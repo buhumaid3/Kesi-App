@@ -1,4 +1,43 @@
-# Kesi: Kenya Case Files — case data (deliverable 6)
+# Kesi: Kenya Case Files
+
+## Play the region 1 build
+
+```
+npm run play          # serves www/ on port 5173; in a Codespace open PORTS → 5173 → globe icon
+npm run place         # the same, plus the hotspot placement tool at /place (writes into www/cases/)
+npm test              # autoplay: every region 1 case solved by exhaustive play, plus save/load round trips
+```
+
+Voices for Mwalimu and Halima (Gemini text-to-speech, same key as the images):
+
+```
+node tools/generate-voices.mjs design            # 3 candidate voices each; samples in review/voices/
+node tools/generate-voices.mjs pick mwalimu 2    # and: pick halima N
+node tools/generate-voices.mjs say mwalimu "Detective. Ngara."
+node tools/generate-voices.mjs generate          # every region 1 line (89, ≈ $0.13)
+node tools/generate-voices.mjs review            # then /review/voices.html with npm run play
+```
+
+Add `?playtest` to the URL to open all ten region 1 cases at once, `?case=7` to jump straight into a case,
+`?reset` to start from the prologue with an empty save.
+
+```
+www/index.html             the shell (Capacitor-wrapped later)
+www/engine/state.js        the case run: pure logic, same unlock rules as tools/validate.mjs (runs in node too)
+www/engine/app.js          screens: prologue, cabinet, case desk, places, people, exhibits, notebook, board,
+                           phone (hint calls), charge sheet, verdict, Pattern File, settings
+www/engine/docs.js         the code-drawn document templates and the case-photo treatment
+www/engine/ui.js           sheets, voice-notes, typewriter, stamps, synthesized sounds
+www/engine/store.js        the save (localStorage now; @capacitor/preferences in the iOS build)
+www/styles/app.css         every game screen, built on tokens.css
+tools/serve.mjs            local server for play and placement (no dependencies)
+tools/place-hotspots.html  drag each hotspot pin onto the photo, save into the case file
+tests/autoplay.mjs         logic test for every region 1 case
+tests/ui-smoke.mjs         plays case 1 through the interface on an iPhone-sized screen, saves screenshots
+tests/ui-region1.mjs       plays all ten region 1 cases through the interface, start to verdict
+```
+
+## Case data and tools
 
 ```
 www/cases/_campaign.json   regions and their rules, spine threads, recurring cast, lexicon, prologue, between-case beats

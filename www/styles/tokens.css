@@ -119,11 +119,19 @@
 
 /* Night shift (system dark mode): the room darkens, paper dims but stays paper. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --desk: #17110C; --desk-hi: #24190F; --desk-lo: #0D0906;
     --paper: #DCD1BC; --paper-lo: #CBBFA7; --ledger: #D6D9C9; --manila: #C8AC78; --manila-lo: #A98B57;
     --lamp: #F2B85A; --stamp: #9E1F18; --string: #B52E24;
+    color-scheme: dark;
   }
+}
+/* An explicit theme choice from a host page wins over the system setting, both ways. */
+:root[data-theme="dark"] {
+  --desk: #17110C; --desk-hi: #24190F; --desk-lo: #0D0906;
+  --paper: #DCD1BC; --paper-lo: #CBBFA7; --ledger: #D6D9C9; --manila: #C8AC78; --manila-lo: #A98B57;
+  --lamp: #F2B85A; --stamp: #9E1F18; --string: #B52E24;
+  color-scheme: dark;
 }
 
 /* Plain text mode (Settings → Reading): every typed or handwritten face becomes the system face. */

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotspot Placement</title>
+<style>
+  :root { --ink: #23222B; --paper: #F3EBDA; --stamp: #B3261E; --green: #2F5D46; --desk: #2A1D15; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--desk); color: #f3ebda; font: 14px/1.45 ui-monospace, Menlo, monospace; }
+  header { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; padding: 12px 16px; background: #1a110c; position: sticky; top: 0; z-index: 5; }
+  header h1 { font: 800 18px system-ui; margin: 0 12px 0 0; text-transform: uppercase; letter-spacing: .06em; }
+  select, button { font: inherit; padding: 8px 10px; border-radius: 3px; border: 1px solid #8c7a62; background: var(--paper); color: var(--ink); }
+  button.primary { background: var(--green); color: #fff; border-color: var(--green); font-weight: 700; }
+  button:disabled { opacity: .5; }
+  main { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 16px; padding: 16px; }
+  @media (max-width: 900px) { main { grid-template-columns: 1fr; } }
+  .stage { position: relative; background: #000; align-self: start; user-select: none; touch-action: none; }
+  .stage img { display: block; width: 100%; }
+  .stage .missing { aspect-ratio: 3 / 2; display: grid; place-items: center; color: #aaa; }
+  .pin { position: absolute; width: 34px; height: 34px; margin: -17px 0 0 -17px; border-radius: 50%; border: 2.5px solid #fff; background: var(--stamp); color: #fff; font: 700 14px/29px system-ui; text-align: center; cursor: grab; box-shadow: 0 2px 6px rgba(0,0,0,.6); touch-action: none; }
+  .pin.sel { outline: 3px solid #F2A33A; outline-offset: 2px; z-index: 2; }
+  .pin.moved { background: var(--green); }
+  aside { background: var(--paper); color: var(--ink); padding: 12px 14px; border-radius: 3px; align-self: start; }
+  aside h2 { margin: 0 0 6px; font: 800 16px system-ui; text-transform: uppercase; }
+  ol { padding-left: 20px; margin: 8px 0; }
+  li { margin: 8px 0; cursor: pointer; }
+  li.sel { background: #F4DD62; }
+  li small { display: block; color: #4E4B57; }
+  .status { min-height: 1.4em; font-weight: 700; }
+  .ok { color: var(--green); } .err { color: var(--stamp); }
+  .help { font-size: 12px; color: #4E4B57; }
+  .progress { font-size: 12px; color: #cdbfa4; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Hotspot placement</h1>
+  <label>Case <select id="case"></select></label>
+  <label>Place <select id="loc"></select></label>
+  <button id="prev" type="button">◀ Prev</button>
+  <button id="next" type="button">Next ▶</button>
+  <button id="save" class="primary" type="button">Save to case file</button>
+  <span class="progress" id="progress"></span>
+</header>
+<main>
+  <div class="stage" id="stage"></div>
+  <aside>
+    <h2 id="title"></h2>
+    <p class="help">Drag each numbered pin onto the thing it names. Click a row to select its pin, then use the arrow keys to nudge it (Shift = 5×). Save writes the positions into <code>www/cases/case-NNN.json</code>; commit after each region.</p>
+    <p class="status" id="status"></p>
+    <ol id="list"></ol>
+  </aside>
+</main>
+<script type="module">
+const $ = s => document.querySelector(s);
+const pad = n => String(n).padStart(3, '0');
+const state = { n: 1, c: null, loc: null, pos: {}, sel: null, dirty: false };
+const caseSel = $('#case'), locSel = $('#loc');
+for (let n = 1; n <= 100; n++) caseSel.append(new Option(`Case ${pad(n)}`, n));
+const q = new URLSearchParams(location.search);
+state.n = +(q.get('case') || localStorage.getItem('place.case') || 1);
+caseSel.value = state.n;
+
+async function loadCase(n, locId) {
+  if (state.dirty && !confirm('Unsaved moves on this place. Leave without saving?')) { caseSel.value = state.n; return; }
+  state.n = n; localStorage.setItem('place.case', n);
+  state.c = await (await fetch(`/cases/case-${pad(n)}.json?t=${Date.now()}`)).json();
+  locSel.replaceChildren(...state.c.locations.map(l => new Option(`${l.hotspotsPlaced ? '✓ ' : ''}${l.name}`, l.id)));
+  locSel.value = locId && state.c.locations.some(l => l.id === locId) ? locId : state.c.locations[0].id;
+  loadLoc(locSel.value);
+}
+function loadLoc(id) {
+  state.loc = state.c.locations.find(l => l.id === id);
+  state.pos = Object.fromEntries((state.loc.hotspots || []).map(h => [h.id, [...(h.pos || [50, 50])]]));
+  state.sel = null; state.dirty = false;
+  $('#title').textContent = `Case ${pad(state.n)} · ${state.loc.name}`;
+  $('#status').textContent = state.loc.hotspotsPlaced ? 'Placed before. Adjust and save again if needed.' : 'Not placed yet.';
+  $('#status').className = 'status';
+  draw();
+}
+function draw() {
+  const stage = $('#stage');
+  const img = new Image();
+  img.src = `/img/cases/${pad(state.n)}/${state.loc.id}.webp`;
+  img.alt = state.loc.name;
+  img.onerror = () => { img.replaceWith(Object.assign(document.createElement('div'), { className: 'missing', textContent: 'No image yet for this place.' })); };
+  stage.replaceChildren(img);
+  const hs = state.loc.hotspots || [];
+  hs.forEach((h, i) => {
+    const p = document.createElement('div');
+    p.className = `pin ${state.sel === h.id ? 'sel' : ''} ${moved(h) ? 'moved' : ''}`;
+    p.textContent = i + 1; p.title = h.label;
+    p.style.left = state.pos[h.id][0] + '%'; p.style.top = state.pos[h.id][1] + '%';
+    p.addEventListener('pointerdown', e => {
+      e.preventDefault(); p.setPointerCapture(e.pointerId); select(h.id, false);
+      const r = stage.getBoundingClientRect();
+      const move = ev => { state.pos[h.id] = [clamp((ev.clientX - r.left) / r.width * 100), clamp((ev.clientY - r.top) / r.height * 100)]; state.dirty = true; p.style.left = state.pos[h.id][0] + '%'; p.style.top = state.pos[h.id][1] + '%'; p.classList.add('moved'); };
+      p.addEventListener('pointermove', move);
+      p.addEventListener('pointerup', () => { p.removeEventListener('pointermove', move); drawList(); }, { once: true });
+    });
+    stage.append(p);
+  });
+  drawList();
+}
+const clamp = v => Math.round(Math.max(0, Math.min(100, v)));
+const moved = h => !h.pos || state.pos[h.id][0] !== h.pos[0] || state.pos[h.id][1] !== h.pos[1];
+function drawList() {
+  $('#list').replaceChildren(...(state.loc.hotspots || []).map((h, i) => {
+    const li = document.createElement('li');
+    li.className = state.sel === h.id ? 'sel' : '';
+    li.innerHTML = `<b></b> <span></span><small></small>`;
+    li.querySelector('b').textContent = h.label;
+    li.querySelector('span').textContent = `(${state.pos[h.id].join(', ')})`;
+    li.querySelector('small').textContent = h.text;
+    li.addEventListener('click', () => select(h.id));
+    return li;
+  }));
+}
+function select(id, redraw = true) { state.sel = id; if (redraw) draw(); else drawList(); }
+addEventListener('keydown', e => {
+  if (!state.sel || !['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key)) return;
+  e.preventDefault();
+  const d = e.shiftKey ? 5 : 1, p = state.pos[state.sel];
+  if (e.key === 'ArrowLeft') p[0] = clamp(p[0] - d); if (e.key === 'ArrowRight') p[0] = clamp(p[0] + d);
+  if (e.key === 'ArrowUp') p[1] = clamp(p[1] - d); if (e.key === 'ArrowDown') p[1] = clamp(p[1] + d);
+  state.dirty = true; draw();
+});
+$('#save').addEventListener('click', async () => {
+  const r = await fetch('/api/hotspots', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ case: state.n, location: state.loc.id, positions: state.pos }) });
+  const j = await r.json();
+  $('#status').textContent = j.ok ? `Saved (${j.changed} moved).` : `Not saved: ${j.error}`;
+  $('#status').className = `status ${j.ok ? 'ok' : 'err'}`;
+  if (j.ok) { state.dirty = false; const keep = state.loc.id; await loadCase(state.n, keep); $('#status').textContent = `Saved (${j.changed} moved).`; $('#status').className = 'status ok'; progress(); }
+});
+caseSel.addEventListener('change', () => loadCase(+caseSel.value));
+locSel.addEventListener('change', () => { if (state.dirty && !confirm('Unsaved moves. Leave without saving?')) { locSel.value = state.loc.id; return; } loadLoc(locSel.value); });
+function step(dir) {
+  const ls = state.c.locations, i = ls.indexOf(state.loc);
+  if (ls[i + dir]) { locSel.value = ls[i + dir].id; locSel.dispatchEvent(new Event('change')); return; }
+  const n = state.n + dir; if (n < 1 || n > 100) return;
+  caseSel.value = n; loadCase(n).then(() => { if (dir < 0) { locSel.value = state.c.locations.at(-1).id; loadLoc(locSel.value); } });
+}
+$('#prev').addEventListener('click', () => step(-1));
+$('#next').addEventListener('click', () => step(1));
+async function progress() {
+  let placed = 0, total = 0;
+  const cs = await Promise.all(Array.from({ length: 100 }, (_, i) => fetch(`/cases/case-${pad(i + 1)}.json?t=${Date.now()}`).then(r => r.json()).catch(() => null)));
+  for (const c of cs) if (c) for (const l of c.locations) { total++; if (l.hotspotsPlaced) placed++; }
+  $('#progress').textContent = `${placed} of ${total} places done`;
+}
+addEventListener('beforeunload', e => { if (state.dirty) { e.preventDefault(); e.returnValue = ''; } });
+loadCase(state.n).then(progress);
+</script>
+</body>
+</html>

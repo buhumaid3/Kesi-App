@@ -8,11 +8,16 @@
     "validate": "node tools/validate.mjs www/cases",
     "prompts": "node tools/compile-prompts.mjs www/cases prompts",
     "contrast": "node tools/contrast.mjs",
-    "images": "node tools/generate-images.mjs"
+    "images": "node tools/generate-images.mjs",
+    "play": "node tools/serve.mjs",
+    "place": "node tools/serve.mjs --place",
+    "test": "node tests/autoplay.mjs 1 10"
   },
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
-    "@google/genai": "2.32.0",
+    "@google/genai": "^2.32.0",
     "sharp": "0.35.5"
   }
 }

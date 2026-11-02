@@ -1,0 +1,45 @@
+{
+ "model": "gemini-3.8-flash-tts",
+ "speakers": {
+  "mwalimu": {
+   "voice": null,
+   "candidates": [
+    {
+     "n": 1,
+     "id": "voice_7iv9l3o3osct",
+     "description": "A Kenyan woman in her late fifties, a senior police inspector in Nairobi. Natural Kenyan English accent. Low-medium pitch, slightly husky, dry and measured, with warmth underneath. Speaks in short sentences with small pauses."
+    },
+    {
+     "n": 2,
+     "id": "voice_qcxg1dcl4x03",
+     "description": "A Kenyan woman in her late fifties who trains young detectives in Nairobi. Natural Kenyan English accent. Medium pitch, a brisk teacher's cadence, crisp consonants, quietly amused."
+    },
+    {
+     "n": 3,
+     "id": "voice_iuai1y5h5tgz",
+     "description": "A Kenyan woman nearing sixty, a veteran police officer from Nairobi. Natural Kenyan English accent. Low pitch, slower, a little gravelly, calm and certain, the faint smile of someone who has seen everything."
+    }
+   ]
+  },
+  "halima": {
+   "voice": null,
+   "candidates": [
+    {
+     "n": 1,
+     "id": "voice_gquws2ndxfh2",
+     "description": "A Kenyan woman in her early forties, a state prosecutor in Nairobi. Natural Kenyan English accent of an educated Nairobi professional. Clear mid pitch, precise, formal and sceptical, never raises her voice."
+    },
+    {
+     "n": 2,
+     "id": "voice_o2vyd0m7bpml",
+     "description": "A Kenyan woman in her early forties, a senior prosecutor in Nairobi. Natural Kenyan English accent. Lower and cooler, very controlled, every word placed carefully."
+    },
+    {
+     "n": 3,
+     "id": "voice_v02b80jvkd12",
+     "description": "A Kenyan woman in her early forties, a sharp Nairobi prosecutor. Natural Kenyan English accent. Slightly faster, crisp, with dry humour under the formality."
+    }
+   ]
+  }
+ }
+}

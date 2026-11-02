@@ -1,6 +1,6 @@
 # Kesi: Kenya Case Files — Game Design Document
 
-Status: planning phase. Build brief: `claude/kenya-detective-game-build-prompt.md`.
+Status: build phase (planning complete 2 November 2026). Build brief: `claude/kenya-detective-game-build-prompt.md`.
 
 | # | Deliverable | Status |
 |---|---|---|
@@ -11,7 +11,9 @@ Status: planning phase. Build brief: `claude/kenya-detective-game-build-prompt.m
 | 5 | 100-case master list | APPROVED (`claude/kesi-case-master-list.md`) |
 | 6 | Full case files, region by region | APPROVED: all 100 cases, Regions 1–10 (`claude/kesi-repo/www/cases/`; readable scripts `claude/kesi-region-NN-case-scripts.md`) |
 | 7 | Aesthetic concept + master image style prompt | APPROVED (§5; image production runbook §6) |
-| 8 | Repo name | FOR APPROVAL (§7): `Kesi-App` |
+| 8 | Repo name | APPROVED (§7): `Kesi-App` |
+| B1 | Region 1 playable vertical slice | IN REVIEW (§8) |
+| B2 | Stage 1 polish: tips, case intros, music and cues, voices for Mwalimu and Halima | IN REVIEW (§9) |
 
 ## 1. Name + positioning (APPROVED)
 
@@ -498,13 +500,13 @@ Twelve years ago, a land surveyor named **Joseph Mwenda** was found dead on a ro
 |---|---|---|
 | **Amani** | The player | Seen only through the desk, the hands, the notebook and the phone. Never shown, never gendered (Amani is a gender-neutral Swahili name meaning "peace"), never given lines that tell the player how to feel. |
 | **Chief Inspector Esther Wairimu, "Mwalimu"** | Mentor and the voice of the hint calls | A veteran nearing retirement who trains Amani. Dry, exacting, warm underneath. She is the reason the unit exists. She is also the officer who signed off Joseph's file twelve years ago, under pressure, and has lived with it since. |
-| **Kivuli** | Antagonist | A fixer known only by a nickname for 90 cases. Not a politician or a stand-in for a real person: a private middleman who sells "problems solved". Real name revealed in case 100: **Margaret Kabiru**, former Deputy Chief Land Registrar (Records), now chair of a family foundation *(provisional name; decided with the cultural reader before release)*. |
-| **"Fundi"** | Kivuli's enforcer | The first face of the network (case 50). A former mechanic who cleans up for Kivuli. |
+| **Kivuli** | Antagonist | A fixer known only by a nickname for 90 cases. Not a politician or a stand-in for a real person: a private middleman who sells "problems solved". Real name revealed in case 100: **Margaret Kabiru**, former Deputy Chief Land Registrar (Records), now chair of a family foundation *(name confirmed 2 November 2026; the cultural reader still reviews it)*. |
+| **"Fundi"** | Kivuli's enforcer | The first face of the network (case 50): **Benedict Mbuvi** (name confirmed 2 November 2026). A former mechanic who cleans up for Kivuli. |
 | **The registry man** | Kivuli's inside contact | A lands-registry clerk who makes files disappear. Discovered in case 80 by noticing what is *missing*, fitting that region's mechanic. |
 | **Prosecutor Halima Abdi** | Reviews every charge sheet | The voice of the batch-confirmation feedback (§2.3). Sceptical, fair, the closest thing Amani has to a friend at work. Her trust grows with your record. |
 | **Joseph Mwenda** | Amani's father, the cold-case victim | Appears only in documents: his survey notes, one photo, the thin closed file in the drawer. |
 
-**Names are provisional.** They're spread across Kenya's communities, and none signals that a community is good or bad. The antagonist's real name in particular is decided with the Kenyan cultural reader before anything is final.
+**Names.** Kivuli (Margaret Kabiru) and Fundi (Benedict Mbuvi) were confirmed on 2 November 2026; Raphael Oduya and Stanley Rotich stay provisional. Names are spread across Kenya's communities, and none signals that a community is good or bad. The antagonist's real name in particular is decided with the Kenyan cultural reader before anything is final.
 
 ### 4.3 How the story is delivered (no long cutscenes)
 
@@ -836,7 +838,7 @@ Tool: `tools/generate-images.mjs` (in the repo), run inside a GitHub Codespace. 
 
 **A. The repo and Codespace**
 1. On GitHub (account `buhumaid3`), create a new **private** repository, `Kesi-App` (§7). Leave it empty: no README, no .gitignore.
-2. Open it in a Codespace: **Code → Codespaces → Create codespace on main**.
+2. GitHub can't create a Codespace on an empty repo, so give it one commit first: on the repo page click **creating a new file**, name it `README.md`, type `Kesi`, and **Commit changes**. Then open it in a Codespace: **Code → Codespaces → Create codespace on main**. (The zip's README replaces this placeholder in step 3.)
 3. Drag `kesi-app-initial.zip` into the Codespace's Explorer, then in the terminal:
    ```
    unzip kesi-app-initial.zip && mv kesi/* kesi/.gitignore . && rmdir kesi && rm kesi-app-initial.zip
@@ -871,11 +873,11 @@ You do all of B and C yourself; I never see or handle the key.
 | 4 Region 1 | `npm run images -- batch --region 1` → `status` → `fetch` | 66 more | ≈ $1.22 | within 24 h | Review sheet, rejects, redo (step 6) |
 | 5 Regions 2–10 | `npm run images -- batch --region 2` … `--region 10` (all can be submitted the same day once region 1 looks right) | 1,016 | ≈ $20.43 | within 24 h each | One review sheet per region |
 | 6 Review and redo | `npm run images -- review --region N`, then `redo --rejects` | rejects only | $0.034 each | minutes | See 6.3 |
-| 7 Continuity | `npm run images -- continuity` (run once the anchors in cases 10, 50, 74, 80, 90 and 96 are approved) | 21 portraits that attach an earlier face | $0.71 | ~3 min | Check each face matches its reference |
+| 7 Continuity | `npm run images -- continuity` (run once a region's locations and the portrait anchors in cases 10, 50, 74, 80, 90 and 96 are approved) | 21 portraits that attach an earlier face, and the 90 scene photos, each generated from its own case's location photo so the same vehicle and place appear in both | $5.25 | ~20 min | Check each face matches its reference, and each scene matches its location |
 | 8 Commit | `git add www/img prompts/state.json && git commit -m "Region N images" && git push` | | | | After each approved region |
 | 9 Back up the masters | `zip -qr kesi-masters.zip img-masters` and download it (right-click → Download) | | | | `img-masters/` is git-ignored (about 1–2 GB); keep a copy on your computer or Drive |
 
-Expected total for the plan above: **≈ $23** (batch prices, with the pilot, references and continuity portraits generated interactively), plus regenerations (≈ $0.034 each). Budget **$35–70**.
+Expected total for the plan above: **≈ $25** (batch prices, with the pilot, references and continuity portraits generated interactively), plus regenerations (≈ $0.034 each). Budget **$35–70**.
 
 **Why region by region:** each batch is small enough to review in one sitting, a problem in the prompts costs one region rather than 1,127 images, and approved regions can be committed while later ones are still running.
 
@@ -892,7 +894,8 @@ Expected total for the plan above: **≈ $23** (batch prices, with the pilot, re
    - blood, a body or an injury;
    - a detective or camera in frame;
    - a hotspot object missing from a location;
-   - a recurring face that doesn't match its reference.
+   - a recurring face that doesn't match its reference;
+   - a scene photo whose vehicle or place doesn't match its location photo.
 3. Click **Collect rejects**, copy the text into `prompts/rejects.txt` (one `KEY  note` per line), then run `npm run images -- redo --rejects`. Each note is appended to that image's prompt as "Correction from review: …". Clear `rejects.txt` once a round is done.
 4. Portraits also go to the cultural reader before release.
 
@@ -907,7 +910,15 @@ Expected total for the plan above: **≈ $23** (batch prices, with the pilot, re
 | `report` lists wrong aspect ratios | Batch ignored `imageConfig` | Stop after the batch pilot (step 2) and tell me; we'd switch to interactive generation (about twice the cost, ≈ $45 total) |
 | Codespace runs out of disk | The masters are large | Download `img-masters` and delete older regions' masters |
 
-### 6.5 What the script does (for checking)
+### 6.5 Pilot findings (2 November 2026) and the fixes
+
+The first four images (case 1) were reviewed:
+- **Portrait (Moses Wafula): pass.** It matches the brief: early 40s, greying hair, maroon jacket over a checked shirt, ID-photo framing, and the film look.
+- **Spanner: pass.** The L-shaped wheel brace has the white-painted handle and the juice carton. The light is warmer daylight rather than orange street light, which the photo treatment absorbs.
+- **Location (Ngara stage): rejected.** It came back with a readable "KDK 418T" plate. The compiler itself had put the plate in, through a hotspot label ("Behind KDK 418T"). **Fix:** number plates (Kenyan `KXX 000X` and `GK …` formats) are now replaced with "the parked vehicle" in every brief and composition hint; 0 plates remain in the 1,127 prompts.
+- **Scene (cap by the rear wheel): rejected.** It showed a white van with spray-painted spots, not the painted matatu in the location photo. Scene and location had been generated independently. **Fix:** every scene photo now attaches its own case's location photo as a reference ("this same place, taken earlier the same night: keep the same vehicles, paintwork, buildings, ground and light"). Scenes therefore move from the batch to the `continuity` step (90 images, +$2.27 against batch prices).
+
+### 6.6 What the script does (for checking)
 
 - **Requests.** Each one is `contents` (the compiled prompt) and `generation_config` with `responseModalities ['TEXT','IMAGE']` and `imageConfig {aspectRatio, imageSize}`. Batch jobs go in as JSONL through the Files API, keyed `NNN/id` (for example `001/p_moses`).
 - **Results.** Results come back in request order (Google's documentation for the batch output file). The script uses the key when a line carries one and the order when it doesn't, and records failures without stopping.
@@ -917,7 +928,7 @@ Expected total for the plan above: **≈ $23** (batch prices, with the pilot, re
 
 ---
 
-## 7. Repo name (deliverable 8, FOR APPROVAL)
+## 7. Repo name (deliverable 8, APPROVED)
 
 **`Kesi-App`**, private, under `buhumaid3`.
 
@@ -949,3 +960,99 @@ Kesi-App/
 ```
 
 With deliverable 8 approved, the planning phase is complete. Next comes the build brief's next step: **build Region 1 as a playable vertical slice**, then playtest and adjust the mechanics before the image run is finished for later regions.
+
+---
+
+## 8. Build B1: Region 1 playable vertical slice (IN REVIEW)
+
+The first build of the game itself: cases 1–10, start to finish, with the prologue, the cabinet, every beat of the case loop (§2.1), the hint calls, the verdict and the Pattern File unlock after case 10. Regions 2–10 are in the cabinet as shut drawers ("Not in this build").
+
+### 8.1 What the player can do
+
+| Beat (§2.1) | In the build |
+|---|---|
+| Prologue (§4.3) | Lamp click, the typed first line, the folder dropping onto the desk, Mwalimu's three lines, the optional desk drawer with Joseph's thin CLOSED folder. Skippable. The drawer stays on the desk shelf to reread |
+| Cabinet | Region 1 drawer with ten folders (folder tab, number, title, stars, CLOSED stamp); later folders sealed until the one before is closed; "Continue" card; the desk shelf (Pattern File, collectibles, desk changes from the between-case beats, the drawer). Region title card the first time |
+| 1. OB entry | Manila folder with region tab, received stamp, OB number and date; the OB entry types itself onto a ledger strip at ~45 characters a second (tap completes it) |
+| 2. Scene | The place photo with numbered pins at the authored hotspot positions, the same hotspots as a list below (the accessible route), each tap shows what Amani notices and bags the exhibit; hotspots that unlock later (a matatu returning) appear when their fact is known |
+| 3. Investigate | Places as VISIT cards; people as clipped ID cards; interviews with the intro line, what they say (claims), statements they give, and "Ask about" chips for every known person, place, exhibit and authored fact topic; a plain "I don't know" for anything without an authored answer, so the chips don't reveal which topics matter. The transcript stays |
+| Exhibits | All 22 document kinds used in region 1, drawn in code: statement forms, ledgers and registers as tables, receipts and tickets as slips, printouts, notes in a second hand, the notice board, scene notes, exhibit tags. Photos get the full case-photo treatment (§5.6) and open full size with zoom (case 9's beat) |
+| Notebook (§2.7) | Every fact auto-logged on discovery, grouped by people / places / exhibits, searchable; a Time tab that draws every `where` fact as a bar (cases 2 and 5); a pinned tray of six facts (case 9); the case glossary. New facts are highlighted until read |
+| 4. Board (§2.6) | Corkboard with every person met, every exhibit, pinned facts and sticky notes; drag to arrange, red string between any two cards, saved per case, never graded |
+| Hints (§2.8) | The phone: one call button per charge-sheet group, tier 1 → 2 → 3 in order, each labelled with the star cap it costs; tier 1 opens the card it names, tier 2 shows the two facts (or says where the missing one is) and pins both, tier 3 fills a blank. From case 7 Mwalimu offers the calls after the first returned sheet. Message history keeps every voice-note and Halima's texts |
+| 5. Charge sheet (§2.3) | Carbon-copy form ("Murder, contrary to section 203 of the Penal Code"), the template sentence with blanks; tap a blank then a word, or drag a word onto a blank; the bank only holds discovered words; batch confirmation by group with Halima's pass or fail line and an ACCEPTED (double-ruled) or RETURNED (round) stamp |
+| 6. Verdict | ACCEPTED stamp and Halima's line, CASE CLOSED and the title in the sign-painted treatment, stars with the reason, the reconstruction, "Why not the others" (every elimination), after-verdict beats, spine details filed (including any the player missed), the collectible, the desk change, Mwalimu's voice-note and Halima's text; next case, cabinet, or play again (best stars kept) |
+| Case 1 tutorial | The seven guided voice-notes fire on their triggers; "Before you send it…" arms the submit button so the first press only plays the note |
+| Settings (§2.12) | Text size S/M/L/XL, plain text mode, inline glossary, sounds, motion (system / reduce / full), playtest mode (all ten cases open), erase progress |
+
+Stars follow §2.9 exactly: three with at most one returned sheet and no calls; two with a tier-1 or tier-2 call or 2–3 returned sheets; one with a tier-3 call or more than three returned sheets. Region 1 has no credibility stamps (they arrive in region 2); the engine already carries them.
+
+### 8.2 How it is built
+
+- **Engine as modules, not one file.** §3.7 said "engine (single file)". It is `www/index.html` plus five ES modules in `www/engine/` and `www/styles/app.css`: easier to review and test, no build step, and Capacitor serves them the same way. No frameworks, no dependencies at runtime.
+- **One set of rules.** `www/engine/state.js` reproduces the validator's reachability simulation (§3.5 rule 2) as player actions: visiting a place, tapping a hotspot, interviewing, asking. What the validator proves reachable is exactly what a player can reach. It has no DOM, so the same file runs in node for the tests.
+- **Save anywhere.** Every action saves (debounced, and immediately when the app goes to the background). Reopening the app returns to the open case and the open sheet: the place, the person, the exhibit, the notebook tab, the board, the phone or the charge sheet. The save is `localStorage` for now; the iOS build moves it to `@capacitor/preferences`, which iOS doesn't purge.
+- **Images.** The game loads `img/cases/NNN/<id>.webp` for each person, place and exhibit with an image brief; anything not generated yet shows a striped "Photo pending" frame, so the build plays with or without images.
+- **Sounds** are synthesized (typewriter keys, stamp thump, pin, phone chime): no audio files.
+- **Accessibility.** Every pin has a list equivalent, every drag has a tap equivalent, every badge and stamp has a word, iOS Reduce Motion is followed (and can be forced either way), text scales to 130%, plain text mode swaps all three faces for the system font.
+
+### 8.3 The hotspot placement pass (§5.10), built now
+
+Hotspot positions were authored before the images existed, and the generated photos put things elsewhere (on case 1's stage the tally book is bottom left, not on the road). `npm run place` serves the game plus a placement tool at `/place`: pick a case and place, drag each numbered pin onto its thing (arrow keys nudge, Shift for 5×), Save writes the positions into the case file and marks the place `hotspotsPlaced: true` (a new optional field; the validator ignores it). The header counts places done out of 326. Do it region by region, after each region's images are approved, then commit.
+
+### 8.4 What was tested
+
+- `npm test` (`tests/autoplay.mjs`): for each of cases 1–10, exhaustive play through the engine's own actions, with a save-and-reload between every pass. All facts and exhibits are reachable in all ten cases; every proof fact, elimination fact and answer word is reachable; a wrong sheet is returned with a line; the right sheet is accepted; the three hint tiers work and tier 3 fills the blank.
+- `tests/ui-smoke.mjs`: case 1 played through the interface on a 390 × 844 iPhone screen (prologue with the drawer, the stage, every hotspot, every interview and question, notebook, time view, board with string, a hint call, a returned and an accepted sheet, the verdict, the cabinet), plus resume after closing mid-case and a dark-mode pass.
+- `tests/ui-region1.mjs`: all ten cases played through the interface, start to verdict. Result on 2 November 2026: in every case every fact and every exhibit was found through the interface, the verdict came back with three stars, the next case unlocked, and after case 10 the Pattern File opened with 5 pins (the case 6 calendar and four from case 10) and Rashid Omar's stamp went on the desk. No page errors.
+- The validator still passes on all 100 cases (0 errors) after the name confirmations.
+
+### 8.5 Not in this build
+
+- Regions 2–10 mechanics (contradictions and pressing, warrants and credibility stamps, records, labs and the arrest clock, timeline strips, the map and travel, forgery, absence, accomplice, planted, real target, spine groups). The data and validator are ready; each region's build adds its mechanics.
+- Haptics, the Capacitor wrap and `codemagic.yaml` (next step after this review).
+- Desk objects as drawn objects: the between-case desk changes and collectibles appear as a list on the desk shelf for now.
+
+### 8.6 What happens next
+
+1. You play region 1 (`npm run play` in the Codespace, or on a phone through the forwarded port) and tell me what feels wrong.
+2. Hotspot placement for region 1 once its images are approved.
+3. A blind playtest of region 1 with real players (§3.6). The test tells us whether the reasoning is fair before regions 2–10 are built on the same engine.
+4. Capacitor wrap and Codemagic, then TestFlight with region 1.
+
+---
+
+## 9. Build B2: stage 1 polish (IN REVIEW)
+
+Approved on 2 November 2026 as stage 1 of the polish plan: new-mechanic tips, case intros, music and sound cues, and a voice pilot for Mwalimu and Halima. Stage 2 (after the region 1 playtest): a 2.5D depth effect on photos, local detective profiles, iCloud sync. Stage 3 (after launch): Game Center achievements and leaderboards, then a pass-and-play partner mode. True 3D, accounts and online real-time multiplayer were turned down (cost, App Store account rules, a free app with no server budget, and the approved paper-desk concept).
+
+### 9.1 Mwalimu's tips for each new mechanic
+
+`www/cases/_coach.json` holds one tip per interface beat (the `ui.beats` every case already lists). A tip plays once, as a Mwalimu voice-note, the first time its trigger happens in the first case that lists the beat: opening the case, the scene, an exhibit (optionally only certain document kinds), the notebook, the board, the phone or the charge sheet. Tips teach how to use a tool, never what a case means. Region 1 has 14 (registers, the Time tab, two places, paper side by side, a building, empty stretches on the clock, zoom, red herrings, timetables, what isn't there, three-step proofs, pinned facts, photo backgrounds, two blanks). Four basic tips play for anyone who starts somewhere other than case 1 (playtest mode). The case 7 hint offer moved into the same file. Settings → Mwalimu's tips → Replay plays them all again. Each later region adds its beats to this file as its mechanics are built.
+
+### 9.2 Case intros
+
+A title sequence of about five seconds when a case opens: the case's scene photo, darkened, pushing in slowly; the folder tab and CASE NNN · REGION; the title in the sign-painted treatment; the place and date in Amani's hand; the OB time typing in; the OB number stamped. A low drum and a slow minor chord play under it. One tap skips it. Reduce Motion shows it still. Settings → Case intros: first time (default), always, or off. It uses no art beyond the case's own photos.
+
+### 9.3 Music and sound
+
+`www/engine/audio.js` runs three volume buses (music, effects, voices) through Web Audio, because iOS ignores the volume of a plain audio element. Settings has a slider for each.
+- **Music:** one loop per region plus a cabinet theme, from `www/audio/music/` as listed in its `manifest.json`. Until a track exists, a quiet procedural room tone plays: distant traffic, the lamp's hum. The music dips while someone speaks. The brief for a composer is `docs/music-brief.md`. **Recommendation:** commission a Kenyan composer on a written buyout licence. Use a royalty-free library only after reading its licence for app use. No AI-generated music until its commercial rights are documented.
+- **Cues** (synthesized, no files): case intro, sheet ACCEPTED (a rising chord), RETURNED (two falling notes), CASE CLOSED, alongside the existing keys, stamps, pins and phone.
+
+### 9.4 Voices: Mwalimu and Halima (pilot)
+
+`tools/generate-voices.mjs` records their lines with Gemini text-to-speech (`gemini-3.8-flash-tts`, read from Google's docs 2 November 2026), using the same `GEMINI_API_KEY` secret as the images.
+1. `design` creates three candidate voices for each from a written description ("a Kenyan woman in her late fifties, a senior police inspector in Nairobi, natural Kenyan English accent…") through Google's voice design, and saves a sample of each. `catalog` lists any library voices tagged Kenyan, as an alternative.
+2. `pick mwalimu N` / `pick halima N` chooses one; `say mwalimu "…"` tests a single line.
+3. `lines` compiles every line they speak in region 1: the prologue, the case 1 guidance, the tips, the hint calls, the between-case voice-notes (Mwalimu), and the ACCEPTED and RETURNED lines on every charge sheet (Halima). That is **89 lines, about 9–10 minutes of speech, ≈ $0.13** at 2026 prices ($9 per million audio tokens, 25 tokens a second; the price doubles on 1 January 2027). Voice design was not priced on Google's page.
+4. `generate` records them as AAC (`www/audio/voice/<speaker>/<key>.m4a`; WAV if ffmpeg is missing) and writes the manifest; `review` makes a listening page with reject boxes; `redo --rejects` re-records with the review note added to the delivery instruction.
+
+The game plays a recorded line whenever it shows that exact text (the file name comes from the text, so an edited line never plays an old recording). A voice-note with a recording stays up until it has been said. Every line stays on screen; voices are never the only way to get information. Amani is never voiced. Halima's between-case texts stay texts.
+
+**Before rolling out:** a Kenyan listener judges the samples (accent, names, Swahili and Sheng words). If the AI voices don't pass, the alternative is two voice actors for these two characters only, about 10 minutes of script for region 1.
+
+### 9.5 Tested
+
+- The voice tool ran end to end against a fake Gemini client (design, pick, say, lines, generate with ffmpeg conversion, report, review). The game then played a recorded line through the voice bus in a browser. The calls follow the shapes in Google's speech-generation docs and the installed SDK's type definitions; the first live run is `design` then `say`.
+- `npm test` and both interface tests pass with intros and tips on (the intro is screenshotted in `ui-smoke`); the validator still passes all 100 cases.

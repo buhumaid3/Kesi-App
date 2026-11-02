@@ -9,7 +9,8 @@
 //   node tools/generate-images.mjs batch --case N | --all
 //   node tools/generate-images.mjs status                state of every submitted job
 //   node tools/generate-images.mjs fetch                 download finished jobs, save masters and game images
-//   node tools/generate-images.mjs continuity            the 21 portraits that attach an earlier face (interactive)
+//   node tools/generate-images.mjs continuity            everything that attaches an earlier image (interactive): 21 recurring
+//                                                        portraits, and 90 scene photos that reuse their case's location photo
 //   node tools/generate-images.mjs redo KEY [KEY…]       regenerate single images (interactive)
 //   node tools/generate-images.mjs redo --rejects        regenerate everything listed in prompts/rejects.txt
 //   node tools/generate-images.mjs review [--region N]   write review/region-N.html, a contact sheet to approve from
@@ -224,7 +225,7 @@ switch (cmd) {
   case 'dry-run': {
     const rows = select();
     const skipped = requests.filter(r => r.case > 0 && r.reference).length;
-    console.log(`${rows.length} images would be submitted (${rows.filter(r => r.size === '1K').length} at 1K, ${rows.filter(r => r.size === '2K').length} at 2K): batch ≈ $${cost(rows, 'batch').toFixed(2)}, interactive ≈ $${cost(rows, 'interactive').toFixed(2)}. ${skipped} reference portraits are left for  continuity .`);
+    console.log(`${rows.length} images would be submitted (${rows.filter(r => r.size === '1K').length} at 1K, ${rows.filter(r => r.size === '2K').length} at 2K): batch ≈ $${cost(rows, 'batch').toFixed(2)}, interactive ≈ $${cost(rows, 'interactive').toFixed(2)}. ${skipped} images with a reference (recurring faces, scenes) are left for  continuity .`);
     break;
   }
   case 'pilot': {
@@ -245,7 +246,7 @@ switch (cmd) {
     const rows = requests.filter(r => r.reference && !['done', 'approved'].includes(st(r.key).status));
     const ready = rows.filter(r => fs.existsSync(P('img-masters', r.reference.replace(/^img\//, ''))));
     if (ready.length < rows.length) console.log(`${rows.length - ready.length} wait for their reference image: ` + rows.filter(r => !ready.includes(r)).map(r => r.key).join(', '));
-    console.log(`Continuity portraits: ${ready.length}, ≈ $${cost(ready, 'interactive').toFixed(2)}.`);
+    console.log(`Images with a reference (recurring faces, scenes): ${ready.length}, ≈ $${cost(ready, 'interactive').toFixed(2)}.`);
     await interactive(ready); break;
   }
   case 'redo': {

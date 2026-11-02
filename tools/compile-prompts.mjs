@@ -80,13 +80,15 @@ const rewrite = (brief) => {
 const third = (x) => (x < 34 ? 'left' : x > 66 ? 'right' : 'centre');
 const band = (y) => (y < 34 ? 'upper' : y > 66 ? 'lower' : 'middle');
 const where = ([x, y]) => { const b = band(y), t = third(x); return b === 'middle' && t === 'centre' ? 'in the centre' : `in the ${b === 'middle' ? '' : b + ' '}${t}${t === 'centre' ? '' : ' third'}`; };
+const PLATE = /\b(K[A-Z]{2}\s?\d{3}\s?[A-Z]|GK\s?[A-Z]?[\s.…]*\d{3})\b/g;
+const noPlates = (t) => t.replace(/\b(behind|beside|next to|near)\s+(K[A-Z]{2}\s?\d{3}\s?[A-Z])\b/gi, '$1 the parked vehicle').replace(PLATE, 'the vehicle');
 const compose = (loc, ev) => {
   // People are never placed in a location shot (their statements are cards, not things in the picture).
   const hs = (loc.hotspots || []).filter(h => !h.unlock && !['witness', 'phone'].includes(ev.get(h.yields)?.type) && ev.get(h.yields)?.render !== 'statement').slice(0, 5);
   if (!hs.length) return '';
   const hs2 = hs.filter(h => !/^search\b/i.test(h.label)); // a records search is an action, not a thing in the picture
   if (!hs2.length) return '';
-  return 'Composition: ' + hs2.map(h => `${h.label.replace(QUOTED, '$1$2').replace(/["\u201c\u201d]/g, '').replace(/^The /, 'the ')} ${where(h.pos)}`).join('; ') + '.';
+  return 'Composition: ' + hs2.map(h => `${noPlates(h.label).replace(QUOTED, '$1$2').replace(/["\u201c\u201d]/g, '').replace(/^The /, 'the ')} ${where(h.pos)}`).join('; ') + '.';
 };
 
 // 3. Continuity: the same person in a later case is generated from the earlier image.
@@ -111,10 +113,11 @@ const problems = [];
 const push = (caseNo, id, kind, brief, extra = {}) => {
   const k = KIND[kind] || KIND.evidence;
   const { b: lifted, words } = kind === 'portrait' ? { b: brief, words: [] } : lift(brief);
-  const b = kind === 'portrait' ? rewrite(lifted) : lifted.replace(/,?\s*ID-photo framing\.?/i, '').replace(/\.$/, '');
+  const b = kind === 'portrait' ? rewrite(lifted) : noPlates(lifted.replace(/,?\s*ID-photo framing\.?/i, '')).replace(/\.$/, '');
   const parts = [MASTER, k.text, (kind === 'portrait' ? 'Subject: ' : kind === 'evidence' ? 'Object: ' : 'Show: ') + b + '.'];
   if (extra.compose) parts.push(extra.compose);
-  if (extra.reference) parts.push(`Use the attached reference image (${extra.reference}) for this person's face, build and age${extra.ageNote ? ', ' + extra.ageNote : ''}; change only clothing, expression and setting as described.`);
+  if (extra.reference && kind === 'scene') parts.push(`The attached photograph (${extra.reference}) is this same place, taken earlier the same night: keep the same vehicles, paintwork, buildings, ground and light, and show the closer view described.`);
+  else if (extra.reference) parts.push(`Use the attached reference image (${extra.reference}) for this person's face, build and age${extra.ageNote ? ', ' + extra.ageNote : ''}; change only clothing, expression and setting as described.`);
   parts.push(GUARD);
   const prompt = parts.join('\n');
   for (const [re, what] of BAD) {
@@ -154,7 +157,11 @@ for (const f of files) {
   }
   const evMap = new Map(c.evidence.map(e => [e.id, e]));
   for (const l of c.locations) if (l.image) push(n, l.id, 'location', l.image.brief, { compose: compose(l, evMap) });
-  for (const e of c.evidence) if (e.image) push(n, e.id, e.image.kind === 'scene' ? 'scene' : 'evidence', e.image.brief);
+  const sceneLoc = c.locations.find(l => l.kind === 'scene' && l.image);
+  for (const e of c.evidence) if (e.image) {
+    const isScene = e.image.kind === 'scene';
+    push(n, e.id, isScene ? 'scene' : 'evidence', e.image.brief, isScene && sceneLoc ? { reference: `img/cases/${String(n).padStart(3, '0')}/${sceneLoc.id}.webp` } : {});
+  }
 }
 
 // Same name in two cases without a continuity entry: either a collision or a missing link.

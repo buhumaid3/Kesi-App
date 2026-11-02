@@ -1,0 +1,84 @@
+{
+  "note": "Mwalimu's first-time tips, one per interface beat (case ui.beats). Each fires once, on its trigger, in the first case that lists the beat. They teach how to use a tool, never what a case means. Triggers: caseOpen, sceneOpen, notebookOpen, boardOpen, chargeOpen, evidenceOpen (optionally limited to renders), afterWrong. Case 1's guided loop lives in case-001.json tutorial[]; the hint offer (case 7) is built into the charge sheet.",
+  "beats": {
+    "foundPaperBook": {
+      "trigger": "evidenceOpen",
+      "renders": [
+        "visitorRegister",
+        "logBook",
+        "tallyBook",
+        "ticketBook",
+        "jobBook",
+        "orderBook",
+        "feeBook",
+        "ledger"
+      ],
+      "line": "Registers are kept by people who weren't thinking about murder. That's why they're honest. Read every row, not just the one you came for."
+    },
+    "timeWindow": {
+      "trigger": "notebookOpen",
+      "line": "Times matter now. Your notebook has a Time tab: everyone you can place, lined up on one clock."
+    },
+    "map": {
+      "trigger": "caseOpen",
+      "line": "Two places today. Both are in the folder. Go back and forth as often as you like. Walking costs you nothing."
+    },
+    "paperMatch": {
+      "trigger": "evidenceOpen",
+      "line": "When two papers talk about the same thing, put them side by side. Pin a line from each in your notebook and read the Pinned tab."
+    },
+    "sceneSketch": {
+      "trigger": "sceneOpen",
+      "line": "A building, not a street. Before you decide who was where, ask how anyone got from one floor to another."
+    },
+    "timeView": {
+      "trigger": "notebookOpen",
+      "line": "Open the Time tab. Every bar is someone you can place. The empty stretches deserve as much attention as the bars."
+    },
+    "zoomInspect": {
+      "trigger": "evidenceOpen",
+      "line": "Small writing matters. Tap any photograph to open it full size, then pinch or double-tap to look closer."
+    },
+    "firstRedHerring": {
+      "trigger": "caseOpen",
+      "line": "Not everything that looks guilty is. When something points at a person, ask what else could explain it before you write a name."
+    },
+    "timetable": {
+      "trigger": "evidenceOpen",
+      "renders": [
+        "timetable"
+      ],
+      "line": "A timetable says where a train should be. People tell you where they were. Hold one against the other."
+    },
+    "absencePreview": {
+      "trigger": "caseOpen",
+      "line": "Read every exhibit twice: once for what it shows, and once for what it ought to show."
+    },
+    "threeStepProof": {
+      "trigger": "chargeOpen",
+      "line": "This one takes three steps, not two. If your name rests on a single fact, you're not finished."
+    },
+    "pinnedFacts": {
+      "trigger": "notebookOpen",
+      "line": "You can pin six facts. Keep the ones that belong together on the Pinned tab, and the board will show them too."
+    },
+    "photoZoom": {
+      "trigger": "evidenceOpen",
+      "renders": [
+        "photo"
+      ],
+      "line": "Photographs have backgrounds. Open it full size and look past the people in front."
+    },
+    "twoBlankGroup": {
+      "trigger": "chargeOpen",
+      "line": "Two blanks this time, judged together. Halima accepts both or neither, so be sure of each."
+    }
+  },
+  "core": {
+    "notebookOpen": "Everything you find lands here by itself. People, places, exhibits, and times. You don't write, you think.",
+    "boardOpen": "The board is yours. Drag things where they make sense to you, tie string between them. Nobody grades it.",
+    "phoneOpen": "Call me when you're stuck. Where to look, what to notice, or the answer. Each one costs you a star you haven't earned yet, never the case.",
+    "chargeOpen": "The charge sheet. Only names you've actually found are in the bank. Halima reads every one."
+  },
+  "hintOffer": "Detective. You can call me. \"Where to look\" names the thing that matters. \"What to notice\" shows you two facts that belong together. \"The answer\" fills a blank, and costs you more."
+}
