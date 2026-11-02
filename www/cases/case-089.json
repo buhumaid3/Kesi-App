@@ -1,0 +1,2770 @@
+{
+  "meta": {
+    "id": "case-089",
+    "number": 89,
+    "region": "westlands-karen-runda",
+    "regionNumber": 9,
+    "title": "Rooftop",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 46,
+    "date": "Sunday 27 September",
+    "folderTab": "ANGA ROOFTOP"
+  },
+  "pattern": {
+    "crimePattern": "an event promoter pushes the photographer who can prove she padlocked a fire exit before a crush off a rooftop service terrace; her head bouncer deletes the footage and says the victim was drunk",
+    "noRealCaseRetold": true,
+    "notes": "Fictional promoter, venue and March incident (fourteen injured, nobody died). ACCOMPLICE against a crowded field of liars; ABSENCE of alcohol and of climbing scrapes against the staff's story.",
+    "tags": [
+      "fall",
+      "pushed",
+      "cover-up",
+      "accomplice",
+      "deleted-cctv",
+      "three-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where",
+      "absence"
+    ]
+  },
+  "difficulty": {
+    "suspects": 5,
+    "chainLength": 6,
+    "redHerrings": 3,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "accomplice",
+      "how",
+      "why",
+      "absence"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic",
+      "cctv"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 14/27/09",
+    "date": "Sunday 27 September",
+    "time": "01:20",
+    "reportedBy": "Anga Rooftop, Westlands",
+    "text": "A woman falls from the eighth-floor rooftop bar of a Westlands building during an event: Tracy Odhiambo (29), event photographer. Staff tell police she was drunk and climbed the railing for a photo.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_street",
+    "nodes": [
+      "loc_street",
+      "loc_rooftop",
+      "loc_secoffice",
+      "loc_flat"
+    ],
+    "edges": [
+      {
+        "a": "loc_street",
+        "b": "loc_rooftop",
+        "minutes": 3,
+        "by": "lift"
+      },
+      {
+        "a": "loc_rooftop",
+        "b": "loc_secoffice",
+        "minutes": 1,
+        "by": "foot"
+      },
+      {
+        "a": "loc_secoffice",
+        "b": "loc_street",
+        "minutes": 3,
+        "by": "lift"
+      },
+      {
+        "a": "loc_street",
+        "b": "loc_flat",
+        "minutes": 10,
+        "by": "road"
+      },
+      {
+        "a": "loc_rooftop",
+        "b": "loc_flat",
+        "minutes": 12,
+        "by": "road"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_tracy",
+      "role": "victim",
+      "name": "Tracy Odhiambo",
+      "age": 29,
+      "occupation": "Event photographer and crowd-safety officer",
+      "bio": "Booked to shoot the night. Never shoots without two memory cards.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_terrace",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo woman, late 20s, short locs, a camera around her neck, a direct, warm face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mukami",
+      "role": "suspect",
+      "name": "Mukami Njeru",
+      "age": 27,
+      "occupation": "Event promoter, Skyline Socials",
+      "bio": "Organised the night.",
+      "community": "Embu",
+      "isCulprit": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_dance",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Embu woman, late 20s, a sequin jacket and a headset, a polished, upset face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_ezekiel",
+      "role": "suspect",
+      "name": "Ezekiel Muriuki",
+      "age": 36,
+      "occupation": "Head bouncer, hired by Skyline Socials",
+      "bio": "Has worked her events for three years. Holds the security office password.",
+      "community": "Meru",
+      "isCulprit": false,
+      "accomplice": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_door",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Meru man, mid 30s, a black security T-shirt and an earpiece, a heavy, protective face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_duncan",
+      "role": "suspect",
+      "name": "Duncan Mwangi",
+      "age": 42,
+      "occupation": "Anga's bar manager",
+      "redHerring": true,
+      "bio": "Let the event run over capacity.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_bar",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, early 40s, a black shirt and a bar towel over his shoulder, an evasive face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_morris",
+      "role": "suspect",
+      "name": "Morris Ouma",
+      "age": 31,
+      "occupation": "Tracy's ex-boyfriend",
+      "redHerring": true,
+      "bio": "Turned up and argued with her at 23:30.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_pendo"
+      },
+      "at": "plc_taxi",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, early 30s, a bomber jacket, a regretful face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_wesley",
+      "role": "suspect",
+      "name": "Wesley Ngetich",
+      "age": 35,
+      "occupation": "A guest Tracy photographed",
+      "redHerring": true,
+      "bio": "Demanded she delete the photos.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_pendo"
+      },
+      "at": "plc_bar",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, mid 30s, an open shirt and a gold chain, a sulky face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_pendo",
+      "role": "witness",
+      "name": "Pendo Mwakio",
+      "age": 24,
+      "occupation": "Bartender",
+      "bio": "Serves at the end of the bar by the staff door.",
+      "community": "Taita",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_bar",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Taita woman, mid 20s, a bartender's apron, braids up, a frightened, steady face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_assistant",
+      "role": "witness",
+      "name": "Brian Owino",
+      "age": 22,
+      "occupation": "Tracy's photography assistant",
+      "statementOnly": true,
+      "bio": "Carried her spare lenses.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_dance",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_terrace",
+      "name": "The service terrace",
+      "within": "loc_rooftop"
+    },
+    {
+      "id": "plc_dance",
+      "name": "The dance floor",
+      "within": "loc_rooftop"
+    },
+    {
+      "id": "plc_bar",
+      "name": "The bar",
+      "within": "loc_rooftop"
+    },
+    {
+      "id": "plc_door",
+      "name": "The rooftop door",
+      "within": "loc_rooftop"
+    },
+    {
+      "id": "plc_taxi",
+      "name": "Morris's taxi home"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_street",
+      "name": "The street below",
+      "kind": "location",
+      "description": "Woodvale Grove at night, ride-hail cars double-parked, eight floors below the rooftop.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "On the pavement",
+          "pos": [
+            50,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Tracy on the pavement; her smashed camera beside her."
+        },
+        {
+          "id": "hs_assistant",
+          "label": "Her assistant",
+          "pos": [
+            30,
+            40
+          ],
+          "yields": "ev_assistant",
+          "text": "Her assistant, Brian, shaking."
+        },
+        {
+          "id": "hs_sister",
+          "label": "Tracy's sister",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_march",
+          "text": "Her sister arrives with Tracy's laptop.",
+          "unlock": {
+            "fact": "f_text"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a Westlands street at night below a rooftop bar, ride-hail cars double-parked, a smashed camera on the pavement, no people in focus"
+      },
+      "expected": [
+        {
+          "id": "x_card",
+          "text": "A memory card in a working photographer's camera, and a spare in her pocket",
+          "because": "f_assistant",
+          "present": false,
+          "fact": "f_abs_card"
+        },
+        {
+          "id": "x_drunk",
+          "text": "A woman \"very drunk\" with alcohol in her blood, and railing scrapes on her palms if she climbed",
+          "because": "f_aut",
+          "present": false,
+          "fact": "f_abs_sober"
+        }
+      ]
+    },
+    {
+      "id": "loc_rooftop",
+      "name": "Anga Rooftop, eighth floor",
+      "kind": "scene",
+      "description": "A glass-fronted bar and a dance floor. Behind the bar, through a staff door, a service terrace closed to guests: kegs, a gas store, a waist-high railing.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_terrace",
+          "label": "The service terrace",
+          "pos": [
+            80,
+            40
+          ],
+          "yields": "ev_terrace",
+          "text": "The terrace behind the staff door."
+        },
+        {
+          "id": "hs_pendo",
+          "label": "Pendo at the bar",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_pendo",
+          "text": "Pendo, still behind the bar."
+        },
+        {
+          "id": "hs_barcam",
+          "label": "Bar camera",
+          "pos": [
+            40,
+            30
+          ],
+          "yields": "ev_barcam",
+          "text": "The bar camera's recording, untouched.",
+          "unlock": {
+            "fact": "f_pendo"
+          }
+        },
+        {
+          "id": "hs_clicker",
+          "label": "Door clickers",
+          "pos": [
+            20,
+            60
+          ],
+          "yields": "ev_capacity",
+          "text": "The door staff's clickers.",
+          "unlock": {
+            "fact": "f_du_cap"
+          }
+        },
+        {
+          "id": "hs_ezekiel",
+          "label": "Ezekiel's statement",
+          "pos": [
+            15,
+            40
+          ],
+          "yields": "ev_ez_first",
+          "text": "Ezekiel by the rooftop door."
+        },
+        {
+          "id": "hs_phone",
+          "label": "Tracy's phone",
+          "pos": [
+            60,
+            70
+          ],
+          "yields": "ev_text",
+          "text": "Tracy's phone, cracked but working, recovered from her pocket."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a Westlands rooftop at night, city lights, a service terrace with kegs and a low waist-high railing behind a staff door, no people in focus"
+      },
+      "expected": [
+        {
+          "id": "x_guests",
+          "text": "No guests on a terrace closed to guests",
+          "because": "f_terrace",
+          "present": false,
+          "fact": "f_abs_others"
+        },
+        {
+          "id": "x_morris",
+          "text": "Morris on the cameras if he stayed after midnight",
+          "because": "f_mo_claim",
+          "present": false,
+          "fact": "f_abs_morris"
+        }
+      ]
+    },
+    {
+      "id": "loc_secoffice",
+      "name": "The security office",
+      "kind": "location",
+      "description": "A small room with a PC recording the bar, lift and terrace cameras. The head bouncer holds the password.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_pc",
+          "label": "The security PC",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_cam_gap",
+          "text": "The camera files and the system log."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small security office with a PC showing a grid of camera feeds, one feed black"
+      },
+      "expected": [
+        {
+          "id": "x_footage",
+          "text": "The terrace camera records continuously, like the bar and lift cameras",
+          "because": "f_camrule",
+          "present": false,
+          "fact": "f_abs_footage"
+        }
+      ]
+    },
+    {
+      "id": "loc_flat",
+      "name": "Mukami's flat, Riverside",
+      "kind": "location",
+      "description": "A Riverside flat, her clutch bag from the night on the hall table.",
+      "unlock": {
+        "fact": "f_pay"
+      },
+      "hotspots": [
+        {
+          "id": "hs_flat",
+          "label": "Her flat and clutch bag",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_flat",
+          "text": "Search under warrant."
+        },
+        {
+          "id": "hs_contents",
+          "label": "The memory card",
+          "pos": [
+            60,
+            40
+          ],
+          "yields": "ev_card_contents",
+          "text": "The card in a reader.",
+          "unlock": {
+            "fact": "f_card"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a Riverside apartment hallway, a sequinned clutch bag on a side table, a small memory card in its inner pocket"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Tracy on the pavement",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Fall injuries. Her camera body smashed beside her, memory-card slot empty."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a smashed professional camera body on a city pavement at night, its memory-card door open and empty"
+      }
+    },
+    {
+      "id": "ev_assistant",
+      "type": "witness",
+      "title": "Statement: Tracy's assistant",
+      "render": "statement",
+      "body": {
+        "speaker": "p_assistant"
+      },
+      "facts": [
+        "f_assistant"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_terrace",
+      "type": "physical",
+      "title": "The service terrace",
+      "render": "object",
+      "body": {
+        "label": "Closed to guests: kegs, a gas store, a waist-high railing. Nobody else was meant to be here."
+      },
+      "facts": [
+        "f_terrace"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ez_first",
+      "type": "witness",
+      "title": "Ezekiel's first statement",
+      "render": "statement",
+      "body": {
+        "speaker": "p_ezekiel"
+      },
+      "facts": [
+        "f_ez_first"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_text",
+      "type": "phone",
+      "title": "Tracy's phone",
+      "render": "manifest",
+      "body": {
+        "text": "00:25 to a journalist: \"Meeting Mukami now on the service terrace. She wants to 'talk'. Monday still on.\""
+      },
+      "facts": [
+        "f_text"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_march",
+      "type": "document",
+      "title": "Tracy's March photos (cloud backup)",
+      "render": "form",
+      "body": {
+        "photo": "A padlocked fire exit at the bottom of a packed staircase.",
+        "chat": "A screenshot of Mukami's WhatsApp: \"Padlock the fire exit, people are sneaking in free.\"",
+        "note": "The county inquiry into the crush (fourteen injured) stalled."
+      },
+      "facts": [
+        "f_march"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_pendo",
+      "type": "witness",
+      "title": "Statement: Pendo Mwakio",
+      "render": "statement",
+      "body": {
+        "speaker": "p_pendo"
+      },
+      "facts": [
+        "f_pendo"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_barcam",
+      "type": "cctv",
+      "title": "Bar camera (undeleted)",
+      "render": "object",
+      "body": {
+        "label": "Tracy through the staff door 00:24; Mukami 00:25; Mukami back alone 00:31, to Ezekiel at 00:33. Ezekiel at the rooftop door 00:20–00:33, then into the security office 00:46. Duncan behind the bar; Wesley at the bar 00:10–00:50."
+      },
+      "facts": [
+        "f_barcam",
+        "f_ez_door",
+        "f_duncan_bar",
+        "f_wesley"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_cam_gap",
+      "type": "cctv",
+      "title": "Security PC: files and log",
+      "render": "object",
+      "body": {
+        "files": "The terrace camera file is missing 00:20–00:55; the bar and lift files are complete.",
+        "log": "\"Delete — clip 00:20–00:55 — user: HEAD_SEC — 00:48\"."
+      },
+      "facts": [
+        "f_camrule",
+        "f_delete_log"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_capacity",
+      "type": "document",
+      "title": "Door clicker counts",
+      "render": "logBook",
+      "body": {
+        "text": "412 guests against a licensed capacity of 300."
+      },
+      "facts": [
+        "f_capacity"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Mukami's and Ezekiel's PesaPap",
+      "render": "manifest",
+      "body": {
+        "pay": "01:15: Mukami to Ezekiel, KSh 60,000, \"balance + bonus\"."
+      },
+      "facts": [
+        "f_pay"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_delete_log",
+          "f_barcam",
+          "f_text"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_flat",
+      "type": "physical",
+      "title": "Mukami's clutch bag",
+      "render": "object",
+      "body": {
+        "label": "In the inner pocket: Tracy's memory card."
+      },
+      "facts": [
+        "f_card"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_pay",
+          "f_barcam",
+          "f_abs_card"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a small camera memory card in the inner pocket of a sequinned clutch bag"
+      }
+    },
+    {
+      "id": "ev_card_contents",
+      "type": "physical",
+      "title": "The memory card",
+      "render": "object",
+      "body": {
+        "label": "Saturday's event photos. The last frame, 00:26: a blurred close shot of Mukami's face on the terrace, her hand raised."
+      },
+      "facts": [
+        "f_lastframe"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_morris",
+      "type": "document",
+      "title": "Lift camera and taxi receipt",
+      "render": "logBook",
+      "body": {
+        "text": "Morris left by lift at 23:52; taxi receipt from midnight."
+      },
+      "facts": [
+        "f_morris"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mu_prints",
+      "type": "physical",
+      "title": "Fingerprints: Mukami Njeru",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention."
+      },
+      "facts": [
+        "f_mu_printset"
+      ],
+      "gate": null,
+      "detention": "p_mukami",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_fibres",
+      "type": "forensic",
+      "title": "Lab: fibres (railing vs her jacket)",
+      "render": "labReport",
+      "body": {
+        "test": "fibres"
+      },
+      "facts": [
+        "f_fibres"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "fibres",
+        "hours": 12,
+        "needs": [
+          "ev_terrace",
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints (memory card)",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_cardprints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_flat",
+          "ev_mu_prints"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Tracy Odhiambo fell from the eighth-floor rooftop of Anga in Westlands just before half past midnight; staff say she was drunk and climbed the railing for a photo.",
+      "kind": "true",
+      "about": [
+        "p_tracy",
+        "loc_rooftop"
+      ],
+      "at": {
+        "from": "00:27",
+        "to": null,
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "Fall injuries. Her camera body smashed beside her, the memory-card slot empty.",
+      "kind": "true",
+      "about": [
+        "p_tracy",
+        "loc_street"
+      ]
+    },
+    {
+      "id": "f_assistant",
+      "text": "Her assistant: \"She never shoots without two cards, one in the camera, one in her pocket.\" Neither is on her, on the street or on the terrace.",
+      "kind": "true",
+      "about": [
+        "p_tracy"
+      ]
+    },
+    {
+      "id": "f_terrace",
+      "text": "The service terrace is closed to guests: kegs, a gas store, a waist-high railing.",
+      "kind": "true",
+      "about": [
+        "plc_terrace"
+      ]
+    },
+    {
+      "id": "f_ez_first",
+      "text": "Ezekiel's first statement: Tracy was very drunk; he saw her climb the railing to get a skyline photo.",
+      "kind": "true",
+      "about": [
+        "p_ezekiel",
+        "p_tracy"
+      ]
+    },
+    {
+      "id": "f_text",
+      "text": "Tracy's phone, 00:25, to a journalist: \"Meeting Mukami now on the service terrace. She wants to 'talk'. Monday still on.\"",
+      "kind": "true",
+      "about": [
+        "p_tracy",
+        "p_mukami"
+      ],
+      "at": {
+        "from": "00:25",
+        "to": null,
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_march",
+      "text": "Tracy's March photos: a padlocked fire exit below a packed staircase, and Mukami's WhatsApp: \"Padlock the fire exit, people are sneaking in free.\" Fourteen people were hurt in the crush.",
+      "kind": "true",
+      "about": [
+        "p_mukami"
+      ]
+    },
+    {
+      "id": "f_pendo",
+      "text": "Pendo: Tracy went through the staff door at about 00:24, Mukami a minute later; Mukami came back alone, white, straight to Ezekiel. Earlier Tracy argued with her ex, Morris, and a guest about photos.",
+      "kind": "true",
+      "about": [
+        "p_mukami",
+        "p_ezekiel",
+        "p_morris",
+        "p_wesley"
+      ]
+    },
+    {
+      "id": "f_barcam",
+      "text": "Bar camera: Tracy through the staff door 00:24; Mukami 00:25; Mukami back alone at 00:31, to Ezekiel at 00:33; Ezekiel into the security office at 00:46.",
+      "kind": "true",
+      "about": [
+        "p_mukami",
+        "p_ezekiel"
+      ],
+      "where": {
+        "person": "p_mukami",
+        "place": "plc_terrace",
+        "from": "00:25",
+        "to": "00:31"
+      }
+    },
+    {
+      "id": "f_ez_door",
+      "text": "Bar camera: Ezekiel at the rooftop door 00:20–00:33.",
+      "kind": "true",
+      "about": [
+        "p_ezekiel"
+      ],
+      "where": {
+        "person": "p_ezekiel",
+        "place": "plc_door",
+        "from": "00:20",
+        "to": "00:33"
+      }
+    },
+    {
+      "id": "f_duncan_bar",
+      "text": "Bar camera: Duncan behind the bar all through the half hour.",
+      "kind": "true",
+      "about": [
+        "p_duncan"
+      ],
+      "where": {
+        "person": "p_duncan",
+        "place": "plc_bar",
+        "from": "00:00",
+        "to": "01:00"
+      }
+    },
+    {
+      "id": "f_wesley",
+      "text": "Bar camera: Wesley at the bar 00:10–00:50, arguing with a friend, never near the staff door.",
+      "kind": "true",
+      "about": [
+        "p_wesley"
+      ],
+      "where": {
+        "person": "p_wesley",
+        "place": "plc_bar",
+        "from": "00:10",
+        "to": "00:50"
+      }
+    },
+    {
+      "id": "f_camrule",
+      "text": "The bar, lift and terrace cameras all record continuously to the security PC; the bar and lift files are complete.",
+      "kind": "true",
+      "about": [
+        "loc_secoffice"
+      ]
+    },
+    {
+      "id": "f_delete_log",
+      "text": "Security PC log: \"Delete — clip 00:20–00:55 — user: HEAD_SEC — 00:48\". HEAD_SEC is the head bouncer's account.",
+      "kind": "true",
+      "about": [
+        "p_ezekiel"
+      ],
+      "at": {
+        "from": "00:48",
+        "to": null,
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_capacity",
+      "text": "Door clickers: 412 guests against a licensed capacity of 300.",
+      "kind": "true",
+      "about": [
+        "p_duncan"
+      ]
+    },
+    {
+      "id": "f_pay",
+      "text": "Records: at 01:15 Mukami sent Ezekiel KSh 60,000, \"balance + bonus\".",
+      "kind": "true",
+      "about": [
+        "p_mukami",
+        "p_ezekiel"
+      ],
+      "at": {
+        "from": "01:15",
+        "to": null,
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_card",
+      "text": "In Mukami's clutch bag: Tracy's memory card.",
+      "kind": "true",
+      "about": [
+        "p_mukami"
+      ]
+    },
+    {
+      "id": "f_lastframe",
+      "text": "The card's last frame, 00:26: a blurred close shot of Mukami's face on the terrace, her hand raised.",
+      "kind": "true",
+      "about": [
+        "p_mukami"
+      ],
+      "at": {
+        "from": "00:26",
+        "to": null,
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_morris",
+      "text": "Lift camera and taxi: Morris left at 23:52 and was in a taxi by midnight.",
+      "kind": "true",
+      "about": [
+        "p_morris"
+      ],
+      "where": {
+        "person": "p_morris",
+        "place": "plc_taxi",
+        "from": "23:55",
+        "to": "01:00"
+      }
+    },
+    {
+      "id": "f_mu_printset",
+      "text": "Fingerprints taken from Mukami in detention.",
+      "kind": "true",
+      "about": [
+        "p_mukami"
+      ]
+    },
+    {
+      "id": "f_aut",
+      "text": "Post-mortem: fall injuries; bruising on the upper chest from two hands; none of the palm or inner-arm scrapes a climber gets from a railing; blood alcohol zero.",
+      "kind": "true",
+      "about": [
+        "p_tracy"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death 00:26–00:28 (the fall was seen from the street).",
+      "kind": "true",
+      "about": [
+        "p_tracy"
+      ],
+      "at": {
+        "from": "00:26",
+        "to": "00:28",
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_fibres",
+      "text": "Lab: fibres on the railing's top bar are from the back of Tracy's jacket, not the front or sleeves. She went over backwards.",
+      "kind": "true",
+      "about": [
+        "p_tracy"
+      ]
+    },
+    {
+      "id": "f_cardprints",
+      "text": "Lab: Tracy's and Mukami's prints on the memory card.",
+      "kind": "true",
+      "about": [
+        "p_mukami"
+      ]
+    },
+    {
+      "id": "f_abs_sober",
+      "text": "Missing: there's no alcohol in her blood and no railing scrapes on her hands.",
+      "kind": "true",
+      "about": [
+        "p_tracy"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_card",
+      "text": "Missing: there's no memory card in her camera.",
+      "kind": "true",
+      "about": [
+        "p_tracy"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_footage",
+      "text": "Missing: the terrace footage from 00:20 to 00:55 is gone.",
+      "kind": "true",
+      "about": [
+        "loc_secoffice"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_morris",
+      "text": "Missing: Morris isn't on any camera after 23:52.",
+      "kind": "true",
+      "about": [
+        "p_morris"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_others",
+      "text": "Missing: there are no other guests on the terrace.",
+      "kind": "true",
+      "about": [
+        "plc_terrace"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_mu_never",
+      "text": "Mukami: \"I never went onto the service terrace. Tracy was drunk; Ezekiel told me she climbed the railing.\"",
+      "kind": "lie",
+      "about": [
+        "p_mukami"
+      ]
+    },
+    {
+      "id": "f_mu_reveal",
+      "text": "Mukami: \"She was going to end my company over one bad night in March. Nobody died in March. I just wanted the card.\"",
+      "kind": "true",
+      "about": [
+        "p_mukami",
+        "p_tracy"
+      ]
+    },
+    {
+      "id": "f_mu_card",
+      "text": "Mukami: \"I never touched her camera or her card.\"",
+      "kind": "lie",
+      "about": [
+        "p_mukami"
+      ]
+    },
+    {
+      "id": "f_ez_drunk",
+      "text": "Ezekiel: \"Tracy was very drunk. I saw her climb the railing to get a skyline photo.\"",
+      "kind": "lie",
+      "about": [
+        "p_ezekiel"
+      ]
+    },
+    {
+      "id": "f_ez_reveal",
+      "text": "Ezekiel: \"Madam came to me shaking and said Tracy fell and the camera mustn't show her there. I deleted it. She sent me sixty thousand. I'm not a killer. I did what my boss said.\"",
+      "kind": "true",
+      "about": [
+        "p_ezekiel",
+        "p_mukami"
+      ]
+    },
+    {
+      "id": "f_du_cap",
+      "text": "Duncan: \"We were under capacity all night.\"",
+      "kind": "lie",
+      "about": [
+        "p_duncan"
+      ]
+    },
+    {
+      "id": "f_du_reveal",
+      "text": "Duncan: \"Four hundred and twelve. The promoter pays us per head. I didn't want a fine. That girl didn't fall because of a crowd.\"",
+      "kind": "true",
+      "about": [
+        "p_duncan"
+      ]
+    },
+    {
+      "id": "f_mo_claim",
+      "text": "Morris: \"We argued about getting back together. I left before midnight.\"",
+      "kind": "claim",
+      "about": [
+        "p_morris"
+      ]
+    },
+    {
+      "id": "f_we_claim",
+      "text": "Wesley: \"I wanted my photos deleted. I was at the bar.\"",
+      "kind": "claim",
+      "about": [
+        "p_wesley"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_mukami",
+      "stance": "cooperative",
+      "intro": "Mukami is still in her sequin jacket, upset and composed. \"I never went onto the service terrace. Tracy was drunk; Ezekiel told me she climbed the railing.\"",
+      "claims": [
+        "f_mu_never"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_mu_card",
+          "after": "f_mu_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_ezekiel",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_ez_first"
+      ],
+      "intro": "Ezekiel stands between you and the security office door. \"Tracy was very drunk. I saw her climb the railing to get a skyline photo.\"",
+      "claims": [
+        "f_ez_drunk"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_duncan",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_terrace"
+      ],
+      "intro": "Duncan polishes a glass that is already clean. \"We were under capacity all night.\"",
+      "claims": [
+        "f_du_cap"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_morris",
+      "stance": "cooperative",
+      "intro": "Morris answers from his flat. \"We argued about getting back together. I left before midnight.\"",
+      "claims": [
+        "f_mo_claim"
+      ],
+      "yields": [
+        "ev_morris"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_wesley",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_barcam"
+      ],
+      "intro": "Wesley folds his arms. \"I wanted my photos deleted. I was at the bar.\"",
+      "claims": [
+        "f_we_claim"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_pendo",
+      "stance": "cooperative",
+      "intro": "Pendo keeps her eyes on the staff door while she talks.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_du",
+      "claim": "f_du_cap",
+      "brokenBy": [
+        "f_capacity"
+      ],
+      "reveals": [
+        "f_du_reveal"
+      ],
+      "reaction": "\"Four hundred and twelve. The promoter pays us per head. I didn't want a fine. That girl didn't fall because of a crowd.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_ez",
+      "claim": "f_ez_drunk",
+      "brokenBy": [
+        "f_aut",
+        "f_delete_log",
+        "f_pay"
+      ],
+      "reveals": [
+        "f_ez_reveal"
+      ],
+      "reaction": "\"Madam came to me shaking and said Tracy fell and the camera mustn't show her there. I deleted it. She sent me sixty thousand at quarter past one. I'm not a killer. I'm a man who did what his boss said.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_mu",
+      "claim": "f_mu_never",
+      "brokenBy": [
+        "f_barcam",
+        "f_text"
+      ],
+      "reveals": [
+        "f_mu_reveal"
+      ],
+      "reaction": "\"She was going to end my company over one bad night in March. Nobody died in March. I just wanted the card.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_mu_card",
+      "claim": "f_mu_card",
+      "brokenBy": [
+        "f_cardprints"
+      ],
+      "reveals": [],
+      "reaction": "Mukami looks at the last frame on the card: her own face, blurred, her hand raised. She asks for a lawyer.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_mukami",
+      "text": "Mukami Njeru",
+      "category": "person",
+      "ref": "p_mukami",
+      "unlock": {
+        "anyOf": [
+          "f_text"
+        ]
+      }
+    },
+    {
+      "id": "w_ezekiel",
+      "text": "Ezekiel Muriuki",
+      "category": "person",
+      "ref": "p_ezekiel",
+      "unlock": {
+        "anyOf": [
+          "f_ez_first"
+        ]
+      }
+    },
+    {
+      "id": "w_duncan",
+      "text": "Duncan Mwangi",
+      "category": "person",
+      "ref": "p_duncan",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_morris",
+      "text": "Morris Ouma",
+      "category": "person",
+      "ref": "p_morris",
+      "unlock": {
+        "anyOf": [
+          "f_pendo"
+        ]
+      }
+    },
+    {
+      "id": "w_wesley",
+      "text": "Wesley Ngetich",
+      "category": "person",
+      "ref": "p_wesley",
+      "unlock": {
+        "anyOf": [
+          "f_pendo"
+        ]
+      }
+    },
+    {
+      "id": "w_pendo",
+      "text": "Pendo Mwakio",
+      "category": "person",
+      "ref": "p_pendo",
+      "unlock": {
+        "anyOf": [
+          "f_pendo"
+        ]
+      }
+    },
+    {
+      "id": "w_nobody",
+      "text": "nobody",
+      "category": "person",
+      "nobody": true,
+      "unlock": {
+        "start": true
+      }
+    },
+    {
+      "id": "r_delete",
+      "text": "deleted the CCTV footage and gave a false account",
+      "category": "role",
+      "by": [
+        "f_delete_log",
+        "f_ez_drunk",
+        "f_ez_reveal"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_delete_log"
+        ]
+      }
+    },
+    {
+      "id": "r_lure",
+      "text": "lured the victim",
+      "category": "role",
+      "by": [
+        "f_text"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_text"
+        ]
+      }
+    },
+    {
+      "id": "r_drove",
+      "text": "drove the killer",
+      "category": "role",
+      "by": [
+        "f_ob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_text"
+        ]
+      }
+    },
+    {
+      "id": "r_key",
+      "text": "had a key cut",
+      "category": "role",
+      "by": [
+        "f_ob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_text"
+        ]
+      }
+    },
+    {
+      "id": "r_plant",
+      "text": "planted evidence",
+      "category": "role",
+      "by": [
+        "f_ob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_text"
+        ]
+      }
+    },
+    {
+      "id": "a_sober",
+      "text": "there's no alcohol in her blood and no railing scrapes on her hands",
+      "category": "absence",
+      "ref": "f_abs_sober",
+      "unlock": {
+        "anyOf": [
+          "f_abs_sober"
+        ]
+      }
+    },
+    {
+      "id": "a_card",
+      "text": "there's no memory card in her camera",
+      "category": "absence",
+      "ref": "f_abs_card",
+      "unlock": {
+        "anyOf": [
+          "f_abs_card"
+        ]
+      }
+    },
+    {
+      "id": "a_footage",
+      "text": "the terrace footage from 00:20 to 00:55 is gone",
+      "category": "absence",
+      "ref": "f_abs_footage",
+      "unlock": {
+        "anyOf": [
+          "f_abs_footage"
+        ]
+      }
+    },
+    {
+      "id": "a_morris",
+      "text": "Morris isn't on any camera after 23:52",
+      "category": "absence",
+      "ref": "f_abs_morris",
+      "unlock": {
+        "anyOf": [
+          "f_abs_morris"
+        ]
+      }
+    },
+    {
+      "id": "a_others",
+      "text": "there are no other guests on the terrace",
+      "category": "absence",
+      "ref": "f_abs_others",
+      "unlock": {
+        "anyOf": [
+          "f_abs_others"
+        ]
+      }
+    },
+    {
+      "id": "k_noclimb",
+      "text": "she didn't drunkenly climb the railing",
+      "category": "conclusion",
+      "by": [
+        "f_abs_sober",
+        "f_aut",
+        "f_fibres"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_sober"
+        ]
+      }
+    },
+    {
+      "id": "k_photo",
+      "text": "she fell while taking a photo",
+      "category": "conclusion",
+      "by": [
+        "f_aut"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_sober"
+        ]
+      }
+    },
+    {
+      "id": "k_system",
+      "text": "the camera system failed",
+      "category": "conclusion",
+      "by": [
+        "f_delete_log"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_sober"
+        ]
+      }
+    },
+    {
+      "id": "k_morris",
+      "text": "Morris pushed her",
+      "category": "conclusion",
+      "by": [
+        "f_morris"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_sober"
+        ]
+      }
+    },
+    {
+      "id": "k_jumped",
+      "text": "she jumped",
+      "category": "conclusion",
+      "by": [
+        "f_text"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_sober"
+        ]
+      }
+    },
+    {
+      "id": "k_crowd",
+      "text": "the crowd crushed her against the railing",
+      "category": "conclusion",
+      "by": [
+        "f_terrace"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_sober"
+        ]
+      }
+    },
+    {
+      "id": "pl_terrace",
+      "text": "the service terrace",
+      "category": "place",
+      "ref": "plc_terrace",
+      "unlock": {
+        "anyOf": [
+          "f_text"
+        ]
+      }
+    },
+    {
+      "id": "pl_dance",
+      "text": "the dance floor",
+      "category": "place",
+      "ref": "plc_dance",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_secoffice",
+      "text": "the security office",
+      "category": "place",
+      "ref": "loc_secoffice",
+      "unlock": {
+        "anyOf": [
+          "f_delete_log"
+        ]
+      }
+    },
+    {
+      "id": "pl_street",
+      "text": "the street below",
+      "category": "place",
+      "ref": "loc_street",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_bar",
+      "text": "the bar",
+      "category": "place",
+      "ref": "plc_bar",
+      "unlock": {
+        "anyOf": [
+          "f_pendo"
+        ]
+      }
+    },
+    {
+      "id": "h_pushed",
+      "text": "pushing her backwards over the service-terrace railing",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut"
+        ]
+      }
+    },
+    {
+      "id": "h_climbed",
+      "text": "a drunken climb onto the railing and a fall",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_jump",
+      "text": "a jump",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_crowd",
+      "text": "a crush against the railing",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_struck",
+      "text": "striking her before the fall",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_padlock",
+      "text": "to stop Tracy exposing the padlocked fire exit behind the March staircase crush",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_march"
+        ]
+      }
+    },
+    {
+      "id": "m_ex",
+      "text": "an ex-boyfriend's jealousy",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_pendo"
+        ]
+      }
+    },
+    {
+      "id": "m_photos",
+      "text": "a guest's anger over photos",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_pendo"
+        ]
+      }
+    },
+    {
+      "id": "m_capacity",
+      "text": "a bar manager's fear of a capacity fine",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_du_cap"
+        ]
+      }
+    },
+    {
+      "id": "m_camera",
+      "text": "a robbery of her camera",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. The killer was helped by {accomplice}, who {role}. That {missing} shows that {conclusion}.",
+    "fixed": {
+      "victim": "Tracy Odhiambo"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_march",
+                  "label": "March",
+                  "from": null,
+                  "to": null,
+                  "day": "Mar"
+                },
+                {
+                  "id": "sl_0025",
+                  "label": "Sunday 00:25",
+                  "from": "00:25",
+                  "to": "00:25",
+                  "day": "Sun"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Sunday 00:25–00:31",
+                  "from": "00:25",
+                  "to": "00:31",
+                  "day": "Sun"
+                },
+                {
+                  "id": "sl_0048",
+                  "label": "Sunday 00:48",
+                  "from": "00:48",
+                  "to": "00:48",
+                  "day": "Sun"
+                },
+                {
+                  "id": "sl_0100",
+                  "label": "Sunday 01:00",
+                  "from": "01:00",
+                  "to": "01:00",
+                  "day": "Sun"
+                },
+                {
+                  "id": "sl_0115",
+                  "label": "Sunday 01:15",
+                  "from": "01:15",
+                  "to": "01:15",
+                  "day": "Sun"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_crush",
+                  "text": "The March staircase crush",
+                  "slot": "sl_march",
+                  "by": [
+                    "f_march"
+                  ],
+                  "why": "Her photos, March.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_march"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_text",
+                  "text": "Tracy texts the journalist",
+                  "slot": "sl_0025",
+                  "by": [
+                    "f_text"
+                  ],
+                  "why": "Her phone: 00:25.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_text"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_push",
+                  "text": "Tracy is pushed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_barcam",
+                    "f_lastframe",
+                    "f_aut_tod"
+                  ],
+                  "why": "Mukami on the terrace 00:25–00:31; the last frame at 00:26.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_barcam"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_delete",
+                  "text": "The footage is deleted",
+                  "slot": "sl_0048",
+                  "by": [
+                    "f_delete_log"
+                  ],
+                  "why": "The PC log: 00:48.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_delete_log"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_pay",
+                  "text": "Mukami pays Ezekiel",
+                  "slot": "sl_0115",
+                  "by": [
+                    "f_pay"
+                  ],
+                  "why": "Records: 01:15, \"balance + bonus\".",
+                  "unlock": {
+                    "anyOf": [
+                      "f_pay"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_0100",
+                  "by": [
+                    "f_aut_tod",
+                    "f_aut"
+                  ],
+                  "why": "\"A drunk climb for a skyline photo at one\"? She fell at 00:26, sober."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A padlock in March, a text at 00:25, a push a minute later, a deletion at 00:48, and sixty thousand shillings at 01:15.",
+          "fail": [
+            "She was dead before one, and sober.",
+            "When did the delete log run?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_terrace"
+          }
+        ],
+        "prosecutor": {
+          "pass": "On the service terrace, where she was told to come and talk.",
+          "fail": [
+            "She landed in the street. She was pushed from the terrace.",
+            "The security office is where the footage died."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_mukami",
+            "pool": [
+              "w_mukami",
+              "w_ezekiel",
+              "w_duncan",
+              "w_morris",
+              "w_wesley",
+              "w_pendo"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her text to the journalist, the bar camera at the staff door, her face in the last frame, the card in her bag.",
+          "fail": [
+            "Ezekiel was at the rooftop door until 00:33.",
+            "Morris left at 23:52."
+          ]
+        }
+      },
+      {
+        "id": "g_accomplice",
+        "kind": "accomplice",
+        "blanks": [
+          {
+            "id": "accomplice",
+            "category": "person",
+            "answer": "w_ezekiel",
+            "pool": [
+              "w_ezekiel",
+              "w_duncan",
+              "w_pendo",
+              "w_morris",
+              "w_wesley",
+              "w_nobody"
+            ]
+          },
+          {
+            "id": "role",
+            "category": "role",
+            "answer": "r_delete"
+          }
+        ],
+        "prosecutor": {
+          "pass": "HEAD_SEC at 00:48, \"very drunk\" to the police, and sixty thousand for it. He knew.",
+          "fail": [
+            "Duncan lied about capacity. The delete log names the head bouncer.",
+            "Tracy's own text says Mukami asked to meet. Nobody else lured her."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_pushed"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Two hands on her chest, and the back of her jacket on the rail.",
+          "fail": [
+            "Climbers scrape their palms. She has none.",
+            "Nobody else was on that terrace to crush her."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_padlock"
+          }
+        ],
+        "prosecutor": {
+          "pass": "\"Padlock the fire exit.\" Fourteen people hurt, and a Monday deadline.",
+          "fail": [
+            "The camera went over the railing. Only the card was taken.",
+            "Duncan's fine is about capacity, not a death."
+          ]
+        }
+      },
+      {
+        "id": "g_absence",
+        "kind": "absence",
+        "blanks": [
+          {
+            "id": "missing",
+            "category": "absence",
+            "answer": "a_sober"
+          },
+          {
+            "id": "conclusion",
+            "category": "conclusion",
+            "answer": "k_noclimb"
+          }
+        ],
+        "prosecutor": {
+          "pass": "No drink in her, no scrapes on her. Their story needs both.",
+          "fail": [
+            "The missing footage tells you someone deleted it. That belongs in the ACCOMPLICE line.",
+            "A missing card tells you what was taken, not how she fell."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_terrace",
+      "from": "00:25",
+      "to": "00:31",
+      "note": "While Mukami was through the staff door, 00:25–00:31; the fall was seen from the street at about 00:26–00:28."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_text",
+          "f_march"
+        ],
+        "concludes": "Tracy was going public on Monday with proof that Mukami padlocked a fire exit before a crush.",
+        "answers": [
+          "why"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_body",
+          "f_ez_first",
+          "f_aut",
+          "f_aut_tod",
+          "f_abs_sober",
+          "f_fibres",
+          "f_terrace"
+        ],
+        "concludes": "She was sober and went over backwards, pushed.",
+        "answers": [
+          "missing",
+          "conclusion",
+          "how"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_pendo",
+          "f_barcam",
+          "f_mu_never",
+          "f_mu_reveal"
+        ],
+        "concludes": "Mukami followed Tracy onto the terrace and came back alone.",
+        "answers": [
+          "when",
+          "where"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_camrule",
+          "f_delete_log",
+          "f_pay",
+          "f_ez_drunk",
+          "f_ez_reveal"
+        ],
+        "concludes": "Ezekiel deleted the terrace footage on Mukami's word, lied to the police, and was paid.",
+        "answers": [
+          "accomplice",
+          "role"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_assistant",
+          "f_abs_card",
+          "f_card",
+          "f_lastframe"
+        ],
+        "concludes": "Tracy's missing memory card was in Mukami's bag, its last frame Mukami's face on the terrace."
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_cardprints",
+          "f_mu_card"
+        ],
+        "concludes": "Mukami Njeru pushed Tracy over the service-terrace railing; Ezekiel Muriuki deleted the footage and gave a false account.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_dance",
+        "blank": "where",
+        "by": [
+          "f_barcam"
+        ],
+        "why": "Mukami left the dance floor for the terrace."
+      },
+      {
+        "word": "pl_secoffice",
+        "blank": "where",
+        "by": [
+          "f_delete_log"
+        ],
+        "why": "The footage was deleted there, after."
+      },
+      {
+        "word": "pl_street",
+        "blank": "where",
+        "by": [
+          "f_fibres"
+        ],
+        "why": "She landed in the street; she went over the terrace railing."
+      },
+      {
+        "word": "pl_bar",
+        "blank": "where",
+        "by": [
+          "f_barcam"
+        ],
+        "why": "The bar camera saw her go through the staff door."
+      },
+      {
+        "word": "w_ezekiel",
+        "blank": "who",
+        "by": [
+          "f_ez_door"
+        ],
+        "why": "Ezekiel was at the rooftop door on camera until 00:33."
+      },
+      {
+        "word": "w_duncan",
+        "blank": "who",
+        "by": [
+          "f_duncan_bar"
+        ],
+        "why": "Duncan was behind the bar on camera."
+      },
+      {
+        "word": "w_morris",
+        "blank": "who",
+        "by": [
+          "f_morris"
+        ],
+        "why": "Morris left at 23:52."
+      },
+      {
+        "word": "w_wesley",
+        "blank": "who",
+        "by": [
+          "f_wesley"
+        ],
+        "why": "Wesley was at the bar, never near the staff door."
+      },
+      {
+        "word": "w_pendo",
+        "blank": "who",
+        "by": [
+          "f_pendo"
+        ],
+        "why": "Pendo was serving at the bar; she is the witness who saw."
+      },
+      {
+        "word": "w_duncan",
+        "blank": "accomplice",
+        "by": [
+          "f_delete_log",
+          "f_barcam"
+        ],
+        "why": "The delete log names HEAD_SEC, and the camera shows Ezekiel going into the office."
+      },
+      {
+        "word": "w_pendo",
+        "blank": "accomplice",
+        "by": [
+          "f_pendo"
+        ],
+        "why": "Pendo is the witness who saw."
+      },
+      {
+        "word": "w_morris",
+        "blank": "accomplice",
+        "by": [
+          "f_morris"
+        ],
+        "why": "Morris had left."
+      },
+      {
+        "word": "w_wesley",
+        "blank": "accomplice",
+        "by": [
+          "f_wesley"
+        ],
+        "why": "Wesley stayed at the bar."
+      },
+      {
+        "word": "w_nobody",
+        "blank": "accomplice",
+        "by": [
+          "f_delete_log",
+          "f_ez_reveal"
+        ],
+        "why": "Someone with the head bouncer's password deleted the footage."
+      },
+      {
+        "word": "r_lure",
+        "blank": "role",
+        "by": [
+          "f_text"
+        ],
+        "why": "Tracy's own text says Mukami asked to meet."
+      },
+      {
+        "word": "r_drove",
+        "blank": "role",
+        "by": [
+          "f_ez_door"
+        ],
+        "why": "Nobody drove anyone; Ezekiel never left the rooftop."
+      },
+      {
+        "word": "r_key",
+        "blank": "role",
+        "by": [
+          "f_terrace"
+        ],
+        "why": "The staff door isn't locked during events."
+      },
+      {
+        "word": "r_plant",
+        "blank": "role",
+        "by": [
+          "f_delete_log"
+        ],
+        "why": "Nothing was planted; footage was removed."
+      },
+      {
+        "word": "h_climbed",
+        "blank": "how",
+        "by": [
+          "f_aut",
+          "f_fibres"
+        ],
+        "why": "Zero alcohol, no climbing scrapes, back-of-jacket fibres."
+      },
+      {
+        "word": "h_jump",
+        "blank": "how",
+        "by": [
+          "f_text",
+          "f_aut"
+        ],
+        "why": "\"Monday still on\" at 00:25, and chest bruising."
+      },
+      {
+        "word": "h_crowd",
+        "blank": "how",
+        "by": [
+          "f_terrace"
+        ],
+        "why": "The terrace is closed to guests."
+      },
+      {
+        "word": "h_struck",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "No head wound before the fall injuries."
+      },
+      {
+        "word": "m_ex",
+        "blank": "why",
+        "by": [
+          "f_morris"
+        ],
+        "why": "Morris had left."
+      },
+      {
+        "word": "m_photos",
+        "blank": "why",
+        "by": [
+          "f_wesley"
+        ],
+        "why": "Wesley stayed at the bar."
+      },
+      {
+        "word": "m_capacity",
+        "blank": "why",
+        "by": [
+          "f_du_reveal"
+        ],
+        "why": "Duncan's lie is about capacity, not the death."
+      },
+      {
+        "word": "m_camera",
+        "blank": "why",
+        "by": [
+          "f_body",
+          "f_card"
+        ],
+        "why": "The camera went over the railing; only the card was taken."
+      },
+      {
+        "word": "a_card",
+        "blank": "missing",
+        "by": [
+          "f_abs_card"
+        ],
+        "why": "It shows what was taken, not how she fell."
+      },
+      {
+        "word": "a_footage",
+        "blank": "missing",
+        "by": [
+          "f_abs_footage",
+          "f_delete_log"
+        ],
+        "why": "It shows someone deleted it: that belongs to the ACCOMPLICE line."
+      },
+      {
+        "word": "a_morris",
+        "blank": "missing",
+        "by": [
+          "f_abs_morris"
+        ],
+        "why": "It clears Morris."
+      },
+      {
+        "word": "a_others",
+        "blank": "missing",
+        "by": [
+          "f_abs_others"
+        ],
+        "why": "It rules out a crowd, not a drunken climb."
+      },
+      {
+        "word": "k_photo",
+        "blank": "conclusion",
+        "by": [
+          "f_aut"
+        ],
+        "why": "No scrapes; pushed."
+      },
+      {
+        "word": "k_system",
+        "blank": "conclusion",
+        "by": [
+          "f_delete_log"
+        ],
+        "why": "It was deleted by hand."
+      },
+      {
+        "word": "k_morris",
+        "blank": "conclusion",
+        "by": [
+          "f_morris"
+        ],
+        "why": "He had left."
+      },
+      {
+        "word": "k_jumped",
+        "blank": "conclusion",
+        "by": [
+          "f_text"
+        ],
+        "why": "Monday was still on."
+      },
+      {
+        "word": "k_crowd",
+        "blank": "conclusion",
+        "by": [
+          "f_terrace"
+        ],
+        "why": "Nobody else was there."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "In March, at a Skyline Socials concert, a crush on an overcrowded staircase injures fourteen people. The fire exit is padlocked on Mukami's orders. Tracy, crowd-safety officer that night, photographs the padlock and keeps the order.",
+        "image": null
+      },
+      {
+        "text": "This week Tracy tells Mukami she will hand her photos to the inquiry and a journalist on Monday. On Saturday she works Mukami's rooftop event as booked. At 00:25 she texts the journalist: \"Meeting Mukami now on the service terrace.\"",
+        "image": null
+      },
+      {
+        "text": "On the terrace Mukami asks for the memory card. Tracy refuses. Mukami pushes her backwards over the waist-high railing. She pulls the card from the fallen camera and drops the camera over too.",
+        "image": "plc_terrace"
+      },
+      {
+        "text": "At 00:33 she tells Ezekiel: \"Tracy fell. She was drunk. The terrace camera can't show me there.\" At 00:48 he deletes 00:20–00:55 and tells the police she climbed for a photo. At 01:15 Mukami sends him KSh 60,000.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Two stamps: records on Mukami and Ezekiel, and a warrant on Mukami's flat. The railing fibres (12 h) go first thing; detain Mukami after the search, and the card prints (6 h) come back inside 24 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_street",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_assistant",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_rooftop",
+        "hours": 0.25,
+        "from": "loc_street"
+      },
+      {
+        "do": "visit",
+        "target": "loc_rooftop",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_terrace",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_ez_first",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_text",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_pendo",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_pendo"
+      },
+      {
+        "do": "read",
+        "target": "ev_barcam",
+        "hours": 1
+      },
+      {
+        "do": "submit",
+        "target": "ev_fibres"
+      },
+      {
+        "do": "interview",
+        "target": "p_mukami"
+      },
+      {
+        "do": "interview",
+        "target": "p_ezekiel"
+      },
+      {
+        "do": "interview",
+        "target": "p_duncan"
+      },
+      {
+        "do": "read",
+        "target": "ev_capacity",
+        "hours": 0
+      },
+      {
+        "do": "press",
+        "target": "c_du"
+      },
+      {
+        "do": "interview",
+        "target": "p_wesley"
+      },
+      {
+        "do": "interview",
+        "target": "p_morris"
+      },
+      {
+        "do": "travel",
+        "target": "loc_secoffice",
+        "hours": 0.25,
+        "from": "loc_rooftop"
+      },
+      {
+        "do": "visit",
+        "target": "loc_secoffice",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_cam_gap",
+        "hours": 1
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "press",
+        "target": "c_ez"
+      },
+      {
+        "do": "press",
+        "target": "c_mu"
+      },
+      {
+        "do": "travel",
+        "target": "loc_street",
+        "hours": 0.25,
+        "from": "loc_secoffice"
+      },
+      {
+        "do": "visit",
+        "target": "loc_street",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_march",
+        "hours": 1
+      },
+      {
+        "do": "travel",
+        "target": "loc_flat",
+        "hours": 0.25,
+        "from": "loc_street"
+      },
+      {
+        "do": "search",
+        "target": "loc_flat"
+      },
+      {
+        "do": "read",
+        "target": "ev_card_contents",
+        "hours": 0
+      },
+      {
+        "do": "detain",
+        "target": "p_mukami"
+      },
+      {
+        "do": "sample",
+        "target": "ev_mu_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 6
+      },
+      {
+        "do": "press",
+        "target": "c_mu_card"
+      }
+    ],
+    "totalHours": 38
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_cam_gap",
+        "line": "A deleted file still leaves a log, Amani."
+      },
+      "tier2": {
+        "facts": [
+          "f_text",
+          "f_delete_log"
+        ],
+        "line": "A text at 00:25. A deletion at 00:48."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_text",
+        "line": "Where did she say she was going?"
+      },
+      "tier2": {
+        "facts": [
+          "f_text",
+          "f_fibres"
+        ],
+        "line": "The service terrace. Her jacket on its rail."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_barcam",
+        "line": "The bar camera wasn't deleted. Watch the staff door."
+      },
+      "tier2": {
+        "facts": [
+          "f_barcam",
+          "f_lastframe"
+        ],
+        "line": "Mukami through at 00:25, back alone at 00:31. Her face in the last frame."
+      }
+    },
+    "g_accomplice": {
+      "tier1": {
+        "point": "ev_cam_gap",
+        "line": "Whose account deleted the terrace footage?"
+      },
+      "tier2": {
+        "facts": [
+          "f_delete_log",
+          "f_pay"
+        ],
+        "line": "HEAD_SEC, at 00:48. Paid at 01:15."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Climbers scrape their palms. Look at hers."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut",
+          "f_fibres"
+        ],
+        "line": "No scrapes, chest bruising, the back of her jacket on the rail."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_march",
+        "line": "Ask her sister for the March photos."
+      },
+      "tier2": {
+        "facts": [
+          "f_march",
+          "f_text"
+        ],
+        "line": "A padlocked fire exit, and Monday."
+      }
+    },
+    "g_absence": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "They say she was very drunk. Is she?"
+      },
+      "tier2": {
+        "facts": [
+          "f_abs_sober",
+          "f_aut"
+        ],
+        "line": "Zero alcohol. No railing scrapes."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "paa",
+      "def": "A roof; a rooftop."
+    },
+    {
+      "term": "mpiga picha",
+      "def": "A photographer."
+    },
+    {
+      "term": "mlango wa dharura",
+      "def": "A fire exit."
+    },
+    {
+      "term": "kadi ya kumbukumbu",
+      "def": "A memory card."
+    },
+    {
+      "term": "pesa",
+      "def": "Money."
+    },
+    {
+      "term": "pesapap",
+      "def": "A fictional mobile-money service (\"pesa\" is money)."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "deleteLogs"
+    ],
+    "beatNotes": "Delete logs. A camera gap now comes with a system log the player can open: who deleted, when, from which account. An ABSENCE fact gets a \"by whom\" field, linking the missing footage to a person card."
+  }
+}

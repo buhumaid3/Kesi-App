@@ -1,0 +1,2176 @@
+{
+  "meta": {
+    "id": "case-054",
+    "number": 54,
+    "region": "maasai-mara",
+    "regionNumber": 6,
+    "title": "The Collar",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 32,
+    "date": "Thursday 19 February",
+    "folderTab": "CHECKPOINT"
+  },
+  "pattern": {
+    "crimePattern": "merchant smuggling ivory in cement sacks kills the ranger who found it and refused a bribe, and leaves him at a lion kill",
+    "noRealCaseRetold": true,
+    "notes": "Fictional merchant, conservancy, checkpoint and research project. Lemayian is written as a hero. Ivory concealment is named only as \"inside cement sacks\"; no routes, buyers or methods beyond that.",
+    "tags": [
+      "blunt-force",
+      "moved-body",
+      "staged-animal-attack",
+      "wildlife-crime",
+      "cover-up",
+      "two-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 5,
+    "redHerrings": 1,
+    "liars": 2,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": "the-lions-were-9-km-away"
+  },
+  "ob": {
+    "number": "OB 18/19/02",
+    "date": "Thursday 19 February",
+    "time": "07:30",
+    "reportedBy": "Enkare Conservancy rangers",
+    "text": "Conservancy rangers report a colleague, Corporal Lemayian Kantai (35), found dead at 07:00 beside a zebra carcass in the reserve, with lions nearby. Recorded as killed by lions while on night patrol.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_kill",
+    "nodes": [
+      "loc_kill",
+      "loc_checkpoint",
+      "loc_post",
+      "loc_yard",
+      "loc_research"
+    ],
+    "edges": [
+      {
+        "a": "loc_kill",
+        "b": "loc_research",
+        "minutes": 30,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_kill",
+        "b": "loc_checkpoint",
+        "minutes": 90,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_checkpoint",
+        "b": "loc_post",
+        "minutes": 15,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_checkpoint",
+        "b": "loc_yard",
+        "minutes": 90,
+        "by": "road"
+      },
+      {
+        "a": "loc_research",
+        "b": "loc_checkpoint",
+        "minutes": 100,
+        "by": "4x4"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_lemayian",
+      "role": "victim",
+      "name": "Corporal Lemayian Kantai",
+      "age": 35,
+      "occupation": "Anti-poaching ranger, 12 years in service",
+      "bio": "Alone at the checkpoint on Wednesday night because his partner was off sick. Never took a shilling.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_checkpoint",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Maasai man, mid 30s, a ranger's green uniform and beret, a radio on his chest strap, a calm, upright bearing, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_ndwiga",
+      "role": "suspect",
+      "name": "Josphat Ndwiga",
+      "age": 63,
+      "occupation": "Hardware merchant, Narok",
+      "bio": "A respected elder in Narok. His lorry carries cement, roofing and pipes to the lodges.",
+      "community": "Embu",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_logbook"
+      },
+      "at": "loc_yard",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Embu man, early 60s, a tweed jacket over a sweater, a church elder's lapel pin, silver-rimmed glasses, a dignified, unbothered face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_daudi",
+      "role": "suspect",
+      "name": "Daudi Ngari",
+      "age": 38,
+      "occupation": "Ndwiga's lorry driver",
+      "bio": "Has driven the lorry for six years. Hasn't eaten since yesterday.",
+      "community": "Embu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_logbook"
+      },
+      "at": "loc_yard",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Embu man, late 30s, a driver's overall with cement dust in the creases, a grey, sick face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_faith",
+      "role": "suspect",
+      "name": "Faith Cheruto",
+      "age": 30,
+      "occupation": "Ranger",
+      "redHerring": true,
+      "bio": "Argued with Lemayian over the duty roster last week.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_roster"
+      },
+      "at": "plc_northpost",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin woman, about 30, a ranger's uniform and beret, her hair braided back, red-eyed and angry, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kimathi",
+      "role": "suspect",
+      "name": "Kimathi Njue",
+      "age": 22,
+      "occupation": "The lorry's turnboy",
+      "bio": "Rides in the cab and loads the sacks. Terrified.",
+      "community": "Embu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_nd_admits"
+      },
+      "at": "plc_cab",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Embu young man, early 20s, a torn T-shirt and cement-dusted trousers, very frightened, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_nalangu",
+      "role": "witness",
+      "name": "Dr. Nalangu Sipitiek",
+      "age": 38,
+      "occupation": "Lion researcher",
+      "bio": "Keeps the GPS-collar data for two lionesses of the local pride.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_research",
+      "image": null
+    },
+    {
+      "id": "p_sergeant",
+      "role": "witness",
+      "name": "Sergeant Moses Leparan",
+      "age": 48,
+      "occupation": "Ranger post sergeant",
+      "statementOnly": true,
+      "bio": "Settled the roster argument on Monday. Keeps the radio log.",
+      "community": "Samburu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_post",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_boom",
+      "name": "The checkpoint boom and inspection bay",
+      "within": "loc_checkpoint"
+    },
+    {
+      "id": "plc_hut",
+      "name": "The checkpoint hut",
+      "within": "loc_checkpoint"
+    },
+    {
+      "id": "plc_cab",
+      "name": "The lorry's cab"
+    },
+    {
+      "id": "plc_northpost",
+      "name": "The north ranger post"
+    },
+    {
+      "id": "plc_track",
+      "name": "The reserve track"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_kill",
+      "name": "The zebra kill",
+      "kind": "scene",
+      "description": "Open plain inside the reserve, a fresh zebra carcass, lion pug marks and hyena tracks around it. Lemayian lay beside the carcass. Twin heavy tyre tracks leave the reserve track and come straight here.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Beside the carcass",
+          "pos": [
+            44,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Lemayian lay beside the zebra. Rangers have covered him with a blanket."
+        },
+        {
+          "id": "hs_tracks",
+          "label": "Tyre tracks",
+          "pos": [
+            76,
+            40
+          ],
+          "yields": "ev_tracks",
+          "text": "Twin dual-wheel tyre tracks off the track to the kill, deep in the dry ground."
+        },
+        {
+          "id": "hs_device",
+          "label": "In the grass",
+          "pos": [
+            24,
+            70
+          ],
+          "yields": "ev_device_found",
+          "text": "His patrol GPS device, switched off, thrown in the grass."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "open grass plains of the Maasai Mara at dawn, a zebra carcass, lion and hyena tracks in the dust, deep dual-wheel lorry tyre tracks leaving a dirt track, a ranger's blanket in the distance, no body visible"
+      }
+    },
+    {
+      "id": "loc_research",
+      "name": "Lion research camp",
+      "kind": "location",
+      "description": "Two tents, a solar panel, a laptop with the collar downloads, a whiteboard of lioness names.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_collar",
+          "label": "Collar downloads",
+          "pos": [
+            44,
+            40
+          ],
+          "yields": "ev_collar",
+          "text": "Last night's positions for the two collared lionesses."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small lion research camp in the Mara, two canvas tents, a solar panel, a laptop showing GPS tracks on a map, a whiteboard with lion names"
+      }
+    },
+    {
+      "id": "loc_checkpoint",
+      "name": "Ranger checkpoint",
+      "kind": "location",
+      "description": "A boom across the road from Narok, a lamp on a pole, a small hut with a logbook, a bay where lorries are searched.",
+      "unlock": {
+        "fact": "f_collar"
+      },
+      "hotspots": [
+        {
+          "id": "hs_log",
+          "label": "Checkpoint logbook",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_logbook",
+          "text": "The logbook open on the hut table, a pen across it."
+        },
+        {
+          "id": "hs_hut",
+          "label": "Hut floor",
+          "pos": [
+            56,
+            64
+          ],
+          "yields": "ev_hut",
+          "text": "Grey dust on the floor, and a scrap of paper sack."
+        },
+        {
+          "id": "hs_server",
+          "label": "Patrol-device record",
+          "pos": [
+            76,
+            30
+          ],
+          "yields": "ev_device",
+          "text": "The conservancy's server log for his patrol device, read on the hut terminal."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a ranger checkpoint on a dark road at night, a red-and-white boom, a lamp on a pole, a small hut with a lit window and a logbook on a table, an inspection bay"
+      }
+    },
+    {
+      "id": "loc_post",
+      "name": "Ranger post",
+      "kind": "location",
+      "description": "The conservancy's ranger post: a radio room, a duty roster on the wall, the sergeant's office.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_radio",
+          "label": "Radio log",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_faith",
+          "text": "The post's radio log for the night."
+        },
+        {
+          "id": "hs_roster",
+          "label": "Duty roster",
+          "pos": [
+            70,
+            30
+          ],
+          "yields": "ev_roster",
+          "text": "The roster, with a note in the sergeant's hand."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a conservancy ranger post, a radio room with a handset and a logbook, a duty roster pinned to a wall"
+      }
+    },
+    {
+      "id": "loc_yard",
+      "name": "Ndwiga's yard, Narok",
+      "kind": "location",
+      "description": "A hardware yard on the edge of Narok: stacked roofing sheets, pipes, a lorry with dual rear wheels parked by the gate.",
+      "unlock": {
+        "fact": "f_rec_nd"
+      },
+      "hotspots": [
+        {
+          "id": "hs_gate",
+          "label": "The yard gate",
+          "pos": [
+            30,
+            50
+          ],
+          "yields": "ev_yard_gate",
+          "text": "A watchman's book hangs by the gate."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a hardware merchant's yard on the edge of Narok town, stacked roofing sheets and pipes, a large lorry with dual rear wheels parked by the gate"
+      }
+    },
+    {
+      "id": "loc_lorry",
+      "name": "Ndwiga's lorry (search)",
+      "kind": "search",
+      "description": "The lorry's load bed under a tarpaulin, and the cab.",
+      "unlock": {
+        "fact": "f_rec_nd"
+      },
+      "hotspots": [
+        {
+          "id": "hs_load",
+          "label": "Load and cab",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_lorry",
+          "text": "Cement sacks in rows, the third row loose. In the cab, a jack handle."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the load bed of a lorry stacked with grey cement sacks under a tarpaulin, a steel jack handle on the cab floor"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "At the zebra kill",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Two head wounds. Later scavenging marks. His rifle and radio on him; his patrol device thrown in the grass."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a ranger's green blanket on dry grass beside a zebra carcass at dawn, a beret on the ground, no body visible"
+      }
+    },
+    {
+      "id": "ev_tracks",
+      "type": "physical",
+      "title": "Tyre tracks at the kill",
+      "render": "sketch",
+      "body": {
+        "note": "Twin rear tyre tracks of a heavy lorry with dual wheels, off the track to the kill and back. No lodge vehicle is that heavy."
+      },
+      "facts": [
+        "f_tracks"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_device_found",
+      "type": "physical",
+      "title": "Patrol device in the grass",
+      "render": "object",
+      "body": {
+        "label": "Switched off, thrown in the grass 20 m from the body."
+      },
+      "facts": [
+        "f_device_found"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_collar",
+      "type": "physical",
+      "title": "Collar data",
+      "render": "logBook",
+      "body": {
+        "lionesses": "Both collared lionesses 9 km north-east of the kill site from 21:00 to 03:40. They reached the zebra kill at 04:05."
+      },
+      "facts": [
+        "f_collar"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_nalangu",
+      "type": "witness",
+      "title": "Statement: Dr. Nalangu Sipitiek",
+      "render": "statement",
+      "body": {
+        "speaker": "p_nalangu"
+      },
+      "facts": [
+        "f_nalangu",
+        "f_nalangu_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_logbook",
+      "type": "physical",
+      "title": "Checkpoint logbook",
+      "render": "logBook",
+      "body": {
+        "last": "\"22:30 — lorry KCE xxx, hardware, J. Ndwiga — INSPECTING —\" (unfinished)"
+      },
+      "facts": [
+        "f_logbook"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_device",
+      "type": "physical",
+      "title": "Patrol-device server log",
+      "render": "logBook",
+      "body": {
+        "positions": "Every 5 minutes at the checkpoint all evening. Last position 22:41, at the checkpoint. Then off."
+      },
+      "facts": [
+        "f_device"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_hut",
+      "type": "physical",
+      "title": "Checkpoint hut floor",
+      "render": "sceneNote",
+      "body": {
+        "note": "Cement dust on the floor. A torn scrap of cement sack with a small pale flake caught in its weave."
+      },
+      "facts": [
+        "f_hut"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Josphat Ndwiga's line",
+      "render": "manifest",
+      "body": {
+        "masts": "Checkpoint zone 22:20–23:00; reserve-interior mast 23:40–00:10; Narok 02:30."
+      },
+      "facts": [
+        "f_rec_nd"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_logbook"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_yard_gate",
+      "type": "physical",
+      "title": "Yard watchman's book",
+      "render": "logBook",
+      "body": {
+        "entries": "Lorry out 20:15 Wednesday. Lorry in 02:30 Thursday."
+      },
+      "facts": [
+        "f_yardbook"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lorry",
+      "type": "physical",
+      "title": "Ndwiga's lorry",
+      "render": "object",
+      "body": {
+        "tyres": "Dual rear tyres matching the tracks at the kill.",
+        "load": "Cement sacks with fine pale dust in their seams.",
+        "cab": "A jack handle in the cab, on the owner's side, washed."
+      },
+      "facts": [
+        "f_lorry_tyres",
+        "f_sacks",
+        "f_jack"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_nd",
+          "f_logbook"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_crew_prints",
+      "type": "physical",
+      "title": "Prints of the driver and turnboy (voluntary)",
+      "render": "form",
+      "body": {
+        "names": "D. Ngari · K. Njue"
+      },
+      "facts": [
+        "f_crew_prints"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_nd_prints",
+      "type": "physical",
+      "title": "Fingerprints: Josphat Ndwiga",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention; he refused to give them voluntarily."
+      },
+      "facts": [
+        "f_nd_prints"
+      ],
+      "gate": null,
+      "detention": "p_ndwiga",
+      "image": null
+    },
+    {
+      "id": "ev_faith",
+      "type": "physical",
+      "title": "Ranger post radio log",
+      "render": "logBook",
+      "body": {
+        "faith": "F. Cheruto, north post: check-ins every hour, 18:00 to 06:00."
+      },
+      "facts": [
+        "f_faith"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_roster",
+      "type": "physical",
+      "title": "Duty roster",
+      "render": "form",
+      "body": {
+        "note": "Roster dispute Cheruto/Kantai: settled by Sgt. Leparan, Monday.",
+        "receipts": "Ranger post cement order: paid, January.",
+        "patrols": "No snares reported on the checkpoint road in a year. No road accident logged."
+      },
+      "facts": [
+        "f_roster",
+        "f_cement_paid",
+        "f_no_snares"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blows",
+        "f_aut_nolion",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_ivory",
+      "type": "forensic",
+      "title": "Lab: the pale flake and the sack seams",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_ivory"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_hut",
+          "ev_lorry"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_trace",
+      "type": "forensic",
+      "title": "Lab: trace (jack handle)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_trace"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_lorry"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints on the jack handle",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_jack_prints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_lorry",
+          "ev_nd_prints",
+          "ev_crew_prints"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Corporal Lemayian Kantai was found dead at 07:00 beside a zebra carcass in the reserve, lions nearby. Recorded as killed by lions on night patrol.",
+      "kind": "true",
+      "about": [
+        "p_lemayian",
+        "loc_kill"
+      ],
+      "at": {
+        "from": "07:00"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "Two head wounds. His rifle and radio are still on him.",
+      "kind": "true",
+      "about": [
+        "p_lemayian",
+        "loc_kill"
+      ]
+    },
+    {
+      "id": "f_tracks",
+      "text": "At the kill: twin rear tyre tracks of a heavy lorry with dual wheels, off the track and back. No lodge vehicle is that heavy.",
+      "kind": "true",
+      "about": [
+        "loc_kill"
+      ]
+    },
+    {
+      "id": "f_device_found",
+      "text": "His patrol GPS device was switched off and thrown in the grass 20 m from the body.",
+      "kind": "true",
+      "about": [
+        "p_lemayian"
+      ]
+    },
+    {
+      "id": "f_collar",
+      "text": "Collar data: both collared lionesses were 9 km north-east of the kill site from 21:00 to 03:40. They reached the zebra kill at 04:05.",
+      "kind": "true",
+      "about": [
+        "p_nalangu"
+      ],
+      "at": {
+        "from": "04:05"
+      }
+    },
+    {
+      "id": "f_nalangu",
+      "text": "Dr. Sipitiek: \"My lions were nowhere near that zebra until four. And lions don't kill a man and walk away from a fresh zebra.\"",
+      "kind": "true",
+      "about": [
+        "p_nalangu"
+      ]
+    },
+    {
+      "id": "f_nalangu_self",
+      "text": "Dr. Sipitiek was at the research camp all night; her collar downloads are timestamped every hour.",
+      "kind": "true",
+      "about": [
+        "p_nalangu"
+      ],
+      "where": {
+        "person": "p_nalangu",
+        "place": "loc_research",
+        "from": "18:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_logbook",
+      "text": "Checkpoint logbook, Lemayian's last entry: \"22:30 — lorry KCE xxx, hardware, J. Ndwiga — INSPECTING —\". The line is unfinished.",
+      "kind": "true",
+      "about": [
+        "p_lemayian",
+        "p_ndwiga"
+      ],
+      "at": {
+        "from": "22:30"
+      }
+    },
+    {
+      "id": "f_device",
+      "text": "Patrol-device server: his position every 5 minutes at the checkpoint all evening. Last position 22:41, at the checkpoint. Then off.",
+      "kind": "true",
+      "about": [
+        "p_lemayian"
+      ],
+      "at": {
+        "from": "22:41"
+      }
+    },
+    {
+      "id": "f_hut",
+      "text": "Checkpoint hut: cement dust on the floor and a torn scrap of cement sack with a small pale flake caught in it.",
+      "kind": "true",
+      "about": [
+        "plc_hut"
+      ]
+    },
+    {
+      "id": "f_rec_nd",
+      "text": "Records, Ndwiga's line: checkpoint zone 22:20–23:00; reserve-interior mast 23:40–00:10; Narok 02:30.",
+      "kind": "true",
+      "about": [
+        "p_ndwiga"
+      ],
+      "at": {
+        "from": "22:20",
+        "to": "02:30"
+      }
+    },
+    {
+      "id": "f_yardbook",
+      "text": "Ndwiga's yard watchman's book: lorry out at 20:15 on Wednesday, back in at 02:30 on Thursday.",
+      "kind": "true",
+      "about": [
+        "p_ndwiga"
+      ]
+    },
+    {
+      "id": "f_lorry_tyres",
+      "text": "Ndwiga's lorry has dual rear tyres matching the tracks at the kill.",
+      "kind": "true",
+      "about": [
+        "p_ndwiga"
+      ]
+    },
+    {
+      "id": "f_sacks",
+      "text": "In the lorry's load: cement sacks with fine pale dust in their seams.",
+      "kind": "true",
+      "about": [
+        "p_ndwiga"
+      ]
+    },
+    {
+      "id": "f_jack",
+      "text": "In the cab, on the owner's side: a jack handle, washed.",
+      "kind": "true",
+      "about": [
+        "p_ndwiga"
+      ]
+    },
+    {
+      "id": "f_crew_prints",
+      "text": "Daudi and Kimathi give their fingerprints voluntarily.",
+      "kind": "true",
+      "about": [
+        "p_daudi",
+        "p_kimathi"
+      ]
+    },
+    {
+      "id": "f_nd_prints",
+      "text": "Fingerprints taken from Josphat Ndwiga in detention.",
+      "kind": "true",
+      "about": [
+        "p_ndwiga"
+      ]
+    },
+    {
+      "id": "f_faith",
+      "text": "Ranger radio log: Faith on duty at the north post all night, checking in every hour from 18:00 to 06:00.",
+      "kind": "true",
+      "about": [
+        "p_faith"
+      ],
+      "where": {
+        "person": "p_faith",
+        "place": "plc_northpost",
+        "from": "18:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_roster",
+      "text": "Duty roster note: the Cheruto–Kantai roster dispute was settled by the sergeant on Monday.",
+      "kind": "true",
+      "about": [
+        "p_faith",
+        "p_lemayian"
+      ]
+    },
+    {
+      "id": "f_cement_paid",
+      "text": "Ranger post files: the post's January cement order from Ndwiga Hardware was paid in full.",
+      "kind": "true",
+      "about": [
+        "p_ndwiga"
+      ]
+    },
+    {
+      "id": "f_no_snares",
+      "text": "Patrol reports: no snares on the checkpoint road in a year, and no road accident logged there.",
+      "kind": "true",
+      "about": [
+        "loc_checkpoint"
+      ]
+    },
+    {
+      "id": "f_aut_blows",
+      "text": "Autopsy: two blows with a heavy metal bar.",
+      "kind": "true",
+      "about": [
+        "p_lemayian"
+      ]
+    },
+    {
+      "id": "f_aut_nolion",
+      "text": "Autopsy: no lion bites or claw marks made while he was alive; later scavenging by hyena only. No gunshot; no vehicle or trampling injuries.",
+      "kind": "true",
+      "about": [
+        "p_lemayian"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 22:30 and 23:15.",
+      "kind": "true",
+      "about": [
+        "p_lemayian"
+      ],
+      "at": {
+        "from": "22:30",
+        "to": "23:15"
+      }
+    },
+    {
+      "id": "f_ivory",
+      "text": "Lab: the pale flake from the hut and the dust in the sack seams are elephant ivory (cross-hatched growth lines under the microscope).",
+      "kind": "true",
+      "about": [
+        "p_ndwiga"
+      ]
+    },
+    {
+      "id": "f_trace",
+      "text": "Lab: Lemayian's blood on the jack handle.",
+      "kind": "true",
+      "about": [
+        "p_lemayian",
+        "p_ndwiga"
+      ]
+    },
+    {
+      "id": "f_jack_prints",
+      "text": "Lab: Ndwiga's prints on the jack handle's grip. Neither Daudi's nor Kimathi's.",
+      "kind": "true",
+      "about": [
+        "p_ndwiga",
+        "p_daudi",
+        "p_kimathi"
+      ]
+    },
+    {
+      "id": "f_nd_yard",
+      "text": "Ndwiga: \"My lorry was in my Narok yard all night. I never drove that road.\"",
+      "kind": "lie",
+      "about": [
+        "p_ndwiga"
+      ]
+    },
+    {
+      "id": "f_nd_admits",
+      "text": "Ndwiga admits his lorry passed the checkpoint at about 22:30 with him in the cab.",
+      "kind": "true",
+      "about": [
+        "p_ndwiga"
+      ],
+      "where": {
+        "person": "p_ndwiga",
+        "place": "plc_boom",
+        "from": "22:25",
+        "to": "22:45"
+      }
+    },
+    {
+      "id": "f_nd_waved",
+      "text": "Ndwiga: \"The corporal waved us through. He was alive at the boom when we drove on.\"",
+      "kind": "lie",
+      "about": [
+        "p_ndwiga"
+      ]
+    },
+    {
+      "id": "f_daudi_home",
+      "text": "Daudi: \"We didn't go out last night.\"",
+      "kind": "lie",
+      "about": [
+        "p_daudi"
+      ]
+    },
+    {
+      "id": "f_daudi_reveal",
+      "text": "Daudi: Lemayian found the tusks; the boss offered him money; he said no and reached for his radio. The boss hit him. They put him in the lorry and Daudi drove where he was told.",
+      "kind": "true",
+      "about": [
+        "p_daudi",
+        "p_ndwiga",
+        "p_lemayian"
+      ],
+      "where": {
+        "person": "p_daudi",
+        "place": "plc_boom",
+        "from": "22:25",
+        "to": "22:45"
+      }
+    },
+    {
+      "id": "f_kimathi_cab",
+      "text": "Daudi: Kimathi was asleep in the cab. Its inside handle is broken; the boy can only get out when the driver opens the door.",
+      "kind": "true",
+      "about": [
+        "p_daudi",
+        "p_kimathi"
+      ],
+      "where": {
+        "person": "p_kimathi",
+        "place": "plc_cab",
+        "from": "20:15",
+        "to": "02:30"
+      }
+    },
+    {
+      "id": "f_faith_claim",
+      "text": "Faith: \"I was at the north post all night.\"",
+      "kind": "claim",
+      "about": [
+        "p_faith"
+      ]
+    },
+    {
+      "id": "f_faith_best",
+      "text": "Faith: \"We fought about the roster. He was the best of us.\"",
+      "kind": "true",
+      "about": [
+        "p_faith",
+        "p_lemayian"
+      ]
+    },
+    {
+      "id": "f_kim_claim",
+      "text": "Kimathi: \"I was asleep in the cab.\"",
+      "kind": "claim",
+      "about": [
+        "p_kimathi"
+      ]
+    },
+    {
+      "id": "f_kim_row",
+      "text": "Kimathi: \"I'm not allowed to touch the third row of sacks. Never.\"",
+      "kind": "true",
+      "about": [
+        "p_kimathi",
+        "p_ndwiga"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_ndwiga",
+      "stance": "cooperative",
+      "intro": "Ndwiga receives you in his yard office under a photograph of himself with the county governor. \"My lorry was in my yard all night. I never drove that road.\"",
+      "claims": [
+        "f_nd_yard"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_nd_waved",
+          "after": "f_nd_admits"
+        }
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_logbook",
+          "reply": "A ranger writes many things. Ask him what he meant.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_daudi",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_logbook"
+      ],
+      "intro": "Daudi sits on the lorry's step and won't look up. \"We didn't go out last night.\"",
+      "claims": [
+        "f_daudi_home"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_faith",
+      "stance": "cooperative",
+      "intro": "Faith stands at attention at the post and her voice shakes. \"I was at the north post all night.\"",
+      "claims": [
+        "f_faith_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_lemayian",
+          "reply": "We fought about the roster. He was the best of us.",
+          "reveals": [
+            "f_faith_best"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_kimathi",
+      "stance": "cooperative",
+      "intro": "Kimathi crouches by the yard gate. \"I was asleep in the cab. I can't even open the door from inside.\"",
+      "claims": [
+        "f_kim_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_lorry",
+          "reply": "I'm not allowed to touch the third row. Never. Take my fingerprints. Take Daudi's too.",
+          "reveals": [
+            "f_kim_row",
+            "ev_crew_prints"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_nalangu",
+      "stance": "cooperative",
+      "intro": "Dr. Sipitiek turns her laptop round so you can see the two tracks. \"Look at the times.\"",
+      "claims": [],
+      "yields": [
+        "ev_nalangu"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_nd",
+      "claim": "f_nd_yard",
+      "brokenBy": [
+        "f_logbook",
+        "f_rec_nd",
+        "f_yardbook"
+      ],
+      "reveals": [
+        "f_nd_admits"
+      ],
+      "reaction": "Ndwiga adjusts his glasses. \"...We passed the checkpoint. The corporal waved us through.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_daudi",
+      "claim": "f_daudi_home",
+      "brokenBy": [
+        "f_rec_nd",
+        "f_tracks"
+      ],
+      "reveals": [
+        "f_daudi_reveal",
+        "f_kimathi_cab"
+      ],
+      "reaction": "\"He found the tusks. The boss offered him money. He said no and picked up his radio. The boss hit him. We put him in the lorry. I drove where he told me. I've vomited every hour since.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_nd_waved",
+      "claim": "f_nd_waved",
+      "brokenBy": [
+        "f_trace",
+        "f_jack_prints"
+      ],
+      "reveals": [],
+      "reaction": "Ndwiga takes off his glasses and folds them. \"Half a million shillings,\" he says. \"Half a million, and he picked up his radio.\" He asks for his lawyer.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_ndwiga",
+      "text": "Josphat Ndwiga",
+      "category": "person",
+      "ref": "p_ndwiga",
+      "unlock": {
+        "anyOf": [
+          "f_logbook"
+        ]
+      }
+    },
+    {
+      "id": "w_daudi",
+      "text": "Daudi Ngari",
+      "category": "person",
+      "ref": "p_daudi",
+      "unlock": {
+        "anyOf": [
+          "f_logbook"
+        ]
+      }
+    },
+    {
+      "id": "w_faith",
+      "text": "Faith Cheruto",
+      "category": "person",
+      "ref": "p_faith",
+      "unlock": {
+        "anyOf": [
+          "f_roster"
+        ]
+      }
+    },
+    {
+      "id": "w_kimathi",
+      "text": "Kimathi Njue",
+      "category": "person",
+      "ref": "p_kimathi",
+      "unlock": {
+        "anyOf": [
+          "f_nd_admits"
+        ]
+      }
+    },
+    {
+      "id": "w_nalangu",
+      "text": "Nalangu Sipitiek",
+      "category": "person",
+      "ref": "p_nalangu",
+      "unlock": {
+        "anyOf": [
+          "f_collar"
+        ]
+      }
+    },
+    {
+      "id": "pl_kill",
+      "text": "the lion kill",
+      "category": "place",
+      "ref": "loc_kill",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_checkpoint",
+      "text": "the checkpoint",
+      "category": "place",
+      "ref": "loc_checkpoint",
+      "unlock": {
+        "anyOf": [
+          "f_logbook"
+        ]
+      }
+    },
+    {
+      "id": "pl_post",
+      "text": "the ranger post",
+      "category": "place",
+      "ref": "loc_post",
+      "unlock": {
+        "anyOf": [
+          "f_roster"
+        ]
+      }
+    },
+    {
+      "id": "pl_yard",
+      "text": "Ndwiga's Narok yard",
+      "category": "place",
+      "ref": "loc_yard",
+      "unlock": {
+        "anyOf": [
+          "f_logbook"
+        ]
+      }
+    },
+    {
+      "id": "pl_track",
+      "text": "the reserve track",
+      "category": "place",
+      "ref": "plc_track",
+      "unlock": {
+        "anyOf": [
+          "f_tracks"
+        ]
+      }
+    },
+    {
+      "id": "h_jack",
+      "text": "struck with the lorry's jack handle, then left at a lion kill",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blows"
+        ]
+      }
+    },
+    {
+      "id": "h_lions",
+      "text": "killed by lions on patrol",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_shot",
+      "text": "shot by poachers",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_vehicle",
+      "text": "hit by a vehicle at the checkpoint",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_logbook"
+        ]
+      }
+    },
+    {
+      "id": "h_buffalo",
+      "text": "trampled by buffalo",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_ivory",
+      "text": "the corporal found ivory in his cement sacks and refused a bribe",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_hut"
+        ]
+      }
+    },
+    {
+      "id": "m_roster",
+      "text": "the duty-roster quarrel",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_roster"
+        ]
+      }
+    },
+    {
+      "id": "m_snares",
+      "text": "a dispute over bushmeat snares",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_cement",
+      "text": "an unpaid cement order for the ranger post",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_logbook"
+        ]
+      }
+    },
+    {
+      "id": "m_accident",
+      "text": "a road accident he caused",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_logbook"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Corporal Lemayian Kantai"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_2230",
+                  "label": "22:30",
+                  "from": "22:30",
+                  "to": "22:30"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "22:30–22:45",
+                  "from": "22:30",
+                  "to": "22:45"
+                },
+                {
+                  "id": "sl_reserve",
+                  "label": "23:40–00:10",
+                  "from": "23:40",
+                  "to": "00:10"
+                },
+                {
+                  "id": "sl_0405",
+                  "label": "04:05",
+                  "from": "04:05",
+                  "to": "04:05"
+                },
+                {
+                  "id": "sl_0700",
+                  "label": "07:00",
+                  "from": "07:00",
+                  "to": "07:00"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_stop",
+                  "text": "Lemayian stops the lorry",
+                  "slot": "sl_2230",
+                  "by": [
+                    "f_logbook"
+                  ],
+                  "why": "His last logbook line: 22:30, INSPECTING.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_logbook"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Lemayian is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_logbook",
+                    "f_device",
+                    "f_aut_tod",
+                    "f_nd_admits"
+                  ],
+                  "why": "He stopped the lorry at 22:30; his patrol device logged its last position at the checkpoint at 22:41 and went dark.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_device"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_reserve",
+                  "text": "The lorry's phone is inside the reserve",
+                  "slot": "sl_reserve",
+                  "by": [
+                    "f_rec_nd"
+                  ],
+                  "why": "The reserve-interior mast: 23:40 to 00:10.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rec_nd"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_lions",
+                  "text": "The lions reach the kill",
+                  "slot": "sl_0405",
+                  "by": [
+                    "f_collar"
+                  ],
+                  "why": "The collars: 04:05, hours after he died.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_collar"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_0700",
+                  "by": [
+                    "f_ob"
+                  ],
+                  "why": "07:00 is when the rangers found him."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "Stopped at half ten, dark at 22:41, the lorry in the reserve by twenty to midnight, the lions at five past four. The lions came last.",
+          "fail": [
+            "Seven o'clock is when they found him.",
+            "The lions reached the kill at 04:05. He was long dead."
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_checkpoint"
+          }
+        ],
+        "prosecutor": {
+          "pass": "An unfinished line in the logbook, a device that never left the checkpoint until it died, and ivory on the hut floor. He died at his post.",
+          "fail": [
+            "The lions were 9 km away and the tracks at the kill are a lorry's.",
+            "His device sat at the checkpoint until 22:41."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_ndwiga"
+          }
+        ],
+        "prosecutor": {
+          "pass": "His lorry at the boom, his phone in the reserve, the corporal's blood on the jack handle and his prints on its grip. That will hold.",
+          "fail": [
+            "The driver helped and drove. Whose prints are on the handle?",
+            "Faith checked in every hour from the north post."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_jack"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Two blows with a bar, then a zebra for an alibi. Yes.",
+          "fail": [
+            "No lion wounds made while he was alive.",
+            "No gunshot. Two blows with a metal bar."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_ivory"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Ivory in the cement and half a million refused. That's the reason. Rangers will be at the reconstruction in full uniform.",
+          "fail": [
+            "The roster was settled on Monday.",
+            "The post paid for its cement."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_checkpoint",
+      "from": "22:30",
+      "to": "23:15",
+      "within": [
+        "plc_boom",
+        "plc_hut"
+      ],
+      "note": "From the autopsy; the logbook stops at 22:30 and the device at 22:41."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_collar",
+          "f_nalangu",
+          "f_aut_nolion",
+          "f_aut_blows"
+        ],
+        "concludes": "The lions were 9 km away until 04:05, and there are no lion injuries from before death. No lion killed him: two blows with a metal bar did."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_logbook",
+          "f_device",
+          "f_hut",
+          "f_aut_tod",
+          "f_device_found"
+        ],
+        "concludes": "He was killed at the checkpoint while inspecting Ndwiga's lorry: his log stops mid-line at 22:30 and his device last reported from the checkpoint at 22:41.",
+        "answers": [
+          "where",
+          "when"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_nd_yard",
+          "f_rec_nd",
+          "f_yardbook",
+          "f_nd_admits",
+          "f_daudi_home",
+          "f_daudi_reveal"
+        ],
+        "concludes": "The lorry's owner was at the checkpoint and then drove into the reserve, not home; his driver describes the blow."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_tracks",
+          "f_lorry_tyres",
+          "f_sacks",
+          "f_ivory"
+        ],
+        "concludes": "The lorry's dual tyres made the tracks to the kill, and its cement sacks and the hut floor carry elephant ivory."
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_jack",
+          "f_trace",
+          "f_jack_prints",
+          "f_nd_waved"
+        ],
+        "concludes": "The jack handle on the owner's side of the cab carries the corporal's blood and Ndwiga's prints. At the checkpoint, Josphat Ndwiga struck Lemayian with the lorry's jack handle and left him at a lion kill, because the corporal found ivory in his cement sacks and refused a bribe.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_kill",
+        "blank": "where",
+        "by": [
+          "f_collar",
+          "f_aut_nolion",
+          "f_tracks"
+        ],
+        "why": "The lions arrived at 04:05, there are no lion wounds from life, and a lorry's tracks lead to the body."
+      },
+      {
+        "word": "pl_post",
+        "blank": "where",
+        "by": [
+          "f_device"
+        ],
+        "why": "His device never left the checkpoint until it went dark."
+      },
+      {
+        "word": "pl_yard",
+        "blank": "where",
+        "by": [
+          "f_device",
+          "f_yardbook"
+        ],
+        "why": "He was at the checkpoint; the lorry wasn't back in the yard until 02:30."
+      },
+      {
+        "word": "pl_track",
+        "blank": "where",
+        "by": [
+          "f_device",
+          "f_logbook"
+        ],
+        "why": "His device and logbook put him at the checkpoint when he died."
+      },
+      {
+        "word": "w_daudi",
+        "blank": "who",
+        "by": [
+          "f_jack_prints",
+          "f_daudi_reveal"
+        ],
+        "why": "Daudi was there and helped move the body; he will be charged as an accessory. The handle carries Ndwiga's prints, not his.",
+        "present": true
+      },
+      {
+        "word": "w_kimathi",
+        "blank": "who",
+        "by": [
+          "f_kimathi_cab"
+        ],
+        "why": "Kimathi was asleep in the cab, which he can't open from inside."
+      },
+      {
+        "word": "w_faith",
+        "blank": "who",
+        "by": [
+          "f_faith"
+        ],
+        "why": "Faith checked in every hour from the north post."
+      },
+      {
+        "word": "w_nalangu",
+        "blank": "who",
+        "by": [
+          "f_nalangu_self"
+        ],
+        "why": "Dr. Sipitiek was at the research camp; her downloads are timestamped."
+      },
+      {
+        "word": "h_lions",
+        "blank": "how",
+        "by": [
+          "f_collar",
+          "f_aut_nolion"
+        ],
+        "why": "The lions were 9 km away, and no lion wounded him in life."
+      },
+      {
+        "word": "h_shot",
+        "blank": "how",
+        "by": [
+          "f_aut_nolion"
+        ],
+        "why": "No gunshot."
+      },
+      {
+        "word": "h_vehicle",
+        "blank": "how",
+        "by": [
+          "f_aut_blows",
+          "f_aut_nolion"
+        ],
+        "why": "Two bar blows, no vehicle injuries."
+      },
+      {
+        "word": "h_buffalo",
+        "blank": "how",
+        "by": [
+          "f_aut_nolion"
+        ],
+        "why": "No trampling."
+      },
+      {
+        "word": "m_roster",
+        "blank": "why",
+        "by": [
+          "f_roster",
+          "f_faith"
+        ],
+        "why": "Settled on Monday, and Faith was at her post."
+      },
+      {
+        "word": "m_snares",
+        "blank": "why",
+        "by": [
+          "f_no_snares"
+        ],
+        "why": "No snares on that road in a year."
+      },
+      {
+        "word": "m_cement",
+        "blank": "why",
+        "by": [
+          "f_cement_paid"
+        ],
+        "why": "The post's cement order was paid."
+      },
+      {
+        "word": "m_accident",
+        "blank": "why",
+        "by": [
+          "f_no_snares"
+        ],
+        "why": "No road accident was ever logged."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "For a year Ndwiga's lorry carries cement and roofing to the lodges, and, in the third row of sacks, elephant ivory from the borderlands to buyers in Narok.",
+        "image": null
+      },
+      {
+        "text": "Wednesday, 22:30. Corporal Lemayian Kantai, alone at the checkpoint, stops the lorry and writes in his log: INSPECTING. In the third sack he finds a tusk.",
+        "image": null
+      },
+      {
+        "text": "Ndwiga offers him KSh 500,000. He refuses and reaches for his radio. Ndwiga strikes him twice with the jack handle.",
+        "image": "loc_checkpoint"
+      },
+      {
+        "text": "With Daudi's help he loads the corporal into the lorry, drives into the reserve, and leaves him beside a fresh zebra kill. He switches off the patrol device and throws it in the grass. At 02:30 the lorry is back in Narok.",
+        "image": null
+      },
+      {
+        "text": "At 04:05 the lionesses reach the zebra. At 07:00 the rangers find their colleague. They attend the reconstruction in full uniform.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Records on Ndwiga's line, then a warrant on the lorry. Detain him at the yard; his prints come back in 6 h and the trace and ivory in 12 h, inside the 24 hours.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_kill",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_tracks",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_device_found",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_research",
+        "hours": 0.5,
+        "from": "loc_kill"
+      },
+      {
+        "do": "visit",
+        "target": "loc_research",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_nalangu"
+      },
+      {
+        "do": "read",
+        "target": "ev_collar",
+        "hours": 1
+      },
+      {
+        "do": "travel",
+        "target": "loc_checkpoint",
+        "hours": 2,
+        "from": "loc_research"
+      },
+      {
+        "do": "visit",
+        "target": "loc_checkpoint",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_logbook",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_hut",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_device",
+        "hours": 1
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "travel",
+        "target": "loc_yard",
+        "hours": 1.5,
+        "from": "loc_checkpoint"
+      },
+      {
+        "do": "visit",
+        "target": "loc_yard",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_yard_gate",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_ndwiga"
+      },
+      {
+        "do": "press",
+        "target": "c_nd"
+      },
+      {
+        "do": "search",
+        "target": "loc_lorry"
+      },
+      {
+        "do": "detain",
+        "target": "p_ndwiga"
+      },
+      {
+        "do": "sample",
+        "target": "ev_nd_prints"
+      },
+      {
+        "do": "interview",
+        "target": "p_daudi"
+      },
+      {
+        "do": "press",
+        "target": "c_daudi"
+      },
+      {
+        "do": "interview",
+        "target": "p_kimathi"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_trace"
+      },
+      {
+        "do": "submit",
+        "target": "ev_ivory"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 12
+      },
+      {
+        "do": "interview",
+        "target": "p_ndwiga"
+      },
+      {
+        "do": "press",
+        "target": "c_nd_waved"
+      }
+    ],
+    "totalHours": 47
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_device",
+        "line": "His patrol device reported every five minutes. When did it stop?"
+      },
+      "tier2": {
+        "facts": [
+          "f_logbook",
+          "f_device"
+        ],
+        "line": "INSPECTING at 22:30, last position 22:41."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_collar",
+        "line": "Where were the lions while he was dying?"
+      },
+      "tier2": {
+        "facts": [
+          "f_collar",
+          "f_device"
+        ],
+        "line": "The lions 9 km away until 04:05; his device at the checkpoint until 22:41."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_logbook",
+        "line": "He wrote a name before he stopped writing."
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_nd",
+          "f_lorry_tyres"
+        ],
+        "line": "A phone at the checkpoint and then in the reserve, and dual tyres at the kill."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Dr. Chebii says two blows with a metal bar. What heavy bar does a lorry carry?"
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_blows",
+          "f_trace"
+        ],
+        "line": "Two bar blows, and his blood on the jack handle."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_hut",
+        "line": "Something pale is caught in that scrap of cement sack."
+      },
+      "tier2": {
+        "facts": [
+          "f_hut",
+          "f_ivory"
+        ],
+        "line": "Elephant ivory on the hut floor and in the sack seams."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "askari wa wanyamapori",
+      "def": "A wildlife ranger."
+    },
+    {
+      "term": "pembe za ndovu",
+      "def": "Elephant ivory (literally \"elephant horns\")."
+    },
+    {
+      "term": "simba",
+      "def": "Lion."
+    },
+    {
+      "term": "fisi",
+      "def": "Hyena."
+    },
+    {
+      "term": "hongo",
+      "def": "A bribe."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "animalDataAlibi"
+    ],
+    "beatNotes": "Animal data as an alibi for animals. Collar positions draw two lioness tracks on the site map, moving in time with a slider; the player watches the lions arrive hours after the ranger died."
+  }
+}

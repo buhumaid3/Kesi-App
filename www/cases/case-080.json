@@ -1,0 +1,3877 @@
+{
+  "meta": {
+    "id": "case-080",
+    "number": 80,
+    "region": "northern-frontier",
+    "regionNumber": 8,
+    "title": "Drawer 14",
+    "boss": true,
+    "schemaVersion": 1,
+    "estMinutes": 48,
+    "date": "Saturday 8 August",
+    "folderTab": "ISIOLO LAND REGISTRY"
+  },
+  "pattern": {
+    "crimePattern": "a Nairobi records officer who makes land files disappear kills the clerk who listed the missing files, and drives her body out to a murram pit",
+    "noRealCaseRetold": true,
+    "notes": "Fictional people, registry and ministry team. Region 8 boss. The registry man (t_registry) is identified as Julius Emojong. In his drawer: the 37 files, Abdia's green notebook, and Joseph Mwenda's working field book, taken from his body twelve years ago. Abdia's letter to Ubah was found in case 77.",
+    "tags": [
+      "blunt-force",
+      "moved-body",
+      "commissioned",
+      "document-fraud",
+      "records-theft",
+      "three-liars",
+      "lawyered",
+      "records",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where-two-blanks",
+      "forgery",
+      "absence",
+      "spine",
+      "boss"
+    ]
+  },
+  "difficulty": {
+    "suspects": 6,
+    "chainLength": 7,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "forgery",
+      "absence",
+      "spine"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "records",
+      "warrant"
+    ],
+    "twist": "the-registry-man-and-his-drawer"
+  },
+  "ob": {
+    "number": "OB 09/08/08",
+    "date": "Saturday 8 August",
+    "time": "09:10",
+    "reportedBy": "The Golicha family, Isiolo",
+    "text": "A family in Isiolo reports their daughter missing since Friday evening: Abdia Golicha (32), records clerk at the Isiolo county land registry. She never came home from work.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_registry",
+    "nodes": [
+      "loc_registry",
+      "loc_home",
+      "loc_guest",
+      "loc_police",
+      "loc_pit",
+      "loc_drawer"
+    ],
+    "edges": [
+      {
+        "a": "loc_registry",
+        "b": "loc_home",
+        "minutes": 8,
+        "by": "road"
+      },
+      {
+        "a": "loc_registry",
+        "b": "loc_guest",
+        "minutes": 5,
+        "by": "road"
+      },
+      {
+        "a": "loc_registry",
+        "b": "loc_police",
+        "minutes": 5,
+        "by": "road"
+      },
+      {
+        "a": "loc_guest",
+        "b": "loc_police",
+        "minutes": 6,
+        "by": "road"
+      },
+      {
+        "a": "loc_home",
+        "b": "loc_police",
+        "minutes": 8,
+        "by": "road"
+      },
+      {
+        "a": "loc_registry",
+        "b": "loc_pit",
+        "minutes": 40,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_guest",
+        "b": "loc_pit",
+        "minutes": 40,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_registry",
+        "b": "loc_drawer",
+        "minutes": 1,
+        "by": "foot"
+      },
+      {
+        "a": "loc_police",
+        "b": "loc_pit",
+        "minutes": 40,
+        "by": "4x4"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_abdia",
+      "role": "victim",
+      "name": "Abdia Golicha",
+      "age": 32,
+      "occupation": "Records clerk, Isiolo county land registry (nine years)",
+      "bio": "Kept a shadow list in a green notebook of every file she handed to the Nairobi team, and whether it came back.",
+      "community": "Borana",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_digi",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Borana woman, early 30s, a patterned headscarf, a green notebook held to her chest, a direct, determined face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_emojong",
+      "role": "suspect",
+      "name": "Julius Emojong",
+      "age": 54,
+      "occupation": "Senior records officer, Ministry of Lands, Nairobi; leader of the \"digitisation team\"",
+      "bio": "Touring the northern registries with a team, two scanners and a locked steel cabinet. Polite, precise, unhurried.",
+      "community": "Teso",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_signout"
+      },
+      "at": "loc_guest",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Teso man, mid 50s, a grey suit, reading glasses on a cord, a calm, courteous, unreadable face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_guracha",
+      "role": "suspect",
+      "name": "Hassan Guracha",
+      "age": 57,
+      "occupation": "County land registrar, Isiolo; Abdia's boss",
+      "bio": "Has run the Isiolo registry for twelve years.",
+      "community": "Borana",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_office",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Borana man, late 50s, a kofia and a pressed shirt, an ashamed, tired face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_omar",
+      "role": "suspect",
+      "name": "Omar Hiribae",
+      "age": 41,
+      "occupation": "Driver of the team's project vehicle",
+      "bio": "Keeps the vehicle's work ticket.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_odo"
+      },
+      "at": "loc_guest",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Somali man, early 40s, a driver's jacket and a key lanyard, an evasive face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_jattani",
+      "role": "suspect",
+      "name": "Jattani Halkano",
+      "age": 34,
+      "occupation": "Abdia's fiancé",
+      "redHerring": true,
+      "bio": "Their families were arguing over the wedding.",
+      "community": "Borana",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_mother"
+      },
+      "at": "plc_garissa",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Borana man, mid 30s, a neat shirt, frantic and grieving, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kennedy",
+      "role": "suspect",
+      "name": "Kennedy Mulwa",
+      "age": 44,
+      "occupation": "Waso Range's former liaison officer (case 74)",
+      "redHerring": true,
+      "bio": "Visited the registry on Friday afternoon.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_visitors"
+      },
+      "at": "loc_police",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba man, mid 40s, an open-necked shirt, a subdued, cooperative face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_florence",
+      "role": "suspect",
+      "name": "Florence Atieno",
+      "age": 29,
+      "occupation": "Scanner operator, digitisation team",
+      "bio": "Scans; the team leader keeps the drawers.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_guest",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo woman, late 20s, braids tied back, a team lanyard, a scared, honest face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_galma",
+      "role": "witness",
+      "name": "Galma Shune",
+      "age": 60,
+      "occupation": "Registry night guard",
+      "bio": "Keeps the sign-out book after 17:00.",
+      "community": "Borana",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_gate",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Borana man, about 60, a guard's greatcoat and a walking stick, an anxious, honest face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mother",
+      "role": "witness",
+      "name": "Halima Golicha",
+      "age": 58,
+      "occupation": "Abdia's mother",
+      "statementOnly": true,
+      "bio": "Reported her daughter missing.",
+      "community": "Borana",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_home",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_digi",
+      "name": "The digitisation room",
+      "within": "loc_registry"
+    },
+    {
+      "id": "plc_recroom",
+      "name": "The records room",
+      "within": "loc_registry"
+    },
+    {
+      "id": "plc_gate",
+      "name": "The registry gate",
+      "within": "loc_registry"
+    },
+    {
+      "id": "plc_office",
+      "name": "The registrar's office",
+      "within": "loc_registry"
+    },
+    {
+      "id": "plc_stage",
+      "name": "The tuk-tuk stage"
+    },
+    {
+      "id": "plc_river",
+      "name": "The Isiolo river"
+    },
+    {
+      "id": "plc_vehicle",
+      "name": "The project vehicle"
+    },
+    {
+      "id": "plc_garissa",
+      "name": "Garissa"
+    },
+    {
+      "id": "plc_mosque",
+      "name": "The mosque committee room"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_registry",
+      "name": "Isiolo county land registry",
+      "kind": "scene",
+      "description": "A single-storey government building: a records room of steel cabinets and buff folders; a back room converted three months ago into the \"digitisation room\", with two scanners, a laptop, archive boxes and one locked steel cabinet; the registrar's office; a guard's table at the gate.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_signout",
+          "label": "Guard's sign-out book",
+          "pos": [
+            15,
+            60
+          ],
+          "yields": "ev_signout",
+          "text": "Friday's page."
+        },
+        {
+          "id": "hs_galma",
+          "label": "Galma Shune",
+          "pos": [
+            10,
+            45
+          ],
+          "yields": "ev_galma",
+          "text": "The night guard, called in early."
+        },
+        {
+          "id": "hs_index",
+          "label": "Index cards and dispatch book",
+          "pos": [
+            35,
+            35
+          ],
+          "yields": "ev_index",
+          "text": "The records room: index cards against the shelves."
+        },
+        {
+          "id": "hs_tray",
+          "label": "Registrar's tray",
+          "pos": [
+            55,
+            30
+          ],
+          "yields": "ev_dispatch",
+          "text": "A pad of dispatch notes in the registrar's tray."
+        },
+        {
+          "id": "hs_corr",
+          "label": "Correspondence file",
+          "pos": [
+            60,
+            40
+          ],
+          "yields": "ev_withdrawal",
+          "text": "The registry's correspondence file.",
+          "unlock": {
+            "fact": "f_index"
+          }
+        },
+        {
+          "id": "hs_digi",
+          "label": "The digitisation room",
+          "pos": [
+            80,
+            55
+          ],
+          "yields": "ev_room",
+          "text": "The scanning table, the cabinet, the floor."
+        },
+        {
+          "id": "hs_laptop",
+          "label": "Digitisation laptop",
+          "pos": [
+            85,
+            40
+          ],
+          "yields": "ev_scanlog",
+          "text": "The scan log. Florence has the password.",
+          "unlock": {
+            "fact": "f_flo_claim"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the back room of a small county land registry at night, two scanners on a table, stacked archive boxes, a steel cabinet with one drawer slightly ajar, buff folders on shelves"
+      },
+      "expected": [
+        {
+          "id": "x_37",
+          "text": "Every scan numbered in sequence, and every file that leaves the building in the dispatch book",
+          "because": "f_index",
+          "present": false,
+          "fact": "f_abs_37"
+        },
+        {
+          "id": "x_signout",
+          "text": "Every staff member signs out after 17:00",
+          "because": "f_galma_rule",
+          "present": false,
+          "fact": "f_abs_signout"
+        },
+        {
+          "id": "x_scans",
+          "text": "Two scanners, a laptop, the archive boxes",
+          "because": "f_ob",
+          "present": true
+        }
+      ]
+    },
+    {
+      "id": "loc_home",
+      "name": "Abdia's family home",
+      "kind": "location",
+      "description": "A compound on the edge of Isiolo town, 2 km from the registry. Her mother by the gate; the tuk-tuk driver who brings Abdia home every evening.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_mother",
+          "label": "Her mother and the tuk-tuk driver",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_missing",
+          "text": "Abdia's mother and the driver."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a family compound on the edge of Isiolo town in the morning, a tin gate, a tuk-tuk waiting outside"
+      },
+      "expected": [
+        {
+          "id": "x_phone",
+          "text": "A phone carried out of the building moves from mast to mast",
+          "because": "f_rec_abdia",
+          "present": false,
+          "fact": "f_abs_phone"
+        }
+      ]
+    },
+    {
+      "id": "loc_guest",
+      "name": "The team's guesthouse",
+      "kind": "location",
+      "description": "A guesthouse 1 km from the registry where the Nairobi team stays. The white project vehicle is parked in the yard.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_vehicle",
+          "label": "The project vehicle",
+          "pos": [
+            30,
+            60
+          ],
+          "yields": "ev_odometer",
+          "text": "The vehicle, its work ticket on the dashboard."
+        },
+        {
+          "id": "hs_staff",
+          "label": "Guesthouse staff",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_florence",
+          "text": "The cook and the cleaner."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a modest guesthouse yard in Isiolo, a white government project vehicle with red murram dust on its tyres"
+      },
+      "expected": [
+        {
+          "id": "x_ticket",
+          "text": "Every trip in a government vehicle on its work ticket",
+          "because": "f_omar_rule",
+          "present": false,
+          "fact": "f_abs_ticket"
+        },
+        {
+          "id": "x_signal",
+          "text": "His phone on the Isiolo mast all evening, if he drove straight to the guesthouse",
+          "because": "f_rec_emojong",
+          "present": false,
+          "fact": "f_abs_signal"
+        }
+      ]
+    },
+    {
+      "id": "loc_police",
+      "name": "Isiolo police station",
+      "kind": "location",
+      "description": "The station, its visitors' book, and the exhibits desk.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_visitors",
+          "label": "Visitors' book",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_kennedy",
+          "text": "Friday's visitors."
+        },
+        {
+          "id": "hs_exhibits",
+          "label": "Exhibits request",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_fb_slip",
+          "text": "A request to the Nakuru exhibits store, case 40.",
+          "unlock": {
+            "fact": "f_withdrawal"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small county police station in Isiolo, a front desk with a visitors' book, a wire exhibits cage behind"
+      }
+    },
+    {
+      "id": "loc_pit",
+      "name": "The murram pit, km 32, Garba Tula road",
+      "kind": "location",
+      "description": "An abandoned murram pit off the Garba Tula road, 32 km from Isiolo, red earth and thornbush.",
+      "unlock": {
+        "fact": "f_rec_emojong"
+      },
+      "hotspots": [
+        {
+          "id": "hs_pit",
+          "label": "The pit",
+          "pos": [
+            50,
+            60
+          ],
+          "yields": "ev_pit",
+          "text": "Cpl. Ewoi follows a single set of tyre tracks off the road."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "an abandoned red murram pit beside a gravel road through thornbush at dusk, no people in focus"
+      }
+    },
+    {
+      "id": "loc_drawer",
+      "name": "Drawer 14 of the team's cabinet",
+      "kind": "location",
+      "description": "The bottom drawer of the steel cabinet in the digitisation room. Emojong's key, on his ring.",
+      "unlock": {
+        "fact": "f_body"
+      },
+      "hotspots": [
+        {
+          "id": "hs_drawer",
+          "label": "Drawer 14",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_drawer",
+          "text": "Search under warrant."
+        },
+        {
+          "id": "hs_green",
+          "label": "The green notebook",
+          "pos": [
+            65,
+            45
+          ],
+          "yields": "ev_notebook",
+          "text": "Abdia's notebook, opened at the last page.",
+          "unlock": {
+            "fact": "f_greenbook"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "an open steel cabinet drawer packed with buff land files, a green notebook on top, an old cloth-bound field book in a plastic bag at the back"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_missing",
+      "type": "witness",
+      "title": "Statements: Abdia's mother and the driver",
+      "render": "statement",
+      "body": {
+        "speaker": "p_mother"
+      },
+      "facts": [
+        "f_tuktuk",
+        "f_mother"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_signout",
+      "type": "document",
+      "title": "Guard's sign-out book",
+      "render": "logBook",
+      "body": {
+        "text": "Friday after 17:00: F. Atieno 17:20. Registrar H. Guracha 17:45. J. Emojong 19:55, \"project vehicle — archive boxes\". No sign-out for A. Golicha."
+      },
+      "facts": [
+        "f_signout"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "sign-out book"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_galma",
+      "type": "witness",
+      "title": "Statement: Galma Shune, night guard",
+      "render": "statement",
+      "body": {
+        "speaker": "p_galma"
+      },
+      "facts": [
+        "f_galma_rule",
+        "f_galma_back",
+        "f_galma_trolley"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_phone",
+      "type": "phone",
+      "title": "Records ①: Abdia's line",
+      "render": "manifest",
+      "body": {
+        "abdia": "On the Isiolo mast until 18:41, then off. It never moved."
+      },
+      "facts": [
+        "f_rec_abdia"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_tuktuk",
+          "f_abs_signout"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_scanlog",
+      "type": "document",
+      "title": "Digitisation laptop: scan log",
+      "render": "logBook",
+      "body": {
+        "text": "Sequence 0001–4,812. Thirty-seven numbers missing in the middle of runs."
+      },
+      "facts": [
+        "f_scanlog"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "scan log"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_index",
+      "type": "document",
+      "title": "Registry index cards and dispatch book",
+      "render": "logBook",
+      "body": {
+        "text": "Thirty-seven files on the index cards are absent from the shelves. The dispatch book has no entry for any of them leaving."
+      },
+      "facts": [
+        "f_index"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "index cards"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_dispatch",
+      "type": "document",
+      "title": "Pre-signed dispatch notes (registrar's tray)",
+      "render": "form",
+      "body": {
+        "text": "A pad of dispatch notes signed by Registrar Guracha, details blank. Three used, typed: \"Dispatched to Nairobi for digitisation.\""
+      },
+      "facts": [
+        "f_dispatch"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": false,
+        "forger": "p_emojong",
+        "kind": "dispatch notes"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a pad of government dispatch notes with a registrar's signature on blank forms, one typed over"
+      }
+    },
+    {
+      "id": "ev_withdrawal",
+      "type": "document",
+      "title": "Withdrawal requisition: Garba Tula file",
+      "render": "form",
+      "body": {
+        "text": "Requisition to withdraw the Garba Tula community registration file \"for digitisation\". Signed, with the officer code J.E./SRO/0331."
+      },
+      "facts": [
+        "f_withdrawal"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "withdrawal requisition"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_fb_slip",
+      "type": "document",
+      "title": "Exhibit from case 40: FB 4471 withdrawal slip",
+      "render": "form",
+      "body": {
+        "text": "Sent from the Nakuru exhibits store: the slip that withdrew field book FB 4471, Bahati Block 9, eleven years ago. Signed, with an officer code."
+      },
+      "facts": [
+        "f_fb_slip"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "withdrawal slip"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_room",
+      "type": "physical",
+      "title": "The digitisation room",
+      "render": "object",
+      "body": {
+        "punch": "The heavy steel two-hole binding punch on the scanning table, wiped.",
+        "grout": "The grout round one floor tile stained and scrubbed.",
+        "cap": "A tiny phone-camera lens cap under the cabinet: from Abdia's phone case."
+      },
+      "facts": [
+        "f_punch",
+        "f_grout",
+        "f_lenscap"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a heavy steel two-hole binding punch on a scanning table, a scrubbed floor tile, a tiny lens cap under a steel cabinet"
+      }
+    },
+    {
+      "id": "ev_odometer",
+      "type": "document",
+      "title": "Project vehicle: odometer and work ticket",
+      "render": "logBook",
+      "body": {
+        "ticket": "No journey recorded since Thursday.",
+        "odo": "The odometer reads 64 km more than Thursday's last ticket entry.",
+        "omar": "Omar: \"Every trip in a government vehicle goes on the work ticket.\""
+      },
+      "facts": [
+        "f_odo",
+        "f_omar_rule"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "work ticket"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_records_emojong",
+      "type": "phone",
+      "title": "Records ②: Emojong's line",
+      "render": "manifest",
+      "body": {
+        "emojong": "On the Isiolo mast until 20:20, then off-network (the Garba Tula road beyond coverage) until 21:15."
+      },
+      "facts": [
+        "f_rec_emojong"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_signout",
+          "f_odo"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_pit",
+      "type": "physical",
+      "title": "Tracker's reading (Cpl Ewoi Lomuke)",
+      "render": "object",
+      "body": {
+        "tracks": "At km 32, a single vehicle turned off to the pit; tracks filled in by wind: over a day old. Heavy footprints carrying something; the small wheels of a trolley.",
+        "body": "Abdia's body in the pit."
+      },
+      "facts": [
+        "f_pit",
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "tyre tracks turning off a gravel road into a red murram pit, small trolley-wheel marks and heavy footprints softened by wind"
+      }
+    },
+    {
+      "id": "ev_drawer",
+      "type": "physical",
+      "title": "Drawer 14",
+      "render": "object",
+      "body": {
+        "files": "The 37 Isiolo files, among them the Garba Tula registration file (case 74), and their scans on a flash drive.",
+        "notebook": "Abdia's green notebook.",
+        "phone": "Abdia's phone, switched off.",
+        "fieldbook": "Wrapped in a plastic bag at the back: an old surveyor's field book, cloth-bound, water-stained: \"J. MWENDA — working book — Bahati Block 9\"."
+      },
+      "facts": [
+        "f_files37",
+        "f_greenbook",
+        "f_phone_drawer",
+        "f_fieldbook"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_pit",
+          "f_rec_emojong",
+          "f_scanlog"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a steel drawer packed with buff land files, a green notebook, and an old water-stained cloth-bound field book in a plastic bag"
+      }
+    },
+    {
+      "id": "ev_notebook",
+      "type": "document",
+      "title": "Abdia's green notebook",
+      "render": "note",
+      "body": {
+        "list": "Thirty-seven file numbers, each marked \"not back\", begun three months ago when the team arrived.",
+        "last": "Thursday: \"J.E. on phone, 16:10: 'Tell the fourth floor the north is clean by month end.'\""
+      },
+      "facts": [
+        "f_shadow",
+        "f_fourth"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "notebook"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_jattani",
+      "type": "document",
+      "title": "Garissa hotel register and bus ticket",
+      "render": "logBook",
+      "body": {
+        "text": "Jattani Halkano in Garissa for his cousin's wedding, Thursday to Sunday."
+      },
+      "facts": [
+        "f_jattani"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kennedy",
+      "type": "document",
+      "title": "Isiolo police visitors' book",
+      "render": "logBook",
+      "body": {
+        "text": "Friday: Kennedy Mulwa, statement on the Garba Tula case, 16:30–19:00."
+      },
+      "facts": [
+        "f_visitors",
+        "f_kennedy"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_florence",
+      "type": "witness",
+      "title": "Statement: guesthouse staff",
+      "render": "statement",
+      "body": {
+        "speaker": "p_florence"
+      },
+      "facts": [
+        "f_florence",
+        "f_omar_guest"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_imam",
+      "type": "witness",
+      "title": "Statement: the imam",
+      "render": "statement",
+      "body": {
+        "speaker": "p_guracha"
+      },
+      "facts": [
+        "f_guracha"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_emo_prints",
+      "type": "physical",
+      "title": "Fingerprints: Julius Emojong",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention; he refused."
+      },
+      "facts": [
+        "f_emo_printset"
+      ],
+      "gate": null,
+      "detention": "p_emojong",
+      "image": null
+    },
+    {
+      "id": "ev_typed",
+      "type": "forensic",
+      "title": "Document view: raking light, dispatch note",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_typed"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_dispatch"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Dr. Chebii, Isiolo)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_pit"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_blood",
+      "type": "forensic",
+      "title": "Lab: trace (punch, grout)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_blood"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_room"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints (punch handle)",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_prints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_room",
+          "ev_emo_prints"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_docexam",
+      "type": "forensic",
+      "title": "Questioned Documents Lab: dispatch notes",
+      "render": "labReport",
+      "body": {
+        "test": "document"
+      },
+      "facts": [
+        "f_docexam"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "document",
+        "hours": 10,
+        "needs": [
+          "ev_dispatch"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_hand",
+      "type": "forensic",
+      "title": "Questioned Documents Lab: the two withdrawals",
+      "render": "labReport",
+      "body": {
+        "test": "handwriting"
+      },
+      "facts": [
+        "f_hand"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "handwriting",
+        "hours": 10,
+        "needs": [
+          "ev_withdrawal",
+          "ev_fb_slip"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Abdia Golicha, records clerk at the Isiolo land registry, has been missing since she failed to come home from work on Friday.",
+      "kind": "true",
+      "about": [
+        "p_abdia",
+        "loc_registry"
+      ],
+      "at": {
+        "from": "17:30",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_tuktuk",
+      "text": "The tuk-tuk driver waited at the registry gate from 17:30 to 18:15 as every evening; she never came out.",
+      "kind": "true",
+      "about": [
+        "p_abdia",
+        "plc_gate"
+      ],
+      "at": {
+        "from": "18:15",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_mother",
+      "text": "Her mother: on Thursday Abdia said, \"I've found something at work. I'm writing it down.\" Her fiancé Jattani's family and hers were arguing over the wedding.",
+      "kind": "true",
+      "about": [
+        "p_mother",
+        "p_abdia",
+        "p_jattani"
+      ]
+    },
+    {
+      "id": "f_signout",
+      "text": "Sign-out book, Friday after 17:00: Florence 17:20, Registrar Guracha 17:45, Emojong 19:55 \"project vehicle — archive boxes\". No sign-out for Abdia.",
+      "kind": "true",
+      "about": [
+        "loc_registry",
+        "p_emojong"
+      ],
+      "at": {
+        "from": "19:55",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_galma_rule",
+      "text": "Galma: every staff member signs the book after 17:00. \"I check names, not faces.\"",
+      "kind": "true",
+      "about": [
+        "p_galma"
+      ]
+    },
+    {
+      "id": "f_galma_back",
+      "text": "Galma: Mr. Emojong came back in at about 18:25, \"for something he'd forgotten\", and didn't come out again until 19:55.",
+      "kind": "true",
+      "about": [
+        "p_emojong"
+      ],
+      "where": {
+        "person": "p_emojong",
+        "place": "plc_digi",
+        "from": "18:25",
+        "to": "19:55"
+      }
+    },
+    {
+      "id": "f_galma_trolley",
+      "text": "Galma: at 19:55 Emojong pushed out a trolley with a big archive box. \"He said it was going to Nairobi. Abdia? I thought she'd gone at five with the others.\"",
+      "kind": "true",
+      "about": [
+        "p_emojong"
+      ]
+    },
+    {
+      "id": "f_rec_abdia",
+      "text": "Records ①: Abdia's phone was on the Isiolo mast until 18:41, then switched off. It never moved.",
+      "kind": "true",
+      "about": [
+        "p_abdia"
+      ],
+      "at": {
+        "from": "18:41",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_scanlog",
+      "text": "Scan log: sequence 0001–4,812, with 37 numbers missing in the middle of runs.",
+      "kind": "true",
+      "about": [
+        "plc_digi"
+      ]
+    },
+    {
+      "id": "f_index",
+      "text": "Index cards: 37 files absent from the shelves, and no dispatch-book entry for any of them leaving.",
+      "kind": "true",
+      "about": [
+        "plc_recroom"
+      ]
+    },
+    {
+      "id": "f_dispatch",
+      "text": "Registrar's tray: a pad of dispatch notes pre-signed by Guracha with the details blank; three used, typed \"Dispatched to Nairobi for digitisation\".",
+      "kind": "true",
+      "about": [
+        "p_guracha",
+        "p_emojong"
+      ]
+    },
+    {
+      "id": "f_typed",
+      "text": "Under raking light: on a used dispatch note the typing lies on top of the signature's ink. The form was signed blank and filled in later.",
+      "kind": "true",
+      "about": [
+        "p_emojong"
+      ]
+    },
+    {
+      "id": "f_docexam",
+      "text": "Questioned Documents Lab: all three used notes were typed over signatures made on blank forms, on the team's typewriter ribbon.",
+      "kind": "true",
+      "about": [
+        "p_emojong"
+      ]
+    },
+    {
+      "id": "f_withdrawal",
+      "text": "The Garba Tula file was withdrawn \"for digitisation\" on a requisition signed with the officer code J.E./SRO/0331.",
+      "kind": "true",
+      "about": [
+        "p_emojong"
+      ]
+    },
+    {
+      "id": "f_fb_slip",
+      "text": "Case 40 exhibit: the slip that withdrew FB 4471, Bahati Block 9, eleven years ago, signed with an officer code.",
+      "kind": "true",
+      "about": [
+        "p_emojong"
+      ]
+    },
+    {
+      "id": "f_hand",
+      "text": "Examiner Ayugi: the Garba Tula requisition and the FB 4471 slip are in the same hand, with the same officer code: J.E./SRO/0331.",
+      "kind": "true",
+      "about": [
+        "p_emojong"
+      ],
+      "spine": "t_registry"
+    },
+    {
+      "id": "f_punch",
+      "text": "In the digitisation room: the steel two-hole binding punch on the scanning table, wiped.",
+      "kind": "true",
+      "about": [
+        "plc_digi"
+      ]
+    },
+    {
+      "id": "f_grout",
+      "text": "The grout round one floor tile in the digitisation room is stained and scrubbed.",
+      "kind": "true",
+      "about": [
+        "plc_digi"
+      ]
+    },
+    {
+      "id": "f_lenscap",
+      "text": "Under the cabinet: a phone-camera lens cap from Abdia's phone case.",
+      "kind": "true",
+      "about": [
+        "p_abdia",
+        "plc_digi"
+      ]
+    },
+    {
+      "id": "f_odo",
+      "text": "The project vehicle's work ticket shows no journey since Thursday; the odometer reads 64 km more.",
+      "kind": "true",
+      "about": [
+        "plc_vehicle"
+      ]
+    },
+    {
+      "id": "f_omar_rule",
+      "text": "Omar: every trip in a government vehicle goes on the work ticket.",
+      "kind": "true",
+      "about": [
+        "plc_vehicle"
+      ]
+    },
+    {
+      "id": "f_rec_emojong",
+      "text": "Records ②: Emojong's phone left the Isiolo mast at 20:20 and was off-network, out on the Garba Tula road, until 21:15.",
+      "kind": "true",
+      "about": [
+        "p_emojong"
+      ],
+      "at": {
+        "from": "20:20",
+        "to": "21:15",
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_pit",
+      "text": "Ewoi: at km 32 of the Garba Tula road a single vehicle turned off to an old murram pit, over a day ago; heavy footprints carrying something, and trolley wheels.",
+      "kind": "true",
+      "about": [
+        "loc_pit"
+      ]
+    },
+    {
+      "id": "f_body",
+      "text": "Abdia's body lies in the murram pit.",
+      "kind": "true",
+      "about": [
+        "p_abdia",
+        "loc_pit"
+      ]
+    },
+    {
+      "id": "f_files37",
+      "text": "In drawer 14: the 37 Isiolo files, the Garba Tula registration file among them, and their scans on a flash drive.",
+      "kind": "true",
+      "about": [
+        "loc_drawer"
+      ]
+    },
+    {
+      "id": "f_greenbook",
+      "text": "In drawer 14: Abdia's green notebook.",
+      "kind": "true",
+      "about": [
+        "p_abdia"
+      ]
+    },
+    {
+      "id": "f_phone_drawer",
+      "text": "In drawer 14: Abdia's phone, switched off.",
+      "kind": "true",
+      "about": [
+        "p_abdia"
+      ]
+    },
+    {
+      "id": "f_fieldbook",
+      "text": "At the back of drawer 14, in a plastic bag: \"J. MWENDA — working book — Bahati Block 9\", cloth-bound and water-stained. The field book taken from Joseph Mwenda's body twelve years ago.",
+      "kind": "true",
+      "about": [
+        "p_emojong"
+      ],
+      "spine": "t_joseph"
+    },
+    {
+      "id": "f_shadow",
+      "text": "Abdia's shadow list, begun three months ago when the team arrived: 37 file numbers, each marked \"not back\".",
+      "kind": "true",
+      "about": [
+        "p_abdia"
+      ]
+    },
+    {
+      "id": "f_fourth",
+      "text": "Abdia's last entry, Thursday: \"J.E. on phone, 16:10: 'Tell the fourth floor the north is clean by month end.'\"",
+      "kind": "true",
+      "about": [
+        "p_emojong"
+      ],
+      "at": {
+        "from": "16:10",
+        "to": null,
+        "day": "Thu"
+      },
+      "spine": "t_kivuli"
+    },
+    {
+      "id": "f_jattani",
+      "text": "Jattani was in Garissa for his cousin's wedding from Thursday to Sunday.",
+      "kind": "true",
+      "about": [
+        "p_jattani"
+      ],
+      "where": {
+        "person": "p_jattani",
+        "place": "plc_garissa",
+        "from": "00:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_visitors",
+      "text": "Police visitors' book: Kennedy Mulwa visited the registry on Friday afternoon, then gave a statement at the station.",
+      "kind": "true",
+      "about": [
+        "p_kennedy"
+      ]
+    },
+    {
+      "id": "f_kennedy",
+      "text": "Kennedy was at the police station giving his statement from 16:30 to 19:00.",
+      "kind": "true",
+      "about": [
+        "p_kennedy"
+      ],
+      "where": {
+        "person": "p_kennedy",
+        "place": "loc_police",
+        "from": "16:30",
+        "to": "19:00"
+      }
+    },
+    {
+      "id": "f_florence",
+      "text": "Guesthouse staff: Florence came in at 17:40 and ate dinner with the cook at 19:00.",
+      "kind": "true",
+      "about": [
+        "p_florence"
+      ],
+      "where": {
+        "person": "p_florence",
+        "place": "loc_guest",
+        "from": "17:40",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_omar_guest",
+      "text": "Guesthouse staff: Omar was at the guesthouse from 17:30, without the vehicle from about 19:00.",
+      "kind": "true",
+      "about": [
+        "p_omar"
+      ],
+      "where": {
+        "person": "p_omar",
+        "place": "loc_guest",
+        "from": "17:30",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_guracha",
+      "text": "The imam: Guracha chaired the mosque committee from 18:00 to 20:00.",
+      "kind": "true",
+      "about": [
+        "p_guracha"
+      ],
+      "where": {
+        "person": "p_guracha",
+        "place": "plc_mosque",
+        "from": "18:00",
+        "to": "20:00"
+      }
+    },
+    {
+      "id": "f_emo_printset",
+      "text": "Fingerprints taken from Emojong in detention.",
+      "kind": "true",
+      "about": [
+        "p_emojong"
+      ]
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Post-mortem: one heavy blow to the side of the head from a narrow steel edge.",
+      "kind": "true",
+      "about": [
+        "p_abdia"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death early on Friday evening; her 13:00 lunch partly digested, consistent with 18:00–19:00.",
+      "kind": "true",
+      "about": [
+        "p_abdia"
+      ],
+      "at": {
+        "from": "18:00",
+        "to": "19:00",
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_blood",
+      "text": "Lab: Abdia's blood on the binding punch and in the scrubbed grout.",
+      "kind": "true",
+      "about": [
+        "p_abdia",
+        "plc_digi"
+      ]
+    },
+    {
+      "id": "f_prints",
+      "text": "Lab: a partial print under the punch's lever matches Emojong.",
+      "kind": "true",
+      "about": [
+        "p_emojong"
+      ]
+    },
+    {
+      "id": "f_abs_37",
+      "text": "Missing: 37 scan numbers and 37 files, with no dispatch entries.",
+      "kind": "true",
+      "about": [
+        "loc_registry"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_signout",
+      "text": "Missing: there's no sign-out for Abdia.",
+      "kind": "true",
+      "about": [
+        "p_abdia"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_ticket",
+      "text": "Missing: there's no journey on the vehicle's work ticket.",
+      "kind": "true",
+      "about": [
+        "plc_vehicle"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_signal",
+      "text": "Missing: there's no signal from his phone for an hour.",
+      "kind": "true",
+      "about": [
+        "p_emojong"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_phone",
+      "text": "Missing: her phone never moved after 18:41.",
+      "kind": "true",
+      "about": [
+        "p_abdia"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_emo_drove",
+      "text": "Emojong: \"I left the registry at eight with archive boxes and drove straight to the guesthouse.\"",
+      "kind": "lie",
+      "about": [
+        "p_emojong"
+      ]
+    },
+    {
+      "id": "f_emo_files",
+      "text": "Emojong: \"Every file I've touched is accounted for in the dispatch book.\"",
+      "kind": "lie",
+      "about": [
+        "p_emojong"
+      ]
+    },
+    {
+      "id": "f_emo_never",
+      "text": "Emojong: \"I never saw Abdia after five.\"",
+      "kind": "lie",
+      "about": [
+        "p_emojong"
+      ]
+    },
+    {
+      "id": "f_emo_drawer",
+      "text": "Emojong, about the drawer, and nothing else: \"You think I'm the desk. I'm a drawer, Detective. Drawers get opened. Desks don't.\"",
+      "kind": "true",
+      "about": [
+        "p_emojong"
+      ],
+      "spine": "t_kivuli"
+    },
+    {
+      "id": "f_emo_punch",
+      "text": "Emojong: \"I have never handled the team's binding equipment.\"",
+      "kind": "lie",
+      "about": [
+        "p_emojong"
+      ]
+    },
+    {
+      "id": "f_gur_dispatch",
+      "text": "Guracha: \"Every file that left this registry had a dispatch note and a line in the book.\"",
+      "kind": "lie",
+      "about": [
+        "p_guracha"
+      ]
+    },
+    {
+      "id": "f_gur_reveal",
+      "text": "Guracha: Nairobi told him to pre-sign dispatch forms so the team wouldn't wait; he signed twenty. Abdia asked him about the missing files last week and he told her not to make trouble.",
+      "kind": "true",
+      "about": [
+        "p_guracha",
+        "p_emojong",
+        "p_abdia"
+      ]
+    },
+    {
+      "id": "f_omar_parked",
+      "text": "Omar: \"The vehicle was parked at the guesthouse all weekend.\"",
+      "kind": "lie",
+      "about": [
+        "p_omar"
+      ]
+    },
+    {
+      "id": "f_omar_reveal",
+      "text": "Omar: \"Mr. Emojong asked for the key at seven on Friday and gave me ten thousand. He said a private errand, don't write it. He brought it back at half past nine. There was murram dust on the tyres.\"",
+      "kind": "true",
+      "about": [
+        "p_omar",
+        "p_emojong"
+      ]
+    },
+    {
+      "id": "f_jat_claim",
+      "text": "Jattani: \"Our families argued about the bride price. I was in Garissa.\"",
+      "kind": "claim",
+      "about": [
+        "p_jattani"
+      ]
+    },
+    {
+      "id": "f_jat_eating",
+      "text": "Jattani: \"She said there was a man at work who was 'eating files'. She laughed about it.\"",
+      "kind": "true",
+      "about": [
+        "p_jattani",
+        "p_abdia"
+      ]
+    },
+    {
+      "id": "f_ken_claim",
+      "text": "Kennedy: \"I came to give her the minutes copy. I was at the police station until seven.\"",
+      "kind": "claim",
+      "about": [
+        "p_kennedy"
+      ]
+    },
+    {
+      "id": "f_ken_file",
+      "text": "Kennedy: \"She told me a Nairobi officer had already taken the Garba Tula file. She was angry.\"",
+      "kind": "true",
+      "about": [
+        "p_kennedy",
+        "p_abdia"
+      ]
+    },
+    {
+      "id": "f_flo_claim",
+      "text": "Florence: \"I scan. Mr. Emojong keeps the drawers.\"",
+      "kind": "claim",
+      "about": [
+        "p_florence"
+      ]
+    },
+    {
+      "id": "f_flo_rescan",
+      "text": "Florence: \"Sometimes he'd tell me to rescan a file and the first scan number would be gone. I thought it was the software.\"",
+      "kind": "true",
+      "about": [
+        "p_florence",
+        "p_emojong"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_emojong",
+      "stance": "lawyered",
+      "lawyered": {
+        "advocate": "Advocate Sharon Kiprop",
+        "reopenedBy": [
+          "f_omar_reveal"
+        ],
+        "line": "My client is a senior civil servant on official duty. No comment."
+      },
+      "intro": "Emojong sits very straight, reading glasses on their cord, Advocate Sharon Kiprop beside him. \"My client is a senior civil servant on official duty. No comment.\"",
+      "claims": [
+        "f_emo_drove",
+        "f_emo_files",
+        "f_emo_never"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_emo_punch",
+          "after": "f_emo_drawer"
+        }
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_drawer",
+          "reply": "\"You think I'm the desk. I'm a drawer, Detective. Drawers get opened. Desks don't.\" Advocate Kiprop ends the interview.",
+          "reveals": [
+            "f_emo_drawer"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_guracha",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_index"
+      ],
+      "intro": "Guracha closes his office door. \"Every file that left this registry had a dispatch note and a line in the book.\"",
+      "claims": [
+        "f_gur_dispatch"
+      ],
+      "yields": [
+        "ev_imam"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_omar",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_odometer"
+      ],
+      "intro": "Omar keeps the vehicle key in his fist. \"The vehicle was parked at the guesthouse all weekend.\"",
+      "claims": [
+        "f_omar_parked"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_jattani",
+      "stance": "cooperative",
+      "intro": "Jattani has come back from Garissa overnight. \"Our families argued about the bride price. I was in Garissa.\"",
+      "claims": [
+        "f_jat_claim"
+      ],
+      "yields": [
+        "ev_jattani"
+      ],
+      "topics": [
+        {
+          "about": "ev_missing",
+          "reply": "\"She said there was a man at work who was 'eating files'. She laughed about it.\"",
+          "reveals": [
+            "f_jat_eating"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_kennedy",
+      "stance": "cooperative",
+      "intro": "Kennedy has been cooperating since Garba Tula. \"I came to give her the minutes copy. I was at the police station until seven.\"",
+      "claims": [
+        "f_ken_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_signout",
+          "reply": "\"She told me a Nairobi officer had already taken the Garba Tula file. She was angry.\"",
+          "reveals": [
+            "f_ken_file"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_florence",
+      "stance": "cooperative",
+      "intro": "Florence twists her lanyard. \"I scan. Mr. Emojong keeps the drawers.\"",
+      "claims": [
+        "f_flo_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_scanlog",
+          "reply": "\"Sometimes he'd tell me to rescan a file and the first scan number would be gone. I thought it was the software.\"",
+          "reveals": [
+            "f_flo_rescan"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_galma",
+      "stance": "cooperative",
+      "intro": "Galma holds his sign-out book in both hands.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_gur",
+      "claim": "f_gur_dispatch",
+      "brokenBy": [
+        "f_index",
+        "f_dispatch"
+      ],
+      "reveals": [
+        "f_gur_reveal"
+      ],
+      "reaction": "\"Nairobi said the team was urgent and I should pre-sign dispatch forms so they wouldn't wait for me. I signed twenty. I didn't think. Abdia asked me about the missing files last week and I told her not to make trouble.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_omar",
+      "claim": "f_omar_parked",
+      "brokenBy": [
+        "f_odo"
+      ],
+      "reveals": [
+        "f_omar_reveal"
+      ],
+      "reaction": "\"Mr. Emojong asked for the key at seven on Friday and gave me ten thousand. He said a private errand, don't write it. He brought it back at half past nine. There was murram dust on the tyres.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_emo_drove",
+      "claim": "f_emo_drove",
+      "brokenBy": [
+        "f_rec_emojong",
+        "f_pit"
+      ],
+      "reveals": [],
+      "reaction": "Emojong looks at the map of the Garba Tula road and folds his glasses. Advocate Kiprop: \"My client has nothing to add.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_emo_files",
+      "claim": "f_emo_files",
+      "brokenBy": [
+        "f_index",
+        "f_scanlog",
+        "f_typed"
+      ],
+      "reveals": [],
+      "reaction": "Emojong reads the index list without expression. \"The ministry will account for its files.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_emo_never",
+      "claim": "f_emo_never",
+      "brokenBy": [
+        "f_rec_abdia",
+        "f_galma_back",
+        "f_lenscap"
+      ],
+      "reveals": [],
+      "reaction": "For the first time he doesn't answer at once. Advocate Kiprop puts a hand on his sleeve.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_emo_punch",
+      "claim": "f_emo_punch",
+      "brokenBy": [
+        "f_prints"
+      ],
+      "reveals": [],
+      "reaction": "Emojong takes off his glasses. Advocate Kiprop ends the interview.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_emojong",
+      "text": "Julius Emojong",
+      "category": "person",
+      "ref": "p_emojong",
+      "unlock": {
+        "anyOf": [
+          "f_signout"
+        ]
+      }
+    },
+    {
+      "id": "w_guracha",
+      "text": "Hassan Guracha",
+      "category": "person",
+      "ref": "p_guracha",
+      "unlock": {
+        "anyOf": [
+          "f_signout"
+        ]
+      }
+    },
+    {
+      "id": "w_omar",
+      "text": "Omar Hiribae",
+      "category": "person",
+      "ref": "p_omar",
+      "unlock": {
+        "anyOf": [
+          "f_odo"
+        ]
+      }
+    },
+    {
+      "id": "w_jattani",
+      "text": "Jattani Halkano",
+      "category": "person",
+      "ref": "p_jattani",
+      "unlock": {
+        "anyOf": [
+          "f_mother"
+        ]
+      }
+    },
+    {
+      "id": "w_kennedy",
+      "text": "Kennedy Mulwa",
+      "category": "person",
+      "ref": "p_kennedy",
+      "unlock": {
+        "anyOf": [
+          "f_visitors"
+        ]
+      }
+    },
+    {
+      "id": "w_florence",
+      "text": "Florence Atieno",
+      "category": "person",
+      "ref": "p_florence",
+      "unlock": {
+        "anyOf": [
+          "f_signout"
+        ]
+      }
+    },
+    {
+      "id": "pl_digi",
+      "text": "the digitisation room",
+      "category": "place",
+      "ref": "plc_digi",
+      "unlock": {
+        "anyOf": [
+          "f_punch"
+        ]
+      }
+    },
+    {
+      "id": "pl_recroom",
+      "text": "the records room",
+      "category": "place",
+      "ref": "plc_recroom",
+      "unlock": {
+        "anyOf": [
+          "f_index"
+        ]
+      }
+    },
+    {
+      "id": "pl_gate",
+      "text": "the registry gate",
+      "category": "place",
+      "ref": "plc_gate",
+      "unlock": {
+        "anyOf": [
+          "f_tuktuk"
+        ]
+      }
+    },
+    {
+      "id": "pl_guest1",
+      "text": "the guesthouse",
+      "category": "place",
+      "ref": "loc_guest",
+      "unlock": {
+        "anyOf": [
+          "f_signout"
+        ]
+      }
+    },
+    {
+      "id": "pl_stage",
+      "text": "the tuk-tuk stage",
+      "category": "place",
+      "ref": "plc_stage",
+      "unlock": {
+        "anyOf": [
+          "f_tuktuk"
+        ]
+      }
+    },
+    {
+      "id": "pl_office",
+      "text": "the registrar's office",
+      "category": "place",
+      "ref": "plc_office",
+      "unlock": {
+        "anyOf": [
+          "f_dispatch"
+        ]
+      }
+    },
+    {
+      "id": "pl_pit",
+      "text": "the murram pit on the Garba Tula road",
+      "category": "place",
+      "ref": "loc_pit",
+      "unlock": {
+        "anyOf": [
+          "f_pit"
+        ]
+      }
+    },
+    {
+      "id": "pl_guest2",
+      "text": "the guesthouse",
+      "category": "place",
+      "ref": "loc_guest",
+      "unlock": {
+        "anyOf": [
+          "f_signout"
+        ]
+      }
+    },
+    {
+      "id": "pl_river",
+      "text": "the Isiolo river",
+      "category": "place",
+      "ref": "plc_river",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_drawer",
+      "text": "drawer 14",
+      "category": "place",
+      "ref": "loc_drawer",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "pl_vehicle",
+      "text": "the project vehicle",
+      "category": "place",
+      "ref": "plc_vehicle",
+      "unlock": {
+        "anyOf": [
+          "f_odo"
+        ]
+      }
+    },
+    {
+      "id": "pl_home",
+      "text": "her family's home",
+      "category": "place",
+      "ref": "loc_home",
+      "unlock": {
+        "anyOf": [
+          "f_mother"
+        ]
+      }
+    },
+    {
+      "id": "h_punch",
+      "text": "striking her with a steel binding punch",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_drawer",
+      "text": "striking her with a file-cabinet drawer",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_cable",
+      "text": "strangling her with a scanner cable",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_fall",
+      "text": "a fall in the records room",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_vehicle",
+      "text": "running her down with the project vehicle",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_odo"
+        ]
+      }
+    },
+    {
+      "id": "m_files",
+      "text": "she'd found and listed the files he was removing from the registry",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_shadow"
+        ]
+      }
+    },
+    {
+      "id": "m_wedding",
+      "text": "a dispute over her wedding",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_mother"
+        ]
+      }
+    },
+    {
+      "id": "m_forms",
+      "text": "a registrar protecting his pre-signed forms",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_dispatch"
+        ]
+      }
+    },
+    {
+      "id": "m_company",
+      "text": "a company's anger over the Garba Tula case",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_visitors"
+        ]
+      }
+    },
+    {
+      "id": "m_phone",
+      "text": "a theft of her phone",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_rec_abdia"
+        ]
+      }
+    },
+    {
+      "id": "d_dispatch",
+      "text": "The pre-signed dispatch notes",
+      "category": "document",
+      "ref": "ev_dispatch",
+      "unlock": {
+        "anyOf": [
+          "f_dispatch"
+        ]
+      }
+    },
+    {
+      "id": "d_scanlog",
+      "text": "The scan log",
+      "category": "document",
+      "ref": "ev_scanlog",
+      "unlock": {
+        "anyOf": [
+          "f_scanlog"
+        ]
+      }
+    },
+    {
+      "id": "d_signout",
+      "text": "The sign-out book",
+      "category": "document",
+      "ref": "ev_signout",
+      "unlock": {
+        "anyOf": [
+          "f_signout"
+        ]
+      }
+    },
+    {
+      "id": "d_ticket",
+      "text": "The vehicle's work ticket",
+      "category": "document",
+      "ref": "ev_odometer",
+      "unlock": {
+        "anyOf": [
+          "f_odo"
+        ]
+      }
+    },
+    {
+      "id": "d_withdrawal",
+      "text": "The withdrawal requisition",
+      "category": "document",
+      "ref": "ev_withdrawal",
+      "unlock": {
+        "anyOf": [
+          "f_withdrawal"
+        ]
+      }
+    },
+    {
+      "id": "t_typed",
+      "text": "the typing lies on top of a signature made on a blank form",
+      "category": "tell",
+      "by": [
+        "f_typed",
+        "f_docexam"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_typed"
+        ]
+      }
+    },
+    {
+      "id": "t_retired",
+      "text": "a retired stamp",
+      "category": "tell",
+      "by": [
+        "f_typed"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_dispatch"
+        ]
+      }
+    },
+    {
+      "id": "t_parcel",
+      "text": "a parcel missing from the index map",
+      "category": "tell",
+      "by": [
+        "f_typed"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_dispatch"
+        ]
+      }
+    },
+    {
+      "id": "t_deadwit",
+      "text": "a witness who was dead",
+      "category": "tell",
+      "by": [
+        "f_typed"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_dispatch"
+        ]
+      }
+    },
+    {
+      "id": "t_batch",
+      "text": "a batch number that doesn't exist",
+      "category": "tell",
+      "by": [
+        "f_typed"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_dispatch"
+        ]
+      }
+    },
+    {
+      "id": "t_index",
+      "text": "an index number belonging to someone else",
+      "category": "tell",
+      "by": [
+        "f_typed"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_dispatch"
+        ]
+      }
+    },
+    {
+      "id": "a_37",
+      "text": "37 scan numbers and 37 files, with no dispatch entries",
+      "category": "absence",
+      "ref": "f_abs_37",
+      "unlock": {
+        "anyOf": [
+          "f_abs_37"
+        ]
+      }
+    },
+    {
+      "id": "a_signout",
+      "text": "there's no sign-out for Abdia",
+      "category": "absence",
+      "ref": "f_abs_signout",
+      "unlock": {
+        "anyOf": [
+          "f_abs_signout"
+        ]
+      }
+    },
+    {
+      "id": "a_ticket",
+      "text": "there's no journey on the vehicle's work ticket",
+      "category": "absence",
+      "ref": "f_abs_ticket",
+      "unlock": {
+        "anyOf": [
+          "f_abs_ticket"
+        ]
+      }
+    },
+    {
+      "id": "a_signal",
+      "text": "there's no signal from his phone for an hour",
+      "category": "absence",
+      "ref": "f_abs_signal",
+      "unlock": {
+        "anyOf": [
+          "f_abs_signal"
+        ]
+      }
+    },
+    {
+      "id": "a_phone",
+      "text": "her phone never moved after 18:41",
+      "category": "absence",
+      "ref": "f_abs_phone",
+      "unlock": {
+        "anyOf": [
+          "f_abs_phone"
+        ]
+      }
+    },
+    {
+      "id": "k_inside",
+      "text": "the files were being removed from inside the registry without a record",
+      "category": "conclusion",
+      "by": [
+        "f_abs_37",
+        "f_index",
+        "f_scanlog",
+        "f_files37"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_37"
+        ]
+      }
+    },
+    {
+      "id": "k_ran",
+      "text": "Abdia ran away",
+      "category": "conclusion",
+      "by": [
+        "f_body"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_37"
+        ]
+      }
+    },
+    {
+      "id": "k_proper",
+      "text": "the files were sent to Nairobi properly",
+      "category": "conclusion",
+      "by": [
+        "f_index"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_37"
+        ]
+      }
+    },
+    {
+      "id": "k_software",
+      "text": "the software lost the scans",
+      "category": "conclusion",
+      "by": [
+        "f_files37"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_37"
+        ]
+      }
+    },
+    {
+      "id": "k_unused",
+      "text": "the vehicle was never used",
+      "category": "conclusion",
+      "by": [
+        "f_odo"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_37"
+        ]
+      }
+    },
+    {
+      "id": "k_five",
+      "text": "Abdia left with the others at five",
+      "category": "conclusion",
+      "by": [
+        "f_tuktuk"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_37"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_fb",
+      "text": "Field book FB 4471, Bahati Block 9 (case 40)",
+      "category": "pin",
+      "pin": "case-040:f_hannah_withdrawn",
+      "unlock": {
+        "anyOf": [
+          "f_hand"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_doreen",
+      "text": "Doreen Kathambi's commissioner stamp (cases 60 and 70)",
+      "category": "pin",
+      "pin": "case-060:f_comm_stamp",
+      "unlock": {
+        "anyOf": [
+          "f_hand"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_mv",
+      "text": "The oval \"MV\" seal (case 66)",
+      "category": "pin",
+      "pin": "case-066:f_mv_seal",
+      "unlock": {
+        "anyOf": [
+          "f_hand"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_seal",
+      "text": "The REGISTRAR OF TITLES seal order (case 10)",
+      "category": "pin",
+      "pin": "case-010:f_order_mvua",
+      "unlock": {
+        "anyOf": [
+          "f_hand"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_container",
+      "text": "The container of \"printing paper\", Shimanzi (case 30)",
+      "category": "pin",
+      "pin": "case-030:f_container_oval",
+      "unlock": {
+        "anyOf": [
+          "f_hand"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} in {where1} and left her body at {where2}, by {how}, because {why}. {document} was forged, as shown by {tell}. That {missing} shows that {conclusion}. The man who removed the Isiolo files also withdrew {pin} eleven years ago.",
+    "fixed": {
+      "victim": "Abdia Golicha"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_11y",
+                  "label": "Eleven years ago",
+                  "from": null,
+                  "to": null,
+                  "day": "11 years ago"
+                },
+                {
+                  "id": "sl_3m",
+                  "label": "Three months ago",
+                  "from": null,
+                  "to": null,
+                  "day": "3 months ago"
+                },
+                {
+                  "id": "sl_thu",
+                  "label": "Thursday 16:10",
+                  "from": "16:10",
+                  "to": "16:10",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_1700",
+                  "label": "Friday 17:00",
+                  "from": "17:00",
+                  "to": "17:00",
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Friday 18:25–18:41",
+                  "from": "18:25",
+                  "to": "18:41",
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_1955",
+                  "label": "Friday 19:55",
+                  "from": "19:55",
+                  "to": "19:55",
+                  "day": "Fri"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_fb",
+                  "text": "Emojong withdraws FB 4471",
+                  "slot": "sl_11y",
+                  "by": [
+                    "f_fb_slip",
+                    "f_hand"
+                  ],
+                  "why": "The case 40 slip, eleven years ago, in his hand.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_fb_slip"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_list",
+                  "text": "Abdia starts her shadow list",
+                  "slot": "sl_3m",
+                  "by": [
+                    "f_shadow"
+                  ],
+                  "why": "When the team arrived, three months ago.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_shadow"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_fourth",
+                  "text": "Abdia overhears \"the fourth floor\"",
+                  "slot": "sl_thu",
+                  "by": [
+                    "f_fourth"
+                  ],
+                  "why": "Her last entry: Thursday 16:10.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_fourth"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Abdia is killed in the digitisation room",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_galma_back",
+                    "f_rec_abdia",
+                    "f_aut_tod"
+                  ],
+                  "why": "After Emojong came back in at 18:25 and before her phone was switched off at 18:41.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_out",
+                  "text": "Emojong signs out with \"archive boxes\"",
+                  "slot": "sl_1955",
+                  "by": [
+                    "f_signout",
+                    "f_galma_trolley"
+                  ],
+                  "why": "The sign-out book: 19:55.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_signout"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_1700",
+                  "by": [
+                    "f_tuktuk",
+                    "f_abs_signout"
+                  ],
+                  "why": "\"She left with the others at five\"? The driver waited until 18:15 and she never signed out."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A field book eleven years ago, a list begun three months ago, a phone call on Thursday, a phone switched off at 18:41, and a trolley at five to eight.",
+          "fail": [
+            "Five o'clock is what the guard assumed. The book says otherwise.",
+            "When did he come back in?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where1",
+            "category": "place",
+            "answer": "pl_digi",
+            "pool": [
+              "pl_digi",
+              "pl_recroom",
+              "pl_gate",
+              "pl_guest1",
+              "pl_stage",
+              "pl_office"
+            ]
+          },
+          {
+            "id": "where2",
+            "category": "place",
+            "answer": "pl_pit",
+            "subject": "other",
+            "note": "Where her body was left.",
+            "pool": [
+              "pl_pit",
+              "pl_guest2",
+              "pl_river",
+              "pl_drawer",
+              "pl_vehicle",
+              "pl_home"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "Killed at his own scanning table. Carried out in his archive box, and left 32 km out in a murram pit.",
+          "fail": [
+            "Her blood is in the digitisation room's grout.",
+            "Drawer 14 held her notebook and her phone. Not her."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_emojong"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Back in at 18:25, out at 19:55 with a trolley, 64 km on a vehicle that went nowhere, and his print under the punch.",
+          "fail": [
+            "Guracha signed blank forms; he was at the mosque.",
+            "Omar sold a key; he was at the guesthouse."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_punch"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A narrow steel edge. The punch, wiped.",
+          "fail": [
+            "Drawer edges are rolled. The wound is narrow.",
+            "No vehicle injuries."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_files"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Thirty-seven files, \"not back\". She wrote them down because nobody else would.",
+          "fail": [
+            "Jattani was in Garissa, and the families settled on Thursday.",
+            "Kennedy was at the police station helping us."
+          ]
+        }
+      },
+      {
+        "id": "g_forgery",
+        "kind": "forgery",
+        "blanks": [
+          {
+            "id": "document",
+            "category": "document",
+            "answer": "d_dispatch"
+          },
+          {
+            "id": "tell",
+            "category": "tell",
+            "answer": "t_typed"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Signed blank, typed later. The registrar signed a lie in advance and Nairobi filled it in.",
+          "fail": [
+            "The scan log is honest. It's the gaps that talk.",
+            "The requisition is genuinely his. That's why it convicts him."
+          ]
+        }
+      },
+      {
+        "id": "g_absence",
+        "kind": "absence",
+        "blanks": [
+          {
+            "id": "missing",
+            "category": "absence",
+            "answer": "a_37"
+          },
+          {
+            "id": "conclusion",
+            "category": "conclusion",
+            "answer": "k_inside"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Thirty-seven numbers missing, thirty-seven holes on the shelf, not one line in the book. Removed from inside.",
+          "fail": [
+            "The vehicle and his phone belong to the WHERE, Amani. I asked about the files.",
+            "Her phone not moving tells me where she died. Not what was taken."
+          ]
+        }
+      },
+      {
+        "id": "g_spine",
+        "kind": "spine",
+        "blanks": [
+          {
+            "id": "pin",
+            "category": "pin",
+            "answer": "w_pin_fb",
+            "spine": true
+          }
+        ],
+        "prosecutor": {
+          "pass": "J.E./SRO/0331. The same hand withdrew your father's field book.",
+          "fail": [
+            "Doreen's stamp was Mvua's tool. This is the registry's own officer code.",
+            "Read Ayugi's report on the two withdrawals."
+          ]
+        }
+      }
+    ],
+    "halima": "A clerk kept a list in a green notebook because nobody else would. Put her name on the first page of whatever we build from this, Amani."
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_digi",
+      "from": "18:25",
+      "to": "18:41",
+      "note": "From Emojong coming back in at 18:25 to her phone being switched off at 18:41; the post-mortem allows 18:00–19:00."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_tuktuk",
+          "f_mother",
+          "f_signout",
+          "f_galma_rule",
+          "f_abs_signout",
+          "f_rec_abdia",
+          "f_abs_phone"
+        ],
+        "concludes": "Abdia never left the building alive; her phone died inside it at 18:41."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_scanlog",
+          "f_flo_rescan",
+          "f_index",
+          "f_abs_37",
+          "f_dispatch",
+          "f_typed",
+          "f_docexam",
+          "f_gur_dispatch",
+          "f_gur_reveal",
+          "f_emo_files"
+        ],
+        "concludes": "37 files were removed from inside without a record, on dispatch forms signed blank and typed later.",
+        "answers": [
+          "missing",
+          "conclusion",
+          "document",
+          "tell"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_galma_back",
+          "f_galma_trolley",
+          "f_emo_never",
+          "f_lenscap"
+        ],
+        "concludes": "Emojong came back in at 18:25 and left at 19:55 with a trolley and a large archive box.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_odo",
+          "f_omar_rule",
+          "f_abs_ticket",
+          "f_omar_parked",
+          "f_omar_reveal",
+          "f_rec_emojong",
+          "f_abs_signal",
+          "f_emo_drove"
+        ],
+        "concludes": "The project vehicle went 32 km out and back while his phone was off-network."
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_pit",
+          "f_body",
+          "f_aut_blow",
+          "f_aut_tod"
+        ],
+        "concludes": "Her body lay in the murram pit at km 32 of the Garba Tula road.",
+        "answers": [
+          "where2"
+        ]
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_punch",
+          "f_grout",
+          "f_blood",
+          "f_prints",
+          "f_emo_punch"
+        ],
+        "concludes": "Julius Emojong struck Abdia with the steel binding punch in the digitisation room, because she had found and listed the files he was removing.",
+        "answers": [
+          "who",
+          "how",
+          "where1"
+        ]
+      },
+      {
+        "id": "s7",
+        "from": [
+          "s6",
+          "f_files37",
+          "f_greenbook",
+          "f_phone_drawer",
+          "f_shadow",
+          "f_fourth",
+          "f_withdrawal",
+          "f_fb_slip",
+          "f_hand",
+          "f_fieldbook",
+          "case-040:f_hannah_withdrawn"
+        ],
+        "concludes": "Drawer 14 held the 37 files, her list and her phone. The same officer code withdrew FB 4471 eleven years ago, and his drawer held Joseph Mwenda's working field book.",
+        "answers": [
+          "why",
+          "pin"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_recroom",
+        "blank": "where1",
+        "by": [
+          "f_blood",
+          "f_grout"
+        ],
+        "why": "Her blood is in the digitisation room's grout."
+      },
+      {
+        "word": "pl_gate",
+        "blank": "where1",
+        "by": [
+          "f_tuktuk"
+        ],
+        "why": "The driver waited at the gate; she never came out."
+      },
+      {
+        "word": "pl_guest1",
+        "blank": "where1",
+        "by": [
+          "f_rec_abdia"
+        ],
+        "why": "Her phone never left the registry mast or moved."
+      },
+      {
+        "word": "pl_stage",
+        "blank": "where1",
+        "by": [
+          "f_tuktuk"
+        ],
+        "why": "She never reached the stage."
+      },
+      {
+        "word": "pl_office",
+        "blank": "where1",
+        "by": [
+          "f_blood"
+        ],
+        "why": "The blood is in the digitisation room."
+      },
+      {
+        "word": "pl_guest2",
+        "blank": "where2",
+        "by": [
+          "f_body"
+        ],
+        "why": "She was found in the pit."
+      },
+      {
+        "word": "pl_river",
+        "blank": "where2",
+        "by": [
+          "f_body"
+        ],
+        "why": "She was found in the pit."
+      },
+      {
+        "word": "pl_drawer",
+        "blank": "where2",
+        "by": [
+          "f_phone_drawer",
+          "f_body"
+        ],
+        "why": "The drawer held her phone and notebook, not her."
+      },
+      {
+        "word": "pl_vehicle",
+        "blank": "where2",
+        "by": [
+          "f_body",
+          "f_pit"
+        ],
+        "why": "The vehicle carried her; it didn't keep her."
+      },
+      {
+        "word": "pl_home",
+        "blank": "where2",
+        "by": [
+          "f_tuktuk",
+          "f_body"
+        ],
+        "why": "She never came home."
+      },
+      {
+        "word": "w_guracha",
+        "blank": "who",
+        "by": [
+          "f_guracha"
+        ],
+        "why": "Guracha chaired the mosque committee 18:00–20:00."
+      },
+      {
+        "word": "w_omar",
+        "blank": "who",
+        "by": [
+          "f_omar_guest"
+        ],
+        "why": "Omar was at the guesthouse from 17:30."
+      },
+      {
+        "word": "w_jattani",
+        "blank": "who",
+        "by": [
+          "f_jattani"
+        ],
+        "why": "Jattani was in Garissa."
+      },
+      {
+        "word": "w_kennedy",
+        "blank": "who",
+        "by": [
+          "f_kennedy"
+        ],
+        "why": "Kennedy was at the police station 16:30–19:00."
+      },
+      {
+        "word": "w_florence",
+        "blank": "who",
+        "by": [
+          "f_florence"
+        ],
+        "why": "Florence was at the guesthouse from 17:40."
+      },
+      {
+        "word": "h_drawer",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "A narrow steel edge; drawer edges are rolled."
+      },
+      {
+        "word": "h_cable",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "A blow, not strangulation."
+      },
+      {
+        "word": "h_fall",
+        "blank": "how",
+        "by": [
+          "f_blood",
+          "f_aut_blow"
+        ],
+        "why": "She was struck in the digitisation room."
+      },
+      {
+        "word": "h_vehicle",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "No vehicle injuries."
+      },
+      {
+        "word": "m_wedding",
+        "blank": "why",
+        "by": [
+          "f_jattani"
+        ],
+        "why": "Jattani was in Garissa."
+      },
+      {
+        "word": "m_forms",
+        "blank": "why",
+        "by": [
+          "f_guracha",
+          "f_gur_reveal"
+        ],
+        "why": "Guracha's fear was of trouble, and he was at the mosque."
+      },
+      {
+        "word": "m_company",
+        "blank": "why",
+        "by": [
+          "f_kennedy",
+          "f_ken_file"
+        ],
+        "why": "Kennedy was giving his statement to the police."
+      },
+      {
+        "word": "m_phone",
+        "blank": "why",
+        "by": [
+          "f_phone_drawer"
+        ],
+        "why": "Her phone is in drawer 14, switched off, unsold."
+      },
+      {
+        "word": "d_scanlog",
+        "blank": "document",
+        "by": [
+          "f_scanlog",
+          "f_flo_rescan"
+        ],
+        "why": "The scan log is genuine; its gaps are the evidence."
+      },
+      {
+        "word": "d_signout",
+        "blank": "document",
+        "by": [
+          "f_galma_rule"
+        ],
+        "why": "Galma's book is honest."
+      },
+      {
+        "word": "d_ticket",
+        "blank": "document",
+        "by": [
+          "f_omar_reveal"
+        ],
+        "why": "The ticket is true; the journey was never written."
+      },
+      {
+        "word": "d_withdrawal",
+        "blank": "document",
+        "by": [
+          "f_hand"
+        ],
+        "why": "The requisition is genuinely his."
+      },
+      {
+        "word": "t_retired",
+        "blank": "tell",
+        "by": [
+          "f_typed"
+        ],
+        "why": "The notes carry no stamp."
+      },
+      {
+        "word": "t_parcel",
+        "blank": "tell",
+        "by": [
+          "f_typed"
+        ],
+        "why": "Dispatch notes have no map."
+      },
+      {
+        "word": "t_deadwit",
+        "blank": "tell",
+        "by": [
+          "f_typed"
+        ],
+        "why": "No witnesses on a dispatch note."
+      },
+      {
+        "word": "t_batch",
+        "blank": "tell",
+        "by": [
+          "f_typed"
+        ],
+        "why": "No batch numbers."
+      },
+      {
+        "word": "t_index",
+        "blank": "tell",
+        "by": [
+          "f_typed"
+        ],
+        "why": "The file numbers are the real ones."
+      },
+      {
+        "word": "a_signout",
+        "blank": "missing",
+        "by": [
+          "f_abs_signout"
+        ],
+        "why": "It shows she never left, not what was taken."
+      },
+      {
+        "word": "a_ticket",
+        "blank": "missing",
+        "by": [
+          "f_abs_ticket"
+        ],
+        "why": "It belongs to the journey, not the files."
+      },
+      {
+        "word": "a_signal",
+        "blank": "missing",
+        "by": [
+          "f_abs_signal"
+        ],
+        "why": "It belongs to the road, not the files."
+      },
+      {
+        "word": "a_phone",
+        "blank": "missing",
+        "by": [
+          "f_abs_phone"
+        ],
+        "why": "It shows where she died."
+      },
+      {
+        "word": "k_ran",
+        "blank": "conclusion",
+        "by": [
+          "f_body"
+        ],
+        "why": "She was found in the pit."
+      },
+      {
+        "word": "k_proper",
+        "blank": "conclusion",
+        "by": [
+          "f_index"
+        ],
+        "why": "No dispatch entries."
+      },
+      {
+        "word": "k_software",
+        "blank": "conclusion",
+        "by": [
+          "f_files37"
+        ],
+        "why": "The files and scans were in drawer 14."
+      },
+      {
+        "word": "k_unused",
+        "blank": "conclusion",
+        "by": [
+          "f_odo"
+        ],
+        "why": "64 km on the odometer."
+      },
+      {
+        "word": "k_five",
+        "blank": "conclusion",
+        "by": [
+          "f_tuktuk"
+        ],
+        "why": "The driver waited until 18:15."
+      },
+      {
+        "word": "w_pin_doreen",
+        "blank": "pin",
+        "by": [
+          "case-060:f_comm_stamp",
+          "f_hand"
+        ],
+        "why": "Doreen's stamp was a tool Mvua rented. The officer code is the registry's own."
+      },
+      {
+        "word": "w_pin_mv",
+        "blank": "pin",
+        "by": [
+          "case-066:f_mv_seal",
+          "f_hand"
+        ],
+        "why": "Mvua made the MV seal. This is a withdrawal, in one officer's hand."
+      },
+      {
+        "word": "w_pin_seal",
+        "blank": "pin",
+        "by": [
+          "case-010:f_order_mvua",
+          "f_hand"
+        ],
+        "why": "A seal order, not a withdrawal."
+      },
+      {
+        "word": "w_pin_container",
+        "blank": "pin",
+        "by": [
+          "case-030:f_container_oval",
+          "f_hand"
+        ],
+        "why": "Paper in a container, not a file withdrawn."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Eleven years ago Julius Emojong withdraws Joseph Mwenda's official field book, FB 4471, from the national registry. It never comes back. He keeps something else, given to him to destroy: Joseph's own working field book, taken from his body on the Bahati road.",
+        "image": null
+      },
+      {
+        "text": "Three months ago he arrives in Isiolo with a \"digitisation team\". Files are scanned, the scans deleted, the paper locked in drawer 14, the dispatch notes typed on forms signed blank. Abdia starts a list in a green notebook. On Thursday at 16:10 she hears him on the phone: \"Tell the fourth floor the north is clean by month end.\"",
+        "image": null
+      },
+      {
+        "text": "Friday. She stays late, finds the drawer 14 key in the scanner tray and opens the drawer. At 18:25 he comes back for his key and finds her photographing the files. He strikes her with the steel binding punch, switches off her phone at 18:41, and locks her notebook and phone in the drawer.",
+        "image": "plc_digi"
+      },
+      {
+        "text": "At 19:00 he buys the vehicle key from Omar. At 19:55 he signs out, \"project vehicle — archive boxes\", and wheels her out in an archive box on a trolley. His phone leaves the Isiolo mast at 20:20.",
+        "image": null
+      },
+      {
+        "text": "At km 32 of the Garba Tula road he leaves her in an abandoned murram pit. He is back on the Isiolo mast at 21:15 and returns the key at 21:30, murram dust on the tyres.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "Abdia's 37 files go back on the Isiolo shelves, each with a new index card in Insp. Halake's handwriting: \"Returned. Abdia Golicha's list.\" The Garba Tula community's registration file is among them. At a community assembly the lease is cancelled; the women's group chair reads Abdia's name out first."
+    },
+    {
+      "beat": "Emojong is charged with Abdia's murder. He says nothing more.",
+      "files": [
+        {
+          "thread": "t_kivuli",
+          "text": "Emojong: \"You think I'm the desk. I'm a drawer, Detective. Drawers get opened. Desks don't.\""
+        },
+        {
+          "thread": "t_mvua",
+          "text": "The Garba Tula file, one of Mvua's leases, was in drawer 14."
+        }
+      ]
+    },
+    {
+      "beat": "Joseph's working field book goes into the evidence store under the new OB number from his reopened file. The player can open it.",
+      "scene": "fieldBook",
+      "beats": [
+        "Joseph's handwriting: beacon angles, chainage, a careful sketch of Block 9 with every plot numbered.",
+        "On the last used page, in pencil: \"Visited again today by the man from Lands, 4th floor. Offered money to change BH9/14. Refused. Told Ch. Insp. Wairimu.\"",
+        "The date is three weeks before his death."
+      ],
+      "files": [
+        {
+          "thread": "t_joseph",
+          "text": "Joseph's working field book, from drawer 14. Last note: \"the man from Lands, 4th floor. Offered money to change BH9/14. Refused.\""
+        }
+      ]
+    },
+    {
+      "beat": "The phone rings. Mwalimu, very quietly: \"Fourth floor. Yes. That's the floor.\" A pause. \"Come home, Amani. The rest is in Nairobi.\"",
+      "files": [
+        {
+          "thread": "t_kivuli",
+          "text": "\"The fourth floor\": from Abdia's notebook, Joseph's field book and Mwalimu. Three sources now."
+        }
+      ]
+    },
+    {
+      "beat": "Pattern File: t_registry closes as identified: Julius Emojong (statement pending).",
+      "files": [
+        {
+          "thread": "t_registry",
+          "text": "Identified: Julius Emojong, J.E./SRO/0331. Withdrew FB 4471; kept Joseph's working field book. Statement pending."
+        }
+      ]
+    },
+    {
+      "beat": "Collectible: the key to drawer 14, a small brass key on a ring with a cardboard tag in Abdia's handwriting: \"Ask him.\" She tagged it in the scanner tray before she opened the drawer."
+    },
+    {
+      "beat": "Amani's notebook, the region's last line: \"Fourth floor. Three people have said it now. Dad wrote it down first.\""
+    }
+  ],
+  "clockPlan": {
+    "note": "Three stamps, the maximum: records on Abdia's line, records on Emojong's line, and the warrant on drawer 14. Emojong is lawyered until Omar admits the 64 km. The blood, document and handwriting exams go before detention; detain him when the body is found, and the prints (6 h + 4) come back well inside 24 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_registry",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_signout",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_galma",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_galma"
+      },
+      {
+        "do": "travel",
+        "target": "loc_home",
+        "hours": 0.25,
+        "from": "loc_registry"
+      },
+      {
+        "do": "visit",
+        "target": "loc_home",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_missing",
+        "hours": 1
+      },
+      {
+        "do": "records",
+        "target": "ev_phone"
+      },
+      {
+        "do": "travel",
+        "target": "loc_registry",
+        "hours": 0.25,
+        "from": "loc_home"
+      },
+      {
+        "do": "visit",
+        "target": "loc_registry",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_index",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_dispatch",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_room",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_withdrawal",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_guracha"
+      },
+      {
+        "do": "press",
+        "target": "c_gur"
+      },
+      {
+        "do": "interview",
+        "target": "p_florence"
+      },
+      {
+        "do": "read",
+        "target": "ev_scanlog",
+        "hours": 1
+      },
+      {
+        "do": "submit",
+        "target": "ev_blood"
+      },
+      {
+        "do": "submit",
+        "target": "ev_docexam"
+      },
+      {
+        "do": "travel",
+        "target": "loc_guest",
+        "hours": 0.25,
+        "from": "loc_registry"
+      },
+      {
+        "do": "visit",
+        "target": "loc_guest",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_odometer",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_florence",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_omar"
+      },
+      {
+        "do": "press",
+        "target": "c_omar"
+      },
+      {
+        "do": "records",
+        "target": "ev_records_emojong"
+      },
+      {
+        "do": "reopen",
+        "target": "p_emojong",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_emojong"
+      },
+      {
+        "do": "travel",
+        "target": "loc_police",
+        "hours": 0.25,
+        "from": "loc_guest"
+      },
+      {
+        "do": "visit",
+        "target": "loc_police",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_kennedy",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_kennedy"
+      },
+      {
+        "do": "read",
+        "target": "ev_fb_slip",
+        "hours": 0
+      },
+      {
+        "do": "submit",
+        "target": "ev_hand"
+      },
+      {
+        "do": "interview",
+        "target": "p_jattani"
+      },
+      {
+        "do": "travel",
+        "target": "loc_pit",
+        "hours": 1,
+        "from": "loc_police"
+      },
+      {
+        "do": "visit",
+        "target": "loc_pit",
+        "hours": 2
+      },
+      {
+        "do": "read",
+        "target": "ev_pit",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_guest",
+        "hours": 1,
+        "from": "loc_pit"
+      },
+      {
+        "do": "press",
+        "target": "c_emo_drove"
+      },
+      {
+        "do": "press",
+        "target": "c_emo_files"
+      },
+      {
+        "do": "press",
+        "target": "c_emo_never"
+      },
+      {
+        "do": "detain",
+        "target": "p_emojong"
+      },
+      {
+        "do": "sample",
+        "target": "ev_emo_prints"
+      },
+      {
+        "do": "travel",
+        "target": "loc_registry",
+        "hours": 0.25,
+        "from": "loc_guest"
+      },
+      {
+        "do": "search",
+        "target": "loc_drawer"
+      },
+      {
+        "do": "read",
+        "target": "ev_notebook",
+        "hours": 0
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "travel",
+        "target": "loc_guest",
+        "hours": 0.25,
+        "from": "loc_registry"
+      },
+      {
+        "do": "interview",
+        "target": "p_emojong"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 10
+      },
+      {
+        "do": "press",
+        "target": "c_emo_punch"
+      }
+    ],
+    "totalHours": 58.5
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_galma",
+        "line": "Ask Galma who came back in, Amani."
+      },
+      "tier2": {
+        "facts": [
+          "f_galma_back",
+          "f_rec_abdia"
+        ],
+        "line": "Emojong back in at 18:25. Her phone off at 18:41."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_room",
+        "line": "Look at the floor of the digitisation room. Then follow the vehicle."
+      },
+      "tier2": {
+        "facts": [
+          "f_grout",
+          "f_blood",
+          "f_pit"
+        ],
+        "line": "Her blood in the grout. Her body at km 32."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_odometer",
+        "line": "A government vehicle that went nowhere has 64 km on it."
+      },
+      "tier2": {
+        "facts": [
+          "f_omar_reveal",
+          "f_prints"
+        ],
+        "line": "He bought the key from Omar. His print is under the punch."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_room",
+        "line": "Something on the scanning table has been wiped."
+      },
+      "tier2": {
+        "facts": [
+          "f_punch",
+          "f_aut_blow"
+        ],
+        "line": "A narrow steel edge: the binding punch."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_notebook",
+        "line": "Read her list."
+      },
+      "tier2": {
+        "facts": [
+          "f_shadow",
+          "f_files37"
+        ],
+        "line": "Thirty-seven \"not back\". All thirty-seven in his drawer."
+      }
+    },
+    "g_forgery": {
+      "tier1": {
+        "point": "ev_dispatch",
+        "line": "Put a used dispatch note under a raking light."
+      },
+      "tier2": {
+        "facts": [
+          "f_typed",
+          "f_docexam"
+        ],
+        "line": "The typing lies on top of the signature."
+      }
+    },
+    "g_absence": {
+      "tier1": {
+        "point": "ev_scanlog",
+        "line": "Run a ruler down the scan numbers."
+      },
+      "tier2": {
+        "facts": [
+          "f_abs_37",
+          "f_index"
+        ],
+        "line": "Thirty-seven gaps, thirty-seven empty shelf places, no dispatch lines."
+      }
+    },
+    "g_spine": {
+      "tier1": {
+        "point": "ev_fb_slip",
+        "line": "Ask Nakuru for the slip from case 40."
+      },
+      "tier2": {
+        "facts": [
+          "f_hand",
+          "case-040:f_hannah_withdrawn"
+        ],
+        "line": "J.E./SRO/0331. Your father's field book, eleven years ago."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "sajili ya ardhi",
+      "def": "A land registry."
+    },
+    {
+      "term": "faili",
+      "def": "A file."
+    },
+    {
+      "term": "droo",
+      "def": "A drawer."
+    },
+    {
+      "term": "kitabu cha kutoka",
+      "def": "A sign-out book."
+    },
+    {
+      "term": "shimo la murram",
+      "def": "A murram pit."
+    },
+    {
+      "term": "murram",
+      "def": "Red laterite gravel used for roads."
+    },
+    {
+      "term": "kofia",
+      "def": "A brimless embroidered cap."
+    },
+    {
+      "term": "mwalimu",
+      "def": "Teacher. Ch. Insp. Esther Wairimu's callsign."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "gapRuler",
+      "fieldBookReader"
+    ],
+    "beatNotes": "The gap ruler. The scan log scrolls as a long strip of numbers; the player drags a ruler along it and every missing number drops out as a dotted gap. Matching each gap to an index card lights a file-shaped hole on the shelf photo. Thirty-seven holes. After the verdict, Joseph's working field book can be opened page by page."
+  }
+}

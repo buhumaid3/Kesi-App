@@ -1,0 +1,1026 @@
+{
+  "meta": {
+    "id": "case-008",
+    "number": 8,
+    "region": "nairobi-cbd",
+    "regionNumber": 1,
+    "title": "The 18:10 to Embakasi",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 9,
+    "date": "Friday 2 May",
+    "folderTab": "RAILWAY STATION"
+  },
+  "pattern": {
+    "crimePattern": "business partner cut out of a shared kiosk",
+    "noRealCaseRetold": true,
+    "notes": "Fictional kiosk and fictional train times; Nairobi Railway Station is a setting only.",
+    "tags": [
+      "blunt-force",
+      "business-partnership"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 2,
+    "redHerrings": 0,
+    "liars": 0,
+    "groups": [
+      "who"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness"
+    ],
+    "gatedActions": [],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 30/02/05",
+    "date": "Friday 2 May",
+    "time": "18:57",
+    "reportedBy": "Felix Wanyonyi, platform porter, Nairobi Railway Station",
+    "text": "Porter Felix Wanyonyi reports that Elijah Onyango (58), co-owner of the Stesheni Tea Kiosk on platform 2, was found dead in the kiosk storeroom at 18:50 during the evening rush.",
+    "facts": [
+      "f_ob_found"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_elijah",
+      "role": "victim",
+      "name": "Elijah Onyango",
+      "age": 58,
+      "occupation": "Co-owner, Stesheni Tea Kiosk; retired railway clerk",
+      "bio": "Worked forty years for the railway, then opened a tea kiosk on the platform he used to clerk on.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_station",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 50s, old railway-issue cardigan, flat cap, kind lined face, a tin teapot in hand, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_dorcas",
+      "role": "suspect",
+      "name": "Dorcas Moraa",
+      "age": 37,
+      "occupation": "Co-owner (in practice) of the kiosk",
+      "bio": "Has run the kiosk with Elijah for five years and put in half the money. Takes the 18:10 to Embakasi every weekday.",
+      "community": "Kisii",
+      "isCulprit": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_station",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 30s, short relaxed hair, apron over a cardigan, a commuter's handbag over her shoulder, guarded expression, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_felix",
+      "role": "suspect",
+      "name": "Felix Wanyonyi",
+      "age": 40,
+      "occupation": "Platform porter",
+      "bio": "Elijah accused him last month of stealing soda crates from the storeroom.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_parcels",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, around 40, faded blue porter's overalls, a hand trolley beside him, wary, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kamal",
+      "role": "suspect",
+      "name": "Kamal Shah",
+      "age": 50,
+      "occupation": "Bread and milk supplier",
+      "bio": "Delivers to the kiosk every afternoon. Elijah owed him for three months.",
+      "community": "Kenyan-Asian",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_licence_debt"
+      },
+      "at": "plc_bakery",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan-Asian man, around 50, short-sleeved shirt, delivery clipboard, reading glasses on a cord, tired and patient, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_janet",
+      "role": "witness",
+      "name": "Janet Achieng",
+      "age": 28,
+      "occupation": "Ticket clerk, window 3",
+      "bio": "Sells commuter tickets at window 3 every evening.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_window3",
+      "image": null
+    },
+    {
+      "id": "p_musa",
+      "role": "witness",
+      "name": "Musa Ngala",
+      "age": 63,
+      "occupation": "Ticket inspector on the 18:10",
+      "bio": "Has checked tickets on the Embakasi line for twenty years. Knows every regular.",
+      "community": "Mijikenda",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_timetable_punch"
+      },
+      "at": "plc_train",
+      "image": null
+    },
+    {
+      "id": "p_simon_w",
+      "role": "witness",
+      "name": "Simon Wachira",
+      "age": 45,
+      "occupation": "Shoe-shiner, platform 2",
+      "bio": "Shines shoes on a stool by the kiosk.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "statementOnly": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_station",
+      "image": null
+    },
+    {
+      "id": "p_foreman",
+      "role": "witness",
+      "name": "Rajesh Bhatt",
+      "age": 47,
+      "occupation": "Foreman at Kamal's bakery",
+      "statementOnly": true,
+      "bio": "Statement by phone.",
+      "community": "Kenyan-Asian",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_gate_kamal"
+      },
+      "at": "plc_bakery",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_storeroom",
+      "name": "Kiosk storeroom behind platform 2",
+      "within": "loc_station"
+    },
+    {
+      "id": "plc_parcels",
+      "name": "Parcels office"
+    },
+    {
+      "id": "plc_window3",
+      "name": "Ticket window 3"
+    },
+    {
+      "id": "plc_train",
+      "name": "The platform-2 gate, then the 18:10 train"
+    },
+    {
+      "id": "plc_bakery",
+      "name": "Kamal's bakery, Industrial Area"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_station",
+      "name": "Nairobi Railway Station, platform 2",
+      "kind": "scene",
+      "description": "Evening rush. Commuters pour through the gates for the Embakasi and Syokimau trains. The Stesheni Tea Kiosk has a counter on the platform and a storeroom behind it with a door onto a service corridor. A schedule board hangs over the platform.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Kiosk storeroom",
+          "pos": [
+            62,
+            58
+          ],
+          "yields": "ev_body",
+          "text": "Elijah lies between stacks of soda crates. One crate of empties has split open beside him. The report says he was struck with it."
+        },
+        {
+          "id": "hs_floor",
+          "label": "Storeroom floor",
+          "pos": [
+            70,
+            74
+          ],
+          "yields": "ev_ticket",
+          "text": "Under a crate, half trodden flat: a small cardboard commuter ticket."
+        },
+        {
+          "id": "hs_board",
+          "label": "Schedule board",
+          "pos": [
+            30,
+            12
+          ],
+          "yields": "ev_timetable",
+          "text": "A code-drawn timetable board. Tap a train row to see what it touches."
+        },
+        {
+          "id": "hs_drawer",
+          "label": "Kiosk drawer",
+          "pos": [
+            48,
+            46
+          ],
+          "yields": "ev_licence",
+          "text": "The kiosk's trading licence in a plastic sleeve, and a folded note."
+        },
+        {
+          "id": "hs_window",
+          "label": "Ticket window 3",
+          "pos": [
+            12,
+            50
+          ],
+          "yields": "ev_janet",
+          "text": "Janet Achieng has closed her window for ten minutes to talk."
+        },
+        {
+          "id": "hs_shoeshine",
+          "label": "Shoe-shine stool",
+          "pos": [
+            40,
+            70
+          ],
+          "yields": "ev_shoeshine",
+          "text": "Simon Wachira's stool and brushes, right beside the kiosk's service corridor."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a platform at Nairobi's old railway station at dusk, commuters' blur, a small tea kiosk with a tin counter and soda crates stacked behind it, a painted train timetable board overhead, warm station lamps, no faces in focus"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only."
+      },
+      "facts": [
+        "f_body_crate"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ticket",
+      "type": "physical",
+      "title": "Commuter ticket",
+      "render": "ticket",
+      "body": {
+        "train": "18:10 Nairobi → Embakasi",
+        "sold": "Window 3, 17:52",
+        "punch": "none"
+      },
+      "facts": [
+        "f_ticket_found",
+        "f_ticket_unpunched"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a small printed cardboard commuter rail ticket reading 'NAIROBI – EMBAKASI 18:10', unpunched, slightly crushed, on a concrete floor beside a soda crate"
+      }
+    },
+    {
+      "id": "ev_timetable",
+      "type": "physical",
+      "title": "Schedule board",
+      "render": "timetable",
+      "body": {
+        "rows": [
+          {
+            "train": "18:10 Embakasi",
+            "departed": "18:12"
+          },
+          {
+            "train": "18:25 Syokimau",
+            "departed": "18:27"
+          }
+        ],
+        "note": "Inspectors punch every ticket on board between Nairobi and Makadara."
+      },
+      "facts": [
+        "f_timetable_left",
+        "f_timetable_punch"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_licence",
+      "type": "physical",
+      "title": "Kiosk licence and note",
+      "render": "note",
+      "body": {
+        "licence": "Stesheni Tea Kiosk — licensee: E. Onyango",
+        "note": "Buyer Tuesday. Tell D. Pay K. Shah after sale."
+      },
+      "facts": [
+        "f_licence_name",
+        "f_licence_buyer",
+        "f_licence_debt"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_janet",
+      "type": "witness",
+      "title": "Statement: Janet Achieng",
+      "render": "statement",
+      "body": {
+        "speaker": "p_janet"
+      },
+      "facts": [
+        "f_janet_dorcas",
+        "f_janet_crash",
+        "f_janet_window"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_musa",
+      "type": "witness",
+      "title": "Statement: Musa Ngala",
+      "render": "statement",
+      "body": {
+        "speaker": "p_musa"
+      },
+      "facts": [
+        "f_musa_no_dorcas",
+        "f_musa_gate"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_shoeshine",
+      "type": "witness",
+      "title": "Statement: Simon Wachira",
+      "render": "statement",
+      "body": {
+        "speaker": "p_simon_w"
+      },
+      "facts": [
+        "f_shoeshine_dorcas"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_parcels",
+      "type": "physical",
+      "title": "Parcels office logbook",
+      "render": "logBook",
+      "body": {
+        "rows": [
+          {
+            "time": "17:58",
+            "by": "F. Wanyonyi"
+          },
+          {
+            "time": "18:04",
+            "by": "F. Wanyonyi"
+          },
+          {
+            "time": "18:15",
+            "by": "F. Wanyonyi"
+          },
+          {
+            "time": "18:22",
+            "by": "F. Wanyonyi"
+          }
+        ]
+      },
+      "facts": [
+        "f_parcels_felix"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gate",
+      "type": "physical",
+      "title": "Station vehicle gate log",
+      "render": "logBook",
+      "body": {
+        "rows": [
+          {
+            "vehicle": "Shah Bakery van",
+            "in": "17:20",
+            "out": "17:45"
+          }
+        ]
+      },
+      "facts": [
+        "f_gate_kamal"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_foreman",
+      "type": "witness",
+      "title": "Phone: bakery foreman",
+      "render": "statement",
+      "body": {
+        "speaker": "p_foreman",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_foreman_kamal"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Elijah Onyango was found dead in the kiosk storeroom on platform 2 at 18:50.",
+      "kind": "true",
+      "about": [
+        "p_elijah",
+        "plc_storeroom"
+      ]
+    },
+    {
+      "id": "f_body_crate",
+      "text": "Elijah was struck with a crate of empty soda bottles.",
+      "kind": "true",
+      "about": [
+        "p_elijah"
+      ]
+    },
+    {
+      "id": "f_ticket_found",
+      "text": "A commuter ticket was under a crate on the storeroom floor: 18:10 to Embakasi, sold at window 3 at 17:52.",
+      "kind": "true",
+      "about": [
+        "ev_ticket",
+        "plc_storeroom"
+      ]
+    },
+    {
+      "id": "f_ticket_unpunched",
+      "text": "The ticket has no punch hole.",
+      "kind": "true",
+      "about": [
+        "ev_ticket"
+      ]
+    },
+    {
+      "id": "f_timetable_left",
+      "text": "The 18:10 to Embakasi left at 18:12.",
+      "kind": "true",
+      "about": [
+        "ev_timetable"
+      ]
+    },
+    {
+      "id": "f_timetable_punch",
+      "text": "Inspectors punch every ticket on the train between Nairobi and Makadara.",
+      "kind": "true",
+      "about": [
+        "ev_timetable"
+      ]
+    },
+    {
+      "id": "f_licence_name",
+      "text": "The kiosk licence is in Elijah's name only.",
+      "kind": "true",
+      "about": [
+        "p_elijah",
+        "p_dorcas"
+      ]
+    },
+    {
+      "id": "f_licence_buyer",
+      "text": "Elijah's note: 'Buyer Tuesday. Tell D.'",
+      "kind": "true",
+      "about": [
+        "p_elijah",
+        "p_dorcas"
+      ]
+    },
+    {
+      "id": "f_licence_debt",
+      "text": "Elijah's note: 'Pay K. Shah after sale.' He owed the supplier, Kamal Shah.",
+      "kind": "true",
+      "about": [
+        "p_elijah",
+        "p_kamal"
+      ]
+    },
+    {
+      "id": "f_janet_dorcas",
+      "text": "Janet: \"Dorcas buys an 18:10 ticket every weekday. Today too, about ten to six.\"",
+      "kind": "true",
+      "about": [
+        "p_janet",
+        "p_dorcas"
+      ]
+    },
+    {
+      "id": "f_janet_crash",
+      "text": "Janet heard a crash of bottles from behind the kiosk at about 18:05 and thought someone had dropped a crate.",
+      "kind": "true",
+      "about": [
+        "p_janet",
+        "plc_storeroom"
+      ]
+    },
+    {
+      "id": "f_janet_window",
+      "text": "Janet sold tickets at window 3 without a break from 17:30 to 18:40 (her ticket numbers run in sequence).",
+      "kind": "true",
+      "about": [
+        "p_janet"
+      ],
+      "where": {
+        "person": "p_janet",
+        "place": "plc_window3",
+        "from": "17:30",
+        "to": "18:40"
+      }
+    },
+    {
+      "id": "f_musa_no_dorcas",
+      "text": "Musa: Dorcas wasn't on the 18:10 today, though she rides it every day and always greets him.",
+      "kind": "true",
+      "about": [
+        "p_musa",
+        "p_dorcas"
+      ]
+    },
+    {
+      "id": "f_musa_gate",
+      "text": "Musa stood at the platform-2 gate checking tickets from 17:55 until the train left at 18:12.",
+      "kind": "true",
+      "about": [
+        "p_musa"
+      ],
+      "where": {
+        "person": "p_musa",
+        "place": "plc_train",
+        "from": "17:55",
+        "to": "18:12"
+      }
+    },
+    {
+      "id": "f_shoeshine_dorcas",
+      "text": "Shoe-shiner: Dorcas went round to the storeroom door by the service corridor at about 18:00. He didn't see her come back to the platform.",
+      "kind": "true",
+      "about": [
+        "p_simon_w",
+        "p_dorcas"
+      ],
+      "where": {
+        "person": "p_dorcas",
+        "place": "plc_storeroom",
+        "from": "17:58",
+        "to": "18:03"
+      }
+    },
+    {
+      "id": "f_parcels_felix",
+      "text": "Parcels log: Felix signed parcels in at 17:58, 18:04, 18:15 and 18:22.",
+      "kind": "true",
+      "about": [
+        "p_felix"
+      ],
+      "where": {
+        "person": "p_felix",
+        "place": "plc_parcels",
+        "from": "17:55",
+        "to": "18:25"
+      }
+    },
+    {
+      "id": "f_gate_kamal",
+      "text": "Gate log: the Shah Bakery van left the station at 17:45.",
+      "kind": "true",
+      "about": [
+        "p_kamal"
+      ]
+    },
+    {
+      "id": "f_foreman_kamal",
+      "text": "Foreman: Kamal got back to the bakery in Industrial Area at 17:58 and did the stock count until 19:30.",
+      "kind": "true",
+      "about": [
+        "p_kamal"
+      ],
+      "where": {
+        "person": "p_kamal",
+        "place": "plc_bakery",
+        "from": "17:58",
+        "to": "19:30"
+      }
+    },
+    {
+      "id": "f_dorcas_claim",
+      "text": "Dorcas: \"I bought my ticket and went home. I always go home on the 18:10.\"",
+      "kind": "claim",
+      "about": [
+        "p_dorcas"
+      ]
+    },
+    {
+      "id": "f_dorcas_denial",
+      "text": "Dorcas: \"Elijah and I were partners. I'd never hurt him.\"",
+      "kind": "claim",
+      "about": [
+        "p_dorcas"
+      ]
+    },
+    {
+      "id": "f_dorcas_money",
+      "text": "Dorcas says she put half the money into the kiosk five years ago.",
+      "kind": "true",
+      "about": [
+        "p_dorcas"
+      ]
+    },
+    {
+      "id": "f_felix_accused",
+      "text": "Felix: Elijah accused him last month of stealing soda crates. He didn't.",
+      "kind": "true",
+      "about": [
+        "p_felix",
+        "p_elijah"
+      ]
+    },
+    {
+      "id": "f_kamal_owed",
+      "text": "Kamal: Elijah owed him for three months of bread and milk.",
+      "kind": "true",
+      "about": [
+        "p_kamal",
+        "p_elijah"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_felix",
+      "stance": "cooperative",
+      "intro": "Felix keeps one hand on his trolley as if he might need to leave quickly. \"I found him. Me. And he called me a thief last month.\"",
+      "claims": [],
+      "yields": [
+        "ev_parcels"
+      ],
+      "topics": [
+        {
+          "about": "p_elijah",
+          "reply": "He said I stole soda crates. I didn't. But I'm the one who found him, so you'll look at me. Look at the parcels book.",
+          "reveals": [
+            "f_felix_accused"
+          ]
+        },
+        {
+          "about": "p_dorcas",
+          "reply": "Dorcas runs that kiosk more than he did. She catches the 18:10 every day. Every day.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_janet",
+      "stance": "cooperative",
+      "intro": "Janet slides her window shut. \"I sell her the same ticket every day. I can tell you the exact minute.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_dorcas",
+          "reply": "Ten to six, 18:10 to Embakasi, like always. She looked upset. She usually jokes about the queue.",
+          "reveals": []
+        },
+        {
+          "about": "p_elijah",
+          "reply": "Mzee Elijah brought me tea at quarter to six. Then later I heard bottles crash, about five past. I thought he'd dropped a crate.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_musa",
+      "stance": "cooperative",
+      "intro": "Musa comes off the 18:40 return train, clipping his punch to his belt. \"Twenty years on this line. I know my regulars.\"",
+      "claims": [],
+      "yields": [
+        "ev_musa"
+      ],
+      "topics": [
+        {
+          "about": "p_dorcas",
+          "reply": "Mama Dorcas? Every day she greets me, 'Musa, how is your back?' Not today. Not on my train.",
+          "reveals": []
+        },
+        {
+          "about": "ev_ticket",
+          "reply": "No hole. Then it was never on my train. I punch every ticket before Makadara. Every one.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_dorcas",
+      "stance": "cooperative",
+      "intro": "Dorcas is found at home in Embakasi at 20:30. She came by matatu. \"Elijah? I left him at the kiosk.\"",
+      "claims": [
+        "f_dorcas_claim",
+        "f_dorcas_denial"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_licence",
+          "reply": "My name isn't on the licence because the county wanted one name. I put in half. Half! Five years.",
+          "reveals": [
+            "f_dorcas_money"
+          ]
+        },
+        {
+          "about": "ev_ticket",
+          "reply": "I must have dropped it. I didn't take the train in the end. I took a matatu. I didn't feel like the crowd.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_kamal",
+      "stance": "cooperative",
+      "intro": "Kamal answers his phone at the bakery. \"Elijah? He owed me, yes, but he always paid in the end.\"",
+      "claims": [],
+      "yields": [
+        "ev_gate",
+        "ev_foreman"
+      ],
+      "topics": [
+        {
+          "about": "p_elijah",
+          "reply": "Three months of bread and milk. He said he'd sell and pay me. I'm sorry for him. I'm sorry for my money too, honestly.",
+          "reveals": [
+            "f_kamal_owed"
+          ]
+        }
+      ]
+    }
+  ],
+  "contradictions": [],
+  "words": [
+    {
+      "id": "w_dorcas",
+      "text": "Dorcas Moraa",
+      "category": "person",
+      "ref": "p_dorcas",
+      "unlock": {
+        "anyOf": [
+          "f_janet_dorcas",
+          "f_licence_buyer"
+        ]
+      }
+    },
+    {
+      "id": "w_felix",
+      "text": "Felix Wanyonyi",
+      "category": "person",
+      "ref": "p_felix",
+      "unlock": {
+        "anyOf": [
+          "f_ob_found",
+          "f_parcels_felix"
+        ]
+      }
+    },
+    {
+      "id": "w_kamal",
+      "text": "Kamal Shah",
+      "category": "person",
+      "ref": "p_kamal",
+      "unlock": {
+        "anyOf": [
+          "f_licence_debt"
+        ]
+      }
+    },
+    {
+      "id": "w_janet",
+      "text": "Janet Achieng",
+      "category": "person",
+      "ref": "p_janet",
+      "unlock": {
+        "anyOf": [
+          "f_janet_dorcas"
+        ]
+      }
+    },
+    {
+      "id": "w_musa",
+      "text": "Musa Ngala",
+      "category": "person",
+      "ref": "p_musa",
+      "unlock": {
+        "anyOf": [
+          "f_timetable_punch"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} at the Railway Station.",
+    "fixed": {
+      "victim": "Elijah Onyango"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_dorcas"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her ticket, on the storeroom floor, never punched. She never caught her train. That will hold.",
+          "fail": [
+            "This doesn't hold up. Whose ticket is on that floor?",
+            "No. Ask the inspector what an unpunched ticket means."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_storeroom",
+      "from": "18:00",
+      "to": "18:10"
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_ticket_found",
+          "f_janet_dorcas"
+        ],
+        "concludes": "The ticket on the storeroom floor is the 18:10 ticket Dorcas bought at window 3 at 17:52."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_ticket_unpunched",
+          "f_timetable_punch",
+          "f_musa_no_dorcas",
+          "f_shoeshine_dorcas"
+        ],
+        "concludes": "It was never punched, so Dorcas never boarded the 18:10: she went to the storeroom at 18:00, and her ticket stayed on its floor.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_felix",
+        "blank": "who",
+        "by": [
+          "f_parcels_felix"
+        ],
+        "why": "Felix signed parcels in at 17:58, 18:04, 18:15 and 18:22."
+      },
+      {
+        "word": "w_kamal",
+        "blank": "who",
+        "by": [
+          "f_gate_kamal",
+          "f_foreman_kamal"
+        ],
+        "why": "Kamal's van left at 17:45 and he was at his bakery from 17:58."
+      },
+      {
+        "word": "w_janet",
+        "blank": "who",
+        "by": [
+          "f_janet_window"
+        ],
+        "why": "Janet sold tickets at window 3 without a break, in numbered sequence."
+      },
+      {
+        "word": "w_musa",
+        "blank": "who",
+        "by": [
+          "f_musa_gate"
+        ],
+        "why": "Musa was at the platform-2 gate checking tickets until his train left."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "That afternoon Elijah tells Dorcas he's found a buyer, and that he'll sell her half too: the licence is in his name alone.",
+        "image": null
+      },
+      {
+        "text": "17:52. Dorcas buys her usual 18:10 ticket at window 3, like every weekday. Then, at 18:00, she goes round to the storeroom to argue.",
+        "image": null
+      },
+      {
+        "text": "About 18:05. She swings a crate of empties at him. In the struggle her ticket falls from her pocket under the crates.",
+        "image": "loc_station"
+      },
+      {
+        "text": "18:12. The 18:10 leaves without her. Musa punches every ticket before Makadara; he never punches hers. She walks out to the road and takes a matatu home.",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_ticket",
+        "line": "There's a ticket on that floor. A ticket tells you a train, a time and a window. Ask the window."
+      },
+      "tier2": {
+        "facts": [
+          "f_ticket_unpunched",
+          "f_timetable_punch"
+        ],
+        "line": "No punch hole, and inspectors punch every ticket on board. So whoever bought it never got on."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "stesheni",
+      "def": "Station."
+    },
+    {
+      "term": "tiketi",
+      "def": "Ticket."
+    },
+    {
+      "term": "mzee",
+      "def": "Respectful word for an older man."
+    },
+    {
+      "term": "mama",
+      "def": "Respectful way to address an older woman."
+    },
+    {
+      "term": "matatu",
+      "def": "Privately run minibus."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "timetable",
+      "absencePreview"
+    ],
+    "beatNotes": "First code-drawn schedule board; tapping a train row shows which facts it touches. First clue that is an absence (no punch hole): a small preview of region 8."
+  }
+}

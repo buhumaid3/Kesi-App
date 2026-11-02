@@ -1,0 +1,3102 @@
+{
+  "meta": {
+    "id": "case-091",
+    "number": 91,
+    "region": "final-files",
+    "regionNumber": 10,
+    "title": "The Settlement Account",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 48,
+    "date": "Tuesday 6 October",
+    "folderTab": "JUMUIYA BANK"
+  },
+  "pattern": {
+    "crimePattern": "a private banker taking commission on the account behind the Mvua till pushes the analyst who traced it down the fire stairs, after luring her there with a fake \"lifts out of service\" notice",
+    "noRealCaseRetold": true,
+    "notes": "Fictional bank, trust and staff. Region 10, case 1: closes t_mvua as traced (three-headed). Introduces Anjali Mehta, head of compliance, as an ally. The fake notice frames a story (an accident), not a person.",
+    "tags": [
+      "fall",
+      "pushed",
+      "financial-crime",
+      "cover-up",
+      "planted",
+      "absence",
+      "spine",
+      "three-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 6,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "planted",
+      "absence",
+      "spine"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic",
+      "cctv"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": "the-stairs-accident-was-murder"
+  },
+  "ob": {
+    "number": "OB 11/06/10",
+    "date": "Tuesday 6 October",
+    "time": "07:40",
+    "reportedBy": "Jumuiya Bank, Kenyatta Avenue",
+    "text": "A bank in the CBD reports a member of staff, financial-crime analyst Nasimiyu Wekesa (34), found dead on its internal fire stairs on Monday night. The bank's first report says she fell while the lifts were out of service.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_stairs",
+    "nodes": [
+      "loc_stairs",
+      "loc_floor18",
+      "loc_floor15",
+      "loc_facilities",
+      "loc_flat"
+    ],
+    "edges": [
+      {
+        "a": "loc_stairs",
+        "b": "loc_floor18",
+        "minutes": 1,
+        "by": "stairs"
+      },
+      {
+        "a": "loc_stairs",
+        "b": "loc_floor15",
+        "minutes": 1,
+        "by": "stairs"
+      },
+      {
+        "a": "loc_floor18",
+        "b": "loc_floor15",
+        "minutes": 2,
+        "by": "lift"
+      },
+      {
+        "a": "loc_floor15",
+        "b": "loc_facilities",
+        "minutes": 2,
+        "by": "lift"
+      },
+      {
+        "a": "loc_facilities",
+        "b": "loc_stairs",
+        "minutes": 3,
+        "by": "lift"
+      },
+      {
+        "a": "loc_facilities",
+        "b": "loc_flat",
+        "minutes": 15,
+        "by": "road"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_nasimiyu",
+      "role": "victim",
+      "name": "Nasimiyu Wekesa",
+      "age": 34,
+      "occupation": "Financial-crime analyst, Jumuiya Bank",
+      "bio": "Carries her case file home every night.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_landing",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luhya woman, mid 30s, braids in a low bun, a bank lanyard, a determined, tired face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mwanaisha",
+      "role": "suspect",
+      "name": "Mwanaisha Salim",
+      "age": 44,
+      "occupation": "Private-banking relationship manager; runs the Msingi Trust's accounts",
+      "bio": "Professional, careful, well liked by her clients.",
+      "community": "Swahili",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_email"
+      },
+      "at": "loc_floor15",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Swahili woman, mid 40s, a silk scarf and a tailored dress, a professional, guarded face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_gideon",
+      "role": "suspect",
+      "name": "Gideon Masika",
+      "age": 51,
+      "occupation": "Head of financial crime; Nasimiyu's boss",
+      "redHerring": true,
+      "bio": "Defensive about his unit.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_floor18",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luhya man, early 50s, a grey suit, a defensive, sweating face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kelvin",
+      "role": "suspect",
+      "name": "Kelvin Mutai",
+      "age": 33,
+      "occupation": "Nasimiyu's ex-fiancé",
+      "redHerring": true,
+      "bio": "The wedding was called off last month.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_anjali_file"
+      },
+      "at": "plc_kasarani",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, early 30s, a football scarf, a hurt, guarded face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_sylvia",
+      "role": "suspect",
+      "name": "Sylvia Kemunto",
+      "age": 29,
+      "occupation": "IT systems administrator",
+      "bio": "Has access to every log in the building.",
+      "community": "Kisii",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_home",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kisii woman, late 20s, a hoodie and a laptop, a calm, capable face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_anjali",
+      "role": "witness",
+      "name": "Ms. Anjali Mehta",
+      "age": 50,
+      "occupation": "Head of compliance",
+      "bio": "Nasimiyu emailed her at 21:05.",
+      "community": "Kenyan Asian",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_gigiri",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Asian woman, about 50, short grey-streaked hair, a cream blazer and reading glasses on a chain, a precise, upset face, ID-photo framing",
+        "ref": "reference"
+      }
+    },
+    {
+      "id": "p_omari",
+      "role": "witness",
+      "name": "Omari Said",
+      "age": 47,
+      "occupation": "Night security officer, floor 14",
+      "bio": "Patrols floors 12 to 16 at night.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_stairs",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Swahili man, late 40s, a security officer's blazer and a radio, a steady, honest face, ID-photo framing",
+        "ref": null
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_landing",
+      "name": "The stair landing between floors 16 and 17",
+      "within": "loc_stairs"
+    },
+    {
+      "id": "plc_printer",
+      "name": "The floor-15 printer",
+      "within": "loc_floor15"
+    },
+    {
+      "id": "plc_liftlobby",
+      "name": "The floor-18 lift lobby",
+      "within": "loc_floor18"
+    },
+    {
+      "id": "plc_floor14",
+      "name": "Floor 14"
+    },
+    {
+      "id": "plc_kitengela",
+      "name": "Gideon's home, Kitengela"
+    },
+    {
+      "id": "plc_kasarani",
+      "name": "Kasarani stadium"
+    },
+    {
+      "id": "plc_home",
+      "name": "Sylvia's flat"
+    },
+    {
+      "id": "plc_gigiri",
+      "name": "A dinner in Gigiri"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_stairs",
+      "name": "The internal fire stairs",
+      "kind": "scene",
+      "description": "A grey concrete stairwell running the height of the tower; badge-controlled doors on every floor; no cameras.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The landing, 16–17",
+          "pos": [
+            50,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Nasimiyu on the landing; her bag open beside her."
+        },
+        {
+          "id": "hs_omari",
+          "label": "Omari",
+          "pos": [
+            30,
+            80
+          ],
+          "yields": "ev_omari",
+          "text": "Omari, with his radio log."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a grey bank-tower fire stairwell at night, a concrete landing, an open handbag on the steps, no people in focus"
+      },
+      "expected": [
+        {
+          "id": "x_file",
+          "text": "Her case file in her bag: she carried it home every night",
+          "because": "f_anjali_file",
+          "present": false,
+          "fact": "f_abs_file"
+        },
+        {
+          "id": "x_camera",
+          "text": "A camera on the stairwell, as on the lift lobbies",
+          "because": "f_omari_rule",
+          "present": false,
+          "fact": "f_abs_camera"
+        }
+      ]
+    },
+    {
+      "id": "loc_floor18",
+      "name": "Floor 18, financial crime",
+      "kind": "location",
+      "description": "A restricted floor: glass door, badge-only, desks with locked drawers. A paper notice beside the lifts.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_notice",
+          "label": "Beside the lifts",
+          "pos": [
+            30,
+            40
+          ],
+          "yields": "ev_notice",
+          "text": "A paper notice taped beside the lift doors."
+        },
+        {
+          "id": "hs_desk",
+          "label": "Nasimiyu's desk",
+          "pos": [
+            60,
+            50
+          ],
+          "yields": "ev_desk",
+          "text": "Her laptop, still on the desk."
+        },
+        {
+          "id": "hs_gideon",
+          "label": "Gideon's email",
+          "pos": [
+            80,
+            40
+          ],
+          "yields": "ev_gideon",
+          "text": "Gideon's inbox, opened by Anjali.",
+          "unlock": {
+            "fact": "f_gid_never"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a restricted bank office floor at night behind a glass door, a printed notice taped beside lift doors"
+      },
+      "expected": [
+        {
+          "id": "x_swipe",
+          "text": "Every visitor to floor 18 swipes in",
+          "because": "f_badge_rule",
+          "present": false,
+          "fact": "f_abs_swipe"
+        },
+        {
+          "id": "x_answer",
+          "text": "A head of unit answers two escalations",
+          "because": "f_email",
+          "present": false,
+          "fact": "f_abs_answer"
+        }
+      ]
+    },
+    {
+      "id": "loc_floor15",
+      "name": "Floor 15, private banking",
+      "kind": "location",
+      "description": "Private-banking suites, a shared printer, workstations PB-01 to PB-12.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_anjali",
+          "label": "Anjali Mehta",
+          "pos": [
+            40,
+            50
+          ],
+          "yields": "ev_email",
+          "text": "Anjali, with her inbox open."
+        },
+        {
+          "id": "hs_msingi",
+          "label": "The bank's Msingi file",
+          "pos": [
+            60,
+            40
+          ],
+          "yields": "ev_msingi",
+          "text": "Anjali brings out what the bank holds on the Msingi Trust.",
+          "unlock": {
+            "fact": "f_an_claim"
+          }
+        },
+        {
+          "id": "hs_logs",
+          "label": "Sylvia's logs",
+          "pos": [
+            80,
+            60
+          ],
+          "yields": "ev_printlog",
+          "text": "Sylvia pulls the print and badge logs.",
+          "unlock": {
+            "fact": "f_sy_claim"
+          }
+        },
+        {
+          "id": "hs_badges",
+          "label": "Badge system",
+          "pos": [
+            85,
+            40
+          ],
+          "yields": "ev_badges",
+          "text": "The badge log for Monday night.",
+          "unlock": {
+            "fact": "f_sy_claim"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a private-banking floor in a CBD tower, plush meeting rooms, a shared office printer"
+      }
+    },
+    {
+      "id": "loc_facilities",
+      "name": "Facilities office, floor 2",
+      "kind": "location",
+      "description": "The office that posts every maintenance notice, and logs it.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_faclog",
+          "label": "Facilities log and lift logs",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_facilities",
+          "text": "Monday's maintenance log and the lifts' own logs."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a building facilities office with a whiteboard of maintenance jobs and a logbook"
+      },
+      "expected": [
+        {
+          "id": "x_maint",
+          "text": "A notice from Facilities has a job in the Facilities log",
+          "because": "f_notice",
+          "present": false,
+          "fact": "f_abs_maint"
+        }
+      ]
+    },
+    {
+      "id": "loc_flat",
+      "name": "Mwanaisha's flat, Kileleshwa",
+      "kind": "location",
+      "description": "A smart flat; a laundry bag by the bathroom door.",
+      "unlock": {
+        "fact": "f_commission"
+      },
+      "hotspots": [
+        {
+          "id": "hs_flat",
+          "label": "Her flat",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_flat",
+          "text": "Search under warrant."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a smart Kileleshwa flat, a laundry bag by a bathroom door, a roll of clear tape on a shelf"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Nasimiyu on the landing",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Fall injuries. Her bag open beside her; no case file in it."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a concrete stair landing with an open shoulder bag and scattered pens, no body visible"
+      }
+    },
+    {
+      "id": "ev_omari",
+      "type": "witness",
+      "title": "Statement: Omari Said",
+      "render": "statement",
+      "body": {
+        "speaker": "p_omari"
+      },
+      "facts": [
+        "f_omari",
+        "f_omari_rule",
+        "f_omari_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_notice",
+      "type": "document",
+      "title": "A notice beside the lifts",
+      "render": "note",
+      "body": {
+        "text": "\"LIFTS OUT OF SERVICE 21:00–23:00. PLEASE USE THE STAIRS. — Facilities.\""
+      },
+      "facts": [
+        "f_notice"
+      ],
+      "gate": null,
+      "planted": {
+        "by": "p_mwanaisha"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a printed paper notice reading LIFTS OUT OF SERVICE taped beside a lift door"
+      }
+    },
+    {
+      "id": "ev_desk",
+      "type": "physical",
+      "title": "Nasimiyu's desk",
+      "render": "object",
+      "body": {
+        "label": "Her laptop, still on the desk. Her desk calendar: \"Mon 13:00 — lunch, K.\" and a café receipt for two."
+      },
+      "facts": [
+        "f_laptop",
+        "f_kelvin"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_facilities",
+      "type": "document",
+      "title": "Facilities log and lift logs",
+      "render": "logBook",
+      "body": {
+        "text": "No lift maintenance on Monday. The lifts' own logs: working all night."
+      },
+      "facts": [
+        "f_facilities"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_email",
+      "type": "document",
+      "title": "Anjali's inbox",
+      "render": "form",
+      "body": {
+        "text": "Nasimiyu, 21:05: \"Escalating. Till 880 214 settles into Msingi Trust. RM: M. Salim. Please read tonight; I'm filing an STR in the morning.\" Two earlier escalations to Gideon, forwarded, unanswered."
+      },
+      "facts": [
+        "f_email",
+        "f_anjali_file"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_msingi",
+      "type": "document",
+      "title": "The bank's Msingi Trust file",
+      "render": "form",
+      "body": {
+        "payouts": "The settlement account behind Till 880 214 paid out to, among others: \"S. Kiprop, Advocate — retainer\" and \"Mlinzi Bora Security — KSh 2,000,000\".",
+        "directors": "Three nominee directors: Okoth Oduya, Mary Chepkemoi, Advocate Wanjiru Nderitu."
+      },
+      "facts": [
+        "f_payouts",
+        "f_directors"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_printlog",
+      "type": "document",
+      "title": "Print server log",
+      "render": "logBook",
+      "body": {
+        "text": "The notice: printed 21:12 on the floor-15 printer, workstation PB-07, user msalim."
+      },
+      "facts": [
+        "f_printlog"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_badges",
+      "type": "document",
+      "title": "Badge system log",
+      "render": "logBook",
+      "body": {
+        "text": "21:19 floor-18 door: \"door held open\" (someone let in without a swipe). 21:38 Nasimiyu into the stairwell from 18. 21:44 Mwanaisha out of the stairwell onto 15. Mwanaisha had told the bank she left at 20:30."
+      },
+      "facts": [
+        "f_badges",
+        "f_badge_rule"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gideon",
+      "type": "document",
+      "title": "Gideon's email",
+      "render": "form",
+      "body": {
+        "text": "Both escalations forwarded to the Msingi file with the note \"Hold, large client\". Gideon's badge out at 19:00."
+      },
+      "facts": [
+        "f_gideon"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kelvin",
+      "type": "witness",
+      "title": "A match ticket and photos",
+      "render": "statement",
+      "body": {
+        "speaker": "p_kelvin"
+      },
+      "facts": [
+        "f_kel_match"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gid_home",
+      "type": "witness",
+      "title": "Gideon's family and car tracker",
+      "render": "statement",
+      "body": {
+        "speaker": "p_gideon"
+      },
+      "facts": [
+        "f_gid_home"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_sylvia",
+      "type": "witness",
+      "title": "Sylvia's flatmates",
+      "render": "statement",
+      "body": {
+        "speaker": "p_sylvia"
+      },
+      "facts": [
+        "f_sylvia"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Mwanaisha's line and PesaPap",
+      "render": "manifest",
+      "body": {
+        "call": "21:58: a call to the number Mlinzi Bora's office used (case 90), now disconnected.",
+        "pesapap": "Monthly \"commission\" into her account from Till 880 214, for four years."
+      },
+      "facts": [
+        "f_rec_call",
+        "f_commission"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_printlog",
+          "f_badges"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_flat",
+      "type": "physical",
+      "title": "Mwanaisha's flat",
+      "render": "object",
+      "body": {
+        "file": "Nasimiyu's case file, in a laundry bag.",
+        "tape": "A roll of clear tape like the one on the notice.",
+        "jacket": "The jacket she wore on Monday."
+      },
+      "facts": [
+        "f_casefile",
+        "f_tape"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_commission",
+          "f_badges",
+          "f_notice"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a bank case file in a laundry bag, a roll of clear sticky tape, a woman's jacket on a hanger"
+      }
+    },
+    {
+      "id": "ev_mw_prints",
+      "type": "physical",
+      "title": "Fingerprints: Mwanaisha Salim",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention."
+      },
+      "facts": [
+        "f_mw_printset"
+      ],
+      "gate": null,
+      "detention": "p_mwanaisha",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints (notice and tape)",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_noticeprints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_notice",
+          "ev_flat",
+          "ev_mw_prints"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_fibres",
+      "type": "forensic",
+      "title": "Lab: fibres (under Nasimiyu's nails)",
+      "render": "labReport",
+      "body": {
+        "test": "fibres"
+      },
+      "facts": [
+        "f_fibres"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "fibres",
+        "hours": 12,
+        "needs": [
+          "ev_body",
+          "ev_flat"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Nasimiyu Wekesa was found dead on Jumuiya Bank's internal fire stairs on Monday night; the bank says she fell while the lifts were out of service.",
+      "kind": "true",
+      "about": [
+        "p_nasimiyu",
+        "loc_stairs"
+      ],
+      "at": {
+        "from": "21:46",
+        "to": null,
+        "day": "Mon"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "Fall injuries on the landing between 16 and 17. Her bag is open; there is no case file in it.",
+      "kind": "true",
+      "about": [
+        "p_nasimiyu",
+        "plc_landing"
+      ]
+    },
+    {
+      "id": "f_omari",
+      "text": "Omari: at about twenty to ten he heard a cry in the stairwell above 14, then a door upstairs; he ran up and found her at quarter to ten. His radio log: 21:46.",
+      "kind": "true",
+      "about": [
+        "p_omari"
+      ],
+      "at": {
+        "from": "21:40",
+        "to": "21:46",
+        "day": "Mon"
+      }
+    },
+    {
+      "id": "f_omari_rule",
+      "text": "Omari: the lift lobbies have cameras; the stairwells don't.",
+      "kind": "true",
+      "about": [
+        "loc_stairs"
+      ]
+    },
+    {
+      "id": "f_omari_self",
+      "text": "Lobby camera: Omari on floor 14 until he ran up at 21:41.",
+      "kind": "true",
+      "about": [
+        "p_omari"
+      ],
+      "where": {
+        "person": "p_omari",
+        "place": "plc_floor14",
+        "from": "21:00",
+        "to": "21:41"
+      }
+    },
+    {
+      "id": "f_notice",
+      "text": "Beside the floor-18 lifts: \"LIFTS OUT OF SERVICE 21:00–23:00. PLEASE USE THE STAIRS. — Facilities.\"",
+      "kind": "true",
+      "about": [
+        "plc_liftlobby"
+      ]
+    },
+    {
+      "id": "f_laptop",
+      "text": "Nasimiyu's laptop is still on her desk.",
+      "kind": "true",
+      "about": [
+        "p_nasimiyu"
+      ]
+    },
+    {
+      "id": "f_facilities",
+      "text": "Facilities log: no lift maintenance on Monday. The lifts' own logs show them working all night.",
+      "kind": "true",
+      "about": [
+        "loc_facilities"
+      ]
+    },
+    {
+      "id": "f_email",
+      "text": "Nasimiyu to Anjali, 21:05: \"Escalating. Till 880 214 settles into Msingi Trust. RM: M. Salim. I'm filing an STR in the morning.\" Two earlier escalations to Gideon went unanswered.",
+      "kind": "true",
+      "about": [
+        "p_nasimiyu",
+        "p_mwanaisha",
+        "p_gideon"
+      ],
+      "at": {
+        "from": "21:05",
+        "to": null,
+        "day": "Mon"
+      }
+    },
+    {
+      "id": "f_anjali_file",
+      "text": "Anjali: Nasimiyu carried her case file home every night. Her ex-fiancé Kelvin used to tease her about it.",
+      "kind": "true",
+      "about": [
+        "p_nasimiyu",
+        "p_kelvin"
+      ]
+    },
+    {
+      "id": "f_payouts",
+      "text": "The Msingi settlement account paid \"S. Kiprop, Advocate — retainer\" and \"Mlinzi Bora Security — KSh 2,000,000\".",
+      "kind": "true",
+      "about": [
+        "p_mwanaisha"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_directors",
+      "text": "The Msingi Trust has three nominee directors: Okoth Oduya, Mary Chepkemoi and Advocate Wanjiru Nderitu.",
+      "kind": "true",
+      "about": [
+        "p_mwanaisha"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_printlog",
+      "text": "Print log: the notice was printed at 21:12 on the floor-15 printer from workstation PB-07, user msalim.",
+      "kind": "true",
+      "about": [
+        "p_mwanaisha"
+      ],
+      "at": {
+        "from": "21:12",
+        "to": null,
+        "day": "Mon"
+      }
+    },
+    {
+      "id": "f_badges",
+      "text": "Badge log: 21:19 floor-18 door \"held open\"; 21:38 Nasimiyu into the stairwell from 18; 21:44 Mwanaisha out of the stairwell onto 15, with no swipe in between.",
+      "kind": "true",
+      "about": [
+        "p_mwanaisha",
+        "p_nasimiyu"
+      ],
+      "where": {
+        "person": "p_mwanaisha",
+        "place": "plc_landing",
+        "from": "21:38",
+        "to": "21:44"
+      }
+    },
+    {
+      "id": "f_badge_rule",
+      "text": "Every staff member swipes onto floor 18; a \"door held open\" alert means someone was let in without a swipe.",
+      "kind": "true",
+      "about": [
+        "loc_floor18"
+      ]
+    },
+    {
+      "id": "f_gideon",
+      "text": "Gideon forwarded both escalations to the Msingi file with the note \"Hold, large client\". His badge went out at 19:00.",
+      "kind": "true",
+      "about": [
+        "p_gideon"
+      ]
+    },
+    {
+      "id": "f_gid_home",
+      "text": "Gideon's family and his car tracker: home in Kitengela from 20:00.",
+      "kind": "true",
+      "about": [
+        "p_gideon"
+      ],
+      "where": {
+        "person": "p_gideon",
+        "place": "plc_kitengela",
+        "from": "20:00",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_kelvin",
+      "text": "Her desk calendar and a café receipt: lunch with \"K.\" on Monday; café staff say Kelvin and Nasimiyu argued about the wedding being off.",
+      "kind": "true",
+      "about": [
+        "p_kelvin",
+        "p_nasimiyu"
+      ]
+    },
+    {
+      "id": "f_kel_match",
+      "text": "Kelvin was at the football at Kasarani 20:00–22:30 (ticket, photos).",
+      "kind": "true",
+      "about": [
+        "p_kelvin"
+      ],
+      "where": {
+        "person": "p_kelvin",
+        "place": "plc_kasarani",
+        "from": "20:00",
+        "to": "22:30"
+      }
+    },
+    {
+      "id": "f_sylvia",
+      "text": "Sylvia's flatmates: she was home from 18:30.",
+      "kind": "true",
+      "about": [
+        "p_sylvia"
+      ],
+      "where": {
+        "person": "p_sylvia",
+        "place": "plc_home",
+        "from": "18:30",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_anjali_self",
+      "text": "Anjali was at a dinner in Gigiri until 23:00.",
+      "kind": "true",
+      "about": [
+        "p_anjali"
+      ],
+      "where": {
+        "person": "p_anjali",
+        "place": "plc_gigiri",
+        "from": "19:30",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_rec_call",
+      "text": "Records: at 21:58 Mwanaisha called the number Mlinzi Bora's office used (case 90), now disconnected.",
+      "kind": "true",
+      "about": [
+        "p_mwanaisha"
+      ],
+      "at": {
+        "from": "21:58",
+        "to": null,
+        "day": "Mon"
+      }
+    },
+    {
+      "id": "f_commission",
+      "text": "Records: a monthly \"commission\" into Mwanaisha's account from Till 880 214, for four years.",
+      "kind": "true",
+      "about": [
+        "p_mwanaisha"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_casefile",
+      "text": "In Mwanaisha's laundry bag: Nasimiyu's case file.",
+      "kind": "true",
+      "about": [
+        "p_mwanaisha",
+        "p_nasimiyu"
+      ]
+    },
+    {
+      "id": "f_tape",
+      "text": "In her flat: a roll of clear tape like the one on the notice.",
+      "kind": "true",
+      "about": [
+        "p_mwanaisha"
+      ]
+    },
+    {
+      "id": "f_mw_printset",
+      "text": "Fingerprints taken from Mwanaisha in detention.",
+      "kind": "true",
+      "about": [
+        "p_mwanaisha"
+      ]
+    },
+    {
+      "id": "f_aut",
+      "text": "Post-mortem: head and neck injuries from a fall down a flight, and grip bruises on both upper arms made just before.",
+      "kind": "true",
+      "about": [
+        "p_nasimiyu"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Monday between 21:38 and 21:46.",
+      "kind": "true",
+      "about": [
+        "p_nasimiyu"
+      ],
+      "at": {
+        "from": "21:38",
+        "to": "21:46",
+        "day": "Mon"
+      }
+    },
+    {
+      "id": "f_noticeprints",
+      "text": "Lab: Mwanaisha's prints on the back of the notice and on the tape roll.",
+      "kind": "true",
+      "about": [
+        "p_mwanaisha"
+      ]
+    },
+    {
+      "id": "f_fibres",
+      "text": "Lab: fibres under Nasimiyu's fingernails match Mwanaisha's jacket.",
+      "kind": "true",
+      "about": [
+        "p_mwanaisha",
+        "p_nasimiyu"
+      ]
+    },
+    {
+      "id": "f_abs_file",
+      "text": "Missing: there's no case file in her bag.",
+      "kind": "true",
+      "about": [
+        "p_nasimiyu"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_camera",
+      "text": "Missing: there's no camera in the stairwell.",
+      "kind": "true",
+      "about": [
+        "loc_stairs"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_swipe",
+      "text": "Missing: there's no swipe for the visitor at 21:19.",
+      "kind": "true",
+      "about": [
+        "loc_floor18"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_answer",
+      "text": "Missing: Gideon never answered her escalations.",
+      "kind": "true",
+      "about": [
+        "p_gideon"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_maint",
+      "text": "Missing: there's no lift maintenance in the facilities log.",
+      "kind": "true",
+      "about": [
+        "loc_facilities"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_mw_left",
+      "text": "Mwanaisha: \"I left the building at half past eight. I never went to 18.\"",
+      "kind": "lie",
+      "about": [
+        "p_mwanaisha"
+      ]
+    },
+    {
+      "id": "f_mw_clean",
+      "text": "Mwanaisha: \"Msingi Trust is a clean client.\"",
+      "kind": "lie",
+      "about": [
+        "p_mwanaisha"
+      ]
+    },
+    {
+      "id": "f_mw_reveal",
+      "text": "Mwanaisha: \"Four years of commission. Enough to put my children through university abroad. She was going to file in the morning. I asked her for one week.\"",
+      "kind": "true",
+      "about": [
+        "p_mwanaisha",
+        "p_nasimiyu"
+      ]
+    },
+    {
+      "id": "f_mw_notice",
+      "text": "Mwanaisha: \"I've never seen that notice before.\"",
+      "kind": "lie",
+      "about": [
+        "p_mwanaisha"
+      ]
+    },
+    {
+      "id": "f_gid_never",
+      "text": "Gideon: \"Nasimiyu never escalated Msingi to me.\"",
+      "kind": "lie",
+      "about": [
+        "p_gideon"
+      ]
+    },
+    {
+      "id": "f_gid_reveal",
+      "text": "Gideon: \"I told her to hold it. It's our third-largest private client. That's my failing, not a crime. I'll answer for it to the board.\"",
+      "kind": "true",
+      "about": [
+        "p_gideon"
+      ]
+    },
+    {
+      "id": "f_kel_month",
+      "text": "Kelvin: \"I hadn't seen her for a month.\"",
+      "kind": "lie",
+      "about": [
+        "p_kelvin"
+      ]
+    },
+    {
+      "id": "f_kel_reveal",
+      "text": "Kelvin: \"We had lunch. She ended it properly. I was at the football that night; I've got four hundred photos.\"",
+      "kind": "true",
+      "about": [
+        "p_kelvin"
+      ]
+    },
+    {
+      "id": "f_sy_claim",
+      "text": "Sylvia: \"I can show you every log.\"",
+      "kind": "claim",
+      "about": [
+        "p_sylvia"
+      ]
+    },
+    {
+      "id": "f_an_claim",
+      "text": "Anjali: \"I didn't read her email until Tuesday morning. She was right and she was alone. I'll give you everything the bank holds on Msingi.\"",
+      "kind": "claim",
+      "about": [
+        "p_anjali"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_mwanaisha",
+      "stance": "cooperative",
+      "intro": "Mwanaisha meets you in a private-banking suite with coffee already poured. \"I left the building at half past eight. I never went to 18. And Msingi Trust is a clean client.\"",
+      "claims": [
+        "f_mw_left",
+        "f_mw_clean"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_mw_notice",
+          "after": "f_mw_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_gideon",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_email"
+      ],
+      "intro": "Gideon closes his office door. \"Nasimiyu never escalated Msingi to me.\"",
+      "claims": [
+        "f_gid_never"
+      ],
+      "yields": [
+        "ev_gid_home"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_kelvin",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_email"
+      ],
+      "intro": "Kelvin won't sit down. \"I hadn't seen her for a month.\"",
+      "claims": [
+        "f_kel_month"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_sylvia",
+      "stance": "cooperative",
+      "intro": "Sylvia logs in remotely and turns the screen to you. \"I can show you every log.\"",
+      "claims": [
+        "f_sy_claim"
+      ],
+      "yields": [
+        "ev_sylvia"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_anjali",
+      "stance": "cooperative",
+      "intro": "Anjali Mehta is angry with herself, and precise about it. \"I didn't read her email until Tuesday morning. She was right and she was alone. I'll give you everything the bank holds on Msingi.\"",
+      "claims": [
+        "f_an_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_body",
+          "reply": "\"I was at a dinner in Gigiri until eleven. My phone was in my bag. That's no excuse.\"",
+          "reveals": [
+            "f_anjali_self"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_omari",
+      "stance": "cooperative",
+      "intro": "Omari reads from his radio log.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_gid",
+      "claim": "f_gid_never",
+      "brokenBy": [
+        "f_gideon"
+      ],
+      "reveals": [
+        "f_gid_reveal"
+      ],
+      "reaction": "\"I told her to hold it. It's our third-largest private client. That's my failing, not a crime. I'll answer for it to the board.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_kel",
+      "claim": "f_kel_month",
+      "brokenBy": [
+        "f_kelvin"
+      ],
+      "reveals": [
+        "f_kel_reveal",
+        "ev_kelvin"
+      ],
+      "reaction": "\"We had lunch. She ended it properly. I was at the football that night; I've got four hundred photos.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_mw_left",
+      "claim": "f_mw_left",
+      "brokenBy": [
+        "f_badges",
+        "f_printlog"
+      ],
+      "reveals": [
+        "f_mw_reveal"
+      ],
+      "reaction": "\"Four years of commission. Enough to put my children through university abroad. She was going to file in the morning. I asked her for one week.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_mw_clean",
+      "claim": "f_mw_clean",
+      "brokenBy": [
+        "f_email",
+        "f_commission"
+      ],
+      "reveals": [],
+      "reaction": "Mwanaisha looks at four years of payments from the till and folds her scarf in her lap.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_mw_notice",
+      "claim": "f_mw_notice",
+      "brokenBy": [
+        "f_noticeprints"
+      ],
+      "reveals": [],
+      "reaction": "Mwanaisha reads the print report and asks for a glass of water.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_mwanaisha",
+      "text": "Mwanaisha Salim",
+      "category": "person",
+      "ref": "p_mwanaisha",
+      "unlock": {
+        "anyOf": [
+          "f_email"
+        ]
+      }
+    },
+    {
+      "id": "w_gideon",
+      "text": "Gideon Masika",
+      "category": "person",
+      "ref": "p_gideon",
+      "unlock": {
+        "anyOf": [
+          "f_email"
+        ]
+      }
+    },
+    {
+      "id": "w_kelvin",
+      "text": "Kelvin Mutai",
+      "category": "person",
+      "ref": "p_kelvin",
+      "unlock": {
+        "anyOf": [
+          "f_anjali_file"
+        ]
+      }
+    },
+    {
+      "id": "w_sylvia",
+      "text": "Sylvia Kemunto",
+      "category": "person",
+      "ref": "p_sylvia",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_anjali",
+      "text": "Anjali Mehta",
+      "category": "person",
+      "ref": "p_anjali",
+      "unlock": {
+        "anyOf": [
+          "f_email"
+        ]
+      }
+    },
+    {
+      "id": "w_omari",
+      "text": "Omari Said",
+      "category": "person",
+      "ref": "p_omari",
+      "unlock": {
+        "anyOf": [
+          "f_omari"
+        ]
+      }
+    },
+    {
+      "id": "pl_landing",
+      "text": "the stair landing between floors 16 and 17",
+      "category": "place",
+      "ref": "plc_landing",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "pl_floor18",
+      "text": "the floor-18 office",
+      "category": "place",
+      "ref": "loc_floor18",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_printer",
+      "text": "the floor-15 printer",
+      "category": "place",
+      "ref": "plc_printer",
+      "unlock": {
+        "anyOf": [
+          "f_printlog"
+        ]
+      }
+    },
+    {
+      "id": "pl_liftlobby",
+      "text": "the lift lobby",
+      "category": "place",
+      "ref": "plc_liftlobby",
+      "unlock": {
+        "anyOf": [
+          "f_notice"
+        ]
+      }
+    },
+    {
+      "id": "pl_flat",
+      "text": "Mwanaisha's flat",
+      "category": "place",
+      "ref": "loc_flat",
+      "unlock": {
+        "anyOf": [
+          "f_commission"
+        ]
+      }
+    },
+    {
+      "id": "h_shove",
+      "text": "shoving her headfirst down the stairs on a landing she'd lured her to with a fake notice",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut"
+        ]
+      }
+    },
+    {
+      "id": "h_fell",
+      "text": "a fall on the stairs because the lifts were off",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack on the stairs",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_ext",
+      "text": "striking her with a fire extinguisher",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_balcony",
+      "text": "a fall from the floor-18 balcony",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_report",
+      "text": "to stop her filing a report on the Msingi Trust accounts and Mwanaisha's commission",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_email"
+        ]
+      }
+    },
+    {
+      "id": "m_engage",
+      "text": "a broken engagement",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_anjali_file"
+        ]
+      }
+    },
+    {
+      "id": "m_client",
+      "text": "a boss protecting a client",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_email"
+        ]
+      }
+    },
+    {
+      "id": "m_laptop",
+      "text": "a robbery for her laptop",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_logs",
+      "text": "an IT administrator hiding logs",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "i_notice",
+      "text": "the \"lifts out of service\" notice",
+      "category": "item",
+      "ref": "ev_notice",
+      "unlock": {
+        "anyOf": [
+          "f_notice"
+        ]
+      }
+    },
+    {
+      "id": "i_bag",
+      "text": "Nasimiyu's open bag",
+      "category": "item",
+      "ref": "ev_body",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "i_held",
+      "text": "the door-held alert",
+      "category": "item",
+      "ref": "ev_badges",
+      "unlock": {
+        "anyOf": [
+          "f_badges"
+        ]
+      }
+    },
+    {
+      "id": "i_hold",
+      "text": "Gideon's \"hold\" note",
+      "category": "item",
+      "ref": "ev_gideon",
+      "unlock": {
+        "anyOf": [
+          "f_gideon"
+        ]
+      }
+    },
+    {
+      "id": "i_email",
+      "text": "the email to Anjali",
+      "category": "item",
+      "ref": "ev_email",
+      "unlock": {
+        "anyOf": [
+          "f_email"
+        ]
+      }
+    },
+    {
+      "id": "p_printed",
+      "text": "it was printed from private banking at 21:12, and facilities logged no maintenance",
+      "category": "plantTell",
+      "by": [
+        "f_printlog",
+        "f_facilities",
+        "f_abs_maint"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_printlog"
+        ]
+      }
+    },
+    {
+      "id": "p_prints",
+      "text": "Mwanaisha's prints on the back of it",
+      "category": "plantTell",
+      "by": [
+        "f_noticeprints"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_notice"
+        ]
+      }
+    },
+    {
+      "id": "p_smear",
+      "text": "a wiped smear, not spatter",
+      "category": "plantTell",
+      "by": [
+        "f_notice"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_notice"
+        ]
+      }
+    },
+    {
+      "id": "p_dust",
+      "text": "dust under it, not on it",
+      "category": "plantTell",
+      "by": [
+        "f_notice"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_notice"
+        ]
+      }
+    },
+    {
+      "id": "p_missing",
+      "text": "it was reported missing before the murder",
+      "category": "plantTell",
+      "by": [
+        "f_notice"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_notice"
+        ]
+      }
+    },
+    {
+      "id": "p_reach",
+      "text": "placed where she couldn't reach",
+      "category": "plantTell",
+      "by": [
+        "f_notice"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_notice"
+        ]
+      }
+    },
+    {
+      "id": "a_file",
+      "text": "there's no case file in her bag",
+      "category": "absence",
+      "ref": "f_abs_file",
+      "unlock": {
+        "anyOf": [
+          "f_abs_file"
+        ]
+      }
+    },
+    {
+      "id": "a_maint",
+      "text": "there's no lift maintenance in the facilities log",
+      "category": "absence",
+      "ref": "f_abs_maint",
+      "unlock": {
+        "anyOf": [
+          "f_abs_maint"
+        ]
+      }
+    },
+    {
+      "id": "a_swipe",
+      "text": "there's no swipe for the visitor at 21:19",
+      "category": "absence",
+      "ref": "f_abs_swipe",
+      "unlock": {
+        "anyOf": [
+          "f_abs_swipe"
+        ]
+      }
+    },
+    {
+      "id": "a_answer",
+      "text": "Gideon never answered her escalations",
+      "category": "absence",
+      "ref": "f_abs_answer",
+      "unlock": {
+        "anyOf": [
+          "f_abs_answer"
+        ]
+      }
+    },
+    {
+      "id": "a_camera",
+      "text": "there's no camera in the stairwell",
+      "category": "absence",
+      "ref": "f_abs_camera",
+      "unlock": {
+        "anyOf": [
+          "f_abs_camera"
+        ]
+      }
+    },
+    {
+      "id": "k_took",
+      "text": "someone took what she was carrying home",
+      "category": "conclusion",
+      "by": [
+        "f_abs_file",
+        "f_anjali_file",
+        "f_casefile"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_file"
+        ]
+      }
+    },
+    {
+      "id": "k_lifts",
+      "text": "she fell because the lifts were off",
+      "category": "conclusion",
+      "by": [
+        "f_facilities"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_file"
+        ]
+      }
+    },
+    {
+      "id": "k_novisit",
+      "text": "nobody visited floor 18",
+      "category": "conclusion",
+      "by": [
+        "f_badges"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_file"
+        ]
+      }
+    },
+    {
+      "id": "k_gideon",
+      "text": "Gideon pushed her",
+      "category": "conclusion",
+      "by": [
+        "f_gid_home"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_file"
+        ]
+      }
+    },
+    {
+      "id": "k_desk",
+      "text": "she left the file at her desk",
+      "category": "conclusion",
+      "by": [
+        "f_casefile"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_file"
+        ]
+      }
+    },
+    {
+      "id": "k_fake",
+      "text": "the file was never real",
+      "category": "conclusion",
+      "by": [
+        "f_casefile"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_file"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_kiprop",
+      "text": "Advocate Sharon Kiprop's retainer (case 83)",
+      "category": "pin",
+      "pin": "case-083:f_card",
+      "unlock": {
+        "anyOf": [
+          "f_payouts"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_upendo",
+      "text": "The chama savings in the Upendo receipts (case 20)",
+      "category": "pin",
+      "pin": "case-020:f_mh_receipts",
+      "unlock": {
+        "anyOf": [
+          "f_payouts"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_lease",
+      "text": "The Garba Tula lease bribe (case 74)",
+      "category": "pin",
+      "pin": "case-074:f_till_mvua",
+      "unlock": {
+        "anyOf": [
+          "f_payouts"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_mlinzi",
+      "text": "The KSh 2 million to Mlinzi Bora (case 90)",
+      "category": "pin",
+      "pin": "case-090:f_till2m",
+      "unlock": {
+        "anyOf": [
+          "f_payouts"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_doreen",
+      "text": "Doreen Kathambi's commissioner stamp (case 70)",
+      "category": "pin",
+      "pin": "case-060:f_comm_stamp",
+      "unlock": {
+        "anyOf": [
+          "f_payouts"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. {item} was planted, as shown by {ptell}. That {missing} shows that {conclusion}. The account behind Till 880 214 also paid {pin}.",
+    "fixed": {
+      "victim": "Nasimiyu Wekesa"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_2030",
+                  "label": "Monday 20:30",
+                  "from": "20:30",
+                  "to": "20:30",
+                  "day": "Mon"
+                },
+                {
+                  "id": "sl_2105",
+                  "label": "Monday 21:05",
+                  "from": "21:05",
+                  "to": "21:05",
+                  "day": "Mon"
+                },
+                {
+                  "id": "sl_2112",
+                  "label": "Monday 21:12",
+                  "from": "21:12",
+                  "to": "21:12",
+                  "day": "Mon"
+                },
+                {
+                  "id": "sl_2119",
+                  "label": "Monday 21:19",
+                  "from": "21:19",
+                  "to": "21:19",
+                  "day": "Mon"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Monday 21:38–21:44",
+                  "from": "21:38",
+                  "to": "21:44",
+                  "day": "Mon"
+                },
+                {
+                  "id": "sl_2146",
+                  "label": "Monday 21:46",
+                  "from": "21:46",
+                  "to": "21:46",
+                  "day": "Mon"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_email",
+                  "text": "Nasimiyu emails Anjali",
+                  "slot": "sl_2105",
+                  "by": [
+                    "f_email"
+                  ],
+                  "why": "Her email: 21:05.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_email"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_notice",
+                  "text": "The false notice is printed",
+                  "slot": "sl_2112",
+                  "by": [
+                    "f_printlog"
+                  ],
+                  "why": "The print log: 21:12.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_printlog"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_letin",
+                  "text": "Mwanaisha is let onto floor 18",
+                  "slot": "sl_2119",
+                  "by": [
+                    "f_badges"
+                  ],
+                  "why": "The door-held alert: 21:19.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_badges"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_push",
+                  "text": "Nasimiyu is pushed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_badges",
+                    "f_omari",
+                    "f_aut_tod"
+                  ],
+                  "why": "Into the stairwell at 21:38; Mwanaisha out at 21:44.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_badges"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_radio",
+                  "text": "Omari radios it in",
+                  "slot": "sl_2146",
+                  "by": [
+                    "f_omari"
+                  ],
+                  "why": "His radio log: 21:46.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_omari"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_2030",
+                  "by": [
+                    "f_badges",
+                    "f_printlog"
+                  ],
+                  "why": "\"Mwanaisha left the building at 20:30\" is her story. She printed the notice at 21:12 and swiped out of the stairwell at 21:44."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "An email at 21:05, a fake notice at 21:12, a held door at 21:19, the stairs at 21:38, and a radio call at 21:46.",
+          "fail": [
+            "Half past eight is her story.",
+            "When did Nasimiyu go into the stairwell, and who came out?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_landing"
+          }
+        ],
+        "prosecutor": {
+          "pass": "On the landing between 16 and 17, where she was waiting.",
+          "fail": [
+            "The notice was printed on 15. She died on the stairs.",
+            "Nasimiyu let her onto 18 and refused her there. The push came later."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_mwanaisha"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her workstation, her badge out of the stairwell, the case file in her laundry bag.",
+          "fail": [
+            "Gideon buried the escalations, then went home to Kitengela.",
+            "Kelvin has four hundred photos from Kasarani."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_shove"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Two hands on her arms, and a flight of concrete stairs.",
+          "fail": [
+            "The lifts worked all night.",
+            "There is no balcony."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_report"
+          }
+        ],
+        "prosecutor": {
+          "pass": "\"I'm filing an STR in the morning.\" Four years of commission.",
+          "fail": [
+            "Her laptop was on her desk. Only the file went.",
+            "Sylvia gave you the logs."
+          ]
+        }
+      },
+      {
+        "id": "g_planted",
+        "kind": "planted",
+        "blanks": [
+          {
+            "id": "item",
+            "category": "item",
+            "answer": "i_notice"
+          },
+          {
+            "id": "ptell",
+            "category": "plantTell",
+            "answer": "p_printed",
+            "accept": [
+              "p_prints"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "Facilities never printed it. Private banking did, at 21:12, and her prints are on the back.",
+          "fail": [
+            "The door-held alert is a real log.",
+            "Gideon's \"hold\" note is real, and shameful, but it isn't planted."
+          ]
+        }
+      },
+      {
+        "id": "g_absence",
+        "kind": "absence",
+        "blanks": [
+          {
+            "id": "missing",
+            "category": "absence",
+            "answer": "a_file"
+          },
+          {
+            "id": "conclusion",
+            "category": "conclusion",
+            "answer": "k_took"
+          }
+        ],
+        "prosecutor": {
+          "pass": "She took that file home every night. Someone took it from her.",
+          "fail": [
+            "No maintenance shows the notice was fake, not what was stolen.",
+            "No camera tells you why the stairs were chosen."
+          ]
+        }
+      },
+      {
+        "id": "g_spine",
+        "kind": "spine",
+        "blanks": [
+          {
+            "id": "pin",
+            "category": "pin",
+            "answer": "w_pin_kiprop",
+            "accept": [
+              "w_pin_mlinzi"
+            ],
+            "spine": true
+          }
+        ],
+        "prosecutor": {
+          "pass": "Kiprop's retainer, and Mlinzi Bora's two million. One settlement account, every hand.",
+          "fail": [
+            "The lease bribe was paid from the till, not from the settlement account.",
+            "Read the Msingi payouts again."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_landing",
+      "from": "21:38",
+      "to": "21:44",
+      "note": "From Nasimiyu's badge into the stairwell at 21:38 to Mwanaisha's out at 21:44; Omari heard the cry at about 21:40."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_email",
+          "f_gideon",
+          "f_gid_never",
+          "f_gid_reveal",
+          "f_abs_answer",
+          "f_payouts",
+          "case-083:f_card",
+          "case-090:f_till2m"
+        ],
+        "concludes": "Nasimiyu had traced the Mvua till's settlement account to Mwanaisha's client and was filing in the morning; the same account paid Kiprop and Mlinzi Bora.",
+        "answers": [
+          "why",
+          "pin"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_notice",
+          "f_facilities",
+          "f_abs_maint",
+          "f_printlog"
+        ],
+        "concludes": "The lift notice was fake, printed by Mwanaisha.",
+        "answers": [
+          "item",
+          "ptell"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_badges",
+          "f_badge_rule",
+          "f_mw_left",
+          "f_mw_reveal"
+        ],
+        "concludes": "She was let onto 18 at 21:19 and left the stairwell at 21:44.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_body",
+          "f_omari",
+          "f_aut",
+          "f_aut_tod"
+        ],
+        "concludes": "Nasimiyu was shoved down the flight at about 21:40.",
+        "answers": [
+          "where",
+          "how"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_anjali_file",
+          "f_abs_file",
+          "f_casefile",
+          "f_tape",
+          "f_commission",
+          "f_mw_clean"
+        ],
+        "concludes": "Her case file was in Mwanaisha's laundry bag.",
+        "answers": [
+          "missing",
+          "conclusion"
+        ]
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_noticeprints",
+          "f_fibres",
+          "f_mw_notice"
+        ],
+        "concludes": "Mwanaisha Salim shoved Nasimiyu down the stairs on a landing she lured her to with a fake notice.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_floor18",
+        "blank": "where",
+        "by": [
+          "f_badges"
+        ],
+        "why": "Nasimiyu let her in on 18 and refused her there; she died on the stairs."
+      },
+      {
+        "word": "pl_printer",
+        "blank": "where",
+        "by": [
+          "f_printlog"
+        ],
+        "why": "The notice was printed there."
+      },
+      {
+        "word": "pl_liftlobby",
+        "blank": "where",
+        "by": [
+          "f_notice"
+        ],
+        "why": "The notice was taped there."
+      },
+      {
+        "word": "pl_flat",
+        "blank": "where",
+        "by": [
+          "f_casefile"
+        ],
+        "why": "The file went there afterwards."
+      },
+      {
+        "word": "w_gideon",
+        "blank": "who",
+        "by": [
+          "f_gid_home"
+        ],
+        "why": "Gideon was home in Kitengela."
+      },
+      {
+        "word": "w_kelvin",
+        "blank": "who",
+        "by": [
+          "f_kel_match"
+        ],
+        "why": "Kelvin was at the football in Kasarani."
+      },
+      {
+        "word": "w_sylvia",
+        "blank": "who",
+        "by": [
+          "f_sylvia"
+        ],
+        "why": "Sylvia was home from 18:30."
+      },
+      {
+        "word": "w_anjali",
+        "blank": "who",
+        "by": [
+          "f_anjali_self"
+        ],
+        "why": "Anjali was at a dinner in Gigiri."
+      },
+      {
+        "word": "w_omari",
+        "blank": "who",
+        "by": [
+          "f_omari_self"
+        ],
+        "why": "Omari was on floor 14 until he ran up."
+      },
+      {
+        "word": "h_fell",
+        "blank": "how",
+        "by": [
+          "f_facilities",
+          "f_aut"
+        ],
+        "why": "The lifts worked; grip bruises."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "A fall after a shove."
+      },
+      {
+        "word": "h_ext",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "The extinguishers are sealed in their brackets; the injuries are a fall."
+      },
+      {
+        "word": "h_balcony",
+        "blank": "how",
+        "by": [
+          "f_body"
+        ],
+        "why": "There's no balcony; she's in the stairwell."
+      },
+      {
+        "word": "m_engage",
+        "blank": "why",
+        "by": [
+          "f_kel_match"
+        ],
+        "why": "Kelvin was at the football."
+      },
+      {
+        "word": "m_client",
+        "blank": "why",
+        "by": [
+          "f_gid_home"
+        ],
+        "why": "Gideon's sin is real, but he was in Kitengela."
+      },
+      {
+        "word": "m_laptop",
+        "blank": "why",
+        "by": [
+          "f_laptop"
+        ],
+        "why": "Her laptop was on her desk."
+      },
+      {
+        "word": "m_logs",
+        "blank": "why",
+        "by": [
+          "f_sy_claim"
+        ],
+        "why": "Sylvia supplied the logs."
+      },
+      {
+        "word": "i_bag",
+        "blank": "item",
+        "by": [
+          "f_body"
+        ],
+        "why": "Her bag was opened, not placed."
+      },
+      {
+        "word": "i_held",
+        "blank": "item",
+        "by": [
+          "f_badge_rule"
+        ],
+        "why": "A real system log."
+      },
+      {
+        "word": "i_hold",
+        "blank": "item",
+        "by": [
+          "f_gid_reveal"
+        ],
+        "why": "Gideon wrote it; it's real."
+      },
+      {
+        "word": "i_email",
+        "blank": "item",
+        "by": [
+          "f_email"
+        ],
+        "why": "Nasimiyu's own email."
+      },
+      {
+        "word": "p_smear",
+        "blank": "ptell",
+        "by": [
+          "f_notice"
+        ],
+        "why": "No blood on it."
+      },
+      {
+        "word": "p_dust",
+        "blank": "ptell",
+        "by": [
+          "f_notice"
+        ],
+        "why": "It was taped to a wall."
+      },
+      {
+        "word": "p_missing",
+        "blank": "ptell",
+        "by": [
+          "f_notice"
+        ],
+        "why": "Nothing was reported missing."
+      },
+      {
+        "word": "p_reach",
+        "blank": "ptell",
+        "by": [
+          "f_notice"
+        ],
+        "why": "Anyone could reach a lift lobby wall."
+      },
+      {
+        "word": "a_maint",
+        "blank": "missing",
+        "by": [
+          "f_abs_maint"
+        ],
+        "why": "It shows the notice was fake, not what was taken."
+      },
+      {
+        "word": "a_swipe",
+        "blank": "missing",
+        "by": [
+          "f_abs_swipe"
+        ],
+        "why": "It shows a visitor, not what was taken."
+      },
+      {
+        "word": "a_answer",
+        "blank": "missing",
+        "by": [
+          "f_abs_answer"
+        ],
+        "why": "It shows Gideon's failure."
+      },
+      {
+        "word": "a_camera",
+        "blank": "missing",
+        "by": [
+          "f_abs_camera"
+        ],
+        "why": "It explains the stairs, not the theft."
+      },
+      {
+        "word": "k_lifts",
+        "blank": "conclusion",
+        "by": [
+          "f_facilities"
+        ],
+        "why": "The lifts worked."
+      },
+      {
+        "word": "k_novisit",
+        "blank": "conclusion",
+        "by": [
+          "f_badges"
+        ],
+        "why": "A door was held at 21:19."
+      },
+      {
+        "word": "k_gideon",
+        "blank": "conclusion",
+        "by": [
+          "f_gid_home"
+        ],
+        "why": "He was in Kitengela."
+      },
+      {
+        "word": "k_desk",
+        "blank": "conclusion",
+        "by": [
+          "f_casefile"
+        ],
+        "why": "It was in Mwanaisha's laundry bag."
+      },
+      {
+        "word": "k_fake",
+        "blank": "conclusion",
+        "by": [
+          "f_casefile"
+        ],
+        "why": "It exists."
+      },
+      {
+        "word": "w_pin_upendo",
+        "blank": "pin",
+        "by": [
+          "case-020:f_mh_receipts",
+          "f_payouts"
+        ],
+        "why": "The chama paid into the till; the settlement account paid out."
+      },
+      {
+        "word": "w_pin_lease",
+        "blank": "pin",
+        "by": [
+          "case-074:f_till_mvua",
+          "f_payouts"
+        ],
+        "why": "That bribe was paid from the till itself, not from the settlement account."
+      },
+      {
+        "word": "w_pin_doreen",
+        "blank": "pin",
+        "by": [
+          "case-060:f_comm_stamp",
+          "f_payouts"
+        ],
+        "why": "A stamp, not a payment."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "For six weeks Nasimiyu traces the account where Till 880 214 settles its takings. It leads to the Msingi Trust, run by Mwanaisha, who has taken a private commission from it for four years. Gideon sits on two escalations.",
+        "image": null
+      },
+      {
+        "text": "Monday, 21:05: she emails Anjali over his head and says she'll file in the morning. At 21:12 Mwanaisha prints \"LIFTS OUT OF SERVICE\" on the floor-15 printer. At 21:19 she knocks on 18's glass door; Nasimiyu lets her in and refuses to wait a week.",
+        "image": null
+      },
+      {
+        "text": "Mwanaisha tapes the notice by the lifts and waits on the landing between 17 and 16. At 21:38 Nasimiyu takes the stairs. Mwanaisha grabs her case file; Nasimiyu pulls it back; Mwanaisha shoves her headfirst down the flight.",
+        "image": "plc_landing"
+      },
+      {
+        "text": "She takes the file, goes down to 15 and swipes out of the stairwell at 21:44. At 21:46 Omari radios it in. At 21:58 Mwanaisha calls a number that used to ring at Mlinzi Bora.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "Anjali Mehta hands Amani the Msingi Trust's full file, signed over to the ODPP. \"Everything. I should have read her email on Monday.\""
+    },
+    {
+      "beat": "The trust's three nominee directors each lead somewhere.",
+      "files": [
+        {
+          "thread": "t_mvua",
+          "text": "Traced: three-headed. Msingi's directors lead to Okoth Oduya (Raphael Oduya's nephew), Mary Chepkemoi (company secretary of Stanley Rotich's firm) and Advocate Wanjiru Nderitu (legal officer of Margaret Kabiru's Ukarimu Foundation)."
+        }
+      ]
+    },
+    {
+      "beat": "Halima, reading it: \"They built it so each of them could point at the other two.\" Amani's notebook: \"Three directors, three names. Of course. Nobody holds the knife alone.\""
+    }
+  ],
+  "clockPlan": {
+    "note": "Two stamps: records on Mwanaisha and a warrant on her flat. Detain her after the search; the prints (6 h) and fibres (12 h) come back inside 24 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_stairs",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_omari",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_omari"
+      },
+      {
+        "do": "travel",
+        "target": "loc_floor18",
+        "hours": 0.1,
+        "from": "loc_stairs"
+      },
+      {
+        "do": "visit",
+        "target": "loc_floor18",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_notice",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_desk",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_gideon"
+      },
+      {
+        "do": "travel",
+        "target": "loc_floor15",
+        "hours": 0.1,
+        "from": "loc_floor18"
+      },
+      {
+        "do": "visit",
+        "target": "loc_floor15",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_email",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_anjali"
+      },
+      {
+        "do": "read",
+        "target": "ev_msingi",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_sylvia"
+      },
+      {
+        "do": "read",
+        "target": "ev_printlog",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_badges",
+        "hours": 1
+      },
+      {
+        "do": "travel",
+        "target": "loc_floor18",
+        "hours": 0.1,
+        "from": "loc_floor15"
+      },
+      {
+        "do": "visit",
+        "target": "loc_floor18",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_gideon",
+        "hours": 0
+      },
+      {
+        "do": "press",
+        "target": "c_gid"
+      },
+      {
+        "do": "travel",
+        "target": "loc_floor15",
+        "hours": 0.1,
+        "from": "loc_floor18"
+      },
+      {
+        "do": "travel",
+        "target": "loc_facilities",
+        "hours": 0.1,
+        "from": "loc_floor15"
+      },
+      {
+        "do": "visit",
+        "target": "loc_facilities",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_facilities",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_floor15",
+        "hours": 0.1,
+        "from": "loc_facilities"
+      },
+      {
+        "do": "visit",
+        "target": "loc_floor15",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_mwanaisha"
+      },
+      {
+        "do": "press",
+        "target": "c_mw_left"
+      },
+      {
+        "do": "interview",
+        "target": "p_kelvin"
+      },
+      {
+        "do": "press",
+        "target": "c_kel"
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "press",
+        "target": "c_mw_clean"
+      },
+      {
+        "do": "travel",
+        "target": "loc_facilities",
+        "hours": 0.1,
+        "from": "loc_floor15"
+      },
+      {
+        "do": "travel",
+        "target": "loc_flat",
+        "hours": 0.25,
+        "from": "loc_facilities"
+      },
+      {
+        "do": "search",
+        "target": "loc_flat"
+      },
+      {
+        "do": "detain",
+        "target": "p_mwanaisha"
+      },
+      {
+        "do": "sample",
+        "target": "ev_mw_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_fibres"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 12
+      },
+      {
+        "do": "press",
+        "target": "c_mw_notice"
+      }
+    ],
+    "totalHours": 44.95
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_badges",
+        "line": "Every door in that tower keeps time, Amani."
+      },
+      "tier2": {
+        "facts": [
+          "f_badges",
+          "f_printlog"
+        ],
+        "line": "Printed 21:12. Into the stairwell 21:38. Out onto 15 at 21:44."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_body",
+        "line": "Where would someone wait for her?"
+      },
+      "tier2": {
+        "facts": [
+          "f_body",
+          "f_badges"
+        ],
+        "line": "The landing between 16 and 17, inside the stairwell."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_printlog",
+        "line": "Whose workstation printed the notice?"
+      },
+      "tier2": {
+        "facts": [
+          "f_printlog",
+          "f_casefile"
+        ],
+        "line": "PB-07, msalim. And the file in her laundry bag."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Ask Dr. Chebii about her arms."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut"
+        ],
+        "line": "Grip bruises, then the fall."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_email",
+        "line": "Read what she sent at 21:05."
+      },
+      "tier2": {
+        "facts": [
+          "f_email",
+          "f_commission"
+        ],
+        "line": "An STR in the morning. Four years of commission."
+      }
+    },
+    "g_planted": {
+      "tier1": {
+        "point": "ev_facilities",
+        "line": "Did Facilities post that notice?"
+      },
+      "tier2": {
+        "facts": [
+          "f_facilities",
+          "f_printlog"
+        ],
+        "line": "No maintenance. Printed on 15 at 21:12."
+      }
+    },
+    "g_absence": {
+      "tier1": {
+        "point": "ev_body",
+        "line": "What did she always carry home?"
+      },
+      "tier2": {
+        "facts": [
+          "f_abs_file",
+          "f_anjali_file"
+        ],
+        "line": "Her case file. It isn't in her bag."
+      }
+    },
+    "g_spine": {
+      "tier1": {
+        "point": "ev_msingi",
+        "line": "Read who the settlement account paid."
+      },
+      "tier2": {
+        "facts": [
+          "f_payouts"
+        ],
+        "line": "Kiprop's retainer. Mlinzi Bora's two million."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "benki",
+      "def": "A bank."
+    },
+    {
+      "term": "akaunti",
+      "def": "An account."
+    },
+    {
+      "term": "ngazi za dharura",
+      "def": "Fire stairs."
+    },
+    {
+      "term": "tangazo",
+      "def": "A notice."
+    },
+    {
+      "term": "STR",
+      "def": "A suspicious-transaction report, filed by a bank to the Financial Reporting Centre."
+    },
+    {
+      "term": "pesa",
+      "def": "Money."
+    },
+    {
+      "term": "pesapap",
+      "def": "A fictional mobile-money service (\"pesa\" is money)."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    },
+    {
+      "term": "mlinzi",
+      "def": "A guard (\"Mlinzi Bora\": \"the best guard\")."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "threadBranch"
+    ],
+    "beatNotes": "No new mechanics. After the verdict the Pattern File's t_mvua thread draws a branching line from the till to three photos for the first time."
+  }
+}

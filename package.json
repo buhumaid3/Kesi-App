@@ -1,0 +1,18 @@
+{
+  "name": "kesi-app",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Kesi: Kenya Case Files — case data, validator and asset tools",
+  "type": "module",
+  "scripts": {
+    "validate": "node tools/validate.mjs www/cases",
+    "prompts": "node tools/compile-prompts.mjs www/cases prompts",
+    "contrast": "node tools/contrast.mjs",
+    "images": "node tools/generate-images.mjs"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@google/genai": "2.32.0",
+    "sharp": "0.35.5"
+  }
+}

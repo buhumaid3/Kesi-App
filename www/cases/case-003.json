@@ -1,0 +1,1030 @@
+{
+  "meta": {
+    "id": "case-003",
+    "number": 3,
+    "region": "nairobi-cbd",
+    "regionNumber": 1,
+    "title": "Seat Fourteen",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 6,
+    "date": "Friday 21 March",
+    "folderTab": "COUNTRY BUS"
+  },
+  "pattern": {
+    "crimePattern": "sacked employee returns to rob the clerk who reported him",
+    "noRealCaseRetold": true,
+    "notes": "Fictional bus company and routes; composite of bus-station booking-office robberies.",
+    "tags": [
+      "blunt-force",
+      "robbery",
+      "revenge"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 2,
+    "redHerrings": 0,
+    "liars": 0,
+    "groups": [
+      "who"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness"
+    ],
+    "gatedActions": [],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 19/21/03",
+    "date": "Friday 21 March",
+    "time": "05:58",
+    "reportedBy": "A passenger (name withheld), Machakos Country Bus station",
+    "text": "A passenger reports that the booking clerk of Tana Express, Ruth Nyokabi (35), was found behind the counter of the company's booking office at Machakos Country Bus station at 05:50. Pronounced dead at the scene. The office cash box is missing.",
+    "facts": [
+      "f_ob_found",
+      "f_ob_cashbox"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_ruth",
+      "role": "victim",
+      "name": "Ruth Nyokabi",
+      "age": 35,
+      "occupation": "Booking clerk, Tana Express (early shift)",
+      "bio": "Seven years at the Tana Express counter. Reported a tout for selling fake tickets in February.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_booking",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 30s, hair in neat cornrows, maroon Tana Express staff blouse with a name badge, a pen behind her ear, brisk friendly expression, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_stephen",
+      "role": "suspect",
+      "name": "Stephen Musyoka",
+      "age": 46,
+      "occupation": "Tout for a rival bus company; sacked by Tana Express in February",
+      "bio": "Worked the Tana Express queue for years until Ruth reported him for selling fake tickets. Now touts for Kitui Star Coaches, two bays down.",
+      "community": "Kamba",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_manifest_seat14"
+      },
+      "at": "loc_yard",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, heavy-set, grey fleece jacket over a Kitui Star Coaches T-shirt, a stack of paper tickets in one hand, narrowed eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kevin",
+      "role": "suspect",
+      "name": "Kevin Omondi",
+      "age": 29,
+      "occupation": "Driver of the 06:00 Garissa bus",
+      "bio": "Ruth complained to the depot manager about his late departures twice this month.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_ticketbook_complaint"
+      },
+      "at": "loc_yard",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 20s, Tana Express driver's shirt with epaulettes, oil on his hands, cap pushed back, annoyed and anxious, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_lilian",
+      "role": "suspect",
+      "name": "Lilian Jeptoo",
+      "age": 31,
+      "occupation": "Night-shift booking clerk",
+      "bio": "Handed the counter over to Ruth at 05:00. The two of them had a cold relationship over shift rotas.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_ticketbook_handover"
+      },
+      "at": "plc_lilian_home",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 30s, maroon Tana Express staff blouse under a cardigan, hair pulled back, tired night-shift eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mwikali",
+      "role": "witness",
+      "name": "Mwikali Nzioka",
+      "age": 52,
+      "occupation": "Tea vendor at the booking-office door",
+      "bio": "Sells chai and mandazi from a flask and a basin at the office door from 04:30 every day.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_teastand",
+      "image": null
+    },
+    {
+      "id": "p_gideon",
+      "role": "witness",
+      "name": "Gideon Kirui",
+      "age": 40,
+      "occupation": "Tana Express mechanic",
+      "bio": "Does every pre-trip check in the yard.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_mwikali_kevin"
+      },
+      "at": "plc_garissa_bus",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_teastand",
+      "name": "Mwikali's tea stand at the booking-office door",
+      "within": "loc_booking"
+    },
+    {
+      "id": "plc_garissa_bus",
+      "name": "Under the 06:00 Garissa bus, Tana Express yard",
+      "within": "loc_yard"
+    },
+    {
+      "id": "plc_lilian_route",
+      "name": "Matatu to Kayole, then Lilian's home"
+    },
+    {
+      "id": "plc_lilian_home",
+      "name": "Lilian's home, Kayole"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_booking",
+      "name": "Tana Express booking office",
+      "kind": "scene",
+      "description": "Machakos Country Bus station before dawn. Buses warm up with their engines roaring; the air smells of diesel and mandazi. The booking office is a narrow room with a counter, a carbon ticket book, a ticket punch and a steel cash box bolted to nothing.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Behind the counter",
+          "pos": [
+            55,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Ruth lies behind the counter. The steel ticket punch is on the floor beside her. Her right hand is closed around a torn slip of paper."
+        },
+        {
+          "id": "hs_hand",
+          "label": "The paper in Ruth's hand",
+          "pos": [
+            60,
+            70
+          ],
+          "yields": "ev_counterfoil",
+          "text": "A torn counterfoil from the ticket book, still damp with her grip."
+        },
+        {
+          "id": "hs_book",
+          "label": "Carbon ticket book",
+          "pos": [
+            38,
+            46
+          ],
+          "yields": "ev_ticketbook",
+          "text": "Every ticket is written in duplicate: one for the passenger, one carbon stays in the book with the time."
+        },
+        {
+          "id": "hs_shelf",
+          "label": "Empty space under the counter",
+          "pos": [
+            48,
+            78
+          ],
+          "yields": null,
+          "text": "A clean rectangle in the dust where the cash box sat. The night's takings were about KSh 46,000."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a cramped bus-company booking office at Machakos Country Bus station before dawn, a wooden counter with a carbon ticket book and a steel ticket punch, buses with headlights on outside the window, diesel haze, no people in frame"
+      }
+    },
+    {
+      "id": "loc_yard",
+      "name": "Bus yard",
+      "kind": "location",
+      "description": "Rows of buses nose to nose. The 05:45 Kitui bus has already left. The 06:00 Garissa bus has its engine cover up. Kitui Star Coaches' buses are parked two bays down.",
+      "unlock": {
+        "fact": "f_counterfoil"
+      },
+      "hotspots": [
+        {
+          "id": "hs_conductor",
+          "label": "Kitui bus conductor (by phone)",
+          "pos": [
+            30,
+            50
+          ],
+          "yields": "ev_manifest",
+          "text": "The Kitui bus conductor reads his manifest to Amani over the phone from Thika Road."
+        },
+        {
+          "id": "hs_bay",
+          "label": "Kitui Star Coaches luggage bay",
+          "pos": [
+            74,
+            62
+          ],
+          "yields": "ev_cashbox",
+          "unlock": {
+            "fact": "f_mwikali_stephen_works"
+          },
+          "text": "The luggage bay of a Kitui Star bus is half open. Behind a sack of maize: a steel box."
+        },
+        {
+          "id": "hs_gate",
+          "label": "Station gate askari's book",
+          "pos": [
+            12,
+            30
+          ],
+          "yields": "ev_gatelog",
+          "unlock": {
+            "fact": "f_ticketbook_handover"
+          },
+          "text": "The gate askari logs every staff member in and out."
+        },
+        {
+          "id": "hs_garissa",
+          "label": "The 06:00 Garissa bus",
+          "pos": [
+            52,
+            40
+          ],
+          "yields": "ev_gideon",
+          "unlock": {
+            "fact": "f_mwikali_kevin"
+          },
+          "text": "Gideon Kirui, the mechanic, wipes his hands and climbs out from under the bus."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a crowded bus yard at dawn at Machakos Country Bus, long-distance buses nose to nose with painted liveries, one bus with its rear engine cover open, a luggage bay hatch half open, no people in focus"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only."
+      },
+      "facts": [
+        "f_body_punch"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_counterfoil",
+      "type": "physical",
+      "title": "Torn counterfoil",
+      "render": "ticket",
+      "body": {
+        "company": "Tana Express",
+        "route": "Nairobi → Kitui",
+        "departs": "05:45",
+        "seat": "14",
+        "issued": "05:22",
+        "fare": "KSh 700"
+      },
+      "facts": [
+        "f_counterfoil"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a torn pink carbon bus-ticket counterfoil reading 'Kitui 05:45 Seat 14', crumpled, on a wooden counter"
+      }
+    },
+    {
+      "id": "ev_ticketbook",
+      "type": "physical",
+      "title": "Carbon ticket book",
+      "render": "ticketBook",
+      "body": {
+        "rows": [
+          {
+            "time": "05:00",
+            "note": "Handover L.J. → R.N. Float KSh 2,000."
+          },
+          {
+            "time": "05:09",
+            "route": "Garissa 06:00",
+            "seat": "22"
+          },
+          {
+            "time": "05:22",
+            "route": "Kitui 05:45",
+            "seat": "14"
+          }
+        ],
+        "margin": "Note in Ruth's hand, last week: 'Garissa late AGAIN — K.O. — told manager.'"
+      },
+      "facts": [
+        "f_ticketbook_last",
+        "f_ticketbook_handover",
+        "f_ticketbook_complaint"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_manifest",
+      "type": "physical",
+      "title": "Kitui bus manifest",
+      "render": "manifest",
+      "body": {
+        "bus": "05:45 Kitui",
+        "seat14": "S. Musyoka — Kitui — NO SHOW",
+        "departed": "05:51"
+      },
+      "facts": [
+        "f_manifest_seat14",
+        "f_manifest_noshow"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_cashbox",
+      "type": "physical",
+      "title": "Tana Express cash box",
+      "render": "object",
+      "body": {
+        "label": "Steel cash box stencilled TANA EXPRESS. Lock forced. Empty."
+      },
+      "facts": [
+        "f_cashbox"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a dented grey steel cash box stencilled 'TANA EXPRESS', lid forced open and empty, lying behind a sack of maize in a bus luggage bay"
+      }
+    },
+    {
+      "id": "ev_mwikali",
+      "type": "witness",
+      "title": "Statement: Mwikali Nzioka",
+      "render": "statement",
+      "body": {
+        "speaker": "p_mwikali"
+      },
+      "facts": [
+        "f_mwikali_ticket",
+        "f_mwikali_never",
+        "f_mwikali_stephen_works",
+        "f_mwikali_sacked",
+        "f_mwikali_kevin"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gideon",
+      "type": "witness",
+      "title": "Statement: Gideon Kirui",
+      "render": "statement",
+      "body": {
+        "speaker": "p_gideon"
+      },
+      "facts": [
+        "f_gideon_kevin",
+        "f_gideon_tea",
+        "f_gideon_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gatelog",
+      "type": "physical",
+      "title": "Gate askari's staff log",
+      "render": "logBook",
+      "body": {
+        "rows": [
+          {
+            "name": "L. Jeptoo",
+            "out": "05:04"
+          },
+          {
+            "name": "K. Omondi",
+            "in": "04:50"
+          }
+        ]
+      },
+      "facts": [
+        "f_gatelog_lilian"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lilian_receipt",
+      "type": "physical",
+      "title": "Lilian's matatu receipt",
+      "render": "receipt",
+      "body": {
+        "route": "Country Bus → Kayole",
+        "time": "05:10",
+        "fare": "KSh 80"
+      },
+      "facts": [
+        "f_lilian_route"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Ruth Nyokabi was found behind the Tana Express counter at 05:50.",
+      "kind": "true",
+      "about": [
+        "p_ruth",
+        "loc_booking"
+      ]
+    },
+    {
+      "id": "f_ob_cashbox",
+      "text": "The booking office's cash box, about KSh 46,000, is missing.",
+      "kind": "true",
+      "about": [
+        "loc_booking"
+      ]
+    },
+    {
+      "id": "f_body_punch",
+      "text": "Ruth was struck once with the office's own steel ticket punch.",
+      "kind": "true",
+      "about": [
+        "p_ruth"
+      ]
+    },
+    {
+      "id": "f_counterfoil",
+      "text": "The counterfoil in Ruth's hand: Kitui 05:45, seat 14, issued 05:22.",
+      "kind": "true",
+      "about": [
+        "p_ruth",
+        "ev_counterfoil"
+      ]
+    },
+    {
+      "id": "f_ticketbook_last",
+      "text": "The carbon book's last ticket is seat 14 on the Kitui bus at 05:22. The one before was 05:09.",
+      "kind": "true",
+      "about": [
+        "ev_ticketbook"
+      ]
+    },
+    {
+      "id": "f_ticketbook_handover",
+      "text": "Night clerk Lilian Jeptoo handed the counter to Ruth at 05:00.",
+      "kind": "true",
+      "about": [
+        "p_lilian",
+        "p_ruth"
+      ]
+    },
+    {
+      "id": "f_ticketbook_complaint",
+      "text": "Ruth's margin note: the Garissa driver, K.O., was late again; she told the manager.",
+      "kind": "true",
+      "about": [
+        "p_kevin",
+        "p_ruth"
+      ]
+    },
+    {
+      "id": "f_manifest_seat14",
+      "text": "Kitui manifest: seat 14, S. Musyoka, booked to Kitui.",
+      "kind": "true",
+      "about": [
+        "p_stephen"
+      ]
+    },
+    {
+      "id": "f_manifest_noshow",
+      "text": "Seat 14 was marked 'no show'. The Kitui bus left at 05:51 with the seat empty.",
+      "kind": "true",
+      "about": [
+        "p_stephen"
+      ]
+    },
+    {
+      "id": "f_cashbox",
+      "text": "The forced, empty Tana Express cash box was in the luggage bay of a Kitui Star Coaches bus.",
+      "kind": "true",
+      "about": [
+        "ev_cashbox"
+      ]
+    },
+    {
+      "id": "f_mwikali_ticket",
+      "text": "Mwikali saw Stephen Musyoka buy a ticket at the counter at about 05:20.",
+      "kind": "true",
+      "about": [
+        "p_mwikali",
+        "p_stephen"
+      ],
+      "where": {
+        "person": "p_stephen",
+        "place": "loc_booking",
+        "from": "05:20",
+        "to": "05:24"
+      }
+    },
+    {
+      "id": "f_mwikali_never",
+      "text": "Mwikali: \"He never travels, that one. He lives here.\"",
+      "kind": "true",
+      "about": [
+        "p_mwikali",
+        "p_stephen"
+      ]
+    },
+    {
+      "id": "f_mwikali_stephen_works",
+      "text": "Stephen now touts for Kitui Star Coaches, two bays down.",
+      "kind": "true",
+      "about": [
+        "p_stephen",
+        "loc_yard"
+      ]
+    },
+    {
+      "id": "f_mwikali_sacked",
+      "text": "Ruth reported Stephen in February for selling fake Tana Express tickets. He was sacked.",
+      "kind": "true",
+      "about": [
+        "p_stephen",
+        "p_ruth"
+      ]
+    },
+    {
+      "id": "f_mwikali_kevin",
+      "text": "Mwikali: the Garissa driver, Kevin Omondi, has been under his bus with the mechanic since five.",
+      "kind": "true",
+      "about": [
+        "p_kevin",
+        "plc_garissa_bus"
+      ]
+    },
+    {
+      "id": "f_gideon_kevin",
+      "text": "Gideon: Kevin did the pre-trip check with him under the Garissa bus from 05:00 to 05:50.",
+      "kind": "true",
+      "about": [
+        "p_kevin",
+        "p_gideon"
+      ],
+      "where": {
+        "person": "p_kevin",
+        "place": "plc_garissa_bus",
+        "from": "05:00",
+        "to": "05:50"
+      }
+    },
+    {
+      "id": "f_gideon_tea",
+      "text": "Gideon: Mwikali brought them tea under the bus at 05:30, and she'd been at her stand all morning.",
+      "kind": "true",
+      "about": [
+        "p_gideon",
+        "p_mwikali"
+      ],
+      "where": {
+        "person": "p_mwikali",
+        "place": "plc_teastand",
+        "from": "04:30",
+        "to": "05:50"
+      }
+    },
+    {
+      "id": "f_gideon_self",
+      "text": "Gideon was under the Garissa bus with Kevin from 05:00 to 05:50.",
+      "kind": "true",
+      "about": [
+        "p_gideon"
+      ],
+      "where": {
+        "person": "p_gideon",
+        "place": "plc_garissa_bus",
+        "from": "05:00",
+        "to": "05:50"
+      }
+    },
+    {
+      "id": "f_gatelog_lilian",
+      "text": "Gate log: L. Jeptoo left the station at 05:04.",
+      "kind": "true",
+      "about": [
+        "p_lilian"
+      ]
+    },
+    {
+      "id": "f_lilian_route",
+      "text": "Lilian's matatu receipt: Country Bus to Kayole at 05:10. Her landlady saw her arrive home at 05:45.",
+      "kind": "true",
+      "about": [
+        "p_lilian"
+      ],
+      "where": {
+        "person": "p_lilian",
+        "place": "plc_lilian_route",
+        "from": "05:08",
+        "to": "05:45"
+      }
+    },
+    {
+      "id": "f_stephen_claim",
+      "text": "Stephen: \"I bought a ticket and changed my mind. Is that a crime?\"",
+      "kind": "claim",
+      "about": [
+        "p_stephen"
+      ]
+    },
+    {
+      "id": "f_stephen_denial",
+      "text": "Stephen: \"I never touched her. I never touched that box.\"",
+      "kind": "claim",
+      "about": [
+        "p_stephen"
+      ]
+    },
+    {
+      "id": "f_kevin_claim",
+      "text": "Kevin: \"I was under my bus. Ask Gideon.\"",
+      "kind": "claim",
+      "about": [
+        "p_kevin"
+      ]
+    },
+    {
+      "id": "f_lilian_claim",
+      "text": "Lilian: \"I handed over at five and went home. We didn't like each other. That's all.\"",
+      "kind": "claim",
+      "about": [
+        "p_lilian"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_mwikali",
+      "stance": "cooperative",
+      "intro": "Mwikali pours Amani a cup of chai without asking. \"Drink. You'll need it. That girl was good to me.\"",
+      "claims": [],
+      "yields": [
+        "ev_mwikali"
+      ],
+      "topics": [
+        {
+          "about": "p_stephen",
+          "reply": "Musyoka bought a ticket at twenty past five. Him! He hasn't travelled anywhere in ten years. Since February he touts for Kitui Star, two bays down.",
+          "reveals": []
+        },
+        {
+          "about": "p_kevin",
+          "reply": "Kevin has been under the Garissa bus with Gideon since five. I took them tea.",
+          "reveals": []
+        },
+        {
+          "about": "p_lilian",
+          "reply": "Lilian left at five past five like every Friday. She takes the Kayole matatu.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_gideon",
+      "stance": "cooperative",
+      "intro": "Gideon climbs out from under the Garissa bus. \"Ruth? No. No.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_kevin",
+          "reply": "He held the torch for me the whole check. Five to ten to six. Brake lines, belts, tyres. He didn't move.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_stephen",
+      "stance": "cooperative",
+      "intro": "Stephen leans on a Kitui Star bus, calling passengers. He stops when he sees Amani's badge.",
+      "claims": [
+        "f_stephen_claim",
+        "f_stephen_denial"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_ruth",
+          "reply": "That woman lost me my job for two tickets. Two! Every manamba sells a few. But I didn't touch her.",
+          "reveals": []
+        },
+        {
+          "about": "ev_cashbox",
+          "reply": "Anyone can open a luggage bay. Ask who drives that bus.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_kevin",
+      "stance": "cooperative",
+      "intro": "Kevin drops his spanner. \"She reported me twice this month. Now people will say I did it.\"",
+      "claims": [
+        "f_kevin_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_ruth",
+          "reply": "She was strict about time. She was right, mostly. I'm late because the bus is old.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_lilian",
+      "stance": "cooperative",
+      "intro": "Lilian, by phone from Kayole, half asleep: \"Ruth? But I left her at five. She was fine.\"",
+      "claims": [
+        "f_lilian_claim"
+      ],
+      "yields": [
+        "ev_lilian_receipt"
+      ],
+      "topics": [
+        {
+          "about": "p_ruth",
+          "reply": "We fought about rotas. Not about anything real. I'm sorry I said bad things about her.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [],
+  "words": [
+    {
+      "id": "w_stephen",
+      "text": "Stephen Musyoka",
+      "category": "person",
+      "ref": "p_stephen",
+      "unlock": {
+        "anyOf": [
+          "f_manifest_seat14",
+          "f_mwikali_ticket"
+        ]
+      }
+    },
+    {
+      "id": "w_kevin",
+      "text": "Kevin Omondi",
+      "category": "person",
+      "ref": "p_kevin",
+      "unlock": {
+        "anyOf": [
+          "f_ticketbook_complaint",
+          "f_mwikali_kevin"
+        ]
+      }
+    },
+    {
+      "id": "w_lilian",
+      "text": "Lilian Jeptoo",
+      "category": "person",
+      "ref": "p_lilian",
+      "unlock": {
+        "anyOf": [
+          "f_ticketbook_handover"
+        ]
+      }
+    },
+    {
+      "id": "w_mwikali",
+      "text": "Mwikali Nzioka",
+      "category": "person",
+      "ref": "p_mwikali",
+      "unlock": {
+        "anyOf": [
+          "f_mwikali_ticket"
+        ]
+      }
+    },
+    {
+      "id": "w_gideon",
+      "text": "Gideon Kirui",
+      "category": "person",
+      "ref": "p_gideon",
+      "unlock": {
+        "anyOf": [
+          "f_gideon_kevin"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} at the Tana Express booking office.",
+    "fixed": {
+      "victim": "Ruth Nyokabi"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_stephen"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The last ticket she ever wrote was his, and he never got on the bus. That will hold.",
+          "fail": [
+            "This doesn't hold up. Who was standing at that counter at 05:22?",
+            "No. Match the paper in her hand to the bus it belongs to."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_booking",
+      "from": "05:20",
+      "to": "05:30",
+      "within": [
+        "plc_teastand"
+      ]
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_counterfoil",
+          "f_ticketbook_last"
+        ],
+        "concludes": "The last person Ruth served, at 05:22, bought seat 14 on the 05:45 Kitui bus."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_manifest_seat14",
+          "f_manifest_noshow",
+          "f_mwikali_ticket"
+        ],
+        "concludes": "Seat 14 was Stephen Musyoka, who was seen buying it at 05:20 and never boarded.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_kevin",
+        "blank": "who",
+        "by": [
+          "f_gideon_kevin"
+        ],
+        "why": "Kevin was under the Garissa bus with the mechanic from 05:00 to 05:50."
+      },
+      {
+        "word": "w_lilian",
+        "blank": "who",
+        "by": [
+          "f_gatelog_lilian",
+          "f_lilian_route"
+        ],
+        "why": "Lilian left the station at 05:04, eighteen minutes before the 05:22 sale, and was on a matatu home."
+      },
+      {
+        "word": "w_mwikali",
+        "blank": "who",
+        "by": [
+          "f_gideon_tea"
+        ],
+        "why": "Mwikali was at her tea stand serving the queue all morning."
+      },
+      {
+        "word": "w_gideon",
+        "blank": "who",
+        "by": [
+          "f_gideon_self",
+          "f_gideon_kevin"
+        ],
+        "why": "Gideon was under the Garissa bus with Kevin the whole time."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "February: Ruth reports a tout for selling fake Tana Express tickets. Stephen Musyoka loses his job.",
+        "image": null
+      },
+      {
+        "text": "05:20, Friday. Stephen comes to the counter and buys seat 14 on the 05:45 to Kitui, so he has a reason to be standing there.",
+        "image": "loc_booking"
+      },
+      {
+        "text": "05:22. While Ruth writes the counterfoil, he reaches for the cash box. She grabs his sleeve. He hits her with the ticket punch and takes the box.",
+        "image": null
+      },
+      {
+        "text": "He forces the box, empties it, and hides it in the luggage bay of the Kitui Star bus where he now works. Seat 14 leaves Machakos Country Bus empty.",
+        "image": null
+      },
+      {
+        "text": "Ruth kept hold of the counterfoil. It was the last thing she wrote.",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_counterfoil",
+        "line": "She was holding something. Every ticket has two halves. Find the other half."
+      },
+      "tier2": {
+        "facts": [
+          "f_counterfoil",
+          "f_manifest_noshow"
+        ],
+        "line": "Seat fourteen at 05:22, and seat fourteen empty when the bus left. Who books a seat he doesn't take?"
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "manamba",
+      "def": "Tout who calls passengers onto buses or matatus."
+    },
+    {
+      "term": "chai",
+      "def": "Tea, usually boiled with milk and sugar."
+    },
+    {
+      "term": "mandazi",
+      "def": "Fried dough snack, like a light doughnut."
+    },
+    {
+      "term": "matatu",
+      "def": "Privately run minibus."
+    },
+    {
+      "term": "askari",
+      "def": "Security guard."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "map",
+      "paperMatch"
+    ],
+    "beatNotes": "First map: two locations (booking office, bus yard). Moving between them. First paper match: tapping the counterfoil and the manifest shows them side by side in the notebook."
+  }
+}

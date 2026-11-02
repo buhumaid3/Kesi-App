@@ -1,0 +1,1291 @@
+{
+  "meta": {
+    "id": "case-027",
+    "number": 27,
+    "region": "mombasa-old-town",
+    "regionNumber": 3,
+    "title": "Staff Quarters",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 16,
+    "date": "Sunday 14 September",
+    "folderTab": "MTWAPA"
+  },
+  "pattern": {
+    "crimePattern": "payroll manager stealing pension deductions kills the staff welfare representative who found out",
+    "noRealCaseRetold": true,
+    "notes": "Fictional resort. Unremitted pension deductions and ghost employees are documented abuses; the case never implies a real pension fund is at fault: the money never reached any fund.",
+    "tags": [
+      "blunt-force",
+      "fraud-exposure",
+      "records-request",
+      "spine-background"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 3,
+    "redHerrings": 1,
+    "liars": 1,
+    "groups": [
+      "who",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "document",
+      "phone"
+    ],
+    "gatedActions": [
+      "records"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 12/15/09",
+    "date": "Monday 15 September",
+    "time": "00:04",
+    "reportedBy": "Night security supervisor, Coral Tide Resort, Mtwapa",
+    "text": "The night security supervisor of Coral Tide Resort, Mtwapa, reports that housekeeper Riziki Chai (29), the staff's elected welfare representative, was found dead in the staff-quarters laundry at 23:50.",
+    "facts": [
+      "f_ob_found"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_riziki",
+      "role": "victim",
+      "name": "Riziki Chai",
+      "age": 29,
+      "occupation": "Housekeeper; staff welfare representative",
+      "bio": "Elected by the staff to speak for them. Asked for everyone's pension statements last month.",
+      "community": "Mijikenda",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_laundry",
+      "image": {
+        "kind": "portrait",
+        "brief": "Mijikenda Kenyan young woman, late 20s, a housekeeping uniform with a name badge, hair in neat cornrows, a folder held against her chest, determined, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_catherine",
+      "role": "suspect",
+      "name": "Catherine Kathure",
+      "age": 52,
+      "occupation": "HR and payroll manager",
+      "bio": "Runs payroll for 140 staff. Lives in Nyali. Known to the staff as \"Mama Catherine HR\".",
+      "community": "Meru",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_rz_call"
+      },
+      "at": "plc_admin",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 50s, a tailored skirt suit, a staff lanyard, short relaxed hair, a large designer-style handbag, gracious smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_anthony",
+      "role": "suspect",
+      "name": "Anthony Gikonyo",
+      "age": 44,
+      "occupation": "Hotel guest from Nairobi",
+      "redHerring": true,
+      "bio": "Accused Riziki of stealing his watch that morning and shouted at her at reception.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_anthony_accused"
+      },
+      "at": "plc_bar",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, a linen beach shirt, a bare pale band on his wrist where a watch usually sits, red-faced and embarrassed, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kache",
+      "role": "suspect",
+      "name": "Kache Mwaro",
+      "age": 26,
+      "occupation": "Riziki's roommate; kitchen assistant",
+      "bio": "Shares a room with Riziki in the staff quarters. They argued about money.",
+      "community": "Mijikenda",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_jumaa_kache"
+      },
+      "at": "plc_kitchen",
+      "image": {
+        "kind": "portrait",
+        "brief": "Mijikenda Kenyan young woman, mid 20s, a kitchen hairnet and white chef's jacket, eyes swollen from crying, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_jumaa",
+      "role": "witness",
+      "name": "Jumaa Tsuma",
+      "age": 48,
+      "occupation": "Staff-quarters gate guard",
+      "bio": "Guards the staff gate and keeps its book.",
+      "community": "Mijikenda",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_qgate",
+      "image": null
+    },
+    {
+      "id": "p_neema",
+      "role": "witness",
+      "name": "Neema Chai",
+      "age": 24,
+      "occupation": "Riziki's sister",
+      "bio": "Lives in Kilifi. Received Riziki's last message.",
+      "community": "Mijikenda",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_rz_whatsapp"
+      },
+      "at": "plc_kilifi",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_laundry",
+      "name": "Staff-quarters laundry",
+      "within": "loc_staff"
+    },
+    {
+      "id": "plc_admin",
+      "name": "Admin block",
+      "within": "loc_staff"
+    },
+    {
+      "id": "plc_qpath",
+      "name": "Path from the admin block to the quarters",
+      "within": "loc_staff"
+    },
+    {
+      "id": "plc_qgate",
+      "name": "Staff gate",
+      "within": "loc_staff"
+    },
+    {
+      "id": "plc_bar",
+      "name": "Hotel bar (guest side)"
+    },
+    {
+      "id": "plc_kitchen",
+      "name": "Main kitchen (guest side)"
+    },
+    {
+      "id": "plc_kilifi",
+      "name": "Kilifi"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_staff",
+      "name": "Coral Tide Resort, staff side",
+      "kind": "scene",
+      "description": "Behind a high wall from the pool and the beach: the admin block, the staff gate with its book, the staff quarters, and a laundry room where uniforms are pressed at night. Music from the guest side comes over the wall.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Laundry",
+          "pos": [
+            56,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Riziki lies beside the pressing table. The heavy steam iron is on the floor."
+        },
+        {
+          "id": "hs_phone",
+          "label": "Her uniform pocket",
+          "pos": [
+            50,
+            54
+          ],
+          "yields": "ev_riziki_phone",
+          "text": "Her phone. Her sister, on a video call from Kilifi, gives the code."
+        },
+        {
+          "id": "hs_locker",
+          "label": "Riziki's locker",
+          "pos": [
+            24,
+            40
+          ],
+          "yields": "ev_folder",
+          "text": "Her staff locker, unlocked. A folder inside."
+        },
+        {
+          "id": "hs_gate",
+          "label": "Staff gate",
+          "pos": [
+            90,
+            70
+          ],
+          "yields": "ev_gatebook",
+          "text": "The gate book: staff and managers sign in and out here."
+        },
+        {
+          "id": "hs_jumaa",
+          "label": "Gate guard",
+          "pos": [
+            94,
+            60
+          ],
+          "yields": "ev_jumaa",
+          "text": "Jumaa Tsuma has his book open and his torch on."
+        },
+        {
+          "id": "hs_notice",
+          "label": "Staff noticeboard",
+          "pos": [
+            36,
+            22
+          ],
+          "yields": "ev_payroll_list",
+          "text": "The admin-block noticeboard: the staff list, duty rosters, a flyer."
+        },
+        {
+          "id": "hs_flyer",
+          "label": "Flyer on the board",
+          "pos": [
+            40,
+            18
+          ],
+          "yields": "ev_flyer",
+          "text": "A glossy flyer pinned over an old roster."
+        },
+        {
+          "id": "hs_payslips",
+          "label": "Riziki's payslips",
+          "pos": [
+            20,
+            46
+          ],
+          "yields": "ev_overtime",
+          "text": "A bundle of payslips in the locker."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the staff side of a Kenyan coast beach resort at night, a high white wall with the glow and music of the guest side beyond, a plain admin block, a staff gate with a guard hut, a row of staff quarters and a laundry room with a pressing table and steam iron, no people in focus"
+      }
+    },
+    {
+      "id": "loc_guest",
+      "name": "Coral Tide Resort, guest side",
+      "kind": "location",
+      "description": "Pool lights, a beach bar, reception with a brass bell.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_bar",
+          "label": "Bar till",
+          "pos": [
+            40,
+            50
+          ],
+          "yields": "ev_bar",
+          "text": "The bar till printout for the night."
+        },
+        {
+          "id": "hs_reception",
+          "label": "Reception",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_watch",
+          "text": "The duty manager has a note and a watch in an envelope."
+        },
+        {
+          "id": "hs_kitchen",
+          "label": "Kitchen door",
+          "pos": [
+            20,
+            60
+          ],
+          "yields": "ev_kitchen",
+          "text": "The kitchen clock-card rack."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the guest side of a Kenyan beach resort at night, a lit swimming pool, a thatched beach bar, a reception desk with a brass bell"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body in the laundry",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Struck with the laundry's steam press iron."
+      },
+      "facts": [
+        "f_body_iron"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a hotel staff laundry room at night, a pressing table with a uniform half-pressed, a heavy steam iron lying on the tiled floor with its cord pulled taut, no body visible"
+      }
+    },
+    {
+      "id": "ev_riziki_phone",
+      "type": "phone",
+      "title": "Riziki's phone (unlocked by her sister)",
+      "render": "smsThread",
+      "body": {
+        "calls": [
+          {
+            "time": "22:41",
+            "from": "Mama Catherine HR",
+            "duration": "40 s"
+          }
+        ],
+        "messages": [
+          {
+            "time": "22:45",
+            "to": "Neema",
+            "text": "Naenda kukutana na HR laundry. Nimeshika ushahidi wa pension."
+          }
+        ]
+      },
+      "facts": [
+        "f_rz_call",
+        "f_rz_whatsapp"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_neema",
+      "type": "witness",
+      "title": "Video call: Neema Chai",
+      "render": "statement",
+      "body": {
+        "speaker": "p_neema",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_neema_pension",
+        "f_neema_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_folder",
+      "type": "physical",
+      "title": "Empty folder",
+      "render": "object",
+      "body": {
+        "label": "\"Pension — staff statements.\" Empty."
+      },
+      "facts": [
+        "f_folder"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gatebook",
+      "type": "physical",
+      "title": "Staff gate book",
+      "render": "visitorRegister",
+      "body": {
+        "rows": [
+          {
+            "name": "C. Kathure",
+            "out": "18:05"
+          },
+          {
+            "name": "C. Kathure",
+            "in": "22:30",
+            "out": "23:22"
+          }
+        ]
+      },
+      "facts": [
+        "f_gatebook"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_jumaa",
+      "type": "witness",
+      "title": "Statement: Jumaa Tsuma",
+      "render": "statement",
+      "body": {
+        "speaker": "p_jumaa"
+      },
+      "facts": [
+        "f_jumaa_saw",
+        "f_jumaa_kache",
+        "f_jumaa_rumour",
+        "f_jumaa_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Catherine Kathure's number",
+      "render": "pesapapStatement",
+      "body": {
+        "pesapap": "Monthly \"salary — Mwaka Kenga\" from the Coral Tide payroll account to Catherine's registered number, 24 months running.",
+        "calls": "Call to Riziki 22:41.",
+        "masts": "Mtwapa 22:25–23:30."
+      },
+      "facts": [
+        "f_rec_ghost",
+        "f_rec_mast"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_rz_call"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_payroll_list",
+      "type": "document",
+      "title": "Staff list",
+      "render": "form",
+      "body": {
+        "text": "140 staff by department. No \"Mwaka Kenga\" anywhere. Housekeeping: R. Chai. HR & payroll: C. Kathure (manager)."
+      },
+      "facts": [
+        "f_staff_list"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_watch",
+      "type": "physical",
+      "title": "Guest's watch and apology",
+      "render": "note",
+      "body": {
+        "text": "Watch found in Mr Gikonyo's own room safe by the duty manager at 20:00. Note at reception: \"I owe that girl an apology. A. G.\""
+      },
+      "facts": [
+        "f_anthony_accused",
+        "f_watch"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_bar",
+      "type": "physical",
+      "title": "Bar till printout",
+      "render": "receipt",
+      "body": {
+        "tab": "Room 214, A. Gikonyo",
+        "orders": "22:30, 22:55, 23:20, 23:45"
+      },
+      "facts": [
+        "f_bar"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kitchen",
+      "type": "physical",
+      "title": "Kitchen clock card",
+      "render": "ticket",
+      "body": {
+        "name": "K. Mwaro",
+        "in": "18:00",
+        "out": "02:00",
+        "note": "Head chef: \"She didn't leave the pass all night.\""
+      },
+      "facts": [
+        "f_kitchen"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_overtime",
+      "type": "physical",
+      "title": "Riziki's payslips",
+      "render": "ledger",
+      "body": {
+        "line": "Overtime paid every month."
+      },
+      "facts": [
+        "f_overtime"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_flyer",
+      "type": "physical",
+      "title": "Flyer on the staff board",
+      "render": "board",
+      "body": {
+        "text": "ARDHI YA UFUKWENI INAUZWA — beachfront plots, Mtwapa & Kilifi. Mvua Holdings. Till 880 214."
+      },
+      "facts": [
+        "f_flyer"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Housekeeper Riziki Chai, the staff's welfare representative, was found dead in the staff-quarters laundry at 23:50.",
+      "kind": "true",
+      "about": [
+        "p_riziki",
+        "plc_laundry"
+      ]
+    },
+    {
+      "id": "f_body_iron",
+      "text": "Riziki was struck with the laundry's steam press iron.",
+      "kind": "true",
+      "about": [
+        "p_riziki",
+        "plc_laundry"
+      ]
+    },
+    {
+      "id": "f_rz_call",
+      "text": "Riziki's phone: an incoming call at 22:41 from the contact 'Mama Catherine HR', 40 seconds.",
+      "kind": "true",
+      "about": [
+        "p_riziki",
+        "p_catherine"
+      ]
+    },
+    {
+      "id": "f_rz_whatsapp",
+      "text": "WhatsApp to her sister at 22:45: 'Naenda kukutana na HR laundry. Nimeshika ushahidi wa pension.' (Going to meet HR at the laundry. I've got the pension evidence.)",
+      "kind": "true",
+      "about": [
+        "p_riziki",
+        "p_neema"
+      ]
+    },
+    {
+      "id": "f_neema_pension",
+      "text": "Neema: last week Riziki told her the staff pension contributions \"for everyone\" had not been paid in for two years.",
+      "kind": "true",
+      "about": [
+        "p_neema",
+        "p_riziki"
+      ]
+    },
+    {
+      "id": "f_neema_self",
+      "text": "Neema is in Kilifi; she received the message there and called the hotel at 23:30.",
+      "kind": "true",
+      "about": [
+        "p_neema"
+      ],
+      "where": {
+        "person": "p_neema",
+        "place": "plc_kilifi",
+        "from": "20:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_folder",
+      "text": "An empty folder in Riziki's locker: 'Pension — staff statements'.",
+      "kind": "true",
+      "about": [
+        "p_riziki"
+      ]
+    },
+    {
+      "id": "f_gatebook",
+      "text": "Staff gate book: 'C. Kathure — out 18:05', then 'C. Kathure — in 22:30 — out 23:22'.",
+      "kind": "true",
+      "about": [
+        "p_catherine"
+      ],
+      "where": {
+        "person": "p_catherine",
+        "place": "loc_staff",
+        "from": "22:30",
+        "to": "23:22"
+      }
+    },
+    {
+      "id": "f_jumaa_saw",
+      "text": "Jumaa: at about 22:50 he saw Catherine walk from the admin block towards the quarters \"with her handbag, at night, which she never does\".",
+      "kind": "true",
+      "about": [
+        "p_jumaa",
+        "p_catherine"
+      ],
+      "where": {
+        "person": "p_catherine",
+        "place": "plc_qpath",
+        "from": "22:50",
+        "to": "22:52"
+      }
+    },
+    {
+      "id": "f_jumaa_kache",
+      "text": "Jumaa: Riziki's roommate Kache Mwaro is on the kitchen night shift. They argued about money last week.",
+      "kind": "true",
+      "about": [
+        "p_jumaa",
+        "p_kache"
+      ]
+    },
+    {
+      "id": "f_jumaa_rumour",
+      "text": "Jumaa: \"Some people say HR was jealous when the staff chose Riziki.\"",
+      "kind": "true",
+      "about": [
+        "p_jumaa",
+        "p_catherine"
+      ]
+    },
+    {
+      "id": "f_jumaa_self",
+      "text": "Jumaa was at the staff gate all night; his own clock-in book shows his rounds every half hour.",
+      "kind": "true",
+      "about": [
+        "p_jumaa"
+      ],
+      "where": {
+        "person": "p_jumaa",
+        "place": "plc_qgate",
+        "from": "18:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_rec_ghost",
+      "text": "PesaPap: for 24 months, a monthly 'salary — Mwaka Kenga' from the hotel payroll account has landed on Catherine's own registered number.",
+      "kind": "true",
+      "about": [
+        "p_catherine"
+      ]
+    },
+    {
+      "id": "f_rec_mast",
+      "text": "Records, Catherine's number: call to Riziki at 22:41; Mtwapa mast 22:25–23:30.",
+      "kind": "true",
+      "about": [
+        "p_catherine"
+      ]
+    },
+    {
+      "id": "f_staff_list",
+      "text": "Staff list: no employee called Mwaka Kenga exists in any department. Riziki is a housekeeper; Catherine is the HR manager.",
+      "kind": "true",
+      "about": [
+        "p_catherine",
+        "p_riziki"
+      ]
+    },
+    {
+      "id": "f_anthony_accused",
+      "text": "Duty manager: that morning the guest Anthony Gikonyo accused Riziki of stealing his watch and shouted at her at reception.",
+      "kind": "true",
+      "about": [
+        "p_anthony",
+        "p_riziki"
+      ]
+    },
+    {
+      "id": "f_watch",
+      "text": "Duty manager: the watch was found in Mr Gikonyo's own room safe at 20:00. He left an apology note for Riziki at reception.",
+      "kind": "true",
+      "about": [
+        "p_anthony"
+      ]
+    },
+    {
+      "id": "f_bar",
+      "text": "Bar till: Anthony Gikonyo's tab, orders at 22:30, 22:55, 23:20 and 23:45.",
+      "kind": "true",
+      "about": [
+        "p_anthony"
+      ],
+      "where": {
+        "person": "p_anthony",
+        "place": "plc_bar",
+        "from": "22:30",
+        "to": "23:45"
+      }
+    },
+    {
+      "id": "f_kitchen",
+      "text": "Kitchen clock card: K. Mwaro in 18:00, out 02:00. The head chef says she didn't leave the pass all night.",
+      "kind": "true",
+      "about": [
+        "p_kache"
+      ],
+      "where": {
+        "person": "p_kache",
+        "place": "plc_kitchen",
+        "from": "18:00",
+        "to": "02:00"
+      }
+    },
+    {
+      "id": "f_overtime",
+      "text": "Riziki's payslips: overtime paid every month.",
+      "kind": "true",
+      "about": [
+        "p_riziki"
+      ]
+    },
+    {
+      "id": "f_flyer",
+      "text": "Flyer on the staff board: 'Ardhi ya ufukweni inauzwa — beachfront plots, Mtwapa & Kilifi. Mvua Holdings. Till 880 214.'",
+      "kind": "true",
+      "about": [
+        "loc_staff"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_cath_home",
+      "text": "Catherine: \"I left the hotel at six and was home in Nyali all evening.\"",
+      "kind": "lie",
+      "about": [
+        "p_catherine"
+      ]
+    },
+    {
+      "id": "f_cath_good",
+      "text": "Catherine: \"Riziki was a good girl. Very emotional.\"",
+      "kind": "claim",
+      "about": [
+        "p_catherine",
+        "p_riziki"
+      ]
+    },
+    {
+      "id": "f_cath_payroll",
+      "text": "Catherine: \"I came back to finish payroll. I never went near the quarters.\"",
+      "kind": "claim",
+      "about": [
+        "p_catherine"
+      ]
+    },
+    {
+      "id": "f_anthony_claim",
+      "text": "Anthony: \"I was at the bar all night. I owe that girl an apology.\"",
+      "kind": "claim",
+      "about": [
+        "p_anthony"
+      ]
+    },
+    {
+      "id": "f_kache_claim",
+      "text": "Kache: \"I was in the kitchen until two.\"",
+      "kind": "claim",
+      "about": [
+        "p_kache"
+      ]
+    },
+    {
+      "id": "f_kache_loan",
+      "text": "Kache: Riziki lent her money for her mother's hospital bill. They argued about when she'd pay it back, \"but she said don't worry\".",
+      "kind": "true",
+      "about": [
+        "p_kache",
+        "p_riziki"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_catherine",
+      "stance": "cooperative",
+      "intro": "Catherine arrives from Nyali in the morning, immaculate. \"Riziki? I can't believe it. Such a good girl.\"",
+      "claims": [
+        "f_cath_home",
+        "f_cath_good"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_folder",
+          "reply": "Pension statements? The staff can ask for those any time. Nothing to hide.",
+          "reveals": []
+        },
+        {
+          "about": "p_anthony",
+          "reply": "That guest shouted at her in front of everybody yesterday morning. About a watch.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_anthony",
+      "stance": "cooperative",
+      "intro": "Anthony is at the bar again, drinking coffee this time. \"I accused her of stealing my watch. It was in my own safe. I owe that girl an apology.\"",
+      "claims": [
+        "f_anthony_claim"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_kache",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_body"
+      ],
+      "intro": "Kache stands at the kitchen pass with her hands flat on the steel. \"I can't talk. I have orders.\"",
+      "claims": [
+        "f_kache_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "f_jumaa_kache",
+          "reply": "She lent me money for my mother's hospital bill. We argued about when I'd pay. She said don't worry. She always said don't worry.",
+          "reveals": [
+            "f_kache_loan"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_neema",
+      "stance": "cooperative",
+      "intro": "Neema, on video from Kilifi, can't stop shaking her head. \"She said she was going to fix it. For everybody.\"",
+      "claims": [],
+      "yields": [
+        "ev_neema"
+      ],
+      "topics": [
+        {
+          "about": "p_catherine",
+          "reply": "Mama Catherine HR. Riziki said she was the one who signs everything.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_jumaa",
+      "stance": "cooperative",
+      "intro": "Jumaa runs his finger down tonight's page. \"Managers sign too. Everyone signs at my gate.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_catherine",
+          "reply": "Madam HR came back at half past ten. At ten to eleven she walked to the quarters with her handbag. At night. She never does that.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_cath_home",
+      "claim": "f_cath_home",
+      "brokenBy": [
+        "f_gatebook",
+        "f_rec_mast"
+      ],
+      "reveals": [
+        "f_cath_payroll"
+      ],
+      "reaction": "I came back to finish payroll. It's the end of the month. I was in my office. I never went near the quarters.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_catherine",
+      "text": "Catherine Kathure",
+      "category": "person",
+      "ref": "p_catherine",
+      "unlock": {
+        "anyOf": [
+          "f_rz_call",
+          "f_gatebook"
+        ]
+      }
+    },
+    {
+      "id": "w_anthony",
+      "text": "Anthony Gikonyo",
+      "category": "person",
+      "ref": "p_anthony",
+      "unlock": {
+        "anyOf": [
+          "f_anthony_accused"
+        ]
+      }
+    },
+    {
+      "id": "w_kache",
+      "text": "Kache Mwaro",
+      "category": "person",
+      "ref": "p_kache",
+      "unlock": {
+        "anyOf": [
+          "f_jumaa_kache"
+        ]
+      }
+    },
+    {
+      "id": "w_jumaa",
+      "text": "Jumaa Tsuma",
+      "category": "person",
+      "ref": "p_jumaa",
+      "unlock": {
+        "anyOf": [
+          "f_jumaa_saw"
+        ]
+      }
+    },
+    {
+      "id": "w_neema",
+      "text": "Neema Chai",
+      "category": "person",
+      "ref": "p_neema",
+      "unlock": {
+        "anyOf": [
+          "f_rz_whatsapp"
+        ]
+      }
+    },
+    {
+      "id": "m_pension",
+      "text": "Riziki was about to expose the stolen pension contributions",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_rz_whatsapp",
+          "f_neema_pension"
+        ]
+      }
+    },
+    {
+      "id": "m_watch",
+      "text": "the stolen watch accusation",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_anthony_accused"
+        ]
+      }
+    },
+    {
+      "id": "m_loan",
+      "text": "a loan between roommates",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_kache_loan"
+        ]
+      }
+    },
+    {
+      "id": "m_overtime",
+      "text": "unpaid overtime",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_overtime"
+        ]
+      }
+    },
+    {
+      "id": "m_promotion",
+      "text": "jealousy over the welfare post",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_jumaa_rumour"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} because {why}.",
+    "fixed": {
+      "victim": "Riziki Chai"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_catherine"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A call at 22:41, the gate book, and the guard who saw her walk to the quarters. That will hold.",
+          "fail": [
+            "Doesn't hold up. The loud guest was at the bar all night apologising. Who called her to the laundry?",
+            "No. Read the gate book. Managers sign too."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_pension"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A ghost on the payroll for two years, and a welfare rep with the statements. Clean.",
+          "fail": [
+            "She did it. But not over a watch or a loan. What was in that empty folder?",
+            "Read the staff list. Who is Mwaka Kenga?"
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_staff",
+      "from": "22:45",
+      "to": "23:22",
+      "within": [
+        "plc_laundry",
+        "plc_admin",
+        "plc_qpath",
+        "plc_qgate"
+      ]
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_rz_call",
+          "f_rz_whatsapp",
+          "f_neema_pension",
+          "f_folder"
+        ],
+        "concludes": "Catherine called Riziki at 22:41. Riziki went to meet \"HR\" at the laundry carrying the pension evidence. The evidence is gone."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_cath_home",
+          "f_gatebook",
+          "f_jumaa_saw"
+        ],
+        "concludes": "Catherine wasn't home. She signed back in at 22:30, walked to the quarters at 22:50 and signed out at 23:22."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_rec_ghost",
+          "f_staff_list"
+        ],
+        "concludes": "For two years a \"Mwaka Kenga\" salary has gone to Catherine's own number, and there is no Mwaka Kenga on the staff. The pension evidence would have exposed her. Catherine Kathure killed Riziki.",
+        "answers": [
+          "who",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_anthony",
+        "blank": "who",
+        "by": [
+          "f_bar"
+        ],
+        "why": "Anthony was ordering at the bar at 22:30, 22:55, 23:20 and 23:45."
+      },
+      {
+        "word": "w_kache",
+        "blank": "who",
+        "by": [
+          "f_kitchen"
+        ],
+        "why": "Kache was on the kitchen pass from 18:00 to 02:00."
+      },
+      {
+        "word": "w_jumaa",
+        "blank": "who",
+        "by": [
+          "f_jumaa_self"
+        ],
+        "why": "Jumaa was at the staff gate all night, his rounds logged every half hour."
+      },
+      {
+        "word": "w_neema",
+        "blank": "who",
+        "by": [
+          "f_neema_self"
+        ],
+        "why": "Neema is in Kilifi."
+      },
+      {
+        "word": "m_watch",
+        "blank": "why",
+        "by": [
+          "f_watch"
+        ],
+        "why": "The watch was in the guest's own safe, and that was his accusation, not Catherine's."
+      },
+      {
+        "word": "m_loan",
+        "blank": "why",
+        "by": [
+          "f_kache_loan",
+          "f_kitchen"
+        ],
+        "why": "The loan was between Riziki and Kache, and Kache was in the kitchen."
+      },
+      {
+        "word": "m_overtime",
+        "blank": "why",
+        "by": [
+          "f_overtime"
+        ],
+        "why": "Riziki's overtime was paid every month."
+      },
+      {
+        "word": "m_promotion",
+        "blank": "why",
+        "by": [
+          "f_staff_list"
+        ],
+        "why": "Riziki was a housekeeper and Catherine a manager. The welfare post isn't a job Catherine could hold."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "For two years Catherine deducts pension contributions from every payslip and pays them in nowhere. A ghost employee, \"Mwaka Kenga\", draws a salary into her own number.",
+        "image": null
+      },
+      {
+        "text": "Riziki, the staff's welfare rep, asks for the official pension statements. Two years of zeros.",
+        "image": null
+      },
+      {
+        "text": "22:41. \"Mama Catherine HR\" calls: let's meet privately, before you embarrass the hotel. 22:45: Riziki tells her sister she's going, with the evidence.",
+        "image": "loc_staff"
+      },
+      {
+        "text": "About 23:00, in the laundry, Catherine reaches for the statements. Riziki won't let go. The steam iron.",
+        "image": null
+      },
+      {
+        "text": "23:22. Catherine signs out at the staff gate with her handbag. The folder in Riziki's locker is empty.",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_riziki_phone",
+        "line": "Who called her at 22:41, and where did she say she was going?"
+      },
+      "tier2": {
+        "facts": [
+          "f_cath_home",
+          "f_gatebook"
+        ],
+        "line": "She says home in Nyali from six. The staff gate keeps a book, and managers sign it too."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_payroll_list",
+        "line": "Read the staff list carefully. Then ask for her records."
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_ghost",
+          "f_staff_list"
+        ],
+        "line": "A monthly salary for a man who doesn't exist, landing on her number."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "ushahidi",
+      "def": "Evidence."
+    },
+    {
+      "term": "ardhi",
+      "def": "Land."
+    },
+    {
+      "term": "ufukweni",
+      "def": "At the beachfront."
+    },
+    {
+      "term": "dada",
+      "def": "Sister."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address or name a woman."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "recordsProveWhy"
+    ],
+    "beatNotes": "Records that prove WHY, not WHO: the first case where the records request is decisive for the motive more than the location. The notebook's WHY panel lights up when a fact connects to a motive word."
+  }
+}

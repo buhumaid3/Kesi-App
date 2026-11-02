@@ -1,0 +1,2039 @@
+{
+  "meta": {
+    "id": "case-052",
+    "number": 52,
+    "region": "maasai-mara",
+    "regionNumber": 6,
+    "title": "Crocodile Point",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 30,
+    "date": "Monday 9 February",
+    "folderTab": "MARA RIVER"
+  },
+  "pattern": {
+    "crimePattern": "indebted camp owner kills the neighbour who bought her mortgage and came to take her camp, and lets the river carry him to the crocodiles",
+    "noRealCaseRetold": true,
+    "notes": "Fictional camps and owners. Crocodile and hippo behaviour is described only as the pathologist's findings; no image of the body. Camp mortgages and debt purchase are given in outline.",
+    "tags": [
+      "blunt-force",
+      "moved-by-river",
+      "debt",
+      "two-liars",
+      "records",
+      "warrant",
+      "forensics",
+      "when-strip",
+      "where"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 4,
+    "redHerrings": 1,
+    "liars": 2,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": "not-the-river-not-a-crocodile"
+  },
+  "ob": {
+    "number": "OB 11/09/02",
+    "date": "Monday 9 February",
+    "time": "09:20",
+    "reportedBy": "Olekina Saning'o, guide",
+    "text": "Guides report a man's body in the Mara River at crossing point 2 at 08:40, with crocodiles feeding. He is identified as Richard Ainsworth (55), owner of Ainsworth River Camp. Recorded as drowning; crocodile attack suspected.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_crossing",
+    "nodes": [
+      "loc_crossing",
+      "loc_ainsworth",
+      "loc_marabend",
+      "loc_airstrip"
+    ],
+    "edges": [
+      {
+        "a": "loc_ainsworth",
+        "b": "loc_marabend",
+        "minutes": 10,
+        "by": "bank track"
+      },
+      {
+        "a": "loc_marabend",
+        "b": "loc_crossing",
+        "minutes": 25,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_ainsworth",
+        "b": "loc_crossing",
+        "minutes": 30,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_crossing",
+        "b": "loc_airstrip",
+        "minutes": 30,
+        "by": "4x4"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_richard",
+      "role": "victim",
+      "name": "Richard Ainsworth",
+      "age": 55,
+      "occupation": "Owner, Ainsworth River Camp",
+      "bio": "Born in Narok to a family three generations in Kenya. Walks everywhere on the bank track, torch in hand.",
+      "community": "Kenyan-European",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_deck",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan-European man, mid 50s, a faded khaki safari shirt, a weathered sunburnt face, reading glasses pushed up, a determined jaw, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_lucia",
+      "role": "suspect",
+      "name": "Lucia Wanjiru",
+      "age": 62,
+      "occupation": "Owner, Mara Bend Camp",
+      "bio": "Built her camp on the bend thirty years ago with her late husband. Everyone on the river calls her Mama Lucia.",
+      "community": "Kikuyu",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_mumbi"
+      },
+      "at": "loc_marabend",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, early 60s, short grey hair, a cream linen shirt and a kikoi, gold-rimmed glasses, gracious and very composed, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kipchumba",
+      "role": "suspect",
+      "name": "Kipchumba Kemei",
+      "age": 39,
+      "occupation": "Former bar manager, Ainsworth Camp",
+      "redHerring": true,
+      "bio": "Fired by Richard on Monday for taking from the bar.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_kemei_fired"
+      },
+      "at": "plc_narok",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, late 30s, a smart shirt, a bar manager's neat moustache, sullen, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_lekishon",
+      "role": "suspect",
+      "name": "Lekishon Tompoi",
+      "age": 45,
+      "occupation": "Night askari, Mara Bend Camp",
+      "bio": "Twenty years guarding Mama Lucia's gate with a torch and a rungu.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_gate",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Maasai man, mid 40s, a dark greatcoat over a red shuka, a torch and a rungu, a tired, uneasy face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mumbi",
+      "role": "witness",
+      "name": "Mumbi Gachoki",
+      "age": 41,
+      "occupation": "Manager, Ainsworth River Camp",
+      "bio": "Runs the camp day to day. Last saw Richard at 21:00.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_ainsworth",
+      "image": null
+    },
+    {
+      "id": "p_olekina",
+      "role": "witness",
+      "name": "Olekina Saning'o",
+      "age": 36,
+      "occupation": "Guide",
+      "bio": "Found the body at the crossing with his morning clients.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_crossing",
+      "image": null
+    },
+    {
+      "id": "p_josephine",
+      "role": "witness",
+      "name": "Josephine Wambui",
+      "age": 34,
+      "occupation": "Night cook, Mara Bend Camp",
+      "statementOnly": true,
+      "bio": "Bakes the morning bread through the night beside the gate.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_gate",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_deck",
+      "name": "Mara Bend Camp's hippo deck",
+      "within": "loc_marabend"
+    },
+    {
+      "id": "plc_pool",
+      "name": "The hippo pool under the deck",
+      "within": "plc_deck"
+    },
+    {
+      "id": "plc_gate",
+      "name": "Mara Bend Camp's guest gate and kitchen",
+      "within": "loc_marabend"
+    },
+    {
+      "id": "plc_banktrack",
+      "name": "The bank track between the camps"
+    },
+    {
+      "id": "plc_narok",
+      "name": "A hotel in Narok town"
+    },
+    {
+      "id": "plc_lodge",
+      "name": "Olekina's clients' lodge"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_crossing",
+      "name": "Crossing point 2, Mara River",
+      "kind": "scene",
+      "description": "A wide brown crossing where the wildebeest come down in July. In February the water is slow and shallow over coarse yellow sand and gravel; crocodiles bask on the sandbanks. Guides' vehicles stand on the high bank.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The water's edge",
+          "pos": [
+            46,
+            64
+          ],
+          "yields": "ev_body",
+          "text": "Rangers have brought the body to the bank under a tarpaulin."
+        },
+        {
+          "id": "hs_sand",
+          "label": "The crossing bed",
+          "pos": [
+            70,
+            76
+          ],
+          "yields": "ev_crossingsand",
+          "text": "Coarse yellow sand and gravel. Amani bags some."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a wide brown crossing on the Mara River in the dry season, coarse yellow sand and gravel banks, crocodiles basking on a sandbank, safari vehicles on the high bank above, no people in focus"
+      }
+    },
+    {
+      "id": "loc_ainsworth",
+      "name": "Ainsworth River Camp",
+      "kind": "location",
+      "description": "Tents on the high bank under fig trees, a dining tent, Richard's office with a filing cabinet and a radio.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_office",
+          "label": "Richard's office",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_letter",
+          "text": "A copy of a letter in the out-tray, and the camp's files."
+        },
+        {
+          "id": "hs_staff",
+          "label": "Staff file",
+          "pos": [
+            64,
+            46
+          ],
+          "yields": "ev_staff",
+          "text": "The staff file, a dismissal letter on top."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a tented safari camp on the high bank of the Mara River under fig trees, a dining tent, an office tent with a filing cabinet and a radio"
+      }
+    },
+    {
+      "id": "loc_marabend",
+      "name": "Mara Bend Camp",
+      "kind": "location",
+      "description": "An older camp on a bend upstream, its wooden viewing deck built out over a hippo pool. Below the deck the water barely moves; fine grey silt settles on the bottom. A guest gate with a book on the road side.",
+      "unlock": {
+        "fact": "f_mumbi"
+      },
+      "hotspots": [
+        {
+          "id": "hs_deck",
+          "label": "The hippo deck",
+          "pos": [
+            44,
+            40
+          ],
+          "yields": "ev_deck",
+          "text": "The mvule railing along the deck. One post is pale raw timber; the boards are freshly swept."
+        },
+        {
+          "id": "hs_silt",
+          "label": "Under the deck",
+          "pos": [
+            50,
+            74
+          ],
+          "yields": "ev_poolsilt",
+          "text": "Fine grey silt from the slow pool under the deck. Amani bags some."
+        },
+        {
+          "id": "hs_gatebook",
+          "label": "Guest gate book",
+          "pos": [
+            86,
+            30
+          ],
+          "yields": "ev_gatebook",
+          "text": "The camp's guest gate book."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a wooden viewing deck of dark mvule hardwood built out over a still hippo pool on a bend of the Mara River at dusk, one railing post newly replaced with pale raw timber, hippos in the water below"
+      }
+    },
+    {
+      "id": "loc_airstrip",
+      "name": "The airstrip",
+      "kind": "location",
+      "description": "A murram strip half an hour from the crossing, a windsock and a shelter.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_wind",
+          "label": "Windsock",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_strip",
+          "text": "The airstrip log for Sunday: last landing 17:40, first departure Monday 10:00."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a murram bush airstrip in the Maasai Mara, a windsock and a thatched shelter, empty plains"
+      }
+    },
+    {
+      "id": "loc_lstore",
+      "name": "Mara Bend Camp workshop (search)",
+      "kind": "search",
+      "description": "A tin-roofed workshop behind the camp: timber, tools, a tarpaulin over something long.",
+      "unlock": {
+        "fact": "f_deck"
+      },
+      "hotspots": [
+        {
+          "id": "hs_tarp",
+          "label": "Under the tarpaulin",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_lucia_store",
+          "text": "Under the tarpaulin, a length of dark mvule, wet and scrubbed."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a tin-roofed camp workshop with stacked timber and tools, a tarpaulin over a long dark wooden post on the floor"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "At the crossing",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Recovered from the water at crossing point 2 at 08:40. Fine grey silt inside his shoes and trouser turn-ups."
+      },
+      "facts": [
+        "f_body",
+        "f_shoesilt"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a tarpaulin on the sandy bank of a brown river at a crossing point, rangers' boots nearby, crocodiles on a far sandbank, no body visible"
+      }
+    },
+    {
+      "id": "ev_olekina",
+      "type": "witness",
+      "title": "Statement: Olekina Saning'o",
+      "render": "statement",
+      "body": {
+        "speaker": "p_olekina"
+      },
+      "facts": [
+        "f_olekina",
+        "f_olekina_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_crossingsand",
+      "type": "physical",
+      "title": "Crossing-point sand",
+      "render": "object",
+      "body": {
+        "label": "Coarse yellow sand and gravel."
+      },
+      "facts": [
+        "f_crossing_sand"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mumbi",
+      "type": "witness",
+      "title": "Statement: Mumbi Gachoki",
+      "render": "statement",
+      "body": {
+        "speaker": "p_mumbi"
+      },
+      "facts": [
+        "f_mumbi",
+        "f_mumbi_self",
+        "f_camps_friendly"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_letter",
+      "type": "physical",
+      "title": "Richard's letter to Lucia",
+      "render": "note",
+      "body": {
+        "text": "Thursday 5 February: \"I have bought your camp's debt from the bank. Pay the full balance by Friday or I take possession of Mara Bend Camp.\" Lease maps and bookings in the same file."
+      },
+      "facts": [
+        "f_letter",
+        "f_no_boundary",
+        "f_no_booking"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_staff",
+      "type": "physical",
+      "title": "Ainsworth staff file",
+      "render": "form",
+      "body": {
+        "letter": "K. Kemei, bar manager: dismissed Monday 2 February for theft from the bar."
+      },
+      "facts": [
+        "f_kemei_fired"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_deck",
+      "type": "physical",
+      "title": "The hippo deck",
+      "render": "sceneNote",
+      "body": {
+        "note": "Mvule railing; one post freshly replaced with raw new timber; the old post missing. Fresh sweeping marks on the boards."
+      },
+      "facts": [
+        "f_deck"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_poolsilt",
+      "type": "physical",
+      "title": "Silt from under the deck",
+      "render": "object",
+      "body": {
+        "label": "Fine grey silt from the still hippo pool."
+      },
+      "facts": [
+        "f_pool_silt"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gatebook",
+      "type": "physical",
+      "title": "Mara Bend guest gate book",
+      "render": "visitorRegister",
+      "body": {
+        "entries": "No entry after 18:00.",
+        "note": "The bank-track path from Ainsworth Camp reaches the deck without passing the gate."
+      },
+      "facts": [
+        "f_gatebook"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Richard Ainsworth's line",
+      "render": "manifest",
+      "body": {
+        "masts": "Mara Bend zone 21:12–21:50, then nothing."
+      },
+      "facts": [
+        "f_rec_richard"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_mumbi"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_cook",
+      "type": "witness",
+      "title": "Statement: Josephine Wambui",
+      "render": "statement",
+      "body": {
+        "speaker": "p_josephine"
+      },
+      "facts": [
+        "f_lek_gate"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kemei",
+      "type": "physical",
+      "title": "Narok hotel bill",
+      "render": "receipt",
+      "body": {
+        "stay": "K. Kemei: checked in 19:30 Sunday; bar tab until 01:10."
+      },
+      "facts": [
+        "f_kemei_narok"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_strip",
+      "type": "physical",
+      "title": "Airstrip log",
+      "render": "logBook",
+      "body": {
+        "sunday": "Last landing 17:40. No movement until 10:00 Monday."
+      },
+      "facts": [
+        "f_strip"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lucia_store",
+      "type": "physical",
+      "title": "Under the tarpaulin",
+      "render": "object",
+      "body": {
+        "label": "The old mvule railing post, wet and scrubbed. A crack at one end."
+      },
+      "facts": [
+        "f_oldpost"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_deck",
+          "f_rec_richard"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a long dark mvule hardwood railing post, wet and scrubbed, with a split crack at one end, lying on a workshop floor"
+      }
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_nodrown",
+        "f_aut_croc",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_wood",
+      "type": "forensic",
+      "title": "Lab: wood ID (splinters vs the old post)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_wood_match"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 8,
+        "needs": [
+          "ev_autopsy",
+          "ev_lucia_store"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_silt",
+      "type": "forensic",
+      "title": "Lab: silt (shoes vs pool vs crossing)",
+      "render": "labReport",
+      "body": {
+        "test": "soil"
+      },
+      "facts": [
+        "f_silt"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "soil",
+        "hours": 8,
+        "needs": [
+          "ev_body",
+          "ev_poolsilt",
+          "ev_crossingsand"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Richard Ainsworth's body was found in the Mara River at crossing point 2 at 08:40, with crocodiles feeding. Recorded as drowning; crocodile attack suspected.",
+      "kind": "true",
+      "about": [
+        "p_richard",
+        "loc_crossing"
+      ],
+      "at": {
+        "from": "08:40"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "Recovered from the water at crossing point 2 at 08:40.",
+      "kind": "true",
+      "about": [
+        "p_richard",
+        "loc_crossing"
+      ]
+    },
+    {
+      "id": "f_shoesilt",
+      "text": "Inside his shoes and trouser turn-ups: fine grey silt.",
+      "kind": "true",
+      "about": [
+        "p_richard"
+      ]
+    },
+    {
+      "id": "f_olekina",
+      "text": "Olekina: he found the body at 08:40 among crocodiles at crossing point 2 and radioed it on the sightings channel.",
+      "kind": "true",
+      "about": [
+        "p_olekina"
+      ],
+      "at": {
+        "from": "08:40"
+      }
+    },
+    {
+      "id": "f_olekina_self",
+      "text": "Olekina was with his clients at their lodge until the 06:00 gate opening; the gate log has his vehicle out at 06:05.",
+      "kind": "true",
+      "about": [
+        "p_olekina"
+      ],
+      "where": {
+        "person": "p_olekina",
+        "place": "plc_lodge",
+        "from": "18:30",
+        "to": "06:05"
+      }
+    },
+    {
+      "id": "f_crossing_sand",
+      "text": "The bed at crossing point 2 is coarse yellow sand and gravel.",
+      "kind": "true",
+      "about": [
+        "loc_crossing"
+      ]
+    },
+    {
+      "id": "f_mumbi",
+      "text": "Mumbi: at 21:00 Richard left on foot along the bank track. \"I'm going to see Mama Lucia about the letter. Back in an hour.\" He never came back.",
+      "kind": "true",
+      "about": [
+        "p_mumbi",
+        "p_richard",
+        "p_lucia"
+      ],
+      "at": {
+        "from": "21:00"
+      }
+    },
+    {
+      "id": "f_mumbi_self",
+      "text": "Mumbi hosted the guests at dinner in the dining tent until 23:00.",
+      "kind": "true",
+      "about": [
+        "p_mumbi"
+      ],
+      "where": {
+        "person": "p_mumbi",
+        "place": "loc_ainsworth",
+        "from": "19:30",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_camps_friendly",
+      "text": "Mumbi: the two camps sent each other guests for years and had Christmas dinner together. \"Until the letter.\"",
+      "kind": "true",
+      "about": [
+        "p_mumbi"
+      ]
+    },
+    {
+      "id": "f_letter",
+      "text": "Richard's letter to Lucia, Thursday: he has bought her camp's debt from the bank. \"Pay the full balance by Friday or I take possession of Mara Bend Camp.\"",
+      "kind": "true",
+      "about": [
+        "p_richard",
+        "p_lucia"
+      ]
+    },
+    {
+      "id": "f_no_boundary",
+      "text": "Conservancy lease maps in Richard's file: the two camps share no boundary in dispute.",
+      "kind": "true",
+      "about": [
+        "p_richard",
+        "p_lucia"
+      ]
+    },
+    {
+      "id": "f_no_booking",
+      "text": "Ainsworth booking records: no booking dispute with Mara Bend Camp, ever.",
+      "kind": "true",
+      "about": [
+        "p_richard"
+      ]
+    },
+    {
+      "id": "f_kemei_fired",
+      "text": "Staff file: Kipchumba Kemei, bar manager, dismissed on Monday 2 February for theft from the bar.",
+      "kind": "true",
+      "about": [
+        "p_kipchumba"
+      ]
+    },
+    {
+      "id": "f_deck",
+      "text": "Mara Bend's hippo deck: one mvule railing post freshly replaced with raw new timber; the old post is missing. The boards have fresh sweeping marks.",
+      "kind": "true",
+      "about": [
+        "plc_deck"
+      ]
+    },
+    {
+      "id": "f_pool_silt",
+      "text": "The still hippo pool under Mara Bend's deck settles fine grey silt.",
+      "kind": "true",
+      "about": [
+        "plc_pool"
+      ]
+    },
+    {
+      "id": "f_gatebook",
+      "text": "Mara Bend's guest gate book: no entry after 18:00. The bank-track path reaches the deck without passing the gate.",
+      "kind": "true",
+      "about": [
+        "loc_marabend"
+      ]
+    },
+    {
+      "id": "f_rec_richard",
+      "text": "Records, Richard's line: Mara Bend mast zone 21:12–21:50, then nothing. The phone was later found in the river.",
+      "kind": "true",
+      "about": [
+        "p_richard"
+      ],
+      "at": {
+        "from": "21:12",
+        "to": "21:50"
+      }
+    },
+    {
+      "id": "f_lek_gate",
+      "text": "Josephine: Lekishon sat at the gate fire by her kitchen all night, 100 m from the deck. She brought him tea at ten and at midnight.",
+      "kind": "true",
+      "about": [
+        "p_josephine",
+        "p_lekishon"
+      ],
+      "where": {
+        "person": "p_lekishon",
+        "place": "plc_gate",
+        "from": "18:30",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_kemei_narok",
+      "text": "Narok hotel bill: Kipchumba checked in at 19:30 on Sunday; his bar tab runs until 01:10.",
+      "kind": "true",
+      "about": [
+        "p_kipchumba"
+      ],
+      "where": {
+        "person": "p_kipchumba",
+        "place": "plc_narok",
+        "from": "19:30",
+        "to": "01:10"
+      }
+    },
+    {
+      "id": "f_strip",
+      "text": "Airstrip log: last landing 17:40 on Sunday; no movement until 10:00 Monday.",
+      "kind": "true",
+      "about": [
+        "loc_airstrip"
+      ]
+    },
+    {
+      "id": "f_oldpost",
+      "text": "In Mara Bend's workshop, under a tarpaulin: the old mvule railing post, wet and scrubbed, with a crack at one end.",
+      "kind": "true",
+      "about": [
+        "p_lucia"
+      ]
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Autopsy: a heavy blow to the head with a wooden object, before death. Splinters of mvule hardwood in the wound.",
+      "kind": "true",
+      "about": [
+        "p_richard"
+      ]
+    },
+    {
+      "id": "f_aut_nodrown",
+      "text": "Autopsy: no water in the airways. He didn't drown.",
+      "kind": "true",
+      "about": [
+        "p_richard"
+      ]
+    },
+    {
+      "id": "f_aut_croc",
+      "text": "Autopsy: the crocodile injuries were made after death. No hippo bite or crush injuries.",
+      "kind": "true",
+      "about": [
+        "p_richard"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 21:15 and 22:30.",
+      "kind": "true",
+      "about": [
+        "p_richard"
+      ],
+      "at": {
+        "from": "21:15",
+        "to": "22:30"
+      }
+    },
+    {
+      "id": "f_wood_match",
+      "text": "Lab: the splinters are mvule and match the cracked end of the old post. His blood is in the crack.",
+      "kind": "true",
+      "about": [
+        "p_richard",
+        "p_lucia"
+      ]
+    },
+    {
+      "id": "f_silt",
+      "text": "Lab: the silt in his shoes is from the hippo pool under Mara Bend's deck, not the coarse sand of crossing point 2.",
+      "kind": "true",
+      "about": [
+        "p_richard",
+        "plc_pool"
+      ]
+    },
+    {
+      "id": "f_lucia_never",
+      "text": "Lucia: \"Richard never came here last night. I was asleep by nine.\"",
+      "kind": "lie",
+      "about": [
+        "p_lucia"
+      ]
+    },
+    {
+      "id": "f_lucia_came",
+      "text": "Lucia admits Richard came and they talked on the hippo deck. \"He told me my camp was his now. I told him to leave.\"",
+      "kind": "true",
+      "about": [
+        "p_lucia",
+        "p_richard"
+      ],
+      "where": {
+        "person": "p_lucia",
+        "place": "plc_deck",
+        "from": "21:15",
+        "to": "21:35"
+      }
+    },
+    {
+      "id": "f_lucia_alive",
+      "text": "Lucia: \"He was standing on the deck when I went in.\"",
+      "kind": "lie",
+      "about": [
+        "p_lucia"
+      ]
+    },
+    {
+      "id": "f_lek_none",
+      "text": "Lekishon: \"No visitors came to the camp last night.\"",
+      "kind": "lie",
+      "about": [
+        "p_lekishon"
+      ]
+    },
+    {
+      "id": "f_lek_reveal",
+      "text": "Lekishon: Mr Richard came along the river path at quarter past nine. In the morning Mama told him to say no one came.",
+      "kind": "true",
+      "about": [
+        "p_lekishon",
+        "p_richard",
+        "p_lucia"
+      ],
+      "at": {
+        "from": "21:15"
+      }
+    },
+    {
+      "id": "f_kemei_claim",
+      "text": "Kipchumba: \"I was in Narok.\"",
+      "kind": "claim",
+      "about": [
+        "p_kipchumba"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_lucia",
+      "stance": "cooperative",
+      "intro": "Lucia receives you on her veranda with a pot of tea and good china. \"Poor Richard. He walked that track at night like a young man. He never came here last night. I was asleep by nine.\"",
+      "claims": [
+        "f_lucia_never"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_lucia_alive",
+          "after": "f_lucia_came"
+        }
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_letter",
+          "reply": "Yes, he bought my debt. Business. I would have found the money.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_lekishon",
+      "stance": "cooperative",
+      "intro": "Lekishon stands very straight at the gate. \"No visitors came last night.\"",
+      "claims": [
+        "f_lek_none"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "f_rec_richard",
+          "reply": "Ask Josephine. I sat by her fire all night. She brought me tea.",
+          "reveals": [
+            "ev_cook"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_kipchumba",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_letter"
+      ],
+      "intro": "Kipchumba picks up the phone from Narok. \"He fired me. That's all I'll say.\"",
+      "claims": [
+        "f_kemei_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_letter",
+          "reply": "He was going to take Mama Lucia's camp? ...I was in Narok. Here, I'll send you the hotel bill.",
+          "reveals": [
+            "ev_kemei"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_mumbi",
+      "stance": "cooperative",
+      "intro": "Mumbi has been on the radio to the rangers all morning. \"He said back in an hour. I thought he'd stayed for a whisky.\"",
+      "claims": [],
+      "yields": [
+        "ev_mumbi"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_olekina",
+      "stance": "cooperative",
+      "intro": "Olekina keeps his clients in the vehicle and talks to you on the bank. \"I called it in at twenty to nine.\"",
+      "claims": [],
+      "yields": [
+        "ev_olekina"
+      ],
+      "topics": [
+        {
+          "about": "ev_body",
+          "reply": "Crocodiles take what the river brings. This one came from upstream. The water is slow; he floated.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_lek",
+      "claim": "f_lek_none",
+      "brokenBy": [
+        "f_rec_richard"
+      ],
+      "reveals": [
+        "f_lek_reveal"
+      ],
+      "reaction": "\"Mr Richard came along the river path at quarter past nine. Mama told me in the morning to say no one came. She said it would save trouble for the camp.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_lucia",
+      "claim": "f_lucia_never",
+      "brokenBy": [
+        "f_rec_richard",
+        "f_lek_reveal"
+      ],
+      "reveals": [
+        "f_lucia_came"
+      ],
+      "reaction": "She sets down her cup. \"...He came. He told me my camp was his now. I told him to leave. He was standing on the deck when I went in.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_lucia_alive",
+      "claim": "f_lucia_alive",
+      "brokenBy": [
+        "f_wood_match",
+        "f_silt"
+      ],
+      "reveals": [],
+      "reaction": "Lucia looks out at the deck for a long time. \"Thirty years,\" she says. \"My husband built that railing.\" She says nothing more.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_lucia",
+      "text": "Lucia Wanjiru",
+      "category": "person",
+      "ref": "p_lucia",
+      "unlock": {
+        "anyOf": [
+          "f_mumbi"
+        ]
+      }
+    },
+    {
+      "id": "w_kipchumba",
+      "text": "Kipchumba Kemei",
+      "category": "person",
+      "ref": "p_kipchumba",
+      "unlock": {
+        "anyOf": [
+          "f_kemei_fired"
+        ]
+      }
+    },
+    {
+      "id": "w_lekishon",
+      "text": "Lekishon Tompoi",
+      "category": "person",
+      "ref": "p_lekishon",
+      "unlock": {
+        "anyOf": [
+          "f_lek_none"
+        ]
+      }
+    },
+    {
+      "id": "w_mumbi",
+      "text": "Mumbi Gachoki",
+      "category": "person",
+      "ref": "p_mumbi",
+      "unlock": {
+        "anyOf": [
+          "f_mumbi"
+        ]
+      }
+    },
+    {
+      "id": "w_olekina",
+      "text": "Olekina Saning'o",
+      "category": "person",
+      "ref": "p_olekina",
+      "unlock": {
+        "anyOf": [
+          "f_olekina"
+        ]
+      }
+    },
+    {
+      "id": "pl_crossing",
+      "text": "crossing point 2",
+      "category": "place",
+      "ref": "loc_crossing",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_deck",
+      "text": "the hippo deck at Mara Bend Camp",
+      "category": "place",
+      "ref": "plc_deck",
+      "unlock": {
+        "anyOf": [
+          "f_mumbi"
+        ]
+      }
+    },
+    {
+      "id": "pl_ainsworth",
+      "text": "Ainsworth Camp",
+      "category": "place",
+      "ref": "loc_ainsworth",
+      "unlock": {
+        "anyOf": [
+          "f_mumbi"
+        ]
+      }
+    },
+    {
+      "id": "pl_track",
+      "text": "the bank track between the camps",
+      "category": "place",
+      "ref": "plc_banktrack",
+      "unlock": {
+        "anyOf": [
+          "f_mumbi"
+        ]
+      }
+    },
+    {
+      "id": "pl_airstrip",
+      "text": "the airstrip",
+      "category": "place",
+      "ref": "loc_airstrip",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_post",
+      "text": "struck with a railing post and left in the river",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_croc",
+      "text": "taken by a crocodile while crossing",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_drown",
+      "text": "drowned after falling from the bank",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_hippo",
+      "text": "attacked by a hippo",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_tree",
+      "text": "struck by a falling tree",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "m_debt",
+      "text": "he was about to take her camp over the debt he'd bought",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_letter"
+        ]
+      }
+    },
+    {
+      "id": "m_theft",
+      "text": "his bar manager's theft",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_kemei_fired"
+        ]
+      }
+    },
+    {
+      "id": "m_boundary",
+      "text": "a boundary dispute between the camps",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_letter"
+        ]
+      }
+    },
+    {
+      "id": "m_booking",
+      "text": "a lost tourist booking",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_letter"
+        ]
+      }
+    },
+    {
+      "id": "m_jealous",
+      "text": "jealousy between rival camps",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_mumbi"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Richard Ainsworth"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_2100",
+                  "label": "21:00",
+                  "from": "21:00",
+                  "to": "21:00"
+                },
+                {
+                  "id": "sl_2115",
+                  "label": "21:15",
+                  "from": "21:15",
+                  "to": "21:15"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "21:15–21:50",
+                  "from": "21:15",
+                  "to": "21:50"
+                },
+                {
+                  "id": "sl_0600",
+                  "label": "06:00",
+                  "from": "06:00",
+                  "to": "06:00"
+                },
+                {
+                  "id": "sl_0840",
+                  "label": "08:40",
+                  "from": "08:40",
+                  "to": "08:40"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_leaves",
+                  "text": "Richard leaves his camp",
+                  "slot": "sl_2100",
+                  "by": [
+                    "f_mumbi"
+                  ],
+                  "why": "Mumbi: on foot along the bank track at 21:00.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_mumbi"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_reaches",
+                  "text": "Richard reaches Lucia's camp",
+                  "slot": "sl_2115",
+                  "by": [
+                    "f_lek_reveal",
+                    "f_rec_richard"
+                  ],
+                  "why": "The askari saw him come along the river path at 21:15; his phone joined the Mara Bend mast at 21:12.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_lek_reveal"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Richard is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_rec_richard",
+                    "f_aut_tod",
+                    "f_lucia_came"
+                  ],
+                  "why": "He was on Lucia's deck from 21:15; his phone went into the river with him at 21:50.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_found",
+                  "text": "The body is found at the crossing",
+                  "slot": "sl_0840",
+                  "by": [
+                    "f_olekina"
+                  ],
+                  "why": "Olekina radioed it at 08:40.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_olekina"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_0600",
+                  "by": [
+                    "f_olekina_self",
+                    "f_aut_tod"
+                  ],
+                  "why": "06:00 is when the reserve gates open and the guides drive out; he had been dead for eight hours."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "Out of his camp at nine, on her deck at quarter past, his phone in the river by ten to ten, found at twenty to nine. That's the night.",
+          "fail": [
+            "Six o'clock is the gates opening. He was dead long before.",
+            "When did his phone stop?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_deck"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Grey silt from a still pool in his shoes, a fresh post on the railing, and the old one hidden in her workshop. He died on the deck.",
+          "fail": [
+            "Crossing point 2 is coarse yellow sand. Read his shoes.",
+            "His phone sat at Mara Bend for forty minutes. He didn't die on the track."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_lucia"
+          }
+        ],
+        "prosecutor": {
+          "pass": "She told her askari to lie, she was on the deck with him, and the post with his blood was under her tarpaulin. That will hold.",
+          "fail": [
+            "The askari lied because she told him to. Who told him?",
+            "The bar manager was drinking in Narok until one."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_post"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Mvule splinters in the wound and a railing post that went missing overnight. Yes.",
+          "fail": [
+            "No water in his lungs, and the crocodiles came after death.",
+            "Worked hardwood, not a branch."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_debt"
+          }
+        ],
+        "prosecutor": {
+          "pass": "He bought her debt and came to take her camp. That's the reason.",
+          "fail": [
+            "That's the bar manager's grudge, and he was in Narok.",
+            "Read the letter. It says exactly what he wanted."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_deck",
+      "from": "21:15",
+      "to": "21:50",
+      "within": [
+        "plc_pool"
+      ],
+      "note": "On the deck from 21:15; his phone went into the river at 21:50. The autopsy allows 21:15–22:30."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_aut_blow",
+          "f_aut_nodrown",
+          "f_aut_croc",
+          "f_shoesilt",
+          "f_silt",
+          "f_crossing_sand",
+          "f_pool_silt"
+        ],
+        "concludes": "Richard didn't drown, and the crocodiles came after death. He was struck with mvule hardwood and went into still water that leaves fine grey silt, not the coarse sand of the crossing."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_mumbi",
+          "f_rec_richard",
+          "f_lek_none",
+          "f_lek_reveal",
+          "f_lucia_never",
+          "f_lucia_came",
+          "f_aut_tod"
+        ],
+        "concludes": "He walked to Lucia's camp and was there from 21:12; Lucia told her askari to deny it and admits they talked on the deck. His phone went silent at 21:50.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_deck",
+          "f_oldpost",
+          "f_wood_match",
+          "f_gatebook"
+        ],
+        "concludes": "The deck's mvule post was replaced overnight; the old one, cracked and scrubbed, carries his blood and matches the splinters. He died on the hippo deck and the river carried him 2 km to the crossing.",
+        "answers": [
+          "where"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_letter",
+          "f_lucia_alive"
+        ],
+        "concludes": "He had bought her debt and come to take her camp. At the hippo deck, Lucia Wanjiru struck Richard with a railing post and left him in the river.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_crossing",
+        "blank": "where",
+        "by": [
+          "f_aut_nodrown",
+          "f_aut_croc",
+          "f_silt"
+        ],
+        "why": "He didn't drown, the crocodiles came after death, and his shoes hold pool silt, not crossing sand."
+      },
+      {
+        "word": "pl_ainsworth",
+        "blank": "where",
+        "by": [
+          "f_mumbi"
+        ],
+        "why": "He left his own camp alive at 21:00."
+      },
+      {
+        "word": "pl_track",
+        "blank": "where",
+        "by": [
+          "f_rec_richard",
+          "f_silt"
+        ],
+        "why": "His phone was at Mara Bend from 21:12 to 21:50, and the silt is from the pool under the deck."
+      },
+      {
+        "word": "pl_airstrip",
+        "blank": "where",
+        "by": [
+          "f_strip",
+          "f_rec_richard"
+        ],
+        "why": "Nothing moved at the airstrip; his phone never left Mara Bend."
+      },
+      {
+        "word": "w_kipchumba",
+        "blank": "who",
+        "by": [
+          "f_kemei_narok"
+        ],
+        "why": "Kipchumba was in a Narok hotel bar from 19:30 to 01:10."
+      },
+      {
+        "word": "w_lekishon",
+        "blank": "who",
+        "by": [
+          "f_lek_gate"
+        ],
+        "why": "Lekishon sat at the gate fire by the kitchen all night, 100 m from the deck."
+      },
+      {
+        "word": "w_mumbi",
+        "blank": "who",
+        "by": [
+          "f_mumbi_self"
+        ],
+        "why": "Mumbi hosted dinner at Ainsworth Camp until 23:00."
+      },
+      {
+        "word": "w_olekina",
+        "blank": "who",
+        "by": [
+          "f_olekina_self"
+        ],
+        "why": "Olekina was at his clients' lodge until the 06:00 gate opening."
+      },
+      {
+        "word": "h_croc",
+        "blank": "how",
+        "by": [
+          "f_aut_croc"
+        ],
+        "why": "The crocodile injuries came after death."
+      },
+      {
+        "word": "h_drown",
+        "blank": "how",
+        "by": [
+          "f_aut_nodrown"
+        ],
+        "why": "No water in his airways."
+      },
+      {
+        "word": "h_hippo",
+        "blank": "how",
+        "by": [
+          "f_aut_croc"
+        ],
+        "why": "No hippo bite or crush injuries."
+      },
+      {
+        "word": "h_tree",
+        "blank": "how",
+        "by": [
+          "f_wood_match"
+        ],
+        "why": "Splinters from a worked railing post, not a branch."
+      },
+      {
+        "word": "m_theft",
+        "blank": "why",
+        "by": [
+          "f_kemei_fired",
+          "f_kemei_narok"
+        ],
+        "why": "That's Kipchumba's grievance, and he was in Narok."
+      },
+      {
+        "word": "m_boundary",
+        "blank": "why",
+        "by": [
+          "f_no_boundary"
+        ],
+        "why": "The lease maps show no boundary in dispute."
+      },
+      {
+        "word": "m_booking",
+        "blank": "why",
+        "by": [
+          "f_no_booking"
+        ],
+        "why": "No booking dispute was ever recorded."
+      },
+      {
+        "word": "m_jealous",
+        "blank": "why",
+        "by": [
+          "f_camps_friendly",
+          "f_letter"
+        ],
+        "why": "The camps were friends for years; the letter gives the real reason."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Mara Bend Camp is mortgaged. In January Richard quietly buys Lucia's debt from the bank. On Thursday he writes: pay in full by Friday, or he takes possession.",
+        "image": null
+      },
+      {
+        "text": "Friday passes. On Sunday at 21:00 he walks along the bank track \"to see Mama Lucia about the letter\". At 21:15 the askari sees him come along the river path.",
+        "image": null
+      },
+      {
+        "text": "On the hippo deck he tells her the camp is his. She picks up a loose railing post, waiting for repair, and strikes him. He falls into the still pool below.",
+        "image": "plc_deck"
+      },
+      {
+        "text": "She sweeps the boards, has the post replaced at first light, and hides the old one under a tarpaulin. In the morning she tells Lekishon that no one came.",
+        "image": null
+      },
+      {
+        "text": "The slow river carries Richard 2 km downstream. At crossing point 2 the crocodiles find him at dawn. Dr. Chebii: \"Your crocodile arrived for breakfast, Detective, not dinner.\"",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Records on Richard's phone, then a warrant on the workshop. Wood and silt both take 8 h. No detention needed.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_crossing",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_olekina"
+      },
+      {
+        "do": "read",
+        "target": "ev_crossingsand",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_ainsworth",
+        "hours": 1,
+        "from": "loc_crossing"
+      },
+      {
+        "do": "visit",
+        "target": "loc_ainsworth",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_mumbi"
+      },
+      {
+        "do": "read",
+        "target": "ev_letter",
+        "hours": 1
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "travel",
+        "target": "loc_marabend",
+        "hours": 1,
+        "from": "loc_ainsworth"
+      },
+      {
+        "do": "visit",
+        "target": "loc_marabend",
+        "hours": 2
+      },
+      {
+        "do": "read",
+        "target": "ev_deck",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_poolsilt",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_gatebook",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_lekishon"
+      },
+      {
+        "do": "press",
+        "target": "c_lek"
+      },
+      {
+        "do": "interview",
+        "target": "p_lucia"
+      },
+      {
+        "do": "press",
+        "target": "c_lucia"
+      },
+      {
+        "do": "search",
+        "target": "loc_lstore"
+      },
+      {
+        "do": "submit",
+        "target": "ev_wood"
+      },
+      {
+        "do": "submit",
+        "target": "ev_silt"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 8
+      },
+      {
+        "do": "interview",
+        "target": "p_lucia"
+      },
+      {
+        "do": "press",
+        "target": "c_lucia_alive"
+      }
+    ],
+    "totalHours": 36
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_records",
+        "line": "His phone went into the river with him. When did it stop?"
+      },
+      "tier2": {
+        "facts": [
+          "f_mumbi",
+          "f_rec_richard"
+        ],
+        "line": "Out of his camp at 21:00. His phone at Mara Bend from 21:12 until 21:50."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_body",
+        "line": "What's inside his shoes? The river leaves different sand in different places."
+      },
+      "tier2": {
+        "facts": [
+          "f_silt",
+          "f_deck"
+        ],
+        "line": "Pool silt in his shoes, and a railing post replaced overnight above that pool."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_gatebook",
+        "line": "The gate book is empty, but the river path doesn't pass the gate. Ask the askari again."
+      },
+      "tier2": {
+        "facts": [
+          "f_lek_reveal",
+          "f_lucia_came"
+        ],
+        "line": "\"Mama told me to say no one came.\" And then she admits he did."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Dr. Chebii found something in the wound that isn't from a crocodile."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_blow",
+          "f_wood_match"
+        ],
+        "line": "Mvule splinters, and a cracked mvule post under a tarpaulin."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_letter",
+        "line": "Read the letter in Richard's out-tray."
+      },
+      "tier2": {
+        "facts": [
+          "f_letter",
+          "f_lucia_came"
+        ],
+        "line": "He bought her debt. \"My camp was his now.\""
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "mamba",
+      "def": "Crocodile."
+    },
+    {
+      "term": "kiboko",
+      "def": "Hippopotamus."
+    },
+    {
+      "term": "mto",
+      "def": "River."
+    },
+    {
+      "term": "mvule",
+      "def": "A dense tropical hardwood used for decks and furniture."
+    },
+    {
+      "term": "deni",
+      "def": "Debt."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address or name an older woman."
+    },
+    {
+      "term": "askari",
+      "def": "A guard or watchman."
+    },
+    {
+      "term": "rungu",
+      "def": "A wooden club, carried by Maasai men."
+    },
+    {
+      "term": "shuka",
+      "def": "A Maasai cloth worn wrapped round the body, often red."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "waterAsMap"
+    ],
+    "beatNotes": "Water as a map. The site map shows the river's flow with an arrow; dropping the body's find point and the silt's source on it draws the drift path downstream from the deck to the crossing."
+  }
+}

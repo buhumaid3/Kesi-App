@@ -1,0 +1,1885 @@
+{
+  "meta": {
+    "id": "case-046",
+    "number": 46,
+    "region": "kisumu-lake",
+    "regionNumber": 5,
+    "title": "Full Moon",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 26,
+    "date": "Friday 2 January",
+    "folderTab": "RUSINGA"
+  },
+  "pattern": {
+    "crimePattern": "moneylender kills the boat owner who was about to repay her and keep the boat, then sets her adrift to fake a night-fishing accident",
+    "noRealCaseRetold": true,
+    "notes": "Fictional BMU, lender and sacco. Moon phases follow the real calendar: full moon 3 January 2026, so 1 January is a bright-moon night with no omena boats out. Informal boat financing terms are for the cultural reader to confirm.",
+    "tags": [
+      "blunt-force",
+      "staged-accident",
+      "debt",
+      "warrant",
+      "forensics",
+      "moon",
+      "when-strip"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 4,
+    "redHerrings": 1,
+    "liars": 1,
+    "groups": [
+      "when",
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "warrant"
+    ],
+    "twist": "nobody-fished-that-night"
+  },
+  "ob": {
+    "number": "OB 06/02/01",
+    "date": "Friday 2 January",
+    "time": "07:10",
+    "reportedBy": "Japheth Okinyi, crewman",
+    "text": "Fishermen report a woman boat owner, Valary Okello (34), found dead at 06:30 in her own canoe drifting two kilometres off Rusinga Island. Recorded as an accident while night fishing.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_valary",
+      "role": "victim",
+      "name": "Valary Okello",
+      "age": 34,
+      "occupation": "Boat owner, two boats and two crews",
+      "bio": "One of the island's few women boat owners. Taught half the young men on Kamato beach to fish omena.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_tcompound",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo woman, mid 30s, a fisherman's waterproof jacket over a bright T-shirt, a headwrap, a confident, laughing face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_truphena",
+      "role": "suspect",
+      "name": "Truphena Owiti",
+      "age": 48,
+      "occupation": "Moneylender; owns a motorboat taxi",
+      "bio": "Lends to fishermen on her own terms. Financed Valary's second boat.",
+      "community": "Suba",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_valary_msg"
+      },
+      "at": "plc_tcompound",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Suba woman, late 40s, a church-going print dress and a warm cardigan, gold earrings, a motherly smile with careful eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kizito",
+      "role": "suspect",
+      "name": "Kizito Orwa",
+      "age": 37,
+      "occupation": "Valary's ex-partner",
+      "redHerring": true,
+      "bio": "Shouted at her in front of everyone at a New Year's Eve party.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_japheth"
+      },
+      "at": "plc_party",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, late 30s, a party shirt from the night before, sunglasses pushed up, hungover and defensive, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_calvince",
+      "role": "suspect",
+      "name": "Calvince Onyuka",
+      "age": 31,
+      "occupation": "Truphena's boatman",
+      "bio": "Runs her motorboat taxi between Rusinga and Mbita.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_fuellog"
+      },
+      "at": "plc_kamato",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, early 30s, a life jacket worn open over a vest, a boat key on a float, frightened, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_japheth",
+      "role": "witness",
+      "name": "Japheth Okinyi",
+      "age": 29,
+      "occupation": "Valary's crewman",
+      "bio": "Has crewed her second boat since she bought it.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_jhome",
+      "image": null
+    },
+    {
+      "id": "p_rose",
+      "role": "witness",
+      "name": "Rose Ogolla",
+      "age": 55,
+      "occupation": "Clerk, Kamato BMU",
+      "bio": "Signs the boats out at night and in at dawn.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_beach",
+      "image": null
+    },
+    {
+      "id": "p_dorcas",
+      "role": "witness",
+      "name": "Dorcas Akinyi",
+      "age": 30,
+      "occupation": "Calvince's wife",
+      "statementOnly": true,
+      "bio": "Was at home with her husband on New Year's night.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_kamato",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_tcompound",
+      "name": "Truphena's house, Kamato",
+      "within": "loc_tsearch"
+    },
+    {
+      "id": "plc_tlanding",
+      "name": "Truphena's private landing",
+      "within": "loc_tsearch"
+    },
+    {
+      "id": "plc_kamato",
+      "name": "Kamato village and the public landing"
+    },
+    {
+      "id": "plc_party",
+      "name": "A New Year party in Mbita"
+    },
+    {
+      "id": "plc_jhome",
+      "name": "Japheth's house"
+    },
+    {
+      "id": "plc_lake",
+      "name": "Open water off Rusinga"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_beach",
+      "name": "Kamato beach, Rusinga",
+      "kind": "scene",
+      "description": "A beach of grey volcanic grit on Rusinga Island. Omena boats lie pulled up and dark, their pressure lanterns hanging unlit. Valary's canoe has been towed back in and drawn up apart from the others. The BMU hut stands above the tide line.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_canoe",
+          "label": "Valary's canoe",
+          "pos": [
+            40,
+            60
+          ],
+          "yields": "ev_canoe",
+          "text": "Her canoe, drawn up on the grit. A pressure lantern at the bow, a folded net amidships."
+        },
+        {
+          "id": "hs_body",
+          "label": "In the canoe",
+          "pos": [
+            46,
+            70
+          ],
+          "yields": "ev_body",
+          "text": "Valary was found lying in the bottom of the canoe."
+        },
+        {
+          "id": "hs_phone",
+          "label": "Under the thwart",
+          "pos": [
+            30,
+            66
+          ],
+          "yields": "ev_valary_phone",
+          "text": "Her phone, wrapped in a plastic bag under the thwart, and a roll of cash."
+        },
+        {
+          "id": "hs_log",
+          "label": "BMU night log",
+          "pos": [
+            74,
+            30
+          ],
+          "yields": "ev_bmulog",
+          "text": "The BMU's night log on its clipboard in the hut."
+        },
+        {
+          "id": "hs_diary",
+          "label": "Fisheries diary",
+          "pos": [
+            86,
+            26
+          ],
+          "yields": "ev_diary",
+          "text": "A fisheries diary on the hut wall, the moon's phases printed down each page."
+        },
+        {
+          "id": "hs_motor",
+          "label": "The motorboat taxi",
+          "pos": [
+            16,
+            40
+          ],
+          "yields": "ev_fuellog",
+          "text": "Truphena's white motorboat taxi on its mooring at the public landing. A fuel log in a plastic sleeve."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a beach of grey volcanic grit on Rusinga Island in Lake Victoria at dawn, wooden omena boats pulled up and dark with unlit pressure lanterns, one canoe drawn up apart from the rest, a small BMU hut above the tide line, a motorboat on a mooring, no people in focus"
+      }
+    },
+    {
+      "id": "loc_vhome",
+      "name": "Valary's house and beach",
+      "kind": "location",
+      "description": "A neat house above Valary's own small beach of grey grit, her second boat drawn up below. Her mother sits on the step.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_letter",
+          "label": "On the table",
+          "pos": [
+            40,
+            46
+          ],
+          "yields": "ev_sacco",
+          "text": "A sacco letter in an envelope, opened and refolded many times."
+        },
+        {
+          "id": "hs_grit",
+          "label": "Her beach",
+          "pos": [
+            70,
+            70
+          ],
+          "yields": "ev_vbeach",
+          "text": "Plain grey volcanic grit. Amani bags some."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a neat small house above a beach of grey volcanic grit on Rusinga Island, a wooden boat drawn up below, a woman sitting on the step, Lake Victoria beyond"
+      }
+    },
+    {
+      "id": "loc_mbita",
+      "name": "Mbita jetty",
+      "kind": "location",
+      "description": "The jetty at Mbita across the causeway, a clerk's hut and an arrivals log for every boat that ties up.",
+      "unlock": {
+        "fact": "f_cal_claim"
+      },
+      "hotspots": [
+        {
+          "id": "hs_mlog",
+          "label": "Arrivals log",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_mbitalog",
+          "text": "The arrivals log for New Year's night."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a busy wooden and concrete jetty at Mbita on Lake Victoria, a clerk's hut with a logbook, motorboats tied up, the causeway to Rusinga in the distance"
+      }
+    },
+    {
+      "id": "loc_tsearch",
+      "name": "Truphena's compound (search)",
+      "kind": "search",
+      "description": "A compound behind a hedge above a private landing. A path of red-streaked volcanic grit runs from the house down to the water.",
+      "unlock": {
+        "fact": "f_valary_msg"
+      },
+      "hotspots": [
+        {
+          "id": "hs_compound",
+          "label": "House and landing",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_compound",
+          "text": "Behind the house a canoe paddle leans against the wall, its blade scrubbed pale. A lending book on the shelf inside."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a hedged compound above a small private landing on Rusinga Island, a path of grit with a distinct red layer leading down to the water, a canoe paddle leaning against a house wall"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "In the canoe",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. One head wound. Found lying in the bottom of her canoe at 06:30, two kilometres out."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a wooden fishing canoe drifting on still grey water at dawn, a pressure lantern at the bow, no body visible"
+      }
+    },
+    {
+      "id": "ev_canoe",
+      "type": "physical",
+      "title": "Valary's canoe",
+      "render": "sceneNote",
+      "body": {
+        "note": "The pressure lantern is full of kerosene; wick dry, glass clean: never lit. Net folded and dry. Anchor rope cut. Fresh chafe marks on the bow where a tow rope pulled. Canoe upright."
+      },
+      "facts": [
+        "f_canoe"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a pressure lantern on the bow of a wooden canoe, its glass clean and wick unburnt, a dry folded fishing net beside it"
+      }
+    },
+    {
+      "id": "ev_valary_phone",
+      "type": "phone",
+      "title": "Valary's phone and cash",
+      "render": "manifest",
+      "body": {
+        "message": "21:50 to her sister: \"Truphena ameniita kwake saa nne tumalize mambo ya boti. Nitaenda na mtumbwi wangu. Sacco wamenipa mkopo, nitamlipa yote!\"",
+        "translation": "\"Truphena's called me to her place at ten to settle the boat. I'll go in my canoe. The sacco gave me the loan, I'll pay her everything!\"",
+        "cash": "KSh 12,400 in a roll."
+      },
+      "facts": [
+        "f_valary_msg",
+        "f_cash"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_bmulog",
+      "type": "physical",
+      "title": "Kamato BMU night log",
+      "render": "logBook",
+      "body": {
+        "entry": "1 January: \"Bright moon — no boats out.\" R. Ogolla, 19:00 and 06:00."
+      },
+      "facts": [
+        "f_bmulog"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_diary",
+      "type": "physical",
+      "title": "Fisheries diary",
+      "render": "calendar",
+      "body": {
+        "page": "Full moon 3 January. Bright nights 31 Dec–5 Jan marked: no omena."
+      },
+      "facts": [
+        "f_diary"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rose",
+      "type": "witness",
+      "title": "Statement: Rose Ogolla",
+      "render": "statement",
+      "body": {
+        "speaker": "p_rose"
+      },
+      "facts": [
+        "f_rose",
+        "f_rose_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_japheth",
+      "type": "witness",
+      "title": "Statement: Japheth Okinyi",
+      "render": "statement",
+      "body": {
+        "speaker": "p_japheth"
+      },
+      "facts": [
+        "f_japheth",
+        "f_japheth_self",
+        "f_wages"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_sacco",
+      "type": "physical",
+      "title": "Sacco loan approval",
+      "render": "form",
+      "body": {
+        "date": "29 December",
+        "amount": "Enough to repay T. Owiti in full, with the boat as the sacco's security."
+      },
+      "facts": [
+        "f_sacco"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_vbeach",
+      "type": "physical",
+      "title": "Grit from Valary's beach",
+      "render": "object",
+      "body": {
+        "label": "Plain grey volcanic grit."
+      },
+      "facts": [
+        "f_vbeach"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_fuellog",
+      "type": "physical",
+      "title": "Motorboat fuel log",
+      "render": "logBook",
+      "body": {
+        "entry": "1 Jan — 23:30–00:30 — to Mbita — C. Onyuka"
+      },
+      "facts": [
+        "f_fuellog"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mbitalog",
+      "type": "physical",
+      "title": "Mbita jetty arrivals log",
+      "render": "logBook",
+      "body": {
+        "search": "No arrival from the Owiti motorboat on 1–2 January."
+      },
+      "facts": [
+        "f_mbita"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_dorcas",
+      "type": "witness",
+      "title": "Statement: Dorcas Akinyi",
+      "render": "statement",
+      "body": {
+        "speaker": "p_dorcas"
+      },
+      "facts": [
+        "f_calv_home"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_party",
+      "type": "physical",
+      "title": "New Year party photos",
+      "render": "photo",
+      "body": {
+        "stamps": "Kizito in photos from 21:00 to 02:30; the host confirms."
+      },
+      "facts": [
+        "f_party"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_compound",
+      "type": "physical",
+      "title": "Truphena's compound",
+      "render": "object",
+      "body": {
+        "paddle": "A canoe paddle with a fresh crack, recently scrubbed.",
+        "path": "Grit path to her landing with a distinct red volcanic layer.",
+        "book": "Lending book: Valary — two payments missed — \"boat to lender after three missed payments\"."
+      },
+      "facts": [
+        "f_paddle",
+        "f_tpath",
+        "f_loanbook"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_valary_msg",
+          "f_fuellog"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_nowater",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_compare",
+      "type": "forensic",
+      "title": "Comparison: paddle vs wound",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_paddle_match"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_autopsy",
+          "ev_compound"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_soil",
+      "type": "forensic",
+      "title": "Lab: grit (clothes vs two beaches)",
+      "render": "labReport",
+      "body": {
+        "test": "soil"
+      },
+      "facts": [
+        "f_soil"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "soil",
+        "hours": 8,
+        "needs": [
+          "ev_body",
+          "ev_vbeach",
+          "ev_compound"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Valary Okello was found dead at 06:30 in her own canoe, drifting two kilometres off Rusinga. Recorded as a night-fishing accident.",
+      "kind": "true",
+      "about": [
+        "p_valary"
+      ],
+      "at": {
+        "from": "06:30"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "One head wound. She lay in the bottom of her canoe.",
+      "kind": "true",
+      "about": [
+        "p_valary"
+      ]
+    },
+    {
+      "id": "f_canoe",
+      "text": "Her lantern is full of kerosene and was never lit; the net is folded and dry; the anchor rope is cut; fresh chafe marks on the bow show a tow rope. The canoe is upright.",
+      "kind": "true",
+      "about": [
+        "p_valary"
+      ]
+    },
+    {
+      "id": "f_cash",
+      "text": "Her phone and KSh 12,400 in cash were in a plastic bag under the thwart.",
+      "kind": "true",
+      "about": [
+        "p_valary"
+      ]
+    },
+    {
+      "id": "f_valary_msg",
+      "text": "Valary to her sister, 21:50: Truphena has called her to her place at ten to settle the boat; she'll go in her canoe; \"the sacco gave me the loan, I'll pay her everything!\"",
+      "kind": "true",
+      "about": [
+        "p_valary",
+        "p_truphena"
+      ],
+      "at": {
+        "from": "21:50"
+      }
+    },
+    {
+      "id": "f_bmulog",
+      "text": "BMU night log, 1 January: \"Bright moon — no boats out.\" Signed by Rose at 19:00 and 06:00.",
+      "kind": "true",
+      "about": [
+        "p_rose"
+      ],
+      "at": {
+        "from": "19:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_diary",
+      "text": "Fisheries diary: full moon on 3 January; the bright nights from 31 December to 5 January are marked \"no omena\".",
+      "kind": "true",
+      "about": [
+        "loc_beach"
+      ]
+    },
+    {
+      "id": "f_rose",
+      "text": "Rose: \"Nobody fishes omena under that moon. Valary least of all. She taught half the young men that.\"",
+      "kind": "true",
+      "about": [
+        "p_rose",
+        "p_valary"
+      ]
+    },
+    {
+      "id": "f_rose_self",
+      "text": "Rose signed the log at 19:00 and went home to Kamato village until 06:00.",
+      "kind": "true",
+      "about": [
+        "p_rose"
+      ],
+      "where": {
+        "person": "p_rose",
+        "place": "plc_kamato",
+        "from": "19:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_japheth",
+      "text": "Japheth: Valary told the crew on the 1st, \"No work tonight, the moon is fat. Go home.\" He also says her ex, Kizito, shouted at her at a New Year's Eve party.",
+      "kind": "true",
+      "about": [
+        "p_japheth",
+        "p_valary",
+        "p_kizito"
+      ]
+    },
+    {
+      "id": "f_japheth_self",
+      "text": "Japheth was at home with his wife and children all night.",
+      "kind": "true",
+      "about": [
+        "p_japheth"
+      ],
+      "where": {
+        "person": "p_japheth",
+        "place": "plc_jhome",
+        "from": "19:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_wages",
+      "text": "Japheth: Valary paid both crews every Friday, never late.",
+      "kind": "true",
+      "about": [
+        "p_japheth",
+        "p_valary"
+      ]
+    },
+    {
+      "id": "f_sacco",
+      "text": "Sacco letter, 29 December: a loan approved to Valary, enough to repay Truphena in full and keep her second boat.",
+      "kind": "true",
+      "about": [
+        "p_valary",
+        "p_truphena"
+      ]
+    },
+    {
+      "id": "f_vbeach",
+      "text": "Valary's own beach is plain grey volcanic grit.",
+      "kind": "true",
+      "about": [
+        "p_valary"
+      ]
+    },
+    {
+      "id": "f_fuellog",
+      "text": "Truphena's motorboat fuel log: \"1 Jan — 23:30–00:30 — to Mbita — C. Onyuka\".",
+      "kind": "true",
+      "about": [
+        "p_calvince",
+        "p_truphena"
+      ],
+      "at": {
+        "from": "23:30",
+        "to": "00:30"
+      }
+    },
+    {
+      "id": "f_mbita",
+      "text": "Mbita jetty arrivals log: no arrival from the Owiti motorboat that night.",
+      "kind": "true",
+      "about": [
+        "p_calvince"
+      ]
+    },
+    {
+      "id": "f_calv_home",
+      "text": "Dorcas: Calvince was at home with her from 20:00. Truphena phoned him at 23:10 and he left at 23:15 for the public landing.",
+      "kind": "true",
+      "about": [
+        "p_dorcas",
+        "p_calvince"
+      ],
+      "where": {
+        "person": "p_calvince",
+        "place": "plc_kamato",
+        "from": "20:00",
+        "to": "23:15"
+      }
+    },
+    {
+      "id": "f_party",
+      "text": "Party photos: Kizito appears from 21:00 to 02:30 at a New Year party in Mbita; the host confirms.",
+      "kind": "true",
+      "about": [
+        "p_kizito"
+      ],
+      "where": {
+        "person": "p_kizito",
+        "place": "plc_party",
+        "from": "21:00",
+        "to": "02:30"
+      }
+    },
+    {
+      "id": "f_paddle",
+      "text": "Behind Truphena's house: a canoe paddle with a fresh crack along the blade, recently scrubbed.",
+      "kind": "true",
+      "about": [
+        "p_truphena"
+      ]
+    },
+    {
+      "id": "f_tpath",
+      "text": "Truphena's path down to her landing is grit with a distinct red volcanic layer.",
+      "kind": "true",
+      "about": [
+        "p_truphena"
+      ]
+    },
+    {
+      "id": "f_loanbook",
+      "text": "Truphena's lending book: Valary, two payments missed. Clause: \"boat to lender after three missed payments\".",
+      "kind": "true",
+      "about": [
+        "p_truphena",
+        "p_valary"
+      ]
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Autopsy: a single heavy blow with a long flat object. Not a fall.",
+      "kind": "true",
+      "about": [
+        "p_valary"
+      ]
+    },
+    {
+      "id": "f_aut_nowater",
+      "text": "Autopsy: no water in the lungs. She didn't drown.",
+      "kind": "true",
+      "about": [
+        "p_valary"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 22:00 and 23:30.",
+      "kind": "true",
+      "about": [
+        "p_valary"
+      ],
+      "at": {
+        "from": "22:00",
+        "to": "23:30"
+      }
+    },
+    {
+      "id": "f_soil",
+      "text": "Lab: the grit on Valary's clothes has the red volcanic layer of Truphena's path, not the plain grey of her own beach.",
+      "kind": "true",
+      "about": [
+        "p_valary",
+        "p_truphena"
+      ]
+    },
+    {
+      "id": "f_paddle_match",
+      "text": "Dr. Chebii: the cracked paddle matches the wound in width and edge.",
+      "kind": "true",
+      "about": [
+        "p_valary"
+      ]
+    },
+    {
+      "id": "f_tru_lantern",
+      "text": "Truphena: \"Valary went out omena fishing at eight. I saw her lantern going out from my door.\"",
+      "kind": "lie",
+      "about": [
+        "p_truphena"
+      ]
+    },
+    {
+      "id": "f_tru_owed",
+      "text": "Truphena: \"She owed me. I'd never hurt a borrower.\"",
+      "kind": "claim",
+      "about": [
+        "p_truphena"
+      ]
+    },
+    {
+      "id": "f_tru_home",
+      "text": "Truphena says she was at home in her compound all evening, from seven.",
+      "kind": "true",
+      "about": [
+        "p_truphena"
+      ],
+      "where": {
+        "person": "p_truphena",
+        "place": "plc_tcompound",
+        "from": "19:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_tru_nevercame",
+      "text": "Truphena: \"Valary never came here. Ask anyone.\"",
+      "kind": "lie",
+      "about": [
+        "p_truphena",
+        "p_valary"
+      ]
+    },
+    {
+      "id": "f_cal_claim",
+      "text": "Calvince: \"I took the boat to Mbita.\"",
+      "kind": "claim",
+      "about": [
+        "p_calvince"
+      ]
+    },
+    {
+      "id": "f_cal_tow",
+      "text": "Calvince: Truphena paid him KSh 5,000 to tow Valary's canoe out from her landing. \"She said Valary was drunk and sleeping it off. I didn't look.\"",
+      "kind": "true",
+      "about": [
+        "p_calvince",
+        "p_truphena"
+      ]
+    },
+    {
+      "id": "f_calv_call",
+      "text": "Calvince: Truphena phoned him at 23:10. When he reached her landing at about 23:25 she was standing by Valary's canoe.",
+      "kind": "true",
+      "about": [
+        "p_calvince",
+        "p_truphena"
+      ],
+      "at": {
+        "from": "23:10"
+      }
+    },
+    {
+      "id": "f_kiz_claim",
+      "text": "Kizito: \"I was at the party in Mbita until after two.\"",
+      "kind": "claim",
+      "about": [
+        "p_kizito"
+      ]
+    },
+    {
+      "id": "f_kizito_quarrel",
+      "text": "Kizito: \"She dumped me. I shouted at her on New Year's Eve. That's all.\"",
+      "kind": "true",
+      "about": [
+        "p_kizito",
+        "p_valary"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_truphena",
+      "stance": "cooperative",
+      "intro": "Truphena serves you tea in her best cups. \"That poor girl. I saw her lantern going out at eight. She was always too brave on the water.\"",
+      "claims": [
+        "f_tru_lantern",
+        "f_tru_owed"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_tru_nevercame",
+          "after": "f_tru_home"
+        }
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "f_sacco",
+          "reply": "A sacco loan? She never told me. Well. Then she would have paid. Good for her.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_calvince",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_fuellog"
+      ],
+      "intro": "Calvince keeps wiping the motorboat's seat that is already dry. \"I took the boat to Mbita. That's my job.\"",
+      "claims": [
+        "f_cal_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_truphena",
+          "reply": "She pays me by the trip. I don't ask where the money comes from.",
+          "reveals": []
+        },
+        {
+          "about": "p_dorcas",
+          "reply": "I was home with my wife until Mama Truphena called. Ask Dorcas.",
+          "reveals": [
+            "ev_dorcas"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_kizito",
+      "stance": "cooperative",
+      "intro": "Kizito squints at you on a Mbita bench. \"I was at the party until after two. There are a hundred photos.\"",
+      "claims": [
+        "f_kiz_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_valary",
+          "reply": "She dumped me. I shouted at her on New Year's Eve. That's all. I would never... look at the photos.",
+          "reveals": [
+            "f_kizito_quarrel",
+            "ev_party"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_japheth",
+      "stance": "cooperative",
+      "intro": "Japheth stands at the edge of the water looking at her canoe. \"She sent us home. She said the moon was fat.\"",
+      "claims": [],
+      "yields": [
+        "ev_japheth"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_rose",
+      "stance": "cooperative",
+      "intro": "Rose taps the night log. \"Nobody went out. Nobody. Look at the sky last night.\"",
+      "claims": [],
+      "yields": [
+        "ev_rose"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_tru_lantern",
+      "claim": "f_tru_lantern",
+      "brokenBy": [
+        "f_bmulog",
+        "f_canoe"
+      ],
+      "reveals": [
+        "f_tru_home"
+      ],
+      "reaction": "Her smile stays. \"Maybe I saw another lantern. My eyes are old. I was home all evening, from seven, by myself.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_calvince",
+      "claim": "f_cal_claim",
+      "brokenBy": [
+        "f_mbita"
+      ],
+      "reveals": [
+        "f_cal_tow",
+        "f_calv_call"
+      ],
+      "reaction": "\"She paid me five thousand to tow Valary's canoe out. She said Valary was drunk and sleeping it off. I didn't look. God forgive me, I didn't look.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_tru_nevercame",
+      "claim": "f_tru_nevercame",
+      "brokenBy": [
+        "f_calv_call",
+        "f_soil"
+      ],
+      "reveals": [],
+      "reaction": "Truphena puts the teacup down. \"She came to pay me. I told her the boat was mine.\" Then she folds her hands and won't speak again.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_truphena",
+      "text": "Truphena Owiti",
+      "category": "person",
+      "ref": "p_truphena",
+      "unlock": {
+        "anyOf": [
+          "f_valary_msg"
+        ]
+      }
+    },
+    {
+      "id": "w_kizito",
+      "text": "Kizito Orwa",
+      "category": "person",
+      "ref": "p_kizito",
+      "unlock": {
+        "anyOf": [
+          "f_japheth"
+        ]
+      }
+    },
+    {
+      "id": "w_calvince",
+      "text": "Calvince Onyuka",
+      "category": "person",
+      "ref": "p_calvince",
+      "unlock": {
+        "anyOf": [
+          "f_fuellog"
+        ]
+      }
+    },
+    {
+      "id": "w_japheth",
+      "text": "Japheth Okinyi",
+      "category": "person",
+      "ref": "p_japheth",
+      "unlock": {
+        "anyOf": [
+          "f_japheth"
+        ]
+      }
+    },
+    {
+      "id": "w_rose",
+      "text": "Rose Ogolla",
+      "category": "person",
+      "ref": "p_rose",
+      "unlock": {
+        "anyOf": [
+          "f_bmulog"
+        ]
+      }
+    },
+    {
+      "id": "h_paddle",
+      "text": "struck with a canoe paddle at Truphena's house, then set adrift in her own canoe",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_fall",
+      "text": "fell and struck her head while fishing",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_capsize",
+      "text": "drowned when her canoe capsized",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_lantern",
+      "text": "struck by the lantern",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_canoe"
+        ]
+      }
+    },
+    {
+      "id": "h_robbers",
+      "text": "attacked by robbers on the water",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_boat",
+      "text": "Valary was about to repay her in full and keep the boat Truphena wanted",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_sacco"
+        ]
+      }
+    },
+    {
+      "id": "m_refused",
+      "text": "Valary refused to repay her loan",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_tru_owed"
+        ]
+      }
+    },
+    {
+      "id": "m_jealous",
+      "text": "the ex-partner's jealousy",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_japheth"
+        ]
+      }
+    },
+    {
+      "id": "m_wages",
+      "text": "unpaid crew wages",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_wages"
+        ]
+      }
+    },
+    {
+      "id": "m_party",
+      "text": "a quarrel at the New Year party",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_japheth"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Valary Okello"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_2000",
+                  "label": "20:00",
+                  "from": "20:00",
+                  "to": "20:00"
+                },
+                {
+                  "id": "sl_2150",
+                  "label": "21:50",
+                  "from": "21:50",
+                  "to": "21:50"
+                },
+                {
+                  "id": "sl_2200",
+                  "label": "22:00–23:10",
+                  "from": "22:00",
+                  "to": "23:10"
+                },
+                {
+                  "id": "sl_2330",
+                  "label": "23:30–00:30",
+                  "from": "23:30",
+                  "to": "00:30"
+                },
+                {
+                  "id": "sl_0630",
+                  "label": "06:30",
+                  "from": "06:30",
+                  "to": "06:30"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_msg",
+                  "text": "Valary's message to her sister",
+                  "slot": "sl_2150",
+                  "by": [
+                    "f_valary_msg"
+                  ],
+                  "why": "Her phone timestamps the message at 21:50.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_valary_msg"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Valary is killed",
+                  "slot": "sl_2200",
+                  "by": [
+                    "f_aut_tod",
+                    "f_valary_msg",
+                    "f_calv_call"
+                  ],
+                  "why": "She was due at Truphena's at ten; by 23:10 Truphena was already calling for a tow. The autopsy agrees: 22:00 to 23:30.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_tow",
+                  "text": "Her canoe is towed out",
+                  "slot": "sl_2330",
+                  "by": [
+                    "f_fuellog",
+                    "f_cal_tow"
+                  ],
+                  "why": "The motorboat's fuel log: 23:30 to 00:30, and Calvince admits the tow.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_fuellog"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_found",
+                  "text": "Fishermen find the canoe",
+                  "slot": "sl_0630",
+                  "by": [
+                    "f_ob"
+                  ],
+                  "why": "The OB: found at 06:30, two kilometres out.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_ob"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_2000",
+                  "by": [
+                    "f_bmulog",
+                    "f_canoe",
+                    "f_valary_msg"
+                  ],
+                  "why": "Truphena's \"lantern at eight\" never happened: no boats went out, the lantern was never lit, and at 21:50 Valary was still at home writing to her sister."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A message at ten to ten, dead before Truphena phoned at ten past eleven, towed out at half past. That's the night.",
+          "fail": [
+            "Eight o'clock is Truphena's lantern. There was no lantern.",
+            "Half past eleven is the tow. She was dead before the phone call."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_truphena"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A lantern that was never lit, a tow she paid for, her path's grit on Valary's clothes, and her paddle. That will hold.",
+          "fail": [
+            "The boatman was at home until 23:15 and he towed what he was told was a sleeping woman.",
+            "The ex is in a hundred party photos in Mbita."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_paddle"
+          }
+        ],
+        "prosecutor": {
+          "pass": "One blow with a paddle on dry land, then the lake to hide it. Yes.",
+          "fail": [
+            "No water in her lungs, and the canoe is upright.",
+            "Nobody fished that night. Look at the sky."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_boat"
+          }
+        ],
+        "prosecutor": {
+          "pass": "She wasn't refusing to pay. She was about to pay, and keep the boat. That's the reason.",
+          "fail": [
+            "Read the sacco letter again. Was she refusing, or about to pay?",
+            "She paid her crews every Friday."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_tsearch",
+      "from": "22:00",
+      "to": "23:10",
+      "within": [
+        "plc_tcompound",
+        "plc_tlanding"
+      ],
+      "note": "Due at Truphena's at 22:00; Truphena was calling for a tow at 23:10. The autopsy allows 22:00–23:30."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_bmulog",
+          "f_diary",
+          "f_rose",
+          "f_japheth",
+          "f_canoe"
+        ],
+        "concludes": "Nobody fished on that bright-moon night. Valary sent her crew home, her lantern was never lit and her net never wet. The night-fishing accident is false."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_valary_msg",
+          "f_aut_tod",
+          "f_aut_nowater"
+        ],
+        "concludes": "At 21:50 she was going in her canoe to Truphena's at ten, to pay off the boat. She died between 22:00 and 23:30, and not by drowning."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_tru_lantern",
+          "f_fuellog",
+          "f_mbita",
+          "f_cal_tow",
+          "f_calv_call"
+        ],
+        "concludes": "Truphena paid her boatman to tow Valary's canoe out from her own landing at 23:30, and was calling for him at 23:10, so Valary was dead by then.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_tru_home",
+          "f_tru_nevercame",
+          "f_paddle",
+          "f_soil",
+          "f_paddle_match",
+          "f_sacco",
+          "f_loanbook"
+        ],
+        "concludes": "The grit on Valary's clothes is from Truphena's path, the cracked paddle matches the wound, and Valary was about to repay her and keep the boat Truphena's clause would have taken. Truphena Owiti struck her with a canoe paddle at her house and set her adrift.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_kizito",
+        "blank": "who",
+        "by": [
+          "f_party"
+        ],
+        "why": "Kizito is in party photos in Mbita from 21:00 to 02:30."
+      },
+      {
+        "word": "w_calvince",
+        "blank": "who",
+        "by": [
+          "f_calv_home",
+          "f_cal_tow"
+        ],
+        "why": "Calvince was at home with his wife until 23:15; he towed a canoe he was told held a sleeping woman."
+      },
+      {
+        "word": "w_japheth",
+        "blank": "who",
+        "by": [
+          "f_japheth_self"
+        ],
+        "why": "Japheth was at home with his family; Valary had sent the crew home."
+      },
+      {
+        "word": "w_rose",
+        "blank": "who",
+        "by": [
+          "f_rose_self"
+        ],
+        "why": "Rose signed the log at 19:00 and went home to Kamato village."
+      },
+      {
+        "word": "h_fall",
+        "blank": "how",
+        "by": [
+          "f_bmulog",
+          "f_canoe",
+          "f_aut_blow"
+        ],
+        "why": "She wasn't fishing, and a single heavy blow is not a fall."
+      },
+      {
+        "word": "h_capsize",
+        "blank": "how",
+        "by": [
+          "f_aut_nowater",
+          "f_canoe"
+        ],
+        "why": "No water in her lungs, and the canoe is upright."
+      },
+      {
+        "word": "h_lantern",
+        "blank": "how",
+        "by": [
+          "f_canoe",
+          "f_aut_blow"
+        ],
+        "why": "The lantern is intact, and the wound is from a long flat object."
+      },
+      {
+        "word": "h_robbers",
+        "blank": "how",
+        "by": [
+          "f_cash"
+        ],
+        "why": "Her phone and KSh 12,400 were still in the canoe."
+      },
+      {
+        "word": "m_refused",
+        "blank": "why",
+        "by": [
+          "f_sacco",
+          "f_valary_msg"
+        ],
+        "why": "She wasn't refusing: the sacco had approved her loan and she was going to pay everything."
+      },
+      {
+        "word": "m_jealous",
+        "blank": "why",
+        "by": [
+          "f_party"
+        ],
+        "why": "That jealousy is Kizito's, and Kizito was at the party in Mbita."
+      },
+      {
+        "word": "m_wages",
+        "blank": "why",
+        "by": [
+          "f_wages"
+        ],
+        "why": "She paid her crews every Friday."
+      },
+      {
+        "word": "m_party",
+        "blank": "why",
+        "by": [
+          "f_kizito_quarrel",
+          "f_party"
+        ],
+        "why": "The New Year quarrel was Kizito's, and he was in Mbita."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Truphena lends Valary the money for her second boat. If Valary misses three payments, the boat is Truphena's, and the boat is worth far more than the debt.",
+        "image": null
+      },
+      {
+        "text": "Valary misses two. On 29 December her sacco approves a loan to pay Truphena off in full.",
+        "image": null
+      },
+      {
+        "text": "1 January, a bright moon two nights from full. Valary sends her crews home. At 21:50 she tells her sister she's going to Truphena's at ten, in her canoe, to pay everything.",
+        "image": null
+      },
+      {
+        "text": "At Truphena's house they argue. Truphena strikes her once with a canoe paddle and lays her in her own canoe at the landing.",
+        "image": "loc_tsearch"
+      },
+      {
+        "text": "23:10. She phones her boatman. At 23:30 he tows the canoe out behind the motorboat, cuts it loose, and logs a trip \"to Mbita\". In the morning Truphena tells everyone she saw Valary's lantern go out at eight.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "No detention needed. One warrant on the compound. The grit comparison (8 h) breaks her second story.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_beach",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_canoe",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_bmulog",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_diary",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_rose"
+      },
+      {
+        "do": "interview",
+        "target": "p_japheth"
+      },
+      {
+        "do": "read",
+        "target": "ev_valary_phone",
+        "hours": 1
+      },
+      {
+        "do": "visit",
+        "target": "loc_vhome",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_sacco",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_vbeach",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_truphena"
+      },
+      {
+        "do": "press",
+        "target": "c_tru_lantern"
+      },
+      {
+        "do": "read",
+        "target": "ev_fuellog",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_calvince"
+      },
+      {
+        "do": "visit",
+        "target": "loc_mbita",
+        "hours": 2
+      },
+      {
+        "do": "read",
+        "target": "ev_mbitalog",
+        "hours": 1
+      },
+      {
+        "do": "press",
+        "target": "c_calvince"
+      },
+      {
+        "do": "search",
+        "target": "loc_tsearch"
+      },
+      {
+        "do": "submit",
+        "target": "ev_soil"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 8
+      },
+      {
+        "do": "interview",
+        "target": "p_truphena"
+      },
+      {
+        "do": "press",
+        "target": "c_tru_nevercame"
+      }
+    ],
+    "totalHours": 32
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_diary",
+        "line": "Nature keeps time too. What was the moon doing that night?"
+      },
+      "tier2": {
+        "facts": [
+          "f_valary_msg",
+          "f_calv_call"
+        ],
+        "line": "A message at 21:50, due at ten. A phone call for a tow at 23:10."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_fuellog",
+        "line": "A motorboat went out that night when nobody was fishing. Whose?"
+      },
+      "tier2": {
+        "facts": [
+          "f_cal_tow",
+          "f_soil"
+        ],
+        "line": "A tow paid for with five thousand shillings, and red grit on grey clothes."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_canoe",
+        "line": "Look at her lantern and her net before you look at her."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_nowater",
+          "f_paddle_match"
+        ],
+        "line": "No water in her lungs. A paddle with a fresh crack."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_sacco",
+        "line": "Read the sacco letter. Then read the clause in the lending book."
+      },
+      "tier2": {
+        "facts": [
+          "f_sacco",
+          "f_loanbook"
+        ],
+        "line": "One more missed payment and the boat was Truphena's. The sacco was about to stop that."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "omena",
+      "def": "Small silver lake fish, caught at night with lanterns and dried in the sun."
+    },
+    {
+      "term": "taa",
+      "def": "Lamp; here, the pressure lantern on an omena boat."
+    },
+    {
+      "term": "mwezi mpevu",
+      "def": "Full moon."
+    },
+    {
+      "term": "mkopo",
+      "def": "A loan."
+    },
+    {
+      "term": "boti",
+      "def": "Boat."
+    },
+    {
+      "term": "mtumbwi",
+      "def": "Canoe."
+    },
+    {
+      "term": "sacco",
+      "def": "Savings and credit co-operative society."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address or name a woman."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "natureAsClock"
+    ],
+    "beatNotes": "Nature as a clock. The fisheries diary's moon-phase page becomes a timeline source on the rail: the whole night of 1 January is shaded \"no boats\". Truphena's 20:00 lantern lands in the shaded band and turns amber."
+  }
+}

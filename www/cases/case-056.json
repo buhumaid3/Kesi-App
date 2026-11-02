@@ -1,0 +1,1849 @@
+{
+  "meta": {
+    "id": "case-056",
+    "number": 56,
+    "region": "maasai-mara",
+    "regionNumber": 6,
+    "title": "The Boma",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 30,
+    "date": "Sunday 1 March",
+    "folderTab": "SEKENANI"
+  },
+  "pattern": {
+    "crimePattern": "manyatta elder strikes the tour operator who cheated the village and framed his grandson; the grandson moves the body to fake a robbery",
+    "noRealCaseRetold": true,
+    "notes": "Fictional manyatta, elder, family and tour company. The Mzee is written with full dignity; the case shows cultural tourism's real exploitation of villages without exoticising the manyatta. The cultural reader is asked to check the depiction.",
+    "tags": [
+      "blunt-force",
+      "moved-body",
+      "staged-robbery",
+      "protecting",
+      "two-liars",
+      "records",
+      "forensics",
+      "when-strip",
+      "where"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 4,
+    "redHerrings": 1,
+    "liars": 2,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 22/01/03",
+    "date": "Sunday 1 March",
+    "time": "06:20",
+    "reportedBy": "A herder on the Sekenani road",
+    "text": "A herder reports a tour operator, James Kinuthia (46) of Mara Heritage Tours, found dead at 06:00 beside his vehicle on the Sekenani road, the driver's door open. Recorded as robbery with violence.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_road",
+    "nodes": [
+      "loc_road",
+      "loc_manyatta",
+      "loc_talek"
+    ],
+    "edges": [
+      {
+        "a": "loc_road",
+        "b": "loc_manyatta",
+        "minutes": 10,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_manyatta",
+        "b": "loc_talek",
+        "minutes": 45,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_road",
+        "b": "loc_talek",
+        "minutes": 50,
+        "by": "4x4"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_kinuthia",
+      "role": "victim",
+      "name": "James Kinuthia",
+      "age": 46,
+      "occupation": "Owner, Mara Heritage Tours",
+      "bio": "Brings busloads of visitors to the manyattas near Sekenani. Charming with guests; less so with villages.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_boma",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, mid 40s, a tour company polo shirt and a khaki hat, sunglasses on a cord, a salesman's practised smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mzee",
+      "role": "suspect",
+      "name": "Mzee Kiraposhe ole Nampaso",
+      "age": 72,
+      "occupation": "Elder of Enkang Oloirien",
+      "bio": "The manyatta's elder. Carries his rungu as a mark of standing, not a weapon.",
+      "community": "Maasai",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_tracker"
+      },
+      "at": "plc_fire",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Maasai elder, early 70s, a red-checked shuka and an elder's beaded necklace, a carved rungu in his hand, a lined, dignified, very still face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_lenku",
+      "role": "suspect",
+      "name": "Lenku Nampaso",
+      "age": 24,
+      "occupation": "Trainee guide; the Mzee's grandson",
+      "bio": "Reads every receipt. Worked out what Kinuthia was doing to the village.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_ob_camera"
+      },
+      "at": "plc_talektown",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Maasai young man, mid 20s, a trainee guide's shirt, a beaded bracelet, a frightened, protective face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mohamed",
+      "role": "suspect",
+      "name": "Mohamed Abdille",
+      "age": 45,
+      "occupation": "Rival tour operator",
+      "redHerring": true,
+      "bio": "Fought Kinuthia over bookings for years.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_operator"
+      },
+      "at": "plc_narok",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Somali man, mid 40s, a crisp shirt and a kofia, a phone in each hand, impatient, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_ruth",
+      "role": "suspect",
+      "name": "Ruth Ndambuki",
+      "age": 38,
+      "occupation": "Visitor from Nairobi",
+      "bio": "Argued with Kinuthia about prices on Saturday afternoon.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_naipanoi"
+      },
+      "at": "plc_lodge",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba woman, late 30s, a sun hat and a safari shirt, a camera round her neck, indignant, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_naipanoi",
+      "role": "witness",
+      "name": "Naipanoi Lemiso",
+      "age": 50,
+      "occupation": "Chairlady, Enkang Oloirien",
+      "bio": "Keeps the village's receipt book for visitor fees.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_manyatta",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_boma",
+      "name": "The cattle boma at the centre of the manyatta",
+      "within": "loc_manyatta"
+    },
+    {
+      "id": "plc_dance",
+      "name": "The dance ground",
+      "within": "loc_manyatta"
+    },
+    {
+      "id": "plc_fire",
+      "name": "The Mzee's fire, by his house",
+      "within": "loc_manyatta"
+    },
+    {
+      "id": "plc_nhouse",
+      "name": "Naipanoi's house",
+      "within": "loc_manyatta"
+    },
+    {
+      "id": "plc_office",
+      "name": "Mara Heritage Tours' Talek office",
+      "within": "loc_talek"
+    },
+    {
+      "id": "plc_talektown",
+      "name": "Talek town"
+    },
+    {
+      "id": "plc_gate",
+      "name": "Sekenani gate"
+    },
+    {
+      "id": "plc_narok",
+      "name": "A hotel in Narok"
+    },
+    {
+      "id": "plc_lodge",
+      "name": "Ruth's lodge"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_road",
+      "name": "The Sekenani road",
+      "kind": "scene",
+      "description": "A murram road through open grass, 4 km from the manyatta. A white tour van stands on the verge with its driver's door open. Kinuthia lay beside it.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Beside the van",
+          "pos": [
+            44,
+            60
+          ],
+          "yields": "ev_scene_road",
+          "text": "The murram around the van is smooth. His wallet is still in his pocket."
+        },
+        {
+          "id": "hs_clothes",
+          "label": "His clothes",
+          "pos": [
+            50,
+            70
+          ],
+          "yields": "ev_clothes",
+          "text": "Something caught in the creases and the weave of his jacket."
+        },
+        {
+          "id": "hs_tracker",
+          "label": "Company tracker",
+          "pos": [
+            80,
+            36
+          ],
+          "yields": "ev_tracker",
+          "text": "The tour company's office prints the van's tracker log."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a murram road through open grass near the Sekenani gate at dawn, a white safari tour van on the verge with its driver's door open, no struggle marks in the dust, no body visible"
+      }
+    },
+    {
+      "id": "loc_manyatta",
+      "name": "Enkang Oloirien",
+      "kind": "location",
+      "description": "A ring of low houses of mud, sticks and cow dung inside a fence of woven acacia thorn. At the centre, the cattle boma. A dance ground where visitors watch the adumu, and a beadwork market under a tree.",
+      "unlock": {
+        "fact": "f_tracker"
+      },
+      "hotspots": [
+        {
+          "id": "hs_boma",
+          "label": "The boma",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_boma",
+          "text": "The cattle boma, its thorn fence, the cattle inside."
+        },
+        {
+          "id": "hs_book",
+          "label": "Naipanoi's receipt book",
+          "pos": [
+            26,
+            40
+          ],
+          "yields": "ev_village_book",
+          "text": "The village's receipt book for visitor fees."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a Maasai manyatta near Sekenani at dusk, a ring of low houses of mud and sticks inside a fence of woven acacia thorn, a cattle boma at the centre with cattle coming in, a dance ground, no people in focus"
+      }
+    },
+    {
+      "id": "loc_talek",
+      "name": "Talek town",
+      "kind": "location",
+      "description": "The police post with its OB, and Mara Heritage Tours' small office on the main street.",
+      "unlock": {
+        "fact": "f_tracker"
+      },
+      "hotspots": [
+        {
+          "id": "hs_ob",
+          "label": "Police post OB",
+          "pos": [
+            30,
+            40
+          ],
+          "yields": "ev_ob_camera",
+          "text": "The Talek police post OB, open three days back."
+        },
+        {
+          "id": "hs_office",
+          "label": "Kinuthia's office",
+          "pos": [
+            70,
+            46
+          ],
+          "yields": "ev_operator_book",
+          "text": "Kinuthia's own account book, in a drawer."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "Talek town's main street, a small police post with a blue sign, a tour company office with posters of manyattas in the window"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_scene_road",
+      "type": "physical",
+      "title": "On the road",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Driver's door open. His wallet still in his pocket with KSh 21,000. No struggle marks on the murram."
+      },
+      "facts": [
+        "f_road"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "an open driver's door of a white safari van on a murram road at dawn, a wallet visible on the dashboard, no body visible"
+      }
+    },
+    {
+      "id": "ev_clothes",
+      "type": "physical",
+      "title": "His clothes",
+      "render": "object",
+      "body": {
+        "label": "Cattle hair and fresh dung in the creases. Acacia thorns of the kind woven into a boma fence caught in his jacket."
+      },
+      "facts": [
+        "f_clothes"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tracker",
+      "type": "physical",
+      "title": "Mara Heritage Tours' van tracker",
+      "render": "logBook",
+      "body": {
+        "log": "At the manyatta 18:40–21:10. Moves 4 km. Stops on the Sekenani road 21:20; engine off."
+      },
+      "facts": [
+        "f_tracker"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_boma",
+      "type": "physical",
+      "title": "The boma",
+      "render": "sceneNote",
+      "body": {
+        "note": "A woven acacia-thorn fence; a patch of trampled dung near the gate, swept over."
+      },
+      "facts": [
+        "f_boma"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_village_book",
+      "type": "physical",
+      "title": "Village receipt book",
+      "render": "ledger",
+      "body": {
+        "entries": "Mara Heritage Tours: KSh 500 per visitor, every entry signed by J. Kinuthia.",
+        "other": "No cattle sale to or from Kinuthia, ever."
+      },
+      "facts": [
+        "f_village",
+        "f_no_sale"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_operator_book",
+      "type": "physical",
+      "title": "Kinuthia's account book",
+      "render": "ledger",
+      "body": {
+        "entries": "\"Village fee\": KSh 3,000 per visitor, charged to guests."
+      },
+      "facts": [
+        "f_operator"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ob_camera",
+      "type": "physical",
+      "title": "Talek police post OB",
+      "render": "form",
+      "body": {
+        "entry": "Wednesday: complaint by J. Kinuthia that \"guide Lenku Nampaso stole a guest's camera\"."
+      },
+      "facts": [
+        "f_ob_camera"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ruth",
+      "type": "witness",
+      "title": "Statement and lodge register: Ruth Ndambuki",
+      "render": "statement",
+      "body": {
+        "speaker": "p_ruth"
+      },
+      "facts": [
+        "f_ruth",
+        "f_ruth_lodge"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Lenku Nampaso's line",
+      "render": "manifest",
+      "body": {
+        "masts": "Talek zone 17:30–20:20; manyatta zone 20:25–21:05; Sekenani road 21:15–21:25; manyatta again 22:30."
+      },
+      "facts": [
+        "f_rec_lenku"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_ob_camera",
+          "f_tracker"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_naipanoi",
+      "type": "witness",
+      "title": "Statement: Naipanoi Lemiso",
+      "render": "statement",
+      "body": {
+        "speaker": "p_naipanoi"
+      },
+      "facts": [
+        "f_naipanoi",
+        "f_naipanoi_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_abdille",
+      "type": "physical",
+      "title": "Narok hotel bill",
+      "render": "receipt",
+      "body": {
+        "stay": "M. Abdille: checked in 17:00 Saturday; dinner bill 20:30."
+      },
+      "facts": [
+        "f_abdille"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rungu",
+      "type": "physical",
+      "title": "The Mzee's rungu",
+      "render": "object",
+      "body": {
+        "label": "A carved wooden club with a rounded head, handed over by the Mzee himself."
+      },
+      "facts": [
+        "f_rungu"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a carved wooden Maasai rungu club with a rounded head and a polished handle, lying on a red-checked cloth"
+      }
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_club",
+        "f_aut_lividity",
+        "f_aut_tod",
+        "f_aut_noother"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_scene_road"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_trace",
+      "type": "forensic",
+      "title": "Lab: trace (the rungu)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_trace"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_rungu"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "James Kinuthia was found dead at 06:00 beside his tour van on the Sekenani road, the driver's door open. Recorded as robbery with violence.",
+      "kind": "true",
+      "about": [
+        "p_kinuthia",
+        "loc_road"
+      ],
+      "at": {
+        "from": "06:00"
+      }
+    },
+    {
+      "id": "f_road",
+      "text": "His wallet is still in his pocket with KSh 21,000. There are no struggle marks on the murram.",
+      "kind": "true",
+      "about": [
+        "p_kinuthia",
+        "loc_road"
+      ]
+    },
+    {
+      "id": "f_clothes",
+      "text": "Cattle hair and fresh dung in the creases of his clothes; acacia thorns of the kind woven into a boma fence caught in his jacket.",
+      "kind": "true",
+      "about": [
+        "p_kinuthia"
+      ]
+    },
+    {
+      "id": "f_tracker",
+      "text": "Van tracker: at the manyatta 18:40–21:10; moves 4 km; stops on the Sekenani road at 21:20, engine off.",
+      "kind": "true",
+      "about": [
+        "p_kinuthia",
+        "loc_manyatta"
+      ],
+      "at": {
+        "from": "18:40",
+        "to": "21:20"
+      }
+    },
+    {
+      "id": "f_boma",
+      "text": "In the boma: a patch of trampled dung near the gate, swept over, and the thorn fence matching the thorns in his jacket.",
+      "kind": "true",
+      "about": [
+        "plc_boma"
+      ]
+    },
+    {
+      "id": "f_village",
+      "text": "Village receipt book: Mara Heritage Tours paid KSh 500 per visitor, every entry signed by Kinuthia.",
+      "kind": "true",
+      "about": [
+        "p_kinuthia",
+        "p_naipanoi"
+      ]
+    },
+    {
+      "id": "f_no_sale",
+      "text": "Village receipt book: no cattle sale to or from Kinuthia, ever.",
+      "kind": "true",
+      "about": [
+        "p_kinuthia"
+      ]
+    },
+    {
+      "id": "f_operator",
+      "text": "Kinuthia's own account book: a \"village fee\" of KSh 3,000 per visitor, charged to guests.",
+      "kind": "true",
+      "about": [
+        "p_kinuthia"
+      ]
+    },
+    {
+      "id": "f_ob_camera",
+      "text": "Talek police post OB, Wednesday: a complaint by J. Kinuthia that \"guide Lenku Nampaso stole a guest's camera\".",
+      "kind": "true",
+      "about": [
+        "p_kinuthia",
+        "p_lenku"
+      ]
+    },
+    {
+      "id": "f_ruth",
+      "text": "Ruth: no guest lost a camera on her trip. \"The camera he waved around was his own; it had his company sticker.\" She argued with him about prices at 16:00 and left at 17:30.",
+      "kind": "true",
+      "about": [
+        "p_ruth",
+        "p_kinuthia"
+      ]
+    },
+    {
+      "id": "f_ruth_lodge",
+      "text": "Lodge register: Ruth checked back in at 17:50 and dined at the lodge.",
+      "kind": "true",
+      "about": [
+        "p_ruth"
+      ],
+      "where": {
+        "person": "p_ruth",
+        "place": "plc_lodge",
+        "from": "17:50",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_rec_lenku",
+      "text": "Records, Lenku's line: Talek zone 17:30–20:20; manyatta zone 20:25–21:05; Sekenani road 21:15–21:25; manyatta again at 22:30.",
+      "kind": "true",
+      "about": [
+        "p_lenku"
+      ],
+      "where": {
+        "person": "p_lenku",
+        "place": "plc_talektown",
+        "from": "17:30",
+        "to": "20:20"
+      },
+      "at": {
+        "from": "17:30",
+        "to": "22:30"
+      }
+    },
+    {
+      "id": "f_naipanoi",
+      "text": "Naipanoi: she saw Kinuthia's van arrive at 18:40 and the Mzee walk with him to the boma. She heard raised voices, \"then the cattle were restless\".",
+      "kind": "true",
+      "about": [
+        "p_naipanoi",
+        "p_mzee",
+        "p_kinuthia"
+      ],
+      "where": {
+        "person": "p_mzee",
+        "place": "plc_boma",
+        "from": "18:40",
+        "to": "18:50"
+      },
+      "at": {
+        "from": "18:40"
+      }
+    },
+    {
+      "id": "f_naipanoi_self",
+      "text": "Naipanoi was in her house with her daughters all evening; they confirm it.",
+      "kind": "true",
+      "about": [
+        "p_naipanoi"
+      ],
+      "where": {
+        "person": "p_naipanoi",
+        "place": "plc_nhouse",
+        "from": "18:00",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_abdille",
+      "text": "Narok hotel: Mohamed Abdille checked in at 17:00 on Saturday; his dinner bill is stamped 20:30.",
+      "kind": "true",
+      "about": [
+        "p_mohamed"
+      ],
+      "where": {
+        "person": "p_mohamed",
+        "place": "plc_narok",
+        "from": "17:00",
+        "to": "21:00"
+      }
+    },
+    {
+      "id": "f_rungu",
+      "text": "The Mzee's rungu: a carved wooden club with a rounded head, handed over by the Mzee himself.",
+      "kind": "true",
+      "about": [
+        "p_mzee"
+      ]
+    },
+    {
+      "id": "f_aut_club",
+      "text": "Autopsy: one heavy blow from a rounded wooden club head.",
+      "kind": "true",
+      "about": [
+        "p_kinuthia"
+      ]
+    },
+    {
+      "id": "f_aut_lividity",
+      "text": "Autopsy: lividity shows he lay on his side for about two hours, then was moved.",
+      "kind": "true",
+      "about": [
+        "p_kinuthia"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 18:45 and 19:30.",
+      "kind": "true",
+      "about": [
+        "p_kinuthia"
+      ],
+      "at": {
+        "from": "18:45",
+        "to": "19:30"
+      }
+    },
+    {
+      "id": "f_aut_noother",
+      "text": "Autopsy: no vehicle injuries, no trampling, no fall.",
+      "kind": "true",
+      "about": [
+        "p_kinuthia"
+      ]
+    },
+    {
+      "id": "f_trace",
+      "text": "Lab: Kinuthia's blood in the grain of the rungu's head.",
+      "kind": "true",
+      "about": [
+        "p_kinuthia",
+        "p_mzee"
+      ]
+    },
+    {
+      "id": "f_lenku_talek",
+      "text": "Lenku: \"I was in Talek all evening. I never saw Kinuthia's car.\"",
+      "kind": "lie",
+      "about": [
+        "p_lenku"
+      ]
+    },
+    {
+      "id": "f_lenku_reveal",
+      "text": "Lenku: he came home at 20:30 and found Kinuthia lying in the boma, his grandfather sitting by the fire, very quiet. He drove the van to the road so they would think robbers.",
+      "kind": "true",
+      "about": [
+        "p_lenku",
+        "p_mzee",
+        "p_kinuthia"
+      ],
+      "at": {
+        "from": "20:30"
+      }
+    },
+    {
+      "id": "f_mzee_notsee",
+      "text": "The Mzee: \"I didn't see that man after the visitors left.\"",
+      "kind": "lie",
+      "about": [
+        "p_mzee"
+      ]
+    },
+    {
+      "id": "f_mzee_confess",
+      "text": "The Mzee: \"He said my grandson would go to prison for his lie. I am old. Let them take me, not the boy.\"",
+      "kind": "true",
+      "about": [
+        "p_mzee",
+        "p_lenku",
+        "p_kinuthia"
+      ]
+    },
+    {
+      "id": "f_mohamed_claim",
+      "text": "Mohamed: \"I was in Narok.\"",
+      "kind": "claim",
+      "about": [
+        "p_mohamed"
+      ]
+    },
+    {
+      "id": "f_mohamed_knew",
+      "text": "Mohamed: \"Everyone knew he cheated the villages. Nobody could prove it.\"",
+      "kind": "true",
+      "about": [
+        "p_mohamed",
+        "p_kinuthia"
+      ]
+    },
+    {
+      "id": "f_ruth_claim",
+      "text": "Ruth: \"We argued about prices. I left at half five.\"",
+      "kind": "claim",
+      "about": [
+        "p_ruth"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_lenku",
+      "stance": "cooperative",
+      "intro": "Lenku stands at the edge of the dance ground, arms folded tight. \"I was in Talek all evening. I never saw Kinuthia's car.\"",
+      "claims": [
+        "f_lenku_talek"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_ob_camera",
+          "reply": "A camera? It was his own. He waved it at me and said, \"Now you're a thief.\" Because I read the receipts.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_mzee",
+      "stance": "cooperative",
+      "intro": "The Mzee sits on a low stool by his fire, his rungu across his knees. He listens to the whole question before he answers. \"I didn't see that man after the visitors left.\"",
+      "claims": [
+        "f_mzee_notsee"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_mohamed",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_operator_book"
+      ],
+      "intro": "Mohamed answers from a Narok hotel lobby. \"Kinuthia and I compete. That's all.\"",
+      "claims": [
+        "f_mohamed_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_operator_book",
+          "reply": "Three thousand, and he paid them five hundred? Everyone knew he cheated the villages. Nobody could prove it. I was in Narok; ask the hotel.",
+          "reveals": [
+            "f_mohamed_knew",
+            "ev_abdille"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_ruth",
+      "stance": "cooperative",
+      "intro": "Ruth calls from her lodge, still angry. \"We argued about prices. I left at half five.\"",
+      "claims": [
+        "f_ruth_claim"
+      ],
+      "yields": [
+        "ev_ruth"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_naipanoi",
+      "stance": "cooperative",
+      "intro": "Naipanoi brings out the receipt book wrapped in a cloth. \"Every visitor. Every shilling. Count them.\"",
+      "claims": [],
+      "yields": [
+        "ev_naipanoi",
+        "ev_village_book"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_lenku",
+      "claim": "f_lenku_talek",
+      "brokenBy": [
+        "f_rec_lenku",
+        "f_tracker"
+      ],
+      "reveals": [
+        "f_lenku_reveal"
+      ],
+      "reaction": "\"I came home at half past eight. He was lying in the boma. Grandfather was sitting by the fire, very quiet. I drove the car to the road so they would think robbers. I couldn't let them take him.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_mzee",
+      "claim": "f_mzee_notsee",
+      "brokenBy": [
+        "f_lenku_reveal",
+        "f_clothes",
+        "f_naipanoi"
+      ],
+      "reveals": [
+        "f_mzee_confess",
+        "ev_rungu"
+      ],
+      "reaction": "The Mzee lifts his rungu from his knees and holds it out to you, handle first. \"He said my grandson would go to prison for his lie. I am old. Let them take me, not the boy.\"",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_mzee",
+      "text": "Mzee Kiraposhe ole Nampaso",
+      "category": "person",
+      "ref": "p_mzee",
+      "unlock": {
+        "anyOf": [
+          "f_tracker"
+        ]
+      }
+    },
+    {
+      "id": "w_lenku",
+      "text": "Lenku Nampaso",
+      "category": "person",
+      "ref": "p_lenku",
+      "unlock": {
+        "anyOf": [
+          "f_ob_camera"
+        ]
+      }
+    },
+    {
+      "id": "w_mohamed",
+      "text": "Mohamed Abdille",
+      "category": "person",
+      "ref": "p_mohamed",
+      "unlock": {
+        "anyOf": [
+          "f_operator"
+        ]
+      }
+    },
+    {
+      "id": "w_ruth",
+      "text": "Ruth Ndambuki",
+      "category": "person",
+      "ref": "p_ruth",
+      "unlock": {
+        "anyOf": [
+          "f_naipanoi"
+        ]
+      }
+    },
+    {
+      "id": "w_naipanoi",
+      "text": "Naipanoi Lemiso",
+      "category": "person",
+      "ref": "p_naipanoi",
+      "unlock": {
+        "anyOf": [
+          "f_naipanoi"
+        ]
+      }
+    },
+    {
+      "id": "pl_road",
+      "text": "the Sekenani road",
+      "category": "place",
+      "ref": "loc_road",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_boma",
+      "text": "the cattle boma in the manyatta",
+      "category": "place",
+      "ref": "plc_boma",
+      "unlock": {
+        "anyOf": [
+          "f_tracker"
+        ]
+      }
+    },
+    {
+      "id": "pl_dance",
+      "text": "the dance ground",
+      "category": "place",
+      "ref": "plc_dance",
+      "unlock": {
+        "anyOf": [
+          "f_tracker"
+        ]
+      }
+    },
+    {
+      "id": "pl_office",
+      "text": "the tour company's Talek office",
+      "category": "place",
+      "ref": "plc_office",
+      "unlock": {
+        "anyOf": [
+          "f_operator"
+        ]
+      }
+    },
+    {
+      "id": "pl_gate",
+      "text": "the Sekenani gate",
+      "category": "place",
+      "ref": "plc_gate",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_rungu",
+      "text": "struck with his rungu",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_club"
+        ]
+      }
+    },
+    {
+      "id": "h_robbers",
+      "text": "attacked by robbers on the road",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_vehicle",
+      "text": "hit by a passing vehicle",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_cattle",
+      "text": "trampled by cattle in the boma",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_clothes"
+        ]
+      }
+    },
+    {
+      "id": "h_fell",
+      "text": "fell and struck his head",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_road"
+        ]
+      }
+    },
+    {
+      "id": "m_cheating",
+      "text": "Kinuthia had been cheating the village and was framing his grandson",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_village"
+        ]
+      }
+    },
+    {
+      "id": "m_cow",
+      "text": "a quarrel over a cow sale",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_clothes"
+        ]
+      }
+    },
+    {
+      "id": "m_price",
+      "text": "the visitor's price complaint",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ruth_claim"
+        ]
+      }
+    },
+    {
+      "id": "m_rival",
+      "text": "rivalry between tour operators",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_operator"
+        ]
+      }
+    },
+    {
+      "id": "m_robbery",
+      "text": "robbery",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "James Kinuthia"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_1840",
+                  "label": "18:40",
+                  "from": "18:40",
+                  "to": "18:40"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "18:45–19:30",
+                  "from": "18:45",
+                  "to": "19:30"
+                },
+                {
+                  "id": "sl_2030",
+                  "label": "20:30",
+                  "from": "20:30",
+                  "to": "20:30"
+                },
+                {
+                  "id": "sl_2120",
+                  "label": "21:20",
+                  "from": "21:20",
+                  "to": "21:20"
+                },
+                {
+                  "id": "sl_0600",
+                  "label": "06:00",
+                  "from": "06:00",
+                  "to": "06:00"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_arrive",
+                  "text": "Kinuthia's vehicle arrives",
+                  "slot": "sl_1840",
+                  "by": [
+                    "f_tracker",
+                    "f_naipanoi"
+                  ],
+                  "why": "The tracker and Naipanoi: 18:40.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_tracker"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Kinuthia is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod",
+                    "f_naipanoi",
+                    "f_aut_lividity"
+                  ],
+                  "why": "He walked to the boma with the Mzee at 18:40 and lay there for two hours; the autopsy: 18:45–19:30.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_lenku",
+                  "text": "Lenku comes home",
+                  "slot": "sl_2030",
+                  "by": [
+                    "f_lenku_reveal",
+                    "f_rec_lenku"
+                  ],
+                  "why": "His phone leaves Talek at 20:20 and reaches the manyatta at 20:25; he says half past eight.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_lenku_reveal"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_stop",
+                  "text": "The vehicle stops on the road",
+                  "slot": "sl_2120",
+                  "by": [
+                    "f_tracker"
+                  ],
+                  "why": "The tracker: engine off on the Sekenani road at 21:20.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_tracker"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_0600",
+                  "by": [
+                    "f_ob"
+                  ],
+                  "why": "06:00 is when the herder found him."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "In at twenty to seven, dead within the hour, the boy home at half eight, the van on the road at twenty past nine. That's the evening.",
+          "fail": [
+            "Six in the morning is when the herder found him.",
+            "The van only reached the road at 21:20. He was long dead."
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_boma"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Cattle hair, fresh dung and boma thorns on a man found on a murram road. He died in the boma.",
+          "fail": [
+            "Nothing on that road but a van and some murram. Look at his jacket.",
+            "The van sat at the manyatta until 21:10. Where in the manyatta?"
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_mzee"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Seen walking to the boma with him, his rungu carries Kinuthia's blood, and he says so himself. That will hold.",
+          "fail": [
+            "The grandson was in Talek until 20:20. He moved the body; he didn't strike the blow.",
+            "Mohamed was in Narok with a dinner bill."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_rungu"
+          }
+        ],
+        "prosecutor": {
+          "pass": "One blow from a rounded club head. Yes.",
+          "fail": [
+            "His wallet and twenty-one thousand shillings were still in his pocket.",
+            "One blow from a club, no trampling."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_cheating"
+          }
+        ],
+        "prosecutor": {
+          "pass": "He'll stand trial. So will Kinuthia's books, and that false complaint against the boy.",
+          "fail": [
+            "There's no cow sale in any book.",
+            "Ruth argued and went back to her lodge. Read the two receipt books side by side."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_boma",
+      "from": "18:45",
+      "to": "19:30",
+      "note": "From the autopsy; Naipanoi saw the Mzee walk him to the boma at 18:40."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_road",
+          "f_aut_lividity",
+          "f_tracker",
+          "f_aut_tod"
+        ],
+        "concludes": "No robbery: his wallet and cash were untouched. He died between 18:45 and 19:30 and lay on his side for two hours; the van only reached the road at 21:20."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_clothes",
+          "f_boma",
+          "f_naipanoi"
+        ],
+        "concludes": "Cattle hair, fresh dung and boma thorns on his clothes: he died in the cattle boma, where he'd walked with the Mzee at 18:40.",
+        "answers": [
+          "where"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_rec_lenku",
+          "f_lenku_talek",
+          "f_lenku_reveal",
+          "f_mzee_notsee",
+          "f_mzee_confess"
+        ],
+        "concludes": "Lenku was in Talek until 20:20; he came home, found the body and moved it. His grandfather struck the blow.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_village",
+          "f_operator",
+          "f_ob_camera",
+          "f_ruth",
+          "f_rungu",
+          "f_trace",
+          "f_aut_club"
+        ],
+        "concludes": "Kinuthia charged guests KSh 3,000 for the village and paid it KSh 500, and filed a false complaint against Lenku to silence him. The rungu carries his blood. In the cattle boma, Mzee Kiraposhe ole Nampaso struck Kinuthia with his rungu, because Kinuthia had been cheating the village and was framing his grandson.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_road",
+        "blank": "where",
+        "by": [
+          "f_road",
+          "f_aut_lividity",
+          "f_tracker"
+        ],
+        "why": "No struggle on the road; he lay elsewhere for two hours, and the van only reached the road after he died."
+      },
+      {
+        "word": "pl_dance",
+        "blank": "where",
+        "by": [
+          "f_clothes",
+          "f_naipanoi"
+        ],
+        "why": "Cattle hair, dung and fence thorns belong to the boma, where Naipanoi saw them go."
+      },
+      {
+        "word": "pl_office",
+        "blank": "where",
+        "by": [
+          "f_tracker",
+          "f_aut_tod"
+        ],
+        "why": "His van was at the manyatta from 18:40, inside the time of death."
+      },
+      {
+        "word": "pl_gate",
+        "blank": "where",
+        "by": [
+          "f_tracker",
+          "f_clothes"
+        ],
+        "why": "The van never went to the gate, and the boma's thorns are in his jacket."
+      },
+      {
+        "word": "w_lenku",
+        "blank": "who",
+        "by": [
+          "f_rec_lenku"
+        ],
+        "why": "Lenku was in Talek until 20:20, after the time of death. He moved the body; he didn't kill."
+      },
+      {
+        "word": "w_mohamed",
+        "blank": "who",
+        "by": [
+          "f_abdille"
+        ],
+        "why": "Mohamed was at a Narok hotel from 17:00, dinner at 20:30."
+      },
+      {
+        "word": "w_ruth",
+        "blank": "who",
+        "by": [
+          "f_ruth_lodge"
+        ],
+        "why": "Ruth was back at her lodge from 17:50."
+      },
+      {
+        "word": "w_naipanoi",
+        "blank": "who",
+        "by": [
+          "f_naipanoi_self"
+        ],
+        "why": "Naipanoi was in her house with her daughters."
+      },
+      {
+        "word": "h_robbers",
+        "blank": "how",
+        "by": [
+          "f_road"
+        ],
+        "why": "His wallet and cash were untouched."
+      },
+      {
+        "word": "h_vehicle",
+        "blank": "how",
+        "by": [
+          "f_aut_noother"
+        ],
+        "why": "No vehicle injuries."
+      },
+      {
+        "word": "h_cattle",
+        "blank": "how",
+        "by": [
+          "f_aut_club",
+          "f_aut_noother"
+        ],
+        "why": "A single blow from a club head; no trampling."
+      },
+      {
+        "word": "h_fell",
+        "blank": "how",
+        "by": [
+          "f_aut_noother",
+          "f_aut_club"
+        ],
+        "why": "Not a fall: one blow from a club."
+      },
+      {
+        "word": "m_cow",
+        "blank": "why",
+        "by": [
+          "f_no_sale"
+        ],
+        "why": "No cow sale between them, in any book."
+      },
+      {
+        "word": "m_price",
+        "blank": "why",
+        "by": [
+          "f_ruth_lodge"
+        ],
+        "why": "That complaint was Ruth's, and she was at her lodge."
+      },
+      {
+        "word": "m_rival",
+        "blank": "why",
+        "by": [
+          "f_abdille"
+        ],
+        "why": "That rivalry is Mohamed's, and he was in Narok."
+      },
+      {
+        "word": "m_robbery",
+        "blank": "why",
+        "by": [
+          "f_road"
+        ],
+        "why": "His wallet and KSh 21,000 were untouched."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "For years Kinuthia charges each visitor KSh 3,000 \"for the village\" and pays the village KSh 500. Lenku works it out from guests' receipts and tells his grandfather.",
+        "image": null
+      },
+      {
+        "text": "On Wednesday Kinuthia files a police complaint accusing Lenku of stealing a guest's camera: Kinuthia's own camera.",
+        "image": null
+      },
+      {
+        "text": "Saturday, 18:40. After the last visitors leave, Kinuthia comes back to collect \"his share\", and tells the Mzee in the boma that the boy will go to prison unless the village keeps quiet.",
+        "image": null
+      },
+      {
+        "text": "Among the restless cattle, the old man strikes him once with his rungu, and goes back to sit by his fire.",
+        "image": "plc_boma"
+      },
+      {
+        "text": "20:30. Lenku comes home, finds the body and his grandfather by the fire, and at 21:10 drives Kinuthia's van to the road and leaves it as a robbery. On Sunday the Mzee walks to the post on his own feet, with Lenku.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "One records request, on Lenku's phone. No detention: the Mzee hands over his rungu himself. The trace takes 12 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_road",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_scene_road",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_clothes",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_tracker",
+        "hours": 1
+      },
+      {
+        "do": "travel",
+        "target": "loc_manyatta",
+        "hours": 0.5,
+        "from": "loc_road"
+      },
+      {
+        "do": "visit",
+        "target": "loc_manyatta",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_naipanoi"
+      },
+      {
+        "do": "read",
+        "target": "ev_boma",
+        "hours": 1
+      },
+      {
+        "do": "travel",
+        "target": "loc_talek",
+        "hours": 1,
+        "from": "loc_manyatta"
+      },
+      {
+        "do": "visit",
+        "target": "loc_talek",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_ob_camera",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_operator_book",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_ruth"
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "travel",
+        "target": "loc_manyatta",
+        "hours": 1,
+        "from": "loc_talek"
+      },
+      {
+        "do": "visit",
+        "target": "loc_manyatta",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_lenku"
+      },
+      {
+        "do": "press",
+        "target": "c_lenku"
+      },
+      {
+        "do": "interview",
+        "target": "p_mzee"
+      },
+      {
+        "do": "press",
+        "target": "c_mzee"
+      },
+      {
+        "do": "submit",
+        "target": "ev_trace"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 12
+      }
+    ],
+    "totalHours": 36.5
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_tracker",
+        "line": "The van's tracker keeps time for the whole evening."
+      },
+      "tier2": {
+        "facts": [
+          "f_tracker",
+          "f_aut_tod"
+        ],
+        "line": "At the manyatta from 18:40, dead by 19:30, on the road at 21:20."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_clothes",
+        "line": "What's caught in his clothes? A murram road doesn't leave that."
+      },
+      "tier2": {
+        "facts": [
+          "f_clothes",
+          "f_naipanoi"
+        ],
+        "line": "Cattle hair, dung and fence thorns, and Naipanoi saw them walk to the boma."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_naipanoi",
+        "line": "Who walked with Kinuthia when he arrived?"
+      },
+      "tier2": {
+        "facts": [
+          "f_naipanoi",
+          "f_lenku_reveal"
+        ],
+        "line": "The Mzee walked him to the boma. His grandson found him there two hours later."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "A rounded wooden club head. Who carries one as a mark of standing?"
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_club",
+          "f_trace"
+        ],
+        "line": "One blow from a club head, and his blood in the grain of the rungu."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_village_book",
+        "line": "Compare the village's receipt book with Kinuthia's own book."
+      },
+      "tier2": {
+        "facts": [
+          "f_village",
+          "f_operator"
+        ],
+        "line": "KSh 3,000 charged, KSh 500 paid, and a false complaint against the boy who noticed."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "enkang",
+      "def": "Maa: a homestead."
+    },
+    {
+      "term": "boma",
+      "def": "An enclosure or kraal for cattle."
+    },
+    {
+      "term": "rungu",
+      "def": "A carved wooden club carried by Maasai men, a mark of standing."
+    },
+    {
+      "term": "adumu",
+      "def": "The Maasai jumping dance."
+    },
+    {
+      "term": "shuka",
+      "def": "A Maasai cloth worn wrapped round the body, often red."
+    },
+    {
+      "term": "mzee",
+      "def": "Respectful word for an elder."
+    },
+    {
+      "term": "manyatta",
+      "def": "A Maasai homestead: a ring of houses inside a thorn fence."
+    },
+    {
+      "term": "kofia",
+      "def": "A brimless embroidered cap."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "movedBodyOnMap"
+    ],
+    "beatNotes": "A body moved after death is marked on the site map with two pins and a dotted line; the player drags the \"killed here\" pin to the right place. WHERE becomes physical on the map, not just a word."
+  }
+}

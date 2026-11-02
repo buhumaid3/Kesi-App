@@ -1,0 +1,2268 @@
+{
+  "meta": {
+    "id": "case-084",
+    "number": 84,
+    "region": "westlands-karen-runda",
+    "regionNumber": 9,
+    "title": "Wrong Glass",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 44,
+    "date": "Monday 7 September",
+    "folderTab": "KAREN — SUNDAY LUNCH"
+  },
+  "pattern": {
+    "crimePattern": "a grandfather poisons the one glass without ice, meant for the young man blackmailing his granddaughter, and his oldest friend, who never takes ice, picks it up first",
+    "noRealCaseRetold": true,
+    "notes": "Fictional families and house. Teaches REAL TARGET: the woman who died was the one person at the table nobody wanted dead. Oleander is a real, common, poisonous garden shrub; no preparation details beyond \"steeped leaves\" are given.",
+    "tags": [
+      "poison",
+      "oleander",
+      "wrong-victim",
+      "blackmail",
+      "protecting-family",
+      "real-target",
+      "three-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where"
+    ]
+  },
+  "difficulty": {
+    "suspects": 5,
+    "chainLength": 6,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "realTarget"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": "the-dead-woman-was-not-the-target"
+  },
+  "ob": {
+    "number": "OB 21/06/09",
+    "date": "Sunday 6 September",
+    "time": "22:10",
+    "reportedBy": "Dr. Paul Muriithi, Beatrice Oloo's doctor",
+    "text": "A doctor reports that his patient, retired diplomat Beatrice Achieng Oloo (63), collapsed and died at her home in Karen on Sunday evening, after lunch at a neighbour's. She had no history of heart disease. He asks for a post-mortem.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_beatrice",
+    "nodes": [
+      "loc_carrow",
+      "loc_beatrice",
+      "loc_dstudy"
+    ],
+    "edges": [
+      {
+        "a": "loc_carrow",
+        "b": "loc_beatrice",
+        "minutes": 5,
+        "by": "foot"
+      },
+      {
+        "a": "loc_carrow",
+        "b": "loc_dstudy",
+        "minutes": 1,
+        "by": "foot"
+      },
+      {
+        "a": "loc_beatrice",
+        "b": "loc_dstudy",
+        "minutes": 6,
+        "by": "foot"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_beatrice",
+      "role": "victim",
+      "name": "Beatrice Achieng Oloo",
+      "age": 63,
+      "occupation": "Retired diplomat",
+      "bio": "Desmond Carrow's neighbour and closest friend for twenty years. Sensitive teeth: never takes ice.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_veranda",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo woman, early 60s, silver-streaked hair in a neat wrap, pearl earrings, a warm, wry face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_desmond",
+      "role": "suspect",
+      "name": "Desmond Carrow",
+      "age": 74,
+      "occupation": "Retired farmer and horse breeder; the host",
+      "bio": "Buried his wife and son. Chloe is all he has left.",
+      "community": "Kenyan European",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_doctor"
+      },
+      "at": "loc_carrow",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan European man, mid 70s, a cardigan and a walking stick, a courtly, exhausted face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_marcus",
+      "role": "suspect",
+      "name": "Marcus Waweru",
+      "age": 31,
+      "occupation": "Chloe's ex-boyfriend",
+      "redHerring": true,
+      "bio": "Invited himself to Sunday lunch.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "intendedTarget": true,
+      "unlock": {
+        "fact": "f_joyce_chloe"
+      },
+      "at": "plc_kilimani",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, early 30s, a linen shirt and designer sunglasses, a charming, calculating smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_chloe",
+      "role": "suspect",
+      "name": "Chloe Carrow",
+      "age": 22,
+      "occupation": "Desmond's granddaughter; a university student",
+      "bio": "Lives with her grandfather in term breaks.",
+      "community": "Kenyan European",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_doctor"
+      },
+      "at": "loc_carrow",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan European woman, early 20s, a university hoodie, frightened eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_fiona",
+      "role": "suspect",
+      "name": "Fiona Carrow",
+      "age": 48,
+      "occupation": "Chloe's mother; Desmond's daughter",
+      "bio": "Sat beside Beatrice at lunch.",
+      "community": "Kenyan European",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_doctor"
+      },
+      "at": "loc_carrow",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan European woman, late 40s, a linen shirt and reading glasses on her head, a worried, practical face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_tobias",
+      "role": "suspect",
+      "name": "Tobias Oloo",
+      "age": 36,
+      "occupation": "Beatrice's nephew",
+      "redHerring": true,
+      "bio": "Inherits her house.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_will"
+      },
+      "at": "plc_kisumu",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, mid 30s, a smart suit from a wedding, a shocked face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_joyce",
+      "role": "witness",
+      "name": "Joyce Mbatha",
+      "age": 57,
+      "occupation": "The Carrows' cook for fifteen years",
+      "bio": "Knows everyone's habits at the Sunday table.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_carrow",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba woman, late 50s, a cook's apron and headscarf, a steady, observant face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_doctor",
+      "role": "witness",
+      "name": "Dr. Paul Muriithi",
+      "age": 58,
+      "occupation": "Beatrice's doctor",
+      "statementOnly": true,
+      "bio": "Reported the death.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_beatrice",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_veranda",
+      "name": "The Carrow veranda",
+      "within": "loc_carrow"
+    },
+    {
+      "id": "plc_pantry",
+      "name": "The pantry",
+      "within": "loc_carrow"
+    },
+    {
+      "id": "plc_lawn",
+      "name": "The lawn",
+      "within": "loc_carrow"
+    },
+    {
+      "id": "plc_hedge",
+      "name": "The oleander hedge",
+      "within": "loc_carrow"
+    },
+    {
+      "id": "plc_paddock",
+      "name": "The paddock",
+      "within": "loc_carrow"
+    },
+    {
+      "id": "plc_kilimani",
+      "name": "Marcus's flat, Kilimani"
+    },
+    {
+      "id": "plc_kisumu",
+      "name": "Kisumu"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_carrow",
+      "name": "The Carrow house, Karen",
+      "kind": "scene",
+      "description": "A low stone farmhouse with a deep veranda on a murram lane, a paddock with two old horses, a kitchen garden, and a long oleander hedge with a gap the neighbours walk through.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_joyce",
+          "label": "Joyce in the kitchen",
+          "pos": [
+            30,
+            50
+          ],
+          "yields": "ev_joyce",
+          "text": "Joyce at the sink, where Sunday's glasses are still stacked."
+        },
+        {
+          "id": "hs_tray",
+          "label": "Sunday's glasses",
+          "pos": [
+            35,
+            60
+          ],
+          "yields": "ev_tray",
+          "text": "Eight glasses by the sink. Joyce washes on Monday."
+        },
+        {
+          "id": "hs_pantry",
+          "label": "The pantry",
+          "pos": [
+            20,
+            30
+          ],
+          "yields": "ev_jug",
+          "text": "The back of the pantry shelf.",
+          "unlock": {
+            "fact": "f_joyce_tray"
+          }
+        },
+        {
+          "id": "hs_hedge",
+          "label": "The oleander hedge",
+          "pos": [
+            80,
+            40
+          ],
+          "yields": "ev_hedge",
+          "text": "The long hedge by the kitchen garden.",
+          "unlock": {
+            "fact": "f_fiona_hedge"
+          }
+        },
+        {
+          "id": "hs_veranda",
+          "label": "The veranda",
+          "pos": [
+            60,
+            70
+          ],
+          "yields": "ev_veranda",
+          "text": "The table, the chairs, the place cards."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a low stone farmhouse veranda in Karen at Sunday lunch, a drinks tray of passion juice with ice in every glass but one, an oleander hedge in flower beyond, no people in focus"
+      }
+    },
+    {
+      "id": "loc_beatrice",
+      "name": "Beatrice's house",
+      "kind": "location",
+      "description": "A house 300 m away through the hedge gap. Her doctor waits in the sitting room.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_doctor",
+          "label": "Dr. Muriithi",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_doctor",
+          "text": "Her doctor, with his notes from her call."
+        },
+        {
+          "id": "hs_will",
+          "label": "Her desk",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_will",
+          "text": "Her papers."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a tidy retired diplomat's sitting room in Karen, framed photographs from postings abroad, a desk by the window"
+      }
+    },
+    {
+      "id": "loc_dstudy",
+      "name": "Desmond's study and outdoor bin",
+      "kind": "location",
+      "description": "A book-lined study at the end of the house, and the kitchen's outdoor bin beside its door.",
+      "unlock": {
+        "fact": "f_jug"
+      },
+      "hotspots": [
+        {
+          "id": "hs_study",
+          "label": "Study and bin",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_desmond_house",
+          "text": "Search under warrant."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a book-lined study in an old Karen farmhouse, a garden book open on the desk, a bin outside the door"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_doctor",
+      "type": "witness",
+      "title": "Statement: Dr. Paul Muriithi",
+      "render": "statement",
+      "body": {
+        "speaker": "p_doctor"
+      },
+      "facts": [
+        "f_doctor",
+        "f_nomeds"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_will",
+      "type": "document",
+      "title": "Beatrice's will",
+      "render": "form",
+      "body": {
+        "text": "Her house to her nephew, Tobias Oloo."
+      },
+      "facts": [
+        "f_will"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_joyce",
+      "type": "witness",
+      "title": "Statement: Joyce Mbatha",
+      "render": "statement",
+      "body": {
+        "speaker": "p_joyce"
+      },
+      "facts": [
+        "f_joyce",
+        "f_joyce_tray",
+        "f_joyce_late",
+        "f_joyce_chloe",
+        "f_samelunch"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tray",
+      "type": "physical",
+      "title": "Sunday's drinks glasses",
+      "render": "object",
+      "body": {
+        "label": "Eight glasses. Seven with ice watermarks; one without, carrying Beatrice's lipstick."
+      },
+      "facts": [
+        "f_tray"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "eight empty drinking glasses by a kitchen sink, seven with ice watermark rings, one clean-rimmed with a lipstick mark"
+      }
+    },
+    {
+      "id": "ev_jug",
+      "type": "physical",
+      "title": "A small jug at the back of the pantry",
+      "render": "object",
+      "body": {
+        "label": "Rinsed, with a faint green film in the spout."
+      },
+      "facts": [
+        "f_jug"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a small glass jug at the back of a pantry shelf, a faint green film in its spout"
+      }
+    },
+    {
+      "id": "ev_hedge",
+      "type": "physical",
+      "title": "The oleander hedge",
+      "render": "object",
+      "body": {
+        "label": "A patch freshly stripped of leaves by the kitchen garden; the snapped stems still weep white sap."
+      },
+      "facts": [
+        "f_hedge"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a section of oleander hedge with pink flowers, a patch freshly stripped of leaves, white sap on snapped stems"
+      }
+    },
+    {
+      "id": "ev_veranda",
+      "type": "physical",
+      "title": "The veranda table",
+      "render": "object",
+      "body": {
+        "label": "Seven places. Marcus's chair at the far end, by the lawn steps."
+      },
+      "facts": [
+        "f_veranda"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Marcus's PesaPap",
+      "render": "manifest",
+      "body": {
+        "pesapap": "KSh 200,000 from Chloe Carrow in four payments since July.",
+        "text": "Friday to Chloe: \"One million or the video goes to your university and the police. See you Sunday.\""
+      },
+      "facts": [
+        "f_records"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_joyce_chloe",
+          "f_tray"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_no_ice",
+      "type": "witness",
+      "title": "Statement: Chloe, on Saturday",
+      "render": "statement",
+      "body": {
+        "speaker": "p_chloe"
+      },
+      "facts": [
+        "f_noice"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_marcus_call",
+      "type": "phone",
+      "title": "Marcus's call log",
+      "render": "manifest",
+      "body": {
+        "text": "Sunday 12:46–12:55: a 9-minute call. He took it on the lawn."
+      },
+      "facts": [
+        "f_ma_call"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_desmond_house",
+      "type": "physical",
+      "title": "Desmond's study and bin",
+      "render": "object",
+      "body": {
+        "bin": "A sieve and a muslin cloth in the outdoor bin, green-stained.",
+        "book": "In the study, a library book, Garden Plants of East Africa, a slip marking the page on oleander."
+      },
+      "facts": [
+        "f_sieve",
+        "f_book"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_joyce_tray",
+          "f_jug",
+          "f_hedge"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a green-stained kitchen sieve and muslin cloth in a garden bin, an old botany book with a paper slip marking a page"
+      }
+    },
+    {
+      "id": "ev_tobias",
+      "type": "document",
+      "title": "Kisumu hotel register",
+      "render": "logBook",
+      "body": {
+        "text": "T. Oloo, Friday to Monday, a family wedding."
+      },
+      "facts": [
+        "f_tobias"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_de_prints",
+      "type": "physical",
+      "title": "Fingerprints: Desmond Carrow",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention."
+      },
+      "facts": [
+        "f_de_printset"
+      ],
+      "gate": null,
+      "detention": "p_desmond",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_doctor"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tox",
+      "type": "forensic",
+      "title": "Lab: toxicology (blood, glass, jug)",
+      "render": "labReport",
+      "body": {
+        "test": "toxicology"
+      },
+      "facts": [
+        "f_tox"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toxicology",
+        "hours": 18,
+        "needs": [
+          "ev_doctor",
+          "ev_tray",
+          "ev_jug"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints (glass and jug)",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_prints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_tray",
+          "ev_jug",
+          "ev_de_prints"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Beatrice Oloo collapsed and died at home on Sunday evening after lunch at a neighbour's; no heart history.",
+      "kind": "true",
+      "about": [
+        "p_beatrice",
+        "loc_beatrice"
+      ],
+      "at": {
+        "from": "21:30",
+        "to": null,
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_doctor",
+      "text": "Dr. Muriithi: no heart history, a normal ECG in May. At 19:00 she called him with nausea, a slow pulse and \"seeing yellow\". She had lunch at the Carrows'.",
+      "kind": "true",
+      "about": [
+        "p_beatrice",
+        "p_desmond"
+      ],
+      "at": {
+        "from": "19:00",
+        "to": null,
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_nomeds",
+      "text": "Dr. Muriithi: she took no heart medicine and had no allergies.",
+      "kind": "true",
+      "about": [
+        "p_beatrice"
+      ]
+    },
+    {
+      "id": "f_will",
+      "text": "Her will leaves her house to her nephew, Tobias Oloo.",
+      "kind": "true",
+      "about": [
+        "p_tobias"
+      ]
+    },
+    {
+      "id": "f_joyce",
+      "text": "Joyce: \"Ice in every glass, every Sunday. Mama Beatrice never takes ice, so I always keep her glass back and bring it separately.\"",
+      "kind": "true",
+      "about": [
+        "p_joyce",
+        "p_beatrice"
+      ]
+    },
+    {
+      "id": "f_joyce_tray",
+      "text": "Joyce: this Sunday Bwana Desmond said \"I'll do the tray, Joyce\" and carried it out himself at ten to one.",
+      "kind": "true",
+      "about": [
+        "p_desmond"
+      ],
+      "where": {
+        "person": "p_desmond",
+        "place": "plc_veranda",
+        "from": "12:50",
+        "to": "12:55"
+      }
+    },
+    {
+      "id": "f_joyce_late",
+      "text": "Joyce: when she brought Mama Beatrice's no-ice glass, Beatrice already had one. \"I thought, Bwana must have remembered.\"",
+      "kind": "true",
+      "about": [
+        "p_beatrice"
+      ],
+      "at": {
+        "from": "12:55",
+        "to": null,
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_joyce_chloe",
+      "text": "Joyce: the young man Marcus invited himself to lunch; Chloe was crying in the kitchen on Saturday night after a call from him.",
+      "kind": "true",
+      "about": [
+        "p_marcus",
+        "p_chloe"
+      ]
+    },
+    {
+      "id": "f_samelunch",
+      "text": "Joyce: seven people ate the same lunch and nobody else was ill.",
+      "kind": "true",
+      "about": [
+        "loc_carrow"
+      ]
+    },
+    {
+      "id": "f_tray",
+      "text": "Of Sunday's eight glasses, seven carry ice watermarks; one has none, and it carries Beatrice's lipstick.",
+      "kind": "true",
+      "about": [
+        "p_beatrice"
+      ]
+    },
+    {
+      "id": "f_jug",
+      "text": "At the back of the pantry shelf: a small glass jug, rinsed, with a faint green film in the spout.",
+      "kind": "true",
+      "about": [
+        "plc_pantry"
+      ]
+    },
+    {
+      "id": "f_hedge",
+      "text": "A patch of the oleander hedge by the kitchen garden is freshly stripped of leaves; the stems still weep sap.",
+      "kind": "true",
+      "about": [
+        "plc_hedge"
+      ]
+    },
+    {
+      "id": "f_veranda",
+      "text": "The veranda table: Marcus's chair was at the far end, by the lawn steps.",
+      "kind": "true",
+      "about": [
+        "p_marcus"
+      ]
+    },
+    {
+      "id": "f_records",
+      "text": "Records: Chloe paid Marcus KSh 200,000 in four payments since July. Friday, Marcus to Chloe: \"One million or the video goes to your university and the police. See you Sunday.\"",
+      "kind": "true",
+      "about": [
+        "p_marcus",
+        "p_chloe"
+      ]
+    },
+    {
+      "id": "f_noice",
+      "text": "Chloe: on Saturday Marcus said, \"Tell your grandfather I'll want my juice without ice.\" She told her grandfather that night.",
+      "kind": "true",
+      "about": [
+        "p_marcus",
+        "p_desmond"
+      ]
+    },
+    {
+      "id": "f_ma_call",
+      "text": "Marcus's call log: a 9-minute call 12:46–12:55 on Sunday, taken on the lawn.",
+      "kind": "true",
+      "about": [
+        "p_marcus"
+      ],
+      "where": {
+        "person": "p_marcus",
+        "place": "plc_lawn",
+        "from": "12:46",
+        "to": "12:55"
+      }
+    },
+    {
+      "id": "f_sieve",
+      "text": "In Desmond's outdoor bin: a green-stained sieve and muslin cloth.",
+      "kind": "true",
+      "about": [
+        "p_desmond"
+      ]
+    },
+    {
+      "id": "f_book",
+      "text": "In his study: a library book, Garden Plants of East Africa, marked at the page on oleander.",
+      "kind": "true",
+      "about": [
+        "p_desmond"
+      ]
+    },
+    {
+      "id": "f_tobias",
+      "text": "Tobias was at a family wedding in Kisumu from Friday to Monday.",
+      "kind": "true",
+      "about": [
+        "p_tobias"
+      ],
+      "where": {
+        "person": "p_tobias",
+        "place": "plc_kisumu",
+        "from": "00:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_de_printset",
+      "text": "Fingerprints taken from Desmond in detention.",
+      "kind": "true",
+      "about": [
+        "p_desmond"
+      ]
+    },
+    {
+      "id": "f_aut",
+      "text": "Post-mortem: heart-rhythm failure with no heart disease; passion juice in the stomach.",
+      "kind": "true",
+      "about": [
+        "p_beatrice"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death at about 21:30 on Sunday, hours after the poison was taken.",
+      "kind": "true",
+      "about": [
+        "p_beatrice"
+      ],
+      "at": {
+        "from": "21:00",
+        "to": "22:00",
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_tox",
+      "text": "Lab: cardiac glycosides consistent with oleander in her blood, in the no-ice glass's residue, and in the pantry jug's film.",
+      "kind": "true",
+      "about": [
+        "p_beatrice"
+      ]
+    },
+    {
+      "id": "f_prints",
+      "text": "Lab: on the no-ice glass, Beatrice's and Desmond's prints; on the pantry jug, Desmond's only. Nobody else's on either.",
+      "kind": "true",
+      "about": [
+        "p_desmond"
+      ]
+    },
+    {
+      "id": "f_fiona_hedge",
+      "text": "Fiona: \"Daddy was strange all morning. He went to the hedge twice.\"",
+      "kind": "true",
+      "about": [
+        "p_fiona",
+        "p_desmond"
+      ]
+    },
+    {
+      "id": "f_de_tray",
+      "text": "Desmond: \"Joyce made the drinks. I only carried the tray.\"",
+      "kind": "lie",
+      "about": [
+        "p_desmond"
+      ]
+    },
+    {
+      "id": "f_de_nothing",
+      "text": "Desmond: \"I made nothing special for anyone.\"",
+      "kind": "lie",
+      "about": [
+        "p_desmond"
+      ]
+    },
+    {
+      "id": "f_de_reveal",
+      "text": "Desmond: \"It was meant for that boy. Beatrice took the wrong glass. Beatrice. Of all the people at that table.\" He asks to see her.",
+      "kind": "true",
+      "about": [
+        "p_desmond",
+        "p_marcus",
+        "p_beatrice"
+      ]
+    },
+    {
+      "id": "f_ma_good",
+      "text": "Marcus: \"I'm a friend of the family. Chloe and I are on good terms.\"",
+      "kind": "lie",
+      "about": [
+        "p_marcus"
+      ]
+    },
+    {
+      "id": "f_ma_reveal",
+      "text": "Marcus: \"It was a business arrangement. She had money, I had a video. Nobody got hurt.\"",
+      "kind": "true",
+      "about": [
+        "p_marcus",
+        "p_chloe"
+      ]
+    },
+    {
+      "id": "f_ch_none",
+      "text": "Chloe: \"Nobody is blackmailing me.\"",
+      "kind": "lie",
+      "about": [
+        "p_chloe"
+      ]
+    },
+    {
+      "id": "f_ch_reveal",
+      "text": "Chloe: \"In June I drove home drunk and hit a parked car. Marcus filmed it. I told Grandpa on Saturday night, all of it. He held my hand and said, 'Leave it with me.'\"",
+      "kind": "true",
+      "about": [
+        "p_chloe",
+        "p_desmond"
+      ]
+    },
+    {
+      "id": "f_fi_claim",
+      "text": "Fiona: \"I sat beside Beatrice. I didn't see who took which glass.\"",
+      "kind": "claim",
+      "about": [
+        "p_fiona"
+      ]
+    },
+    {
+      "id": "f_to_claim",
+      "text": "Tobias: \"I inherit her house. I was in Kisumu.\"",
+      "kind": "claim",
+      "about": [
+        "p_tobias"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_desmond",
+      "stance": "cooperative",
+      "intro": "Desmond receives you on the veranda, courtly and very tired, his stick across his knees. \"Joyce made the drinks. I only carried the tray.\"",
+      "claims": [
+        "f_de_tray"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_de_nothing",
+          "after": "f_jug"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_marcus",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_joyce"
+      ],
+      "intro": "Marcus leans back, sunglasses on. \"I'm a friend of the family. Chloe and I are on good terms.\"",
+      "claims": [
+        "f_ma_good"
+      ],
+      "yields": [
+        "ev_marcus_call"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_chloe",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_joyce"
+      ],
+      "intro": "Chloe sits on her hands. \"Nobody is blackmailing me.\"",
+      "claims": [
+        "f_ch_none"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_fiona",
+      "stance": "cooperative",
+      "intro": "Fiona pours you tea she doesn't drink. \"I sat beside Beatrice. I didn't see who took which glass.\"",
+      "claims": [
+        "f_fi_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_tray",
+          "reply": "\"Daddy was strange all morning. He went to the hedge twice.\"",
+          "reveals": [
+            "f_fiona_hedge"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_tobias",
+      "stance": "cooperative",
+      "intro": "Tobias drives back from Kisumu overnight. \"I inherit her house. I was in Kisumu.\"",
+      "claims": [
+        "f_to_claim"
+      ],
+      "yields": [
+        "ev_tobias"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_joyce",
+      "stance": "cooperative",
+      "intro": "Joyce dries her hands and answers every question exactly.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_ch",
+      "claim": "f_ch_none",
+      "brokenBy": [
+        "f_records"
+      ],
+      "reveals": [
+        "f_ch_reveal",
+        "ev_no_ice"
+      ],
+      "reaction": "\"In June I drove home drunk and hit a parked car. Marcus filmed it. I told Grandpa on Saturday night. All of it. He held my hand and said, 'Leave it with me.'\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_ma",
+      "claim": "f_ma_good",
+      "brokenBy": [
+        "f_records"
+      ],
+      "reveals": [
+        "f_ma_reveal"
+      ],
+      "reaction": "\"It was a business arrangement. She had money, I had a video. Nobody got hurt.\" (Blackmail is a separate charge, filed against him.)",
+      "mark": "explains"
+    },
+    {
+      "id": "c_de_tray",
+      "claim": "f_de_tray",
+      "brokenBy": [
+        "f_joyce_tray",
+        "f_tray",
+        "f_jug"
+      ],
+      "reveals": [],
+      "reaction": "Desmond looks out over the paddock for a long time. \"Joyce has been with us fifteen years,\" he says, and nothing else.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_de_nothing",
+      "claim": "f_de_nothing",
+      "brokenBy": [
+        "f_prints",
+        "f_sieve"
+      ],
+      "reveals": [
+        "f_de_reveal"
+      ],
+      "reaction": "\"It was meant for that boy. Beatrice took the wrong glass. Beatrice. Of all the people at that table.\" He asks to see her body.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_desmond",
+      "text": "Desmond Carrow",
+      "category": "person",
+      "ref": "p_desmond",
+      "unlock": {
+        "anyOf": [
+          "f_joyce_tray"
+        ]
+      }
+    },
+    {
+      "id": "w_marcus",
+      "text": "Marcus Waweru",
+      "category": "person",
+      "ref": "p_marcus",
+      "unlock": {
+        "anyOf": [
+          "f_joyce_chloe"
+        ]
+      }
+    },
+    {
+      "id": "w_chloe",
+      "text": "Chloe Carrow",
+      "category": "person",
+      "ref": "p_chloe",
+      "unlock": {
+        "anyOf": [
+          "f_doctor"
+        ]
+      }
+    },
+    {
+      "id": "w_fiona",
+      "text": "Fiona Carrow",
+      "category": "person",
+      "ref": "p_fiona",
+      "unlock": {
+        "anyOf": [
+          "f_doctor"
+        ]
+      }
+    },
+    {
+      "id": "w_tobias",
+      "text": "Tobias Oloo",
+      "category": "person",
+      "ref": "p_tobias",
+      "unlock": {
+        "anyOf": [
+          "f_will"
+        ]
+      }
+    },
+    {
+      "id": "w_joyce",
+      "text": "Joyce Mbatha",
+      "category": "person",
+      "ref": "p_joyce",
+      "unlock": {
+        "anyOf": [
+          "f_joyce"
+        ]
+      }
+    },
+    {
+      "id": "t_marcus",
+      "text": "Marcus Waweru",
+      "category": "target",
+      "ref": "p_marcus",
+      "unlock": {
+        "anyOf": [
+          "f_joyce_chloe"
+        ]
+      }
+    },
+    {
+      "id": "t_beatrice",
+      "text": "Beatrice Oloo",
+      "category": "target",
+      "ref": "p_beatrice",
+      "unlock": {
+        "anyOf": [
+          "f_doctor"
+        ]
+      }
+    },
+    {
+      "id": "t_chloe",
+      "text": "Chloe Carrow",
+      "category": "target",
+      "ref": "p_chloe",
+      "unlock": {
+        "anyOf": [
+          "f_doctor"
+        ]
+      }
+    },
+    {
+      "id": "t_fiona",
+      "text": "Fiona Carrow",
+      "category": "target",
+      "ref": "p_fiona",
+      "unlock": {
+        "anyOf": [
+          "f_doctor"
+        ]
+      }
+    },
+    {
+      "id": "t_desmond",
+      "text": "Desmond Carrow himself",
+      "category": "target",
+      "ref": "p_desmond",
+      "unlock": {
+        "anyOf": [
+          "f_joyce_tray"
+        ]
+      }
+    },
+    {
+      "id": "t_joyce",
+      "text": "Joyce Mbatha",
+      "category": "target",
+      "ref": "p_joyce",
+      "unlock": {
+        "anyOf": [
+          "f_joyce"
+        ]
+      }
+    },
+    {
+      "id": "pl_veranda",
+      "text": "the Carrow veranda",
+      "category": "place",
+      "ref": "plc_veranda",
+      "unlock": {
+        "anyOf": [
+          "f_joyce_tray"
+        ]
+      }
+    },
+    {
+      "id": "pl_pantry",
+      "text": "the pantry",
+      "category": "place",
+      "ref": "plc_pantry",
+      "unlock": {
+        "anyOf": [
+          "f_jug"
+        ]
+      }
+    },
+    {
+      "id": "pl_bhouse",
+      "text": "Beatrice's house",
+      "category": "place",
+      "ref": "loc_beatrice",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_hedge",
+      "text": "the oleander hedge",
+      "category": "place",
+      "ref": "plc_hedge",
+      "unlock": {
+        "anyOf": [
+          "f_hedge"
+        ]
+      }
+    },
+    {
+      "id": "pl_paddock",
+      "text": "the paddock",
+      "category": "place",
+      "ref": "plc_paddock",
+      "unlock": {
+        "anyOf": [
+          "f_doctor"
+        ]
+      }
+    },
+    {
+      "id": "h_oleander",
+      "text": "oleander poison in a glass of passion juice",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_tox"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_food",
+      "text": "food poisoning from the lunch",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_doctor"
+        ]
+      }
+    },
+    {
+      "id": "h_meds",
+      "text": "her own heart medication",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_bee",
+      "text": "a bee sting",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_blackmail",
+      "text": "to stop Marcus blackmailing his granddaughter (the poison was meant for Marcus)",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_records"
+        ]
+      }
+    },
+    {
+      "id": "m_inherit",
+      "text": "a nephew's inheritance",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_will"
+        ]
+      }
+    },
+    {
+      "id": "m_quarrel",
+      "text": "a quarrel between old friends",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_doctor"
+        ]
+      }
+    },
+    {
+      "id": "m_witness",
+      "text": "Marcus silencing a witness",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_records"
+        ]
+      }
+    },
+    {
+      "id": "m_video",
+      "text": "to stop Beatrice revealing the video",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_records"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. The killer meant to kill {target}.",
+    "fixed": {
+      "victim": "Beatrice Achieng Oloo"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_june",
+                  "label": "June",
+                  "from": null,
+                  "to": null,
+                  "day": "Jun"
+                },
+                {
+                  "id": "sl_fri",
+                  "label": "Friday",
+                  "from": null,
+                  "to": null,
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_sat",
+                  "label": "Saturday night",
+                  "from": null,
+                  "to": null,
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Sunday 12:50–12:55",
+                  "from": "12:50",
+                  "to": "12:55",
+                  "day": "Sun"
+                },
+                {
+                  "id": "sl_1600",
+                  "label": "Sunday 16:00",
+                  "from": "16:00",
+                  "to": "16:00",
+                  "day": "Sun"
+                },
+                {
+                  "id": "sl_2130",
+                  "label": "Sunday 21:30",
+                  "from": "21:30",
+                  "to": "21:30",
+                  "day": "Sun"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_june",
+                  "text": "Chloe hits a parked car; Marcus films it",
+                  "slot": "sl_june",
+                  "by": [
+                    "f_ch_reveal"
+                  ],
+                  "why": "Chloe: in June.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_ch_reveal"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_demand",
+                  "text": "Marcus demands a million",
+                  "slot": "sl_fri",
+                  "by": [
+                    "f_records"
+                  ],
+                  "why": "His text on Friday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_records"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_tells",
+                  "text": "Chloe tells her grandfather",
+                  "slot": "sl_sat",
+                  "by": [
+                    "f_ch_reveal",
+                    "f_noice"
+                  ],
+                  "why": "Saturday night.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_noice"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_glass",
+                  "text": "The no-ice glass goes out on the tray and Beatrice takes it",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_joyce_tray",
+                    "f_joyce_late",
+                    "f_tray"
+                  ],
+                  "why": "Desmond carried the tray at ten to one; Beatrice had a glass before Joyce brought hers.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_joyce_tray"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_dies",
+                  "text": "Beatrice dies",
+                  "slot": "sl_2130",
+                  "by": [
+                    "f_ob",
+                    "f_aut_tod"
+                  ],
+                  "why": "At home, at about half past nine.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_1600",
+                  "by": [
+                    "f_tox",
+                    "f_tray",
+                    "f_joyce_late"
+                  ],
+                  "why": "\"Taken ill at home\" is when she felt it. The poison was in the glass she drank at lunch."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A crash in June, a demand on Friday, a confession on Saturday, a tray at ten to one, and a death at half past nine.",
+          "fail": [
+            "Four o'clock is when she felt ill. When did she drink?",
+            "Who carried the tray, and when?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_veranda"
+          }
+        ],
+        "prosecutor": {
+          "pass": "On the veranda, from a tray he carried himself.",
+          "fail": [
+            "The poison was made in the pantry. She drank it on the veranda.",
+            "She died at home; she was poisoned at lunch."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_desmond"
+          }
+        ],
+        "prosecutor": {
+          "pass": "His tray, his jug, his hedge, his sieve. Only his prints on the jug.",
+          "fail": [
+            "Marcus was on the phone on the lawn.",
+            "Joyce's glasses were all iced, and she never touched the jug."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_oleander"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Oleander, from his own hedge, in one glass of passion juice.",
+          "fail": [
+            "Seven people ate the same lunch.",
+            "No heart disease. Read the toxicology."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_blackmail"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A million shillings or the video. \"Leave it with me.\"",
+          "fail": [
+            "Tobias was in Kisumu.",
+            "Beatrice never knew there was a video."
+          ]
+        }
+      },
+      {
+        "id": "g_target",
+        "kind": "realTarget",
+        "blanks": [
+          {
+            "id": "target",
+            "category": "target",
+            "answer": "t_marcus"
+          }
+        ],
+        "prosecutor": {
+          "pass": "One glass without ice, for the man who asked for no ice. The one person who always takes no ice got there first.",
+          "fail": [
+            "Twenty years of Sunday lunches. Nobody at that table wanted Beatrice dead.",
+            "Chloe always takes ice. She's the one he was protecting."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_veranda",
+      "from": "12:50",
+      "to": "12:55",
+      "note": "The act window: the tray carried out at 12:50 and the glass taken by about 12:55. She died of it at about 21:30."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_doctor",
+          "f_nomeds",
+          "f_aut",
+          "f_aut_tod",
+          "f_tox",
+          "f_samelunch"
+        ],
+        "concludes": "Oleander poisoning, in the juice she drank at lunch.",
+        "answers": [
+          "how"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_tray",
+          "f_joyce",
+          "f_joyce_tray",
+          "f_joyce_late",
+          "f_de_tray"
+        ],
+        "concludes": "The poison was in the one glass without ice, which Desmond carried out himself.",
+        "answers": [
+          "when",
+          "where"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_jug",
+          "f_hedge",
+          "f_fiona_hedge",
+          "f_sieve",
+          "f_book",
+          "f_prints",
+          "f_de_nothing"
+        ],
+        "concludes": "Desmond prepared it: the pantry jug, the stripped hedge, the sieve, his prints."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_joyce_chloe",
+          "f_records",
+          "f_ch_none",
+          "f_ch_reveal",
+          "f_noice",
+          "f_ma_good",
+          "f_ma_reveal"
+        ],
+        "concludes": "Marcus was blackmailing Chloe and had asked for his juice without ice.",
+        "answers": [
+          "why",
+          "target"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_ma_call",
+          "f_veranda"
+        ],
+        "concludes": "Marcus was on the lawn when the tray came out; Beatrice, who never takes ice, took the glass first."
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_de_reveal"
+        ],
+        "concludes": "Desmond Carrow poisoned the no-ice glass for Marcus; Beatrice drank it.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_pantry",
+        "blank": "where",
+        "by": [
+          "f_jug",
+          "f_tray"
+        ],
+        "why": "The poison was made in the pantry; she drank it on the veranda."
+      },
+      {
+        "word": "pl_bhouse",
+        "blank": "where",
+        "by": [
+          "f_tox",
+          "f_tray"
+        ],
+        "why": "She died at home, poisoned at lunch."
+      },
+      {
+        "word": "pl_hedge",
+        "blank": "where",
+        "by": [
+          "f_hedge"
+        ],
+        "why": "The leaves came from the hedge."
+      },
+      {
+        "word": "pl_paddock",
+        "blank": "where",
+        "by": [
+          "f_tray"
+        ],
+        "why": "Nothing happened in the paddock."
+      },
+      {
+        "word": "w_marcus",
+        "blank": "who",
+        "by": [
+          "f_ma_call"
+        ],
+        "why": "Marcus was on the phone on the lawn while the tray came out."
+      },
+      {
+        "word": "w_chloe",
+        "blank": "who",
+        "by": [
+          "f_prints",
+          "f_tray"
+        ],
+        "why": "Chloe was at the table, but her prints are on neither the glass nor the jug.",
+        "present": true
+      },
+      {
+        "word": "w_fiona",
+        "blank": "who",
+        "by": [
+          "f_prints",
+          "f_tray"
+        ],
+        "why": "Fiona sat beside Beatrice; her prints are on neither the glass nor the jug.",
+        "present": true
+      },
+      {
+        "word": "w_tobias",
+        "blank": "who",
+        "by": [
+          "f_tobias"
+        ],
+        "why": "Tobias was in Kisumu."
+      },
+      {
+        "word": "w_joyce",
+        "blank": "who",
+        "by": [
+          "f_joyce",
+          "f_prints"
+        ],
+        "why": "Joyce iced every glass and never touched the jug."
+      },
+      {
+        "word": "t_beatrice",
+        "blank": "target",
+        "by": [
+          "f_joyce",
+          "f_noice"
+        ],
+        "why": "The glass was set without ice for the man who asked for no ice. Beatrice's own glass was kept back by Joyce, as always."
+      },
+      {
+        "word": "t_chloe",
+        "blank": "target",
+        "by": [
+          "f_ch_reveal",
+          "f_joyce"
+        ],
+        "why": "Chloe always takes ice, and she was the one he was protecting."
+      },
+      {
+        "word": "t_fiona",
+        "blank": "target",
+        "by": [
+          "f_noice"
+        ],
+        "why": "No link to the no-ice request."
+      },
+      {
+        "word": "t_desmond",
+        "blank": "target",
+        "by": [
+          "f_joyce_tray",
+          "f_de_reveal"
+        ],
+        "why": "He poured, carried and didn't drink; he never tried to take it."
+      },
+      {
+        "word": "t_joyce",
+        "blank": "target",
+        "by": [
+          "f_joyce"
+        ],
+        "why": "Joyce doesn't drink from the tray."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut",
+          "f_tox"
+        ],
+        "why": "No heart disease; oleander in her blood."
+      },
+      {
+        "word": "h_food",
+        "blank": "how",
+        "by": [
+          "f_samelunch"
+        ],
+        "why": "Seven others ate the same lunch and were well."
+      },
+      {
+        "word": "h_meds",
+        "blank": "how",
+        "by": [
+          "f_nomeds"
+        ],
+        "why": "She took no heart medicine."
+      },
+      {
+        "word": "h_bee",
+        "blank": "how",
+        "by": [
+          "f_nomeds",
+          "f_aut"
+        ],
+        "why": "No sting, no allergy."
+      },
+      {
+        "word": "m_inherit",
+        "blank": "why",
+        "by": [
+          "f_tobias"
+        ],
+        "why": "Tobias was in Kisumu."
+      },
+      {
+        "word": "m_quarrel",
+        "blank": "why",
+        "by": [
+          "f_joyce"
+        ],
+        "why": "Twenty years of Sunday lunches."
+      },
+      {
+        "word": "m_witness",
+        "blank": "why",
+        "by": [
+          "f_ma_call",
+          "f_prints"
+        ],
+        "why": "Marcus never touched the drinks."
+      },
+      {
+        "word": "m_video",
+        "blank": "why",
+        "by": [
+          "f_ch_reveal"
+        ],
+        "why": "Beatrice never knew about the video."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "In June Chloe drives home drunk and hits a parked car. Marcus, beside her, films it. After they split up he starts demanding money: KSh 200,000 so far. On Friday he asks for a million and invites himself to Sunday lunch.",
+        "image": null
+      },
+      {
+        "text": "On Saturday night Chloe tells her grandfather everything, including Marcus's message: he wants his juice \"without ice\". Desmond holds her hand and says, \"Leave it with me.\"",
+        "image": null
+      },
+      {
+        "text": "On Sunday morning Desmond strips leaves from the oleander hedge, steeps them, and strains the liquid into a small jug in the pantry. At 12:50 he says \"I'll do the tray, Joyce\" and pours one glass of passion juice without ice.",
+        "image": "plc_veranda"
+      },
+      {
+        "text": "Marcus has stepped onto the lawn for a phone call. Beatrice, arriving late through the hedge, takes the one glass without ice, as she always does. Nobody notices. She goes home at four feeling unwell and dies at half past nine.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Two stamps: records on Marcus and a warrant on Desmond's study and bin. The toxicology (18 h) goes with the glass and the jug first thing; detain Desmond after the search, and the prints (6 h) come back inside 24 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_beatrice",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_doctor",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_will",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_carrow",
+        "hours": 0.1,
+        "from": "loc_beatrice"
+      },
+      {
+        "do": "visit",
+        "target": "loc_carrow",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_joyce",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_joyce"
+      },
+      {
+        "do": "read",
+        "target": "ev_tray",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_veranda",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_jug",
+        "hours": 0
+      },
+      {
+        "do": "submit",
+        "target": "ev_tox"
+      },
+      {
+        "do": "interview",
+        "target": "p_desmond"
+      },
+      {
+        "do": "press",
+        "target": "c_de_tray"
+      },
+      {
+        "do": "interview",
+        "target": "p_fiona"
+      },
+      {
+        "do": "read",
+        "target": "ev_hedge",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_chloe"
+      },
+      {
+        "do": "interview",
+        "target": "p_marcus"
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "press",
+        "target": "c_ch"
+      },
+      {
+        "do": "read",
+        "target": "ev_no_ice",
+        "hours": 0
+      },
+      {
+        "do": "press",
+        "target": "c_ma"
+      },
+      {
+        "do": "interview",
+        "target": "p_tobias"
+      },
+      {
+        "do": "travel",
+        "target": "loc_dstudy",
+        "hours": 0.1,
+        "from": "loc_carrow"
+      },
+      {
+        "do": "search",
+        "target": "loc_dstudy"
+      },
+      {
+        "do": "detain",
+        "target": "p_desmond"
+      },
+      {
+        "do": "sample",
+        "target": "ev_de_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 6
+      },
+      {
+        "do": "press",
+        "target": "c_de_nothing"
+      }
+    ],
+    "totalHours": 32.2
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_joyce",
+        "line": "Ask Joyce who carried the tray this Sunday, Amani."
+      },
+      "tier2": {
+        "facts": [
+          "f_joyce_tray",
+          "f_joyce_late"
+        ],
+        "line": "Desmond, at ten to one. Beatrice had a glass before Joyce brought hers."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_tray",
+        "line": "Count the ice rings on Sunday's glasses."
+      },
+      "tier2": {
+        "facts": [
+          "f_tray",
+          "f_tox"
+        ],
+        "line": "One glass without ice, poisoned, drunk at the veranda table."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_jug",
+        "line": "Who keeps a jug at the back of the pantry?"
+      },
+      "tier2": {
+        "facts": [
+          "f_prints",
+          "f_hedge"
+        ],
+        "line": "Only his prints on the jug. And a stripped hedge."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_doctor",
+        "line": "\"Seeing yellow.\" Ask Dr. Chebii what does that."
+      },
+      "tier2": {
+        "facts": [
+          "f_tox",
+          "f_hedge"
+        ],
+        "line": "Oleander, from the hedge."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_records",
+        "line": "Why did a young man invite himself to Sunday lunch?"
+      },
+      "tier2": {
+        "facts": [
+          "f_records",
+          "f_ch_reveal"
+        ],
+        "line": "A million shillings, or a video."
+      }
+    },
+    "g_target": {
+      "tier1": {
+        "point": "ev_no_ice",
+        "line": "Who asked for his juice without ice?"
+      },
+      "tier2": {
+        "facts": [
+          "f_noice",
+          "f_joyce"
+        ],
+        "line": "Marcus did. Beatrice never takes ice, so Joyce always keeps hers back."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "juisi ya pasheni",
+      "def": "Passion-fruit juice."
+    },
+    {
+      "term": "barafu",
+      "def": "Ice."
+    },
+    {
+      "term": "ua",
+      "def": "A hedge."
+    },
+    {
+      "term": "sumu",
+      "def": "Poison."
+    },
+    {
+      "term": "ulaghai",
+      "def": "Fraud; here, blackmail."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address an older woman."
+    },
+    {
+      "term": "bwana",
+      "def": "Sir; the master of the house."
+    },
+    {
+      "term": "pesa",
+      "def": "Money."
+    },
+    {
+      "term": "pesapap",
+      "def": "A fictional mobile-money service (\"pesa\" is money)."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "realTarget"
+    ],
+    "beatNotes": "The REAL TARGET blank. When the player places the no-ice glass and Marcus's \"no ice\" request side by side on the board, a dotted line draws itself from the glass to Marcus, not to Beatrice, and the charge sheet slides open a new group: \"The killer meant to kill ____.\""
+  }
+}

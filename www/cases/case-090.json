@@ -1,0 +1,3484 @@
+{
+  "meta": {
+    "id": "case-090",
+    "number": 90,
+    "region": "westlands-karen-runda",
+    "regionNumber": 9,
+    "title": "The Advocate",
+    "boss": true,
+    "schemaVersion": 1,
+    "estMinutes": 52,
+    "date": "Monday 28 September",
+    "folderTab": "JACARANDA TOWERS"
+  },
+  "pattern": {
+    "crimePattern": "a security contractor paid from the Mvua till kills the defence advocate who was about to talk to the prosecutor, and frames the prosecutor with her own pen and paper",
+    "noRealCaseRetold": true,
+    "notes": "Fictional tower, firm, contractor and ODPP clerk. Region 9 boss. Halima is the framed suspect and tells the truth from the first interview. The SIM that lured her uses the same dead man's ID as the phone in case 50. After the verdict the envelope narrows Kivuli to three names (provisional, pending the cultural reader).",
+    "tags": [
+      "blunt-force",
+      "commissioned",
+      "framed",
+      "planted",
+      "accomplice",
+      "unknowing-helper",
+      "three-liars",
+      "records",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where-two-blanks",
+      "spine",
+      "boss"
+    ]
+  },
+  "difficulty": {
+    "suspects": 6,
+    "chainLength": 7,
+    "redHerrings": 3,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "accomplice",
+      "how",
+      "why",
+      "planted",
+      "spine"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic",
+      "cctv"
+    ],
+    "gatedActions": [
+      "records",
+      "records",
+      "warrant"
+    ],
+    "twist": "halima-framed-and-the-list-narrows-to-three"
+  },
+  "ob": {
+    "number": "OB 02/28/09",
+    "date": "Monday 28 September",
+    "time": "08:05",
+    "reportedBy": "Faith Jepchirchir, Kiprop & Associates",
+    "text": "Advocate Sharon Kiprop (46) is found dead in her chambers on the ninth floor of Jacaranda Towers, Westlands. On Tuesday morning DCI officers arrest Prosecutor Halima Abdi. At noon the Officer Commanding gives Amani the case: \"You know her. That's why it's you, and that's why you'll do it by the book.\"",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_chambers",
+    "nodes": [
+      "loc_chambers",
+      "loc_lobby",
+      "loc_odpp",
+      "loc_mlinzi"
+    ],
+    "edges": [
+      {
+        "a": "loc_chambers",
+        "b": "loc_lobby",
+        "minutes": 2,
+        "by": "lift"
+      },
+      {
+        "a": "loc_lobby",
+        "b": "loc_odpp",
+        "minutes": 20,
+        "by": "road"
+      },
+      {
+        "a": "loc_lobby",
+        "b": "loc_mlinzi",
+        "minutes": 30,
+        "by": "road"
+      },
+      {
+        "a": "loc_odpp",
+        "b": "loc_mlinzi",
+        "minutes": 35,
+        "by": "road"
+      },
+      {
+        "a": "loc_chambers",
+        "b": "loc_mlinzi",
+        "minutes": 32,
+        "by": "road"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_sharon",
+      "role": "victim",
+      "name": "Advocate Sharon Kiprop",
+      "age": 46,
+      "occupation": "Defence advocate, Kiprop & Associates",
+      "bio": "Defended Emojong, Priya Shah, Dr. Mwamburi and Benedict Mbuvi (\"Fundi\"). Her retainer came through the Mvua till.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_office",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin woman, mid 40s, pearls and a black advocate's gown over one arm, a composed, guarded face, ID-photo framing",
+        "ref": "reference"
+      }
+    },
+    {
+      "id": "p_mwita",
+      "role": "suspect",
+      "name": "Major (rtd) Daniel Mwita",
+      "age": 55,
+      "occupation": "Owner of Mlinzi Bora Security Ltd, the tower's security contractor",
+      "bio": "Military, helpful, precise. His company holds a master card for every floor.",
+      "community": "Kuria",
+      "isCulprit": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_mlinzi",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kuria man, mid 50s, a grey moustache and a navy blazer with a regimental pin, a helpful, unreadable face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_cynthia",
+      "role": "suspect",
+      "name": "Cynthia Moraa",
+      "age": 31,
+      "occupation": "Records clerk at the ODPP, in Halima's section",
+      "bio": "Lives in Kasarani.",
+      "community": "Kisii",
+      "isCulprit": false,
+      "accomplice": true,
+      "unlock": {
+        "fact": "f_pen_report"
+      },
+      "at": "plc_kasarani",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kisii woman, early 30s, an office cardigan and a lanyard, a terrified face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_patrick",
+      "role": "suspect",
+      "name": "Patrick Ekesa",
+      "age": 38,
+      "occupation": "Mlinzi Bora guard, lobby desk on Sunday night",
+      "bio": "Keeps the lobby sign-in book.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unknowingHelper": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_lobbydesk",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luhya man, late 30s, a security guard's uniform and cap, a frightened face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_halima",
+      "role": "suspect",
+      "name": "Prosecutor Halima Abdi",
+      "age": 44,
+      "occupation": "Prosecutor on the Emojong case",
+      "redHerring": true,
+      "bio": "Has reviewed every one of Amani's charge sheets. Clashed with Sharon in court last week.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_southc",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Somali woman, mid 40s, a dark hijab and a prosecutor's black jacket, angry and controlled, ID-photo framing",
+        "ref": "reference"
+      }
+    },
+    {
+      "id": "p_kenneth",
+      "role": "suspect",
+      "name": "Advocate Kenneth Langat",
+      "age": 50,
+      "occupation": "Sharon's law partner",
+      "redHerring": true,
+      "bio": "They were dissolving the partnership.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_faith"
+      },
+      "at": "plc_nanyuki",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, about 50, a golf jacket over a shirt and tie, a wary face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_lydia",
+      "role": "suspect",
+      "name": "Lydia Emojong",
+      "age": 51,
+      "occupation": "Julius Emojong's wife",
+      "redHerring": true,
+      "bio": "Blamed Sharon publicly for \"selling out\" her husband.",
+      "community": "Teso",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_faith"
+      },
+      "at": "plc_buruburu",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Teso woman, early 50s, a church headwrap and a cardigan, a bitter, tired face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_faith",
+      "role": "witness",
+      "name": "Faith Jepchirchir",
+      "age": 28,
+      "occupation": "Sharon's assistant",
+      "bio": "Has worked at the reception desk for three years.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_reception",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin woman, late 20s, a neat office blouse, red-eyed, steady, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_rukia",
+      "role": "witness",
+      "name": "Senior Prosecutor Rukia Hassan",
+      "age": 52,
+      "occupation": "Acting reviewer of Amani's charge sheets while Halima is suspended",
+      "statementOnly": true,
+      "bio": "Cold, exact, fair.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_odpp",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Swahili woman, early 50s, a grey hijab and reading glasses, a severe, fair face, ID-photo framing",
+        "ref": null
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_office",
+      "name": "Sharon's inner office",
+      "within": "loc_chambers"
+    },
+    {
+      "id": "plc_reception",
+      "name": "The reception",
+      "within": "loc_chambers"
+    },
+    {
+      "id": "plc_lobbydesk",
+      "name": "The lobby desk",
+      "within": "loc_lobby"
+    },
+    {
+      "id": "plc_carpark",
+      "name": "The car park"
+    },
+    {
+      "id": "plc_slift",
+      "name": "The service lift"
+    },
+    {
+      "id": "plc_slift_cp",
+      "name": "The service lift and the car park"
+    },
+    {
+      "id": "plc_plift",
+      "name": "The passenger lift"
+    },
+    {
+      "id": "plc_stairs",
+      "name": "The fire stairs"
+    },
+    {
+      "id": "plc_roof",
+      "name": "The roof"
+    },
+    {
+      "id": "plc_outside",
+      "name": "Outside the tower"
+    },
+    {
+      "id": "plc_southc",
+      "name": "Halima's flat, South C"
+    },
+    {
+      "id": "plc_kasarani",
+      "name": "Cynthia's flat, Kasarani"
+    },
+    {
+      "id": "plc_nanyuki",
+      "name": "Nanyuki"
+    },
+    {
+      "id": "plc_buruburu",
+      "name": "A church in Buruburu"
+    },
+    {
+      "id": "plc_faithhome",
+      "name": "Faith's flat"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_chambers",
+      "name": "Kiprop & Associates, ninth floor",
+      "kind": "scene",
+      "description": "Half the ninth floor of Jacaranda Towers: a reception, an assistant's desk, Sharon's inner office with marble bookends on the shelves, and a document safe whose combination only Sharon knew. The service lift opens into the back corridor beside her office.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Sharon's inner office",
+          "pos": [
+            50,
+            55
+          ],
+          "yields": "ev_body",
+          "text": "Sharon on the carpet; a marble bookend beside her."
+        },
+        {
+          "id": "hs_pen",
+          "label": "Under the desk",
+          "pos": [
+            55,
+            70
+          ],
+          "yields": "ev_pen",
+          "text": "A fountain pen under the desk."
+        },
+        {
+          "id": "hs_note",
+          "label": "On the desk",
+          "pos": [
+            55,
+            40
+          ],
+          "yields": "ev_note",
+          "text": "A typed note on the desk."
+        },
+        {
+          "id": "hs_dci",
+          "label": "The DCI file",
+          "pos": [
+            20,
+            30
+          ],
+          "yields": "ev_dcifile",
+          "text": "The file that led to Halima's arrest."
+        },
+        {
+          "id": "hs_faith",
+          "label": "Faith",
+          "pos": [
+            15,
+            60
+          ],
+          "yields": "ev_faith",
+          "text": "Faith at the reception desk."
+        },
+        {
+          "id": "hs_safe",
+          "label": "The document safe",
+          "pos": [
+            80,
+            40
+          ],
+          "yields": "ev_envelope",
+          "text": "The safe, opened with Faith's sealed note, in Halima's presence.",
+          "unlock": {
+            "fact": "f_faith"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a ninth-floor advocate's office in a Westlands tower at night, law books, marble bookends on a shelf with one missing, a safe in the corner, one door ajar, no people in focus"
+      }
+    },
+    {
+      "id": "loc_lobby",
+      "name": "Jacaranda Towers lobby",
+      "kind": "location",
+      "description": "A guard desk with a sign-in book, a camera over the doors, the passenger lift (with a camera) and the service lift (without one).",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_signin",
+          "label": "Sign-in book, raking light",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_signin",
+          "text": "Sunday's page under a raking light."
+        },
+        {
+          "id": "hs_cam",
+          "label": "Lobby camera",
+          "pos": [
+            60,
+            30
+          ],
+          "yields": "ev_lobbycam",
+          "text": "Sunday evening's recording."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a Westlands office tower lobby at night, a guard desk with a sign-in book under a lamp, a camera dome over the glass doors"
+      }
+    },
+    {
+      "id": "loc_odpp",
+      "name": "The ODPP office",
+      "kind": "location",
+      "description": "Halima's section: desks, a printer, a lost-property log kept by the office manager.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_log",
+          "label": "Lost-property log",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_pen_report",
+          "text": "The office manager's log."
+        },
+        {
+          "id": "hs_prints",
+          "label": "Halima's staff file",
+          "pos": [
+            60,
+            40
+          ],
+          "yields": "ev_ha_printfile",
+          "text": "Elimination prints from her staff file."
+        },
+        {
+          "id": "hs_halima",
+          "label": "Halima, in custody",
+          "pos": [
+            80,
+            60
+          ],
+          "yields": "ev_halima",
+          "text": "Halima, brought over from the cells."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "an open-plan prosecutors' office with files on every desk, a shared printer, a lost-property ledger on a shelf"
+      }
+    },
+    {
+      "id": "loc_mlinzi",
+      "name": "Mlinzi Bora's office, Mombasa Road",
+      "kind": "location",
+      "description": "A security company's office: radios on chargers, a duty board, the Major's safe.",
+      "unlock": {
+        "fact": "f_master"
+      },
+      "hotspots": [
+        {
+          "id": "hs_msafe",
+          "label": "The Major's safe",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_mwita_office",
+          "text": "Search under warrant."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a private security company's office on Mombasa Road, radios on a charging rack, a duty board, a grey safe"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Sharon in her inner office",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. One blow to the head. A marble bookend on the carpet, wiped. Her laptop missing. The safe untouched, scratched around the dial."
+      },
+      "facts": [
+        "f_body",
+        "f_safe"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "an advocate's office carpet with a single marble bookend lying on it, a safe with scratches around its dial, an empty laptop stand, no body visible"
+      }
+    },
+    {
+      "id": "ev_pen",
+      "type": "physical",
+      "title": "A fountain pen under the desk",
+      "render": "object",
+      "body": {
+        "label": "Black, engraved \"H. Abdi — from Baba\"."
+      },
+      "facts": [
+        "f_pen"
+      ],
+      "gate": null,
+      "planted": {
+        "by": "p_mwita",
+        "frames": "p_halima"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a black fountain pen engraved H. Abdi from Baba, on a carpet under a desk"
+      }
+    },
+    {
+      "id": "ev_note",
+      "type": "document",
+      "title": "A typed note on the desk",
+      "render": "note",
+      "body": {
+        "text": "\"Withdraw the complaint against me or you will regret it. — H.A.\""
+      },
+      "facts": [
+        "f_note"
+      ],
+      "gate": null,
+      "planted": {
+        "by": "p_mwita",
+        "frames": "p_halima"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a single typed sheet on a desk: a short threatening note signed H.A."
+      }
+    },
+    {
+      "id": "ev_dcifile",
+      "type": "document",
+      "title": "The DCI file on Halima",
+      "render": "form",
+      "body": {
+        "text": "The pen; the note; the sign-in book: \"H. Abdi — 21:45 — Kiprop & Assoc.\"; Sharon's misconduct complaint against Halima, filed last week; Halima's reply to the S.K. text: \"I'll be there at 9.\""
+      },
+      "facts": [
+        "f_dcifile"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_signin",
+      "type": "document",
+      "title": "Lobby sign-in book",
+      "render": "logBook",
+      "body": {
+        "text": "Halima's entry: \"21:45\", written over an erased \"21:00\" in a different pen."
+      },
+      "facts": [
+        "f_signin"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lobbycam",
+      "type": "cctv",
+      "title": "Lobby camera, Sunday",
+      "render": "object",
+      "body": {
+        "label": "Halima in at 21:00, out at 21:14. Sharon in at 21:32. No one else through the lobby until 23:00. Patrick at the desk all night."
+      },
+      "facts": [
+        "f_lobbycam",
+        "f_ha_out",
+        "f_pa_desk"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_halima",
+      "type": "witness",
+      "title": "Statement: Prosecutor Halima Abdi",
+      "render": "statement",
+      "body": {
+        "speaker": "p_halima"
+      },
+      "facts": [
+        "f_halima"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_pen_report",
+      "type": "document",
+      "title": "ODPP lost-property log",
+      "render": "logBook",
+      "body": {
+        "text": "\"Friday 17:30 — H. Abdi — fountain pen, black, engraved — missing from desk.\" Office manager: Cynthia Moraa, the section's records clerk, was alone in the section that afternoon."
+      },
+      "facts": [
+        "f_pen_report"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ha_printfile",
+      "type": "document",
+      "title": "Halima's elimination prints (staff file)",
+      "render": "form",
+      "body": {
+        "text": "Ten-print card from her ODPP staff file."
+      },
+      "facts": [
+        "f_ha_printcard"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_faith",
+      "type": "witness",
+      "title": "Statement: Faith Jepchirchir",
+      "render": "statement",
+      "body": {
+        "speaker": "p_faith"
+      },
+      "facts": [
+        "f_faith",
+        "f_faith_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_envelope",
+      "type": "document",
+      "title": "A white envelope in Sharon's safe",
+      "render": "form",
+      "body": {
+        "text": "Addressed \"Prosecutor H. Abdi — only\". Sealed."
+      },
+      "facts": [
+        "f_envelope"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lure_sim",
+      "type": "phone",
+      "title": "Records ①: the \"S.K.\" number",
+      "render": "manifest",
+      "body": {
+        "reg": "Registered to the national ID of a man dead ten years: the same ID as the phone that called Walter Ogada (case 50).",
+        "use": "Active once: the 20:10 text, from the mast covering Kasarani."
+      },
+      "facts": [
+        "f_lure_sim"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_dcifile",
+          "f_lobbycam"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_mlinzi_rec",
+      "type": "phone",
+      "title": "Records ②: Mlinzi Bora's lines and access log",
+      "render": "manifest",
+      "body": {
+        "call": "21:05: Mwita's phone to Sharon, 1 minute.",
+        "card": "Master card: service lift 21:35 up to the ninth floor, 22:16 down; car park exit 22:20.",
+        "cam": "Service-lift camera \"under maintenance\" since Friday, ordered by Mlinzi Bora.",
+        "pay": "Monthly payments to Cynthia Moraa, \"consultancy\", for a year; and KSh 2,000,000 in from Till 880 214 on Monday.",
+        "cynthia": "Cynthia's own line on the Kasarani mast all Sunday evening."
+      },
+      "facts": [
+        "f_mwcall",
+        "f_master",
+        "f_liftcam",
+        "f_cy_pay",
+        "f_till2m",
+        "f_cy_phone"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_lure_sim",
+          "f_signin",
+          "f_pa_reveal"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_cy_home",
+      "type": "physical",
+      "title": "Cynthia's phone case and diary printout",
+      "render": "object",
+      "body": {
+        "label": "She hands them over: the S.K. SIM in a phone-case pocket, and a printout of Halima's diary page for the week."
+      },
+      "facts": [
+        "f_cy_home"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mwita_office",
+      "type": "physical",
+      "title": "The Major's safe",
+      "render": "object",
+      "body": {
+        "laptop": "Sharon's laptop.",
+        "covers": "A pair of shoe covers in a bin bag, stained."
+      },
+      "facts": [
+        "f_laptop",
+        "f_covers"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_mwcall",
+          "f_master",
+          "f_cy_pay"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a woman's laptop and a bin bag with stained shoe covers inside an open grey office safe"
+      }
+    },
+    {
+      "id": "ev_kenneth",
+      "type": "document",
+      "title": "Nanyuki golf club register",
+      "render": "logBook",
+      "body": {
+        "text": "K. Langat at a weekend tournament, Friday to Monday."
+      },
+      "facts": [
+        "f_kenneth"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lydia",
+      "type": "witness",
+      "title": "Statements: Lydia's church and her sister",
+      "render": "statement",
+      "body": {
+        "speaker": "p_lydia"
+      },
+      "facts": [
+        "f_lydia"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mw_prints",
+      "type": "physical",
+      "title": "Fingerprints: Major Mwita",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention."
+      },
+      "facts": [
+        "f_mw_printset"
+      ],
+      "gate": null,
+      "detention": "p_mwita",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_raking",
+      "type": "forensic",
+      "title": "Document view: the sign-in entry",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_signin_alt"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_signin",
+          "ev_lobbycam"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_layering",
+      "type": "forensic",
+      "title": "Lab: fingerprints (layering on the note)",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_layering"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_note",
+          "ev_ha_printfile"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_docexam",
+      "type": "forensic",
+      "title": "Questioned Documents Lab: the sign-in book",
+      "render": "labReport",
+      "body": {
+        "test": "document"
+      },
+      "facts": [
+        "f_docexam"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "document",
+        "hours": 10,
+        "needs": [
+          "ev_signin"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_shoeblood",
+      "type": "forensic",
+      "title": "Lab: trace (the shoe covers)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_shoeblood"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_mwita_office"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Advocate Sharon Kiprop was found dead in her ninth-floor chambers on Monday morning; on Tuesday the DCI arrested Prosecutor Halima Abdi.",
+      "kind": "true",
+      "about": [
+        "p_sharon",
+        "p_halima",
+        "loc_chambers"
+      ],
+      "at": {
+        "from": "08:00",
+        "to": null,
+        "day": "Mon"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "One blow to Sharon's head; a marble bookend on the carpet, wiped. Her laptop is missing.",
+      "kind": "true",
+      "about": [
+        "p_sharon",
+        "plc_office"
+      ]
+    },
+    {
+      "id": "f_safe",
+      "text": "The document safe is untouched but scratched around the dial.",
+      "kind": "true",
+      "about": [
+        "plc_office"
+      ]
+    },
+    {
+      "id": "f_pen",
+      "text": "Under the desk: a black fountain pen engraved \"H. Abdi — from Baba\".",
+      "kind": "true",
+      "about": [
+        "p_halima",
+        "plc_office"
+      ]
+    },
+    {
+      "id": "f_note",
+      "text": "On the desk, typed: \"Withdraw the complaint against me or you will regret it. — H.A.\"",
+      "kind": "true",
+      "about": [
+        "p_halima",
+        "plc_office"
+      ]
+    },
+    {
+      "id": "f_dcifile",
+      "text": "The DCI file: the pen, the note, the sign-in entry \"H. Abdi — 21:45\", Sharon's misconduct complaint against Halima, and Halima's reply to \"S.K.\": \"I'll be there at 9.\"",
+      "kind": "true",
+      "about": [
+        "p_halima"
+      ]
+    },
+    {
+      "id": "f_signin",
+      "text": "Sign-in book: Halima's entry reads \"21:45\", written over an erased \"21:00\" in a different pen.",
+      "kind": "true",
+      "about": [
+        "p_halima",
+        "p_patrick"
+      ]
+    },
+    {
+      "id": "f_signin_alt",
+      "text": "Under raking light, against the lobby camera: the entry was first \"21:00\", the minute Halima walked in; it was changed later.",
+      "kind": "true",
+      "about": [
+        "p_patrick"
+      ]
+    },
+    {
+      "id": "f_lobbycam",
+      "text": "Lobby camera: Halima in at 21:00, out at 21:14. Sharon in at 21:32. No one else through the lobby until 23:00.",
+      "kind": "true",
+      "about": [
+        "p_halima",
+        "p_sharon"
+      ],
+      "at": {
+        "from": "21:00",
+        "to": "21:32",
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_ha_out",
+      "text": "Halima left the tower at 21:14 and never came back: the lobby camera, and the service lift needs a master card.",
+      "kind": "true",
+      "about": [
+        "p_halima"
+      ],
+      "where": {
+        "person": "p_halima",
+        "place": "plc_outside",
+        "from": "21:14",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_pa_desk",
+      "text": "Patrick was at the lobby desk on camera all night.",
+      "kind": "true",
+      "about": [
+        "p_patrick"
+      ],
+      "where": {
+        "person": "p_patrick",
+        "place": "plc_lobbydesk",
+        "from": "18:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_halima",
+      "text": "Halima: \"Someone signing as S.K. texted at ten past eight. I went at nine. The guard said she wasn't in but I could go up. I knocked, waited, left. My pen went missing on Friday; I reported it.\"",
+      "kind": "true",
+      "about": [
+        "p_halima"
+      ],
+      "at": {
+        "from": "20:10",
+        "to": null,
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_pen_report",
+      "text": "ODPP log: \"Friday 17:30 — H. Abdi — fountain pen, black, engraved — missing from desk.\" Cynthia Moraa, the records clerk, was alone in the section that afternoon.",
+      "kind": "true",
+      "about": [
+        "p_halima",
+        "p_cynthia"
+      ],
+      "at": {
+        "from": "17:30",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_ha_printcard",
+      "text": "Halima's ten-print card from her ODPP staff file.",
+      "kind": "true",
+      "about": [
+        "p_halima"
+      ]
+    },
+    {
+      "id": "f_faith",
+      "text": "Faith: on Friday Sharon said her safe's white envelope goes to Prosecutor Abdi if anything happens to her, and gave Faith the combination, sealed. Her partner and Lydia Emojong quarrelled with her.",
+      "kind": "true",
+      "about": [
+        "p_faith",
+        "p_sharon",
+        "p_kenneth",
+        "p_lydia"
+      ]
+    },
+    {
+      "id": "f_faith_self",
+      "text": "Faith was at home on a video call with her mother 21:30–22:30.",
+      "kind": "true",
+      "about": [
+        "p_faith"
+      ],
+      "where": {
+        "person": "p_faith",
+        "place": "plc_faithhome",
+        "from": "21:30",
+        "to": "22:30"
+      }
+    },
+    {
+      "id": "f_envelope",
+      "text": "In Sharon's safe: a white envelope addressed \"Prosecutor H. Abdi — only\".",
+      "kind": "true",
+      "about": [
+        "p_sharon",
+        "p_halima"
+      ]
+    },
+    {
+      "id": "f_lure_sim",
+      "text": "Records ①: the S.K. SIM is registered to the ID of a man dead ten years, the same ID as the phone that called Walter Ogada. Used once: the 20:10 text, from the Kasarani mast.",
+      "kind": "true",
+      "about": [
+        "p_cynthia"
+      ],
+      "at": {
+        "from": "20:10",
+        "to": null,
+        "day": "Sun"
+      },
+      "spine": "t_fundi"
+    },
+    {
+      "id": "f_mwcall",
+      "text": "Records ②: at 21:05 Mwita's phone called Sharon for one minute.",
+      "kind": "true",
+      "about": [
+        "p_mwita",
+        "p_sharon"
+      ],
+      "at": {
+        "from": "21:05",
+        "to": null,
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_master",
+      "text": "Records ②: the Mlinzi Bora master card took the service lift up to the ninth floor at 21:35, into the corridor beside Sharon's office, and down at 22:16; car park exit 22:20.",
+      "kind": "true",
+      "about": [
+        "p_mwita"
+      ],
+      "where": {
+        "person": "p_mwita",
+        "place": "plc_office",
+        "from": "21:35",
+        "to": "22:16"
+      }
+    },
+    {
+      "id": "f_liftcam",
+      "text": "Records ②: the service-lift camera has been \"under maintenance\" since Friday, a job ordered by Mlinzi Bora.",
+      "kind": "true",
+      "about": [
+        "p_mwita"
+      ]
+    },
+    {
+      "id": "f_cy_pay",
+      "text": "Records ②: Mlinzi Bora paid Cynthia Moraa monthly for a year, \"consultancy\".",
+      "kind": "true",
+      "about": [
+        "p_cynthia",
+        "p_mwita"
+      ]
+    },
+    {
+      "id": "f_till2m",
+      "text": "Records ②: on Monday Mlinzi Bora received KSh 2,000,000 from Till 880 214, \"security consultancy\".",
+      "kind": "true",
+      "about": [
+        "p_mwita"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_cy_phone",
+      "text": "Records ②: Cynthia's own line was on the Kasarani mast all Sunday evening.",
+      "kind": "true",
+      "about": [
+        "p_cynthia"
+      ],
+      "where": {
+        "person": "p_cynthia",
+        "place": "plc_kasarani",
+        "from": "18:00",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_cy_home",
+      "text": "Cynthia hands over the S.K. SIM from her phone-case pocket and a printout of Halima's diary page for the week.",
+      "kind": "true",
+      "about": [
+        "p_cynthia"
+      ]
+    },
+    {
+      "id": "f_laptop",
+      "text": "In the Major's safe: Sharon's laptop.",
+      "kind": "true",
+      "about": [
+        "p_mwita"
+      ]
+    },
+    {
+      "id": "f_covers",
+      "text": "In the Major's safe: a pair of shoe covers in a bin bag, stained.",
+      "kind": "true",
+      "about": [
+        "p_mwita"
+      ]
+    },
+    {
+      "id": "f_kenneth",
+      "text": "Kenneth was at a golf tournament in Nanyuki from Friday to Monday.",
+      "kind": "true",
+      "about": [
+        "p_kenneth"
+      ],
+      "where": {
+        "person": "p_kenneth",
+        "place": "plc_nanyuki",
+        "from": "00:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_lydia",
+      "text": "Her church and her sister: Lydia was at an all-night prayer vigil in Buruburu on Sunday.",
+      "kind": "true",
+      "about": [
+        "p_lydia"
+      ],
+      "where": {
+        "person": "p_lydia",
+        "place": "plc_buruburu",
+        "from": "20:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_mw_printset",
+      "text": "Fingerprints taken from Major Mwita in detention.",
+      "kind": "true",
+      "about": [
+        "p_mwita"
+      ]
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Post-mortem: one blow from a heavy, smooth-edged object, matching the bookend.",
+      "kind": "true",
+      "about": [
+        "p_sharon"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Sunday between 21:40 and 22:15.",
+      "kind": "true",
+      "about": [
+        "p_sharon"
+      ],
+      "at": {
+        "from": "21:40",
+        "to": "22:15",
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_layering",
+      "text": "Lab: Halima's prints are under the toner: the ridges show beneath the printed letters. Nothing on top of the toner at all.",
+      "kind": "true",
+      "about": [
+        "p_halima"
+      ]
+    },
+    {
+      "id": "f_docexam",
+      "text": "Questioned Documents Lab: \"21:45\" was written over an erased \"21:00\" in a different ink.",
+      "kind": "true",
+      "about": [
+        "p_patrick"
+      ]
+    },
+    {
+      "id": "f_shoeblood",
+      "text": "Lab: the stains on the shoe covers are Sharon's blood.",
+      "kind": "true",
+      "about": [
+        "p_sharon",
+        "p_mwita"
+      ]
+    },
+    {
+      "id": "f_mw_home",
+      "text": "Mwita: \"I was at home on Sunday night. My company's records show nothing unusual.\"",
+      "kind": "lie",
+      "about": [
+        "p_mwita"
+      ]
+    },
+    {
+      "id": "f_mw_never",
+      "text": "Mwita: \"I've never spoken to Advocate Kiprop except about building security.\"",
+      "kind": "lie",
+      "about": [
+        "p_mwita"
+      ]
+    },
+    {
+      "id": "f_mw_reveal",
+      "text": "Mwita: \"I secure buildings for people who pay. I don't ask who's paying the people who pay me.\" Nothing further. He never says Kivuli's name, and never asks for a lawyer.",
+      "kind": "true",
+      "about": [
+        "p_mwita"
+      ],
+      "spine": "t_kivuli"
+    },
+    {
+      "id": "f_mw_ninth",
+      "text": "Mwita: \"I didn't set foot on the ninth floor that night.\"",
+      "kind": "lie",
+      "about": [
+        "p_mwita"
+      ]
+    },
+    {
+      "id": "f_cy_never",
+      "text": "Cynthia: \"I never touched Prosecutor Abdi's desk. I don't know any Major.\"",
+      "kind": "lie",
+      "about": [
+        "p_cynthia"
+      ]
+    },
+    {
+      "id": "f_cy_reveal",
+      "text": "Cynthia: the Major paid her to report on Halima's files; on Friday he asked for her pen and paper she'd touched; on Sunday he gave her a SIM and the words to type. \"I thought it was to embarrass her.\"",
+      "kind": "true",
+      "about": [
+        "p_cynthia",
+        "p_mwita",
+        "p_halima"
+      ]
+    },
+    {
+      "id": "f_pa_2145",
+      "text": "Patrick: \"Prosecutor Abdi signed in at quarter to ten.\"",
+      "kind": "lie",
+      "about": [
+        "p_patrick"
+      ]
+    },
+    {
+      "id": "f_pa_reveal",
+      "text": "Patrick: on Monday morning the Major told him to change it to 21:45 \"so the record matches the camera\". He didn't check. On Sunday the Major said the service-lift camera was under maintenance.",
+      "kind": "true",
+      "about": [
+        "p_patrick",
+        "p_mwita"
+      ]
+    },
+    {
+      "id": "f_ha_claim",
+      "text": "Halima: \"I went at nine because someone signing as S.K. asked me to. I left at quarter past. I've never threatened anyone in writing in my life.\"",
+      "kind": "claim",
+      "about": [
+        "p_halima"
+      ]
+    },
+    {
+      "id": "f_ke_claim",
+      "text": "Kenneth: \"We were splitting the firm. I was in Nanyuki.\"",
+      "kind": "claim",
+      "about": [
+        "p_kenneth"
+      ]
+    },
+    {
+      "id": "f_ke_said",
+      "text": "Kenneth: \"She'd started taking clients I didn't want to know about. That's why I was leaving.\"",
+      "kind": "true",
+      "about": [
+        "p_kenneth",
+        "p_sharon"
+      ]
+    },
+    {
+      "id": "f_ly_claim",
+      "text": "Lydia: \"She sold my husband out. I was at a vigil.\"",
+      "kind": "claim",
+      "about": [
+        "p_lydia"
+      ]
+    },
+    {
+      "id": "f_ly_said",
+      "text": "Lydia: \"Julius told me in remand: 'Sharon is talking.' I thought he meant to the press.\"",
+      "kind": "true",
+      "about": [
+        "p_lydia",
+        "p_sharon"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_mwita",
+      "stance": "cooperative",
+      "intro": "Major Mwita arrives in a pressed blazer with a USB stick of his company's footage. \"I was at home on Sunday night. My company's records show nothing unusual. I've never spoken to Advocate Kiprop except about building security.\"",
+      "claims": [
+        "f_mw_home",
+        "f_mw_never"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_mw_ninth",
+          "after": "f_mw_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_cynthia",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_pen_report"
+      ],
+      "intro": "Cynthia grips her lanyard in both hands. \"I never touched Prosecutor Abdi's desk. I don't know any Major.\"",
+      "claims": [
+        "f_cy_never"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_patrick",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_dcifile"
+      ],
+      "intro": "Patrick won't look up from the book. \"Prosecutor Abdi signed in at quarter to ten.\"",
+      "claims": [
+        "f_pa_2145"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_halima",
+      "stance": "cooperative",
+      "intro": "Halima sits very straight in a borrowed chair, angry and controlled. \"I went at nine because someone signing as S.K. asked me to. I left at quarter past. I've never threatened anyone in writing in my life.\"",
+      "claims": [
+        "f_ha_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_note",
+          "reply": "To you, alone: \"Don't be careful with me because you like me. Be careful because they're good at this.\"",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_kenneth",
+      "stance": "cooperative",
+      "intro": "Kenneth calls from Nanyuki. \"We were splitting the firm. I was in Nanyuki.\"",
+      "claims": [
+        "f_ke_claim"
+      ],
+      "yields": [
+        "ev_kenneth"
+      ],
+      "topics": [
+        {
+          "about": "ev_body",
+          "reply": "\"She'd started taking clients I didn't want to know about. That's why I was leaving.\"",
+          "reveals": [
+            "f_ke_said"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_lydia",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_faith"
+      ],
+      "intro": "Lydia folds her arms. \"She sold my husband out. I was at a vigil.\"",
+      "claims": [
+        "f_ly_claim"
+      ],
+      "yields": [
+        "ev_lydia"
+      ],
+      "topics": [
+        {
+          "about": "ev_faith",
+          "reply": "\"Julius told me in remand: 'Sharon is talking.' I thought he meant to the press.\"",
+          "reveals": [
+            "f_ly_said"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_faith",
+      "stance": "cooperative",
+      "intro": "Faith answers carefully, the sealed note in her hand.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_pa",
+      "claim": "f_pa_2145",
+      "brokenBy": [
+        "f_lobbycam",
+        "f_signin_alt"
+      ],
+      "reveals": [
+        "f_pa_reveal"
+      ],
+      "reaction": "\"The Major told me on Monday morning to change it to 21:45 'so the record matches the camera'. I didn't look at the camera. I changed it. On Sunday he also told me the service-lift camera was under maintenance.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_cy",
+      "claim": "f_cy_never",
+      "brokenBy": [
+        "f_cy_pay",
+        "f_pen_report"
+      ],
+      "reveals": [
+        "f_cy_reveal",
+        "ev_cy_home"
+      ],
+      "reaction": "\"He paid me to tell him what files she was working on. A year. Then on Friday he said bring the pen and some paper she'd touched. On Sunday he gave me a SIM and told me what to type. I didn't know he'd kill her. I thought it was to embarrass Madam Halima.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_mw_never",
+      "claim": "f_mw_never",
+      "brokenBy": [
+        "f_mwcall"
+      ],
+      "reveals": [],
+      "reaction": "Mwita nods, as if at a briefing. \"A routine alarm call, Detective.\" He doesn't say which alarm.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_mw_home",
+      "claim": "f_mw_home",
+      "brokenBy": [
+        "f_master",
+        "f_liftcam"
+      ],
+      "reveals": [
+        "f_mw_reveal"
+      ],
+      "reaction": "\"I secure buildings for people who pay. I don't ask who's paying the people who pay me.\" Nothing further.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_mw_ninth",
+      "claim": "f_mw_ninth",
+      "brokenBy": [
+        "f_shoeblood"
+      ],
+      "reveals": [],
+      "reaction": "Mwita looks at the lab sheet, then squares it neatly on the table, as if filing it.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_mwita",
+      "text": "Daniel Mwita",
+      "category": "person",
+      "ref": "p_mwita",
+      "unlock": {
+        "anyOf": [
+          "f_mwcall",
+          "f_liftcam"
+        ]
+      }
+    },
+    {
+      "id": "w_cynthia",
+      "text": "Cynthia Moraa",
+      "category": "person",
+      "ref": "p_cynthia",
+      "unlock": {
+        "anyOf": [
+          "f_pen_report"
+        ]
+      }
+    },
+    {
+      "id": "w_patrick",
+      "text": "Patrick Ekesa",
+      "category": "person",
+      "ref": "p_patrick",
+      "unlock": {
+        "anyOf": [
+          "f_signin"
+        ]
+      }
+    },
+    {
+      "id": "w_halima",
+      "text": "Halima Abdi",
+      "category": "person",
+      "ref": "p_halima",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_kenneth",
+      "text": "Kenneth Langat",
+      "category": "person",
+      "ref": "p_kenneth",
+      "unlock": {
+        "anyOf": [
+          "f_faith"
+        ]
+      }
+    },
+    {
+      "id": "w_lydia",
+      "text": "Lydia Emojong",
+      "category": "person",
+      "ref": "p_lydia",
+      "unlock": {
+        "anyOf": [
+          "f_faith"
+        ]
+      }
+    },
+    {
+      "id": "w_faith",
+      "text": "Faith Jepchirchir",
+      "category": "person",
+      "ref": "p_faith",
+      "unlock": {
+        "anyOf": [
+          "f_faith"
+        ]
+      }
+    },
+    {
+      "id": "w_nobody",
+      "text": "nobody",
+      "category": "person",
+      "nobody": true,
+      "unlock": {
+        "start": true
+      }
+    },
+    {
+      "id": "r_frame",
+      "text": "supplied Halima's pen and papers and sent the lure text",
+      "category": "role",
+      "by": [
+        "f_pen_report",
+        "f_cy_reveal",
+        "f_cy_home",
+        "f_lure_sim"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_cy_pay"
+        ]
+      }
+    },
+    {
+      "id": "r_alibi",
+      "text": "gave a false alibi",
+      "category": "role",
+      "by": [
+        "f_pa_reveal"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_lure_sim"
+        ]
+      }
+    },
+    {
+      "id": "r_delete",
+      "text": "deleted the footage",
+      "category": "role",
+      "by": [
+        "f_liftcam"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_lure_sim"
+        ]
+      }
+    },
+    {
+      "id": "r_drove",
+      "text": "drove the killer",
+      "category": "role",
+      "by": [
+        "f_master"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_lure_sim"
+        ]
+      }
+    },
+    {
+      "id": "r_key",
+      "text": "had a key cut",
+      "category": "role",
+      "by": [
+        "f_master"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_lure_sim"
+        ]
+      }
+    },
+    {
+      "id": "pl_office",
+      "text": "Sharon's inner office",
+      "category": "place",
+      "ref": "plc_office",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "pl_reception",
+      "text": "the reception",
+      "category": "place",
+      "ref": "plc_reception",
+      "unlock": {
+        "anyOf": [
+          "f_faith"
+        ]
+      }
+    },
+    {
+      "id": "pl_lobby1",
+      "text": "the lobby",
+      "category": "place",
+      "ref": "loc_lobby",
+      "unlock": {
+        "anyOf": [
+          "f_lobbycam"
+        ]
+      }
+    },
+    {
+      "id": "pl_carpark1",
+      "text": "the car park",
+      "category": "place",
+      "ref": "plc_carpark",
+      "unlock": {
+        "anyOf": [
+          "f_lobbycam"
+        ]
+      }
+    },
+    {
+      "id": "pl_slift1",
+      "text": "the service lift",
+      "category": "place",
+      "ref": "plc_slift",
+      "unlock": {
+        "anyOf": [
+          "f_lobbycam"
+        ]
+      }
+    },
+    {
+      "id": "pl_southc",
+      "text": "Halima's flat",
+      "category": "place",
+      "ref": "plc_southc",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_slift2",
+      "text": "the service lift and the car park",
+      "category": "place",
+      "ref": "plc_slift_cp",
+      "unlock": {
+        "anyOf": [
+          "f_lobbycam"
+        ]
+      }
+    },
+    {
+      "id": "pl_lobby2",
+      "text": "the lobby",
+      "category": "place",
+      "ref": "loc_lobby",
+      "unlock": {
+        "anyOf": [
+          "f_lobbycam"
+        ]
+      }
+    },
+    {
+      "id": "pl_plift",
+      "text": "the passenger lift",
+      "category": "place",
+      "ref": "plc_plift",
+      "unlock": {
+        "anyOf": [
+          "f_lobbycam"
+        ]
+      }
+    },
+    {
+      "id": "pl_stairs",
+      "text": "the fire stairs",
+      "category": "place",
+      "ref": "plc_stairs",
+      "unlock": {
+        "anyOf": [
+          "f_lobbycam"
+        ]
+      }
+    },
+    {
+      "id": "pl_reception2",
+      "text": "the reception",
+      "category": "place",
+      "ref": "plc_reception",
+      "unlock": {
+        "anyOf": [
+          "f_faith"
+        ]
+      }
+    },
+    {
+      "id": "pl_roof",
+      "text": "the roof",
+      "category": "place",
+      "ref": "plc_roof",
+      "unlock": {
+        "anyOf": [
+          "f_lobbycam"
+        ]
+      }
+    },
+    {
+      "id": "h_bookend",
+      "text": "striking her with a marble bookend",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_laptop",
+      "text": "striking her with her laptop",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_safe",
+      "text": "pushing her against the safe",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_safe"
+        ]
+      }
+    },
+    {
+      "id": "h_strangle",
+      "text": "strangling her",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_fall",
+      "text": "a fall",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_silence",
+      "text": "to silence her before she told Halima who instructed her clients (paid from the Mvua till)",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_faith"
+        ]
+      }
+    },
+    {
+      "id": "m_complaint",
+      "text": "a prosecutor's anger at a misconduct complaint",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_dcifile"
+        ]
+      }
+    },
+    {
+      "id": "m_partner",
+      "text": "a partnership dispute",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_faith"
+        ]
+      }
+    },
+    {
+      "id": "m_wife",
+      "text": "a wife's anger over her husband's defence",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_faith"
+        ]
+      }
+    },
+    {
+      "id": "m_laptop",
+      "text": "a robbery of her laptop",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "i_note",
+      "text": "the typed note on her desk",
+      "category": "item",
+      "ref": "ev_note",
+      "unlock": {
+        "anyOf": [
+          "f_note"
+        ]
+      }
+    },
+    {
+      "id": "i_pen",
+      "text": "the fountain pen under the desk",
+      "category": "item",
+      "ref": "ev_pen",
+      "unlock": {
+        "anyOf": [
+          "f_pen"
+        ]
+      }
+    },
+    {
+      "id": "i_bookend",
+      "text": "the marble bookend",
+      "category": "item",
+      "ref": "ev_body",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "i_signin",
+      "text": "the sign-in entry",
+      "category": "item",
+      "ref": "ev_signin",
+      "unlock": {
+        "anyOf": [
+          "f_signin"
+        ]
+      }
+    },
+    {
+      "id": "i_laptop",
+      "text": "the laptop",
+      "category": "item",
+      "ref": "ev_mwita_office",
+      "unlock": {
+        "anyOf": [
+          "f_laptop"
+        ]
+      }
+    },
+    {
+      "id": "p_under",
+      "text": "Halima's prints are under the printed text",
+      "category": "plantTell",
+      "by": [
+        "f_layering",
+        "f_ha_printcard"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_note"
+        ]
+      }
+    },
+    {
+      "id": "p_missing",
+      "text": "it was reported missing before the murder",
+      "category": "plantTell",
+      "by": [
+        "f_pen_report"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_pen_report"
+        ]
+      }
+    },
+    {
+      "id": "p_dust",
+      "text": "dust under it, not on it",
+      "category": "plantTell",
+      "by": [
+        "f_pen"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_pen"
+        ]
+      }
+    },
+    {
+      "id": "p_smear",
+      "text": "a wiped smear, not spatter",
+      "category": "plantTell",
+      "by": [
+        "f_pen"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_pen"
+        ]
+      }
+    },
+    {
+      "id": "p_time",
+      "text": "a timestamp before the item existed",
+      "category": "plantTell",
+      "by": [
+        "f_pen"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_pen"
+        ]
+      }
+    },
+    {
+      "id": "p_reach",
+      "text": "placed where she couldn't reach",
+      "category": "plantTell",
+      "by": [
+        "f_pen"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_pen"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_ogada",
+      "text": "The phone that called Walter Ogada (case 50)",
+      "category": "pin",
+      "pin": "case-050:f_rec_caller_id",
+      "unlock": {
+        "anyOf": [
+          "f_lure_sim"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_container",
+      "text": "The container of \"printing paper\", Shimanzi (case 30)",
+      "category": "pin",
+      "pin": "case-030:f_container_oval",
+      "unlock": {
+        "anyOf": [
+          "f_lure_sim"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_till",
+      "text": "The Mvua till on the seal order (case 10)",
+      "category": "pin",
+      "pin": "case-010:f_order_mvua",
+      "unlock": {
+        "anyOf": [
+          "f_lure_sim"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_doreen",
+      "text": "Doreen Kathambi's commissioner stamp (cases 60 and 70)",
+      "category": "pin",
+      "pin": "case-060:f_comm_stamp",
+      "unlock": {
+        "anyOf": [
+          "f_lure_sim"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_fb",
+      "text": "Field book FB 4471 (case 40)",
+      "category": "pin",
+      "pin": "case-040:f_hannah_withdrawn",
+      "unlock": {
+        "anyOf": [
+          "f_lure_sim"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} in {where1}, coming and going by {where2}, by {how}, because {why}. The killer was helped by {accomplice}, who {role}. {item} was planted, as shown by {ptell}. The SIM that lured Halima was registered to the same dead man's ID as {pin}.",
+    "fixed": {
+      "victim": "Advocate Sharon Kiprop"
+    },
+    "reviewer": "Senior Prosecutor Rukia Hassan",
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_thu",
+                  "label": "Thursday",
+                  "from": null,
+                  "to": null,
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_fri",
+                  "label": "Friday afternoon",
+                  "from": null,
+                  "to": null,
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_2010",
+                  "label": "Sunday 20:10",
+                  "from": "20:10",
+                  "to": "20:10",
+                  "day": "Sun"
+                },
+                {
+                  "id": "sl_2100",
+                  "label": "Sunday 21:00–21:14",
+                  "from": "21:00",
+                  "to": "21:14",
+                  "day": "Sun"
+                },
+                {
+                  "id": "sl_2145",
+                  "label": "Sunday 21:45",
+                  "from": "21:45",
+                  "to": "21:45",
+                  "day": "Sun"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Sunday 21:35–22:16",
+                  "from": "21:35",
+                  "to": "22:16",
+                  "day": "Sun"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_email",
+                  "text": "Sharon writes to Halima asking to meet",
+                  "slot": "sl_thu",
+                  "by": [
+                    "f_faith",
+                    "f_cy_reveal"
+                  ],
+                  "why": "Her private email, Thursday; Cynthia read it on Friday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_faith"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_pen",
+                  "text": "Cynthia takes Halima's pen and paper",
+                  "slot": "sl_fri",
+                  "by": [
+                    "f_pen_report",
+                    "f_cy_reveal"
+                  ],
+                  "why": "The pen was reported missing at 17:30 on Friday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_pen_report"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_lure",
+                  "text": "The lure text",
+                  "slot": "sl_2010",
+                  "by": [
+                    "f_lure_sim",
+                    "f_halima"
+                  ],
+                  "why": "Records: 20:10, from Kasarani.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_lure_sim"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_knock",
+                  "text": "Halima knocks and leaves",
+                  "slot": "sl_2100",
+                  "by": [
+                    "f_lobbycam"
+                  ],
+                  "why": "The lobby camera: in at 21:00, out at 21:14.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_lobbycam"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_kill",
+                  "text": "Sharon is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_master",
+                    "f_aut_tod"
+                  ],
+                  "why": "The master card up the service lift at 21:35, down at 22:16.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_master"
+                    ]
+                  },
+                  "act": true
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_2145",
+                  "by": [
+                    "f_signin_alt",
+                    "f_pa_reveal"
+                  ],
+                  "why": "\"Halima signs in at 21:45\" was written over \"21:00\" on Monday morning, on the Major's orders."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "An email on Thursday, a pen gone on Friday, a text at ten past eight, a knock at nine, and a service lift at 21:35.",
+          "fail": [
+            "21:45 was written over 21:00 on Monday morning.",
+            "When did the master card go up?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where1",
+            "category": "place",
+            "answer": "pl_office",
+            "pool": [
+              "pl_office",
+              "pl_reception",
+              "pl_lobby1",
+              "pl_carpark1",
+              "pl_slift1",
+              "pl_southc"
+            ]
+          },
+          {
+            "id": "where2",
+            "category": "place",
+            "answer": "pl_slift2",
+            "subject": "other",
+            "note": "How the killer came and went.",
+            "pool": [
+              "pl_slift2",
+              "pl_lobby2",
+              "pl_plift",
+              "pl_stairs",
+              "pl_reception2",
+              "pl_roof"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "Killed in her own office. In and out by the camera-less service lift and the car park.",
+          "fail": [
+            "No one but Halima and Sharon came through the lobby before 23:00.",
+            "The passenger lift has a camera. He didn't use it."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_mwita",
+            "pool": [
+              "w_mwita",
+              "w_cynthia",
+              "w_patrick",
+              "w_halima",
+              "w_kenneth",
+              "w_lydia",
+              "w_faith"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "His call that brought her in, his master card up the service lift, her laptop in his safe, her blood on his shoe covers.",
+          "fail": [
+            "Halima left at 21:14. Sharon arrived at 21:32.",
+            "Cynthia never left Kasarani."
+          ]
+        }
+      },
+      {
+        "id": "g_accomplice",
+        "kind": "accomplice",
+        "blanks": [
+          {
+            "id": "accomplice",
+            "category": "person",
+            "answer": "w_cynthia",
+            "pool": [
+              "w_cynthia",
+              "w_patrick",
+              "w_faith",
+              "w_kenneth",
+              "w_lydia",
+              "w_nobody"
+            ]
+          },
+          {
+            "id": "role",
+            "category": "role",
+            "answer": "r_frame"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A year on his payroll, a pen from Halima's desk, and a dead man's SIM in her phone case.",
+          "fail": [
+            "Patrick changed a time on Monday, after the death, and didn't know why. That's not an accomplice.",
+            "Faith kept the envelope safe. She's the reason we can read it."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_bookend"
+          }
+        ],
+        "prosecutor": {
+          "pass": "One of her own marble bookends.",
+          "fail": [
+            "The laptop was in his safe, intact.",
+            "The safe is scratched round the dial. No blood."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_silence"
+          }
+        ],
+        "prosecutor": {
+          "pass": "\"Sharon is talking.\" And two million shillings from the till the next morning.",
+          "fail": [
+            "Halima's complaint was a pretext they built for her.",
+            "Kenneth was in Nanyuki."
+          ]
+        }
+      },
+      {
+        "id": "g_planted",
+        "kind": "planted",
+        "blanks": [
+          {
+            "id": "item",
+            "category": "item",
+            "answer": "i_note",
+            "accept": [
+              "i_pen"
+            ]
+          },
+          {
+            "id": "ptell",
+            "category": "plantTell",
+            "answer": "p_under",
+            "accept": [
+              "p_missing"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her prints under the toner: she touched a blank sheet. And the pen was reported missing two days before.",
+          "fail": [
+            "The sign-in entry wasn't planted. It was altered: that's Patrick's lie.",
+            "The bookend is the weapon."
+          ]
+        }
+      },
+      {
+        "id": "g_spine",
+        "kind": "spine",
+        "blanks": [
+          {
+            "id": "pin",
+            "category": "pin",
+            "answer": "w_pin_ogada",
+            "spine": true
+          }
+        ],
+        "prosecutor": {
+          "pass": "The same dead man's ID that set up Walter Ogada. Fundi's people.",
+          "fail": [
+            "The till paid for this, yes. The question is the SIM.",
+            "Read the registration again."
+          ]
+        }
+      }
+    ],
+    "halima": "Charges accepted. Prosecutor Abdi's suspension is lifted with effect from now. (Off the record, Rukia Hassan adds: \"Tell her I never believed it.\")"
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_office",
+      "from": "21:35",
+      "to": "22:16",
+      "note": "The master card's service-lift ride, up at 21:35 and down at 22:16; the post-mortem allows 21:40–22:15."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_ob",
+          "f_dcifile",
+          "f_lobbycam",
+          "f_ha_out",
+          "f_signin",
+          "f_signin_alt",
+          "f_docexam",
+          "f_pa_2145",
+          "f_pa_reveal",
+          "f_halima",
+          "f_ha_claim"
+        ],
+        "concludes": "Halima came at 21:00 and left at 21:14, before Sharon arrived; the 21:45 entry was altered on Monday."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_note",
+          "f_layering",
+          "f_ha_printcard",
+          "f_pen",
+          "f_pen_report"
+        ],
+        "concludes": "The note was printed on a sheet Halima had touched blank, and her pen went missing on Friday.",
+        "answers": [
+          "item",
+          "ptell"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_lure_sim",
+          "case-050:f_rec_caller_id"
+        ],
+        "concludes": "The lure SIM used the same dead man's ID as the phone that set up Walter Ogada's murder.",
+        "answers": [
+          "pin"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_cy_never",
+          "f_cy_pay",
+          "f_cy_reveal",
+          "f_cy_home"
+        ],
+        "concludes": "Cynthia sent the lure and supplied the pen and paper, paid by Mlinzi Bora.",
+        "answers": [
+          "accomplice",
+          "role"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_mwcall",
+          "f_master",
+          "f_liftcam",
+          "f_mw_never",
+          "f_mw_home",
+          "f_mw_reveal"
+        ],
+        "concludes": "Mwita called Sharon to the building at 21:05 and rode the camera-less service lift up at 21:35 and down at 22:16.",
+        "answers": [
+          "when",
+          "where1",
+          "where2"
+        ]
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_faith",
+          "f_ly_said",
+          "f_till2m"
+        ],
+        "concludes": "Sharon was about to talk to Halima; the killing was paid for from the Mvua till the next morning.",
+        "answers": [
+          "why"
+        ]
+      },
+      {
+        "id": "s7",
+        "from": [
+          "s6",
+          "f_body",
+          "f_aut_blow",
+          "f_aut_tod",
+          "f_laptop",
+          "f_covers",
+          "f_shoeblood",
+          "f_mw_ninth"
+        ],
+        "concludes": "Major (rtd) Daniel Mwita struck Sharon with a marble bookend in her office and framed Halima, helped by Cynthia Moraa.",
+        "answers": [
+          "who",
+          "how"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_reception",
+        "blank": "where1",
+        "by": [
+          "f_body"
+        ],
+        "why": "She was found in her inner office."
+      },
+      {
+        "word": "pl_lobby1",
+        "blank": "where1",
+        "by": [
+          "f_lobbycam"
+        ],
+        "why": "She walked through the lobby alive at 21:32."
+      },
+      {
+        "word": "pl_carpark1",
+        "blank": "where1",
+        "by": [
+          "f_body"
+        ],
+        "why": "He left by the car park; she died upstairs."
+      },
+      {
+        "word": "pl_slift1",
+        "blank": "where1",
+        "by": [
+          "f_body",
+          "f_master"
+        ],
+        "why": "He used the service lift; she died in her office."
+      },
+      {
+        "word": "pl_southc",
+        "blank": "where1",
+        "by": [
+          "f_body"
+        ],
+        "why": "Halima's flat is where Halima was."
+      },
+      {
+        "word": "pl_lobby2",
+        "blank": "where2",
+        "by": [
+          "f_lobbycam"
+        ],
+        "why": "Nobody else came through the lobby before 23:00."
+      },
+      {
+        "word": "pl_plift",
+        "blank": "where2",
+        "by": [
+          "f_lobbycam",
+          "f_master"
+        ],
+        "why": "The passenger lift has a camera; the master card used the service lift."
+      },
+      {
+        "word": "pl_stairs",
+        "blank": "where2",
+        "by": [
+          "f_master"
+        ],
+        "why": "The access log shows the service lift."
+      },
+      {
+        "word": "pl_reception2",
+        "blank": "where2",
+        "by": [
+          "f_master"
+        ],
+        "why": "The service lift opens into the back corridor."
+      },
+      {
+        "word": "pl_roof",
+        "blank": "where2",
+        "by": [
+          "f_master"
+        ],
+        "why": "He left by the car park at 22:20."
+      },
+      {
+        "word": "w_cynthia",
+        "blank": "who",
+        "by": [
+          "f_cy_phone"
+        ],
+        "why": "Cynthia's phone was in Kasarani all evening."
+      },
+      {
+        "word": "w_patrick",
+        "blank": "who",
+        "by": [
+          "f_pa_desk"
+        ],
+        "why": "Patrick was at the lobby desk on camera all night."
+      },
+      {
+        "word": "w_halima",
+        "blank": "who",
+        "by": [
+          "f_ha_out"
+        ],
+        "why": "Halima left at 21:14; Sharon arrived at 21:32."
+      },
+      {
+        "word": "w_kenneth",
+        "blank": "who",
+        "by": [
+          "f_kenneth"
+        ],
+        "why": "Kenneth was in Nanyuki."
+      },
+      {
+        "word": "w_lydia",
+        "blank": "who",
+        "by": [
+          "f_lydia"
+        ],
+        "why": "Lydia was at a vigil in Buruburu."
+      },
+      {
+        "word": "w_faith",
+        "blank": "who",
+        "by": [
+          "f_faith_self"
+        ],
+        "why": "Faith was on a video call with her mother."
+      },
+      {
+        "word": "w_patrick",
+        "blank": "accomplice",
+        "by": [
+          "f_pa_reveal",
+          "f_docexam"
+        ],
+        "why": "He changed the time on Monday, after the death, on his boss's word, without knowing why: an unknowing helper."
+      },
+      {
+        "word": "w_faith",
+        "blank": "accomplice",
+        "by": [
+          "f_faith"
+        ],
+        "why": "Faith kept Sharon's envelope safe."
+      },
+      {
+        "word": "w_kenneth",
+        "blank": "accomplice",
+        "by": [
+          "f_kenneth",
+          "f_ke_said"
+        ],
+        "why": "Kenneth was in Nanyuki, leaving the firm."
+      },
+      {
+        "word": "w_lydia",
+        "blank": "accomplice",
+        "by": [
+          "f_lydia"
+        ],
+        "why": "Lydia was at a vigil."
+      },
+      {
+        "word": "w_nobody",
+        "blank": "accomplice",
+        "by": [
+          "f_cy_reveal",
+          "f_cy_home"
+        ],
+        "why": "Someone took the pen and sent the text."
+      },
+      {
+        "word": "r_alibi",
+        "blank": "role",
+        "by": [
+          "f_pa_reveal"
+        ],
+        "why": "Nobody gave Mwita an alibi; Patrick altered Halima's time."
+      },
+      {
+        "word": "r_delete",
+        "blank": "role",
+        "by": [
+          "f_liftcam"
+        ],
+        "why": "The service-lift camera was switched off before, by a maintenance order."
+      },
+      {
+        "word": "r_drove",
+        "blank": "role",
+        "by": [
+          "f_cy_phone"
+        ],
+        "why": "Cynthia never left Kasarani."
+      },
+      {
+        "word": "r_key",
+        "blank": "role",
+        "by": [
+          "f_master"
+        ],
+        "why": "He had a master card already."
+      },
+      {
+        "word": "h_laptop",
+        "blank": "how",
+        "by": [
+          "f_laptop"
+        ],
+        "why": "The laptop was intact in his safe."
+      },
+      {
+        "word": "h_safe",
+        "blank": "how",
+        "by": [
+          "f_safe",
+          "f_aut_blow"
+        ],
+        "why": "Scratches round the dial, no blood."
+      },
+      {
+        "word": "h_strangle",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "One blow."
+      },
+      {
+        "word": "h_fall",
+        "blank": "how",
+        "by": [
+          "f_aut_blow",
+          "f_body"
+        ],
+        "why": "One blow; the bookend wiped."
+      },
+      {
+        "word": "m_complaint",
+        "blank": "why",
+        "by": [
+          "f_ha_out",
+          "f_layering"
+        ],
+        "why": "Halima was gone before Sharon arrived; the note was made on her blank paper."
+      },
+      {
+        "word": "m_partner",
+        "blank": "why",
+        "by": [
+          "f_kenneth"
+        ],
+        "why": "Kenneth was in Nanyuki."
+      },
+      {
+        "word": "m_wife",
+        "blank": "why",
+        "by": [
+          "f_lydia"
+        ],
+        "why": "Lydia was at a vigil."
+      },
+      {
+        "word": "m_laptop",
+        "blank": "why",
+        "by": [
+          "f_till2m",
+          "f_laptop"
+        ],
+        "why": "Taken to stop what was on it, by a man paid KSh 2 million the next morning."
+      },
+      {
+        "word": "i_bookend",
+        "blank": "item",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "The bookend is the weapon."
+      },
+      {
+        "word": "i_signin",
+        "blank": "item",
+        "by": [
+          "f_signin_alt",
+          "f_pa_reveal"
+        ],
+        "why": "It wasn't planted, it was altered: that's Patrick's lie."
+      },
+      {
+        "word": "i_laptop",
+        "blank": "item",
+        "by": [
+          "f_laptop"
+        ],
+        "why": "The laptop was taken, not planted."
+      },
+      {
+        "word": "p_dust",
+        "blank": "ptell",
+        "by": [
+          "f_pen_report"
+        ],
+        "why": "It's the log that dates the pen, not dust."
+      },
+      {
+        "word": "p_smear",
+        "blank": "ptell",
+        "by": [
+          "f_note"
+        ],
+        "why": "No blood on the note."
+      },
+      {
+        "word": "p_time",
+        "blank": "ptell",
+        "by": [
+          "f_note"
+        ],
+        "why": "The note is undated."
+      },
+      {
+        "word": "p_reach",
+        "blank": "ptell",
+        "by": [
+          "f_lobbycam"
+        ],
+        "why": "She could reach the desk; she simply never got through the locked door."
+      },
+      {
+        "word": "w_pin_container",
+        "blank": "pin",
+        "by": [
+          "case-030:f_container_oval",
+          "f_lure_sim"
+        ],
+        "why": "A container is paper, not a SIM."
+      },
+      {
+        "word": "w_pin_till",
+        "blank": "pin",
+        "by": [
+          "case-010:f_order_mvua",
+          "f_till2m"
+        ],
+        "why": "The till paid for this killing, but the question is the SIM's registration."
+      },
+      {
+        "word": "w_pin_doreen",
+        "blank": "pin",
+        "by": [
+          "case-060:f_comm_stamp",
+          "f_lure_sim"
+        ],
+        "why": "A stamp, not an ID."
+      },
+      {
+        "word": "w_pin_fb",
+        "blank": "pin",
+        "by": [
+          "case-040:f_hannah_withdrawn",
+          "f_lure_sim"
+        ],
+        "why": "A withdrawn file, not a dead man's ID."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "After Emojong's arrest, Sharon understands that Kivuli's people will decide she knows too much. On Thursday she emails Halima from a private address asking to meet \"about my clients' instructing party\".",
+        "image": null
+      },
+      {
+        "text": "On Friday Cynthia, paid by Mlinzi Bora for a year, reads the email on Halima's screen and tells Major Mwita. That afternoon she takes Halima's engraved pen and three blank sheets from the printer tray Halima loaded that morning.",
+        "image": null
+      },
+      {
+        "text": "Sunday, 20:10. Cynthia sends the \"S.K.\" text from a dead man's SIM. Halima comes at nine, knocks on a locked door and leaves at 21:14. At 21:05 Mwita calls Sharon in about an \"alarm\"; she arrives at 21:32.",
+        "image": null
+      },
+      {
+        "text": "At 21:35 Mwita rides the camera-less service lift up on his master card. He strikes Sharon with a marble bookend, fails at the safe, takes her laptop, and leaves Halima's pen and a note printed on her paper.",
+        "image": "plc_office"
+      },
+      {
+        "text": "He leaves by the car park at 22:20. On Monday morning he has Patrick change Halima's time to 21:45, and Mlinzi Bora receives KSh 2 million from Till 880 214.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "Halima is released on Wednesday evening. She walks into the SCU office without knocking, puts a box of mandazi on Amani's desk and sits down. Then she takes the fountain pen from the evidence bag Rukia signed over and puts it in Amani's hand: \"My father gave it to me when I passed the bar. You use it. Sign Kivuli's charge sheet with it.\""
+    },
+    {
+      "beat": "The white envelope is opened in Halima's presence.",
+      "scene": "envelope",
+      "beats": [
+        "A copy of Sharon's retainer ledger: every client she represented for \"M.H.\" over six years, each instruction marked \"per K.\"",
+        "A handwritten page: \"Instructions come from a person the others call K. I have never met K knowingly. Instructions reach me through three people, always in person, at a private members' club in Muthaiga: Raphael Oduya, Margaret Kabiru, Stanley Rotich.\"",
+        "\"Each of them has at some point said 'K. wants'. Each of them sat on the fourth floor of Lands House twelve years ago. I believe one of them is K. I have never been able to tell which. — S.K.\"",
+        "A photograph: the same one that hangs in Dr. Mwamburi's boardroom (case 86), the fourth-floor launch twelve years ago, with three faces circled in red pen."
+      ],
+      "files": [
+        {
+          "thread": "t_kivuli",
+          "text": "Narrowed to three: Raphael Oduya (then Director of Land Adjudication), Margaret Kabiru (then Deputy Chief Land Registrar, Records), Stanley Rotich (then Chief Valuer). \"One of them is K.\""
+        },
+        {
+          "thread": "t_fundi",
+          "text": "The dead man's ID: the same registration behind the phone in case 50 and the lure SIM in case 90."
+        },
+        {
+          "thread": "t_mvua",
+          "text": "KSh 2,000,000 from Till 880 214 to Mlinzi Bora the morning after; Sharon's retainer ledger, \"per K.\""
+        }
+      ]
+    },
+    {
+      "beat": "That night Mwalimu calls. The player reads the three names to her from the notebook (shown as text; Amani is never voiced). A long silence. Then: \"I sat across a table from all three at that launch. One of them shook your father's hand that day. I don't know which one sent the order. But I know the fourth floor's corridor by heart, and I'll draw it for you.\" The next morning a hand-drawn floor plan arrives by courier, three offices marked.",
+      "files": [
+        {
+          "thread": "t_joseph",
+          "text": "Mwalimu: one of the three shook Joseph's hand at the launch. Her drawing of the fourth-floor corridor, three offices marked."
+        }
+      ]
+    },
+    {
+      "beat": "Collectible: Halima's fountain pen, engraved \"H. Abdi — from Baba\", on Amani's desk from now on."
+    },
+    {
+      "beat": "Amani's notebook, the region's last line: \"Oduya. Kabiru. Rotich. One of them is the desk.\""
+    }
+  ],
+  "clockPlan": {
+    "note": "Three stamps, the maximum: records on the lure SIM, records on Mlinzi Bora (calls, access card, payments), and a warrant on the Major's office. Cynthia hands over the SIM when pressed. The fingerprint layering (6 h) and the sign-in document exam (10 h) go first; detain Mwita after the warrant, and the shoe-cover blood (12 h) comes back inside 24 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_chambers",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_dcifile",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_pen",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_note",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_faith",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_faith"
+      },
+      {
+        "do": "read",
+        "target": "ev_envelope",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_lobby",
+        "hours": 0.1,
+        "from": "loc_chambers"
+      },
+      {
+        "do": "visit",
+        "target": "loc_lobby",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_signin",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_lobbycam",
+        "hours": 1
+      },
+      {
+        "do": "submit",
+        "target": "ev_docexam"
+      },
+      {
+        "do": "travel",
+        "target": "loc_odpp",
+        "hours": 0.5,
+        "from": "loc_lobby"
+      },
+      {
+        "do": "visit",
+        "target": "loc_odpp",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_pen_report",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_ha_printfile",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_halima",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_halima"
+      },
+      {
+        "do": "submit",
+        "target": "ev_layering"
+      },
+      {
+        "do": "records",
+        "target": "ev_lure_sim"
+      },
+      {
+        "do": "interview",
+        "target": "p_kenneth"
+      },
+      {
+        "do": "interview",
+        "target": "p_lydia"
+      },
+      {
+        "do": "travel",
+        "target": "loc_lobby",
+        "hours": 0.5,
+        "from": "loc_odpp"
+      },
+      {
+        "do": "visit",
+        "target": "loc_lobby",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_patrick"
+      },
+      {
+        "do": "press",
+        "target": "c_pa"
+      },
+      {
+        "do": "records",
+        "target": "ev_mlinzi_rec"
+      },
+      {
+        "do": "travel",
+        "target": "loc_odpp",
+        "hours": 0.5,
+        "from": "loc_lobby"
+      },
+      {
+        "do": "visit",
+        "target": "loc_odpp",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_cynthia"
+      },
+      {
+        "do": "press",
+        "target": "c_cy"
+      },
+      {
+        "do": "travel",
+        "target": "loc_mlinzi",
+        "hours": 0.75,
+        "from": "loc_odpp"
+      },
+      {
+        "do": "visit",
+        "target": "loc_mlinzi",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_mwita"
+      },
+      {
+        "do": "press",
+        "target": "c_mw_never"
+      },
+      {
+        "do": "press",
+        "target": "c_mw_home"
+      },
+      {
+        "do": "search",
+        "target": "loc_mlinzi"
+      },
+      {
+        "do": "submit",
+        "target": "ev_shoeblood"
+      },
+      {
+        "do": "detain",
+        "target": "p_mwita"
+      },
+      {
+        "do": "sample",
+        "target": "ev_mw_prints"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 11
+      },
+      {
+        "do": "press",
+        "target": "c_mw_ninth"
+      }
+    ],
+    "totalHours": 51.35
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_lobbycam",
+        "line": "The camera saw her leave, Amani. When did Sharon come in?"
+      },
+      "tier2": {
+        "facts": [
+          "f_lobbycam",
+          "f_master"
+        ],
+        "line": "Halima out at 21:14. Sharon in at 21:32. The master card up at 21:35."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_mlinzi_rec",
+        "line": "Which lift has no camera?"
+      },
+      "tier2": {
+        "facts": [
+          "f_master",
+          "f_liftcam"
+        ],
+        "line": "The service lift, \"under maintenance\" since Friday, and the car park."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_mlinzi_rec",
+        "line": "Who called her in about an alarm?"
+      },
+      "tier2": {
+        "facts": [
+          "f_mwcall",
+          "f_shoeblood"
+        ],
+        "line": "The Major, at 21:05. Her blood on his shoe covers."
+      }
+    },
+    "g_accomplice": {
+      "tier1": {
+        "point": "ev_pen_report",
+        "line": "Who was alone in Halima's section on Friday afternoon?"
+      },
+      "tier2": {
+        "facts": [
+          "f_pen_report",
+          "f_cy_reveal"
+        ],
+        "line": "Cynthia. A year on his payroll, and a dead man's SIM."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_body",
+        "line": "Count the bookends on her shelf."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_blow",
+          "f_body"
+        ],
+        "line": "One marble bookend, wiped."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_faith",
+        "line": "Ask Faith what was in the safe."
+      },
+      "tier2": {
+        "facts": [
+          "f_faith",
+          "f_till2m"
+        ],
+        "line": "An envelope for Halima. Two million from the till the next morning."
+      }
+    },
+    "g_planted": {
+      "tier1": {
+        "point": "ev_note",
+        "line": "Which came first on that sheet: the fingers or the toner?"
+      },
+      "tier2": {
+        "facts": [
+          "f_layering",
+          "f_pen_report"
+        ],
+        "line": "Her prints under the toner. The pen reported missing on Friday."
+      }
+    },
+    "g_spine": {
+      "tier1": {
+        "point": "ev_lure_sim",
+        "line": "Whose ID is that SIM registered to? You've seen it before."
+      },
+      "tier2": {
+        "facts": [
+          "f_lure_sim",
+          "case-050:f_rec_caller_id"
+        ],
+        "line": "A man dead ten years. The phone that called Walter Ogada."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "wakili",
+      "def": "An advocate; a lawyer."
+    },
+    {
+      "term": "mwendesha mashtaka",
+      "def": "A prosecutor."
+    },
+    {
+      "term": "kalamu ya wino",
+      "def": "A fountain pen."
+    },
+    {
+      "term": "lifti ya huduma",
+      "def": "A service lift."
+    },
+    {
+      "term": "bahasha",
+      "def": "An envelope."
+    },
+    {
+      "term": "kusingiziwa",
+      "def": "To be falsely accused; framed."
+    },
+    {
+      "term": "mandazi",
+      "def": "Sweet fried dough, eaten with tea."
+    },
+    {
+      "term": "baba",
+      "def": "Father."
+    },
+    {
+      "term": "mwalimu",
+      "def": "Teacher. Ch. Insp. Esther Wairimu's callsign."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    },
+    {
+      "term": "kivuli",
+      "def": "Shadow. The name the network's leader goes by."
+    },
+    {
+      "term": "fundi",
+      "def": "A craftsman or fixer. The network's enforcer, Benedict Mbuvi (case 50)."
+    },
+    {
+      "term": "mlinzi",
+      "def": "A guard (\"Mlinzi Bora\": \"the best guard\")."
+    },
+    {
+      "term": "pesa",
+      "def": "Money."
+    },
+    {
+      "term": "pesapap",
+      "def": "A fictional mobile-money service (\"pesa\" is money)."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "framedFriend",
+      "reviewerSwap"
+    ],
+    "beatNotes": "The framed friend. For the first time, a character the player trusts is on the suspect wall, and Halima's voice is gone from the batch-confirmation feedback: Rukia Hassan's colder lines replace it for this one case. When the charge sheet is accepted, Halima's photo moves off the suspect wall and back to its old place on the desk, beside the phone."
+  }
+}

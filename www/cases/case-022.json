@@ -1,0 +1,1270 @@
+{
+  "meta": {
+    "id": "case-022",
+    "number": 22,
+    "region": "mombasa-old-town",
+    "regionNumber": 3,
+    "title": "The 06:40 Ferry",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 14,
+    "date": "Thursday 14 August",
+    "folderTab": "LIKONI"
+  },
+  "pattern": {
+    "crimePattern": "wife kills the woman her husband was secretly seeing and supporting",
+    "noRealCaseRetold": true,
+    "notes": "Fictional cold store and traders' collective at the real Likoni ferry crossing.",
+    "tags": [
+      "blunt-force",
+      "jealousy",
+      "records-request",
+      "found-phone"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 3,
+    "redHerrings": 1,
+    "liars": 1,
+    "groups": [
+      "who",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone"
+    ],
+    "gatedActions": [
+      "records"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 08/14/08",
+    "date": "Thursday 14 August",
+    "time": "07:48",
+    "reportedBy": "Zaituni Omar, cleaner, Samaki Bora cold store, Likoni",
+    "text": "Zaituni Omar, a cleaner, reports that fish trader Agnes Auma (44) was found dead in the back room of the Samaki Bora cold store, on the Likoni side of the ferry crossing, at 07:40.",
+    "facts": [
+      "f_ob_found"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_agnes",
+      "role": "victim",
+      "name": "Agnes Auma",
+      "age": 44,
+      "occupation": "Fish trader, Samaki Bora collective",
+      "bio": "Sells kingfish and snapper on the island. Crosses on the ferry every morning with her crates.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_coldstore",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 40s, a rubber apron over a printed dress, a headscarf against the cold-store chill, strong forearms, a warm tired smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mwanasiti",
+      "role": "suspect",
+      "name": "Mwanasiti Mwinyi",
+      "age": 31,
+      "occupation": "Fish trader, same collective",
+      "bio": "Bay 7. Says she crosses on the 06:40 ferry every morning, like clockwork.",
+      "community": "Digo",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_mm_two"
+      },
+      "at": "plc_ferry",
+      "image": {
+        "kind": "portrait",
+        "brief": "Digo Kenyan woman, early 30s, a dark green headscarf, a rubber apron, two fish crates stacked beside her, a composed face with red-rimmed eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_thomas",
+      "role": "suspect",
+      "name": "Thomas Owino",
+      "age": 47,
+      "occupation": "Agnes's ex-husband; hotel security guard",
+      "redHerring": true,
+      "bio": "They have fought for a year over their children's school fees.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_zaituni_thomas"
+      },
+      "at": "plc_nyali",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 40s, a security-company uniform with epaulettes, a night-shift stubble, a flask in his hand, bitter and tired, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mariamu",
+      "role": "suspect",
+      "name": "Mariamu Mbaraka",
+      "age": 39,
+      "occupation": "Fish trader, same collective",
+      "bio": "Signs the collection book \"M.M.\", like one other trader.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_mm_two"
+      },
+      "at": "plc_marikiti",
+      "image": {
+        "kind": "portrait",
+        "brief": "Swahili Kenyan woman, late 30s, a bright orange headscarf, gold bangles, a market receipt in her hand, annoyed to be asked, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_omari",
+      "role": "witness",
+      "name": "Omari Mwinyi",
+      "age": 36,
+      "occupation": "Mwanasiti's husband; port porter",
+      "bio": "Works at the old port from six.",
+      "community": "Digo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_phone_chat"
+      },
+      "at": "plc_oldport",
+      "image": null
+    },
+    {
+      "id": "p_zaituni",
+      "role": "witness",
+      "name": "Zaituni Omar",
+      "age": 50,
+      "occupation": "Cold-store cleaner",
+      "bio": "Cleans the cold store and fetches ice. Found Agnes.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_icefactory",
+      "image": null
+    },
+    {
+      "id": "p_charo",
+      "role": "witness",
+      "name": "John Charo",
+      "age": 25,
+      "occupation": "Boda rider at the ferry",
+      "statementOnly": true,
+      "bio": "Waits for fares outside the cold stores.",
+      "community": "Mijikenda",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_rec_boda"
+      },
+      "at": "plc_ferry",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_backroom",
+      "name": "Back room of the cold store",
+      "within": "loc_coldstore"
+    },
+    {
+      "id": "plc_ferry",
+      "name": "Likoni ferry crossing"
+    },
+    {
+      "id": "plc_marikiti",
+      "name": "Marikiti market, Mombasa island"
+    },
+    {
+      "id": "plc_nyali",
+      "name": "Hotel in Nyali (Thomas's night post)"
+    },
+    {
+      "id": "plc_icefactory",
+      "name": "Ice factory up the road"
+    },
+    {
+      "id": "plc_oldport",
+      "name": "Old Port, Mombasa island"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_coldstore",
+      "name": "Samaki Bora cold store, Likoni",
+      "kind": "scene",
+      "description": "Dawn at the Likoni crossing: thousands of commuters, handcarts and fish crates pouring onto the ferries. Samaki Bora is a block of insulated rooms run by a fish traders' collective. Ice blocks, plastic crates, a collection book on a chain, a bay board on the wall.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Back room",
+          "pos": [
+            66,
+            58
+          ],
+          "yields": "ev_body",
+          "text": "Agnes lies by the ice chest. An ice mallet is on the wet floor. Her apron pocket is zipped and full."
+        },
+        {
+          "id": "hs_phone",
+          "label": "Apron pocket",
+          "pos": [
+            60,
+            50
+          ],
+          "yields": "ev_agnes_phone",
+          "text": "Her phone, in a plastic bag against the wet. Her sister is on her way with the code."
+        },
+        {
+          "id": "hs_book",
+          "label": "Collection book",
+          "pos": [
+            24,
+            44
+          ],
+          "yields": "ev_collection",
+          "text": "Every trader signs out their crates here, with the time."
+        },
+        {
+          "id": "hs_bays",
+          "label": "Bay board",
+          "pos": [
+            16,
+            26
+          ],
+          "yields": "ev_bays",
+          "text": "The allocation sheet: who keeps their fish in which bay."
+        },
+        {
+          "id": "hs_chama",
+          "label": "Collective's cash book",
+          "pos": [
+            30,
+            34
+          ],
+          "yields": "ev_chama",
+          "text": "The collective's chama book, on a shelf beside the ledger."
+        },
+        {
+          "id": "hs_board",
+          "label": "Ferry board outside",
+          "pos": [
+            92,
+            20
+          ],
+          "yields": "ev_timetable",
+          "text": "The ferry timetable board at the ramp, painted over many times."
+        },
+        {
+          "id": "hs_zaituni",
+          "label": "Cleaner at the door",
+          "pos": [
+            86,
+            62
+          ],
+          "yields": "ev_zaituni",
+          "text": "Zaituni Omar sits on an upturned crate with a bag of melting ice at her feet."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the Likoni ferry crossing at sunrise in Mombasa, crowds of commuters and handcarts, a ferry at the ramp, and beside it a small insulated cold-store building with plastic fish crates stacked outside, wet concrete, no people in focus"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body in the back room",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Struck with an ice mallet. Apron pocket: KSh 7,200, untouched."
+      },
+      "facts": [
+        "f_body_mallet",
+        "f_body_cash"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the back room of a fish cold store, a wooden ice mallet on a wet concrete floor beside an insulated chest, scattered ice chips, a plastic fish crate on its side, no body visible"
+      }
+    },
+    {
+      "id": "ev_agnes_phone",
+      "type": "phone",
+      "title": "Agnes's phone (unlocked by her sister)",
+      "render": "phoneLog",
+      "body": {
+        "calls": [
+          {
+            "time": "06:30",
+            "from": "Mwanasiti",
+            "duration": "48 s"
+          }
+        ],
+        "chat": "Omari Mwinyi: months of messages. Last week: \"Nimekutumia elfu tano.\""
+      },
+      "facts": [
+        "f_phone_call",
+        "f_phone_chat"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_collection",
+      "type": "physical",
+      "title": "Collection book",
+      "render": "logBook",
+      "body": {
+        "rows": [
+          {
+            "time": "06:52",
+            "entry": "M.M. — 2 crates kingfish"
+          }
+        ],
+        "members": "Members signing M.M.: Mwanasiti Mwinyi (bay 7), Mariamu Mbaraka (bay 2)"
+      },
+      "facts": [
+        "f_collection",
+        "f_mm_two"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_zaituni",
+      "type": "witness",
+      "title": "Statement: Zaituni Omar",
+      "render": "statement",
+      "body": {
+        "speaker": "p_zaituni"
+      },
+      "facts": [
+        "f_zaituni_arrive",
+        "f_zaituni_thomas"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_icereceipt",
+      "type": "physical",
+      "title": "Ice factory receipt",
+      "render": "receipt",
+      "body": {
+        "time": "07:20",
+        "goods": "6 ice blocks",
+        "buyer": "Samaki Bora (Zaituni)"
+      },
+      "facts": [
+        "f_ice"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Mwanasiti Mwinyi's line",
+      "render": "mastRecord",
+      "body": {
+        "calls": "Outgoing to Agnes Auma 06:30, 48 s.",
+        "masts": "Likoni Ferry 06:20–07:26; Mombasa Island (Old Port) from 07:45.",
+        "pesapap": "07:18 — KSh 100 to JOHN CHARO."
+      },
+      "facts": [
+        "f_rec_mast",
+        "f_rec_boda"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_phone_call"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_charo",
+      "type": "witness",
+      "title": "Phone statement: John Charo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_charo",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_charo"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mariamu",
+      "type": "physical",
+      "title": "Mariamu's market receipt",
+      "render": "receipt",
+      "body": {
+        "place": "Marikiti market",
+        "time": "06:35",
+        "item": "Daily stall fee"
+      },
+      "facts": [
+        "f_mariamu_receipt"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_timetable",
+      "type": "physical",
+      "title": "Ferry timetable board",
+      "render": "timetable",
+      "body": {
+        "text": "Peak hours: every 10–15 minutes. Crossing time about 10 minutes."
+      },
+      "facts": [
+        "f_ferry"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_owino",
+      "type": "physical",
+      "title": "Thomas's clock card",
+      "render": "ticket",
+      "body": {
+        "site": "Hotel, Nyali (night security)",
+        "in": "19:00",
+        "out": "07:02",
+        "canteen": "Staff canteen book: T. Owino, breakfast, until 07:30"
+      },
+      "facts": [
+        "f_owino"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_omari",
+      "type": "witness",
+      "title": "Statement: Omari Mwinyi",
+      "render": "statement",
+      "body": {
+        "speaker": "p_omari"
+      },
+      "facts": [
+        "f_omari_affair",
+        "f_omari_work"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_chama",
+      "type": "physical",
+      "title": "Collective's chama book",
+      "render": "ledger",
+      "body": {
+        "line": "A. Auma — loan KSh 20,000 — fully repaid, June."
+      },
+      "facts": [
+        "f_chama"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_bays",
+      "type": "physical",
+      "title": "Bay allocation sheet",
+      "render": "form",
+      "body": {
+        "rows": "Bay 3: A. Auma. Bay 7: M. Mwinyi. Unchanged for two years."
+      },
+      "facts": [
+        "f_bays"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Zaituni Omar found fish trader Agnes Auma dead in the back room of the Samaki Bora cold store at 07:40.",
+      "kind": "true",
+      "about": [
+        "p_agnes",
+        "p_zaituni",
+        "plc_backroom"
+      ]
+    },
+    {
+      "id": "f_body_mallet",
+      "text": "Agnes was struck with an ice mallet.",
+      "kind": "true",
+      "about": [
+        "p_agnes",
+        "plc_backroom"
+      ]
+    },
+    {
+      "id": "f_body_cash",
+      "text": "Her apron pocket still holds KSh 7,200. Nothing was taken.",
+      "kind": "true",
+      "about": [
+        "p_agnes"
+      ]
+    },
+    {
+      "id": "f_phone_call",
+      "text": "Agnes's phone: an incoming call at 06:30 from the contact 'Mwanasiti', 48 seconds.",
+      "kind": "true",
+      "about": [
+        "p_agnes",
+        "p_mwanasiti"
+      ]
+    },
+    {
+      "id": "f_phone_chat",
+      "text": "Agnes's phone: months of messages with Omari Mwinyi. Last week he wrote, 'Nimekutumia elfu tano' (I've sent you five thousand).",
+      "kind": "true",
+      "about": [
+        "p_agnes",
+        "p_omari"
+      ]
+    },
+    {
+      "id": "f_collection",
+      "text": "Collection book: 'M.M. — 2 crates kingfish — 06:52'.",
+      "kind": "true",
+      "about": [
+        "loc_coldstore"
+      ]
+    },
+    {
+      "id": "f_mm_two",
+      "text": "Two members of the collective sign as M.M.: Mwanasiti Mwinyi (bay 7) and Mariamu Mbaraka (bay 2).",
+      "kind": "true",
+      "about": [
+        "p_mwanasiti",
+        "p_mariamu"
+      ]
+    },
+    {
+      "id": "f_zaituni_arrive",
+      "text": "Zaituni: Agnes arrived at 06:35. Zaituni left at 06:50 to fetch ice from the factory up the road, came back at 07:35 and found her at 07:40.",
+      "kind": "true",
+      "about": [
+        "p_zaituni",
+        "p_agnes"
+      ]
+    },
+    {
+      "id": "f_zaituni_thomas",
+      "text": "Zaituni: last week Agnes's ex-husband, Thomas, came to the cold store shouting about the children's school fees.",
+      "kind": "true",
+      "about": [
+        "p_zaituni",
+        "p_thomas"
+      ]
+    },
+    {
+      "id": "f_ice",
+      "text": "Ice factory receipt: 07:20, six blocks for Samaki Bora. Zaituni was at the factory from 06:50 to 07:35.",
+      "kind": "true",
+      "about": [
+        "p_zaituni"
+      ],
+      "where": {
+        "person": "p_zaituni",
+        "place": "plc_icefactory",
+        "from": "06:50",
+        "to": "07:35"
+      }
+    },
+    {
+      "id": "f_rec_mast",
+      "text": "Jamii Mobile, Mwanasiti's line: on the Likoni Ferry mast from 06:20 until 07:26. On the island (Old Port) mast from 07:45.",
+      "kind": "true",
+      "about": [
+        "p_mwanasiti"
+      ]
+    },
+    {
+      "id": "f_rec_boda",
+      "text": "PesaPap, Mwanasiti's line: 07:18, KSh 100 to JOHN CHARO.",
+      "kind": "true",
+      "about": [
+        "p_mwanasiti",
+        "p_charo"
+      ]
+    },
+    {
+      "id": "f_charo",
+      "text": "John Charo: at 07:18 he picked up a woman with two fish crates outside Samaki Bora and took her to the ferry. She paid by phone. \"She was shaking.\"",
+      "kind": "true",
+      "about": [
+        "p_charo"
+      ]
+    },
+    {
+      "id": "f_mariamu_receipt",
+      "text": "Mariamu's Marikiti stall fee receipt: 06:35, on the island. Her stall neighbours saw her selling there until noon.",
+      "kind": "true",
+      "about": [
+        "p_mariamu"
+      ],
+      "where": {
+        "person": "p_mariamu",
+        "place": "plc_marikiti",
+        "from": "06:35",
+        "to": "12:00"
+      }
+    },
+    {
+      "id": "f_ferry",
+      "text": "Ferry board: crossings every 10–15 minutes at peak, about 10 minutes each. On the 06:40 ferry you are on the island by 06:50.",
+      "kind": "true",
+      "about": [
+        "plc_ferry"
+      ]
+    },
+    {
+      "id": "f_owino",
+      "text": "Thomas's clock card, hotel in Nyali: in 19:00, out 07:02. The staff canteen book has him at breakfast until 07:30. Nyali is on the far side of the island from Likoni.",
+      "kind": "true",
+      "about": [
+        "p_thomas"
+      ],
+      "where": {
+        "person": "p_thomas",
+        "place": "plc_nyali",
+        "from": "19:00",
+        "to": "07:30"
+      }
+    },
+    {
+      "id": "f_omari_affair",
+      "text": "Omari admits he has been seeing Agnes for a year and sending her money every month. Mwanasiti \"found the messages last week and went silent\".",
+      "kind": "true",
+      "about": [
+        "p_omari",
+        "p_agnes",
+        "p_mwanasiti"
+      ]
+    },
+    {
+      "id": "f_omari_work",
+      "text": "Omari's employer at the Old Port: he clocked in at 06:00 and was loading all morning.",
+      "kind": "true",
+      "about": [
+        "p_omari"
+      ],
+      "where": {
+        "person": "p_omari",
+        "place": "plc_oldport",
+        "from": "06:00",
+        "to": "12:00"
+      }
+    },
+    {
+      "id": "f_chama",
+      "text": "Collective's chama book: Agnes's KSh 20,000 loan was fully repaid in June.",
+      "kind": "true",
+      "about": [
+        "p_agnes"
+      ]
+    },
+    {
+      "id": "f_bays",
+      "text": "Bay sheet: Agnes bay 3, Mwanasiti bay 7, unchanged for two years.",
+      "kind": "true",
+      "about": [
+        "p_agnes",
+        "p_mwanasiti"
+      ]
+    },
+    {
+      "id": "f_ms_ferry",
+      "text": "Mwanasiti: \"I crossed on the 06:40 ferry like every morning. I was at the old port by seven.\"",
+      "kind": "lie",
+      "about": [
+        "p_mwanasiti"
+      ]
+    },
+    {
+      "id": "f_ms_nocall",
+      "text": "Mwanasiti: \"I didn't speak to Agnes today.\"",
+      "kind": "lie",
+      "about": [
+        "p_mwanasiti",
+        "p_agnes"
+      ]
+    },
+    {
+      "id": "f_ms_admits",
+      "text": "Mwanasiti admits she went to the cold store after calling Agnes, and they shouted. She says she left for the ferry and Agnes was alive.",
+      "kind": "true",
+      "about": [
+        "p_mwanasiti",
+        "loc_coldstore"
+      ],
+      "where": {
+        "person": "p_mwanasiti",
+        "place": "loc_coldstore",
+        "from": "06:45",
+        "to": "07:18"
+      }
+    },
+    {
+      "id": "f_ms_husband",
+      "text": "Mwanasiti: \"I called her. I wanted her to stop. Ask my husband who he sends money to every month.\"",
+      "kind": "claim",
+      "about": [
+        "p_mwanasiti",
+        "p_omari"
+      ]
+    },
+    {
+      "id": "f_thomas_claim",
+      "text": "Thomas: \"I was on night shift in Nyali.\"",
+      "kind": "claim",
+      "about": [
+        "p_thomas"
+      ]
+    },
+    {
+      "id": "f_thomas_fees",
+      "text": "Thomas: the school-fees fight is real and bitter, \"but she is my children's mother\".",
+      "kind": "true",
+      "about": [
+        "p_thomas",
+        "p_agnes"
+      ]
+    },
+    {
+      "id": "f_mariamu_claim",
+      "text": "Mariamu: \"That M.M. isn't me. I was in town by half past six.\"",
+      "kind": "claim",
+      "about": [
+        "p_mariamu"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_mwanasiti",
+      "stance": "cooperative",
+      "intro": "Mwanasiti is found at her island stall, scaling kingfish. She doesn't stop. \"Agnes? Eh. God rest her.\"",
+      "claims": [
+        "f_ms_ferry",
+        "f_ms_nocall"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_agnes",
+          "reply": "We sold the same fish to the same hotels. That is all.",
+          "reveals": []
+        },
+        {
+          "about": "f_collection",
+          "reply": "Two of us sign M.M. Ask Mariamu.",
+          "reveals": []
+        },
+        {
+          "about": "p_charo",
+          "reply": "Boda boys. Every one of them says he remembers you.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_thomas",
+      "stance": "cooperative",
+      "intro": "Thomas, still in his security uniform, takes the call in a hotel staff canteen. \"Agnes? What do you mean, Agnes?\"",
+      "claims": [
+        "f_thomas_claim"
+      ],
+      "yields": [
+        "ev_owino"
+      ],
+      "topics": [
+        {
+          "about": "f_zaituni_thomas",
+          "reply": "The fees. Yes, we shouted. It's been a year of shouting. But she is my children's mother.",
+          "reveals": [
+            "f_thomas_fees"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_mariamu",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_collection"
+      ],
+      "intro": "Mariamu keeps serving customers at her Marikiti stall while she talks. \"I have nothing to do with that cold store this morning.\"",
+      "claims": [
+        "f_mariamu_claim"
+      ],
+      "yields": [
+        "ev_mariamu"
+      ],
+      "topics": [
+        {
+          "about": "p_mwanasiti",
+          "reply": "Mwanasiti signs M.M. too. Since last week she's been like a ghost. Something happened at home.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_omari",
+      "stance": "cooperative",
+      "intro": "Omari sits on a sack at the old port with his hands over his face. \"I know why you're here.\"",
+      "claims": [],
+      "yields": [
+        "ev_omari"
+      ],
+      "topics": [
+        {
+          "about": "p_agnes",
+          "reply": "A year. I sent her money every month. My wife found the messages last week. Since then she hasn't said one word to me.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_zaituni",
+      "stance": "cooperative",
+      "intro": "Zaituni wipes her hands on her kanga again and again. \"I was gone forty-five minutes. Forty-five minutes.\"",
+      "claims": [],
+      "yields": [
+        "ev_icereceipt"
+      ],
+      "topics": [
+        {
+          "about": "ev_icereceipt",
+          "reply": "Six blocks. The factory is slow in the morning. I came back at twenty-five to eight.",
+          "reveals": []
+        },
+        {
+          "about": "p_charo",
+          "reply": "The boda boys wait outside every morning. Charo is always there.",
+          "reveals": [
+            "ev_charo"
+          ]
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_ms_ferry",
+      "claim": "f_ms_ferry",
+      "brokenBy": [
+        "f_rec_mast",
+        "f_charo"
+      ],
+      "reveals": [
+        "f_ms_admits"
+      ],
+      "reaction": "I went to the cold store. I told her to stop. We shouted. Then I left for the ferry. She was alive. She was laughing at me.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_ms_nocall",
+      "claim": "f_ms_nocall",
+      "brokenBy": [
+        "f_phone_call"
+      ],
+      "reveals": [
+        "f_ms_husband"
+      ],
+      "reaction": "I called her. I wanted her to stop. Ask my husband who he sends money to every month. Ask him.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_mwanasiti",
+      "text": "Mwanasiti Mwinyi",
+      "category": "person",
+      "ref": "p_mwanasiti",
+      "unlock": {
+        "anyOf": [
+          "f_phone_call",
+          "f_mm_two"
+        ]
+      }
+    },
+    {
+      "id": "w_thomas",
+      "text": "Thomas Owino",
+      "category": "person",
+      "ref": "p_thomas",
+      "unlock": {
+        "anyOf": [
+          "f_zaituni_thomas"
+        ]
+      }
+    },
+    {
+      "id": "w_mariamu",
+      "text": "Mariamu Mbaraka",
+      "category": "person",
+      "ref": "p_mariamu",
+      "unlock": {
+        "anyOf": [
+          "f_mm_two"
+        ]
+      }
+    },
+    {
+      "id": "w_zaituni",
+      "text": "Zaituni Omar",
+      "category": "person",
+      "ref": "p_zaituni",
+      "unlock": {
+        "anyOf": [
+          "f_ob_found"
+        ]
+      }
+    },
+    {
+      "id": "w_omari",
+      "text": "Omari Mwinyi",
+      "category": "person",
+      "ref": "p_omari",
+      "unlock": {
+        "anyOf": [
+          "f_phone_chat"
+        ]
+      }
+    },
+    {
+      "id": "m_husband",
+      "text": "she'd found out Agnes was seeing her husband",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_phone_chat",
+          "f_omari_affair"
+        ]
+      }
+    },
+    {
+      "id": "m_space",
+      "text": "a fight over cold-store space",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_bays"
+        ]
+      }
+    },
+    {
+      "id": "m_loan",
+      "text": "an unpaid chama loan",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_chama"
+        ]
+      }
+    },
+    {
+      "id": "m_rob",
+      "text": "to rob her",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_body_cash"
+        ]
+      }
+    },
+    {
+      "id": "m_fees",
+      "text": "her ex-husband's school-fees fight",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_zaituni_thomas"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} because {why}.",
+    "fixed": {
+      "victim": "Agnes Auma"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_mwanasiti"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her call brought Agnes in, her phone never left Likoni until 07:26, and she paid a boda from the door. That will hold.",
+          "fail": [
+            "Doesn't hold up. Two women sign M.M. Which one was on the island at 06:35?",
+            "No. A bitter ex-husband in Nyali can't be at Likoni by 07:18. Check the water between them."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_husband"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Five thousand a month to another woman. The court will understand the why. It won't excuse it.",
+          "fail": [
+            "She did it. But that isn't why. Read the dead woman's phone again.",
+            "That motive belongs to somebody else in this case."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_coldstore",
+      "from": "06:52",
+      "to": "07:18",
+      "within": [
+        "plc_backroom"
+      ]
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_collection",
+          "f_mm_two",
+          "f_mariamu_receipt"
+        ],
+        "concludes": "The M.M. who signed out crates at 06:52 can't be Mariamu, who paid her stall fee on the island at 06:35. It was Mwanasiti."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_ms_ferry",
+          "f_phone_call",
+          "f_rec_mast",
+          "f_rec_boda",
+          "f_ms_admits"
+        ],
+        "concludes": "Mwanasiti called Agnes at 06:30, stayed on the Likoni mast until 07:26 (not the 06:40 ferry), and paid a boda at 07:18. Pressed, she admits going to the cold store."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_zaituni_arrive",
+          "f_charo",
+          "f_phone_chat",
+          "f_omari_affair"
+        ],
+        "concludes": "Agnes was alone after Zaituni left at 06:50. At 07:18 Mwanasiti left the cold store shaking. Agnes had been seeing her husband for a year. Mwanasiti Mwinyi killed her.",
+        "answers": [
+          "who",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_thomas",
+        "blank": "who",
+        "by": [
+          "f_owino"
+        ],
+        "why": "Thomas was at his hotel in Nyali, on the far side of the island, until 07:30."
+      },
+      {
+        "word": "w_mariamu",
+        "blank": "who",
+        "by": [
+          "f_mariamu_receipt"
+        ],
+        "why": "Mariamu was selling at Marikiti on the island from 06:35."
+      },
+      {
+        "word": "w_zaituni",
+        "blank": "who",
+        "by": [
+          "f_ice"
+        ],
+        "why": "Zaituni was at the ice factory from 06:50 to 07:35."
+      },
+      {
+        "word": "w_omari",
+        "blank": "who",
+        "by": [
+          "f_omari_work"
+        ],
+        "why": "Omari was loading at the Old Port from 06:00."
+      },
+      {
+        "word": "m_space",
+        "blank": "why",
+        "by": [
+          "f_bays"
+        ],
+        "why": "Their bays haven't changed in two years."
+      },
+      {
+        "word": "m_loan",
+        "blank": "why",
+        "by": [
+          "f_chama"
+        ],
+        "why": "Agnes repaid her chama loan in June."
+      },
+      {
+        "word": "m_rob",
+        "blank": "why",
+        "by": [
+          "f_body_cash"
+        ],
+        "why": "KSh 7,200 was still in her apron."
+      },
+      {
+        "word": "m_fees",
+        "blank": "why",
+        "by": [
+          "f_thomas_fees",
+          "f_owino"
+        ],
+        "why": "That is Thomas's quarrel, and Thomas was in Nyali."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Last week. Mwanasiti finds the messages on her husband's phone. A year of them, and money every month. She says nothing to anyone.",
+        "image": null
+      },
+      {
+        "text": "06:30. She calls Agnes. \"Come to the cold store. We need to talk.\"",
+        "image": null
+      },
+      {
+        "text": "06:52. She signs out her crates as M.M. and waits until the cleaner leaves for ice.",
+        "image": "loc_coldstore"
+      },
+      {
+        "text": "About 07:05, in the back room, the ice mallet.",
+        "image": null
+      },
+      {
+        "text": "07:18. She pays a boda a hundred shillings by phone to take her and her crates to the ferry. She crosses at 07:30, and tells everyone it was the 06:40 as always.",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_collection",
+        "line": "Two women sign M.M. One of them can't have been in Likoni at ten to seven."
+      },
+      "tier2": {
+        "facts": [
+          "f_ms_ferry",
+          "f_rec_mast"
+        ],
+        "line": "The 06:40 ferry puts you on the island by ten to seven. Where was her phone until twenty-six past?"
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_agnes_phone",
+        "line": "Read the dead woman's chats. Who was sending her money?"
+      },
+      "tier2": {
+        "facts": [
+          "f_phone_chat",
+          "f_omari_affair"
+        ],
+        "line": "Five thousand last week, from a married man. Whose husband?"
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "samaki",
+      "def": "Fish."
+    },
+    {
+      "term": "kivuko",
+      "def": "Ferry."
+    },
+    {
+      "term": "barafu",
+      "def": "Ice."
+    },
+    {
+      "term": "boda",
+      "def": "Short for boda-boda: a motorbike taxi."
+    },
+    {
+      "term": "chama",
+      "def": "Savings group whose members pool money and lend to each other."
+    },
+    {
+      "term": "kanga",
+      "def": "Printed cotton cloth, often with a proverb along the edge."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "geographyAcrossWater",
+      "foundPhone"
+    ],
+    "beatNotes": "Geography across water: the map shows the channel, the ferry crossing and mast zones on both shores, and the crossing time becomes part of an alibi. Also the victim's found phone, read with the family's consent."
+  }
+}

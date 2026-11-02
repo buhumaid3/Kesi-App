@@ -1,0 +1,3360 @@
+{
+  "meta": {
+    "id": "case-070",
+    "number": 70,
+    "region": "mt-kenya",
+    "regionNumber": 7,
+    "title": "The Will",
+    "boss": true,
+    "schemaVersion": 1,
+    "estMinutes": 45,
+    "date": "Thursday 28 May",
+    "folderTab": "TETU ESTATE"
+  },
+  "pattern": {
+    "crimePattern": "an estate agent acting for Mvua files a will \"signed\" while the testator was in a coma, then kills the widow who found out and stages a fall down the stairs",
+    "noRealCaseRetold": true,
+    "notes": "Fictional estate, trust, advocates, touts and hospital. Probate and commissioner-for-oaths procedure simplified; the cultural reader is asked to check it. Mwalimu's confession must not excuse her (master list H, question 9).",
+    "tags": [
+      "blunt-force",
+      "staged-accident",
+      "moved-body",
+      "commissioned",
+      "document-fraud",
+      "three-liars",
+      "lawyered",
+      "records",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where-two-blanks",
+      "forgery",
+      "spine",
+      "boss"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 7,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "forgery",
+      "spine"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "records",
+      "warrant"
+    ],
+    "twist": "staged-fall-and-doreens-stamp"
+  },
+  "ob": {
+    "number": "OB 30/28/05",
+    "date": "Thursday 28 May",
+    "time": "07:10",
+    "reportedBy": "Farm manager, Tetu coffee estate, Nyeri",
+    "text": "A farm manager reports the owner of a coffee estate at Tetu, Veronica Waithera (66), found dead at the foot of the stairs in the main house at 06:30. Suspected fall. She was due in the High Court at Nyeri this morning.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_house",
+    "nodes": [
+      "loc_house",
+      "loc_office",
+      "loc_court",
+      "loc_advocate",
+      "loc_hospital",
+      "loc_rahab"
+    ],
+    "edges": [
+      {
+        "a": "loc_house",
+        "b": "loc_office",
+        "minutes": 3,
+        "by": "foot"
+      },
+      {
+        "a": "loc_house",
+        "b": "loc_court",
+        "minutes": 20,
+        "by": "road"
+      },
+      {
+        "a": "loc_house",
+        "b": "loc_hospital",
+        "minutes": 25,
+        "by": "road"
+      },
+      {
+        "a": "loc_house",
+        "b": "loc_rahab",
+        "minutes": 20,
+        "by": "road"
+      },
+      {
+        "a": "loc_court",
+        "b": "loc_advocate",
+        "minutes": 5,
+        "by": "foot"
+      },
+      {
+        "a": "loc_advocate",
+        "b": "loc_hospital",
+        "minutes": 10,
+        "by": "road"
+      },
+      {
+        "a": "loc_court",
+        "b": "loc_hospital",
+        "minutes": 10,
+        "by": "road"
+      },
+      {
+        "a": "loc_hospital",
+        "b": "loc_rahab",
+        "minutes": 10,
+        "by": "road"
+      },
+      {
+        "a": "loc_court",
+        "b": "loc_rahab",
+        "minutes": 5,
+        "by": "foot"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_veronica",
+      "role": "victim",
+      "name": "Veronica Waithera",
+      "age": 66,
+      "occupation": "Widow of Kiama Wainaina; owner of a Tetu coffee estate",
+      "bio": "Ran the estate beside her husband for thirty years. Was filing an objection to his \"will\" in the High Court on Thursday.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_study",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, mid 60s, a cardigan over a cotton dress, reading glasses on a chain, grey hair in neat cornrows, a firm, intelligent face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_rahab",
+      "role": "suspect",
+      "name": "Rahab Nyawira",
+      "age": 53,
+      "occupation": "Estate agent, Nyeri; \"executor\" of the March will",
+      "bio": "Pearl earrings and a document folder. Speaks through her advocate.",
+      "community": "Kikuyu",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_filed_will"
+      },
+      "at": "loc_rahab",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, early 50s, pearl earrings, a tailored jacket, a leather document folder held to her chest, a polished, guarded face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_gakuya",
+      "role": "suspect",
+      "name": "Gakuya Kinyanjui",
+      "age": 45,
+      "occupation": "Witness to the will; a tout at the court registry",
+      "bio": "Stands at the registry door. Witnesses anything for anyone, for a fee.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_filed_will"
+      },
+      "at": "plc_nyeribar",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, mid 40s, a shiny suit a size too big, a pen behind his ear, a quick, knowing smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_gichuhi",
+      "role": "suspect",
+      "name": "Gichuhi Wainaina",
+      "age": 40,
+      "occupation": "Kiama's son by his first marriage",
+      "redHerring": true,
+      "bio": "Resents his stepmother. Has never hidden it.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_genuine_will"
+      },
+      "at": "plc_nanyuki",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, about 40, a rugby shirt and a cap, a bitter, defensive face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_njogu",
+      "role": "suspect",
+      "name": "Njogu Kimotho",
+      "age": 58,
+      "occupation": "Farm manager for 25 years",
+      "redHerring": true,
+      "bio": "Found the body. Veronica planned to replace him after the harvest.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_shed",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, late 50s, a farm manager's khaki jacket and gumboots, a lined, grieving face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_beth",
+      "role": "witness",
+      "name": "Beth Ngare",
+      "age": 37,
+      "occupation": "Medical records officer, Nyeri hospital",
+      "bio": "Gave Veronica copies of her husband's records on Monday.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_filed_will"
+      },
+      "at": "loc_hospital",
+      "image": null
+    },
+    {
+      "id": "p_japhet",
+      "role": "witness",
+      "name": "Japhet Gathogo",
+      "age": 48,
+      "occupation": "Probate clerk, High Court registry, Nyeri",
+      "bio": "Received the March will for filing.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_ob"
+      },
+      "at": "loc_court",
+      "image": null
+    },
+    {
+      "id": "p_halima",
+      "role": "witness",
+      "name": "Prosecutor Halima Abdi",
+      "age": 42,
+      "occupation": "Prosecutor (by phone)",
+      "bio": "Veronica's name is in her diary for Friday.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_envelope"
+      },
+      "at": "plc_halima",
+      "image": null
+    },
+    {
+      "id": "p_wairagu",
+      "role": "witness",
+      "name": "Advocate Lucy Wairagu",
+      "age": 61,
+      "occupation": "The Wainaina family advocate, Nyeri",
+      "bio": "Drew Kiama's will in 2019 and keeps it in her strongroom.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_advocate",
+      "image": null
+    },
+    {
+      "id": "p_gitau",
+      "role": "witness",
+      "name": "Gitau Muriithi",
+      "age": 55,
+      "occupation": "Estate night watchman",
+      "statementOnly": true,
+      "bio": "Opens the estate gate at night, when Mama says.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_house",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_study",
+      "name": "The study",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_staircase",
+      "name": "The staircase",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_stairfoot",
+      "name": "The foot of the staircase",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_kitchen",
+      "name": "The kitchen",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_veranda",
+      "name": "The veranda",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_soakpit",
+      "name": "The kitchen soak-pit",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_shed",
+      "name": "The factory shed"
+    },
+    {
+      "id": "plc_rows",
+      "name": "The coffee rows"
+    },
+    {
+      "id": "plc_car",
+      "name": "Rahab's car"
+    },
+    {
+      "id": "plc_nyeribar",
+      "name": "A bar in Nyeri town"
+    },
+    {
+      "id": "plc_nanyuki",
+      "name": "Nanyuki"
+    },
+    {
+      "id": "plc_halima",
+      "name": "The prosecutor's office"
+    },
+    {
+      "id": "plc_japhome",
+      "name": "Japhet's home, Nyeri"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_house",
+      "name": "The main house, Tetu estate",
+      "kind": "scene",
+      "description": "A 1950s stone house under grevillea shade trees, a wooden staircase in the hall, a study off the hall with a rug and a desk, a kitchen at the back. Coffee rows run down the slope towards the Aberdares.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Foot of the stairs",
+          "pos": [
+            40,
+            70
+          ],
+          "yields": "ev_body",
+          "text": "Veronica lies on her back at the bottom step."
+        },
+        {
+          "id": "hs_hall",
+          "label": "Hall floor",
+          "pos": [
+            50,
+            60
+          ],
+          "yields": "ev_drag",
+          "text": "The polished hall floor between the study door and the stairs."
+        },
+        {
+          "id": "hs_study",
+          "label": "The study",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_study",
+          "text": "The study: a desk, a rug, a hospital envelope."
+        },
+        {
+          "id": "hs_soak",
+          "label": "Behind the kitchen",
+          "pos": [
+            90,
+            70
+          ],
+          "yields": "ev_doorstop",
+          "text": "The kitchen soak-pit. Its cover has been lifted and put back.",
+          "unlock": {
+            "fact": "f_njogu_reveal"
+          }
+        },
+        {
+          "id": "hs_gate",
+          "label": "Estate gate",
+          "pos": [
+            10,
+            20
+          ],
+          "yields": "ev_gate",
+          "text": "Gitau Muriithi at the gate hut."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a 1950s stone farmhouse on a Nyeri coffee estate at dusk, grevillea shade trees, coffee rows running down a slope, one window lit, the Aberdares beyond, no people in focus"
+      }
+    },
+    {
+      "id": "loc_office",
+      "name": "Estate office",
+      "kind": "location",
+      "description": "A small office by the factory shed: ledgers, a cash box, a calendar of picking days.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_cash",
+          "label": "Cash box",
+          "pos": [
+            40,
+            50
+          ],
+          "yields": "ev_cash",
+          "text": "The estate cash box."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small coffee-estate office with ledgers on a shelf, a grey cash box, a calendar of picking days"
+      }
+    },
+    {
+      "id": "loc_court",
+      "name": "High Court registry, Nyeri (probate)",
+      "kind": "location",
+      "description": "The probate registry: a counter, a queue, and touts at the door offering to \"help\".",
+      "unlock": {
+        "fact": "f_ob"
+      },
+      "hotspots": [
+        {
+          "id": "hs_filed",
+          "label": "Probate file",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_filed_will",
+          "text": "The probate file: a will dated 14 March."
+        },
+        {
+          "id": "hs_id",
+          "label": "ID check",
+          "pos": [
+            56,
+            50
+          ],
+          "yields": "ev_ndegwa",
+          "text": "A civil-registry and ID check on the will's second witness."
+        },
+        {
+          "id": "hs_trust",
+          "label": "Registrar of companies",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_trust",
+          "text": "A search on the \"Tetu Heritage Trust\"."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a High Court probate registry counter in Nyeri, files stacked behind glass, men in suits loitering at the door"
+      }
+    },
+    {
+      "id": "loc_advocate",
+      "name": "Advocate Wairagu's office",
+      "kind": "location",
+      "description": "A family advocate's office, a strongroom of wills in envelopes.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_genuine",
+          "label": "Strongroom",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_genuine_will",
+          "text": "Kiama Wainaina's 2019 will, in its sealed envelope."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a family advocate's office in Nyeri, a strongroom door open on shelves of sealed envelopes"
+      }
+    },
+    {
+      "id": "loc_hospital",
+      "name": "Nyeri hospital, medical records",
+      "kind": "location",
+      "description": "Records in brown folders, and the nursing notes of every ward.",
+      "unlock": {
+        "fact": "f_filed_will"
+      },
+      "hotspots": [
+        {
+          "id": "hs_coma",
+          "label": "Kiama Wainaina's file",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_coma",
+          "text": "Admissions, nursing notes, the date of death."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a hospital medical-records room in Nyeri, brown folders on metal shelves, a records officer at a desk"
+      }
+    },
+    {
+      "id": "loc_rahab",
+      "name": "Rahab's office, Nyeri",
+      "kind": "location",
+      "description": "A first-floor estate agency. A shredder by the desk, its bin full.",
+      "unlock": {
+        "fact": "f_rec_rahab"
+      },
+      "hotspots": [
+        {
+          "id": "hs_shred",
+          "label": "Shredder bin",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_rahab_office",
+          "text": "The shredder bin and a folder in the desk drawer."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "an estate agent's office in Nyeri, a paper shredder with a full bin, a folder on the desk"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Foot of the stairs",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. On her back at the bottom step. One wound to the side of the head. No other injuries: no bruised arms, no broken wrist."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the bottom step of an old wooden staircase in a stone hall, a pair of reading glasses on the floor, no body visible"
+      }
+    },
+    {
+      "id": "ev_drag",
+      "type": "physical",
+      "title": "The hall floor",
+      "render": "object",
+      "body": {
+        "label": "Two faint parallel heel scuffs in the polish, from the study door to the stairs."
+      },
+      "facts": [
+        "f_drag"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_study",
+      "type": "physical",
+      "title": "The study",
+      "render": "sceneNote",
+      "body": {
+        "rug": "The rug turned over at one corner; under it, a small blood stain.",
+        "doorstop": "The brass coffee-bean doorstop is gone from its place: a clean, polish-free circle.",
+        "envelope": "A hospital envelope on the desk, empty."
+      },
+      "facts": [
+        "f_rug",
+        "f_doorstop_gone",
+        "f_envelope"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_doorstop",
+      "type": "physical",
+      "title": "The brass doorstop",
+      "render": "object",
+      "body": {
+        "label": "Shaped like a coffee bean. Washed. Something dark in the casting seam."
+      },
+      "facts": [
+        "f_doorstop"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a heavy brass doorstop shaped like a coffee bean, wet, lying on the lifted cover of a soak-pit"
+      }
+    },
+    {
+      "id": "ev_gate",
+      "type": "witness",
+      "title": "Statement: Gitau Muriithi",
+      "render": "statement",
+      "body": {
+        "speaker": "p_gitau"
+      },
+      "facts": [
+        "f_gate"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_cash",
+      "type": "physical",
+      "title": "Estate cash box",
+      "render": "object",
+      "body": {
+        "label": "Locked. KSh 85,000, matching the ledger."
+      },
+      "facts": [
+        "f_cash"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_genuine_will",
+      "type": "document",
+      "title": "Kiama Wainaina's 2019 will",
+      "render": "form",
+      "body": {
+        "text": "The estate to Veronica for life, then to his children equally. Signed before Advocate Wairagu."
+      },
+      "facts": [
+        "f_genuine_will"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "will"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_filed_will",
+      "type": "document",
+      "title": "The will filed for probate",
+      "render": "form",
+      "body": {
+        "text": "Dated 14 March. The whole estate to the \"Tetu Heritage Trust\"; executor Rahab Nyawira. Witnesses: Gakuya Kinyanjui and \"Stephen Mwaura Ndegwa\". Stamp: \"D. KATHAMBI, ADVOCATE & COMMISSIONER FOR OATHS, NAROK\"."
+      },
+      "facts": [
+        "f_filed_will"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": false,
+        "forger": "p_rahab",
+        "kind": "will"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a typed will with a signature, two witness signatures and an oval commissioner-for-oaths stamp reading NAROK"
+      }
+    },
+    {
+      "id": "ev_japhet",
+      "type": "witness",
+      "title": "Statement: Japhet Gathogo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_japhet"
+      },
+      "facts": [
+        "f_japhet",
+        "f_japhet_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ndegwa",
+      "type": "document",
+      "title": "ID check: \"Stephen Mwaura Ndegwa\"",
+      "render": "form",
+      "body": {
+        "text": "No living person of that name holds the ID number on the will."
+      },
+      "facts": [
+        "f_ndegwa"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_trust",
+      "type": "document",
+      "title": "Tetu Heritage Trust registration",
+      "render": "form",
+      "body": {
+        "text": "Registered in April. Two nominee trustees. Registration fees paid by PesaPap, Till 880 214."
+      },
+      "facts": [
+        "f_trust"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "trust registration"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_coma",
+      "type": "document",
+      "title": "Kiama Wainaina's hospital file",
+      "render": "form",
+      "body": {
+        "admit": "Admitted 2 March; unconscious from 3 March until his death on 17 March.",
+        "notes": "Nursing notes, 14 March: \"GCS 4; unresponsive.\""
+      },
+      "facts": [
+        "f_coma"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "hospital nursing notes"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_beth",
+      "type": "witness",
+      "title": "Statement: Beth Ngare",
+      "render": "statement",
+      "body": {
+        "speaker": "p_beth"
+      },
+      "facts": [
+        "f_beth",
+        "f_beth_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_halima",
+      "type": "witness",
+      "title": "Phone call: Prosecutor Halima Abdi",
+      "render": "statement",
+      "body": {
+        "speaker": "p_halima"
+      },
+      "facts": [
+        "f_halima"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_store_stamp",
+      "type": "physical",
+      "title": "Exhibit from case 60: Doreen Kathambi's stamp",
+      "render": "object",
+      "body": {
+        "label": "Sent up from the Narok exhibits store at Halima's request: her commissioner-for-oaths stamp and ink pad."
+      },
+      "facts": [
+        "f_store_stamp"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a commissioner-for-oaths rubber stamp and ink pad in a sealed evidence bag with a case-60 exhibit label"
+      }
+    },
+    {
+      "id": "ev_gak_pay",
+      "type": "phone",
+      "title": "Records: Gakuya Kinyanjui's PesaPap",
+      "render": "manifest",
+      "body": {
+        "pay": "2 April: KSh 30,000 from RAHAB NYAWIRA."
+      },
+      "facts": [
+        "f_gak_pay"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_filed_will",
+          "f_coma"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_records_rahab",
+      "type": "phone",
+      "title": "Records: Rahab Nyawira's line",
+      "render": "manifest",
+      "body": {
+        "masts": "Tetu estates zone, Wednesday 19:50–21:05."
+      },
+      "facts": [
+        "f_rec_rahab"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_filed_will",
+          "f_envelope"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_rahab_office",
+      "type": "document",
+      "title": "Rahab's shredder bin and desk",
+      "render": "object",
+      "body": {
+        "bin": "The hospital record copies, half shredded.",
+        "folder": "A folder \"Tetu — M.H.\" with Mvua Holdings letterhead: \"Trust to be executor-controlled. Use Narok stamp.\"",
+        "consent": "A \"consent\" signed by Gichuhi Wainaina in April supporting probate of the March will, for \"KSh 2 million upon grant\"."
+      },
+      "facts": [
+        "f_shredder",
+        "f_mvua_folder",
+        "f_consent"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_rahab",
+          "f_gate"
+        ]
+      },
+      "doc": {
+        "genuine": true,
+        "kind": "consent"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "half-shredded strips of hospital records in a shredder bin beside a folder marked TETU — M.H."
+      }
+    },
+    {
+      "id": "ev_gak_tab",
+      "type": "document",
+      "title": "Gakuya's bar tab",
+      "render": "receipt",
+      "body": {
+        "text": "Nyeri town bar, Wednesday 17:30 to closing; his phone in town all evening."
+      },
+      "facts": [
+        "f_gakuya"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gichuhi",
+      "type": "document",
+      "title": "Gichuhi's bar and lodging bills",
+      "render": "receipt",
+      "body": {
+        "text": "Nanyuki, Wednesday 18:00 to late; lodging overnight."
+      },
+      "facts": [
+        "f_gichuhi"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_njogu",
+      "type": "witness",
+      "title": "Statement: the estate workers",
+      "render": "statement",
+      "body": {
+        "speaker": "p_njogu"
+      },
+      "facts": [
+        "f_njogu"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rah_prints",
+      "type": "physical",
+      "title": "Fingerprints: Rahab Nyawira",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention; she refused."
+      },
+      "facts": [
+        "f_rah_printset"
+      ],
+      "gate": null,
+      "detention": "p_rahab",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_nofall",
+        "f_aut_lividity",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_compare",
+      "type": "forensic",
+      "title": "Two-will overlay and hospital file",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_cmp_coma",
+        "f_cmp_trace",
+        "f_cmp_ink",
+        "f_cmp_fields"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_filed_will",
+          "ev_genuine_will",
+          "ev_coma"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_blood",
+      "type": "forensic",
+      "title": "Lab: trace (rug stain, doorstop seam)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_blood"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_study",
+          "ev_doorstop"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints on the doorstop",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_prints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_doorstop",
+          "ev_rah_prints"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_docexam",
+      "type": "forensic",
+      "title": "Questioned Documents Lab: will and stamp",
+      "render": "labReport",
+      "body": {
+        "test": "document"
+      },
+      "facts": [
+        "f_docexam"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "document",
+        "hours": 10,
+        "needs": [
+          "ev_filed_will",
+          "ev_genuine_will",
+          "ev_store_stamp"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Veronica Waithera was found dead at the foot of the stairs in the main house at 06:30. She was due in the High Court at Nyeri that morning.",
+      "kind": "true",
+      "about": [
+        "p_veronica",
+        "loc_house"
+      ],
+      "at": {
+        "from": "06:30",
+        "to": null,
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "She lay on her back at the bottom step with one wound to the side of the head and no other injuries: no bruised arms, no broken wrist.",
+      "kind": "true",
+      "about": [
+        "p_veronica",
+        "plc_stairfoot"
+      ]
+    },
+    {
+      "id": "f_drag",
+      "text": "Two faint parallel heel scuffs in the hall's floor polish run from the study door to the stairs.",
+      "kind": "true",
+      "about": [
+        "plc_study",
+        "plc_stairfoot"
+      ]
+    },
+    {
+      "id": "f_rug",
+      "text": "In the study the rug is turned over at one corner, and under it is a small blood stain.",
+      "kind": "true",
+      "about": [
+        "plc_study"
+      ]
+    },
+    {
+      "id": "f_doorstop_gone",
+      "text": "The study's brass coffee-bean doorstop is missing: a clean, polish-free circle where it stood.",
+      "kind": "true",
+      "about": [
+        "plc_study"
+      ]
+    },
+    {
+      "id": "f_envelope",
+      "text": "A hospital envelope on Veronica's desk is empty.",
+      "kind": "true",
+      "about": [
+        "plc_study"
+      ]
+    },
+    {
+      "id": "f_doorstop",
+      "text": "In the kitchen soak-pit: the brass doorstop, washed, something dark in its casting seam.",
+      "kind": "true",
+      "about": [
+        "plc_soakpit"
+      ]
+    },
+    {
+      "id": "f_gate",
+      "text": "Gitau: Mrs. Rahab's silver car came at about eight; Mama said let her in. It left at about nine, fast, lights off until the road.",
+      "kind": "true",
+      "about": [
+        "p_gitau",
+        "p_rahab"
+      ],
+      "at": {
+        "from": "20:00",
+        "to": "21:00",
+        "day": "Wed"
+      }
+    },
+    {
+      "id": "f_cash",
+      "text": "The estate cash box is locked: KSh 85,000, matching the ledger.",
+      "kind": "true",
+      "about": [
+        "loc_office"
+      ]
+    },
+    {
+      "id": "f_genuine_will",
+      "text": "Kiama's 2019 will, held by Advocate Wairagu: the estate to Veronica for life, then to his children equally.",
+      "kind": "true",
+      "about": [
+        "p_veronica",
+        "p_gichuhi"
+      ]
+    },
+    {
+      "id": "f_filed_will",
+      "text": "Probate will, dated 14 March: all to the \"Tetu Heritage Trust\", executor Rahab Nyawira; witnesses Gakuya Kinyanjui and \"Stephen Mwaura Ndegwa\"; stamped \"D. Kathambi, Commissioner for Oaths, Narok\".",
+      "kind": "true",
+      "about": [
+        "p_rahab",
+        "p_gakuya"
+      ]
+    },
+    {
+      "id": "f_japhet",
+      "text": "Japhet: Rahab Nyawira filed it in person on 2 April.",
+      "kind": "true",
+      "about": [
+        "p_japhet",
+        "p_rahab"
+      ]
+    },
+    {
+      "id": "f_japhet_self",
+      "text": "Japhet was at home in Nyeri with his family all Wednesday evening.",
+      "kind": "true",
+      "about": [
+        "p_japhet"
+      ],
+      "where": {
+        "person": "p_japhet",
+        "place": "plc_japhome",
+        "from": "18:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_ndegwa",
+      "text": "No living person called \"Stephen Mwaura Ndegwa\" holds the ID number on the will.",
+      "kind": "true",
+      "about": [
+        "loc_court"
+      ]
+    },
+    {
+      "id": "f_trust",
+      "text": "The Tetu Heritage Trust was registered in April with two nominee trustees; its fees were paid by PesaPap Till 880 214.",
+      "kind": "true",
+      "about": [
+        "p_rahab"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_coma",
+      "text": "Hospital file: Kiama Wainaina admitted 2 March, unconscious from 3 March until his death on 17 March. Nursing notes, 14 March: \"GCS 4; unresponsive.\"",
+      "kind": "true",
+      "about": [
+        "p_veronica"
+      ]
+    },
+    {
+      "id": "f_beth",
+      "text": "Beth: \"Mrs. Waithera asked for these on Monday. I gave her copies.\"",
+      "kind": "true",
+      "about": [
+        "p_beth",
+        "p_veronica"
+      ]
+    },
+    {
+      "id": "f_beth_self",
+      "text": "Beth was on shift at the hospital Wednesday 14:00–22:00.",
+      "kind": "true",
+      "about": [
+        "p_beth"
+      ],
+      "where": {
+        "person": "p_beth",
+        "place": "loc_hospital",
+        "from": "14:00",
+        "to": "22:00"
+      }
+    },
+    {
+      "id": "f_halima",
+      "text": "Halima: \"Mrs. Waithera called my office on Tuesday asking for a meeting about a forged will. We had her down for Friday.\"",
+      "kind": "true",
+      "about": [
+        "p_halima",
+        "p_veronica"
+      ]
+    },
+    {
+      "id": "f_store_stamp",
+      "text": "Doreen Kathambi's seized commissioner-for-oaths stamp, sent up from the Narok exhibits store.",
+      "kind": "true",
+      "about": [
+        "loc_court"
+      ]
+    },
+    {
+      "id": "f_gak_pay",
+      "text": "Records, Gakuya's PesaPap: KSh 30,000 from Rahab Nyawira on 2 April, the day the will was filed.",
+      "kind": "true",
+      "about": [
+        "p_gakuya",
+        "p_rahab"
+      ]
+    },
+    {
+      "id": "f_rec_rahab",
+      "text": "Records, Rahab's line: Tetu estates zone, Wednesday 19:50–21:05.",
+      "kind": "true",
+      "about": [
+        "p_rahab"
+      ],
+      "at": {
+        "from": "19:50",
+        "to": "21:05",
+        "day": "Wed"
+      }
+    },
+    {
+      "id": "f_shredder",
+      "text": "In Rahab's shredder bin: the hospital record copies, half shredded.",
+      "kind": "true",
+      "about": [
+        "p_rahab"
+      ]
+    },
+    {
+      "id": "f_mvua_folder",
+      "text": "A folder \"Tetu — M.H.\" on Mvua Holdings letterhead: \"Trust to be executor-controlled. Use Narok stamp.\"",
+      "kind": "true",
+      "about": [
+        "p_rahab"
+      ],
+      "spine": "t_stamp"
+    },
+    {
+      "id": "f_consent",
+      "text": "A \"consent\" signed by Gichuhi in April supporting probate of the March will, for \"KSh 2 million upon grant\".",
+      "kind": "true",
+      "about": [
+        "p_gichuhi",
+        "p_rahab"
+      ]
+    },
+    {
+      "id": "f_gakuya",
+      "text": "Gakuya's bar tab: a Nyeri town bar from 17:30 to closing on Wednesday; his phone in town all evening.",
+      "kind": "true",
+      "about": [
+        "p_gakuya"
+      ],
+      "where": {
+        "person": "p_gakuya",
+        "place": "plc_nyeribar",
+        "from": "17:30",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_gichuhi",
+      "text": "Gichuhi's bills: in Nanyuki from 18:00 on Wednesday, overnight.",
+      "kind": "true",
+      "about": [
+        "p_gichuhi"
+      ],
+      "where": {
+        "person": "p_gichuhi",
+        "place": "plc_nanyuki",
+        "from": "18:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_njogu",
+      "text": "The workers: Njogu chaired their meeting in the factory shed 19:30–21:30, and found Mama at 06:30.",
+      "kind": "true",
+      "about": [
+        "p_njogu"
+      ],
+      "where": {
+        "person": "p_njogu",
+        "place": "plc_shed",
+        "from": "19:30",
+        "to": "21:30"
+      }
+    },
+    {
+      "id": "f_rah_printset",
+      "text": "Fingerprints taken from Rahab in detention.",
+      "kind": "true",
+      "about": [
+        "p_rahab"
+      ]
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Autopsy: one blow from a heavy, rounded, ridged object.",
+      "kind": "true",
+      "about": [
+        "p_veronica"
+      ]
+    },
+    {
+      "id": "f_aut_nofall",
+      "text": "Autopsy: no injuries consistent with a fall down stairs; no stroke.",
+      "kind": "true",
+      "about": [
+        "p_veronica"
+      ]
+    },
+    {
+      "id": "f_aut_lividity",
+      "text": "Autopsy: lividity shows she lay on her side for some time before being moved onto her back.",
+      "kind": "true",
+      "about": [
+        "p_veronica"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death on Wednesday between 20:00 and 21:00.",
+      "kind": "true",
+      "about": [
+        "p_veronica"
+      ],
+      "at": {
+        "from": "20:00",
+        "to": "21:00",
+        "day": "Wed"
+      }
+    },
+    {
+      "id": "f_cmp_coma",
+      "text": "Comparison view: the will's date, 14 March, laid on the hospital file. That day the testator was in a coma: \"GCS 4; unresponsive.\"",
+      "kind": "true",
+      "about": [
+        "p_rahab"
+      ]
+    },
+    {
+      "id": "f_cmp_trace",
+      "text": "Two-will overlay: Kiama's signature on the March will lines up with the 2019 signature perfectly. Too perfectly: a real signature varies.",
+      "kind": "true",
+      "about": [
+        "p_rahab"
+      ]
+    },
+    {
+      "id": "f_cmp_ink",
+      "text": "Under the magnifier: the commissioner's impression is pressed ink with a halo, not printer dots.",
+      "kind": "true",
+      "about": [
+        "loc_court"
+      ]
+    },
+    {
+      "id": "f_cmp_fields",
+      "text": "A will carries no batch numbers and no exam index numbers; its land reference, Tetu/1187, is on the index map.",
+      "kind": "true",
+      "about": [
+        "loc_court"
+      ]
+    },
+    {
+      "id": "f_blood",
+      "text": "Lab: Veronica's blood under the study rug and in the doorstop's casting seam.",
+      "kind": "true",
+      "about": [
+        "p_veronica"
+      ]
+    },
+    {
+      "id": "f_prints",
+      "text": "Lab: a partial print in the doorstop's seam matches Rahab Nyawira.",
+      "kind": "true",
+      "about": [
+        "p_rahab"
+      ]
+    },
+    {
+      "id": "f_docexam",
+      "text": "Wilfrida Ayugi: Kiama's signature is traced from the 2019 will; the commissioner's impression was made by Doreen Kathambi's own seized stamp.",
+      "kind": "true",
+      "about": [
+        "p_rahab"
+      ]
+    },
+    {
+      "id": "f_rah_never",
+      "text": "Rahab: \"I haven't been to the estate since the funeral.\"",
+      "kind": "lie",
+      "about": [
+        "p_rahab"
+      ]
+    },
+    {
+      "id": "f_rah_signed",
+      "text": "Rahab: \"Mr. Wainaina signed that will in front of me on 14 March.\"",
+      "kind": "lie",
+      "about": [
+        "p_rahab"
+      ]
+    },
+    {
+      "id": "f_rah_reveal",
+      "text": "Rahab: she went to offer Veronica \"a settlement\". In the study Veronica was unreasonable. \"I left her standing.\"",
+      "kind": "true",
+      "about": [
+        "p_rahab",
+        "p_veronica"
+      ],
+      "where": {
+        "person": "p_rahab",
+        "place": "plc_study",
+        "from": "20:00",
+        "to": "20:50"
+      }
+    },
+    {
+      "id": "f_rah_touch",
+      "text": "Rahab: \"I touched nothing in that room.\"",
+      "kind": "lie",
+      "about": [
+        "p_rahab"
+      ]
+    },
+    {
+      "id": "f_gak_saw",
+      "text": "Gakuya: \"I saw Mr. Wainaina sign it with my own eyes.\"",
+      "kind": "lie",
+      "about": [
+        "p_gakuya"
+      ]
+    },
+    {
+      "id": "f_gak_reveal",
+      "text": "Gakuya: he signs for whoever pays at the registry door. Thirty thousand. He never met the man. \"The other witness? There's no other witness. She wrote that name in the car.\"",
+      "kind": "true",
+      "about": [
+        "p_gakuya",
+        "p_rahab"
+      ]
+    },
+    {
+      "id": "f_gich_where",
+      "text": "Gichuhi: \"I hated that she got everything. I was in Nanyuki.\"",
+      "kind": "claim",
+      "about": [
+        "p_gichuhi"
+      ]
+    },
+    {
+      "id": "f_gich_never",
+      "text": "Gichuhi: \"I've never met this Rahab.\"",
+      "kind": "lie",
+      "about": [
+        "p_gichuhi"
+      ]
+    },
+    {
+      "id": "f_gich_reveal",
+      "text": "Gichuhi: Rahab found him in April, said the new will was real, and promised two million if he didn't fight it. He signed. \"I didn't ask how my father signed anything in a coma.\"",
+      "kind": "true",
+      "about": [
+        "p_gichuhi",
+        "p_rahab"
+      ]
+    },
+    {
+      "id": "f_njogu_claim",
+      "text": "Njogu: \"I found Mama at the stairs. I was at the workers' meeting till half past nine.\"",
+      "kind": "claim",
+      "about": [
+        "p_njogu"
+      ]
+    },
+    {
+      "id": "f_njogu_reveal",
+      "text": "Njogu, shown the scuffs: \"The kitchen soak-pit. Someone's been at the cover. I saw it this morning and thought it was dogs.\"",
+      "kind": "true",
+      "about": [
+        "p_njogu"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_rahab",
+      "stance": "lawyered",
+      "lawyered": {
+        "advocate": "Advocate Benjamin Muchiri",
+        "reopenedBy": [
+          "f_coma"
+        ],
+        "line": "On my advocate's advice, no comment."
+      },
+      "intro": "Rahab sits with her folder on her knees and Advocate Muchiri at her elbow. \"On my advocate's advice, no comment.\"",
+      "claims": [
+        "f_rah_never",
+        "f_rah_signed"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_rah_touch",
+          "after": "f_rah_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_gakuya",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_filed_will"
+      ],
+      "intro": "Gakuya leans on the registry doorframe, pen behind his ear. \"I saw Mr. Wainaina sign it with my own eyes.\"",
+      "claims": [
+        "f_gak_saw"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_gichuhi",
+      "stance": "cooperative",
+      "intro": "Gichuhi answers from a Nanyuki bar. \"I hated that she got everything. I was in Nanyuki. And I've never met this Rahab.\"",
+      "claims": [
+        "f_gich_where",
+        "f_gich_never"
+      ],
+      "yields": [
+        "ev_gichuhi"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_njogu",
+      "stance": "cooperative",
+      "intro": "Njogu stands at the foot of the stairs with his hat in his hands. \"I found Mama at the stairs. I was at the workers' meeting till half past nine.\"",
+      "claims": [
+        "f_njogu_claim"
+      ],
+      "yields": [
+        "ev_njogu"
+      ],
+      "topics": [
+        {
+          "about": "ev_drag",
+          "reply": "\"The kitchen soak-pit. Someone's been at the cover. I saw it this morning and thought it was dogs.\"",
+          "reveals": [
+            "f_njogu_reveal"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_beth",
+      "stance": "cooperative",
+      "intro": "Beth opens the brown folder on her desk.",
+      "claims": [],
+      "yields": [
+        "ev_beth"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_japhet",
+      "stance": "cooperative",
+      "intro": "Japhet finds the probate file without looking it up. \"Everyone's asking for this one this morning.\"",
+      "claims": [],
+      "yields": [
+        "ev_japhet"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_halima",
+      "stance": "cooperative",
+      "intro": "Halima picks up on the first ring.",
+      "claims": [],
+      "yields": [
+        "ev_halima",
+        "ev_store_stamp"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_wairagu",
+      "stance": "cooperative",
+      "intro": "Advocate Wairagu breaks the seal on the envelope in front of you.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_gak",
+      "claim": "f_gak_saw",
+      "brokenBy": [
+        "f_coma",
+        "f_gak_pay"
+      ],
+      "reveals": [
+        "f_gak_reveal",
+        "ev_gak_tab"
+      ],
+      "reaction": "\"I sign for whoever pays at the registry door. Thirty thousand. I never met the man. The other witness? There's no other witness. She wrote that name in the car.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_rah_never",
+      "claim": "f_rah_never",
+      "brokenBy": [
+        "f_rec_rahab",
+        "f_gate"
+      ],
+      "reveals": [
+        "f_rah_reveal"
+      ],
+      "reaction": "\"I went to offer her a settlement. She was unreasonable. I left her standing.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_gich",
+      "claim": "f_gich_never",
+      "brokenBy": [
+        "f_consent"
+      ],
+      "reveals": [
+        "f_gich_reveal"
+      ],
+      "reaction": "\"She found me in April. Said the new will was real and if I didn't fight it I'd get two million. I signed. I didn't ask how my father signed anything in a coma. I didn't want to know.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_rah_signed",
+      "claim": "f_rah_signed",
+      "brokenBy": [
+        "f_docexam"
+      ],
+      "reveals": [],
+      "reaction": "Advocate Muchiri, quietly, as he closes his file: \"I'm withdrawing, Detective. I don't represent clients who lie to me about comas.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_rah_touch",
+      "claim": "f_rah_touch",
+      "brokenBy": [
+        "f_prints"
+      ],
+      "reveals": [],
+      "reaction": "Rahab looks at the print card, then at the empty chair where her advocate sat. She says nothing at all.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_rahab",
+      "text": "Rahab Nyawira",
+      "category": "person",
+      "ref": "p_rahab",
+      "unlock": {
+        "anyOf": [
+          "f_filed_will"
+        ]
+      }
+    },
+    {
+      "id": "w_gakuya",
+      "text": "Gakuya Kinyanjui",
+      "category": "person",
+      "ref": "p_gakuya",
+      "unlock": {
+        "anyOf": [
+          "f_filed_will"
+        ]
+      }
+    },
+    {
+      "id": "w_gichuhi",
+      "text": "Gichuhi Wainaina",
+      "category": "person",
+      "ref": "p_gichuhi",
+      "unlock": {
+        "anyOf": [
+          "f_genuine_will"
+        ]
+      }
+    },
+    {
+      "id": "w_njogu",
+      "text": "Njogu Kimotho",
+      "category": "person",
+      "ref": "p_njogu",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_beth",
+      "text": "Beth Ngare",
+      "category": "person",
+      "ref": "p_beth",
+      "unlock": {
+        "anyOf": [
+          "f_coma"
+        ]
+      }
+    },
+    {
+      "id": "w_japhet",
+      "text": "Japhet Gathogo",
+      "category": "person",
+      "ref": "p_japhet",
+      "unlock": {
+        "anyOf": [
+          "f_japhet"
+        ]
+      }
+    },
+    {
+      "id": "pl_study",
+      "text": "the study",
+      "category": "place",
+      "ref": "plc_study",
+      "unlock": {
+        "anyOf": [
+          "f_rug"
+        ]
+      }
+    },
+    {
+      "id": "pl_staircase",
+      "text": "the staircase",
+      "category": "place",
+      "ref": "plc_staircase",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_office",
+      "text": "the estate office",
+      "category": "place",
+      "ref": "loc_office",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_shed",
+      "text": "the factory shed",
+      "category": "place",
+      "ref": "plc_shed",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_kitchen",
+      "text": "the kitchen",
+      "category": "place",
+      "ref": "plc_kitchen",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_rows",
+      "text": "the coffee rows",
+      "category": "place",
+      "ref": "plc_rows",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_stairfoot",
+      "text": "the foot of the staircase",
+      "category": "place",
+      "ref": "plc_stairfoot",
+      "unlock": {
+        "anyOf": [
+          "f_drag"
+        ]
+      }
+    },
+    {
+      "id": "pl_soakpit",
+      "text": "the soak-pit",
+      "category": "place",
+      "ref": "plc_soakpit",
+      "unlock": {
+        "anyOf": [
+          "f_doorstop"
+        ]
+      }
+    },
+    {
+      "id": "pl_study2",
+      "text": "the study",
+      "category": "place",
+      "ref": "plc_study",
+      "unlock": {
+        "anyOf": [
+          "f_drag"
+        ]
+      }
+    },
+    {
+      "id": "pl_veranda",
+      "text": "the veranda",
+      "category": "place",
+      "ref": "plc_veranda",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_car",
+      "text": "Rahab's car",
+      "category": "place",
+      "ref": "plc_car",
+      "unlock": {
+        "anyOf": [
+          "f_gate"
+        ]
+      }
+    },
+    {
+      "id": "pl_office2",
+      "text": "the estate office",
+      "category": "place",
+      "ref": "loc_office",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_doorstop",
+      "text": "striking her with a brass doorstop and moving her to the stairs",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_fall",
+      "text": "a fall down the stairs",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_pushed",
+      "text": "pushing her down the stairs",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_stroke",
+      "text": "a stroke",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_stick",
+      "text": "striking her with a walking stick",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_will",
+      "text": "to stop her objection exposing the forged will that left the estate to a Mvua trust",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_halima"
+        ]
+      }
+    },
+    {
+      "id": "m_stepson",
+      "text": "the stepson's resentment over his inheritance",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_genuine_will"
+        ]
+      }
+    },
+    {
+      "id": "m_manager",
+      "text": "the farm manager's fear of being replaced",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_robbery",
+      "text": "a robbery of the estate's cash",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_tout",
+      "text": "a court tout's fee dispute",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_filed_will"
+        ]
+      }
+    },
+    {
+      "id": "d_march",
+      "text": "The March will",
+      "category": "document",
+      "ref": "ev_filed_will",
+      "unlock": {
+        "anyOf": [
+          "f_filed_will"
+        ]
+      }
+    },
+    {
+      "id": "d_2019",
+      "text": "The 2019 will",
+      "category": "document",
+      "ref": "ev_genuine_will",
+      "unlock": {
+        "anyOf": [
+          "f_genuine_will"
+        ]
+      }
+    },
+    {
+      "id": "d_notes",
+      "text": "The hospital nursing notes",
+      "category": "document",
+      "ref": "ev_coma",
+      "unlock": {
+        "anyOf": [
+          "f_coma"
+        ]
+      }
+    },
+    {
+      "id": "d_consent",
+      "text": "Gichuhi's consent",
+      "category": "document",
+      "ref": "ev_rahab_office",
+      "unlock": {
+        "anyOf": [
+          "f_consent"
+        ]
+      }
+    },
+    {
+      "id": "d_trust",
+      "text": "The trust registration",
+      "category": "document",
+      "ref": "ev_trust",
+      "unlock": {
+        "anyOf": [
+          "f_trust"
+        ]
+      }
+    },
+    {
+      "id": "t_coma",
+      "text": "it is dated on a day the testator was in a coma",
+      "category": "tell",
+      "by": [
+        "f_coma",
+        "f_cmp_coma"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_coma"
+        ]
+      }
+    },
+    {
+      "id": "t_nowitness",
+      "text": "its second witness doesn't exist",
+      "category": "tell",
+      "by": [
+        "f_ndegwa",
+        "f_gak_reveal"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_ndegwa"
+        ]
+      }
+    },
+    {
+      "id": "t_dots",
+      "text": "a seal printed in dots",
+      "category": "tell",
+      "by": [
+        "f_cmp_ink"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_filed_will"
+        ]
+      }
+    },
+    {
+      "id": "t_batch",
+      "text": "a batch number that doesn't exist",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_filed_will"
+        ]
+      }
+    },
+    {
+      "id": "t_parcel",
+      "text": "a parcel missing from the map",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_filed_will"
+        ]
+      }
+    },
+    {
+      "id": "t_index",
+      "text": "an index number belonging to someone else",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_filed_will"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_doreen",
+      "text": "Doreen Kathambi's commissioner stamp (case 60)",
+      "category": "pin",
+      "pin": "case-060:f_comm_stamp",
+      "unlock": {
+        "anyOf": [
+          "f_docexam"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_seal",
+      "text": "The REGISTRAR OF TITLES seal order (case 10)",
+      "category": "pin",
+      "pin": "case-010:f_order_mvua",
+      "unlock": {
+        "anyOf": [
+          "f_docexam"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_container",
+      "text": "The container of \"printing paper\", Shimanzi (case 30)",
+      "category": "pin",
+      "pin": "case-030:f_container_oval",
+      "unlock": {
+        "anyOf": [
+          "f_docexam"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_mv",
+      "text": "The oval \"MV\" seal from Desai's box (case 66)",
+      "category": "pin",
+      "pin": "case-066:f_mv_seal",
+      "unlock": {
+        "anyOf": [
+          "f_docexam"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_flyer",
+      "text": "The Mvua lease-advance flyer (case 53)",
+      "category": "pin",
+      "pin": "case-053:f_flyer",
+      "unlock": {
+        "anyOf": [
+          "f_docexam"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} in {where1} and moved her to {where2}, by {how}, because {why}. {document} was forged, as shown by {tell}. The forged will was commissioned with the stamp of {pin}.",
+    "fixed": {
+      "victim": "Veronica Waithera"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_coma",
+                  "label": "3 March",
+                  "from": null,
+                  "to": null,
+                  "day": "3 Mar"
+                },
+                {
+                  "id": "sl_sign",
+                  "label": "14 March",
+                  "from": null,
+                  "to": null,
+                  "day": "14 Mar"
+                },
+                {
+                  "id": "sl_filed",
+                  "label": "2 April",
+                  "from": null,
+                  "to": null,
+                  "day": "2 Apr"
+                },
+                {
+                  "id": "sl_mon",
+                  "label": "Monday",
+                  "from": null,
+                  "to": null,
+                  "day": "Mon"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Wednesday 20:00–21:00",
+                  "from": "20:00",
+                  "to": "21:00",
+                  "day": "Wed"
+                },
+                {
+                  "id": "sl_thu",
+                  "label": "Thursday 06:30",
+                  "from": "06:30",
+                  "to": "06:30",
+                  "day": "Thu"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_coma",
+                  "text": "Kiama falls into a coma",
+                  "slot": "sl_coma",
+                  "by": [
+                    "f_coma"
+                  ],
+                  "why": "The hospital file: unconscious from 3 March.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_coma"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_sign",
+                  "text": "The will is \"signed\"",
+                  "slot": "sl_sign",
+                  "by": [
+                    "f_filed_will",
+                    "f_cmp_coma"
+                  ],
+                  "why": "The date on the March will.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_filed_will"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_filed",
+                  "text": "The will is filed and Gakuya is paid",
+                  "slot": "sl_filed",
+                  "by": [
+                    "f_japhet",
+                    "f_gak_pay"
+                  ],
+                  "why": "Japhet, and the PesaPap payment: 2 April.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_japhet"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_records",
+                  "text": "Veronica gets the hospital records",
+                  "slot": "sl_mon",
+                  "by": [
+                    "f_beth"
+                  ],
+                  "why": "Beth: Monday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_beth"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Veronica is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod",
+                    "f_gate",
+                    "f_rah_reveal"
+                  ],
+                  "why": "The autopsy, and Rahab's car in the gate from eight to nine.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_thu",
+                  "by": [
+                    "f_aut_tod",
+                    "f_aut_lividity"
+                  ],
+                  "why": "Thursday 06:30 is when Njogu found her at the stairs. She died on Wednesday evening, and lay on her side for a while before she was moved."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A coma on the third, a signature on the fourteenth, a filing on the second of April. Records on Monday, my office on Tuesday, dead on Wednesday.",
+          "fail": [
+            "Thursday morning is when she was found, not when she died.",
+            "What date is on the will, and where was Kiama that day?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where1",
+            "category": "place",
+            "answer": "pl_study",
+            "pool": [
+              "pl_study",
+              "pl_staircase",
+              "pl_office",
+              "pl_shed",
+              "pl_kitchen",
+              "pl_rows"
+            ]
+          },
+          {
+            "id": "where2",
+            "category": "place",
+            "answer": "pl_stairfoot",
+            "subject": "other",
+            "note": "Where her body was moved to.",
+            "pool": [
+              "pl_stairfoot",
+              "pl_soakpit",
+              "pl_study2",
+              "pl_veranda",
+              "pl_car",
+              "pl_office2"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "Killed in the study, dragged to the stairs. The floor polish kept the record.",
+          "fail": [
+            "No fall injuries. She didn't die on the stairs.",
+            "The doorstop went into the soak-pit. She didn't."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_rahab"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her car at eight, her phone at the estate, the hospital copies in her shredder, her print in the doorstop. That will hold.",
+          "fail": [
+            "Gakuya was drinking in Nyeri town all evening.",
+            "Gichuhi took her bribe, but he was in Nanyuki."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_doorstop"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A ridged brass coffee bean, and a fall that never happened.",
+          "fail": [
+            "A fall down stairs breaks wrists and bruises arms. She has neither.",
+            "A walking stick doesn't leave a ridged wound."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_will"
+          }
+        ],
+        "prosecutor": {
+          "pass": "An objection on Thursday, my office on Friday. She couldn't let Veronica reach either.",
+          "fail": [
+            "The cash box is full.",
+            "The tout was paid in full on 2 April."
+          ]
+        }
+      },
+      {
+        "id": "g_forgery",
+        "kind": "forgery",
+        "blanks": [
+          {
+            "id": "document",
+            "category": "document",
+            "answer": "d_march"
+          },
+          {
+            "id": "tell",
+            "category": "tell",
+            "answer": "t_coma",
+            "accept": [
+              "t_nowitness"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "A man in a coma does not sign wills. And a witness who doesn't exist doesn't witness them.",
+          "fail": [
+            "The 2019 will is in Advocate Wairagu's strongroom, sealed.",
+            "The stamp is real ink. That's the worse problem."
+          ]
+        }
+      },
+      {
+        "id": "g_spine",
+        "kind": "spine",
+        "blanks": [
+          {
+            "id": "pin",
+            "category": "pin",
+            "answer": "w_pin_doreen",
+            "spine": true
+          }
+        ],
+        "prosecutor": {
+          "pass": "Doreen's own stamp. Mvua rented a real advocate. That's worse than a fake one.",
+          "fail": [
+            "Mvua made the oval MV seal, yes. But this impression is a real advocate's stamp.",
+            "Read Ayugi's report on the impression again."
+          ]
+        }
+      }
+    ],
+    "halima": "She called my office on Tuesday, Amani. Friday was too late. I'm going to remember that."
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_study",
+      "from": "20:00",
+      "to": "21:00",
+      "note": "From the autopsy; Rahab's car came through the gate at about eight and left at about nine."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_body",
+          "f_drag",
+          "f_rug",
+          "f_doorstop_gone",
+          "f_aut_blow",
+          "f_aut_nofall",
+          "f_aut_lividity"
+        ],
+        "concludes": "She didn't fall: she was struck in the study, lay on her side, and was dragged to the stairs.",
+        "answers": [
+          "where1",
+          "where2"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_filed_will",
+          "f_genuine_will",
+          "f_coma",
+          "f_cmp_coma",
+          "f_ndegwa",
+          "f_cmp_trace"
+        ],
+        "concludes": "The March will is forged: Kiama was in a coma on its date, one witness doesn't exist, and the signature is traced.",
+        "answers": [
+          "document",
+          "tell"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_gak_saw",
+          "f_gak_pay",
+          "f_gak_reveal",
+          "f_japhet"
+        ],
+        "concludes": "Rahab filed it, paid the witness, and invented the other."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_rah_never",
+          "f_rec_rahab",
+          "f_gate",
+          "f_rah_reveal",
+          "f_beth",
+          "f_envelope",
+          "f_halima"
+        ],
+        "concludes": "Veronica had the hospital records and an appointment with the prosecutor; Rahab was in the house with her 19:50–21:05.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_shredder",
+          "f_mvua_folder"
+        ],
+        "concludes": "The stolen hospital copies are in Rahab's shredder, with Mvua's instructions: \"Use Narok stamp.\""
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_njogu_reveal",
+          "f_doorstop",
+          "f_blood",
+          "f_prints",
+          "f_rah_touch"
+        ],
+        "concludes": "The doorstop in the soak-pit carries Veronica's blood and Rahab's print. Rahab Nyawira struck Veronica with the brass doorstop in the study and moved her to the foot of the staircase, to stop her objection exposing the forged will.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      },
+      {
+        "id": "s7",
+        "from": [
+          "s6",
+          "f_store_stamp",
+          "f_docexam",
+          "f_rah_signed",
+          "case-060:f_comm_stamp"
+        ],
+        "concludes": "The commissioner's impression on the will was made by Doreen Kathambi's own stamp, seized in case 60.",
+        "answers": [
+          "pin"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_staircase",
+        "blank": "where1",
+        "by": [
+          "f_aut_nofall",
+          "f_rug"
+        ],
+        "why": "No fall injuries; the blood is under the study rug."
+      },
+      {
+        "word": "pl_office",
+        "blank": "where1",
+        "by": [
+          "f_rug",
+          "f_cash"
+        ],
+        "why": "The blood is in the study; the office cash box is untouched."
+      },
+      {
+        "word": "pl_shed",
+        "blank": "where1",
+        "by": [
+          "f_rug",
+          "f_njogu"
+        ],
+        "why": "The workers were meeting in the shed; she died in the study."
+      },
+      {
+        "word": "pl_kitchen",
+        "blank": "where1",
+        "by": [
+          "f_rug",
+          "f_drag"
+        ],
+        "why": "The drag marks start at the study door."
+      },
+      {
+        "word": "pl_rows",
+        "blank": "where1",
+        "by": [
+          "f_rug",
+          "f_drag"
+        ],
+        "why": "She never left the house."
+      },
+      {
+        "word": "pl_soakpit",
+        "blank": "where2",
+        "by": [
+          "f_body",
+          "f_doorstop"
+        ],
+        "why": "Only the doorstop went into the soak-pit."
+      },
+      {
+        "word": "pl_study2",
+        "blank": "where2",
+        "by": [
+          "f_drag",
+          "f_body"
+        ],
+        "why": "She was dragged out of the study to the stairs."
+      },
+      {
+        "word": "pl_veranda",
+        "blank": "where2",
+        "by": [
+          "f_body",
+          "f_drag"
+        ],
+        "why": "The scuffs end at the stairs."
+      },
+      {
+        "word": "pl_car",
+        "blank": "where2",
+        "by": [
+          "f_body"
+        ],
+        "why": "She was found in the house."
+      },
+      {
+        "word": "pl_office2",
+        "blank": "where2",
+        "by": [
+          "f_body"
+        ],
+        "why": "She was found at the foot of the stairs."
+      },
+      {
+        "word": "w_gakuya",
+        "blank": "who",
+        "by": [
+          "f_gakuya"
+        ],
+        "why": "Gakuya was in a Nyeri town bar from 17:30 to closing."
+      },
+      {
+        "word": "w_gichuhi",
+        "blank": "who",
+        "by": [
+          "f_gichuhi"
+        ],
+        "why": "Gichuhi was in Nanyuki."
+      },
+      {
+        "word": "w_njogu",
+        "blank": "who",
+        "by": [
+          "f_njogu"
+        ],
+        "why": "Njogu chaired the workers' meeting in the shed, 19:30–21:30."
+      },
+      {
+        "word": "w_beth",
+        "blank": "who",
+        "by": [
+          "f_beth_self"
+        ],
+        "why": "Beth was on shift at the hospital."
+      },
+      {
+        "word": "w_japhet",
+        "blank": "who",
+        "by": [
+          "f_japhet_self"
+        ],
+        "why": "Japhet was at home with his family."
+      },
+      {
+        "word": "h_fall",
+        "blank": "how",
+        "by": [
+          "f_aut_nofall",
+          "f_aut_lividity"
+        ],
+        "why": "No fall injuries, and she was moved after death."
+      },
+      {
+        "word": "h_pushed",
+        "blank": "how",
+        "by": [
+          "f_aut_nofall"
+        ],
+        "why": "No injuries from the stairs at all."
+      },
+      {
+        "word": "h_stroke",
+        "blank": "how",
+        "by": [
+          "f_aut_nofall",
+          "f_aut_blow"
+        ],
+        "why": "No stroke; one blow killed her."
+      },
+      {
+        "word": "h_stick",
+        "blank": "how",
+        "by": [
+          "f_aut_blow",
+          "f_doorstop"
+        ],
+        "why": "The wound is ridged and rounded, matching the doorstop's casting."
+      },
+      {
+        "word": "m_stepson",
+        "blank": "why",
+        "by": [
+          "f_gichuhi",
+          "f_consent"
+        ],
+        "why": "Gichuhi gained if the forged will stood unchallenged, but he was in Nanyuki."
+      },
+      {
+        "word": "m_manager",
+        "blank": "why",
+        "by": [
+          "f_njogu"
+        ],
+        "why": "Njogu was at the workers' meeting."
+      },
+      {
+        "word": "m_robbery",
+        "blank": "why",
+        "by": [
+          "f_cash"
+        ],
+        "why": "KSh 85,000 still in the cash box."
+      },
+      {
+        "word": "m_tout",
+        "blank": "why",
+        "by": [
+          "f_gak_pay"
+        ],
+        "why": "Gakuya was paid in full on 2 April."
+      },
+      {
+        "word": "d_2019",
+        "blank": "document",
+        "by": [
+          "f_genuine_will"
+        ],
+        "why": "Sealed in the family advocate's strongroom."
+      },
+      {
+        "word": "d_notes",
+        "blank": "document",
+        "by": [
+          "f_beth"
+        ],
+        "why": "The hospital's own file."
+      },
+      {
+        "word": "d_consent",
+        "blank": "document",
+        "by": [
+          "f_gich_reveal"
+        ],
+        "why": "Gichuhi signed it himself, for money."
+      },
+      {
+        "word": "d_trust",
+        "blank": "document",
+        "by": [
+          "f_trust"
+        ],
+        "why": "A real registration of a sham trust."
+      },
+      {
+        "word": "t_dots",
+        "blank": "tell",
+        "by": [
+          "f_cmp_ink"
+        ],
+        "why": "The commissioner's impression is real ink."
+      },
+      {
+        "word": "t_batch",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "A will has no batch numbers."
+      },
+      {
+        "word": "t_parcel",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "The estate's land reference is on the index map."
+      },
+      {
+        "word": "t_index",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "A will has no exam index number."
+      },
+      {
+        "word": "w_pin_seal",
+        "blank": "pin",
+        "by": [
+          "case-010:f_order_mvua",
+          "f_docexam"
+        ],
+        "why": "That seal is the Registrar of Titles'. A will carries a commissioner's stamp."
+      },
+      {
+        "word": "w_pin_container",
+        "blank": "pin",
+        "by": [
+          "case-030:f_container_oval",
+          "f_docexam"
+        ],
+        "why": "That pin is paper, not a stamp."
+      },
+      {
+        "word": "w_pin_mv",
+        "blank": "pin",
+        "by": [
+          "case-066:f_mv_seal",
+          "f_docexam"
+        ],
+        "why": "Mvua made the MV seal; this impression is a real advocate's stamp."
+      },
+      {
+        "word": "w_pin_flyer",
+        "blank": "pin",
+        "by": [
+          "case-053:f_flyer",
+          "f_docexam"
+        ],
+        "why": "A flyer is not a stamp."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Kiama Wainaina's 2019 will leaves the estate to Veronica for life, then to his children. He falls into a coma on 3 March and dies on 17 March.",
+        "image": null
+      },
+      {
+        "text": "Acting for Mvua, Rahab prepares a \"will\" dated 14 March leaving everything to the Tetu Heritage Trust, with herself as executor. She traces Kiama's signature, pays a registry tout to witness, invents a second witness, and has it stamped with Doreen Kathambi's commissioner stamp before Doreen's arrest. \"Use Narok stamp.\"",
+        "image": null
+      },
+      {
+        "text": "2 April: the will is filed. In April Rahab buys Gichuhi's silence for \"KSh 2 million upon grant\".",
+        "image": null
+      },
+      {
+        "text": "Monday, Veronica gets the hospital records. Tuesday, she calls Prosecutor Halima Abdi's office. Her objection is due on Thursday.",
+        "image": null
+      },
+      {
+        "text": "Wednesday, about 20:00. Rahab comes \"to discuss a settlement\". In the study Veronica shows her the nursing notes. Rahab strikes her with the brass coffee-bean doorstop.",
+        "image": "plc_study"
+      },
+      {
+        "text": "She drags Veronica to the foot of the stairs to make it a fall, drops the doorstop into the kitchen soak-pit, takes the hospital copies and drives out at about nine, lights off until the road.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "The probate court revokes the grant of the March will and admits the 2019 will. Gichuhi stands in the corridor outside court and apologises to his half-sisters. The estate workers keep their jobs; Njogu stays."
+    },
+    {
+      "beat": "Doreen Kathambi, interviewed in remand, says one sentence on record: \"Mvua rented my stamp the way you rent a car. Ask the registry man who taught them.\"",
+      "files": [
+        {
+          "thread": "t_registry",
+          "text": "Doreen, in remand: \"Ask the registry man who taught them.\""
+        },
+        {
+          "thread": "t_stamp",
+          "text": "Doreen's real commissioner stamp, rented to Mvua."
+        }
+      ]
+    },
+    {
+      "beat": "That evening Amani drives to Mwalimu's house: a small stone house with a vegetable garden outside Nyeri town, on the road to the Aberdares. There is no hint system on this screen. The player sits at her kitchen table and taps to continue. Every beat is quiet.",
+      "scene": "kitchenTable",
+      "beats": [
+        "She has the \"Leverage — E.W.\" photocopy on the table already. She has been expecting it.",
+        "\"Twelve years ago I was a new Chief Inspector in Nakuru. Your father came to me with a complaint: people pressing him to change the survey of Bahati Block 9. I wrote it up. Two days later my commander called me in. He said the complaint had come to the attention of 'a desk on the Lands side', and the desk wanted it closed. NFA. He said it as if it were a filing matter.\"",
+        "\"I signed it. I was afraid. I had two children and a promotion pending, and I told myself it was a quarrel over a survey.\"",
+        "\"Three weeks later your father was dead on the Bahati road. A robbery, they said. The file came to me. My commander said: nine days. I closed it in nine days. I have been closing it every night since.\"",
+        "She brings out a box: Joseph Mwenda's complete original file, not the thin closed one Amani has seen, with her own handwritten notes from the nine days: the survey numbers he wouldn't change, the name of a Lands officer who visited him, a tyre-track sketch from the Bahati road, and one line underlined twice: \"Not a robbery. Taken: his field book only.\"",
+        "\"The desk is real, Amani. I know which floor of which building. I don't know the man who sits at it. Find him, and I'll testify. Against him, and against myself.\"",
+        "She doesn't ask for forgiveness. There is no dialogue choice. Amani picks up the box and leaves. At the gate Mwalimu says, \"Drive carefully on the mountain road.\" It is what she always says on the phone."
+      ],
+      "files": [
+        {
+          "thread": "t_joseph",
+          "text": "Mwalimu's confession: ordered by \"a desk on the Lands side\" to close the complaint; closed the murder file in nine days. Her notes: \"Not a robbery. Taken: his field book only.\""
+        },
+        {
+          "thread": "t_kivuli",
+          "text": "\"A desk on the Lands side. A floor she knows.\" Fundi said Kivuli is a desk. Now two people have said it."
+        }
+      ]
+    },
+    {
+      "beat": "From case 71 Mwalimu's hint calls are quieter: shorter, no jokes, sometimes just the hint and \"Amani.\" Her card in the Pattern File gains a note: \"Witness. Promised to testify.\""
+    },
+    {
+      "beat": "Collectible: Joseph Mwenda's original file, reopened. A thick buff folder with a new OB number written in Amani's hand on the cover."
+    },
+    {
+      "beat": "Amani's notebook, the region's last line: \"A desk on the Lands side. A floor she knows. Field book taken. Fundi said Kivuli is a desk. Now two people have said it.\""
+    }
+  ],
+  "clockPlan": {
+    "note": "Three stamps, the region maximum: records on Gakuya, records on Rahab, and the warrant on her office. Rahab stays silent until the hospital file is put in front of her. Detain her after the warrant; the blood trace (12 h), prints (6 h) and the will-and-stamp examination (10 h) all come back inside her 24 hours.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_house",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_drag",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_study",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_njogu"
+      },
+      {
+        "do": "read",
+        "target": "ev_doorstop",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_gate",
+        "hours": 1
+      },
+      {
+        "do": "travel",
+        "target": "loc_court",
+        "hours": 0.5,
+        "from": "loc_house"
+      },
+      {
+        "do": "visit",
+        "target": "loc_court",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_filed_will",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_ndegwa",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_trust",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_japhet"
+      },
+      {
+        "do": "interview",
+        "target": "p_halima"
+      },
+      {
+        "do": "interview",
+        "target": "p_gakuya"
+      },
+      {
+        "do": "travel",
+        "target": "loc_advocate",
+        "hours": 0.25,
+        "from": "loc_court"
+      },
+      {
+        "do": "visit",
+        "target": "loc_advocate",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_genuine_will",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_hospital",
+        "hours": 0.25,
+        "from": "loc_advocate"
+      },
+      {
+        "do": "visit",
+        "target": "loc_hospital",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_coma",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_beth"
+      },
+      {
+        "do": "records",
+        "target": "ev_gak_pay"
+      },
+      {
+        "do": "records",
+        "target": "ev_records_rahab"
+      },
+      {
+        "do": "press",
+        "target": "c_gak"
+      },
+      {
+        "do": "travel",
+        "target": "loc_rahab",
+        "hours": 0.25,
+        "from": "loc_hospital"
+      },
+      {
+        "do": "visit",
+        "target": "loc_rahab",
+        "hours": 1
+      },
+      {
+        "do": "reopen",
+        "target": "p_rahab",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_rahab"
+      },
+      {
+        "do": "press",
+        "target": "c_rah_never"
+      },
+      {
+        "do": "search",
+        "target": "loc_rahab"
+      },
+      {
+        "do": "detain",
+        "target": "p_rahab"
+      },
+      {
+        "do": "sample",
+        "target": "ev_rah_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_blood"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_docexam"
+      },
+      {
+        "do": "interview",
+        "target": "p_gichuhi"
+      },
+      {
+        "do": "press",
+        "target": "c_gich"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 8
+      },
+      {
+        "do": "press",
+        "target": "c_rah_signed"
+      },
+      {
+        "do": "press",
+        "target": "c_rah_touch"
+      }
+    ],
+    "totalHours": 48.25
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_coma",
+        "line": "This strip spans months. Start with where Kiama was in March."
+      },
+      "tier2": {
+        "facts": [
+          "f_coma",
+          "f_gate"
+        ],
+        "line": "A coma from the third. And a silver car at eight on Wednesday."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_drag",
+        "line": "Floor polish keeps a record, Amani. Follow the scuffs."
+      },
+      "tier2": {
+        "facts": [
+          "f_drag",
+          "f_rug"
+        ],
+        "line": "From the study, where the blood is under the rug, to the stairs."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_gate",
+        "line": "Ask the watchman whose car came."
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_rahab",
+          "f_prints"
+        ],
+        "line": "Her phone at the estate, her print in the doorstop."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_study",
+        "line": "Something heavy is missing from the study. Ask Njogu where it went."
+      },
+      "tier2": {
+        "facts": [
+          "f_doorstop_gone",
+          "f_doorstop"
+        ],
+        "line": "The brass coffee bean, in the soak-pit."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_halima",
+        "line": "Who was she going to see on Friday?"
+      },
+      "tier2": {
+        "facts": [
+          "f_halima",
+          "f_coma"
+        ],
+        "line": "Halima, about a forged will. With the hospital records in her hand."
+      }
+    },
+    "g_forgery": {
+      "tier1": {
+        "point": "ev_compare",
+        "line": "Lay the will's date on the hospital file."
+      },
+      "tier2": {
+        "facts": [
+          "f_cmp_coma",
+          "f_ndegwa"
+        ],
+        "line": "A coma that day. And a witness who doesn't exist."
+      }
+    },
+    "g_spine": {
+      "tier1": {
+        "point": "ev_store_stamp",
+        "line": "Ink Doreen's seized stamp and press it beside the will's."
+      },
+      "tier2": {
+        "facts": [
+          "f_docexam",
+          "case-060:f_comm_stamp"
+        ],
+        "line": "Her own stamp. From the safe in Narok."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "wosia",
+      "def": "A will."
+    },
+    {
+      "term": "mtekelezaji",
+      "def": "An executor."
+    },
+    {
+      "term": "kamishna wa viapo",
+      "def": "A commissioner for oaths."
+    },
+    {
+      "term": "probate",
+      "def": "The court process that proves a will."
+    },
+    {
+      "term": "mahakama kuu",
+      "def": "The High Court."
+    },
+    {
+      "term": "mlango",
+      "def": "A door."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address an older woman."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    },
+    {
+      "term": "NFA",
+      "def": "No further action: a police file closed without a charge."
+    },
+    {
+      "term": "mwalimu",
+      "def": "Teacher. Ch. Insp. Esther Wairimu's callsign."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "twoWillOverlay",
+      "stampArchive",
+      "kitchenTableScene"
+    ],
+    "beatNotes": "The two-will overlay and the stamp archive: the player lays the March will over the 2019 will and the signatures line up perfectly, too perfectly. Then the case-60 exhibit slides onto the desk and Doreen's seized stamp is inked and pressed beside the will's impression. After the verdict, Mwalimu's kitchen table: no hints, tap to continue."
+  }
+}

@@ -1,0 +1,1632 @@
+{
+  "meta": {
+    "id": "case-038",
+    "number": 38,
+    "region": "rift-valley",
+    "regionNumber": 4,
+    "title": "Lactometer",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 20,
+    "date": "Monday 17 November",
+    "folderTab": "OL KALOU"
+  },
+  "pattern": {
+    "crimePattern": "dairy farmer kills the milk grader who rejected her honest milk because she refused to pay bribes",
+    "noRealCaseRetold": true,
+    "notes": "Fictional co-op. Lactometer grading at collection centres and grader corruption are real, widely discussed issues; readings follow the common published range. To be checked by the cultural reader.",
+    "tags": [
+      "blunt-force",
+      "corruption",
+      "revenge",
+      "forensics",
+      "detention",
+      "records"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 3,
+    "redHerrings": 1,
+    "liars": 1,
+    "groups": [
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 13/17/11",
+    "date": "Monday 17 November",
+    "time": "11:30",
+    "reportedBy": "Peris Wanjugu, clerk, Kinangop Highland Dairy Co-op, Ol Kalou",
+    "text": "The clerk of Kinangop Highland Dairy Co-op reports that the co-op's milk grader, Dorothy Wangechi (33), was found dead at the grading table of the Ol Kalou collection centre at 11:20, after the morning collection.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_dorothy",
+      "role": "victim",
+      "name": "Dorothy Wangechi",
+      "age": 33,
+      "occupation": "Milk grader, Ol Kalou collection centre",
+      "bio": "Tests every farmer's can with a lactometer and decides whose milk is accepted and whose is poured away.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_centre",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 30s, a white co-op dust coat, a lactometer gauge in a steel cylinder in her hand, a knowing half-smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mary",
+      "role": "suspect",
+      "name": "Mary Amoit",
+      "age": 44,
+      "occupation": "Dairy farmer, three cows",
+      "bio": "Delivers milk every morning. Her milk was rejected three days running; she needs the deliveries for a school-fees loan.",
+      "community": "Teso",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_gradingbook"
+      },
+      "at": "plc_farm",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 40s, a warm knitted hat, a heavy jumper with sleeves pushed up, strong hands, a steel milk can beside her, angry and exhausted, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_hudson",
+      "role": "suspect",
+      "name": "Hudson Karanja",
+      "age": 58,
+      "occupation": "Co-op chairman",
+      "redHerring": true,
+      "bio": "Shouted at Dorothy last week about \"missing litres\" in the centre's totals.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_hudson_shout"
+      },
+      "at": "plc_nyahururu",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 50s, a co-op blazer, a flat cap, a folder of production figures, irritable, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_zakayo",
+      "role": "suspect",
+      "name": "Zakayo Ndegwa",
+      "age": 60,
+      "occupation": "Dairy farmer",
+      "bio": "Delivers watered milk. Pays Dorothy to pass it.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_notebook"
+      },
+      "at": "plc_zfarm",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 60, gumboots and a heavy coat, a milk can on a bicycle, ashamed, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_peris",
+      "role": "witness",
+      "name": "Peris Wanjugu",
+      "age": 37,
+      "occupation": "Co-op clerk",
+      "bio": "Records the litres and banks the morning's cash.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_bank",
+      "image": null
+    },
+    {
+      "id": "p_ezekiel",
+      "role": "witness",
+      "name": "Ezekiel Njuguna",
+      "age": 26,
+      "occupation": "Boda rider",
+      "statementOnly": true,
+      "bio": "Rides from the Ol Kalou stage.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_rec_boda"
+      },
+      "at": "plc_town",
+      "image": null
+    },
+    {
+      "id": "p_david",
+      "role": "witness",
+      "name": "David Ndegwa",
+      "age": 31,
+      "occupation": "Zakayo's son",
+      "statementOnly": true,
+      "bio": "Farms with his father.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_zak_claim"
+      },
+      "at": "plc_zfarm",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_farm",
+      "name": "Mary's farm"
+    },
+    {
+      "id": "plc_zfarm",
+      "name": "Zakayo's farm"
+    },
+    {
+      "id": "plc_bank",
+      "name": "Bank, Ol Kalou town"
+    },
+    {
+      "id": "plc_town",
+      "name": "Ol Kalou town"
+    },
+    {
+      "id": "plc_nyahururu",
+      "name": "County dairy board, Nyahururu"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_centre",
+      "name": "Ol Kalou milk collection centre",
+      "kind": "scene",
+      "description": "A concrete shed with a grading table, a rack of steel milk cans, a cooling tank humming, a laminated chart on the wall. Morning collection ended at nine; the floor is still wet from washing.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The grading table",
+          "pos": [
+            44,
+            56
+          ],
+          "yields": "ev_body",
+          "text": "Dorothy lies by the grading table. A dented 10-litre steel can is on the floor beside her."
+        },
+        {
+          "id": "hs_can",
+          "label": "The dented can",
+          "pos": [
+            48,
+            66
+          ],
+          "yields": "ev_can",
+          "text": "A 10-litre steel can from the rack, dented at the rim. Bag it."
+        },
+        {
+          "id": "hs_gradingbook",
+          "label": "Grading book",
+          "pos": [
+            50,
+            44
+          ],
+          "yields": "ev_gradingbook",
+          "text": "This week's readings by farmer: a number for every can, and a word beside it."
+        },
+        {
+          "id": "hs_chart",
+          "label": "Wall chart",
+          "pos": [
+            80,
+            24
+          ],
+          "yields": "ev_chart",
+          "text": "A laminated chart: what the lactometer should read."
+        },
+        {
+          "id": "hs_handbag",
+          "label": "Her handbag",
+          "pos": [
+            30,
+            40
+          ],
+          "yields": "ev_notebook",
+          "text": "In her handbag, a small notebook with a column headed \"B\"."
+        },
+        {
+          "id": "hs_phone",
+          "label": "Her phone",
+          "pos": [
+            34,
+            46
+          ],
+          "yields": "ev_phone",
+          "text": "Her phone, unlocked by her mother on the phone from Nyeri."
+        },
+        {
+          "id": "hs_peris",
+          "label": "The clerk",
+          "pos": [
+            90,
+            70
+          ],
+          "yields": "ev_peris",
+          "text": "Peris Wanjugu stands at the door with the bank's deposit book still in her hand."
+        },
+        {
+          "id": "hs_office",
+          "label": "Co-op office",
+          "pos": [
+            10,
+            70
+          ],
+          "yields": "ev_shrinkage",
+          "text": "The co-op office, and its maintenance log."
+        },
+        {
+          "id": "hs_map",
+          "label": "Member map",
+          "pos": [
+            14,
+            30
+          ],
+          "yields": "ev_membermap",
+          "text": "A map of every member's farm, pinned by the door."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a smallholder milk collection centre in the cool Kenyan highlands in the morning, a concrete shed with a grading table, rows of steel milk cans on a rack, a stainless cooling tank, a laminated reference chart on the wall, mist outside, no people in focus"
+      }
+    },
+    {
+      "id": "loc_stage",
+      "name": "Boda stage, Ol Kalou",
+      "kind": "location",
+      "description": "A row of motorbikes in the mist by the market.",
+      "unlock": {
+        "fact": "f_rec_boda"
+      },
+      "hotspots": [
+        {
+          "id": "hs_ezekiel",
+          "label": "The rider",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_ezekiel",
+          "text": "Ezekiel Njuguna checks his phone for the payment, then nods."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a boda-boda stage in a small Kenyan highland town in morning mist, motorbikes in a row, riders in jackets"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The grading table",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Struck with a steel milk can, which lies dented on the floor."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a dented 10-litre steel milk can lying on a wet concrete floor beside a grading table with a lactometer cylinder on it, no body visible"
+      }
+    },
+    {
+      "id": "ev_can",
+      "type": "physical",
+      "title": "The dented can",
+      "render": "object",
+      "body": {
+        "label": "10-litre steel can from the rack, dented at the rim. Handprints on the base."
+      },
+      "facts": [
+        "f_can"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gradingbook",
+      "type": "physical",
+      "title": "Grading book",
+      "render": "tallyBook",
+      "body": {
+        "rows": [
+          {
+            "farmer": "Mary Amoit",
+            "readings": "1.029, 1.028, 1.030",
+            "mark": "REJECTED ×3"
+          },
+          {
+            "farmer": "Zakayo Ndegwa",
+            "readings": "1.022, 1.023, 1.021",
+            "mark": "ACCEPTED ×3"
+          }
+        ]
+      },
+      "facts": [
+        "f_gradingbook"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_chart",
+      "type": "physical",
+      "title": "Lactometer chart",
+      "render": "board",
+      "body": {
+        "text": "Normal whole milk reads 1.026–1.032. Below 1.026: water added."
+      },
+      "facts": [
+        "f_chart"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_notebook",
+      "type": "physical",
+      "title": "Notebook column \"B\"",
+      "render": "tallyBook",
+      "body": {
+        "rows": [
+          {
+            "name": "Zakayo",
+            "marks": "200 ✓ daily"
+          },
+          {
+            "name": "Amoit",
+            "marks": "REFUSED ×3"
+          }
+        ]
+      },
+      "facts": [
+        "f_notebook"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_phone",
+      "type": "phone",
+      "title": "Dorothy's phone",
+      "render": "note",
+      "body": {
+        "log": "Incoming call, 10:05, \"Mama Amoit\", 1 min 10 s."
+      },
+      "facts": [
+        "f_phone_call"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_peris",
+      "type": "witness",
+      "title": "Statement: Peris Wanjugu",
+      "render": "statement",
+      "body": {
+        "speaker": "p_peris"
+      },
+      "facts": [
+        "f_peris_left",
+        "f_peris_bank",
+        "f_peris_money",
+        "f_hudson_shout"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Mary Amoit's line",
+      "render": "manifest",
+      "body": {
+        "calls": "to Dorothy 10:05",
+        "pesapap": "10:16 KSh 100 to EZEKIEL NJUGUNA",
+        "masts": "Collection-centre zone 10:20–10:40"
+      },
+      "facts": [
+        "f_rec_call",
+        "f_rec_boda",
+        "f_rec_mast"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_phone_call"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_ezekiel",
+      "type": "witness",
+      "title": "Statement: Ezekiel Njuguna",
+      "render": "statement",
+      "body": {
+        "speaker": "p_ezekiel"
+      },
+      "facts": [
+        "f_ezekiel",
+        "f_ezekiel_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_shrinkage",
+      "type": "physical",
+      "title": "Maintenance log",
+      "render": "logBook",
+      "body": {
+        "rows": [
+          {
+            "date": "Friday",
+            "entry": "Cooling-tank meter fault fixed. \"Missing litres\" explained."
+          }
+        ]
+      },
+      "facts": [
+        "f_shrinkage"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_membermap",
+      "type": "physical",
+      "title": "Member map",
+      "render": "sketch",
+      "body": {
+        "note": "Mary Amoit's and Dorothy's families farm on opposite sides of Ol Kalou. No shared boundary."
+      },
+      "facts": [
+        "f_membermap"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_dairyboard",
+      "type": "physical",
+      "title": "Dairy board minutes",
+      "render": "logBook",
+      "body": {
+        "rows": [
+          {
+            "name": "H. Karanja",
+            "present": "09:00–13:00, Nyahururu"
+          }
+        ]
+      },
+      "facts": [
+        "f_dairyboard"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_david",
+      "type": "witness",
+      "title": "Phone statement: David Ndegwa",
+      "render": "statement",
+      "body": {
+        "speaker": "p_david",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_zakayo_home"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mary_prints",
+      "type": "physical",
+      "title": "Fingerprints: Mary Amoit",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention after she refused."
+      },
+      "facts": [
+        "f_mary_prints"
+      ],
+      "gate": null,
+      "detention": "p_mary",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blows",
+        "f_aut_nolungs",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints on the can",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_prints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_can",
+          "ev_mary_prints"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tox",
+      "type": "forensic",
+      "title": "Lab: toxicology",
+      "render": "labReport",
+      "body": {
+        "test": "toxicology"
+      },
+      "facts": [
+        "f_tox"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toxicology",
+        "hours": 18,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Dorothy Wangechi, milk grader, was found dead at the grading table of the Ol Kalou collection centre at 11:20.",
+      "kind": "true",
+      "about": [
+        "p_dorothy",
+        "loc_centre"
+      ]
+    },
+    {
+      "id": "f_body",
+      "text": "Dorothy lies by the grading table, near the cooling tank. A dented 10-litre steel can is on the floor beside her.",
+      "kind": "true",
+      "about": [
+        "p_dorothy",
+        "loc_centre"
+      ]
+    },
+    {
+      "id": "f_can",
+      "text": "The dented can is from the centre's rack. There are handprints on its base.",
+      "kind": "true",
+      "about": [
+        "loc_centre"
+      ]
+    },
+    {
+      "id": "f_gradingbook",
+      "text": "Grading book: Mary Amoit 1.029, 1.028, 1.030, all marked REJECTED. Zakayo Ndegwa 1.022, 1.023, 1.021, all marked ACCEPTED.",
+      "kind": "true",
+      "about": [
+        "p_mary",
+        "p_zakayo",
+        "p_dorothy"
+      ]
+    },
+    {
+      "id": "f_chart",
+      "text": "Wall chart: 'Normal whole milk reads 1.026–1.032. Below 1.026: water added.'",
+      "kind": "true",
+      "about": [
+        "loc_centre"
+      ]
+    },
+    {
+      "id": "f_notebook",
+      "text": "Dorothy's notebook, column 'B': 'Zakayo — 200 ✓' every day. 'Amoit — REFUSED' three days running.",
+      "kind": "true",
+      "about": [
+        "p_dorothy",
+        "p_zakayo",
+        "p_mary"
+      ]
+    },
+    {
+      "id": "f_phone_call",
+      "text": "Dorothy's phone: an incoming call at 10:05 from 'Mama Amoit', 1 minute 10 seconds.",
+      "kind": "true",
+      "about": [
+        "p_dorothy",
+        "p_mary"
+      ]
+    },
+    {
+      "id": "f_peris_left",
+      "text": "Peris: she left at 10:00 to bank the morning's cash. Dorothy was fine, and alone. Peris found her at 11:20.",
+      "kind": "true",
+      "about": [
+        "p_peris",
+        "p_dorothy"
+      ]
+    },
+    {
+      "id": "f_peris_bank",
+      "text": "Peris's bank deposit slip is stamped 10:25 at the Ol Kalou branch; she queued from 10:10 to 10:40.",
+      "kind": "true",
+      "about": [
+        "p_peris"
+      ],
+      "where": {
+        "person": "p_peris",
+        "place": "plc_bank",
+        "from": "10:10",
+        "to": "10:40"
+      }
+    },
+    {
+      "id": "f_peris_money",
+      "text": "Peris: payments to farmers only go through the co-op ledger. Dorothy never lent to or borrowed from members.",
+      "kind": "true",
+      "about": [
+        "p_peris",
+        "p_dorothy"
+      ]
+    },
+    {
+      "id": "f_hudson_shout",
+      "text": "Peris: last week the chairman, Hudson Karanja, shouted at Dorothy about \"missing litres\" in the totals.",
+      "kind": "true",
+      "about": [
+        "p_peris",
+        "p_hudson"
+      ]
+    },
+    {
+      "id": "f_rec_call",
+      "text": "Records, Mary's line: a call to Dorothy at 10:05.",
+      "kind": "true",
+      "about": [
+        "p_mary"
+      ]
+    },
+    {
+      "id": "f_rec_boda",
+      "text": "Records: PesaPap, 10:16, KSh 100 to EZEKIEL NJUGUNA.",
+      "kind": "true",
+      "about": [
+        "p_mary",
+        "p_ezekiel"
+      ]
+    },
+    {
+      "id": "f_rec_mast",
+      "text": "Records: Mary's phone in the collection-centre zone 10:20–10:40.",
+      "kind": "true",
+      "about": [
+        "p_mary"
+      ]
+    },
+    {
+      "id": "f_ezekiel",
+      "text": "Ezekiel: he took Mary from her farm to the centre and dropped her at 10:20. \"She was angry. She said she'd been robbed for three days.\"",
+      "kind": "true",
+      "about": [
+        "p_ezekiel",
+        "p_mary"
+      ]
+    },
+    {
+      "id": "f_ezekiel_self",
+      "text": "Ezekiel rode off at 10:21 to another fare; a passenger paid him in Ol Kalou town at 10:34.",
+      "kind": "true",
+      "about": [
+        "p_ezekiel"
+      ],
+      "where": {
+        "person": "p_ezekiel",
+        "place": "plc_town",
+        "from": "10:21",
+        "to": "10:45"
+      }
+    },
+    {
+      "id": "f_shrinkage",
+      "text": "Maintenance log, Friday: the \"missing litres\" were a cooling-tank meter fault, now fixed.",
+      "kind": "true",
+      "about": [
+        "p_hudson"
+      ]
+    },
+    {
+      "id": "f_membermap",
+      "text": "Member map: Mary's and Dorothy's families farm on opposite sides of Ol Kalou. No shared boundary.",
+      "kind": "true",
+      "about": [
+        "p_mary",
+        "p_dorothy"
+      ]
+    },
+    {
+      "id": "f_dairyboard",
+      "text": "County dairy board minutes, Nyahururu: H. Karanja present 09:00–13:00.",
+      "kind": "true",
+      "about": [
+        "p_hudson"
+      ],
+      "where": {
+        "person": "p_hudson",
+        "place": "plc_nyahururu",
+        "from": "09:00",
+        "to": "13:00"
+      }
+    },
+    {
+      "id": "f_zakayo_home",
+      "text": "David: his father was milking, then cutting fodder with him at home, 09:30–12:00.",
+      "kind": "true",
+      "about": [
+        "p_david",
+        "p_zakayo"
+      ],
+      "where": {
+        "person": "p_zakayo",
+        "place": "plc_zfarm",
+        "from": "09:30",
+        "to": "12:00"
+      }
+    },
+    {
+      "id": "f_mary_prints",
+      "text": "Fingerprints taken from Mary Amoit in detention.",
+      "kind": "true",
+      "about": [
+        "p_mary"
+      ]
+    },
+    {
+      "id": "f_aut_blows",
+      "text": "Autopsy: two blows with a heavy rounded rim, matching a milk can. No injury from a fall.",
+      "kind": "true",
+      "about": [
+        "p_dorothy"
+      ]
+    },
+    {
+      "id": "f_aut_nolungs",
+      "text": "Autopsy: no fluid in the lungs; no marks on the neck.",
+      "kind": "true",
+      "about": [
+        "p_dorothy"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 10:15 and 11:00.",
+      "kind": "true",
+      "about": [
+        "p_dorothy"
+      ]
+    },
+    {
+      "id": "f_prints",
+      "text": "Lab: Mary Amoit's prints are on the can's base, gripped upside down as if swung, not carried by the handle.",
+      "kind": "true",
+      "about": [
+        "p_mary"
+      ]
+    },
+    {
+      "id": "f_tox",
+      "text": "Toxicology: clean. No preservative, no poison.",
+      "kind": "true",
+      "about": [
+        "p_dorothy"
+      ]
+    },
+    {
+      "id": "f_mary_home",
+      "text": "Mary: \"I delivered at half past six and went home. I didn't go back.\"",
+      "kind": "lie",
+      "about": [
+        "p_mary"
+      ]
+    },
+    {
+      "id": "f_mary_stole",
+      "text": "Mary: \"That girl stole from me.\"",
+      "kind": "claim",
+      "about": [
+        "p_mary",
+        "p_dorothy"
+      ]
+    },
+    {
+      "id": "f_mary_admits",
+      "text": "Mary admits she went back at about 10:20 to show Dorothy her milk was good. She says Dorothy laughed, \"pay like everyone else\", and she left her standing there.",
+      "kind": "true",
+      "about": [
+        "p_mary",
+        "loc_centre"
+      ],
+      "where": {
+        "person": "p_mary",
+        "place": "loc_centre",
+        "from": "10:20",
+        "to": "10:35"
+      }
+    },
+    {
+      "id": "f_mary_cans",
+      "text": "Mary: \"I never touched those cans. I brought my own.\"",
+      "kind": "lie",
+      "about": [
+        "p_mary"
+      ]
+    },
+    {
+      "id": "f_mary_swung",
+      "text": "Mary admits she took a can from the rack when Dorothy laughed.",
+      "kind": "true",
+      "about": [
+        "p_mary",
+        "loc_centre"
+      ]
+    },
+    {
+      "id": "f_zak_claim",
+      "text": "Zakayo: \"I was at home milking.\"",
+      "kind": "claim",
+      "about": [
+        "p_zakayo"
+      ]
+    },
+    {
+      "id": "f_zak_paid",
+      "text": "Zakayo admits he paid Dorothy 200 a day to pass his watered milk. \"Everyone who waters pays.\"",
+      "kind": "true",
+      "about": [
+        "p_zakayo",
+        "p_dorothy"
+      ]
+    },
+    {
+      "id": "f_hud_claim",
+      "text": "Hudson: \"I was in Nyahururu at the dairy board.\"",
+      "kind": "claim",
+      "about": [
+        "p_hudson"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_mary",
+      "stance": "cooperative",
+      "intro": "Mary is still in her milking clothes. \"Dorothy? I delivered at half past six and went home.\"",
+      "claims": [
+        "f_mary_home",
+        "f_mary_stole"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_mary_cans",
+          "after": "f_mary_admits"
+        }
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_gradingbook",
+          "reply": "One point zero two nine. That is good milk. Three days she poured it out in front of everyone.",
+          "reveals": []
+        },
+        {
+          "about": "ev_can",
+          "reply": "I won't give my fingerprints. I'm not a thief.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_zakayo",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_notebook"
+      ],
+      "intro": "Zakayo turns his cap round and round. \"I bring my milk. I go home.\"",
+      "claims": [
+        "f_zak_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_notebook",
+          "reply": "Yes, I paid her. Two hundred a day. Everyone who waters pays. I'm ashamed. I didn't hurt her.",
+          "reveals": [
+            "f_zak_paid"
+          ]
+        },
+        {
+          "about": "p_david",
+          "reply": "Call my son. We were cutting fodder.",
+          "reveals": [
+            "ev_david"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_hudson",
+      "stance": "cooperative",
+      "intro": "Hudson takes the call outside the dairy board. \"Missing litres, yes, I shouted. It was the meter. We fixed it.\"",
+      "claims": [
+        "f_hud_claim"
+      ],
+      "yields": [
+        "ev_dairyboard"
+      ],
+      "topics": [
+        {
+          "about": "f_hudson_shout",
+          "reply": "It was the cooling-tank meter. Fixed on Friday. Check the log.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_peris",
+      "stance": "cooperative",
+      "intro": "Peris holds the bank deposit book against her chest. \"I left at ten. She was fine. She was alone.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_mary",
+          "reply": "Mama Amoit? Her milk is always good. I didn't understand why it was rejected.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_mary_home",
+      "claim": "f_mary_home",
+      "brokenBy": [
+        "f_rec_mast",
+        "f_ezekiel"
+      ],
+      "reveals": [
+        "f_mary_admits"
+      ],
+      "reaction": "I went back. To show her my milk was good. She laughed. She said, \"Pay like everyone else.\" I left her standing there.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_mary_cans",
+      "claim": "f_mary_cans",
+      "brokenBy": [
+        "f_prints"
+      ],
+      "reveals": [
+        "f_mary_swung"
+      ],
+      "reaction": "She looks at her hands for a long time. \"...She laughed. I took a can from the rack. Three days of my milk on the floor. My daughter's fees.\"",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_mary",
+      "text": "Mary Amoit",
+      "category": "person",
+      "ref": "p_mary",
+      "unlock": {
+        "anyOf": [
+          "f_gradingbook"
+        ]
+      }
+    },
+    {
+      "id": "w_hudson",
+      "text": "Hudson Karanja",
+      "category": "person",
+      "ref": "p_hudson",
+      "unlock": {
+        "anyOf": [
+          "f_hudson_shout"
+        ]
+      }
+    },
+    {
+      "id": "w_zakayo",
+      "text": "Zakayo Ndegwa",
+      "category": "person",
+      "ref": "p_zakayo",
+      "unlock": {
+        "anyOf": [
+          "f_notebook"
+        ]
+      }
+    },
+    {
+      "id": "w_peris",
+      "text": "Peris Wanjugu",
+      "category": "person",
+      "ref": "p_peris",
+      "unlock": {
+        "anyOf": [
+          "f_peris_left"
+        ]
+      }
+    },
+    {
+      "id": "w_ezekiel",
+      "text": "Ezekiel Njuguna",
+      "category": "person",
+      "ref": "p_ezekiel",
+      "unlock": {
+        "anyOf": [
+          "f_rec_boda"
+        ]
+      }
+    },
+    {
+      "id": "h_can",
+      "text": "struck with a steel milk can",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blows"
+        ]
+      }
+    },
+    {
+      "id": "h_fell",
+      "text": "fell and hit her head on the cooling tank",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_drown",
+      "text": "drowned in the cooling tank",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_preservative",
+      "text": "poisoned with milk preservative",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_tox"
+        ]
+      }
+    },
+    {
+      "id": "h_strangled",
+      "text": "strangled",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_nolungs"
+        ]
+      }
+    },
+    {
+      "id": "m_bribes",
+      "text": "Dorothy rejected her honest milk because she refused to pay bribes",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_notebook"
+        ]
+      }
+    },
+    {
+      "id": "m_litres",
+      "text": "the missing-litres dispute",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_hudson_shout"
+        ]
+      }
+    },
+    {
+      "id": "m_exposed",
+      "text": "fear of being exposed as a briber",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_notebook"
+        ]
+      }
+    },
+    {
+      "id": "m_land",
+      "text": "a land boundary dispute",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_membermap"
+        ]
+      }
+    },
+    {
+      "id": "m_loan",
+      "text": "an unpaid loan between them",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_mary_stole"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Dorothy Wangechi"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_mary"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her call, her boda, her phone at the centre, and her hands on the base of that can. That will hold.",
+          "fail": [
+            "Doesn't hold up. The man who paid bribes was cutting fodder with his son. Who came back after ten?",
+            "No. Read her phone, then follow the boda."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_can"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Two blows with a can rim. Yes.",
+          "fail": [
+            "No fluid in the lungs. Not the tank.",
+            "Two blows, not a fall. Read the autopsy."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_bribes"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Good milk poured away because she wouldn't pay. The court will understand. It will still convict.",
+          "fail": [
+            "The missing litres were a meter fault. Try again.",
+            "Fear of exposure is the briber's problem, and he was at home."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_centre",
+      "from": "10:20",
+      "to": "10:40"
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_gradingbook",
+          "f_chart",
+          "f_notebook"
+        ],
+        "concludes": "Mary's milk read 1.028–1.030, normal, yet was rejected; Zakayo's read 1.021–1.023, watered, yet was accepted, and he is ticked as paying \"B\". Mary refused to pay and lost three days' milk."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_mary_home",
+          "f_phone_call",
+          "f_rec_mast",
+          "f_rec_boda",
+          "f_ezekiel",
+          "f_mary_admits",
+          "f_peris_left",
+          "f_aut_tod"
+        ],
+        "concludes": "Mary said she never went back. She called Dorothy at 10:05, a boda dropped her at the centre at 10:20, and her phone stayed there until 10:40, inside the time of death and after the clerk had left. She admits it."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_aut_blows",
+          "f_prints",
+          "f_mary_swung"
+        ],
+        "concludes": "Her prints are on the base of the dented can, as if swung. Mary Amoit struck Dorothy with a steel milk can, because Dorothy rejected her honest milk when she refused to pay bribes.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_hudson",
+        "blank": "who",
+        "by": [
+          "f_dairyboard"
+        ],
+        "why": "Hudson was at the dairy board in Nyahururu from 09:00 to 13:00."
+      },
+      {
+        "word": "w_zakayo",
+        "blank": "who",
+        "by": [
+          "f_zakayo_home"
+        ],
+        "why": "Zakayo was milking and cutting fodder at home with his son from 09:30 to 12:00."
+      },
+      {
+        "word": "w_peris",
+        "blank": "who",
+        "by": [
+          "f_peris_bank"
+        ],
+        "why": "Peris was in the bank queue from 10:10 to 10:40; her slip is stamped 10:25."
+      },
+      {
+        "word": "w_ezekiel",
+        "blank": "who",
+        "by": [
+          "f_ezekiel_self"
+        ],
+        "why": "Ezekiel rode off at 10:21 and was paid by another passenger in town at 10:34."
+      },
+      {
+        "word": "h_fell",
+        "blank": "how",
+        "by": [
+          "f_aut_blows"
+        ],
+        "why": "Two blows with a can rim, not a fall."
+      },
+      {
+        "word": "h_drown",
+        "blank": "how",
+        "by": [
+          "f_aut_nolungs"
+        ],
+        "why": "No fluid in the lungs."
+      },
+      {
+        "word": "h_preservative",
+        "blank": "how",
+        "by": [
+          "f_tox"
+        ],
+        "why": "Toxicology is clean."
+      },
+      {
+        "word": "h_strangled",
+        "blank": "how",
+        "by": [
+          "f_aut_nolungs"
+        ],
+        "why": "No marks on the neck."
+      },
+      {
+        "word": "m_litres",
+        "blank": "why",
+        "by": [
+          "f_shrinkage"
+        ],
+        "why": "The \"missing litres\" were a meter fault, and that was the chairman's complaint."
+      },
+      {
+        "word": "m_exposed",
+        "blank": "why",
+        "by": [
+          "f_zakayo_home"
+        ],
+        "why": "That fear is Zakayo's, and he was at home."
+      },
+      {
+        "word": "m_land",
+        "blank": "why",
+        "by": [
+          "f_membermap"
+        ],
+        "why": "They farm on opposite sides of Ol Kalou."
+      },
+      {
+        "word": "m_loan",
+        "blank": "why",
+        "by": [
+          "f_peris_money"
+        ],
+        "why": "Dorothy never lent to or borrowed from members."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "For a year Dorothy takes 200 shillings a day from farmers who water their milk. To keep the centre's average looking normal, she rejects honest milk from farmers who won't pay.",
+        "image": null
+      },
+      {
+        "text": "Mary won't pay. Three mornings her good milk reads 1.029 and is poured away. Three days' pay, and a school-fees loan that needs the deliveries.",
+        "image": null
+      },
+      {
+        "text": "10:05. She calls Dorothy to say she's coming. 10:20, a boda drops her at the centre. The clerk left at ten for the bank.",
+        "image": "loc_centre"
+      },
+      {
+        "text": "At the grading table Dorothy laughs: \"Pay like everyone else.\" Mary takes a can from the rack, upside down, by its base.",
+        "image": null
+      },
+      {
+        "text": "She walks home through the mist at about 10:35. The grading book stays open at her name.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Records on Mary's line, then the boda rider; detain her and take prints (6 h); press inside the 24 hours.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_centre",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_gradingbook",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_chart",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_notebook",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_peris"
+      },
+      {
+        "do": "read",
+        "target": "ev_phone",
+        "hours": 1
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "visit",
+        "target": "loc_stage",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_ezekiel",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_mary"
+      },
+      {
+        "do": "press",
+        "target": "c_mary_home"
+      },
+      {
+        "do": "detain",
+        "target": "p_mary"
+      },
+      {
+        "do": "sample",
+        "target": "ev_mary_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "interview",
+        "target": "p_zakayo"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 4
+      },
+      {
+        "do": "interview",
+        "target": "p_mary"
+      },
+      {
+        "do": "press",
+        "target": "c_mary_cans"
+      }
+    ],
+    "totalHours": 24
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_phone",
+        "line": "Someone called Dorothy at five past ten. Read her phone."
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_mast",
+          "f_ezekiel"
+        ],
+        "line": "A boda dropped her at the centre at 10:20, and her phone stayed until 10:40."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Dr. Chebii counted the blows and measured their shape."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_blows",
+          "f_can"
+        ],
+        "line": "Two blows with a heavy rounded rim, and a dented can on the floor."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_gradingbook",
+        "line": "Drag every reading onto the wall chart. Whose good milk was rejected?"
+      },
+      "tier2": {
+        "facts": [
+          "f_gradingbook",
+          "f_notebook"
+        ],
+        "line": "Watered milk accepted, good milk rejected, and a column headed \"B\"."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "maziwa",
+      "def": "Milk."
+    },
+    {
+      "term": "karo",
+      "def": "School fees."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address or name a woman."
+    },
+    {
+      "term": "boda",
+      "def": "Short for boda-boda: a motorbike taxi."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "readingAgainstReference"
+    ],
+    "beatNotes": "Reading a scale against a reference: the grading book's numbers can be dragged onto the wall chart, and each reading snaps into \"normal\" or \"watered\". Small domain knowledge, given in-world, decides the case."
+  }
+}

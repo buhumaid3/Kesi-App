@@ -1,0 +1,2981 @@
+{
+  "meta": {
+    "id": "case-086",
+    "number": 86,
+    "region": "westlands-karen-runda",
+    "regionNumber": 9,
+    "title": "Second Opinion",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 46,
+    "date": "Wednesday 16 September",
+    "folderTab": "UPPER HILL"
+  },
+  "pattern": {
+    "crimePattern": "a cardiologist billing insurers for stents never fitted kills the fraud investigator auditing his originals, and frames the grieving son who has threatened him online",
+    "noRealCaseRetold": true,
+    "notes": "Fictional clinic, insurer and plaza. FORGERY (the procedure reports) and PLANTED (the son's key fob from the lost-and-found box) in one case. Spine background: a twelve-year-old photo of a launch \"on the 4th floor\" of the fictional Lands House, captioned with six officials (t_kivuli). Nothing in the case says which, if any, matters.",
+    "tags": [
+      "blunt-force",
+      "insurance-fraud",
+      "framed",
+      "planted",
+      "forgery",
+      "lawyered",
+      "three-liars",
+      "records",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where",
+      "spine-background"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 6,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "forgery",
+      "planted"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic",
+      "cctv"
+    ],
+    "gatedActions": [
+      "records",
+      "records",
+      "warrant"
+    ],
+    "twist": "the-angry-son-was-framed"
+  },
+  "ob": {
+    "number": "OB 22/16/09",
+    "date": "Wednesday 16 September",
+    "time": "07:10",
+    "reportedBy": "A cleaner, Mwamburi Heart Centre, Upper Hill",
+    "text": "A cleaner reports a woman found dead in the medical-records room of a private heart clinic in Upper Hill: Grace Mumbua (41), a fraud investigator for Imara Health Insurance. Staff name a patient's son who has been threatening the clinic online.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_clinic",
+    "nodes": [
+      "loc_clinic",
+      "loc_office",
+      "loc_lobby"
+    ],
+    "edges": [
+      {
+        "a": "loc_clinic",
+        "b": "loc_office",
+        "minutes": 1,
+        "by": "foot"
+      },
+      {
+        "a": "loc_clinic",
+        "b": "loc_lobby",
+        "minutes": 2,
+        "by": "lift"
+      },
+      {
+        "a": "loc_office",
+        "b": "loc_lobby",
+        "minutes": 2,
+        "by": "lift"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_grace",
+      "role": "victim",
+      "name": "Grace Mumbua",
+      "age": 41,
+      "occupation": "Fraud investigator, Imara Health Insurance",
+      "bio": "Auditing Imara's claims from private clinics.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_records",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba woman, early 40s, a grey blazer and rimless glasses, a laptop bag on her shoulder, a sharp, patient face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mwamburi",
+      "role": "suspect",
+      "name": "Dr. Hamisi Mwamburi",
+      "age": 62,
+      "occupation": "Cardiologist; owner of the clinic",
+      "bio": "Grey hair, a bow tie, an air of quiet authority.",
+      "community": "Mijikenda",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_audit"
+      },
+      "at": "loc_office",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Mijikenda man, early 60s, grey hair, a bow tie and a white coat, a courteous, controlled face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_benson",
+      "role": "suspect",
+      "name": "Benson Mutua",
+      "age": 39,
+      "occupation": "Cath-lab technician",
+      "bio": "Keeps the cath-lab log.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_maint"
+      },
+      "at": "plc_cathlab",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba man, late 30s, theatre scrubs and a lanyard, a sweating, frightened face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_elvis",
+      "role": "suspect",
+      "name": "Elvis Karanja",
+      "age": 33,
+      "occupation": "Son of a patient who died after a procedure at the clinic",
+      "redHerring": true,
+      "bio": "Has threatened Dr. Mwamburi online for eight months; protests outside on Tuesdays.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_staff"
+      },
+      "at": "plc_southb",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, early 30s, a T-shirt with his father's photo printed on it, an angry, grieving face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_joan",
+      "role": "suspect",
+      "name": "Joan Akoth",
+      "age": 45,
+      "occupation": "Practice manager",
+      "redHerring": true,
+      "bio": "Grace had accused her of obstructing the audit.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_audit"
+      },
+      "at": "plc_church",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo woman, mid 40s, a neat suit and a lanyard, a guarded, offended face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_eunice",
+      "role": "witness",
+      "name": "Mama Eunice Nafula",
+      "age": 52,
+      "occupation": "Night cleaner",
+      "bio": "Cleans the clinic floors every evening.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_clinic",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luhya woman, early 50s, a cleaner's overall and headscarf, a mop in her hand, a careful, worried face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kibet",
+      "role": "witness",
+      "name": "Dr. Paul Kibet",
+      "age": 47,
+      "occupation": "Imara's medical director; Grace's boss",
+      "bio": "Knew what Grace was auditing.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_audit"
+      },
+      "at": "plc_imara",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, late 40s, a dark suit, a shaken, earnest face, ID-photo framing",
+        "ref": null
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_records",
+      "name": "The medical-records room",
+      "within": "loc_clinic"
+    },
+    {
+      "id": "plc_cathlab",
+      "name": "The cath lab",
+      "within": "loc_clinic"
+    },
+    {
+      "id": "plc_reception",
+      "name": "The reception desk",
+      "within": "loc_clinic"
+    },
+    {
+      "id": "plc_southb",
+      "name": "Elvis's sister's flat, South B"
+    },
+    {
+      "id": "plc_church",
+      "name": "Joan's church"
+    },
+    {
+      "id": "plc_stadium",
+      "name": "Nyayo Stadium"
+    },
+    {
+      "id": "plc_imara",
+      "name": "Imara's office, Westlands"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_clinic",
+      "name": "Mwamburi Heart Centre",
+      "kind": "scene",
+      "description": "Two floors of a medical plaza: consulting rooms, a cath lab, a records room with rolling shelves, a reception desk with a lost-and-found box, a boardroom with photographs.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The records room",
+          "pos": [
+            50,
+            55
+          ],
+          "yields": "ev_body",
+          "text": "Grace on the floor; files open on the table."
+        },
+        {
+          "id": "hs_fob",
+          "label": "Under the body",
+          "pos": [
+            55,
+            65
+          ],
+          "yields": "ev_fob",
+          "text": "A key fob under her."
+        },
+        {
+          "id": "hs_stand",
+          "label": "The corridor",
+          "pos": [
+            75,
+            50
+          ],
+          "yields": "ev_stand",
+          "text": "A steel drip stand in the corridor."
+        },
+        {
+          "id": "hs_staff",
+          "label": "Morning staff",
+          "pos": [
+            20,
+            30
+          ],
+          "yields": "ev_staff_say",
+          "text": "The receptionist, arriving."
+        },
+        {
+          "id": "hs_lost",
+          "label": "Lost-and-found",
+          "pos": [
+            15,
+            50
+          ],
+          "yields": "ev_lostfound",
+          "text": "The reception's lost-and-found book and box.",
+          "unlock": {
+            "fact": "f_fob"
+          }
+        },
+        {
+          "id": "hs_audit",
+          "label": "Grace's laptop bag",
+          "pos": [
+            45,
+            40
+          ],
+          "yields": "ev_audit",
+          "text": "Her working sheet."
+        },
+        {
+          "id": "hs_files",
+          "label": "The files she pulled",
+          "pos": [
+            52,
+            45
+          ],
+          "yields": "ev_reports",
+          "text": "Procedure reports, pulled from the rolling shelves.",
+          "unlock": {
+            "fact": "f_audit"
+          }
+        },
+        {
+          "id": "hs_cathlog",
+          "label": "The cath-lab log",
+          "pos": [
+            85,
+            30
+          ],
+          "yields": "ev_cathlog",
+          "text": "The log on the cath-lab desk.",
+          "unlock": {
+            "fact": "f_audit"
+          }
+        },
+        {
+          "id": "hs_eunice",
+          "label": "Mama Eunice",
+          "pos": [
+            30,
+            70
+          ],
+          "yields": "ev_eunice",
+          "text": "Mama Eunice, called back in."
+        },
+        {
+          "id": "hs_board",
+          "label": "The boardroom",
+          "pos": [
+            90,
+            80
+          ],
+          "yields": "ev_photo",
+          "text": "Framed photographs on the boardroom wall."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a private clinic's medical-records room at night, rolling shelves, files open on a table under a strip light, no people in focus"
+      },
+      "expected": [
+        {
+          "id": "x_box",
+          "text": "Unclaimed items stay in the lost-and-found box until collected",
+          "because": "f_lostfound_rule",
+          "present": false,
+          "fact": "f_abs_box"
+        }
+      ]
+    },
+    {
+      "id": "loc_lobby",
+      "name": "The plaza lobby",
+      "kind": "location",
+      "description": "A lobby with a guard, a camera over the doors and the plaza's access-card system.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_cam",
+          "label": "Lobby camera",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_placard",
+          "text": "Tuesday's recording of the doors and the pavement.",
+          "unlock": {
+            "fact": "f_el_never"
+          }
+        },
+        {
+          "id": "hs_servicing",
+          "label": "Servicing company's records",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_maint",
+          "text": "The cath-lab servicing company's visit sheets, sent over at your request.",
+          "unlock": {
+            "fact": "f_audit"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a medical plaza lobby in Upper Hill at night, glass doors, a guard desk, a camera dome"
+      }
+    },
+    {
+      "id": "loc_office",
+      "name": "Dr. Mwamburi's office",
+      "kind": "location",
+      "description": "A consultant's office 30 m down the corridor from the records room.",
+      "unlock": {
+        "fact": "f_access"
+      },
+      "hotspots": [
+        {
+          "id": "hs_office",
+          "label": "His office",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_office",
+          "text": "Search under warrant."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a cardiologist's office at night, a desk with a key ring, a white coat in a dry-cleaning bag on the door"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Grace in the records room",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. One heavy blow to the head. Files pulled out on the table. The clinic's drugs cupboard untouched."
+      },
+      "facts": [
+        "f_body",
+        "f_drugs"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a clinic records room with rolling shelves, files spread on a table, a fallen chair, no body visible"
+      }
+    },
+    {
+      "id": "ev_fob",
+      "type": "physical",
+      "title": "A key fob under the body",
+      "render": "object",
+      "body": {
+        "label": "A car key fob on a ring with a tag: \"E. Karanja\"."
+      },
+      "facts": [
+        "f_fob"
+      ],
+      "gate": null,
+      "planted": {
+        "by": "p_mwamburi",
+        "frames": "p_elvis"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a car key fob on a ring with a paper tag reading E. Karanja, on a clinic floor"
+      }
+    },
+    {
+      "id": "ev_stand",
+      "type": "physical",
+      "title": "A steel drip stand",
+      "render": "object",
+      "body": {
+        "label": "In the corridor; its heavy round base wiped."
+      },
+      "facts": [
+        "f_stand"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_staff_say",
+      "type": "witness",
+      "title": "Statement: the receptionist",
+      "render": "statement",
+      "body": {
+        "speaker": "p_eunice"
+      },
+      "facts": [
+        "f_staff"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_posts",
+      "type": "document",
+      "title": "Elvis's social media",
+      "render": "form",
+      "body": {
+        "text": "Eight months of posts: \"Mwamburi killed my father. He will pay.\""
+      },
+      "facts": [
+        "f_posts"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "posts"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_lostfound",
+      "type": "document",
+      "title": "Reception lost-and-found book",
+      "render": "logBook",
+      "body": {
+        "book": "\"Car key fob, tag E. Karanja, found at reception — in box.\" Two weeks ago.",
+        "box": "The box this morning: no fob.",
+        "joan": "Joan: unclaimed items stay in the box until collected; the box key is on the clinic's master ring."
+      },
+      "facts": [
+        "f_lostfound",
+        "f_lostfound_rule"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "lost-and-found book"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_placard",
+      "type": "cctv",
+      "title": "Plaza lobby camera, Tuesday",
+      "render": "object",
+      "body": {
+        "label": "Elvis outside with a placard 18:00–18:50. He never comes in. He walks off towards the stage."
+      },
+      "facts": [
+        "f_placard"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_access",
+      "type": "document",
+      "title": "Records ①: plaza access-card log",
+      "render": "logBook",
+      "body": {
+        "text": "Dr. Mwamburi's card: clinic floor in 20:31, car park exit 21:15. Grace signed in as a visitor at 19:30. No other clinic card after 19:00."
+      },
+      "facts": [
+        "f_access"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_body",
+          "f_lostfound"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_audit",
+      "type": "document",
+      "title": "Grace's audit sheet",
+      "render": "form",
+      "body": {
+        "text": "61 billed stents on dates the cath lab was closed for maintenance. \"Originals Tuesday eve. If they match, refer to DCI.\""
+      },
+      "facts": [
+        "f_audit"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "audit sheet"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_maint",
+      "type": "document",
+      "title": "Cath-lab servicing record",
+      "render": "logBook",
+      "body": {
+        "text": "The servicing company's copies: the lab closed for servicing on 61 dates over four years."
+      },
+      "facts": [
+        "f_maint"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "maintenance record"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_reports",
+      "type": "document",
+      "title": "Stent procedure reports",
+      "render": "form",
+      "body": {
+        "text": "Reports for stents fitted on those very dates, signed Dr. H. Mwamburi."
+      },
+      "facts": [
+        "f_reports"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": false,
+        "forger": "p_mwamburi",
+        "kind": "procedure reports"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a stack of printed cardiac procedure reports with an identical stamped signature"
+      }
+    },
+    {
+      "id": "ev_cathlog",
+      "type": "document",
+      "title": "Cath-lab log",
+      "render": "logBook",
+      "body": {
+        "text": "Benson Mutua's log: a stent procedure entered on each of the 61 dates."
+      },
+      "facts": [
+        "f_cathlog"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "cath-lab log"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_eunice",
+      "type": "witness",
+      "title": "Statement: Mama Eunice Nafula",
+      "render": "statement",
+      "body": {
+        "speaker": "p_eunice"
+      },
+      "facts": [
+        "f_eunice",
+        "f_eunice_down"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_claims",
+      "type": "document",
+      "title": "Records ②: Imara's claim payments",
+      "render": "logBook",
+      "body": {
+        "text": "KSh 38 million paid to the clinic for the 61 stents."
+      },
+      "facts": [
+        "f_claims"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_audit",
+          "f_maint"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_office",
+      "type": "physical",
+      "title": "Dr. Mwamburi's office",
+      "render": "object",
+      "body": {
+        "coat": "A white coat in a dry-cleaning bag, blood on one cuff.",
+        "blanks": "A folder of blank procedure-report forms, pre-signed with his stamped signature.",
+        "keys": "The clinic master ring on his desk, with the lost-and-found box key."
+      },
+      "facts": [
+        "f_coat",
+        "f_blanks",
+        "f_boxkey"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_access",
+          "f_eunice",
+          "f_claims"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a white doctor's coat in a dry-cleaning bag with a stained cuff, a folder of pre-signed blank forms, a key ring on a desk"
+      }
+    },
+    {
+      "id": "ev_photo",
+      "type": "physical",
+      "title": "A framed photograph in the boardroom",
+      "render": "object",
+      "body": {
+        "label": "Twelve years old: \"Launch of the Lands House Staff Medical Scheme, 4th Floor\". Dr. Mwamburi among six senior officials, each captioned: among them Raphael Oduya, Margaret Kabiru and Stanley Rotich."
+      },
+      "facts": [
+        "f_photo"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a twelve-year-old framed group photograph of six officials in suits at a ribbon-cutting, a caption strip beneath"
+      }
+    },
+    {
+      "id": "ev_elvis_alibi",
+      "type": "witness",
+      "title": "Statements: the stage tout and Elvis's sister",
+      "render": "statement",
+      "body": {
+        "speaker": "p_elvis"
+      },
+      "facts": [
+        "f_el_alibi"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_benson_alibi",
+      "type": "document",
+      "title": "Football ticket and friends",
+      "render": "form",
+      "body": {
+        "text": "Benson at the stadium for the evening match with three friends; his access card unused after 17:00."
+      },
+      "facts": [
+        "f_be_alibi"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_joan",
+      "type": "document",
+      "title": "Choir rota and her phone",
+      "render": "logBook",
+      "body": {
+        "text": "Joan at choir practice 19:00–21:30."
+      },
+      "facts": [
+        "f_joan"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mw_prints",
+      "type": "physical",
+      "title": "Fingerprints: Dr. Mwamburi",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention."
+      },
+      "facts": [
+        "f_mw_printset"
+      ],
+      "gate": null,
+      "detention": "p_mwamburi",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_dust",
+      "type": "forensic",
+      "title": "Lab: trace (dust and lint on the fob)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_dust"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_fob"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_fobprints",
+      "type": "forensic",
+      "title": "Lab: fingerprints (the fob and ring)",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_fobprints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_fob",
+          "ev_mw_prints"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_cuff",
+      "type": "forensic",
+      "title": "Lab: trace (the coat cuff)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_cuffblood"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_office"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_docexam",
+      "type": "forensic",
+      "title": "Questioned Documents Lab: procedure reports",
+      "render": "labReport",
+      "body": {
+        "test": "document"
+      },
+      "facts": [
+        "f_docexam"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "document",
+        "hours": 10,
+        "needs": [
+          "ev_reports",
+          "ev_office"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Grace Mumbua, an insurance fraud investigator, was found dead in the records room of the Mwamburi Heart Centre on Wednesday morning.",
+      "kind": "true",
+      "about": [
+        "p_grace",
+        "loc_clinic"
+      ],
+      "at": {
+        "from": "07:00",
+        "to": null,
+        "day": "Wed"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "One heavy blow to Grace's head. Files pulled out on the table.",
+      "kind": "true",
+      "about": [
+        "p_grace",
+        "plc_records"
+      ]
+    },
+    {
+      "id": "f_drugs",
+      "text": "The clinic's drugs cupboard is locked and untouched.",
+      "kind": "true",
+      "about": [
+        "loc_clinic"
+      ]
+    },
+    {
+      "id": "f_fob",
+      "text": "Under the body: a car key fob on a ring tagged \"E. Karanja\".",
+      "kind": "true",
+      "about": [
+        "p_elvis",
+        "plc_records"
+      ]
+    },
+    {
+      "id": "f_stand",
+      "text": "A steel drip stand in the corridor, its heavy round base wiped.",
+      "kind": "true",
+      "about": [
+        "plc_records"
+      ]
+    },
+    {
+      "id": "f_staff",
+      "text": "The receptionist: \"It's that man Elvis. He's been threatening Daktari for months. He was outside with a placard yesterday.\"",
+      "kind": "true",
+      "about": [
+        "p_elvis"
+      ]
+    },
+    {
+      "id": "f_posts",
+      "text": "Elvis's posts for eight months: \"Mwamburi killed my father. He will pay.\"",
+      "kind": "true",
+      "about": [
+        "p_elvis",
+        "p_mwamburi"
+      ]
+    },
+    {
+      "id": "f_lostfound",
+      "text": "Lost-and-found book: a car key fob tagged E. Karanja, found at reception two weeks ago, \"in box\". This morning the box has no fob.",
+      "kind": "true",
+      "about": [
+        "p_elvis",
+        "plc_reception"
+      ]
+    },
+    {
+      "id": "f_lostfound_rule",
+      "text": "Joan: unclaimed items stay in the box until collected; the box key is on the clinic's master ring.",
+      "kind": "true",
+      "about": [
+        "plc_reception"
+      ]
+    },
+    {
+      "id": "f_placard",
+      "text": "Lobby camera: Elvis outside with a placard 18:00–18:50; he never comes in, and walks off towards the matatu stage.",
+      "kind": "true",
+      "about": [
+        "p_elvis"
+      ],
+      "at": {
+        "from": "18:00",
+        "to": "18:50",
+        "day": "Tue"
+      }
+    },
+    {
+      "id": "f_access",
+      "text": "Records ①: Dr. Mwamburi's card on the clinic floor at 20:31, out through the car park at 21:15. Grace signed in at 19:30. No other clinic card after 19:00.",
+      "kind": "true",
+      "about": [
+        "p_mwamburi"
+      ],
+      "at": {
+        "from": "20:31",
+        "to": "21:15",
+        "day": "Tue"
+      }
+    },
+    {
+      "id": "f_audit",
+      "text": "Grace's sheet: 61 billed stents on dates the cath lab was closed for maintenance. \"Originals Tuesday eve. If they match, refer to DCI.\"",
+      "kind": "true",
+      "about": [
+        "p_grace",
+        "p_mwamburi"
+      ]
+    },
+    {
+      "id": "f_maint",
+      "text": "The servicing company's record: the cath lab was closed for servicing on all 61 dates.",
+      "kind": "true",
+      "about": [
+        "plc_cathlab"
+      ]
+    },
+    {
+      "id": "f_reports",
+      "text": "The files Grace pulled: procedure reports for stents on those very dates, signed by Dr. Mwamburi.",
+      "kind": "true",
+      "about": [
+        "p_mwamburi"
+      ]
+    },
+    {
+      "id": "f_cathlog",
+      "text": "Benson's cath-lab log enters a stent procedure on each of the 61 dates.",
+      "kind": "true",
+      "about": [
+        "p_benson"
+      ]
+    },
+    {
+      "id": "f_eunice",
+      "text": "Mama Eunice: Daktari's light was on at half past eight; at about quarter to nine a bang like a stand falling in the records room; Daktari came out and said, \"Leave this floor tonight, Mama.\"",
+      "kind": "true",
+      "about": [
+        "p_mwamburi"
+      ],
+      "where": {
+        "person": "p_mwamburi",
+        "place": "plc_records",
+        "from": "20:40",
+        "to": "20:50"
+      }
+    },
+    {
+      "id": "f_eunice_down",
+      "text": "Mama Eunice went downstairs at 20:50 and stayed in the lobby (lobby camera).",
+      "kind": "true",
+      "about": [
+        "p_eunice"
+      ],
+      "where": {
+        "person": "p_eunice",
+        "place": "loc_lobby",
+        "from": "20:50",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_claims",
+      "text": "Records ②: Imara paid the clinic KSh 38 million for the 61 stents.",
+      "kind": "true",
+      "about": [
+        "p_mwamburi"
+      ]
+    },
+    {
+      "id": "f_coat",
+      "text": "In Dr. Mwamburi's office: a white coat in a dry-cleaning bag, blood on one cuff.",
+      "kind": "true",
+      "about": [
+        "p_mwamburi"
+      ]
+    },
+    {
+      "id": "f_blanks",
+      "text": "In his office: a folder of blank procedure-report forms, pre-signed with his stamped signature.",
+      "kind": "true",
+      "about": [
+        "p_mwamburi"
+      ]
+    },
+    {
+      "id": "f_boxkey",
+      "text": "On his desk: the clinic's master ring, with the lost-and-found box key.",
+      "kind": "true",
+      "about": [
+        "p_mwamburi"
+      ]
+    },
+    {
+      "id": "f_photo",
+      "text": "A twelve-year-old photo: \"Launch of the Lands House Staff Medical Scheme, 4th Floor\". Mwamburi among six officials, among them Raphael Oduya, Margaret Kabiru and Stanley Rotich.",
+      "kind": "true",
+      "about": [
+        "p_mwamburi"
+      ],
+      "spine": "t_kivuli"
+    },
+    {
+      "id": "f_el_alibi",
+      "text": "The stage tout and his sister: Elvis took a matatu at 19:05 and was at his sister's in South B from 19:40 to midnight.",
+      "kind": "true",
+      "about": [
+        "p_elvis"
+      ],
+      "where": {
+        "person": "p_elvis",
+        "place": "plc_southb",
+        "from": "19:40",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_be_alibi",
+      "text": "Benson was at the stadium for the evening match with three friends; his access card was unused after 17:00.",
+      "kind": "true",
+      "about": [
+        "p_benson"
+      ],
+      "where": {
+        "person": "p_benson",
+        "place": "plc_stadium",
+        "from": "18:30",
+        "to": "22:00"
+      }
+    },
+    {
+      "id": "f_joan",
+      "text": "Joan was at choir practice 19:00–21:30.",
+      "kind": "true",
+      "about": [
+        "p_joan"
+      ],
+      "where": {
+        "person": "p_joan",
+        "place": "plc_church",
+        "from": "19:00",
+        "to": "21:30"
+      }
+    },
+    {
+      "id": "f_mw_printset",
+      "text": "Fingerprints taken from Dr. Mwamburi in detention.",
+      "kind": "true",
+      "about": [
+        "p_mwamburi"
+      ]
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Post-mortem: one blow from a heavy round metal base.",
+      "kind": "true",
+      "about": [
+        "p_grace"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Tuesday between 20:30 and 21:15.",
+      "kind": "true",
+      "about": [
+        "p_grace"
+      ],
+      "at": {
+        "from": "20:30",
+        "to": "21:15",
+        "day": "Tue"
+      }
+    },
+    {
+      "id": "f_dust",
+      "text": "Lab: the fob carries the reception box's lint (cardboard fibres, receipt-paper scraps) and none of the records room's dust.",
+      "kind": "true",
+      "about": [
+        "plc_reception"
+      ]
+    },
+    {
+      "id": "f_fobprints",
+      "text": "Lab: Elvis's old, smudged prints on the fob, and a fresh partial of Dr. Mwamburi's on the ring.",
+      "kind": "true",
+      "about": [
+        "p_mwamburi",
+        "p_elvis"
+      ]
+    },
+    {
+      "id": "f_cuffblood",
+      "text": "Lab: the blood on the coat cuff is Grace's.",
+      "kind": "true",
+      "about": [
+        "p_grace",
+        "p_mwamburi"
+      ]
+    },
+    {
+      "id": "f_docexam",
+      "text": "Questioned Documents Lab: the reports were printed from the same template as the pre-signed blanks, typed over a stamped facsimile signature.",
+      "kind": "true",
+      "about": [
+        "p_mwamburi"
+      ]
+    },
+    {
+      "id": "f_abs_box",
+      "text": "Missing: the fob is no longer in the lost-and-found box.",
+      "kind": "true",
+      "about": [
+        "plc_reception"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_mw_left",
+      "text": "Dr. Mwamburi: \"I left at seven and never came back.\"",
+      "kind": "lie",
+      "about": [
+        "p_mwamburi"
+      ]
+    },
+    {
+      "id": "f_mw_stents",
+      "text": "Dr. Mwamburi: \"Every stent we billed was fitted.\"",
+      "kind": "lie",
+      "about": [
+        "p_mwamburi"
+      ]
+    },
+    {
+      "id": "f_mw_reveal",
+      "text": "Dr. Mwamburi: \"I came back for a file.\" Advocate Kiprop ends the interview.",
+      "kind": "true",
+      "about": [
+        "p_mwamburi"
+      ]
+    },
+    {
+      "id": "f_mw_alive",
+      "text": "Dr. Mwamburi: \"Mrs. Mumbua was alive when I left.\"",
+      "kind": "lie",
+      "about": [
+        "p_mwamburi"
+      ]
+    },
+    {
+      "id": "f_be_log",
+      "text": "Benson: \"Every procedure in my log was performed.\"",
+      "kind": "lie",
+      "about": [
+        "p_benson"
+      ]
+    },
+    {
+      "id": "f_be_reveal",
+      "text": "Benson: \"Daktari told me what to write. The lab was closed and I wrote stents. I didn't hurt anyone.\"",
+      "kind": "true",
+      "about": [
+        "p_benson",
+        "p_mwamburi"
+      ]
+    },
+    {
+      "id": "f_el_never",
+      "text": "Elvis: \"I wasn't at that plaza last night.\"",
+      "kind": "lie",
+      "about": [
+        "p_elvis"
+      ]
+    },
+    {
+      "id": "f_el_reveal",
+      "text": "Elvis: \"I stood outside with my sign like every Tuesday. I left at seven. I lost my car key at that reception two weeks ago and they told me it wasn't there when I asked.\"",
+      "kind": "true",
+      "about": [
+        "p_elvis"
+      ]
+    },
+    {
+      "id": "f_jo_claim",
+      "text": "Joan: \"Grace thought I was hiding files. I was at choir.\"",
+      "kind": "claim",
+      "about": [
+        "p_joan"
+      ]
+    },
+    {
+      "id": "f_jo_copies",
+      "text": "Joan: \"Daktari told me to give her only the copies. She insisted on originals.\"",
+      "kind": "true",
+      "about": [
+        "p_joan",
+        "p_mwamburi"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_mwamburi",
+      "stance": "lawyered",
+      "lawyered": {
+        "advocate": "Advocate Sharon Kiprop",
+        "reopenedBy": [
+          "f_access"
+        ],
+        "line": "Dr. Mwamburi is a witness, not a suspect. No comment."
+      },
+      "intro": "Dr. Mwamburi adjusts his bow tie. Advocate Sharon Kiprop speaks first: \"Dr. Mwamburi is a witness, not a suspect. No comment.\"",
+      "claims": [
+        "f_mw_left",
+        "f_mw_stents"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_mw_alive",
+          "after": "f_mw_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_benson",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_cathlog"
+      ],
+      "intro": "Benson wipes his forehead with a scrub cap. \"Every procedure in my log was performed.\"",
+      "claims": [
+        "f_be_log"
+      ],
+      "yields": [
+        "ev_benson_alibi"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_elvis",
+      "stance": "cooperative",
+      "intro": "Elvis is angry before you sit down. \"I wasn't at that plaza last night.\"",
+      "claims": [
+        "f_el_never"
+      ],
+      "yields": [
+        "ev_posts"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_joan",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_audit"
+      ],
+      "intro": "Joan keeps her arms folded. \"Grace thought I was hiding files. I was at choir.\"",
+      "claims": [
+        "f_jo_claim"
+      ],
+      "yields": [
+        "ev_joan"
+      ],
+      "topics": [
+        {
+          "about": "ev_audit",
+          "reply": "\"Daktari told me to give her only the copies. She insisted on originals.\"",
+          "reveals": [
+            "f_jo_copies"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_eunice",
+      "stance": "cooperative",
+      "intro": "Mama Eunice holds her mop with both hands and tells it exactly.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_kibet",
+      "stance": "cooperative",
+      "intro": "Dr. Kibet comes from Imara's office with Grace's file.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_el",
+      "claim": "f_el_never",
+      "brokenBy": [
+        "f_placard"
+      ],
+      "reveals": [
+        "f_el_reveal",
+        "ev_elvis_alibi"
+      ],
+      "reaction": "\"I stood outside with my sign like every Tuesday. I left at seven. I lost my car key at that reception two weeks ago and they told me it wasn't there when I asked.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_be",
+      "claim": "f_be_log",
+      "brokenBy": [
+        "f_maint"
+      ],
+      "reveals": [
+        "f_be_reveal"
+      ],
+      "reaction": "\"Daktari told me what to write. The lab was closed and I wrote stents. I didn't hurt anyone.\" (Filed for fraud, not the killing.)",
+      "mark": "explains"
+    },
+    {
+      "id": "c_mw_left",
+      "claim": "f_mw_left",
+      "brokenBy": [
+        "f_access",
+        "f_eunice"
+      ],
+      "reveals": [
+        "f_mw_reveal"
+      ],
+      "reaction": "\"I came back for a file.\" Advocate Kiprop ends the interview. In the corridor she tells you: \"You've cost my clients a great deal this month, Detective.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_mw_stents",
+      "claim": "f_mw_stents",
+      "brokenBy": [
+        "f_maint",
+        "f_reports",
+        "f_be_reveal"
+      ],
+      "reveals": [],
+      "reaction": "Dr. Mwamburi looks at the servicing dates for a long time. Kiprop answers for him: \"My client will address billing with the insurer.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_mw_alive",
+      "claim": "f_mw_alive",
+      "brokenBy": [
+        "f_cuffblood"
+      ],
+      "reveals": [],
+      "reaction": "Dr. Mwamburi takes off his bow tie and folds it on the table.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_mwamburi",
+      "text": "Hamisi Mwamburi",
+      "category": "person",
+      "ref": "p_mwamburi",
+      "unlock": {
+        "anyOf": [
+          "f_audit"
+        ]
+      }
+    },
+    {
+      "id": "w_benson",
+      "text": "Benson Mutua",
+      "category": "person",
+      "ref": "p_benson",
+      "unlock": {
+        "anyOf": [
+          "f_maint"
+        ]
+      }
+    },
+    {
+      "id": "w_elvis",
+      "text": "Elvis Karanja",
+      "category": "person",
+      "ref": "p_elvis",
+      "unlock": {
+        "anyOf": [
+          "f_staff"
+        ]
+      }
+    },
+    {
+      "id": "w_joan",
+      "text": "Joan Akoth",
+      "category": "person",
+      "ref": "p_joan",
+      "unlock": {
+        "anyOf": [
+          "f_audit"
+        ]
+      }
+    },
+    {
+      "id": "w_eunice",
+      "text": "Eunice Nafula",
+      "category": "person",
+      "ref": "p_eunice",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_kibet",
+      "text": "Paul Kibet",
+      "category": "person",
+      "ref": "p_kibet",
+      "unlock": {
+        "anyOf": [
+          "f_audit"
+        ]
+      }
+    },
+    {
+      "id": "d_reports",
+      "text": "the stent procedure reports",
+      "category": "document",
+      "ref": "ev_reports",
+      "unlock": {
+        "anyOf": [
+          "f_reports"
+        ]
+      }
+    },
+    {
+      "id": "d_cathlog",
+      "text": "the cath-lab log",
+      "category": "document",
+      "ref": "ev_cathlog",
+      "unlock": {
+        "anyOf": [
+          "f_cathlog"
+        ]
+      }
+    },
+    {
+      "id": "d_maint",
+      "text": "the maintenance record",
+      "category": "document",
+      "ref": "ev_maint",
+      "unlock": {
+        "anyOf": [
+          "f_maint"
+        ]
+      }
+    },
+    {
+      "id": "d_lostfound",
+      "text": "the lost-and-found book",
+      "category": "document",
+      "ref": "ev_lostfound",
+      "unlock": {
+        "anyOf": [
+          "f_lostfound"
+        ]
+      }
+    },
+    {
+      "id": "d_audit",
+      "text": "Grace's audit sheet",
+      "category": "document",
+      "ref": "ev_audit",
+      "unlock": {
+        "anyOf": [
+          "f_audit"
+        ]
+      }
+    },
+    {
+      "id": "t_closed",
+      "text": "they record stents fitted on days the cath lab was closed for servicing",
+      "category": "tell",
+      "by": [
+        "f_maint",
+        "f_reports"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_maint"
+        ]
+      }
+    },
+    {
+      "id": "t_typed",
+      "text": "typing on top of a pre-signed blank",
+      "category": "tell",
+      "by": [
+        "f_blanks",
+        "f_docexam"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_blanks"
+        ]
+      }
+    },
+    {
+      "id": "t_retired",
+      "text": "a retired stamp",
+      "category": "tell",
+      "by": [
+        "f_reports"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_reports"
+        ]
+      }
+    },
+    {
+      "id": "t_deadwit",
+      "text": "a witness who was dead",
+      "category": "tell",
+      "by": [
+        "f_reports"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_reports"
+        ]
+      }
+    },
+    {
+      "id": "t_parcel",
+      "text": "a parcel missing from the index map",
+      "category": "tell",
+      "by": [
+        "f_reports"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_reports"
+        ]
+      }
+    },
+    {
+      "id": "t_batch",
+      "text": "a batch number that doesn't exist",
+      "category": "tell",
+      "by": [
+        "f_reports"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_reports"
+        ]
+      }
+    },
+    {
+      "id": "i_fob",
+      "text": "Elvis's key fob under the body",
+      "category": "item",
+      "ref": "ev_fob",
+      "unlock": {
+        "anyOf": [
+          "f_fob"
+        ]
+      }
+    },
+    {
+      "id": "i_stand",
+      "text": "the drip stand in the corridor",
+      "category": "item",
+      "ref": "ev_stand",
+      "unlock": {
+        "anyOf": [
+          "f_stand"
+        ]
+      }
+    },
+    {
+      "id": "i_audit",
+      "text": "Grace's audit sheet",
+      "category": "item",
+      "ref": "ev_audit",
+      "unlock": {
+        "anyOf": [
+          "f_audit"
+        ]
+      }
+    },
+    {
+      "id": "i_posts",
+      "text": "Elvis's online posts",
+      "category": "item",
+      "ref": "ev_posts",
+      "unlock": {
+        "anyOf": [
+          "f_posts"
+        ]
+      }
+    },
+    {
+      "id": "i_files",
+      "text": "the files on the table",
+      "category": "item",
+      "ref": "ev_reports",
+      "unlock": {
+        "anyOf": [
+          "f_reports"
+        ]
+      }
+    },
+    {
+      "id": "p_box",
+      "text": "it had been in the reception's lost-and-found box since two weeks before",
+      "category": "plantTell",
+      "by": [
+        "f_lostfound",
+        "f_dust",
+        "f_abs_box"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_lostfound"
+        ]
+      }
+    },
+    {
+      "id": "p_smear",
+      "text": "a wiped smear, not spatter",
+      "category": "plantTell",
+      "by": [
+        "f_fob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_fob"
+        ]
+      }
+    },
+    {
+      "id": "p_print",
+      "text": "prints under the printed text",
+      "category": "plantTell",
+      "by": [
+        "f_fob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_fob"
+        ]
+      }
+    },
+    {
+      "id": "p_time",
+      "text": "a timestamp before the item existed",
+      "category": "plantTell",
+      "by": [
+        "f_fob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_fob"
+        ]
+      }
+    },
+    {
+      "id": "p_knot",
+      "text": "a wrong-handed knot",
+      "category": "plantTell",
+      "by": [
+        "f_fob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_fob"
+        ]
+      }
+    },
+    {
+      "id": "p_reach",
+      "text": "placed where he couldn't reach",
+      "category": "plantTell",
+      "by": [
+        "f_fob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_fob"
+        ]
+      }
+    },
+    {
+      "id": "pl_records",
+      "text": "the medical-records room",
+      "category": "place",
+      "ref": "plc_records",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "pl_cathlab",
+      "text": "the cath lab",
+      "category": "place",
+      "ref": "plc_cathlab",
+      "unlock": {
+        "anyOf": [
+          "f_maint"
+        ]
+      }
+    },
+    {
+      "id": "pl_office",
+      "text": "Dr. Mwamburi's office",
+      "category": "place",
+      "ref": "loc_office",
+      "unlock": {
+        "anyOf": [
+          "f_access"
+        ]
+      }
+    },
+    {
+      "id": "pl_lobby",
+      "text": "the plaza lobby",
+      "category": "place",
+      "ref": "loc_lobby",
+      "unlock": {
+        "anyOf": [
+          "f_placard"
+        ]
+      }
+    },
+    {
+      "id": "pl_reception",
+      "text": "the reception desk",
+      "category": "place",
+      "ref": "plc_reception",
+      "unlock": {
+        "anyOf": [
+          "f_lostfound"
+        ]
+      }
+    },
+    {
+      "id": "h_stand",
+      "text": "striking her with the steel base of a drip stand",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_shelves",
+      "text": "a fall from the rolling shelves",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_box",
+      "text": "striking her with a file box",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_defib",
+      "text": "striking her with a defibrillator",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_stents",
+      "text": "to stop her exposing the phantom stent claims",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_audit"
+        ]
+      }
+    },
+    {
+      "id": "m_revenge",
+      "text": "a grieving son's revenge on the clinic",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_posts"
+        ]
+      }
+    },
+    {
+      "id": "m_obstruct",
+      "text": "a practice manager's obstruction",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_audit"
+        ]
+      }
+    },
+    {
+      "id": "m_tech",
+      "text": "a technician's fraud",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_maint"
+        ]
+      }
+    },
+    {
+      "id": "m_drugs",
+      "text": "a robbery of drugs",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. {document} was forged, as shown by {tell}. {item} was planted, as shown by {ptell}.",
+    "fixed": {
+      "victim": "Grace Mumbua"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_2wk",
+                  "label": "Two weeks ago",
+                  "from": null,
+                  "to": null,
+                  "day": "2 weeks ago"
+                },
+                {
+                  "id": "sl_protest",
+                  "label": "Tuesday 18:00–18:50",
+                  "from": "18:00",
+                  "to": "18:50",
+                  "day": "Tue"
+                },
+                {
+                  "id": "sl_1930",
+                  "label": "Tuesday 19:30",
+                  "from": "19:30",
+                  "to": "19:30",
+                  "day": "Tue"
+                },
+                {
+                  "id": "sl_2031",
+                  "label": "Tuesday 20:31",
+                  "from": "20:31",
+                  "to": "20:31",
+                  "day": "Tue"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Tuesday 20:40–20:50",
+                  "from": "20:40",
+                  "to": "20:50",
+                  "day": "Tue"
+                },
+                {
+                  "id": "sl_2115",
+                  "label": "Tuesday 21:15",
+                  "from": "21:15",
+                  "to": "21:15",
+                  "day": "Tue"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_lost",
+                  "text": "Elvis loses his key fob at reception",
+                  "slot": "sl_2wk",
+                  "by": [
+                    "f_lostfound"
+                  ],
+                  "why": "The lost-and-found book: two weeks ago.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_lostfound"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_protest",
+                  "text": "Elvis protests outside",
+                  "slot": "sl_protest",
+                  "by": [
+                    "f_placard"
+                  ],
+                  "why": "The lobby camera: 18:00–18:50.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_placard"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_back",
+                  "text": "Mwamburi returns",
+                  "slot": "sl_2031",
+                  "by": [
+                    "f_access"
+                  ],
+                  "why": "His card: 20:31.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_access"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_kill",
+                  "text": "Grace is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_eunice",
+                    "f_aut_tod"
+                  ],
+                  "why": "Eunice heard the bang at about quarter to nine.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_eunice"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_leave",
+                  "text": "Mwamburi leaves by the car park",
+                  "slot": "sl_2115",
+                  "by": [
+                    "f_access"
+                  ],
+                  "why": "His card: out at 21:15.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_access"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_1930",
+                  "by": [
+                    "f_access"
+                  ],
+                  "why": "19:30 is when Grace signed in. Mwamburi's card didn't come back until 20:31."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A fob lost two weeks ago, a placard at six, a card back at 20:31, a bang at quarter to nine, and the car park at 21:15.",
+          "fail": [
+            "Grace signed in at half seven. He came back an hour later.",
+            "When did Eunice hear the stand fall?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_records"
+          }
+        ],
+        "prosecutor": {
+          "pass": "In the records room, among the originals she came to see.",
+          "fail": [
+            "The coat was in his office. She died in the records room.",
+            "The fob came from reception. She didn't."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_mwamburi"
+          }
+        ],
+        "prosecutor": {
+          "pass": "His card on the floor, his words to the cleaner, Grace's blood on his cuff.",
+          "fail": [
+            "Elvis was in South B with his sister.",
+            "Benson wrote lies in a log, then went to the football."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_stand"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A heavy round base, wiped. The drip stand.",
+          "fail": [
+            "A file box is cardboard.",
+            "The defibrillators are sealed and logged."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_stents"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Sixty-one stents, thirty-eight million shillings, and an investigator with the originals in her hands.",
+          "fail": [
+            "Elvis's anger was at the doctor, not the insurer, and he was in South B.",
+            "Joan was singing."
+          ]
+        }
+      },
+      {
+        "id": "g_forgery",
+        "kind": "forgery",
+        "blanks": [
+          {
+            "id": "document",
+            "category": "document",
+            "answer": "d_reports"
+          },
+          {
+            "id": "tell",
+            "category": "tell",
+            "answer": "t_closed",
+            "accept": [
+              "t_typed"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "Stents fitted in a lab that was shut for servicing. And the blanks were signed before anyone typed them.",
+          "fail": [
+            "The log is false, but Benson wrote it as told. The reports are the forged paper.",
+            "The servicing record is the servicing company's own copy."
+          ]
+        }
+      },
+      {
+        "id": "g_planted",
+        "kind": "planted",
+        "blanks": [
+          {
+            "id": "item",
+            "category": "item",
+            "answer": "i_fob"
+          },
+          {
+            "id": "ptell",
+            "category": "plantTell",
+            "answer": "p_box"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Reception dust on a fob that never left the box. Until someone with the box key took it out.",
+          "fail": [
+            "The drip stand is the weapon. It wasn't placed; it was used.",
+            "Elvis really wrote those posts. Anger isn't evidence."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_records",
+      "from": "20:40",
+      "to": "20:50",
+      "note": "Eunice's bang at about quarter to nine, inside his card's time on the floor (20:31–21:15); the post-mortem allows 20:30–21:15."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_staff",
+          "f_fob",
+          "f_lostfound",
+          "f_lostfound_rule",
+          "f_abs_box",
+          "f_dust"
+        ],
+        "concludes": "The fob was taken from the lost-and-found box and placed under the body by someone with the box key.",
+        "answers": [
+          "item",
+          "ptell"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_posts",
+          "f_el_never",
+          "f_placard",
+          "f_el_reveal",
+          "f_el_alibi"
+        ],
+        "concludes": "Elvis never came in and was in South B: framed."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_audit",
+          "f_jo_copies",
+          "f_maint",
+          "f_reports",
+          "f_cathlog",
+          "f_be_log",
+          "f_be_reveal",
+          "f_claims",
+          "f_blanks",
+          "f_docexam",
+          "f_mw_stents"
+        ],
+        "concludes": "61 phantom stents, KSh 38 million, on reports typed over pre-signed blanks.",
+        "answers": [
+          "document",
+          "tell",
+          "why"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_access",
+          "f_mw_left",
+          "f_mw_reveal",
+          "f_eunice"
+        ],
+        "concludes": "Mwamburi was on the floor 20:31–21:15, sent the cleaner away, and the stand fell in the records room at about quarter to nine.",
+        "answers": [
+          "when",
+          "where"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_body",
+          "f_stand",
+          "f_aut_blow",
+          "f_aut_tod"
+        ],
+        "concludes": "She was struck once with the heavy round base of the corridor drip stand, wiped afterwards.",
+        "answers": [
+          "how"
+        ]
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_coat",
+          "f_cuffblood",
+          "f_boxkey",
+          "f_fobprints",
+          "f_mw_alive"
+        ],
+        "concludes": "Dr. Hamisi Mwamburi struck Grace in the records room and planted Elvis's fob from the box he held the key to.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_cathlab",
+        "blank": "where",
+        "by": [
+          "f_body"
+        ],
+        "why": "She was found among the files."
+      },
+      {
+        "word": "pl_office",
+        "blank": "where",
+        "by": [
+          "f_eunice"
+        ],
+        "why": "The bang came from the records room; the coat went to his office afterwards."
+      },
+      {
+        "word": "pl_lobby",
+        "blank": "where",
+        "by": [
+          "f_placard",
+          "f_body"
+        ],
+        "why": "Elvis stood outside the lobby; Grace died upstairs."
+      },
+      {
+        "word": "pl_reception",
+        "blank": "where",
+        "by": [
+          "f_lostfound",
+          "f_body"
+        ],
+        "why": "The fob came from reception."
+      },
+      {
+        "word": "w_benson",
+        "blank": "who",
+        "by": [
+          "f_be_alibi"
+        ],
+        "why": "Benson was at the football with three friends."
+      },
+      {
+        "word": "w_elvis",
+        "blank": "who",
+        "by": [
+          "f_el_alibi"
+        ],
+        "why": "Elvis was at his sister's in South B from 19:40."
+      },
+      {
+        "word": "w_joan",
+        "blank": "who",
+        "by": [
+          "f_joan"
+        ],
+        "why": "Joan was at choir until 21:30."
+      },
+      {
+        "word": "w_eunice",
+        "blank": "who",
+        "by": [
+          "f_eunice_down",
+          "f_eunice"
+        ],
+        "why": "Eunice was sent downstairs, and heard the bang from the corridor."
+      },
+      {
+        "word": "w_kibet",
+        "blank": "who",
+        "by": [
+          "f_audit"
+        ],
+        "why": "Dr. Kibet was at Imara's office in Westlands."
+      },
+      {
+        "word": "h_shelves",
+        "blank": "how",
+        "by": [
+          "f_aut_blow",
+          "f_stand"
+        ],
+        "why": "One blow from a round base; the stand's base wiped."
+      },
+      {
+        "word": "h_box",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "File boxes are light cardboard."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "A blow."
+      },
+      {
+        "word": "h_defib",
+        "blank": "how",
+        "by": [
+          "f_aut_blow",
+          "f_drugs"
+        ],
+        "why": "The defibrillators are sealed and logged; the wound is a round base."
+      },
+      {
+        "word": "m_revenge",
+        "blank": "why",
+        "by": [
+          "f_el_alibi"
+        ],
+        "why": "Elvis was in South B."
+      },
+      {
+        "word": "m_obstruct",
+        "blank": "why",
+        "by": [
+          "f_joan",
+          "f_jo_copies"
+        ],
+        "why": "Joan was at choir; she was following orders."
+      },
+      {
+        "word": "m_tech",
+        "blank": "why",
+        "by": [
+          "f_be_alibi"
+        ],
+        "why": "Benson's fraud is real, but he was at the football."
+      },
+      {
+        "word": "m_drugs",
+        "blank": "why",
+        "by": [
+          "f_drugs"
+        ],
+        "why": "The drugs cupboard is untouched."
+      },
+      {
+        "word": "d_cathlog",
+        "blank": "document",
+        "by": [
+          "f_be_reveal"
+        ],
+        "why": "The log is false, but written as Benson was told; it was not forged."
+      },
+      {
+        "word": "d_maint",
+        "blank": "document",
+        "by": [
+          "f_maint"
+        ],
+        "why": "The servicing company's own copies."
+      },
+      {
+        "word": "d_lostfound",
+        "blank": "document",
+        "by": [
+          "f_lostfound_rule"
+        ],
+        "why": "The book is honest."
+      },
+      {
+        "word": "d_audit",
+        "blank": "document",
+        "by": [
+          "f_audit"
+        ],
+        "why": "Grace's own sheet."
+      },
+      {
+        "word": "t_retired",
+        "blank": "tell",
+        "by": [
+          "f_docexam"
+        ],
+        "why": "No retired stamp."
+      },
+      {
+        "word": "t_deadwit",
+        "blank": "tell",
+        "by": [
+          "f_reports"
+        ],
+        "why": "No witnesses on a procedure report."
+      },
+      {
+        "word": "t_parcel",
+        "blank": "tell",
+        "by": [
+          "f_reports"
+        ],
+        "why": "No map."
+      },
+      {
+        "word": "t_batch",
+        "blank": "tell",
+        "by": [
+          "f_reports"
+        ],
+        "why": "No batch numbers."
+      },
+      {
+        "word": "i_stand",
+        "blank": "item",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "The stand is the real weapon."
+      },
+      {
+        "word": "i_audit",
+        "blank": "item",
+        "by": [
+          "f_audit"
+        ],
+        "why": "Grace's own sheet."
+      },
+      {
+        "word": "i_posts",
+        "blank": "item",
+        "by": [
+          "f_el_reveal"
+        ],
+        "why": "Elvis wrote them; they are anger, not planted evidence."
+      },
+      {
+        "word": "i_files",
+        "blank": "item",
+        "by": [
+          "f_audit"
+        ],
+        "why": "Grace pulled the files herself."
+      },
+      {
+        "word": "p_smear",
+        "blank": "ptell",
+        "by": [
+          "f_dust"
+        ],
+        "why": "No blood on the fob."
+      },
+      {
+        "word": "p_print",
+        "blank": "ptell",
+        "by": [
+          "f_fob"
+        ],
+        "why": "A fob has no printed text."
+      },
+      {
+        "word": "p_time",
+        "blank": "ptell",
+        "by": [
+          "f_lostfound"
+        ],
+        "why": "The fob is old; the book dates it."
+      },
+      {
+        "word": "p_knot",
+        "blank": "ptell",
+        "by": [
+          "f_fob"
+        ],
+        "why": "Nothing is tied."
+      },
+      {
+        "word": "p_reach",
+        "blank": "ptell",
+        "by": [
+          "f_el_alibi"
+        ],
+        "why": "He could reach it; he simply wasn't there."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "For four years the clinic bills insurers for heart stents never fitted: a diagnostic test, then a procedure report typed on a pre-signed blank. Benson keeps the cath-lab log to match.",
+        "image": null
+      },
+      {
+        "text": "Grace notices that 61 billed stents fall on days the servicing company had the cath lab closed. She arranges to see the originals on Tuesday evening. \"We have nothing to hide,\" says Dr. Mwamburi.",
+        "image": null
+      },
+      {
+        "text": "At 20:31 his card comes back on the floor. At about quarter to nine he finds her with the reports pulled out and strikes her with the steel base of a drip stand. He tells Mama Eunice to leave the floor.",
+        "image": "plc_records"
+      },
+      {
+        "text": "He takes Elvis's lost key fob from the reception box (the key is on his ring) and drops it under her. He leaves through the car park at 21:15. In the morning the staff name the man with the placard.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "Elvis is cleared. Imara refers all 61 claims to the DCI; the clinic's licence is suspended. Benson is charged with fraud."
+    },
+    {
+      "beat": "The boardroom photograph is auto-filed to the Pattern File. Amani's notebook: \"Fourth floor, Lands House. Six faces. Photographed.\"",
+      "files": [
+        {
+          "thread": "t_kivuli",
+          "text": "A twelve-year-old photo, \"4th Floor\", Lands House: six senior officials, captioned, among them Raphael Oduya, Margaret Kabiru, Stanley Rotich."
+        }
+      ]
+    }
+  ],
+  "clockPlan": {
+    "note": "Three stamps, the maximum: the plaza access log (which also reopens Dr. Mwamburi), Imara's claim payments, and a warrant on his office. The fob's dust trace (12 h) goes first thing; the document exam (10 h) and cuff blood (12 h) go after the search; detain him, and the prints (6 h) and blood are back inside 24 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_clinic",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_fob",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_stand",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_staff_say",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_lostfound",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_audit",
+        "hours": 1
+      },
+      {
+        "do": "submit",
+        "target": "ev_dust"
+      },
+      {
+        "do": "read",
+        "target": "ev_reports",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_cathlog",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_eunice",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_eunice"
+      },
+      {
+        "do": "interview",
+        "target": "p_joan"
+      },
+      {
+        "do": "interview",
+        "target": "p_kibet"
+      },
+      {
+        "do": "interview",
+        "target": "p_elvis"
+      },
+      {
+        "do": "travel",
+        "target": "loc_lobby",
+        "hours": 0.25,
+        "from": "loc_clinic"
+      },
+      {
+        "do": "visit",
+        "target": "loc_lobby",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_placard",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_maint",
+        "hours": 1
+      },
+      {
+        "do": "press",
+        "target": "c_el"
+      },
+      {
+        "do": "records",
+        "target": "ev_access"
+      },
+      {
+        "do": "records",
+        "target": "ev_claims"
+      },
+      {
+        "do": "interview",
+        "target": "p_benson"
+      },
+      {
+        "do": "press",
+        "target": "c_be"
+      },
+      {
+        "do": "reopen",
+        "target": "p_mwamburi",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_mwamburi"
+      },
+      {
+        "do": "press",
+        "target": "c_mw_left"
+      },
+      {
+        "do": "press",
+        "target": "c_mw_stents"
+      },
+      {
+        "do": "travel",
+        "target": "loc_office",
+        "hours": 0.25,
+        "from": "loc_lobby"
+      },
+      {
+        "do": "search",
+        "target": "loc_office"
+      },
+      {
+        "do": "submit",
+        "target": "ev_docexam"
+      },
+      {
+        "do": "submit",
+        "target": "ev_cuff"
+      },
+      {
+        "do": "detain",
+        "target": "p_mwamburi"
+      },
+      {
+        "do": "sample",
+        "target": "ev_mw_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_fobprints"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 10
+      },
+      {
+        "do": "press",
+        "target": "c_mw_alive"
+      }
+    ],
+    "totalHours": 46.5
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_access",
+        "line": "His card tells you when he came back, Amani."
+      },
+      "tier2": {
+        "facts": [
+          "f_access",
+          "f_eunice"
+        ],
+        "line": "In at 20:31. A bang at quarter to nine. Out at 21:15."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_eunice",
+        "line": "Where did Eunice hear the stand fall?"
+      },
+      "tier2": {
+        "facts": [
+          "f_eunice",
+          "f_body"
+        ],
+        "line": "The records room."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_office",
+        "line": "Who holds the key to the lost-and-found box?"
+      },
+      "tier2": {
+        "facts": [
+          "f_boxkey",
+          "f_cuffblood"
+        ],
+        "line": "The master ring on his desk, and her blood on his cuff."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_stand",
+        "line": "Something heavy and round was wiped in the corridor."
+      },
+      "tier2": {
+        "facts": [
+          "f_stand",
+          "f_aut_blow"
+        ],
+        "line": "The drip stand's steel base."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_audit",
+        "line": "Read what Grace came to check."
+      },
+      "tier2": {
+        "facts": [
+          "f_audit",
+          "f_claims"
+        ],
+        "line": "61 stents on days the lab was shut. KSh 38 million."
+      }
+    },
+    "g_forgery": {
+      "tier1": {
+        "point": "ev_maint",
+        "line": "Lay the servicing dates over the procedure dates."
+      },
+      "tier2": {
+        "facts": [
+          "f_maint",
+          "f_reports"
+        ],
+        "line": "Every stent on a day the lab was closed."
+      }
+    },
+    "g_planted": {
+      "tier1": {
+        "point": "ev_lostfound",
+        "line": "Where had that fob been for two weeks?"
+      },
+      "tier2": {
+        "facts": [
+          "f_lostfound",
+          "f_dust"
+        ],
+        "line": "In the reception box. It still carries the box's dust."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "daktari",
+      "def": "Doctor."
+    },
+    {
+      "term": "bima",
+      "def": "Insurance."
+    },
+    {
+      "term": "maabara",
+      "def": "A laboratory."
+    },
+    {
+      "term": "sanduku la vitu vilivyopotea",
+      "def": "A lost-and-found box."
+    },
+    {
+      "term": "matatu",
+      "def": "A shared minibus taxi."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "dustOverlay"
+    ],
+    "beatNotes": "Dust tells a story. The magnifier view gains a \"dust\" overlay: fibres on an object glow in colours matched to places on the board (the reception box's cardboard is brown; the records room's is grey). The fob glows brown."
+  }
+}

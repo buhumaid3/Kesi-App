@@ -1,0 +1,1113 @@
+{
+  "meta": {
+    "id": "case-012",
+    "number": 12,
+    "region": "eastlands",
+    "regionNumber": 2,
+    "title": "Rent Day",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 11,
+    "date": "Thursday 5 June",
+    "folderTab": "JERICHO"
+  },
+  "pattern": {
+    "crimePattern": "tenant facing eviction kills the caretaker and takes the rent book",
+    "noRealCaseRetold": true,
+    "notes": "Fictional building in a real estate. Distress-for-rent procedure shown in outline only; to be checked by the cultural reader.",
+    "tags": [
+      "blunt-force",
+      "eviction",
+      "forged-receipt",
+      "first-warrant"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 2,
+    "redHerrings": 0,
+    "liars": 1,
+    "groups": [
+      "who"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness"
+    ],
+    "gatedActions": [
+      "warrant"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 14/05/06",
+    "date": "Thursday 5 June",
+    "time": "18:31",
+    "reportedBy": "Bonface Mutinda, night watchman, Baraka Flats, Jericho",
+    "text": "Bonface Mutinda, watchman at Baraka Flats, Jericho, reports that the caretaker, Margaret Wangila (45), was found dead in the ground-floor rent office at 18:25 by tenants coming to pay rent. The office rent book is missing.",
+    "facts": [
+      "f_ob_found",
+      "f_ob_book"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_margaret",
+      "role": "victim",
+      "name": "Margaret Wangila",
+      "age": 45,
+      "occupation": "Caretaker, Baraka Flats",
+      "bio": "Has run Baraka Flats for eleven years: rent, repairs, water days, quarrels. Writes everything in one blue rent book.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_office",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 40s, short relaxed hair, reading glasses on a beaded chain, cardigan over a printed blouse, a pen behind her ear, no-nonsense but kind face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mwita",
+      "role": "suspect",
+      "name": "Mwita Chacha",
+      "age": 64,
+      "occupation": "Retired railway clerk; tenant, flat 4C",
+      "bio": "Nineteen years in flat 4C. Three months behind on rent since his pension was delayed. An auctioneer's notice is taped to his door.",
+      "community": "Kuria",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_notice"
+      },
+      "at": "loc_flat4c",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 60s, thin, grey stubble, an old railway-issue cardigan with leather elbow patches, clasped hands, proud and frightened at once, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_lydia",
+      "role": "suspect",
+      "name": "Lydia Anyango",
+      "age": 28,
+      "occupation": "Tenant, flat 1B; cashier",
+      "bio": "Screamed at Margaret on Monday over the water rationing. Paid her rent this afternoon.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_rehema_lydia"
+      },
+      "at": "plc_salon",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 20s, freshly braided long box braids, supermarket cashier's uniform blouse, a receipt in her hand, irritated and defensive, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_wilson",
+      "role": "suspect",
+      "name": "Wilson Kiprono",
+      "age": 39,
+      "occupation": "Plumber",
+      "bio": "Fixing the building's water tank this week. Margaret refused to pay his last invoice until the leak stopped.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_gatebook_out"
+      },
+      "at": "plc_outside",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 30s, blue overalls with a pipe wrench in the chest pocket, wet sleeves, a baseball cap turned backwards, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_bonface",
+      "role": "witness",
+      "name": "Bonface Mutinda",
+      "age": 58,
+      "occupation": "Night watchman",
+      "bio": "Sits on a stool at the only gate from 17:00, with the gate book on his knees.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_gate",
+      "image": null
+    },
+    {
+      "id": "p_janeth",
+      "role": "witness",
+      "name": "Janeth Kwamboka",
+      "age": 34,
+      "occupation": "Salon owner, Jericho market",
+      "statementOnly": true,
+      "bio": "Braids hair at a busy salon in Jericho market.",
+      "community": "Kisii",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_lydia_salon"
+      },
+      "at": "plc_salon",
+      "image": null
+    },
+    {
+      "id": "p_rehema",
+      "role": "witness",
+      "name": "Rehema Wanjiku",
+      "age": 50,
+      "occupation": "Vegetable seller at the gate",
+      "statementOnly": true,
+      "bio": "Sells sukuma and tomatoes from a table beside the Baraka Flats gate every evening.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_gate",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_office",
+      "name": "Ground-floor rent office",
+      "within": "loc_flats"
+    },
+    {
+      "id": "plc_gate",
+      "name": "Baraka Flats gate",
+      "within": "loc_flats"
+    },
+    {
+      "id": "plc_stairs",
+      "name": "Main stairwell",
+      "within": "loc_flats"
+    },
+    {
+      "id": "plc_salon",
+      "name": "Salon, Jericho market"
+    },
+    {
+      "id": "plc_outside",
+      "name": "Outside the compound"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_flats",
+      "name": "Baraka Flats, Jericho",
+      "kind": "scene",
+      "description": "A five-storey walk-up around a concrete courtyard, washing on every balcony. One gate, one watchman, one stairwell. Ground floor, by the stairs: the rent office, its door open, the light on. It is the 5th: rent day.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Rent office",
+          "pos": [
+            36,
+            62
+          ],
+          "yields": "ev_body",
+          "text": "Margaret lies beside her desk. The heavy metal date stamp is on the floor. On the shelf behind her, the slot where the rent book always stands is empty."
+        },
+        {
+          "id": "hs_drawer",
+          "label": "Desk drawer",
+          "pos": [
+            46,
+            56
+          ],
+          "yields": "ev_cash",
+          "text": "The drawer is closed. Inside, a brown envelope marked in Margaret's hand."
+        },
+        {
+          "id": "hs_gate",
+          "label": "Gate and stool",
+          "pos": [
+            86,
+            72
+          ],
+          "yields": "ev_gatebook",
+          "text": "The watchman's stool and the gate book: every visitor in and out, with times."
+        },
+        {
+          "id": "hs_rehema",
+          "label": "Vegetable table at the gate",
+          "pos": [
+            94,
+            60
+          ],
+          "yields": "ev_rehema",
+          "text": "Rehema Wanjiku is packing her sukuma into a sack, very slowly, so she can keep watching the office."
+        },
+        {
+          "id": "hs_landing",
+          "label": "Fourth-floor landing",
+          "pos": [
+            60,
+            18
+          ],
+          "yields": "ev_notice",
+          "text": "Flat 4C. A typed notice is taped to the door, its corners curling."
+        },
+        {
+          "id": "hs_tank",
+          "label": "Water tank on the roof",
+          "pos": [
+            20,
+            10
+          ],
+          "text": "A new pipe joint on the roof tank, still wrapped in tape. Somebody worked on it today."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a five-storey walk-up apartment block in an Eastlands estate of Nairobi at dusk, washing on balconies, a concrete courtyard, a single steel gate with a watchman's stool and a vegetable table beside it, a ground-floor office with its door open and a light on, no people in focus"
+      }
+    },
+    {
+      "id": "loc_flat4c",
+      "name": "Flat 4C (search)",
+      "kind": "search",
+      "description": "Two rooms. A railway calendar from 1998, a framed long-service certificate, a single bed, a radio. Everything is very clean. The mattress sits a little high on one side.",
+      "unlock": {
+        "fact": "f_bonface_book"
+      },
+      "hotspots": [
+        {
+          "id": "hs_mattress",
+          "label": "Under the mattress",
+          "pos": [
+            40,
+            64
+          ],
+          "yields": "ev_rentbook",
+          "text": "Wrapped in a kanga, flat under the mattress: a blue hard-cover book."
+        },
+        {
+          "id": "hs_certificate",
+          "label": "Long-service certificate",
+          "pos": [
+            72,
+            30
+          ],
+          "text": "\"Mwita Chacha. 30 years' loyal service.\" The frame has been dusted today."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small, very tidy two-room flat in Nairobi, a single bed, an old radio, a framed long-service certificate from a railway on the wall, a faded calendar, late evening light"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body and the office",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Struck with the office's metal date stamp, found on the floor. The rent book's place on the shelf is empty."
+      },
+      "facts": [
+        "f_body_stamp",
+        "f_ob_book"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a small ground-floor rent office, a wooden desk with a ledger-shaped empty gap on the shelf behind it, a heavy metal date stamp lying on the cement floor, a calendar showing the 5th circled, no body visible"
+      }
+    },
+    {
+      "id": "ev_cash",
+      "type": "physical",
+      "title": "Rent-cash envelope",
+      "render": "object",
+      "body": {
+        "label": "\"5th — rent cash.\" KSh 64,000. Untouched."
+      },
+      "facts": [
+        "f_cash"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gatebook",
+      "type": "physical",
+      "title": "Gate book",
+      "render": "visitorRegister",
+      "body": {
+        "rows": [
+          {
+            "time": "17:41",
+            "entry": "Plumber W. Kiprono — OUT. (Mama Margaret walked him to the gate.)"
+          },
+          {
+            "time": "18:20",
+            "entry": "Tenants 2A and 3D — IN."
+          }
+        ],
+        "note": "No entries between 17:41 and 18:20."
+      },
+      "facts": [
+        "f_gatebook_out"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_bonface",
+      "type": "witness",
+      "title": "Statement: Bonface Mutinda",
+      "render": "statement",
+      "body": {
+        "speaker": "p_bonface"
+      },
+      "facts": [
+        "f_bonface_gate",
+        "f_bonface_only",
+        "f_bonface_book"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rehema",
+      "type": "witness",
+      "title": "Statement: Rehema Wanjiku",
+      "render": "statement",
+      "body": {
+        "speaker": "p_rehema"
+      },
+      "facts": [
+        "f_rehema",
+        "f_rehema_lydia"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_notice",
+      "type": "physical",
+      "title": "Notice on the door of 4C",
+      "render": "form",
+      "body": {
+        "title": "PROCLAMATION — DISTRESS FOR RENT",
+        "body": "Arrears January–March: KSh 27,000. Goods to be attached after seven days.",
+        "signed": "Licensed auctioneer (name withheld)"
+      },
+      "facts": [
+        "f_notice"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lydia_receipt",
+      "type": "physical",
+      "title": "Lydia's rent receipt",
+      "render": "receipt",
+      "body": {
+        "no": "0471",
+        "date": "5th",
+        "time": "17:20",
+        "amount": "KSh 9,500",
+        "signed": "M. Wangila"
+      },
+      "facts": [
+        "f_lydia_receipt"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mwita_receipt",
+      "type": "physical",
+      "title": "Mwita's rent receipt",
+      "render": "receipt",
+      "body": {
+        "no": "0498",
+        "date": "last Saturday",
+        "amount": "KSh 27,000",
+        "note": "Jan–Mar paid in full",
+        "signed": "(a scrawl)"
+      },
+      "facts": [
+        "f_mwita_receipt"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rentbook",
+      "type": "physical",
+      "title": "The missing rent book",
+      "render": "ledger",
+      "body": {
+        "carbons": "Saturday: 0455–0462. Today: last carbon 0471 (L. Anyango, 17:20). 0472–0500: blank. Original 0498 torn out of the back, no carbon behind it.",
+        "ledger4C": "Jan, Feb, Mar — UNPAID — FINAL NOTICE (Margaret's hand)"
+      },
+      "facts": [
+        "f_rentbook_carbons",
+        "f_rentbook_ledger"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_bonface_book"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a blue hard-cover carbon receipt book lying open on a folded kanga, the back pages showing a ragged edge where one receipt was torn out, blank carbon pages around it"
+      }
+    },
+    {
+      "id": "ev_janeth",
+      "type": "witness",
+      "title": "Phone statement: Janeth Kwamboka",
+      "render": "statement",
+      "body": {
+        "speaker": "p_janeth",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_janeth"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Margaret Wangila, caretaker of Baraka Flats, was found dead in the rent office at 18:25 by tenants coming to pay their rent.",
+      "kind": "true",
+      "about": [
+        "p_margaret",
+        "plc_office"
+      ]
+    },
+    {
+      "id": "f_ob_book",
+      "text": "The blue rent book, which never leaves the office shelf, is missing.",
+      "kind": "true",
+      "about": [
+        "plc_office"
+      ]
+    },
+    {
+      "id": "f_body_stamp",
+      "text": "Margaret was struck with the office's heavy metal date stamp.",
+      "kind": "true",
+      "about": [
+        "p_margaret",
+        "plc_office"
+      ]
+    },
+    {
+      "id": "f_cash",
+      "text": "The day's rent cash, KSh 64,000 in an envelope in the drawer, is untouched. Whoever did this came for the book, not the money.",
+      "kind": "true",
+      "about": [
+        "plc_office"
+      ]
+    },
+    {
+      "id": "f_gatebook_out",
+      "text": "Gate book: '17:41 — Plumber W. Kiprono OUT. Mama Margaret walked him to the gate.' The next entry is at 18:20.",
+      "kind": "true",
+      "about": [
+        "p_wilson",
+        "p_margaret",
+        "plc_gate"
+      ]
+    },
+    {
+      "id": "f_bonface_gate",
+      "text": "Bonface: Margaret walked the plumber out at 17:41 and went back to her office. From 17:41 to 18:20 nobody came through the gate in either direction.",
+      "kind": "true",
+      "about": [
+        "p_bonface",
+        "p_wilson",
+        "p_margaret"
+      ],
+      "where": {
+        "person": "p_wilson",
+        "place": "plc_outside",
+        "from": "17:41",
+        "to": "18:20"
+      }
+    },
+    {
+      "id": "f_bonface_only",
+      "text": "Bonface: on the 5th everyone works late. The only tenant home that evening was Mzee Mwita in 4C.",
+      "kind": "true",
+      "about": [
+        "p_bonface",
+        "p_mwita"
+      ]
+    },
+    {
+      "id": "f_bonface_book",
+      "text": "Bonface: at 18:10 he saw Mzee Mwita go up the stairs with a big blue book under his jacket.",
+      "kind": "true",
+      "about": [
+        "p_bonface",
+        "p_mwita"
+      ],
+      "where": {
+        "person": "p_mwita",
+        "place": "plc_stairs",
+        "from": "18:10",
+        "to": "18:12"
+      }
+    },
+    {
+      "id": "f_rehema",
+      "text": "Rehema: Bonface sat on his stool beside her table from 17:00 until the tenants came at 18:20. Nobody passed the gate between the plumber and the tenants.",
+      "kind": "true",
+      "about": [
+        "p_rehema",
+        "p_bonface"
+      ],
+      "where": {
+        "person": "p_bonface",
+        "place": "plc_gate",
+        "from": "17:00",
+        "to": "18:20"
+      }
+    },
+    {
+      "id": "f_rehema_lydia",
+      "text": "Rehema: on Monday the girl from 1B, Lydia, shouted at Margaret about the water. \"The whole building heard.\"",
+      "kind": "true",
+      "about": [
+        "p_rehema",
+        "p_lydia",
+        "p_margaret"
+      ]
+    },
+    {
+      "id": "f_notice",
+      "text": "Notice on the door of 4C: distress for rent, arrears January–March, KSh 27,000. Goods to be taken after seven days.",
+      "kind": "true",
+      "about": [
+        "p_mwita",
+        "ev_notice"
+      ]
+    },
+    {
+      "id": "f_lydia_receipt",
+      "text": "Lydia's receipt: No. 0471, today, 17:20, KSh 9,500, signed by Margaret.",
+      "kind": "true",
+      "about": [
+        "p_lydia",
+        "p_margaret"
+      ],
+      "where": {
+        "person": "p_lydia",
+        "place": "plc_office",
+        "from": "17:15",
+        "to": "17:25"
+      }
+    },
+    {
+      "id": "f_mwita_receipt",
+      "text": "Mwita's receipt: No. 0498, dated last Saturday, 'Jan–Mar paid in full, KSh 27,000', signed with a scrawl.",
+      "kind": "true",
+      "about": [
+        "p_mwita",
+        "ev_mwita_receipt"
+      ]
+    },
+    {
+      "id": "f_rentbook_carbons",
+      "text": "Rent book carbons: Saturday reached only 0462. Today's last receipt is 0471. Carbons 0472–0500 are blank, and receipt 0498 was torn out of the back with no carbon behind it.",
+      "kind": "true",
+      "about": [
+        "ev_rentbook",
+        "p_mwita"
+      ]
+    },
+    {
+      "id": "f_rentbook_ledger",
+      "text": "Rent book ledger, flat 4C, in Margaret's hand: 'Jan, Feb, Mar — UNPAID — FINAL NOTICE.'",
+      "kind": "true",
+      "about": [
+        "ev_rentbook",
+        "p_mwita"
+      ]
+    },
+    {
+      "id": "f_mwita_paid",
+      "text": "Mwita: \"I paid all my arrears on Saturday. Margaret gave me a receipt.\"",
+      "kind": "lie",
+      "about": [
+        "p_mwita"
+      ]
+    },
+    {
+      "id": "f_mwita_years",
+      "text": "Mwita: \"Nineteen years I have lived in 4C. I have never been late until this year.\"",
+      "kind": "claim",
+      "about": [
+        "p_mwita"
+      ]
+    },
+    {
+      "id": "f_mwita_office",
+      "text": "Mwita admits he was in the rent office at about 18:05 and took the rent book.",
+      "kind": "true",
+      "about": [
+        "p_mwita",
+        "plc_office"
+      ],
+      "where": {
+        "person": "p_mwita",
+        "place": "plc_office",
+        "from": "18:00",
+        "to": "18:10"
+      }
+    },
+    {
+      "id": "f_mwita_found",
+      "text": "Mwita: \"She was already lying there when I went in. I swear it.\"",
+      "kind": "claim",
+      "about": [
+        "p_mwita",
+        "p_margaret"
+      ]
+    },
+    {
+      "id": "f_lydia_claim",
+      "text": "Lydia: \"I paid my rent at twenty past five and went to get my hair done.\"",
+      "kind": "claim",
+      "about": [
+        "p_lydia"
+      ]
+    },
+    {
+      "id": "f_lydia_water",
+      "text": "Lydia: on Monday she shouted at Margaret because her floor had no water for four days. \"I shouted. I paid. That is all.\"",
+      "kind": "true",
+      "about": [
+        "p_lydia",
+        "p_margaret"
+      ]
+    },
+    {
+      "id": "f_lydia_salon",
+      "text": "Lydia gives the name of her salon: Janeth's, in Jericho market.",
+      "kind": "true",
+      "about": [
+        "p_lydia",
+        "p_janeth"
+      ]
+    },
+    {
+      "id": "f_janeth",
+      "text": "Janeth: Lydia was in her chair for braids from 17:30 until after 19:00. \"Three of us worked on her. She didn't even go to the toilet.\"",
+      "kind": "true",
+      "about": [
+        "p_janeth",
+        "p_lydia"
+      ],
+      "where": {
+        "person": "p_lydia",
+        "place": "plc_salon",
+        "from": "17:30",
+        "to": "19:00"
+      }
+    },
+    {
+      "id": "f_wilson_claim",
+      "text": "Wilson: \"She walked me out herself. She was alive and shouting about my invoice.\"",
+      "kind": "claim",
+      "about": [
+        "p_wilson"
+      ]
+    },
+    {
+      "id": "f_wilson_invoice",
+      "text": "Wilson: Margaret had promised to pay his invoice on the 10th, once the tank stopped leaking.",
+      "kind": "true",
+      "about": [
+        "p_wilson",
+        "p_margaret"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_mwita",
+      "stance": "cooperative",
+      "intro": "Mwita opens the door of 4C before Amani knocks. He is wearing a tie. \"Come in, officer. I know about Margaret. Terrible.\"",
+      "claims": [
+        "f_mwita_paid",
+        "f_mwita_years"
+      ],
+      "yields": [
+        "ev_mwita_receipt"
+      ],
+      "topics": [
+        {
+          "about": "ev_notice",
+          "reply": "A mistake. The auctioneer doesn't know I paid. I will take the receipt to his office on Monday.",
+          "reveals": []
+        },
+        {
+          "about": "p_margaret",
+          "reply": "Eleven years she has been caretaker. She was strict, but she was fair. Until this year.",
+          "reveals": []
+        },
+        {
+          "about": "f_bonface_book",
+          "reply": "Bonface is an old man. He sees a man with a book. Many people carry books.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_lydia",
+      "stance": "cooperative",
+      "intro": "Lydia touches her new braids as if checking they are still there. \"I shouted at her on Monday. Everybody heard. Now you think I killed her.\"",
+      "claims": [
+        "f_lydia_claim"
+      ],
+      "yields": [
+        "ev_lydia_receipt"
+      ],
+      "topics": [
+        {
+          "about": "p_margaret",
+          "reply": "Four days without water on my floor. Four days. I shouted, yes. Then I paid her today like always.",
+          "reveals": [
+            "f_lydia_water"
+          ]
+        },
+        {
+          "about": "ev_lydia_receipt",
+          "reply": "There. Twenty past five. Then I went straight to Janeth's in the market.",
+          "reveals": [
+            "f_lydia_salon"
+          ]
+        },
+        {
+          "about": "p_janeth",
+          "reply": "Call her. She'll tell you how long braids take.",
+          "reveals": [
+            "ev_janeth"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_wilson",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_gatebook"
+      ],
+      "intro": "Wilson stands at the gate with his toolbag and won't come in. \"I fix pipes. I don't know anything.\"",
+      "claims": [
+        "f_wilson_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_margaret",
+          "reply": "She owed me for the tank. She said the 10th. I believed her. Now who will pay me?",
+          "reveals": [
+            "f_wilson_invoice"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_bonface",
+      "stance": "cooperative",
+      "intro": "Bonface stands up from his stool for the first time all evening. \"I sat here. I watched this gate. Nobody passed.\"",
+      "claims": [],
+      "yields": [
+        "ev_bonface"
+      ],
+      "topics": [
+        {
+          "about": "p_mwita",
+          "reply": "Mzee Mwita? Nineteen years here. Retired from the railway. A gentleman. At ten past six he went up with that blue book under his jacket. I thought she lent it to him.",
+          "reveals": []
+        },
+        {
+          "about": "p_wilson",
+          "reply": "Mama Margaret walked him out herself at 17:41. She was complaining about his invoice the whole way.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_mwita_paid",
+      "claim": "f_mwita_paid",
+      "brokenBy": [
+        "f_rentbook_carbons"
+      ],
+      "reveals": [
+        "f_mwita_office",
+        "f_mwita_found"
+      ],
+      "reaction": "...I took the book. Nineteen years in that flat. My arrears were in it. Without the book, who could prove anything? But she was already lying there when I went in. I swear it on my children.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_mwita",
+      "text": "Mwita Chacha",
+      "category": "person",
+      "ref": "p_mwita",
+      "unlock": {
+        "anyOf": [
+          "f_notice",
+          "f_bonface_only"
+        ]
+      }
+    },
+    {
+      "id": "w_lydia",
+      "text": "Lydia Anyango",
+      "category": "person",
+      "ref": "p_lydia",
+      "unlock": {
+        "anyOf": [
+          "f_lydia_claim"
+        ]
+      }
+    },
+    {
+      "id": "w_wilson",
+      "text": "Wilson Kiprono",
+      "category": "person",
+      "ref": "p_wilson",
+      "unlock": {
+        "anyOf": [
+          "f_gatebook_out"
+        ]
+      }
+    },
+    {
+      "id": "w_bonface",
+      "text": "Bonface Mutinda",
+      "category": "person",
+      "ref": "p_bonface",
+      "unlock": {
+        "anyOf": [
+          "f_bonface_gate"
+        ]
+      }
+    },
+    {
+      "id": "w_janeth",
+      "text": "Janeth Kwamboka",
+      "category": "person",
+      "ref": "p_janeth",
+      "unlock": {
+        "anyOf": [
+          "f_janeth"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} at Baraka Flats.",
+    "fixed": {
+      "victim": "Margaret Wangila"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_mwita"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Nobody came in, nobody went out, and one man was inside with the book. \"Already lying there\" won't survive that gate book.",
+          "fail": [
+            "Doesn't hold up. Read the gate book against the watchman. Who was inside that compound between 17:41 and 18:10?",
+            "No. Shouting about water isn't being in the office. Where was everyone when she died?"
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_flats",
+      "from": "17:41",
+      "to": "18:10",
+      "within": [
+        "plc_office",
+        "plc_stairs"
+      ]
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_mwita_paid",
+          "f_rentbook_carbons",
+          "f_mwita_office"
+        ],
+        "concludes": "Mwita's Saturday receipt is No. 0498, but on Saturday the book only reached 0462, and 0498 was torn out of the back with no carbon. He forged it from the stolen book. Pressed, he admits taking the book from the office at about 18:05."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "f_gatebook_out",
+          "f_bonface_gate",
+          "f_bonface_only",
+          "f_bonface_book"
+        ],
+        "concludes": "Margaret was alive at 17:41 when she walked the plumber out. Nobody came in or went out until 18:20. The only tenant home was Mwita, seen going upstairs at 18:10 with the blue book."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s1",
+          "s2",
+          "f_cash"
+        ],
+        "concludes": "The only person inside the compound with her was the man who took the book and left the cash. \"Already lying there\" is impossible: nobody else was in. Mwita Chacha killed Margaret.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_wilson",
+        "blank": "who",
+        "by": [
+          "f_bonface_gate"
+        ],
+        "why": "Margaret was alive when she walked Wilson out at 17:41, and he never came back through the gate before 18:20."
+      },
+      {
+        "word": "w_lydia",
+        "blank": "who",
+        "by": [
+          "f_janeth"
+        ],
+        "why": "Lydia was in Janeth's chair in Jericho market from 17:30 until after 19:00."
+      },
+      {
+        "word": "w_bonface",
+        "blank": "who",
+        "by": [
+          "f_rehema"
+        ],
+        "why": "Rehema had Bonface on his stool at the gate beside her from 17:00 until 18:20."
+      },
+      {
+        "word": "w_janeth",
+        "blank": "who",
+        "by": [
+          "f_janeth"
+        ],
+        "why": "Janeth was braiding Lydia's hair at her salon with two other stylists."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Saturday. Margaret tells Mwita the auctioneers will take his furniture next week. Nineteen years in 4C, and three months behind.",
+        "image": null
+      },
+      {
+        "text": "The 5th, 17:41. Margaret walks the plumber to the gate, complaining about his invoice, and goes back to her office. The building is empty except for one tenant.",
+        "image": "loc_flats"
+      },
+      {
+        "text": "About 18:00. Mwita comes down to beg one more time. She refuses. He picks up the date stamp from her desk.",
+        "image": null
+      },
+      {
+        "text": "He leaves the envelope of cash in the drawer. He takes the blue book, because his arrears are written in it, and carries it upstairs under his jacket at 18:10.",
+        "image": null
+      },
+      {
+        "text": "That night he tears a blank receipt from the back of the book and writes himself one: \"Jan–Mar, paid in full.\" The number on it is 0498.",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_bonface",
+        "line": "The watchman sat at the only gate. Ask him who came in, who went out, and who was already inside."
+      },
+      "tier2": {
+        "facts": [
+          "f_mwita_receipt",
+          "f_rentbook_carbons"
+        ],
+        "line": "A receipt has a number. The book has carbons. On Saturday, how far had the numbers got?"
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "mzee",
+      "def": "Respectful word for an older man."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address or name a woman."
+    },
+    {
+      "term": "madalali",
+      "def": "Agents or brokers; here, the auctioneer's men who come to take goods."
+    },
+    {
+      "term": "kanga",
+      "def": "Printed cotton cloth, often with a proverb along the edge."
+    },
+    {
+      "term": "sukuma",
+      "def": "Sukuma wiki: collard greens, the everyday vegetable."
+    }
+  ],
+  "tutorial": [
+    {
+      "trigger": "warrantAvailable",
+      "line": "That is grounds: someone saw him with it. A warrant costs a stamp. Spend it when what you find can change the case."
+    },
+    {
+      "trigger": "warrantSigned",
+      "line": "Signed. Search it like a scene. Look where a careful man would hide something flat."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "searchWarrant"
+    ],
+    "beatNotes": "The search warrant: once Bonface's sighting is read, a warrant form slides onto the desk with Mwita's name, address and the grounds pre-typed from the fact. Spending a stamp: the duty magistrate's signature writes itself in and \"Flat 4C — search\" opens on the map, searched with the same hotspot interface as a scene."
+  }
+}

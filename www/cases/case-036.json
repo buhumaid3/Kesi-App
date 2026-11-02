@@ -1,0 +1,1696 @@
+{
+  "meta": {
+    "id": "case-036",
+    "number": 36,
+    "region": "rift-valley",
+    "regionNumber": 4,
+    "title": "Extended Bags",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 21,
+    "date": "Tuesday 4 November",
+    "folderTab": "MOLO"
+  },
+  "pattern": {
+    "crimePattern": "potato broker locks the co-op chairlady in a cold store after her complaint got the broker's lorries impounded",
+    "noRealCaseRetold": true,
+    "notes": "Fictional co-op and broker. The \"extended bag\" dispute in the potato trade is real and widely reported. Tone: the reconstruction ends at the door closing; it does not show the night.",
+    "tags": [
+      "hypothermia",
+      "locked-room",
+      "business-rivalry",
+      "two-liars",
+      "forensics",
+      "detention",
+      "spine-background"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 3,
+    "redHerrings": 1,
+    "liars": 2,
+    "groups": [
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 09/04/11",
+    "date": "Tuesday 4 November",
+    "time": "07:20",
+    "reportedBy": "Agnetta Rutto, clerk, Molo Highland Potato Co-op",
+    "text": "The clerk of the Molo Highland Potato Co-op reports that the co-op's chairlady, Susan Chelangat (52), was found dead inside the stone potato store at 07:05. The store door was barred and padlocked from outside with a padlock that is not the co-op's.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_susan",
+      "role": "victim",
+      "name": "Susan Chelangat",
+      "age": 52,
+      "occupation": "Chairlady, Molo Highland Potato Co-op",
+      "bio": "Led the farmers' campaign for the legal 50 kg bag. Stays late on Mondays counting bags in the store.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_store",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 50s, a thick knitted cardigan and a woollen hat against the cold, a counting book in her hand, a determined set to her mouth, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_vivian",
+      "role": "suspect",
+      "name": "Vivian Chepngeno",
+      "age": 36,
+      "occupation": "Potato broker",
+      "bio": "Buys from farmers across Molo and trucks to Nairobi. Two of her lorries were impounded last week for oversized bags, after Susan's complaint.",
+      "community": "Kalenjin",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_enforcement"
+      },
+      "at": "plc_town",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 30s, a padded jacket, a lorry key ring with many keys clipped to her belt, a phone in each hand, impatient and cold-eyed, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_hosea",
+      "role": "suspect",
+      "name": "Hosea Kahiga",
+      "age": 61,
+      "occupation": "Farmer; lost the co-op chair election to Susan",
+      "redHerring": true,
+      "bio": "Chaired the co-op for eight years until Susan beat him in the vote. Has not forgiven her, loudly.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_election"
+      },
+      "at": "plc_wake",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 60s, a heavy coat and a flat cap, a walking stick, a black mourning ribbon on his lapel, bitter and tired, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_benjamin",
+      "role": "suspect",
+      "name": "Benjamin Kirwa",
+      "age": 33,
+      "occupation": "Co-op night guard",
+      "bio": "Guards the yard from six in the evening. Signs the gate book every hour.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_gate",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 30s, a guard's greatcoat, a woollen balaclava rolled up as a hat, a rungu, sheepish, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_agnetta",
+      "role": "witness",
+      "name": "Agnetta Rutto",
+      "age": 28,
+      "occupation": "Co-op clerk",
+      "bio": "Keeps the co-op office. Found the store locked at 07:00.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_office",
+      "image": null
+    },
+    {
+      "id": "p_jared",
+      "role": "witness",
+      "name": "Jared Kimutai",
+      "age": 41,
+      "occupation": "County produce-enforcement officer",
+      "bio": "Impounded Vivian's two lorries last week.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_agnetta_impound"
+      },
+      "at": "plc_county",
+      "image": null
+    },
+    {
+      "id": "p_fred",
+      "role": "witness",
+      "name": "Fred Wanjala",
+      "age": 47,
+      "occupation": "Bar owner, Molo town",
+      "statementOnly": true,
+      "bio": "Runs a bar with a big screen on football nights.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_ben_admits"
+      },
+      "at": "plc_bar",
+      "image": null
+    },
+    {
+      "id": "p_lucy",
+      "role": "witness",
+      "name": "Lucy Njambi",
+      "age": 55,
+      "occupation": "Host of a funeral wake in Elburgon",
+      "statementOnly": true,
+      "bio": "Her husband's wake has run every night since Friday.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_hosea_claim"
+      },
+      "at": "plc_wake",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_office",
+      "name": "Co-op office",
+      "within": "loc_yard"
+    },
+    {
+      "id": "plc_gate",
+      "name": "Co-op yard gate",
+      "within": "loc_yard"
+    },
+    {
+      "id": "plc_coopzone",
+      "name": "Molo co-op mast zone"
+    },
+    {
+      "id": "plc_town",
+      "name": "Molo town"
+    },
+    {
+      "id": "plc_bar",
+      "name": "Bar, Molo town"
+    },
+    {
+      "id": "plc_wake",
+      "name": "Funeral wake, Elburgon"
+    },
+    {
+      "id": "plc_county",
+      "name": "County office, Nakuru"
+    },
+    {
+      "id": "plc_agnetta",
+      "name": "Agnetta's home"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_store",
+      "name": "The potato store, Molo co-op",
+      "kind": "scene",
+      "description": "A thick-walled stone store with small vents high up, a heavy wooden door and an iron bar across the outside. Inside: sacks stacked to the roof, the smell of earth, a counting book on an upturned crate. Frost on the yard outside.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_door",
+          "label": "The door",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_door",
+          "text": "The iron bar is down across the door, and a steel padlock that isn't the co-op's has been cut off it."
+        },
+        {
+          "id": "hs_phone",
+          "label": "Inside, by the crate",
+          "pos": [
+            30,
+            70
+          ],
+          "yields": "ev_susan_phone",
+          "text": "Her phone lies on the counting crate. The screen shows a list of failed calls."
+        },
+        {
+          "id": "hs_vent",
+          "label": "Vent log on the wall",
+          "pos": [
+            70,
+            30
+          ],
+          "yields": "ev_ventlog",
+          "text": "A card on the inside wall: vents and gas readings, written up every evening."
+        },
+        {
+          "id": "hs_agnetta",
+          "label": "The clerk",
+          "pos": [
+            86,
+            70
+          ],
+          "yields": "ev_agnetta",
+          "text": "Agnetta Rutto stands in the yard holding the cut padlock in both hands."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the inside of a thick-walled stone potato store in the cold Kenyan highlands at dawn, sacks of potatoes stacked to the roof, a small high vent, a heavy wooden door standing open with an iron bar and a cut padlock hanging from it, frost on the ground outside, no people in focus"
+      }
+    },
+    {
+      "id": "loc_yard",
+      "name": "Co-op yard and office",
+      "kind": "location",
+      "description": "A muddy yard, a small office with a key board, a guard's hut with a gate book.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_keyboard",
+          "label": "Office key board",
+          "pos": [
+            30,
+            40
+          ],
+          "yields": "ev_brass",
+          "text": "The co-op's own brass padlock for the store hangs open on its nail, key number 12 in it."
+        },
+        {
+          "id": "hs_gatebook",
+          "label": "Guard's gate book",
+          "pos": [
+            70,
+            50
+          ],
+          "yields": "ev_gatebook",
+          "text": "The night's page: an entry every hour."
+        },
+        {
+          "id": "hs_ledger",
+          "label": "Co-op ledger",
+          "pos": [
+            20,
+            60
+          ],
+          "yields": "ev_ledger",
+          "text": "Purchases and payments, by broker."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small potato co-operative yard in Molo at dawn, a muddy yard, a tin-roofed office with a key board, a guard hut with a lamp, frost"
+      }
+    },
+    {
+      "id": "loc_county",
+      "name": "County produce-enforcement office, Nakuru",
+      "kind": "location",
+      "description": "A county office with impound files.",
+      "unlock": {
+        "fact": "f_agnetta_impound"
+      },
+      "hotspots": [
+        {
+          "id": "hs_impound",
+          "label": "Impound file",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_jared",
+          "text": "Jared Kimutai has the impound file open."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a county government office in Nakuru with box files on shelves and an impound notice board"
+      }
+    },
+    {
+      "id": "loc_bar",
+      "name": "Bar, Molo town",
+      "kind": "location",
+      "description": "A bar with a big screen and a till that prints receipts.",
+      "unlock": {
+        "fact": "f_gatebook"
+      },
+      "hotspots": [
+        {
+          "id": "hs_barreceipt",
+          "label": "The till",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_bar",
+          "text": "The owner checks his till roll and his memory."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small bar in a Kenyan highland town at night with a big screen showing football, plastic chairs, a till on the counter"
+      }
+    },
+    {
+      "id": "loc_lorry",
+      "name": "Vivian's lorry (search)",
+      "kind": "search",
+      "description": "A seven-tonne lorry parked in Molo town, its cab cluttered with receipts.",
+      "unlock": {
+        "fact": "f_rec_mast"
+      },
+      "hotspots": [
+        {
+          "id": "hs_cab",
+          "label": "The cab",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_lorry",
+          "text": "A key ring hanging from the dashboard, a toolbox under the seat, papers in the door pocket."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the cab of a Kenyan produce lorry, a key ring hanging from the dashboard, a metal toolbox under the seat, papers in the door pocket"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_door",
+      "type": "physical",
+      "title": "The store door",
+      "render": "object",
+      "body": {
+        "label": "Barred from outside and locked with a steel padlock (cut off this morning). Not the co-op's lock."
+      },
+      "facts": [
+        "f_door"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a heavy wooden store door with an iron bar across it, a cut steel padlock hanging from the hasp, frost on the stone wall, no body visible"
+      }
+    },
+    {
+      "id": "ev_brass",
+      "type": "physical",
+      "title": "The co-op's own padlock",
+      "render": "object",
+      "body": {
+        "label": "Brass padlock, key No. 12, hanging open on its nail in the office."
+      },
+      "facts": [
+        "f_brass"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_susan_phone",
+      "type": "phone",
+      "title": "Susan's phone",
+      "render": "note",
+      "body": {
+        "log": "Outgoing calls after 18:50, all failed: \"No network\". The store is a dead zone on the mast map."
+      },
+      "facts": [
+        "f_phone_fail"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ventlog",
+      "type": "physical",
+      "title": "Vent and gas log",
+      "render": "form",
+      "body": {
+        "entry": "18:00 — vents open, CO2 normal. S.C."
+      },
+      "facts": [
+        "f_ventlog"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_agnetta",
+      "type": "witness",
+      "title": "Statement: Agnetta Rutto",
+      "render": "statement",
+      "body": {
+        "speaker": "p_agnetta"
+      },
+      "facts": [
+        "f_agnetta",
+        "f_agnetta_home",
+        "f_election",
+        "f_agnetta_impound"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gatebook",
+      "type": "physical",
+      "title": "Guard's gate book",
+      "render": "visitorRegister",
+      "body": {
+        "rows": "Every hour 18:00–06:00: \"all quiet. B.K.\"",
+        "note": "All in the same ink."
+      },
+      "facts": [
+        "f_gatebook"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ledger",
+      "type": "physical",
+      "title": "Co-op ledger",
+      "render": "ledger",
+      "body": {
+        "line": "V. Chepngeno: purchases paid in full. No seed-potato debts either way."
+      },
+      "facts": [
+        "f_ledger"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_jared",
+      "type": "witness",
+      "title": "Statement: Jared Kimutai",
+      "render": "statement",
+      "body": {
+        "speaker": "p_jared"
+      },
+      "facts": [
+        "f_enforcement",
+        "f_jared",
+        "f_jared_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_bar",
+      "type": "witness",
+      "title": "Statement and receipt: Fred Wanjala",
+      "render": "statement",
+      "body": {
+        "speaker": "p_fred"
+      },
+      "facts": [
+        "f_bar"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rec_vivian",
+      "type": "phone",
+      "title": "Records: Vivian Chepngeno's line",
+      "render": "manifest",
+      "body": {
+        "masts": "Molo co-op zone 18:22–18:56; Molo town from 19:05"
+      },
+      "facts": [
+        "f_rec_mast"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_jared"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_lorry",
+      "type": "physical",
+      "title": "Vivian's lorry cab",
+      "render": "object",
+      "body": {
+        "found": [
+          "key ring with a steel padlock key that opens the store padlock",
+          "toolbox padlock hasp empty",
+          "loan agreement: lorry financed by Mvua Holdings, repayments to Till 880 214"
+        ]
+      },
+      "facts": [
+        "f_lorry_key",
+        "f_lorry_mvua"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_mast"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_wake",
+      "type": "witness",
+      "title": "Phone statement: Lucy Njambi",
+      "render": "statement",
+      "body": {
+        "speaker": "p_lucy",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_wake"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_viv_prints",
+      "type": "physical",
+      "title": "Fingerprints: Vivian Chepngeno",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention after she refused."
+      },
+      "facts": [
+        "f_viv_prints"
+      ],
+      "gate": null,
+      "detention": "p_vivian",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_hypo",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_door"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints on the steel padlock",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_prints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_door",
+          "ev_viv_prints"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tox",
+      "type": "forensic",
+      "title": "Lab: toxicology",
+      "render": "labReport",
+      "body": {
+        "test": "toxicology"
+      },
+      "facts": [
+        "f_tox"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toxicology",
+        "hours": 18,
+        "needs": [
+          "ev_door"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Susan Chelangat was found dead inside the co-op potato store at 07:05. The door was barred and padlocked from outside.",
+      "kind": "true",
+      "about": [
+        "p_susan",
+        "loc_store"
+      ]
+    },
+    {
+      "id": "f_door",
+      "text": "The store was barred from outside and locked with a steel padlock that is not the co-op's.",
+      "kind": "true",
+      "about": [
+        "loc_store"
+      ]
+    },
+    {
+      "id": "f_brass",
+      "text": "The co-op's own brass store padlock (key No. 12) is hanging open on its nail in the office.",
+      "kind": "true",
+      "about": [
+        "plc_office"
+      ]
+    },
+    {
+      "id": "f_phone_fail",
+      "text": "Susan's phone: outgoing calls after 18:50, every one failed with 'No network'. The stone store is a dead zone on the mast map.",
+      "kind": "true",
+      "about": [
+        "p_susan",
+        "loc_store"
+      ]
+    },
+    {
+      "id": "f_ventlog",
+      "text": "Vent log in Susan's hand: '18:00 — vents open, CO2 normal.'",
+      "kind": "true",
+      "about": [
+        "loc_store"
+      ]
+    },
+    {
+      "id": "f_agnetta",
+      "text": "Agnetta: she found the store locked at 07:00 \"with a padlock that isn't ours\", had it cut, and found Susan.",
+      "kind": "true",
+      "about": [
+        "p_agnetta"
+      ]
+    },
+    {
+      "id": "f_agnetta_home",
+      "text": "Agnetta went home at 17:30 and came back at 07:00.",
+      "kind": "true",
+      "about": [
+        "p_agnetta"
+      ],
+      "where": {
+        "person": "p_agnetta",
+        "place": "plc_agnetta",
+        "from": "17:30",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_agnetta_impound",
+      "text": "Agnetta: last week Susan's complaint got a broker's lorries impounded for oversized bags. \"The county officer was Jared Kimutai.\"",
+      "kind": "true",
+      "about": [
+        "p_agnetta",
+        "p_jared",
+        "p_susan"
+      ]
+    },
+    {
+      "id": "f_election",
+      "text": "Agnetta: Hosea Kahiga lost the chair election to Susan and has been bitter about it ever since.",
+      "kind": "true",
+      "about": [
+        "p_agnetta",
+        "p_hosea",
+        "p_susan"
+      ]
+    },
+    {
+      "id": "f_gatebook",
+      "text": "Gate book: an entry every hour from 18:00 to 06:00, \"all quiet. B.K.\", every one in the same ink.",
+      "kind": "true",
+      "about": [
+        "p_benjamin"
+      ]
+    },
+    {
+      "id": "f_ledger",
+      "text": "Co-op ledger: Vivian's purchases are paid in full; there are no seed-potato debts either way.",
+      "kind": "true",
+      "about": [
+        "p_vivian"
+      ]
+    },
+    {
+      "id": "f_enforcement",
+      "text": "Impound notice: two lorries, owner V. Chepngeno, 'extended bags, 128–131 kg'. Complaint by the co-op's chairlady, S. Chelangat.",
+      "kind": "true",
+      "about": [
+        "p_vivian",
+        "p_susan",
+        "p_jared"
+      ]
+    },
+    {
+      "id": "f_jared",
+      "text": "Jared: at the impound Vivian told him, \"That woman will regret this.\"",
+      "kind": "true",
+      "about": [
+        "p_jared",
+        "p_vivian"
+      ]
+    },
+    {
+      "id": "f_jared_self",
+      "text": "Jared was at the county office in Nakuru until 20:00; a colleague drove him home.",
+      "kind": "true",
+      "about": [
+        "p_jared"
+      ],
+      "where": {
+        "person": "p_jared",
+        "place": "plc_county",
+        "from": "08:00",
+        "to": "20:00"
+      }
+    },
+    {
+      "id": "f_bar",
+      "text": "Fred: Benjamin watched the match at his bar from 18:10 to 23:00. His till printed Benjamin's order at 22:41.",
+      "kind": "true",
+      "about": [
+        "p_fred",
+        "p_benjamin"
+      ],
+      "where": {
+        "person": "p_benjamin",
+        "place": "plc_bar",
+        "from": "18:10",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_rec_mast",
+      "text": "Records, Vivian's line: in the Molo co-op mast zone 18:22–18:56, then Molo town from 19:05.",
+      "kind": "true",
+      "about": [
+        "p_vivian"
+      ]
+    },
+    {
+      "id": "f_lorry_key",
+      "text": "In her lorry cab: a key ring with a steel padlock key that opens the padlock from the store door. The toolbox's padlock hasp is empty.",
+      "kind": "true",
+      "about": [
+        "p_vivian"
+      ]
+    },
+    {
+      "id": "f_lorry_mvua",
+      "text": "Also in the cab: a loan agreement, 'Lorry financed by Mvua Holdings, repayments to Till 880 214'.",
+      "kind": "true",
+      "about": [
+        "p_vivian"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_wake",
+      "text": "Lucy: Hosea sat at her husband's wake in Elburgon from 17:00 until morning.",
+      "kind": "true",
+      "about": [
+        "p_lucy",
+        "p_hosea"
+      ],
+      "where": {
+        "person": "p_hosea",
+        "place": "plc_wake",
+        "from": "17:00",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_viv_prints",
+      "text": "Fingerprints taken from Vivian Chepngeno in detention.",
+      "kind": "true",
+      "about": [
+        "p_vivian"
+      ]
+    },
+    {
+      "id": "f_aut_hypo",
+      "text": "Autopsy: hypothermia. No injuries, no alcohol.",
+      "kind": "true",
+      "about": [
+        "p_susan"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 01:00 and 04:00. She was alive for hours after the door was locked.",
+      "kind": "true",
+      "about": [
+        "p_susan"
+      ]
+    },
+    {
+      "id": "f_prints",
+      "text": "Lab: Vivian Chepngeno's fingerprints are on the steel padlock.",
+      "kind": "true",
+      "about": [
+        "p_vivian"
+      ]
+    },
+    {
+      "id": "f_tox",
+      "text": "Toxicology: clean.",
+      "kind": "true",
+      "about": [
+        "p_susan"
+      ]
+    },
+    {
+      "id": "f_viv_town",
+      "text": "Vivian: \"I was in Nakuru town all evening.\"",
+      "kind": "lie",
+      "about": [
+        "p_vivian"
+      ]
+    },
+    {
+      "id": "f_viv_nothing",
+      "text": "Vivian: \"I have nothing against that woman.\"",
+      "kind": "claim",
+      "about": [
+        "p_vivian",
+        "p_susan"
+      ]
+    },
+    {
+      "id": "f_viv_admits",
+      "text": "Vivian admits she drove to the co-op at about 18:25 \"to talk to Susan\". She says Susan wouldn't listen, and she left.",
+      "kind": "true",
+      "about": [
+        "p_vivian",
+        "loc_store"
+      ],
+      "where": {
+        "person": "p_vivian",
+        "place": "loc_store",
+        "from": "18:25",
+        "to": "18:55"
+      }
+    },
+    {
+      "id": "f_viv_door",
+      "text": "Vivian: \"I never touched that door.\"",
+      "kind": "lie",
+      "about": [
+        "p_vivian"
+      ]
+    },
+    {
+      "id": "f_viv_bar",
+      "text": "Vivian admits she dropped the bar and locked the door with the padlock from her lorry's toolbox. \"To frighten her. I meant to come back.\"",
+      "kind": "true",
+      "about": [
+        "p_vivian",
+        "loc_store"
+      ]
+    },
+    {
+      "id": "f_ben_gate",
+      "text": "Benjamin: \"I was at the gate all night. I signed every hour.\"",
+      "kind": "lie",
+      "about": [
+        "p_benjamin"
+      ]
+    },
+    {
+      "id": "f_ben_admits",
+      "text": "Benjamin admits he was at a bar in Molo town watching the match, and signed the whole night's book when he came back at eleven. The gate was empty 18:10–23:00.",
+      "kind": "true",
+      "about": [
+        "p_benjamin"
+      ]
+    },
+    {
+      "id": "f_hosea_claim",
+      "text": "Hosea: \"I was at a wake in Elburgon.\"",
+      "kind": "claim",
+      "about": [
+        "p_hosea"
+      ]
+    },
+    {
+      "id": "f_hosea_susan",
+      "text": "Hosea: \"We fought for years about the chair. Not about this.\"",
+      "kind": "true",
+      "about": [
+        "p_hosea",
+        "p_susan"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_vivian",
+      "stance": "cooperative",
+      "intro": "Vivian takes the call standing next to an empty lorry. \"Susan? Dead? I was in town all evening. I have nothing against that woman.\"",
+      "claims": [
+        "f_viv_town",
+        "f_viv_nothing"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_viv_door",
+          "after": "f_viv_admits"
+        }
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "f_enforcement",
+          "reply": "Two lorries. Two hundred thousand in fines and my Nairobi buyer gone. Because of a bag.",
+          "reveals": []
+        },
+        {
+          "about": "ev_brass",
+          "reply": "I don't know their locks.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_benjamin",
+      "stance": "cooperative",
+      "intro": "Benjamin holds his gate book closed. \"I was at the gate all night. Every hour, signed.\"",
+      "claims": [
+        "f_ben_gate"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_brass",
+          "reply": "That is our lock. The key is twelve. It stays in the office.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_hosea",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_agnetta"
+      ],
+      "intro": "Hosea answers from the wake, singing behind him. \"I lost the chair to her. I did not lose my mind.\"",
+      "claims": [
+        "f_hosea_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_susan",
+          "reply": "We fought for years about the chair. Not about this. Never this.",
+          "reveals": [
+            "f_hosea_susan"
+          ]
+        },
+        {
+          "about": "p_lucy",
+          "reply": "Ask Mama Njambi. I have sat by her husband every night since Friday.",
+          "reveals": [
+            "ev_wake"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_agnetta",
+      "stance": "cooperative",
+      "intro": "Agnetta turns the cut padlock over and over. \"It isn't ours. Ours is brass.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_susan",
+          "reply": "Mondays she stays late and counts every sack. She says the brokers count with their own bags.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_jared",
+      "stance": "cooperative",
+      "intro": "Jared has the impound file open before Amani sits down. \"Two lorries, last week. Here.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_vivian",
+          "reply": "At the impound she said, \"That woman will regret this.\" I wrote it in the file.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_ben_gate",
+      "claim": "f_ben_gate",
+      "brokenBy": [
+        "f_bar"
+      ],
+      "reveals": [
+        "f_ben_admits"
+      ],
+      "reaction": "I was at the bar. The match. I signed the whole night's book when I came back at eleven. The gate was empty. I'm sorry. God, I'm sorry.",
+      "mark": "explains"
+    },
+    {
+      "id": "c_viv_town",
+      "claim": "f_viv_town",
+      "brokenBy": [
+        "f_rec_mast"
+      ],
+      "reveals": [
+        "f_viv_admits"
+      ],
+      "reaction": "I went to the co-op to talk to her. She wouldn't listen. She went back to counting. I left. I never touched that door.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_viv_door",
+      "claim": "f_viv_door",
+      "brokenBy": [
+        "f_prints",
+        "f_lorry_key"
+      ],
+      "reveals": [
+        "f_viv_bar"
+      ],
+      "reaction": "She stares at the padlock in its evidence bag. \"...She turned her back on me. I dropped the bar. To frighten her. I meant to come back. I meant to.\"",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_vivian",
+      "text": "Vivian Chepngeno",
+      "category": "person",
+      "ref": "p_vivian",
+      "unlock": {
+        "anyOf": [
+          "f_enforcement"
+        ]
+      }
+    },
+    {
+      "id": "w_hosea",
+      "text": "Hosea Kahiga",
+      "category": "person",
+      "ref": "p_hosea",
+      "unlock": {
+        "anyOf": [
+          "f_election"
+        ]
+      }
+    },
+    {
+      "id": "w_benjamin",
+      "text": "Benjamin Kirwa",
+      "category": "person",
+      "ref": "p_benjamin",
+      "unlock": {
+        "anyOf": [
+          "f_gatebook"
+        ]
+      }
+    },
+    {
+      "id": "w_agnetta",
+      "text": "Agnetta Rutto",
+      "category": "person",
+      "ref": "p_agnetta",
+      "unlock": {
+        "anyOf": [
+          "f_agnetta"
+        ]
+      }
+    },
+    {
+      "id": "w_jared",
+      "text": "Jared Kimutai",
+      "category": "person",
+      "ref": "p_jared",
+      "unlock": {
+        "anyOf": [
+          "f_jared"
+        ]
+      }
+    },
+    {
+      "id": "h_locked",
+      "text": "locked her in the potato store overnight, where she died of cold",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_hypo"
+        ]
+      }
+    },
+    {
+      "id": "h_blow",
+      "text": "a blow to the head",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack while working",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_gas",
+      "text": "gas from rotting potatoes",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ventlog"
+        ]
+      }
+    },
+    {
+      "id": "h_poison",
+      "text": "poisoned",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_tox"
+        ]
+      }
+    },
+    {
+      "id": "m_impound",
+      "text": "Susan's complaint got her lorries impounded for oversized bags",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_enforcement"
+        ]
+      }
+    },
+    {
+      "id": "m_election",
+      "text": "the co-op chair election",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_election"
+        ]
+      }
+    },
+    {
+      "id": "m_money",
+      "text": "unpaid potato money",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ledger"
+        ]
+      }
+    },
+    {
+      "id": "m_seed",
+      "text": "a seed-potato debt",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ledger"
+        ]
+      }
+    },
+    {
+      "id": "m_guard",
+      "text": "a quarrel over the guard's absence",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ben_admits"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Susan Chelangat"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_vivian"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her phone at the co-op, her key, her prints on the lock. That will hold.",
+          "fail": [
+            "Doesn't hold up. The guard lied about where he was, not about a lock. Whose key opens that padlock?",
+            "No. The election rival sat at a wake all night. Follow the impound."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_locked"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Locked in, no signal, three degrees. Hypothermia. Yes.",
+          "fail": [
+            "The vents were open at six. Read the log.",
+            "No injuries at all. Read what Dr. Chebii found."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_impound"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Two lorries and a buyer lost over a 50 kg bag. That's the reason.",
+          "fail": [
+            "The ledger is paid in full. Try again.",
+            "That grudge was settled at a ballot box, and its owner was at a wake."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_store",
+      "from": "18:25",
+      "to": "18:55",
+      "note": "The act window: the door was barred and locked. Death followed between 01:00 and 04:00."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_ben_gate",
+          "f_bar",
+          "f_ben_admits",
+          "f_gatebook"
+        ],
+        "concludes": "The guard was at a bar in town from 18:10 to 23:00 and signed the night's book afterwards. The yard was unguarded; anyone could have come."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_door",
+          "f_brass",
+          "f_phone_fail",
+          "f_aut_hypo",
+          "f_aut_tod",
+          "f_ventlog"
+        ],
+        "concludes": "Susan was locked in with a padlock that isn't the co-op's, couldn't call out from the stone store, and died of cold hours later. The air was fine; the vents were open."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_viv_town",
+          "f_rec_mast",
+          "f_viv_admits",
+          "f_lorry_key",
+          "f_prints",
+          "f_enforcement",
+          "f_jared"
+        ],
+        "concludes": "Vivian's phone was at the co-op 18:22–18:56 and she admits going there. The key to the steel padlock is on her ring and her prints are on the lock. Vivian Chepngeno locked Susan in the potato store overnight, because Susan's complaint got her lorries impounded.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_hosea",
+        "blank": "who",
+        "by": [
+          "f_wake"
+        ],
+        "why": "Hosea sat at a wake in Elburgon from 17:00 until morning."
+      },
+      {
+        "word": "w_benjamin",
+        "blank": "who",
+        "by": [
+          "f_bar"
+        ],
+        "why": "Benjamin was at the bar in Molo town from 18:10 to 23:00, and has no key to that padlock."
+      },
+      {
+        "word": "w_agnetta",
+        "blank": "who",
+        "by": [
+          "f_agnetta_home"
+        ],
+        "why": "Agnetta went home at 17:30 and came back at 07:00."
+      },
+      {
+        "word": "w_jared",
+        "blank": "who",
+        "by": [
+          "f_jared_self"
+        ],
+        "why": "Jared was at the county office in Nakuru until 20:00."
+      },
+      {
+        "word": "h_blow",
+        "blank": "how",
+        "by": [
+          "f_aut_hypo"
+        ],
+        "why": "No injuries."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_hypo"
+        ],
+        "why": "She died of cold, not of her heart."
+      },
+      {
+        "word": "h_gas",
+        "blank": "how",
+        "by": [
+          "f_ventlog"
+        ],
+        "why": "The vents were open and the gas reading normal at 18:00."
+      },
+      {
+        "word": "h_poison",
+        "blank": "how",
+        "by": [
+          "f_tox"
+        ],
+        "why": "Toxicology is clean."
+      },
+      {
+        "word": "m_election",
+        "blank": "why",
+        "by": [
+          "f_wake"
+        ],
+        "why": "That grudge is Hosea's, and he was at the wake."
+      },
+      {
+        "word": "m_money",
+        "blank": "why",
+        "by": [
+          "f_ledger"
+        ],
+        "why": "Her purchases were paid in full."
+      },
+      {
+        "word": "m_seed",
+        "blank": "why",
+        "by": [
+          "f_ledger"
+        ],
+        "why": "No seed-potato debts either way."
+      },
+      {
+        "word": "m_guard",
+        "blank": "why",
+        "by": [
+          "f_ben_admits"
+        ],
+        "why": "The empty gate was Benjamin's failing, not a reason for Vivian."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Last week the county impounds two of Vivian's lorries for 130 kg bags, on Susan's complaint. Fines, and a Nairobi buyer lost. \"That woman will regret this.\"",
+        "image": null
+      },
+      {
+        "text": "Monday, 18:10. The night guard slips off to watch the match in town.",
+        "image": null
+      },
+      {
+        "text": "18:25. Vivian drives into the empty yard. Susan is in the stone store, counting sacks, as every Monday.",
+        "image": "loc_store"
+      },
+      {
+        "text": "They argue. Susan turns back to her count. Vivian steps outside, swings the heavy door shut, drops the iron bar, and locks it with the padlock from her lorry's toolbox.",
+        "image": null
+      },
+      {
+        "text": "18:56. Her lorry pulls out of the yard. The reconstruction ends here.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Break the guard, request Vivian's records, search the lorry, then detain her: prints take 6 h; press inside the 24 hours.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_store",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_door",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_agnetta"
+      },
+      {
+        "do": "visit",
+        "target": "loc_county",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_jared"
+      },
+      {
+        "do": "interview",
+        "target": "p_benjamin"
+      },
+      {
+        "do": "visit",
+        "target": "loc_bar",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_bar",
+        "hours": 1
+      },
+      {
+        "do": "press",
+        "target": "c_ben_gate"
+      },
+      {
+        "do": "records",
+        "target": "ev_rec_vivian"
+      },
+      {
+        "do": "interview",
+        "target": "p_vivian"
+      },
+      {
+        "do": "press",
+        "target": "c_viv_town"
+      },
+      {
+        "do": "search",
+        "target": "loc_lorry"
+      },
+      {
+        "do": "detain",
+        "target": "p_vivian"
+      },
+      {
+        "do": "sample",
+        "target": "ev_viv_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 6
+      },
+      {
+        "do": "interview",
+        "target": "p_vivian"
+      },
+      {
+        "do": "press",
+        "target": "c_viv_door"
+      }
+    ],
+    "totalHours": 30
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_brass",
+        "line": "The co-op's own lock is hanging in the office. So whose lock was on the door?"
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_mast",
+          "f_lorry_key"
+        ],
+        "line": "Her phone at the co-op while the yard was empty, and a key on her ring that fits."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_susan_phone",
+        "line": "Read her phone. Then read the autopsy's time of death."
+      },
+      "tier2": {
+        "facts": [
+          "f_phone_fail",
+          "f_aut_tod"
+        ],
+        "line": "No signal in stone, and she lived for hours after the door shut. The cold did it."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_jared",
+        "line": "Ask the county officer what he impounded last week, and on whose complaint."
+      },
+      "tier2": {
+        "facts": [
+          "f_enforcement",
+          "f_jared"
+        ],
+        "line": "130 kg bags, two lorries, and \"that woman will regret this\"."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "viazi",
+      "def": "Potatoes."
+    },
+    {
+      "term": "gunia",
+      "def": "Sack."
+    },
+    {
+      "term": "matanga",
+      "def": "Funeral vigil: mourners gather and sing for several nights."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address or name a woman."
+    },
+    {
+      "term": "rungu",
+      "def": "Wooden club carried by watchmen and herders."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "deadZone"
+    ],
+    "beatNotes": "Absence of signal as evidence: the mast map shows the stone store as a dead zone, and the failed-call log becomes a fact about the room, not just about the phone. Tone note: the reconstruction ends at the door closing."
+  }
+}

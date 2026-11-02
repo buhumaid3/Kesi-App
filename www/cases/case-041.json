@@ -1,0 +1,1872 @@
+{
+  "meta": {
+    "id": "case-041",
+    "number": 41,
+    "region": "kisumu-lake",
+    "regionNumber": 5,
+    "title": "The Levy Book",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 22,
+    "date": "Monday 8 December",
+    "folderTab": "DUNGA"
+  },
+  "pattern": {
+    "crimePattern": "engine-theft fence kills the beach treasurer who matched a stolen outboard to the stolen-engine register",
+    "noRealCaseRetold": true,
+    "notes": "Fictional BMU, mechanic and serial number (partly masked). Outboard theft on the lake is a well-known problem; no real ring or case is retold.",
+    "tags": [
+      "blunt-force",
+      "stolen-goods",
+      "fraud-exposure",
+      "records",
+      "when-window"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 3,
+    "redHerrings": 1,
+    "liars": 1,
+    "groups": [
+      "when",
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 08/08/12",
+    "date": "Monday 8 December",
+    "time": "08:20",
+    "reportedBy": "Dismas Ojwang, chairman, Dunga Beach Management Unit",
+    "text": "The chairman of Dunga Beach Management Unit reports the BMU treasurer, Phoebe Awuor (44), found dead behind the BMU office among the stored boat engines at about 08:00. She was last seen at the landing in the early morning.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_phoebe",
+      "role": "victim",
+      "name": "Phoebe Awuor",
+      "age": 44,
+      "occupation": "Treasurer, Dunga BMU",
+      "bio": "Eleven years writing every landing in the levy book. Meets every boat at the water, book in hand.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_bmu",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo woman, mid 40s, a headscarf tied back, a BMU reflective bib over a blouse, a hard-backed levy book under her arm, a pen behind her ear, brisk and kind, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_geoffrey",
+      "role": "suspect",
+      "name": "Geoffrey Ombui",
+      "age": 36,
+      "occupation": "Outboard-engine mechanic, Kisumu town",
+      "bio": "Runs a workshop off Otieno Oyoo Street. \"Reconditioned\" engines a speciality.",
+      "community": "Kisii",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_register"
+      },
+      "at": "plc_town",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 30s, grease-stained blue overalls unzipped to the waist over a T-shirt, a spanner in the chest pocket, an easy salesman's smile that doesn't reach the eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_dismas",
+      "role": "suspect",
+      "name": "Dismas Ojwang",
+      "age": 52,
+      "occupation": "Chairman, Dunga BMU",
+      "redHerring": true,
+      "bio": "Quarrelled with Phoebe last week about a levy shortfall. Reported the death.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_bmu",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, early 50s, a BMU cap and a short-sleeved shirt, a phone in each hand, a chairman's weary authority, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_elisha",
+      "role": "suspect",
+      "name": "Elisha Amollo",
+      "age": 40,
+      "occupation": "Boat owner",
+      "bio": "Bought a \"reconditioned\" 15-horsepower engine from Geoffrey last week and brought it to the BMU to register.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_register"
+      },
+      "at": "plc_lake",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, about 40, a faded football shirt and a fisherman's rubber apron, lake-weathered hands, worried eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_benta",
+      "role": "witness",
+      "name": "Benta Ayieko",
+      "age": 58,
+      "occupation": "Chai seller at the landing",
+      "bio": "Has sold chai and mandazi at Dunga landing since before the BMU existed.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_landing",
+      "image": null
+    },
+    {
+      "id": "p_seline",
+      "role": "witness",
+      "name": "Seline Awuor",
+      "age": 39,
+      "occupation": "Phoebe's sister, fish trader",
+      "bio": "Buys omena at dawn and sells it at the Kisumu fish market.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_market",
+      "image": null
+    },
+    {
+      "id": "p_fanuel",
+      "role": "witness",
+      "name": "Fanuel Opiyo",
+      "age": 27,
+      "occupation": "Boda rider at Dunga",
+      "statementOnly": true,
+      "bio": "Waits at the Dunga stage every morning for the first fares to town.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_rec_geof_pay"
+      },
+      "at": "plc_stage",
+      "image": null
+    },
+    {
+      "id": "p_maurice",
+      "role": "witness",
+      "name": "Maurice Owino",
+      "age": 45,
+      "occupation": "Coxswain of boat KSM-2214",
+      "statementOnly": true,
+      "bio": "Brought the first big catch in on Monday morning.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_landing",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_store",
+      "name": "Engine store behind the BMU office",
+      "within": "loc_bmu"
+    },
+    {
+      "id": "plc_gate",
+      "name": "Outside the BMU office, on the road side",
+      "within": "loc_bmu"
+    },
+    {
+      "id": "plc_landing",
+      "name": "Dunga landing"
+    },
+    {
+      "id": "plc_stage",
+      "name": "Dunga boda stage"
+    },
+    {
+      "id": "plc_town",
+      "name": "Kisumu town"
+    },
+    {
+      "id": "plc_lake",
+      "name": "Out on the lake"
+    },
+    {
+      "id": "plc_fisheries",
+      "name": "County fisheries office, Kisumu"
+    },
+    {
+      "id": "plc_market",
+      "name": "Kisumu fish market"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_bmu",
+      "name": "Dunga BMU office",
+      "kind": "scene",
+      "description": "A one-room office of blue-painted block a few metres above the sand: a desk, a chair, a wall calendar, a filing box. Behind it, a locked store where the outboard engines are chained at night. Phoebe lies behind the office among them.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Behind the office",
+          "pos": [
+            70,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Phoebe lies on the sand among the outboard engines, the rack above her intact, every engine still chained in its place."
+        },
+        {
+          "id": "hs_levy",
+          "label": "The levy book",
+          "pos": [
+            30,
+            40
+          ],
+          "yields": "ev_levybook",
+          "text": "The levy book lies open on the desk, Phoebe's pen in the gutter of the page."
+        },
+        {
+          "id": "hs_register",
+          "label": "Stolen-engine register",
+          "pos": [
+            44,
+            30
+          ],
+          "yields": "ev_register",
+          "text": "A school exercise book labelled \"STOLEN ENGINES — LAKE BMUs\" in marker pen, with a pencil note on the last page."
+        },
+        {
+          "id": "hs_engine",
+          "label": "The new engine",
+          "pos": [
+            84,
+            44
+          ],
+          "yields": "ev_engine",
+          "text": "A 15-horsepower outboard on its stand, freshly painted, a BMU registration tag waiting to be filled in."
+        },
+        {
+          "id": "hs_files",
+          "label": "Filing box",
+          "pos": [
+            18,
+            56
+          ],
+          "yields": "ev_bmu_files",
+          "text": "The BMU's boat register, a receipt book, and a spike of paid invoices."
+        },
+        {
+          "id": "hs_departures",
+          "label": "Night departure book",
+          "pos": [
+            56,
+            24
+          ],
+          "yields": "ev_departures",
+          "text": "The night watchman's book, where boats are signed out before dawn."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small blue-painted BMU office of concrete block above a sandy lake beach at Dunga near Kisumu at dawn, a locked engine store behind it, outboard motors chained on a rack, wooden canoes pulled up below, omena drying on nets, water hyacinth in the shallows, no people in focus"
+      }
+    },
+    {
+      "id": "loc_landing",
+      "name": "Dunga landing",
+      "kind": "location",
+      "description": "Long wooden canoes pulled up in a row on the sand. Omena spread to dry on nets, silver in the morning light. A chai kettle on a charcoal jiko under a tree. Hyacinth rocking in the shallows, papyrus beyond.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_crew",
+          "label": "Boat KSM-2214",
+          "pos": [
+            40,
+            60
+          ],
+          "yields": "ev_crew",
+          "text": "The crew of KSM-2214 are still sorting their catch into basins."
+        },
+        {
+          "id": "hs_net",
+          "label": "Phoebe's drying net",
+          "pos": [
+            74,
+            70
+          ],
+          "yields": "ev_net",
+          "text": "A drying net with Phoebe's name painted on the pole. Her basket stands beside it, full."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a sandy lake beach at Dunga near Kisumu in early morning, long wooden fishing canoes pulled up in a row, small silver omena fish spread to dry on nets, a woman's chai kettle on a charcoal stove under a tree, water hyacinth and papyrus at the edge, no people in focus"
+      }
+    },
+    {
+      "id": "loc_shallows",
+      "name": "Shallows behind the office (BMU divers)",
+      "kind": "location",
+      "description": "The water behind the office is waist-deep and brown. Two BMU boys who dive for dropped engines go in on Dismas's word, feeling along the bottom with their feet.",
+      "unlock": {
+        "fact": "f_aut_prop"
+      },
+      "hotspots": [
+        {
+          "id": "hs_dive",
+          "label": "The divers' find",
+          "pos": [
+            50,
+            60
+          ],
+          "yields": "ev_propeller",
+          "text": "One of the boys comes up holding something silver with three blades."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "brown shallow lake water at the edge of a beach, water hyacinth floating, two young men waist-deep feeling the bottom, viewed from the shore"
+      }
+    },
+    {
+      "id": "loc_stage",
+      "name": "Dunga boda stage",
+      "kind": "location",
+      "description": "A shade tree where the road meets the beach track, six motorbikes in a row, riders on their saddles waiting for fares.",
+      "unlock": {
+        "fact": "f_rec_geof_pay"
+      },
+      "hotspots": [
+        {
+          "id": "hs_fanuel",
+          "label": "Fanuel's bike",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_fanuel",
+          "text": "Fanuel Opiyo checks the PesaPap message on his phone and nods."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a roadside shade tree near a lake beach outside Kisumu, a row of motorbike taxis with riders waiting, a dusty murram road"
+      }
+    },
+    {
+      "id": "loc_fisheries",
+      "name": "County fisheries office",
+      "kind": "location",
+      "description": "A government office on the Kisumu lakefront: a meeting room, a sign-in sheet on a clipboard by the door.",
+      "unlock": {
+        "fact": "f_dis_claim"
+      },
+      "hotspots": [
+        {
+          "id": "hs_signin",
+          "label": "Sign-in sheet",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_fisheries",
+          "text": "Monday's meeting sign-in sheet, a column of names and times."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a government fisheries office in Kisumu, a meeting room with plastic chairs and a whiteboard, a clipboard with a sign-in sheet hanging by the door"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Behind the office",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Two wounds to the head. The store rack is intact; every engine is still chained."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "outboard engines chained on a metal rack behind a small lake-shore office, sand below, one empty space on the sand, no body visible"
+      }
+    },
+    {
+      "id": "ev_levybook",
+      "type": "physical",
+      "title": "The levy book",
+      "render": "ledger",
+      "body": {
+        "entries": [
+          "06:10 KSM-1906 omena 3 basins",
+          "06:25 KSM-0442 tilapia 41 kg",
+          "06:40 KSM-1190 omena 5 basins",
+          "06:52 KSM-0318 Nile perch 22 kg"
+        ],
+        "after": "Blank."
+      },
+      "facts": [
+        "f_levy"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "an open hard-backed ledger on a wooden desk, handwritten columns of times, boat numbers and catches, the last line at 06:52, blank below, a pen in the gutter"
+      }
+    },
+    {
+      "id": "ev_crew",
+      "type": "witness",
+      "title": "Statement: Maurice Owino (KSM-2214)",
+      "render": "statement",
+      "body": {
+        "speaker": "p_maurice"
+      },
+      "facts": [
+        "f_crew"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_net",
+      "type": "physical",
+      "title": "Phoebe's basket",
+      "render": "sceneNote",
+      "body": {
+        "note": "Her omena basket stands by her drying net, full and wet. Nothing has been spread."
+      },
+      "facts": [
+        "f_net"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_benta",
+      "type": "witness",
+      "title": "Statement: Benta Ayieko",
+      "render": "statement",
+      "body": {
+        "speaker": "p_benta"
+      },
+      "facts": [
+        "f_benta",
+        "f_benta_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_seline",
+      "type": "witness",
+      "title": "Statement: Seline Awuor",
+      "render": "statement",
+      "body": {
+        "speaker": "p_seline"
+      },
+      "facts": [
+        "f_seline",
+        "f_seline_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_register",
+      "type": "physical",
+      "title": "Stolen-engine register",
+      "render": "ledger",
+      "body": {
+        "entry": "Serial 6Y4-…-1187, 15 hp, stolen from a moored boat at Usenge, 14 October.",
+        "note": "Elisha's new engine — same number! Geoffrey Ombui sold it. Police post Monday 8am."
+      },
+      "facts": [
+        "f_register"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_engine",
+      "type": "physical",
+      "title": "Elisha's new engine",
+      "render": "object",
+      "body": {
+        "label": "Fresh grey paint over the old colour. Serial plate: 6Y4-…-1187."
+      },
+      "facts": [
+        "f_engine"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_bmu_files",
+      "type": "physical",
+      "title": "BMU filing box",
+      "render": "receipt",
+      "body": {
+        "invoice": "Ombui Marine — engine service, BMU patrol boat — PAID IN FULL, 2 December",
+        "boats": "Boat register: no boat registered to any Ombui."
+      },
+      "facts": [
+        "f_invoice_paid",
+        "f_geof_noboat"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_departures",
+      "type": "physical",
+      "title": "Night departure book",
+      "render": "logBook",
+      "body": {
+        "entry": "04:00 — KSM-0871 — E. Amollo + 3 crew — out",
+        "landing": "Landed 08:15 (written in by the assistant clerk)"
+      },
+      "facts": [
+        "f_elisha_lake"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_levyshortfall",
+      "type": "physical",
+      "title": "Levy reconciliation",
+      "render": "form",
+      "body": {
+        "note": "Shortfall of KSh 4,200: counting error by the chairman, found and corrected Saturday 6 December.",
+        "signed": "D. Ojwang · P. Awuor"
+      },
+      "facts": [
+        "f_shortfall"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Geoffrey Ombui's line",
+      "render": "manifest",
+      "body": {
+        "masts": "Dunga 07:02–07:29; Kisumu CBD from 07:45",
+        "pesapap": "07:27 — KSh 150 to FANUEL OPIYO"
+      },
+      "facts": [
+        "f_rec_geof_mast",
+        "f_rec_geof_pay"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_register"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_fanuel",
+      "type": "witness",
+      "title": "Statement: Fanuel Opiyo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_fanuel"
+      },
+      "facts": [
+        "f_fanuel"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_propeller",
+      "type": "physical",
+      "title": "From the shallows",
+      "render": "object",
+      "body": {
+        "label": "A three-blade aluminium propeller. Scratched on the hub: G.O."
+      },
+      "facts": [
+        "f_propeller"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a wet three-blade aluminium boat propeller lying on wooden planks, the initials G.O. scratched into the hub"
+      }
+    },
+    {
+      "id": "ev_fisheries",
+      "type": "physical",
+      "title": "Fisheries meeting sign-in",
+      "render": "visitorRegister",
+      "body": {
+        "entry": "D. Ojwang — Dunga BMU — 06:55",
+        "meeting": "07:00–09:30"
+      },
+      "facts": [
+        "f_fisheries"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_prop",
+        "f_aut_nowater",
+        "f_aut_tod",
+        "f_aut_heart"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_compare",
+      "type": "forensic",
+      "title": "Comparison: propeller vs wounds",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_prop_match"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_autopsy",
+          "ev_propeller"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Phoebe Awuor, Dunga BMU treasurer, was found dead behind the BMU office among the stored boat engines at about 08:00.",
+      "kind": "true",
+      "about": [
+        "p_phoebe",
+        "loc_bmu"
+      ]
+    },
+    {
+      "id": "f_body",
+      "text": "Behind the office: two wounds to her head. The store rack is intact and every engine is still chained in its place.",
+      "kind": "true",
+      "about": [
+        "p_phoebe",
+        "loc_bmu"
+      ]
+    },
+    {
+      "id": "f_levy",
+      "text": "Levy book, in Phoebe's hand: landings at 06:10, 06:25, 06:40 and 06:52. Nothing after 06:52.",
+      "kind": "true",
+      "about": [
+        "p_phoebe"
+      ],
+      "at": {
+        "from": "06:52"
+      }
+    },
+    {
+      "id": "f_crew",
+      "text": "Maurice (KSM-2214): they landed at 07:30. Phoebe always meets every boat at the water with her book. This time she didn't come, and the office door was pulled shut.",
+      "kind": "true",
+      "about": [
+        "p_maurice",
+        "p_phoebe"
+      ],
+      "at": {
+        "from": "07:30"
+      }
+    },
+    {
+      "id": "f_net",
+      "text": "Phoebe's omena basket is still full and wet beside her drying net. She always spreads her fish by 07:00.",
+      "kind": "true",
+      "about": [
+        "p_phoebe"
+      ]
+    },
+    {
+      "id": "f_benta",
+      "text": "Benta sold Phoebe her morning chai at 07:05. \"She was worried. She said a mechanic was coming to see her.\"",
+      "kind": "true",
+      "about": [
+        "p_benta",
+        "p_phoebe"
+      ],
+      "at": {
+        "from": "07:05"
+      }
+    },
+    {
+      "id": "f_benta_self",
+      "text": "Benta served chai at her stall from 05:30 to 09:00, with the landing crowd around her.",
+      "kind": "true",
+      "about": [
+        "p_benta"
+      ],
+      "where": {
+        "person": "p_benta",
+        "place": "plc_landing",
+        "from": "05:30",
+        "to": "09:00"
+      }
+    },
+    {
+      "id": "f_seline",
+      "text": "Seline: Phoebe spreads her own omena on the net by 07:00, every day of her life. Seline found the basket full and wet at 08:00.",
+      "kind": "true",
+      "about": [
+        "p_seline",
+        "p_phoebe"
+      ]
+    },
+    {
+      "id": "f_seline_self",
+      "text": "Seline was at her stall in the Kisumu fish market from 06:00 to 07:45; her stall receipts are timed.",
+      "kind": "true",
+      "about": [
+        "p_seline"
+      ],
+      "where": {
+        "person": "p_seline",
+        "place": "plc_market",
+        "from": "06:00",
+        "to": "07:45"
+      }
+    },
+    {
+      "id": "f_register",
+      "text": "Stolen-engine register: serial 6Y4-…-1187, stolen at Usenge on 14 October. Phoebe's pencil note: \"Elisha's new engine — same number! Geoffrey Ombui sold it. Police post Monday 8am.\"",
+      "kind": "true",
+      "about": [
+        "p_geoffrey",
+        "p_elisha",
+        "p_phoebe"
+      ]
+    },
+    {
+      "id": "f_engine",
+      "text": "Elisha's \"reconditioned\" engine: fresh grey paint over the old colour, serial plate 6Y4-…-1187.",
+      "kind": "true",
+      "about": [
+        "p_elisha",
+        "p_geoffrey"
+      ]
+    },
+    {
+      "id": "f_invoice_paid",
+      "text": "BMU files: Ombui Marine's last invoice, for servicing the patrol boat, was paid in full on 2 December.",
+      "kind": "true",
+      "about": [
+        "p_geoffrey"
+      ]
+    },
+    {
+      "id": "f_geof_noboat",
+      "text": "BMU boat register: no boat is registered to Geoffrey Ombui or anyone named Ombui.",
+      "kind": "true",
+      "about": [
+        "p_geoffrey"
+      ]
+    },
+    {
+      "id": "f_elisha_lake",
+      "text": "Night departure book: Elisha's boat KSM-0871 went out at 04:00 with three crew and landed at 08:15.",
+      "kind": "true",
+      "about": [
+        "p_elisha"
+      ],
+      "where": {
+        "person": "p_elisha",
+        "place": "plc_lake",
+        "from": "04:00",
+        "to": "08:15"
+      },
+      "at": {
+        "from": "04:00",
+        "to": "08:15"
+      }
+    },
+    {
+      "id": "f_shortfall",
+      "text": "Levy reconciliation: the KSh 4,200 shortfall was the chairman's own counting error, found and corrected on Saturday, signed by both.",
+      "kind": "true",
+      "about": [
+        "p_dismas",
+        "p_phoebe"
+      ]
+    },
+    {
+      "id": "f_rec_geof_mast",
+      "text": "Records, Geoffrey's line: Dunga mast 07:02–07:29, then Kisumu CBD from 07:45.",
+      "kind": "true",
+      "about": [
+        "p_geoffrey"
+      ],
+      "at": {
+        "from": "07:02",
+        "to": "07:29"
+      }
+    },
+    {
+      "id": "f_rec_geof_pay",
+      "text": "Records, Geoffrey's PesaPap: 07:27, KSh 150 to FANUEL OPIYO.",
+      "kind": "true",
+      "about": [
+        "p_geoffrey",
+        "p_fanuel"
+      ],
+      "at": {
+        "from": "07:27"
+      }
+    },
+    {
+      "id": "f_fanuel",
+      "text": "Fanuel: he picked up \"the mechanic\" outside the BMU office at 07:27. He carried a tool bag and was wet to the knees.",
+      "kind": "true",
+      "about": [
+        "p_fanuel",
+        "p_geoffrey"
+      ],
+      "where": {
+        "person": "p_geoffrey",
+        "place": "plc_gate",
+        "from": "07:27",
+        "to": "07:28"
+      },
+      "at": {
+        "from": "07:27"
+      }
+    },
+    {
+      "id": "f_propeller",
+      "text": "From the shallows behind the office: a three-blade aluminium propeller, \"G.O.\" scratched on the hub, the way Geoffrey marks his workshop stock.",
+      "kind": "true",
+      "about": [
+        "p_geoffrey"
+      ]
+    },
+    {
+      "id": "f_fisheries",
+      "text": "Fisheries sign-in: D. Ojwang, 06:55. The meeting ran from 07:00 to 09:30.",
+      "kind": "true",
+      "about": [
+        "p_dismas"
+      ],
+      "where": {
+        "person": "p_dismas",
+        "place": "plc_fisheries",
+        "from": "06:55",
+        "to": "09:30"
+      },
+      "at": {
+        "from": "06:55",
+        "to": "09:30"
+      }
+    },
+    {
+      "id": "f_aut_prop",
+      "text": "Autopsy: two curved, blade-edged wounds, their spacing consistent with a boat propeller. Clean cut edges; no wood splinters.",
+      "kind": "true",
+      "about": [
+        "p_phoebe"
+      ]
+    },
+    {
+      "id": "f_aut_nowater",
+      "text": "Autopsy: no water in the lungs.",
+      "kind": "true",
+      "about": [
+        "p_phoebe"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 06:45 and 08:00.",
+      "kind": "true",
+      "about": [
+        "p_phoebe"
+      ],
+      "at": {
+        "from": "06:45",
+        "to": "08:00"
+      }
+    },
+    {
+      "id": "f_aut_heart",
+      "text": "Autopsy: a healthy heart; no natural disease.",
+      "kind": "true",
+      "about": [
+        "p_phoebe"
+      ]
+    },
+    {
+      "id": "f_prop_match",
+      "text": "Dr. Chebii: the blade curvature and spacing of the propeller match both wounds.",
+      "kind": "true",
+      "about": [
+        "p_phoebe"
+      ]
+    },
+    {
+      "id": "f_geof_workshop",
+      "text": "Geoffrey: \"I was at my workshop in town from half past six.\"",
+      "kind": "lie",
+      "about": [
+        "p_geoffrey"
+      ]
+    },
+    {
+      "id": "f_geof_papers",
+      "text": "Geoffrey: \"That engine was reconditioned from scrap. I have papers.\"",
+      "kind": "claim",
+      "about": [
+        "p_geoffrey"
+      ]
+    },
+    {
+      "id": "f_geof_office",
+      "text": "Geoffrey admits he was in the BMU office with Phoebe from about 07:10, \"to explain the papers\".",
+      "kind": "true",
+      "about": [
+        "p_geoffrey",
+        "p_phoebe"
+      ],
+      "where": {
+        "person": "p_geoffrey",
+        "place": "loc_bmu",
+        "from": "07:10",
+        "to": "07:20"
+      }
+    },
+    {
+      "id": "f_dis_claim",
+      "text": "Dismas: \"I was at the fisheries office by seven.\"",
+      "kind": "claim",
+      "about": [
+        "p_dismas"
+      ]
+    },
+    {
+      "id": "f_dis_quarrel",
+      "text": "Dismas: he and Phoebe quarrelled last week about a levy shortfall. \"The numbers were wrong. Mine, not hers.\"",
+      "kind": "true",
+      "about": [
+        "p_dismas",
+        "p_phoebe"
+      ]
+    },
+    {
+      "id": "f_eli_claim",
+      "text": "Elisha: \"I was on the lake.\"",
+      "kind": "claim",
+      "about": [
+        "p_elisha"
+      ]
+    },
+    {
+      "id": "f_eli_paid",
+      "text": "Elisha: he paid Geoffrey KSh 180,000 for the engine. \"I didn't know.\"",
+      "kind": "true",
+      "about": [
+        "p_elisha",
+        "p_geoffrey"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_geoffrey",
+      "stance": "cooperative",
+      "intro": "Geoffrey wipes his hands on a rag at the workshop door. \"Phoebe? Pole sana. I was here all morning. Ask anyone.\"",
+      "claims": [
+        "f_geof_workshop",
+        "f_geof_papers"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_engine",
+          "reply": "That engine was reconditioned from scrap. Parts from five engines. Serial numbers on scrap mean nothing, Inspector.",
+          "reveals": []
+        },
+        {
+          "about": "ev_propeller",
+          "reply": "Every mechanic on this lake has propellers. Anyone can scratch two letters.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_dismas",
+      "stance": "cooperative",
+      "intro": "Dismas comes straight from the fisheries meeting, still holding the agenda. \"I left her at 06:45 with her book. Go and find who did this.\"",
+      "claims": [
+        "f_dis_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_phoebe",
+          "reply": "We fought about numbers last week. The numbers were wrong. Mine, not hers. We fixed it on Saturday.",
+          "reveals": [
+            "f_dis_quarrel",
+            "ev_levyshortfall"
+          ]
+        },
+        {
+          "about": "f_aut_prop",
+          "reply": "A propeller? Then it's in the water. My boys dive for dropped engines every week. Give them an hour.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_elisha",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_engine"
+      ],
+      "intro": "Elisha stands by his boat, not looking at the office. \"I fish. I came in at quarter past eight and the beach was screaming.\"",
+      "claims": [
+        "f_eli_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_engine",
+          "reply": "I paid him one hundred and eighty thousand for that engine. My whole savings. I didn't know. I swear I didn't know.",
+          "reveals": [
+            "f_eli_paid"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_benta",
+      "stance": "cooperative",
+      "intro": "Benta pours a glass of chai and pushes it across without asking. \"Drink. Then ask.\"",
+      "claims": [],
+      "yields": [
+        "ev_benta"
+      ],
+      "topics": [
+        {
+          "about": "p_phoebe",
+          "reply": "Every morning, seven o'clock, chai and one mandazi. Today she didn't finish the mandazi. She said a mechanic was coming.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_seline",
+      "stance": "cooperative",
+      "intro": "Seline sits on an upturned basin by her sister's net. \"She spreads her own fish. Every day. Look at the basket.\"",
+      "claims": [],
+      "yields": [
+        "ev_seline"
+      ],
+      "topics": [
+        {
+          "about": "ev_register",
+          "reply": "She talked about that book like it was scripture. Every stolen engine on the lake, she wanted it home.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_geof",
+      "claim": "f_geof_workshop",
+      "brokenBy": [
+        "f_rec_geof_mast",
+        "f_fanuel"
+      ],
+      "reveals": [
+        "f_geof_office"
+      ],
+      "reaction": "He puts the rag down. \"...I went to Dunga to explain the papers. She wouldn't listen. I left her at her desk.\"",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "t_0530",
+      "text": "Monday, between 05:30 and 06:15",
+      "category": "time",
+      "window": {
+        "from": "05:30",
+        "to": "06:15"
+      },
+      "unlock": {
+        "anyOf": [
+          "f_aut_tod"
+        ]
+      }
+    },
+    {
+      "id": "t_0615",
+      "text": "Monday, between 06:15 and 07:00",
+      "category": "time",
+      "window": {
+        "from": "06:15",
+        "to": "07:00"
+      },
+      "unlock": {
+        "anyOf": [
+          "f_aut_tod"
+        ]
+      }
+    },
+    {
+      "id": "t_0705",
+      "text": "Monday, between 07:05 and 07:30",
+      "category": "time",
+      "window": {
+        "from": "07:05",
+        "to": "07:30"
+      },
+      "unlock": {
+        "anyOf": [
+          "f_aut_tod"
+        ]
+      }
+    },
+    {
+      "id": "t_0730",
+      "text": "Monday, between 07:30 and 08:00",
+      "category": "time",
+      "window": {
+        "from": "07:30",
+        "to": "08:00"
+      },
+      "unlock": {
+        "anyOf": [
+          "f_aut_tod"
+        ]
+      }
+    },
+    {
+      "id": "t_0800",
+      "text": "Monday, between 08:00 and 08:30",
+      "category": "time",
+      "window": {
+        "from": "08:00",
+        "to": "08:30"
+      },
+      "unlock": {
+        "anyOf": [
+          "f_aut_tod"
+        ]
+      }
+    },
+    {
+      "id": "w_geoffrey",
+      "text": "Geoffrey Ombui",
+      "category": "person",
+      "ref": "p_geoffrey",
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "w_dismas",
+      "text": "Dismas Ojwang",
+      "category": "person",
+      "ref": "p_dismas",
+      "unlock": {
+        "anyOf": [
+          "f_dis_claim"
+        ]
+      }
+    },
+    {
+      "id": "w_elisha",
+      "text": "Elisha Amollo",
+      "category": "person",
+      "ref": "p_elisha",
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "w_benta",
+      "text": "Benta Ayieko",
+      "category": "person",
+      "ref": "p_benta",
+      "unlock": {
+        "anyOf": [
+          "f_benta"
+        ]
+      }
+    },
+    {
+      "id": "w_seline",
+      "text": "Seline Awuor",
+      "category": "person",
+      "ref": "p_seline",
+      "unlock": {
+        "anyOf": [
+          "f_seline"
+        ]
+      }
+    },
+    {
+      "id": "h_prop",
+      "text": "struck with a boat propeller",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_prop"
+        ]
+      }
+    },
+    {
+      "id": "h_drown",
+      "text": "drowned",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_engine",
+      "text": "crushed by an engine falling from the store rack",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_paddle",
+      "text": "struck with a wooden paddle",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_tod"
+        ]
+      }
+    },
+    {
+      "id": "m_engine",
+      "text": "she'd matched the engine he was selling to a stolen-engine report",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "m_levy",
+      "text": "the levy shortfall",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_dis_quarrel"
+        ]
+      }
+    },
+    {
+      "id": "m_repair",
+      "text": "an unpaid repair bill",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_invoice_paid"
+        ]
+      }
+    },
+    {
+      "id": "m_landing",
+      "text": "a quarrel over landing space",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_levy"
+        ]
+      }
+    },
+    {
+      "id": "m_price",
+      "text": "a fight about Elisha's engine price",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_eli_paid"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "On {when}, {who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Phoebe Awuor"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "time",
+            "answer": "t_0705"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Alive with her chai at 07:05, gone before the 07:30 boat. That's your window, and it's tight.",
+          "fail": [
+            "She was buying chai at 07:05. Start there.",
+            "She never missed a landing. Which one did she miss?"
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_geoffrey"
+          }
+        ],
+        "prosecutor": {
+          "pass": "His phone at Dunga until 07:29, a boda at 07:27, wet to the knees, and his mark on the propeller. That will hold.",
+          "fail": [
+            "The chairman was signing in at the fisheries office at 06:55. Look again.",
+            "That boat was on the lake until quarter past eight."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_prop"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Two curved blades, and the propeller that made them. Yes.",
+          "fail": [
+            "Every engine on that rack is still chained. Read the wounds.",
+            "Clean edges, no splinters. That isn't wood."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_engine"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A serial number and a police post at eight o'clock. That's the reason.",
+          "fail": [
+            "That shortfall was corrected on Saturday, and it was the chairman's.",
+            "His invoice was paid. Read her pencil note."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_bmu",
+      "from": "07:05",
+      "to": "07:30",
+      "within": [
+        "plc_store",
+        "plc_gate"
+      ],
+      "note": "The act window: alive buying chai at 07:05, missed the 07:30 landing. The autopsy allows 06:45–08:00."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_benta",
+          "f_crew",
+          "f_levy",
+          "f_net",
+          "f_seline",
+          "f_aut_tod"
+        ],
+        "concludes": "Phoebe was alive buying chai at 07:05. At 07:30 she failed to meet KSM-2214, the first landing she ever missed, and her omena was never spread. She died between 07:05 and 07:30.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_register",
+          "f_engine"
+        ],
+        "concludes": "The engine Geoffrey sold Elisha is a stolen one, serial 1187, and Phoebe had written that she'd take it to the police post at 08:00 on Monday."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_geof_workshop",
+          "f_rec_geof_mast",
+          "f_fanuel",
+          "f_geof_office",
+          "f_rec_geof_pay",
+          "f_aut_prop",
+          "f_propeller",
+          "f_prop_match"
+        ],
+        "concludes": "Geoffrey wasn't at his workshop: his phone was at Dunga 07:02–07:29, he admits he was in the office from 07:10, and he left on a boda at 07:27 wet to the knees. The propeller in the shallows carries his mark and matches the wounds. Geoffrey Ombui struck Phoebe with a boat propeller because she'd matched his engine to a stolen-engine report.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "t_0530",
+        "blank": "when",
+        "by": [
+          "f_benta"
+        ],
+        "why": "She was alive and buying chai at 07:05."
+      },
+      {
+        "word": "t_0615",
+        "blank": "when",
+        "by": [
+          "f_benta",
+          "f_levy"
+        ],
+        "why": "She logged a landing at 06:52 and bought chai at 07:05."
+      },
+      {
+        "word": "t_0730",
+        "blank": "when",
+        "by": [
+          "f_crew",
+          "f_net"
+        ],
+        "why": "She failed to meet the 07:30 landing; she was already dead."
+      },
+      {
+        "word": "t_0800",
+        "blank": "when",
+        "by": [
+          "f_crew",
+          "f_ob"
+        ],
+        "why": "She missed the 07:30 boat and was found at about 08:00."
+      },
+      {
+        "word": "w_dismas",
+        "blank": "who",
+        "by": [
+          "f_fisheries"
+        ],
+        "why": "Dismas signed in at the county fisheries office at 06:55 and sat in the meeting until 09:30."
+      },
+      {
+        "word": "w_elisha",
+        "blank": "who",
+        "by": [
+          "f_elisha_lake"
+        ],
+        "why": "Elisha's boat was on the lake from 04:00 until 08:15."
+      },
+      {
+        "word": "w_benta",
+        "blank": "who",
+        "by": [
+          "f_benta_self"
+        ],
+        "why": "Benta was at her chai stall in front of the landing crowd all morning."
+      },
+      {
+        "word": "w_seline",
+        "blank": "who",
+        "by": [
+          "f_seline_self"
+        ],
+        "why": "Seline was at her stall in the Kisumu fish market from 06:00."
+      },
+      {
+        "word": "h_drown",
+        "blank": "how",
+        "by": [
+          "f_aut_nowater"
+        ],
+        "why": "No water in her lungs."
+      },
+      {
+        "word": "h_engine",
+        "blank": "how",
+        "by": [
+          "f_body",
+          "f_aut_prop"
+        ],
+        "why": "The rack is intact, every engine still chained, and the wounds are curved blade edges."
+      },
+      {
+        "word": "h_paddle",
+        "blank": "how",
+        "by": [
+          "f_aut_prop"
+        ],
+        "why": "Clean blade edges and no wood splinters."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_heart"
+        ],
+        "why": "A healthy heart; she was struck twice."
+      },
+      {
+        "word": "m_levy",
+        "blank": "why",
+        "by": [
+          "f_shortfall"
+        ],
+        "why": "The shortfall was the chairman's error, corrected on Saturday, and it was his quarrel, not Geoffrey's."
+      },
+      {
+        "word": "m_repair",
+        "blank": "why",
+        "by": [
+          "f_invoice_paid"
+        ],
+        "why": "The BMU paid Geoffrey's last invoice in full."
+      },
+      {
+        "word": "m_landing",
+        "blank": "why",
+        "by": [
+          "f_geof_noboat"
+        ],
+        "why": "Geoffrey doesn't own a boat."
+      },
+      {
+        "word": "m_price",
+        "blank": "why",
+        "by": [
+          "f_eli_paid",
+          "f_elisha_lake"
+        ],
+        "why": "That grievance is Elisha's, and Elisha was on the lake."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Last week Elisha brings a \"reconditioned\" 15-horsepower engine to the BMU to register. Phoebe checks the serial against her register: stolen at Usenge in October.",
+        "image": null
+      },
+      {
+        "text": "On Sunday she tells Geoffrey Ombui, who sold it, that she'll take it to the beach police post when it opens at 08:00 on Monday.",
+        "image": null
+      },
+      {
+        "text": "Monday, 07:05. She buys her chai from Benta and says a mechanic is coming.",
+        "image": null
+      },
+      {
+        "text": "07:10. Geoffrey comes to the office to talk her out of it. At about 07:15 he strikes her with a spare propeller from his tool bag, behind the office among the chained engines.",
+        "image": "loc_bmu"
+      },
+      {
+        "text": "He wades out and drops the propeller in the shallows. At 07:27 he pays a boda rider KSh 150 for a ride to town, wet to the knees. At 07:30 KSM-2214 lands, and for the first time in eleven years nobody meets it with the book.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "No detention needed; the autopsy and the propeller comparison are immediate. One records request.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_bmu",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_levybook",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_register",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_engine",
+        "hours": 0
+      },
+      {
+        "do": "visit",
+        "target": "loc_landing",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_benta"
+      },
+      {
+        "do": "read",
+        "target": "ev_crew",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_seline"
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "visit",
+        "target": "loc_stage",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_fanuel",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_geoffrey"
+      },
+      {
+        "do": "press",
+        "target": "c_geof"
+      },
+      {
+        "do": "interview",
+        "target": "p_dismas"
+      },
+      {
+        "do": "visit",
+        "target": "loc_shallows",
+        "hours": 2
+      },
+      {
+        "do": "read",
+        "target": "ev_propeller",
+        "hours": 0
+      }
+    ],
+    "totalHours": 21
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_levybook",
+        "line": "Every fact has a time. Line them up and the gap will tell you."
+      },
+      "tier2": {
+        "facts": [
+          "f_benta",
+          "f_crew"
+        ],
+        "line": "Chai at 07:05. The 07:30 boat came in to an empty beach."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_register",
+        "line": "Read her pencil note in the stolen-engine book. She wrote a name."
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_geof_mast",
+          "f_fanuel"
+        ],
+        "line": "His phone sat at Dunga until 07:29, and a boda rider took him away at 07:27."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Dr. Chebii measured the curve of the wounds."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_prop",
+          "f_propeller"
+        ],
+        "line": "Curved blades, evenly spaced, and something with three blades in the water."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_engine",
+        "line": "Read the serial plate on Elisha's new engine. Then read it again in her book."
+      },
+      "tier2": {
+        "facts": [
+          "f_register",
+          "f_engine"
+        ],
+        "line": "Same number. Stolen at Usenge. Police post, Monday, eight o'clock."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "omena",
+      "def": "Small silver lake fish, dried in the sun."
+    },
+    {
+      "term": "BMU",
+      "def": "Beach management unit: the elected body that runs a landing beach and collects its levies."
+    },
+    {
+      "term": "injini",
+      "def": "Engine; here, an outboard motor."
+    },
+    {
+      "term": "chai",
+      "def": "Tea, usually boiled with milk and sugar."
+    },
+    {
+      "term": "mandazi",
+      "def": "A slightly sweet fried dough snack."
+    },
+    {
+      "term": "boda",
+      "def": "Short for boda-boda: a motorbike taxi."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    },
+    {
+      "term": "pole sana",
+      "def": "I'm very sorry (for your loss or trouble)."
+    },
+    {
+      "term": "jiko",
+      "def": "A charcoal stove."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "whenWindow",
+      "timelineRail"
+    ],
+    "beatNotes": "The WHEN blank and the timeline rail. The rail slides out from under the corkboard; Benta's 07:05 and the crew's 07:30 snap onto it and the window shades in between them. Mwalimu: \"Every fact has a time. Line them up and the gap will tell you.\""
+  }
+}

@@ -1,0 +1,2487 @@
+{
+  "meta": {
+    "id": "case-075",
+    "number": 75,
+    "region": "northern-frontier",
+    "regionNumber": 8,
+    "title": "No Brakes",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 40,
+    "date": "Thursday 2 July",
+    "folderTab": "BAKULI BEND"
+  },
+  "pattern": {
+    "crimePattern": "a mother who has watched the road for nine years kills the lorry driver she learns ran over her son, and stages a brake failure on the bend",
+    "noRealCaseRetold": true,
+    "notes": "Fictional people, bend and transporters. The child's death nine years ago is told only in a closed police file, in report language, and never shown. \"Bandits\" is the story everyone reaches for; the evidence clears them (region rule). Open decision for the user: the child death in the back-story (see the region report).",
+    "tags": [
+      "blunt-force",
+      "staged-accident",
+      "revenge",
+      "old-hit-and-run",
+      "two-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where",
+      "absence"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 5,
+    "redHerrings": 2,
+    "liars": 2,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "absence"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": "the-old-hit-and-run-was-his"
+  },
+  "ob": {
+    "number": "OB 04/02/07",
+    "date": "Thursday 2 July",
+    "time": "07:00",
+    "reportedBy": "Bus crew, Marsabit mountain road",
+    "text": "A bus crew reports a lorry gone off the road at the Bakuli bend on the descent from Marsabit mountain, the driver dead in the cab: Kirimi Mbaabu (54). Talk in town says bandits stopped him.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_drop",
+    "nodes": [
+      "loc_drop",
+      "loc_kiosk",
+      "loc_town",
+      "loc_logologo"
+    ],
+    "edges": [
+      {
+        "a": "loc_drop",
+        "b": "loc_kiosk",
+        "minutes": 5,
+        "by": "foot"
+      },
+      {
+        "a": "loc_kiosk",
+        "b": "loc_town",
+        "minutes": 25,
+        "by": "road"
+      },
+      {
+        "a": "loc_drop",
+        "b": "loc_town",
+        "minutes": 25,
+        "by": "road"
+      },
+      {
+        "a": "loc_town",
+        "b": "loc_logologo",
+        "minutes": 60,
+        "by": "road"
+      },
+      {
+        "a": "loc_kiosk",
+        "b": "loc_logologo",
+        "minutes": 75,
+        "by": "road"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_kirimi",
+      "role": "victim",
+      "name": "Kirimi Mbaabu",
+      "age": 54,
+      "occupation": "Long-distance lorry driver, Isiolo–Marsabit–Moyale, 20 years",
+      "bio": "Drives a red lorry with a white stripe. Stops for tea at the Bakuli bend most nights.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_shoulder",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Meru man, mid 50s, a driver's cap and a worn leather jacket, a broad, easy face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_aliyo",
+      "role": "suspect",
+      "name": "Aliyo Korre",
+      "age": 46,
+      "occupation": "Runs the tea kiosk at the Bakuli bend",
+      "bio": "Opened her kiosk at the bend eight years ago. Watches every lorry.",
+      "community": "Rendille",
+      "isCulprit": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_kiosk",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Rendille woman, mid 40s, a dark headscarf and layered bead necklaces, standing by a charcoal brazier, a very still face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_abduba",
+      "role": "suspect",
+      "name": "Abduba Sora",
+      "age": 22,
+      "occupation": "Kirimi's turnboy",
+      "bio": "Says bandits stopped them at Logologo.",
+      "community": "Borana",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_town",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Borana youth, early 20s, a turnboy's overalls, a coached, frightened face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_murithi",
+      "role": "suspect",
+      "name": "Murithi Kanampiu",
+      "age": 58,
+      "occupation": "The lorry's owner, Isiolo",
+      "redHerring": true,
+      "bio": "His insurance covers robbery, not negligence.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_owner"
+      },
+      "at": "plc_isiolo",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Meru man, late 50s, a transporter's suit jacket and a phone, a shrewd, uneasy face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_ogom",
+      "role": "suspect",
+      "name": "Ogom Korre",
+      "age": 50,
+      "occupation": "Aliyo's husband",
+      "redHerring": true,
+      "bio": "Keeps the family's camels at a satellite camp 30 km out.",
+      "community": "Rendille",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_old_file"
+      },
+      "at": "plc_camp",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Rendille man, about 50, a herder's cloth and a staff, a grieving, quiet face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kioko",
+      "role": "witness",
+      "name": "Sgt Wambua Kioko",
+      "age": 47,
+      "occupation": "Officer, Logologo checkpoint",
+      "bio": "Logs every lorry through Logologo.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_logologo",
+      "image": null
+    },
+    {
+      "id": "p_wife",
+      "role": "witness",
+      "name": "Gaceri Mbaabu",
+      "age": 50,
+      "occupation": "Kirimi's wife",
+      "statementOnly": true,
+      "bio": "Waited up for him in Marsabit.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_town",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_shoulder",
+      "name": "The road shoulder by Aliyo's kiosk",
+      "within": "loc_kiosk"
+    },
+    {
+      "id": "plc_camp",
+      "name": "The camel camp, 30 km out"
+    },
+    {
+      "id": "plc_isiolo",
+      "name": "Isiolo"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_drop",
+      "name": "The Bakuli bend, bottom of the drop",
+      "kind": "scene",
+      "description": "A sharp bend on the descent from Marsabit mountain and a 40-metre drop. A red lorry with a white stripe lies on its side at the bottom, its cargo of sugar and flour still lashed on.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_lorry",
+          "label": "The lorry",
+          "pos": [
+            50,
+            70
+          ],
+          "yields": "ev_lorry",
+          "text": "The lorry on its side. Kirimi in the driver's seat."
+        },
+        {
+          "id": "hs_brakes",
+          "label": "Mechanic's inspection",
+          "pos": [
+            60,
+            60
+          ],
+          "yields": "ev_brakes",
+          "text": "The mechanic from town checks the brakes and the cab."
+        },
+        {
+          "id": "hs_road",
+          "label": "The road above the bend",
+          "pos": [
+            40,
+            20
+          ],
+          "yields": "ev_road",
+          "text": "The tarmac above the bend, in the morning light."
+        },
+        {
+          "id": "hs_phone",
+          "label": "Kirimi's phone",
+          "pos": [
+            52,
+            66
+          ],
+          "yields": "ev_call",
+          "text": "His phone, in the cab."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the Bakuli bend on the Marsabit mountain road at dawn, a sharp curve above a 40-metre drop, a red lorry with a white stripe on its side at the bottom, no people in focus"
+      },
+      "expected": [
+        {
+          "id": "x_skid",
+          "text": "A loaded lorry losing its brakes leaves long black marks or ploughed gravel before the drop",
+          "because": "f_halake_skid",
+          "present": false,
+          "fact": "f_abs_skid"
+        },
+        {
+          "id": "x_fault",
+          "text": "Brakes that \"screamed\" have failed somewhere: a leak, a cut line, an empty reservoir",
+          "because": "f_al_nostop",
+          "present": false,
+          "fact": "f_abs_fault"
+        },
+        {
+          "id": "x_turnboy",
+          "text": "His turnboy in the cab beside him",
+          "because": "f_wife_turnboy",
+          "present": false,
+          "fact": "f_abs_turnboy"
+        },
+        {
+          "id": "x_bleed",
+          "text": "Injuries made in a crash while alive bleed into the tissue",
+          "because": "f_aut_crashnote",
+          "present": false,
+          "fact": "f_abs_bleed"
+        }
+      ]
+    },
+    {
+      "id": "loc_kiosk",
+      "name": "Aliyo's tea kiosk",
+      "kind": "location",
+      "description": "A small kiosk 60 metres up the road from the bend: a lantern, a bench, a charcoal brazier with an iron poker.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_shoulder",
+          "label": "The road shoulder",
+          "pos": [
+            40,
+            60
+          ],
+          "yields": "ev_roll",
+          "text": "The gravel shoulder outside the kiosk. Cpl Ewoi crouches."
+        },
+        {
+          "id": "hs_brazier",
+          "label": "Inside the kiosk",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_kiosk",
+          "text": "The brazier and a tin box. Aliyo won't open the kiosk."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small roadside tea kiosk on a mountain bend at night, a hanging lantern, a wooden bench, a charcoal brazier with an iron poker"
+      },
+      "expected": [
+        {
+          "id": "x_bandits",
+          "text": "Bandits on this stretch would be in the checkpoint's reports",
+          "because": "f_ab_bandits",
+          "present": false,
+          "fact": "f_abs_bandits"
+        }
+      ]
+    },
+    {
+      "id": "loc_town",
+      "name": "Marsabit town",
+      "kind": "location",
+      "description": "The transporters' office with its noticeboard, the police station and its archive.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_board",
+          "label": "Transporters' noticeboard",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_noticeboard",
+          "text": "Old photographs and invoices pinned up for years."
+        },
+        {
+          "id": "hs_archive",
+          "label": "Police archive",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_old_file",
+          "text": "The station archive, by year.",
+          "unlock": {
+            "fact": "f_noticeboard"
+          }
+        },
+        {
+          "id": "hs_wife",
+          "label": "Kirimi's wife",
+          "pos": [
+            20,
+            60
+          ],
+          "yields": "ev_wife",
+          "text": "Gaceri Mbaabu, who waited up all night."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "Marsabit town on its forested mountain, a transporters' office with a crowded noticeboard of photographs and invoices"
+      }
+    },
+    {
+      "id": "loc_logologo",
+      "name": "Logologo checkpoint",
+      "kind": "location",
+      "description": "A police checkpoint on the north road with a logbook of every lorry.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_log",
+          "label": "Checkpoint log",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_checkpoint",
+          "text": "Wednesday's page."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a police checkpoint on a desert highway, a barrier pole, a small hut with a logbook"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_lorry",
+      "type": "physical",
+      "title": "The lorry at the bottom of the drop",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Kirimi in the driver's seat, crash injuries. The lorry is red with a white stripe. Cargo of sugar and flour intact. Owner's plate in the cab: M. Kanampiu, Isiolo."
+      },
+      "facts": [
+        "f_lorry",
+        "f_cargo",
+        "f_owner"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a red lorry with a white stripe lying on its side at the bottom of a rocky drop, sacks of sugar still lashed on, no body visible"
+      }
+    },
+    {
+      "id": "ev_brakes",
+      "type": "physical",
+      "title": "Mechanic's inspection",
+      "render": "object",
+      "body": {
+        "brakes": "Brake reservoir full, lines intact; the brakes work.",
+        "cab": "Handbrake lever down; engine switch off; gearbox in neutral."
+      },
+      "facts": [
+        "f_brakes"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_road",
+      "type": "physical",
+      "title": "The road above the bend",
+      "render": "object",
+      "body": {
+        "label": "Clean tarmac to the edge. Insp. Halake: \"A loaded lorry losing its brakes on this slope leaves long black marks, or ploughs the gravel with locked wheels.\""
+      },
+      "facts": [
+        "f_halake_skid"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_call",
+      "type": "phone",
+      "title": "Kirimi's phone",
+      "render": "manifest",
+      "body": {
+        "call": "Wednesday 20:31, to his wife: \"Stopping for tea at Mama Aliyo's, home by midnight.\""
+      },
+      "facts": [
+        "f_call"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_wife",
+      "type": "witness",
+      "title": "Statement: Gaceri Mbaabu",
+      "render": "statement",
+      "body": {
+        "speaker": "p_wife"
+      },
+      "facts": [
+        "f_wife_turnboy"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_roll",
+      "type": "physical",
+      "title": "Tracker's reading (Cpl Ewoi Lomuke)",
+      "render": "object",
+      "body": {
+        "lorry": "The lorry was parked on the shoulder by the kiosk, then rolled: no wheelspin, no engine-driven slip.",
+        "feet": "One set of a woman's sandal prints from the kiosk to the cab door and back. No other vehicle.",
+        "age": "Sharp edges: last night."
+      },
+      "facts": [
+        "f_roll"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "tyre marks on a gravel road shoulder rolling smoothly downhill, a woman's sandal prints from a kiosk to where a cab door would be"
+      }
+    },
+    {
+      "id": "ev_checkpoint",
+      "type": "document",
+      "title": "Logologo checkpoint log",
+      "render": "logBook",
+      "body": {
+        "log": "Wednesday 19:05: Kirimi's lorry northbound, \"driver only, no turnboy\".",
+        "sgt": "Sgt Kioko: \"Nobody's reported bandits on that stretch for two years. I was on duty here all night.\""
+      },
+      "facts": [
+        "f_checkpoint",
+        "f_nobandits",
+        "f_kioko_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Kirimi's and Aliyo's lines",
+      "render": "manifest",
+      "body": {
+        "kirimi": "Kirimi's phone on the mountain mast until a sudden off-network at 20:44.",
+        "aliyo": "Aliyo's line: 20:52, a one-minute call to her husband."
+      },
+      "facts": [
+        "f_rec_kirimi",
+        "f_rec_aliyo"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_abs_skid",
+          "f_call"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_noticeboard",
+      "type": "document",
+      "title": "Transporters' noticeboard",
+      "render": "form",
+      "body": {
+        "photo": "An old photo of Kirimi's lorry, nine years ago, with a fresh dent in the front-right bumper.",
+        "invoice": "Pinned beside it: \"Front right bumper, headlamp — KSh 18,000\", dated the day after a child died at the Bakuli bend."
+      },
+      "facts": [
+        "f_noticeboard"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_old_file",
+      "type": "document",
+      "title": "Marsabit police archive: a closed file",
+      "render": "form",
+      "body": {
+        "text": "Nine years ago: Lokho Korre, 8, killed at the Bakuli bend at dusk by an unknown vehicle that did not stop. Closed after two months. A witness statement mentions \"a red lorry with a white stripe\"."
+      },
+      "facts": [
+        "f_old_file"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kiosk",
+      "type": "physical",
+      "title": "Inside Aliyo's kiosk",
+      "render": "object",
+      "body": {
+        "poker": "The brazier's iron poker, scrubbed.",
+        "box": "In her tin box: a cut-out copy of the noticeboard photo, the invoice date circled.",
+        "sandals": "Her sandals by the brazier."
+      },
+      "facts": [
+        "f_poker",
+        "f_cutout",
+        "f_sandals"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_roll",
+          "f_rec_aliyo",
+          "f_noticeboard"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "an iron poker scrubbed clean beside a charcoal brazier, a cut-out photograph of a lorry with a circled date in a tin box"
+      }
+    },
+    {
+      "id": "ev_abduba",
+      "type": "witness",
+      "title": "Statement: Abduba's girlfriend's family",
+      "render": "statement",
+      "body": {
+        "speaker": "p_abduba"
+      },
+      "facts": [
+        "f_abduba",
+        "f_paid"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_murithi",
+      "type": "document",
+      "title": "Isiolo transporters' office",
+      "render": "logBook",
+      "body": {
+        "text": "Murithi in Isiolo all week; he called Abduba at 07:20 on Thursday."
+      },
+      "facts": [
+        "f_murithi"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ogom",
+      "type": "witness",
+      "title": "Statement: camel herders at the satellite camp",
+      "render": "statement",
+      "body": {
+        "speaker": "p_ogom"
+      },
+      "facts": [
+        "f_ogom"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Dr. Chebii, Marsabit)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_crashnote",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_lorry"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_blood",
+      "type": "forensic",
+      "title": "Lab: trace (poker joint)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_blood"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_kiosk"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tread",
+      "type": "forensic",
+      "title": "Lab: tread (sandal prints vs sandals)",
+      "render": "labReport",
+      "body": {
+        "test": "toolMarks"
+      },
+      "facts": [
+        "f_tread"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toolMarks",
+        "hours": 8,
+        "needs": [
+          "ev_roll",
+          "ev_kiosk"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Kirimi Mbaabu was found dead in the cab of his lorry at the bottom of the Bakuli bend drop on Thursday morning; talk in town blames bandits.",
+      "kind": "true",
+      "about": [
+        "p_kirimi",
+        "loc_drop"
+      ],
+      "at": {
+        "from": "06:30",
+        "to": null,
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_lorry",
+      "text": "Kirimi lay in the driver's seat with crash injuries. The lorry is red with a white stripe.",
+      "kind": "true",
+      "about": [
+        "p_kirimi",
+        "loc_drop"
+      ]
+    },
+    {
+      "id": "f_cargo",
+      "text": "The cargo of sugar and flour is still lashed on, intact.",
+      "kind": "true",
+      "about": [
+        "loc_drop"
+      ]
+    },
+    {
+      "id": "f_owner",
+      "text": "Owner's plate in the cab: M. Kanampiu, Isiolo.",
+      "kind": "true",
+      "about": [
+        "p_murithi"
+      ]
+    },
+    {
+      "id": "f_brakes",
+      "text": "Mechanic: the brake reservoir is full and the lines intact; the brakes work. The handbrake lever is down, the engine switch off, the gearbox in neutral.",
+      "kind": "true",
+      "about": [
+        "loc_drop"
+      ]
+    },
+    {
+      "id": "f_halake_skid",
+      "text": "Halake: a loaded lorry losing its brakes on this slope leaves long black marks, or ploughs the gravel with locked wheels. The tarmac is clean to the edge.",
+      "kind": "true",
+      "about": [
+        "loc_drop"
+      ]
+    },
+    {
+      "id": "f_call",
+      "text": "Kirimi to his wife, Wednesday 20:31: \"Stopping for tea at Mama Aliyo's, home by midnight.\"",
+      "kind": "true",
+      "about": [
+        "p_kirimi",
+        "p_aliyo"
+      ],
+      "at": {
+        "from": "20:31",
+        "to": null,
+        "day": "Wed"
+      }
+    },
+    {
+      "id": "f_wife_turnboy",
+      "text": "Gaceri: Kirimi always travelled with his turnboy, Abduba. \"He wouldn't drive the mountain alone at night.\"",
+      "kind": "true",
+      "about": [
+        "p_wife",
+        "p_abduba"
+      ]
+    },
+    {
+      "id": "f_roll",
+      "text": "Ewoi: the lorry was parked on the shoulder by the kiosk, then rolled with no engine; one set of a woman's sandal prints went from the kiosk to the cab door and back. Last night.",
+      "kind": "true",
+      "about": [
+        "plc_shoulder"
+      ]
+    },
+    {
+      "id": "f_checkpoint",
+      "text": "Logologo log: Kirimi's lorry passed northbound at 19:05 on Wednesday, \"driver only, no turnboy\".",
+      "kind": "true",
+      "about": [
+        "p_kirimi"
+      ],
+      "at": {
+        "from": "19:05",
+        "to": null,
+        "day": "Wed"
+      }
+    },
+    {
+      "id": "f_nobandits",
+      "text": "Sgt Kioko: nobody has reported bandits on that stretch for two years.",
+      "kind": "true",
+      "about": [
+        "p_kioko"
+      ]
+    },
+    {
+      "id": "f_kioko_self",
+      "text": "Sgt Kioko was on duty at Logologo, an hour away, all night.",
+      "kind": "true",
+      "about": [
+        "p_kioko"
+      ],
+      "where": {
+        "person": "p_kioko",
+        "place": "loc_logologo",
+        "from": "18:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_rec_kirimi",
+      "text": "Records: Kirimi's phone on the mountain mast until a sudden off-network at 20:44.",
+      "kind": "true",
+      "about": [
+        "p_kirimi"
+      ],
+      "at": {
+        "from": "20:44",
+        "to": null,
+        "day": "Wed"
+      }
+    },
+    {
+      "id": "f_rec_aliyo",
+      "text": "Records: Aliyo called her husband at 20:52, for one minute.",
+      "kind": "true",
+      "about": [
+        "p_aliyo",
+        "p_ogom"
+      ],
+      "at": {
+        "from": "20:52",
+        "to": null,
+        "day": "Wed"
+      }
+    },
+    {
+      "id": "f_noticeboard",
+      "text": "Noticeboard: a photo of Kirimi's lorry nine years ago with a fresh dent in the front-right bumper, and an invoice for the repair dated the day after a child died at the Bakuli bend.",
+      "kind": "true",
+      "about": [
+        "p_kirimi"
+      ]
+    },
+    {
+      "id": "f_old_file",
+      "text": "Closed file: nine years ago Lokho Korre, 8, was killed at the Bakuli bend at dusk by a vehicle that did not stop. A witness mentioned \"a red lorry with a white stripe\".",
+      "kind": "true",
+      "about": [
+        "p_aliyo",
+        "p_kirimi"
+      ]
+    },
+    {
+      "id": "f_poker",
+      "text": "In Aliyo's kiosk: the brazier's iron poker, scrubbed.",
+      "kind": "true",
+      "about": [
+        "p_aliyo"
+      ]
+    },
+    {
+      "id": "f_cutout",
+      "text": "In her tin box: a cut-out copy of the noticeboard photo, the invoice date circled.",
+      "kind": "true",
+      "about": [
+        "p_aliyo"
+      ]
+    },
+    {
+      "id": "f_sandals",
+      "text": "Her sandals stand by the brazier.",
+      "kind": "true",
+      "about": [
+        "p_aliyo"
+      ]
+    },
+    {
+      "id": "f_abduba",
+      "text": "Abduba's girlfriend's family: Kirimi dropped him in Marsabit town at 18:00 to visit; he was with them all evening.",
+      "kind": "true",
+      "about": [
+        "p_abduba"
+      ],
+      "where": {
+        "person": "p_abduba",
+        "place": "loc_town",
+        "from": "18:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_paid",
+      "text": "The family: Abduba showed them his week's pay from Kirimi on Wednesday.",
+      "kind": "true",
+      "about": [
+        "p_abduba"
+      ]
+    },
+    {
+      "id": "f_murithi",
+      "text": "Isiolo transporters' office: Murithi in Isiolo all week.",
+      "kind": "true",
+      "about": [
+        "p_murithi"
+      ],
+      "where": {
+        "person": "p_murithi",
+        "place": "plc_isiolo",
+        "from": "00:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_ogom",
+      "text": "The herders: Ogom was at the camel camp 30 km away all week.",
+      "kind": "true",
+      "about": [
+        "p_ogom"
+      ],
+      "where": {
+        "person": "p_ogom",
+        "place": "plc_camp",
+        "from": "00:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Post-mortem: one blow to the back of the head with a narrow iron bar, before the crash.",
+      "kind": "true",
+      "about": [
+        "p_kirimi"
+      ]
+    },
+    {
+      "id": "f_aut_crashnote",
+      "text": "Post-mortem: crash injuries throughout, and none of them bled. Dr. Chebii: \"Injuries made in life bleed. These were made after death.\"",
+      "kind": "true",
+      "about": [
+        "p_kirimi"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Wednesday between 20:30 and 21:00.",
+      "kind": "true",
+      "about": [
+        "p_kirimi"
+      ],
+      "at": {
+        "from": "20:30",
+        "to": "21:00",
+        "day": "Wed"
+      }
+    },
+    {
+      "id": "f_blood",
+      "text": "Lab: Kirimi's blood in the joint of the poker's handle.",
+      "kind": "true",
+      "about": [
+        "p_kirimi",
+        "p_aliyo"
+      ]
+    },
+    {
+      "id": "f_tread",
+      "text": "Lab: the sandal prints on the shoulder match Aliyo's sandals.",
+      "kind": "true",
+      "about": [
+        "p_aliyo"
+      ]
+    },
+    {
+      "id": "f_abs_skid",
+      "text": "Missing: there are no skid marks before the drop.",
+      "kind": "true",
+      "about": [
+        "loc_drop"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_fault",
+      "text": "Missing: there is no brake fault.",
+      "kind": "true",
+      "about": [
+        "loc_drop"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_turnboy",
+      "text": "Missing: there was no turnboy in the cab.",
+      "kind": "true",
+      "about": [
+        "loc_drop"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_bandits",
+      "text": "Missing: no bandits have been reported for two years.",
+      "kind": "true",
+      "about": [
+        "loc_kiosk"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_bleed",
+      "text": "Missing: there is no bleeding in the crash injuries.",
+      "kind": "true",
+      "about": [
+        "p_kirimi"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_al_nostop",
+      "text": "Aliyo: \"He didn't stop at my kiosk last night. I heard brakes screaming and men shouting at the bend: bandits.\"",
+      "kind": "lie",
+      "about": [
+        "p_aliyo"
+      ]
+    },
+    {
+      "id": "f_al_reveal",
+      "text": "Aliyo: he stopped. He laughed about the children on the road. \"My son was on the road. I've waited nine years for him to stop at my kiosk and laugh.\"",
+      "kind": "true",
+      "about": [
+        "p_aliyo",
+        "p_kirimi"
+      ],
+      "where": {
+        "person": "p_aliyo",
+        "place": "plc_shoulder",
+        "from": "20:31",
+        "to": "20:45"
+      }
+    },
+    {
+      "id": "f_al_poker",
+      "text": "Aliyo: \"I never touched him.\"",
+      "kind": "lie",
+      "about": [
+        "p_aliyo"
+      ]
+    },
+    {
+      "id": "f_ab_bandits",
+      "text": "Abduba: \"Bandits stopped us at Logologo earlier and threatened the boss. They followed us.\"",
+      "kind": "lie",
+      "about": [
+        "p_abduba"
+      ]
+    },
+    {
+      "id": "f_ab_reveal",
+      "text": "Abduba: the owner told him to say bandits, because the insurance pays for bandits. \"I wasn't even in the lorry. Boss dropped me in town at six.\"",
+      "kind": "true",
+      "about": [
+        "p_abduba",
+        "p_murithi"
+      ]
+    },
+    {
+      "id": "f_mur_claim",
+      "text": "Murithi: \"The lorry was serviced. I was in Isiolo.\"",
+      "kind": "claim",
+      "about": [
+        "p_murithi"
+      ]
+    },
+    {
+      "id": "f_mur_shame",
+      "text": "Murithi: \"Yes, I told the boy to say bandits. I'm ashamed. I've lost a driver and I was thinking of insurance.\"",
+      "kind": "true",
+      "about": [
+        "p_murithi"
+      ]
+    },
+    {
+      "id": "f_ogom_claim",
+      "text": "Ogom: \"I was with the camels.\"",
+      "kind": "claim",
+      "about": [
+        "p_ogom"
+      ]
+    },
+    {
+      "id": "f_ogom_call",
+      "text": "Ogom: \"She called me at nine last night. She said, 'It's done. Lokho can rest.' I thought she meant she'd finished mourning.\"",
+      "kind": "true",
+      "about": [
+        "p_ogom",
+        "p_aliyo"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_aliyo",
+      "stance": "cooperative",
+      "intro": "Aliyo stands by her cold brazier, very still. \"He didn't stop at my kiosk last night. I heard brakes screaming and men shouting at the bend: bandits.\"",
+      "claims": [
+        "f_al_nostop"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_al_poker",
+          "after": "f_al_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_abduba",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_lorry"
+      ],
+      "intro": "Abduba repeats it as if he has learned it. \"Bandits stopped us at Logologo earlier and threatened the boss. They followed us.\"",
+      "claims": [
+        "f_ab_bandits"
+      ],
+      "yields": [
+        "ev_abduba"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_murithi",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_checkpoint"
+      ],
+      "intro": "Murithi answers from Isiolo. \"The lorry was serviced. I was in Isiolo.\"",
+      "claims": [
+        "f_mur_claim"
+      ],
+      "yields": [
+        "ev_murithi"
+      ],
+      "topics": [
+        {
+          "about": "ev_checkpoint",
+          "reply": "\"Yes, I told the boy to say bandits. I'm ashamed. I've lost a driver and I was thinking of insurance.\"",
+          "reveals": [
+            "f_mur_shame"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_ogom",
+      "stance": "cooperative",
+      "intro": "Ogom has walked in from the camel camp. \"I was with the camels.\"",
+      "claims": [
+        "f_ogom_claim"
+      ],
+      "yields": [
+        "ev_ogom"
+      ],
+      "topics": [
+        {
+          "about": "ev_records",
+          "reply": "\"She called me at nine last night. She said, 'It's done. Lokho can rest.' I thought she meant she'd finished mourning.\"",
+          "reveals": [
+            "f_ogom_call"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_kioko",
+      "stance": "cooperative",
+      "intro": "Sgt Kioko reads his own log back to you over the radio.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_ab",
+      "claim": "f_ab_bandits",
+      "brokenBy": [
+        "f_checkpoint"
+      ],
+      "reveals": [
+        "f_ab_reveal"
+      ],
+      "reaction": "\"The owner told me to say bandits. The insurance pays for bandits. I wasn't even in the lorry. Boss dropped me in town at six to see my girl.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_al",
+      "claim": "f_al_nostop",
+      "brokenBy": [
+        "f_call",
+        "f_abs_skid",
+        "f_roll"
+      ],
+      "reveals": [
+        "f_al_reveal"
+      ],
+      "reaction": "\"He stopped. He laughed about the children on the road. My son was on the road. I've waited nine years for him to stop at my kiosk and laugh.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_al_poker",
+      "claim": "f_al_poker",
+      "brokenBy": [
+        "f_blood"
+      ],
+      "reveals": [],
+      "reaction": "Aliyo looks at the lab sheet, then out of the window at the road. She doesn't speak again.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_aliyo",
+      "text": "Aliyo Korre",
+      "category": "person",
+      "ref": "p_aliyo",
+      "unlock": {
+        "anyOf": [
+          "f_call"
+        ]
+      }
+    },
+    {
+      "id": "w_abduba",
+      "text": "Abduba Sora",
+      "category": "person",
+      "ref": "p_abduba",
+      "unlock": {
+        "anyOf": [
+          "f_wife_turnboy"
+        ]
+      }
+    },
+    {
+      "id": "w_murithi",
+      "text": "Murithi Kanampiu",
+      "category": "person",
+      "ref": "p_murithi",
+      "unlock": {
+        "anyOf": [
+          "f_owner"
+        ]
+      }
+    },
+    {
+      "id": "w_ogom",
+      "text": "Ogom Korre",
+      "category": "person",
+      "ref": "p_ogom",
+      "unlock": {
+        "anyOf": [
+          "f_old_file"
+        ]
+      }
+    },
+    {
+      "id": "w_kioko",
+      "text": "Wambua Kioko",
+      "category": "person",
+      "ref": "p_kioko",
+      "unlock": {
+        "anyOf": [
+          "f_checkpoint"
+        ]
+      }
+    },
+    {
+      "id": "pl_shoulder",
+      "text": "the road shoulder by Aliyo's kiosk",
+      "category": "place",
+      "ref": "plc_shoulder",
+      "unlock": {
+        "anyOf": [
+          "f_roll"
+        ]
+      }
+    },
+    {
+      "id": "pl_drop",
+      "text": "the bottom of the drop at the Bakuli bend",
+      "category": "place",
+      "ref": "loc_drop",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_logologo",
+      "text": "Logologo checkpoint",
+      "category": "place",
+      "ref": "loc_logologo",
+      "unlock": {
+        "anyOf": [
+          "f_checkpoint"
+        ]
+      }
+    },
+    {
+      "id": "pl_town",
+      "text": "Marsabit town",
+      "category": "place",
+      "ref": "loc_town",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_camp",
+      "text": "the camel camp",
+      "category": "place",
+      "ref": "plc_camp",
+      "unlock": {
+        "anyOf": [
+          "f_old_file"
+        ]
+      }
+    },
+    {
+      "id": "h_poker",
+      "text": "striking him with an iron brazier poker, then rolling his lorry off the bend",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_brakes",
+      "text": "brake failure",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_bandits",
+      "text": "being forced off the road by bandits",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_asleep",
+      "text": "falling asleep at the wheel",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack at the wheel",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_lokho",
+      "text": "revenge: she had found that his lorry killed her son nine years ago",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_old_file"
+        ]
+      }
+    },
+    {
+      "id": "m_insurance",
+      "text": "the owner's insurance claim",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_owner"
+        ]
+      }
+    },
+    {
+      "id": "m_husband",
+      "text": "a husband's revenge for his son",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_old_file"
+        ]
+      }
+    },
+    {
+      "id": "m_wages",
+      "text": "a turnboy's unpaid wages",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_wife_turnboy"
+        ]
+      }
+    },
+    {
+      "id": "m_cargo",
+      "text": "a robbery of the cargo",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "a_skid",
+      "text": "there are no skid marks before the drop",
+      "category": "absence",
+      "ref": "f_abs_skid",
+      "unlock": {
+        "anyOf": [
+          "f_abs_skid"
+        ]
+      }
+    },
+    {
+      "id": "a_fault",
+      "text": "there is no brake fault",
+      "category": "absence",
+      "ref": "f_abs_fault",
+      "unlock": {
+        "anyOf": [
+          "f_abs_fault"
+        ]
+      }
+    },
+    {
+      "id": "a_turnboy",
+      "text": "there is no turnboy in the cab",
+      "category": "absence",
+      "ref": "f_abs_turnboy",
+      "unlock": {
+        "anyOf": [
+          "f_abs_turnboy"
+        ]
+      }
+    },
+    {
+      "id": "a_bandits",
+      "text": "there are no bandits reported for two years",
+      "category": "absence",
+      "ref": "f_abs_bandits",
+      "unlock": {
+        "anyOf": [
+          "f_abs_bandits"
+        ]
+      }
+    },
+    {
+      "id": "a_bleed",
+      "text": "there is no bleeding in the crash injuries",
+      "category": "absence",
+      "ref": "f_abs_bleed",
+      "unlock": {
+        "anyOf": [
+          "f_abs_bleed"
+        ]
+      }
+    },
+    {
+      "id": "k_dead",
+      "text": "he never braked because he was already unconscious or dead",
+      "category": "conclusion",
+      "by": [
+        "f_abs_skid",
+        "f_brakes",
+        "f_abs_bleed"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_skid"
+        ]
+      }
+    },
+    {
+      "id": "k_failed",
+      "text": "his brakes failed on the slope",
+      "category": "conclusion",
+      "by": [
+        "f_brakes"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_skid"
+        ]
+      }
+    },
+    {
+      "id": "k_bandits",
+      "text": "bandits forced him off the road",
+      "category": "conclusion",
+      "by": [
+        "f_nobandits"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_skid"
+        ]
+      }
+    },
+    {
+      "id": "k_jumped",
+      "text": "the turnboy jumped clear",
+      "category": "conclusion",
+      "by": [
+        "f_checkpoint"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_skid"
+        ]
+      }
+    },
+    {
+      "id": "k_asleep",
+      "text": "he fell asleep at the wheel",
+      "category": "conclusion",
+      "by": [
+        "f_brakes"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_skid"
+        ]
+      }
+    },
+    {
+      "id": "k_midnight",
+      "text": "he crashed after midnight",
+      "category": "conclusion",
+      "by": [
+        "f_rec_kirimi"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_skid"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. That {missing} shows that {conclusion}.",
+    "fixed": {
+      "victim": "Kirimi Mbaabu"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_9yrs",
+                  "label": "Nine years ago",
+                  "from": null,
+                  "to": null,
+                  "day": "9 years ago"
+                },
+                {
+                  "id": "sl_next",
+                  "label": "The next day",
+                  "from": null,
+                  "to": null,
+                  "day": "9 years ago"
+                },
+                {
+                  "id": "sl_1905",
+                  "label": "Wednesday 19:05",
+                  "from": "19:05",
+                  "to": "19:05",
+                  "day": "Wed"
+                },
+                {
+                  "id": "sl_2031",
+                  "label": "Wednesday 20:31",
+                  "from": "20:31",
+                  "to": "20:31",
+                  "day": "Wed"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Wednesday 20:31–20:44",
+                  "from": "20:31",
+                  "to": "20:44",
+                  "day": "Wed"
+                },
+                {
+                  "id": "sl_mid",
+                  "label": "After midnight",
+                  "from": "00:30",
+                  "to": "00:30",
+                  "day": "Thu"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_lokho",
+                  "text": "Lokho is killed at the bend",
+                  "slot": "sl_9yrs",
+                  "by": [
+                    "f_old_file"
+                  ],
+                  "why": "The closed file: nine years ago.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_old_file"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_dent",
+                  "text": "The dent is repaired",
+                  "slot": "sl_next",
+                  "by": [
+                    "f_noticeboard"
+                  ],
+                  "why": "The invoice: the day after.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_noticeboard"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_logologo",
+                  "text": "Kirimi passes Logologo alone",
+                  "slot": "sl_1905",
+                  "by": [
+                    "f_checkpoint"
+                  ],
+                  "why": "The checkpoint log: 19:05, driver only.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_checkpoint"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_call",
+                  "text": "Kirimi calls his wife from the kiosk",
+                  "slot": "sl_2031",
+                  "by": [
+                    "f_call"
+                  ],
+                  "why": "His phone: 20:31.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_call"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Kirimi is killed and the lorry rolls",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod",
+                    "f_rec_kirimi",
+                    "f_al_reveal"
+                  ],
+                  "why": "After his call and before his phone died in the crash at 20:44.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rec_kirimi"
+                    ]
+                  },
+                  "act": true
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_mid",
+                  "by": [
+                    "f_rec_kirimi",
+                    "f_aut_tod"
+                  ],
+                  "why": "\"Brakes screaming in the night\"? His phone died in the crash at 20:44."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A child nine years ago, a repair the next day. Logologo at five past seven, tea at half past eight, the drop by quarter to nine.",
+          "fail": [
+            "Midnight is Aliyo's story. His phone died at 20:44.",
+            "When did he call his wife, and from where?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_shoulder"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Outside her kiosk, on the shoulder, before the lorry ever moved.",
+          "fail": [
+            "He was dead before the drop. Read the post-mortem.",
+            "Logologo is an hour away."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_aliyo"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her kiosk, her sandals to his door, his blood on her poker. That will hold. Nine years of it.",
+          "fail": [
+            "Abduba was in town with his girl.",
+            "Ogom was at the camp. She called him there."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_poker"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A narrow iron bar, then a handbrake let off. Yes.",
+          "fail": [
+            "The brakes work.",
+            "No bandits for two years, and no other tyre tracks."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_lokho"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A red lorry with a white stripe, and a dent repaired the next day.",
+          "fail": [
+            "The cargo is untouched.",
+            "The owner wanted insurance money, not a dead driver."
+          ]
+        }
+      },
+      {
+        "id": "g_absence",
+        "kind": "absence",
+        "blanks": [
+          {
+            "id": "missing",
+            "category": "absence",
+            "answer": "a_skid",
+            "accept": [
+              "a_bleed"
+            ]
+          },
+          {
+            "id": "conclusion",
+            "category": "conclusion",
+            "answer": "k_dead"
+          }
+        ],
+        "prosecutor": {
+          "pass": "No skid, no fault, no blood in the injuries. He never braked because he couldn't.",
+          "fail": [
+            "No turnboy says he drove alone, not why he didn't brake.",
+            "No bandits clears the herders. It doesn't tell me why the lorry rolled."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_shoulder",
+      "from": "20:31",
+      "to": "20:44",
+      "note": "From his call at the kiosk at 20:31 to his phone going off in the crash at 20:44; the post-mortem allows 20:30–21:00."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_lorry",
+          "f_halake_skid",
+          "f_abs_skid",
+          "f_brakes",
+          "f_aut_crashnote",
+          "f_abs_bleed"
+        ],
+        "concludes": "The brakes didn't fail and he never braked: he was already dead.",
+        "answers": [
+          "missing",
+          "conclusion"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_aut_blow",
+          "f_aut_tod"
+        ],
+        "concludes": "He was struck before the crash with a narrow iron bar."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_checkpoint",
+          "f_nobandits",
+          "f_ab_bandits",
+          "f_ab_reveal",
+          "f_mur_shame"
+        ],
+        "concludes": "There were no bandits: the story was an insurance lie, and Aliyo's own."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_call",
+          "f_roll",
+          "f_rec_kirimi",
+          "f_rec_aliyo",
+          "f_al_nostop",
+          "f_al_reveal"
+        ],
+        "concludes": "He stopped at Aliyo's kiosk; the lorry rolled from the shoulder with no engine, and a woman walked to the cab and back.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_noticeboard",
+          "f_old_file",
+          "f_cutout",
+          "f_poker",
+          "f_blood",
+          "f_tread",
+          "f_al_poker"
+        ],
+        "concludes": "His lorry killed her son nine years ago. Aliyo Korre struck Kirimi with her brazier poker on the shoulder by her kiosk and rolled his lorry off the bend, in revenge.",
+        "answers": [
+          "who",
+          "how",
+          "why",
+          "where"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_drop",
+        "blank": "where",
+        "by": [
+          "f_aut_blow",
+          "f_aut_crashnote"
+        ],
+        "why": "He was dead before the lorry reached the drop."
+      },
+      {
+        "word": "pl_logologo",
+        "blank": "where",
+        "by": [
+          "f_call",
+          "f_checkpoint"
+        ],
+        "why": "He passed Logologo alive at 19:05 and called from the kiosk at 20:31."
+      },
+      {
+        "word": "pl_town",
+        "blank": "where",
+        "by": [
+          "f_call"
+        ],
+        "why": "He was at the kiosk on the mountain."
+      },
+      {
+        "word": "pl_camp",
+        "blank": "where",
+        "by": [
+          "f_call",
+          "f_roll"
+        ],
+        "why": "He never left the road."
+      },
+      {
+        "word": "w_abduba",
+        "blank": "who",
+        "by": [
+          "f_abduba"
+        ],
+        "why": "Abduba was with his girlfriend's family in town from 18:00."
+      },
+      {
+        "word": "w_murithi",
+        "blank": "who",
+        "by": [
+          "f_murithi"
+        ],
+        "why": "Murithi was in Isiolo all week."
+      },
+      {
+        "word": "w_ogom",
+        "blank": "who",
+        "by": [
+          "f_ogom"
+        ],
+        "why": "Ogom was at the camel camp 30 km away."
+      },
+      {
+        "word": "w_kioko",
+        "blank": "who",
+        "by": [
+          "f_kioko_self"
+        ],
+        "why": "Sgt Kioko was on duty at Logologo, an hour away."
+      },
+      {
+        "word": "h_brakes",
+        "blank": "how",
+        "by": [
+          "f_brakes"
+        ],
+        "why": "The brakes work."
+      },
+      {
+        "word": "h_bandits",
+        "blank": "how",
+        "by": [
+          "f_nobandits",
+          "f_roll"
+        ],
+        "why": "No bandits for two years; no other vehicle."
+      },
+      {
+        "word": "h_asleep",
+        "blank": "how",
+        "by": [
+          "f_brakes"
+        ],
+        "why": "Engine off, handbrake down."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "A blow to the head."
+      },
+      {
+        "word": "m_insurance",
+        "blank": "why",
+        "by": [
+          "f_murithi",
+          "f_mur_shame"
+        ],
+        "why": "Murithi lied about bandits for the insurance, after the fact, from Isiolo."
+      },
+      {
+        "word": "m_husband",
+        "blank": "why",
+        "by": [
+          "f_ogom",
+          "f_ogom_call"
+        ],
+        "why": "Ogom was at the camp, and didn't know."
+      },
+      {
+        "word": "m_wages",
+        "blank": "why",
+        "by": [
+          "f_paid",
+          "f_abduba"
+        ],
+        "why": "Abduba was paid, and in town."
+      },
+      {
+        "word": "m_cargo",
+        "blank": "why",
+        "by": [
+          "f_cargo"
+        ],
+        "why": "The cargo is intact."
+      },
+      {
+        "word": "a_fault",
+        "blank": "missing",
+        "by": [
+          "f_abs_fault",
+          "f_brakes"
+        ],
+        "why": "Working brakes rule out a failure; the missing skid shows he never used them."
+      },
+      {
+        "word": "a_turnboy",
+        "blank": "missing",
+        "by": [
+          "f_abs_turnboy",
+          "f_checkpoint"
+        ],
+        "why": "He drove alone; that says nothing about why he didn't brake."
+      },
+      {
+        "word": "a_bandits",
+        "blank": "missing",
+        "by": [
+          "f_abs_bandits"
+        ],
+        "why": "It clears the \"bandits\"; it doesn't explain the roll."
+      },
+      {
+        "word": "k_failed",
+        "blank": "conclusion",
+        "by": [
+          "f_brakes"
+        ],
+        "why": "The brakes work."
+      },
+      {
+        "word": "k_bandits",
+        "blank": "conclusion",
+        "by": [
+          "f_nobandits"
+        ],
+        "why": "No bandits."
+      },
+      {
+        "word": "k_jumped",
+        "blank": "conclusion",
+        "by": [
+          "f_checkpoint",
+          "f_abduba"
+        ],
+        "why": "There was no turnboy in the lorry."
+      },
+      {
+        "word": "k_asleep",
+        "blank": "conclusion",
+        "by": [
+          "f_brakes"
+        ],
+        "why": "The engine was off."
+      },
+      {
+        "word": "k_midnight",
+        "blank": "conclusion",
+        "by": [
+          "f_rec_kirimi"
+        ],
+        "why": "His phone died at 20:44."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Nine years ago, at dusk, a lorry hits Aliyo's son Lokho as he crosses the Bakuli bend with the family's goats, and drives on. The file is closed: \"unknown vehicle\". A year later she opens a tea kiosk at the bend and watches every lorry.",
+        "image": null
+      },
+      {
+        "text": "In March she sees an old photo on the Marsabit noticeboard: Kirimi's red lorry with a dented bumper, and an invoice for the repair dated the day after Lokho died.",
+        "image": null
+      },
+      {
+        "text": "Wednesday, 19:05. Kirimi passes Logologo alone; he dropped his turnboy in town. At 20:31 he stops for tea at her kiosk and calls his wife.",
+        "image": null
+      },
+      {
+        "text": "She asks him about the dent. He laughs: children should keep off the road. As he turns to his cab she strikes him with the brazier poker, pushes him into the driver's seat and lets off the handbrake.",
+        "image": "plc_shoulder"
+      },
+      {
+        "text": "The lorry rolls 60 metres and over the bend. At 20:52 she calls her husband: \"It's done. Lokho can rest.\" In the morning she tells the bus crew she heard brakes and bandits.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Two stamps: records on both lines and a warrant on the kiosk. Detain Aliyo after the search; the poker trace (12 h + 4) and the tread (8 h + 4) come back inside 24 h. The post-mortem in Marsabit runs in parallel.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_drop",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_lorry",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_brakes",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_road",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_call",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_kiosk",
+        "hours": 0.25,
+        "from": "loc_drop"
+      },
+      {
+        "do": "visit",
+        "target": "loc_kiosk",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_roll",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_aliyo"
+      },
+      {
+        "do": "travel",
+        "target": "loc_town",
+        "hours": 0.5,
+        "from": "loc_kiosk"
+      },
+      {
+        "do": "visit",
+        "target": "loc_town",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_wife",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_abduba"
+      },
+      {
+        "do": "travel",
+        "target": "loc_logologo",
+        "hours": 1,
+        "from": "loc_town"
+      },
+      {
+        "do": "visit",
+        "target": "loc_logologo",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_checkpoint",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_kioko"
+      },
+      {
+        "do": "travel",
+        "target": "loc_town",
+        "hours": 1,
+        "from": "loc_logologo"
+      },
+      {
+        "do": "visit",
+        "target": "loc_town",
+        "hours": 1
+      },
+      {
+        "do": "press",
+        "target": "c_ab"
+      },
+      {
+        "do": "interview",
+        "target": "p_murithi"
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "read",
+        "target": "ev_noticeboard",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_old_file",
+        "hours": 1
+      },
+      {
+        "do": "travel",
+        "target": "loc_kiosk",
+        "hours": 0.5,
+        "from": "loc_town"
+      },
+      {
+        "do": "visit",
+        "target": "loc_kiosk",
+        "hours": 1
+      },
+      {
+        "do": "press",
+        "target": "c_al"
+      },
+      {
+        "do": "search",
+        "target": "loc_kiosk"
+      },
+      {
+        "do": "detain",
+        "target": "p_aliyo"
+      },
+      {
+        "do": "submit",
+        "target": "ev_blood"
+      },
+      {
+        "do": "submit",
+        "target": "ev_tread"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 15
+      },
+      {
+        "do": "press",
+        "target": "c_al_poker"
+      }
+    ],
+    "totalHours": 47.25
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_call",
+        "line": "His last call tells you where he stopped, Amani."
+      },
+      "tier2": {
+        "facts": [
+          "f_call",
+          "f_rec_kirimi"
+        ],
+        "line": "Tea at 20:31. His phone dead at 20:44."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_roll",
+        "line": "Where was the lorry before it rolled? Ask Ewoi."
+      },
+      "tier2": {
+        "facts": [
+          "f_roll"
+        ],
+        "line": "Parked on the shoulder by the kiosk."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_roll",
+        "line": "One set of footprints went to the cab and came back."
+      },
+      "tier2": {
+        "facts": [
+          "f_tread",
+          "f_blood"
+        ],
+        "line": "Her sandals, and his blood on her poker."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_brakes",
+        "line": "Look at the handbrake and the engine switch."
+      },
+      "tier2": {
+        "facts": [
+          "f_brakes",
+          "f_aut_blow"
+        ],
+        "line": "Handbrake down, engine off, and a blow before the crash."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_noticeboard",
+        "line": "Look at the old photographs in the transporters' office."
+      },
+      "tier2": {
+        "facts": [
+          "f_noticeboard",
+          "f_old_file"
+        ],
+        "line": "A dent repaired the day after a child died at the bend."
+      }
+    },
+    "g_absence": {
+      "tier1": {
+        "point": "ev_road",
+        "line": "What should a lorry losing its brakes leave on the road?"
+      },
+      "tier2": {
+        "facts": [
+          "f_abs_skid",
+          "f_abs_bleed"
+        ],
+        "line": "No skid marks. No bleeding in the injuries."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "lori",
+      "def": "A lorry."
+    },
+    {
+      "term": "utingo",
+      "def": "A turnboy, the driver's assistant."
+    },
+    {
+      "term": "breki",
+      "def": "Brakes."
+    },
+    {
+      "term": "kibanda cha chai",
+      "def": "A tea kiosk."
+    },
+    {
+      "term": "majambazi",
+      "def": "Bandits."
+    },
+    {
+      "term": "kona",
+      "def": "A bend in the road."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address an older woman."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "twoFilesAtOnce"
+    ],
+    "beatNotes": "Two files at once. When the old file is found, Lokho's thin closed folder slides onto the desk beside the live case. Evidence can be dragged between them; the dent invoice belongs to both. The verdict stamps both."
+  }
+}

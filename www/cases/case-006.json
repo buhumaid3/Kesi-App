@@ -1,0 +1,963 @@
+{
+  "meta": {
+    "id": "case-006",
+    "number": 6,
+    "region": "nairobi-cbd",
+    "regionNumber": 1,
+    "title": "Job Number 318",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 8,
+    "date": "Wednesday 16 April",
+    "folderTab": "LUTHULI AVENUE"
+  },
+  "pattern": {
+    "crimePattern": "fence silences a repairer who found stolen-phone parts",
+    "noRealCaseRetold": true,
+    "notes": "Fictional repair shop; Luthuli Avenue is a setting only.",
+    "tags": [
+      "blunt-force",
+      "stolen-goods"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 2,
+    "redHerrings": 0,
+    "liars": 0,
+    "groups": [
+      "who"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness"
+    ],
+    "gatedActions": [],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 05/16/04",
+    "date": "Wednesday 16 April",
+    "time": "13:42",
+    "reportedBy": "Kelvin Njagi, apprentice, Signal Point electronics",
+    "text": "Apprentice Kelvin Njagi reports that repair technician Joel Mutiso (34) was found dead in the back room of Signal Point electronics repair, Luthuli Avenue, at 13:35, when Kelvin returned from lunch.",
+    "facts": [
+      "f_ob_found"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_joel",
+      "role": "victim",
+      "name": "Joel Mutiso",
+      "age": 34,
+      "occupation": "Repair technician, Signal Point",
+      "bio": "Could fix any radio on Luthuli Avenue with his eyes closed. Wrote every job in the job book in capitals.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_signal",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 30s, magnifying loupe on a band pushed up on his forehead, grey work coat with pens in the pocket, focused gentle face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_wycliffe",
+      "role": "suspect",
+      "name": "Wycliffe Barasa",
+      "age": 29,
+      "occupation": "Customer",
+      "bio": "Brings radios in for repair more often than anyone on the street.",
+      "community": "Luhya",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_jobbook_318"
+      },
+      "at": "plc_street",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 20s, slim, fake-designer bomber jacket, two phones in hand, restless eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_simon",
+      "role": "suspect",
+      "name": "Simon Gakuru",
+      "age": 55,
+      "occupation": "Owner, Signal Point",
+      "bio": "Owns the shop. He and Joel argued for months about Joel's share of the profits.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_kelvin_owner"
+      },
+      "at": "plc_mombasa",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 50s, balding, short-sleeved shirt, phone pressed to his ear, irritated and shocked, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kelvin",
+      "role": "suspect",
+      "name": "Kelvin Njagi",
+      "age": 19,
+      "occupation": "Apprentice, Signal Point",
+      "bio": "Learning the trade from Joel. Joel threatened last week to dismiss him for coming late.",
+      "community": "Embu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_signal",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan teenager, 19, school-style haircut, oversized work coat, shocked and close to tears, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_esther",
+      "role": "witness",
+      "name": "Esther Njoki",
+      "age": 33,
+      "occupation": "Customer (job 317)",
+      "bio": "Her blue radio is still on the repair shelf.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_jobbook_317"
+      },
+      "at": "plc_office",
+      "image": null
+    },
+    {
+      "id": "p_aisha",
+      "role": "witness",
+      "name": "Aisha Noor",
+      "age": 42,
+      "occupation": "Owner, phone-accessory shop next door",
+      "bio": "Her counter faces the street and Signal Point's door.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_aisha_shop",
+      "image": null
+    },
+    {
+      "id": "p_mamaw",
+      "role": "witness",
+      "name": "Mama Wambui",
+      "age": 56,
+      "occupation": "Kibanda owner, Accra Road",
+      "bio": "Serves githeri and tea to half the street. Statement by phone.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_kelvin_lunch"
+      },
+      "at": "plc_kibanda",
+      "statementOnly": true,
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_backroom",
+      "name": "Signal Point back room",
+      "within": "loc_signal"
+    },
+    {
+      "id": "plc_street",
+      "name": "Luthuli Avenue outside the shop"
+    },
+    {
+      "id": "plc_aisha_shop",
+      "name": "Aisha's accessory shop next door"
+    },
+    {
+      "id": "plc_kibanda",
+      "name": "Mama Wambui's kibanda, Accra Road"
+    },
+    {
+      "id": "plc_mombasa",
+      "name": "Mombasa"
+    },
+    {
+      "id": "plc_office",
+      "name": "Esther's workplace, Kenyatta Avenue"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_signal",
+      "name": "Signal Point electronics repair",
+      "kind": "scene",
+      "description": "A narrow shop on Luthuli Avenue between a speaker seller and a phone-accessory shop. A front counter with the job book. A back room with a workbench, soldering irons, a heavy bench transformer, and a shelf of repaired items, each tied with a numbered paper tag.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Back room, by the workbench",
+          "pos": [
+            60,
+            62
+          ],
+          "yields": "ev_body",
+          "text": "Joel lies by the workbench. The report says he was struck from behind with the heavy bench transformer, which is on the floor."
+        },
+        {
+          "id": "hs_shelf",
+          "label": "Repair shelf (zoom)",
+          "pos": [
+            80,
+            30
+          ],
+          "yields": "ev_tagstub",
+          "text": "The shelf opens in a zoom view. Tags dangle from items. On the rail, one tag is torn: only the stub is left, still tied on. Flip it."
+        },
+        {
+          "id": "hs_book",
+          "label": "Job book on the counter",
+          "pos": [
+            20,
+            70
+          ],
+          "yields": "ev_jobbook",
+          "text": "Every repair: number, item, customer, notes. Joel's capitals."
+        },
+        {
+          "id": "hs_floor",
+          "label": "Under the workbench",
+          "pos": [
+            56,
+            82
+          ],
+          "yields": "ev_tray",
+          "text": "Something small and metal under the bench, among solder drips."
+        },
+        {
+          "id": "hs_wall",
+          "label": "Wall calendar",
+          "pos": [
+            36,
+            20
+          ],
+          "yields": "ev_calendar",
+          "text": "A free calendar from a loans company, still on March."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the cluttered back room of a Nairobi electronics repair shop, a workbench with soldering irons and gutted radios, a shelf of repaired radios and phones each with a numbered paper tag, a wall calendar, fluorescent tube light, no people"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only."
+      },
+      "facts": [
+        "f_body_blow"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tagstub",
+      "type": "physical",
+      "title": "Torn tag stub",
+      "render": "tag",
+      "body": {
+        "front": "(torn)",
+        "back": "#318",
+        "note": "The item it was tied to is gone."
+      },
+      "facts": [
+        "f_tagstub_318"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a torn brown paper repair tag stub still knotted to a metal shelf rail, the number '318' handwritten on the back, close-up"
+      }
+    },
+    {
+      "id": "ev_jobbook",
+      "type": "physical",
+      "title": "Job book",
+      "render": "jobBook",
+      "body": {
+        "rows": [
+          {
+            "no": "316",
+            "item": "Nokia phone, cracked screen",
+            "customer": "M. Achieng",
+            "status": "collected"
+          },
+          {
+            "no": "317",
+            "item": "Blue Sony radio",
+            "customer": "Esther Njoki",
+            "status": "ready"
+          },
+          {
+            "no": "318",
+            "item": "Red Philips radio",
+            "customer": "Wycliffe Barasa",
+            "notes": "CHECK INSIDE!!"
+          }
+        ]
+      },
+      "facts": [
+        "f_jobbook_318",
+        "f_jobbook_317"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tray",
+      "type": "physical",
+      "title": "Loose SIM tray",
+      "render": "object",
+      "body": {
+        "label": "A SIM tray from a smartphone. Not from any phone in the job book."
+      },
+      "facts": [
+        "f_tray"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_calendar",
+      "type": "physical",
+      "title": "Wall calendar",
+      "render": "calendar",
+      "body": {
+        "header": "MVUA HOLDINGS",
+        "lines": [
+          "Quick Loans · Title Searches",
+          "Pay by PesaPap Till 880 214"
+        ],
+        "month": "March"
+      },
+      "facts": [
+        "f_calendar_till"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a cheap glossy wall calendar pinned to a cracked shop wall, header 'MVUA HOLDINGS', small print 'Quick Loans · Title Searches · PesaPap Till 880 214', a stock photo of rain on a window, open to March"
+      }
+    },
+    {
+      "id": "ev_aisha",
+      "type": "witness",
+      "title": "Statement: Aisha Noor",
+      "render": "statement",
+      "body": {
+        "speaker": "p_aisha"
+      },
+      "facts": [
+        "f_aisha_alive",
+        "f_aisha_red_radio",
+        "f_aisha_sales",
+        "f_aisha_esther"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ticket",
+      "type": "physical",
+      "title": "Simon's bus ticket (photo)",
+      "render": "ticket",
+      "body": {
+        "company": "Coast Night Express",
+        "route": "Nairobi → Mombasa",
+        "departs": "21:00 (yesterday)"
+      },
+      "facts": [
+        "f_ticket_simon"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kibanda",
+      "type": "witness",
+      "title": "Phone: Mama Wambui",
+      "render": "statement",
+      "body": {
+        "speaker": "p_mamaw",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_kibanda_kelvin"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Joel Mutiso was found dead in Signal Point's back room at 13:35.",
+      "kind": "true",
+      "about": [
+        "p_joel",
+        "loc_signal"
+      ]
+    },
+    {
+      "id": "f_body_blow",
+      "text": "Joel was struck from behind with the heavy bench transformer.",
+      "kind": "true",
+      "about": [
+        "p_joel",
+        "plc_backroom"
+      ]
+    },
+    {
+      "id": "f_tagstub_318",
+      "text": "A torn tag stub, #318, is still tied to the shelf rail. The item is gone.",
+      "kind": "true",
+      "about": [
+        "ev_tagstub"
+      ]
+    },
+    {
+      "id": "f_jobbook_318",
+      "text": "Job book: #318, red Philips radio, customer Wycliffe Barasa. Joel's note: 'CHECK INSIDE!!'",
+      "kind": "true",
+      "about": [
+        "p_wycliffe"
+      ]
+    },
+    {
+      "id": "f_jobbook_317",
+      "text": "Job book: #317, blue Sony radio, Esther Njoki. Still on the shelf.",
+      "kind": "true",
+      "about": [
+        "p_esther"
+      ]
+    },
+    {
+      "id": "f_tray",
+      "text": "A loose smartphone SIM tray is under the workbench. It isn't from any job in the book.",
+      "kind": "true",
+      "about": [
+        "ev_tray"
+      ]
+    },
+    {
+      "id": "f_calendar_till",
+      "text": "Wall calendar: 'Mvua Holdings — Quick Loans · Title Searches — PesaPap Till 880 214'.",
+      "kind": "true",
+      "about": [
+        "ev_calendar"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_aisha_alive",
+      "text": "Aisha saw Joel alive in his doorway at 12:50.",
+      "kind": "true",
+      "about": [
+        "p_aisha",
+        "p_joel"
+      ]
+    },
+    {
+      "id": "f_aisha_red_radio",
+      "text": "At about 13:10 Aisha saw a young man leave Signal Point fast, carrying a red radio.",
+      "kind": "true",
+      "about": [
+        "p_aisha",
+        "plc_street"
+      ]
+    },
+    {
+      "id": "f_aisha_sales",
+      "text": "Aisha's sales book shows her serving customers at 13:00 and 13:08.",
+      "kind": "true",
+      "about": [
+        "p_aisha"
+      ],
+      "where": {
+        "person": "p_aisha",
+        "place": "plc_aisha_shop",
+        "from": "12:45",
+        "to": "13:20"
+      }
+    },
+    {
+      "id": "f_aisha_esther",
+      "text": "Aisha served Esther Njoki at 12:30; Esther left for work at Kenyatta Avenue.",
+      "kind": "true",
+      "about": [
+        "p_aisha",
+        "p_esther"
+      ],
+      "where": {
+        "person": "p_esther",
+        "place": "plc_office",
+        "from": "12:45",
+        "to": "17:00"
+      }
+    },
+    {
+      "id": "f_aisha_ids",
+      "text": "Aisha: \"Barasa? He's been in four times this month. Yes, that was him with the red radio at ten past one.\"",
+      "kind": "true",
+      "about": [
+        "p_aisha",
+        "p_wycliffe"
+      ],
+      "where": {
+        "person": "p_wycliffe",
+        "place": "loc_signal",
+        "from": "13:00",
+        "to": "13:10"
+      }
+    },
+    {
+      "id": "f_ticket_simon",
+      "text": "Simon's ticket: Nairobi–Mombasa, departed 21:00 last night. He's calling from Mombasa.",
+      "kind": "true",
+      "about": [
+        "p_simon"
+      ],
+      "where": {
+        "person": "p_simon",
+        "place": "plc_mombasa",
+        "from": "07:00",
+        "to": null
+      }
+    },
+    {
+      "id": "f_kibanda_kelvin",
+      "text": "Mama Wambui: Kelvin ate githeri at her kibanda on Accra Road from 12:45 to 13:35.",
+      "kind": "true",
+      "about": [
+        "p_kelvin"
+      ],
+      "where": {
+        "person": "p_kelvin",
+        "place": "plc_kibanda",
+        "from": "12:45",
+        "to": "13:35"
+      }
+    },
+    {
+      "id": "f_kelvin_owner",
+      "text": "Kelvin: the owner, Simon Gakuru, and Joel argued for months about Joel's share.",
+      "kind": "true",
+      "about": [
+        "p_kelvin",
+        "p_simon"
+      ]
+    },
+    {
+      "id": "f_kelvin_lunch",
+      "text": "Kelvin: \"I went for lunch at quarter to one at Mama Wambui's on Accra Road.\"",
+      "kind": "claim",
+      "about": [
+        "p_kelvin"
+      ]
+    },
+    {
+      "id": "f_kelvin_threat",
+      "text": "Kelvin admits Joel threatened to dismiss him last week for coming late.",
+      "kind": "true",
+      "about": [
+        "p_kelvin",
+        "p_joel"
+      ]
+    },
+    {
+      "id": "f_wycliffe_claim",
+      "text": "Wycliffe: \"I came for my radio, it wasn't ready, I left. He was fine.\"",
+      "kind": "claim",
+      "about": [
+        "p_wycliffe"
+      ]
+    },
+    {
+      "id": "f_wycliffe_denial",
+      "text": "Wycliffe: \"I don't know anything about SIM trays.\"",
+      "kind": "claim",
+      "about": [
+        "p_wycliffe"
+      ]
+    },
+    {
+      "id": "f_simon_share",
+      "text": "Simon admits he and Joel argued about Joel's share. \"We were going to agree. Now look.\"",
+      "kind": "true",
+      "about": [
+        "p_simon",
+        "p_joel"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_kelvin",
+      "stance": "cooperative",
+      "intro": "Kelvin sits on an upturned crate outside, shaking. \"I was only gone for lunch. Only lunch.\"",
+      "claims": [
+        "f_kelvin_lunch",
+        "f_kelvin_owner"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_joel",
+          "reply": "He shouted at me last week, said he'd dismiss me if I came late again. But he taught me everything. Everything.",
+          "reveals": [
+            "f_kelvin_threat"
+          ]
+        },
+        {
+          "about": "ev_jobbook",
+          "reply": "Joel writes 'check inside' when something's wrong with a job. He never wrote it with two marks before.",
+          "reveals": []
+        },
+        {
+          "about": "p_simon",
+          "reply": "Mr. Gakuru owns the shop. He and Joel argued about money for months. He went to Mombasa last night.",
+          "reveals": [
+            "f_kelvin_owner"
+          ]
+        },
+        {
+          "about": "p_mamaw",
+          "reply": "Mama Wambui on Accra Road. Githeri. She'll tell you.",
+          "reveals": [
+            "ev_kibanda"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_aisha",
+      "stance": "cooperative",
+      "intro": "Aisha closes her shutter halfway. \"I saw. I saw a man running with a radio. I thought he was late for a matatu.\"",
+      "claims": [],
+      "yields": [
+        "ev_aisha"
+      ],
+      "topics": [
+        {
+          "about": "p_wycliffe",
+          "reply": "Barasa? He's been in four times this month. Yes, that was him with the red radio at ten past one. In a hurry.",
+          "reveals": [
+            "f_aisha_ids"
+          ]
+        },
+        {
+          "about": "p_esther",
+          "reply": "Esther was here at half past twelve for a charger. Then she went back to her office on Kenyatta Avenue.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_simon",
+      "stance": "cooperative",
+      "intro": "Simon, on speaker from Mombasa, over the sound of waves: \"Joel? What do you mean, Joel?\"",
+      "claims": [],
+      "yields": [
+        "ev_ticket"
+      ],
+      "topics": [
+        {
+          "about": "p_joel",
+          "reply": "We argued about his share, yes. Every month. We were going to agree. I'll send you my bus ticket.",
+          "reveals": [
+            "f_simon_share"
+          ]
+        },
+        {
+          "about": "p_wycliffe",
+          "reply": "That one brings radios every week. I told Joel not to take his jobs. Something about him.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_wycliffe",
+      "stance": "cooperative",
+      "intro": "Wycliffe answers the number in the job book from a matatu. He agrees to come in. He doesn't bring a radio.",
+      "claims": [
+        "f_wycliffe_claim",
+        "f_wycliffe_denial"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_tagstub",
+          "reply": "Tags tear. Paper tears.",
+          "reveals": []
+        },
+        {
+          "about": "ev_tray",
+          "reply": "SIM trays? Every repair shop has a hundred.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_esther",
+      "stance": "cooperative",
+      "intro": "Esther comes for her blue radio after work and finds the tape.",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_joel",
+          "reply": "He fixed my radio for free last year because my son had exams. He was that kind of man.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [],
+  "words": [
+    {
+      "id": "w_wycliffe",
+      "text": "Wycliffe Barasa",
+      "category": "person",
+      "ref": "p_wycliffe",
+      "unlock": {
+        "anyOf": [
+          "f_jobbook_318"
+        ]
+      }
+    },
+    {
+      "id": "w_simon",
+      "text": "Simon Gakuru",
+      "category": "person",
+      "ref": "p_simon",
+      "unlock": {
+        "anyOf": [
+          "f_kelvin_owner"
+        ]
+      }
+    },
+    {
+      "id": "w_kelvin",
+      "text": "Kelvin Njagi",
+      "category": "person",
+      "ref": "p_kelvin",
+      "unlock": {
+        "anyOf": [
+          "f_kelvin_lunch"
+        ]
+      }
+    },
+    {
+      "id": "w_esther",
+      "text": "Esther Njoki",
+      "category": "person",
+      "ref": "p_esther",
+      "unlock": {
+        "anyOf": [
+          "f_jobbook_317"
+        ]
+      }
+    },
+    {
+      "id": "w_aisha",
+      "text": "Aisha Noor",
+      "category": "person",
+      "ref": "p_aisha",
+      "unlock": {
+        "anyOf": [
+          "f_aisha_alive"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} at Signal Point.",
+    "fixed": {
+      "victim": "Joel Mutiso"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_wycliffe"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A torn tag, the job it belongs to, and the man seen carrying it away. That will hold.",
+          "fail": [
+            "This doesn't hold up. Something was taken off that shelf. What, and whose was it?",
+            "No. Read the small writing. Then read the job book."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_signal",
+      "from": "12:50",
+      "to": "13:10",
+      "within": [
+        "plc_backroom"
+      ]
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_tagstub_318",
+          "f_jobbook_318"
+        ],
+        "concludes": "The item torn off the shelf was job #318, a red radio belonging to Wycliffe Barasa."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_aisha_red_radio",
+          "f_aisha_alive"
+        ],
+        "concludes": "The man who hurried out at 13:10, after Joel was last seen alive, was carrying a red radio.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_simon",
+        "blank": "who",
+        "by": [
+          "f_ticket_simon"
+        ],
+        "why": "Simon took the 21:00 bus to Mombasa the night before."
+      },
+      {
+        "word": "w_kelvin",
+        "blank": "who",
+        "by": [
+          "f_kibanda_kelvin"
+        ],
+        "why": "Kelvin was eating githeri on Accra Road from 12:45 to 13:35."
+      },
+      {
+        "word": "w_esther",
+        "blank": "who",
+        "by": [
+          "f_aisha_esther",
+          "f_jobbook_317"
+        ],
+        "why": "Esther's radio is still on the shelf, and she was back at work on Kenyatta Avenue."
+      },
+      {
+        "word": "w_aisha",
+        "blank": "who",
+        "by": [
+          "f_aisha_sales"
+        ],
+        "why": "Aisha was serving customers in her own shop at 13:00 and 13:08."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "For weeks Wycliffe has been bringing in radios to be 'fixed'. Inside them: SIM trays and chips for changing the identity numbers of stolen phones.",
+        "image": null
+      },
+      {
+        "text": "Wednesday morning. Joel opens job #318 and understands. He writes CHECK INSIDE!! in the job book and decides to go to the police.",
+        "image": null
+      },
+      {
+        "text": "About 13:05. Wycliffe comes for his radio. In the back room Joel tells him what he found. Wycliffe hits him from behind with the bench transformer.",
+        "image": "loc_signal"
+      },
+      {
+        "text": "He tears the red radio off the shelf, ripping its tag, and walks out at 13:10. A SIM tray falls out of the open radio and rolls under the bench.",
+        "image": null
+      },
+      {
+        "text": "On the wall, a free calendar from a loans company. Nobody looks at it. Yet.",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_tagstub",
+        "line": "Something is missing from the shelf. Every repair has a number. Flip the tag."
+      },
+      "tier2": {
+        "facts": [
+          "f_tagstub_318",
+          "f_aisha_red_radio"
+        ],
+        "line": "Job 318 was a red radio. Who did the neighbour see carrying a red radio?"
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "githeri",
+      "def": "Maize and bean stew."
+    },
+    {
+      "term": "kibanda",
+      "def": "Small food stall."
+    },
+    {
+      "term": "mama",
+      "def": "Respectful way to address an older woman."
+    },
+    {
+      "term": "matatu",
+      "def": "Privately run minibus."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "zoomInspect"
+    ],
+    "beatNotes": "The shelf opens in a zoom view; tags can be flipped to read the number on the back. Teaches that small writing matters. The calendar is never highlighted."
+  }
+}

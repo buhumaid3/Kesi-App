@@ -1,0 +1,1717 @@
+{
+  "meta": {
+    "id": "case-031",
+    "number": 31,
+    "region": "rift-valley",
+    "regionNumber": 4,
+    "title": "The Rim",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 18,
+    "date": "Friday 3 October",
+    "folderTab": "MENENGAI"
+  },
+  "pattern": {
+    "crimePattern": "landowner kills the valuer who exposed crops planted to inflate a compensation claim",
+    "noRealCaseRetold": true,
+    "notes": "Fictional energy company and farm on the rim of a real crater. Planting before a valuation cut-off is a widely reported pattern; no real project, company or person is depicted.",
+    "tags": [
+      "fall-from-height",
+      "fraud-exposure",
+      "forensics",
+      "detention"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 3,
+    "redHerrings": 1,
+    "liars": 1,
+    "groups": [
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "forensic"
+    ],
+    "gatedActions": [],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 07/03/10",
+    "date": "Friday 3 October",
+    "time": "18:40",
+    "reportedBy": "Sammy Rono, gate attendant, Menengai crater viewpoint",
+    "text": "The gate attendant at the Menengai crater viewpoint reports that a visitor found a woman on a ledge about 40 m below the viewpoint wall at 18:10. She is identified as Beryl Adoyo (33), a valuation surveyor. Her company car is parked inside the gate.",
+    "facts": [
+      "f_ob_found"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_beryl",
+      "role": "victim",
+      "name": "Beryl Adoyo",
+      "age": 33,
+      "occupation": "Valuation surveyor, Rift Steam Energy pipeline",
+      "bio": "Values crops and trees on farms along a new steam pipeline, so landowners can be paid compensation. Known for re-measuring everything twice.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_rim",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 30s, short braids tied back, a company fleece with a small pipeline logo in plain shapes, a measuring tape clipped to her belt, a camera strap around her neck, focused and friendly, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kimaiyo",
+      "role": "suspect",
+      "name": "Kimaiyo Rotich",
+      "age": 62,
+      "occupation": "Landowner on the pipeline route",
+      "bio": "Farms twelve acres on the crater edge. His compensation claim was cut from KSh 4.2 million to 0.6 million last week.",
+      "community": "Kalenjin",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_valuation"
+      },
+      "at": "loc_farm",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, early 60s, lean and weathered, a hand-knitted green wool sweater with a thick rolled collar, a walking stick, a felt hat in his hand, stern and proud, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_duncan",
+      "role": "suspect",
+      "name": "Duncan Kibe",
+      "age": 36,
+      "occupation": "Drilling engineer, Rift Steam Energy",
+      "redHerring": true,
+      "bio": "Beryl's colleague. Sent her an angry email that morning about the project timeline.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_email"
+      },
+      "at": "plc_pad",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 30s, orange hard hat under his arm, company overalls with a reflective strip, safety glasses pushed up, defensive, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_philemon",
+      "role": "suspect",
+      "name": "Philemon Kiptoo",
+      "age": 40,
+      "occupation": "Kimaiyo's farm manager",
+      "bio": "Runs the farm day to day: the cows, the milking, the planting.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_valuation"
+      },
+      "at": "loc_farm",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 40, gumboots, a worn work jacket over a shirt, a milk can at his feet, uneasy, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_sammy",
+      "role": "witness",
+      "name": "Sammy Rono",
+      "age": 29,
+      "occupation": "Viewpoint gate attendant",
+      "bio": "Runs the gate on the crater rim road: tickets, the visitors' book, a radio.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_gate",
+      "image": null
+    },
+    {
+      "id": "p_ivy",
+      "role": "witness",
+      "name": "Ivy Njenga",
+      "age": 31,
+      "occupation": "Visitor from Nairobi",
+      "bio": "Came up for the sunset. Found Beryl's clipboard on the path and looked over the wall.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_rim",
+      "image": null
+    },
+    {
+      "id": "p_chepkoech",
+      "role": "witness",
+      "name": "Chepkoech Langat",
+      "age": 34,
+      "occupation": "Farm worker",
+      "statementOnly": true,
+      "bio": "Milks on the Rotich farm morning and evening.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_phil_claim"
+      },
+      "at": "loc_farm",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_gate",
+      "name": "Viewpoint gate on the rim road"
+    },
+    {
+      "id": "plc_pad",
+      "name": "Well pad on the crater floor"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_rim",
+      "name": "Menengai crater viewpoint",
+      "kind": "scene",
+      "description": "The rim of a huge crater. Far below, steam plumes rise from geothermal well pads. A low stone wall, waist-high, runs along the viewpoint. A clipboard lies on the path. Beryl's company car is parked 200 m back, inside the gate.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_ledge",
+          "label": "Over the wall",
+          "pos": [
+            50,
+            78
+          ],
+          "yields": "ev_body",
+          "text": "Forty metres down, on a ledge, the rangers have reached her. They bring up what they can."
+        },
+        {
+          "id": "hs_camera",
+          "label": "Her camera (recovered)",
+          "pos": [
+            54,
+            70
+          ],
+          "yields": "ev_camera",
+          "text": "The rangers bring up her camera with the strap still on. The screen is cracked but it works.",
+          "unlock": {
+            "fact": "f_body"
+          }
+        },
+        {
+          "id": "hs_clipboard",
+          "label": "Clipboard on the path",
+          "pos": [
+            36,
+            62
+          ],
+          "yields": "ev_scene",
+          "text": "Her clipboard, face down on the path, a pen still clipped to it. The wall here is waist-high."
+        },
+        {
+          "id": "hs_car",
+          "label": "Her company car",
+          "pos": [
+            88,
+            70
+          ],
+          "yields": "ev_valuation",
+          "text": "Her car, unlocked. On the passenger seat, a valuation file with a red tab: ROTICH."
+        },
+        {
+          "id": "hs_glovebox",
+          "label": "Glovebox",
+          "pos": [
+            92,
+            76
+          ],
+          "yields": "ev_letter",
+          "text": "In the glovebox, folded small, a handwritten letter."
+        },
+        {
+          "id": "hs_phone",
+          "label": "Her phone, on the dashboard",
+          "pos": [
+            80,
+            72
+          ],
+          "yields": "ev_email",
+          "text": "Her phone is on the dashboard, unlocked by her brother on the phone from Kisumu. The last email she opened is angry."
+        },
+        {
+          "id": "hs_file",
+          "label": "Back seat",
+          "pos": [
+            84,
+            64
+          ],
+          "yields": "ev_route",
+          "text": "A box of wayleave agreements for the pipeline route, filed by farm."
+        },
+        {
+          "id": "hs_gate",
+          "label": "Gate hut",
+          "pos": [
+            12,
+            40
+          ],
+          "yields": "ev_gatebook",
+          "text": "The gate hut. Every car that comes up the rim road is written in the visitors' book with its plate."
+        },
+        {
+          "id": "hs_sammy",
+          "label": "Gate attendant",
+          "pos": [
+            16,
+            46
+          ],
+          "yields": "ev_sammy",
+          "text": "Sammy Rono stands at the gate with his radio, looking at the wall and not at anything else."
+        },
+        {
+          "id": "hs_ivy",
+          "label": "The visitor",
+          "pos": [
+            60,
+            40
+          ],
+          "yields": "ev_ivy",
+          "text": "Ivy Njenga sits on the wall with her back to the crater."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the rim of Menengai crater near Nakuru in late afternoon light, a low stone wall at a viewpoint, the vast caldera below with white geothermal steam plumes rising from well pads on its floor, a dirt path along the rim, no people in focus"
+      }
+    },
+    {
+      "id": "loc_farm",
+      "name": "The Rotich farm, crater edge",
+      "kind": "location",
+      "description": "Twelve acres on the crater edge. A strip along the pipeline route is planted with rows of avocado seedlings and a line of young eucalyptus, the soil around each one still loose.",
+      "unlock": {
+        "fact": "f_valuation"
+      },
+      "hotspots": [
+        {
+          "id": "hs_strip",
+          "label": "The pipeline strip",
+          "pos": [
+            60,
+            50
+          ],
+          "text": "Nine hundred seedlings in fresh rings of turned soil, every one the same height. Nothing else on the farm was planted this year."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small farm on the edge of a crater in the Kenyan highlands, a strip of freshly planted avocado seedlings in neat rows of turned red soil, young eucalyptus, a cattle shed and milk cans in the background"
+      }
+    },
+    {
+      "id": "loc_pad",
+      "name": "Rift Steam well pad, crater floor",
+      "kind": "location",
+      "description": "A fenced well pad on the crater floor: a drilling rig, a site office in a container, a shift board.",
+      "unlock": {
+        "fact": "f_email"
+      },
+      "hotspots": [
+        {
+          "id": "hs_shiftlog",
+          "label": "Shift board",
+          "pos": [
+            40,
+            50
+          ],
+          "yields": "ev_shift",
+          "text": "The shift log: every engineer signs every hour, a safety rule."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a geothermal drilling pad on the floor of a crater, a drilling rig, steam venting, a site office made from a shipping container, a fenced compound"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Recovered from the ledge",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Found on a ledge about 40 m below the viewpoint wall at 18:10. Camera strap around her neck. A canteen receipt in her pocket."
+      },
+      "facts": [
+        "f_body",
+        "f_canteen"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_scene",
+      "type": "physical",
+      "title": "The viewpoint wall",
+      "render": "sceneNote",
+      "body": {
+        "note": "Waist-high stone wall. Her clipboard face down on the path beside it."
+      },
+      "facts": [
+        "f_wall"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a waist-high stone wall at a crater viewpoint, a clipboard lying face down on the dirt path beside it, the crater and steam plumes beyond, no body visible"
+      }
+    },
+    {
+      "id": "ev_camera",
+      "type": "physical",
+      "title": "Beryl's camera",
+      "render": "photo",
+      "body": {
+        "frames": "16:18–16:24: the Rotich strip seen from above. Last frame 16:24: a figure in a green sweater on the path behind her."
+      },
+      "facts": [
+        "f_camera_rings",
+        "f_camera_last"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a camera screen showing a photo taken from a crater rim: a farm strip with rows of fresh planting rings below, and at the edge of the frame a small figure in a green sweater walking up a path, timestamp 16:24"
+      }
+    },
+    {
+      "id": "ev_valuation",
+      "type": "physical",
+      "title": "Valuation file: Rotich",
+      "render": "form",
+      "body": {
+        "finding": "Seedlings and eucalyptus planted about 14 days before the compensation cut-off date.",
+        "claim": "KSh 4.2 million",
+        "assessed": "KSh 0.6 million"
+      },
+      "facts": [
+        "f_valuation"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_letter",
+      "type": "physical",
+      "title": "Kimaiyo's letter",
+      "render": "note",
+      "body": {
+        "text": "You will regret this. — K. Rotich"
+      },
+      "facts": [
+        "f_letter"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_route",
+      "type": "physical",
+      "title": "Wayleave agreement: Rotich farm",
+      "render": "form",
+      "body": {
+        "text": "Consent to the pipeline route across the farm. Signed K. Rotich, two years ago."
+      },
+      "facts": [
+        "f_route"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gatebook",
+      "type": "physical",
+      "title": "Viewpoint visitors' book",
+      "render": "visitorRegister",
+      "body": {
+        "rows": [
+          {
+            "plate": "Company car",
+            "name": "B. Adoyo",
+            "in": "15:58"
+          },
+          {
+            "plate": "KCA 7xxX",
+            "name": "K. Rotich",
+            "in": "16:12",
+            "out": "16:48"
+          },
+          {
+            "plate": "KDC 3xxY",
+            "name": "I. Njenga",
+            "in": "17:55"
+          }
+        ]
+      },
+      "facts": [
+        "f_gate_beryl",
+        "f_gate_kimaiyo",
+        "f_gate_ivy"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_sammy",
+      "type": "witness",
+      "title": "Statement: Sammy Rono",
+      "render": "statement",
+      "body": {
+        "speaker": "p_sammy"
+      },
+      "facts": [
+        "f_sammy_up",
+        "f_sammy_down",
+        "f_sammy_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ivy",
+      "type": "witness",
+      "title": "Statement: Ivy Njenga",
+      "render": "statement",
+      "body": {
+        "speaker": "p_ivy"
+      },
+      "facts": [
+        "f_ivy"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kimaiyo_seen",
+      "type": "physical",
+      "title": "Amani's note: Kimaiyo at his gate",
+      "render": "sceneNote",
+      "body": {
+        "note": "Kimaiyo Rotich, at his farm gate at 19:30: a hand-knitted green wool sweater. He refuses to hand it over."
+      },
+      "facts": [
+        "f_kimaiyo_green"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_sweater",
+      "type": "physical",
+      "title": "Green sweater (seized)",
+      "render": "object",
+      "body": {
+        "label": "Hand-knitted green wool sweater, taken from Kimaiyo Rotich in detention."
+      },
+      "facts": [
+        "f_sweater"
+      ],
+      "gate": null,
+      "detention": "p_kimaiyo",
+      "image": {
+        "kind": "evidence",
+        "brief": "a hand-knitted green wool sweater with a thick rolled collar, laid flat in a clear evidence bag with a numbered tag"
+      }
+    },
+    {
+      "id": "ev_shift",
+      "type": "physical",
+      "title": "Well-pad shift log",
+      "render": "logBook",
+      "body": {
+        "rows": [
+          {
+            "name": "D. Kibe",
+            "signed": "14:00, 15:00, 16:00, 17:00, 18:00"
+          }
+        ]
+      },
+      "facts": [
+        "f_shift"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_email",
+      "type": "phone",
+      "title": "Duncan's email (on Beryl's phone)",
+      "render": "note",
+      "body": {
+        "text": "Your valuations are holding up the whole schedule. Fix it this week."
+      },
+      "facts": [
+        "f_email"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_workers",
+      "type": "witness",
+      "title": "Statement: Chepkoech Langat",
+      "render": "statement",
+      "body": {
+        "speaker": "p_chepkoech"
+      },
+      "facts": [
+        "f_workers"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_fall",
+        "f_aut_grip",
+        "f_aut_nohead",
+        "f_aut_tod",
+        "f_aut_nails"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_fibres",
+      "type": "forensic",
+      "title": "Lab: fibre comparison",
+      "render": "labReport",
+      "body": {
+        "test": "fibres"
+      },
+      "facts": [
+        "f_fibres"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "fibres",
+        "hours": 12,
+        "needs": [
+          "ev_autopsy",
+          "ev_sweater"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tox",
+      "type": "forensic",
+      "title": "Lab: toxicology",
+      "render": "labReport",
+      "body": {
+        "test": "toxicology"
+      },
+      "facts": [
+        "f_tox"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toxicology",
+        "hours": 18,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Beryl Adoyo was found on a ledge about 40 m below the Menengai viewpoint wall at 18:10.",
+      "kind": "true",
+      "about": [
+        "p_beryl",
+        "loc_rim"
+      ]
+    },
+    {
+      "id": "f_body",
+      "text": "Recovered from the ledge with her camera strap still around her neck.",
+      "kind": "true",
+      "about": [
+        "p_beryl",
+        "ev_camera"
+      ]
+    },
+    {
+      "id": "f_canteen",
+      "text": "In her pocket: a Rift Steam canteen receipt for lunch at 12:45.",
+      "kind": "true",
+      "about": [
+        "p_beryl"
+      ]
+    },
+    {
+      "id": "f_wall",
+      "text": "The viewpoint wall is waist-high. Her clipboard lay face down on the path beside it.",
+      "kind": "true",
+      "about": [
+        "loc_rim"
+      ]
+    },
+    {
+      "id": "f_camera_rings",
+      "text": "Her last photos, 16:18–16:24, show the Rotich strip from above: rows of fresh planting rings.",
+      "kind": "true",
+      "about": [
+        "p_kimaiyo",
+        "ev_camera"
+      ]
+    },
+    {
+      "id": "f_camera_last",
+      "text": "Her last frame, 16:24: a small figure in a green sweater coming up the path behind her.",
+      "kind": "true",
+      "about": [
+        "ev_camera",
+        "loc_rim"
+      ]
+    },
+    {
+      "id": "f_valuation",
+      "text": "Valuation file, Rotich farm: seedlings planted about 14 days before the cut-off date. Claim cut from KSh 4.2 million to 0.6 million.",
+      "kind": "true",
+      "about": [
+        "p_kimaiyo",
+        "p_beryl"
+      ]
+    },
+    {
+      "id": "f_letter",
+      "text": "Kimaiyo's handwritten letter to Beryl: 'You will regret this.'",
+      "kind": "true",
+      "about": [
+        "p_kimaiyo",
+        "p_beryl"
+      ]
+    },
+    {
+      "id": "f_route",
+      "text": "Wayleave agreement: Kimaiyo signed his consent to the pipeline route two years ago.",
+      "kind": "true",
+      "about": [
+        "p_kimaiyo"
+      ]
+    },
+    {
+      "id": "f_gate_beryl",
+      "text": "Visitors' book: Beryl's company car in at 15:58.",
+      "kind": "true",
+      "about": [
+        "p_beryl",
+        "plc_gate"
+      ]
+    },
+    {
+      "id": "f_gate_kimaiyo",
+      "text": "Visitors' book: 'KCA 7xxX — K. Rotich — in 16:12, out 16:48.'",
+      "kind": "true",
+      "about": [
+        "p_kimaiyo",
+        "plc_gate"
+      ],
+      "where": {
+        "person": "p_kimaiyo",
+        "place": "plc_gate",
+        "from": "16:12",
+        "to": "16:13"
+      }
+    },
+    {
+      "id": "f_gate_ivy",
+      "text": "Visitors' book: 'I. Njenga — in 17:55.'",
+      "kind": "true",
+      "about": [
+        "p_ivy",
+        "plc_gate"
+      ]
+    },
+    {
+      "id": "f_sammy_up",
+      "text": "Sammy: at about 16:20 an older man in a green sweater walked up the path towards the viewpoint.",
+      "kind": "true",
+      "about": [
+        "p_sammy",
+        "loc_rim"
+      ]
+    },
+    {
+      "id": "f_sammy_down",
+      "text": "Sammy: at about 16:45 the same man walked fast back to his car and drove off.",
+      "kind": "true",
+      "about": [
+        "p_sammy"
+      ]
+    },
+    {
+      "id": "f_sammy_self",
+      "text": "Sammy was at the gate all afternoon; every entry in the visitors' book is in his hand.",
+      "kind": "true",
+      "about": [
+        "p_sammy"
+      ],
+      "where": {
+        "person": "p_sammy",
+        "place": "plc_gate",
+        "from": "14:00",
+        "to": "19:00"
+      }
+    },
+    {
+      "id": "f_ivy",
+      "text": "Ivy: she arrived about 18:00, saw a clipboard on the path, looked over the wall and called the gate.",
+      "kind": "true",
+      "about": [
+        "p_ivy",
+        "loc_rim"
+      ]
+    },
+    {
+      "id": "f_kimaiyo_green",
+      "text": "Kimaiyo Rotich wears a hand-knitted green wool sweater. He refuses to hand it over.",
+      "kind": "true",
+      "about": [
+        "p_kimaiyo"
+      ]
+    },
+    {
+      "id": "f_sweater",
+      "text": "Seized from Kimaiyo in detention: his hand-knitted green wool sweater, hand-spun yarn.",
+      "kind": "true",
+      "about": [
+        "p_kimaiyo",
+        "ev_sweater"
+      ]
+    },
+    {
+      "id": "f_shift",
+      "text": "Well-pad shift log: D. Kibe signed every hour from 14:00 to 18:00 on the crater floor.",
+      "kind": "true",
+      "about": [
+        "p_duncan"
+      ],
+      "where": {
+        "person": "p_duncan",
+        "place": "plc_pad",
+        "from": "14:00",
+        "to": "18:00"
+      }
+    },
+    {
+      "id": "f_email",
+      "text": "Duncan's email to Beryl that morning: 'Your valuations are holding up the whole schedule.'",
+      "kind": "true",
+      "about": [
+        "p_duncan",
+        "p_beryl"
+      ]
+    },
+    {
+      "id": "f_duncan_money",
+      "text": "Duncan: valuers never handle money. Compensation is paid by the finance office after the valuation is signed.",
+      "kind": "true",
+      "about": [
+        "p_duncan",
+        "p_beryl"
+      ]
+    },
+    {
+      "id": "f_workers",
+      "text": "Chepkoech: Philemon supervised the evening milking with them from 16:00 to 18:30.",
+      "kind": "true",
+      "about": [
+        "p_chepkoech",
+        "p_philemon"
+      ],
+      "where": {
+        "person": "p_philemon",
+        "place": "loc_farm",
+        "from": "16:00",
+        "to": "18:30"
+      }
+    },
+    {
+      "id": "f_phil_night",
+      "text": "Philemon: Mzee told them to plant the seedlings at night, two weeks before the cut-off. \"I said it was wrong.\"",
+      "kind": "true",
+      "about": [
+        "p_philemon",
+        "p_kimaiyo"
+      ]
+    },
+    {
+      "id": "f_phil_never",
+      "text": "Philemon: Mzee had never met Beryl before the valuation. \"No family, no history. Just the valuation.\"",
+      "kind": "true",
+      "about": [
+        "p_philemon",
+        "p_beryl"
+      ]
+    },
+    {
+      "id": "f_aut_fall",
+      "text": "Autopsy: injuries consistent with a fall from height.",
+      "kind": "true",
+      "about": [
+        "p_beryl"
+      ]
+    },
+    {
+      "id": "f_aut_grip",
+      "text": "Autopsy: fingertip bruises on both upper arms, made shortly before death, as if gripped hard from the front.",
+      "kind": "true",
+      "about": [
+        "p_beryl"
+      ]
+    },
+    {
+      "id": "f_aut_nohead",
+      "text": "Autopsy: no blow to the head before the fall; no vehicle injuries.",
+      "kind": "true",
+      "about": [
+        "p_beryl"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 15:30 and 17:30; stomach contents three to four hours after the 12:45 lunch narrow it to about 16:00–17:00.",
+      "kind": "true",
+      "about": [
+        "p_beryl"
+      ]
+    },
+    {
+      "id": "f_aut_nails",
+      "text": "Autopsy: green wool fibres under her fingernails, kept for comparison.",
+      "kind": "true",
+      "about": [
+        "p_beryl"
+      ]
+    },
+    {
+      "id": "f_fibres",
+      "text": "Lab: the green hand-spun wool under her fingernails matches Kimaiyo's sweater.",
+      "kind": "true",
+      "about": [
+        "p_kimaiyo",
+        "ev_sweater"
+      ]
+    },
+    {
+      "id": "f_tox",
+      "text": "Toxicology: clean. No drugs, no alcohol, no poison.",
+      "kind": "true",
+      "about": [
+        "p_beryl"
+      ]
+    },
+    {
+      "id": "f_kim_never",
+      "text": "Kimaiyo: \"I haven't been up to the crater in years. I was on my farm all afternoon.\"",
+      "kind": "lie",
+      "about": [
+        "p_kimaiyo"
+      ]
+    },
+    {
+      "id": "f_kim_cheat",
+      "text": "Kimaiyo: \"That girl cheated me.\"",
+      "kind": "claim",
+      "about": [
+        "p_kimaiyo",
+        "p_beryl"
+      ]
+    },
+    {
+      "id": "f_kim_admits",
+      "text": "Kimaiyo admits he drove up after her and spoke to her at the viewpoint. He says she was standing at the wall when he left.",
+      "kind": "true",
+      "about": [
+        "p_kimaiyo",
+        "loc_rim"
+      ],
+      "where": {
+        "person": "p_kimaiyo",
+        "place": "loc_rim",
+        "from": "16:20",
+        "to": "16:40"
+      }
+    },
+    {
+      "id": "f_kim_left",
+      "text": "Kimaiyo: \"I never touched her. She was standing there when I left.\"",
+      "kind": "lie",
+      "about": [
+        "p_kimaiyo",
+        "p_beryl"
+      ]
+    },
+    {
+      "id": "f_kim_grabbed",
+      "text": "Kimaiyo, shown the fibre result, admits he took her by the arms \"to make her listen\".",
+      "kind": "true",
+      "about": [
+        "p_kimaiyo",
+        "p_beryl"
+      ]
+    },
+    {
+      "id": "f_duncan_claim",
+      "text": "Duncan: \"I was on the pad all afternoon. The email was about drilling delays.\"",
+      "kind": "claim",
+      "about": [
+        "p_duncan"
+      ]
+    },
+    {
+      "id": "f_phil_claim",
+      "text": "Philemon: \"I was milking with the workers.\"",
+      "kind": "claim",
+      "about": [
+        "p_philemon"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_kimaiyo",
+      "stance": "cooperative",
+      "intro": "Kimaiyo stands at his farm gate with his stick planted in the red soil. \"That valuer. Yes. She cheated me. I have nothing else to say.\"",
+      "claims": [
+        "f_kim_never",
+        "f_kim_cheat"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_kim_left",
+          "after": "f_kim_admits"
+        }
+      ],
+      "yields": [
+        "ev_kimaiyo_seen"
+      ],
+      "topics": [
+        {
+          "about": "ev_valuation",
+          "reply": "Those trees are mine. I planted them on my land. What does it matter when?",
+          "reveals": []
+        },
+        {
+          "about": "ev_letter",
+          "reply": "I wrote what I felt. Old men are allowed to write letters.",
+          "reveals": []
+        },
+        {
+          "about": "f_camera_last",
+          "reply": "Many men wear green.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_duncan",
+      "stance": "cooperative",
+      "intro": "Duncan takes his hard hat off and holds it in both hands. \"I sent her an angry email this morning. I'll never be able to take it back.\"",
+      "claims": [
+        "f_duncan_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_beryl",
+          "reply": "She was the only honest valuer we had. That's why she was slow.",
+          "reveals": []
+        },
+        {
+          "about": "f_valuation",
+          "reply": "Valuers never handle money. Finance pays after she signs. She signed what she saw, and she saw everything.",
+          "reveals": [
+            "f_duncan_money"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_philemon",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_valuation"
+      ],
+      "intro": "Philemon keeps working the pump handle of the milk cooler. \"I manage cows. I don't manage Mzee.\"",
+      "claims": [
+        "f_phil_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_valuation",
+          "reply": "Mzee told us to plant them at night. Two weeks before the date. I said it was wrong. He said, \"It's my land.\"",
+          "reveals": [
+            "f_phil_night"
+          ]
+        },
+        {
+          "about": "p_beryl",
+          "reply": "He had never met her before the valuation. No family, no history. Only that paper.",
+          "reveals": [
+            "f_phil_never"
+          ]
+        },
+        {
+          "about": "p_chepkoech",
+          "reply": "Ask Chepkoech. She milks beside me every evening.",
+          "reveals": [
+            "ev_workers"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_sammy",
+      "stance": "cooperative",
+      "intro": "Sammy keeps one hand on his radio. \"I write every car. Every one. That's my job.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_kimaiyo",
+          "reply": "Mzee Rotich? Yes, he came up at twelve past four. An old man in a green sweater walked up to the viewpoint after that. Then he came back fast and drove away.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_ivy",
+      "stance": "cooperative",
+      "intro": "Ivy can't stop rubbing her arms, though it isn't cold. \"I came for the sunset.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_beryl",
+          "reply": "The clipboard was just lying there. Nobody leaves a clipboard. So I looked.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_kim_never",
+      "claim": "f_kim_never",
+      "brokenBy": [
+        "f_gate_kimaiyo"
+      ],
+      "reveals": [
+        "f_kim_admits"
+      ],
+      "reaction": "I went up to talk to her. Only talk. I asked her to look again at my trees. She laughed. I came down. She was standing there when I left.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_kim_left",
+      "claim": "f_kim_left",
+      "brokenBy": [
+        "f_fibres"
+      ],
+      "reveals": [
+        "f_kim_grabbed"
+      ],
+      "reaction": "A long silence. \"...I took her arms. To make her listen. Thirty years on that land. She laughed at me.\" He says nothing else.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_kimaiyo",
+      "text": "Kimaiyo Rotich",
+      "category": "person",
+      "ref": "p_kimaiyo",
+      "unlock": {
+        "anyOf": [
+          "f_valuation",
+          "f_gate_kimaiyo"
+        ]
+      }
+    },
+    {
+      "id": "w_duncan",
+      "text": "Duncan Kibe",
+      "category": "person",
+      "ref": "p_duncan",
+      "unlock": {
+        "anyOf": [
+          "f_email"
+        ]
+      }
+    },
+    {
+      "id": "w_philemon",
+      "text": "Philemon Kiptoo",
+      "category": "person",
+      "ref": "p_philemon",
+      "unlock": {
+        "anyOf": [
+          "f_phil_claim",
+          "f_workers"
+        ]
+      }
+    },
+    {
+      "id": "w_sammy",
+      "text": "Sammy Rono",
+      "category": "person",
+      "ref": "p_sammy",
+      "unlock": {
+        "anyOf": [
+          "f_sammy_self"
+        ]
+      }
+    },
+    {
+      "id": "w_ivy",
+      "text": "Ivy Njenga",
+      "category": "person",
+      "ref": "p_ivy",
+      "unlock": {
+        "anyOf": [
+          "f_gate_ivy",
+          "f_ivy"
+        ]
+      }
+    },
+    {
+      "id": "h_push",
+      "text": "pushed from the crater rim",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_grip"
+        ]
+      }
+    },
+    {
+      "id": "h_struck",
+      "text": "struck on the head and thrown over",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_fall"
+        ]
+      }
+    },
+    {
+      "id": "h_fell",
+      "text": "fell while taking photographs",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_camera_rings"
+        ]
+      }
+    },
+    {
+      "id": "h_car",
+      "text": "hit by a reversing car",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_gate_beryl"
+        ]
+      }
+    },
+    {
+      "id": "h_poison",
+      "text": "poisoned",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_tox"
+        ]
+      }
+    },
+    {
+      "id": "m_rings",
+      "text": "her valuation exposed the crops he'd planted just before the deadline",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_valuation"
+        ]
+      }
+    },
+    {
+      "id": "m_route",
+      "text": "a dispute over the pipeline route through his farm",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_route"
+        ]
+      }
+    },
+    {
+      "id": "m_delays",
+      "text": "her colleague's anger about delays",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_email"
+        ]
+      }
+    },
+    {
+      "id": "m_feud",
+      "text": "an old family feud",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_letter"
+        ]
+      }
+    },
+    {
+      "id": "m_debt",
+      "text": "a debt",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_kim_cheat"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Beryl Adoyo"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_kimaiyo"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The gate book puts him on the rim, and his own sweater is under her nails. That will hold.",
+          "fail": [
+            "Doesn't hold up. An angry email from the crater floor isn't a man on the rim. Who walked up that path at twenty past four?",
+            "No. Read the gate book against what he told you."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_push"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Gripped by both arms from the front, no blow first. Pushed. Yes.",
+          "fail": [
+            "The pathologist disagrees with you. Read what she found on the arms, and what she didn't find on the head.",
+            "An accident doesn't leave fingertip bruises. Try again."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_rings"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Nine hundred seedlings planted at night. That's the reason, and the court will understand it.",
+          "fail": [
+            "He signed the route two years ago. That isn't it.",
+            "Who gains, and from what paper? Look at the valuation."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_rim",
+      "from": "16:00",
+      "to": "17:00"
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_kim_never",
+          "f_gate_kimaiyo",
+          "f_sammy_up",
+          "f_sammy_down",
+          "f_kim_admits"
+        ],
+        "concludes": "Kimaiyo said he hadn't been up to the crater in years, but the gate book has him in at 16:12 and out at 16:48, and Sammy saw a man in green walk up at 16:20 and back at 16:45. He admits confronting her."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_aut_grip",
+          "f_aut_nohead",
+          "f_aut_tod",
+          "f_canteen",
+          "f_camera_last"
+        ],
+        "concludes": "She died about 16:00–17:00, gripped hard by both arms from the front just before the fall, with no blow first. Her last photo shows a figure in a green sweater coming up the path at 16:24."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_fibres",
+          "f_aut_nails",
+          "f_valuation",
+          "f_camera_rings"
+        ],
+        "concludes": "The wool under her nails is from Kimaiyo's sweater. She was photographing his night-planted strip from above. Kimaiyo Rotich pushed Beryl from the crater rim because her valuation exposed his crops.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_duncan",
+        "blank": "who",
+        "by": [
+          "f_shift"
+        ],
+        "why": "Duncan signed the shift log on the crater floor every hour from 14:00 to 18:00."
+      },
+      {
+        "word": "w_philemon",
+        "blank": "who",
+        "by": [
+          "f_workers"
+        ],
+        "why": "Philemon was supervising the evening milking with the workers from 16:00 to 18:30."
+      },
+      {
+        "word": "w_sammy",
+        "blank": "who",
+        "by": [
+          "f_sammy_self"
+        ],
+        "why": "Sammy was at the gate all afternoon; every entry in the book is in his hand."
+      },
+      {
+        "word": "w_ivy",
+        "blank": "who",
+        "by": [
+          "f_gate_ivy"
+        ],
+        "why": "Ivy only came through the gate at 17:55."
+      },
+      {
+        "word": "h_struck",
+        "blank": "how",
+        "by": [
+          "f_aut_nohead"
+        ],
+        "why": "There was no blow to the head before the fall."
+      },
+      {
+        "word": "h_fell",
+        "blank": "how",
+        "by": [
+          "f_aut_grip",
+          "f_camera_last"
+        ],
+        "why": "An accident doesn't leave grip bruises on both arms, and her last frame shows someone coming up behind her."
+      },
+      {
+        "word": "h_car",
+        "blank": "how",
+        "by": [
+          "f_aut_nohead",
+          "f_wall"
+        ],
+        "why": "No vehicle injuries, and her car was parked 200 m back inside the gate."
+      },
+      {
+        "word": "h_poison",
+        "blank": "how",
+        "by": [
+          "f_tox"
+        ],
+        "why": "Toxicology is clean."
+      },
+      {
+        "word": "m_route",
+        "blank": "why",
+        "by": [
+          "f_route"
+        ],
+        "why": "He signed his consent to the route two years ago."
+      },
+      {
+        "word": "m_delays",
+        "blank": "why",
+        "by": [
+          "f_email",
+          "f_shift"
+        ],
+        "why": "That was Duncan's anger, and Duncan was on the crater floor."
+      },
+      {
+        "word": "m_feud",
+        "blank": "why",
+        "by": [
+          "f_phil_never"
+        ],
+        "why": "He had never met her before the valuation."
+      },
+      {
+        "word": "m_debt",
+        "blank": "why",
+        "by": [
+          "f_duncan_money"
+        ],
+        "why": "Valuers never handle money; nothing passed between them."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Two weeks before the cut-off date, Kimaiyo has 900 seedlings and a row of eucalyptus planted at night on the pipeline strip.",
+        "image": null
+      },
+      {
+        "text": "Beryl's valuation sees the fresh rings. The claim drops from KSh 4.2 million to 0.6 million. He writes: \"You will regret this.\"",
+        "image": null
+      },
+      {
+        "text": "15:58. She drives up to the rim to photograph the strip from above, where the rings show clearly. At 16:12 his car follows her through the gate.",
+        "image": "loc_rim"
+      },
+      {
+        "text": "16:24. Her last frame catches a man in green on the path. At the wall he grips her by both arms. She pushes back at the wool of his sweater.",
+        "image": null
+      },
+      {
+        "text": "16:48. He drives out past the gate. Below the wall, her clipboard lies face down on the path.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Detain after the gate book breaks his claim; fibres take 12 h; press inside the 24 hours. No rush.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_rim",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_gatebook",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_sammy"
+      },
+      {
+        "do": "interview",
+        "target": "p_kimaiyo"
+      },
+      {
+        "do": "press",
+        "target": "c_kim_never"
+      },
+      {
+        "do": "detain",
+        "target": "p_kimaiyo"
+      },
+      {
+        "do": "sample",
+        "target": "ev_sweater"
+      },
+      {
+        "do": "submit",
+        "target": "ev_fibres"
+      },
+      {
+        "do": "submit",
+        "target": "ev_tox"
+      },
+      {
+        "do": "visit",
+        "target": "loc_farm",
+        "hours": 2
+      },
+      {
+        "do": "interview",
+        "target": "p_philemon"
+      },
+      {
+        "do": "visit",
+        "target": "loc_pad",
+        "hours": 2
+      },
+      {
+        "do": "read",
+        "target": "ev_shift",
+        "hours": 1
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 5
+      },
+      {
+        "do": "interview",
+        "target": "p_kimaiyo"
+      },
+      {
+        "do": "press",
+        "target": "c_kim_left"
+      }
+    ],
+    "totalHours": 23
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_gatebook",
+        "line": "Every car on the rim road is in a book at the gate. Read it against what the old man told you."
+      },
+      "tier2": {
+        "facts": [
+          "f_camera_last",
+          "f_kimaiyo_green"
+        ],
+        "line": "Her last photo shows someone in green. Look at what he wears, and think about what a lab could do with it."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Dr. Chebii found bruises before she found anything else. Where are they?"
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_grip",
+          "f_aut_nohead"
+        ],
+        "line": "Gripped from the front by both arms, and no blow to the head first. Say what that is."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_valuation",
+        "line": "Read her file on his farm. Then look at what she was photographing."
+      },
+      "tier2": {
+        "facts": [
+          "f_valuation",
+          "f_camera_rings"
+        ],
+        "line": "Fresh planting rings, two weeks before the deadline. Who loses three and a half million?"
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "mzee",
+      "def": "Respectful word for an older man."
+    },
+    {
+      "term": "fidia",
+      "def": "Compensation."
+    },
+    {
+      "term": "miche",
+      "def": "Seedlings (singular: mche)."
+    }
+  ],
+  "tutorial": [
+    {
+      "trigger": "caseOpen",
+      "line": "New tools, Detective. A pathologist, a lab, and a clock. Detaining someone gives you 24 hours. Use them, don't waste them."
+    },
+    {
+      "trigger": "firstAutopsy",
+      "line": "Dr. Chebii doesn't guess. Read what she found, and also what she didn't."
+    },
+    {
+      "trigger": "firstDetention",
+      "line": "The clock is running. Take what you need from him, send it to the lab, and keep working while it cooks."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "autopsyReport",
+      "labQueue",
+      "arrestClock",
+      "howGroup"
+    ],
+    "beatNotes": "The autopsy report, the lab queue and the arrest clock, all at once. Dr. Chebii delivers the autopsy as a short dry voice-note plus the written report; the lab queue is a clipboard on the corkboard with ticking tags; detaining someone puts a red 24-hour clock on their photo. The charge sheet gains HOW."
+  }
+}

@@ -1,0 +1,1057 @@
+{
+  "meta": {
+    "id": "case-014",
+    "number": 14,
+    "region": "eastlands",
+    "regionNumber": 2,
+    "title": "Full Time",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 12,
+    "date": "Sunday 15 June",
+    "folderTab": "UMOJA"
+  },
+  "pattern": {
+    "crimePattern": "fired employee kills the bar owner over unpaid wages; an innocent patron lies to hide gambling",
+    "noRealCaseRetold": true,
+    "notes": "Fictional pub and betting shop. The match on screen is generic: no real teams, kits or competitions named.",
+    "tags": [
+      "blunt-force",
+      "wages",
+      "innocent-liar",
+      "red-herring"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 2,
+    "redHerrings": 1,
+    "liars": 1,
+    "groups": [
+      "who"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness"
+    ],
+    "gatedActions": [],
+    "twist": "innocent-liar"
+  },
+  "ob": {
+    "number": "OB 08/15/06",
+    "date": "Sunday 15 June",
+    "time": "21:41",
+    "reportedBy": "Monicah Njeri, waitress, Goal Pub & Screen, Umoja Inner Core",
+    "text": "Monicah Njeri, a waitress, reports that the owner of Goal Pub & Screen, Umoja Inner Core, Josiah Mutai (56), was found dead in the storeroom at 21:30, at the end of the Sunday match. About sixty customers were in the pub.",
+    "facts": [
+      "f_ob_found"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_josiah",
+      "role": "victim",
+      "name": "Josiah Mutai",
+      "age": 56,
+      "occupation": "Owner, Goal Pub & Screen",
+      "bio": "Built the pub from a kiosk with one television. Tight with money, loud on match nights.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_storeroom",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 50s, heavy-set, short grey hair, a football club-style scarf in plain colours with no badge, a bunch of keys on his belt, loud laugh lines, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_ian",
+      "role": "suspect",
+      "name": "Ian Kamotho",
+      "age": 27,
+      "occupation": "Screen operator and DJ (\"DJ Kamo\")",
+      "bio": "Has run the projector booth for two years. Fired this afternoon; Josiah refused to pay him two months' wages.",
+      "community": "Kikuyu",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_monicah_freeze"
+      },
+      "at": "plc_booth",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 20s, clean fade haircut, oversized hoodie, a pale band of skin around his neck where headphones usually sit, guarded and very still, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_tobias",
+      "role": "suspect",
+      "name": "Tobias Okoth",
+      "age": 24,
+      "occupation": "Regular customer; mechanic",
+      "redHerring": true,
+      "bio": "Shouted at Josiah at half-time over a KSh 300 tab. Says he never left his seat.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_tab"
+      },
+      "at": "plc_kamari",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 20s, mechanic's overalls tied at the waist over a plain football shirt with no badge, nervous eyes, chewing the inside of his cheek, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_purity",
+      "role": "suspect",
+      "name": "Purity Chepngetich",
+      "age": 49,
+      "occupation": "Josiah's wife",
+      "bio": "Inherits the pub. She wanted to sell it; he refused.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_monicah_purity"
+      },
+      "at": "plc_church",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 40s, church choir robe in maroon over her clothes, hair in a neat wrap, red-eyed and very upright, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_monicah",
+      "role": "witness",
+      "name": "Monicah Njeri",
+      "age": 31,
+      "occupation": "Waitress",
+      "bio": "Has waited tables at Goal Pub for four years. Found Josiah when she went for more crates.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_bar",
+      "image": null
+    },
+    {
+      "id": "p_cynthia",
+      "role": "witness",
+      "name": "Cynthia Awino",
+      "age": 26,
+      "occupation": "Cashier, Kamari Point betting shop",
+      "bio": "Works the live-bet counter across the road. Remembers faces.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "location": "loc_kamari"
+      },
+      "at": "plc_kamari",
+      "image": null
+    },
+    {
+      "id": "p_mugambi",
+      "role": "witness",
+      "name": "Deacon Samuel Mugambi",
+      "age": 61,
+      "occupation": "Usher, Neema Fellowship, Umoja",
+      "statementOnly": true,
+      "bio": "Keeps the door at the evening service.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_purity_claim"
+      },
+      "at": "plc_church",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_storeroom",
+      "name": "Storeroom behind the bar",
+      "within": "loc_pub"
+    },
+    {
+      "id": "plc_booth",
+      "name": "Projector booth beside the storeroom door",
+      "within": "loc_pub"
+    },
+    {
+      "id": "plc_bar",
+      "name": "Bar and tables",
+      "within": "loc_pub"
+    },
+    {
+      "id": "plc_kamari",
+      "name": "Kamari Point betting shop, across the road"
+    },
+    {
+      "id": "plc_church",
+      "name": "Neema Fellowship, Umoja"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_pub",
+      "name": "Goal Pub & Screen, Umoja Inner Core",
+      "kind": "scene",
+      "description": "A long room of plastic chairs facing a projector screen. The match is over and the screen shows a frozen replay. Behind the bar, a plywood booth for the screen operator stands right beside the storeroom door.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Storeroom",
+          "pos": [
+            80,
+            56
+          ],
+          "yields": "ev_body",
+          "text": "Josiah lies among stacked crates of empties. One crate is split open beside him."
+        },
+        {
+          "id": "hs_behindcrates",
+          "label": "Behind the crates",
+          "pos": [
+            90,
+            70
+          ],
+          "yields": "ev_headphones",
+          "text": "Something black and padded has slipped down behind the stack of crates."
+        },
+        {
+          "id": "hs_booth",
+          "label": "Projector booth",
+          "pos": [
+            66,
+            40
+          ],
+          "yields": "ev_booth",
+          "text": "A plywood booth with a laptop, a mixer and the projector cable. A painted board over the hatch."
+        },
+        {
+          "id": "hs_barnote",
+          "label": "Note pinned to the bar",
+          "pos": [
+            44,
+            58
+          ],
+          "yields": "ev_freeze",
+          "text": "Among the betting tips and phone numbers pinned behind the bar, one note is very angry."
+        },
+        {
+          "id": "hs_monicah",
+          "label": "Waitress at the bar",
+          "pos": [
+            36,
+            46
+          ],
+          "yields": "ev_monicah",
+          "text": "Monicah Njeri sits on a bar stool with her tray in her lap."
+        },
+        {
+          "id": "hs_window",
+          "label": "Front window",
+          "pos": [
+            10,
+            30
+          ],
+          "text": "Across the road, the lights of Kamari Point betting shop are still on, odds scrolling on its screens."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "inside a busy Nairobi estate bar after a football screening, rows of plastic chairs facing a projector screen showing a frozen generic football pitch with no logos, a plywood projector booth beside a storeroom door, bottles behind the bar, no people in focus"
+      }
+    },
+    {
+      "id": "loc_kamari",
+      "name": "Kamari Point betting shop",
+      "kind": "location",
+      "description": "A narrow shop with three screens of scrolling odds and a cashier's window. Slips everywhere on the floor.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_counter",
+          "label": "Counter copies",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_betslips",
+          "text": "Cynthia keeps a carbon copy of every live-bet slip, filed by name.",
+          "unlock": {
+            "fact": "f_tab"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a narrow betting shop on a Nairobi estate street at night, screens of scrolling odds, a cashier window with a metal grille, discarded betting slips on the floor"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body in the storeroom",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Struck with a crate of empty bottles. Found 21:30."
+      },
+      "facts": [
+        "f_body_crate"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a bar storeroom with crates of empty beer bottles stacked to the ceiling, one crate split open on the floor with bottles spilled, a bare bulb, no body visible"
+      }
+    },
+    {
+      "id": "ev_monicah",
+      "type": "witness",
+      "title": "Statement: Monicah Njeri",
+      "render": "statement",
+      "body": {
+        "speaker": "p_monicah"
+      },
+      "facts": [
+        "f_monicah_storeroom",
+        "f_monicah_freeze",
+        "f_ian_booth",
+        "f_monicah_floor",
+        "f_tab"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_freeze",
+      "type": "physical",
+      "title": "Angry note on the bar",
+      "render": "note",
+      "body": {
+        "text": "FROZE 68'–74'!!! refund??",
+        "annotation": "Second half kicked off 20:35 (45'). 68'–74' = 20:58–21:04."
+      },
+      "facts": [
+        "f_freeze_note"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_headphones",
+      "type": "physical",
+      "title": "Headphones behind the crates",
+      "render": "object",
+      "body": {
+        "label": "DJ headphones. Sticker on the band: \"DJ KAMO\"."
+      },
+      "facts": [
+        "f_headphones"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a pair of black over-ear DJ headphones lying in the gap behind stacked beer crates, a white sticker on the headband reading DJ KAMO"
+      }
+    },
+    {
+      "id": "ev_booth",
+      "type": "physical",
+      "title": "Board over the booth",
+      "render": "board",
+      "body": {
+        "text": "DJ KAMO on the decks — every Friday & match nights"
+      },
+      "facts": [
+        "f_booth_name"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_betslips",
+      "type": "physical",
+      "title": "Live-bet slips (Tobias Okoth)",
+      "render": "ticketBook",
+      "body": {
+        "rows": [
+          {
+            "time": "20:48",
+            "stake": "KSh 200"
+          },
+          {
+            "time": "20:59",
+            "stake": "KSh 300"
+          },
+          {
+            "time": "21:06",
+            "stake": "KSh 1,500"
+          }
+        ],
+        "name": "T. Okoth"
+      },
+      "facts": [
+        "f_betslips"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_cynthia",
+      "type": "witness",
+      "title": "Statement: Cynthia Awino",
+      "render": "statement",
+      "body": {
+        "speaker": "p_cynthia"
+      },
+      "facts": [
+        "f_cynthia",
+        "f_cynthia_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_church",
+      "type": "witness",
+      "title": "Phone statement: Deacon Mugambi",
+      "render": "statement",
+      "body": {
+        "speaker": "p_mugambi",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_church"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Monicah Njeri found the owner, Josiah Mutai, dead in the storeroom at 21:30, at the end of the match.",
+      "kind": "true",
+      "about": [
+        "p_josiah",
+        "p_monicah",
+        "plc_storeroom"
+      ]
+    },
+    {
+      "id": "f_body_crate",
+      "text": "Josiah was struck with a crate of empty bottles.",
+      "kind": "true",
+      "about": [
+        "p_josiah",
+        "plc_storeroom"
+      ]
+    },
+    {
+      "id": "f_monicah_storeroom",
+      "text": "Monicah: at 20:55 Josiah went into the storeroom to count crates.",
+      "kind": "true",
+      "about": [
+        "p_monicah",
+        "p_josiah",
+        "plc_storeroom"
+      ]
+    },
+    {
+      "id": "f_monicah_freeze",
+      "text": "Monicah: the screen froze for about six minutes in the second half. The pub booed. She went to shout at the booth, and it was empty.",
+      "kind": "true",
+      "about": [
+        "p_monicah",
+        "plc_booth"
+      ]
+    },
+    {
+      "id": "f_ian_booth",
+      "text": "Monicah: Ian ran the screen from the booth all evening, from before kick-off to full time. The booth is right beside the storeroom door.",
+      "kind": "true",
+      "about": [
+        "p_monicah",
+        "p_ian",
+        "plc_booth"
+      ],
+      "where": {
+        "person": "p_ian",
+        "place": "plc_booth",
+        "from": "19:15",
+        "to": "21:30"
+      }
+    },
+    {
+      "id": "f_monicah_floor",
+      "text": "Monicah served tables the whole second half in front of about sixty customers.",
+      "kind": "true",
+      "about": [
+        "p_monicah"
+      ],
+      "where": {
+        "person": "p_monicah",
+        "place": "plc_bar",
+        "from": "20:35",
+        "to": "21:30"
+      }
+    },
+    {
+      "id": "f_freeze_note",
+      "text": "A regular's note: 'FROZE 68'–74''. The second half kicked off at 20:35, so the freeze ran from 20:58 to 21:04.",
+      "kind": "true",
+      "about": [
+        "ev_freeze",
+        "plc_booth"
+      ]
+    },
+    {
+      "id": "f_headphones",
+      "text": "DJ headphones were lying behind the crates in the storeroom, with a sticker: 'DJ KAMO'.",
+      "kind": "true",
+      "about": [
+        "plc_storeroom",
+        "ev_headphones"
+      ]
+    },
+    {
+      "id": "f_booth_name",
+      "text": "The board over the booth: 'DJ KAMO on the decks'. DJ Kamo is Ian Kamotho.",
+      "kind": "true",
+      "about": [
+        "p_ian",
+        "plc_booth"
+      ]
+    },
+    {
+      "id": "f_monicah_fired",
+      "text": "Monicah: Josiah fired Ian at three this afternoon and refused him two months' wages. Ian ran the match anyway because there was nobody else.",
+      "kind": "true",
+      "about": [
+        "p_monicah",
+        "p_ian",
+        "p_josiah"
+      ]
+    },
+    {
+      "id": "f_monicah_purity",
+      "text": "Monicah: Josiah's wife, Purity, wanted to sell the pub. They fought about it every week.",
+      "kind": "true",
+      "about": [
+        "p_monicah",
+        "p_purity"
+      ]
+    },
+    {
+      "id": "f_tab",
+      "text": "Monicah: at half-time Tobias Okoth and Josiah shouted at each other over a KSh 300 tab.",
+      "kind": "true",
+      "about": [
+        "p_monicah",
+        "p_tobias",
+        "p_josiah"
+      ]
+    },
+    {
+      "id": "f_betslips",
+      "text": "Kamari Point counter copies: live bets in the name of Tobias Okoth at 20:48, 20:59 and 21:06, the last for KSh 1,500.",
+      "kind": "true",
+      "about": [
+        "p_tobias",
+        "plc_kamari"
+      ],
+      "where": {
+        "person": "p_tobias",
+        "place": "plc_kamari",
+        "from": "20:47",
+        "to": "21:07"
+      }
+    },
+    {
+      "id": "f_cynthia",
+      "text": "Cynthia: Tobias stood at her counter from about 20:45 to 21:08, watching the odds on the screen.",
+      "kind": "true",
+      "about": [
+        "p_cynthia",
+        "p_tobias"
+      ],
+      "where": {
+        "person": "p_tobias",
+        "place": "plc_kamari",
+        "from": "20:45",
+        "to": "21:08"
+      }
+    },
+    {
+      "id": "f_cynthia_self",
+      "text": "Cynthia worked the live-bet counter alone from 18:00 to closing; the shop's own camera faces her window.",
+      "kind": "true",
+      "about": [
+        "p_cynthia"
+      ],
+      "where": {
+        "person": "p_cynthia",
+        "place": "plc_kamari",
+        "from": "18:00",
+        "to": "22:00"
+      }
+    },
+    {
+      "id": "f_church",
+      "text": "Deacon Mugambi: Purity sang in the choir from 18:00 until the service ended at 21:30.",
+      "kind": "true",
+      "about": [
+        "p_mugambi",
+        "p_purity"
+      ],
+      "where": {
+        "person": "p_purity",
+        "place": "plc_church",
+        "from": "18:00",
+        "to": "21:30"
+      }
+    },
+    {
+      "id": "f_tobias_seat",
+      "text": "Tobias: \"I watched the whole second half from my seat. I never left the pub.\"",
+      "kind": "lie",
+      "about": [
+        "p_tobias"
+      ]
+    },
+    {
+      "id": "f_tobias_tabclaim",
+      "text": "Tobias: \"Mzee and I shouted about a tab. That's football.\"",
+      "kind": "claim",
+      "about": [
+        "p_tobias",
+        "p_josiah"
+      ]
+    },
+    {
+      "id": "f_tobias_kamari",
+      "text": "Tobias admits he was at Kamari Point from about 20:45 to 21:08, betting his mother's school-fees money for his sister.",
+      "kind": "true",
+      "about": [
+        "p_tobias",
+        "plc_kamari"
+      ],
+      "where": {
+        "person": "p_tobias",
+        "place": "plc_kamari",
+        "from": "20:45",
+        "to": "21:08"
+      }
+    },
+    {
+      "id": "f_ian_denial",
+      "text": "Ian: \"I had no problem with Mzee.\"",
+      "kind": "claim",
+      "about": [
+        "p_ian"
+      ]
+    },
+    {
+      "id": "f_purity_claim",
+      "text": "Purity: \"I was at church until half past nine.\"",
+      "kind": "claim",
+      "about": [
+        "p_purity"
+      ]
+    },
+    {
+      "id": "f_purity_sale",
+      "text": "Purity: a buyer offered good money for the pub. Josiah said he would die in it first.",
+      "kind": "true",
+      "about": [
+        "p_purity",
+        "p_josiah"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_monicah",
+      "stance": "cooperative",
+      "intro": "Monicah turns her tray over and over. \"Sixty people in here, and nobody saw anything. They were all watching the screen.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_josiah",
+          "reply": "He was hard, but he paid me. His wife wanted to sell this place. Every week, the same fight.",
+          "reveals": [
+            "f_monicah_purity"
+          ]
+        },
+        {
+          "about": "p_ian",
+          "reply": "Mzee fired him at three. No wages for two months. Ian still came and ran the match. I thought, that boy is a saint.",
+          "reveals": [
+            "f_monicah_fired"
+          ]
+        },
+        {
+          "about": "p_tobias",
+          "reply": "Tobias? He shouted at Mzee at half-time about three hundred bob on his tab. After that I didn't see him. I was busy.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_tobias",
+      "stance": "cooperative",
+      "intro": "Tobias keeps checking his phone, then turning it face down. \"I was here. I was watching the match. Like everybody.\"",
+      "claims": [
+        "f_tobias_seat",
+        "f_tobias_tabclaim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_josiah",
+          "reply": "Three hundred bob. He said I don't pay. I always pay.",
+          "reveals": []
+        },
+        {
+          "about": "p_cynthia",
+          "reply": "I don't know any cashier.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_ian",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_monicah"
+      ],
+      "intro": "Ian sits in his booth with the laptop shut, his hands flat on the lid. \"I just play the match.\"",
+      "claims": [
+        "f_ian_denial"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_freeze",
+          "reply": "The stream drops when the Wi-Fi drops. Every match. Ask anyone.",
+          "reveals": []
+        },
+        {
+          "about": "ev_headphones",
+          "reply": "Anyone could have put them there. I leave them everywhere.",
+          "reveals": []
+        },
+        {
+          "about": "f_monicah_fired",
+          "reply": "He fired me at three. I still ran his match. Does that sound like a man who is angry?",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_purity",
+      "stance": "cooperative",
+      "intro": "Purity has come straight from church in her choir robe. \"They called me during the last hymn.\"",
+      "claims": [
+        "f_purity_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_josiah",
+          "reply": "Twenty-three years married. Yes, I wanted to sell. A buyer offered good money. He said he would die in that pub first.",
+          "reveals": [
+            "f_purity_sale"
+          ]
+        },
+        {
+          "about": "p_mugambi",
+          "reply": "Call the deacon. He keeps the door. He counts us in and out like sheep.",
+          "reveals": [
+            "ev_church"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_cynthia",
+      "stance": "cooperative",
+      "intro": "Cynthia talks through the grille of her window. \"I see a hundred faces a night. Ask me about one.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_tobias",
+          "reply": "The mechanic. He stood right here from quarter to nine until after nine, staring at the odds. Second-half bets. The last one was big.",
+          "reveals": [
+            "ev_cynthia"
+          ]
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_tobias_seat",
+      "claim": "f_tobias_seat",
+      "brokenBy": [
+        "f_betslips",
+        "f_cynthia"
+      ],
+      "reveals": [
+        "f_tobias_kamari"
+      ],
+      "reaction": "Please. Please don't tell my mother. That was her school-fees money for my sister. I was at Kamari Point the whole time, I swear. Ask the cashier. I lost all of it.",
+      "mark": "explains"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_ian",
+      "text": "Ian Kamotho",
+      "category": "person",
+      "ref": "p_ian",
+      "unlock": {
+        "anyOf": [
+          "f_ian_booth",
+          "f_booth_name"
+        ]
+      }
+    },
+    {
+      "id": "w_tobias",
+      "text": "Tobias Okoth",
+      "category": "person",
+      "ref": "p_tobias",
+      "unlock": {
+        "anyOf": [
+          "f_tab"
+        ]
+      }
+    },
+    {
+      "id": "w_purity",
+      "text": "Purity Chepngetich",
+      "category": "person",
+      "ref": "p_purity",
+      "unlock": {
+        "anyOf": [
+          "f_monicah_purity"
+        ]
+      }
+    },
+    {
+      "id": "w_monicah",
+      "text": "Monicah Njeri",
+      "category": "person",
+      "ref": "p_monicah",
+      "unlock": {
+        "anyOf": [
+          "f_ob_found"
+        ]
+      }
+    },
+    {
+      "id": "w_cynthia",
+      "text": "Cynthia Awino",
+      "category": "person",
+      "ref": "p_cynthia",
+      "unlock": {
+        "anyOf": [
+          "f_cynthia_self",
+          "f_betslips"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} at Goal Pub & Screen.",
+    "fixed": {
+      "victim": "Josiah Mutai"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_ian"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Six minutes of frozen screen, an empty booth beside the storeroom, and his headphones behind the crates. That will hold.",
+          "fail": [
+            "Doesn't hold up. Your liar was across the road losing his mother's money. A lie isn't a killing.",
+            "No. Sixty people were looking at one screen. Who was the only person whose job was not to look at it?"
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_pub",
+      "from": "20:58",
+      "to": "21:04",
+      "within": [
+        "plc_storeroom",
+        "plc_booth",
+        "plc_bar"
+      ]
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_monicah_storeroom",
+          "f_monicah_freeze",
+          "f_freeze_note",
+          "f_ian_booth"
+        ],
+        "concludes": "Josiah went into the storeroom at 20:55. From 20:58 to 21:04 the screen froze and the booth beside the storeroom door was empty: the operator left his post exactly when nobody was watching that door."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_headphones",
+          "f_booth_name",
+          "f_monicah_fired"
+        ],
+        "concludes": "The operator's headphones, \"DJ KAMO\", are in the storeroom behind the crates. Ian Kamotho, fired that afternoon and unpaid, killed Josiah.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_tobias",
+        "blank": "who",
+        "by": [
+          "f_betslips",
+          "f_cynthia"
+        ],
+        "why": "Tobias was at the Kamari Point counter from 20:45 to 21:08, placing bets at 20:48, 20:59 and 21:06. His lie hid gambling, not murder."
+      },
+      {
+        "word": "w_purity",
+        "blank": "who",
+        "by": [
+          "f_church"
+        ],
+        "why": "Purity was singing in the Neema Fellowship choir until 21:30."
+      },
+      {
+        "word": "w_monicah",
+        "blank": "who",
+        "by": [
+          "f_monicah_floor"
+        ],
+        "why": "Monicah was serving tables in front of sixty customers the whole second half."
+      },
+      {
+        "word": "w_cynthia",
+        "blank": "who",
+        "by": [
+          "f_cynthia_self"
+        ],
+        "why": "Cynthia was alone at her counter across the road, in view of the shop's camera, all evening."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "15:00. Josiah fires Ian and refuses two months' wages. \"Run tonight's match or get nothing at all.\"",
+        "image": null
+      },
+      {
+        "text": "Half-time. Tobias shouts at Josiah over a KSh 300 tab. At 20:48 he slips across the road to Kamari Point with his mother's school-fees money.",
+        "image": null
+      },
+      {
+        "text": "20:55. Josiah goes into the storeroom to count crates. Ian watches the door from his booth.",
+        "image": "loc_pub"
+      },
+      {
+        "text": "20:58. Ian lets the stream freeze and walks into the storeroom to ask for his wages. Josiah laughs. Ian swings a crate. His headphones slip off and fall behind the stack.",
+        "image": null
+      },
+      {
+        "text": "21:04. Ian is back in the booth. He restarts the stream. Sixty people cheer the picture coming back.",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_freeze",
+        "line": "Somebody in that pub was counting minutes. Turn the match minutes into clock times."
+      },
+      "tier2": {
+        "facts": [
+          "f_monicah_freeze",
+          "f_headphones"
+        ],
+        "line": "The booth was empty while the screen was frozen. Then look behind the crates for something that belongs in the booth."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "kamari",
+      "def": "Gambling."
+    },
+    {
+      "term": "mechi",
+      "def": "A match (football)."
+    },
+    {
+      "term": "bob",
+      "def": "Slang for shillings."
+    },
+    {
+      "term": "karo",
+      "def": "School fees."
+    },
+    {
+      "term": "mzee",
+      "def": "Respectful word for an older man; here, the owner."
+    }
+  ],
+  "tutorial": [
+    {
+      "trigger": "firstGuarded",
+      "line": "Some people will not talk until you put something in front of them. Show him what you already know."
+    },
+    {
+      "trigger": "firstGreyBreak",
+      "line": "A man who lies to you isn't always a man who kills. Find out what he was hiding before you decide what it means."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "brokenIsntGuilty",
+      "guardedStance"
+    ],
+    "beatNotes": "Broken isn't guilty: after the reaction a broken claim is marked red (the reaction implicates) or grey (the reaction explains). Tobias's goes grey. Also the first guarded suspect: Ian's statement sheet is blank until the player shows him relevant evidence."
+  }
+}

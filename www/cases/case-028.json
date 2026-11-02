@@ -1,0 +1,1124 @@
+{
+  "meta": {
+    "id": "case-028",
+    "number": 28,
+    "region": "mombasa-old-town",
+    "regionNumber": 3,
+    "title": "Seven Minutes of Taarab",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 17,
+    "date": "Saturday 20 September",
+    "folderTab": "MAJENGO"
+  },
+  "pattern": {
+    "crimePattern": "elderly musician kills the band manager who was replacing the live band with a DJ",
+    "noRealCaseRetold": true,
+    "notes": "Fictional band, families and DJ. Taarab is a living tradition; the case depicts one fictional man's act, never the music or its community. Tone: quiet, sad, respectful.",
+    "tags": [
+      "blunt-force",
+      "livelihood",
+      "video-evidence",
+      "covering-relative"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 3,
+    "redHerrings": 1,
+    "liars": 1,
+    "groups": [
+      "who",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone"
+    ],
+    "gatedActions": [],
+    "twist": "the-beloved-elder-did-it"
+  },
+  "ob": {
+    "number": "OB 29/20/09",
+    "date": "Saturday 20 September",
+    "time": "23:52",
+    "reportedBy": "The father of the bride, wedding hall, Majengo",
+    "text": "The father of a bride reports that Amina Shee (45), manager of the taarab band Nyota ya Pwani, was found dead in the store room behind the stage of a community hall in Majengo during the wedding, at 23:40.",
+    "facts": [
+      "f_ob_found"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_amina",
+      "role": "victim",
+      "name": "Amina Shee",
+      "age": 45,
+      "occupation": "Manager and booker, Nyota ya Pwani",
+      "bio": "Has booked the band's weddings for fifteen years. Collects the fees and pays the musicians.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_store",
+      "image": {
+        "kind": "portrait",
+        "brief": "Swahili Kenyan woman, mid 40s, an elegant embroidered dera and a silk headscarf, a cash envelope and a phone in her hands, warm and businesslike, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mzee",
+      "role": "suspect",
+      "name": "Mzee Abdulrahman Kibwana",
+      "age": 74,
+      "occupation": "Oud player, Nyota ya Pwani, for 52 years",
+      "bio": "A legend of Mombasa taarab. Gentle, everyone's grandfather. His small share of each wedding fee is his only income.",
+      "community": "Swahili",
+      "isCulprit": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_stage",
+      "image": {
+        "kind": "portrait",
+        "brief": "Swahili Kenyan elder, mid 70s, a white kanzu and embroidered kofia, thin silver beard, an oud resting against his shoulder, long fingers, a gentle tired face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_moha",
+      "role": "suspect",
+      "name": "Mohamed \"DJ Moha\" Bwana",
+      "age": 33,
+      "occupation": "Wedding DJ",
+      "redHerring": true,
+      "bio": "Fought publicly with the band over who would play tonight's wedding.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_amina_msg"
+      },
+      "at": "plc_carpark",
+      "image": {
+        "kind": "portrait",
+        "brief": "Swahili Kenyan man, early 30s, designer-style sunglasses at night, a bomber jacket, headphones round his neck, a confident grin, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mwanaisha",
+      "role": "suspect",
+      "name": "Mwanaisha Fadhili",
+      "age": 56,
+      "occupation": "Lead singer, Nyota ya Pwani",
+      "bio": "Has sung with the band for thirty years. Wanted to take over as manager.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_stage",
+      "image": {
+        "kind": "portrait",
+        "brief": "Swahili Kenyan woman, mid 50s, a shimmering gold dera, heavy kohl, a microphone in her hand, a voice you can see in her face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_twaha",
+      "role": "witness",
+      "name": "Twaha Kibwana",
+      "age": 22,
+      "occupation": "The Mzee's grandson; keyboard player",
+      "bio": "Plays keyboard beside his grandfather. Says Babu never left the stage.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_stage",
+      "image": null
+    },
+    {
+      "id": "p_zainab",
+      "role": "witness",
+      "name": "Bi Zainab Said",
+      "age": 50,
+      "occupation": "Mother of the bride",
+      "bio": "Booked the band for her daughter's wedding, as her mother booked it for hers.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_womens",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_store",
+      "name": "Store room behind the stage",
+      "within": "loc_hall"
+    },
+    {
+      "id": "plc_backstage",
+      "name": "Curtain and passage behind the stage",
+      "within": "loc_hall"
+    },
+    {
+      "id": "plc_stage",
+      "name": "Band stage",
+      "within": "loc_hall"
+    },
+    {
+      "id": "plc_womens",
+      "name": "Women's side of the hall",
+      "within": "loc_hall"
+    },
+    {
+      "id": "plc_carpark",
+      "name": "Car park outside the hall"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_hall",
+      "name": "Community hall, Majengo",
+      "kind": "scene",
+      "description": "A wedding night. The hall is hung with lights; women on one side, men on the other, the bride on a decorated stage. The band plays on a low platform: oud, violin, keyboard, drum. Behind the band, a curtain, a passage, and a store room where the caterers keep their trays.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Store room",
+          "pos": [
+            80,
+            40
+          ],
+          "yields": "ev_body",
+          "text": "Amina lies beside a heavy brass tray stand. The night's cash envelope is still in her hand."
+        },
+        {
+          "id": "hs_risha",
+          "label": "Under the stand",
+          "pos": [
+            84,
+            52
+          ],
+          "yields": "ev_risha",
+          "text": "Something light and pale under the stand: a broken quill."
+        },
+        {
+          "id": "hs_phone",
+          "label": "Her phone",
+          "pos": [
+            76,
+            34
+          ],
+          "yields": "ev_amina_phone",
+          "text": "Her phone on a crate. Her son arrives with the code."
+        },
+        {
+          "id": "hs_bag",
+          "label": "Her bag",
+          "pos": [
+            72,
+            30
+          ],
+          "yields": "ev_contract",
+          "text": "Her handbag, a folded contract inside."
+        },
+        {
+          "id": "hs_stage",
+          "label": "The stage",
+          "pos": [
+            40,
+            30
+          ],
+          "text": "The oud lies across the old man's chair. The keyboard's sampler pads glow faintly."
+        },
+        {
+          "id": "hs_zainab",
+          "label": "Mother of the bride",
+          "pos": [
+            20,
+            60
+          ],
+          "yields": "ev_family",
+          "text": "Bi Zainab stands between the two sides of the hall, holding her daughter's veil."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a community hall in Majengo, Mombasa, decorated for a Swahili wedding at night, strings of lights, a decorated stage for the bride, a taarab band platform with an oud on an empty chair, a violin, a keyboard and a drum, a curtain behind the band, no people in focus"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body in the store room",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Struck with a heavy brass tray stand. The night's cash still in its envelope."
+      },
+      "facts": [
+        "f_body_stand",
+        "f_body_cash"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a small store room behind a wedding stage, stacks of brass serving trays, a heavy brass tray stand fallen on its side, a cash envelope on the floor, a curtain at the doorway, no body visible"
+      }
+    },
+    {
+      "id": "ev_risha",
+      "type": "physical",
+      "title": "Broken feather plectrum",
+      "render": "object",
+      "body": {
+        "label": "A risha cut from an eagle's quill, snapped in two."
+      },
+      "facts": [
+        "f_risha"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a hand-cut feather quill plectrum for an oud, snapped in two, lying on a concrete floor beside the foot of a brass stand"
+      }
+    },
+    {
+      "id": "ev_amina_phone",
+      "type": "phone",
+      "title": "Amina's phone (unlocked by her son)",
+      "render": "smsThread",
+      "body": {
+        "messages": [
+          {
+            "time": "21:50",
+            "to": "DJ Moha",
+            "text": "Baada ya leo, wazee wamekwisha. Contract yako inaanza tarehe moja Oktoba."
+          },
+          {
+            "time": "23:05",
+            "text": "KSh 6,000 sent to ABDULRAHMAN KIBWANA. Ref: last fee, asante."
+          }
+        ]
+      },
+      "facts": [
+        "f_amina_msg",
+        "f_amina_paid"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_contract",
+      "type": "physical",
+      "title": "Contract with DJ Moha",
+      "render": "form",
+      "body": {
+        "text": "Modern taarab package: DJ, playback tracks, two singers. All bookings from 1 October. Signed: A. Shee, M. Bwana."
+      },
+      "facts": [
+        "f_contract"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_video",
+      "type": "phone",
+      "title": "Wedding video (a guest's phone)",
+      "render": "video",
+      "body": {
+        "from": "23:08",
+        "to": "23:24",
+        "notes": "23:12 the oud player stands, leans his oud on the chair and goes through the curtain. Oud still heard. 23:19 he returns."
+      },
+      "facts": [
+        "f_video_empty",
+        "f_video_mzee",
+        "f_video_mwanaisha",
+        "f_video_twaha",
+        "f_video_zainab"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_risha_note",
+      "type": "witness",
+      "title": "Statement: Mwanaisha Fadhili",
+      "render": "statement",
+      "body": {
+        "speaker": "p_mwanaisha"
+      },
+      "facts": [
+        "f_risha_note"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_dj_live",
+      "type": "phone",
+      "title": "DJ Moha's live stream (public)",
+      "render": "video",
+      "body": {
+        "from": "23:00",
+        "to": "23:30",
+        "notes": "Setting up his sound system in the car park, his face on camera throughout."
+      },
+      "facts": [
+        "f_dj_live"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_family",
+      "type": "witness",
+      "title": "Statement: Bi Zainab Said",
+      "render": "statement",
+      "body": {
+        "speaker": "p_zainab"
+      },
+      "facts": [
+        "f_family"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Amina Shee, manager of the taarab band Nyota ya Pwani, was found dead in the store room behind the stage at 23:40.",
+      "kind": "true",
+      "about": [
+        "p_amina",
+        "plc_store"
+      ]
+    },
+    {
+      "id": "f_body_stand",
+      "text": "Amina was struck with a heavy brass tray stand.",
+      "kind": "true",
+      "about": [
+        "p_amina",
+        "plc_store"
+      ]
+    },
+    {
+      "id": "f_body_cash",
+      "text": "The night's cash is still in its envelope in her hand.",
+      "kind": "true",
+      "about": [
+        "p_amina"
+      ]
+    },
+    {
+      "id": "f_risha",
+      "text": "Under the stand: a broken feather plectrum (risha), the old kind cut from an eagle's quill.",
+      "kind": "true",
+      "about": [
+        "plc_store",
+        "ev_risha"
+      ]
+    },
+    {
+      "id": "f_risha_note",
+      "text": "Mwanaisha: \"Only the Mzee uses a feather risha. Everyone else uses plastic. He cuts his own.\"",
+      "kind": "true",
+      "about": [
+        "p_mwanaisha",
+        "p_mzee"
+      ]
+    },
+    {
+      "id": "f_amina_msg",
+      "text": "Amina's WhatsApp to DJ Moha, 21:50: 'Baada ya leo, wazee wamekwisha. Contract yako inaanza tarehe moja Oktoba.' (After today the old men are finished. Your contract starts on 1 October.)",
+      "kind": "true",
+      "about": [
+        "p_amina",
+        "p_moha"
+      ]
+    },
+    {
+      "id": "f_amina_paid",
+      "text": "Amina's PesaPap, 23:05: KSh 6,000 to ABDULRAHMAN KIBWANA, reference 'last fee, asante'.",
+      "kind": "true",
+      "about": [
+        "p_amina",
+        "p_mzee"
+      ]
+    },
+    {
+      "id": "f_contract",
+      "text": "Signed agreement with DJ Moha: \"modern taarab package\", all bookings from 1 October.",
+      "kind": "true",
+      "about": [
+        "p_amina",
+        "p_moha"
+      ]
+    },
+    {
+      "id": "f_video_empty",
+      "text": "Wedding video, 23:08–23:24: from 23:12 to 23:19 the oud player's chair is empty, but the oud is still heard. Twaha's left hand is on the keyboard's sampler pads.",
+      "kind": "true",
+      "about": [
+        "p_mzee",
+        "p_twaha"
+      ]
+    },
+    {
+      "id": "f_video_mzee",
+      "text": "Video: at 23:12 the Mzee stands, leans his oud on his chair and goes through the curtain behind the stage, towards the store room. At 23:19 he comes back through it.",
+      "kind": "true",
+      "about": [
+        "p_mzee",
+        "plc_backstage"
+      ],
+      "where": {
+        "person": "p_mzee",
+        "place": "plc_backstage",
+        "from": "23:12",
+        "to": "23:19"
+      }
+    },
+    {
+      "id": "f_video_mwanaisha",
+      "text": "Video: Mwanaisha sings centre stage from 23:08 to 23:24.",
+      "kind": "true",
+      "about": [
+        "p_mwanaisha"
+      ],
+      "where": {
+        "person": "p_mwanaisha",
+        "place": "plc_stage",
+        "from": "23:08",
+        "to": "23:24"
+      }
+    },
+    {
+      "id": "f_video_twaha",
+      "text": "Video: Twaha's hands are on the keyboard throughout.",
+      "kind": "true",
+      "about": [
+        "p_twaha"
+      ],
+      "where": {
+        "person": "p_twaha",
+        "place": "plc_stage",
+        "from": "23:08",
+        "to": "23:24"
+      }
+    },
+    {
+      "id": "f_video_zainab",
+      "text": "Video: Bi Zainab sits with the bride on the women's side throughout.",
+      "kind": "true",
+      "about": [
+        "p_zainab"
+      ],
+      "where": {
+        "person": "p_zainab",
+        "place": "plc_womens",
+        "from": "23:08",
+        "to": "23:24"
+      }
+    },
+    {
+      "id": "f_dj_live",
+      "text": "DJ Moha's public live stream: setting up his sound system in the car park from 23:00 to 23:30, his face on camera throughout.",
+      "kind": "true",
+      "about": [
+        "p_moha"
+      ],
+      "where": {
+        "person": "p_moha",
+        "place": "plc_carpark",
+        "from": "23:00",
+        "to": "23:30"
+      }
+    },
+    {
+      "id": "f_family",
+      "text": "Bi Zainab: the Kibwanas and the Shees are related by marriage and have played every family wedding for decades. \"There is no feud. There is only love.\"",
+      "kind": "true",
+      "about": [
+        "p_zainab",
+        "p_mzee",
+        "p_amina"
+      ]
+    },
+    {
+      "id": "f_twaha_lie",
+      "text": "Twaha: \"Babu was on stage beside me the whole second set. I can see him from my keyboard.\"",
+      "kind": "lie",
+      "about": [
+        "p_twaha",
+        "p_mzee"
+      ]
+    },
+    {
+      "id": "f_twaha_admits",
+      "text": "Twaha admits that for a year he has played his grandfather's oud parts from a recording when Babu's hands tire. Tonight Babu went out \"for a few minutes\".",
+      "kind": "true",
+      "about": [
+        "p_twaha",
+        "p_mzee"
+      ]
+    },
+    {
+      "id": "f_mzee_claim",
+      "text": "Mzee Kibwana: \"Amina is my daughter's friend. I held her at her naming ceremony.\"",
+      "kind": "claim",
+      "about": [
+        "p_mzee",
+        "p_amina"
+      ]
+    },
+    {
+      "id": "f_moha_claim",
+      "text": "DJ Moha: \"I was setting up outside. I was live the whole time.\"",
+      "kind": "claim",
+      "about": [
+        "p_moha"
+      ]
+    },
+    {
+      "id": "f_moha_feud",
+      "text": "DJ Moha: \"Those two families have always fought. Ask anyone.\"",
+      "kind": "true",
+      "about": [
+        "p_moha"
+      ]
+    },
+    {
+      "id": "f_mwanaisha_claim",
+      "text": "Mwanaisha: \"I sang the whole set.\"",
+      "kind": "claim",
+      "about": [
+        "p_mwanaisha"
+      ]
+    },
+    {
+      "id": "f_mwanaisha_job",
+      "text": "Mwanaisha admits she wanted to take over as the band's manager. \"I wanted to save us. Not like this.\"",
+      "kind": "true",
+      "about": [
+        "p_mwanaisha",
+        "p_amina"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_twaha",
+      "stance": "cooperative",
+      "intro": "Twaha sits on the edge of the stage with his hands between his knees. \"Babu was beside me. The whole time. I can see him from my keyboard.\"",
+      "claims": [
+        "f_twaha_lie"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_amina",
+          "reply": "Auntie Amina booked every wedding we ever played. She was family.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_mzee",
+      "stance": "cooperative",
+      "intro": "The Mzee sits with his oud across his knees, very straight. He greets Amani in the old way, with both hands.",
+      "claims": [
+        "f_mzee_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_risha",
+          "reply": "A long silence. Then: \"Fifty-two years.\" Nothing more.",
+          "reveals": []
+        },
+        {
+          "about": "f_amina_paid",
+          "reply": "She paid me. She always paid me. She said thank you.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_moha",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_contract"
+      ],
+      "intro": "DJ Moha leans on his speaker stack in the car park. \"Don't look at me. I wasn't even inside.\"",
+      "claims": [
+        "f_moha_claim"
+      ],
+      "yields": [
+        "ev_dj_live"
+      ],
+      "topics": [
+        {
+          "about": "p_mzee",
+          "reply": "The old men are finished, that's just business. Those two families have always fought anyway. Ask anyone.",
+          "reveals": [
+            "f_moha_feud"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_mwanaisha",
+      "stance": "cooperative",
+      "intro": "Mwanaisha still has the microphone in her hand. She doesn't seem to know it. \"I sang. I sang the whole time.\"",
+      "claims": [
+        "f_mwanaisha_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_risha",
+          "reply": "Only the Mzee uses a feather risha. Everyone else uses plastic. He cuts his own.",
+          "reveals": [
+            "ev_risha_note"
+          ]
+        },
+        {
+          "about": "p_amina",
+          "reply": "I wanted to be manager. I wanted to save us. Not like this. Never like this.",
+          "reveals": [
+            "f_mwanaisha_job"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_zainab",
+      "stance": "cooperative",
+      "intro": "Bi Zainab holds her daughter's veil in both hands. \"My mother booked this band. I booked this band.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_mzee",
+          "reply": "He played at my wedding. There is no feud between those families. There is only love.",
+          "reveals": []
+        },
+        {
+          "about": "f_twaha_lie",
+          "reply": "My niece filmed the whole second set. Take it. Look at it.",
+          "reveals": [
+            "ev_video"
+          ]
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_twaha",
+      "claim": "f_twaha_lie",
+      "brokenBy": [
+        "f_video_empty",
+        "f_video_mzee"
+      ],
+      "reveals": [
+        "f_twaha_admits"
+      ],
+      "reaction": "Babu's hands get tired. For a year I have played his oud parts from a recording so he can rest. Nobody is supposed to know. Tonight he went out for a few minutes. That's all. That's all it was.",
+      "mark": "explains"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_mzee",
+      "text": "Mzee Abdulrahman Kibwana",
+      "category": "person",
+      "ref": "p_mzee",
+      "unlock": {
+        "anyOf": [
+          "f_mzee_claim",
+          "f_amina_paid"
+        ]
+      }
+    },
+    {
+      "id": "w_moha",
+      "text": "Mohamed Bwana",
+      "category": "person",
+      "ref": "p_moha",
+      "unlock": {
+        "anyOf": [
+          "f_amina_msg"
+        ]
+      }
+    },
+    {
+      "id": "w_mwanaisha",
+      "text": "Mwanaisha Fadhili",
+      "category": "person",
+      "ref": "p_mwanaisha",
+      "unlock": {
+        "anyOf": [
+          "f_mwanaisha_claim"
+        ]
+      }
+    },
+    {
+      "id": "w_twaha",
+      "text": "Twaha Kibwana",
+      "category": "person",
+      "ref": "p_twaha",
+      "unlock": {
+        "anyOf": [
+          "f_twaha_lie"
+        ]
+      }
+    },
+    {
+      "id": "w_zainab",
+      "text": "Zainab Said",
+      "category": "person",
+      "ref": "p_zainab",
+      "unlock": {
+        "anyOf": [
+          "f_family"
+        ]
+      }
+    },
+    {
+      "id": "m_band",
+      "text": "she was ending the band he'd played in for fifty years",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_amina_msg",
+          "f_contract"
+        ]
+      }
+    },
+    {
+      "id": "m_fee",
+      "text": "she owed him his fee",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_amina_paid"
+        ]
+      }
+    },
+    {
+      "id": "m_feud",
+      "text": "a feud between the two families",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_moha_feud"
+        ]
+      }
+    },
+    {
+      "id": "m_takings",
+      "text": "she stole the night's takings",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_body_cash"
+        ]
+      }
+    },
+    {
+      "id": "m_manager",
+      "text": "rivalry for the manager's job",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_mwanaisha_job"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} because {why}.",
+    "fixed": {
+      "victim": "Amina Shee"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_mzee"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Fifty years of music, and seven minutes. I'll ask the court to remember both.",
+          "fail": [
+            "Doesn't hold up. The DJ was live on camera in the car park. Watch the wedding video again: whose chair is empty?",
+            "No. Listen to the oud, then look at the chair."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_band"
+          }
+        ],
+        "prosecutor": {
+          "pass": "After today, the old men are finished. She wrote it herself.",
+          "fail": [
+            "He did it. But she had paid him, at 23:05. That isn't why.",
+            "There is no feud. Read her message to the DJ."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_store",
+      "from": "23:12",
+      "to": "23:19",
+      "within": [
+        "plc_backstage"
+      ]
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_twaha_lie",
+          "f_video_empty",
+          "f_video_mzee",
+          "f_twaha_admits"
+        ],
+        "concludes": "The video shows the oud player's chair empty from 23:12 to 23:19 while a recording plays, and the Mzee going through the curtain towards the store room. Twaha's lie covered for his grandfather's tired hands, and for his absence."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_amina_msg",
+          "f_amina_paid",
+          "f_contract"
+        ],
+        "concludes": "That evening Amina paid the Mzee his \"last fee\" and signed the band's bookings over to a DJ from 1 October."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_risha",
+          "f_risha_note"
+        ],
+        "concludes": "The broken feather plectrum under the stand is the kind only the Mzee uses. Mzee Abdulrahman Kibwana killed her because she was ending the band.",
+        "answers": [
+          "who",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_moha",
+        "blank": "who",
+        "by": [
+          "f_dj_live"
+        ],
+        "why": "DJ Moha was live on camera in the car park from 23:00 to 23:30."
+      },
+      {
+        "word": "w_mwanaisha",
+        "blank": "who",
+        "by": [
+          "f_video_mwanaisha"
+        ],
+        "why": "Mwanaisha sang centre stage throughout 23:08–23:24."
+      },
+      {
+        "word": "w_twaha",
+        "blank": "who",
+        "by": [
+          "f_video_twaha"
+        ],
+        "why": "Twaha's hands are on the keyboard throughout the video."
+      },
+      {
+        "word": "w_zainab",
+        "blank": "who",
+        "by": [
+          "f_video_zainab"
+        ],
+        "why": "Bi Zainab sat with the bride on the women's side throughout."
+      },
+      {
+        "word": "m_fee",
+        "blank": "why",
+        "by": [
+          "f_amina_paid"
+        ],
+        "why": "She paid him his fee at 23:05."
+      },
+      {
+        "word": "m_feud",
+        "blank": "why",
+        "by": [
+          "f_family"
+        ],
+        "why": "The families are related by marriage; there is no feud."
+      },
+      {
+        "word": "m_takings",
+        "blank": "why",
+        "by": [
+          "f_body_cash"
+        ],
+        "why": "The cash is still in the envelope in her hand."
+      },
+      {
+        "word": "m_manager",
+        "blank": "why",
+        "by": [
+          "f_mwanaisha_job",
+          "f_video_mwanaisha"
+        ],
+        "why": "That is Mwanaisha's ambition, and Mwanaisha was singing."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Amina signs a \"modern taarab package\" with a DJ: playback tracks and two young singers, cheaper than a live band. After tonight, Nyota ya Pwani has no more bookings.",
+        "image": null
+      },
+      {
+        "text": "23:05. She sends the Mzee his last fee, with a thank-you.",
+        "image": null
+      },
+      {
+        "text": "23:12. Twaha starts the recorded oud on his sampler, as he has for a year whenever his grandfather's hands tire. The Mzee leans his oud on the chair and goes through the curtain.",
+        "image": "loc_hall"
+      },
+      {
+        "text": "In the store room he pleads once more. She says no, kindly. The brass stand. His risha snaps in his fingers.",
+        "image": null
+      },
+      {
+        "text": "23:19. He is back in his chair with the oud on his knee. The bride is still dancing.",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_video",
+        "line": "Watch the second set. Listen to the oud, and look at who is playing it."
+      },
+      "tier2": {
+        "facts": [
+          "f_risha",
+          "f_risha_note"
+        ],
+        "line": "A feather plectrum under the stand. Ask the singer who still cuts his own."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_amina_phone",
+        "line": "Read what she sent the DJ at ten to ten."
+      },
+      "tier2": {
+        "facts": [
+          "f_amina_msg",
+          "f_contract"
+        ],
+        "line": "After today, the old men are finished."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "taarab",
+      "def": "Sung coastal poetry with an orchestra; Mombasa's wedding music."
+    },
+    {
+      "term": "udi",
+      "def": "Oud, a short-necked lute."
+    },
+    {
+      "term": "risha",
+      "def": "Plectrum for the oud; traditionally cut from a feather quill."
+    },
+    {
+      "term": "harusi",
+      "def": "Wedding."
+    },
+    {
+      "term": "babu",
+      "def": "Grandfather."
+    },
+    {
+      "term": "wazee",
+      "def": "Old men; elders."
+    },
+    {
+      "term": "mzee",
+      "def": "Respectful word for an older man."
+    },
+    {
+      "term": "bi",
+      "def": "Respectful title for a woman, like \"Mrs\"."
+    },
+    {
+      "term": "asante",
+      "def": "Thank you."
+    },
+    {
+      "term": "kanzu",
+      "def": "Long white robe worn by men."
+    },
+    {
+      "term": "kofia",
+      "def": "Embroidered cap, often worn by Muslim men."
+    },
+    {
+      "term": "dera",
+      "def": "A long, loose, light dress worn on the coast."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "videoAsEvidence"
+    ],
+    "beatNotes": "Video as evidence: scrubbed frame by frame with its timestamp. The audio waveform beside it shows the oud continuing while the chair is empty: picture and sound disagree, and that disagreement is the clue."
+  }
+}

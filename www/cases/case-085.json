@@ -1,0 +1,2672 @@
+{
+  "meta": {
+    "id": "case-085",
+    "number": 85,
+    "region": "westlands-karen-runda",
+    "regionNumber": 9,
+    "title": "The Guest List",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 46,
+    "date": "Sunday 13 September",
+    "folderTab": "RUNDA"
+  },
+  "pattern": {
+    "crimePattern": "two celebrities who owe a betting-app founder millions drown him together in his own pool at his party, after one switches off the pool camera from his phone",
+    "noRealCaseRetold": true,
+    "notes": "Fictional people, app (\"PataScore\") and estate. Teaches joint principals: two people held him under, so the WHO group has two unordered blanks; the woman who switched the camera off also held his wrists, so she is a principal, not an accomplice.",
+    "tags": [
+      "drowning",
+      "debt",
+      "joint-principals",
+      "camera-gap",
+      "three-liars",
+      "records",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where",
+      "absence"
+    ]
+  },
+  "difficulty": {
+    "suspects": 5,
+    "chainLength": 6,
+    "redHerrings": 3,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "absence"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic",
+      "cctv"
+    ],
+    "gatedActions": [
+      "records",
+      "records",
+      "warrant"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 30/13/09",
+    "date": "Sunday 13 September",
+    "time": "06:25",
+    "reportedBy": "Mzee Wilson Kombo, caretaker",
+    "text": "A caretaker reports the owner of a Runda house found dead in his swimming pool after a party: Faisal Hirsi (31), founder of the betting app PataScore.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_pool",
+    "nodes": [
+      "loc_pool",
+      "loc_party",
+      "loc_gate",
+      "loc_flat"
+    ],
+    "edges": [
+      {
+        "a": "loc_pool",
+        "b": "loc_party",
+        "minutes": 1,
+        "by": "foot"
+      },
+      {
+        "a": "loc_party",
+        "b": "loc_gate",
+        "minutes": 4,
+        "by": "road"
+      },
+      {
+        "a": "loc_pool",
+        "b": "loc_gate",
+        "minutes": 4,
+        "by": "road"
+      },
+      {
+        "a": "loc_gate",
+        "b": "loc_flat",
+        "minutes": 25,
+        "by": "road"
+      },
+      {
+        "a": "loc_party",
+        "b": "loc_flat",
+        "minutes": 25,
+        "by": "road"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_faisal",
+      "role": "victim",
+      "name": "Faisal Hirsi",
+      "age": 31,
+      "occupation": "Founder of the betting app PataScore; private lender",
+      "bio": "Lends large sums, at high interest, to people with famous names.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_deep",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Somali man, early 30s, a designer T-shirt and a gold watch, a cocky grin, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_allan",
+      "role": "suspect",
+      "name": "Allan Kiplagat",
+      "age": 33,
+      "occupation": "Rugby international",
+      "bio": "Big, easy, popular. Owes Faisal KSh 4.2 million in betting losses.",
+      "community": "Kalenjin",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_guests"
+      },
+      "at": "loc_party",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, early 30s, a broad rugby build, a grey rugby-club training top, an easy smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_michelle",
+      "role": "suspect",
+      "name": "Michelle Wanjala",
+      "age": 27,
+      "occupation": "Lifestyle influencer",
+      "bio": "Polished and careful. Owes Faisal KSh 2.8 million.",
+      "community": "Luhya",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_guests"
+      },
+      "at": "loc_flat",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luhya woman, late 20s, a sequinned dress, long pink acrylic nails with small diamanté, a poised face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kaps",
+      "role": "suspect",
+      "name": "Kapere \"DJ Kaps\" Omondi",
+      "age": 30,
+      "occupation": "DJ for the night",
+      "redHerring": true,
+      "bio": "Fought with Faisal at midnight over his fee.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_wilson"
+      },
+      "at": "loc_party",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, about 30, headphones round his neck and a cap, a defensive face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_hamza",
+      "role": "suspect",
+      "name": "Hamza Aden",
+      "age": 34,
+      "occupation": "Faisal's co-founder, forced out in July",
+      "redHerring": true,
+      "bio": "Not invited.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_wilson"
+      },
+      "at": "plc_parklands",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Somali man, mid 30s, a hoodie and glasses, a bitter, tired face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_sasha",
+      "role": "suspect",
+      "name": "Sasha Njoki",
+      "age": 29,
+      "occupation": "Faisal's ex-girlfriend",
+      "redHerring": true,
+      "bio": "Threw a drink at him at 23:00.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_guests"
+      },
+      "at": "plc_lavington",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, late 20s, a black dress and a leather jacket, a defiant face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_wilson",
+      "role": "witness",
+      "name": "Mzee Wilson Kombo",
+      "age": 61,
+      "occupation": "Caretaker; lives in the staff quarters",
+      "bio": "Has looked after the house for nine years.",
+      "community": "Mijikenda",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_quarters",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Mijikenda man, early 60s, a caretaker's overcoat, grey stubble, a careful, grieving face, ID-photo framing",
+        "ref": null
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_deep",
+      "name": "The deep end of the pool",
+      "within": "loc_pool"
+    },
+    {
+      "id": "plc_quarters",
+      "name": "The staff quarters"
+    },
+    {
+      "id": "plc_bathroom",
+      "name": "The bathroom",
+      "within": "loc_party"
+    },
+    {
+      "id": "plc_driveway",
+      "name": "The driveway"
+    },
+    {
+      "id": "plc_parklands",
+      "name": "Hamza's building, Parklands"
+    },
+    {
+      "id": "plc_lavington",
+      "name": "Sasha's flat, Lavington"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_pool",
+      "name": "Faisal's pool",
+      "kind": "scene",
+      "description": "A pool lit blue at night behind a glass-and-stone house, a deck with loungers, a camera on the wall. The filter basket at the shallow end.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The deep end",
+          "pos": [
+            50,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Faisal in the deep end. Wilson found him at six."
+        },
+        {
+          "id": "hs_wilson",
+          "label": "Mzee Wilson",
+          "pos": [
+            15,
+            70
+          ],
+          "yields": "ev_wilson",
+          "text": "Wilson, still in his overcoat."
+        },
+        {
+          "id": "hs_cam",
+          "label": "Camera storage",
+          "pos": [
+            85,
+            30
+          ],
+          "yields": "ev_cam_gap",
+          "text": "The pool-deck camera's recording."
+        },
+        {
+          "id": "hs_filter",
+          "label": "Filter basket",
+          "pos": [
+            30,
+            40
+          ],
+          "yields": "ev_filter",
+          "text": "The filter basket at the shallow end."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a Runda swimming pool at night lit blue, a deck with loungers, a security camera on the wall with its light off, no people in focus"
+      },
+      "expected": [
+        {
+          "id": "x_cam",
+          "text": "The pool camera records 24 hours a day; it has never had a gap",
+          "because": "f_wilson_cam",
+          "present": false,
+          "fact": "f_abs_cam"
+        },
+        {
+          "id": "x_photo",
+          "text": "Faisal in the party photos until the party ends",
+          "because": "f_guests",
+          "present": false,
+          "fact": "f_abs_photo"
+        },
+        {
+          "id": "x_deck",
+          "text": "Loungers and towels on the deck",
+          "because": "f_ob",
+          "present": true
+        }
+      ]
+    },
+    {
+      "id": "loc_party",
+      "name": "The party room",
+      "kind": "location",
+      "description": "A long room opening onto the pool deck: a bar, a DJ booth with its own camera, a bathroom off the corridor, a driveway camera over the front door.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_guests",
+          "label": "Three guests",
+          "pos": [
+            40,
+            50
+          ],
+          "yields": "ev_guests",
+          "text": "Three guests who stayed to help Wilson."
+        },
+        {
+          "id": "hs_list",
+          "label": "QR guest-list export",
+          "pos": [
+            60,
+            30
+          ],
+          "yields": "ev_guestlist",
+          "text": "The gate app's scan-in and scan-out list."
+        },
+        {
+          "id": "hs_dj",
+          "label": "DJ booth and driveway cameras",
+          "pos": [
+            80,
+            50
+          ],
+          "yields": "ev_dj",
+          "text": "The booth camera, and the driveway camera over the front door.",
+          "unlock": {
+            "fact": "f_kaps_decks"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a long party room in a Runda house the morning after, a DJ booth, a bar of empty glasses, sliding doors open to a pool deck"
+      },
+      "expected": [
+        {
+          "id": "x_dj",
+          "text": "The DJ at his decks all night, as he says",
+          "because": "f_kaps_decks",
+          "present": false,
+          "fact": "f_abs_dj"
+        }
+      ]
+    },
+    {
+      "id": "loc_gate",
+      "name": "The Runda estate gate",
+      "kind": "location",
+      "description": "A guarded estate gate with number-plate cameras on every lane.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_plates",
+          "label": "Number-plate log",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_hamza",
+          "text": "Saturday night's plates."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a gated-estate entrance in Runda at night, a guard booth, barrier arms, number-plate cameras"
+      },
+      "expected": [
+        {
+          "id": "x_hamza",
+          "text": "A car for every guest on the list, and anyone else who came",
+          "because": "f_guestlist",
+          "present": false,
+          "fact": "f_abs_hamza"
+        }
+      ]
+    },
+    {
+      "id": "loc_flat",
+      "name": "Michelle's flat, Kilimani",
+      "kind": "location",
+      "description": "A styled flat with a ring light and a dressing table of acrylic nail sets.",
+      "unlock": {
+        "fact": "f_loans"
+      },
+      "hotspots": [
+        {
+          "id": "hs_flat",
+          "label": "Her flat",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_flat",
+          "text": "Search under warrant."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "an influencer's flat in Kilimani, a ring light, a dressing table with boxes of acrylic nail sets, a laundry bag by the bathroom door"
+      },
+      "expected": [
+        {
+          "id": "x_set",
+          "text": "A full set of ten acrylics on the nails of a woman who \"lost one dancing\"",
+          "because": "f_mi_dance",
+          "present": false,
+          "fact": "f_abs_nail"
+        }
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Faisal in the deep end",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Drowned. Large finger bruises on both shoulders from behind; small crescent marks on both wrists."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the deep end of a blue-lit pool at dawn, a single shoe on the tiled edge, no body visible"
+      }
+    },
+    {
+      "id": "ev_wilson",
+      "type": "witness",
+      "title": "Statement: Mzee Wilson Kombo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_wilson"
+      },
+      "facts": [
+        "f_wilson",
+        "f_wilson_cam",
+        "f_pin",
+        "f_wilson_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_cam_gap",
+      "type": "cctv",
+      "title": "Pool-deck camera storage",
+      "render": "object",
+      "body": {
+        "label": "Recording stops at 01:52 and restarts at 02:31."
+      },
+      "facts": [
+        "f_camgap"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_filter",
+      "type": "physical",
+      "title": "The pool filter basket",
+      "render": "object",
+      "body": {
+        "phone": "Faisal's phone, drowned.",
+        "nail": "A pink acrylic nail tip with a small diamanté."
+      },
+      "facts": [
+        "f_phone",
+        "f_nail"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a pool filter basket holding a drowned phone and a single pink acrylic nail tip with a tiny diamanté"
+      }
+    },
+    {
+      "id": "ev_automation",
+      "type": "phone",
+      "title": "Records ①: house-automation server log",
+      "render": "manifest",
+      "body": {
+        "log": "01:52: \"Pool camera OFF\", from Faisal's phone. 02:31: \"Pool camera ON\": auto-restore, set by the app 39 minutes after any manual off."
+      },
+      "facts": [
+        "f_automation"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_body",
+          "f_abs_cam"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_guestlist",
+      "type": "document",
+      "title": "QR guest-list export",
+      "render": "logBook",
+      "body": {
+        "text": "Allan Kiplagat and Michelle Wanjala scanned out together at 02:45; one taxi. DJ Kaps out at 04:10. Sasha Njoki out at 00:15. Hamza Aden: not on the list."
+      },
+      "facts": [
+        "f_guestlist"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_guests",
+      "type": "witness",
+      "title": "Statements: three guests",
+      "render": "statement",
+      "body": {
+        "speaker": "p_wilson"
+      },
+      "facts": [
+        "f_guests",
+        "f_guests_wet",
+        "f_guests_gloves"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_dj",
+      "type": "cctv",
+      "title": "DJ booth and driveway cameras",
+      "render": "object",
+      "body": {
+        "label": "DJ Kaps left the decks 01:40–02:20 on a playlist; the driveway camera shows him at his car the whole time."
+      },
+      "facts": [
+        "f_djcam"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_hamza",
+      "type": "document",
+      "title": "Estate number-plate log",
+      "render": "logBook",
+      "body": {
+        "text": "Hamza Aden's car never entered the estate on Saturday night."
+      },
+      "facts": [
+        "f_hamza_plate"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_hamza_home",
+      "type": "witness",
+      "title": "Statement: Hamza's building guard",
+      "render": "statement",
+      "body": {
+        "speaker": "p_hamza"
+      },
+      "facts": [
+        "f_hamza_home"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_sasha",
+      "type": "document",
+      "title": "Sasha's taxi receipt",
+      "render": "form",
+      "body": {
+        "text": "Runda 00:15 to Lavington 00:45."
+      },
+      "facts": [
+        "f_sasha"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_loans",
+      "type": "phone",
+      "title": "Records ②: Faisal's PesaPap and lending ledger",
+      "render": "manifest",
+      "body": {
+        "loans": "Allan Kiplagat KSh 4.2 million; Michelle Wanjala KSh 2.8 million.",
+        "friday": "Friday to both: \"Monday, or on Tuesday the list goes up and my lawyers file.\""
+      },
+      "facts": [
+        "f_loans"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_guestlist",
+          "f_guests",
+          "f_nail"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_flat",
+      "type": "physical",
+      "title": "Michelle's flat",
+      "render": "object",
+      "body": {
+        "gloves": "The \"party gloves\".",
+        "shirt": "Allan's damp grey training top in a laundry bag in her bathroom."
+      },
+      "facts": [
+        "f_gloves",
+        "f_shirt"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_loans",
+          "f_nail",
+          "f_guests"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a pair of black satin party gloves on a dressing table, a damp grey rugby training top in a laundry bag"
+      }
+    },
+    {
+      "id": "ev_mi_nails",
+      "type": "physical",
+      "title": "Michelle's nails",
+      "render": "object",
+      "body": {
+        "label": "Photographed and sampled in detention: one acrylic missing from the right ring finger."
+      },
+      "facts": [
+        "f_mi_nails"
+      ],
+      "gate": null,
+      "detention": "p_michelle",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_drown",
+        "f_aut_grip",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_nailcmp",
+      "type": "forensic",
+      "title": "Lab: tool marks (nail tip vs her set)",
+      "render": "labReport",
+      "body": {
+        "test": "toolMarks"
+      },
+      "facts": [
+        "f_nailmatch"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toolMarks",
+        "hours": 8,
+        "needs": [
+          "ev_filter",
+          "ev_mi_nails"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_fibres",
+      "type": "forensic",
+      "title": "Lab: fibres (under Faisal's nails)",
+      "render": "labReport",
+      "body": {
+        "test": "fibres"
+      },
+      "facts": [
+        "f_fibres"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "fibres",
+        "hours": 12,
+        "needs": [
+          "ev_body",
+          "ev_flat"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_chlorine",
+      "type": "forensic",
+      "title": "Lab: trace (the training top)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_chlorine"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_flat"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Faisal Hirsi was found dead in his pool in Runda on Sunday morning after a party.",
+      "kind": "true",
+      "about": [
+        "p_faisal",
+        "loc_pool"
+      ],
+      "at": {
+        "from": "06:00",
+        "to": null,
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "Faisal drowned in the deep end. Large finger bruises on both shoulders from behind; small crescent marks on both wrists.",
+      "kind": "true",
+      "about": [
+        "p_faisal",
+        "plc_deep"
+      ]
+    },
+    {
+      "id": "f_wilson",
+      "text": "Wilson: at about two he heard a big splash and a shout, then the music turned up loud; at six he found Faisal. The DJ fought Faisal over his fee at midnight; Hamza, his old partner, wasn't invited.",
+      "kind": "true",
+      "about": [
+        "p_wilson",
+        "p_kaps",
+        "p_hamza"
+      ],
+      "at": {
+        "from": "02:00",
+        "to": null,
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_wilson_cam",
+      "text": "Wilson: the pool camera records 24 hours; in nine years it has never had a gap.",
+      "kind": "true",
+      "about": [
+        "loc_pool"
+      ]
+    },
+    {
+      "id": "f_pin",
+      "text": "Wilson: only Faisal's assistant and Michelle know his phone PIN; she used to unlock it for him.",
+      "kind": "true",
+      "about": [
+        "p_michelle"
+      ]
+    },
+    {
+      "id": "f_wilson_self",
+      "text": "Wilson was in his quarters all night; his door camera shows it closed.",
+      "kind": "true",
+      "about": [
+        "p_wilson"
+      ],
+      "where": {
+        "person": "p_wilson",
+        "place": "plc_quarters",
+        "from": "22:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_camgap",
+      "text": "The pool camera's recording stops at 01:52 and restarts at 02:31.",
+      "kind": "true",
+      "about": [
+        "loc_pool"
+      ],
+      "at": {
+        "from": "01:52",
+        "to": "02:31",
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_phone",
+      "text": "In the filter basket: Faisal's phone, drowned.",
+      "kind": "true",
+      "about": [
+        "p_faisal"
+      ]
+    },
+    {
+      "id": "f_nail",
+      "text": "In the filter basket: a pink acrylic nail tip with a small diamanté.",
+      "kind": "true",
+      "about": [
+        "loc_pool"
+      ]
+    },
+    {
+      "id": "f_automation",
+      "text": "Records ①: \"Pool camera OFF\" from Faisal's own phone at 01:52; \"ON\" at 02:31 was the app's automatic restore after 39 minutes.",
+      "kind": "true",
+      "about": [
+        "p_faisal"
+      ],
+      "at": {
+        "from": "01:52",
+        "to": null,
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_guestlist",
+      "text": "Guest list: Allan and Michelle scanned out together at 02:45, one taxi. DJ Kaps out at 04:10. Sasha out at 00:15. Hamza not on the list.",
+      "kind": "true",
+      "about": [
+        "p_allan",
+        "p_michelle"
+      ],
+      "at": {
+        "from": "02:45",
+        "to": null,
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_guests",
+      "text": "The guests: Allan and Michelle talked in a corner most of the night. Faisal is in no party photo after 02:00. Sasha threw a drink at him at 23:00 and left.",
+      "kind": "true",
+      "about": [
+        "p_allan",
+        "p_michelle",
+        "p_sasha"
+      ]
+    },
+    {
+      "id": "f_guests_wet",
+      "text": "A guest: \"Allan came back about quarter past two soaking wet, laughing, said he'd jumped in for a dare.\"",
+      "kind": "true",
+      "about": [
+        "p_allan"
+      ],
+      "at": {
+        "from": "02:15",
+        "to": null,
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_guests_gloves",
+      "text": "A guest: \"Michelle was in the bathroom a long time, then wore gloves for the rest of the night. Party gloves, she said.\"",
+      "kind": "true",
+      "about": [
+        "p_michelle"
+      ]
+    },
+    {
+      "id": "f_djcam",
+      "text": "Booth and driveway cameras: DJ Kaps left the decks 01:40–02:20 on a playlist and stood at his car in the driveway.",
+      "kind": "true",
+      "about": [
+        "p_kaps"
+      ],
+      "where": {
+        "person": "p_kaps",
+        "place": "plc_driveway",
+        "from": "01:40",
+        "to": "02:20"
+      }
+    },
+    {
+      "id": "f_hamza_plate",
+      "text": "Estate plate log: Hamza's car never entered Runda on Saturday night.",
+      "kind": "true",
+      "about": [
+        "p_hamza"
+      ]
+    },
+    {
+      "id": "f_hamza_home",
+      "text": "Hamza's building guard: he was home in Parklands all night.",
+      "kind": "true",
+      "about": [
+        "p_hamza"
+      ],
+      "where": {
+        "person": "p_hamza",
+        "place": "plc_parklands",
+        "from": "20:00",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_sasha",
+      "text": "Sasha's taxi: Runda 00:15, home in Lavington 00:45.",
+      "kind": "true",
+      "about": [
+        "p_sasha"
+      ],
+      "where": {
+        "person": "p_sasha",
+        "place": "plc_lavington",
+        "from": "00:45",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_loans",
+      "text": "Records ②: Allan owes Faisal KSh 4.2 million and Michelle KSh 2.8 million. Friday to both: \"Monday, or on Tuesday the list goes up and my lawyers file.\"",
+      "kind": "true",
+      "about": [
+        "p_allan",
+        "p_michelle"
+      ]
+    },
+    {
+      "id": "f_gloves",
+      "text": "In Michelle's flat: the \"party gloves\".",
+      "kind": "true",
+      "about": [
+        "p_michelle"
+      ]
+    },
+    {
+      "id": "f_shirt",
+      "text": "In Michelle's bathroom: Allan's damp grey rugby training top, in a laundry bag.",
+      "kind": "true",
+      "about": [
+        "p_allan",
+        "p_michelle"
+      ]
+    },
+    {
+      "id": "f_mi_nails",
+      "text": "Michelle's nails, in detention: one acrylic missing from the right ring finger.",
+      "kind": "true",
+      "about": [
+        "p_michelle"
+      ]
+    },
+    {
+      "id": "f_aut_drown",
+      "text": "Post-mortem: drowning, with a very high blood alcohol. No head injury, no burns, a healthy heart.",
+      "kind": "true",
+      "about": [
+        "p_faisal"
+      ]
+    },
+    {
+      "id": "f_aut_grip",
+      "text": "Post-mortem: two people held him: a large grip on the shoulders from behind, and smaller fingertip and nail marks on the wrists.",
+      "kind": "true",
+      "about": [
+        "p_faisal"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Sunday between 02:00 and 02:30.",
+      "kind": "true",
+      "about": [
+        "p_faisal"
+      ],
+      "at": {
+        "from": "02:00",
+        "to": "02:30",
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_nailmatch",
+      "text": "Lab: the nail tip from the filter is from Michelle's set, same diamanté.",
+      "kind": "true",
+      "about": [
+        "p_michelle"
+      ]
+    },
+    {
+      "id": "f_fibres",
+      "text": "Lab: under Faisal's fingernails, fibres from Allan's grey rugby training top.",
+      "kind": "true",
+      "about": [
+        "p_allan"
+      ]
+    },
+    {
+      "id": "f_chlorine",
+      "text": "Lab: the training top was soaked in pool water.",
+      "kind": "true",
+      "about": [
+        "p_allan"
+      ]
+    },
+    {
+      "id": "f_abs_cam",
+      "text": "Missing: the pool camera recorded nothing from 01:52 to 02:31.",
+      "kind": "true",
+      "about": [
+        "loc_pool"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_photo",
+      "text": "Missing: Faisal is not in any party photo after 02:00.",
+      "kind": "true",
+      "about": [
+        "p_faisal"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_hamza",
+      "text": "Missing: Hamza's car never entered the estate.",
+      "kind": "true",
+      "about": [
+        "p_hamza"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_nail",
+      "text": "Missing: there's one acrylic nail missing from Michelle's set.",
+      "kind": "true",
+      "about": [
+        "p_michelle"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_dj",
+      "text": "Missing: DJ Kaps wasn't at his decks for forty minutes.",
+      "kind": "true",
+      "about": [
+        "p_kaps"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_al_dare",
+      "text": "Allan: \"I jumped in at about ten past two for a dare. Faisal wasn't there. I never saw him by the pool.\"",
+      "kind": "lie",
+      "about": [
+        "p_allan"
+      ]
+    },
+    {
+      "id": "f_al_reveal",
+      "text": "Allan: \"He was going to put my name on a list on Tuesday. My contract has a morality clause. I'd lose everything.\" He won't speak about Michelle.",
+      "kind": "true",
+      "about": [
+        "p_allan"
+      ]
+    },
+    {
+      "id": "f_al_touch",
+      "text": "Allan: \"I never laid a hand on him.\"",
+      "kind": "lie",
+      "about": [
+        "p_allan"
+      ]
+    },
+    {
+      "id": "f_mi_house",
+      "text": "Michelle: \"I was in the house all night. I never went to the pool.\"",
+      "kind": "lie",
+      "about": [
+        "p_michelle"
+      ]
+    },
+    {
+      "id": "f_mi_dance",
+      "text": "Michelle: \"I lost the nail dancing.\"",
+      "kind": "lie",
+      "about": [
+        "p_michelle"
+      ]
+    },
+    {
+      "id": "f_mi_reveal",
+      "text": "Michelle: \"I switched the camera off. That's all I did.\" Then, shown the wrist marks: \"I held his hands. He was grabbing the edge.\"",
+      "kind": "true",
+      "about": [
+        "p_michelle",
+        "p_faisal"
+      ],
+      "where": {
+        "person": "p_michelle",
+        "place": "plc_deep",
+        "from": "02:00",
+        "to": "02:15"
+      }
+    },
+    {
+      "id": "f_mi_allan",
+      "text": "Michelle: Allan pushed Faisal into the deep end and held his shoulders under.",
+      "kind": "true",
+      "about": [
+        "p_allan",
+        "p_michelle"
+      ],
+      "where": {
+        "person": "p_allan",
+        "place": "plc_deep",
+        "from": "02:00",
+        "to": "02:15"
+      }
+    },
+    {
+      "id": "f_kaps_decks",
+      "text": "DJ Kaps: \"I never left the decks after midnight.\"",
+      "kind": "lie",
+      "about": [
+        "p_kaps"
+      ]
+    },
+    {
+      "id": "f_kaps_reveal",
+      "text": "DJ Kaps: \"I went to my car to cool off after the fee fight. I was gone forty minutes. I didn't want you thinking what you're thinking.\"",
+      "kind": "true",
+      "about": [
+        "p_kaps"
+      ]
+    },
+    {
+      "id": "f_ham_claim",
+      "text": "Hamza: \"He threw me out of my own company. I wasn't there.\"",
+      "kind": "claim",
+      "about": [
+        "p_hamza"
+      ]
+    },
+    {
+      "id": "f_sa_claim",
+      "text": "Sasha: \"I threw a drink at him and left.\"",
+      "kind": "claim",
+      "about": [
+        "p_sasha"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_allan",
+      "stance": "cooperative",
+      "intro": "Allan fills the doorway, easy and friendly. \"I jumped in at about ten past two for a dare. Faisal wasn't there. I never saw him by the pool.\"",
+      "claims": [
+        "f_al_dare"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_al_touch",
+          "after": "f_al_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_michelle",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_guests"
+      ],
+      "intro": "Michelle keeps her hands in her lap. \"I was in the house all night. I never went to the pool. I lost the nail dancing.\"",
+      "claims": [
+        "f_mi_house",
+        "f_mi_dance"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_kaps",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_wilson"
+      ],
+      "intro": "DJ Kaps coils a cable round his arm. \"I never left the decks after midnight.\"",
+      "claims": [
+        "f_kaps_decks"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_hamza",
+      "stance": "cooperative",
+      "intro": "Hamza meets you in a Parklands café. \"He threw me out of my own company. I wasn't there.\"",
+      "claims": [
+        "f_ham_claim"
+      ],
+      "yields": [
+        "ev_hamza_home"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_sasha",
+      "stance": "cooperative",
+      "intro": "Sasha answers from her balcony. \"I threw a drink at him and left.\"",
+      "claims": [
+        "f_sa_claim"
+      ],
+      "yields": [
+        "ev_sasha"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_wilson",
+      "stance": "cooperative",
+      "intro": "Mzee Wilson speaks slowly and is sure of every time.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_kaps",
+      "claim": "f_kaps_decks",
+      "brokenBy": [
+        "f_djcam"
+      ],
+      "reveals": [
+        "f_kaps_reveal"
+      ],
+      "reaction": "\"I went to my car to cool off after the fee fight. I was gone forty minutes. I didn't want you thinking what you're thinking.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_mi_house",
+      "claim": "f_mi_house",
+      "brokenBy": [
+        "f_nail",
+        "f_automation",
+        "f_pin"
+      ],
+      "reveals": [
+        "f_mi_reveal",
+        "f_mi_allan"
+      ],
+      "reaction": "\"I switched the camera off. That's all I did. I didn't think Allan…\" Then, shown the wrist marks: \"I held his hands. He was grabbing the edge.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_al",
+      "claim": "f_al_dare",
+      "brokenBy": [
+        "f_mi_allan",
+        "f_aut_grip",
+        "f_guests_wet"
+      ],
+      "reveals": [
+        "f_al_reveal"
+      ],
+      "reaction": "\"He was going to put my name on a list on Tuesday. My contract has a morality clause. I'd lose everything.\" He won't say a word about Michelle.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_mi_dance",
+      "claim": "f_mi_dance",
+      "brokenBy": [
+        "f_nailmatch"
+      ],
+      "reveals": [],
+      "reaction": "Michelle looks at her own hand on the table, at the bare ring finger, and closes it.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_al_touch",
+      "claim": "f_al_touch",
+      "brokenBy": [
+        "f_fibres"
+      ],
+      "reveals": [],
+      "reaction": "Allan stares at the photo of his own training top and puts his big hands flat on the table.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_allan",
+      "text": "Allan Kiplagat",
+      "category": "person",
+      "ref": "p_allan",
+      "unlock": {
+        "anyOf": [
+          "f_guests"
+        ]
+      }
+    },
+    {
+      "id": "w_michelle",
+      "text": "Michelle Wanjala",
+      "category": "person",
+      "ref": "p_michelle",
+      "unlock": {
+        "anyOf": [
+          "f_guests"
+        ]
+      }
+    },
+    {
+      "id": "w_kaps",
+      "text": "Kapere Omondi",
+      "category": "person",
+      "ref": "p_kaps",
+      "unlock": {
+        "anyOf": [
+          "f_wilson"
+        ]
+      }
+    },
+    {
+      "id": "w_hamza",
+      "text": "Hamza Aden",
+      "category": "person",
+      "ref": "p_hamza",
+      "unlock": {
+        "anyOf": [
+          "f_wilson"
+        ]
+      }
+    },
+    {
+      "id": "w_sasha",
+      "text": "Sasha Njoki",
+      "category": "person",
+      "ref": "p_sasha",
+      "unlock": {
+        "anyOf": [
+          "f_guests"
+        ]
+      }
+    },
+    {
+      "id": "w_wilson",
+      "text": "Wilson Kombo",
+      "category": "person",
+      "ref": "p_wilson",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_deep",
+      "text": "the deep end of the pool",
+      "category": "place",
+      "ref": "plc_deep",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "pl_party",
+      "text": "the party room",
+      "category": "place",
+      "ref": "loc_party",
+      "unlock": {
+        "anyOf": [
+          "f_guests"
+        ]
+      }
+    },
+    {
+      "id": "pl_driveway",
+      "text": "the driveway",
+      "category": "place",
+      "ref": "plc_driveway",
+      "unlock": {
+        "anyOf": [
+          "f_djcam"
+        ]
+      }
+    },
+    {
+      "id": "pl_bathroom",
+      "text": "the bathroom",
+      "category": "place",
+      "ref": "plc_bathroom",
+      "unlock": {
+        "anyOf": [
+          "f_guests_gloves"
+        ]
+      }
+    },
+    {
+      "id": "pl_gate",
+      "text": "the estate gate",
+      "category": "place",
+      "ref": "loc_gate",
+      "unlock": {
+        "anyOf": [
+          "f_guestlist"
+        ]
+      }
+    },
+    {
+      "id": "h_held",
+      "text": "holding him under in the deep end of his pool until he drowned",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_grip"
+        ]
+      }
+    },
+    {
+      "id": "h_alone",
+      "text": "drowning while drunk, alone",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_dive",
+      "text": "hitting his head diving",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack in the water",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_shock",
+      "text": "electrocution by the pool lights",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_debts",
+      "text": "to stop him exposing their debts to him and suing them",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_loans"
+        ]
+      }
+    },
+    {
+      "id": "m_fee",
+      "text": "a DJ's fee fight",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_wilson"
+        ]
+      }
+    },
+    {
+      "id": "m_cofounder",
+      "text": "a co-founder forced out",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_wilson"
+        ]
+      }
+    },
+    {
+      "id": "m_ex",
+      "text": "an ex-girlfriend's anger",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_guests"
+        ]
+      }
+    },
+    {
+      "id": "m_payout",
+      "text": "a betting win he refused to pay",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "a_cam",
+      "text": "the pool camera recorded nothing from 01:52 to 02:31",
+      "category": "absence",
+      "ref": "f_abs_cam",
+      "unlock": {
+        "anyOf": [
+          "f_abs_cam"
+        ]
+      }
+    },
+    {
+      "id": "a_photo",
+      "text": "Faisal is not in any party photo after 02:00",
+      "category": "absence",
+      "ref": "f_abs_photo",
+      "unlock": {
+        "anyOf": [
+          "f_abs_photo"
+        ]
+      }
+    },
+    {
+      "id": "a_hamza",
+      "text": "Hamza's car never entered the estate",
+      "category": "absence",
+      "ref": "f_abs_hamza",
+      "unlock": {
+        "anyOf": [
+          "f_abs_hamza"
+        ]
+      }
+    },
+    {
+      "id": "a_nail",
+      "text": "there's one acrylic nail missing from Michelle's set",
+      "category": "absence",
+      "ref": "f_abs_nail",
+      "unlock": {
+        "anyOf": [
+          "f_abs_nail"
+        ]
+      }
+    },
+    {
+      "id": "a_dj",
+      "text": "DJ Kaps wasn't at his decks for forty minutes",
+      "category": "absence",
+      "ref": "f_abs_dj",
+      "unlock": {
+        "anyOf": [
+          "f_abs_dj"
+        ]
+      }
+    },
+    {
+      "id": "k_phone",
+      "text": "someone with Faisal's phone switched the camera off before he died",
+      "category": "conclusion",
+      "by": [
+        "f_abs_cam",
+        "f_camgap",
+        "f_automation",
+        "f_wilson_cam"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_cam"
+        ]
+      }
+    },
+    {
+      "id": "k_broke",
+      "text": "the camera broke",
+      "category": "conclusion",
+      "by": [
+        "f_automation"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_cam"
+        ]
+      }
+    },
+    {
+      "id": "k_alone",
+      "text": "Faisal drowned alone after midnight",
+      "category": "conclusion",
+      "by": [
+        "f_aut_grip"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_cam"
+        ]
+      }
+    },
+    {
+      "id": "k_hamza",
+      "text": "Hamza killed him",
+      "category": "conclusion",
+      "by": [
+        "f_hamza_home"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_cam"
+        ]
+      }
+    },
+    {
+      "id": "k_dj",
+      "text": "the DJ switched the camera off",
+      "category": "conclusion",
+      "by": [
+        "f_djcam",
+        "f_automation"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_cam"
+        ]
+      }
+    },
+    {
+      "id": "k_nobody",
+      "text": "nobody was at the pool after 01:30",
+      "category": "conclusion",
+      "by": [
+        "f_guests_wet"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_cam"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who1} and {who2} killed {victim} by {how}, because {why}. That {missing} shows that {conclusion}.",
+    "fixed": {
+      "victim": "Faisal Hirsi"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_fri",
+                  "label": "Friday",
+                  "from": null,
+                  "to": null,
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_0152",
+                  "label": "Sunday 01:52",
+                  "from": "01:52",
+                  "to": "01:52",
+                  "day": "Sun"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Sunday 02:00–02:15",
+                  "from": "02:00",
+                  "to": "02:15",
+                  "day": "Sun"
+                },
+                {
+                  "id": "sl_0215",
+                  "label": "Sunday 02:15",
+                  "from": "02:15",
+                  "to": "02:15",
+                  "day": "Sun"
+                },
+                {
+                  "id": "sl_0245",
+                  "label": "Sunday 02:45",
+                  "from": "02:45",
+                  "to": "02:45",
+                  "day": "Sun"
+                },
+                {
+                  "id": "sl_0410",
+                  "label": "Sunday 04:10",
+                  "from": "04:10",
+                  "to": "04:10",
+                  "day": "Sun"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_ultimatum",
+                  "text": "Faisal's ultimatum",
+                  "slot": "sl_fri",
+                  "by": [
+                    "f_loans"
+                  ],
+                  "why": "His messages on Friday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_loans"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_camoff",
+                  "text": "The pool camera goes off",
+                  "slot": "sl_0152",
+                  "by": [
+                    "f_automation",
+                    "f_camgap"
+                  ],
+                  "why": "The server log: 01:52, from his own phone.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_automation"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_drown",
+                  "text": "Faisal is drowned",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod",
+                    "f_wilson",
+                    "f_mi_reveal"
+                  ],
+                  "why": "Wilson heard the splash at about two; Allan was back wet by quarter past.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_wet",
+                  "text": "Allan returns soaking wet",
+                  "slot": "sl_0215",
+                  "by": [
+                    "f_guests_wet"
+                  ],
+                  "why": "A guest: about quarter past two.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_guests_wet"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_leave",
+                  "text": "Allan and Michelle leave together",
+                  "slot": "sl_0245",
+                  "by": [
+                    "f_guestlist"
+                  ],
+                  "why": "The guest list: 02:45, one taxi.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_guestlist"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_0410",
+                  "by": [
+                    "f_aut_tod",
+                    "f_guestlist"
+                  ],
+                  "why": "04:10 is when the last guest, the DJ, scanned out. Faisal was dead by 02:30."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "An ultimatum on Friday, a camera off at 01:52, a splash at two, a wet rugby player at quarter past, and a taxi for two at 02:45.",
+          "fail": [
+            "04:10 is the DJ going home.",
+            "When did the camera go off, and from whose phone?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_deep"
+          }
+        ],
+        "prosecutor": {
+          "pass": "In the deep end, held under.",
+          "fail": [
+            "Michelle's gloves came out of the bathroom. Faisal didn't die there.",
+            "The DJ was in the driveway."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "unordered": true,
+        "blanks": [
+          {
+            "id": "who1",
+            "category": "person",
+            "answer": "w_allan",
+            "accept": [
+              "w_michelle"
+            ]
+          },
+          {
+            "id": "who2",
+            "category": "person",
+            "answer": "w_michelle",
+            "accept": [
+              "w_allan"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "Two grips: his on the shoulders, hers on the wrists. She switched the camera off and then she held his hands. That's not helping. That's killing.",
+          "fail": [
+            "\"Allan, helped by Michelle\" won't do. She held his wrists while he drowned.",
+            "The DJ was at his car in the driveway the whole time."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_held"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Held under by four hands until he stopped.",
+          "fail": [
+            "Drunk men drown alone. They don't get bruised from behind.",
+            "No head injury, no burns."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_debts"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Seven million shillings between them, and a list going up on Tuesday.",
+          "fail": [
+            "Hamza never came into the estate.",
+            "Sasha was home by quarter to one."
+          ]
+        }
+      },
+      {
+        "id": "g_absence",
+        "kind": "absence",
+        "blanks": [
+          {
+            "id": "missing",
+            "category": "absence",
+            "answer": "a_cam"
+          },
+          {
+            "id": "conclusion",
+            "category": "conclusion",
+            "answer": "k_phone"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Thirty-nine minutes of nothing, switched off from his own phone. Someone knew his PIN.",
+          "fail": [
+            "A missing nail tells me who was in the pool, not who switched the camera off.",
+            "The DJ's forty minutes are his alibi, not his guilt."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_deep",
+      "from": "02:00",
+      "to": "02:15",
+      "note": "From Wilson's splash at about two to Allan coming back soaking wet at quarter past; the post-mortem allows 02:00–02:30."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_body",
+          "f_aut_drown",
+          "f_aut_grip",
+          "f_aut_tod"
+        ],
+        "concludes": "He was held under by two people: a large pair of hands on his shoulders and a smaller pair, with nails, on his wrists.",
+        "answers": [
+          "how"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_wilson_cam",
+          "f_camgap",
+          "f_abs_cam",
+          "f_automation",
+          "f_pin"
+        ],
+        "concludes": "The camera was switched off from Faisal's own phone at 01:52 and restored automatically.",
+        "answers": [
+          "missing",
+          "conclusion"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_loans"
+        ],
+        "concludes": "Allan and Michelle owed him KSh 7 million between them and faced exposure on Tuesday.",
+        "answers": [
+          "why"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_guests",
+          "f_guests_wet",
+          "f_guestlist",
+          "f_al_dare",
+          "f_al_reveal",
+          "f_shirt",
+          "f_fibres",
+          "f_chlorine",
+          "f_al_touch"
+        ],
+        "concludes": "Allan was in the pool, and his top is under Faisal's nails."
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_wilson",
+          "f_nail",
+          "f_guests_gloves",
+          "f_gloves",
+          "f_mi_house",
+          "f_mi_reveal",
+          "f_mi_allan",
+          "f_mi_nails",
+          "f_mi_dance",
+          "f_nailmatch"
+        ],
+        "concludes": "Michelle switched the camera off and held his wrists; Allan held his shoulders.",
+        "answers": [
+          "when",
+          "where"
+        ]
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5"
+        ],
+        "concludes": "Allan Kiplagat and Michelle Wanjala together drowned Faisal in the deep end of his pool, to stop him exposing and suing them.",
+        "answers": [
+          "who1",
+          "who2"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_party",
+        "blank": "where",
+        "by": [
+          "f_body",
+          "f_guests_wet"
+        ],
+        "why": "He died in the pool; Allan came back to the party room wet."
+      },
+      {
+        "word": "pl_driveway",
+        "blank": "where",
+        "by": [
+          "f_djcam"
+        ],
+        "why": "The DJ stood in the driveway."
+      },
+      {
+        "word": "pl_bathroom",
+        "blank": "where",
+        "by": [
+          "f_guests_gloves"
+        ],
+        "why": "Michelle hid her hands in the bathroom afterwards."
+      },
+      {
+        "word": "pl_gate",
+        "blank": "where",
+        "by": [
+          "f_guestlist"
+        ],
+        "why": "Guests only scanned in and out at the gate."
+      },
+      {
+        "word": "w_kaps",
+        "blank": "who1",
+        "by": [
+          "f_djcam"
+        ],
+        "why": "DJ Kaps was at his car in the driveway 01:40–02:20, on a camera still running."
+      },
+      {
+        "word": "w_hamza",
+        "blank": "who1",
+        "by": [
+          "f_hamza_home",
+          "f_hamza_plate"
+        ],
+        "why": "Hamza never entered the estate; he was home in Parklands."
+      },
+      {
+        "word": "w_sasha",
+        "blank": "who1",
+        "by": [
+          "f_sasha"
+        ],
+        "why": "Sasha was home in Lavington by 00:45."
+      },
+      {
+        "word": "w_wilson",
+        "blank": "who1",
+        "by": [
+          "f_wilson_self"
+        ],
+        "why": "Wilson was in his quarters; his door camera shows it closed."
+      },
+      {
+        "word": "w_kaps",
+        "blank": "who2",
+        "by": [
+          "f_djcam"
+        ],
+        "why": "DJ Kaps was at his car in the driveway 01:40–02:20, on a camera still running."
+      },
+      {
+        "word": "w_hamza",
+        "blank": "who2",
+        "by": [
+          "f_hamza_home",
+          "f_hamza_plate"
+        ],
+        "why": "Hamza never entered the estate; he was home in Parklands."
+      },
+      {
+        "word": "w_sasha",
+        "blank": "who2",
+        "by": [
+          "f_sasha"
+        ],
+        "why": "Sasha was home in Lavington by 00:45."
+      },
+      {
+        "word": "w_wilson",
+        "blank": "who2",
+        "by": [
+          "f_wilson_self"
+        ],
+        "why": "Wilson was in his quarters; his door camera shows it closed."
+      },
+      {
+        "word": "h_alone",
+        "blank": "how",
+        "by": [
+          "f_aut_grip"
+        ],
+        "why": "Two grips."
+      },
+      {
+        "word": "h_dive",
+        "blank": "how",
+        "by": [
+          "f_aut_drown"
+        ],
+        "why": "No head injury."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_drown"
+        ],
+        "why": "A healthy heart; drowning."
+      },
+      {
+        "word": "h_shock",
+        "blank": "how",
+        "by": [
+          "f_aut_drown"
+        ],
+        "why": "No burns."
+      },
+      {
+        "word": "m_fee",
+        "blank": "why",
+        "by": [
+          "f_djcam"
+        ],
+        "why": "The DJ was in the driveway."
+      },
+      {
+        "word": "m_cofounder",
+        "blank": "why",
+        "by": [
+          "f_hamza_home"
+        ],
+        "why": "Hamza was in Parklands."
+      },
+      {
+        "word": "m_ex",
+        "blank": "why",
+        "by": [
+          "f_sasha"
+        ],
+        "why": "Sasha left at 00:15."
+      },
+      {
+        "word": "m_payout",
+        "blank": "why",
+        "by": [
+          "f_loans"
+        ],
+        "why": "The ledger shows loans, not a disputed win."
+      },
+      {
+        "word": "a_photo",
+        "blank": "missing",
+        "by": [
+          "f_abs_photo"
+        ],
+        "why": "It tells you when he went out, not how the camera stopped."
+      },
+      {
+        "word": "a_hamza",
+        "blank": "missing",
+        "by": [
+          "f_abs_hamza"
+        ],
+        "why": "It clears Hamza."
+      },
+      {
+        "word": "a_nail",
+        "blank": "missing",
+        "by": [
+          "f_abs_nail"
+        ],
+        "why": "It puts Michelle in the pool, but says nothing about the camera."
+      },
+      {
+        "word": "a_dj",
+        "blank": "missing",
+        "by": [
+          "f_abs_dj",
+          "f_djcam"
+        ],
+        "why": "The DJ's forty minutes are on another camera."
+      },
+      {
+        "word": "k_broke",
+        "blank": "conclusion",
+        "by": [
+          "f_automation"
+        ],
+        "why": "It was switched off by command."
+      },
+      {
+        "word": "k_alone",
+        "blank": "conclusion",
+        "by": [
+          "f_aut_grip"
+        ],
+        "why": "Two people held him."
+      },
+      {
+        "word": "k_hamza",
+        "blank": "conclusion",
+        "by": [
+          "f_hamza_home"
+        ],
+        "why": "Hamza wasn't there."
+      },
+      {
+        "word": "k_dj",
+        "blank": "conclusion",
+        "by": [
+          "f_djcam",
+          "f_pin"
+        ],
+        "why": "The command came from Faisal's phone; the DJ didn't have his PIN and was at his car."
+      },
+      {
+        "word": "k_nobody",
+        "blank": "conclusion",
+        "by": [
+          "f_guests_wet",
+          "f_wilson"
+        ],
+        "why": "A splash at two and a wet rugby player at quarter past."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "For years Faisal lends Allan money for betting losses and Michelle money for the life she is paid to show online. On Friday he messages both: pay by Monday, or on Tuesday the list goes up and his lawyers file.",
+        "image": null
+      },
+      {
+        "text": "At his party on Saturday night they talk in a corner and agree. At 01:52 Michelle, who knows his phone PIN, takes his phone from the bar and switches the pool camera off in his house app.",
+        "image": null
+      },
+      {
+        "text": "At about two Faisal, very drunk, goes to sit by the pool. Allan pushes him into the deep end and holds his shoulders under; Michelle holds his wrists to stop him grabbing the edge. She breaks a nail. She throws his phone in the pool.",
+        "image": "plc_deep"
+      },
+      {
+        "text": "Allan goes back to the party with wet hair, laughing that he jumped in for a dare. Michelle hides her hands in party gloves. At 02:31 the app restores the camera; at 02:45 they scan out together and leave in one taxi.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Three stamps, the maximum: the house-automation log, Faisal's loans, and a warrant on Michelle's flat. One detention at a time: Michelle first (her nails are sampled; the nail comparison takes 8 h), then Allan (the fibres and chlorine traces, 12 h each, were submitted with the flat search and are back by then).",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_pool",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_wilson",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_wilson"
+      },
+      {
+        "do": "read",
+        "target": "ev_cam_gap",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_filter",
+        "hours": 0
+      },
+      {
+        "do": "records",
+        "target": "ev_automation"
+      },
+      {
+        "do": "travel",
+        "target": "loc_party",
+        "hours": 0.25,
+        "from": "loc_pool"
+      },
+      {
+        "do": "visit",
+        "target": "loc_party",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_guestlist",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_guests",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_kaps"
+      },
+      {
+        "do": "read",
+        "target": "ev_dj",
+        "hours": 0
+      },
+      {
+        "do": "press",
+        "target": "c_kaps"
+      },
+      {
+        "do": "interview",
+        "target": "p_sasha"
+      },
+      {
+        "do": "interview",
+        "target": "p_hamza"
+      },
+      {
+        "do": "travel",
+        "target": "loc_gate",
+        "hours": 0.25,
+        "from": "loc_party"
+      },
+      {
+        "do": "visit",
+        "target": "loc_gate",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_hamza",
+        "hours": 0
+      },
+      {
+        "do": "records",
+        "target": "ev_loans"
+      },
+      {
+        "do": "travel",
+        "target": "loc_party",
+        "hours": 0.25,
+        "from": "loc_gate"
+      },
+      {
+        "do": "visit",
+        "target": "loc_party",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_allan"
+      },
+      {
+        "do": "interview",
+        "target": "p_michelle"
+      },
+      {
+        "do": "press",
+        "target": "c_mi_house"
+      },
+      {
+        "do": "press",
+        "target": "c_al"
+      },
+      {
+        "do": "travel",
+        "target": "loc_flat",
+        "hours": 0.5,
+        "from": "loc_party"
+      },
+      {
+        "do": "search",
+        "target": "loc_flat"
+      },
+      {
+        "do": "submit",
+        "target": "ev_fibres"
+      },
+      {
+        "do": "submit",
+        "target": "ev_chlorine"
+      },
+      {
+        "do": "detain",
+        "target": "p_michelle"
+      },
+      {
+        "do": "sample",
+        "target": "ev_mi_nails"
+      },
+      {
+        "do": "submit",
+        "target": "ev_nailcmp"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 8
+      },
+      {
+        "do": "press",
+        "target": "c_mi_dance"
+      },
+      {
+        "do": "release",
+        "target": "p_michelle"
+      },
+      {
+        "do": "detain",
+        "target": "p_allan"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 1
+      },
+      {
+        "do": "press",
+        "target": "c_al_touch"
+      }
+    ],
+    "totalHours": 45.25
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_automation",
+        "line": "Even a switched-off camera leaves a log, Amani."
+      },
+      "tier2": {
+        "facts": [
+          "f_automation",
+          "f_guests_wet"
+        ],
+        "line": "Off at 01:52. Allan back wet at quarter past two."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_body",
+        "line": "Where would two people need to stand to do this?"
+      },
+      "tier2": {
+        "facts": [
+          "f_body",
+          "f_aut_grip"
+        ],
+        "line": "At the edge of the deep end."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Count the hands on him. Then measure them."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_grip",
+          "f_fibres",
+          "f_nailmatch"
+        ],
+        "line": "A big grip with rugby-top fibres, and small hands with acrylic nails."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Dr. Chebii says drowning. Ask her about the bruises."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_grip"
+        ],
+        "line": "Held under by the shoulders and the wrists."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_loans",
+        "line": "A lender to famous people keeps a ledger."
+      },
+      "tier2": {
+        "facts": [
+          "f_loans"
+        ],
+        "line": "Seven million between them, due Monday."
+      }
+    },
+    "g_absence": {
+      "tier1": {
+        "point": "ev_cam_gap",
+        "line": "Wilson says the pool camera never stops. It stopped."
+      },
+      "tier2": {
+        "facts": [
+          "f_abs_cam",
+          "f_automation"
+        ],
+        "line": "01:52 to 02:31, switched off from his own phone."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "bwawa la kuogelea",
+      "def": "A swimming pool."
+    },
+    {
+      "term": "deni",
+      "def": "A debt."
+    },
+    {
+      "term": "sherehe",
+      "def": "A party."
+    },
+    {
+      "term": "kamera",
+      "def": "A camera."
+    },
+    {
+      "term": "mlinzi wa lango",
+      "def": "A gate guard."
+    },
+    {
+      "term": "pesa",
+      "def": "Money."
+    },
+    {
+      "term": "pesapap",
+      "def": "A fictional mobile-money service (\"pesa\" is money)."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "twoGrips"
+    ],
+    "beatNotes": "Two people in one act. The post-mortem diagram shows the body with grips colour-coded by hand size. The player drags suspect cards onto each grip. When both grips are filled, the WHO blank on the charge sheet splits into two."
+  }
+}

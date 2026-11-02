@@ -1,0 +1,3067 @@
+{
+  "meta": {
+    "id": "case-098",
+    "number": 98,
+    "region": "final-files",
+    "regionNumber": 10,
+    "title": "The Envelope Log",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 54,
+    "date": "Saturday 28 November",
+    "folderTab": "RIAT HILLS"
+  },
+  "pattern": {
+    "crimePattern": "a retired director strikes down the secretary of twenty-two years who is taking her envelope log to the prosecutor; his nephew burns the log and dumps the weapon, and the director forges her resignation",
+    "noRealCaseRetold": true,
+    "notes": "Fictional house, firm, staff and family; the Riat Hills and Dunga beach are settings only. Raphael Oduya is the killer here but not Kivuli: the log shows him receiving every envelope, first from \"4.12\" on the fourth floor (Records), then \"from Ukarimu, via M.\". Benson repeats a lie he was told after the fact: an unknowing helper, not an accomplice.",
+    "tags": [
+      "blunt-force",
+      "staged-fall",
+      "cover-up",
+      "accomplice",
+      "forgery",
+      "spine",
+      "lawyered",
+      "four-liars",
+      "records",
+      "warrant",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where"
+    ]
+  },
+  "difficulty": {
+    "suspects": 6,
+    "chainLength": 7,
+    "redHerrings": 2,
+    "liars": 4,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "accomplice",
+      "how",
+      "why",
+      "forgery",
+      "spine"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant",
+      "warrant"
+    ],
+    "twist": "the-man-everyone-took-for-the-desk-is-only-the-messenger"
+  },
+  "ob": {
+    "number": "OB 08/28/11",
+    "date": "Saturday 28 November",
+    "time": "07:20",
+    "reportedBy": "Mama Rosa Adhiambo, cook",
+    "text": "A cook reports a woman found dead at the foot of the terrace steps of a house in the Riat Hills above Kisumu: Mrs. Mbithe Kioko (58). The house belongs to Raphael Oduya, released on Thursday after his DCI interview.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_house",
+    "nodes": [
+      "loc_house",
+      "loc_dunga",
+      "loc_okoth"
+    ],
+    "edges": [
+      {
+        "a": "loc_house",
+        "b": "loc_dunga",
+        "minutes": 30,
+        "by": "car"
+      },
+      {
+        "a": "loc_house",
+        "b": "loc_okoth",
+        "minutes": 20,
+        "by": "car"
+      },
+      {
+        "a": "loc_dunga",
+        "b": "loc_okoth",
+        "minutes": 15,
+        "by": "car"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_mbithe",
+      "role": "victim",
+      "name": "Mrs. Mbithe Kioko",
+      "age": 58,
+      "occupation": "Raphael Oduya's personal secretary for 22 years",
+      "bio": "First at Lands House, then at his advisory firm. Keeps everything.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_terrace",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba woman, late 50s, reading glasses on a chain and a neat blouse, a precise, tired face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_oduya",
+      "role": "suspect",
+      "name": "Raphael Oduya",
+      "age": 63,
+      "occupation": "Former Director of Land Adjudication; one of the three fourth-floor names",
+      "bio": "Released on Thursday after his DCI interview.",
+      "community": "Luo",
+      "isCulprit": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_terrace",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, early 60s, a cardigan over a shirt, a heavy, silent face, ID-photo framing",
+        "ref": "reference"
+      }
+    },
+    {
+      "id": "p_okoth",
+      "role": "suspect",
+      "name": "Okoth Oduya",
+      "age": 35,
+      "occupation": "Oduya's nephew; a nominee director of the Msingi Trust (case 91)",
+      "bio": "Has done what his uncle says since he was twelve.",
+      "community": "Luo",
+      "isCulprit": false,
+      "accomplice": true,
+      "unlock": {
+        "fact": "f_rosa"
+      },
+      "at": "plc_kisumu",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, mid 30s, a smart casual shirt and car keys, a frightened face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_akinyi",
+      "role": "suspect",
+      "name": "Mrs. Akinyi Oduya",
+      "age": 60,
+      "occupation": "Oduya's wife",
+      "redHerring": true,
+      "bio": "Proud, upright, a church fellowship leader.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_fellowship",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo woman, about 60, an elegant headwrap and a church fellowship badge, a proud, defensive face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_benson",
+      "role": "suspect",
+      "name": "Benson Wekesa",
+      "age": 49,
+      "occupation": "House manager",
+      "bio": "Lives in the staff house.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unknowingHelper": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_staff",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luhya man, late 40s, a house manager's grey uniform, a guarded, uneasy face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mutua",
+      "role": "suspect",
+      "name": "Mutua Kioko",
+      "age": 34,
+      "occupation": "Mbithe's son",
+      "redHerring": true,
+      "bio": "Quarrelled with his mother over her house in Machakos.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_machakos",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba man, mid 30s, a work shirt, a grieving, angry face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_jared",
+      "role": "suspect",
+      "name": "Jared Omolo",
+      "age": 57,
+      "occupation": "Neighbour",
+      "bio": "A ten-year quarrel with Oduya over a shared road.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_rosa"
+      },
+      "at": "plc_jared",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, late 50s, a farmer's hat and a walking stick, a gruff face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_rosa",
+      "role": "witness",
+      "name": "Mama Rosa Adhiambo",
+      "age": 62,
+      "occupation": "The house's cook for fifteen years",
+      "bio": "Her dog sleeps by the kitchen door.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_kitchen",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo woman, early 60s, a cook's apron and headscarf, an honest, frightened face, ID-photo framing",
+        "ref": null
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_terrace",
+      "name": "The terrace of Oduya's house",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_steps",
+      "name": "The terrace steps",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_incin",
+      "name": "The garden incinerator",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_study",
+      "name": "The study",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_kitchen",
+      "name": "The kitchen",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_room",
+      "name": "Mbithe's room",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_staff",
+      "name": "The staff house"
+    },
+    {
+      "id": "plc_dunga",
+      "name": "Dunga beach",
+      "within": "loc_dunga"
+    },
+    {
+      "id": "plc_kisumu",
+      "name": "Kisumu town and the road up"
+    },
+    {
+      "id": "plc_fellowship",
+      "name": "The women's fellowship, Kisumu town"
+    },
+    {
+      "id": "plc_machakos",
+      "name": "Machakos"
+    },
+    {
+      "id": "plc_jared",
+      "name": "Jared's house"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_house",
+      "name": "Oduya's house, Riat Hills",
+      "kind": "scene",
+      "description": "A big house on a ridge above Lake Victoria: a sitting room full of carvings, a study with a safe, a stone terrace with steps down to the garden, an incinerator by the hedge, a staff house.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The foot of the steps",
+          "pos": [
+            50,
+            75
+          ],
+          "yields": "ev_body",
+          "text": "Where Mbithe lies."
+        },
+        {
+          "id": "hs_rosa",
+          "label": "Mama Rosa",
+          "pos": [
+            15,
+            50
+          ],
+          "yields": "ev_rosa",
+          "text": "In the kitchen."
+        },
+        {
+          "id": "hs_incin",
+          "label": "The incinerator",
+          "pos": [
+            85,
+            60
+          ],
+          "yields": "ev_incin",
+          "text": "Still warm."
+        },
+        {
+          "id": "hs_room",
+          "label": "Mbithe's room",
+          "pos": [
+            30,
+            30
+          ],
+          "yields": "ev_pension",
+          "text": "Her things, her HR folder."
+        },
+        {
+          "id": "hs_bag",
+          "label": "Mbithe's handbag",
+          "pos": [
+            35,
+            35
+          ],
+          "yields": "ev_log",
+          "text": "Under her coat.",
+          "unlock": {
+            "fact": "f_mutua_bag"
+          }
+        },
+        {
+          "id": "hs_counsel",
+          "label": "Senior Counsel's folder",
+          "pos": [
+            70,
+            25
+          ],
+          "yields": "ev_resignation",
+          "text": "A letter produced on Saturday morning."
+        },
+        {
+          "id": "hs_akinyi",
+          "label": "The fellowship leader's statement",
+          "pos": [
+            10,
+            15
+          ],
+          "yields": "ev_akinyi",
+          "text": "By phone."
+        },
+        {
+          "id": "hs_study",
+          "label": "The study",
+          "pos": [
+            60,
+            45
+          ],
+          "yields": "ev_study",
+          "text": "The desk and the laptop.",
+          "unlock": {
+            "fact": "f_sigmatch"
+          }
+        },
+        {
+          "id": "hs_jared",
+          "label": "The neighbour's gate guard",
+          "pos": [
+            92,
+            20
+          ],
+          "yields": "ev_jared",
+          "text": "The shared road."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a stone terrace above Lake Victoria at night, city lights below, a soapstone bird missing from a carved table, stone steps down to a dark garden, no people in focus"
+      }
+    },
+    {
+      "id": "loc_dunga",
+      "name": "Dunga beach, Lake Victoria",
+      "kind": "location",
+      "description": "Papyrus, fishing boats, shallow brown water.",
+      "unlock": {
+        "fact": "f_tracker"
+      },
+      "hotspots": [
+        {
+          "id": "hs_water",
+          "label": "The shallows",
+          "pos": [
+            50,
+            60
+          ],
+          "yields": "ev_dunga",
+          "text": "Police divers."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "Dunga beach on Lake Victoria at morning, fishing boats and papyrus, police divers in shallow water"
+      }
+    },
+    {
+      "id": "loc_okoth",
+      "name": "Okoth's house, Kisumu",
+      "kind": "location",
+      "description": "A town house; his car in the drive.",
+      "unlock": {
+        "fact": "f_tracker"
+      },
+      "hotspots": [
+        {
+          "id": "hs_car",
+          "label": "Okoth's car",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_car",
+          "text": "Search under warrant."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a saloon car in a Kisumu driveway, its boot open, a sooty mat and a folded towel inside"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Mbithe at the foot of the steps",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Fall injuries and one earlier blow to the side of the head. Drag marks on the lowest steps, a metre long, as if someone began to move her and stopped. On the terrace table, a soapstone bird is missing from a set of three."
+      },
+      "facts": [
+        "f_body",
+        "f_drag",
+        "f_set"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "stone garden steps at dawn with a metre of scuff marks on the lowest steps, no body visible"
+      }
+    },
+    {
+      "id": "ev_rosa",
+      "type": "witness",
+      "title": "Statement: Mama Rosa Adhiambo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_rosa"
+      },
+      "facts": [
+        "f_rosa",
+        "f_rosa_car",
+        "f_rosa_benson"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_incin",
+      "type": "physical",
+      "title": "The garden incinerator",
+      "render": "object",
+      "body": {
+        "label": "Charred hard-board and lined ledger paper; one scrap legible."
+      },
+      "facts": [
+        "f_scrap"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "ledger scrap"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a garden incinerator full of ash, a charred scrap of lined ledger paper with faint handwriting"
+      }
+    },
+    {
+      "id": "ev_pension",
+      "type": "document",
+      "title": "Mbithe's pension form (her copy)",
+      "render": "form",
+      "body": {
+        "text": "Signed last year."
+      },
+      "facts": [
+        "f_pension"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "pension form"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_log",
+      "type": "document",
+      "title": "Photocopies of the envelope log",
+      "render": "logBook",
+      "body": {
+        "text": "The last 60 pages, nine years, in Mbithe's hand: \"from Ukarimu, via M. — to Registry (J.E.)\", \"— to Kisumu (B.M.)\", \"— to Mlinzi Bora\"."
+      },
+      "facts": [
+        "f_log"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "envelope log"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "photocopied pages of a handwritten ledger of envelopes, columns of dates and initials"
+      }
+    },
+    {
+      "id": "ev_resignation",
+      "type": "document",
+      "title": "The \"resignation letter\"",
+      "render": "letter",
+      "body": {
+        "text": "Typed, \"from Mbithe Kioko\", dated last week: \"ill health and stress\". Signed."
+      },
+      "facts": [
+        "f_resign"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": false,
+        "forger": "p_oduya",
+        "kind": "resignation letter"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a typed resignation letter with a neat blue signature on a study desk"
+      }
+    },
+    {
+      "id": "ev_akinyi",
+      "type": "witness",
+      "title": "Statement: the fellowship leader",
+      "render": "statement",
+      "body": {
+        "speaker": "p_akinyi"
+      },
+      "facts": [
+        "f_akinyi"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_jared",
+      "type": "witness",
+      "title": "Statement: Jared's gate guard",
+      "render": "statement",
+      "body": {
+        "speaker": "p_jared"
+      },
+      "facts": [
+        "f_jared"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mutua",
+      "type": "witness",
+      "title": "Statement: Mutua Kioko, and his bus ticket",
+      "render": "statement",
+      "body": {
+        "speaker": "p_mutua"
+      },
+      "facts": [
+        "f_mutua",
+        "f_mutua_bag"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: two lines and Okoth's car tracker",
+      "render": "manifest",
+      "body": {
+        "call": "Fri 21:41, Oduya → Okoth, 2 min.",
+        "car": "Kisumu 21:50 → Riat Hills 22:10 → Dunga beach 23:20 → home 23:50."
+      },
+      "facts": [
+        "f_calls",
+        "f_tracker",
+        "f_okoth_town"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_rosa",
+          "f_scrap"
+        ]
+      },
+      "doc": {
+        "genuine": true,
+        "kind": "car tracker log"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_dunga",
+      "type": "physical",
+      "title": "The soapstone bird",
+      "render": "object",
+      "body": {
+        "label": "A crested soapstone bird, in shallow water; dark traces in its crevices."
+      },
+      "facts": [
+        "f_carving"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a carved soapstone bird lying in shallow lake water among pebbles"
+      }
+    },
+    {
+      "id": "ev_study",
+      "type": "physical",
+      "title": "Oduya's study and laptop",
+      "render": "object",
+      "body": {
+        "file": "The resignation letter's file: created Saturday 07:15.",
+        "scan": "On the desktop: a scan of Mbithe's pension-form signature."
+      },
+      "facts": [
+        "f_studyfile"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_tracker",
+          "f_sigmatch"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_car",
+      "type": "physical",
+      "title": "Okoth's car",
+      "render": "object",
+      "body": {
+        "boot": "Ash and soot on the boot mat.",
+        "towel": "A towel on the passenger seat with grey hairs."
+      },
+      "facts": [
+        "f_carash"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_tracker",
+          "f_carving"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_od_prints",
+      "type": "physical",
+      "title": "Fingerprints: Raphael Oduya",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention."
+      },
+      "facts": [
+        "f_od_printset"
+      ],
+      "gate": null,
+      "detention": "p_oduya",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Kisumu County)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_sigcomp",
+      "type": "forensic",
+      "title": "Comparison: the two signatures",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_sigmatch"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_resignation",
+          "ev_pension"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_blood",
+      "type": "forensic",
+      "title": "Lab: trace (the soapstone bird; the towel)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_blood"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_dunga",
+          "ev_car"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_letterprints",
+      "type": "forensic",
+      "title": "Lab: fingerprints (the resignation letter)",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_letterprints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_resignation",
+          "ev_od_prints"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_docexam",
+      "type": "forensic",
+      "title": "Lab: document examination (letter and ash)",
+      "render": "labReport",
+      "body": {
+        "test": "document"
+      },
+      "facts": [
+        "f_docexam"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "document",
+        "hours": 10,
+        "needs": [
+          "ev_resignation",
+          "ev_incin",
+          "ev_log"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Mrs. Mbithe Kioko was found dead at the foot of the terrace steps at Raphael Oduya's house on Saturday morning.",
+      "kind": "true",
+      "about": [
+        "p_mbithe",
+        "p_oduya",
+        "loc_house"
+      ],
+      "at": {
+        "from": "07:20",
+        "to": null,
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "Fall injuries, and one earlier blow to the side of her head.",
+      "kind": "true",
+      "about": [
+        "p_mbithe",
+        "plc_steps"
+      ]
+    },
+    {
+      "id": "f_drag",
+      "text": "Drag marks a metre long on the lowest steps, as if someone began to move her and stopped.",
+      "kind": "true",
+      "about": [
+        "plc_steps"
+      ]
+    },
+    {
+      "id": "f_set",
+      "text": "On the terrace table, a soapstone bird is missing from a set of three.",
+      "kind": "true",
+      "about": [
+        "plc_terrace"
+      ]
+    },
+    {
+      "id": "f_rosa",
+      "text": "Rosa: at half past nine on Friday she heard Mama Mbithe on the terrace, high: \"Monday, Raphael.\" Then a thud, and nothing.",
+      "kind": "true",
+      "about": [
+        "p_rosa",
+        "p_mbithe",
+        "p_oduya"
+      ],
+      "where": {
+        "person": "p_oduya",
+        "place": "plc_terrace",
+        "from": "21:30",
+        "to": "21:40"
+      },
+      "at": {
+        "from": "21:30",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_rosa_car",
+      "text": "Rosa: Okoth's car came up at ten past ten; her dog barked at someone on the steps and they went away. At eleven the incinerator was burning.",
+      "kind": "true",
+      "about": [
+        "p_rosa",
+        "p_okoth"
+      ],
+      "at": {
+        "from": "22:10",
+        "to": "23:00",
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_rosa_benson",
+      "text": "Rosa: Benson came out of the staff house at 22:15, when the car arrived, in his slippers.",
+      "kind": "true",
+      "about": [
+        "p_benson"
+      ],
+      "where": {
+        "person": "p_benson",
+        "place": "plc_staff",
+        "from": "21:00",
+        "to": "22:15"
+      }
+    },
+    {
+      "id": "f_scrap",
+      "text": "One scrap in the ash, in Mbithe's hand: \"…from 4.12 (Records) — to Registry (J.E.)…\"",
+      "kind": "true",
+      "about": [
+        "p_mbithe"
+      ],
+      "spine": "t_kivuli"
+    },
+    {
+      "id": "f_pension",
+      "text": "Mbithe's own copy of her pension form, signed last year.",
+      "kind": "true",
+      "about": [
+        "p_mbithe"
+      ]
+    },
+    {
+      "id": "f_log",
+      "text": "Photocopies in Mbithe's bag: nine years of envelopes \"from Ukarimu, via M.\" arriving at Oduya, and going on \"to Registry (J.E.)\", \"to Kisumu (B.M.)\", \"to Mlinzi Bora\".",
+      "kind": "true",
+      "about": [
+        "p_mbithe",
+        "p_oduya"
+      ],
+      "spine": "t_kivuli"
+    },
+    {
+      "id": "f_resign",
+      "text": "Produced by Oduya's counsel: a typed resignation letter \"from Mbithe Kioko\", dated last week, citing ill health and stress.",
+      "kind": "true",
+      "about": [
+        "p_oduya",
+        "p_mbithe"
+      ]
+    },
+    {
+      "id": "f_akinyi",
+      "text": "The fellowship leader: Akinyi was at an overnight women's fellowship in Kisumu town, 19:00 to 06:00.",
+      "kind": "true",
+      "about": [
+        "p_akinyi"
+      ],
+      "where": {
+        "person": "p_akinyi",
+        "place": "plc_fellowship",
+        "from": "19:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_jared",
+      "text": "Jared's gate guard: Jared was home all night; nothing crossed the shared road but one car, at ten past ten.",
+      "kind": "true",
+      "about": [
+        "p_jared"
+      ],
+      "where": {
+        "person": "p_jared",
+        "place": "plc_jared",
+        "from": "18:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_mutua",
+      "text": "Mutua's bus ticket and his employer: in Machakos all week.",
+      "kind": "true",
+      "about": [
+        "p_mutua"
+      ],
+      "where": {
+        "person": "p_mutua",
+        "place": "plc_machakos",
+        "from": "06:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_mutua_bag",
+      "text": "Mutua: \"Last month she told me, 'If anything happens to me, look in my handbag.'\"",
+      "kind": "true",
+      "about": [
+        "p_mutua",
+        "p_mbithe"
+      ]
+    },
+    {
+      "id": "f_calls",
+      "text": "Records: Friday 21:41, Oduya called Okoth for 2 minutes.",
+      "kind": "true",
+      "about": [
+        "p_oduya",
+        "p_okoth"
+      ],
+      "at": {
+        "from": "21:41",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_tracker",
+      "text": "Records: Okoth's car, Kisumu town 21:50, Riat Hills 22:10, Dunga beach 23:20, home 23:50.",
+      "kind": "true",
+      "about": [
+        "p_okoth"
+      ],
+      "at": {
+        "from": "21:50",
+        "to": "23:50",
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_okoth_town",
+      "text": "Records: before 21:50 Okoth's phone and car were in Kisumu town; he reached the house at 22:10.",
+      "kind": "true",
+      "about": [
+        "p_okoth"
+      ],
+      "where": {
+        "person": "p_okoth",
+        "place": "plc_kisumu",
+        "from": "21:00",
+        "to": "22:05"
+      }
+    },
+    {
+      "id": "f_carving",
+      "text": "At Dunga beach: the missing soapstone bird, in shallow water.",
+      "kind": "true",
+      "about": [
+        "loc_dunga"
+      ]
+    },
+    {
+      "id": "f_studyfile",
+      "text": "Oduya's laptop: the resignation letter's file was created on Saturday at 07:15; a scan of Mbithe's pension-form signature sits on the desktop.",
+      "kind": "true",
+      "about": [
+        "p_oduya"
+      ]
+    },
+    {
+      "id": "f_carash",
+      "text": "Okoth's car: ash on the boot mat; Mbithe's hair on the towel the bird was wrapped in.",
+      "kind": "true",
+      "about": [
+        "p_okoth",
+        "p_mbithe"
+      ]
+    },
+    {
+      "id": "f_od_printset",
+      "text": "Fingerprints taken from Oduya in detention.",
+      "kind": "true",
+      "about": [
+        "p_oduya"
+      ]
+    },
+    {
+      "id": "f_aut",
+      "text": "Post-mortem: a blow to the side of the head from a heavy, smooth, rounded stone, before the fall.",
+      "kind": "true",
+      "about": [
+        "p_mbithe"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Friday between 21:30 and 22:00.",
+      "kind": "true",
+      "about": [
+        "p_mbithe"
+      ],
+      "at": {
+        "from": "21:30",
+        "to": "22:00",
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_sigmatch",
+      "text": "Comparison: the resignation's signature is a pixel-for-pixel copy of the pension-form signature, down to a tiny ink blot. Real signatures always vary.",
+      "kind": "true",
+      "about": [
+        "p_mbithe"
+      ]
+    },
+    {
+      "id": "f_blood",
+      "text": "Lab: Mbithe's blood in the bird's crevices and on the towel in Okoth's car.",
+      "kind": "true",
+      "about": [
+        "p_mbithe",
+        "p_okoth"
+      ]
+    },
+    {
+      "id": "f_letterprints",
+      "text": "Lab: Oduya's prints on the resignation letter.",
+      "kind": "true",
+      "about": [
+        "p_oduya"
+      ]
+    },
+    {
+      "id": "f_docexam",
+      "text": "Document lab: the signature was pasted digitally; the burned paper is the same ledger stock as the photocopied pages.",
+      "kind": "true",
+      "about": [
+        "p_oduya",
+        "p_mbithe"
+      ]
+    },
+    {
+      "id": "f_od_wife",
+      "text": "Oduya: \"I was with my wife all evening.\"",
+      "kind": "lie",
+      "about": [
+        "p_oduya"
+      ]
+    },
+    {
+      "id": "f_od_resigned",
+      "text": "Oduya: \"Mrs. Kioko resigned last week. She had been unwell.\"",
+      "kind": "lie",
+      "about": [
+        "p_oduya"
+      ]
+    },
+    {
+      "id": "f_od_director",
+      "text": "Oduya: \"I never received instructions from anyone. I was a director. I gave them.\"",
+      "kind": "lie",
+      "about": [
+        "p_oduya"
+      ]
+    },
+    {
+      "id": "f_od_postman",
+      "text": "Oduya, after a long silence: \"I carried envelopes. Twelve years, from the fourth floor, then from the foundation. A postman with a pension. She typed it all.\" He won't say whose.",
+      "kind": "true",
+      "about": [
+        "p_oduya"
+      ],
+      "spine": "t_kivuli"
+    },
+    {
+      "id": "f_ok_town",
+      "text": "Okoth: \"I was in town all night. I didn't go to my uncle's.\"",
+      "kind": "lie",
+      "about": [
+        "p_okoth"
+      ]
+    },
+    {
+      "id": "f_ok_reveal",
+      "text": "Okoth: \"He called: 'Come now, bring nothing.' He said burn the book and take the bird to the lake. I tried to move her; the dog barked. I've done what he says since I was twelve.\"",
+      "kind": "true",
+      "about": [
+        "p_okoth",
+        "p_oduya"
+      ]
+    },
+    {
+      "id": "f_ak_with",
+      "text": "Akinyi: \"My husband was with me all evening.\"",
+      "kind": "lie",
+      "about": [
+        "p_akinyi"
+      ]
+    },
+    {
+      "id": "f_ak_reveal",
+      "text": "Akinyi: \"I was at fellowship. I said what a wife says. I didn't know what he'd done.\"",
+      "kind": "true",
+      "about": [
+        "p_akinyi"
+      ]
+    },
+    {
+      "id": "f_be_nocar",
+      "text": "Benson: \"No car left the compound on Friday night.\"",
+      "kind": "lie",
+      "about": [
+        "p_benson"
+      ]
+    },
+    {
+      "id": "f_be_reveal",
+      "text": "Benson: \"Okoth told me at midnight, 'No car came, no car left.' I said it. I didn't ask why.\"",
+      "kind": "true",
+      "about": [
+        "p_benson",
+        "p_okoth"
+      ]
+    },
+    {
+      "id": "f_mu_claim",
+      "text": "Mutua: \"We quarrelled about her house. I was in Machakos.\"",
+      "kind": "claim",
+      "about": [
+        "p_mutua"
+      ]
+    },
+    {
+      "id": "f_ja_claim",
+      "text": "Jared: \"Our road quarrel is ten years old. I was home.\"",
+      "kind": "claim",
+      "about": [
+        "p_jared"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_oduya",
+      "stance": "lawyered",
+      "lawyered": {
+        "advocate": "Senior Counsel Abel Kimathi",
+        "reopenedBy": [
+          "f_sigmatch"
+        ],
+        "line": "My client is a retired public servant of thirty years. No comment."
+      },
+      "intro": "Raphael Oduya sits very still beside Senior Counsel Abel Kimathi. Once reopened: \"I was with my wife all evening. Mrs. Kioko resigned last week; she had been unwell.\"",
+      "claims": [
+        "f_od_wife",
+        "f_od_resigned"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_od_director",
+          "after": "f_studyfile"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_okoth",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_rosa"
+      ],
+      "intro": "Okoth keeps turning his car keys over. \"I was in town all night. I didn't go to my uncle's.\"",
+      "claims": [
+        "f_ok_town"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_akinyi",
+      "stance": "cooperative",
+      "intro": "Mrs. Akinyi Oduya sits upright. \"My husband was with me all evening.\"",
+      "claims": [
+        "f_ak_with"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_benson",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_rosa"
+      ],
+      "intro": "Benson stands by the staff-house door. \"No car left the compound on Friday night.\"",
+      "claims": [
+        "f_be_nocar"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_mutua",
+      "stance": "cooperative",
+      "intro": "Mutua, by phone from Machakos, is angry and crying. \"We quarrelled about her house. I was in Machakos.\"",
+      "claims": [
+        "f_mu_claim"
+      ],
+      "yields": [
+        "ev_mutua"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_jared",
+      "stance": "cooperative",
+      "intro": "Jared leans on his stick at the gate. \"Our road quarrel is ten years old. I was home.\"",
+      "claims": [
+        "f_ja_claim"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_rosa",
+      "stance": "cooperative",
+      "intro": "Mama Rosa keeps her hand on her dog's head.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_akinyi",
+      "claim": "f_ak_with",
+      "brokenBy": [
+        "f_akinyi"
+      ],
+      "reveals": [
+        "f_ak_reveal"
+      ],
+      "reaction": "\"I was at fellowship. I said what a wife says. I didn't know what he'd done.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_benson",
+      "claim": "f_be_nocar",
+      "brokenBy": [
+        "f_tracker",
+        "f_rosa_car"
+      ],
+      "reveals": [
+        "f_be_reveal"
+      ],
+      "reaction": "\"Okoth told me at midnight: 'No car came, no car left.' I said it. I didn't ask why.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_okoth",
+      "claim": "f_ok_town",
+      "brokenBy": [
+        "f_tracker",
+        "f_carash"
+      ],
+      "reveals": [
+        "f_ok_reveal"
+      ],
+      "reaction": "\"He called and said, 'Come now, bring nothing.' He was standing on the terrace. He said burn the book and take the bird to the lake. I'm a director of a trust I've never seen the accounts of.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_od_wife",
+      "claim": "f_od_wife",
+      "brokenBy": [
+        "f_akinyi",
+        "f_rosa",
+        "f_calls"
+      ],
+      "reveals": [],
+      "reaction": "Senior Counsel Kimathi leans across and says something in his client's ear. Oduya says nothing.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_od_resign",
+      "claim": "f_od_resigned",
+      "brokenBy": [
+        "f_sigmatch",
+        "f_letterprints"
+      ],
+      "reveals": [],
+      "reaction": "Oduya looks at the two signatures side by side, and takes off his glasses.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_od_director",
+      "claim": "f_od_director",
+      "brokenBy": [
+        "f_log",
+        "f_scrap"
+      ],
+      "reveals": [
+        "f_od_postman"
+      ],
+      "reaction": "\"I carried envelopes. For twelve years I carried them, from the fourth floor, and then from the foundation. I was a postman with a pension. She typed it all.\" He will not say whose. Senior Counsel Kimathi ends the interview.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_oduya",
+      "text": "Raphael Oduya",
+      "category": "person",
+      "ref": "p_oduya",
+      "unlock": {
+        "anyOf": [
+          "f_rosa"
+        ]
+      }
+    },
+    {
+      "id": "w_okoth",
+      "text": "Okoth Oduya",
+      "category": "person",
+      "ref": "p_okoth",
+      "unlock": {
+        "anyOf": [
+          "f_rosa_car"
+        ]
+      }
+    },
+    {
+      "id": "w_akinyi",
+      "text": "Akinyi Oduya",
+      "category": "person",
+      "ref": "p_akinyi",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_benson",
+      "text": "Benson Wekesa",
+      "category": "person",
+      "ref": "p_benson",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_mutua",
+      "text": "Mutua Kioko",
+      "category": "person",
+      "ref": "p_mutua",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_jared",
+      "text": "Jared Omolo",
+      "category": "person",
+      "ref": "p_jared",
+      "unlock": {
+        "anyOf": [
+          "f_rosa"
+        ]
+      }
+    },
+    {
+      "id": "w_rosa",
+      "text": "Rosa Adhiambo",
+      "category": "person",
+      "ref": "p_rosa",
+      "unlock": {
+        "anyOf": [
+          "f_rosa"
+        ]
+      }
+    },
+    {
+      "id": "w_nobody",
+      "text": "nobody",
+      "category": "person",
+      "nobody": true,
+      "unlock": {
+        "start": true
+      }
+    },
+    {
+      "id": "r_burn",
+      "text": "burned the envelope log and disposed of the weapon",
+      "category": "role",
+      "by": [
+        "f_ok_reveal",
+        "f_tracker",
+        "f_carash",
+        "f_scrap"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_rosa_car"
+        ]
+      }
+    },
+    {
+      "id": "r_alibi",
+      "text": "gave a false alibi",
+      "category": "role",
+      "by": [
+        "f_ak_with"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_rosa_car"
+        ]
+      }
+    },
+    {
+      "id": "r_drove",
+      "text": "drove the killer",
+      "category": "role",
+      "by": [
+        "f_tracker"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_rosa_car"
+        ]
+      }
+    },
+    {
+      "id": "r_plant",
+      "text": "planted evidence",
+      "category": "role",
+      "by": [
+        "f_resign"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_rosa_car"
+        ]
+      }
+    },
+    {
+      "id": "r_lure",
+      "text": "lured the victim",
+      "category": "role",
+      "by": [
+        "f_ob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_rosa_car"
+        ]
+      }
+    },
+    {
+      "id": "pl_terrace",
+      "text": "the terrace of Oduya's house",
+      "category": "place",
+      "ref": "plc_terrace",
+      "unlock": {
+        "anyOf": [
+          "f_rosa"
+        ]
+      }
+    },
+    {
+      "id": "pl_steps",
+      "text": "the terrace steps",
+      "category": "place",
+      "ref": "plc_steps",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "pl_incin",
+      "text": "the garden incinerator",
+      "category": "place",
+      "ref": "plc_incin",
+      "unlock": {
+        "anyOf": [
+          "f_scrap"
+        ]
+      }
+    },
+    {
+      "id": "pl_dunga",
+      "text": "Dunga beach",
+      "category": "place",
+      "ref": "plc_dunga",
+      "unlock": {
+        "anyOf": [
+          "f_tracker"
+        ]
+      }
+    },
+    {
+      "id": "pl_study",
+      "text": "the study",
+      "category": "place",
+      "ref": "plc_study",
+      "unlock": {
+        "anyOf": [
+          "f_resign"
+        ]
+      }
+    },
+    {
+      "id": "h_carving",
+      "text": "striking her with a soapstone carving on the terrace, so that she fell down the steps",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut"
+        ]
+      }
+    },
+    {
+      "id": "h_fall",
+      "text": "a fall down the steps in the dark",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_stroke",
+      "text": "a stroke",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_stick",
+      "text": "a blow with a walking stick",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_wall",
+      "text": "a push off the terrace wall",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_log",
+      "text": "to stop her giving the envelope log to the prosecutor",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_rosa"
+        ]
+      }
+    },
+    {
+      "id": "m_house",
+      "text": "a son's quarrel over her house",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_mutua"
+        ]
+      }
+    },
+    {
+      "id": "m_road",
+      "text": "a neighbour's road dispute",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_jared"
+        ]
+      }
+    },
+    {
+      "id": "m_stress",
+      "text": "she resigned under stress",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_resign"
+        ]
+      }
+    },
+    {
+      "id": "m_robbery",
+      "text": "a robbery",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "d_resign",
+      "text": "Mbithe's \"resignation letter\"",
+      "category": "document",
+      "ref": "ev_resignation",
+      "unlock": {
+        "anyOf": [
+          "f_resign"
+        ]
+      }
+    },
+    {
+      "id": "d_log",
+      "text": "the envelope log",
+      "category": "document",
+      "ref": "ev_log",
+      "unlock": {
+        "anyOf": [
+          "f_log"
+        ]
+      }
+    },
+    {
+      "id": "d_pension",
+      "text": "her pension form",
+      "category": "document",
+      "ref": "ev_pension",
+      "unlock": {
+        "anyOf": [
+          "f_pension"
+        ]
+      }
+    },
+    {
+      "id": "d_tracker",
+      "text": "Okoth's car tracker log",
+      "category": "document",
+      "ref": "ev_records",
+      "unlock": {
+        "anyOf": [
+          "f_tracker"
+        ]
+      }
+    },
+    {
+      "id": "d_incin",
+      "text": "the scrap from the incinerator",
+      "category": "document",
+      "ref": "ev_incin",
+      "unlock": {
+        "anyOf": [
+          "f_scrap"
+        ]
+      }
+    },
+    {
+      "id": "t_pixel",
+      "text": "its signature is a pixel-for-pixel copy of the one on her pension form",
+      "category": "tell",
+      "by": [
+        "f_sigmatch",
+        "f_docexam"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_sigmatch"
+        ]
+      }
+    },
+    {
+      "id": "t_letterhead",
+      "text": "a letterhead replaced years ago",
+      "category": "tell",
+      "by": [
+        "f_resign"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_resign"
+        ]
+      }
+    },
+    {
+      "id": "t_typed",
+      "text": "typing over a pre-signed blank",
+      "category": "tell",
+      "by": [
+        "f_resign"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_resign"
+        ]
+      }
+    },
+    {
+      "id": "t_id",
+      "text": "the ID number belongs to someone else",
+      "category": "tell",
+      "by": [
+        "f_resign"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_resign"
+        ]
+      }
+    },
+    {
+      "id": "t_retired",
+      "text": "a retired stamp",
+      "category": "tell",
+      "by": [
+        "f_resign"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_resign"
+        ]
+      }
+    },
+    {
+      "id": "t_coma",
+      "text": "a date when the signer was in a coma",
+      "category": "tell",
+      "by": [
+        "f_resign"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_resign"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_diary",
+      "text": "The \"Lands House, 4th floor (Records)\" call in Supt. Koech's diary (case 95)",
+      "category": "pin",
+      "pin": "case-095:f_diary_entry",
+      "unlock": {
+        "anyOf": [
+          "f_scrap"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_book",
+      "text": "The black book's first entry, \"For: 4th Floor, Lands House — Records\" (case 92)",
+      "category": "pin",
+      "pin": "case-092:f_book_first",
+      "unlock": {
+        "anyOf": [
+          "f_scrap"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_oduya",
+      "text": "Raphael Oduya himself, the man in the car (case 94)",
+      "category": "pin",
+      "pin": "case-094:f_fu_reveal",
+      "unlock": {
+        "anyOf": [
+          "f_scrap"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_till",
+      "text": "The Mvua till (case 10)",
+      "category": "pin",
+      "pin": "case-010:f_order_mvua",
+      "unlock": {
+        "anyOf": [
+          "f_scrap"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_mlinzi",
+      "text": "Mlinzi Bora Security (case 90)",
+      "category": "pin",
+      "pin": "case-090:f_till2m",
+      "unlock": {
+        "anyOf": [
+          "f_scrap"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. The killer was helped by {accomplice}, who {role}. {document} was forged, as shown by {tell}. Mbithe's log shows the envelopes reaching Oduya's desk came first from the fourth-floor Records office named in {pin}.",
+    "fixed": {
+      "victim": "Mbithe Kioko"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_thu",
+                  "label": "Thursday",
+                  "from": null,
+                  "to": null,
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_fripm",
+                  "label": "Friday afternoon",
+                  "from": null,
+                  "to": null,
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Friday 21:30–22:00",
+                  "from": "21:30",
+                  "to": "22:00",
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_2210",
+                  "label": "Friday 22:10",
+                  "from": "22:10",
+                  "to": "22:10",
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_2300",
+                  "label": "Friday 23:00",
+                  "from": "23:00",
+                  "to": "23:00",
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_0715",
+                  "label": "Saturday 07:15",
+                  "from": "07:15",
+                  "to": "07:15",
+                  "day": "Sat"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_monday",
+                  "text": "Mbithe tells Oduya \"Monday\"",
+                  "slot": "sl_fripm",
+                  "by": [
+                    "f_rosa",
+                    "f_od_postman"
+                  ],
+                  "why": "Friday afternoon she gave him notice; at half past nine she said it again.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rosa"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_strike",
+                  "text": "Mbithe is struck on the terrace",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_rosa",
+                    "f_aut_tod"
+                  ],
+                  "why": "Half past nine, a thud.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_arrive",
+                  "text": "Okoth arrives",
+                  "slot": "sl_2210",
+                  "by": [
+                    "f_tracker",
+                    "f_rosa_car"
+                  ],
+                  "why": "Ten past ten.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_tracker"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_burn",
+                  "text": "The log burns",
+                  "slot": "sl_2300",
+                  "by": [
+                    "f_rosa_car",
+                    "f_scrap"
+                  ],
+                  "why": "Eleven.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rosa_car"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_forge",
+                  "text": "Oduya makes the resignation letter",
+                  "slot": "sl_0715",
+                  "by": [
+                    "f_studyfile"
+                  ],
+                  "why": "Saturday 07:15.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_studyfile"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_thu",
+                  "by": [
+                    "f_ob"
+                  ],
+                  "why": "Thursday he was released from the DCI; nothing on this strip happened then."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "Notice in the afternoon, the thud at half past nine, Okoth at ten past ten, the fire at eleven, and a \"resignation\" over breakfast.",
+          "fail": [
+            "The letter was written on Saturday morning, after she was dead.",
+            "When did Rosa hear the thud?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_terrace"
+          }
+        ],
+        "prosecutor": {
+          "pass": "On the terrace, where the bird stood on the table.",
+          "fail": [
+            "She was struck before she fell down the steps.",
+            "The incinerator is where the log went."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_oduya",
+            "pool": [
+              "w_oduya",
+              "w_okoth",
+              "w_akinyi",
+              "w_benson",
+              "w_mutua",
+              "w_jared",
+              "w_rosa"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "\"Monday, Raphael.\" Then the thud, then the call to his nephew, then a letter with her signature pasted in.",
+          "fail": [
+            "Okoth came at ten past ten.",
+            "Akinyi was at fellowship all night."
+          ]
+        }
+      },
+      {
+        "id": "g_accomplice",
+        "kind": "accomplice",
+        "blanks": [
+          {
+            "id": "accomplice",
+            "category": "person",
+            "answer": "w_okoth",
+            "pool": [
+              "w_okoth",
+              "w_akinyi",
+              "w_benson",
+              "w_mutua",
+              "w_jared",
+              "w_nobody"
+            ]
+          },
+          {
+            "id": "role",
+            "category": "role",
+            "answer": "r_burn"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Okoth burned the book and took the bird to the lake.",
+          "fail": [
+            "Benson repeated a lie after the fact, not knowing why.",
+            "Akinyi lied, but she wasn't there and helped nothing."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_carving"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Smooth, rounded stone, before the fall. The soapstone bird.",
+          "fail": [
+            "A fall doesn't explain the earlier blow.",
+            "She's at the foot of the steps, not under the wall."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_log"
+          }
+        ],
+        "prosecutor": {
+          "pass": "\"I typed your life for twenty-two years. I won't go to prison for it.\"",
+          "fail": [
+            "She never resigned: the letter was made on Saturday.",
+            "Her bag and its photocopies were untouched."
+          ]
+        }
+      },
+      {
+        "id": "g_forgery",
+        "kind": "forgery",
+        "blanks": [
+          {
+            "id": "document",
+            "category": "document",
+            "answer": "d_resign"
+          },
+          {
+            "id": "tell",
+            "category": "tell",
+            "answer": "t_pixel"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Real signatures vary. This one is a copy down to the ink blot.",
+          "fail": [
+            "The log is real; that's why they burned it.",
+            "No letterhead, no stamp."
+          ]
+        }
+      },
+      {
+        "id": "g_spine",
+        "kind": "spine",
+        "blanks": [
+          {
+            "id": "pin",
+            "category": "pin",
+            "answer": "w_pin_diary",
+            "accept": [
+              "w_pin_book"
+            ],
+            "spine": true
+          }
+        ],
+        "prosecutor": {
+          "pass": "\"From 4.12 (Records).\" The fourth floor, again. Oduya only ever received them.",
+          "fail": [
+            "The log shows Oduya receiving each envelope before sending it on.",
+            "The till is money, not envelopes."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_terrace",
+      "from": "21:30",
+      "to": "22:00",
+      "note": "Rosa heard the thud at about 21:30; the post-mortem agrees."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_rosa",
+          "f_body",
+          "f_set",
+          "f_aut",
+          "f_aut_tod",
+          "f_drag"
+        ],
+        "concludes": "Mbithe was struck on the terrace after telling Oduya \"Monday\", before she fell.",
+        "answers": [
+          "where",
+          "how"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_resign",
+          "f_pension",
+          "f_sigmatch",
+          "f_studyfile",
+          "f_od_resigned",
+          "f_letterprints",
+          "f_docexam"
+        ],
+        "concludes": "The \"resignation\" was forged on Saturday morning from her pension signature.",
+        "answers": [
+          "document",
+          "tell"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_calls",
+          "f_tracker",
+          "f_rosa_car",
+          "f_carving",
+          "f_carash",
+          "f_blood",
+          "f_ok_town",
+          "f_ok_reveal"
+        ],
+        "concludes": "Okoth came at Oduya's call, burned the log and threw the bird in the lake.",
+        "answers": [
+          "accomplice",
+          "role",
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_scrap",
+          "f_log",
+          "f_mutua_bag",
+          "f_od_director",
+          "f_od_postman",
+          "case-095:f_diary_entry",
+          "case-092:f_book_first"
+        ],
+        "concludes": "The log records envelopes arriving at Oduya from \"4.12 (Records)\" and then from Ukarimu.",
+        "answers": [
+          "pin",
+          "why"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_akinyi",
+          "f_ak_with",
+          "f_ak_reveal"
+        ],
+        "concludes": "His wife was at fellowship all night."
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_be_nocar",
+          "f_be_reveal",
+          "f_rosa_benson"
+        ],
+        "concludes": "Benson's \"no car\" was Okoth's lie, repeated."
+      },
+      {
+        "id": "s7",
+        "from": [
+          "s6",
+          "f_od_wife"
+        ],
+        "concludes": "Raphael Oduya struck Mbithe with the soapstone bird to keep the log from the prosecutor.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_steps",
+        "blank": "where",
+        "by": [
+          "f_aut",
+          "f_rosa"
+        ],
+        "why": "She was struck on the terrace and fell down them."
+      },
+      {
+        "word": "pl_incin",
+        "blank": "where",
+        "by": [
+          "f_scrap",
+          "f_rosa_car"
+        ],
+        "why": "Where the log burned, an hour later."
+      },
+      {
+        "word": "pl_dunga",
+        "blank": "where",
+        "by": [
+          "f_tracker"
+        ],
+        "why": "Where the bird went."
+      },
+      {
+        "word": "pl_study",
+        "blank": "where",
+        "by": [
+          "f_studyfile"
+        ],
+        "why": "Where the letter was made the next morning."
+      },
+      {
+        "word": "w_okoth",
+        "blank": "who",
+        "by": [
+          "f_okoth_town",
+          "f_rosa_car"
+        ],
+        "why": "In town until 21:50; at the house at 22:10, after the thud."
+      },
+      {
+        "word": "w_akinyi",
+        "blank": "who",
+        "by": [
+          "f_akinyi"
+        ],
+        "why": "At fellowship."
+      },
+      {
+        "word": "w_benson",
+        "blank": "who",
+        "by": [
+          "f_rosa_benson"
+        ],
+        "why": "In the staff house until the car came."
+      },
+      {
+        "word": "w_mutua",
+        "blank": "who",
+        "by": [
+          "f_mutua"
+        ],
+        "why": "In Machakos."
+      },
+      {
+        "word": "w_jared",
+        "blank": "who",
+        "by": [
+          "f_jared"
+        ],
+        "why": "At home."
+      },
+      {
+        "word": "w_rosa",
+        "blank": "who",
+        "by": [
+          "f_rosa",
+          "f_aut"
+        ],
+        "why": "She heard it from the kitchen."
+      },
+      {
+        "word": "w_akinyi",
+        "blank": "accomplice",
+        "by": [
+          "f_akinyi",
+          "f_ak_reveal"
+        ],
+        "why": "She lied, but she wasn't there and helped nothing."
+      },
+      {
+        "word": "w_benson",
+        "blank": "accomplice",
+        "by": [
+          "f_be_reveal",
+          "f_rosa_benson"
+        ],
+        "why": "He repeated a lie he was told after the fact, not knowing why."
+      },
+      {
+        "word": "w_mutua",
+        "blank": "accomplice",
+        "by": [
+          "f_mutua"
+        ],
+        "why": "In Machakos."
+      },
+      {
+        "word": "w_jared",
+        "blank": "accomplice",
+        "by": [
+          "f_jared"
+        ],
+        "why": "At home."
+      },
+      {
+        "word": "w_nobody",
+        "blank": "accomplice",
+        "by": [
+          "f_ok_reveal",
+          "f_tracker"
+        ],
+        "why": "Someone burned the log and drove the bird to the lake."
+      },
+      {
+        "word": "r_alibi",
+        "blank": "role",
+        "by": [
+          "f_ok_reveal"
+        ],
+        "why": "Okoth's lie was for himself; his part was the fire and the lake."
+      },
+      {
+        "word": "r_drove",
+        "blank": "role",
+        "by": [
+          "f_rosa",
+          "f_tracker"
+        ],
+        "why": "Oduya was already there; Okoth drove the weapon away, not the killer."
+      },
+      {
+        "word": "r_plant",
+        "blank": "role",
+        "by": [
+          "f_studyfile"
+        ],
+        "why": "Oduya made the letter himself."
+      },
+      {
+        "word": "r_lure",
+        "blank": "role",
+        "by": [
+          "f_rosa"
+        ],
+        "why": "Mbithe lived there when he was in Kisumu."
+      },
+      {
+        "word": "h_fall",
+        "blank": "how",
+        "by": [
+          "f_aut",
+          "f_drag"
+        ],
+        "why": "An earlier blow, and drag marks."
+      },
+      {
+        "word": "h_stroke",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "A blow."
+      },
+      {
+        "word": "h_stick",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "Smooth, rounded stone."
+      },
+      {
+        "word": "h_wall",
+        "blank": "how",
+        "by": [
+          "f_body",
+          "f_aut"
+        ],
+        "why": "She lies at the foot of the steps."
+      },
+      {
+        "word": "m_house",
+        "blank": "why",
+        "by": [
+          "f_mutua"
+        ],
+        "why": "Mutua was in Machakos."
+      },
+      {
+        "word": "m_road",
+        "blank": "why",
+        "by": [
+          "f_jared"
+        ],
+        "why": "Jared was at home."
+      },
+      {
+        "word": "m_stress",
+        "blank": "why",
+        "by": [
+          "f_sigmatch",
+          "f_studyfile"
+        ],
+        "why": "The letter was forged after she died."
+      },
+      {
+        "word": "m_robbery",
+        "blank": "why",
+        "by": [
+          "f_log"
+        ],
+        "why": "Her bag and its contents were untouched."
+      },
+      {
+        "word": "d_log",
+        "blank": "document",
+        "by": [
+          "f_docexam"
+        ],
+        "why": "Real: the same ledger stock as the ash."
+      },
+      {
+        "word": "d_pension",
+        "blank": "document",
+        "by": [
+          "f_pension"
+        ],
+        "why": "Genuine; it's what was copied."
+      },
+      {
+        "word": "d_tracker",
+        "blank": "document",
+        "by": [
+          "f_tracker"
+        ],
+        "why": "A genuine log."
+      },
+      {
+        "word": "d_incin",
+        "blank": "document",
+        "by": [
+          "f_docexam"
+        ],
+        "why": "Real ledger paper, burned."
+      },
+      {
+        "word": "t_letterhead",
+        "blank": "tell",
+        "by": [
+          "f_resign"
+        ],
+        "why": "Plain paper."
+      },
+      {
+        "word": "t_typed",
+        "blank": "tell",
+        "by": [
+          "f_docexam"
+        ],
+        "why": "The signature was pasted, not pre-signed."
+      },
+      {
+        "word": "t_id",
+        "blank": "tell",
+        "by": [
+          "f_resign"
+        ],
+        "why": "No ID number."
+      },
+      {
+        "word": "t_retired",
+        "blank": "tell",
+        "by": [
+          "f_resign"
+        ],
+        "why": "No stamp."
+      },
+      {
+        "word": "t_coma",
+        "blank": "tell",
+        "by": [
+          "f_resign"
+        ],
+        "why": "Dated a week before she died, while she was at work."
+      },
+      {
+        "word": "w_pin_oduya",
+        "blank": "pin",
+        "by": [
+          "case-094:f_fu_reveal",
+          "f_log"
+        ],
+        "why": "The log records him receiving each envelope before sending it on."
+      },
+      {
+        "word": "w_pin_till",
+        "blank": "pin",
+        "by": [
+          "case-010:f_order_mvua",
+          "f_scrap"
+        ],
+        "why": "Money, not envelopes."
+      },
+      {
+        "word": "w_pin_mlinzi",
+        "blank": "pin",
+        "by": [
+          "case-090:f_till2m",
+          "f_log"
+        ],
+        "why": "Mlinzi Bora received envelopes; it didn't send them."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "For twenty-two years Mbithe logs every sealed envelope: twelve years ago they come from \"4.12\", an extension on the fourth floor; for nine years \"from Ukarimu, via M.\". They go on to the registry, to a garage in Kisumu, to Mlinzi Bora.",
+        "image": null
+      },
+      {
+        "text": "After Pius's statement, on Friday afternoon, she tells Oduya she'll take the log to the prosecutor on Monday: \"I typed your life for twenty-two years, Raphael.\"",
+        "image": null
+      },
+      {
+        "text": "At half past nine on the terrace he begs her; she refuses; he strikes her with a soapstone bird from the table and she falls down the steps. At 21:41 he calls Okoth.",
+        "image": "plc_terrace"
+      },
+      {
+        "text": "Okoth burns the log's cover and forty pages, drives the bird to Dunga beach, and tries to move her until the dog barks. On Saturday at 07:15 Oduya types her \"resignation\".",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "Raphael Oduya is charged with Mbithe's murder and, on Pius's and Fundi's statements, as an accessory to the murder of Joseph Mwenda.",
+      "files": [
+        {
+          "thread": "t_kivuli",
+          "text": "Raphael Oduya eliminated as Kivuli: the messenger. His secretary's log records him receiving every envelope from \"4.12 (Records)\", then \"from Ukarimu, via M.\"."
+        },
+        {
+          "thread": "t_joseph",
+          "text": "Raphael Oduya charged as an accessory to the murder of Joseph Mwenda."
+        }
+      ]
+    },
+    {
+      "beat": "Mutua brings Amani the last thing in his mother's handbag, under the photocopies: \"4.12 was Mrs. Kabiru's office. I took her envelopes up and down for three years. She always said 'Thank you, Mbithe.' She was always polite.\""
+    },
+    {
+      "beat": "Mwalimu, on the phone: \"Office 4.12. The corner office by the window. I told you I knew the corridor.\" Notebook: \"One name left. 'Tell her it's done.' 'Thank you, Mbithe.'\""
+    }
+  ],
+  "clockPlan": {
+    "note": "Three stamps (the maximum): records on the two lines and the tracker, a warrant on the study and one on Okoth's car. Oduya is reopened by the pasted signature. Detain him after the study warrant; prints (6 h), document (10 h) and blood (12 h) inside 24 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_house",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_rosa",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_rosa"
+      },
+      {
+        "do": "read",
+        "target": "ev_incin",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_pension",
+        "hours": 0.5
+      },
+      {
+        "do": "read",
+        "target": "ev_resignation",
+        "hours": 0.5
+      },
+      {
+        "do": "interview",
+        "target": "p_mutua"
+      },
+      {
+        "do": "read",
+        "target": "ev_mutua",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_log",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_akinyi",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_akinyi"
+      },
+      {
+        "do": "press",
+        "target": "c_akinyi"
+      },
+      {
+        "do": "read",
+        "target": "ev_jared",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_jared"
+      },
+      {
+        "do": "submit",
+        "target": "ev_sigcomp"
+      },
+      {
+        "do": "interview",
+        "target": "p_oduya"
+      },
+      {
+        "do": "press",
+        "target": "c_od_wife"
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "interview",
+        "target": "p_benson"
+      },
+      {
+        "do": "press",
+        "target": "c_benson"
+      },
+      {
+        "do": "travel",
+        "target": "loc_dunga",
+        "hours": 0.5,
+        "from": "loc_house"
+      },
+      {
+        "do": "visit",
+        "target": "loc_dunga",
+        "hours": 3
+      },
+      {
+        "do": "read",
+        "target": "ev_dunga",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_okoth",
+        "hours": 0.25,
+        "from": "loc_dunga"
+      },
+      {
+        "do": "search",
+        "target": "loc_okoth"
+      },
+      {
+        "do": "read",
+        "target": "ev_car",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_okoth"
+      },
+      {
+        "do": "press",
+        "target": "c_okoth"
+      },
+      {
+        "do": "travel",
+        "target": "loc_house",
+        "hours": 0.5,
+        "from": "loc_okoth"
+      },
+      {
+        "do": "search",
+        "target": "loc_house"
+      },
+      {
+        "do": "read",
+        "target": "ev_study",
+        "hours": 0
+      },
+      {
+        "do": "detain",
+        "target": "p_oduya"
+      },
+      {
+        "do": "sample",
+        "target": "ev_od_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_letterprints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_docexam"
+      },
+      {
+        "do": "submit",
+        "target": "ev_blood"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 12
+      },
+      {
+        "do": "press",
+        "target": "c_od_resign"
+      },
+      {
+        "do": "press",
+        "target": "c_od_director"
+      }
+    ],
+    "totalHours": 50.25
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_rosa",
+        "line": "When did Rosa hear the thud, and the car?"
+      },
+      "tier2": {
+        "facts": [
+          "f_rosa",
+          "f_rosa_car"
+        ],
+        "line": "Half past nine; ten past ten."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_body",
+        "line": "What's missing from the terrace table?"
+      },
+      "tier2": {
+        "facts": [
+          "f_set",
+          "f_aut"
+        ],
+        "line": "A stone bird. The blow came before the fall."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_rosa",
+        "line": "\"Monday, Raphael.\""
+      },
+      "tier2": {
+        "facts": [
+          "f_rosa",
+          "f_calls"
+        ],
+        "line": "And then he called his nephew."
+      }
+    },
+    "g_accomplice": {
+      "tier1": {
+        "point": "ev_records",
+        "line": "Whose car went to the lake?"
+      },
+      "tier2": {
+        "facts": [
+          "f_tracker",
+          "f_ok_reveal"
+        ],
+        "line": "Okoth burned the book and took the bird."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Smooth, rounded stone, before the fall."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut",
+          "f_carving"
+        ],
+        "line": "The soapstone bird."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_log",
+        "line": "Read the photocopies in her bag."
+      },
+      "tier2": {
+        "facts": [
+          "f_log",
+          "f_rosa"
+        ],
+        "line": "She was taking the log to the prosecutor."
+      }
+    },
+    "g_forgery": {
+      "tier1": {
+        "point": "ev_sigcomp",
+        "line": "Put the two signatures side by side."
+      },
+      "tier2": {
+        "facts": [
+          "f_sigmatch"
+        ],
+        "line": "Identical. Real signatures vary."
+      }
+    },
+    "g_spine": {
+      "tier1": {
+        "point": "ev_incin",
+        "line": "Read the scrap from the ash."
+      },
+      "tier2": {
+        "facts": [
+          "f_scrap"
+        ],
+        "line": "\"From 4.12 (Records)\": the fourth floor in Supt. Koech's diary."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "bahasha",
+      "def": "An envelope."
+    },
+    {
+      "term": "kitabu cha kumbukumbu",
+      "def": "A log book."
+    },
+    {
+      "term": "sanamu ya jiwe",
+      "def": "A stone carving."
+    },
+    {
+      "term": "mpwa",
+      "def": "A nephew or niece."
+    },
+    {
+      "term": "katibu",
+      "def": "A secretary."
+    },
+    {
+      "term": "Ukarimu",
+      "def": "\"Generosity\"; the name of a foundation."
+    },
+    {
+      "term": "mlinzi",
+      "def": "A guard."
+    },
+    {
+      "term": "Mlinzi Bora",
+      "def": "\"Good Guard\": a security company paid by Mvua (case 90)."
+    },
+    {
+      "term": "Mvua",
+      "def": "Mvua Holdings, the shell company behind the forged titles (\"mvua\" means rain)."
+    },
+    {
+      "term": "mama",
+      "def": "A respectful way to address or refer to an older woman."
+    },
+    {
+      "term": "Fundi",
+      "def": "\"Craftsman\" or \"mechanic\"; Benedict Mbuvi's nickname."
+    }
+  ],
+  "ui": {
+    "beats": [],
+    "beatNotes": "No new mechanics."
+  }
+}

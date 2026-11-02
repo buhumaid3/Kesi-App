@@ -1,0 +1,2436 @@
+{
+  "meta": {
+    "id": "case-063",
+    "number": 63,
+    "region": "mt-kenya",
+    "regionNumber": 7,
+    "title": "Cherry",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 36,
+    "date": "Thursday 16 April",
+    "folderTab": "KIAMA FACTORY"
+  },
+  "pattern": {
+    "crimePattern": "a cash-now buyer of co-op payouts drowns the factory manager who found his forged transfer slips, and takes the slips file",
+    "noRealCaseRetold": true,
+    "notes": "Fictional factory, co-operative and people. The drowning is never shown; the tank is shown empty, with footprints. Forgery flaws only, never method.",
+    "tags": [
+      "drowning",
+      "fraud-exposure",
+      "document-fraud",
+      "two-liars",
+      "records",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where",
+      "forgery",
+      "spine-background"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 5,
+    "redHerrings": 2,
+    "liars": 2,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "forgery"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 22/16/04",
+    "date": "Thursday 16 April",
+    "time": "06:10",
+    "reportedBy": "Night-shift worker, Kiama Coffee Factory, Mukurwe-ini",
+    "text": "A shift worker arriving at Kiama Coffee Factory reports the factory manager, Mutwiri Kinoti (38), found in fermentation tank 3 at 05:50. Suspected drowning after a fall.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_factory",
+    "nodes": [
+      "loc_factory",
+      "loc_coop",
+      "loc_stall"
+    ],
+    "edges": [
+      {
+        "a": "loc_factory",
+        "b": "loc_coop",
+        "minutes": 15,
+        "by": "road"
+      },
+      {
+        "a": "loc_factory",
+        "b": "loc_stall",
+        "minutes": 5,
+        "by": "road"
+      },
+      {
+        "a": "loc_stall",
+        "b": "loc_coop",
+        "minutes": 15,
+        "by": "road"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_mutwiri",
+      "role": "victim",
+      "name": "Mutwiri Kinoti",
+      "age": 38,
+      "occupation": "Manager, Kiama Coffee Factory",
+      "bio": "Checks every scale, every slip, every tank. The farmers trust his weights.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_tank3",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Meru man, late 30s, a factory dust coat over a jumper, a clipboard under his arm, an honest, tired face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kaberia",
+      "role": "suspect",
+      "name": "Kaberia Gikunda",
+      "age": 34,
+      "occupation": "\"Cash-now\" buyer at the trading centre",
+      "bio": "Pays farmers today for their co-op payout, at sixty shillings in the hundred.",
+      "community": "Meru",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_faith"
+      },
+      "at": "loc_stall",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Meru man, mid 30s, a smart shirt and polished leather shoes, a gold chain, a smooth salesman's smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_muthomi",
+      "role": "suspect",
+      "name": "Muthomi Kaburu",
+      "age": 47,
+      "occupation": "Night watchman, Kiama Coffee Factory",
+      "bio": "Fifteen years on the gate. Afraid for his job.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_hut",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Meru man, late 40s, a heavy greatcoat, a woolly hat and a torch, red-rimmed, frightened eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kathenya",
+      "role": "suspect",
+      "name": "Mzee Kathenya Murungi",
+      "age": 68,
+      "occupation": "Coffee farmer",
+      "redHerring": true,
+      "bio": "Shouted at Mutwiri on Saturday that the factory scale was crooked.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_kath_shout"
+      },
+      "at": "plc_wake",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Meru man, late 60s, a tweed jacket over a sweater, a walking stick, a furious, proud face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_rose",
+      "role": "suspect",
+      "name": "Rose Kendi",
+      "age": 51,
+      "occupation": "Chair, Kiama Farmers' Co-operative Society",
+      "redHerring": true,
+      "bio": "Mutwiri queried her expense claims in March.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_rose_query"
+      },
+      "at": "plc_nyerihotel",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Meru woman, early 50s, a co-operative-society blazer, a careful hairdo, a guarded, composed face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_faith",
+      "role": "witness",
+      "name": "Faith Wanjiru",
+      "age": 29,
+      "occupation": "The factory's clerk",
+      "bio": "Made photocopies of six slips for Mutwiri on Monday, without asking why.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_office",
+      "image": null
+    },
+    {
+      "id": "p_wangui",
+      "role": "witness",
+      "name": "Wangui Kamau",
+      "age": 57,
+      "occupation": "Farmer; one of three named on the slips",
+      "statementOnly": true,
+      "bio": "Came to the co-op office with two neighbours as soon as she heard.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_coop",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_tank3",
+      "name": "Fermentation tank 3",
+      "within": "loc_factory"
+    },
+    {
+      "id": "plc_office",
+      "name": "The factory office",
+      "within": "loc_factory"
+    },
+    {
+      "id": "plc_tables",
+      "name": "The drying tables",
+      "within": "loc_factory"
+    },
+    {
+      "id": "plc_pulping",
+      "name": "The pulping house",
+      "within": "loc_factory"
+    },
+    {
+      "id": "plc_hut",
+      "name": "The guard hut at the gate",
+      "within": "loc_factory"
+    },
+    {
+      "id": "plc_wake",
+      "name": "A funeral wake in Kathenya's village"
+    },
+    {
+      "id": "plc_nyerihotel",
+      "name": "A Nyeri hotel"
+    },
+    {
+      "id": "plc_faithhome",
+      "name": "Faith's home, Mukurwe-ini town"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_factory",
+      "name": "Kiama Coffee Factory",
+      "kind": "scene",
+      "description": "A co-operative wet mill on the hills: a weighbridge shed, the pulping house, long concrete fermentation tanks under one bulb, and raised drying tables beyond. A guard hut at the gate.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_tank",
+          "label": "Tank 3",
+          "pos": [
+            46,
+            56
+          ],
+          "yields": "ev_tank",
+          "text": "Tank 3, thick with fermenting coffee. Where they found him."
+        },
+        {
+          "id": "hs_mud",
+          "label": "Tank edge",
+          "pos": [
+            52,
+            66
+          ],
+          "yields": "ev_mud",
+          "text": "Footprints in spilled mucilage along the tank's edge."
+        },
+        {
+          "id": "hs_shelf",
+          "label": "Office shelf",
+          "pos": [
+            24,
+            30
+          ],
+          "yields": "ev_gap",
+          "text": "A dust outline on the office shelf where a file stood."
+        },
+        {
+          "id": "hs_safe",
+          "label": "Office safe",
+          "pos": [
+            30,
+            40
+          ],
+          "yields": "ev_safe",
+          "text": "The factory safe."
+        },
+        {
+          "id": "hs_payout",
+          "label": "Payout list",
+          "pos": [
+            36,
+            34
+          ],
+          "yields": "ev_payout",
+          "text": "This quarter's payout list, ticked in pencil."
+        },
+        {
+          "id": "hs_gate",
+          "label": "Guard hut",
+          "pos": [
+            80,
+            70
+          ],
+          "yields": "ev_gatebook",
+          "text": "The gate book on its shelf. A thermos and a blanket."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a coffee wet mill at night on a Nyeri hillside, long concrete fermentation tanks under one bare bulb, raised drying tables beyond in the dark, a small guard hut at the gate, no people in focus"
+      }
+    },
+    {
+      "id": "loc_coop",
+      "name": "Co-operative society office, Mukurwe-ini",
+      "kind": "location",
+      "description": "A busy office with a payout counter and a rubber stamp on a chain.",
+      "unlock": {
+        "fact": "f_faith"
+      },
+      "hotspots": [
+        {
+          "id": "hs_genuine",
+          "label": "The counter",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_genuine_slip",
+          "text": "A genuine transfer slip from the counter tray, stamped with the real rubber stamp."
+        },
+        {
+          "id": "hs_farmers",
+          "label": "Three farmers",
+          "pos": [
+            70,
+            60
+          ],
+          "yields": "ev_farmers",
+          "text": "Three farmers waiting with their member cards."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a co-operative society office in a small Kenyan town, a payout counter, a rubber stamp on a chain, farmers waiting on a bench"
+      }
+    },
+    {
+      "id": "loc_stall",
+      "name": "Kaberia's stall, trading centre",
+      "kind": "location",
+      "description": "A painted kiosk: \"CASH NOW — COFFEE PAYOUTS\". Sacks stacked at the back. Kaberia unlocks it for you: \"Look all you like.\"",
+      "unlock": {
+        "fact": "f_rec_kab"
+      },
+      "hotspots": [
+        {
+          "id": "hs_sacks",
+          "label": "Behind the sacks",
+          "pos": [
+            70,
+            60
+          ],
+          "yields": "ev_stall",
+          "text": "Under a sack at the back."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small painted kiosk at a rural trading centre, a sign CASH NOW, sacks stacked at the back, a pair of polished shoes under a stool"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_tank",
+      "type": "physical",
+      "title": "Fermentation tank 3",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. He was found face down in the fermenting coffee."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a long concrete fermentation tank full of pale fermenting coffee under a bare bulb, no body visible"
+      }
+    },
+    {
+      "id": "ev_mud",
+      "type": "physical",
+      "title": "Footprints at the tank edge",
+      "render": "object",
+      "body": {
+        "label": "In spilled mucilage: Mutwiri's gumboots, and a smart leather shoe, size 9."
+      },
+      "facts": [
+        "f_mud"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gap",
+      "type": "physical",
+      "title": "The empty shelf",
+      "render": "object",
+      "body": {
+        "label": "The payout-slips file is gone. A clean outline in the dust."
+      },
+      "facts": [
+        "f_gap"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_safe",
+      "type": "physical",
+      "title": "The factory safe",
+      "render": "object",
+      "body": {
+        "label": "Locked. The cash book balances to the shilling."
+      },
+      "facts": [
+        "f_safe"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_payout",
+      "type": "document",
+      "title": "Payout list",
+      "render": "form",
+      "body": {
+        "text": "Printed from the co-op ledger. Mutwiri's pencil ticks beside every slip in K. Gikunda's name, and \"?\" beside nine."
+      },
+      "facts": [
+        "f_payout"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "payout list"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_gatebook",
+      "type": "document",
+      "title": "Gate book and guard hut",
+      "render": "logBook",
+      "body": {
+        "entries": "Night entries: none after 18:00.",
+        "hut": "Inside the hut: a thermos and a blanket, slept in."
+      },
+      "facts": [
+        "f_gatebook",
+        "f_bedding"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "gate book"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_faith",
+      "type": "witness",
+      "title": "Statement: Faith Wanjiru",
+      "render": "statement",
+      "body": {
+        "speaker": "p_faith"
+      },
+      "facts": [
+        "f_faith",
+        "f_rose_query",
+        "f_kath_shout",
+        "f_overtime",
+        "f_faith_home"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_slip_copies",
+      "type": "document",
+      "title": "Six transfer slips (photocopies)",
+      "render": "form",
+      "body": {
+        "text": "Six slips, each directing a farmer's payout to \"K. Gikunda\". Co-op stamp on each. Thumbprints."
+      },
+      "facts": [
+        "f_slips"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": false,
+        "forger": "p_kaberia",
+        "kind": "co-op transfer slips"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "six photocopied co-operative transfer slips fanned on a desk, each with a round stamp and a thumbprint"
+      }
+    },
+    {
+      "id": "ev_genuine_slip",
+      "type": "document",
+      "title": "A genuine transfer slip",
+      "render": "form",
+      "body": {
+        "text": "Stamped with the real rubber stamp on its chain."
+      },
+      "facts": [
+        "f_genuine"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "transfer slip"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_farmers",
+      "type": "witness",
+      "title": "Statement: three farmers",
+      "render": "statement",
+      "body": {
+        "speaker": "p_wangui"
+      },
+      "facts": [
+        "f_farmers"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Kaberia Gikunda's line",
+      "render": "manifest",
+      "body": {
+        "masts": "Mukurwe-ini factory zone, Wednesday 22:30–23:20.",
+        "calls": "A call to Muthomi Kaburu at 22:35."
+      },
+      "facts": [
+        "f_rec_kab"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_faith",
+          "f_gap"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_stall",
+      "type": "physical",
+      "title": "Behind the sacks in Kaberia's stall",
+      "render": "object",
+      "body": {
+        "file": "The original payout-slips file from the factory office.",
+        "blanks": "A stack of blank slips; a printed sheet of co-op stamps ready to cut out.",
+        "shoes": "Leather shoes, size 9, dried mucilage in the welts.",
+        "receipt": "In the file: \"MVUA HOLDINGS — document services — KSh 4,000 — Till 880 214\"."
+      },
+      "facts": [
+        "f_stall_file",
+        "f_stall_stamps",
+        "f_shoes",
+        "f_mvua_receipt"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a co-operative file under a coffee sack, a printed sheet of round stamps beside it, a pair of leather shoes crusted pale at the welts"
+      }
+    },
+    {
+      "id": "ev_kathenya",
+      "type": "witness",
+      "title": "Statement: Kathenya's neighbours",
+      "render": "statement",
+      "body": {
+        "speaker": "p_kathenya"
+      },
+      "facts": [
+        "f_kathenya"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_weights",
+      "type": "document",
+      "title": "Kathenya's weight slips",
+      "render": "form",
+      "body": {
+        "text": "His deliveries this season, weighed and signed. The scale was recalibrated by the county on Tuesday after his complaint."
+      },
+      "facts": [
+        "f_weights"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "weight slips"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_rose",
+      "type": "document",
+      "title": "Nyeri hotel bill",
+      "render": "receipt",
+      "body": {
+        "text": "R. Kendi: co-op union meeting, dinner and overnight, Wednesday 18:00 to Thursday 07:30."
+      },
+      "facts": [
+        "f_rose"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_claims",
+      "type": "document",
+      "title": "Rose's expense claims",
+      "render": "form",
+      "body": {
+        "text": "March claims, each with a receipt; the auditor's note: \"Answered. Passed.\""
+      },
+      "facts": [
+        "f_claims"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "expense claims"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_drown",
+        "f_aut_bruise",
+        "f_aut_tod",
+        "f_aut_noother"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_tank"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_compare",
+      "type": "forensic",
+      "title": "Comparison view: slips vs genuine slip",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_cmp_dots",
+        "f_cmp_dates",
+        "f_cmp_names",
+        "f_cmp_fields"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_slip_copies",
+          "ev_genuine_slip"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_shoe",
+      "type": "forensic",
+      "title": "Lab: shoe marks (tank edge vs shoes)",
+      "render": "labReport",
+      "body": {
+        "test": "toolMarks"
+      },
+      "facts": [
+        "f_shoematch"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toolMarks",
+        "hours": 8,
+        "needs": [
+          "ev_mud",
+          "ev_stall"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_docexam",
+      "type": "forensic",
+      "title": "Questioned Documents Lab: transfer slips",
+      "render": "labReport",
+      "body": {
+        "test": "document"
+      },
+      "facts": [
+        "f_docexam"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "document",
+        "hours": 10,
+        "needs": [
+          "ev_stall",
+          "ev_genuine_slip"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Mutwiri Kinoti, manager of Kiama Coffee Factory, was found in fermentation tank 3 at 05:50.",
+      "kind": "true",
+      "about": [
+        "p_mutwiri",
+        "loc_factory"
+      ],
+      "at": {
+        "from": "05:50"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "He was face down in the fermenting coffee in tank 3.",
+      "kind": "true",
+      "about": [
+        "p_mutwiri",
+        "plc_tank3"
+      ]
+    },
+    {
+      "id": "f_mud",
+      "text": "Footprints in spilled mucilage at tank 3's edge: Mutwiri's gumboots and a smart leather shoe, size 9.",
+      "kind": "true",
+      "about": [
+        "plc_tank3"
+      ]
+    },
+    {
+      "id": "f_gap",
+      "text": "The payout-slips file is missing from the office shelf; a clean outline in the dust.",
+      "kind": "true",
+      "about": [
+        "plc_office"
+      ]
+    },
+    {
+      "id": "f_safe",
+      "text": "The factory safe is locked and the cash book balances to the shilling.",
+      "kind": "true",
+      "about": [
+        "plc_office"
+      ]
+    },
+    {
+      "id": "f_payout",
+      "text": "Payout list, printed from the co-op ledger: Mutwiri's pencil ticks beside every slip in K. Gikunda's name, and a \"?\" beside nine.",
+      "kind": "true",
+      "about": [
+        "p_mutwiri",
+        "p_kaberia"
+      ]
+    },
+    {
+      "id": "f_gatebook",
+      "text": "Gate book: no entries after 18:00 on Wednesday.",
+      "kind": "true",
+      "about": [
+        "p_muthomi"
+      ]
+    },
+    {
+      "id": "f_bedding",
+      "text": "In the guard hut: a thermos and a blanket, slept in.",
+      "kind": "true",
+      "about": [
+        "p_muthomi"
+      ]
+    },
+    {
+      "id": "f_faith",
+      "text": "Faith: Mutwiri was checking every transfer slip from Kaberia. On Monday he said he would go to the Co-operative Officer on Friday.",
+      "kind": "true",
+      "about": [
+        "p_faith",
+        "p_mutwiri",
+        "p_kaberia"
+      ]
+    },
+    {
+      "id": "f_rose_query",
+      "text": "Faith: in March Mutwiri queried the chair's expense claims. Rose answered them.",
+      "kind": "true",
+      "about": [
+        "p_faith",
+        "p_rose"
+      ]
+    },
+    {
+      "id": "f_kath_shout",
+      "text": "Faith: on Saturday Mzee Kathenya shouted at Mutwiri that the scale was crooked.",
+      "kind": "true",
+      "about": [
+        "p_faith",
+        "p_kathenya"
+      ]
+    },
+    {
+      "id": "f_overtime",
+      "text": "Faith: Muthomi's overtime was paid with March wages; she paid it herself.",
+      "kind": "true",
+      "about": [
+        "p_faith",
+        "p_muthomi"
+      ]
+    },
+    {
+      "id": "f_faith_home",
+      "text": "Faith's sister: Faith was home in Mukurwe-ini town from 18:00 on Wednesday.",
+      "kind": "true",
+      "about": [
+        "p_faith"
+      ],
+      "where": {
+        "person": "p_faith",
+        "place": "plc_faithhome",
+        "from": "18:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_slips",
+      "text": "Faith's photocopies: six transfer slips directing farmers' payouts to \"K. Gikunda\", each with a co-op stamp and a thumbprint.",
+      "kind": "true",
+      "about": [
+        "p_kaberia"
+      ]
+    },
+    {
+      "id": "f_genuine",
+      "text": "A genuine transfer slip, stamped with the co-op's rubber stamp on its chain.",
+      "kind": "true",
+      "about": [
+        "loc_coop"
+      ]
+    },
+    {
+      "id": "f_farmers",
+      "text": "Wangui Kamau and two neighbours named on the slips: \"I never sold my payout to anyone.\"",
+      "kind": "true",
+      "about": [
+        "p_wangui",
+        "p_kaberia"
+      ]
+    },
+    {
+      "id": "f_rec_kab",
+      "text": "Records, Kaberia's line: Mukurwe-ini factory zone 22:30–23:20 on Wednesday, and a call to Muthomi at 22:35.",
+      "kind": "true",
+      "about": [
+        "p_kaberia",
+        "p_muthomi"
+      ],
+      "at": {
+        "from": "22:30",
+        "to": "23:20"
+      }
+    },
+    {
+      "id": "f_stall_file",
+      "text": "Under a sack in Kaberia's stall: the original payout-slips file from the factory office.",
+      "kind": "true",
+      "about": [
+        "p_kaberia"
+      ]
+    },
+    {
+      "id": "f_stall_stamps",
+      "text": "With it: a stack of blank slips and a printed sheet of co-op stamps ready to cut out.",
+      "kind": "true",
+      "about": [
+        "p_kaberia"
+      ]
+    },
+    {
+      "id": "f_shoes",
+      "text": "In the stall: leather shoes, size 9, with dried mucilage in the welts.",
+      "kind": "true",
+      "about": [
+        "p_kaberia"
+      ]
+    },
+    {
+      "id": "f_mvua_receipt",
+      "text": "In the slips file: \"MVUA HOLDINGS — document services — KSh 4,000 — Till 880 214\".",
+      "kind": "true",
+      "about": [
+        "p_kaberia"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_kathenya",
+      "text": "Kathenya's neighbours: he sat at a funeral wake in his village all night.",
+      "kind": "true",
+      "about": [
+        "p_kathenya"
+      ],
+      "where": {
+        "person": "p_kathenya",
+        "place": "plc_wake",
+        "from": "18:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_weights",
+      "text": "Kathenya's weight slips are signed; the county recalibrated the scale on Tuesday after his complaint.",
+      "kind": "true",
+      "about": [
+        "p_kathenya"
+      ]
+    },
+    {
+      "id": "f_rose",
+      "text": "Nyeri hotel: Rose at a co-op union meeting, dinner and overnight, Wednesday 18:00 to Thursday 07:30.",
+      "kind": "true",
+      "about": [
+        "p_rose"
+      ],
+      "where": {
+        "person": "p_rose",
+        "place": "plc_nyerihotel",
+        "from": "18:00",
+        "to": "07:30"
+      }
+    },
+    {
+      "id": "f_claims",
+      "text": "Rose's March claims, each with a receipt; the auditor's note: \"Answered. Passed.\"",
+      "kind": "true",
+      "about": [
+        "p_rose"
+      ]
+    },
+    {
+      "id": "f_aut_drown",
+      "text": "Autopsy: drowned. Coffee mucilage in the airways and lungs.",
+      "kind": "true",
+      "about": [
+        "p_mutwiri"
+      ]
+    },
+    {
+      "id": "f_aut_bruise",
+      "text": "Autopsy: two bruises on the backs of the shoulders, consistent with being held down.",
+      "kind": "true",
+      "about": [
+        "p_mutwiri"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 22:30 and 23:30.",
+      "kind": "true",
+      "about": [
+        "p_mutwiri"
+      ],
+      "at": {
+        "from": "22:30",
+        "to": "23:30"
+      }
+    },
+    {
+      "id": "f_aut_noother",
+      "text": "Autopsy: no head injury, a sound heart, toxicology clean.",
+      "kind": "true",
+      "about": [
+        "p_mutwiri"
+      ]
+    },
+    {
+      "id": "f_cmp_dots",
+      "text": "Under the magnifier: the slips' \"stamp\" is a grid of tiny printer dots; the genuine stamp is pressed ink with a halo.",
+      "kind": "true",
+      "about": [
+        "p_kaberia"
+      ]
+    },
+    {
+      "id": "f_cmp_dates",
+      "text": "Every slip is dated on a weekday.",
+      "kind": "true",
+      "about": [
+        "loc_coop"
+      ]
+    },
+    {
+      "id": "f_cmp_names",
+      "text": "The farmers' names and the co-op's name are spelled correctly on every slip.",
+      "kind": "true",
+      "about": [
+        "loc_coop"
+      ]
+    },
+    {
+      "id": "f_cmp_fields",
+      "text": "A transfer slip has no witness line and no vehicle numbers: farmer, member number, amount, thumbprint and stamp.",
+      "kind": "true",
+      "about": [
+        "loc_coop"
+      ]
+    },
+    {
+      "id": "f_shoematch",
+      "text": "Lab: the shoe marks at the tank edge match Kaberia's leather shoes.",
+      "kind": "true",
+      "about": [
+        "p_kaberia"
+      ]
+    },
+    {
+      "id": "f_docexam",
+      "text": "Wilfrida Ayugi: forged. The stamp is inkjet-printed, and the thumbprints on four slips are the same thumb.",
+      "kind": "true",
+      "about": [
+        "p_kaberia"
+      ]
+    },
+    {
+      "id": "f_kab_away",
+      "text": "Kaberia: \"I haven't been to the factory this week.\"",
+      "kind": "lie",
+      "about": [
+        "p_kaberia"
+      ]
+    },
+    {
+      "id": "f_kab_genuine",
+      "text": "Kaberia: \"Every slip I hold is genuine.\"",
+      "kind": "lie",
+      "about": [
+        "p_kaberia"
+      ]
+    },
+    {
+      "id": "f_kab_reveal",
+      "text": "Kaberia: he went to the factory to talk; Mutwiri was going to ruin him \"over a few slips\". He says he left him at the tanks.",
+      "kind": "true",
+      "about": [
+        "p_kaberia",
+        "p_mutwiri"
+      ],
+      "where": {
+        "person": "p_kaberia",
+        "place": "plc_tank3",
+        "from": "22:45",
+        "to": "23:05"
+      }
+    },
+    {
+      "id": "f_kab_alive",
+      "text": "Kaberia: \"He was alive when I left. Standing on the edge, shouting.\"",
+      "kind": "lie",
+      "about": [
+        "p_kaberia"
+      ]
+    },
+    {
+      "id": "f_mu_nobody",
+      "text": "Muthomi: \"Nobody came in after six.\"",
+      "kind": "lie",
+      "about": [
+        "p_muthomi"
+      ]
+    },
+    {
+      "id": "f_mu_reveal",
+      "text": "Muthomi: Kaberia phoned, \"open the gate, it's me\". He opened at about 22:40, went back to sleep in the hut, and didn't write him in.",
+      "kind": "true",
+      "about": [
+        "p_muthomi",
+        "p_kaberia"
+      ],
+      "where": {
+        "person": "p_muthomi",
+        "place": "plc_hut",
+        "from": "18:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_kath_claim",
+      "text": "Kathenya: \"I told Mutwiri his scale was crooked. I didn't kill him.\"",
+      "kind": "claim",
+      "about": [
+        "p_kathenya"
+      ]
+    },
+    {
+      "id": "f_rose_claim",
+      "text": "Rose: \"I was in Nyeri.\"",
+      "kind": "claim",
+      "about": [
+        "p_rose"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_kaberia",
+      "stance": "cooperative",
+      "intro": "Kaberia leans on his kiosk counter, smiling. \"I haven't been to the factory this week. And every slip I hold is genuine. The farmers come to me because the co-op is slow.\"",
+      "claims": [
+        "f_kab_away",
+        "f_kab_genuine"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_kab_alive",
+          "after": "f_kab_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_muthomi",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_gatebook"
+      ],
+      "intro": "Muthomi stands at the gate in his greatcoat. \"Nobody came in after six.\"",
+      "claims": [
+        "f_mu_nobody"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_kathenya",
+      "stance": "cooperative",
+      "intro": "Mzee Kathenya thumps his stick on the weighbridge. \"I told Mutwiri his scale was crooked. I didn't kill him.\"",
+      "claims": [
+        "f_kath_claim"
+      ],
+      "yields": [
+        "ev_kathenya",
+        "ev_weights"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_rose",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_faith"
+      ],
+      "intro": "Rose takes the call in a hotel corridor. \"I was in Nyeri.\"",
+      "claims": [
+        "f_rose_claim"
+      ],
+      "yields": [
+        "ev_rose",
+        "ev_claims"
+      ],
+      "topics": [
+        {
+          "about": "ev_faith",
+          "reply": "\"Yes, he queried my claims. I answered them. Ask the auditor.\"",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_faith",
+      "stance": "cooperative",
+      "intro": "Faith has been crying in the office since six. She opens her drawer before you ask.",
+      "claims": [],
+      "yields": [
+        "ev_faith",
+        "ev_slip_copies"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_mu",
+      "claim": "f_mu_nobody",
+      "brokenBy": [
+        "f_bedding",
+        "f_rec_kab"
+      ],
+      "reveals": [
+        "f_mu_reveal"
+      ],
+      "reaction": "\"Kaberia called and said open the gate, it's me. He comes often. I opened and went back to sleep. I didn't write him in. Please, I have children.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_kab_away",
+      "claim": "f_kab_away",
+      "brokenBy": [
+        "f_rec_kab",
+        "f_mu_reveal"
+      ],
+      "reveals": [
+        "f_kab_reveal"
+      ],
+      "reaction": "The smile stays, but it's working. \"I went to talk. He was going to ruin me over a few slips. I left him at the tanks.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_kab_genuine",
+      "claim": "f_kab_genuine",
+      "brokenBy": [
+        "f_farmers",
+        "f_cmp_dots"
+      ],
+      "reveals": [],
+      "reaction": "He looks at the magnified stamp, a grid of dots, and stops talking about the co-op being slow.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_kab_alive",
+      "claim": "f_kab_alive",
+      "brokenBy": [
+        "f_aut_bruise",
+        "f_shoematch"
+      ],
+      "reveals": [],
+      "reaction": "Kaberia looks at his shoes in the evidence bag, then at the floor. He asks for a lawyer.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_kaberia",
+      "text": "Kaberia Gikunda",
+      "category": "person",
+      "ref": "p_kaberia",
+      "unlock": {
+        "anyOf": [
+          "f_faith"
+        ]
+      }
+    },
+    {
+      "id": "w_muthomi",
+      "text": "Muthomi Kaburu",
+      "category": "person",
+      "ref": "p_muthomi",
+      "unlock": {
+        "anyOf": [
+          "f_gatebook"
+        ]
+      }
+    },
+    {
+      "id": "w_kathenya",
+      "text": "Kathenya Murungi",
+      "category": "person",
+      "ref": "p_kathenya",
+      "unlock": {
+        "anyOf": [
+          "f_kath_shout"
+        ]
+      }
+    },
+    {
+      "id": "w_rose",
+      "text": "Rose Kendi",
+      "category": "person",
+      "ref": "p_rose",
+      "unlock": {
+        "anyOf": [
+          "f_rose_query"
+        ]
+      }
+    },
+    {
+      "id": "w_faith",
+      "text": "Faith Wanjiru",
+      "category": "person",
+      "ref": "p_faith",
+      "unlock": {
+        "anyOf": [
+          "f_faith"
+        ]
+      }
+    },
+    {
+      "id": "pl_tank3",
+      "text": "fermentation tank 3",
+      "category": "place",
+      "ref": "plc_tank3",
+      "unlock": {
+        "anyOf": [
+          "f_mud"
+        ]
+      }
+    },
+    {
+      "id": "pl_office",
+      "text": "the factory office",
+      "category": "place",
+      "ref": "plc_office",
+      "unlock": {
+        "anyOf": [
+          "f_gap"
+        ]
+      }
+    },
+    {
+      "id": "pl_tables",
+      "text": "the drying tables",
+      "category": "place",
+      "ref": "plc_tables",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_pulping",
+      "text": "the pulping house",
+      "category": "place",
+      "ref": "plc_pulping",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_stall",
+      "text": "Kaberia's stall",
+      "category": "place",
+      "ref": "loc_stall",
+      "unlock": {
+        "anyOf": [
+          "f_faith"
+        ]
+      }
+    },
+    {
+      "id": "h_held",
+      "text": "holding him under in a fermentation tank until he drowned",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_bruise"
+        ]
+      }
+    },
+    {
+      "id": "h_fell",
+      "text": "a slip and a fall into the tank",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_struck",
+      "text": "a blow to the head",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_poison",
+      "text": "poisoning",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_slips",
+      "text": "to stop him reporting the forged co-op transfer slips",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_faith"
+        ]
+      }
+    },
+    {
+      "id": "m_weights",
+      "text": "a farmer's anger over short weights",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_kath_shout"
+        ]
+      }
+    },
+    {
+      "id": "m_claims",
+      "text": "the chair's expense claims",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_rose_query"
+        ]
+      }
+    },
+    {
+      "id": "m_overtime",
+      "text": "a watchman's unpaid overtime",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_gatebook"
+        ]
+      }
+    },
+    {
+      "id": "m_cash",
+      "text": "theft of the factory's cash",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "d_slips",
+      "text": "The co-op transfer slips",
+      "category": "document",
+      "ref": "ev_slip_copies",
+      "unlock": {
+        "anyOf": [
+          "f_slips"
+        ]
+      }
+    },
+    {
+      "id": "d_payout",
+      "text": "The payout list",
+      "category": "document",
+      "ref": "ev_payout",
+      "unlock": {
+        "anyOf": [
+          "f_payout"
+        ]
+      }
+    },
+    {
+      "id": "d_gatebook",
+      "text": "The gate book",
+      "category": "document",
+      "ref": "ev_gatebook",
+      "unlock": {
+        "anyOf": [
+          "f_gatebook"
+        ]
+      }
+    },
+    {
+      "id": "d_weights",
+      "text": "Kathenya's weight slips",
+      "category": "document",
+      "ref": "ev_weights",
+      "unlock": {
+        "anyOf": [
+          "f_weights"
+        ]
+      }
+    },
+    {
+      "id": "d_claims",
+      "text": "Rose's expense claims",
+      "category": "document",
+      "ref": "ev_claims",
+      "unlock": {
+        "anyOf": [
+          "f_claims"
+        ]
+      }
+    },
+    {
+      "id": "t_dots",
+      "text": "the co-op stamp is printed in dots, not pressed in ink",
+      "category": "tell",
+      "by": [
+        "f_cmp_dots",
+        "f_docexam"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_slips"
+        ]
+      }
+    },
+    {
+      "id": "t_deadwit",
+      "text": "a witness who was dead",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_slips"
+        ]
+      }
+    },
+    {
+      "id": "t_sunday",
+      "text": "a date on a Sunday",
+      "category": "tell",
+      "by": [
+        "f_cmp_dates"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_slips"
+        ]
+      }
+    },
+    {
+      "id": "t_coopname",
+      "text": "the wrong co-op name",
+      "category": "tell",
+      "by": [
+        "f_cmp_names"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_slips"
+        ]
+      }
+    },
+    {
+      "id": "t_misspelt",
+      "text": "a misspelled farmer's name",
+      "category": "tell",
+      "by": [
+        "f_cmp_names"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_slips"
+        ]
+      }
+    },
+    {
+      "id": "t_chassis",
+      "text": "a chassis number that doesn't match",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_slips"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. {document} was forged, as shown by {tell}.",
+    "fixed": {
+      "victim": "Mutwiri Kinoti"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_1800",
+                  "label": "18:00",
+                  "from": "18:00",
+                  "to": "18:00"
+                },
+                {
+                  "id": "sl_2235",
+                  "label": "22:35",
+                  "from": "22:35",
+                  "to": "22:35"
+                },
+                {
+                  "id": "sl_2240",
+                  "label": "22:40",
+                  "from": "22:40",
+                  "to": "22:40"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "22:40–23:20",
+                  "from": "22:40",
+                  "to": "23:20"
+                },
+                {
+                  "id": "sl_2320",
+                  "label": "23:20",
+                  "from": "23:20",
+                  "to": "23:20"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_call",
+                  "text": "Muthomi's phone rings",
+                  "slot": "sl_2235",
+                  "by": [
+                    "f_rec_kab"
+                  ],
+                  "why": "Kaberia's records: a call to Muthomi at 22:35.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rec_kab"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_enter",
+                  "text": "Kaberia is let in at the gate",
+                  "slot": "sl_2240",
+                  "by": [
+                    "f_mu_reveal"
+                  ],
+                  "why": "Muthomi opened at about 22:40.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_mu_reveal"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Mutwiri is drowned",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod",
+                    "f_kab_reveal",
+                    "f_rec_kab"
+                  ],
+                  "why": "Between the gate opening and Kaberia's phone leaving, inside the autopsy's hour.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_leave",
+                  "text": "Kaberia's phone leaves the zone",
+                  "slot": "sl_2320",
+                  "by": [
+                    "f_rec_kab"
+                  ],
+                  "why": "His records: out of the factory zone at 23:20.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rec_kab"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_1800",
+                  "by": [
+                    "f_mu_reveal",
+                    "f_rec_kab"
+                  ],
+                  "why": "18:00 is the last gate-book entry. The gate opened again at 22:40, unwritten."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A call, a gate, a tank, and a phone leaving: forty-five minutes. The watchman slept through the middle.",
+          "fail": [
+            "The gate book stops at six. The gate didn't.",
+            "When did Kaberia's phone leave the factory?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_tank3"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Tank 3, where his gumboots and a leather shoe stood together.",
+          "fail": [
+            "The file was taken from the office. He died at the tanks.",
+            "The stall is where the file went, not where he died."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_kaberia"
+          }
+        ],
+        "prosecutor": {
+          "pass": "His call, his gate, his shoes, his stolen file. That will hold.",
+          "fail": [
+            "The watchman was asleep in his hut, and his boots are clean.",
+            "Mzee Kathenya sat at a wake all night."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_held"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Two bruises where hands held him. Not a fall.",
+          "fail": [
+            "A man who falls doesn't bruise on the backs of his shoulders.",
+            "No head injury. Read the autopsy."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_slips"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Friday, the Co-operative Officer. He wasn't going to let Mutwiri get there.",
+          "fail": [
+            "The safe is untouched.",
+            "The chair's claims were passed by the auditor."
+          ]
+        }
+      },
+      {
+        "id": "g_forgery",
+        "kind": "forgery",
+        "blanks": [
+          {
+            "id": "document",
+            "category": "document",
+            "answer": "d_slips"
+          },
+          {
+            "id": "tell",
+            "category": "tell",
+            "answer": "t_dots"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Real rubber stamps leave a halo. His leave a grid. Drag the magnifier over every stamp from now on.",
+          "fail": [
+            "The dates and names are right. Look closer at the stamp.",
+            "The payout list is printed from the co-op ledger."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_tank3",
+      "from": "22:40",
+      "to": "23:20",
+      "note": "From the gate opening at 22:40 to Kaberia's phone leaving at 23:20; the autopsy allows 22:30–23:30."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_faith",
+          "f_slips",
+          "f_farmers",
+          "f_payout"
+        ],
+        "concludes": "Mutwiri had found transfer slips in Kaberia's name from farmers who never sold, and planned to report them on Friday."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_genuine",
+          "f_cmp_dots",
+          "f_docexam"
+        ],
+        "concludes": "The slips are forged: their co-op stamp is printed in dots, not pressed in ink.",
+        "answers": [
+          "document",
+          "tell"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_body",
+          "f_aut_drown",
+          "f_aut_bruise"
+        ],
+        "concludes": "He was held under, not fallen."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_rec_kab",
+          "f_mu_nobody",
+          "f_bedding",
+          "f_mu_reveal",
+          "f_kab_away",
+          "f_kab_reveal"
+        ],
+        "concludes": "Kaberia phoned the watchman at 22:35 and was let in at 22:40; his phone left at 23:20.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_mud",
+          "f_gap",
+          "f_stall_file",
+          "f_stall_stamps",
+          "f_shoes",
+          "f_shoematch",
+          "f_kab_genuine",
+          "f_kab_alive"
+        ],
+        "concludes": "The stolen file, the printed stamps and the matching shoes are in his stall. Kaberia Gikunda held Mutwiri under in fermentation tank 3 until he drowned, to stop him reporting the forged slips.",
+        "answers": [
+          "who",
+          "how",
+          "why",
+          "where"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_office",
+        "blank": "where",
+        "by": [
+          "f_gap",
+          "f_mud"
+        ],
+        "why": "The file was taken from the office; he died at the tank."
+      },
+      {
+        "word": "pl_tables",
+        "blank": "where",
+        "by": [
+          "f_body",
+          "f_mud"
+        ],
+        "why": "He was in tank 3, the footprints at its edge."
+      },
+      {
+        "word": "pl_pulping",
+        "blank": "where",
+        "by": [
+          "f_body",
+          "f_mud"
+        ],
+        "why": "He was in tank 3."
+      },
+      {
+        "word": "pl_stall",
+        "blank": "where",
+        "by": [
+          "f_body",
+          "f_stall_file"
+        ],
+        "why": "The file went to the stall. He never left the factory."
+      },
+      {
+        "word": "w_muthomi",
+        "blank": "who",
+        "by": [
+          "f_mu_reveal",
+          "f_shoematch"
+        ],
+        "why": "Muthomi slept in the guard hut; the shoe at the tank is Kaberia's."
+      },
+      {
+        "word": "w_kathenya",
+        "blank": "who",
+        "by": [
+          "f_kathenya"
+        ],
+        "why": "Kathenya sat at a funeral wake all night."
+      },
+      {
+        "word": "w_rose",
+        "blank": "who",
+        "by": [
+          "f_rose"
+        ],
+        "why": "Rose was at a union meeting and overnight in Nyeri."
+      },
+      {
+        "word": "w_faith",
+        "blank": "who",
+        "by": [
+          "f_faith_home"
+        ],
+        "why": "Faith was home in Mukurwe-ini town from 18:00."
+      },
+      {
+        "word": "h_fell",
+        "blank": "how",
+        "by": [
+          "f_aut_bruise"
+        ],
+        "why": "Two bruises where hands held him down."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_noother",
+          "f_aut_drown"
+        ],
+        "why": "A sound heart; he drowned."
+      },
+      {
+        "word": "h_struck",
+        "blank": "how",
+        "by": [
+          "f_aut_noother"
+        ],
+        "why": "No head injury."
+      },
+      {
+        "word": "h_poison",
+        "blank": "how",
+        "by": [
+          "f_aut_noother"
+        ],
+        "why": "Toxicology clean."
+      },
+      {
+        "word": "m_weights",
+        "blank": "why",
+        "by": [
+          "f_kathenya",
+          "f_weights"
+        ],
+        "why": "That complaint was Kathenya's, settled on Tuesday, and he was at a wake."
+      },
+      {
+        "word": "m_claims",
+        "blank": "why",
+        "by": [
+          "f_rose",
+          "f_claims"
+        ],
+        "why": "Rose's claims were passed, and she was in Nyeri."
+      },
+      {
+        "word": "m_overtime",
+        "blank": "why",
+        "by": [
+          "f_overtime"
+        ],
+        "why": "The overtime was paid in March."
+      },
+      {
+        "word": "m_cash",
+        "blank": "why",
+        "by": [
+          "f_safe"
+        ],
+        "why": "The safe is locked and balances."
+      },
+      {
+        "word": "d_payout",
+        "blank": "document",
+        "by": [
+          "f_payout"
+        ],
+        "why": "Printed from the co-op's own ledger."
+      },
+      {
+        "word": "d_gatebook",
+        "blank": "document",
+        "by": [
+          "f_gatebook",
+          "f_mu_reveal"
+        ],
+        "why": "The gate book is genuine. What's wrong with it is what Muthomi didn't write."
+      },
+      {
+        "word": "d_weights",
+        "blank": "document",
+        "by": [
+          "f_weights"
+        ],
+        "why": "Signed, and the scale since recalibrated."
+      },
+      {
+        "word": "d_claims",
+        "blank": "document",
+        "by": [
+          "f_claims"
+        ],
+        "why": "Passed by the auditor."
+      },
+      {
+        "word": "t_deadwit",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "A transfer slip has no witness line."
+      },
+      {
+        "word": "t_sunday",
+        "blank": "tell",
+        "by": [
+          "f_cmp_dates"
+        ],
+        "why": "Every slip is dated on a weekday."
+      },
+      {
+        "word": "t_coopname",
+        "blank": "tell",
+        "by": [
+          "f_cmp_names"
+        ],
+        "why": "The co-op's name is right."
+      },
+      {
+        "word": "t_misspelt",
+        "blank": "tell",
+        "by": [
+          "f_cmp_names"
+        ],
+        "why": "The farmers' names are right."
+      },
+      {
+        "word": "t_chassis",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "There are no vehicle numbers on a coffee slip."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Kaberia pays farmers cash today for their co-op payout, sixty shillings in the hundred, and presents transfer slips at the co-op office. Many are genuine. Many are not: forged thumbprints and a stamp printed on an inkjet, from a template he bought from Mvua Holdings' \"document services\".",
+        "image": null
+      },
+      {
+        "text": "Checking the payout list, Mutwiri finds farmers who swear they never sold. On Monday he tells Kaberia he is going to the Co-operative Officer on Friday.",
+        "image": null
+      },
+      {
+        "text": "Wednesday, 22:35. Kaberia phones Muthomi: \"Open the gate, it's me.\" Muthomi, half asleep, opens and goes back to his blanket.",
+        "image": null
+      },
+      {
+        "text": "Mutwiri is checking the tanks. They argue at tank 3. Kaberia pushes him in and holds him under until he stops.",
+        "image": "plc_tank3"
+      },
+      {
+        "text": "He takes the slips file from the office shelf, and his phone leaves the factory zone at 23:20.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "Pattern File, t_mvua: the receipt for \"document services\", KSh 4,000, Till 880 214. Amani's notebook: \"Mvua again. Not just land. Anything with a stamp.\""
+    }
+  ],
+  "clockPlan": {
+    "note": "One stamp: records on Kaberia. Detain him at his stall; the shoe marks (8 h) and the slips examination (10 h) are back well inside the 24 hours. No rush needed.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_factory",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_tank",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_mud",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_gap",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_safe",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_payout",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_gatebook",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_faith"
+      },
+      {
+        "do": "interview",
+        "target": "p_muthomi"
+      },
+      {
+        "do": "travel",
+        "target": "loc_coop",
+        "hours": 0.25,
+        "from": "loc_factory"
+      },
+      {
+        "do": "visit",
+        "target": "loc_coop",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_genuine_slip",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_farmers",
+        "hours": 1
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "press",
+        "target": "c_mu"
+      },
+      {
+        "do": "travel",
+        "target": "loc_stall",
+        "hours": 0.25,
+        "from": "loc_coop"
+      },
+      {
+        "do": "visit",
+        "target": "loc_stall",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_kaberia"
+      },
+      {
+        "do": "press",
+        "target": "c_kab_away"
+      },
+      {
+        "do": "press",
+        "target": "c_kab_genuine"
+      },
+      {
+        "do": "read",
+        "target": "ev_stall",
+        "hours": 1
+      },
+      {
+        "do": "detain",
+        "target": "p_kaberia"
+      },
+      {
+        "do": "submit",
+        "target": "ev_shoe"
+      },
+      {
+        "do": "submit",
+        "target": "ev_docexam"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 10
+      },
+      {
+        "do": "press",
+        "target": "c_kab_alive"
+      }
+    ],
+    "totalHours": 29.5
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_gatebook",
+        "line": "The gate book stops at six. Did the gate?"
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_kab",
+          "f_mu_reveal"
+        ],
+        "line": "A call at 22:35, the gate at 22:40, his phone gone at 23:20."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_mud",
+        "line": "Two kinds of footprint at one tank."
+      },
+      "tier2": {
+        "facts": [
+          "f_mud"
+        ],
+        "line": "Gumboots and a smart shoe, at tank 3."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_faith",
+        "line": "Whose slips was Mutwiri checking?"
+      },
+      "tier2": {
+        "facts": [
+          "f_shoematch",
+          "f_stall_file"
+        ],
+        "line": "The shoe at the tank, and the file under his sack."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Where are the bruises, Amani?"
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_bruise"
+        ],
+        "line": "On the backs of the shoulders. Held down."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_farmers",
+        "line": "Ask the farmers named on the slips."
+      },
+      "tier2": {
+        "facts": [
+          "f_farmers",
+          "f_faith"
+        ],
+        "line": "They never sold. Mutwiri was going to the Co-operative Officer on Friday."
+      }
+    },
+    "g_forgery": {
+      "tier1": {
+        "point": "ev_compare",
+        "line": "Drag the magnifier over the stamp. Then over the real one."
+      },
+      "tier2": {
+        "facts": [
+          "f_cmp_dots"
+        ],
+        "line": "A halo of ink, or a grid of dots?"
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "cherry",
+      "def": "Raw coffee berries, delivered red."
+    },
+    {
+      "term": "wet mill",
+      "def": "A factory that pulps, ferments and washes coffee."
+    },
+    {
+      "term": "chama ya ushirika",
+      "def": "A co-operative society."
+    },
+    {
+      "term": "malipo",
+      "def": "Payment; a payout."
+    },
+    {
+      "term": "mlinzi",
+      "def": "A watchman or guard."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    },
+    {
+      "term": "mzee",
+      "def": "An elder; a respectful title for an older man."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "magnifierOnStamps"
+    ],
+    "beatNotes": "The magnifier on stamps. Real rubber stamps show uneven, pressed ink with a halo; printed stamps dissolve into a grid of dots. The player learns to drag the magnifier over every stamp from now on."
+  }
+}

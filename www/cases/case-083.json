@@ -1,0 +1,2645 @@
+{
+  "meta": {
+    "id": "case-083",
+    "number": 83,
+    "region": "westlands-karen-runda",
+    "regionNumber": 9,
+    "title": "Planted",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 44,
+    "date": "Friday 4 September",
+    "folderTab": "WOODVALE GROVE"
+  },
+  "pattern": {
+    "crimePattern": "a business partner who skimmed the studio's gold kills her co-founder when she finds out, and frames the workshop manager she had already blamed",
+    "noRealCaseRetold": true,
+    "notes": "Fictional studio, building and hotel group. Teaches PLANTED: the apron in the fired man's locker. The guard who wrote the false sign-in entry was paid and didn't know why (an unknowing helper, not an accomplice). Spine background: Advocate Kiprop's retainer is paid through Till 880 214 (t_mvua).",
+    "tags": [
+      "blunt-force",
+      "business",
+      "gold-theft",
+      "framed",
+      "planted",
+      "lawyered",
+      "three-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where",
+      "spine-background"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 6,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "planted"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic",
+      "cctv"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": "the-fired-man-was-framed"
+  },
+  "ob": {
+    "number": "OB 09/04/09",
+    "date": "Friday 4 September",
+    "time": "08:20",
+    "reportedBy": "Building manager, Woodvale Grove, Westlands",
+    "text": "A building manager in Westlands reports a jewellery designer found dead in her third-floor workshop: Wakesho Mghanga (34), co-founder of Shah & Mghanga Studio. Within the hour, staff name a former employee.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_workshop",
+    "nodes": [
+      "loc_workshop",
+      "loc_lobby",
+      "loc_carpark"
+    ],
+    "edges": [
+      {
+        "a": "loc_workshop",
+        "b": "loc_lobby",
+        "minutes": 2,
+        "by": "lift"
+      },
+      {
+        "a": "loc_lobby",
+        "b": "loc_carpark",
+        "minutes": 1,
+        "by": "stairs"
+      },
+      {
+        "a": "loc_workshop",
+        "b": "loc_carpark",
+        "minutes": 3,
+        "by": "stairs"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_wakesho",
+      "role": "victim",
+      "name": "Wakesho Mghanga",
+      "age": 34,
+      "occupation": "Jewellery designer; co-founder of Shah & Mghanga Studio",
+      "bio": "The studio's designs are registered in her name.",
+      "community": "Taita",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_bench",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Taita woman, mid 30s, short natural hair, a jeweller's loupe on a cord, a focused, bright face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_priya",
+      "role": "suspect",
+      "name": "Priya Shah",
+      "age": 36,
+      "occupation": "Co-founder; runs the business side",
+      "bio": "Handles the clients, the invoices and the gold purchases. Lives in Parklands.",
+      "community": "Kenyan Asian",
+      "isCulprit": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_workshop",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Asian woman, mid 30s, a silk blouse and a gold bangle, sleek hair, a composed, guarded face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kevin",
+      "role": "suspect",
+      "name": "Kevin Otieno",
+      "age": 29,
+      "occupation": "Workshop manager, fired two weeks ago",
+      "redHerring": true,
+      "bio": "Fired by Wakesho for \"missing gold\". Handled the scale.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_staff"
+      },
+      "at": "plc_kangemi",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, late 20s, a work shirt with rolled sleeves, a frightened, defensive face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_hezron",
+      "role": "suspect",
+      "name": "Hezron Wafula",
+      "age": 44,
+      "occupation": "Lobby guard, evening shift",
+      "bio": "Keeps the lobby sign-in book.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unknowingHelper": true,
+      "unlock": {
+        "fact": "f_signin"
+      },
+      "at": "plc_lobby",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luhya man, mid 40s, a security guard's navy uniform and cap, an uneasy face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_lenny",
+      "role": "suspect",
+      "name": "Lenny Mwandoe",
+      "age": 38,
+      "occupation": "Wakesho's ex-husband",
+      "redHerring": true,
+      "bio": "Owes her maintenance for their daughter.",
+      "community": "Taita",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_zawadi"
+      },
+      "at": "plc_bus",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Taita man, late 30s, a denim jacket, a tired, rueful face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_zawadi",
+      "role": "witness",
+      "name": "Zawadi Kerubo",
+      "age": 26,
+      "occupation": "Apprentice jeweller",
+      "bio": "Works at the next bench to Wakesho's.",
+      "community": "Kisii",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_workshop",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kisii woman, mid 20s, a work apron and safety glasses pushed up, a grieving, steady face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_manager",
+      "role": "witness",
+      "name": "Mrs. Njeri Gathoni",
+      "age": 52,
+      "occupation": "Building manager",
+      "statementOnly": true,
+      "bio": "Holds the building's master keys and the access-card system.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_lobby",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_bench",
+      "name": "Wakesho's bench",
+      "within": "loc_workshop"
+    },
+    {
+      "id": "plc_lockers",
+      "name": "The staff locker room",
+      "within": "loc_workshop"
+    },
+    {
+      "id": "plc_lobby",
+      "name": "The lobby",
+      "within": "loc_lobby"
+    },
+    {
+      "id": "plc_basement",
+      "name": "The basement car park",
+      "within": "loc_carpark"
+    },
+    {
+      "id": "plc_kangemi",
+      "name": "Kevin's bedsitter, Kangemi"
+    },
+    {
+      "id": "plc_bus",
+      "name": "The night bus to Mombasa"
+    },
+    {
+      "id": "plc_class",
+      "name": "Zawadi's evening class, Parklands"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_workshop",
+      "name": "Shah & Mghanga Studio, third floor",
+      "kind": "scene",
+      "description": "Jewellers' benches with pegs and torches, a gold scale and its weight ledger, a safe, a staff locker room. Staff lockers have their own keys; the two partners hold a master key.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Wakesho's bench",
+          "pos": [
+            45,
+            55
+          ],
+          "yields": "ev_body",
+          "text": "Wakesho at her bench under a single lamp."
+        },
+        {
+          "id": "hs_mandrel",
+          "label": "The floor by the bench",
+          "pos": [
+            52,
+            70
+          ],
+          "yields": "ev_mandrel",
+          "text": "A steel ring mandrel on the floor."
+        },
+        {
+          "id": "hs_staff",
+          "label": "The morning staff",
+          "pos": [
+            20,
+            30
+          ],
+          "yields": "ev_staff_say",
+          "text": "The polishers and the cleaner, in the doorway."
+        },
+        {
+          "id": "hs_locker",
+          "label": "Kevin's locker",
+          "pos": [
+            80,
+            40
+          ],
+          "yields": "ev_apron",
+          "text": "The building manager opens Kevin's old locker with the master key.",
+          "unlock": {
+            "fact": "f_staff"
+          }
+        },
+        {
+          "id": "hs_magnifier",
+          "label": "The apron under the magnifier",
+          "pos": [
+            82,
+            50
+          ],
+          "yields": "ev_smear",
+          "text": "The apron under a jeweller's magnifier.",
+          "unlock": {
+            "fact": "f_apron"
+          }
+        },
+        {
+          "id": "hs_ledger",
+          "label": "Gold scale ledger",
+          "pos": [
+            60,
+            30
+          ],
+          "yields": "ev_ledger",
+          "text": "The weight ledger beside the scale.",
+          "unlock": {
+            "fact": "f_zawadi"
+          }
+        },
+        {
+          "id": "hs_zawadi",
+          "label": "Zawadi",
+          "pos": [
+            30,
+            60
+          ],
+          "yields": "ev_zawadi",
+          "text": "Zawadi at the next bench."
+        },
+        {
+          "id": "hs_laptop",
+          "label": "Studio laptop",
+          "pos": [
+            65,
+            45
+          ],
+          "yields": "ev_client",
+          "text": "Wakesho's email on the studio laptop.",
+          "unlock": {
+            "fact": "f_zawadi"
+          }
+        },
+        {
+          "id": "hs_safe",
+          "label": "The safe",
+          "pos": [
+            90,
+            70
+          ],
+          "yields": "ev_safe",
+          "text": "The studio safe."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small jeweller's workshop at night in an older Westlands office block, benches with pegs and torches, a gold scale and ledger, a single lamp, no people in focus"
+      }
+    },
+    {
+      "id": "loc_lobby",
+      "name": "The lobby and offices",
+      "kind": "location",
+      "description": "A lobby with a guard's desk and sign-in book, a lift with a camera, and on the second floor the shared accountant and HR offices.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_signin",
+          "label": "Sign-in book",
+          "pos": [
+            30,
+            40
+          ],
+          "yields": "ev_signin",
+          "text": "Thursday evening's page."
+        },
+        {
+          "id": "hs_lift",
+          "label": "Lift camera",
+          "pos": [
+            60,
+            30
+          ],
+          "yields": "ev_lift",
+          "text": "The lift camera's recording for Thursday."
+        },
+        {
+          "id": "hs_dues",
+          "label": "Accountant's office",
+          "pos": [
+            70,
+            60
+          ],
+          "yields": "ev_dues",
+          "text": "The final-dues register.",
+          "unlock": {
+            "fact": "f_kv_never"
+          }
+        },
+        {
+          "id": "hs_hr",
+          "label": "HR file",
+          "pos": [
+            80,
+            50
+          ],
+          "yields": "ev_locker_key",
+          "text": "Kevin's HR file.",
+          "unlock": {
+            "fact": "f_apron"
+          }
+        },
+        {
+          "id": "hs_desk",
+          "label": "Lobby camera",
+          "pos": [
+            20,
+            60
+          ],
+          "yields": "ev_lobbycam",
+          "text": "The camera over the guard's desk."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "an older Westlands office lobby at night, a guard's desk with a sign-in book, a lift with a small camera dome"
+      }
+    },
+    {
+      "id": "loc_carpark",
+      "name": "The basement car park",
+      "kind": "location",
+      "description": "A basement with an access-card barrier. Priya's car in her bay.",
+      "unlock": {
+        "fact": "f_barrier"
+      },
+      "hotspots": [
+        {
+          "id": "hs_car",
+          "label": "Priya's car",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_car",
+          "text": "Search under warrant."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a dim basement car park under an office block, an access-card barrier, a single silver hatchback in a bay"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Wakesho at her bench",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Two blows to the head from a narrow tapered steel object."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a jeweller's bench under a lamp, scattered tools, a toppled stool, no body visible"
+      }
+    },
+    {
+      "id": "ev_mandrel",
+      "type": "physical",
+      "title": "A steel ring mandrel",
+      "render": "object",
+      "body": {
+        "label": "A tapered steel ring mandrel on the floor, wiped. The hammers hang clean on their pegs."
+      },
+      "facts": [
+        "f_mandrel"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a tapered steel ring mandrel lying on a workshop floor, wiped clean"
+      }
+    },
+    {
+      "id": "ev_staff_say",
+      "type": "witness",
+      "title": "Statement: the morning staff",
+      "render": "statement",
+      "body": {
+        "speaker": "p_zawadi"
+      },
+      "facts": [
+        "f_staff"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_apron",
+      "type": "physical",
+      "title": "Kevin's apron, from his locker",
+      "render": "object",
+      "body": {
+        "label": "Kevin's old workshop apron, bloodstained down the front."
+      },
+      "facts": [
+        "f_apron"
+      ],
+      "gate": null,
+      "planted": {
+        "by": "p_priya",
+        "frames": "p_kevin"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a canvas workshop apron with a broad brown stain down the front, in an open metal locker"
+      }
+    },
+    {
+      "id": "ev_smear",
+      "type": "physical",
+      "title": "The apron under the magnifier",
+      "render": "object",
+      "body": {
+        "label": "A broad wiped smear, the weave filled evenly. No droplets, no satellite spots. The person who struck two close blows would be spattered."
+      },
+      "facts": [
+        "f_smear"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_signin",
+      "type": "document",
+      "title": "Lobby sign-in book",
+      "render": "logBook",
+      "body": {
+        "text": "\"K. Otieno — 21:05 — collect tools\", in the guard's handwriting. No visitor signature."
+      },
+      "facts": [
+        "f_signin"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lift",
+      "type": "cctv",
+      "title": "Lift camera, Thursday",
+      "render": "object",
+      "body": {
+        "label": "Kevin up at 18:31, down at 19:02 with a box. No Kevin later. Nobody in the lift after 19:40. Building manager: the stairs door to the lobby is alarmed after 20:00 and never opened from the lobby side."
+      },
+      "facts": [
+        "f_lift",
+        "f_stairs"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_dues",
+      "type": "document",
+      "title": "Accountant's final-dues register",
+      "render": "logBook",
+      "body": {
+        "text": "K. Otieno signed for his final dues at 18:45 on Thursday."
+      },
+      "facts": [
+        "f_dues"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_locker_key",
+      "type": "document",
+      "title": "Kevin's HR file",
+      "render": "form",
+      "body": {
+        "text": "Locker key returned on dismissal; HR's signed return slip. Locker never cleared. Master keys: the two partners."
+      },
+      "facts": [
+        "f_lockerkey",
+        "f_masterkey"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lobbycam",
+      "type": "cctv",
+      "title": "Lobby camera, Thursday",
+      "render": "object",
+      "body": {
+        "label": "Hezron at his desk all evening. At 22:01 Priya Shah crosses the lobby from the stairs to the desk and leans over the book."
+      },
+      "facts": [
+        "f_hez_desk",
+        "f_pr_lobby"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_zawadi",
+      "type": "witness",
+      "title": "Statement: Zawadi Kerubo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_zawadi"
+      },
+      "facts": [
+        "f_zawadi",
+        "f_zaw_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ledger",
+      "type": "document",
+      "title": "Gold scale ledger",
+      "render": "logBook",
+      "body": {
+        "text": "For a year, the recorded weights in Priya's batches run 3–6% under the purchase invoices. Wakesho's pencil ticks beside each one, dated Wednesday."
+      },
+      "facts": [
+        "f_ledger"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_client",
+      "type": "document",
+      "title": "Wakesho's email",
+      "render": "form",
+      "body": {
+        "text": "A hotel-group buyer's reply to Priya, forwarded to Wakesho by mistake: \"Happy to move the account to your new company once the designs are transferred.\""
+      },
+      "facts": [
+        "f_client"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_safe",
+      "type": "physical",
+      "title": "The studio safe",
+      "render": "object",
+      "body": {
+        "label": "Locked. Stock and cash all present."
+      },
+      "facts": [
+        "f_safe"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_barrier",
+      "type": "document",
+      "title": "Records: basement access-card log",
+      "render": "logBook",
+      "body": {
+        "text": "Priya Shah's card: in 21:12, out 22:04. No other card after 20:00."
+      },
+      "facts": [
+        "f_barrier"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_smear",
+          "f_lockerkey",
+          "f_lift"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_car",
+      "type": "physical",
+      "title": "Priya's car",
+      "render": "object",
+      "body": {
+        "gloves": "In the spare-tyre well: a pair of white jeweller's cotton gloves, the fingertips stained.",
+        "gold": "A small bag of gold offcuts."
+      },
+      "facts": [
+        "f_gloves",
+        "f_offcuts"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_barrier",
+          "f_ledger",
+          "f_hez_reveal"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "white cotton jeweller's gloves with stained fingertips and a small bag of gold offcuts in a car's spare-tyre well"
+      }
+    },
+    {
+      "id": "ev_kevin_home",
+      "type": "witness",
+      "title": "Statement: the Kangemi plot caretaker",
+      "render": "statement",
+      "body": {
+        "speaker": "p_kevin"
+      },
+      "facts": [
+        "f_kevin_home"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lenny",
+      "type": "document",
+      "title": "Mombasa bus manifest",
+      "render": "logBook",
+      "body": {
+        "text": "L. Mwandoe on the night bus to Mombasa, departed 21:00."
+      },
+      "facts": [
+        "f_lenny"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_card",
+      "type": "physical",
+      "title": "Priya's bag (inventoried at detention)",
+      "render": "object",
+      "body": {
+        "label": "Advocate Sharon Kiprop's business card; on the back, in ink: \"Retainer: PesaPap Till 880 214\"."
+      },
+      "facts": [
+        "f_card"
+      ],
+      "gate": null,
+      "detention": "p_priya",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blows",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_pattern",
+      "type": "forensic",
+      "title": "Lab: trace (apron blood and pattern)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_apron_blood",
+        "f_pattern"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_apron"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_glovelab",
+      "type": "forensic",
+      "title": "Lab: trace (the gloves)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_gloveblood"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_car"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_assay",
+      "type": "forensic",
+      "title": "Lab: trace (gold offcuts vs studio stock)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_assay"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_car",
+          "ev_ledger"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Wakesho Mghanga was found dead in her third-floor workshop in Westlands on Friday morning.",
+      "kind": "true",
+      "about": [
+        "p_wakesho",
+        "loc_workshop"
+      ],
+      "at": {
+        "from": "08:00",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "Two blows to Wakesho's head from a narrow, tapered steel object.",
+      "kind": "true",
+      "about": [
+        "p_wakesho",
+        "plc_bench"
+      ]
+    },
+    {
+      "id": "f_mandrel",
+      "text": "A steel ring mandrel lies on the floor, wiped. The hammers hang clean on their pegs.",
+      "kind": "true",
+      "about": [
+        "plc_bench"
+      ]
+    },
+    {
+      "id": "f_staff",
+      "text": "The staff: \"It's Kevin. He was angry when she fired him.\" Kevin Otieno was fired two weeks ago for \"missing gold\".",
+      "kind": "true",
+      "about": [
+        "p_kevin"
+      ]
+    },
+    {
+      "id": "f_apron",
+      "text": "In Kevin's old locker, opened with the master key: his workshop apron, bloodstained down the front.",
+      "kind": "true",
+      "about": [
+        "p_kevin",
+        "plc_lockers"
+      ]
+    },
+    {
+      "id": "f_smear",
+      "text": "The apron's blood is a broad wiped smear filling the weave evenly. No droplets, no spatter.",
+      "kind": "true",
+      "about": [
+        "plc_lockers"
+      ]
+    },
+    {
+      "id": "f_signin",
+      "text": "Sign-in book: \"K. Otieno — 21:05 — collect tools\", in the guard's handwriting, with no visitor signature.",
+      "kind": "true",
+      "about": [
+        "p_kevin",
+        "p_hezron"
+      ],
+      "at": {
+        "from": "21:05",
+        "to": null,
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_lift",
+      "text": "Lift camera: Kevin up at 18:31, down at 19:02 with a box. Nobody in the lift after 19:40.",
+      "kind": "true",
+      "about": [
+        "p_kevin"
+      ],
+      "at": {
+        "from": "19:02",
+        "to": null,
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_stairs",
+      "text": "Building manager: the stairs door to the lobby is alarmed after 20:00; it was never opened from the lobby side, only from the basement by a card holder.",
+      "kind": "true",
+      "about": [
+        "plc_lobby"
+      ]
+    },
+    {
+      "id": "f_dues",
+      "text": "Accountant's register: Kevin signed for his final dues at 18:45 on Thursday.",
+      "kind": "true",
+      "about": [
+        "p_kevin"
+      ],
+      "at": {
+        "from": "18:45",
+        "to": null,
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_lockerkey",
+      "text": "HR: Kevin returned his locker key when he was fired (a signed slip). His locker was never cleared.",
+      "kind": "true",
+      "about": [
+        "p_kevin"
+      ]
+    },
+    {
+      "id": "f_masterkey",
+      "text": "HR: only the two partners hold the lockers' master key.",
+      "kind": "true",
+      "about": [
+        "p_priya",
+        "p_wakesho"
+      ]
+    },
+    {
+      "id": "f_hez_desk",
+      "text": "Lobby camera: Hezron at his desk all evening.",
+      "kind": "true",
+      "about": [
+        "p_hezron"
+      ],
+      "where": {
+        "person": "p_hezron",
+        "place": "plc_lobby",
+        "from": "17:00",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_pr_lobby",
+      "text": "Lobby camera: at 22:01 Priya crosses from the stairs to the guard's desk and leans over the book.",
+      "kind": "true",
+      "about": [
+        "p_priya",
+        "p_hezron"
+      ],
+      "at": {
+        "from": "22:01",
+        "to": null,
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_zawadi",
+      "text": "Zawadi: on Thursday Wakesho told her, \"Kevin didn't take that gold. I was wrong. I'll fix it tomorrow.\" She and Priya had a shouting match at five with the door closed.",
+      "kind": "true",
+      "about": [
+        "p_wakesho",
+        "p_priya"
+      ],
+      "at": {
+        "from": "17:00",
+        "to": null,
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_zaw_self",
+      "text": "Zawadi left at 18:00 (lift camera) for her evening class, then went home with her flatmates.",
+      "kind": "true",
+      "about": [
+        "p_zawadi"
+      ],
+      "where": {
+        "person": "p_zawadi",
+        "place": "plc_class",
+        "from": "18:30",
+        "to": "23:30"
+      }
+    },
+    {
+      "id": "f_ledger",
+      "text": "The scale ledger: for a year Priya's batches were recorded 3–6% under the purchase invoices. Wakesho ticked each one in pencil on Wednesday.",
+      "kind": "true",
+      "about": [
+        "p_priya"
+      ]
+    },
+    {
+      "id": "f_client",
+      "text": "A hotel buyer to Priya, forwarded to Wakesho by mistake: \"Happy to move the account to your new company once the designs are transferred.\"",
+      "kind": "true",
+      "about": [
+        "p_priya"
+      ]
+    },
+    {
+      "id": "f_safe",
+      "text": "The safe is locked; stock and cash are all there.",
+      "kind": "true",
+      "about": [
+        "loc_workshop"
+      ]
+    },
+    {
+      "id": "f_barrier",
+      "text": "Records: Priya Shah's access card entered the basement at 21:12 and left at 22:04. No other card after 20:00.",
+      "kind": "true",
+      "about": [
+        "p_priya",
+        "plc_basement"
+      ],
+      "at": {
+        "from": "21:12",
+        "to": "22:04",
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_gloves",
+      "text": "In Priya's spare-tyre well: white jeweller's cotton gloves with stained fingertips.",
+      "kind": "true",
+      "about": [
+        "p_priya"
+      ]
+    },
+    {
+      "id": "f_offcuts",
+      "text": "In Priya's car: a small bag of gold offcuts.",
+      "kind": "true",
+      "about": [
+        "p_priya"
+      ]
+    },
+    {
+      "id": "f_kevin_home",
+      "text": "The Kangemi plot caretaker: Kevin was home by 19:40 and his door stayed shut, TV on, all night.",
+      "kind": "true",
+      "about": [
+        "p_kevin"
+      ],
+      "where": {
+        "person": "p_kevin",
+        "place": "plc_kangemi",
+        "from": "19:40",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_lenny",
+      "text": "Lenny left on the 21:00 night bus to Mombasa.",
+      "kind": "true",
+      "about": [
+        "p_lenny"
+      ],
+      "where": {
+        "person": "p_lenny",
+        "place": "plc_bus",
+        "from": "21:00",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_card",
+      "text": "In Priya's bag: Advocate Sharon Kiprop's card; on the back, \"Retainer: PesaPap Till 880 214\".",
+      "kind": "true",
+      "about": [
+        "p_priya"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_aut_blows",
+      "text": "Post-mortem: two blows from a narrow tapered steel object, matching the mandrel.",
+      "kind": "true",
+      "about": [
+        "p_wakesho"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Thursday between 21:15 and 22:00.",
+      "kind": "true",
+      "about": [
+        "p_wakesho"
+      ],
+      "at": {
+        "from": "21:15",
+        "to": "22:00",
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_apron_blood",
+      "text": "Lab: the blood on the apron is Wakesho's.",
+      "kind": "true",
+      "about": [
+        "p_wakesho"
+      ]
+    },
+    {
+      "id": "f_pattern",
+      "text": "Lab: a transfer pattern, wiped or pressed on, not impact spatter. Nobody wore that apron during the attack.",
+      "kind": "true",
+      "about": [
+        "plc_lockers"
+      ]
+    },
+    {
+      "id": "f_gloveblood",
+      "text": "Lab: Wakesho's blood on the fingertips of the gloves.",
+      "kind": "true",
+      "about": [
+        "p_priya",
+        "p_wakesho"
+      ]
+    },
+    {
+      "id": "f_assay",
+      "text": "Lab: the offcuts are the studio's alloy.",
+      "kind": "true",
+      "about": [
+        "p_priya"
+      ]
+    },
+    {
+      "id": "f_pr_home",
+      "text": "Priya: \"I went home at six and didn't come back.\"",
+      "kind": "lie",
+      "about": [
+        "p_priya"
+      ]
+    },
+    {
+      "id": "f_pr_kevin",
+      "text": "Priya: \"Kevin was stealing. Wakesho found out and fired him.\"",
+      "kind": "lie",
+      "about": [
+        "p_priya"
+      ]
+    },
+    {
+      "id": "f_pr_reveal",
+      "text": "Priya: \"I came back for a file.\" Advocate Kiprop: \"That's enough, Priya.\"",
+      "kind": "true",
+      "about": [
+        "p_priya"
+      ],
+      "where": {
+        "person": "p_priya",
+        "place": "plc_bench",
+        "from": "21:15",
+        "to": "22:00"
+      }
+    },
+    {
+      "id": "f_pr_alive",
+      "text": "Priya: \"She was alive when I left.\"",
+      "kind": "lie",
+      "about": [
+        "p_priya"
+      ]
+    },
+    {
+      "id": "f_kv_never",
+      "text": "Kevin: \"I never went near that building on Thursday.\"",
+      "kind": "lie",
+      "about": [
+        "p_kevin"
+      ]
+    },
+    {
+      "id": "f_kv_reveal",
+      "text": "Kevin: \"I went for my final dues at half past six. I left at seven. I lied because I knew they'd say it was me. They always say it's the one who was fired.\"",
+      "kind": "true",
+      "about": [
+        "p_kevin"
+      ]
+    },
+    {
+      "id": "f_hez_kevin",
+      "text": "Hezron: \"Kevin Otieno came in at five past nine. I wrote it myself.\"",
+      "kind": "lie",
+      "about": [
+        "p_hezron"
+      ]
+    },
+    {
+      "id": "f_hez_reveal",
+      "text": "Hezron: \"Madam Priya gave me five thousand and said write Kevin came for his tools, so HR could close his file. I didn't know what for. I swear.\"",
+      "kind": "true",
+      "about": [
+        "p_hezron",
+        "p_priya"
+      ]
+    },
+    {
+      "id": "f_lenny_claim",
+      "text": "Lenny: \"I owed her maintenance. I was on the Mombasa bus.\"",
+      "kind": "claim",
+      "about": [
+        "p_lenny"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_priya",
+      "stance": "lawyered",
+      "lawyered": {
+        "advocate": "Advocate Sharon Kiprop",
+        "reopenedBy": [
+          "f_barrier"
+        ],
+        "line": "My client has been bereaved and is not a suspect. No comment."
+      },
+      "intro": "Priya sits with Advocate Sharon Kiprop at her side. \"My client has been bereaved and is not a suspect. No comment.\"",
+      "claims": [
+        "f_pr_home",
+        "f_pr_kevin"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_pr_alive",
+          "after": "f_pr_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_kevin",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_apron"
+      ],
+      "intro": "Kevin meets you at the Kangemi stage, already shaking. \"I never went near that building on Thursday.\"",
+      "claims": [
+        "f_kv_never"
+      ],
+      "yields": [
+        "ev_kevin_home"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_hezron",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_signin"
+      ],
+      "intro": "Hezron keeps one hand flat on the sign-in book. \"Kevin Otieno came in at five past nine. I wrote it myself.\"",
+      "claims": [
+        "f_hez_kevin"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_lenny",
+      "stance": "cooperative",
+      "intro": "Lenny calls from Mombasa. \"I owed her maintenance. I was on the Mombasa bus.\"",
+      "claims": [
+        "f_lenny_claim"
+      ],
+      "yields": [
+        "ev_lenny"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_zawadi",
+      "stance": "cooperative",
+      "intro": "Zawadi takes off her safety glasses and tells you everything.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_kv",
+      "claim": "f_kv_never",
+      "brokenBy": [
+        "f_lift",
+        "f_dues"
+      ],
+      "reveals": [
+        "f_kv_reveal"
+      ],
+      "reaction": "\"I went for my final dues at half past six. I left at seven. I lied because I knew they'd say it was me. They always say it's the one who was fired.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_hez",
+      "claim": "f_hez_kevin",
+      "brokenBy": [
+        "f_lift",
+        "f_barrier",
+        "f_pr_lobby"
+      ],
+      "reveals": [
+        "f_hez_reveal"
+      ],
+      "reaction": "\"Madam Priya gave me five thousand and said write Kevin came for his tools, for HR to close his file. I didn't know. I swear I didn't know what for.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_pr_home",
+      "claim": "f_pr_home",
+      "brokenBy": [
+        "f_barrier"
+      ],
+      "reveals": [
+        "f_pr_reveal"
+      ],
+      "reaction": "\"I came back for a file.\" Advocate Kiprop: \"That's enough, Priya.\" As she packs up, Kiprop says to you quietly: \"You're thorough, Detective. Be careful who notices.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_pr_kevin",
+      "claim": "f_pr_kevin",
+      "brokenBy": [
+        "f_ledger",
+        "f_zawadi"
+      ],
+      "reveals": [],
+      "reaction": "Priya looks at the ledger ticks in Wakesho's pencil and says nothing. Kiprop writes a note.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_pr_alive",
+      "claim": "f_pr_alive",
+      "brokenBy": [
+        "f_gloveblood"
+      ],
+      "reveals": [],
+      "reaction": "Advocate Kiprop reads the lab sheet, closes her folder and asks for a moment alone with her client.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_priya",
+      "text": "Priya Shah",
+      "category": "person",
+      "ref": "p_priya",
+      "unlock": {
+        "anyOf": [
+          "f_masterkey"
+        ]
+      }
+    },
+    {
+      "id": "w_kevin",
+      "text": "Kevin Otieno",
+      "category": "person",
+      "ref": "p_kevin",
+      "unlock": {
+        "anyOf": [
+          "f_staff"
+        ]
+      }
+    },
+    {
+      "id": "w_hezron",
+      "text": "Hezron Wafula",
+      "category": "person",
+      "ref": "p_hezron",
+      "unlock": {
+        "anyOf": [
+          "f_signin"
+        ]
+      }
+    },
+    {
+      "id": "w_lenny",
+      "text": "Lenny Mwandoe",
+      "category": "person",
+      "ref": "p_lenny",
+      "unlock": {
+        "anyOf": [
+          "f_zawadi"
+        ]
+      }
+    },
+    {
+      "id": "w_zawadi",
+      "text": "Zawadi Kerubo",
+      "category": "person",
+      "ref": "p_zawadi",
+      "unlock": {
+        "anyOf": [
+          "f_zawadi"
+        ]
+      }
+    },
+    {
+      "id": "i_apron",
+      "text": "the bloodstained apron in Kevin's locker",
+      "category": "item",
+      "ref": "ev_apron",
+      "unlock": {
+        "anyOf": [
+          "f_apron"
+        ]
+      }
+    },
+    {
+      "id": "i_signin",
+      "text": "the sign-in entry for Kevin at 21:05",
+      "category": "item",
+      "ref": "ev_signin",
+      "unlock": {
+        "anyOf": [
+          "f_signin"
+        ]
+      }
+    },
+    {
+      "id": "i_mandrel",
+      "text": "the ring mandrel on the floor",
+      "category": "item",
+      "ref": "ev_mandrel",
+      "unlock": {
+        "anyOf": [
+          "f_mandrel"
+        ]
+      }
+    },
+    {
+      "id": "i_ledger",
+      "text": "the gold scale ledger",
+      "category": "item",
+      "ref": "ev_ledger",
+      "unlock": {
+        "anyOf": [
+          "f_ledger"
+        ]
+      }
+    },
+    {
+      "id": "i_email",
+      "text": "the hotel buyer's email",
+      "category": "item",
+      "ref": "ev_client",
+      "unlock": {
+        "anyOf": [
+          "f_client"
+        ]
+      }
+    },
+    {
+      "id": "t_smear",
+      "text": "the blood is a wiped smear, not spatter",
+      "category": "plantTell",
+      "by": [
+        "f_smear",
+        "f_pattern"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_smear"
+        ]
+      }
+    },
+    {
+      "id": "t_reach",
+      "text": "it was placed where Kevin couldn't reach",
+      "category": "plantTell",
+      "by": [
+        "f_lockerkey",
+        "f_masterkey"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_lockerkey"
+        ]
+      }
+    },
+    {
+      "id": "t_print",
+      "text": "prints under the printed text",
+      "category": "plantTell",
+      "by": [
+        "f_smear"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_apron"
+        ]
+      }
+    },
+    {
+      "id": "t_dust",
+      "text": "dust under the object, not on it",
+      "category": "plantTell",
+      "by": [
+        "f_smear"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_apron"
+        ]
+      }
+    },
+    {
+      "id": "t_time",
+      "text": "a timestamp before the item existed",
+      "category": "plantTell",
+      "by": [
+        "f_smear"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_apron"
+        ]
+      }
+    },
+    {
+      "id": "t_knot",
+      "text": "a wrong-handed knot",
+      "category": "plantTell",
+      "by": [
+        "f_smear"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_apron"
+        ]
+      }
+    },
+    {
+      "id": "pl_bench",
+      "text": "the workshop bench",
+      "category": "place",
+      "ref": "plc_bench",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "pl_lockers",
+      "text": "the locker room",
+      "category": "place",
+      "ref": "plc_lockers",
+      "unlock": {
+        "anyOf": [
+          "f_apron"
+        ]
+      }
+    },
+    {
+      "id": "pl_lobby",
+      "text": "the lobby",
+      "category": "place",
+      "ref": "plc_lobby",
+      "unlock": {
+        "anyOf": [
+          "f_signin"
+        ]
+      }
+    },
+    {
+      "id": "pl_basement",
+      "text": "the basement car park",
+      "category": "place",
+      "ref": "plc_basement",
+      "unlock": {
+        "anyOf": [
+          "f_barrier"
+        ]
+      }
+    },
+    {
+      "id": "pl_kangemi",
+      "text": "Kevin's bedsitter in Kangemi",
+      "category": "place",
+      "ref": "plc_kangemi",
+      "unlock": {
+        "anyOf": [
+          "f_staff"
+        ]
+      }
+    },
+    {
+      "id": "h_mandrel",
+      "text": "striking her with a steel ring mandrel",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blows"
+        ]
+      }
+    },
+    {
+      "id": "h_hammer",
+      "text": "striking her with a jeweller's hammer",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_graver",
+      "text": "stabbing her with a graver",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_fall",
+      "text": "a fall against the bench",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_acid",
+      "text": "poisoning her with the pickling acid",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_gold",
+      "text": "Wakesho had found her gold theft and her plan to take the studio's biggest client with Wakesho's designs",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ledger"
+        ]
+      }
+    },
+    {
+      "id": "m_fired",
+      "text": "a fired employee's revenge",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_staff"
+        ]
+      }
+    },
+    {
+      "id": "m_maint",
+      "text": "an ex-husband's unpaid maintenance",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_zawadi"
+        ]
+      }
+    },
+    {
+      "id": "m_safe",
+      "text": "a robbery of the safe",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_bribe",
+      "text": "a guard's bribe gone wrong",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_signin"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. {item} was planted, as shown by {ptell}.",
+    "fixed": {
+      "victim": "Wakesho Mghanga"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_wed",
+                  "label": "Wednesday",
+                  "from": null,
+                  "to": null,
+                  "day": "Wed"
+                },
+                {
+                  "id": "sl_1902",
+                  "label": "Thursday 19:02",
+                  "from": "19:02",
+                  "to": "19:02",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_2105",
+                  "label": "Thursday 21:05",
+                  "from": "21:05",
+                  "to": "21:05",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_2112",
+                  "label": "Thursday 21:12",
+                  "from": "21:12",
+                  "to": "21:12",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Thursday 21:15–22:00",
+                  "from": "21:15",
+                  "to": "22:00",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_2204",
+                  "label": "Thursday 22:04",
+                  "from": "22:04",
+                  "to": "22:04",
+                  "day": "Thu"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_recheck",
+                  "text": "Wakesho rechecks the ledger",
+                  "slot": "sl_wed",
+                  "by": [
+                    "f_ledger"
+                  ],
+                  "why": "Her pencil ticks are dated Wednesday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_ledger"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_kevin",
+                  "text": "Kevin collects his dues and leaves",
+                  "slot": "sl_1902",
+                  "by": [
+                    "f_lift",
+                    "f_dues"
+                  ],
+                  "why": "The lift camera: down at 19:02.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_lift"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_in",
+                  "text": "Priya drives into the basement",
+                  "slot": "sl_2112",
+                  "by": [
+                    "f_barrier"
+                  ],
+                  "why": "Her access card: 21:12.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_barrier"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_kill",
+                  "text": "Wakesho is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod",
+                    "f_barrier",
+                    "f_pr_reveal"
+                  ],
+                  "why": "While Priya's card was inside.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_out",
+                  "text": "Priya drives out",
+                  "slot": "sl_2204",
+                  "by": [
+                    "f_barrier"
+                  ],
+                  "why": "Her card: out 22:04.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_barrier"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_2105",
+                  "by": [
+                    "f_lift",
+                    "f_stairs",
+                    "f_hez_reveal"
+                  ],
+                  "why": "\"Kevin signs in at 21:05\" was bought for five thousand shillings. Nobody used the lift after 19:40."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "Ticks on Wednesday, Kevin gone at two minutes past seven, Priya's card in at 21:12 and out at 22:04.",
+          "fail": [
+            "21:05 is a line Hezron was paid to write.",
+            "When did a card open the barrier?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_bench"
+          }
+        ],
+        "prosecutor": {
+          "pass": "At her own bench, working late.",
+          "fail": [
+            "The apron was put in the locker afterwards.",
+            "The basement is where she parked."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_priya"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her card in the basement, her master key, her gloves with Wakesho's blood.",
+          "fail": [
+            "Kevin was home in Kangemi with his door shut.",
+            "Hezron wrote a line. He never left his desk."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_mandrel"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Narrow and tapered. The mandrel.",
+          "fail": [
+            "The hammers hang clean on their pegs.",
+            "Two blows. Not a fall."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_gold"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A year of short weights, a stolen client, and a lawyer on Friday.",
+          "fail": [
+            "Kevin didn't take the gold. Wakesho said so herself.",
+            "The safe is full."
+          ]
+        }
+      },
+      {
+        "id": "g_planted",
+        "kind": "planted",
+        "blanks": [
+          {
+            "id": "item",
+            "category": "item",
+            "answer": "i_apron"
+          },
+          {
+            "id": "ptell",
+            "category": "plantTell",
+            "answer": "t_smear",
+            "accept": [
+              "t_reach"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "Nobody wears a wiped apron to a killing. And Kevin had handed in his key.",
+          "fail": [
+            "The sign-in line is false, but it was written, not placed. Hezron's lie covers it.",
+            "The mandrel is the real weapon."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_bench",
+      "from": "21:15",
+      "to": "22:00",
+      "note": "The post-mortem window, inside the time Priya's card was in the basement (21:12–22:04)."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_staff",
+          "f_apron",
+          "f_smear",
+          "f_apron_blood",
+          "f_pattern"
+        ],
+        "concludes": "The apron was wiped with Wakesho's blood, not worn in the attack.",
+        "answers": [
+          "item",
+          "ptell"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_lockerkey",
+          "f_masterkey"
+        ],
+        "concludes": "Kevin couldn't open his own locker; someone with a master key did."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_lift",
+          "f_stairs",
+          "f_dues",
+          "f_kv_never",
+          "f_kv_reveal",
+          "f_signin",
+          "f_hez_kevin",
+          "f_pr_lobby",
+          "f_hez_reveal"
+        ],
+        "concludes": "Kevin left at 19:02; the 21:05 entry was bought by Priya at the lobby desk at 22:01."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_ledger",
+          "f_zawadi",
+          "f_client",
+          "f_pr_kevin"
+        ],
+        "concludes": "Priya had stolen the gold, blamed Kevin, and was taking the client and the designs.",
+        "answers": [
+          "why"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_barrier",
+          "f_pr_home",
+          "f_pr_reveal",
+          "f_body",
+          "f_mandrel",
+          "f_aut_blows",
+          "f_aut_tod"
+        ],
+        "concludes": "Priya's card was in the basement 21:12–22:04, while Wakesho was killed at her bench with the mandrel.",
+        "answers": [
+          "when",
+          "where",
+          "how"
+        ]
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_gloves",
+          "f_gloveblood",
+          "f_offcuts",
+          "f_assay",
+          "f_pr_alive"
+        ],
+        "concludes": "Priya Shah struck Wakesho with the ring mandrel and framed Kevin with his own apron.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_lockers",
+        "blank": "where",
+        "by": [
+          "f_pattern"
+        ],
+        "why": "The apron was wiped and put in the locker afterwards."
+      },
+      {
+        "word": "pl_lobby",
+        "blank": "where",
+        "by": [
+          "f_pr_lobby"
+        ],
+        "why": "She stopped at the lobby desk on her way out."
+      },
+      {
+        "word": "pl_basement",
+        "blank": "where",
+        "by": [
+          "f_barrier",
+          "f_body"
+        ],
+        "why": "She parked there; Wakesho died at her bench."
+      },
+      {
+        "word": "pl_kangemi",
+        "blank": "where",
+        "by": [
+          "f_body"
+        ],
+        "why": "Wakesho never left the workshop."
+      },
+      {
+        "word": "w_kevin",
+        "blank": "who",
+        "by": [
+          "f_kevin_home"
+        ],
+        "why": "Kevin was home in Kangemi from 19:40, door shut."
+      },
+      {
+        "word": "w_hezron",
+        "blank": "who",
+        "by": [
+          "f_hez_desk"
+        ],
+        "why": "Hezron was at his desk on camera all evening."
+      },
+      {
+        "word": "w_lenny",
+        "blank": "who",
+        "by": [
+          "f_lenny"
+        ],
+        "why": "Lenny was on the Mombasa bus."
+      },
+      {
+        "word": "w_zawadi",
+        "blank": "who",
+        "by": [
+          "f_zaw_self"
+        ],
+        "why": "Zawadi was at her class, then home with her flatmates."
+      },
+      {
+        "word": "h_hammer",
+        "blank": "how",
+        "by": [
+          "f_mandrel",
+          "f_aut_blows"
+        ],
+        "why": "The wound is tapered; the hammers are on their pegs, clean."
+      },
+      {
+        "word": "h_graver",
+        "blank": "how",
+        "by": [
+          "f_aut_blows"
+        ],
+        "why": "Blows, not a stab."
+      },
+      {
+        "word": "h_fall",
+        "blank": "how",
+        "by": [
+          "f_aut_blows"
+        ],
+        "why": "Two blows."
+      },
+      {
+        "word": "h_acid",
+        "blank": "how",
+        "by": [
+          "f_aut_blows"
+        ],
+        "why": "Read the post-mortem."
+      },
+      {
+        "word": "m_fired",
+        "blank": "why",
+        "by": [
+          "f_kevin_home",
+          "f_zawadi"
+        ],
+        "why": "Kevin was home; Wakesho was about to clear him."
+      },
+      {
+        "word": "m_maint",
+        "blank": "why",
+        "by": [
+          "f_lenny"
+        ],
+        "why": "Lenny was on the bus."
+      },
+      {
+        "word": "m_safe",
+        "blank": "why",
+        "by": [
+          "f_safe"
+        ],
+        "why": "The safe is locked and full."
+      },
+      {
+        "word": "m_bribe",
+        "blank": "why",
+        "by": [
+          "f_hez_reveal",
+          "f_hez_desk"
+        ],
+        "why": "Hezron's money bought a line in a book, not a death."
+      },
+      {
+        "word": "i_signin",
+        "blank": "item",
+        "by": [
+          "f_hez_reveal",
+          "f_lift"
+        ],
+        "why": "The entry is false, but written by Hezron, not placed by the killer's hand; it falls under his lie."
+      },
+      {
+        "word": "i_mandrel",
+        "blank": "item",
+        "by": [
+          "f_aut_blows"
+        ],
+        "why": "The mandrel is the real weapon."
+      },
+      {
+        "word": "i_ledger",
+        "blank": "item",
+        "by": [
+          "f_ledger"
+        ],
+        "why": "The ledger is genuine; it's why she died."
+      },
+      {
+        "word": "i_email",
+        "blank": "item",
+        "by": [
+          "f_client"
+        ],
+        "why": "The email is genuine, forwarded by mistake."
+      },
+      {
+        "word": "t_print",
+        "blank": "ptell",
+        "by": [
+          "f_smear"
+        ],
+        "why": "An apron has no printed text."
+      },
+      {
+        "word": "t_dust",
+        "blank": "ptell",
+        "by": [
+          "f_smear"
+        ],
+        "why": "The locker shows nothing about dust; the stain does the work."
+      },
+      {
+        "word": "t_time",
+        "blank": "ptell",
+        "by": [
+          "f_smear"
+        ],
+        "why": "The apron is two years old."
+      },
+      {
+        "word": "t_knot",
+        "blank": "ptell",
+        "by": [
+          "f_smear"
+        ],
+        "why": "The apron was folded, not tied."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "For a year Priya records short weights for her own batches and sells the difference. When the losses show, she points Wakesho at Kevin, who handles the scale, and Wakesho fires him.",
+        "image": null
+      },
+      {
+        "text": "On Wednesday Wakesho rechecks the ledger herself: every short weight is in Priya's batches. A forwarded email shows Priya taking the hotel client and the designs. On Thursday at five Wakesho says she'll see a lawyer on Friday.",
+        "image": null
+      },
+      {
+        "text": "At 21:12 Priya drives into the basement, walks up the stairs, and finds Wakesho working late. They argue at the bench. Priya strikes her twice with a steel ring mandrel.",
+        "image": "plc_bench"
+      },
+      {
+        "text": "She wipes Wakesho's blood onto Kevin's old apron and locks it in his locker with her master key. At 22:01 she pays Hezron KSh 5,000 to write \"K. Otieno — 21:05 — collect tools\". She drives out at 22:04.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "Kevin gets a letter from the studio's new administrator: his name cleared, his final dues paid again with an apology. Zawadi takes over Wakesho's bench."
+    },
+    {
+      "beat": "Pattern File, t_mvua: Advocate Kiprop's card from Priya's bag, \"Retainer: PesaPap Till 880 214\". Amani's notebook: \"Kiprop again. Emojong's lawyer. Paid through the Mvua till. She's not just a lawyer who takes their cases. She's on their payroll.\"",
+      "files": [
+        {
+          "thread": "t_mvua",
+          "text": "Advocate Kiprop's retainer is paid through Till 880 214."
+        }
+      ]
+    }
+  ],
+  "clockPlan": {
+    "note": "Two stamps: the basement access-card log (which also reopens Priya) and a warrant on her car. The apron's blood and pattern trace (12 h) goes as soon as the apron is bagged; detain Priya after the car search, and the glove trace (12 h) comes back inside 24 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_workshop",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_mandrel",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_staff_say",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_apron",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_smear",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_safe",
+        "hours": 0
+      },
+      {
+        "do": "submit",
+        "target": "ev_pattern"
+      },
+      {
+        "do": "read",
+        "target": "ev_zawadi",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_zawadi"
+      },
+      {
+        "do": "read",
+        "target": "ev_ledger",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_client",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_lobby",
+        "hours": 0.1,
+        "from": "loc_workshop"
+      },
+      {
+        "do": "visit",
+        "target": "loc_lobby",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_signin",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_lift",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_locker_key",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_lobbycam",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_hezron"
+      },
+      {
+        "do": "interview",
+        "target": "p_kevin"
+      },
+      {
+        "do": "read",
+        "target": "ev_dues",
+        "hours": 0
+      },
+      {
+        "do": "press",
+        "target": "c_kv"
+      },
+      {
+        "do": "interview",
+        "target": "p_lenny"
+      },
+      {
+        "do": "records",
+        "target": "ev_barrier"
+      },
+      {
+        "do": "press",
+        "target": "c_hez"
+      },
+      {
+        "do": "reopen",
+        "target": "p_priya",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_priya"
+      },
+      {
+        "do": "press",
+        "target": "c_pr_home"
+      },
+      {
+        "do": "press",
+        "target": "c_pr_kevin"
+      },
+      {
+        "do": "travel",
+        "target": "loc_carpark",
+        "hours": 0.1,
+        "from": "loc_lobby"
+      },
+      {
+        "do": "search",
+        "target": "loc_carpark"
+      },
+      {
+        "do": "detain",
+        "target": "p_priya"
+      },
+      {
+        "do": "sample",
+        "target": "ev_card"
+      },
+      {
+        "do": "submit",
+        "target": "ev_glovelab"
+      },
+      {
+        "do": "submit",
+        "target": "ev_assay"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 12
+      },
+      {
+        "do": "press",
+        "target": "c_pr_alive"
+      }
+    ],
+    "totalHours": 41.2
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_barrier",
+        "line": "In a building like that, every card leaves a time, Amani."
+      },
+      "tier2": {
+        "facts": [
+          "f_barrier",
+          "f_lift"
+        ],
+        "line": "Kevin down at 19:02. Priya's card in at 21:12, out at 22:04."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_body",
+        "line": "Where was she when it started?"
+      },
+      "tier2": {
+        "facts": [
+          "f_body",
+          "f_mandrel"
+        ],
+        "line": "At her own bench, with the mandrel at her feet."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_locker_key",
+        "line": "Who could open Kevin's locker after he handed in his key?"
+      },
+      "tier2": {
+        "facts": [
+          "f_masterkey",
+          "f_gloveblood"
+        ],
+        "line": "Only the partners had the master key. And her gloves."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_mandrel",
+        "line": "Narrow and tapered. Look on the floor."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_blows",
+          "f_mandrel"
+        ],
+        "line": "A steel ring mandrel, wiped."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_ledger",
+        "line": "Read the pencil ticks in the ledger."
+      },
+      "tier2": {
+        "facts": [
+          "f_ledger",
+          "f_client"
+        ],
+        "line": "Short weights in Priya's batches, and a client leaving with her."
+      }
+    },
+    "g_planted": {
+      "tier1": {
+        "point": "ev_smear",
+        "line": "Put the apron under a magnifier. How did the blood get there?"
+      },
+      "tier2": {
+        "facts": [
+          "f_smear",
+          "f_lockerkey"
+        ],
+        "line": "Wiped, not spattered. And Kevin had handed in his key."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "sonara",
+      "def": "A jeweller."
+    },
+    {
+      "term": "dhahabu",
+      "def": "Gold."
+    },
+    {
+      "term": "kabati",
+      "def": "A cupboard or locker."
+    },
+    {
+      "term": "kitabu cha wageni",
+      "def": "A visitors' sign-in book."
+    },
+    {
+      "term": "kusingiziwa",
+      "def": "To be falsely accused; framed."
+    },
+    {
+      "term": "pesa",
+      "def": "Money."
+    },
+    {
+      "term": "pesapap",
+      "def": "A fictional mobile-money service (\"pesa\" is money)."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "suspectedPlanted"
+    ],
+    "beatNotes": "Suspected planted. Long-pressing an evidence card offers \"mark as suspected planted\": the card gets a red edge and moves to its own corner of the board. Planted items can't be used to press a suspect until the player either proves or clears them, so the game rewards checking before accusing."
+  }
+}

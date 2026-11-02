@@ -1,0 +1,4664 @@
+{
+  "meta": {
+    "id": "case-100",
+    "number": 100,
+    "region": "final-files",
+    "regionNumber": 10,
+    "title": "Mwenda, J.",
+    "boss": true,
+    "final": true,
+    "schemaVersion": 1,
+    "estMinutes": 70,
+    "date": "Saturday 5 December",
+    "folderTab": "MWENDA, J."
+  },
+  "pattern": {
+    "crimePattern": "a land registrar orders the killing of the surveyor who refused to move his beacons; her messenger pays a mechanic and is driven to the road; twelve years later her desk is still in her study",
+    "noRealCaseRetold": true,
+    "notes": "Fictional people, offices, companies and parcel; Lands House, Bahati and JKIA are settings only. Kivuli is Margaret Kabiru (provisional name, to be confirmed with the cultural reader). Fundi killed Joseph; Oduya (present and paying) and Pius (driving) are the two accomplices: the only case with two ACCOMPLICE groups. Kabiru is charged on the SPINE line, not the WHO blank: the desk never touches the bar.",
+    "tags": [
+      "final",
+      "cold-case",
+      "commissioned",
+      "accomplice",
+      "forgery",
+      "absence",
+      "spine",
+      "lawyered",
+      "four-liars",
+      "records",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where"
+    ]
+  },
+  "difficulty": {
+    "suspects": 8,
+    "chainLength": 8,
+    "redHerrings": 3,
+    "liars": 4,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "accomplice",
+      "accomplice",
+      "how",
+      "why",
+      "forgery",
+      "absence",
+      "spine"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "records",
+      "warrant"
+    ],
+    "twist": "kivuli-named"
+  },
+  "ob": {
+    "number": "OB 01/05/12",
+    "date": "Saturday 5 December",
+    "time": "06:30",
+    "reportedBy": "Reopened by Det. Amani Mwenda, SCU",
+    "text": "OB 23/14/05 (twelve years ago), 06:50: a man found dead on the verge of the Bahati road; wallet missing; robbery suspected; closed after nine days, NFA. Today: reopened. Mwenda, J.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_scu",
+    "nodes": [
+      "loc_scu",
+      "loc_jkia",
+      "loc_lands",
+      "loc_runda",
+      "loc_bahati"
+    ],
+    "edges": [
+      {
+        "a": "loc_scu",
+        "b": "loc_jkia",
+        "minutes": 40,
+        "by": "car"
+      },
+      {
+        "a": "loc_scu",
+        "b": "loc_lands",
+        "minutes": 15,
+        "by": "car"
+      },
+      {
+        "a": "loc_scu",
+        "b": "loc_runda",
+        "minutes": 30,
+        "by": "car"
+      },
+      {
+        "a": "loc_jkia",
+        "b": "loc_lands",
+        "minutes": 40,
+        "by": "car"
+      },
+      {
+        "a": "loc_lands",
+        "b": "loc_runda",
+        "minutes": 30,
+        "by": "car"
+      },
+      {
+        "a": "loc_jkia",
+        "b": "loc_runda",
+        "minutes": 45,
+        "by": "car"
+      },
+      {
+        "a": "loc_scu",
+        "b": "loc_bahati",
+        "minutes": 180,
+        "by": "car"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_joseph",
+      "role": "victim",
+      "name": "Joseph Mwenda",
+      "age": 45,
+      "occupation": "Licensed surveyor; Amani's father",
+      "bio": "Surveyor of record for Bahati Block 9. Refused to move his beacons.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_verge",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Meru man, mid 40s, a surveyor's jacket, a child on his shoulders beside a red beacon, warm and stubborn, ID-photo framing",
+        "ref": "rc_joseph"
+      }
+    },
+    {
+      "id": "p_fundi",
+      "role": "suspect",
+      "name": "Benedict Mbuvi, \"Fundi\"",
+      "age": 53,
+      "occupation": "In custody; confessed in case 94",
+      "bio": "Twelve years ago a mechanic in Kisumu with debts.",
+      "community": "Kamba",
+      "isCulprit": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_verge",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba man, early 50s, remand whites, a grey, hollow, quiet face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kabiru",
+      "role": "suspect",
+      "name": "Margaret Kabiru",
+      "age": 61,
+      "occupation": "Former Deputy Chief Land Registrar (Records), office 4.12; chair of the Ukarimu Foundation",
+      "bio": "Booked on the 09:15 to London, an hour after her grandson's arrest.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_412",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, early 60s, pearls and a camel coat at an airport boarding gate, a gracious, absolutely composed face, ID-photo framing",
+        "ref": "reference"
+      }
+    },
+    {
+      "id": "p_oduya",
+      "role": "suspect",
+      "name": "Raphael Oduya",
+      "age": 63,
+      "occupation": "In custody; former Director of Land Adjudication, office 4.03",
+      "bio": "Charged in case 98.",
+      "community": "Luo",
+      "isCulprit": false,
+      "accomplice": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_car",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, early 60s, a cardigan in a remand interview room, a heavy, frightened face, ID-photo framing",
+        "ref": "reference"
+      }
+    },
+    {
+      "id": "p_pius",
+      "role": "suspect",
+      "name": "Pius Cheruiyot",
+      "age": 61,
+      "occupation": "In custody; Oduya's driver twelve years ago",
+      "bio": "Confessed in case 96.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "accomplice": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_car",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, early 60s, remand whites and a church elder's calm, a very tired face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_emojong",
+      "role": "suspect",
+      "name": "Julius Emojong",
+      "age": 54,
+      "occupation": "In custody; the registry man (case 80)",
+      "bio": "Withdrew FB 4471 a year after Joseph died.",
+      "community": "Teso",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_registry",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Teso man, mid 50s, remand whites and reading glasses, a careful, ashamed face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_okemwa",
+      "role": "suspect",
+      "name": "George Okemwa",
+      "age": 74,
+      "occupation": "Former Chief Land Registrar; Kabiru's superior",
+      "redHerring": true,
+      "bio": "Old, proud, careful with names.",
+      "community": "Kisii",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_desk_file"
+      },
+      "at": "plc_kisii",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kisii man, mid 70s, a three-piece suit and a walking stick, a guarded, proud face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_leah",
+      "role": "suspect",
+      "name": "Leah Achieng",
+      "age": 66,
+      "occupation": "Former fourth-floor office administrator; ran the switchboard",
+      "redHerring": true,
+      "bio": "Fought Lands for her pension for eight years.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_mbithe_note"
+      },
+      "at": "plc_switch",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo woman, mid 60s, a cardigan and a cardboard box of papers on her lap, a frightened, then steady face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mwangangi",
+      "role": "suspect",
+      "name": "The late Dr. Silas Mwangangi",
+      "age": 70,
+      "occupation": "Former Permanent Secretary, Lands; died eleven years ago",
+      "redHerring": true,
+      "bio": "The man Oduya tries to blame.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_od_ps"
+      },
+      "at": "plc_fifth",
+      "image": {
+        "kind": "portrait",
+        "brief": "an archive photograph of a Kenyan Kamba man in his late 60s, a dark suit and spectacles, an official portrait",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mwalimu",
+      "role": "witness",
+      "name": "Ch. Insp. (rtd) Esther Wairimu, \"Mwalimu\"",
+      "age": 63,
+      "occupation": "Amani's first commander",
+      "bio": "Sworn statement filed in case 95.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_scu",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, early 60s, short grey hair, her old uniform jacket, ID-photo framing",
+        "ref": "rc_mwalimu"
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_verge",
+      "name": "The Bahati road verge",
+      "within": "loc_bahati"
+    },
+    {
+      "id": "plc_car",
+      "name": "GK A…094, on the Bahati road"
+    },
+    {
+      "id": "plc_dairy",
+      "name": "The old dairy gate"
+    },
+    {
+      "id": "plc_garage",
+      "name": "Fundi's garage in Kisumu"
+    },
+    {
+      "id": "plc_nakuru",
+      "name": "Nakuru town"
+    },
+    {
+      "id": "plc_block9",
+      "name": "Bahati Block 9"
+    },
+    {
+      "id": "plc_412",
+      "name": "Office 4.12, Lands House",
+      "within": "loc_lands"
+    },
+    {
+      "id": "plc_403",
+      "name": "Office 4.03, Lands House",
+      "within": "loc_lands"
+    },
+    {
+      "id": "plc_fifth",
+      "name": "The fifth floor (the PS's office), Lands House",
+      "within": "loc_lands"
+    },
+    {
+      "id": "plc_switch",
+      "name": "The fourth-floor switchboard, Lands House",
+      "within": "loc_lands"
+    },
+    {
+      "id": "plc_registry",
+      "name": "The survey registry"
+    },
+    {
+      "id": "plc_ukarimu",
+      "name": "The Ukarimu Foundation, Runda"
+    },
+    {
+      "id": "plc_study",
+      "name": "Kabiru's study in Runda",
+      "within": "loc_runda"
+    },
+    {
+      "id": "plc_nakpolice",
+      "name": "Nakuru Police Division"
+    },
+    {
+      "id": "plc_kisii",
+      "name": "Kisii"
+    },
+    {
+      "id": "plc_nairobi",
+      "name": "Kabiru's house in Nairobi"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_scu",
+      "name": "Amani's desk, SCU",
+      "kind": "location",
+      "description": "The desk from the prologue, with every evidence store of the campaign open on it at once.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_file",
+          "label": "The drawer",
+          "pos": [
+            20,
+            70
+          ],
+          "yields": "ev_file",
+          "text": "The thin closed file, and Mwalimu's full one."
+        },
+        {
+          "id": "hs_board",
+          "label": "The Pattern File",
+          "pos": [
+            50,
+            20
+          ],
+          "yields": "ev_board",
+          "text": "Six threads, one wall."
+        },
+        {
+          "id": "hs_koech",
+          "label": "Case 95: the diary",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_koech",
+          "text": "Supt. Koech's volume."
+        },
+        {
+          "id": "hs_working",
+          "label": "Case 80: Joseph's working book",
+          "pos": [
+            30,
+            40
+          ],
+          "yields": "ev_meeting",
+          "text": "From Emojong's drawer."
+        },
+        {
+          "id": "hs_slip",
+          "label": "Case 80: the withdrawal slip",
+          "pos": [
+            35,
+            55
+          ],
+          "yields": "ev_withdrawal",
+          "text": "J.E./SRO/0331."
+        },
+        {
+          "id": "hs_amend",
+          "label": "Case 40: the Nakuru survey office copy",
+          "pos": [
+            60,
+            60
+          ],
+          "yields": "ev_amendment",
+          "text": "The amended survey of Block 9."
+        },
+        {
+          "id": "hs_rotich",
+          "label": "Case 97: the letter",
+          "pos": [
+            80,
+            25
+          ],
+          "yields": "ev_rotich",
+          "text": "S.K. Rotich, by registered mail."
+        },
+        {
+          "id": "hs_mbithe",
+          "label": "Case 98: Mbithe's note",
+          "pos": [
+            85,
+            55
+          ],
+          "yields": "ev_mbithe",
+          "text": "From her handbag."
+        },
+        {
+          "id": "hs_mwangangi",
+          "label": "Civil registry",
+          "pos": [
+            90,
+            80
+          ],
+          "yields": "ev_mwangangi",
+          "text": "A death record.",
+          "unlock": {
+            "fact": "f_od_ps"
+          }
+        },
+        {
+          "id": "hs_custody",
+          "label": "Interviews in custody",
+          "pos": [
+            10,
+            30
+          ],
+          "yields": "ev_custody",
+          "text": "Fundi, Pius, Emojong."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a detective's desk at night covered in old case files, a corkboard of red threads converging on one card, a thin folder labelled \"Mwenda, J.\" in the drawer"
+      },
+      "expected": [
+        {
+          "id": "x_taken",
+          "text": "A robber takes the watch and the cash",
+          "because": "f_property",
+          "present": false,
+          "fact": "f_abs_taken"
+        },
+        {
+          "id": "x_defence",
+          "text": "Defence injuries on the hands of a man who fought for his wallet",
+          "because": "f_chebii",
+          "present": false,
+          "fact": "f_abs_defence"
+        },
+        {
+          "id": "x_report",
+          "text": "Someone on the road reporting a robbery that night",
+          "because": "f_file",
+          "present": false,
+          "fact": "f_abs_report"
+        },
+        {
+          "id": "x_invest",
+          "text": "An investigation in the complaint file",
+          "because": "f_koech",
+          "present": false,
+          "fact": "f_abs_invest"
+        },
+        {
+          "id": "x_fb",
+          "text": "The original FB 4471 in the survey office",
+          "because": "f_withdrawal",
+          "present": false,
+          "fact": "f_abs_fb"
+        }
+      ]
+    },
+    {
+      "id": "loc_jkia",
+      "name": "JKIA departures",
+      "kind": "location",
+      "description": "Gate 14, the 09:15 to London, boarding at 08:45.",
+      "unlock": {
+        "fact": "f_flight"
+      },
+      "hotspots": [
+        {
+          "id": "hs_gate",
+          "label": "The boarding gate",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_gate",
+          "text": "A woman in a camel coat with a passport in her hand."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "an airport boarding gate at morning, a queue of passengers, a woman in a camel coat at the front, no faces in focus"
+      }
+    },
+    {
+      "id": "loc_lands",
+      "name": "Lands House, fourth floor",
+      "kind": "location",
+      "description": "A 1970s government block; on the fourth floor a long corridor of directors' offices, and at the end, by the window, 4.12.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_corridor",
+          "label": "The corridor",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_corridor",
+          "text": "Numbered doors."
+        },
+        {
+          "id": "hs_memos",
+          "label": "The Records archive",
+          "pos": [
+            20,
+            40
+          ],
+          "yields": "ev_memos",
+          "text": "Twelve-year-old memos."
+        },
+        {
+          "id": "hs_leave",
+          "label": "The leave register",
+          "pos": [
+            80,
+            40
+          ],
+          "yields": "ev_okemwa",
+          "text": "Twelve years ago."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the long fourth-floor corridor of a 1970s government office block, numbered doors, a corner office by the window at the end"
+      }
+    },
+    {
+      "id": "loc_runda",
+      "name": "Kabiru's house, Runda",
+      "kind": "location",
+      "description": "A large house; in the study, an old government desk.",
+      "unlock": {
+        "fact": "f_flight"
+      },
+      "hotspots": [
+        {
+          "id": "hs_desk",
+          "label": "The desk",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_desk",
+          "text": "Search under warrant."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a quiet study in a large Runda house, an old heavy government desk with a brass lock, a metal asset tag on its back"
+      }
+    },
+    {
+      "id": "loc_bahati",
+      "name": "The Bahati road verge",
+      "kind": "scene",
+      "description": "The verge where Joseph was found twelve years ago is a bus stop now.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_verge",
+          "label": "The verge",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_verge",
+          "text": "A bus stop at dawn."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a rural Kenyan road verge at dawn with a small bus shelter, red soil, cypress hedges, no people"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_file",
+      "type": "document",
+      "title": "The file: Mwenda, J.",
+      "render": "logBook",
+      "body": {
+        "text": "The robbery report, nine days, NFA. Mwalimu's notes: \"Not a robbery. Taken: his field book only.\" Watch and KSh 2,400 in his shirt pocket listed in his property."
+      },
+      "facts": [
+        "f_file",
+        "f_property",
+        "f_desk_file"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "NFA complaint file"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a thin police case folder stamped CLOSED, a typed robbery report and handwritten notes in the margin"
+      }
+    },
+    {
+      "id": "ev_board",
+      "type": "document",
+      "title": "The Pattern File",
+      "render": "logBook",
+      "body": {
+        "text": "Case 99: the \"Shosh\" call and Maina's statement. Case 96: Pius's \"Tell her it's done.\" Case 98: \"from 4.12 (Records)\"."
+      },
+      "facts": [
+        "f_board"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_koech",
+      "type": "document",
+      "title": "Supt. Koech's diary (case 95)",
+      "render": "logBook",
+      "body": {
+        "text": "\"Call from Lands House, 4th floor (Records), re: Mwenda complaint. Instructed: close it.\" Two days after the complaint."
+      },
+      "facts": [
+        "f_koech"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_meeting",
+      "type": "document",
+      "title": "Joseph's working field book (case 80)",
+      "render": "logBook",
+      "body": {
+        "text": "Two months before his death: \"Met Mrs. Kabiru, Records, 4.12, at her request re Block 9 amendment. Asked me to 'reconsider the line'. Refused.\""
+      },
+      "facts": [
+        "f_meeting"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_withdrawal",
+      "type": "document",
+      "title": "FB 4471 withdrawal slip (case 80)",
+      "render": "form",
+      "body": {
+        "text": "J.E./SRO/0331, \"on the authority of D.C.L.R. (Records)\"."
+      },
+      "facts": [
+        "f_withdrawal"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "withdrawal slip"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_amendment",
+      "type": "document",
+      "title": "The amended survey of Bahati Block 9",
+      "render": "form",
+      "body": {
+        "text": "Signed \"J. Mwenda, Licensed Surveyor\", dated five weeks after his death. Approved \"D.C.L.R. (Records), per M.K.\""
+      },
+      "facts": [
+        "f_amend"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": false,
+        "forger": "p_kabiru",
+        "kind": "amended survey"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "an amended land survey plan with a surveyor's signature block signed \"J. Mwenda\" and an approval stamp"
+      }
+    },
+    {
+      "id": "ev_rotich",
+      "type": "document",
+      "title": "Rotich's letter (case 97)",
+      "render": "letter",
+      "body": {
+        "text": "\"The desk was Records.\""
+      },
+      "facts": [
+        "f_rotich"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mbithe",
+      "type": "document",
+      "title": "Mbithe's note (case 98)",
+      "render": "letter",
+      "body": {
+        "text": "\"4.12 was Mrs. Kabiru's office… She always said 'Thank you, Mbithe.' Leah on the switchboard kept everything for her pension case.\""
+      },
+      "facts": [
+        "f_mbithe_note"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mwangangi",
+      "type": "document",
+      "title": "Civil registry: Dr. Silas Mwangangi",
+      "render": "form",
+      "body": {
+        "text": "Died eleven years ago. His office was on the fifth floor."
+      },
+      "facts": [
+        "f_mwangangi",
+        "f_mwangangi_alibi"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_custody",
+      "type": "witness",
+      "title": "Statements in custody: Fundi, Pius, Emojong",
+      "render": "statement",
+      "body": {
+        "speaker": "p_fundi"
+      },
+      "facts": [
+        "f_fu_stmt",
+        "f_pi_stmt",
+        "f_em_stmt"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_flight",
+      "type": "phone",
+      "title": "Records ①: Kabiru's line and the airline",
+      "render": "manifest",
+      "body": {
+        "booking": "Booked 22:31 last night: Nairobi–London, one way, 09:15.",
+        "phone": "At JKIA from 07:40."
+      },
+      "facts": [
+        "f_flight"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_board",
+          "f_mbithe_note"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_gate",
+      "type": "physical",
+      "title": "Gate 14, 08:35",
+      "render": "sceneNote",
+      "body": {
+        "note": "Amani detains Margaret Kabiru at the boarding gate."
+      },
+      "facts": [
+        "f_gate"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_corridor",
+      "type": "physical",
+      "title": "The fourth-floor corridor",
+      "render": "sceneNote",
+      "body": {
+        "note": "4.03 halfway down; 4.12 at the end, the corner office by the window."
+      },
+      "facts": [
+        "f_corridor"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_directory",
+      "type": "document",
+      "title": "Lands House internal directory",
+      "render": "logBook",
+      "body": {
+        "text": "\"4.12 — Deputy Chief Land Registrar (Records) — Mrs. M. Kabiru — direct line, not shared.\" \"4.03 — Director, Land Adjudication — Mr. R. Oduya.\""
+      },
+      "facts": [
+        "f_directory"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "telephone directory"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_switchboard",
+      "type": "document",
+      "title": "Switchboard printouts",
+      "render": "logBook",
+      "body": {
+        "text": "4.12 → Nakuru Police Division (Supt. Koech), 10:05, two days after Joseph's complaint. 4.12 → 4.03, 14:10, the day Joseph died."
+      },
+      "facts": [
+        "f_switch_close",
+        "f_switch_order",
+        "f_kabiru_home",
+        "f_leah_self"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "switchboard printouts"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_memos",
+      "type": "document",
+      "title": "Twelve-year-old Records memos",
+      "render": "logBook",
+      "body": {
+        "text": "Memos signed by M. Kabiru, D.C.L.R. (Records)."
+      },
+      "facts": [
+        "f_memos"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_okemwa",
+      "type": "document",
+      "title": "The leave register",
+      "render": "logBook",
+      "body": {
+        "text": "G. Okemwa: annual leave, Kisii, the whole month."
+      },
+      "facts": [
+        "f_okemwa"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_shares",
+      "type": "phone",
+      "title": "Records ②: companies and the bank",
+      "render": "manifest",
+      "body": {
+        "text": "Bahati Highlands Land Ltd: 40% held since eleven years ago by the Ukarimu Foundation Endowment; KSh 380 million in dividends from the 60 plots."
+      },
+      "facts": [
+        "f_shares"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_amend",
+          "f_switch_order"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_desk",
+      "type": "physical",
+      "title": "Kabiru's old government desk",
+      "render": "object",
+      "body": {
+        "tag": "Asset tag on the back: \"Lands House — 4.12\".",
+        "drawer": "A carbon-copy notebook of envelope notes, twelve years of them, each signed \"K.\""
+      },
+      "facts": [
+        "f_assettag",
+        "f_desk_note",
+        "f_desk_seal"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_flight",
+          "f_switch_close",
+          "f_shares"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a carbon-copy notebook open in an old desk drawer, a short note in neat handwriting signed with a single initial"
+      }
+    },
+    {
+      "id": "ev_verge",
+      "type": "physical",
+      "title": "The Bahati road verge",
+      "render": "sceneNote",
+      "body": {
+        "note": "A bus stop at dawn."
+      },
+      "facts": [
+        "f_verge"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_chebii",
+      "type": "forensic",
+      "title": "Review of the original post-mortem (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_chebii",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_file"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_hand_k",
+      "type": "forensic",
+      "title": "Handwriting: desk notebook vs Records memos",
+      "render": "labReport",
+      "body": {
+        "test": "handwriting"
+      },
+      "facts": [
+        "f_hand_k"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "handwriting",
+        "hours": 10,
+        "needs": [
+          "ev_desk",
+          "ev_memos"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_hand_j",
+      "type": "forensic",
+      "title": "Handwriting: \"J. Mwenda\" on the amendment",
+      "render": "labReport",
+      "body": {
+        "test": "handwriting"
+      },
+      "facts": [
+        "f_hand_j"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "handwriting",
+        "hours": 10,
+        "needs": [
+          "ev_amendment",
+          "ev_meeting"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_paper",
+      "type": "forensic",
+      "title": "Paper and ink: the desk notebook",
+      "render": "labReport",
+      "body": {
+        "test": "document"
+      },
+      "facts": [
+        "f_paper"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "document",
+        "hours": 10,
+        "needs": [
+          "ev_desk"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Twelve years ago Joseph Mwenda was found dead on the Bahati road verge; robbery suspected; the file was closed after nine days. Today it is reopened.",
+      "kind": "true",
+      "about": [
+        "p_joseph",
+        "loc_bahati"
+      ],
+      "at": {
+        "from": "06:50",
+        "to": null,
+        "day": "12 years ago"
+      }
+    },
+    {
+      "id": "f_file",
+      "text": "Mwalimu's note on the original file: \"Not a robbery. Taken: his field book only.\"",
+      "kind": "true",
+      "about": [
+        "p_mwalimu",
+        "p_joseph"
+      ]
+    },
+    {
+      "id": "f_property",
+      "text": "His property list: a watch and KSh 2,400 in his shirt pocket, left on him. Only the wallet and the field book were gone.",
+      "kind": "true",
+      "about": [
+        "p_joseph"
+      ]
+    },
+    {
+      "id": "f_desk_file",
+      "text": "The file's cover sheet lists the Lands House officers of twelve years ago: Chief Land Registrar G. Okemwa; D.C.L.R. (Records) M. Kabiru; Director, Land Adjudication R. Oduya.",
+      "kind": "true",
+      "about": [
+        "p_okemwa",
+        "p_kabiru",
+        "p_oduya"
+      ]
+    },
+    {
+      "id": "f_board",
+      "text": "On the Pattern File: Maina's \"Shosh said fix it\" (99), Pius's \"Tell her it's done\" (96), and Mbithe's \"from 4.12 (Records)\" (98).",
+      "kind": "true",
+      "about": [
+        "p_kabiru"
+      ]
+    },
+    {
+      "id": "f_koech",
+      "text": "Supt. Koech's diary: \"Call from Lands House, 4th floor (Records), re: Mwenda complaint. Instructed: close it.\" Two days after the complaint.",
+      "kind": "true",
+      "about": [
+        "p_joseph"
+      ]
+    },
+    {
+      "id": "f_meeting",
+      "text": "Joseph's working book, two months before his death: \"Met Mrs. Kabiru, Records, 4.12, at her request re Block 9 amendment. Asked me to reconsider the line. Refused.\"",
+      "kind": "true",
+      "about": [
+        "p_joseph",
+        "p_kabiru"
+      ]
+    },
+    {
+      "id": "f_withdrawal",
+      "text": "The FB 4471 withdrawal slip, J.E./SRO/0331: \"on the authority of D.C.L.R. (Records)\".",
+      "kind": "true",
+      "about": [
+        "p_emojong"
+      ]
+    },
+    {
+      "id": "f_amend",
+      "text": "The amended survey of Block 9 is signed \"J. Mwenda, Licensed Surveyor\", dated five weeks after his death; approved \"D.C.L.R. (Records), per M.K.\"",
+      "kind": "true",
+      "about": [
+        "p_joseph",
+        "p_kabiru"
+      ]
+    },
+    {
+      "id": "f_rotich",
+      "text": "Rotich's letter (case 97): \"The desk was Records.\"",
+      "kind": "true",
+      "about": [
+        "p_kabiru"
+      ]
+    },
+    {
+      "id": "f_mbithe_note",
+      "text": "Mbithe's note (case 98): \"4.12 was Mrs. Kabiru's office.\" And: \"Leah on the switchboard kept everything for her pension case.\"",
+      "kind": "true",
+      "about": [
+        "p_kabiru",
+        "p_leah"
+      ]
+    },
+    {
+      "id": "f_mwangangi",
+      "text": "Civil registry: Dr. Silas Mwangangi died eleven years ago, and the envelopes \"via M.\" went on for nine more years. His office was on the fifth floor.",
+      "kind": "true",
+      "about": [
+        "p_mwangangi"
+      ]
+    },
+    {
+      "id": "f_mwangangi_alibi",
+      "text": "The Ministry gazette: twelve years ago that week Dr. Mwangangi was at a land conference in Arusha.",
+      "kind": "true",
+      "about": [
+        "p_mwangangi"
+      ]
+    },
+    {
+      "id": "f_fu_stmt",
+      "text": "Fundi, in custody: \"A desk. I told you in Kisumu. I didn't know it had a name.\" He repeats it: the Bahati road, the tyre lever, the wallet, the notebook handed into the car.",
+      "kind": "true",
+      "about": [
+        "p_fundi",
+        "p_joseph"
+      ],
+      "where": {
+        "person": "p_fundi",
+        "place": "plc_verge",
+        "from": "21:30",
+        "to": "21:50"
+      }
+    },
+    {
+      "id": "f_pi_stmt",
+      "text": "Pius, in custody: he drove GK A…094, waited in the car with Mr. Oduya in the back seat, and heard, \"It's done. Tell her it's done.\"",
+      "kind": "true",
+      "about": [
+        "p_pius",
+        "p_oduya"
+      ],
+      "where": {
+        "person": "p_pius",
+        "place": "plc_car",
+        "from": "21:20",
+        "to": "22:00"
+      }
+    },
+    {
+      "id": "f_em_stmt",
+      "text": "Emojong, in custody: \"The withdrawal was on Records' authority, through Adjudication. Her signature was on the authority slip. I kept your father's book.\"",
+      "kind": "true",
+      "about": [
+        "p_emojong",
+        "p_kabiru"
+      ],
+      "where": {
+        "person": "p_emojong",
+        "place": "plc_registry",
+        "from": "08:00",
+        "to": "17:00"
+      }
+    },
+    {
+      "id": "f_flight",
+      "text": "Records ①: Margaret Kabiru booked Nairobi–London, one way, 09:15, at 22:31 last night, an hour after Maina's arrest. Her phone has been at JKIA since 07:40.",
+      "kind": "true",
+      "about": [
+        "p_kabiru"
+      ]
+    },
+    {
+      "id": "f_gate",
+      "text": "At 08:35 Amani detains Margaret Kabiru at Gate 14.",
+      "kind": "true",
+      "about": [
+        "p_kabiru"
+      ]
+    },
+    {
+      "id": "f_corridor",
+      "text": "Lands House, fourth floor: 4.03 halfway down the corridor; 4.12 the corner office by the window.",
+      "kind": "true",
+      "about": [
+        "loc_lands"
+      ]
+    },
+    {
+      "id": "f_directory",
+      "text": "Internal directory, twelve years ago: \"4.12 — D.C.L.R. (Records) — Mrs. M. Kabiru — direct line, not shared.\" \"4.03 — Director, Land Adjudication — Mr. R. Oduya.\"",
+      "kind": "true",
+      "about": [
+        "p_kabiru",
+        "p_oduya"
+      ]
+    },
+    {
+      "id": "f_switch_close",
+      "text": "Switchboard printout: 4.12 called Nakuru Police Division (Supt. Koech) at 10:05, two days after Joseph's complaint.",
+      "kind": "true",
+      "about": [
+        "p_kabiru"
+      ],
+      "at": {
+        "from": "10:05",
+        "to": null,
+        "day": "12 years ago, 3 weeks before"
+      }
+    },
+    {
+      "id": "f_switch_order",
+      "text": "Switchboard printout: 4.12 called 4.03, Oduya's office, at 14:10 on the day Joseph died.",
+      "kind": "true",
+      "about": [
+        "p_kabiru",
+        "p_oduya"
+      ],
+      "at": {
+        "from": "14:10",
+        "to": null,
+        "day": "12 years ago"
+      }
+    },
+    {
+      "id": "f_kabiru_home",
+      "text": "Switchboard and Pius: that night Oduya's call went to Kabiru's home line in Nairobi.",
+      "kind": "true",
+      "about": [
+        "p_kabiru"
+      ],
+      "where": {
+        "person": "p_kabiru",
+        "place": "plc_nairobi",
+        "from": "21:00",
+        "to": "22:30"
+      }
+    },
+    {
+      "id": "f_memos",
+      "text": "Twelve-year-old Records memos signed by M. Kabiru.",
+      "kind": "true",
+      "about": [
+        "p_kabiru"
+      ]
+    },
+    {
+      "id": "f_okemwa",
+      "text": "Leave register: George Okemwa was on annual leave in Kisii for the whole month of the complaint and the killing.",
+      "kind": "true",
+      "about": [
+        "p_okemwa"
+      ],
+      "where": {
+        "person": "p_okemwa",
+        "place": "plc_kisii",
+        "from": "00:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_leah_self",
+      "text": "The switchboard log: Leah's shift ended at 17:00 that day; she was signed out.",
+      "kind": "true",
+      "about": [
+        "p_leah"
+      ],
+      "where": {
+        "person": "p_leah",
+        "place": "plc_switch",
+        "from": "08:00",
+        "to": "17:00"
+      }
+    },
+    {
+      "id": "f_shares",
+      "text": "Records ②: since eleven years ago the Ukarimu Foundation Endowment has held 40% of Bahati Highlands Land Ltd, which sold Block 9's 60 plots: KSh 380 million in dividends.",
+      "kind": "true",
+      "about": [
+        "p_kabiru"
+      ]
+    },
+    {
+      "id": "f_assettag",
+      "text": "On the back of the desk in Kabiru's study, a government asset tag: \"Lands House — 4.12\".",
+      "kind": "true",
+      "about": [
+        "p_kabiru",
+        "plc_study"
+      ]
+    },
+    {
+      "id": "f_desk_note",
+      "text": "In the locked drawer, a carbon copy for the day Joseph died: \"R. — Bahati tonight. He must stop. — K.\"",
+      "kind": "true",
+      "about": [
+        "p_kabiru",
+        "p_oduya",
+        "p_joseph"
+      ]
+    },
+    {
+      "id": "f_desk_seal",
+      "text": "An older carbon in the same book: \"Owino & Mwakazi — Registrar's seal, round — collect by driver. — K.\"",
+      "kind": "true",
+      "about": [
+        "p_kabiru"
+      ]
+    },
+    {
+      "id": "f_verge",
+      "text": "The verge where Joseph was found is a bus stop now.",
+      "kind": "true",
+      "about": [
+        "plc_verge"
+      ]
+    },
+    {
+      "id": "f_chebii",
+      "text": "Dr. Chebii, reviewing the original notes: one blow from a narrow steel bar; no defence injuries on the hands. Struck from behind, not in a struggle over a wallet.",
+      "kind": "true",
+      "about": [
+        "p_joseph"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "The original post-mortem: death twelve years ago between 21:30 and 21:50.",
+      "kind": "true",
+      "about": [
+        "p_joseph"
+      ],
+      "at": {
+        "from": "21:30",
+        "to": "21:50",
+        "day": "12 years ago"
+      }
+    },
+    {
+      "id": "f_hand_k",
+      "text": "Examiner Ayugi: the desk notebook is in the same hand as Kabiru's twelve-year-old Records memos.",
+      "kind": "true",
+      "about": [
+        "p_kabiru"
+      ]
+    },
+    {
+      "id": "f_hand_j",
+      "text": "Handwriting: the \"J. Mwenda\" on the amendment is not Joseph's: a careful copy, the pen pressure even where his always tails off.",
+      "kind": "true",
+      "about": [
+        "p_joseph"
+      ]
+    },
+    {
+      "id": "f_paper",
+      "text": "Paper and ink: Lands House carbon books of twelve years ago; ink ages consistent with the years claimed.",
+      "kind": "true",
+      "about": [
+        "p_kabiru"
+      ]
+    },
+    {
+      "id": "f_abs_taken",
+      "text": "Missing: nothing but his wallet and his field book was taken; his watch and the cash in his shirt pocket were left.",
+      "kind": "true",
+      "about": [
+        "p_joseph"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_defence",
+      "text": "Missing: there are no defence injuries on his hands.",
+      "kind": "true",
+      "about": [
+        "p_joseph"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_report",
+      "text": "Missing: there's no robbery report from anyone on the road that night.",
+      "kind": "true",
+      "about": [
+        "plc_verge"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_invest",
+      "text": "Missing: the complaint file has no investigation in it.",
+      "kind": "true",
+      "about": [
+        "p_joseph"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_fb",
+      "text": "Missing: the original FB 4471 is gone from the survey office.",
+      "kind": "true",
+      "about": [
+        "plc_registry"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_kb_shared",
+      "text": "Kabiru: \"4.12 was a shared line. Anyone could use it.\"",
+      "kind": "lie",
+      "about": [
+        "p_kabiru"
+      ]
+    },
+    {
+      "id": "f_kb_never",
+      "text": "Kabiru: \"I never met a surveyor called Joseph Mwenda.\"",
+      "kind": "lie",
+      "about": [
+        "p_kabiru"
+      ]
+    },
+    {
+      "id": "f_kb_officers",
+      "text": "Kabiru: \"The foundation's grants were its officers' business.\"",
+      "kind": "lie",
+      "about": [
+        "p_kabiru"
+      ]
+    },
+    {
+      "id": "f_kb_lines",
+      "text": "Kabiru, once, after a long silence: \"Your father thought a line on a map was a moral question. It's a line on a map, Detective. Lines move. Desks don't.\"",
+      "kind": "true",
+      "about": [
+        "p_kabiru",
+        "p_joseph"
+      ]
+    },
+    {
+      "id": "f_ok_shared",
+      "text": "Okemwa: \"4.12 was a shared line for the whole Records section.\"",
+      "kind": "lie",
+      "about": [
+        "p_okemwa"
+      ]
+    },
+    {
+      "id": "f_ok_reveal",
+      "text": "Okemwa: \"I said 'shared' because I didn't want to say her name. She ran Records. I was in Kisii that month, and I have been glad of it every day since.\"",
+      "kind": "true",
+      "about": [
+        "p_okemwa",
+        "p_kabiru"
+      ]
+    },
+    {
+      "id": "f_le_none",
+      "text": "Leah: \"I kept no records. Switchboards don't.\"",
+      "kind": "lie",
+      "about": [
+        "p_leah"
+      ]
+    },
+    {
+      "id": "f_le_reveal",
+      "text": "Leah: \"I kept the printouts because Lands owed me a pension for eight years and I wanted proof of my overtime. I didn't know what was in them. I knew what floor I worked on.\"",
+      "kind": "true",
+      "about": [
+        "p_leah"
+      ]
+    },
+    {
+      "id": "f_od_ps",
+      "text": "Oduya: \"The envelopes came from the Permanent Secretary, Dr. Mwangangi.\"",
+      "kind": "lie",
+      "about": [
+        "p_oduya"
+      ]
+    },
+    {
+      "id": "f_od_412",
+      "text": "Oduya: \"Very well. 4.12. Always 4.12, then the foundation. I said 'tell her' in the car because I was frightened of her. I still am.\"",
+      "kind": "true",
+      "about": [
+        "p_oduya",
+        "p_kabiru"
+      ]
+    },
+    {
+      "id": "f_fu_claim",
+      "text": "Fundi: \"A desk. I didn't know it had a name.\"",
+      "kind": "claim",
+      "about": [
+        "p_fundi"
+      ]
+    },
+    {
+      "id": "f_pi_claim",
+      "text": "Pius: \"I drove. I have said it all.\"",
+      "kind": "claim",
+      "about": [
+        "p_pius"
+      ]
+    },
+    {
+      "id": "f_em_claim",
+      "text": "Emojong: \"The withdrawal was on Records' authority, through Adjudication.\"",
+      "kind": "claim",
+      "about": [
+        "p_emojong"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_kabiru",
+      "stance": "lawyered",
+      "lawyered": {
+        "advocate": "Senior Counsel Dorothy Wambugu",
+        "reopenedBy": [
+          "f_switch_close"
+        ],
+        "line": "My client is a retired public servant and philanthropist. No comment."
+      },
+      "intro": "Margaret Kabiru sits in her camel coat beside Senior Counsel Dorothy Wambugu, gloves folded in her lap. Once reopened: \"4.12 was a shared line. Anyone could use it. And I never met a surveyor called Joseph Mwenda.\"",
+      "claims": [
+        "f_kb_shared",
+        "f_kb_never"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_kb_officers",
+          "after": "f_assettag"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_okemwa",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_file"
+      ],
+      "intro": "George Okemwa keeps both hands on his stick. \"4.12 was a shared line for the whole Records section.\"",
+      "claims": [
+        "f_ok_shared"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_leah",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_mbithe"
+      ],
+      "intro": "Leah holds a cardboard box on her lap and doesn't open it. \"I kept no records. Switchboards don't.\"",
+      "claims": [
+        "f_le_none"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_oduya",
+      "stance": "cooperative",
+      "intro": "Raphael Oduya agrees to one interview, his own counsel beside him. \"The envelopes came from the Permanent Secretary, Dr. Mwangangi.\"",
+      "claims": [
+        "f_od_ps"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_fundi",
+      "stance": "cooperative",
+      "intro": "Fundi sits on the floor again. \"A desk. I didn't know it had a name.\"",
+      "claims": [
+        "f_fu_claim"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_pius",
+      "stance": "cooperative",
+      "intro": "Pius folds his hands. \"I drove. I have said it all.\"",
+      "claims": [
+        "f_pi_claim"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_emojong",
+      "stance": "cooperative",
+      "intro": "Emojong cleans his glasses. \"The withdrawal was on Records' authority, through Adjudication.\"",
+      "claims": [
+        "f_em_claim"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_mwalimu",
+      "stance": "cooperative",
+      "intro": "Mwalimu, on the phone, doesn't say hello. \"Office 4.12. Go and get her before nine.\"",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_leah",
+      "claim": "f_le_none",
+      "brokenBy": [
+        "f_mbithe_note"
+      ],
+      "reveals": [
+        "f_le_reveal",
+        "ev_directory",
+        "ev_switchboard"
+      ],
+      "reaction": "\"I kept the printouts because Lands owed me a pension for eight years and I wanted proof of my overtime. I didn't know what was in them. I knew what floor I worked on.\" She opens the box.",
+      "mark": "explains"
+    },
+    {
+      "id": "c_okemwa",
+      "claim": "f_ok_shared",
+      "brokenBy": [
+        "f_directory"
+      ],
+      "reveals": [
+        "f_ok_reveal",
+        "ev_okemwa"
+      ],
+      "reaction": "\"I said 'shared' because I didn't want to say her name. She ran Records. I ran the title. I was in Kisii that month, and I have been glad of it every day since.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_oduya",
+      "claim": "f_od_ps",
+      "brokenBy": [
+        "f_mwangangi"
+      ],
+      "reveals": [
+        "f_od_412"
+      ],
+      "reaction": "\"Very well. 4.12. Always 4.12, then the foundation. I said 'tell her' in the car because I was frightened of her. I still am.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_kb_shared",
+      "claim": "f_kb_shared",
+      "brokenBy": [
+        "f_directory"
+      ],
+      "reveals": [],
+      "reaction": "Senior Counsel Wambugu reads the directory line twice. Kabiru doesn't look at it.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_kb_never",
+      "claim": "f_kb_never",
+      "brokenBy": [
+        "f_meeting"
+      ],
+      "reveals": [],
+      "reaction": "Kabiru looks at Joseph's handwriting for a long time, and smooths her gloves.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_kb_officers",
+      "claim": "f_kb_officers",
+      "brokenBy": [
+        "f_desk_note",
+        "f_hand_k"
+      ],
+      "reveals": [
+        "f_kb_lines"
+      ],
+      "reaction": "\"Your father thought a line on a map was a moral question. It's a line on a map, Detective. Lines move. Desks don't.\" Senior Counsel Wambugu ends the interview. She never says the word Kivuli.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_fundi",
+      "text": "Benedict Mbuvi",
+      "category": "person",
+      "ref": "p_fundi",
+      "unlock": {
+        "anyOf": [
+          "f_fu_stmt"
+        ]
+      }
+    },
+    {
+      "id": "w_kabiru",
+      "text": "Margaret Kabiru",
+      "category": "person",
+      "ref": "p_kabiru",
+      "unlock": {
+        "anyOf": [
+          "f_desk_file"
+        ]
+      }
+    },
+    {
+      "id": "w_oduya",
+      "text": "Raphael Oduya",
+      "category": "person",
+      "ref": "p_oduya",
+      "unlock": {
+        "anyOf": [
+          "f_desk_file"
+        ]
+      }
+    },
+    {
+      "id": "w_pius",
+      "text": "Pius Cheruiyot",
+      "category": "person",
+      "ref": "p_pius",
+      "unlock": {
+        "anyOf": [
+          "f_pi_stmt"
+        ]
+      }
+    },
+    {
+      "id": "w_emojong",
+      "text": "Julius Emojong",
+      "category": "person",
+      "ref": "p_emojong",
+      "unlock": {
+        "anyOf": [
+          "f_withdrawal"
+        ]
+      }
+    },
+    {
+      "id": "w_okemwa",
+      "text": "George Okemwa",
+      "category": "person",
+      "ref": "p_okemwa",
+      "unlock": {
+        "anyOf": [
+          "f_desk_file"
+        ]
+      }
+    },
+    {
+      "id": "w_leah",
+      "text": "Leah Achieng",
+      "category": "person",
+      "ref": "p_leah",
+      "unlock": {
+        "anyOf": [
+          "f_mbithe_note"
+        ]
+      }
+    },
+    {
+      "id": "w_mwangangi",
+      "text": "Silas Mwangangi",
+      "category": "person",
+      "ref": "p_mwangangi",
+      "unlock": {
+        "anyOf": [
+          "f_od_ps"
+        ]
+      }
+    },
+    {
+      "id": "w_nobody",
+      "text": "nobody",
+      "category": "person",
+      "nobody": true,
+      "unlock": {
+        "start": true
+      }
+    },
+    {
+      "id": "r_present",
+      "text": "was present and paying, and carried the order",
+      "category": "role",
+      "by": [
+        "f_pi_stmt",
+        "f_switch_order",
+        "f_od_412",
+        "f_desk_note"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_pi_stmt"
+        ]
+      }
+    },
+    {
+      "id": "r_drove",
+      "text": "drove the car",
+      "category": "role",
+      "by": [
+        "f_pi_stmt"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_pi_stmt"
+        ]
+      }
+    },
+    {
+      "id": "r_withdrew",
+      "text": "withdrew the field book",
+      "category": "role",
+      "by": [
+        "f_withdrawal"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_withdrawal"
+        ]
+      }
+    },
+    {
+      "id": "r_alibi",
+      "text": "gave a false alibi",
+      "category": "role",
+      "by": [
+        "f_od_ps"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_pi_stmt"
+        ]
+      }
+    },
+    {
+      "id": "r_lure",
+      "text": "lured the victim",
+      "category": "role",
+      "by": [
+        "f_meeting"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_pi_stmt"
+        ]
+      }
+    },
+    {
+      "id": "r_plant",
+      "text": "planted evidence",
+      "category": "role",
+      "by": [
+        "f_amend"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_pi_stmt"
+        ]
+      }
+    },
+    {
+      "id": "pl_verge",
+      "text": "the Bahati road verge",
+      "category": "place",
+      "ref": "plc_verge",
+      "unlock": {
+        "anyOf": [
+          "f_fu_stmt"
+        ]
+      }
+    },
+    {
+      "id": "pl_dairy",
+      "text": "the old dairy gate",
+      "category": "place",
+      "ref": "plc_dairy",
+      "unlock": {
+        "anyOf": [
+          "f_pi_stmt"
+        ]
+      }
+    },
+    {
+      "id": "pl_garage",
+      "text": "Fundi's garage in Kisumu",
+      "category": "place",
+      "ref": "plc_garage",
+      "unlock": {
+        "anyOf": [
+          "f_fu_stmt"
+        ]
+      }
+    },
+    {
+      "id": "pl_nakuru",
+      "text": "Nakuru town",
+      "category": "place",
+      "ref": "plc_nakuru",
+      "unlock": {
+        "anyOf": [
+          "f_fu_stmt"
+        ]
+      }
+    },
+    {
+      "id": "pl_block9",
+      "text": "Bahati Block 9",
+      "category": "place",
+      "ref": "plc_block9",
+      "unlock": {
+        "anyOf": [
+          "f_amend"
+        ]
+      }
+    },
+    {
+      "id": "pl_lands",
+      "text": "Lands House",
+      "category": "place",
+      "ref": "loc_lands",
+      "unlock": {
+        "anyOf": [
+          "f_desk_file"
+        ]
+      }
+    },
+    {
+      "id": "pl_412",
+      "text": "office 4.12, Lands House",
+      "category": "place",
+      "ref": "plc_412",
+      "unlock": {
+        "anyOf": [
+          "f_board"
+        ]
+      }
+    },
+    {
+      "id": "pl_403",
+      "text": "office 4.03, Lands House",
+      "category": "place",
+      "ref": "plc_403",
+      "unlock": {
+        "anyOf": [
+          "f_directory"
+        ]
+      }
+    },
+    {
+      "id": "pl_fifth",
+      "text": "the fifth floor (the PS's office)",
+      "category": "place",
+      "ref": "plc_fifth",
+      "unlock": {
+        "anyOf": [
+          "f_od_ps"
+        ]
+      }
+    },
+    {
+      "id": "pl_ukarimu",
+      "text": "the Ukarimu Foundation",
+      "category": "place",
+      "ref": "plc_ukarimu",
+      "unlock": {
+        "anyOf": [
+          "f_board"
+        ]
+      }
+    },
+    {
+      "id": "pl_study",
+      "text": "Kabiru's study in Runda",
+      "category": "place",
+      "ref": "plc_study",
+      "unlock": {
+        "anyOf": [
+          "f_flight"
+        ]
+      }
+    },
+    {
+      "id": "pl_nakpolice",
+      "text": "Nakuru Police Division",
+      "category": "place",
+      "ref": "plc_nakpolice",
+      "unlock": {
+        "anyOf": [
+          "f_koech"
+        ]
+      }
+    },
+    {
+      "id": "h_lever",
+      "text": "striking him from behind with a tyre lever, and robbing him to make it look like a robbery",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_fu_stmt"
+        ]
+      }
+    },
+    {
+      "id": "h_accident",
+      "text": "a road accident",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_fight",
+      "text": "striking him in a fight over his wallet",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_strangle",
+      "text": "strangling him",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_fall",
+      "text": "a fall",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_beacons",
+      "text": "he refused to move his survey beacons on Bahati Block 9 for the company her foundation would own",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_meeting"
+        ]
+      }
+    },
+    {
+      "id": "m_robbery",
+      "text": "a robbery",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_client",
+      "text": "a quarrel with a client",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_seals",
+      "text": "he'd found the forged seals",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_board"
+        ]
+      }
+    },
+    {
+      "id": "m_family",
+      "text": "a family dispute",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "d_amend",
+      "text": "the amended survey of Bahati Block 9",
+      "category": "document",
+      "ref": "ev_amendment",
+      "unlock": {
+        "anyOf": [
+          "f_amend"
+        ]
+      }
+    },
+    {
+      "id": "d_slip",
+      "text": "the FB 4471 withdrawal slip",
+      "category": "document",
+      "ref": "ev_withdrawal",
+      "unlock": {
+        "anyOf": [
+          "f_withdrawal"
+        ]
+      }
+    },
+    {
+      "id": "d_directory",
+      "text": "the telephone directory",
+      "category": "document",
+      "ref": "ev_directory",
+      "unlock": {
+        "anyOf": [
+          "f_directory"
+        ]
+      }
+    },
+    {
+      "id": "d_switch",
+      "text": "the switchboard printouts",
+      "category": "document",
+      "ref": "ev_switchboard",
+      "unlock": {
+        "anyOf": [
+          "f_switch_close"
+        ]
+      }
+    },
+    {
+      "id": "d_nfa",
+      "text": "the NFA complaint file",
+      "category": "document",
+      "ref": "ev_file",
+      "unlock": {
+        "anyOf": [
+          "f_file"
+        ]
+      }
+    },
+    {
+      "id": "t_dead",
+      "text": "it is signed \"J. Mwenda\" five weeks after he died",
+      "category": "tell",
+      "by": [
+        "f_amend",
+        "f_ob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_amend"
+        ]
+      }
+    },
+    {
+      "id": "t_hand",
+      "text": "the handwriting isn't his",
+      "category": "tell",
+      "by": [
+        "f_hand_j"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_hand_j"
+        ]
+      }
+    },
+    {
+      "id": "t_retired",
+      "text": "a retired stamp",
+      "category": "tell",
+      "by": [
+        "f_amend"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_amend"
+        ]
+      }
+    },
+    {
+      "id": "t_facsimile",
+      "text": "a facsimile stamp",
+      "category": "tell",
+      "by": [
+        "f_amend"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_amend"
+        ]
+      }
+    },
+    {
+      "id": "t_letterhead",
+      "text": "a letterhead replaced years ago",
+      "category": "tell",
+      "by": [
+        "f_amend"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_amend"
+        ]
+      }
+    },
+    {
+      "id": "t_typed",
+      "text": "typing over a pre-signed blank",
+      "category": "tell",
+      "by": [
+        "f_amend"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_amend"
+        ]
+      }
+    },
+    {
+      "id": "a_taken",
+      "text": "nothing but his wallet and his field book was taken: his watch and the cash in his shirt pocket were left",
+      "category": "absence",
+      "ref": "f_abs_taken",
+      "unlock": {
+        "anyOf": [
+          "f_abs_taken"
+        ]
+      }
+    },
+    {
+      "id": "a_defence",
+      "text": "there are no defence injuries on his hands",
+      "category": "absence",
+      "ref": "f_abs_defence",
+      "unlock": {
+        "anyOf": [
+          "f_abs_defence"
+        ]
+      }
+    },
+    {
+      "id": "a_report",
+      "text": "there's no robbery report from anyone on the road that night",
+      "category": "absence",
+      "ref": "f_abs_report",
+      "unlock": {
+        "anyOf": [
+          "f_abs_report"
+        ]
+      }
+    },
+    {
+      "id": "a_invest",
+      "text": "the complaint file has no investigation in it",
+      "category": "absence",
+      "ref": "f_abs_invest",
+      "unlock": {
+        "anyOf": [
+          "f_abs_invest"
+        ]
+      }
+    },
+    {
+      "id": "a_fb",
+      "text": "the original FB 4471 is missing from the survey office",
+      "category": "absence",
+      "ref": "f_abs_fb",
+      "unlock": {
+        "anyOf": [
+          "f_abs_fb"
+        ]
+      }
+    },
+    {
+      "id": "k_record",
+      "text": "the killers came for the record of his survey, not his money",
+      "category": "conclusion",
+      "by": [
+        "f_abs_taken",
+        "f_property",
+        "f_file",
+        "f_fu_stmt"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_taken"
+        ]
+      }
+    },
+    {
+      "id": "k_robbery",
+      "text": "it was an ordinary robbery",
+      "category": "conclusion",
+      "by": [
+        "f_property"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_taken"
+        ]
+      }
+    },
+    {
+      "id": "k_fought",
+      "text": "he fought for his wallet",
+      "category": "conclusion",
+      "by": [
+        "f_chebii"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_taken"
+        ]
+      }
+    },
+    {
+      "id": "k_nocare",
+      "text": "nobody cared about Block 9",
+      "category": "conclusion",
+      "by": [
+        "f_shares"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_taken"
+        ]
+      }
+    },
+    {
+      "id": "k_lost",
+      "text": "the field book was lost in the struggle",
+      "category": "conclusion",
+      "by": [
+        "f_fu_stmt"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_taken"
+        ]
+      }
+    },
+    {
+      "id": "k_gave",
+      "text": "he gave the book away before he died",
+      "category": "conclusion",
+      "by": [
+        "f_fu_stmt"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_taken"
+        ]
+      }
+    },
+    {
+      "id": "w_p1_trail",
+      "text": "The Ukarimu Foundation's KSh 214 million (case 99)",
+      "category": "pin",
+      "pin": "case-099:f_grant_trail",
+      "unlock": {
+        "anyOf": [
+          "f_shares"
+        ]
+      }
+    },
+    {
+      "id": "w_p1_till",
+      "text": "Rashid's order book: Till 880 214 (case 10)",
+      "category": "pin",
+      "pin": "case-010:f_order_mvua",
+      "unlock": {
+        "anyOf": [
+          "f_shares"
+        ]
+      }
+    },
+    {
+      "id": "w_p1_mlinzi",
+      "text": "Mlinzi Bora's two million (case 90)",
+      "category": "pin",
+      "pin": "case-090:f_till2m",
+      "unlock": {
+        "anyOf": [
+          "f_shares"
+        ]
+      }
+    },
+    {
+      "id": "w_p1_commission",
+      "text": "Mwanaisha's monthly commission (case 91)",
+      "category": "pin",
+      "pin": "case-091:f_commission",
+      "unlock": {
+        "anyOf": [
+          "f_shares"
+        ]
+      }
+    },
+    {
+      "id": "w_p1_doreen",
+      "text": "Doreen Kathambi's quarterly payments (case 60)",
+      "category": "pin",
+      "pin": "case-060:f_mvua_pay",
+      "unlock": {
+        "anyOf": [
+          "f_shares"
+        ]
+      }
+    },
+    {
+      "id": "w_p2_book",
+      "text": "The black book's first entry: \"4th Floor, Lands House — Records\" (case 92)",
+      "category": "pin",
+      "pin": "case-092:f_book_first",
+      "unlock": {
+        "anyOf": [
+          "f_desk_seal"
+        ]
+      }
+    },
+    {
+      "id": "w_p2_drawer",
+      "text": "Rashid's \"Mvua — Friday\" drawer (case 10)",
+      "category": "pin",
+      "pin": "case-010:f_drawer_mvua",
+      "unlock": {
+        "anyOf": [
+          "f_desk_seal"
+        ]
+      }
+    },
+    {
+      "id": "w_p2_mv",
+      "text": "Desai's oval \"MV\" seal (case 66)",
+      "category": "pin",
+      "pin": "case-066:f_mv_seal",
+      "unlock": {
+        "anyOf": [
+          "f_desk_seal"
+        ]
+      }
+    },
+    {
+      "id": "w_p2_stamp",
+      "text": "Doreen Kathambi's commissioner stamp (case 60)",
+      "category": "pin",
+      "pin": "case-060:f_comm_stamp",
+      "unlock": {
+        "anyOf": [
+          "f_desk_seal"
+        ]
+      }
+    },
+    {
+      "id": "w_p2_paper",
+      "text": "The container of security paper (case 30)",
+      "category": "pin",
+      "pin": "case-030:f_container_oval",
+      "unlock": {
+        "anyOf": [
+          "f_desk_seal"
+        ]
+      }
+    },
+    {
+      "id": "w_p3_scrap",
+      "text": "Mbithe's log: \"from 4.12 (Records) — to Registry (J.E.)\" (case 98)",
+      "category": "pin",
+      "pin": "case-098:f_scrap",
+      "unlock": {
+        "anyOf": [
+          "f_withdrawal"
+        ]
+      }
+    },
+    {
+      "id": "w_p3_hannah",
+      "text": "Hannah's \"withdrawn — Registry\" listing (case 40)",
+      "category": "pin",
+      "pin": "case-040:f_hannah_withdrawn",
+      "unlock": {
+        "anyOf": [
+          "f_withdrawal"
+        ]
+      }
+    },
+    {
+      "id": "w_p3_hand",
+      "text": "Examiner Ayugi's same-hand finding (case 80)",
+      "category": "pin",
+      "pin": "case-080:f_hand",
+      "unlock": {
+        "anyOf": [
+          "f_withdrawal"
+        ]
+      }
+    },
+    {
+      "id": "w_p3_caller",
+      "text": "The dead man's ID on Ogada's caller (case 50)",
+      "category": "pin",
+      "pin": "case-050:f_rec_caller_id",
+      "unlock": {
+        "anyOf": [
+          "f_withdrawal"
+        ]
+      }
+    },
+    {
+      "id": "w_p3_drawer",
+      "text": "Emojong: \"I'm a drawer\" (case 80)",
+      "category": "pin",
+      "pin": "case-080:f_emo_drawer",
+      "unlock": {
+        "anyOf": [
+          "f_withdrawal"
+        ]
+      }
+    },
+    {
+      "id": "w_p4_fundi",
+      "text": "Fundi's man in the government car, Raphael Oduya (case 94)",
+      "category": "pin",
+      "pin": "case-094:f_fu_reveal",
+      "unlock": {
+        "anyOf": [
+          "f_fu_stmt"
+        ]
+      }
+    },
+    {
+      "id": "w_p4_calvin",
+      "text": "Calvin Wamalwa: \"Fundi brings the money\" (case 40)",
+      "category": "pin",
+      "pin": "case-040:f_cal_fundi",
+      "unlock": {
+        "anyOf": [
+          "f_fu_stmt"
+        ]
+      }
+    },
+    {
+      "id": "w_p4_gichuru",
+      "text": "Gichuru: recruited by Fundi (case 30)",
+      "category": "pin",
+      "pin": "case-030:f_gich_fundi",
+      "unlock": {
+        "anyOf": [
+          "f_fu_stmt"
+        ]
+      }
+    },
+    {
+      "id": "w_p4_lineup",
+      "text": "The photo line-up that named Fundi (case 50)",
+      "category": "pin",
+      "pin": "case-050:f_lineup",
+      "unlock": {
+        "anyOf": [
+          "f_fu_stmt"
+        ]
+      }
+    },
+    {
+      "id": "w_p4_sim",
+      "text": "The lure SIM (case 90)",
+      "category": "pin",
+      "pin": "case-090:f_lure_sim",
+      "unlock": {
+        "anyOf": [
+          "f_fu_stmt"
+        ]
+      }
+    },
+    {
+      "id": "w_p5_gk",
+      "text": "GK A…094, the Director of Land Adjudication's car (case 96)",
+      "category": "pin",
+      "pin": "case-096:f_gk",
+      "unlock": {
+        "anyOf": [
+          "f_pi_stmt"
+        ]
+      }
+    },
+    {
+      "id": "w_p5_ob",
+      "text": "The OB of Joseph's death (case 40)",
+      "category": "pin",
+      "pin": "case-040:f_ob_pair",
+      "unlock": {
+        "anyOf": [
+          "f_pi_stmt"
+        ]
+      }
+    },
+    {
+      "id": "w_p5_fb",
+      "text": "The microfilm of FB 4471 (case 40)",
+      "category": "pin",
+      "pin": "case-040:f_fb4471",
+      "unlock": {
+        "anyOf": [
+          "f_pi_stmt"
+        ]
+      }
+    },
+    {
+      "id": "w_p5_nfa",
+      "text": "The NFA file signed \"E. Wairimu\" (case 60)",
+      "category": "pin",
+      "pin": "case-060:f_leverage",
+      "unlock": {
+        "anyOf": [
+          "f_pi_stmt"
+        ]
+      }
+    },
+    {
+      "id": "w_p5_working",
+      "text": "Joseph's working field book (case 80)",
+      "category": "pin",
+      "pin": "case-080:f_fieldbook",
+      "unlock": {
+        "anyOf": [
+          "f_pi_stmt"
+        ]
+      }
+    },
+    {
+      "id": "w_p6_kabiru",
+      "text": "Margaret Kabiru: \"Shosh said fix it\" (case 99)",
+      "category": "pin",
+      "pin": "case-099:f_ma_reveal",
+      "unlock": {
+        "anyOf": [
+          "f_desk_note"
+        ]
+      }
+    },
+    {
+      "id": "w_p6_oduya",
+      "text": "Raphael Oduya: \"a postman with a pension\" (case 98)",
+      "category": "pin",
+      "pin": "case-098:f_od_postman",
+      "unlock": {
+        "anyOf": [
+          "f_desk_note"
+        ]
+      }
+    },
+    {
+      "id": "w_p6_rotich",
+      "text": "Stanley Rotich, in the 4th-floor photo (case 86)",
+      "category": "pin",
+      "pin": "case-086:f_photo",
+      "unlock": {
+        "anyOf": [
+          "f_desk_note"
+        ]
+      }
+    },
+    {
+      "id": "w_p6_desk",
+      "text": "\"Kivuli is a desk\", not a person (case 50)",
+      "category": "pin",
+      "pin": "case-050:f_kivuli_desk",
+      "unlock": {
+        "anyOf": [
+          "f_desk_note"
+        ]
+      }
+    },
+    {
+      "id": "w_p6_emojong",
+      "text": "Julius Emojong: \"Tell the fourth floor\" (case 80)",
+      "category": "pin",
+      "pin": "case-080:f_fourth",
+      "unlock": {
+        "anyOf": [
+          "f_desk_note"
+        ]
+      }
+    },
+    {
+      "id": "w_p6_maina",
+      "text": "Maina Kabiru, \"M.\" (case 97)",
+      "category": "pin",
+      "pin": "case-097:f_note_m",
+      "unlock": {
+        "anyOf": [
+          "f_desk_note"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "On {where1}, {who} killed {victim} by {how}, because {why}, with {accomplice1}, who {role1}, and {accomplice2}, who {role2}. It was ordered from {where2}. {document} was forged, as shown by {tell}. That {missing} shows that {conclusion}. The money behind Till 880 214 came from {pin1}. The first forged registrar's seal was cut for {pin2}. FB 4471 was withdrawn on the authority of {pin3}. Fundi was paid for the Bahati road by {pin4}. The car on the Bahati road that night was {pin5}. Kivuli is {pin6}.",
+    "fixed": {
+      "victim": "Joseph Mwenda"
+    },
+    "halima": "Accepted. All of it. Sign it, Amani.",
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_2m",
+                  "label": "Two months before",
+                  "from": null,
+                  "to": null,
+                  "day": "12 years ago, 2 months before"
+                },
+                {
+                  "id": "sl_1005",
+                  "label": "Three weeks before, 10:05",
+                  "from": "10:05",
+                  "to": "10:05",
+                  "day": "12 years ago, 3 weeks before"
+                },
+                {
+                  "id": "sl_1410",
+                  "label": "The day he died, 14:10",
+                  "from": "14:10",
+                  "to": "14:10",
+                  "day": "12 years ago"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "That night, 21:30–21:50",
+                  "from": "21:30",
+                  "to": "21:50",
+                  "day": "12 years ago"
+                },
+                {
+                  "id": "sl_0650",
+                  "label": "Next morning, 06:50",
+                  "from": "06:50",
+                  "to": "06:50",
+                  "day": "12 years ago, next day"
+                },
+                {
+                  "id": "sl_5w",
+                  "label": "Five weeks later",
+                  "from": null,
+                  "to": null,
+                  "day": "12 years ago, 5 weeks after"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_refuse",
+                  "text": "Joseph refuses Kabiru in office 4.12",
+                  "slot": "sl_2m",
+                  "by": [
+                    "f_meeting"
+                  ],
+                  "why": "His working book.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_meeting"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_close",
+                  "text": "4.12 calls Nakuru: \"close it\"",
+                  "slot": "sl_1005",
+                  "by": [
+                    "f_switch_close",
+                    "f_koech"
+                  ],
+                  "why": "Two days after his complaint.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_switch_close"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_order",
+                  "text": "4.12 calls Oduya's office",
+                  "slot": "sl_1410",
+                  "by": [
+                    "f_switch_order",
+                    "f_desk_note"
+                  ],
+                  "why": "The afternoon he died.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_switch_order"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_kill",
+                  "text": "Joseph is killed on the Bahati road",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod",
+                    "f_fu_stmt"
+                  ],
+                  "why": "Half past nine.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_amend",
+                  "text": "The forged amendment is registered",
+                  "slot": "sl_5w",
+                  "by": [
+                    "f_amend"
+                  ],
+                  "why": "Five weeks after his death.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_amend"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_0650",
+                  "by": [
+                    "f_chebii",
+                    "f_property"
+                  ],
+                  "why": "\"A robbery found at dawn\"? He was struck from behind at half past nine, and nothing of value was taken."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A refusal, a call to close it, a call to 4.03, the road, and his own name forged five weeks later.",
+          "fail": [
+            "A robbery? Nothing of value was taken.",
+            "When did 4.12 call Oduya?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where1",
+            "category": "place",
+            "answer": "pl_verge",
+            "pool": [
+              "pl_verge",
+              "pl_dairy",
+              "pl_garage",
+              "pl_nakuru",
+              "pl_block9",
+              "pl_lands"
+            ]
+          },
+          {
+            "id": "where2",
+            "category": "place",
+            "answer": "pl_412",
+            "pool": [
+              "pl_412",
+              "pl_403",
+              "pl_fifth",
+              "pl_ukarimu",
+              "pl_study",
+              "pl_nakpolice"
+            ],
+            "subject": "other",
+            "note": "Where the killing was ordered from: the office whose extension called Nakuru and 4.03."
+          }
+        ],
+        "prosecutor": {
+          "pass": "Killed on the Bahati road. Ordered from the corner office by the window.",
+          "fail": [
+            "The desk was in 4.12 then; it moved to Runda nine years later.",
+            "4.03 received the call. It didn't make it."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_fundi",
+            "pool": [
+              "w_fundi",
+              "w_kabiru",
+              "w_oduya",
+              "w_pius",
+              "w_emojong",
+              "w_okemwa",
+              "w_leah",
+              "w_mwangangi"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "Benedict Mbuvi struck the blow.",
+          "fail": [
+            "The desk never touched the bar.",
+            "Pius was in the car."
+          ]
+        }
+      },
+      {
+        "id": "g_acc1",
+        "kind": "accomplice",
+        "blanks": [
+          {
+            "id": "accomplice1",
+            "category": "person",
+            "answer": "w_oduya",
+            "pool": [
+              "w_oduya",
+              "w_pius",
+              "w_kabiru",
+              "w_emojong",
+              "w_okemwa",
+              "w_leah",
+              "w_nobody"
+            ]
+          },
+          {
+            "id": "role1",
+            "category": "role",
+            "answer": "r_present",
+            "pool": [
+              "r_present",
+              "r_drove",
+              "r_withdrew",
+              "r_alibi",
+              "r_lure",
+              "r_plant"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "Oduya in the back seat, with the envelope and the order.",
+          "fail": [
+            "Emojong withdrew the book a year later.",
+            "Okemwa was in Kisii."
+          ]
+        }
+      },
+      {
+        "id": "g_acc2",
+        "kind": "accomplice",
+        "blanks": [
+          {
+            "id": "accomplice2",
+            "category": "person",
+            "answer": "w_pius",
+            "pool": [
+              "w_oduya",
+              "w_pius",
+              "w_kabiru",
+              "w_emojong",
+              "w_okemwa",
+              "w_leah",
+              "w_nobody"
+            ]
+          },
+          {
+            "id": "role2",
+            "category": "role",
+            "answer": "r_drove",
+            "pool": [
+              "r_present",
+              "r_drove",
+              "r_withdrew",
+              "r_alibi",
+              "r_lure",
+              "r_plant"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "Pius drove GK A…094.",
+          "fail": [
+            "Oduya was the passenger, not the driver.",
+            "Leah went home at five."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_lever"
+          }
+        ],
+        "prosecutor": {
+          "pass": "From behind, with a tyre lever, and a wallet taken for show.",
+          "fail": [
+            "No defence injuries: there was no fight.",
+            "One blow from a bar."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_beacons"
+          }
+        ],
+        "prosecutor": {
+          "pass": "\"Reconsider the line.\" He refused.",
+          "fail": [
+            "The watch and the cash stayed in his pocket.",
+            "The seals came later."
+          ]
+        }
+      },
+      {
+        "id": "g_forgery",
+        "kind": "forgery",
+        "blanks": [
+          {
+            "id": "document",
+            "category": "document",
+            "answer": "d_amend"
+          },
+          {
+            "id": "tell",
+            "category": "tell",
+            "answer": "t_dead",
+            "accept": [
+              "t_hand"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "His name, five weeks after his funeral, and not in his hand.",
+          "fail": [
+            "The slip is genuine: it's how we know whose authority.",
+            "No stamp on the signature."
+          ]
+        }
+      },
+      {
+        "id": "g_absence",
+        "kind": "absence",
+        "blanks": [
+          {
+            "id": "missing",
+            "category": "absence",
+            "answer": "a_taken"
+          },
+          {
+            "id": "conclusion",
+            "category": "conclusion",
+            "answer": "k_record"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A robber takes the watch. They took the book.",
+          "fail": [
+            "No defence injuries tells you how, not why.",
+            "The empty file tells you about the police, not the killers."
+          ]
+        }
+      },
+      {
+        "id": "g_spine",
+        "kind": "spine",
+        "blanks": [
+          {
+            "id": "pin1",
+            "category": "pin",
+            "answer": "w_p1_trail",
+            "pool": [
+              "w_p1_trail",
+              "w_p1_till",
+              "w_p1_mlinzi",
+              "w_p1_commission",
+              "w_p1_doreen"
+            ],
+            "spine": true
+          },
+          {
+            "id": "pin2",
+            "category": "pin",
+            "answer": "w_p2_book",
+            "pool": [
+              "w_p2_book",
+              "w_p2_drawer",
+              "w_p2_mv",
+              "w_p2_stamp",
+              "w_p2_paper"
+            ],
+            "spine": true
+          },
+          {
+            "id": "pin3",
+            "category": "pin",
+            "answer": "w_p3_scrap",
+            "pool": [
+              "w_p3_scrap",
+              "w_p3_hannah",
+              "w_p3_hand",
+              "w_p3_caller",
+              "w_p3_drawer"
+            ],
+            "spine": true
+          },
+          {
+            "id": "pin4",
+            "category": "pin",
+            "answer": "w_p4_fundi",
+            "pool": [
+              "w_p4_fundi",
+              "w_p4_calvin",
+              "w_p4_gichuru",
+              "w_p4_lineup",
+              "w_p4_sim"
+            ],
+            "spine": true
+          },
+          {
+            "id": "pin5",
+            "category": "pin",
+            "answer": "w_p5_gk",
+            "pool": [
+              "w_p5_gk",
+              "w_p5_ob",
+              "w_p5_fb",
+              "w_p5_nfa",
+              "w_p5_working"
+            ],
+            "spine": true
+          },
+          {
+            "id": "pin6",
+            "category": "pin",
+            "answer": "w_p6_kabiru",
+            "pool": [
+              "w_p6_kabiru",
+              "w_p6_oduya",
+              "w_p6_rotich",
+              "w_p6_desk",
+              "w_p6_emojong",
+              "w_p6_maina"
+            ],
+            "spine": true
+          }
+        ],
+        "prosecutor": {
+          "pass": "Accepted. All of it.",
+          "fail": [
+            "A desk is furniture. Look at the asset tag.",
+            "Read the carbon again: \"— K.\""
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_verge",
+      "from": "21:30",
+      "to": "21:50",
+      "alibisApply": false,
+      "reason": "A killing twelve years old: those on the road are fixed by their own confessions and the post-mortem notes, and nobody else can be given a twelve-year-old alibi beyond the records that refute them.",
+      "note": "The original post-mortem: 21:30–21:50, twelve years ago."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_ob",
+          "f_file",
+          "f_property",
+          "f_abs_taken",
+          "f_chebii",
+          "f_aut_tod"
+        ],
+        "concludes": "Twelve years ago he was struck from behind, with no struggle; only his wallet and field book were taken.",
+        "answers": [
+          "missing",
+          "conclusion",
+          "how"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_amend",
+          "f_hand_j",
+          "f_meeting"
+        ],
+        "concludes": "His signature was forged on the survey change five weeks after his death.",
+        "answers": [
+          "document",
+          "tell"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_fu_stmt",
+          "f_pi_stmt",
+          "f_od_ps",
+          "f_mwangangi",
+          "f_od_412",
+          "case-094:f_fu_reveal",
+          "case-096:f_gk"
+        ],
+        "concludes": "Benedict Mbuvi killed him; Oduya was present and paid; Pius drove GK A…094.",
+        "answers": [
+          "who",
+          "accomplice1",
+          "role1",
+          "accomplice2",
+          "role2",
+          "where1",
+          "pin4",
+          "pin5"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_board",
+          "f_mbithe_note",
+          "f_le_none",
+          "f_le_reveal",
+          "f_switch_close",
+          "f_switch_order",
+          "f_koech"
+        ],
+        "concludes": "4.12 ordered the complaint closed and called Oduya on the day of the killing.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_directory",
+          "f_ok_shared",
+          "f_ok_reveal",
+          "f_kb_shared",
+          "f_kb_never",
+          "f_rotich",
+          "f_withdrawal",
+          "f_em_stmt",
+          "case-098:f_scrap"
+        ],
+        "concludes": "4.12 was Kabiru's direct line and office; Joseph had refused her there; FB 4471 went out on her authority.",
+        "answers": [
+          "where2",
+          "pin3"
+        ]
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_flight",
+          "f_shares",
+          "case-099:f_grant_trail"
+        ],
+        "concludes": "Her foundation has owned 40% of the company that sold Block 9, from the year after; and she was leaving for London.",
+        "answers": [
+          "why",
+          "pin1"
+        ]
+      },
+      {
+        "id": "s7",
+        "from": [
+          "s6",
+          "f_assettag",
+          "f_desk_note",
+          "f_desk_seal",
+          "case-092:f_book_first"
+        ],
+        "concludes": "The desk itself, tagged \"Lands House — 4.12\", with \"R. — Bahati tonight. He must stop. — K.\"",
+        "answers": [
+          "pin2"
+        ]
+      },
+      {
+        "id": "s8",
+        "from": [
+          "s7",
+          "f_hand_k",
+          "f_paper",
+          "f_kb_officers",
+          "f_kb_lines",
+          "case-099:f_ma_reveal"
+        ],
+        "concludes": "Margaret Kabiru, Deputy Chief Land Registrar (Records), ordered the killing of Joseph Mwenda. Kivuli.",
+        "answers": [
+          "pin6"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_dairy",
+        "blank": "where1",
+        "by": [
+          "f_pi_stmt"
+        ],
+        "why": "Where Elijah watched from."
+      },
+      {
+        "word": "pl_garage",
+        "blank": "where1",
+        "by": [
+          "f_fu_stmt"
+        ],
+        "why": "Fundi was picked up in Nakuru; the garage is in Kisumu."
+      },
+      {
+        "word": "pl_nakuru",
+        "blank": "where1",
+        "by": [
+          "f_fu_stmt"
+        ],
+        "why": "Where Fundi was picked up."
+      },
+      {
+        "word": "pl_block9",
+        "blank": "where1",
+        "by": [
+          "f_ob"
+        ],
+        "why": "The land, not the road."
+      },
+      {
+        "word": "pl_lands",
+        "blank": "where1",
+        "by": [
+          "f_ob"
+        ],
+        "why": "Where it was ordered."
+      },
+      {
+        "word": "pl_403",
+        "blank": "where2",
+        "by": [
+          "f_switch_order"
+        ],
+        "why": "4.03 received the call; it didn't make it."
+      },
+      {
+        "word": "pl_fifth",
+        "blank": "where2",
+        "by": [
+          "f_mwangangi"
+        ],
+        "why": "The PS's floor; he was dead for nine years of the envelopes."
+      },
+      {
+        "word": "pl_ukarimu",
+        "blank": "where2",
+        "by": [
+          "f_shares"
+        ],
+        "why": "The foundation came later."
+      },
+      {
+        "word": "pl_study",
+        "blank": "where2",
+        "by": [
+          "f_assettag"
+        ],
+        "why": "The desk was in 4.12 then; it moved to Runda nine years later."
+      },
+      {
+        "word": "pl_nakpolice",
+        "blank": "where2",
+        "by": [
+          "f_switch_close"
+        ],
+        "why": "Nakuru was called; it didn't call."
+      },
+      {
+        "word": "w_kabiru",
+        "blank": "who",
+        "by": [
+          "f_kabiru_home",
+          "f_pi_stmt"
+        ],
+        "why": "She was at home in Nairobi when Oduya called her. The desk never touched the bar."
+      },
+      {
+        "word": "w_oduya",
+        "blank": "who",
+        "by": [
+          "f_pi_stmt",
+          "f_fu_stmt"
+        ],
+        "why": "In the back seat."
+      },
+      {
+        "word": "w_pius",
+        "blank": "who",
+        "by": [
+          "f_pi_stmt"
+        ],
+        "why": "At the wheel."
+      },
+      {
+        "word": "w_emojong",
+        "blank": "who",
+        "by": [
+          "f_em_stmt"
+        ],
+        "why": "At the registry; a year later he withdrew the book."
+      },
+      {
+        "word": "w_okemwa",
+        "blank": "who",
+        "by": [
+          "f_okemwa"
+        ],
+        "why": "In Kisii all month."
+      },
+      {
+        "word": "w_leah",
+        "blank": "who",
+        "by": [
+          "f_leah_self"
+        ],
+        "why": "Off shift at five."
+      },
+      {
+        "word": "w_mwangangi",
+        "blank": "who",
+        "by": [
+          "f_mwangangi_alibi"
+        ],
+        "why": "In Arusha."
+      },
+      {
+        "word": "w_kabiru",
+        "blank": "accomplice1",
+        "by": [
+          "f_desk_note",
+          "f_kabiru_home"
+        ],
+        "why": "She gave the order; she wasn't in the car."
+      },
+      {
+        "word": "w_pius",
+        "blank": "accomplice1",
+        "by": [
+          "f_pi_stmt"
+        ],
+        "why": "He drove; he didn't pay."
+      },
+      {
+        "word": "w_emojong",
+        "blank": "accomplice1",
+        "by": [
+          "f_em_stmt",
+          "f_withdrawal"
+        ],
+        "why": "A drawer, a year later."
+      },
+      {
+        "word": "w_okemwa",
+        "blank": "accomplice1",
+        "by": [
+          "f_okemwa"
+        ],
+        "why": "In Kisii."
+      },
+      {
+        "word": "w_leah",
+        "blank": "accomplice1",
+        "by": [
+          "f_le_reveal"
+        ],
+        "why": "She kept printouts for her pension."
+      },
+      {
+        "word": "w_nobody",
+        "blank": "accomplice1",
+        "by": [
+          "f_pi_stmt"
+        ],
+        "why": "Someone was in the back seat."
+      },
+      {
+        "word": "w_kabiru",
+        "blank": "accomplice2",
+        "by": [
+          "f_kabiru_home"
+        ],
+        "why": "At home in Nairobi."
+      },
+      {
+        "word": "w_oduya",
+        "blank": "accomplice2",
+        "by": [
+          "f_pi_stmt"
+        ],
+        "why": "The passenger, not the driver."
+      },
+      {
+        "word": "w_emojong",
+        "blank": "accomplice2",
+        "by": [
+          "f_em_stmt"
+        ],
+        "why": "Not on the road."
+      },
+      {
+        "word": "w_okemwa",
+        "blank": "accomplice2",
+        "by": [
+          "f_okemwa"
+        ],
+        "why": "In Kisii."
+      },
+      {
+        "word": "w_leah",
+        "blank": "accomplice2",
+        "by": [
+          "f_leah_self"
+        ],
+        "why": "Off shift."
+      },
+      {
+        "word": "w_nobody",
+        "blank": "accomplice2",
+        "by": [
+          "f_pi_stmt"
+        ],
+        "why": "Someone drove."
+      },
+      {
+        "word": "r_drove",
+        "blank": "role1",
+        "by": [
+          "f_pi_stmt"
+        ],
+        "why": "Pius drove; Oduya sat in the back."
+      },
+      {
+        "word": "r_withdrew",
+        "blank": "role1",
+        "by": [
+          "f_withdrawal"
+        ],
+        "why": "Emojong withdrew the book."
+      },
+      {
+        "word": "r_alibi",
+        "blank": "role1",
+        "by": [
+          "f_od_412"
+        ],
+        "why": "His lie came twelve years later."
+      },
+      {
+        "word": "r_lure",
+        "blank": "role1",
+        "by": [
+          "f_meeting"
+        ],
+        "why": "Joseph was on his own road."
+      },
+      {
+        "word": "r_plant",
+        "blank": "role1",
+        "by": [
+          "f_amend"
+        ],
+        "why": "The forgery was Records'."
+      },
+      {
+        "word": "r_present",
+        "blank": "role2",
+        "by": [
+          "f_pi_stmt"
+        ],
+        "why": "Pius stayed at the wheel."
+      },
+      {
+        "word": "r_withdrew",
+        "blank": "role2",
+        "by": [
+          "f_withdrawal"
+        ],
+        "why": "Emojong."
+      },
+      {
+        "word": "r_alibi",
+        "blank": "role2",
+        "by": [
+          "f_pi_stmt"
+        ],
+        "why": "He confessed."
+      },
+      {
+        "word": "r_lure",
+        "blank": "role2",
+        "by": [
+          "f_meeting"
+        ],
+        "why": "Nobody lured him."
+      },
+      {
+        "word": "r_plant",
+        "blank": "role2",
+        "by": [
+          "f_amend"
+        ],
+        "why": "Nothing planted."
+      },
+      {
+        "word": "h_accident",
+        "blank": "how",
+        "by": [
+          "f_chebii"
+        ],
+        "why": "A blow from a bar."
+      },
+      {
+        "word": "h_fight",
+        "blank": "how",
+        "by": [
+          "f_chebii"
+        ],
+        "why": "No defence injuries."
+      },
+      {
+        "word": "h_strangle",
+        "blank": "how",
+        "by": [
+          "f_chebii"
+        ],
+        "why": "A blow."
+      },
+      {
+        "word": "h_fall",
+        "blank": "how",
+        "by": [
+          "f_chebii"
+        ],
+        "why": "A blow from behind."
+      },
+      {
+        "word": "m_robbery",
+        "blank": "why",
+        "by": [
+          "f_property"
+        ],
+        "why": "The watch and cash stayed."
+      },
+      {
+        "word": "m_client",
+        "blank": "why",
+        "by": [
+          "f_meeting"
+        ],
+        "why": "His \"client\" was Records."
+      },
+      {
+        "word": "m_seals",
+        "blank": "why",
+        "by": [
+          "f_meeting",
+          "f_desk_seal"
+        ],
+        "why": "He refused to move a line; the seals were a separate order."
+      },
+      {
+        "word": "m_family",
+        "blank": "why",
+        "by": [
+          "f_meeting"
+        ],
+        "why": "Not family: Block 9."
+      },
+      {
+        "word": "d_slip",
+        "blank": "document",
+        "by": [
+          "f_withdrawal",
+          "f_em_stmt"
+        ],
+        "why": "Genuine: it's how we know whose authority."
+      },
+      {
+        "word": "d_directory",
+        "blank": "document",
+        "by": [
+          "f_directory"
+        ],
+        "why": "Genuine."
+      },
+      {
+        "word": "d_switch",
+        "blank": "document",
+        "by": [
+          "f_le_reveal"
+        ],
+        "why": "Genuine, kept for a pension."
+      },
+      {
+        "word": "d_nfa",
+        "blank": "document",
+        "by": [
+          "f_file"
+        ],
+        "why": "Genuine, and shameful."
+      },
+      {
+        "word": "t_retired",
+        "blank": "tell",
+        "by": [
+          "f_amend"
+        ],
+        "why": "The approval stamp was in use."
+      },
+      {
+        "word": "t_facsimile",
+        "blank": "tell",
+        "by": [
+          "f_hand_j"
+        ],
+        "why": "Hand-copied, not stamped."
+      },
+      {
+        "word": "t_letterhead",
+        "blank": "tell",
+        "by": [
+          "f_amend"
+        ],
+        "why": "A survey plan, not a letter."
+      },
+      {
+        "word": "t_typed",
+        "blank": "tell",
+        "by": [
+          "f_hand_j"
+        ],
+        "why": "Copied by hand."
+      },
+      {
+        "word": "a_defence",
+        "blank": "missing",
+        "by": [
+          "f_abs_defence",
+          "f_chebii"
+        ],
+        "why": "That tells you how he was struck."
+      },
+      {
+        "word": "a_report",
+        "blank": "missing",
+        "by": [
+          "f_abs_report"
+        ],
+        "why": "Nobody saw; that's all it says."
+      },
+      {
+        "word": "a_invest",
+        "blank": "missing",
+        "by": [
+          "f_abs_invest",
+          "f_koech"
+        ],
+        "why": "That tells you about the police."
+      },
+      {
+        "word": "a_fb",
+        "blank": "missing",
+        "by": [
+          "f_abs_fb",
+          "f_withdrawal"
+        ],
+        "why": "That was a year later."
+      },
+      {
+        "word": "k_robbery",
+        "blank": "conclusion",
+        "by": [
+          "f_property"
+        ],
+        "why": "Nothing of value taken."
+      },
+      {
+        "word": "k_fought",
+        "blank": "conclusion",
+        "by": [
+          "f_chebii"
+        ],
+        "why": "No defence injuries."
+      },
+      {
+        "word": "k_nocare",
+        "blank": "conclusion",
+        "by": [
+          "f_shares"
+        ],
+        "why": "KSh 380 million cared."
+      },
+      {
+        "word": "k_lost",
+        "blank": "conclusion",
+        "by": [
+          "f_fu_stmt"
+        ],
+        "why": "Fundi handed it into the car."
+      },
+      {
+        "word": "k_gave",
+        "blank": "conclusion",
+        "by": [
+          "f_fu_stmt"
+        ],
+        "why": "Taken from his body."
+      },
+      {
+        "word": "w_p1_till",
+        "blank": "pin1",
+        "by": [
+          "case-010:f_order_mvua",
+          "f_shares"
+        ],
+        "why": "That's the till, not where its money came from."
+      },
+      {
+        "word": "w_p1_mlinzi",
+        "blank": "pin1",
+        "by": [
+          "case-090:f_till2m"
+        ],
+        "why": "Paid by the till."
+      },
+      {
+        "word": "w_p1_commission",
+        "blank": "pin1",
+        "by": [
+          "case-091:f_commission"
+        ],
+        "why": "Paid by the till."
+      },
+      {
+        "word": "w_p1_doreen",
+        "blank": "pin1",
+        "by": [
+          "case-060:f_mvua_pay"
+        ],
+        "why": "Paid by Mvua."
+      },
+      {
+        "word": "w_p2_drawer",
+        "blank": "pin2",
+        "by": [
+          "case-010:f_drawer_mvua",
+          "f_desk_seal"
+        ],
+        "why": "Rashid's refusal, twelve years later."
+      },
+      {
+        "word": "w_p2_mv",
+        "blank": "pin2",
+        "by": [
+          "case-066:f_mv_seal"
+        ],
+        "why": "A later seal."
+      },
+      {
+        "word": "w_p2_stamp",
+        "blank": "pin2",
+        "by": [
+          "case-060:f_comm_stamp"
+        ],
+        "why": "A commissioner stamp."
+      },
+      {
+        "word": "w_p2_paper",
+        "blank": "pin2",
+        "by": [
+          "case-030:f_container_oval"
+        ],
+        "why": "Paper, not a seal."
+      },
+      {
+        "word": "w_p3_hannah",
+        "blank": "pin3",
+        "by": [
+          "case-040:f_hannah_withdrawn",
+          "f_withdrawal"
+        ],
+        "why": "It says withdrawn; not on whose authority."
+      },
+      {
+        "word": "w_p3_hand",
+        "blank": "pin3",
+        "by": [
+          "case-080:f_hand"
+        ],
+        "why": "Emojong's hand, not the authority."
+      },
+      {
+        "word": "w_p3_caller",
+        "blank": "pin3",
+        "by": [
+          "case-050:f_rec_caller_id"
+        ],
+        "why": "A phone, not an authority."
+      },
+      {
+        "word": "w_p3_drawer",
+        "blank": "pin3",
+        "by": [
+          "case-080:f_emo_drawer",
+          "f_em_stmt"
+        ],
+        "why": "The drawer acted on the desk's slip."
+      },
+      {
+        "word": "w_p4_calvin",
+        "blank": "pin4",
+        "by": [
+          "case-040:f_cal_fundi"
+        ],
+        "why": "Fundi paid Calvin; not the other way."
+      },
+      {
+        "word": "w_p4_gichuru",
+        "blank": "pin4",
+        "by": [
+          "case-030:f_gich_fundi"
+        ],
+        "why": "Fundi recruited Gichuru."
+      },
+      {
+        "word": "w_p4_lineup",
+        "blank": "pin4",
+        "by": [
+          "case-050:f_lineup"
+        ],
+        "why": "It names Fundi, not who paid him."
+      },
+      {
+        "word": "w_p4_sim",
+        "blank": "pin4",
+        "by": [
+          "case-090:f_lure_sim"
+        ],
+        "why": "Twelve years later."
+      },
+      {
+        "word": "w_p5_ob",
+        "blank": "pin5",
+        "by": [
+          "case-040:f_ob_pair"
+        ],
+        "why": "Where, not which car."
+      },
+      {
+        "word": "w_p5_fb",
+        "blank": "pin5",
+        "by": [
+          "case-040:f_fb4471"
+        ],
+        "why": "A field book."
+      },
+      {
+        "word": "w_p5_nfa",
+        "blank": "pin5",
+        "by": [
+          "case-060:f_leverage"
+        ],
+        "why": "The complaint."
+      },
+      {
+        "word": "w_p5_working",
+        "blank": "pin5",
+        "by": [
+          "case-080:f_fieldbook"
+        ],
+        "why": "The book taken."
+      },
+      {
+        "word": "w_p6_oduya",
+        "blank": "pin6",
+        "by": [
+          "case-098:f_od_postman",
+          "f_od_412"
+        ],
+        "why": "The messenger."
+      },
+      {
+        "word": "w_p6_rotich",
+        "blank": "pin6",
+        "by": [
+          "case-086:f_photo",
+          "f_rotich"
+        ],
+        "why": "Dead, and his letter says the desk was Records."
+      },
+      {
+        "word": "w_p6_desk",
+        "blank": "pin6",
+        "by": [
+          "case-050:f_kivuli_desk",
+          "f_assettag"
+        ],
+        "why": "A desk with an asset tag: \"Lands House — 4.12\". Whose office was 4.12?"
+      },
+      {
+        "word": "w_p6_emojong",
+        "blank": "pin6",
+        "by": [
+          "case-080:f_fourth",
+          "f_withdrawal"
+        ],
+        "why": "He told \"the fourth floor\"; he wasn't it."
+      },
+      {
+        "word": "w_p6_maina",
+        "blank": "pin6",
+        "by": [
+          "case-097:f_note_m",
+          "f_board"
+        ],
+        "why": "M. fixed things for Shosh."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Twelve years ago Margaret Kabiru, Deputy Chief Land Registrar for Records, is buying into Bahati Highlands Land Ltd, which needs Block 9's survey amended. In office 4.12 she asks Joseph Mwenda to \"reconsider the line\". He refuses, and complains to the Nakuru police. Two days later 4.12 calls Nakuru: close it.",
+        "image": null
+      },
+      {
+        "text": "On the day he dies, at 14:10, 4.12 calls 4.03. That night Oduya, in GK A…094 driven by Pius, picks up a mechanic in Nakuru town. On the Bahati road Benedict Mbuvi strikes Joseph from behind with a tyre lever and takes his wallet and field book. Oduya calls: \"It's done. Tell her it's done.\"",
+        "image": "plc_verge"
+      },
+      {
+        "text": "Five weeks later the amended survey is registered, signed \"J. Mwenda\". A year later FB 4471 is withdrawn on Records' authority. Kabiru retires, buys her old desk at the government auction, and from her study, through her foundation, her grandson and the till called Mvua, goes on.",
+        "image": null
+      },
+      {
+        "text": "An hour after Maina's arrest she books the 09:15 to London. At 08:35 Amani meets her at the gate.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "The charge sheet is accepted. Amani signs it with Halima's father's fountain pen (case 90). The ink is blue-black. The signature is just \"Amani\".",
+      "files": [
+        {
+          "thread": "t_mvua",
+          "text": "Closed: the Ukarimu Foundation paid Till 880 214; Bahati Highlands Land Ltd paid the foundation."
+        },
+        {
+          "thread": "t_stamp",
+          "text": "Closed: the first forged registrar's seal was cut for \"4th Floor, Lands House — Records\", on a note signed \"K.\"."
+        },
+        {
+          "thread": "t_registry",
+          "text": "Closed: FB 4471 was withdrawn on the authority of D.C.L.R. (Records), office 4.12."
+        },
+        {
+          "thread": "t_fundi",
+          "text": "Closed: Fundi was paid by Raphael Oduya, carrying the order from 4.12."
+        },
+        {
+          "thread": "t_joseph",
+          "text": "Closed with the truth: Joseph Mwenda was killed by Benedict Mbuvi, with Raphael Oduya present and Pius Cheruiyot driving, on the orders of Margaret Kabiru. Not a robbery."
+        },
+        {
+          "thread": "t_kivuli",
+          "text": "Identified: Kivuli is Margaret Kabiru, Deputy Chief Land Registrar (Records), office 4.12."
+        }
+      ]
+    },
+    {
+      "beat": "The epilogue strip, in silent cards: Mwalimu in a court corridor in her old uniform jacket; surveyors re-setting red beacons on Block 9 from Joseph's working book; thirty-seven files on a shelf in Isiolo; Hamisi holding his father's half-finished seal; one still from each place of the campaign; Halima putting a box of mandazi on Amani's desk."
+    },
+    {
+      "beat": "The prologue's drawer. Amani types: \"OB 01/05/12 — Reopened and closed. Joseph Mwenda, licensed surveyor, was killed on the Bahati road by Benedict Mbuvi, with Raphael Oduya present and Pius Cheruiyot driving, on the orders of Margaret Kabiru, Deputy Chief Land Registrar (Records), because he refused to move the beacons of Bahati Block 9. Not a robbery.\" CLOSED, in red. The folder is thick."
+    },
+    {
+      "beat": "Mwalimu's last voice-note: \"Close the drawer, Amani. Go home and sleep. He'd have been proud of how you did it. By the book.\" A new folder slides onto the corner of the desk, unopened: \"OB 02/05/12.\""
+    }
+  ],
+  "clockPlan": {
+    "note": "In play the clock starts at 06:30 with Mwalimu's call and Halima pre-files records ① overnight, so the airline answers by 07:30 and the gate is reached before 08:45 (late: the flight is held at 08:50; no softlock, one star lost). Three stamps (the maximum). Detain Kabiru at the gate; handwriting (10 h) and paper (10 h) come back inside 24 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_scu",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_file",
+        "hours": 0.5
+      },
+      {
+        "do": "read",
+        "target": "ev_board",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_koech",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_meeting",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_withdrawal",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_amendment",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_rotich",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_mbithe",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_custody",
+        "hours": 0
+      },
+      {
+        "do": "submit",
+        "target": "ev_chebii"
+      },
+      {
+        "do": "submit",
+        "target": "ev_hand_j"
+      },
+      {
+        "do": "interview",
+        "target": "p_mwalimu"
+      },
+      {
+        "do": "interview",
+        "target": "p_fundi"
+      },
+      {
+        "do": "interview",
+        "target": "p_pius"
+      },
+      {
+        "do": "interview",
+        "target": "p_emojong"
+      },
+      {
+        "do": "interview",
+        "target": "p_oduya"
+      },
+      {
+        "do": "read",
+        "target": "ev_mwangangi",
+        "hours": 0
+      },
+      {
+        "do": "press",
+        "target": "c_oduya"
+      },
+      {
+        "do": "records",
+        "target": "ev_flight"
+      },
+      {
+        "do": "travel",
+        "target": "loc_lands",
+        "hours": 0.25,
+        "from": "loc_scu"
+      },
+      {
+        "do": "visit",
+        "target": "loc_lands",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_corridor",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_memos",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_leah"
+      },
+      {
+        "do": "press",
+        "target": "c_leah"
+      },
+      {
+        "do": "read",
+        "target": "ev_directory",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_switchboard",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_okemwa"
+      },
+      {
+        "do": "press",
+        "target": "c_okemwa"
+      },
+      {
+        "do": "read",
+        "target": "ev_okemwa",
+        "hours": 0
+      },
+      {
+        "do": "records",
+        "target": "ev_shares"
+      },
+      {
+        "do": "travel",
+        "target": "loc_jkia",
+        "hours": 0.75,
+        "from": "loc_lands"
+      },
+      {
+        "do": "visit",
+        "target": "loc_jkia",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_gate",
+        "hours": 0
+      },
+      {
+        "do": "detain",
+        "target": "p_kabiru"
+      },
+      {
+        "do": "interview",
+        "target": "p_kabiru"
+      },
+      {
+        "do": "press",
+        "target": "c_kb_shared"
+      },
+      {
+        "do": "press",
+        "target": "c_kb_never"
+      },
+      {
+        "do": "travel",
+        "target": "loc_runda",
+        "hours": 0.75,
+        "from": "loc_jkia"
+      },
+      {
+        "do": "search",
+        "target": "loc_runda"
+      },
+      {
+        "do": "read",
+        "target": "ev_desk",
+        "hours": 0
+      },
+      {
+        "do": "submit",
+        "target": "ev_hand_k"
+      },
+      {
+        "do": "submit",
+        "target": "ev_paper"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 10
+      },
+      {
+        "do": "press",
+        "target": "c_kb_officers"
+      }
+    ],
+    "totalHours": 46.25
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_switchboard",
+        "line": "When did 4.12 make its calls?"
+      },
+      "tier2": {
+        "facts": [
+          "f_switch_close",
+          "f_switch_order"
+        ],
+        "line": "Two days after the complaint; the afternoon he died."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_directory",
+        "line": "Whose extension was 4.12?"
+      },
+      "tier2": {
+        "facts": [
+          "f_directory",
+          "f_fu_stmt"
+        ],
+        "line": "The road; and her office."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_custody",
+        "line": "Who swung the bar?"
+      },
+      "tier2": {
+        "facts": [
+          "f_fu_stmt"
+        ],
+        "line": "Benedict Mbuvi."
+      }
+    },
+    "g_acc1": {
+      "tier1": {
+        "point": "ev_custody",
+        "line": "Who sat in the back seat?"
+      },
+      "tier2": {
+        "facts": [
+          "f_pi_stmt",
+          "f_od_412"
+        ],
+        "line": "Raphael Oduya, with the envelope."
+      }
+    },
+    "g_acc2": {
+      "tier1": {
+        "point": "ev_custody",
+        "line": "Who drove?"
+      },
+      "tier2": {
+        "facts": [
+          "f_pi_stmt"
+        ],
+        "line": "Pius."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_chebii",
+        "line": "Dr. Chebii has read the old notes."
+      },
+      "tier2": {
+        "facts": [
+          "f_chebii"
+        ],
+        "line": "From behind; no defence injuries."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_meeting",
+        "line": "Read the entry two months before he died."
+      },
+      "tier2": {
+        "facts": [
+          "f_meeting",
+          "f_shares"
+        ],
+        "line": "\"Reconsider the line.\" Refused."
+      }
+    },
+    "g_forgery": {
+      "tier1": {
+        "point": "ev_amendment",
+        "line": "Look at the date beside his signature."
+      },
+      "tier2": {
+        "facts": [
+          "f_amend"
+        ],
+        "line": "Five weeks after he died."
+      }
+    },
+    "g_absence": {
+      "tier1": {
+        "point": "ev_file",
+        "line": "Read his property list."
+      },
+      "tier2": {
+        "facts": [
+          "f_abs_taken",
+          "f_property"
+        ],
+        "line": "Watch and cash left; the book taken."
+      }
+    },
+    "g_spine": {
+      "tier1": {
+        "point": "ev_desk",
+        "line": "Turn the desk round, Amani."
+      },
+      "tier2": {
+        "facts": [
+          "f_assettag",
+          "f_desk_note"
+        ],
+        "line": "\"Lands House — 4.12.\" \"He must stop. — K.\""
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "faili",
+      "def": "A file."
+    },
+    {
+      "term": "dawati",
+      "def": "A desk."
+    },
+    {
+      "term": "imefungwa",
+      "def": "\"It is closed.\""
+    },
+    {
+      "term": "alama ya mpaka",
+      "def": "A survey beacon."
+    },
+    {
+      "term": "mwisho",
+      "def": "The end."
+    },
+    {
+      "term": "Kivuli",
+      "def": "\"Shadow\": the name the fixers used for whoever gave the orders."
+    },
+    {
+      "term": "Fundi",
+      "def": "\"Craftsman\" or \"mechanic\"; Benedict Mbuvi's nickname."
+    },
+    {
+      "term": "Mwalimu",
+      "def": "\"Teacher\": Esther Wairimu's nickname from her years as Amani's first commander."
+    },
+    {
+      "term": "Mvua",
+      "def": "Mvua Holdings, the shell company behind the forged titles (\"mvua\" means rain)."
+    },
+    {
+      "term": "Ukarimu",
+      "def": "\"Generosity\"; the name of the foundation."
+    },
+    {
+      "term": "mlinzi",
+      "def": "A guard."
+    },
+    {
+      "term": "Mlinzi Bora",
+      "def": "\"Good Guard\": a security company paid by Mvua (case 90)."
+    },
+    {
+      "term": "shosh",
+      "def": "Grandmother (slang)."
+    },
+    {
+      "term": "GK",
+      "def": "Government of Kenya: the prefix on government vehicle plates."
+    },
+    {
+      "term": "NFA",
+      "def": "No Further Action: police shorthand for closing a file."
+    },
+    {
+      "term": "mandazi",
+      "def": "A fried dough snack, like a doughnut."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "airportClock",
+      "wholeDesk",
+      "threadsConverge",
+      "stampRed",
+      "epilogueStrip"
+    ],
+    "beatNotes": "The whole desk: every evidence store opens at once; the Pattern File's six threads draw into one line ending at office 4.12 and the six SPINE blanks fill from it. A timed first part (06:30 to 08:45) to reach the gate. The CLOSED stamp is red."
+  }
+}

@@ -1,0 +1,2622 @@
+{
+  "meta": {
+    "id": "case-076",
+    "number": 76,
+    "region": "northern-frontier",
+    "regionNumber": 8,
+    "title": "Swept Sand",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 40,
+    "date": "Sunday 12 July",
+    "folderTab": "KAWALASE LAGA"
+  },
+  "pattern": {
+    "crimePattern": "a boda rider about to lose his motorbike to the lender kills her on the ride home, then claims he dropped her at her gate",
+    "noRealCaseRetold": true,
+    "notes": "Fictional people, laga, shop and lender. The swept yard is the absence: a broom pattern that nobody crossed. Three liars: the killer, his guarantor (false alibi) and the shop assistant (a small theft unrelated to the killing).",
+    "tags": [
+      "strangulation",
+      "debt",
+      "boda-loan",
+      "false-alibi",
+      "three-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where",
+      "absence"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 5,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "absence"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 11/12/07",
+    "date": "Sunday 12 July",
+    "time": "06:50",
+    "reportedBy": "A water vendor, Kawalase laga",
+    "text": "A water vendor reports a woman dead under a thorn bush in the dry Kawalase laga on the edge of Lodwar town: Akai Lotukoi (31), who runs a mobile-money shop.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_laga",
+    "nodes": [
+      "loc_laga",
+      "loc_compound",
+      "loc_shop",
+      "loc_stage",
+      "loc_room"
+    ],
+    "edges": [
+      {
+        "a": "loc_shop",
+        "b": "loc_laga",
+        "minutes": 10,
+        "by": "foot"
+      },
+      {
+        "a": "loc_laga",
+        "b": "loc_compound",
+        "minutes": 10,
+        "by": "foot"
+      },
+      {
+        "a": "loc_shop",
+        "b": "loc_compound",
+        "minutes": 15,
+        "by": "boda"
+      },
+      {
+        "a": "loc_shop",
+        "b": "loc_stage",
+        "minutes": 3,
+        "by": "foot"
+      },
+      {
+        "a": "loc_stage",
+        "b": "loc_room",
+        "minutes": 10,
+        "by": "boda"
+      },
+      {
+        "a": "loc_laga",
+        "b": "loc_stage",
+        "minutes": 12,
+        "by": "boda"
+      },
+      {
+        "a": "loc_stage",
+        "b": "loc_compound",
+        "minutes": 15,
+        "by": "boda"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_akai",
+      "role": "victim",
+      "name": "Akai Lotukoi",
+      "age": 31,
+      "occupation": "Owner of a mobile-money shop; lends to young boda riders",
+      "bio": "Finances motorbikes for riders at the stage and keeps every loan in a ledger she carries home in her cash bag.",
+      "community": "Turkana",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_track",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Turkana woman, early 30s, short hair, beaded earrings, a business blouse, a sharp, confident face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_dennis",
+      "role": "suspect",
+      "name": "Dennis Ombati",
+      "age": 26,
+      "occupation": "Boda rider",
+      "bio": "Bought his motorbike on a loan from Akai. Charming and easy.",
+      "community": "Kisii",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_closing"
+      },
+      "at": "loc_stage",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kisii man, mid 20s, a reflective boda vest over a T-shirt, a ready smile that doesn't reach his eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kevin",
+      "role": "suspect",
+      "name": "Kevin Nyakundi",
+      "age": 25,
+      "occupation": "Boda rider at the same stage; Dennis's friend",
+      "bio": "Stands guarantor on Dennis's loan.",
+      "community": "Kisii",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_copy"
+      },
+      "at": "loc_stage",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kisii man, mid 20s, a cap and a boda vest, a worried, cornered face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mary",
+      "role": "suspect",
+      "name": "Mary Akeno",
+      "age": 23,
+      "occupation": "Akai's shop assistant",
+      "redHerring": true,
+      "bio": "Runs the counter and keeps the float book.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_shop",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo woman, early 20s, braided hair, a church-choir scarf, a nervous, guilty face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_ekeno",
+      "role": "suspect",
+      "name": "Ekeno Lopua",
+      "age": 38,
+      "occupation": "Akai's ex-husband",
+      "redHerring": true,
+      "bio": "They fought over their children's school fees.",
+      "community": "Turkana",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_nap_fees"
+      },
+      "at": "plc_bus",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Turkana man, late 30s, a cap and a checked shirt, a defensive, tired face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_napeyo",
+      "role": "witness",
+      "name": "Napeyo Lotukoi",
+      "age": 27,
+      "occupation": "Akai's younger sister",
+      "bio": "Lives in the same compound and sweeps the yard every evening.",
+      "community": "Turkana",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_compound",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Turkana woman, late 20s, a kanga wrap, holding a long grass broom, grief held in, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_chair",
+      "role": "witness",
+      "name": "Joseph Ekai",
+      "age": 44,
+      "occupation": "Chairman of the boda stage",
+      "statementOnly": true,
+      "bio": "Keeps the stage's file of loans and guarantors.",
+      "community": "Turkana",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_stage",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_track",
+      "name": "The track along the Kawalase laga",
+      "within": "loc_laga"
+    },
+    {
+      "id": "plc_gate",
+      "name": "Akai's compound gate",
+      "within": "loc_compound"
+    },
+    {
+      "id": "plc_church",
+      "name": "The church beside the shop"
+    },
+    {
+      "id": "plc_bus",
+      "name": "The evening bus to Kakuma"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_laga",
+      "name": "The Kawalase laga",
+      "kind": "scene",
+      "description": "A dry, sandy riverbed lined with doum palms between the shops and the compounds. A boda track runs along its bank, out of sight of the road.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Under the thorn bush",
+          "pos": [
+            50,
+            65
+          ],
+          "yields": "ev_body",
+          "text": "Akai under a thorn bush, a few metres off the track."
+        },
+        {
+          "id": "hs_tracks",
+          "label": "The boda track",
+          "pos": [
+            35,
+            40
+          ],
+          "yields": "ev_tracks",
+          "text": "Cpl Ewoi reads the sand along the track."
+        },
+        {
+          "id": "hs_bushes",
+          "label": "Thorn bushes downstream",
+          "pos": [
+            80,
+            50
+          ],
+          "yields": "ev_strap",
+          "text": "Ewoi follows the motorbike's line out of the laga.",
+          "unlock": {
+            "fact": "f_tracks"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a dry sandy riverbed on the edge of Lodwar at dawn, doum palms, a faint motorbike track along the bank, a thorn bush, no people in focus"
+      },
+      "expected": [
+        {
+          "id": "x_bag",
+          "text": "Her cash bag on her body: she carried it home every night",
+          "because": "f_ledger_habit",
+          "present": false,
+          "fact": "f_abs_bag"
+        }
+      ]
+    },
+    {
+      "id": "loc_compound",
+      "name": "Akai's compound",
+      "kind": "location",
+      "description": "A stick-fenced compound 1.2 km from the shop. The sandy yard is swept every evening in neat curved broom lines that show every footprint and tyre until morning.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_yard",
+          "label": "The swept yard",
+          "pos": [
+            50,
+            60
+          ],
+          "yields": "ev_yard",
+          "text": "The yard from the gate to Akai's door, in the morning light."
+        },
+        {
+          "id": "hs_napeyo",
+          "label": "Napeyo",
+          "pos": [
+            25,
+            40
+          ],
+          "yields": "ev_napeyo",
+          "text": "Napeyo, still holding the broom."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a sandy compound yard in Lodwar at dawn, swept in fine curved broom lines unbroken from a stick gate to a closed tin door"
+      },
+      "expected": [
+        {
+          "id": "x_pattern",
+          "text": "Napeyo's broom pattern from the evening sweep",
+          "because": "f_napeyo",
+          "present": true
+        },
+        {
+          "id": "x_tracks",
+          "text": "Her footprints from the gate to her door, and a boda's tyre mark at the gate",
+          "because": "f_den_gate",
+          "present": false,
+          "fact": "f_abs_yard"
+        }
+      ]
+    },
+    {
+      "id": "loc_shop",
+      "name": "Akai's mobile-money shop",
+      "kind": "location",
+      "description": "A narrow shop on the main road: a counter, a float book, a poster of mobile-money rates. Tidy.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_counter",
+          "label": "The counter",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_shop",
+          "text": "The counter and the float book. Mary unlocks the shop."
+        },
+        {
+          "id": "hs_floatbook",
+          "label": "Float book and agent statement",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_float",
+          "text": "The float book against the agent statement.",
+          "unlock": {
+            "fact": "f_mary_full"
+          }
+        },
+        {
+          "id": "hs_church",
+          "label": "The church next door",
+          "pos": [
+            20,
+            40
+          ],
+          "yields": "ev_mary",
+          "text": "The choir mistress, on her way in.",
+          "unlock": {
+            "fact": "f_mary_full"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a narrow mobile-money shop on a hot Lodwar street, a counter with a float book, a rates poster on the wall"
+      },
+      "expected": [
+        {
+          "id": "x_ledger",
+          "text": "Her loan ledger, which she carried home in her cash bag every night",
+          "because": "f_ledger_habit",
+          "present": false,
+          "fact": "f_abs_ledger"
+        },
+        {
+          "id": "x_struggle",
+          "text": "If she was attacked at the shop: something knocked over, the float spilt",
+          "because": "f_closing",
+          "present": false,
+          "fact": "f_abs_struggle"
+        }
+      ]
+    },
+    {
+      "id": "loc_stage",
+      "name": "The boda stage",
+      "kind": "location",
+      "description": "A tree with a bench under it 200 metres from the shop, a dozen motorbikes in a row, each with a rubber luggage strap on its rack.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_bike",
+          "label": "Dennis's motorbike",
+          "pos": [
+            40,
+            60
+          ],
+          "yields": "ev_strap_gone",
+          "text": "Dennis's bike in the row.",
+          "unlock": {
+            "fact": "f_closing"
+          }
+        },
+        {
+          "id": "hs_chair",
+          "label": "Chairman's file",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_copy",
+          "text": "Joseph Ekai keeps the stage's loan file."
+        },
+        {
+          "id": "hs_chairsays",
+          "label": "The chairman",
+          "pos": [
+            80,
+            60
+          ],
+          "yields": "ev_chair",
+          "text": "Ekai, who sees everyone come and go.",
+          "unlock": {
+            "fact": "f_kev_alibi"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a boda stage under an acacia in Lodwar, a row of motorbikes each with a black rubber strap on its rack, a wooden bench"
+      },
+      "expected": [
+        {
+          "id": "x_strap",
+          "text": "A rubber luggage strap on every rack at the stage",
+          "because": "f_chair_straps",
+          "present": false,
+          "fact": "f_abs_strap"
+        }
+      ]
+    },
+    {
+      "id": "loc_room",
+      "name": "Dennis's rented room",
+      "kind": "location",
+      "description": "A single rented room behind a row of shops: a mattress, a jerrycan, a tin on the floor with ash in it.",
+      "unlock": {
+        "fact": "f_kev_reveal"
+      },
+      "hotspots": [
+        {
+          "id": "hs_room",
+          "label": "Under the mattress and the tin",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_room",
+          "text": "Search under warrant."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small rented room in Lodwar, a mattress on the floor, a jerrycan, a tin with burned paper ash"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Akai under the thorn bush",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Strangled with a broad, flat strap. No cash bag. Her phone in her pocket. Her scarf, soft cotton, still around her shoulders."
+      },
+      "facts": [
+        "f_body",
+        "f_scarf"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a thorn bush in a dry riverbed, a woman's flat shoe in the sand, a dropped headscarf, no body visible"
+      }
+    },
+    {
+      "id": "ev_tracks",
+      "type": "physical",
+      "title": "Tracker's reading (Cpl Ewoi Lomuke)",
+      "render": "object",
+      "body": {
+        "bike": "One boda came in along the track with a passenger, stopped and stood. One rider left alone, fast, downstream.",
+        "feet": "Scuffed ground by the bike. A woman's flat shoes, two steps from the bike.",
+        "age": "Wind-softened: last evening."
+      },
+      "facts": [
+        "f_tracks"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a motorbike tyre track in dry riverbed sand, a scuffed patch beside it, a woman's shoe prints two steps long"
+      }
+    },
+    {
+      "id": "ev_strap",
+      "type": "physical",
+      "title": "A rubber luggage strap in a thorn bush",
+      "render": "object",
+      "body": {
+        "label": "A black rubber boda strap with moulded ridges, about 3 cm wide, flung into a bush 50 m down the laga."
+      },
+      "facts": [
+        "f_strap"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a black rubber motorbike luggage strap with moulded ridges and a metal buckle caught in a thorn bush"
+      }
+    },
+    {
+      "id": "ev_yard",
+      "type": "physical",
+      "title": "The swept yard",
+      "render": "object",
+      "body": {
+        "label": "Napeyo's broom pattern is unbroken from the gate to Akai's door. No footprints. No tyre mark at the gate."
+      },
+      "facts": [
+        "f_yard"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a swept sandy yard at dawn with fine curved broom lines unbroken to a closed door, no footprints"
+      }
+    },
+    {
+      "id": "ev_napeyo",
+      "type": "witness",
+      "title": "Statement: Napeyo Lotukoi",
+      "render": "statement",
+      "body": {
+        "speaker": "p_napeyo"
+      },
+      "facts": [
+        "f_napeyo",
+        "f_nap_fees",
+        "f_nap_home"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_shop",
+      "type": "witness",
+      "title": "Statement: Mary Akeno, at the counter",
+      "render": "statement",
+      "body": {
+        "speaker": "p_mary"
+      },
+      "facts": [
+        "f_closing",
+        "f_ledger_habit"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_float",
+      "type": "document",
+      "title": "Float book vs PesaPap agent statement",
+      "render": "form",
+      "body": {
+        "text": "Cash short KSh 6,500 over two weeks, a few hundred at a time."
+      },
+      "facts": [
+        "f_float"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mary",
+      "type": "witness",
+      "title": "Statement: the choir mistress",
+      "render": "statement",
+      "body": {
+        "speaker": "p_mary"
+      },
+      "facts": [
+        "f_mary_choir"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_strap_gone",
+      "type": "physical",
+      "title": "Dennis's motorbike",
+      "render": "object",
+      "body": {
+        "label": "No luggage strap on the rack."
+      },
+      "facts": [
+        "f_strap_gone",
+        "f_chair_straps"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_copy",
+      "type": "document",
+      "title": "Stage chairman's loan file",
+      "render": "form",
+      "body": {
+        "agreement": "Dennis Ombati: KSh 220,000 borrowed, KSh 40,000 repaid in eight months.",
+        "note": "Akai's Friday note to the chairman: \"Repossess Monday. Guarantor: K. Nyakundi.\""
+      },
+      "facts": [
+        "f_copy"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_chair",
+      "type": "witness",
+      "title": "Statement: Joseph Ekai, stage chairman",
+      "render": "statement",
+      "body": {
+        "speaker": "p_chair"
+      },
+      "facts": [
+        "f_chair",
+        "f_kev_stage"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Akai's and Dennis's lines",
+      "render": "manifest",
+      "body": {
+        "mast": "The Lodwar mast covers the whole town; location is no help.",
+        "akai": "Akai's last transaction 19:28: the closing float report.",
+        "dennis": "Dennis calls Kevin at 20:09: 40 seconds."
+      },
+      "facts": [
+        "f_rec_close",
+        "f_rec_call"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_abs_yard",
+          "f_copy"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_room",
+      "type": "physical",
+      "title": "Dennis's rented room",
+      "render": "object",
+      "body": {
+        "bag": "Under the mattress: Akai's cash bag, KSh 64,200.",
+        "book": "Her loan ledger, Dennis's page torn out; ash and a corner of ruled paper in the tin.",
+        "strap": "A new rubber strap still in its wrapper; receipt from a hardware stall, Sunday 07:30."
+      },
+      "facts": [
+        "f_bag",
+        "f_book",
+        "f_newstrap"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_call",
+          "f_strap_gone",
+          "f_kev_reveal"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a canvas cash bag under a thin mattress, a ledger with a torn-out page, ash in a tin, a new strap in its wrapper"
+      }
+    },
+    {
+      "id": "ev_ekeno",
+      "type": "document",
+      "title": "Kakuma bus manifest and lodging book",
+      "render": "logBook",
+      "body": {
+        "text": "Ekeno Lopua on the evening bus to Kakuma, departed 18:00; signed into a Kakuma lodging at 21:40."
+      },
+      "facts": [
+        "f_ekeno"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_den_prints",
+      "type": "physical",
+      "title": "Fingerprints: Dennis Ombati",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention."
+      },
+      "facts": [
+        "f_den_printset"
+      ],
+      "gate": null,
+      "detention": "p_dennis",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Lodwar County Referral Hospital)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_strap",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_strapmatch",
+      "type": "forensic",
+      "title": "Lab: trace (strap vs ligature mark)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_strapmatch"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_strap",
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints on the cash-bag clasp",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_prints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_room",
+          "ev_den_prints"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Akai Lotukoi was found dead under a thorn bush in the Kawalase laga on Sunday morning.",
+      "kind": "true",
+      "about": [
+        "p_akai",
+        "loc_laga"
+      ],
+      "at": {
+        "from": "06:40",
+        "to": null,
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "Akai was strangled with a broad, flat strap. Her cash bag is gone; her phone is in her pocket.",
+      "kind": "true",
+      "about": [
+        "p_akai",
+        "plc_track"
+      ]
+    },
+    {
+      "id": "f_scarf",
+      "text": "Her scarf is soft cotton, about 1 cm wide when folded, still around her shoulders.",
+      "kind": "true",
+      "about": [
+        "p_akai"
+      ]
+    },
+    {
+      "id": "f_tracks",
+      "text": "Ewoi: one boda came along the laga track with a passenger, stopped and stood; scuffed ground; her shoes two steps from the bike; one rider left alone. Last evening.",
+      "kind": "true",
+      "about": [
+        "plc_track"
+      ]
+    },
+    {
+      "id": "f_strap",
+      "text": "A black rubber boda luggage strap, about 3 cm wide, was flung into a thorn bush 50 m down the laga, on the bike's line out.",
+      "kind": "true",
+      "about": [
+        "plc_track"
+      ]
+    },
+    {
+      "id": "f_yard",
+      "text": "The broom pattern in the yard is unbroken from the gate to Akai's door this morning.",
+      "kind": "true",
+      "about": [
+        "loc_compound"
+      ]
+    },
+    {
+      "id": "f_napeyo",
+      "text": "Napeyo: \"I swept at six like every day. I went to bed at ten thinking she'd gone to a friend. In the morning my pattern was perfect. Nobody came in.\"",
+      "kind": "true",
+      "about": [
+        "p_napeyo",
+        "loc_compound"
+      ],
+      "at": {
+        "from": "18:00",
+        "to": null,
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_nap_fees",
+      "text": "Napeyo: Akai and her ex-husband Ekeno fought over the children's school fees.",
+      "kind": "true",
+      "about": [
+        "p_ekeno",
+        "p_akai"
+      ]
+    },
+    {
+      "id": "f_nap_home",
+      "text": "Napeyo sat with neighbours in the compound from 18:00 to 22:00.",
+      "kind": "true",
+      "about": [
+        "p_napeyo"
+      ],
+      "where": {
+        "person": "p_napeyo",
+        "place": "loc_compound",
+        "from": "18:00",
+        "to": "22:00"
+      }
+    },
+    {
+      "id": "f_closing",
+      "text": "Mary: Akai closed at half past seven; Dennis, a boda rider she lends to, was waiting at the door to give her a lift home \"to talk\".",
+      "kind": "true",
+      "about": [
+        "p_akai",
+        "p_dennis"
+      ],
+      "at": {
+        "from": "19:30",
+        "to": null,
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_ledger_habit",
+      "text": "Mary: Akai carried her loan ledger and the day's cash home in her cash bag every night.",
+      "kind": "true",
+      "about": [
+        "p_akai"
+      ]
+    },
+    {
+      "id": "f_float",
+      "text": "The float book against the agent statement: cash short KSh 6,500 over two weeks, a few hundred at a time.",
+      "kind": "true",
+      "about": [
+        "p_mary"
+      ]
+    },
+    {
+      "id": "f_mary_choir",
+      "text": "Choir mistress: the choir collected Mary at the shop door at 19:30 and she sang with them until 21:30.",
+      "kind": "true",
+      "about": [
+        "p_mary"
+      ],
+      "where": {
+        "person": "p_mary",
+        "place": "plc_church",
+        "from": "19:30",
+        "to": "21:30"
+      }
+    },
+    {
+      "id": "f_strap_gone",
+      "text": "There is no luggage strap on Dennis's rack; it was seen on Saturday afternoon tying a sack of charcoal for a customer.",
+      "kind": "true",
+      "about": [
+        "p_dennis"
+      ]
+    },
+    {
+      "id": "f_chair_straps",
+      "text": "Chairman: every rider at the stage keeps a rubber strap on the rack.",
+      "kind": "true",
+      "about": [
+        "loc_stage"
+      ]
+    },
+    {
+      "id": "f_copy",
+      "text": "The stage file: Dennis borrowed KSh 220,000 from Akai for his motorbike and repaid KSh 40,000. Akai's Friday note: \"Repossess Monday. Guarantor: K. Nyakundi.\"",
+      "kind": "true",
+      "about": [
+        "p_dennis",
+        "p_kevin",
+        "p_akai"
+      ]
+    },
+    {
+      "id": "f_chair",
+      "text": "Chairman Ekai: Dennis got back to the stage at about 20:15, on his own.",
+      "kind": "true",
+      "about": [
+        "p_dennis"
+      ],
+      "at": {
+        "from": "20:15",
+        "to": null,
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_kev_stage",
+      "text": "Chairman Ekai: Kevin was at the stage from 18:00 until late; the other riders agree.",
+      "kind": "true",
+      "about": [
+        "p_kevin"
+      ],
+      "where": {
+        "person": "p_kevin",
+        "place": "loc_stage",
+        "from": "18:00",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_rec_close",
+      "text": "Records: Akai's last transaction was the closing float report at 19:28.",
+      "kind": "true",
+      "about": [
+        "p_akai"
+      ],
+      "at": {
+        "from": "19:28",
+        "to": null,
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_rec_call",
+      "text": "Records: Dennis called Kevin at 20:09, for 40 seconds.",
+      "kind": "true",
+      "about": [
+        "p_dennis",
+        "p_kevin"
+      ],
+      "at": {
+        "from": "20:09",
+        "to": null,
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_bag",
+      "text": "Under Dennis's mattress: Akai's cash bag with KSh 64,200.",
+      "kind": "true",
+      "about": [
+        "p_dennis",
+        "p_akai"
+      ]
+    },
+    {
+      "id": "f_book",
+      "text": "In Dennis's room: Akai's loan ledger with his page torn out, and the page burned in a tin.",
+      "kind": "true",
+      "about": [
+        "p_dennis"
+      ]
+    },
+    {
+      "id": "f_newstrap",
+      "text": "In Dennis's room: a new rubber strap still in its wrapper, bought this morning at 07:30.",
+      "kind": "true",
+      "about": [
+        "p_dennis"
+      ]
+    },
+    {
+      "id": "f_ekeno",
+      "text": "Bus manifest: Ekeno left on the 18:00 bus to Kakuma and signed into a Kakuma lodging at 21:40.",
+      "kind": "true",
+      "about": [
+        "p_ekeno"
+      ],
+      "where": {
+        "person": "p_ekeno",
+        "place": "plc_bus",
+        "from": "18:00",
+        "to": "21:40"
+      }
+    },
+    {
+      "id": "f_den_printset",
+      "text": "Fingerprints taken from Dennis in detention.",
+      "kind": "true",
+      "about": [
+        "p_dennis"
+      ]
+    },
+    {
+      "id": "f_aut_strap",
+      "text": "Post-mortem: strangulation with a flat strap about 3 cm wide, with a moulded ridged pattern in the mark. No head injury, no wound.",
+      "kind": "true",
+      "about": [
+        "p_akai"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Saturday between 19:30 and 20:30.",
+      "kind": "true",
+      "about": [
+        "p_akai"
+      ],
+      "at": {
+        "from": "19:30",
+        "to": "20:30",
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_strapmatch",
+      "text": "Lab: the strap's moulded ridges match the ligature mark; Akai's hair is caught in the buckle.",
+      "kind": "true",
+      "about": [
+        "p_akai"
+      ]
+    },
+    {
+      "id": "f_prints",
+      "text": "Lab: Dennis's fingerprints on the clasp of Akai's cash bag.",
+      "kind": "true",
+      "about": [
+        "p_dennis",
+        "p_akai"
+      ]
+    },
+    {
+      "id": "f_abs_yard",
+      "text": "Missing: there are no footprints or boda tracks in her swept yard.",
+      "kind": "true",
+      "about": [
+        "loc_compound"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_ledger",
+      "text": "Missing: her loan book is missing.",
+      "kind": "true",
+      "about": [
+        "loc_shop"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_struggle",
+      "text": "Missing: there are no signs of a struggle at the shop.",
+      "kind": "true",
+      "about": [
+        "loc_shop"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_strap",
+      "text": "Missing: his luggage strap is missing.",
+      "kind": "true",
+      "about": [
+        "loc_stage"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_bag",
+      "text": "Missing: her cash bag is missing.",
+      "kind": "true",
+      "about": [
+        "loc_laga"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_den_gate",
+      "text": "Dennis: \"I dropped her at her gate at a quarter to eight. She walked in. Then I went back to the stage.\"",
+      "kind": "lie",
+      "about": [
+        "p_dennis"
+      ],
+      "where": {
+        "person": "p_dennis",
+        "place": "plc_gate",
+        "from": "19:45",
+        "to": "19:45"
+      }
+    },
+    {
+      "id": "f_den_reveal",
+      "text": "Dennis: \"I asked her to give me time. She said Monday. I didn't mean to... I don't want to say any more.\"",
+      "kind": "true",
+      "about": [
+        "p_dennis",
+        "p_akai"
+      ],
+      "where": {
+        "person": "p_dennis",
+        "place": "plc_track",
+        "from": "19:30",
+        "to": "20:09"
+      }
+    },
+    {
+      "id": "f_den_bag",
+      "text": "Dennis: \"I never touched her bag. Anyone could have put it in my room.\"",
+      "kind": "lie",
+      "about": [
+        "p_dennis"
+      ]
+    },
+    {
+      "id": "f_kev_alibi",
+      "text": "Kevin: \"Dennis was with me at the stage from a quarter to eight.\"",
+      "kind": "lie",
+      "about": [
+        "p_kevin"
+      ]
+    },
+    {
+      "id": "f_kev_reveal",
+      "text": "Kevin: \"He called at nine past eight and said, 'If anyone asks, I was with you from quarter to eight.' I'm his guarantor. If his bike goes, I pay. I said yes.\"",
+      "kind": "true",
+      "about": [
+        "p_kevin",
+        "p_dennis"
+      ]
+    },
+    {
+      "id": "f_mary_full",
+      "text": "Mary: \"The float was full every night.\"",
+      "kind": "lie",
+      "about": [
+        "p_mary"
+      ]
+    },
+    {
+      "id": "f_mary_reveal",
+      "text": "Mary: \"I took a little, a few hundred at a time, for my mother's medicine. I was going to put it back. I was at choir.\"",
+      "kind": "true",
+      "about": [
+        "p_mary"
+      ]
+    },
+    {
+      "id": "f_ekeno_claim",
+      "text": "Ekeno: \"We fought about fees. I was on the bus to Kakuma.\"",
+      "kind": "claim",
+      "about": [
+        "p_ekeno"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_dennis",
+      "stance": "cooperative",
+      "intro": "Dennis leans on his bike, easy and helpful. \"I dropped her at her gate at a quarter to eight. She walked in. Then I went back to the stage.\"",
+      "claims": [
+        "f_den_gate"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_den_bag",
+          "after": "f_bag"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_kevin",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_copy"
+      ],
+      "intro": "Kevin won't look at the chairman's file. \"Dennis was with me at the stage from a quarter to eight.\"",
+      "claims": [
+        "f_kev_alibi"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_mary",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_shop"
+      ],
+      "intro": "Mary keeps her hand on the float book. \"The float was full every night.\"",
+      "claims": [
+        "f_mary_full"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_ekeno",
+      "stance": "cooperative",
+      "intro": "Ekeno comes back from Kakuma on the morning bus. \"We fought about fees. I was on the bus to Kakuma.\"",
+      "claims": [
+        "f_ekeno_claim"
+      ],
+      "yields": [
+        "ev_ekeno"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_napeyo",
+      "stance": "cooperative",
+      "intro": "Napeyo leans the broom against the wall and answers every question.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_den",
+      "claim": "f_den_gate",
+      "brokenBy": [
+        "f_abs_yard",
+        "f_napeyo"
+      ],
+      "reveals": [
+        "f_den_reveal"
+      ],
+      "reaction": "\"I asked her to give me time. She said Monday. I didn't mean to... I don't want to say any more.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_kev",
+      "claim": "f_kev_alibi",
+      "brokenBy": [
+        "f_rec_call",
+        "f_chair"
+      ],
+      "reveals": [
+        "f_kev_reveal"
+      ],
+      "reaction": "\"He called at nine past eight and said, 'If anyone asks, I was with you from quarter to eight.' I'm his guarantor. If his bike goes, I pay. I said yes.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_mary",
+      "claim": "f_mary_full",
+      "brokenBy": [
+        "f_float"
+      ],
+      "reveals": [
+        "f_mary_reveal"
+      ],
+      "reaction": "\"I took a little, a few hundred at a time, for my mother's medicine. I was going to put it back. I was at choir.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_den_bag",
+      "claim": "f_den_bag",
+      "brokenBy": [
+        "f_prints"
+      ],
+      "reveals": [],
+      "reaction": "Dennis looks at his own fingerprints on the clasp and stops smiling.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_dennis",
+      "text": "Dennis Ombati",
+      "category": "person",
+      "ref": "p_dennis",
+      "unlock": {
+        "anyOf": [
+          "f_closing"
+        ]
+      }
+    },
+    {
+      "id": "w_kevin",
+      "text": "Kevin Nyakundi",
+      "category": "person",
+      "ref": "p_kevin",
+      "unlock": {
+        "anyOf": [
+          "f_copy"
+        ]
+      }
+    },
+    {
+      "id": "w_mary",
+      "text": "Mary Akeno",
+      "category": "person",
+      "ref": "p_mary",
+      "unlock": {
+        "anyOf": [
+          "f_closing"
+        ]
+      }
+    },
+    {
+      "id": "w_ekeno",
+      "text": "Ekeno Lopua",
+      "category": "person",
+      "ref": "p_ekeno",
+      "unlock": {
+        "anyOf": [
+          "f_nap_fees"
+        ]
+      }
+    },
+    {
+      "id": "w_napeyo",
+      "text": "Napeyo Lotukoi",
+      "category": "person",
+      "ref": "p_napeyo",
+      "unlock": {
+        "anyOf": [
+          "f_napeyo"
+        ]
+      }
+    },
+    {
+      "id": "pl_track",
+      "text": "the track along the Kawalase laga",
+      "category": "place",
+      "ref": "plc_track",
+      "unlock": {
+        "anyOf": [
+          "f_tracks"
+        ]
+      }
+    },
+    {
+      "id": "pl_gate",
+      "text": "her compound gate",
+      "category": "place",
+      "ref": "plc_gate",
+      "unlock": {
+        "anyOf": [
+          "f_napeyo"
+        ]
+      }
+    },
+    {
+      "id": "pl_shop",
+      "text": "her shop",
+      "category": "place",
+      "ref": "loc_shop",
+      "unlock": {
+        "anyOf": [
+          "f_closing"
+        ]
+      }
+    },
+    {
+      "id": "pl_stage",
+      "text": "the boda stage",
+      "category": "place",
+      "ref": "loc_stage",
+      "unlock": {
+        "anyOf": [
+          "f_closing"
+        ]
+      }
+    },
+    {
+      "id": "pl_room",
+      "text": "Dennis's room",
+      "category": "place",
+      "ref": "loc_room",
+      "unlock": {
+        "anyOf": [
+          "f_rec_call"
+        ]
+      }
+    },
+    {
+      "id": "h_strap",
+      "text": "strangling her with his motorbike's luggage strap",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_strap"
+        ]
+      }
+    },
+    {
+      "id": "h_scarf",
+      "text": "strangling her with her own scarf",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_scarf"
+        ]
+      }
+    },
+    {
+      "id": "h_blow",
+      "text": "striking her on the head",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_stab",
+      "text": "stabbing her in a robbery",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_asthma",
+      "text": "an asthma attack",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_loan",
+      "text": "to escape his motorbike loan and stop the repossession",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_copy"
+        ]
+      }
+    },
+    {
+      "id": "m_theft",
+      "text": "to hide a shop assistant's theft from the float",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_float"
+        ]
+      }
+    },
+    {
+      "id": "m_fees",
+      "text": "a quarrel over school fees",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_nap_fees"
+        ]
+      }
+    },
+    {
+      "id": "m_robbery",
+      "text": "a stranger's robbery",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_guarantor",
+      "text": "a guarantor's fear of paying",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_copy"
+        ]
+      }
+    },
+    {
+      "id": "a_yard",
+      "text": "there are no footprints or boda tracks in her swept yard",
+      "category": "absence",
+      "ref": "f_abs_yard",
+      "unlock": {
+        "anyOf": [
+          "f_abs_yard"
+        ]
+      }
+    },
+    {
+      "id": "a_ledger",
+      "text": "her loan book is missing",
+      "category": "absence",
+      "ref": "f_abs_ledger",
+      "unlock": {
+        "anyOf": [
+          "f_abs_ledger"
+        ]
+      }
+    },
+    {
+      "id": "a_strap",
+      "text": "his luggage strap is missing",
+      "category": "absence",
+      "ref": "f_abs_strap",
+      "unlock": {
+        "anyOf": [
+          "f_abs_strap"
+        ]
+      }
+    },
+    {
+      "id": "a_bag",
+      "text": "her cash bag is missing",
+      "category": "absence",
+      "ref": "f_abs_bag",
+      "unlock": {
+        "anyOf": [
+          "f_abs_bag"
+        ]
+      }
+    },
+    {
+      "id": "a_struggle",
+      "text": "there are no signs of a struggle at the shop",
+      "category": "absence",
+      "ref": "f_abs_struggle",
+      "unlock": {
+        "anyOf": [
+          "f_abs_struggle"
+        ]
+      }
+    },
+    {
+      "id": "k_never",
+      "text": "she never reached home",
+      "category": "conclusion",
+      "by": [
+        "f_abs_yard",
+        "f_napeyo",
+        "f_yard"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_yard"
+        ]
+      }
+    },
+    {
+      "id": "k_inside",
+      "text": "she was killed inside her compound",
+      "category": "conclusion",
+      "by": [
+        "f_body"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_yard"
+        ]
+      }
+    },
+    {
+      "id": "k_stranger",
+      "text": "she was robbed by a stranger",
+      "category": "conclusion",
+      "by": [
+        "f_bag"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_yard"
+        ]
+      }
+    },
+    {
+      "id": "k_mary",
+      "text": "Mary stole the float and fled",
+      "category": "conclusion",
+      "by": [
+        "f_mary_choir"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_yard"
+        ]
+      }
+    },
+    {
+      "id": "k_walked",
+      "text": "she walked home alone",
+      "category": "conclusion",
+      "by": [
+        "f_closing"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_yard"
+        ]
+      }
+    },
+    {
+      "id": "k_shop",
+      "text": "she was killed at the shop",
+      "category": "conclusion",
+      "by": [
+        "f_abs_struggle"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_yard"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. That {missing} shows that {conclusion}.",
+    "fixed": {
+      "victim": "Akai Lotukoi"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_fri",
+                  "label": "Friday",
+                  "from": null,
+                  "to": null,
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_1800",
+                  "label": "Saturday 18:00",
+                  "from": "18:00",
+                  "to": "18:00",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_1928",
+                  "label": "Saturday 19:28",
+                  "from": "19:28",
+                  "to": "19:28",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Saturday 19:30–20:09",
+                  "from": "19:30",
+                  "to": "20:09",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_2009",
+                  "label": "Saturday 20:09",
+                  "from": "20:09",
+                  "to": "20:09",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_2200",
+                  "label": "Saturday 22:00",
+                  "from": "22:00",
+                  "to": "22:00",
+                  "day": "Sat"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_repo",
+                  "text": "Akai orders the repossession",
+                  "slot": "sl_fri",
+                  "by": [
+                    "f_copy"
+                  ],
+                  "why": "Her note to the chairman: Friday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_copy"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_sweep",
+                  "text": "Napeyo sweeps the yard",
+                  "slot": "sl_1800",
+                  "by": [
+                    "f_napeyo"
+                  ],
+                  "why": "At six, like every day.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_napeyo"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_close",
+                  "text": "Akai's last transaction; she closes",
+                  "slot": "sl_1928",
+                  "by": [
+                    "f_rec_close"
+                  ],
+                  "why": "The closing float report.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rec_close"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Akai is killed on the laga track",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod",
+                    "f_closing",
+                    "f_rec_call",
+                    "f_den_reveal"
+                  ],
+                  "why": "After she got on his bike at closing and before he rang Kevin for an alibi.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_call",
+                  "text": "Dennis calls Kevin",
+                  "slot": "sl_2009",
+                  "by": [
+                    "f_rec_call"
+                  ],
+                  "why": "Records: 20:09, 40 seconds.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rec_call"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_2200",
+                  "by": [
+                    "f_aut_tod"
+                  ],
+                  "why": "\"She'd gone to a friend's\" was Napeyo's guess at bedtime. The post-mortem says she was dead by 20:30."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A note on Friday, a broom at six, the float closed at 19:28, and the alibi bought at 20:09. She died in between.",
+          "fail": [
+            "She was dead long before ten.",
+            "What did he do at nine minutes past eight?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_track"
+          }
+        ],
+        "prosecutor": {
+          "pass": "On the laga track, out of sight of the road, where the bike stood.",
+          "fail": [
+            "Nobody crossed her yard. She never got to the gate.",
+            "The shop was tidy when Mary locked it."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_dennis"
+          }
+        ],
+        "prosecutor": {
+          "pass": "His lift, his strap, her bag under his mattress with his prints on it.",
+          "fail": [
+            "Kevin was at the stage all evening; he only lied for him.",
+            "Mary was singing."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_strap"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A 3 cm moulded strap, with her hair in the buckle.",
+          "fail": [
+            "Her scarf is soft and a centimetre wide. The mark is three.",
+            "No head injury, no wound."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_loan"
+          }
+        ],
+        "prosecutor": {
+          "pass": "One hundred and eighty thousand owed and the bike gone on Monday. And his page burned in a tin.",
+          "fail": [
+            "Mary's few hundred were never discovered.",
+            "Kevin feared paying, but he never left the stage."
+          ]
+        }
+      },
+      {
+        "id": "g_absence",
+        "kind": "absence",
+        "blanks": [
+          {
+            "id": "missing",
+            "category": "absence",
+            "answer": "a_yard"
+          },
+          {
+            "id": "conclusion",
+            "category": "conclusion",
+            "answer": "k_never"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Napeyo's broom is the best witness in Lodwar. Nobody crossed that yard.",
+          "fail": [
+            "A missing bag tells me she was robbed, not where she went.",
+            "The strap tells me how. I asked whether she got home."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_track",
+      "from": "19:30",
+      "to": "20:09",
+      "note": "From closing, when she got on his bike, to his call to Kevin at 20:09; the post-mortem allows 19:30–20:30."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_copy",
+          "f_closing"
+        ],
+        "concludes": "Dennis owed KSh 180,000, was about to lose his bike, and gave Akai a lift at closing."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_den_gate",
+          "f_napeyo",
+          "f_yard",
+          "f_abs_yard",
+          "f_den_reveal"
+        ],
+        "concludes": "Nobody crossed the swept yard: she never got home, and Dennis's story fails.",
+        "answers": [
+          "missing",
+          "conclusion"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_rec_close",
+          "f_rec_call",
+          "f_chair",
+          "f_kev_alibi",
+          "f_kev_reveal"
+        ],
+        "concludes": "Dennis rang his guarantor at 20:09 for a false alibi and reached the stage alone at 20:15.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_tracks",
+          "f_strap_gone",
+          "f_chair_straps",
+          "f_strap",
+          "f_aut_strap",
+          "f_aut_tod",
+          "f_strapmatch"
+        ],
+        "concludes": "One boda stopped on the laga track; the strap from a bike's rack killed her there.",
+        "answers": [
+          "where",
+          "how"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_bag",
+          "f_book",
+          "f_newstrap",
+          "f_prints",
+          "f_den_bag"
+        ],
+        "concludes": "Dennis Ombati strangled Akai with his motorbike's luggage strap on the laga track, to escape his loan and stop the repossession.",
+        "answers": [
+          "who",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_gate",
+        "blank": "where",
+        "by": [
+          "f_abs_yard",
+          "f_napeyo"
+        ],
+        "why": "Nobody reached the gate: no tyre mark, no footprints."
+      },
+      {
+        "word": "pl_shop",
+        "blank": "where",
+        "by": [
+          "f_rec_close",
+          "f_abs_struggle"
+        ],
+        "why": "She closed normally at 19:28; no struggle at the shop."
+      },
+      {
+        "word": "pl_stage",
+        "blank": "where",
+        "by": [
+          "f_tracks"
+        ],
+        "why": "The bike stood on the laga track."
+      },
+      {
+        "word": "pl_room",
+        "blank": "where",
+        "by": [
+          "f_tracks",
+          "f_strap"
+        ],
+        "why": "She died on the track; only her bag went to his room."
+      },
+      {
+        "word": "w_kevin",
+        "blank": "who",
+        "by": [
+          "f_kev_stage"
+        ],
+        "why": "Kevin was at the stage from 18:00."
+      },
+      {
+        "word": "w_mary",
+        "blank": "who",
+        "by": [
+          "f_mary_choir"
+        ],
+        "why": "Mary was at choir from 19:30 to 21:30."
+      },
+      {
+        "word": "w_ekeno",
+        "blank": "who",
+        "by": [
+          "f_ekeno"
+        ],
+        "why": "Ekeno was on the bus to Kakuma."
+      },
+      {
+        "word": "w_napeyo",
+        "blank": "who",
+        "by": [
+          "f_nap_home"
+        ],
+        "why": "Napeyo was in the compound with neighbours."
+      },
+      {
+        "word": "h_scarf",
+        "blank": "how",
+        "by": [
+          "f_scarf",
+          "f_aut_strap"
+        ],
+        "why": "Her scarf is 1 cm folded; the mark is a 3 cm moulded strap."
+      },
+      {
+        "word": "h_blow",
+        "blank": "how",
+        "by": [
+          "f_aut_strap"
+        ],
+        "why": "No head injury."
+      },
+      {
+        "word": "h_stab",
+        "blank": "how",
+        "by": [
+          "f_aut_strap"
+        ],
+        "why": "No wound."
+      },
+      {
+        "word": "h_asthma",
+        "blank": "how",
+        "by": [
+          "f_aut_strap"
+        ],
+        "why": "Strangulation."
+      },
+      {
+        "word": "m_theft",
+        "blank": "why",
+        "by": [
+          "f_mary_reveal",
+          "f_mary_choir"
+        ],
+        "why": "Mary's thefts were small and undiscovered, and she was at choir."
+      },
+      {
+        "word": "m_fees",
+        "blank": "why",
+        "by": [
+          "f_ekeno"
+        ],
+        "why": "Ekeno was on the bus."
+      },
+      {
+        "word": "m_robbery",
+        "blank": "why",
+        "by": [
+          "f_bag"
+        ],
+        "why": "The cash bag was under Dennis's mattress."
+      },
+      {
+        "word": "m_guarantor",
+        "blank": "why",
+        "by": [
+          "f_kev_stage"
+        ],
+        "why": "Kevin's fear was real, but he was at the stage."
+      },
+      {
+        "word": "a_ledger",
+        "blank": "missing",
+        "by": [
+          "f_abs_ledger",
+          "f_book"
+        ],
+        "why": "It explains his motive, not whether she got home."
+      },
+      {
+        "word": "a_strap",
+        "blank": "missing",
+        "by": [
+          "f_abs_strap",
+          "f_strap"
+        ],
+        "why": "It tells you the weapon, not her route."
+      },
+      {
+        "word": "a_bag",
+        "blank": "missing",
+        "by": [
+          "f_abs_bag",
+          "f_bag"
+        ],
+        "why": "It tells you she was robbed, not where."
+      },
+      {
+        "word": "a_struggle",
+        "blank": "missing",
+        "by": [
+          "f_abs_struggle"
+        ],
+        "why": "It clears the shop; it doesn't test his story about the gate."
+      },
+      {
+        "word": "k_inside",
+        "blank": "conclusion",
+        "by": [
+          "f_body"
+        ],
+        "why": "She was found in the laga."
+      },
+      {
+        "word": "k_stranger",
+        "blank": "conclusion",
+        "by": [
+          "f_bag"
+        ],
+        "why": "Her bag was in Dennis's room."
+      },
+      {
+        "word": "k_mary",
+        "blank": "conclusion",
+        "by": [
+          "f_mary_choir"
+        ],
+        "why": "Mary was at choir."
+      },
+      {
+        "word": "k_walked",
+        "blank": "conclusion",
+        "by": [
+          "f_closing",
+          "f_tracks"
+        ],
+        "why": "She left on Dennis's bike."
+      },
+      {
+        "word": "k_shop",
+        "blank": "conclusion",
+        "by": [
+          "f_abs_struggle",
+          "f_rec_close"
+        ],
+        "why": "She closed normally."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Dennis bought his motorbike on a KSh 220,000 loan from Akai and paid KSh 40,000 in eight months. On Friday she wrote to the stage chairman: repossess Monday; guarantor K. Nyakundi.",
+        "image": null
+      },
+      {
+        "text": "Saturday, 18:00. Napeyo sweeps the yard, as every evening. At 19:28 Akai sends her closing float report. Dennis is waiting at the door and offers her a lift home, \"to talk\".",
+        "image": null
+      },
+      {
+        "text": "On the laga track, out of sight of the road, he stops and asks her to tear up his page. She refuses. He pulls the rubber strap off his rack and strangles her.",
+        "image": "plc_track"
+      },
+      {
+        "text": "He takes her cash bag and ledger, flings the strap into a thorn bush and rides back. At 20:09 he calls Kevin: \"If anyone asks, I was with you from quarter to eight.\" He reaches the stage at 20:15.",
+        "image": null
+      },
+      {
+        "text": "That night he tears his page out and burns it in a tin. On Sunday morning he buys a new strap. In the yard, Napeyo's broom lines lie unbroken until dawn.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Two stamps: records on both lines and a warrant on Dennis's room. Detain Dennis after the search; prints (6 h + 4) and the strap match (12 h + 4) come back inside 24 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_laga",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_tracks",
+        "hours": 1
+      },
+      {
+        "do": "travel",
+        "target": "loc_shop",
+        "hours": 0.25,
+        "from": "loc_laga"
+      },
+      {
+        "do": "visit",
+        "target": "loc_shop",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_shop",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_mary"
+      },
+      {
+        "do": "travel",
+        "target": "loc_stage",
+        "hours": 0.1,
+        "from": "loc_shop"
+      },
+      {
+        "do": "visit",
+        "target": "loc_stage",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_copy",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_strap_gone",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_dennis"
+      },
+      {
+        "do": "interview",
+        "target": "p_kevin"
+      },
+      {
+        "do": "travel",
+        "target": "loc_compound",
+        "hours": 0.25,
+        "from": "loc_stage"
+      },
+      {
+        "do": "visit",
+        "target": "loc_compound",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_yard",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_napeyo",
+        "hours": 1
+      },
+      {
+        "do": "press",
+        "target": "c_den"
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "travel",
+        "target": "loc_stage",
+        "hours": 0.25,
+        "from": "loc_compound"
+      },
+      {
+        "do": "visit",
+        "target": "loc_stage",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_chair",
+        "hours": 0
+      },
+      {
+        "do": "press",
+        "target": "c_kev"
+      },
+      {
+        "do": "travel",
+        "target": "loc_laga",
+        "hours": 0.25,
+        "from": "loc_stage"
+      },
+      {
+        "do": "visit",
+        "target": "loc_laga",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_strap",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_shop",
+        "hours": 0.25,
+        "from": "loc_laga"
+      },
+      {
+        "do": "visit",
+        "target": "loc_shop",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_float",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_mary",
+        "hours": 0
+      },
+      {
+        "do": "press",
+        "target": "c_mary"
+      },
+      {
+        "do": "search",
+        "target": "loc_room"
+      },
+      {
+        "do": "detain",
+        "target": "p_dennis"
+      },
+      {
+        "do": "sample",
+        "target": "ev_den_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_strapmatch"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 16
+      },
+      {
+        "do": "press",
+        "target": "c_den_bag"
+      }
+    ],
+    "totalHours": 43.35
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_records",
+        "line": "What did he do the moment it was over, Amani?"
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_close",
+          "f_rec_call"
+        ],
+        "line": "Float closed at 19:28. A call to Kevin at 20:09."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_tracks",
+        "line": "Where did the motorbike stop? Ewoi knows."
+      },
+      "tier2": {
+        "facts": [
+          "f_tracks"
+        ],
+        "line": "One boda stood on the laga track. Her shoes two steps from it."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_strap_gone",
+        "line": "Look at the racks at the stage. Whose is bare?"
+      },
+      "tier2": {
+        "facts": [
+          "f_bag",
+          "f_prints"
+        ],
+        "line": "Her cash bag under his mattress, with his prints on the clasp."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_strap",
+        "line": "Follow the bike out of the laga."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_strap",
+          "f_strapmatch"
+        ],
+        "line": "A 3 cm moulded strap. Her hair in the buckle."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_copy",
+        "line": "Ask the chairman for the loan file."
+      },
+      "tier2": {
+        "facts": [
+          "f_copy",
+          "f_book"
+        ],
+        "line": "Repossess Monday. And his page burned in a tin."
+      }
+    },
+    "g_absence": {
+      "tier1": {
+        "point": "ev_yard",
+        "line": "Napeyo swept at six. What should be in her yard if he dropped Akai at the gate?"
+      },
+      "tier2": {
+        "facts": [
+          "f_abs_yard",
+          "f_napeyo"
+        ],
+        "line": "No footprints. No tyre. The pattern is perfect."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "laga",
+      "def": "A dry riverbed (Turkana)."
+    },
+    {
+      "term": "boda",
+      "def": "A motorbike taxi; also its rider."
+    },
+    {
+      "term": "mkopo",
+      "def": "A loan."
+    },
+    {
+      "term": "mdhamini",
+      "def": "A guarantor."
+    },
+    {
+      "term": "fagio",
+      "def": "A broom."
+    },
+    {
+      "term": "pesa",
+      "def": "Money."
+    },
+    {
+      "term": "pesapap",
+      "def": "A fictional mobile-money service (\"pesa\" is money)."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "sweptYard"
+    ],
+    "beatNotes": "Reading a swept yard. The yard photo shows Napeyo's broom pattern as fine curved lines; the player drags Dennis's claimed route (\"at the gate, walked to the door\") onto it and the line glows red where it would have had to break the pattern."
+  }
+}

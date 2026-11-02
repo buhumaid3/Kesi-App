@@ -1,0 +1,983 @@
+{
+  "meta": {
+    "id": "case-016",
+    "number": 16,
+    "region": "eastlands",
+    "regionNumber": 2,
+    "title": "Maji",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 13,
+    "date": "Tuesday 24 June",
+    "folderTab": "MATHARE"
+  },
+  "pattern": {
+    "crimePattern": "grandmother kills a water-gang collector who threatened her grandson; the grandson confesses falsely",
+    "noRealCaseRetold": true,
+    "notes": "Water-vending cartels taxing community water points are a documented pattern in Nairobi settlements; no real gang, committee or incident is depicted. Tone: quiet and sad. The victim is the aggressor; the reconstruction neither glamorises the killing nor mocks him.",
+    "tags": [
+      "blunt-force",
+      "protecting-someone",
+      "false-confession"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 2,
+    "redHerrings": 0,
+    "liars": 1,
+    "groups": [
+      "who"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness"
+    ],
+    "gatedActions": [],
+    "twist": "false-confession"
+  },
+  "ob": {
+    "number": "OB 19/24/06",
+    "date": "Tuesday 24 June",
+    "time": "22:08",
+    "reportedBy": "Zipporah Mutheu, resident, Mathare North; confession at the front desk by Baraka Kazungu (19)",
+    "text": "Zipporah Mutheu reports a man, Stanley Mulwa (36), found dead beside community water kiosk MK-7, Mathare North, at 21:50. At 22:00 a young man, Baraka Kazungu (19), walked into the station and confessed to the killing.",
+    "facts": [
+      "f_ob_found",
+      "f_ob_confession"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_stanley",
+      "role": "victim",
+      "name": "Stanley Mulwa",
+      "age": 36,
+      "occupation": "Collects \"fees\" from water points for a water-vending gang",
+      "bio": "Walks the river kiosks every week collecting a cut of the takings for the gang he works for. People pay, or things happen.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_kiosk",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 30s, heavy build, a leather jacket over a vest, a thick gold-coloured chain, a hard smile that is meant to frighten, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kadzo",
+      "role": "suspect",
+      "name": "Kadzo Kahindi",
+      "age": 67,
+      "occupation": "Kiosk attendant, MK-7",
+      "bio": "Has run kiosk MK-7 for fourteen years for the residents' water committee. Refuses to pay the gang.",
+      "community": "Mijikenda",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_notice_key"
+      },
+      "at": "loc_kiosk",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan grandmother, late 60s, small and wiry, a faded kanga over her head and shoulders, a bunch of keys on a string, deep lines around a closed mouth, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_baraka",
+      "role": "suspect",
+      "name": "Baraka Kazungu",
+      "age": 19,
+      "occupation": "Kadzo's grandson",
+      "bio": "Helps his grandmother at the kiosk. On Monday a man broke his right arm. Tonight he walked into the station and confessed.",
+      "community": "Mijikenda",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_pitch",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan young man, 19, thin, a football jersey with no badge, right forearm in a white plaster cast and a sling, eyes fixed on the floor, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_nicholas",
+      "role": "suspect",
+      "name": "Nicholas Ruto",
+      "age": 42,
+      "occupation": "Runs a rival water-vending crew",
+      "bio": "Wanted Mulwa's stretch of the river. The two crews have fought before.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_zipporah_rival"
+      },
+      "at": "plc_matanga",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 40s, lean, a black funeral armband on a sports jacket, a hoarse voice from singing, calm and watchful, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_zipporah",
+      "role": "witness",
+      "name": "Zipporah Mutheu",
+      "age": 45,
+      "occupation": "Neighbour; found him",
+      "bio": "Lives in the iron-sheet house next to the kiosk. Her window looks straight onto the tap stand.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_zipporah",
+      "image": null
+    },
+    {
+      "id": "p_rhoda",
+      "role": "witness",
+      "name": "Rhoda Jebet",
+      "age": 38,
+      "occupation": "Nurse, Mathare Community Clinic",
+      "statementOnly": true,
+      "bio": "Night-shift nurse at a fictional community clinic. Set Baraka's arm on Monday.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_clinic"
+      },
+      "at": "plc_clinic",
+      "image": null
+    },
+    {
+      "id": "p_rosebella",
+      "role": "witness",
+      "name": "Rosebella Akinyi",
+      "age": 53,
+      "occupation": "Host of a funeral vigil in Huruma",
+      "statementOnly": true,
+      "bio": "Her brother died on Saturday. The matanga has run every night since.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_nicholas_claim"
+      },
+      "at": "plc_matanga",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_zipporah",
+      "name": "Zipporah's house, next to the kiosk"
+    },
+    {
+      "id": "plc_pitch",
+      "name": "Football pitch by the river"
+    },
+    {
+      "id": "plc_clinic",
+      "name": "Mathare Community Clinic"
+    },
+    {
+      "id": "plc_matanga",
+      "name": "Funeral vigil, Huruma"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_kiosk",
+      "name": "Maji Safi Kiosk No. 7 (MK-7), Mathare North",
+      "kind": "scene",
+      "description": "A blue water tank on a concrete stand, a tap with a padlocked cage, a painted price board: KSh 5 per 20-litre jerrican. The main valve is opened with a long iron key. Mud everywhere. One bulb.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "By the tap stand",
+          "pos": [
+            44,
+            70
+          ],
+          "yields": "ev_body",
+          "text": "Stanley Mulwa lies in the mud beside the tap stand. A long iron T-bar lies next to him."
+        },
+        {
+          "id": "hs_key",
+          "label": "The iron T-bar",
+          "pos": [
+            56,
+            78
+          ],
+          "yields": "ev_valvekey",
+          "text": "The valve key: an iron T-bar taller than a child. Pick it up and turn it over."
+        },
+        {
+          "id": "hs_notice",
+          "label": "Notice on the tank",
+          "pos": [
+            70,
+            30
+          ],
+          "yields": "ev_notice",
+          "text": "A committee notice painted on the side of the tank."
+        },
+        {
+          "id": "hs_salesbook",
+          "label": "Counter",
+          "pos": [
+            24,
+            48
+          ],
+          "yields": "ev_salesbook",
+          "text": "The attendant's sales book on the counter, a pencil tied to it with string."
+        },
+        {
+          "id": "hs_zipporah",
+          "label": "House next door",
+          "pos": [
+            92,
+            50
+          ],
+          "yields": "ev_zipporah",
+          "text": "Zipporah Mutheu stands in her doorway with a jerrican she never filled."
+        },
+        {
+          "id": "hs_price",
+          "label": "Price board",
+          "pos": [
+            14,
+            22
+          ],
+          "text": "\"MAJI SAFI — KSh 5 per 20 L — Mathare North Water Committee.\" Someone has scratched a different number underneath: 10."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a community water kiosk in a Nairobi informal settlement at night, a blue plastic water tank on a concrete stand, a caged tap, a painted price board, yellow jerricans lined up in the mud, a single bulb on a wire, iron-sheet houses close around it, no people in focus"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body by the tap stand",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Struck with the kiosk's iron valve key, found in the mud beside him."
+      },
+      "facts": [
+        "f_body_key"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the muddy ground beside a community water tap stand at night, a long iron T-shaped valve key lying in the mud, spilled yellow jerricans, torchlight, no body visible"
+      }
+    },
+    {
+      "id": "ev_valvekey",
+      "type": "physical",
+      "title": "Valve key MK-7",
+      "render": "object",
+      "body": {
+        "label": "Iron T-bar, about 1.2 m. Painted MK-7. Two worn grip patches on the crossbar: it takes both hands to swing."
+      },
+      "facts": [
+        "f_valvekey"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a long iron T-bar valve key about 1.2 metres long lying on a concrete slab, the letters MK-7 painted on the shaft, two shiny worn grip patches on the crossbar"
+      }
+    },
+    {
+      "id": "ev_notice",
+      "type": "physical",
+      "title": "Committee notice",
+      "render": "board",
+      "body": {
+        "text": "VALVE KEY HELD BY KIOSK ATTENDANT ONLY. — Mathare North Water Committee"
+      },
+      "facts": [
+        "f_notice_key"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_salesbook",
+      "type": "physical",
+      "title": "Kiosk sales book",
+      "render": "tallyBook",
+      "body": {
+        "rows": [
+          {
+            "time": "20:40",
+            "entry": "3 jerricans — 15/-"
+          },
+          {
+            "time": "20:52",
+            "entry": "2 jerricans — 10/-"
+          },
+          {
+            "time": "21:05",
+            "entry": "1 jerrican — 5/-"
+          }
+        ],
+        "note": "Nothing after 21:05. Usually sells until 22:00."
+      },
+      "facts": [
+        "f_salesbook"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_zipporah",
+      "type": "witness",
+      "title": "Statement: Zipporah Mutheu",
+      "render": "statement",
+      "body": {
+        "speaker": "p_zipporah"
+      },
+      "facts": [
+        "f_zipporah_kiosk",
+        "f_zipporah_threat",
+        "f_zipporah_clang",
+        "f_zipporah_walk",
+        "f_baraka_where",
+        "f_zipporah_self",
+        "f_zipporah_rival"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_clinic",
+      "type": "physical",
+      "title": "Baraka's clinic card",
+      "render": "form",
+      "body": {
+        "clinic": "Mathare Community Clinic",
+        "date": "Monday",
+        "diagnosis": "Fracture, RIGHT forearm. POP cast applied.",
+        "review": "6 weeks"
+      },
+      "facts": [
+        "f_clinic"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rhoda",
+      "type": "witness",
+      "title": "Phone statement: Rhoda Jebet",
+      "render": "statement",
+      "body": {
+        "speaker": "p_rhoda",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_rhoda",
+        "f_rhoda_shift"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_matanga",
+      "type": "witness",
+      "title": "Phone statement: Rosebella Akinyi",
+      "render": "statement",
+      "body": {
+        "speaker": "p_rosebella",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_matanga"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Zipporah Mutheu found Stanley Mulwa dead beside water kiosk MK-7 at 21:50.",
+      "kind": "true",
+      "about": [
+        "p_stanley",
+        "p_zipporah",
+        "loc_kiosk"
+      ]
+    },
+    {
+      "id": "f_ob_confession",
+      "text": "At 22:00 Baraka Kazungu, 19, walked into the station and confessed.",
+      "kind": "true",
+      "about": [
+        "p_baraka"
+      ]
+    },
+    {
+      "id": "f_body_key",
+      "text": "Mulwa was struck with the kiosk's iron valve key, which lies in the mud beside him.",
+      "kind": "true",
+      "about": [
+        "p_stanley",
+        "ev_valvekey"
+      ]
+    },
+    {
+      "id": "f_valvekey",
+      "text": "The valve key is an iron T-bar about 1.2 m long, painted MK-7. Swinging it takes both hands.",
+      "kind": "true",
+      "about": [
+        "ev_valvekey"
+      ]
+    },
+    {
+      "id": "f_notice_key",
+      "text": "Committee notice: 'Valve key held by kiosk attendant only.' The attendant is Kadzo Kahindi.",
+      "kind": "true",
+      "about": [
+        "p_kadzo",
+        "ev_valvekey"
+      ]
+    },
+    {
+      "id": "f_salesbook",
+      "text": "Kadzo's sales book: the last sale is at 21:05. Nothing after that, though the kiosk normally sells until 22:00.",
+      "kind": "true",
+      "about": [
+        "p_kadzo",
+        "loc_kiosk"
+      ],
+      "where": {
+        "person": "p_kadzo",
+        "place": "loc_kiosk",
+        "from": "20:40",
+        "to": "21:05"
+      }
+    },
+    {
+      "id": "f_zipporah_kiosk",
+      "text": "Zipporah: from her window she could see Kadzo at the counter from 21:00. Nobody else came to the kiosk until Mulwa at 21:10 and Baraka at about 21:18.",
+      "kind": "true",
+      "about": [
+        "p_zipporah",
+        "p_kadzo"
+      ],
+      "where": {
+        "person": "p_kadzo",
+        "place": "loc_kiosk",
+        "from": "21:00",
+        "to": "21:20"
+      }
+    },
+    {
+      "id": "f_zipporah_threat",
+      "text": "Zipporah: at 21:10 she heard Mulwa at the kiosk shouting, \"Next time it's the boy's head.\"",
+      "kind": "true",
+      "about": [
+        "p_zipporah",
+        "p_stanley"
+      ]
+    },
+    {
+      "id": "f_zipporah_clang",
+      "text": "Zipporah: at about 21:15 she heard a heavy clang, then nothing.",
+      "kind": "true",
+      "about": [
+        "p_zipporah",
+        "loc_kiosk"
+      ]
+    },
+    {
+      "id": "f_zipporah_walk",
+      "text": "Zipporah: at 21:20 she saw Kadzo walk Baraka away from the kiosk, holding him by the elbow.",
+      "kind": "true",
+      "about": [
+        "p_zipporah",
+        "p_kadzo",
+        "p_baraka"
+      ]
+    },
+    {
+      "id": "f_baraka_where",
+      "text": "Zipporah: Baraka came running from the football pitch at about 21:18, still in his jersey. Her son had sat beside him on the touchline since eight.",
+      "kind": "true",
+      "about": [
+        "p_zipporah",
+        "p_baraka"
+      ],
+      "where": {
+        "person": "p_baraka",
+        "place": "plc_pitch",
+        "from": "20:00",
+        "to": "21:16"
+      }
+    },
+    {
+      "id": "f_zipporah_self",
+      "text": "Zipporah stayed in her house from 20:30 until she went out for water at 21:50.",
+      "kind": "true",
+      "about": [
+        "p_zipporah"
+      ],
+      "where": {
+        "person": "p_zipporah",
+        "place": "plc_zipporah",
+        "from": "20:30",
+        "to": "21:50"
+      }
+    },
+    {
+      "id": "f_zipporah_rival",
+      "text": "Zipporah: Mulwa's crew and Nicholas Ruto's crew have been fighting over this stretch of river all year.",
+      "kind": "true",
+      "about": [
+        "p_zipporah",
+        "p_nicholas",
+        "p_stanley"
+      ]
+    },
+    {
+      "id": "f_clinic",
+      "text": "Baraka's clinic card, Monday: 'Fracture, RIGHT forearm. POP cast applied. Review in 6 weeks.' His right arm is in a cast and sling.",
+      "kind": "true",
+      "about": [
+        "p_baraka"
+      ]
+    },
+    {
+      "id": "f_rhoda",
+      "text": "Rhoda: on Monday Baraka said \"a man\" broke his arm over water money. He was too frightened to say who.",
+      "kind": "true",
+      "about": [
+        "p_rhoda",
+        "p_baraka"
+      ]
+    },
+    {
+      "id": "f_rhoda_shift",
+      "text": "Rhoda has been on the clinic's night shift since 19:00.",
+      "kind": "true",
+      "about": [
+        "p_rhoda"
+      ],
+      "where": {
+        "person": "p_rhoda",
+        "place": "plc_clinic",
+        "from": "19:00",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_baraka_confess",
+      "text": "Baraka: \"I did it. I hit him with the valve key. Leave my grandmother out of this.\"",
+      "kind": "lie",
+      "about": [
+        "p_baraka",
+        "p_stanley"
+      ]
+    },
+    {
+      "id": "f_baraka_admits",
+      "text": "Baraka admits he was not at the kiosk when it happened. His grandmother called him there after, and told him to go home and say nothing.",
+      "kind": "true",
+      "about": [
+        "p_baraka",
+        "p_kadzo"
+      ]
+    },
+    {
+      "id": "f_kadzo_arm",
+      "text": "Kadzo: \"That man broke my grandson's arm on Monday. Because the boy would not give him our takings.\"",
+      "kind": "claim",
+      "about": [
+        "p_kadzo",
+        "p_stanley",
+        "p_baraka"
+      ]
+    },
+    {
+      "id": "f_kadzo_water",
+      "text": "Kadzo: \"I sell water. That is all I do.\"",
+      "kind": "claim",
+      "about": [
+        "p_kadzo"
+      ]
+    },
+    {
+      "id": "f_nicholas_claim",
+      "text": "Nicholas: \"I was at a matanga in Huruma all night.\"",
+      "kind": "claim",
+      "about": [
+        "p_nicholas"
+      ]
+    },
+    {
+      "id": "f_matanga",
+      "text": "Rosebella: Nicholas Ruto came to her brother's matanga at 20:00 and led the singing until after one in the morning.",
+      "kind": "true",
+      "about": [
+        "p_rosebella",
+        "p_nicholas"
+      ],
+      "where": {
+        "person": "p_nicholas",
+        "place": "plc_matanga",
+        "from": "20:00",
+        "to": "01:00"
+      }
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_baraka",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_body",
+        "ev_valvekey"
+      ],
+      "intro": "Baraka sits at the front desk with his cast on the counter. \"I already told them. Write it down.\"",
+      "claims": [
+        "f_baraka_confess"
+      ],
+      "yields": [
+        "ev_clinic"
+      ],
+      "topics": [
+        {
+          "about": "p_kadzo",
+          "reply": "Leave her. She is old. She didn't do anything.",
+          "reveals": []
+        },
+        {
+          "about": "ev_clinic",
+          "reply": "I fell.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_kadzo",
+      "stance": "cooperative",
+      "intro": "Kadzo sits on an upturned jerrican with her hands folded. She does not look at the mud.",
+      "claims": [
+        "f_kadzo_arm",
+        "f_kadzo_water"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_valvekey",
+          "reply": "Nobody else touches it. The committee says so. Fourteen years, it hangs on my wall.",
+          "reveals": []
+        },
+        {
+          "about": "p_baraka",
+          "reply": "She goes quiet for a long time. \"He is a good boy. He brings me tea.\"",
+          "reveals": []
+        },
+        {
+          "about": "ev_clinic",
+          "reply": "Monday. Because he would not give that man our takings. Two thousand shillings. For water.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_nicholas",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_zipporah"
+      ],
+      "intro": "Nicholas answers his phone over the sound of singing. \"Mulwa? Huh. Everyone on that river had a reason.\"",
+      "claims": [
+        "f_nicholas_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_stanley",
+          "reply": "Everyone on this river had a reason. Not everyone had the stomach.",
+          "reveals": []
+        },
+        {
+          "about": "p_rosebella",
+          "reply": "Call Mama Akinyi. It is her brother's matanga. I have been leading the songs all night.",
+          "reveals": [
+            "ev_matanga"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_zipporah",
+      "stance": "cooperative",
+      "intro": "Zipporah puts down her empty jerrican. \"I heard it. I hear everything at that kiosk. These walls are tin.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_rhoda",
+          "reply": "The nurse at the clinic set the boy's arm on Monday. Ask her what he said.",
+          "reveals": [
+            "ev_rhoda"
+          ]
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_baraka_confess",
+      "claim": "f_baraka_confess",
+      "brokenBy": [
+        "f_clinic",
+        "f_baraka_where"
+      ],
+      "reveals": [
+        "f_baraka_admits"
+      ],
+      "reaction": "...I wasn't there when it happened. Bibi called me after. She told me to go home and say nothing. I couldn't let them take her. She is all I have.",
+      "mark": "explains"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_kadzo",
+      "text": "Kadzo Kahindi",
+      "category": "person",
+      "ref": "p_kadzo",
+      "unlock": {
+        "anyOf": [
+          "f_notice_key"
+        ]
+      }
+    },
+    {
+      "id": "w_baraka",
+      "text": "Baraka Kazungu",
+      "category": "person",
+      "ref": "p_baraka",
+      "unlock": {
+        "anyOf": [
+          "f_ob_confession"
+        ]
+      }
+    },
+    {
+      "id": "w_nicholas",
+      "text": "Nicholas Ruto",
+      "category": "person",
+      "ref": "p_nicholas",
+      "unlock": {
+        "anyOf": [
+          "f_zipporah_rival"
+        ]
+      }
+    },
+    {
+      "id": "w_zipporah",
+      "text": "Zipporah Mutheu",
+      "category": "person",
+      "ref": "p_zipporah",
+      "unlock": {
+        "anyOf": [
+          "f_ob_found"
+        ]
+      }
+    },
+    {
+      "id": "w_rhoda",
+      "text": "Rhoda Jebet",
+      "category": "person",
+      "ref": "p_rhoda",
+      "unlock": {
+        "anyOf": [
+          "f_rhoda"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} at Kiosk MK-7.",
+    "fixed": {
+      "victim": "Stanley Mulwa"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_kadzo"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The court will hear what he did to that boy. It still has to hear what she did.",
+          "fail": [
+            "A confession is where you start, not where you stop. Look at his arm.",
+            "No. Who holds that key, and who was at that counter when the clang came?"
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_kiosk",
+      "from": "21:10",
+      "to": "21:16"
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_baraka_confess",
+          "f_clinic",
+          "f_valvekey",
+          "f_baraka_where",
+          "f_baraka_admits"
+        ],
+        "concludes": "Baraka could not swing a two-handed iron bar with his right arm in a cast, and he was on the touchline until he came running at 21:18, after the clang. His confession is false, and protects someone who called him to the kiosk afterwards."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_notice_key",
+          "f_salesbook",
+          "f_zipporah_kiosk",
+          "f_zipporah_threat",
+          "f_zipporah_clang"
+        ],
+        "concludes": "The weapon is the valve key only the attendant holds. Kadzo's sales stop at 21:05. Mulwa threatened the boy at 21:10 and was struck at 21:15, and the only other person at the kiosk was Kadzo. Kadzo Kahindi killed Stanley Mulwa.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_baraka",
+        "blank": "who",
+        "by": [
+          "f_clinic",
+          "f_baraka_where"
+        ],
+        "why": "Baraka's right arm is in a cast, the key needs two hands, and he was on the touchline at the pitch until he came running at 21:18."
+      },
+      {
+        "word": "w_nicholas",
+        "blank": "who",
+        "by": [
+          "f_matanga"
+        ],
+        "why": "Nicholas was leading the singing at a matanga in Huruma from 20:00 until after one."
+      },
+      {
+        "word": "w_zipporah",
+        "blank": "who",
+        "by": [
+          "f_zipporah_self"
+        ],
+        "why": "Zipporah was in her house next door; she heard, and only came out at 21:50."
+      },
+      {
+        "word": "w_rhoda",
+        "blank": "who",
+        "by": [
+          "f_rhoda_shift"
+        ],
+        "why": "Rhoda was on the clinic's night shift from 19:00."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Monday. Baraka will not hand over the kiosk's takings. Mulwa breaks his arm. At the clinic Baraka says only, \"a man\".",
+        "image": null
+      },
+      {
+        "text": "Tuesday, 21:05. Kadzo sells her last jerrican of the night.",
+        "image": "loc_kiosk"
+      },
+      {
+        "text": "21:10. Mulwa comes back. He tells her that next time it will be the boy's head.",
+        "image": null
+      },
+      {
+        "text": "21:15. She takes the valve key off its hook in both hands and swings it once. He does not get up.",
+        "image": null
+      },
+      {
+        "text": "She calls Baraka from the pitch, walks him away by the elbow and tells him to go home and say nothing. At 22:00 he walks into the station instead and says he did it.",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_valvekey",
+        "line": "Pick the key up. Turn it over. Then look at the boy who says he swung it."
+      },
+      "tier2": {
+        "facts": [
+          "f_notice_key",
+          "f_zipporah_kiosk"
+        ],
+        "line": "Read the notice on the tank. Then ask the neighbour who was at the counter between ten past and quarter past nine."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "maji",
+      "def": "Water."
+    },
+    {
+      "term": "bibi",
+      "def": "Grandmother."
+    },
+    {
+      "term": "matanga",
+      "def": "Funeral vigil: mourners gather and sing for several nights."
+    },
+    {
+      "term": "mtaa",
+      "def": "Neighbourhood; the estate."
+    },
+    {
+      "term": "kanga",
+      "def": "Printed cotton cloth, often with a proverb along the edge."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address or name a woman."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "objectIn3D"
+    ],
+    "beatNotes": "Handling objects in 3D: the valve key can be lifted and turned; its two worn grip patches show without any text. First case where a physical property of an object (it needs two hands) is the deduction."
+  }
+}

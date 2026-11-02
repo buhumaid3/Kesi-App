@@ -1,0 +1,1128 @@
+{
+  "meta": {
+    "id": "case-002",
+    "number": 2,
+    "region": "nairobi-cbd",
+    "regionNumber": 1,
+    "title": "Wet Paint",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 6,
+    "date": "Tuesday 18 March",
+    "folderTab": "MOI AVENUE"
+  },
+  "pattern": {
+    "crimePattern": "embezzler surprised by a night guard while removing records",
+    "noRealCaseRetold": true,
+    "notes": "Composite of office-block thefts; fictional building and company.",
+    "tags": [
+      "blunt-force",
+      "fall",
+      "workplace",
+      "cover-up"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 2,
+    "redHerrings": 0,
+    "liars": 0,
+    "groups": [
+      "who"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness"
+    ],
+    "gatedActions": [],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 07/18/03",
+    "date": "Tuesday 18 March",
+    "time": "06:41",
+    "reportedBy": "Nancy Akinyi, cleaner, Kilele House",
+    "text": "Cleaner Nancy Akinyi reports that the night askari of Kilele House, Moi Avenue, Francis Mutua (52), was found at the foot of the 4th-floor stairwell at 06:35. Pronounced dead at the scene. The building's front door was locked from inside.",
+    "facts": [
+      "f_ob_found",
+      "f_ob_locked"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_francis",
+      "role": "victim",
+      "name": "Francis Mutua",
+      "age": 52,
+      "occupation": "Night askari, Kilele House",
+      "bio": "Guarded Kilele House for eleven years. Locked the front door at 19:00 every night and walked every floor with his torch.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_kilele",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 50s, grey-flecked moustache, navy security guard uniform with a company badge, a heavy black torch clipped to his belt, calm proud face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_rehema",
+      "role": "suspect",
+      "name": "Rehema Salim",
+      "age": 41,
+      "occupation": "Accountant, Bidii Freight (4th floor)",
+      "bio": "Has kept Bidii Freight's books for six years. An outside audit of the cash accounts is due on Monday.",
+      "community": "Swahili",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_register_rehema"
+      },
+      "at": "loc_bidii",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 40s, patterned headscarf, neat office blouse, a laptop bag strap across her shoulder, composed but tired eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_isaac",
+      "role": "suspect",
+      "name": "Isaac Kiprotich",
+      "age": 33,
+      "occupation": "Painter contracted for the 4th floor",
+      "bio": "Repainting the 4th-floor corridor this week. Overalls spattered in Ivory Cream.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_tin_note"
+      },
+      "at": "loc_kilele",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 30s, white painter's overalls spattered with cream paint, a paint roller over his shoulder, cheerful but worried, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_collins",
+      "role": "suspect",
+      "name": "Collins Wekesa",
+      "age": 27,
+      "occupation": "Day askari, Kilele House",
+      "bio": "Covers the day shift. Argued with Francis last week about swapping weekend shifts.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_nancy_collins"
+      },
+      "at": "loc_kilele",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 20s, navy security guard uniform, cap under his arm, young and defensive, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_nancy",
+      "role": "witness",
+      "name": "Nancy Akinyi",
+      "age": 44,
+      "occupation": "Morning cleaner",
+      "bio": "Starts at 06:30 every weekday. Found Francis.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_kilele",
+      "image": null
+    },
+    {
+      "id": "p_ali",
+      "role": "witness",
+      "name": "Ali Hussein",
+      "age": 60,
+      "occupation": "Night askari, the building next door",
+      "bio": "Guards the bank-hall building next to Kilele House. Sits by the window facing Kilele's front door and stairwell.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_nancy_ali"
+      },
+      "at": "plc_nextdoor",
+      "image": null
+    },
+    {
+      "id": "p_joyce",
+      "role": "witness",
+      "name": "Joyce Wekesa",
+      "age": 26,
+      "occupation": "Collins's wife",
+      "bio": "Speaks to Amani by phone from Kayole.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_nancy_collins"
+      },
+      "at": "plc_kayole",
+      "statementOnly": true,
+      "image": null
+    },
+    {
+      "id": "p_kioko",
+      "role": "witness",
+      "name": "Pastor Daniel Kioko",
+      "age": 58,
+      "occupation": "Choir master, Kariobangi",
+      "bio": "Runs Tuesday-night choir practice. Speaks to Amani by phone.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_isaac_claim"
+      },
+      "at": "plc_choir",
+      "statementOnly": true,
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_stairwell",
+      "name": "4th-floor stairwell, Kilele House",
+      "within": "loc_kilele"
+    },
+    {
+      "id": "plc_nextdoor",
+      "name": "Guard post, the building next door"
+    },
+    {
+      "id": "plc_kayole",
+      "name": "Collins's home, Kayole"
+    },
+    {
+      "id": "plc_choir",
+      "name": "Church hall, Kariobangi (choir practice)"
+    },
+    {
+      "id": "plc_nancy_home",
+      "name": "Nancy's home, Mathare North"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_kilele",
+      "name": "Kilele House, Moi Avenue",
+      "kind": "scene",
+      "description": "A six-storey 1970s office block. Ground-floor desk with the visitor register. The 4th-floor corridor is half repainted: drop cloths, a ladder, tins. The stairwell window faces the building next door. A side fire door opens onto a service lane.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Foot of the 4th-floor stairs",
+          "pos": [
+            50,
+            72
+          ],
+          "yields": "ev_body",
+          "text": "Francis lies on the landing below the 4th floor. His torch is broken beside him. On his right sleeve: a smear of cream paint."
+        },
+        {
+          "id": "hs_register",
+          "label": "Ground-floor desk: visitor register",
+          "pos": [
+            18,
+            80
+          ],
+          "yields": "ev_register",
+          "text": "A thick ruled book. After 19:00, the night askari writes in everyone who enters and signs them out."
+        },
+        {
+          "id": "hs_tin",
+          "label": "Paint tins on the 4th floor",
+          "pos": [
+            70,
+            30
+          ],
+          "yields": "ev_tin",
+          "text": "Three tins of 'Ivory Cream' emulsion, one open. A painter's note is taped to the lid."
+        },
+        {
+          "id": "hs_dropcloth",
+          "label": "Drop cloth in the corridor",
+          "pos": [
+            56,
+            34
+          ],
+          "yields": "ev_print",
+          "text": "The drop cloth runs the length of the corridor. Near the stairwell door, a single shoe print has set in the paint."
+        },
+        {
+          "id": "hs_firedoor",
+          "label": "Side fire door",
+          "pos": [
+            88,
+            76
+          ],
+          "yields": "ev_nancy",
+          "text": "The fire door onto the service lane is unlatched. Nancy says it is always latched at night."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a dim 1970s Nairobi office stairwell at night, cream paint drying on half the corridor wall, drop cloths on the floor, a step ladder, a stairwell window looking onto the lit window of the building next door, no people"
+      }
+    },
+    {
+      "id": "loc_bidii",
+      "name": "Bidii Freight office, 4th floor",
+      "kind": "location",
+      "description": "Two desks, a filing cabinet, a calendar from a shipping line. A note on the board: 'AUDIT — Monday 9am — all cash ledgers.'",
+      "unlock": {
+        "fact": "f_register_rehema"
+      },
+      "hotspots": [
+        {
+          "id": "hs_bin",
+          "label": "Office bin",
+          "pos": [
+            30,
+            70
+          ],
+          "yields": "ev_bin",
+          "text": "Nancy empties this bin every morning. Today it holds a pair of women's court shoes wrapped in a carrier bag."
+        },
+        {
+          "id": "hs_shelf",
+          "label": "Ledger shelf",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_shelf",
+          "text": "A row of cash ledgers, numbered by year. This year's is missing."
+        }
+      ],
+      "image": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only."
+      },
+      "facts": [
+        "f_body_blow",
+        "f_body_sleeve"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a broken black security torch lying on a concrete stair landing, a cream paint smear on the step beside it, police tape across the stairwell rail, no body visible"
+      }
+    },
+    {
+      "id": "ev_register",
+      "type": "physical",
+      "title": "Visitor register",
+      "render": "visitorRegister",
+      "body": {
+        "rows": [
+          {
+            "name": "I. Kiprotich (painter)",
+            "company": "contractor",
+            "in": "08:00",
+            "out": "17:10"
+          },
+          {
+            "name": "— LOCKED 19:00 — F.M.",
+            "company": "",
+            "in": "",
+            "out": ""
+          },
+          {
+            "name": "R. Salim",
+            "company": "Bidii Freight",
+            "in": "20:40",
+            "out": ""
+          },
+          {
+            "name": "N. Akinyi (cleaner)",
+            "company": "",
+            "in": "06:30",
+            "out": ""
+          }
+        ]
+      },
+      "facts": [
+        "f_register_isaac",
+        "f_register_rehema",
+        "f_register_only",
+        "f_register_nancy"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tin",
+      "type": "physical",
+      "title": "Paint tin and painter's note",
+      "render": "object",
+      "body": {
+        "label": "Ivory Cream emulsion. Touch dry: 4–6 hours.",
+        "note": "Final coat 4th flr corridor done 16:50. DON'T WALK. — Isaac"
+      },
+      "facts": [
+        "f_tin_drytime",
+        "f_tin_note"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_print",
+      "type": "physical",
+      "title": "Shoe print in paint",
+      "render": "object",
+      "body": {
+        "label": "Narrow heel, pointed toe, about size 38. A women's court shoe."
+      },
+      "facts": [
+        "f_print"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a single women's court-shoe print, narrow heel and pointed toe, set in cream paint on a canvas drop cloth, with a police scale ruler beside it"
+      }
+    },
+    {
+      "id": "ev_bin",
+      "type": "physical",
+      "title": "Shoes in the Bidii bin",
+      "render": "object",
+      "body": {
+        "label": "Black court shoes, size 38. Cream paint on one heel."
+      },
+      "facts": [
+        "f_bin_shoes"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a pair of black women's court shoes in a crumpled carrier bag in an office bin, one heel smeared with cream paint"
+      }
+    },
+    {
+      "id": "ev_shelf",
+      "type": "physical",
+      "title": "Ledger shelf",
+      "render": "object",
+      "body": {
+        "label": "Cash ledgers 2019–last year. This year's: missing. Board note: AUDIT Monday."
+      },
+      "facts": [
+        "f_shelf_missing",
+        "f_shelf_audit"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ali",
+      "type": "witness",
+      "title": "Statement: Ali Hussein",
+      "render": "statement",
+      "body": {
+        "speaker": "p_ali"
+      },
+      "facts": [
+        "f_ali_woman",
+        "f_ali_shout",
+        "f_ali_post"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_nancy",
+      "type": "witness",
+      "title": "Statement: Nancy Akinyi",
+      "render": "statement",
+      "body": {
+        "speaker": "p_nancy"
+      },
+      "facts": [
+        "f_nancy_firedoor",
+        "f_nancy_ali",
+        "f_nancy_collins",
+        "f_nancy_home"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_joyce",
+      "type": "witness",
+      "title": "Phone: Joyce Wekesa",
+      "render": "statement",
+      "body": {
+        "speaker": "p_joyce",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_joyce_home"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kioko",
+      "type": "witness",
+      "title": "Phone: Pastor Kioko",
+      "render": "statement",
+      "body": {
+        "speaker": "p_kioko",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_kioko_choir"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Francis Mutua was found at the foot of the 4th-floor stairs of Kilele House at 06:35.",
+      "kind": "true",
+      "about": [
+        "p_francis",
+        "loc_kilele"
+      ]
+    },
+    {
+      "id": "f_ob_locked",
+      "text": "The front door of Kilele House was locked from inside when the cleaner arrived.",
+      "kind": "true",
+      "about": [
+        "loc_kilele"
+      ]
+    },
+    {
+      "id": "f_body_blow",
+      "text": "Francis was struck or shoved, then fell down the stairs. His torch broke.",
+      "kind": "true",
+      "about": [
+        "p_francis"
+      ]
+    },
+    {
+      "id": "f_body_sleeve",
+      "text": "A smear of cream paint is on Francis's sleeve.",
+      "kind": "true",
+      "about": [
+        "p_francis"
+      ]
+    },
+    {
+      "id": "f_register_isaac",
+      "text": "Register: I. Kiprotich, painter, signed in 08:00 and out 17:10.",
+      "kind": "true",
+      "about": [
+        "p_isaac",
+        "loc_kilele"
+      ],
+      "where": {
+        "person": "p_isaac",
+        "place": "loc_kilele",
+        "from": "08:00",
+        "to": "17:10"
+      }
+    },
+    {
+      "id": "f_register_rehema",
+      "text": "Register after lock-up: R. Salim, Bidii Freight, in at 20:40. No sign-out.",
+      "kind": "true",
+      "about": [
+        "p_rehema",
+        "loc_kilele"
+      ],
+      "where": {
+        "person": "p_rehema",
+        "place": "loc_kilele",
+        "from": "20:40",
+        "to": null
+      }
+    },
+    {
+      "id": "f_register_only",
+      "text": "After the 19:00 lock-up, the register has only one entry: R. Salim.",
+      "kind": "true",
+      "about": [
+        "loc_kilele"
+      ]
+    },
+    {
+      "id": "f_register_nancy",
+      "text": "Register: N. Akinyi, cleaner, in at 06:30.",
+      "kind": "true",
+      "about": [
+        "p_nancy",
+        "loc_kilele"
+      ]
+    },
+    {
+      "id": "f_tin_drytime",
+      "text": "The paint is 'touch dry' only 4–6 hours after it goes on.",
+      "kind": "true",
+      "about": [
+        "ev_tin"
+      ]
+    },
+    {
+      "id": "f_tin_note",
+      "text": "Painter Isaac Kiprotich put the final coat on the corridor at 16:50.",
+      "kind": "true",
+      "about": [
+        "ev_tin",
+        "p_isaac"
+      ]
+    },
+    {
+      "id": "f_print",
+      "text": "A size-38 women's court-shoe print set in the wet paint by the stairwell door.",
+      "kind": "true",
+      "about": [
+        "ev_print",
+        "plc_stairwell"
+      ]
+    },
+    {
+      "id": "f_bin_shoes",
+      "text": "Size-38 court shoes with cream paint on one heel are in the Bidii Freight office bin.",
+      "kind": "true",
+      "about": [
+        "ev_bin",
+        "loc_bidii"
+      ]
+    },
+    {
+      "id": "f_shelf_missing",
+      "text": "This year's Bidii Freight cash ledger is missing from its shelf.",
+      "kind": "true",
+      "about": [
+        "loc_bidii"
+      ]
+    },
+    {
+      "id": "f_shelf_audit",
+      "text": "An audit of all Bidii Freight cash ledgers is set for Monday at 9.",
+      "kind": "true",
+      "about": [
+        "loc_bidii",
+        "p_rehema"
+      ]
+    },
+    {
+      "id": "f_ali_woman",
+      "text": "Ali saw only one person enter Kilele House after 19:00: a woman with a laptop bag, at about 20:40.",
+      "kind": "true",
+      "about": [
+        "p_ali",
+        "loc_kilele"
+      ]
+    },
+    {
+      "id": "f_ali_shout",
+      "text": "At about 21:15 Ali saw a torch moving in Kilele's 4th-floor stairwell window and heard a shout.",
+      "kind": "true",
+      "about": [
+        "p_ali",
+        "plc_stairwell"
+      ]
+    },
+    {
+      "id": "f_ali_post",
+      "text": "Ali's own guard book shows him at his post all night, 19:00 to 06:00.",
+      "kind": "true",
+      "about": [
+        "p_ali"
+      ],
+      "where": {
+        "person": "p_ali",
+        "place": "plc_nextdoor",
+        "from": "19:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_nancy_firedoor",
+      "text": "The side fire door was unlatched when Nancy arrived. It is always latched at night.",
+      "kind": "true",
+      "about": [
+        "p_nancy",
+        "loc_kilele"
+      ]
+    },
+    {
+      "id": "f_nancy_ali",
+      "text": "Nancy says Mzee Ali next door watches Kilele's door all night from his window.",
+      "kind": "true",
+      "about": [
+        "p_nancy",
+        "p_ali"
+      ]
+    },
+    {
+      "id": "f_nancy_collins",
+      "text": "Nancy says the day askari, Collins Wekesa, argued with Francis last week about weekend shifts.",
+      "kind": "true",
+      "about": [
+        "p_nancy",
+        "p_collins",
+        "p_francis"
+      ]
+    },
+    {
+      "id": "f_nancy_home",
+      "text": "Nancy was at home in Mathare North until she left for work at 05:50.",
+      "kind": "true",
+      "about": [
+        "p_nancy"
+      ],
+      "where": {
+        "person": "p_nancy",
+        "place": "plc_nancy_home",
+        "from": "18:00",
+        "to": "05:50"
+      }
+    },
+    {
+      "id": "f_joyce_home",
+      "text": "Joyce: Collins was home in Kayole all evening. The neighbours' kesha kept everyone awake past midnight.",
+      "kind": "true",
+      "about": [
+        "p_collins",
+        "p_joyce"
+      ],
+      "where": {
+        "person": "p_collins",
+        "place": "plc_kayole",
+        "from": "18:30",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_kioko_choir",
+      "text": "Pastor Kioko: Isaac sang at choir practice in Kariobangi from 19:30 to 21:45, then helped stack chairs.",
+      "kind": "true",
+      "about": [
+        "p_isaac",
+        "p_kioko"
+      ],
+      "where": {
+        "person": "p_isaac",
+        "place": "plc_choir",
+        "from": "19:30",
+        "to": "21:50"
+      }
+    },
+    {
+      "id": "f_isaac_claim",
+      "text": "Isaac: \"I signed out at ten past five and went to choir.\"",
+      "kind": "claim",
+      "about": [
+        "p_isaac"
+      ]
+    },
+    {
+      "id": "f_collins_claim",
+      "text": "Collins: \"I was home in Kayole. I didn't like Francis, but I didn't come back here.\"",
+      "kind": "claim",
+      "about": [
+        "p_collins"
+      ]
+    },
+    {
+      "id": "f_rehema_claim",
+      "text": "Rehema: \"I came back for some files and left. I didn't see anyone.\"",
+      "kind": "claim",
+      "about": [
+        "p_rehema"
+      ]
+    },
+    {
+      "id": "f_rehema_shoes",
+      "text": "Rehema says she wears flat shoes home and leaves her office shoes in the office.",
+      "kind": "true",
+      "about": [
+        "p_rehema"
+      ]
+    },
+    {
+      "id": "f_isaac_wet",
+      "text": "Isaac warned everyone on the 4th floor that the corridor would be wet until late night.",
+      "kind": "true",
+      "about": [
+        "p_isaac"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_nancy",
+      "stance": "cooperative",
+      "intro": "Nancy has her mop in both hands like a staff. \"Eleven years he greeted me every morning. Every morning.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_francis",
+          "reply": "Francis did his rounds every hour with that big torch. Every floor. He was proud of that torch.",
+          "reveals": []
+        },
+        {
+          "about": "loc_bidii",
+          "reply": "I clean Bidii Freight first, every morning. The bin is always just paper. Today there were shoes in it. Shoes!",
+          "reveals": []
+        },
+        {
+          "about": "p_collins",
+          "reply": "Collins and Francis shouted at each other last week about weekend shifts. Young men shout.",
+          "reveals": [
+            "f_nancy_collins"
+          ]
+        },
+        {
+          "about": "p_ali",
+          "reply": "Mzee Ali next door sits at his window all night. Nothing happens on this street he doesn't see.",
+          "reveals": [
+            "f_nancy_ali"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_ali",
+      "stance": "cooperative",
+      "intro": "Ali speaks slowly, choosing every word. \"I keep a book too. Askari to askari, we watch each other's doors.\"",
+      "claims": [],
+      "yields": [
+        "ev_ali"
+      ],
+      "topics": [
+        {
+          "about": "p_rehema",
+          "reply": "A woman with a laptop bag, about twenty to nine. Francis let her in and wrote in his book. I didn't see her come out of the front.",
+          "reveals": []
+        },
+        {
+          "about": "p_isaac",
+          "reply": "The painter? He left before dark, at five or so. Singing.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_isaac",
+      "stance": "cooperative",
+      "intro": "Isaac keeps wiping his hands on his overalls though they're dry. \"I told everyone. Don't walk on my corridor.\"",
+      "claims": [
+        "f_isaac_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_tin",
+          "reply": "Final coat at ten to five. That paint stays tacky till nine, ten at night. I told the whole floor.",
+          "reveals": [
+            "f_isaac_wet"
+          ]
+        },
+        {
+          "about": "ev_print",
+          "reply": "That's not my boot. My boots are size 44. And I walk on the cloth edges, like a professional.",
+          "reveals": []
+        },
+        {
+          "about": "p_kioko",
+          "reply": "Call Pastor Kioko. Tuesday is choir. I've never missed a Tuesday.",
+          "reveals": [
+            "ev_kioko"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_collins",
+      "stance": "cooperative",
+      "intro": "Collins arrives for his day shift and stops dead at the tape. \"Francis? Kwani what happened?\"",
+      "claims": [
+        "f_collins_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_francis",
+          "reply": "We argued about Saturdays. He wanted me to cover. I said no. It was nothing. Call my wife.",
+          "reveals": [
+            "ev_joyce"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_rehema",
+      "stance": "cooperative",
+      "intro": "Rehema answers the door of her flat in Parklands already dressed for work. \"Kilele House? I was there last night, yes. Briefly.\"",
+      "claims": [
+        "f_rehema_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_bin",
+          "reply": "I keep a pair of office shoes in the office and go home in flats. Doesn't everyone?",
+          "reveals": [
+            "f_rehema_shoes"
+          ]
+        },
+        {
+          "about": "f_shelf_audit",
+          "reply": "The audit is routine. Every year. I don't see what that has to do with Francis.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [],
+  "words": [
+    {
+      "id": "w_rehema",
+      "text": "Rehema Salim",
+      "category": "person",
+      "ref": "p_rehema",
+      "unlock": {
+        "anyOf": [
+          "f_register_rehema"
+        ]
+      }
+    },
+    {
+      "id": "w_isaac",
+      "text": "Isaac Kiprotich",
+      "category": "person",
+      "ref": "p_isaac",
+      "unlock": {
+        "anyOf": [
+          "f_tin_note",
+          "f_register_isaac"
+        ]
+      }
+    },
+    {
+      "id": "w_collins",
+      "text": "Collins Wekesa",
+      "category": "person",
+      "ref": "p_collins",
+      "unlock": {
+        "anyOf": [
+          "f_nancy_collins"
+        ]
+      }
+    },
+    {
+      "id": "w_nancy",
+      "text": "Nancy Akinyi",
+      "category": "person",
+      "ref": "p_nancy",
+      "unlock": {
+        "anyOf": [
+          "f_register_nancy",
+          "f_nancy_firedoor"
+        ]
+      }
+    },
+    {
+      "id": "w_ali",
+      "text": "Ali Hussein",
+      "category": "person",
+      "ref": "p_ali",
+      "unlock": {
+        "anyOf": [
+          "f_nancy_ali"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} caused the death of {victim} at Kilele House.",
+    "fixed": {
+      "victim": "Francis Mutua"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_rehema"
+          }
+        ],
+        "prosecutor": {
+          "pass": "One entry after lock-up, one shoe in the paint, the same shoe in her bin. It will hold.",
+          "fail": [
+            "This doesn't hold up. Who was actually inside that building after seven?",
+            "No. The paint tells you when. The register tells you who. Read them together."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_kilele",
+      "from": "21:00",
+      "to": "21:30",
+      "within": [
+        "plc_stairwell"
+      ]
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_tin_drytime",
+          "f_tin_note",
+          "f_print"
+        ],
+        "concludes": "The print was made in wet paint, after 16:50 and before late night, by someone in a size-38 women's court shoe."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_register_rehema",
+          "f_register_only",
+          "f_ali_woman",
+          "f_bin_shoes"
+        ],
+        "concludes": "The only person inside Kilele House after lock-up was Rehema Salim, and her office shoes carry the cream paint.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_isaac",
+        "blank": "who",
+        "by": [
+          "f_register_isaac",
+          "f_kioko_choir"
+        ],
+        "why": "Isaac signed out at 17:10 and was at choir practice in Kariobangi from 19:30 to 21:50."
+      },
+      {
+        "word": "w_collins",
+        "blank": "who",
+        "by": [
+          "f_joyce_home",
+          "f_ali_woman"
+        ],
+        "why": "Collins was home in Kayole, kept awake by the neighbours' kesha, and nobody but the woman with the laptop bag entered after 19:00."
+      },
+      {
+        "word": "w_nancy",
+        "blank": "who",
+        "by": [
+          "f_register_nancy",
+          "f_nancy_home"
+        ],
+        "why": "Nancy only arrived at 06:30, long after the 21:15 shout."
+      },
+      {
+        "word": "w_ali",
+        "blank": "who",
+        "by": [
+          "f_ali_post"
+        ],
+        "why": "Ali's guard book places him at his own post next door all night."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Monday's audit will show the cash Rehema has been skimming from Bidii Freight. On Tuesday night she comes back for this year's ledger.",
+        "image": null
+      },
+      {
+        "text": "20:40. Francis unlocks the front door for her and writes her in. He doesn't think twice: she's worked upstairs for six years.",
+        "image": null
+      },
+      {
+        "text": "About 21:15. Ledger in her bag, Rehema crosses the wet corridor in her office shoes. Francis's torch finds her at the stairwell door. He asks what she's carrying.",
+        "image": "loc_kilele"
+      },
+      {
+        "text": "She shoves him. He falls. She changes into her flats, drops the painted shoes in her own office bin, and leaves by the side fire door.",
+        "image": null
+      },
+      {
+        "text": "The painter, covered in Ivory Cream, was singing in Kariobangi the whole time.",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_register",
+        "line": "Every office block in Nairobi keeps a book at the front desk. Read it like a list of suspects."
+      },
+      "tier2": {
+        "facts": [
+          "f_print",
+          "f_bin_shoes"
+        ],
+        "line": "A shoe print in the paint, and a pair of shoes in a bin. Whose bin?"
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "askari",
+      "def": "Security guard."
+    },
+    {
+      "term": "kesha",
+      "def": "All-night prayer vigil, usually with loud singing."
+    },
+    {
+      "term": "mzee",
+      "def": "Respectful word for an older man."
+    },
+    {
+      "term": "kwani",
+      "def": "\"But why…?\" or \"So what…?\": a word of surprise or protest."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "foundPaperBook",
+      "timeWindow"
+    ],
+    "beatNotes": "Found paper: the visitor register opens as a full-screen ruled book the player scrolls; facts lift out of it line by line. First time window in the notebook: Ali's 21:15 shout gets a clock icon."
+  }
+}

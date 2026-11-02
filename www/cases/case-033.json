@@ -1,0 +1,1761 @@
+{
+  "meta": {
+    "id": "case-033",
+    "number": 33,
+    "region": "rift-valley",
+    "regionNumber": 4,
+    "title": "Brine",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 20,
+    "date": "Wednesday 15 October",
+    "folderTab": "LAKE NAKURU"
+  },
+  "pattern": {
+    "crimePattern": "buyer of a flooded plot drowns the broker in a water tank and dumps him in the lake",
+    "noRealCaseRetold": true,
+    "notes": "Fictional estate on the real, flooded shore of Lake Nakuru. Rising Rift lakes drowning homes and plots is real and widely reported; no real broker, buyer or estate is depicted.",
+    "tags": [
+      "drowning",
+      "staged-location",
+      "land-fraud",
+      "forensics",
+      "spine-background"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 4,
+    "redHerrings": 1,
+    "liars": 1,
+    "groups": [
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": "drowned-somewhere-else"
+  },
+  "ob": {
+    "number": "OB 31/15/10",
+    "date": "Wednesday 15 October",
+    "time": "07:15",
+    "reportedBy": "Barack Okeyo, fisherman, Ziwani Gardens",
+    "text": "Fishermen report a man found floating among drowned fence posts at Ziwani Gardens on the flooded southern shore of Lake Nakuru at 06:40. He is identified as Hezekiah Onsongo (57), a land broker. Recorded as drowning; suspected fall from a boat.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_hezekiah",
+      "role": "victim",
+      "name": "Hezekiah Onsongo",
+      "age": 57,
+      "occupation": "Land broker, Ziwani Gardens",
+      "bio": "Sold the Ziwani Gardens plots, and kept selling them as the lake rose, promising \"it will go back down\".",
+      "community": "Kisii",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_garage",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 50s, a broker's blazer over a striped shirt, a leather document case, a gold wristwatch, a confident salesman's smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kyalo",
+      "role": "suspect",
+      "name": "Kyalo Mwanzia",
+      "age": 34,
+      "occupation": "Mechanic, Lanet",
+      "bio": "Paid KSh 900,000, his savings and a chama loan, for plot 47 at Ziwani Gardens. Plot 47 is now under a metre of water.",
+      "community": "Kamba",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_rec_call"
+      },
+      "at": "loc_garage",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 30s, grease-stained overalls tied at the waist over a T-shirt, a spanner in his back pocket, forearms marked with old burns, hard eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_nico",
+      "role": "suspect",
+      "name": "Nicodemus Kipkemboi",
+      "age": 47,
+      "occupation": "Plot buyer; church choir leader",
+      "redHerring": true,
+      "bio": "Bought a Ziwani plot that flooded. Protested loudly at Hezekiah's office last week.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_nico_protest"
+      },
+      "at": "plc_church",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 40s, a church choir robe over a suit, a hymn book in his hand, angry and red-eyed from no sleep, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_rael",
+      "role": "suspect",
+      "name": "Rael Nyaboke",
+      "age": 52,
+      "occupation": "Hezekiah's widow",
+      "bio": "Inherits the business. Begged him for a year to stop selling flooded plots.",
+      "community": "Kisii",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_sister",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 50s, a dark headwrap, a cardigan over a church dress, a folder of business papers clutched to her chest, exhausted, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_barack",
+      "role": "witness",
+      "name": "Barack Okeyo",
+      "age": 44,
+      "occupation": "Fisherman",
+      "bio": "Fishes the flooded estate for tilapia. Found the body among the fence posts.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_lake",
+      "image": null
+    },
+    {
+      "id": "p_lawrence",
+      "role": "witness",
+      "name": "Lawrence Gatimu",
+      "age": 49,
+      "occupation": "Owner of the pickup at Kyalo's garage",
+      "statementOnly": true,
+      "bio": "Left his pickup with Kyalo for brake repairs on Monday.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_jobcard"
+      },
+      "at": "plc_gilgil",
+      "image": null
+    },
+    {
+      "id": "p_pastor",
+      "role": "witness",
+      "name": "Pastor Mary Waithera",
+      "age": 58,
+      "occupation": "Pastor, Lanet",
+      "statementOnly": true,
+      "bio": "Leads an all-night prayer at her church on Tuesdays.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_nico_claim"
+      },
+      "at": "plc_church",
+      "image": null
+    },
+    {
+      "id": "p_sister",
+      "role": "witness",
+      "name": "Grace Moraa",
+      "age": 49,
+      "occupation": "Rael's sister, Nakuru town",
+      "statementOnly": true,
+      "bio": "Lives in Nakuru town. Rael stayed with her last night.",
+      "community": "Kisii",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_rael_claim"
+      },
+      "at": "plc_sister",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_yard",
+      "name": "Kyalo's yard and water tank",
+      "within": "loc_garage"
+    },
+    {
+      "id": "plc_church",
+      "name": "All-night prayer, a church in Lanet"
+    },
+    {
+      "id": "plc_sister",
+      "name": "Grace Moraa's house, Nakuru town"
+    },
+    {
+      "id": "plc_gilgil",
+      "name": "Gilgil"
+    },
+    {
+      "id": "plc_boat",
+      "name": "Fishing boats on the flooded estate"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_lake",
+      "name": "Ziwani Gardens, Lake Nakuru shore",
+      "kind": "scene",
+      "description": "An estate of plots half under the lake. Fence posts and gate pillars stand in green, soda-alkaline water thick with algae. Flamingos far out. A fishing boat pulled up on the drowned road.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Among the fence posts",
+          "pos": [
+            48,
+            66
+          ],
+          "yields": "ev_body",
+          "text": "He floats face down among the drowned fence posts of plot 47. His left wrist is bare."
+        },
+        {
+          "id": "hs_water",
+          "label": "The lake water",
+          "pos": [
+            30,
+            74
+          ],
+          "yields": "ev_lakewater",
+          "text": "Green, thick, slippery water. It smells of soda. Amani bottles a sample for the lab."
+        },
+        {
+          "id": "hs_barack",
+          "label": "Fishing boat",
+          "pos": [
+            82,
+            60
+          ],
+          "yields": "ev_barack",
+          "text": "Barack Okeyo sits in his boat with his net still wet, not wanting to go back out."
+        },
+        {
+          "id": "hs_sign",
+          "label": "Estate signboard",
+          "pos": [
+            12,
+            30
+          ],
+          "text": "\"ZIWANI GARDENS — PLOTS FOR SALE — TITLE READY\". The board stands in a metre of water."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a flooded housing estate on the shore of Lake Nakuru at dawn, fence posts and gate pillars standing in green algae-thick water, a drowned signboard, a fishing boat, pink flamingos far out on the lake, no people in focus"
+      }
+    },
+    {
+      "id": "loc_office",
+      "name": "Hezekiah's office, Nakuru",
+      "kind": "location",
+      "description": "A first-floor office with maps of Ziwani Gardens on every wall, plots coloured in as \"sold\". His car is in the yard below.",
+      "unlock": {
+        "fact": "f_rael_lanet"
+      },
+      "hotspots": [
+        {
+          "id": "hs_plot47",
+          "label": "File: plot 47",
+          "pos": [
+            40,
+            50
+          ],
+          "yields": "ev_plot47",
+          "text": "The sale file for plot 47, with a note pinned to the front."
+        },
+        {
+          "id": "hs_visitors",
+          "label": "Office visitors' book",
+          "pos": [
+            20,
+            40
+          ],
+          "yields": "ev_protest",
+          "text": "The office visitors' book. Last week's page has a complaint written across it."
+        },
+        {
+          "id": "hs_car",
+          "label": "His car, the briefcase",
+          "pos": [
+            80,
+            70
+          ],
+          "yields": "ev_briefcase",
+          "text": "In his car, a briefcase of title deeds for Ziwani plots, all neatly stamped."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small land broker's office in Nakuru, a large estate map pinned to the wall with plots coloured in, files on a desk, a window over a car park"
+      }
+    },
+    {
+      "id": "loc_garage",
+      "name": "Kyalo's garage, Lanet",
+      "kind": "location",
+      "description": "A roadside garage: a pit, a compressor, a customer's double-cab pickup on blocks, a 5,000-litre plastic water tank in the yard behind.",
+      "unlock": {
+        "fact": "f_rec_call"
+      },
+      "hotspots": [
+        {
+          "id": "hs_jobcard",
+          "label": "Job card on the pickup",
+          "pos": [
+            40,
+            44
+          ],
+          "yields": "ev_jobcard",
+          "text": "A job card tucked under the wiper of a customer's pickup, and the odometer behind the glass."
+        },
+        {
+          "id": "hs_jobbook",
+          "label": "Garage job book",
+          "pos": [
+            20,
+            60
+          ],
+          "yields": "ev_jobbook",
+          "text": "Every customer, every job, for three years."
+        },
+        {
+          "id": "hs_customer",
+          "label": "Number on the job card",
+          "pos": [
+            44,
+            40
+          ],
+          "yields": "ev_customer",
+          "text": "The customer's name and number are on the job card: L. Gatimu. Amani calls him.",
+          "unlock": {
+            "fact": "f_jobcard"
+          }
+        },
+        {
+          "id": "hs_passbook",
+          "label": "Passbook on the bench",
+          "pos": [
+            60,
+            66
+          ],
+          "yields": "ev_chamabook",
+          "text": "A chama passbook lies on the bench under a spanner."
+        },
+        {
+          "id": "hs_map",
+          "label": "Wall map",
+          "pos": [
+            70,
+            30
+          ],
+          "yields": "ev_distance",
+          "text": "A road map of Nakuru county pinned above the bench."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a roadside mechanic's garage in Lanet near Nakuru at dusk, a grease pit, a double-cab pickup raised on blocks, a large black plastic water tank in the yard behind, tools on the wall"
+      }
+    },
+    {
+      "id": "loc_yard",
+      "name": "Kyalo's yard (search)",
+      "kind": "search",
+      "description": "Behind the garage: a black 5,000-litre water tank on a concrete stand, its lid off, clear county water to the brim.",
+      "unlock": {
+        "fact": "f_rec_mast"
+      },
+      "hotspots": [
+        {
+          "id": "hs_tank",
+          "label": "Inside the tank",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_tank",
+          "text": "At the bottom of the clear water, something glints."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a large black plastic 5,000-litre water tank on a concrete stand behind a garage, its lid off, clear water inside"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Recovered from the lake",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. No head injury seen. Left wrist bare, a pale band where a watch was."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "drowned fence posts standing in green lake water at dawn, a single broker's leather shoe floating among them, no body visible"
+      }
+    },
+    {
+      "id": "ev_lakewater",
+      "type": "physical",
+      "title": "Lake water sample",
+      "render": "object",
+      "body": {
+        "label": "Bottled at the fence posts of plot 47."
+      },
+      "facts": [
+        "f_lakewater"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_barack",
+      "type": "witness",
+      "title": "Statement: Barack Okeyo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_barack"
+      },
+      "facts": [
+        "f_barack"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rael",
+      "type": "witness",
+      "title": "Statement: Rael Nyaboke",
+      "render": "statement",
+      "body": {
+        "speaker": "p_rael"
+      },
+      "facts": [
+        "f_rael_lanet",
+        "f_rael_inherits"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records_hez",
+      "type": "phone",
+      "title": "Records: Hezekiah Onsongo's line",
+      "render": "manifest",
+      "body": {
+        "calls": "19:40 call with KYALO MWANZIA",
+        "masts": "Lanet 20:25–23:05; Nakuru South (lake shore) 23:20; then off"
+      },
+      "facts": [
+        "f_rec_call",
+        "f_rec_mast"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_rael_lanet"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_plot47",
+      "type": "physical",
+      "title": "Sale file: plot 47",
+      "render": "form",
+      "body": {
+        "buyer": "Kyalo Mwanzia",
+        "price": "KSh 900,000",
+        "note": "Refund or I'll see you in court. — K.M."
+      },
+      "facts": [
+        "f_plot47"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_protest",
+      "type": "physical",
+      "title": "Office visitors' book",
+      "render": "visitorRegister",
+      "body": {
+        "rows": [
+          {
+            "name": "N. Kipkemboi",
+            "note": "Came to complain. Shouted. Asked to leave."
+          }
+        ]
+      },
+      "facts": [
+        "f_nico_protest"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_briefcase",
+      "type": "physical",
+      "title": "Hezekiah's briefcase",
+      "render": "object",
+      "body": {
+        "label": "Title deeds for Ziwani plots on watermarked paper, each with a REGISTRAR OF TITLES oval seal; agreements printed \"Title processing: Mvua Holdings\"."
+      },
+      "facts": [
+        "f_brief_seal",
+        "f_brief_mvua"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_jobcard",
+      "type": "physical",
+      "title": "Job card: customer's pickup",
+      "render": "jobBook",
+      "body": {
+        "job": "Brakes",
+        "odometerIn": "48,210 km (08:00 yesterday)",
+        "note": "Brakes not yet road-tested",
+        "odometerNow": "48,248 km"
+      },
+      "facts": [
+        "f_jobcard"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_jobbook",
+      "type": "physical",
+      "title": "Garage job book",
+      "render": "jobBook",
+      "body": {
+        "line": "Three years of customers. No H. Onsongo."
+      },
+      "facts": [
+        "f_jobbook"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_distance",
+      "type": "physical",
+      "title": "Road map",
+      "render": "sketch",
+      "body": {
+        "route": "Lanet garage → Ziwani Gardens → back",
+        "distance": "about 38 km"
+      },
+      "facts": [
+        "f_distance"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_customer",
+      "type": "witness",
+      "title": "Phone statement: Lawrence Gatimu",
+      "render": "statement",
+      "body": {
+        "speaker": "p_lawrence",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_customer"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tank",
+      "type": "physical",
+      "title": "Kyalo's water tank",
+      "render": "object",
+      "body": {
+        "label": "5,000 litres of clear county water. At the bottom: a gold wristwatch, strap snapped, engraved \"H.O. — 25 years\"."
+      },
+      "facts": [
+        "f_tank_watch",
+        "f_tank_water"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_mast"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a gold wristwatch with a snapped leather strap lying at the bottom of clear water inside a black plastic tank, the back engraved H.O. 25 YEARS"
+      }
+    },
+    {
+      "id": "ev_chamabook",
+      "type": "physical",
+      "title": "Kyalo's chama book",
+      "render": "ledger",
+      "body": {
+        "line": "Loan current. Repayments on time. No debts to H. Onsongo."
+      },
+      "facts": [
+        "f_chama"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_church",
+      "type": "witness",
+      "title": "Phone statement: Pastor Mary Waithera",
+      "render": "statement",
+      "body": {
+        "speaker": "p_pastor",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_church"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_sister",
+      "type": "witness",
+      "title": "Phone statement: Grace Moraa",
+      "render": "statement",
+      "body": {
+        "speaker": "p_sister",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_sister"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_drown",
+        "f_aut_neck",
+        "f_aut_tod",
+        "f_aut_lungs"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_water1",
+      "type": "forensic",
+      "title": "Lab: water chemistry (lungs vs lake)",
+      "render": "labReport",
+      "body": {
+        "test": "water"
+      },
+      "facts": [
+        "f_water_notlake"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "water",
+        "hours": 10,
+        "needs": [
+          "ev_autopsy",
+          "ev_lakewater"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_water2",
+      "type": "forensic",
+      "title": "Lab: water chemistry (lungs vs tank)",
+      "render": "labReport",
+      "body": {
+        "test": "water"
+      },
+      "facts": [
+        "f_water_tank"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "water",
+        "hours": 10,
+        "needs": [
+          "ev_autopsy",
+          "ev_tank"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tox",
+      "type": "forensic",
+      "title": "Lab: toxicology",
+      "render": "labReport",
+      "body": {
+        "test": "toxicology"
+      },
+      "facts": [
+        "f_tox"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toxicology",
+        "hours": 18,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Hezekiah Onsongo, land broker, was found floating among drowned fence posts at Ziwani Gardens at 06:40. Recorded as drowning.",
+      "kind": "true",
+      "about": [
+        "p_hezekiah",
+        "loc_lake"
+      ]
+    },
+    {
+      "id": "f_body",
+      "text": "No head injury. His left wrist is bare, with a pale band where a watch used to be.",
+      "kind": "true",
+      "about": [
+        "p_hezekiah"
+      ]
+    },
+    {
+      "id": "f_lakewater",
+      "text": "Lake water sample from plot 47: green, soda-alkaline, thick with blue-green algae.",
+      "kind": "true",
+      "about": [
+        "loc_lake"
+      ]
+    },
+    {
+      "id": "f_barack",
+      "text": "Barack: he and two others were fishing from 04:00; he found the body at 06:40. No boat was out last night.",
+      "kind": "true",
+      "about": [
+        "p_barack"
+      ],
+      "where": {
+        "person": "p_barack",
+        "place": "plc_boat",
+        "from": "04:00",
+        "to": "06:40"
+      }
+    },
+    {
+      "id": "f_rael_lanet",
+      "text": "Rael: last night Hezekiah went to Lanet to tell a buyer there'd be no refund. \"He said the man was a mechanic.\"",
+      "kind": "true",
+      "about": [
+        "p_rael",
+        "p_hezekiah"
+      ]
+    },
+    {
+      "id": "f_rael_inherits",
+      "text": "Rael inherits the business. \"He kept selling. I begged him to stop.\"",
+      "kind": "true",
+      "about": [
+        "p_rael"
+      ]
+    },
+    {
+      "id": "f_rec_call",
+      "text": "Records, Hezekiah's line: a call with KYALO MWANZIA at 19:40.",
+      "kind": "true",
+      "about": [
+        "p_hezekiah",
+        "p_kyalo"
+      ]
+    },
+    {
+      "id": "f_rec_mast",
+      "text": "Records: Hezekiah's phone on the Lanet mast 20:25–23:05, then Nakuru South (the lake shore) at 23:20, then off.",
+      "kind": "true",
+      "about": [
+        "p_hezekiah"
+      ]
+    },
+    {
+      "id": "f_plot47",
+      "text": "Plot 47, Ziwani Gardens: sold to Kyalo Mwanzia for KSh 900,000. Pinned to it: 'Refund or I'll see you in court. — K.M.'",
+      "kind": "true",
+      "about": [
+        "p_kyalo",
+        "p_hezekiah"
+      ]
+    },
+    {
+      "id": "f_nico_protest",
+      "text": "Office visitors' book, last week: 'N. Kipkemboi — came to complain. Shouted. Asked to leave.'",
+      "kind": "true",
+      "about": [
+        "p_nico",
+        "p_hezekiah"
+      ]
+    },
+    {
+      "id": "f_brief_seal",
+      "text": "Title deeds for Ziwani plots in his briefcase carry the REGISTRAR OF TITLES oval seal, the familiar design, on watermarked paper.",
+      "kind": "true",
+      "about": [
+        "ev_briefcase"
+      ],
+      "spine": "t_stamp"
+    },
+    {
+      "id": "f_brief_mvua",
+      "text": "The Ziwani sale agreements are printed: 'Title processing: Mvua Holdings'.",
+      "kind": "true",
+      "about": [
+        "ev_briefcase"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_jobcard",
+      "text": "Job card on the customer's pickup: odometer 48,210 km at 08:00 yesterday, 'brakes not yet road-tested'. It now reads 48,248 km.",
+      "kind": "true",
+      "about": [
+        "p_kyalo",
+        "p_lawrence"
+      ]
+    },
+    {
+      "id": "f_jobbook",
+      "text": "Garage job book: three years of customers. Hezekiah Onsongo was never one of them.",
+      "kind": "true",
+      "about": [
+        "p_kyalo"
+      ]
+    },
+    {
+      "id": "f_distance",
+      "text": "Map: Kyalo's garage in Lanet to Ziwani Gardens and back is about 38 km.",
+      "kind": "true",
+      "about": [
+        "loc_garage",
+        "loc_lake"
+      ]
+    },
+    {
+      "id": "f_customer",
+      "text": "Lawrence: he left the pickup on Monday for brakes and has been in Gilgil since, without a car. He hasn't driven it.",
+      "kind": "true",
+      "about": [
+        "p_lawrence"
+      ],
+      "where": {
+        "person": "p_lawrence",
+        "place": "plc_gilgil",
+        "from": "08:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_tank_watch",
+      "text": "At the bottom of Kyalo's water tank: a gold watch, strap snapped, engraved \"H.O. — 25 years\".",
+      "kind": "true",
+      "about": [
+        "p_hezekiah",
+        "p_kyalo"
+      ]
+    },
+    {
+      "id": "f_tank_water",
+      "text": "The tank holds clear, chlorinated county water. Amani bottles a sample.",
+      "kind": "true",
+      "about": [
+        "plc_yard"
+      ]
+    },
+    {
+      "id": "f_chama",
+      "text": "Kyalo's chama book: his loan is current. He owes Hezekiah nothing.",
+      "kind": "true",
+      "about": [
+        "p_kyalo"
+      ]
+    },
+    {
+      "id": "f_church",
+      "text": "Pastor Waithera: Nicodemus led the singing at the all-night prayer from 20:00 to 05:00.",
+      "kind": "true",
+      "about": [
+        "p_pastor",
+        "p_nico"
+      ],
+      "where": {
+        "person": "p_nico",
+        "place": "plc_church",
+        "from": "20:00",
+        "to": "05:00"
+      }
+    },
+    {
+      "id": "f_sister",
+      "text": "Grace: Rael stayed with her in Nakuru town from 19:00. They watched the news and slept.",
+      "kind": "true",
+      "about": [
+        "p_sister",
+        "p_rael"
+      ],
+      "where": {
+        "person": "p_rael",
+        "place": "plc_sister",
+        "from": "19:00",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_aut_drown",
+      "text": "Autopsy: drowning confirmed, water in the lungs and airways. No head injury.",
+      "kind": "true",
+      "about": [
+        "p_hezekiah"
+      ]
+    },
+    {
+      "id": "f_aut_neck",
+      "text": "Autopsy: bruising on the back of the neck, as if he was held down.",
+      "kind": "true",
+      "about": [
+        "p_hezekiah"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 20:30 and 22:30.",
+      "kind": "true",
+      "about": [
+        "p_hezekiah"
+      ]
+    },
+    {
+      "id": "f_aut_lungs",
+      "text": "Autopsy: lung fluid kept for water chemistry.",
+      "kind": "true",
+      "about": [
+        "p_hezekiah"
+      ]
+    },
+    {
+      "id": "f_water_notlake",
+      "text": "Lab: the lung fluid is fresh, slightly chlorinated, with no algae. Lake Nakuru water is strongly alkaline and full of algae. He did not drown in the lake.",
+      "kind": "true",
+      "about": [
+        "p_hezekiah",
+        "loc_lake"
+      ]
+    },
+    {
+      "id": "f_water_tank",
+      "text": "Lab: the lung fluid matches the water in Kyalo's tank.",
+      "kind": "true",
+      "about": [
+        "p_hezekiah",
+        "plc_yard"
+      ]
+    },
+    {
+      "id": "f_tox",
+      "text": "Toxicology: clean.",
+      "kind": "true",
+      "about": [
+        "p_hezekiah"
+      ]
+    },
+    {
+      "id": "f_ky_never",
+      "text": "Kyalo: \"I haven't seen him since August. He won't even take my calls.\"",
+      "kind": "lie",
+      "about": [
+        "p_kyalo",
+        "p_hezekiah"
+      ]
+    },
+    {
+      "id": "f_ky_brakes",
+      "text": "Kyalo: \"I was working late on a pickup's brakes, here, all night.\"",
+      "kind": "lie",
+      "about": [
+        "p_kyalo"
+      ]
+    },
+    {
+      "id": "f_ky_admits",
+      "text": "Kyalo admits Hezekiah came to the garage at about 20:30. He says Hezekiah laughed about the refund and left.",
+      "kind": "true",
+      "about": [
+        "p_kyalo",
+        "p_hezekiah"
+      ],
+      "where": {
+        "person": "p_kyalo",
+        "place": "loc_garage",
+        "from": "20:30",
+        "to": "21:00"
+      }
+    },
+    {
+      "id": "f_ky_test",
+      "text": "Kyalo: \"I took the pickup out to test the brakes. That's all.\"",
+      "kind": "claim",
+      "about": [
+        "p_kyalo"
+      ]
+    },
+    {
+      "id": "f_nico_claim",
+      "text": "Nicodemus: \"I was at church all night.\"",
+      "kind": "claim",
+      "about": [
+        "p_nico"
+      ]
+    },
+    {
+      "id": "f_rael_claim",
+      "text": "Rael: \"I was at my sister's in town.\"",
+      "kind": "claim",
+      "about": [
+        "p_rael"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_kyalo",
+      "stance": "cooperative",
+      "intro": "Kyalo wipes his hands on a rag and keeps wiping. \"Onsongo? Dead? Then my money is in the lake for good.\"",
+      "claims": [
+        "f_ky_never",
+        "f_ky_brakes"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_plot47",
+          "reply": "Nine hundred thousand. My savings and my chama's money. Under a metre of water.",
+          "reveals": []
+        },
+        {
+          "about": "p_hezekiah",
+          "reply": "He said it would go back down. The lake doesn't listen to brokers.",
+          "reveals": []
+        },
+        {
+          "about": "ev_chamabook",
+          "reply": "My chama is paid. Every month. I'm not a thief.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_nico",
+      "stance": "cooperative",
+      "intro": "Nicodemus has come straight from the prayer, hoarse. \"He sold me water too. I prayed for him all night. I didn't kill him.\"",
+      "claims": [
+        "f_nico_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_protest",
+          "reply": "I shouted in his office. A man is allowed to shout when he's robbed.",
+          "reveals": []
+        },
+        {
+          "about": "p_pastor",
+          "reply": "Ask Pastor Waithera. I led the singing until five.",
+          "reveals": [
+            "ev_church"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_rael",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_body"
+      ],
+      "intro": "Rael holds a folder of the business papers against her chest. \"Ask me what you want. I begged him to stop.\"",
+      "claims": [
+        "f_rael_claim"
+      ],
+      "yields": [
+        "ev_rael"
+      ],
+      "topics": [
+        {
+          "about": "p_hezekiah",
+          "reply": "He went to Lanet to tell a buyer there would be no refund. A mechanic. He said the man was angry.",
+          "reveals": []
+        },
+        {
+          "about": "p_sister",
+          "reply": "I was at Grace's. Call her.",
+          "reveals": [
+            "ev_sister"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_barack",
+      "stance": "cooperative",
+      "intro": "Barack keeps his eyes on his net. \"Every morning I see this estate under the water. This morning there was a man.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_body",
+          "reply": "No boat went out last night. We are the only boats here, and we went out at four.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_ky_never",
+      "claim": "f_ky_never",
+      "brokenBy": [
+        "f_rec_call",
+        "f_rec_mast"
+      ],
+      "reveals": [
+        "f_ky_admits"
+      ],
+      "reaction": "He came here. Half past eight. He told me my money was in the lake with my plot, and he laughed. Then he left. That's all.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_ky_brakes",
+      "claim": "f_ky_brakes",
+      "brokenBy": [
+        "f_jobcard"
+      ],
+      "reveals": [
+        "f_ky_test"
+      ],
+      "reaction": "I took the pickup out. To test the brakes. You have to test brakes.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_kyalo",
+      "text": "Kyalo Mwanzia",
+      "category": "person",
+      "ref": "p_kyalo",
+      "unlock": {
+        "anyOf": [
+          "f_rec_call",
+          "f_plot47"
+        ]
+      }
+    },
+    {
+      "id": "w_nico",
+      "text": "Nicodemus Kipkemboi",
+      "category": "person",
+      "ref": "p_nico",
+      "unlock": {
+        "anyOf": [
+          "f_nico_protest"
+        ]
+      }
+    },
+    {
+      "id": "w_rael",
+      "text": "Rael Nyaboke",
+      "category": "person",
+      "ref": "p_rael",
+      "unlock": {
+        "anyOf": [
+          "f_rael_claim"
+        ]
+      }
+    },
+    {
+      "id": "w_barack",
+      "text": "Barack Okeyo",
+      "category": "person",
+      "ref": "p_barack",
+      "unlock": {
+        "anyOf": [
+          "f_barack"
+        ]
+      }
+    },
+    {
+      "id": "w_lawrence",
+      "text": "Lawrence Gatimu",
+      "category": "person",
+      "ref": "p_lawrence",
+      "unlock": {
+        "anyOf": [
+          "f_customer"
+        ]
+      }
+    },
+    {
+      "id": "h_tank",
+      "text": "drowned in a water tank, then dumped in the lake",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_water_notlake"
+        ]
+      }
+    },
+    {
+      "id": "h_boat",
+      "text": "drowned after falling from a boat",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_struck",
+      "text": "struck and thrown into the lake",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack while wading",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_drown"
+        ]
+      }
+    },
+    {
+      "id": "h_poison",
+      "text": "poisoned",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_tox"
+        ]
+      }
+    },
+    {
+      "id": "m_plot",
+      "text": "he'd sold him a plot under the lake and refused a refund",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_plot47"
+        ]
+      }
+    },
+    {
+      "id": "m_inherit",
+      "text": "to inherit the business",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_rael_inherits"
+        ]
+      }
+    },
+    {
+      "id": "m_buyer",
+      "text": "another buyer's refund",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_nico_protest"
+        ]
+      }
+    },
+    {
+      "id": "m_chama",
+      "text": "a chama debt",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_chama"
+        ]
+      }
+    },
+    {
+      "id": "m_garage",
+      "text": "a garage bill Hezekiah wouldn't pay",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_jobbook"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Hezekiah Onsongo"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_kyalo"
+          }
+        ],
+        "prosecutor": {
+          "pass": "His phone sat in Lanet, a pickup did 38 km on untested brakes, and the watch is in his tank. That will hold.",
+          "fail": [
+            "Doesn't hold up. The loudest buyer sang all night in front of a congregation. Where did the broker's phone go?",
+            "No. Follow the phone, then follow the odometer."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_tank"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Drowned in drinking water, held by the neck, carried to the lake. Yes.",
+          "fail": [
+            "The lake killed nobody. Read the water results.",
+            "No blow, no boat. What was in his lungs?"
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_plot"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Nine hundred thousand shillings under a metre of water. The court will understand it, and still convict.",
+          "fail": [
+            "His chama is paid. That isn't it.",
+            "That grievance belongs to someone who was singing all night."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_garage",
+      "from": "20:30",
+      "to": "22:30",
+      "within": [
+        "plc_yard"
+      ],
+      "note": "Where he died, not where he was found."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_aut_drown",
+          "f_aut_neck",
+          "f_water_notlake",
+          "f_lakewater"
+        ],
+        "concludes": "Hezekiah drowned, held by the neck, but the water in his lungs is clean and chlorinated, with no algae. He did not drown in Lake Nakuru. He was drowned somewhere else and put in the lake."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_rael_lanet",
+          "f_rec_call",
+          "f_rec_mast",
+          "f_ky_never",
+          "f_ky_admits"
+        ],
+        "concludes": "He went to a mechanic in Lanet about a refund. His phone stayed in Lanet until 23:05 and reached the lake shore at 23:20. Kyalo said he hadn't seen him since August; pressed, he admits Hezekiah came to his garage at 20:30."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_jobcard",
+          "f_customer",
+          "f_distance"
+        ],
+        "concludes": "The customer's pickup was driven 38 km that night on brakes \"not yet road-tested\": Lanet to Ziwani Gardens and back."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_tank_watch",
+          "f_water_tank",
+          "f_plot47"
+        ],
+        "concludes": "The water in his lungs matches Kyalo's tank, and his watch is at the bottom of it. Kyalo Mwanzia drowned Hezekiah in his water tank and dumped him in the lake, because he had sold him a plot under the lake and refused a refund.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_nico",
+        "blank": "who",
+        "by": [
+          "f_church"
+        ],
+        "why": "Nicodemus led the singing at an all-night prayer from 20:00 to 05:00."
+      },
+      {
+        "word": "w_rael",
+        "blank": "who",
+        "by": [
+          "f_sister"
+        ],
+        "why": "Rael was at her sister's in Nakuru town from 19:00."
+      },
+      {
+        "word": "w_barack",
+        "blank": "who",
+        "by": [
+          "f_barack"
+        ],
+        "why": "Barack went out fishing at 04:00 with two others and found the body."
+      },
+      {
+        "word": "w_lawrence",
+        "blank": "who",
+        "by": [
+          "f_customer"
+        ],
+        "why": "Lawrence has been in Gilgil without a car since Monday."
+      },
+      {
+        "word": "h_boat",
+        "blank": "how",
+        "by": [
+          "f_water_notlake",
+          "f_barack"
+        ],
+        "why": "There was no lake water in his lungs, and no boat went out last night."
+      },
+      {
+        "word": "h_struck",
+        "blank": "how",
+        "by": [
+          "f_aut_drown"
+        ],
+        "why": "No head injury; he drowned."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_neck"
+        ],
+        "why": "He drowned while held by the neck."
+      },
+      {
+        "word": "h_poison",
+        "blank": "how",
+        "by": [
+          "f_tox"
+        ],
+        "why": "Toxicology is clean."
+      },
+      {
+        "word": "m_inherit",
+        "blank": "why",
+        "by": [
+          "f_sister"
+        ],
+        "why": "That is Rael's position, and Rael was in town all night."
+      },
+      {
+        "word": "m_buyer",
+        "blank": "why",
+        "by": [
+          "f_church"
+        ],
+        "why": "That is Nicodemus's grievance, and he was singing all night."
+      },
+      {
+        "word": "m_chama",
+        "blank": "why",
+        "by": [
+          "f_chama"
+        ],
+        "why": "Kyalo's chama loan is current."
+      },
+      {
+        "word": "m_garage",
+        "blank": "why",
+        "by": [
+          "f_jobbook"
+        ],
+        "why": "Hezekiah was never a customer of the garage."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Year by year the lake rises over Ziwani Gardens. Hezekiah keeps selling plots, promising it will go back down. Plot 47 goes to a mechanic for KSh 900,000.",
+        "image": null
+      },
+      {
+        "text": "19:40. A phone call: a meeting at the garage \"to discuss a refund\". At 20:30 Hezekiah arrives in Lanet to say there won't be one.",
+        "image": "loc_garage"
+      },
+      {
+        "text": "In the yard he laughs about the lake. Kyalo forces his head into the open water tank and holds it there. The watch strap snaps.",
+        "image": null
+      },
+      {
+        "text": "23:00. Kyalo loads him into a customer's pickup and drives to the drowned estate. He leaves him among the fence posts of plot 47.",
+        "image": null
+      },
+      {
+        "text": "The pickup is back on its blocks by 00:30, with 38 more kilometres on it than the job card says.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "No detention needed. Both water tests take 10 h; the case can be charged as soon as the second result is in.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_lake",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_lakewater",
+        "hours": 1
+      },
+      {
+        "do": "submit",
+        "target": "ev_water1"
+      },
+      {
+        "do": "submit",
+        "target": "ev_tox"
+      },
+      {
+        "do": "interview",
+        "target": "p_rael"
+      },
+      {
+        "do": "records",
+        "target": "ev_records_hez"
+      },
+      {
+        "do": "visit",
+        "target": "loc_office",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_plot47",
+        "hours": 1
+      },
+      {
+        "do": "visit",
+        "target": "loc_garage",
+        "hours": 2
+      },
+      {
+        "do": "interview",
+        "target": "p_kyalo"
+      },
+      {
+        "do": "press",
+        "target": "c_ky_never"
+      },
+      {
+        "do": "read",
+        "target": "ev_jobcard",
+        "hours": 1
+      },
+      {
+        "do": "press",
+        "target": "c_ky_brakes"
+      },
+      {
+        "do": "search",
+        "target": "loc_yard"
+      },
+      {
+        "do": "submit",
+        "target": "ev_water2"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 10
+      }
+    ],
+    "totalHours": 31
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_rael",
+        "line": "His widow knows where he went last night. Then ask his phone."
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_mast",
+          "f_jobcard"
+        ],
+        "line": "The phone sat in Lanet until eleven. A pickup in a Lanet garage did 38 km it shouldn't have."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_water1",
+        "line": "Send the lake water with the lung fluid. Lake Nakuru isn't ordinary water."
+      },
+      "tier2": {
+        "facts": [
+          "f_water_notlake",
+          "f_tank_water"
+        ],
+        "line": "Clean, chlorinated, no algae. Where do you find a lot of clean water in one place?"
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_plot47",
+        "line": "Read the file for plot 47 and the note pinned to it."
+      },
+      "tier2": {
+        "facts": [
+          "f_plot47",
+          "f_chama"
+        ],
+        "line": "Nine hundred thousand, and the chama loan still being paid. For a plot under the lake."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "mafuriko",
+      "def": "Floods."
+    },
+    {
+      "term": "tangi",
+      "def": "Water tank."
+    },
+    {
+      "term": "ploti",
+      "def": "A plot of land."
+    },
+    {
+      "term": "maji ya kunywa",
+      "def": "Drinking water."
+    },
+    {
+      "term": "chama",
+      "def": "Savings group whose members pool money and lend to each other."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "threeSampleCompare"
+    ],
+    "beatNotes": "Comparing three samples at once (lung fluid, lake, tank) in the lab view: three test tubes, three readings, one mismatch, one match. Dr. Chebii on the first result: \"Your man drowned in drinking water, Detective. Somebody has a very clean tank.\""
+  }
+}

@@ -1,0 +1,2568 @@
+{
+  "meta": {
+    "id": "case-069",
+    "number": 69,
+    "region": "mt-kenya",
+    "regionNumber": 7,
+    "title": "Batch Number",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 40,
+    "date": "Thursday 21 May",
+    "folderTab": "TUMAINI CHEMISTS"
+  },
+  "pattern": {
+    "crimePattern": "a young pharmacist selling counterfeit medicines under forged supplier invoices poisons the inspector who found them, with a drugged soda",
+    "noRealCaseRetold": true,
+    "notes": "Fictional pharmacy, distributor and inspectors. The sedative is never named and no dose is given. The forgery's flaw (batch numbers that do not exist) is shown, never how invoices are faked.",
+    "tags": [
+      "poison",
+      "fraud-exposure",
+      "counterfeit-medicine",
+      "document-fraud",
+      "two-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where",
+      "forgery"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 6,
+    "redHerrings": 2,
+    "liars": 2,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "forgery"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic",
+      "cctv"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 07/21/05",
+    "date": "Thursday 21 May",
+    "time": "19:50",
+    "reportedBy": "Traffic officer, Meru town",
+    "text": "A woman is reported dead in her parked car on Meru's main street, 50 metres from a pharmacy. Kanini Wambua (44), Pharmacy and Poisons Board inspector. Suspected heart attack.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_car",
+    "nodes": [
+      "loc_car",
+      "loc_pharmacy",
+      "loc_ppb",
+      "loc_flat"
+    ],
+    "edges": [
+      {
+        "a": "loc_car",
+        "b": "loc_pharmacy",
+        "minutes": 2,
+        "by": "foot"
+      },
+      {
+        "a": "loc_pharmacy",
+        "b": "loc_ppb",
+        "minutes": 10,
+        "by": "road"
+      },
+      {
+        "a": "loc_pharmacy",
+        "b": "loc_flat",
+        "minutes": 5,
+        "by": "road"
+      },
+      {
+        "a": "loc_car",
+        "b": "loc_ppb",
+        "minutes": 10,
+        "by": "road"
+      },
+      {
+        "a": "loc_ppb",
+        "b": "loc_flat",
+        "minutes": 10,
+        "by": "road"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_kanini",
+      "role": "victim",
+      "name": "Kanini Wambua",
+      "age": 44,
+      "occupation": "Inspector, Pharmacy and Poisons Board (region)",
+      "bio": "Walks in unannounced. Checks every batch number against the manufacturer's register.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_car",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba woman, mid 40s, a PPB inspector's jacket and badge, a tablet under her arm, a brisk, kind face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_brenda",
+      "role": "suspect",
+      "name": "Brenda Jepkemboi",
+      "age": 26,
+      "occupation": "Pharmacist in charge, Tumaini Chemists",
+      "bio": "Top of her class two years ago. Runs Tumaini alone; the owner lives in Nairobi.",
+      "community": "Kalenjin",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_carbon"
+      },
+      "at": "loc_pharmacy",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin woman, mid 20s, a crisp white pharmacist's coat, hair pulled back, a professional, unreadable face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mark",
+      "role": "suspect",
+      "name": "Mark Gitobu",
+      "age": 23,
+      "occupation": "Pharmacy assistant",
+      "bio": "Sweeps, stacks, sells. Afraid of losing the job.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_carbon"
+      },
+      "at": "loc_pharmacy",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Meru man, early 20s, a pharmacy assistant's tunic, a nervous, young face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_silas",
+      "role": "suspect",
+      "name": "Silas Muthaura",
+      "age": 50,
+      "occupation": "Owner, Tumaini Chemists (absentee)",
+      "redHerring": true,
+      "bio": "Owns the licence and lives in Nairobi. Doesn't look at the books.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_licence"
+      },
+      "at": "plc_nairobi",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Meru man, about 50, an expensive suit, a phone to his ear, an evasive, comfortable face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_abdikadir",
+      "role": "suspect",
+      "name": "Abdikadir Ali",
+      "age": 37,
+      "occupation": "Sales rep for a licensed medicine supplier",
+      "redHerring": true,
+      "bio": "Kanini suspended his company's licence last year.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_grace"
+      },
+      "at": "plc_nyeri",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Somali man, late 30s, a sales rep's polo shirt with a company logo, a sample case, a guarded, tired face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_grace",
+      "role": "witness",
+      "name": "Grace Makena",
+      "age": 30,
+      "occupation": "Kanini's colleague, PPB office, Meru",
+      "bio": "Shared an office with Kanini for four years.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_ppb",
+      "image": null
+    },
+    {
+      "id": "p_distrib",
+      "role": "witness",
+      "name": "Kirinyaga Pharma Distributors",
+      "age": 45,
+      "occupation": "Licensed distributor, Karatina (by phone)",
+      "statementOnly": true,
+      "bio": "The real company whose name is on Tumaini's invoices.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_karatina",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_buspark",
+      "name": "The Meru bus park"
+    },
+    {
+      "id": "plc_back",
+      "name": "Tumaini's back room",
+      "within": "loc_pharmacy"
+    },
+    {
+      "id": "plc_nairobi",
+      "name": "Nairobi"
+    },
+    {
+      "id": "plc_nyeri",
+      "name": "A sales meeting in Nyeri"
+    },
+    {
+      "id": "plc_karatina",
+      "name": "Karatina"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_car",
+      "name": "Kanini's car, Meru main street",
+      "kind": "scene",
+      "description": "A white PPB pool car parked in a marked bay, 50 metres from Tumaini Chemists. Windows down, engine off. Miraa lorries and banana lorries crawl past.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_car",
+          "label": "Driver's seat",
+          "pos": [
+            46,
+            50
+          ],
+          "yields": "ev_car",
+          "text": "Kanini, slumped over the wheel. An empty soda bottle in the cup holder."
+        },
+        {
+          "id": "hs_carbon",
+          "label": "PPB bag",
+          "pos": [
+            60,
+            56
+          ],
+          "yields": "ev_carbon",
+          "text": "Her PPB bag, open. A carbon book."
+        },
+        {
+          "id": "hs_tablet",
+          "label": "Tablet",
+          "pos": [
+            66,
+            46
+          ],
+          "yields": "ev_tablet",
+          "text": "Her tablet, unlocked by the PPB."
+        },
+        {
+          "id": "hs_cctv",
+          "label": "ATM across the road",
+          "pos": [
+            86,
+            30
+          ],
+          "yields": "ev_cctv",
+          "text": "A bank ATM camera facing Tumaini's door."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a white government pool car parked on a busy Meru main street at dusk, windows down, an empty soda bottle in the cup holder, a pharmacy's green cross glowing fifty metres away, no people in focus"
+      }
+    },
+    {
+      "id": "loc_pharmacy",
+      "name": "Tumaini Chemists",
+      "kind": "location",
+      "description": "A narrow chemist's shop: a counter, shelves to the ceiling, a small fridge of sodas, a back room with a locked cabinet.",
+      "unlock": {
+        "fact": "f_carbon"
+      },
+      "hotspots": [
+        {
+          "id": "hs_shelf",
+          "label": "The shelf",
+          "pos": [
+            30,
+            30
+          ],
+          "yields": "ev_shelf",
+          "text": "Six gaps on the shelf."
+        },
+        {
+          "id": "hs_invoices",
+          "label": "Invoice file",
+          "pos": [
+            44,
+            40
+          ],
+          "yields": "ev_invoices",
+          "text": "The supplier invoices."
+        },
+        {
+          "id": "hs_fridge",
+          "label": "Fridge",
+          "pos": [
+            60,
+            50
+          ],
+          "yields": "ev_soda",
+          "text": "The soda fridge and its crate."
+        },
+        {
+          "id": "hs_cabinet",
+          "label": "Controlled-drugs register",
+          "pos": [
+            76,
+            40
+          ],
+          "yields": "ev_cabinet",
+          "text": "The locked cabinet's register."
+        },
+        {
+          "id": "hs_licence",
+          "label": "Wall",
+          "pos": [
+            20,
+            20
+          ],
+          "yields": "ev_licence",
+          "text": "The PPB premises licence, framed."
+        },
+        {
+          "id": "hs_phone",
+          "label": "Shop phone",
+          "pos": [
+            84,
+            60
+          ],
+          "yields": "ev_kra",
+          "text": "A number for Kirinyaga Pharma Distributors on the invoices."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a narrow Kenyan chemist's shop at dusk, shelves of medicine boxes to the ceiling, a small glass-fronted soda fridge, a green cross sign outside"
+      }
+    },
+    {
+      "id": "loc_ppb",
+      "name": "PPB regional office, Meru",
+      "kind": "location",
+      "description": "Two desks, one of them empty now. A sign-out book by the door.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_grace",
+          "label": "Grace's desk",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_genuine_inv",
+          "text": "Grace has a genuine Kirinyaga Pharma invoice from last month's inspection."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small government office in Meru, two desks, one empty with a jacket on the chair, a sign-out book by the door"
+      }
+    },
+    {
+      "id": "loc_flat",
+      "name": "Brenda's flat",
+      "kind": "location",
+      "description": "A one-bedroom flat with a small charcoal stove on the balcony.",
+      "unlock": {
+        "fact": "f_rec_brenda"
+      },
+      "hotspots": [
+        {
+          "id": "hs_ash",
+          "label": "Balcony stove",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_flat",
+          "text": "The stove's ash pan, and a desk drawer."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small flat balcony at night in Meru, a charcoal stove with an ash pan, a half-burned sheet of paper in the ash"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_car",
+      "type": "physical",
+      "title": "Kanini's car",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Slumped over the wheel. An empty soda bottle in the cup holder. Engine off, windows down, parked in a marked bay.",
+        "hawker": "A hawker told the first officer she \"collapsed at sunset, about half six\"."
+      },
+      "facts": [
+        "f_car",
+        "f_engine",
+        "f_hawker"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "an empty glass soda bottle in a car's cup holder beside a PPB bag, no body visible"
+      }
+    },
+    {
+      "id": "ev_carbon",
+      "type": "document",
+      "title": "Kanini's carbon book",
+      "render": "form",
+      "body": {
+        "text": "Carbon copy, 17:20, to \"Tumaini Chemists\": \"Six products — batch numbers not on manufacturer register — premises to close 09:00 Friday — invoices to be seized.\" The top copy is torn out, and not in her bag."
+      },
+      "facts": [
+        "f_carbon"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "inspection notice"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tablet",
+      "type": "phone",
+      "title": "Kanini's tablet",
+      "render": "manifest",
+      "body": {
+        "photos": "17:05: six packs on Tumaini's shelf.",
+        "lookup": "Register lookup: \"batch not found\", all six. Two control packs from the same shelf: \"found\"."
+      },
+      "facts": [
+        "f_tablet",
+        "f_tablet_ctrl"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_cctv",
+      "type": "cctv",
+      "title": "ATM camera across the road",
+      "render": "cctv",
+      "body": {
+        "frames": "Kanini enters Tumaini at 16:58; leaves at 17:25 holding a soda bottle.",
+        "bay": "Her car parked in a marked bay; no warden, no argument."
+      },
+      "facts": [
+        "f_cctv",
+        "f_parking"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_shelf",
+      "type": "physical",
+      "title": "Tumaini's shelf and stockroom",
+      "render": "object",
+      "body": {
+        "label": "Six gaps where those packs stood. The same batches in the stockroom, boxes of 200."
+      },
+      "facts": [
+        "f_shelf"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_invoices",
+      "type": "document",
+      "title": "Supplier invoices",
+      "render": "form",
+      "body": {
+        "text": "\"Kirinyaga Pharma Distributors\", listing those batch numbers."
+      },
+      "facts": [
+        "f_invoices"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": false,
+        "forger": "p_brenda",
+        "kind": "supplier invoices"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a supplier invoice with a distributor's logo and a column of batch numbers"
+      }
+    },
+    {
+      "id": "ev_soda",
+      "type": "document",
+      "title": "Soda crate label",
+      "render": "object",
+      "body": {
+        "label": "The crate counted this morning: \"24\". Now 23."
+      },
+      "facts": [
+        "f_crate"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "crate label"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_cabinet",
+      "type": "document",
+      "title": "Controlled-drugs register",
+      "render": "logBook",
+      "body": {
+        "entry": "Thursday 17:10: 20 tablets of a strong sedative, \"for patient\", no prescription number. Initials: B.J."
+      },
+      "facts": [
+        "f_cabinet"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "controlled-drugs register"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_licence",
+      "type": "document",
+      "title": "PPB premises licence",
+      "render": "form",
+      "body": {
+        "text": "Tumaini Chemists. Owner: S. Muthaura. Pharmacist in charge: B. Jepkemboi, with her specimen signature. Current."
+      },
+      "facts": [
+        "f_licence"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "PPB licence"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_kra",
+      "type": "witness",
+      "title": "Phone call: Kirinyaga Pharma Distributors",
+      "render": "statement",
+      "body": {
+        "speaker": "p_distrib"
+      },
+      "facts": [
+        "f_kra"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_genuine_inv",
+      "type": "document",
+      "title": "A genuine Kirinyaga Pharma invoice",
+      "render": "form",
+      "body": {
+        "text": "From last month's inspection elsewhere: a current invoice series, laser-printed, a KRA PIN."
+      },
+      "facts": [
+        "f_genuine",
+        "f_grace"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "supplier invoice"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Brenda Jepkemboi's line",
+      "render": "manifest",
+      "body": {
+        "call": "Thursday 17:40: a call to a number registered at the Meru bus park, 6 minutes."
+      },
+      "facts": [
+        "f_rec_brenda"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_cabinet",
+          "f_cctv"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_flat",
+      "type": "physical",
+      "title": "Brenda's stove and drawer",
+      "render": "object",
+      "body": {
+        "ash": "The torn-out inspection notice, half burned in the ash pan.",
+        "drawer": "A sheet of blank invoice paper with the distributor's logo."
+      },
+      "facts": [
+        "f_ash",
+        "f_blankinv"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_brenda",
+          "f_carbon"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a half-burned printed form in the ash pan of a small charcoal stove"
+      }
+    },
+    {
+      "id": "ev_silas",
+      "type": "document",
+      "title": "Silas's Nairobi records",
+      "render": "receipt",
+      "body": {
+        "text": "Hotel and meeting records: Silas in Nairobi all week."
+      },
+      "facts": [
+        "f_silas"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_abdi",
+      "type": "witness",
+      "title": "Statement: Abdikadir's Nyeri office",
+      "render": "statement",
+      "body": {
+        "speaker": "p_abdikadir"
+      },
+      "facts": [
+        "f_abdi"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mark_prints",
+      "type": "physical",
+      "title": "Mark's prints (voluntary)",
+      "render": "form",
+      "body": {
+        "name": "M. Gitobu"
+      },
+      "facts": [
+        "f_mark_printset"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_br_prints",
+      "type": "physical",
+      "title": "Fingerprints: Brenda Jepkemboi",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention; she refused."
+      },
+      "facts": [
+        "f_br_printset"
+      ],
+      "gate": null,
+      "detention": "p_brenda",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_car"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_compare",
+      "type": "forensic",
+      "title": "Comparison view: invoices vs genuine",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_cmp_batch",
+        "f_cmp_nostamp",
+        "f_cmp_fields",
+        "f_cmp_sig"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_invoices",
+          "ev_genuine_inv",
+          "ev_tablet"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tox",
+      "type": "forensic",
+      "title": "Lab: toxicology (blood, bottle)",
+      "render": "labReport",
+      "body": {
+        "test": "toxicology"
+      },
+      "facts": [
+        "f_tox"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toxicology",
+        "hours": 18,
+        "needs": [
+          "ev_car"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints on the bottle",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_bottle_prints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_car",
+          "ev_br_prints",
+          "ev_mark_prints"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_docexam",
+      "type": "forensic",
+      "title": "Questioned Documents Lab: the invoices",
+      "render": "labReport",
+      "body": {
+        "test": "document"
+      },
+      "facts": [
+        "f_docexam"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "document",
+        "hours": 10,
+        "needs": [
+          "ev_invoices",
+          "ev_genuine_inv"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Kanini Wambua, PPB inspector, was found dead in her parked car on Meru's main street, 50 metres from Tumaini Chemists.",
+      "kind": "true",
+      "about": [
+        "p_kanini",
+        "loc_car"
+      ],
+      "at": {
+        "from": "19:50"
+      }
+    },
+    {
+      "id": "f_car",
+      "text": "She was slumped over the wheel; an empty soda bottle in the cup holder; no inspection notice in her bag.",
+      "kind": "true",
+      "about": [
+        "p_kanini",
+        "loc_car"
+      ]
+    },
+    {
+      "id": "f_engine",
+      "text": "The engine was off and the windows were down.",
+      "kind": "true",
+      "about": [
+        "loc_car"
+      ]
+    },
+    {
+      "id": "f_hawker",
+      "text": "A hawker told the first officer she \"collapsed at sunset, about half six\".",
+      "kind": "true",
+      "about": [
+        "loc_car"
+      ],
+      "at": {
+        "from": "18:30"
+      }
+    },
+    {
+      "id": "f_carbon",
+      "text": "Kanini's carbon book: a notice at 17:20 to Tumaini Chemists, six products not on the manufacturer's register, premises to close 09:00 Friday, invoices to be seized. The top copy is torn out.",
+      "kind": "true",
+      "about": [
+        "p_kanini",
+        "p_brenda"
+      ],
+      "at": {
+        "from": "17:20"
+      }
+    },
+    {
+      "id": "f_tablet",
+      "text": "Kanini's tablet: photos at 17:05 of six packs on Tumaini's shelf; the register says \"batch not found\" for all six.",
+      "kind": "true",
+      "about": [
+        "p_kanini"
+      ],
+      "at": {
+        "from": "17:05"
+      }
+    },
+    {
+      "id": "f_tablet_ctrl",
+      "text": "Two control packs from the same shelf come back \"found\".",
+      "kind": "true",
+      "about": [
+        "p_kanini"
+      ]
+    },
+    {
+      "id": "f_cctv",
+      "text": "ATM camera: Kanini enters Tumaini at 16:58 and leaves at 17:25 holding a soda bottle.",
+      "kind": "true",
+      "about": [
+        "p_kanini"
+      ],
+      "at": {
+        "from": "16:58",
+        "to": "17:25"
+      }
+    },
+    {
+      "id": "f_parking",
+      "text": "ATM camera: her car parked in a marked bay; no warden, no argument.",
+      "kind": "true",
+      "about": [
+        "loc_car"
+      ]
+    },
+    {
+      "id": "f_shelf",
+      "text": "Tumaini: six gaps on the shelf; the same batches in the stockroom in boxes of 200.",
+      "kind": "true",
+      "about": [
+        "loc_pharmacy"
+      ]
+    },
+    {
+      "id": "f_invoices",
+      "text": "Supplier invoices from \"Kirinyaga Pharma Distributors\" list those batch numbers.",
+      "kind": "true",
+      "about": [
+        "p_brenda"
+      ]
+    },
+    {
+      "id": "f_crate",
+      "text": "The soda crate counted that morning: \"24\". Now 23.",
+      "kind": "true",
+      "about": [
+        "loc_pharmacy"
+      ]
+    },
+    {
+      "id": "f_cabinet",
+      "text": "Controlled-drugs register, Thursday 17:10: 20 tablets of a strong sedative \"for patient\", no prescription number, initials B.J.",
+      "kind": "true",
+      "about": [
+        "p_brenda"
+      ],
+      "at": {
+        "from": "17:10"
+      }
+    },
+    {
+      "id": "f_licence",
+      "text": "PPB licence: owner S. Muthaura; pharmacist in charge B. Jepkemboi, with her specimen signature.",
+      "kind": "true",
+      "about": [
+        "p_silas",
+        "p_brenda"
+      ]
+    },
+    {
+      "id": "f_kra",
+      "text": "Kirinyaga Pharma: \"We don't stock those brands. That PIN on the invoice is ours, but the invoice number series ended in 2023.\"",
+      "kind": "true",
+      "about": [
+        "p_distrib"
+      ]
+    },
+    {
+      "id": "f_genuine",
+      "text": "A genuine Kirinyaga Pharma invoice: the current number series, laser-printed, the KRA PIN.",
+      "kind": "true",
+      "about": [
+        "loc_ppb"
+      ]
+    },
+    {
+      "id": "f_grace",
+      "text": "Grace: Kanini suspended Abdikadir Ali's company's licence last year. Grace was at the PPB office until 17:30 (the sign-out book).",
+      "kind": "true",
+      "about": [
+        "p_grace",
+        "p_abdikadir"
+      ],
+      "where": {
+        "person": "p_grace",
+        "place": "loc_ppb",
+        "from": "08:00",
+        "to": "17:30"
+      }
+    },
+    {
+      "id": "f_rec_brenda",
+      "text": "Records, Brenda's line: Thursday 17:40, a 6-minute call to a number registered at the Meru bus park.",
+      "kind": "true",
+      "about": [
+        "p_brenda"
+      ],
+      "at": {
+        "from": "17:40"
+      }
+    },
+    {
+      "id": "f_ash",
+      "text": "In Brenda's stove ash pan: the torn-out inspection notice, half burned.",
+      "kind": "true",
+      "about": [
+        "p_brenda"
+      ]
+    },
+    {
+      "id": "f_blankinv",
+      "text": "In her drawer: blank invoice paper with the distributor's logo.",
+      "kind": "true",
+      "about": [
+        "p_brenda"
+      ]
+    },
+    {
+      "id": "f_silas",
+      "text": "Silas was in Nairobi all week, at his hotel and meetings.",
+      "kind": "true",
+      "about": [
+        "p_silas"
+      ],
+      "where": {
+        "person": "p_silas",
+        "place": "plc_nairobi",
+        "from": "00:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_abdi",
+      "text": "His company's Nyeri office: Abdikadir at a sales meeting 14:00–19:00.",
+      "kind": "true",
+      "about": [
+        "p_abdikadir"
+      ],
+      "where": {
+        "person": "p_abdikadir",
+        "place": "plc_nyeri",
+        "from": "14:00",
+        "to": "19:00"
+      }
+    },
+    {
+      "id": "f_mark_printset",
+      "text": "Mark gives his fingerprints voluntarily.",
+      "kind": "true",
+      "about": [
+        "p_mark"
+      ]
+    },
+    {
+      "id": "f_br_printset",
+      "text": "Fingerprints taken from Brenda in detention.",
+      "kind": "true",
+      "about": [
+        "p_brenda"
+      ]
+    },
+    {
+      "id": "f_aut",
+      "text": "Autopsy: no heart disease. Death by respiratory depression.",
+      "kind": "true",
+      "about": [
+        "p_kanini"
+      ]
+    },
+    {
+      "id": "f_tox",
+      "text": "Toxicology: a heavy dose of the sedative in her blood and in the soda bottle. Death between 17:30 and 18:00.",
+      "kind": "true",
+      "about": [
+        "p_kanini"
+      ],
+      "at": {
+        "from": "17:30",
+        "to": "18:00"
+      }
+    },
+    {
+      "id": "f_bottle_prints",
+      "text": "Lab: Kanini's and Brenda's prints on the bottle. Not Mark's.",
+      "kind": "true",
+      "about": [
+        "p_brenda",
+        "p_mark"
+      ]
+    },
+    {
+      "id": "f_cmp_batch",
+      "text": "Comparison view: the batch numbers on the invoices are not on the manufacturer's register, and their invoice series ended years ago.",
+      "kind": "true",
+      "about": [
+        "p_brenda"
+      ]
+    },
+    {
+      "id": "f_cmp_nostamp",
+      "text": "The invoices carry no stamp: a printed logo and a PIN.",
+      "kind": "true",
+      "about": [
+        "loc_pharmacy"
+      ]
+    },
+    {
+      "id": "f_cmp_fields",
+      "text": "A supplier invoice has no witnesses, no exam index number and no parcel number.",
+      "kind": "true",
+      "about": [
+        "loc_pharmacy"
+      ]
+    },
+    {
+      "id": "f_cmp_sig",
+      "text": "The receiving signature on the invoices matches Brenda's specimen signature on the licence: her own.",
+      "kind": "true",
+      "about": [
+        "p_brenda"
+      ]
+    },
+    {
+      "id": "f_docexam",
+      "text": "Wilfrida Ayugi: forged. Inkjet-printed; the logo copied from the distributor's website.",
+      "kind": "true",
+      "about": [
+        "p_brenda"
+      ]
+    },
+    {
+      "id": "f_br_happy",
+      "text": "Brenda: \"The inspector came, checked some packs and left happy. No notice.\"",
+      "kind": "lie",
+      "about": [
+        "p_brenda"
+      ]
+    },
+    {
+      "id": "f_br_stock",
+      "text": "Brenda: \"All my stock comes from Kirinyaga Pharma.\"",
+      "kind": "lie",
+      "about": [
+        "p_brenda"
+      ]
+    },
+    {
+      "id": "f_br_reveal",
+      "text": "Brenda: \"Fine. She found a few batches. I gave her a soda because it was hot. That's not a crime.\"",
+      "kind": "true",
+      "about": [
+        "p_brenda",
+        "p_kanini"
+      ],
+      "where": {
+        "person": "p_brenda",
+        "place": "loc_pharmacy",
+        "from": "16:58",
+        "to": "17:25"
+      }
+    },
+    {
+      "id": "f_br_soda",
+      "text": "Brenda: \"It was a soda from the fridge. There was nothing in it.\"",
+      "kind": "lie",
+      "about": [
+        "p_brenda"
+      ]
+    },
+    {
+      "id": "f_mk_notin",
+      "text": "Mark: \"The inspector didn't come in on Thursday.\"",
+      "kind": "lie",
+      "about": [
+        "p_mark"
+      ]
+    },
+    {
+      "id": "f_mark_reveal",
+      "text": "Mark: Brenda told him to say that, or he'd lose his job and be charged with her. He watched her take a soda from the fridge into the back room before she gave it to the inspector.",
+      "kind": "true",
+      "about": [
+        "p_mark",
+        "p_brenda"
+      ]
+    },
+    {
+      "id": "f_silas_claim",
+      "text": "Silas: \"I own it. I don't run it. I was in Nairobi.\"",
+      "kind": "claim",
+      "about": [
+        "p_silas"
+      ]
+    },
+    {
+      "id": "f_silas_profit",
+      "text": "Silas: \"Brenda was making profits I didn't understand. I was happy not to understand.\"",
+      "kind": "true",
+      "about": [
+        "p_silas",
+        "p_brenda"
+      ]
+    },
+    {
+      "id": "f_abdi_claim",
+      "text": "Abdikadir: \"I was in Nyeri.\"",
+      "kind": "claim",
+      "about": [
+        "p_abdikadir"
+      ]
+    },
+    {
+      "id": "f_abdi_template",
+      "text": "Abdikadir: \"That isn't our company's invoice. But I've seen that template before, in Meru. Someone sells them.\"",
+      "kind": "true",
+      "about": [
+        "p_abdikadir"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_brenda",
+      "stance": "cooperative",
+      "intro": "Brenda straightens her white coat behind the counter. \"The inspector came, checked some packs and left happy. No notice. All my stock comes from Kirinyaga Pharma.\"",
+      "claims": [
+        "f_br_happy",
+        "f_br_stock"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_br_soda",
+          "after": "f_br_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_mark",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_cctv"
+      ],
+      "intro": "Mark keeps sweeping the same patch of floor. \"The inspector didn't come in on Thursday.\"",
+      "claims": [
+        "f_mk_notin"
+      ],
+      "yields": [
+        "ev_mark_prints"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_silas",
+      "stance": "cooperative",
+      "intro": "Silas answers from Nairobi on speaker. \"I own it. I don't run it. I was in Nairobi.\"",
+      "claims": [
+        "f_silas_claim"
+      ],
+      "yields": [
+        "ev_silas"
+      ],
+      "topics": [
+        {
+          "about": "ev_invoices",
+          "reply": "\"Brenda was making profits I didn't understand. I was happy not to understand.\"",
+          "reveals": [
+            "f_silas_profit"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_abdikadir",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_invoices"
+      ],
+      "intro": "Abdikadir answers from his Nyeri office. \"I was in Nyeri.\"",
+      "claims": [
+        "f_abdi_claim"
+      ],
+      "yields": [
+        "ev_abdi"
+      ],
+      "topics": [
+        {
+          "about": "ev_invoices",
+          "reply": "\"That isn't our company's invoice. But I've seen that template before, in Meru. Someone sells them.\"",
+          "reveals": [
+            "f_abdi_template"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_grace",
+      "stance": "cooperative",
+      "intro": "Grace sits at the empty desk opposite her own. \"She signed out at four. She said, 'One more chemist and I'm done for the week.'\"",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_mk",
+      "claim": "f_mk_notin",
+      "brokenBy": [
+        "f_cctv"
+      ],
+      "reveals": [
+        "f_mark_reveal"
+      ],
+      "reaction": "\"Brenda told me to say that. She told me I'd lose my job and be charged with her. I watched her take a soda from the fridge into the back room before she gave it to the inspector.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_br_happy",
+      "claim": "f_br_happy",
+      "brokenBy": [
+        "f_carbon",
+        "f_tablet"
+      ],
+      "reveals": [
+        "f_br_reveal"
+      ],
+      "reaction": "\"Fine. She found a few batches. I gave her a soda because it was hot. That's not a crime.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_br_stock",
+      "claim": "f_br_stock",
+      "brokenBy": [
+        "f_kra",
+        "f_cmp_batch"
+      ],
+      "reveals": [],
+      "reaction": "Brenda looks at the distributor's answer for a long time. \"They're cheaper at the bus park,\" she says, very quietly.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_br_soda",
+      "claim": "f_br_soda",
+      "brokenBy": [
+        "f_tox"
+      ],
+      "reveals": [],
+      "reaction": "Brenda reads the toxicology line twice. She takes off her white coat and folds it on her knee.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_brenda",
+      "text": "Brenda Jepkemboi",
+      "category": "person",
+      "ref": "p_brenda",
+      "unlock": {
+        "anyOf": [
+          "f_carbon"
+        ]
+      }
+    },
+    {
+      "id": "w_mark",
+      "text": "Mark Gitobu",
+      "category": "person",
+      "ref": "p_mark",
+      "unlock": {
+        "anyOf": [
+          "f_carbon"
+        ]
+      }
+    },
+    {
+      "id": "w_silas",
+      "text": "Silas Muthaura",
+      "category": "person",
+      "ref": "p_silas",
+      "unlock": {
+        "anyOf": [
+          "f_licence"
+        ]
+      }
+    },
+    {
+      "id": "w_abdikadir",
+      "text": "Abdikadir Ali",
+      "category": "person",
+      "ref": "p_abdikadir",
+      "unlock": {
+        "anyOf": [
+          "f_grace"
+        ]
+      }
+    },
+    {
+      "id": "w_grace",
+      "text": "Grace Makena",
+      "category": "person",
+      "ref": "p_grace",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_tumaini",
+      "text": "Tumaini Chemists",
+      "category": "place",
+      "ref": "loc_pharmacy",
+      "unlock": {
+        "anyOf": [
+          "f_cctv"
+        ]
+      }
+    },
+    {
+      "id": "pl_car",
+      "text": "Kanini's car",
+      "category": "place",
+      "ref": "loc_car",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_buspark",
+      "text": "the Meru bus park",
+      "category": "place",
+      "ref": "plc_buspark",
+      "unlock": {
+        "anyOf": [
+          "f_rec_brenda"
+        ]
+      }
+    },
+    {
+      "id": "pl_flat",
+      "text": "Brenda's flat",
+      "category": "place",
+      "ref": "loc_flat",
+      "unlock": {
+        "anyOf": [
+          "f_carbon"
+        ]
+      }
+    },
+    {
+      "id": "pl_ppb",
+      "text": "the PPB office",
+      "category": "place",
+      "ref": "loc_ppb",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_sedative",
+      "text": "a heavy dose of sedative dissolved in a soda",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_tox"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_co",
+      "text": "carbon monoxide in the car",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_car"
+        ]
+      }
+    },
+    {
+      "id": "h_fake",
+      "text": "a counterfeit medicine she'd taken",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_shelf"
+        ]
+      }
+    },
+    {
+      "id": "h_smother",
+      "text": "smothering her",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_car"
+        ]
+      }
+    },
+    {
+      "id": "m_close",
+      "text": "to stop her closing the pharmacy and seizing the forged supplier invoices",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_carbon"
+        ]
+      }
+    },
+    {
+      "id": "m_owner",
+      "text": "the owner's hidden profits",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_licence"
+        ]
+      }
+    },
+    {
+      "id": "m_supplier",
+      "text": "the suspended supplier's licence",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_grace"
+        ]
+      }
+    },
+    {
+      "id": "m_parking",
+      "text": "a parking quarrel",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_assistant",
+      "text": "an assistant's fear for his job",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_carbon"
+        ]
+      }
+    },
+    {
+      "id": "d_invoices",
+      "text": "The supplier invoices",
+      "category": "document",
+      "ref": "ev_invoices",
+      "unlock": {
+        "anyOf": [
+          "f_invoices"
+        ]
+      }
+    },
+    {
+      "id": "d_register",
+      "text": "The controlled-drugs register",
+      "category": "document",
+      "ref": "ev_cabinet",
+      "unlock": {
+        "anyOf": [
+          "f_cabinet"
+        ]
+      }
+    },
+    {
+      "id": "d_notice",
+      "text": "The inspection notice",
+      "category": "document",
+      "ref": "ev_carbon",
+      "unlock": {
+        "anyOf": [
+          "f_carbon"
+        ]
+      }
+    },
+    {
+      "id": "d_crate",
+      "text": "The soda crate label",
+      "category": "document",
+      "ref": "ev_soda",
+      "unlock": {
+        "anyOf": [
+          "f_crate"
+        ]
+      }
+    },
+    {
+      "id": "d_licence",
+      "text": "The pharmacy's PPB licence",
+      "category": "document",
+      "ref": "ev_licence",
+      "unlock": {
+        "anyOf": [
+          "f_licence"
+        ]
+      }
+    },
+    {
+      "id": "t_batch",
+      "text": "the batch numbers don't exist on the manufacturer's register and the invoice series ended years ago",
+      "category": "tell",
+      "by": [
+        "f_cmp_batch",
+        "f_kra",
+        "f_tablet"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_tablet"
+        ]
+      }
+    },
+    {
+      "id": "t_dots",
+      "text": "a stamp printed in dots",
+      "category": "tell",
+      "by": [
+        "f_cmp_nostamp"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_invoices"
+        ]
+      }
+    },
+    {
+      "id": "t_deadwit",
+      "text": "a witness who was dead",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_invoices"
+        ]
+      }
+    },
+    {
+      "id": "t_index",
+      "text": "an index number belonging to someone else",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_invoices"
+        ]
+      }
+    },
+    {
+      "id": "t_parcel",
+      "text": "a parcel missing from the index map",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_invoices"
+        ]
+      }
+    },
+    {
+      "id": "t_sig",
+      "text": "a signature unlike the licence",
+      "category": "tell",
+      "by": [
+        "f_cmp_sig"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_invoices"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. {document} was forged, as shown by {tell}.",
+    "fixed": {
+      "victim": "Kanini Wambua"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_1658",
+                  "label": "16:58",
+                  "from": "16:58",
+                  "to": "16:58"
+                },
+                {
+                  "id": "sl_1705",
+                  "label": "17:05",
+                  "from": "17:05",
+                  "to": "17:05"
+                },
+                {
+                  "id": "sl_act",
+                  "label": "17:10–17:25",
+                  "from": "17:10",
+                  "to": "17:25"
+                },
+                {
+                  "id": "sl_1725",
+                  "label": "17:25",
+                  "from": "17:25",
+                  "to": "17:25"
+                },
+                {
+                  "id": "sl_death",
+                  "label": "17:30–18:00",
+                  "from": "17:30",
+                  "to": "18:00"
+                },
+                {
+                  "id": "sl_1830",
+                  "label": "18:30",
+                  "from": "18:30",
+                  "to": "18:30"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_enter",
+                  "text": "Kanini enters Tumaini",
+                  "slot": "sl_1658",
+                  "by": [
+                    "f_cctv"
+                  ],
+                  "why": "The ATM camera: 16:58.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_cctv"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_check",
+                  "text": "She checks the batch numbers",
+                  "slot": "sl_1705",
+                  "by": [
+                    "f_tablet"
+                  ],
+                  "why": "Her tablet's photos: 17:05.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_tablet"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_poison",
+                  "text": "A drugged soda is prepared and handed to her",
+                  "slot": "sl_act",
+                  "by": [
+                    "f_cabinet",
+                    "f_mark_reveal",
+                    "f_cctv"
+                  ],
+                  "why": "The sedative signed out at 17:10; she left with the soda at 17:25.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_cabinet"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_leave",
+                  "text": "Kanini leaves holding a soda",
+                  "slot": "sl_1725",
+                  "by": [
+                    "f_cctv"
+                  ],
+                  "why": "The ATM camera: 17:25.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_cctv"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_dies",
+                  "text": "She dies in her car",
+                  "slot": "sl_death",
+                  "by": [
+                    "f_tox"
+                  ],
+                  "why": "Toxicology: 17:30 to 18:00.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_tox"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_1830",
+                  "by": [
+                    "f_tox",
+                    "f_hawker"
+                  ],
+                  "why": "18:30 is the hawker's \"collapsed at sunset\". Toxicology puts her death before 18:00."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "In at two minutes to five, batches at five past, a sedative signed out at ten past, out with a soda at twenty-five past. Dead within the half-hour.",
+          "fail": [
+            "Sunset is a hawker's guess. Read the toxicology.",
+            "When was the sedative signed out, and by whom?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_tumaini"
+          }
+        ],
+        "prosecutor": {
+          "pass": "She died in the car, but she was poisoned at the counter. Tumaini.",
+          "fail": [
+            "She drove fifty metres and parked. Where did she drink?",
+            "The bus park is where the stock came from, not the soda."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_brenda"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her initials in the register, her prints on the bottle, the notice in her ash pan. That will hold.",
+          "fail": [
+            "Mark watched; his prints aren't on the bottle.",
+            "Silas hasn't been to Meru in a month."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_sedative"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Twenty tablets from her own cabinet, in a cold soda.",
+          "fail": [
+            "The engine was off and the windows were down.",
+            "She took no medicine. The sedative was genuine cabinet stock."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_close"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Closed at nine on Friday, invoices seized. She had one evening.",
+          "fail": [
+            "Abdikadir was in Nyeri all afternoon.",
+            "Mark was afraid. He didn't act."
+          ]
+        }
+      },
+      {
+        "id": "g_forgery",
+        "kind": "forgery",
+        "blanks": [
+          {
+            "id": "document",
+            "category": "document",
+            "answer": "d_invoices"
+          },
+          {
+            "id": "tell",
+            "category": "tell",
+            "answer": "t_batch"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Batches that don't exist, from a series that ended years ago. Check the control sample first, as Kanini did.",
+          "fail": [
+            "The controlled-drugs register is genuine. That's what makes it damning.",
+            "The signature is hers, on purpose. Look at the numbers."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_pharmacy",
+      "from": "17:10",
+      "to": "17:25",
+      "note": "The act window: the sedative signed out at 17:10; Kanini left holding the soda at 17:25. She died of it in her car between 17:30 and 18:00."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_carbon",
+          "f_tablet",
+          "f_tablet_ctrl",
+          "f_shelf"
+        ],
+        "concludes": "Kanini found counterfeit batches at Tumaini and wrote a closure notice at 17:20."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_invoices",
+          "f_kra",
+          "f_cmp_batch",
+          "f_docexam",
+          "f_br_stock"
+        ],
+        "concludes": "Brenda's supplier invoices are forged: the batches don't exist and the invoice series ended years ago.",
+        "answers": [
+          "document",
+          "tell"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_cctv",
+          "f_mk_notin",
+          "f_mark_reveal",
+          "f_crate",
+          "f_cabinet",
+          "f_br_happy",
+          "f_br_reveal"
+        ],
+        "concludes": "Brenda signed out 20 sedative tablets at 17:10 and prepared a soda in the back room; Kanini left with it at 17:25.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_car",
+          "f_aut",
+          "f_tox"
+        ],
+        "concludes": "Kanini died of the sedative in the soda, in her car, before 18:00."
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_bottle_prints",
+          "f_br_soda"
+        ],
+        "concludes": "Brenda's prints are on the bottle, and Mark's are not."
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_rec_brenda",
+          "f_ash",
+          "f_blankinv"
+        ],
+        "concludes": "The torn-out notice is half burned in her stove. Brenda Jepkemboi gave Kanini a soda with a heavy dose of sedative at Tumaini Chemists, to stop her closing the pharmacy and seizing the forged invoices.",
+        "answers": [
+          "who",
+          "how",
+          "why",
+          "where"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_car",
+        "blank": "where",
+        "by": [
+          "f_cctv",
+          "f_tox"
+        ],
+        "why": "She died in the car, but she drank the soda at Tumaini and left with it."
+      },
+      {
+        "word": "pl_buspark",
+        "blank": "where",
+        "by": [
+          "f_cctv"
+        ],
+        "why": "She went from Tumaini straight to her car."
+      },
+      {
+        "word": "pl_flat",
+        "blank": "where",
+        "by": [
+          "f_cctv"
+        ],
+        "why": "She never went to Brenda's flat."
+      },
+      {
+        "word": "pl_ppb",
+        "blank": "where",
+        "by": [
+          "f_cctv",
+          "f_grace"
+        ],
+        "why": "She signed out of the office at four."
+      },
+      {
+        "word": "w_mark",
+        "blank": "who",
+        "by": [
+          "f_bottle_prints",
+          "f_mark_reveal"
+        ],
+        "why": "Mark was in the shop and lied for Brenda, but the soda came from the back room, where only she went, and his prints aren't on the bottle.",
+        "present": true
+      },
+      {
+        "word": "w_silas",
+        "blank": "who",
+        "by": [
+          "f_silas"
+        ],
+        "why": "Silas was in Nairobi all week."
+      },
+      {
+        "word": "w_abdikadir",
+        "blank": "who",
+        "by": [
+          "f_abdi"
+        ],
+        "why": "Abdikadir was at a sales meeting in Nyeri, 14:00–19:00."
+      },
+      {
+        "word": "w_grace",
+        "blank": "who",
+        "by": [
+          "f_grace"
+        ],
+        "why": "Grace was in the PPB office until 17:30."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "No heart disease."
+      },
+      {
+        "word": "h_co",
+        "blank": "how",
+        "by": [
+          "f_engine",
+          "f_tox"
+        ],
+        "why": "The engine was off, the windows down; a sedative killed her."
+      },
+      {
+        "word": "h_fake",
+        "blank": "how",
+        "by": [
+          "f_tox",
+          "f_cabinet"
+        ],
+        "why": "The sedative was genuine cabinet stock, signed out by B.J."
+      },
+      {
+        "word": "h_smother",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "Respiratory depression, no smothering."
+      },
+      {
+        "word": "m_owner",
+        "blank": "why",
+        "by": [
+          "f_silas",
+          "f_silas_profit"
+        ],
+        "why": "Silas preferred not to know, and was in Nairobi."
+      },
+      {
+        "word": "m_supplier",
+        "blank": "why",
+        "by": [
+          "f_abdi",
+          "f_abdi_template"
+        ],
+        "why": "That grievance was Abdikadir's, and he was in Nyeri."
+      },
+      {
+        "word": "m_parking",
+        "blank": "why",
+        "by": [
+          "f_parking"
+        ],
+        "why": "A marked bay, no warden, no argument."
+      },
+      {
+        "word": "m_assistant",
+        "blank": "why",
+        "by": [
+          "f_mark_reveal",
+          "f_bottle_prints"
+        ],
+        "why": "Mark's fear was real, but he didn't act."
+      },
+      {
+        "word": "d_register",
+        "blank": "document",
+        "by": [
+          "f_cabinet"
+        ],
+        "why": "Genuine, in her own initials. That's what makes it damning."
+      },
+      {
+        "word": "d_notice",
+        "blank": "document",
+        "by": [
+          "f_carbon"
+        ],
+        "why": "Kanini's own carbon copy."
+      },
+      {
+        "word": "d_crate",
+        "blank": "document",
+        "by": [
+          "f_crate"
+        ],
+        "why": "A crate count, 24 down to 23."
+      },
+      {
+        "word": "d_licence",
+        "blank": "document",
+        "by": [
+          "f_licence"
+        ],
+        "why": "A current PPB licence."
+      },
+      {
+        "word": "t_dots",
+        "blank": "tell",
+        "by": [
+          "f_cmp_nostamp"
+        ],
+        "why": "The invoices carry no stamp."
+      },
+      {
+        "word": "t_deadwit",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "An invoice has no witnesses."
+      },
+      {
+        "word": "t_index",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "No index numbers on an invoice."
+      },
+      {
+        "word": "t_parcel",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "No parcels on an invoice."
+      },
+      {
+        "word": "t_sig",
+        "blank": "tell",
+        "by": [
+          "f_cmp_sig"
+        ],
+        "why": "The signature is Brenda's own, and matches the licence."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Brenda buys cheap counterfeit antimalarials and antibiotics from a man at the bus park and covers them with invoices printed in the name of a real distributor, with invented batch numbers. The profit is hers; the owner never looks.",
+        "image": null
+      },
+      {
+        "text": "Thursday, 16:58. Kanini walks in, photographs six packs at 17:05, and gets \"batch not found\" six times. Two control packs come back \"found\". She tells Brenda quietly she'll close her at nine tomorrow and take the invoices.",
+        "image": null
+      },
+      {
+        "text": "17:10. Brenda signs out 20 sedative tablets from the cabinet, \"for patient\", and takes a cold soda into the back room while Kanini writes her notice.",
+        "image": "loc_pharmacy"
+      },
+      {
+        "text": "17:25. Kanini leaves holding the soda. She drives 50 metres, parks to make a call, and slumps over the wheel. Brenda takes the top copy of the notice from the passenger seat while people are still gathering.",
+        "image": null
+      },
+      {
+        "text": "17:40. Brenda calls the bus park. That night she burns the notice in her stove.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Two stamps: records on Brenda and a warrant on her flat. Detain her after the search; toxicology takes 18 h, still inside her 24, with the prints (6 h) and the invoice examination (10 h) running alongside.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_car",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_car",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_carbon",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_tablet",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_cctv",
+        "hours": 1
+      },
+      {
+        "do": "travel",
+        "target": "loc_pharmacy",
+        "hours": 0.25,
+        "from": "loc_car"
+      },
+      {
+        "do": "visit",
+        "target": "loc_pharmacy",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_shelf",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_invoices",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_soda",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_cabinet",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_licence",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_kra",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_mark"
+      },
+      {
+        "do": "press",
+        "target": "c_mk"
+      },
+      {
+        "do": "interview",
+        "target": "p_brenda"
+      },
+      {
+        "do": "press",
+        "target": "c_br_happy"
+      },
+      {
+        "do": "press",
+        "target": "c_br_stock"
+      },
+      {
+        "do": "travel",
+        "target": "loc_ppb",
+        "hours": 0.25,
+        "from": "loc_pharmacy"
+      },
+      {
+        "do": "visit",
+        "target": "loc_ppb",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_genuine_inv",
+        "hours": 0
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "travel",
+        "target": "loc_flat",
+        "hours": 0.25,
+        "from": "loc_ppb"
+      },
+      {
+        "do": "visit",
+        "target": "loc_flat",
+        "hours": 1
+      },
+      {
+        "do": "search",
+        "target": "loc_flat"
+      },
+      {
+        "do": "detain",
+        "target": "p_brenda"
+      },
+      {
+        "do": "sample",
+        "target": "ev_br_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_tox"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_docexam"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 16
+      },
+      {
+        "do": "press",
+        "target": "c_br_soda"
+      }
+    ],
+    "totalHours": 40.75
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_cctv",
+        "line": "A bank camera faces the door, Amani."
+      },
+      "tier2": {
+        "facts": [
+          "f_cctv",
+          "f_cabinet"
+        ],
+        "line": "In at 16:58, out at 17:25 with a soda. A sedative signed out at 17:10."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_cctv",
+        "line": "She died in the car. Where did she get the soda?"
+      },
+      "tier2": {
+        "facts": [
+          "f_cctv",
+          "f_mark_reveal"
+        ],
+        "line": "From Tumaini's back room."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_cabinet",
+        "line": "Whose initials are in the register at 17:10?"
+      },
+      "tier2": {
+        "facts": [
+          "f_cabinet",
+          "f_bottle_prints"
+        ],
+        "line": "B.J., and her prints on the bottle."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_soda",
+        "line": "Count the sodas in the crate."
+      },
+      "tier2": {
+        "facts": [
+          "f_crate",
+          "f_tox"
+        ],
+        "line": "One missing, and a sedative in the bottle."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_carbon",
+        "line": "Read the carbon copy of the notice she never got to keep."
+      },
+      "tier2": {
+        "facts": [
+          "f_carbon"
+        ],
+        "line": "Closed at nine on Friday, invoices seized."
+      }
+    },
+    "g_forgery": {
+      "tier1": {
+        "point": "ev_tablet",
+        "line": "Type the batch numbers in. Then type in a control."
+      },
+      "tier2": {
+        "facts": [
+          "f_cmp_batch",
+          "f_kra"
+        ],
+        "line": "Not found, and a series that ended in 2023."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "dawa bandia",
+      "def": "Counterfeit medicine."
+    },
+    {
+      "term": "namba ya batch",
+      "def": "A batch number on a medicine pack."
+    },
+    {
+      "term": "PPB",
+      "def": "Pharmacy and Poisons Board, the medicines regulator."
+    },
+    {
+      "term": "ankara",
+      "def": "An invoice."
+    },
+    {
+      "term": "soda",
+      "def": "A soft drink."
+    },
+    {
+      "term": "KRA",
+      "def": "Kenya Revenue Authority; every business has a KRA PIN."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "batchLookup"
+    ],
+    "beatNotes": "Batch lookup. The player types a batch number into Kanini's tablet; it answers \"found\" or \"not found\". Genuine packs from the same shelf come back \"found\", teaching the player to check a control sample before trusting a \"not found\". The bus-park counterfeiter goes to the Pattern File as a lead (not a spine thread)."
+  }
+}

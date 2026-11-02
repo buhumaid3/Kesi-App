@@ -1,0 +1,1390 @@
+{
+  "meta": {
+    "id": "case-020",
+    "number": 20,
+    "region": "eastlands",
+    "regionNumber": 2,
+    "title": "Three Padlocks",
+    "boss": true,
+    "schemaVersion": 1,
+    "estMinutes": 18,
+    "date": "Saturday 26 July",
+    "folderTab": "KOMAROCK"
+  },
+  "pattern": {
+    "crimePattern": "chama chair diverts the savings into a fake land scheme and kills the treasurer who found out",
+    "noRealCaseRetold": true,
+    "notes": "Fictional chama, fictional shell company and plots. Chama investment frauds selling non-existent plots are a widely reported pattern; no real group, company or case is depicted. Spine boss case.",
+    "tags": [
+      "blunt-force",
+      "chama-fraud",
+      "warrant",
+      "spine",
+      "boss"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 3,
+    "redHerrings": 1,
+    "liars": 1,
+    "groups": [
+      "who",
+      "spine"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness"
+    ],
+    "gatedActions": [
+      "warrant"
+    ],
+    "twist": "the-lockbox-tells-the-story"
+  },
+  "ob": {
+    "number": "OB 03/26/07",
+    "date": "Saturday 26 July",
+    "time": "21:26",
+    "reportedBy": "Musau Kilonzo, by phone from the Kangundo road",
+    "text": "Musau Kilonzo reports by phone that his wife, Anne Mumbua (54), treasurer of Upendo Women's Chama, was found dead at their maisonette in Komarock Phase 1 at 21:05 by a neighbour. The chama's lockbox is broken open on the dining table.",
+    "facts": [
+      "f_ob_found",
+      "f_ob_box"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_anne",
+      "role": "victim",
+      "name": "Anne Mumbua",
+      "age": 54,
+      "occupation": "Treasurer, Upendo Women's Chama",
+      "bio": "Treasurer for six years. Keeps the chama's lockbox at her house and the treasurer's key on a chain round her neck.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_house",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 50s, a blue-and-yellow kitenge dress and matching headwrap, reading glasses, a small key on a thin chain at her neck, careful and kind, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_millicent",
+      "role": "suspect",
+      "name": "Millicent Akoth",
+      "age": 48,
+      "occupation": "Chairlady, Upendo Women's Chama",
+      "bio": "Chair for three years. In April she pushed the chama to put its savings into the \"Mvua Holdings Land Investment Plan\".",
+      "community": "Luo",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_box_keys"
+      },
+      "at": "loc_mh",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 40s, the same blue-and-yellow kitenge as the chama uniform, a gold watch, a confident chairlady's smile held a little too long, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_joyce",
+      "role": "suspect",
+      "name": "Joyce Kemunto",
+      "age": 37,
+      "occupation": "Secretary, Upendo Women's Chama",
+      "bio": "Keeps the minutes book. Holds, or held, the secretary's key.",
+      "community": "Kisii",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_box_keys"
+      },
+      "at": "plc_wedding",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 30s, neat braids in a bun, a minutes book held against her chest, a pen behind her ear, anxious and precise, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_musau",
+      "role": "suspect",
+      "name": "Musau Kilonzo",
+      "age": 57,
+      "occupation": "Anne's husband",
+      "redHerring": true,
+      "bio": "Took a chama loan against Anne's share and lost it. They shouted about it that afternoon.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_kangundo",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 50s, a funeral MC's suit with a black ribbon pinned to the lapel, a microphone cable still looped over his shoulder, stunned, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_florence",
+      "role": "suspect",
+      "name": "Florence Nekesa",
+      "age": 35,
+      "occupation": "Chama member; nurse",
+      "bio": "Stood up at the last meeting and demanded her payout early.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_minutes_florence"
+      },
+      "at": "plc_hospital",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 30s, a nurse's uniform under a cardigan, hospital ID on a lanyard, tired and blunt, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_gladys",
+      "role": "witness",
+      "name": "Gladys Kawira",
+      "age": 60,
+      "occupation": "Next-door neighbour",
+      "bio": "Her gate faces Anne's. Found Anne when she saw the gate still open at nine.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_gladys",
+      "image": null
+    },
+    {
+      "id": "p_jillo",
+      "role": "witness",
+      "name": "Mohamed Jillo",
+      "age": 45,
+      "occupation": "Shopkeeper at the corner",
+      "bio": "Everyone on the street buys their milk from him at eight.",
+      "community": "Borana",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_shop",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_dining",
+      "name": "Dining room",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_gladys",
+      "name": "Gladys's gate, opposite"
+    },
+    {
+      "id": "plc_shop",
+      "name": "Jillo's shop, at the corner"
+    },
+    {
+      "id": "plc_wedding",
+      "name": "Wedding committee meeting, Kayole"
+    },
+    {
+      "id": "plc_kangundo",
+      "name": "Funeral harambee, Kangundo"
+    },
+    {
+      "id": "plc_hospital",
+      "name": "Embakasi Mission Hospital"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_house",
+      "name": "The Kilonzo maisonette, Komarock Phase 1",
+      "kind": "scene",
+      "description": "A two-storey maisonette with a small front yard. In the dining room a blue steel lockbox stands open on the table. Three padlocks hang from it. Chama uniforms, blue and yellow, hang drying on the line outside.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Dining room",
+          "pos": [
+            40,
+            62
+          ],
+          "yields": "ev_body",
+          "text": "Anne lies beside the dining table. The steel lid bar of the lockbox is on the floor."
+        },
+        {
+          "id": "hs_box",
+          "label": "The lockbox",
+          "pos": [
+            52,
+            44
+          ],
+          "yields": "ev_box",
+          "text": "The chama lockbox: three hasps, three padlocks. Pick it up and turn it to look at each lock."
+        },
+        {
+          "id": "hs_key",
+          "label": "At her neck",
+          "pos": [
+            36,
+            56
+          ],
+          "yields": "ev_annekey",
+          "text": "A thin chain disappears under the collar of her blouse."
+        },
+        {
+          "id": "hs_gladys",
+          "label": "Gate opposite",
+          "pos": [
+            92,
+            70
+          ],
+          "yields": "ev_gladys",
+          "text": "Gladys Kawira is standing at her own gate in her nightdress and a kitenge wrap, holding a torch."
+        },
+        {
+          "id": "hs_shop",
+          "label": "Corner shop",
+          "pos": [
+            96,
+            20
+          ],
+          "yields": "ev_jillo",
+          "text": "Mohamed Jillo's shop at the end of the street, still lit."
+        },
+        {
+          "id": "hs_line",
+          "label": "Washing line",
+          "pos": [
+            14,
+            28
+          ],
+          "text": "Blue-and-yellow kitenge: the Upendo uniform. Twenty-four women own one each."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the dining room of a modest two-storey maisonette in Komarock, Nairobi at night, a blue steel lockbox standing open on the dining table with three padlocks hanging from its hasps, one of them visibly cut through, a plastic tablecloth, family photographs on the wall, no people in focus"
+      }
+    },
+    {
+      "id": "loc_mh",
+      "name": "Millicent Akoth's house, Komarock Phase 2 (search)",
+      "kind": "search",
+      "description": "A larger maisonette two phases over. A new sofa still in its plastic. A kitchen drawer that sticks. A handbag on the bed.",
+      "unlock": {
+        "fact": "f_minutes_keys"
+      },
+      "hotspots": [
+        {
+          "id": "hs_mh",
+          "label": "Search the house",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_millicent_house",
+          "text": "Kitchen drawer, the back of the wardrobe, the handbag on the bed."
+        },
+        {
+          "id": "hs_sofa",
+          "label": "New sofa",
+          "pos": [
+            20,
+            70
+          ],
+          "text": "Still in its plastic wrap. The receipt is taped to it: KSh 89,000, paid in cash, last month."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a bedroom and kitchen in a Nairobi maisonette being searched, a wardrobe door open, a kitchen drawer pulled out, a blue ledger book and a pair of bolt cutters laid on a bedspread beside a handbag"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body in the dining room",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Struck with the lockbox's steel lid bar. The box is open. The ledger compartment is empty."
+      },
+      "facts": [
+        "f_body_bar",
+        "f_ob_box"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a dining room floor beside a table, a heavy steel bar from a lockbox lid lying on the tiles, a fallen chair, a tin of milk spilled, no body visible"
+      }
+    },
+    {
+      "id": "ev_box",
+      "type": "physical",
+      "title": "The lockbox (three padlocks)",
+      "render": "object",
+      "body": {
+        "chair": "opened with a key, hanging open",
+        "secretary": "opened with a key, hanging open",
+        "treasurer": "cut through with bolt cutters",
+        "ledger": "compartment empty"
+      },
+      "facts": [
+        "f_box_keys",
+        "f_box_cut"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a blue steel chama lockbox with three padlocks on three hasps, two padlocks hanging open with their keys removed, the third padlock's shackle cut clean through, the empty ledger compartment visible inside"
+      }
+    },
+    {
+      "id": "ev_annekey",
+      "type": "physical",
+      "title": "Anne's key",
+      "render": "object",
+      "body": {
+        "label": "The treasurer's padlock key on a thin chain round her neck, under her blouse."
+      },
+      "facts": [
+        "f_annekey"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gladys",
+      "type": "witness",
+      "title": "Statement: Gladys Kawira",
+      "render": "statement",
+      "body": {
+        "speaker": "p_gladys"
+      },
+      "facts": [
+        "f_gladys_quarrel",
+        "f_gladys_shout",
+        "f_gladys_woman",
+        "f_gladys_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_jillo",
+      "type": "witness",
+      "title": "Statement: Mohamed Jillo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_jillo"
+      },
+      "facts": [
+        "f_jillo"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_minutes",
+      "type": "physical",
+      "title": "Upendo minutes book",
+      "render": "logBook",
+      "body": {
+        "rows": [
+          {
+            "date": "April",
+            "entry": "Investment — Chair proposes the Mvua Holdings Land Investment Plan. Carried. Secretary's key handed to Chair for safekeeping during the investment period.",
+            "apologies": "A. Mumbua (son's graduation, Eldoret)"
+          },
+          {
+            "date": "July",
+            "entry": "Member F. Nekesa requests early payout. Chair: \"The money is invested.\" Request declined."
+          }
+        ]
+      },
+      "facts": [
+        "f_minutes_keys",
+        "f_minutes_apologies",
+        "f_minutes_florence"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_joyce",
+      "type": "witness",
+      "title": "Statement: Joyce Kemunto",
+      "render": "statement",
+      "body": {
+        "speaker": "p_joyce"
+      },
+      "facts": [
+        "f_joyce_nocopy"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_millicent_house",
+      "type": "physical",
+      "title": "Search: Millicent's house",
+      "render": "object",
+      "body": {
+        "found": [
+          "the Upendo ledger",
+          "bolt cutters",
+          "six PesaPap receipts: Till 880 214 — Mvua Holdings — Plot reservation, Bahati block, Nakuru — total KSh 1,140,000",
+          "a typed letter on Mvua letterhead signed \"K.\""
+        ]
+      },
+      "facts": [
+        "f_mh_ledger",
+        "f_mh_cutters",
+        "f_mh_receipts",
+        "f_mh_letter_k"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_minutes_keys"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "six small thermal mobile-money receipts fanned out on a bedspread, each printed TILL 880 214 MVUA HOLDINGS PLOT RESERVATION, beside a blue chama ledger book and a pair of red-handled bolt cutters"
+      }
+    },
+    {
+      "id": "ev_musau",
+      "type": "physical",
+      "title": "Funeral harambee programme",
+      "render": "timetable",
+      "body": {
+        "event": "Funeral harambee, Kangundo",
+        "mc": "Mr Musau Kilonzo",
+        "time": "17:00–21:00"
+      },
+      "facts": [
+        "f_musau_programme"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_wedding",
+      "type": "physical",
+      "title": "Wedding-committee minutes",
+      "render": "logBook",
+      "body": {
+        "meeting": "Wedding committee, Kayole",
+        "time": "18:00–22:00",
+        "minutes": "taken by J. Kemunto"
+      },
+      "facts": [
+        "f_wedding"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_florence",
+      "type": "physical",
+      "title": "Florence's clock card",
+      "render": "ticket",
+      "body": {
+        "site": "Embakasi Mission Hospital, night shift",
+        "in": "18:55"
+      },
+      "facts": [
+        "f_florence_card"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Anne Mumbua, treasurer of Upendo Women's Chama, was found dead at home at 21:05 by her neighbour.",
+      "kind": "true",
+      "about": [
+        "p_anne",
+        "p_gladys",
+        "loc_house"
+      ]
+    },
+    {
+      "id": "f_ob_box",
+      "text": "The chama's lockbox is broken open on the dining table and the ledger is gone.",
+      "kind": "true",
+      "about": [
+        "loc_house"
+      ]
+    },
+    {
+      "id": "f_body_bar",
+      "text": "Anne was struck with the steel lid bar of the lockbox.",
+      "kind": "true",
+      "about": [
+        "p_anne",
+        "plc_dining"
+      ]
+    },
+    {
+      "id": "f_box_keys",
+      "text": "Lockbox: the chair's padlock and the secretary's padlock were both opened with their keys and hang open.",
+      "kind": "true",
+      "about": [
+        "ev_box",
+        "p_millicent",
+        "p_joyce"
+      ]
+    },
+    {
+      "id": "f_box_cut",
+      "text": "Lockbox: the treasurer's padlock was cut through with bolt cutters. The ledger compartment is empty.",
+      "kind": "true",
+      "about": [
+        "ev_box"
+      ]
+    },
+    {
+      "id": "f_annekey",
+      "text": "The treasurer's key is still on its chain round Anne's neck, under her blouse.",
+      "kind": "true",
+      "about": [
+        "p_anne"
+      ]
+    },
+    {
+      "id": "f_jillo",
+      "text": "Jillo: Anne bought milk at 20:05 and said she was \"going home to count\".",
+      "kind": "true",
+      "about": [
+        "p_jillo",
+        "p_anne"
+      ]
+    },
+    {
+      "id": "f_gladys_quarrel",
+      "text": "Gladys: Anne and Musau shouted at each other about a loan at about 15:00.",
+      "kind": "true",
+      "about": [
+        "p_gladys",
+        "p_musau"
+      ]
+    },
+    {
+      "id": "f_gladys_shout",
+      "text": "Gladys: she heard a shout from Anne's house at about 20:30.",
+      "kind": "true",
+      "about": [
+        "p_gladys",
+        "loc_house"
+      ]
+    },
+    {
+      "id": "f_gladys_woman",
+      "text": "Gladys: at about 20:40 a woman in the Upendo kitenge left Anne's gate with a heavy bag. She couldn't see her face.",
+      "kind": "true",
+      "about": [
+        "p_gladys",
+        "loc_house"
+      ]
+    },
+    {
+      "id": "f_gladys_self",
+      "text": "Gladys was at her own gate from 20:00, waiting for her grandson, until she crossed to Anne's at 21:05.",
+      "kind": "true",
+      "about": [
+        "p_gladys"
+      ],
+      "where": {
+        "person": "p_gladys",
+        "place": "plc_gladys",
+        "from": "20:00",
+        "to": "21:05"
+      }
+    },
+    {
+      "id": "f_minutes_keys",
+      "text": "April minutes: 'Chair proposes the Mvua Holdings Land Investment Plan. Carried. Secretary's key handed to Chair for safekeeping.' Since April, the chair holds two of the three keys.",
+      "kind": "true",
+      "about": [
+        "p_millicent",
+        "p_joyce"
+      ]
+    },
+    {
+      "id": "f_minutes_apologies",
+      "text": "April minutes, attendance: 'Apologies: A. Mumbua (son's graduation, Eldoret).' Anne was not at the meeting.",
+      "kind": "true",
+      "about": [
+        "p_anne"
+      ]
+    },
+    {
+      "id": "f_minutes_florence",
+      "text": "July minutes: 'F. Nekesa requests early payout. Chair: the money is invested. Declined.'",
+      "kind": "true",
+      "about": [
+        "p_florence",
+        "p_millicent"
+      ]
+    },
+    {
+      "id": "f_joyce_nocopy",
+      "text": "Joyce: she gave her key to the chair in April. There is no copy: \"You can't copy those keys on River Road. They're the old kind.\"",
+      "kind": "true",
+      "about": [
+        "p_joyce",
+        "p_millicent"
+      ]
+    },
+    {
+      "id": "f_mh_ledger",
+      "text": "In Millicent's house: the Upendo ledger Anne took home to count.",
+      "kind": "true",
+      "about": [
+        "p_millicent",
+        "p_anne"
+      ]
+    },
+    {
+      "id": "f_mh_cutters",
+      "text": "In Millicent's kitchen drawer: a pair of bolt cutters.",
+      "kind": "true",
+      "about": [
+        "p_millicent"
+      ]
+    },
+    {
+      "id": "f_mh_receipts",
+      "text": "Six PesaPap receipts: 'Till 880 214 — Mvua Holdings — Plot reservation, Bahati block, Nakuru', total KSh 1,140,000 of Upendo's savings.",
+      "kind": "true",
+      "about": [
+        "p_millicent"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_mh_letter_k",
+      "text": "A typed letter on Mvua letterhead: 'Delay the payout. Members will be paid in plots. — K.'",
+      "kind": "true",
+      "about": [
+        "p_millicent"
+      ],
+      "spine": "t_kivuli"
+    },
+    {
+      "id": "f_millicent_fundi",
+      "text": "Millicent: she never met anyone from Mvua. Letters came signed \"K.\" The cash for the plot fees was collected by \"a man they call Fundi, with a bad leg\".",
+      "kind": "true",
+      "about": [
+        "p_millicent"
+      ],
+      "spine": "t_fundi"
+    },
+    {
+      "id": "f_millicent_vote",
+      "text": "Millicent: \"Anne voted for the Mvua investment at the April meeting. She agreed to everything.\"",
+      "kind": "lie",
+      "about": [
+        "p_millicent",
+        "p_anne"
+      ]
+    },
+    {
+      "id": "f_millicent_home",
+      "text": "Millicent: \"I was at home all evening.\"",
+      "kind": "lie",
+      "about": [
+        "p_millicent"
+      ]
+    },
+    {
+      "id": "f_millicent_admits_vote",
+      "text": "Millicent admits Anne was not at the April meeting. \"We needed the vote before the offer closed. The plots are real.\"",
+      "kind": "true",
+      "about": [
+        "p_millicent",
+        "p_anne"
+      ]
+    },
+    {
+      "id": "f_millicent_admits_house",
+      "text": "Millicent admits she went to Anne's house at about 20:15 for the ledger, \"before Thursday\". She says they argued and she left with it.",
+      "kind": "true",
+      "about": [
+        "p_millicent",
+        "loc_house"
+      ],
+      "where": {
+        "person": "p_millicent",
+        "place": "loc_house",
+        "from": "20:15",
+        "to": "20:40"
+      }
+    },
+    {
+      "id": "f_musau_claim",
+      "text": "Musau: \"I was the MC at my cousin's funeral harambee in Kangundo.\"",
+      "kind": "claim",
+      "about": [
+        "p_musau"
+      ]
+    },
+    {
+      "id": "f_musau_loan",
+      "text": "Musau: he took a chama loan against Anne's share and lost it betting. They fought about it at three.",
+      "kind": "true",
+      "about": [
+        "p_musau",
+        "p_anne"
+      ]
+    },
+    {
+      "id": "f_musau_programme",
+      "text": "Harambee programme: 'MC: Mr Musau Kilonzo', 17:00–21:00, Kangundo, about ninety minutes' drive away. Forty mourners saw him at the microphone.",
+      "kind": "true",
+      "about": [
+        "p_musau"
+      ],
+      "where": {
+        "person": "p_musau",
+        "place": "plc_kangundo",
+        "from": "17:00",
+        "to": "21:00"
+      }
+    },
+    {
+      "id": "f_joyce_claim",
+      "text": "Joyce: \"I don't have my key. The chair does.\"",
+      "kind": "claim",
+      "about": [
+        "p_joyce",
+        "p_millicent"
+      ]
+    },
+    {
+      "id": "f_wedding",
+      "text": "Wedding-committee minutes, Kayole: meeting 18:00–22:00, Joyce Kemunto taking the minutes throughout.",
+      "kind": "true",
+      "about": [
+        "p_joyce"
+      ],
+      "where": {
+        "person": "p_joyce",
+        "place": "plc_wedding",
+        "from": "18:00",
+        "to": "22:00"
+      }
+    },
+    {
+      "id": "f_florence_claim",
+      "text": "Florence: \"I was at work.\"",
+      "kind": "claim",
+      "about": [
+        "p_florence"
+      ]
+    },
+    {
+      "id": "f_florence_payout",
+      "text": "Florence: she asked for her payout early \"because Millicent kept saying the money was invested. I wanted mine before it disappeared.\"",
+      "kind": "true",
+      "about": [
+        "p_florence",
+        "p_millicent"
+      ]
+    },
+    {
+      "id": "f_florence_card",
+      "text": "Florence's clock card, Embakasi Mission Hospital night shift: in 18:55. The ward sister confirms she didn't leave the ward.",
+      "kind": "true",
+      "about": [
+        "p_florence"
+      ],
+      "where": {
+        "person": "p_florence",
+        "place": "plc_hospital",
+        "from": "18:55",
+        "to": "07:00"
+      }
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_millicent",
+      "stance": "cooperative",
+      "intro": "Millicent arrives in her chama uniform with her hand on her heart. \"Anne? Our Anne? I was going to see her on Thursday at the payout.\"",
+      "claims": [
+        "f_millicent_vote",
+        "f_millicent_home"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_box",
+          "reply": "Anyone can buy bolt cutters.",
+          "reveals": []
+        },
+        {
+          "about": "f_minutes_keys",
+          "reply": "For safekeeping. During the investment. It was voted. It is in the minutes.",
+          "reveals": []
+        },
+        {
+          "about": "f_mh_letter_k",
+          "reply": "I never met anyone from Mvua. The letters came signed \"K\". The plot fees were collected in cash by a man they call Fundi. He has a bad leg. That is all I know.",
+          "reveals": [
+            "f_millicent_fundi"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_joyce",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_box"
+      ],
+      "intro": "Joyce holds the minutes book against her chest like a shield. \"I am the secretary. I write things down.\"",
+      "claims": [
+        "f_joyce_claim"
+      ],
+      "yields": [
+        "ev_minutes",
+        "ev_wedding"
+      ],
+      "topics": [
+        {
+          "about": "p_millicent",
+          "reply": "I gave her my key in April. There is no copy. You can't copy those keys on River Road. They're the old kind.",
+          "reveals": [
+            "ev_joyce"
+          ]
+        },
+        {
+          "about": "p_anne",
+          "reply": "Anne came back from Eldoret and asked to see every receipt. She stopped talking to Millicent after that.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_musau",
+      "stance": "cooperative",
+      "intro": "Musau, on the phone from the Kangundo road, keeps saying her name. \"Anne. Anne. I was at the microphone. I was at the microphone.\"",
+      "claims": [
+        "f_musau_claim"
+      ],
+      "yields": [
+        "ev_musau"
+      ],
+      "topics": [
+        {
+          "about": "f_gladys_quarrel",
+          "reply": "I took a loan against her share. I lost it. Betting. She shouted, I shouted. That was the last thing I said to her.",
+          "reveals": [
+            "f_musau_loan"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_florence",
+      "stance": "cooperative",
+      "intro": "Florence takes the call at the nurses' station. \"Anne is dead? Then where is our money?\"",
+      "claims": [
+        "f_florence_claim"
+      ],
+      "yields": [
+        "ev_florence"
+      ],
+      "topics": [
+        {
+          "about": "f_minutes_florence",
+          "reply": "Because Millicent kept saying the money was \"invested\". I wanted mine before it disappeared. Anne was the only one who believed me.",
+          "reveals": [
+            "f_florence_payout"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_gladys",
+      "stance": "cooperative",
+      "intro": "Gladys points her torch at the ground. \"Twenty-four women own that kitenge. I own one. I couldn't see her face.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_musau",
+          "reply": "He was not here tonight. He left at four for the funeral in Kangundo. They shouted before he left.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_jillo",
+      "stance": "cooperative",
+      "intro": "Jillo leans on his counter. \"Eight o'clock, everyone comes for milk. Mama Anne too.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_anne",
+          "reply": "Five past eight. One packet of milk. She said, \"I'm going home to count.\" She was smiling.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_millicent_vote",
+      "claim": "f_millicent_vote",
+      "brokenBy": [
+        "f_minutes_apologies"
+      ],
+      "reveals": [
+        "f_millicent_admits_vote"
+      ],
+      "reaction": "...She wasn't there. We needed the vote before the offer closed. It is a good investment. The plots are real. I have seen the papers.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_millicent_home",
+      "claim": "f_millicent_home",
+      "brokenBy": [
+        "f_mh_ledger"
+      ],
+      "reveals": [
+        "f_millicent_admits_house"
+      ],
+      "reaction": "I went for the ledger. Quarter past eight. She was going to read it to everybody on Thursday and nobody would understand it. We argued. I took it. That is all I will say.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_millicent",
+      "text": "Millicent Akoth",
+      "category": "person",
+      "ref": "p_millicent",
+      "unlock": {
+        "anyOf": [
+          "f_box_keys",
+          "f_minutes_keys"
+        ]
+      }
+    },
+    {
+      "id": "w_joyce",
+      "text": "Joyce Kemunto",
+      "category": "person",
+      "ref": "p_joyce",
+      "unlock": {
+        "anyOf": [
+          "f_box_keys"
+        ]
+      }
+    },
+    {
+      "id": "w_musau",
+      "text": "Musau Kilonzo",
+      "category": "person",
+      "ref": "p_musau",
+      "unlock": {
+        "anyOf": [
+          "f_ob_found",
+          "f_gladys_quarrel"
+        ]
+      }
+    },
+    {
+      "id": "w_florence",
+      "text": "Florence Nekesa",
+      "category": "person",
+      "ref": "p_florence",
+      "unlock": {
+        "anyOf": [
+          "f_minutes_florence"
+        ]
+      }
+    },
+    {
+      "id": "w_gladys",
+      "text": "Gladys Kawira",
+      "category": "person",
+      "ref": "p_gladys",
+      "unlock": {
+        "anyOf": [
+          "f_gladys_shout"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_seal",
+      "text": "the forged registrar seal (case 10)",
+      "category": "pin",
+      "pin": "case-010:f_order_mvua",
+      "unlock": {
+        "anyOf": [
+          "f_mh_receipts"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_calendar",
+      "text": "the Mvua calendar (case 6)",
+      "category": "pin",
+      "pin": "case-006:f_calendar_till",
+      "unlock": {
+        "anyOf": [
+          "f_mh_receipts"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_card",
+      "text": "the Mvua business card (case 13)",
+      "category": "pin",
+      "pin": "case-013:f_card_mvua",
+      "unlock": {
+        "anyOf": [
+          "f_mh_receipts"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_agreement",
+      "text": "the stamped sale agreement (case 17)",
+      "category": "pin",
+      "pin": "case-017:f_agreement_stamp",
+      "unlock": {
+        "anyOf": [
+          "f_mh_receipts"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_kivuli",
+      "text": "the note \"Kivuli wants it Friday\" (case 10)",
+      "category": "pin",
+      "pin": "case-010:f_note_kivuli",
+      "unlock": {
+        "anyOf": [
+          "f_mh_receipts"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} to stop her telling the members where their savings had gone. Upendo's savings were paid to Till 880 214, the same till that took the deposit for {pin}.",
+    "fixed": {
+      "victim": "Anne Mumbua"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_millicent"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Two keys turned, one lock cut, and the minutes say who held two keys. The ledger was in her kitchen. That will hold.",
+          "fail": [
+            "Doesn't hold up. Look at the box again: two locks opened with keys. Who had two keys?",
+            "No. A husband who lost money isn't a woman in the chama kitenge at 20:40. Who could open that box?"
+          ]
+        }
+      },
+      {
+        "id": "g_spine",
+        "kind": "spine",
+        "blanks": [
+          {
+            "id": "pin",
+            "category": "pin",
+            "answer": "w_pin_seal",
+            "spine": true
+          }
+        ],
+        "prosecutor": {
+          "pass": "The same till that ordered a fake seal is selling fake plots. Amani, who are these people?",
+          "fail": [
+            "She did it. But you're telling me this is bigger than a chama. Show me how.",
+            "That pin shows the till number. I asked which one shows money going into it."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_house",
+      "from": "20:10",
+      "to": "20:40",
+      "within": [
+        "plc_dining"
+      ]
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_box_keys",
+          "f_box_cut",
+          "f_annekey"
+        ],
+        "concludes": "Whoever opened the box had the chair's key and the secretary's key, and had to cut the treasurer's padlock because Anne's key was on the chain round her neck."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_minutes_keys",
+          "f_joyce_nocopy",
+          "f_millicent_vote",
+          "f_minutes_apologies",
+          "f_millicent_admits_vote"
+        ],
+        "concludes": "Since April both of those keys have been held by one person, the chair, and there is no copy. Millicent's claim that Anne voted for the investment is false: Anne was in Eldoret."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_jillo",
+          "f_gladys_woman",
+          "f_mh_ledger",
+          "f_mh_cutters",
+          "f_millicent_admits_house"
+        ],
+        "concludes": "Anne was alive at 20:05. A woman in the chama uniform left with a heavy bag at 20:40. The missing ledger and the bolt cutters are in Millicent's house, and she admits being there from 20:15. Millicent Akoth killed Anne.",
+        "answers": [
+          "who"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "f_mh_receipts",
+          "case-010:f_order_mvua"
+        ],
+        "concludes": "Upendo's savings went to Till 880 214. On the Pattern File, only one pin shows a payment into that till: the deposit for Rashid's forged REGISTRAR OF TITLES seal.",
+        "answers": [
+          "pin"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_joyce",
+        "blank": "who",
+        "by": [
+          "f_wedding",
+          "f_minutes_keys"
+        ],
+        "why": "Joyce was taking the minutes at a wedding committee in Kayole from 18:00 to 22:00, and she gave up her key in April."
+      },
+      {
+        "word": "w_musau",
+        "blank": "who",
+        "by": [
+          "f_musau_programme"
+        ],
+        "why": "Musau was the MC at a funeral harambee in Kangundo, ninety minutes away, from 17:00 to 21:00."
+      },
+      {
+        "word": "w_florence",
+        "blank": "who",
+        "by": [
+          "f_florence_card"
+        ],
+        "why": "Florence clocked in for a night shift at 18:55 and never left the ward."
+      },
+      {
+        "word": "w_gladys",
+        "blank": "who",
+        "by": [
+          "f_gladys_self"
+        ],
+        "why": "Gladys was at her own gate across the road the whole time; she is the one who saw the woman leave."
+      },
+      {
+        "word": "w_pin_calendar",
+        "blank": "pin",
+        "by": [
+          "case-006:f_calendar_till"
+        ],
+        "why": "The Mvua calendar shows the till number, but no payment into it."
+      },
+      {
+        "word": "w_pin_card",
+        "blank": "pin",
+        "by": [
+          "case-013:f_card_mvua"
+        ],
+        "why": "The business card advertises the till; nobody paid anything into it."
+      },
+      {
+        "word": "w_pin_agreement",
+        "blank": "pin",
+        "by": [
+          "case-017:f_agreement_stamp"
+        ],
+        "why": "The sale agreement carries the forged oval stamp, not the till."
+      },
+      {
+        "word": "w_pin_kivuli",
+        "blank": "pin",
+        "by": [
+          "case-010:f_note_kivuli"
+        ],
+        "why": "The Kivuli card names no till and records no payment."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "April. Anne is away at her son's graduation. Millicent gets the members present to vote the savings into the Mvua Holdings Land Investment Plan, and takes the secretary's key \"for safekeeping\".",
+        "image": null
+      },
+      {
+        "text": "Six payments go to Till 880 214 for \"plot reservations\" in Bahati, Nakuru: KSh 1.14 million. Anne comes home, checks every receipt and finds the plots don't exist.",
+        "image": null
+      },
+      {
+        "text": "20:05. Anne buys milk at the corner. \"I'm going home to count.\" On Thursday she will read the ledger to all 24 members.",
+        "image": null
+      },
+      {
+        "text": "About 20:15. Millicent lets herself in with two keys and bolt cutters. Anne catches her at the box. The lid bar. Then the cutters on the treasurer's padlock.",
+        "image": "loc_house"
+      },
+      {
+        "text": "20:40. A woman in the blue-and-yellow kitenge leaves by the gate with the ledger in a heavy bag. Twenty-four women own that uniform. Only one held two keys.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "Interview room. Millicent never met anyone from Mvua. Letters came signed \"K.\" Cash for the \"plot fees\" was collected by a man they call Fundi, with a bad leg."
+    },
+    {
+      "beat": "Pattern File: three new pins. The six Mvua receipts (\"Bahati block, Nakuru\"), the \"K.\" letter, and Millicent's description of Fundi. The receipts are the first pointer towards Nakuru."
+    },
+    {
+      "beat": "Halima, by text: \"Drink something. That one was heavy.\""
+    },
+    {
+      "beat": "Collectible: a photocopied page of the Upendo ledger, the members' names in Anne's handwriting, sent to Amani after the payout is restored. It goes in a frame on the desk."
+    }
+  ],
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_box",
+        "line": "Turn the box. Look at each padlock. Two were opened one way, one another."
+      },
+      "tier2": {
+        "facts": [
+          "f_box_keys",
+          "f_minutes_keys"
+        ],
+        "line": "Two keys, used. Now read the April minutes: who has been holding two keys since then?"
+      }
+    },
+    "g_spine": {
+      "tier1": {
+        "point": "ev_millicent_house",
+        "line": "Read the receipts from her house. Then go to the Pattern File."
+      },
+      "tier2": {
+        "facts": [
+          "f_mh_receipts",
+          "case-010:f_order_mvua"
+        ],
+        "line": "Several pins show the till. Only one shows money going into it."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "chama",
+      "def": "Savings group whose members pool money and lend to each other."
+    },
+    {
+      "term": "kitenge",
+      "def": "Bright printed cloth; chama members often wear matching kitenge."
+    },
+    {
+      "term": "harambee",
+      "def": "A community fundraiser; \"let's all pull together\"."
+    },
+    {
+      "term": "ploti",
+      "def": "A plot of land."
+    },
+    {
+      "term": "mweka hazina",
+      "def": "Treasurer."
+    },
+    {
+      "term": "mwenyekiti",
+      "def": "Chairperson."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    },
+    {
+      "term": "fundi",
+      "def": "Craftsman, mechanic, skilled tradesman. Here, a nickname."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address or name a woman."
+    },
+    {
+      "term": "kivuli",
+      "def": "Shadow."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "patternFileBlank",
+      "lockbox3D"
+    ],
+    "beatNotes": "The Pattern File as evidence: the first charge-sheet blank filled by dragging a pin from the Pattern File, not a word from this case. Also the lockbox 3D inspection: turn the box and look at each padlock in turn."
+  }
+}

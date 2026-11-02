@@ -1,0 +1,2466 @@
+{
+  "meta": {
+    "id": "case-065",
+    "number": 65,
+    "region": "mt-kenya",
+    "regionNumber": 7,
+    "title": "Index Number",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 36,
+    "date": "Friday 8 May",
+    "folderTab": "CHUKA"
+  },
+  "pattern": {
+    "crimePattern": "a mother who bought her son a fake school certificate kills the HR manager who found out and was about to report it",
+    "noRealCaseRetold": true,
+    "notes": "Fictional hospital staff and exam candidates. The certificate's flaw (an index number belonging to someone else) is shown; how such certificates are made is never described. The mother is written with sympathy.",
+    "tags": [
+      "blunt-force",
+      "protecting",
+      "document-fraud",
+      "two-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where",
+      "forgery"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 5,
+    "redHerrings": 2,
+    "liars": 2,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "forgery"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 18/08/05",
+    "date": "Friday 8 May",
+    "time": "22:45",
+    "reportedBy": "Neighbour, Chuka",
+    "text": "A neighbour reports a woman found dead at the gate of her home in Chuka at 22:30, struck on the head. Irene Kagwiria (41), HR manager at the county hospital.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_irene",
+    "nodes": [
+      "loc_irene",
+      "loc_hospital",
+      "loc_philomena"
+    ],
+    "edges": [
+      {
+        "a": "loc_irene",
+        "b": "loc_hospital",
+        "minutes": 5,
+        "by": "road"
+      },
+      {
+        "a": "loc_irene",
+        "b": "loc_philomena",
+        "minutes": 10,
+        "by": "road"
+      },
+      {
+        "a": "loc_hospital",
+        "b": "loc_philomena",
+        "minutes": 10,
+        "by": "road"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_irene",
+      "role": "victim",
+      "name": "Irene Kagwiria",
+      "age": 41,
+      "occupation": "HR manager, Chuka county hospital",
+      "bio": "Checks every new hire with the exam council. Kind, people say, and impossible to move.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_gate",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Meru woman, early 40s, a navy work suit, a hospital lanyard, short relaxed hair, a kind, firm face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_philomena",
+      "role": "suspect",
+      "name": "Philomena Ogola",
+      "age": 63,
+      "occupation": "Retired primary-school teacher",
+      "bio": "Taught in Chuka for thirty years. Spent her pension on her son's schooling.",
+      "community": "Luo",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_melvin_text"
+      },
+      "at": "loc_philomena",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo woman, early 60s, a church headscarf and a long cardigan, reading glasses on a chain, a dignified, exhausted face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_melvin",
+      "role": "suspect",
+      "name": "Melvin Ogola",
+      "age": 24,
+      "occupation": "Lab assistant, Chuka county hospital (new contract)",
+      "bio": "Hired in March on a KCSE certificate.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_verification"
+      },
+      "at": "loc_hospital",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, mid 20s, a white lab coat over a T-shirt, a frightened, boyish face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kaimenyi",
+      "role": "suspect",
+      "name": "Kaimenyi Mutethia",
+      "age": 39,
+      "occupation": "Procurement officer, Chuka county hospital",
+      "redHerring": true,
+      "bio": "Irene flagged one of his tenders in March.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_tender"
+      },
+      "at": "plc_bar",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Meru man, late 30s, an open-necked shirt and a blazer, a phone in each hand, a wary, practised smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_riungu",
+      "role": "suspect",
+      "name": "Riungu Kirema",
+      "age": 44,
+      "occupation": "Irene's ex-husband",
+      "redHerring": true,
+      "bio": "In a custody dispute with Irene over their two daughters.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_custody"
+      },
+      "at": "plc_merohotel",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Meru man, mid 40s, a hotel night-manager's jacket, a tired, defensive face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kalekye",
+      "role": "witness",
+      "name": "Kalekye Muli",
+      "age": 25,
+      "occupation": "Teacher, Kitui",
+      "statementOnly": true,
+      "bio": "A young teacher in Kitui. Her index number is on Melvin's certificate.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_kitui",
+      "image": null
+    },
+    {
+      "id": "p_kawira",
+      "role": "witness",
+      "name": "Kawira Nkonge",
+      "age": 58,
+      "occupation": "Irene's neighbour",
+      "statementOnly": true,
+      "bio": "Her veranda looks over Irene's gate.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_irene",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_gate",
+      "name": "Irene's gate",
+      "within": "loc_irene"
+    },
+    {
+      "id": "plc_hr",
+      "name": "The hospital HR office",
+      "within": "loc_hospital"
+    },
+    {
+      "id": "plc_lab",
+      "name": "The hospital lab",
+      "within": "loc_hospital"
+    },
+    {
+      "id": "plc_bar",
+      "name": "A Chuka bar"
+    },
+    {
+      "id": "plc_church",
+      "name": "The church"
+    },
+    {
+      "id": "plc_merohotel",
+      "name": "A Meru hotel"
+    },
+    {
+      "id": "plc_kitui",
+      "name": "A school in Kitui"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_irene",
+      "name": "Irene's home, Chuka",
+      "kind": "scene",
+      "description": "A stone-walled garden with a small gate on a quiet road. A gap in the top row of the wall. Irene's work bag lies inside the gate where she dropped it.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The gate",
+          "pos": [
+            46,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Irene lies just inside her gate."
+        },
+        {
+          "id": "hs_wall",
+          "label": "The wall",
+          "pos": [
+            30,
+            30
+          ],
+          "yields": "ev_wall",
+          "text": "A gap in the top row of the garden wall."
+        },
+        {
+          "id": "hs_bag",
+          "label": "Work bag",
+          "pos": [
+            58,
+            66
+          ],
+          "yields": "ev_verification",
+          "text": "Her work bag. A letter from the exam council, and a memo."
+        },
+        {
+          "id": "hs_tender",
+          "label": "A file in the bag",
+          "pos": [
+            62,
+            70
+          ],
+          "yields": "ev_tender",
+          "text": "A tender file with her sticky notes."
+        },
+        {
+          "id": "hs_custody",
+          "label": "An envelope",
+          "pos": [
+            66,
+            62
+          ],
+          "yields": "ev_custody",
+          "text": "A court envelope: a custody order."
+        },
+        {
+          "id": "hs_neighbour",
+          "label": "The neighbour",
+          "pos": [
+            14,
+            44
+          ],
+          "yields": "ev_neighbour",
+          "text": "Kawira Nkonge on her veranda, still in her dressing gown."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a stone-walled garden gate on a quiet road in Chuka at night, a gap in the top row of the wall, a work bag on the ground inside the gate, no people in focus"
+      }
+    },
+    {
+      "id": "loc_hospital",
+      "name": "Chuka county hospital",
+      "kind": "location",
+      "description": "The HR office: files of new staff in a cabinet. A phone on the desk.",
+      "unlock": {
+        "fact": "f_verification"
+      },
+      "hotspots": [
+        {
+          "id": "hs_cert",
+          "label": "HR file: Melvin Ogola",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_cert",
+          "text": "Melvin's KCSE certificate copy."
+        },
+        {
+          "id": "hs_gen",
+          "label": "HR file: another employee",
+          "pos": [
+            56,
+            44
+          ],
+          "yields": "ev_genuine_kcse",
+          "text": "A genuine certificate of the same year."
+        },
+        {
+          "id": "hs_appt",
+          "label": "Appointment letter",
+          "pos": [
+            44,
+            54
+          ],
+          "yields": "ev_appointment",
+          "text": "Melvin's appointment letter."
+        },
+        {
+          "id": "hs_roster",
+          "label": "Lab roster",
+          "pos": [
+            70,
+            50
+          ],
+          "yields": "ev_roster",
+          "text": "The lab's duty roster."
+        },
+        {
+          "id": "hs_call",
+          "label": "Phone",
+          "pos": [
+            80,
+            40
+          ],
+          "yields": "ev_kalekye",
+          "text": "The phone. A Kitui number on the verification letter."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a hospital HR office in a Kenyan county town, staff files in a grey cabinet, a desk phone, a window onto a car park"
+      }
+    },
+    {
+      "id": "loc_philomena",
+      "name": "Philomena's house",
+      "kind": "location",
+      "description": "A small rented house with a vegetable garden, a cross on the wall, and a washing line.",
+      "unlock": {
+        "fact": "f_rec_ph"
+      },
+      "hotspots": [
+        {
+          "id": "hs_line",
+          "label": "Washing line",
+          "pos": [
+            40,
+            30
+          ],
+          "yields": "ev_ph_home",
+          "text": "The washing line and the kitchen drawer."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small rented house with a vegetable garden in Chuka, a washing line with a headscarf hanging damp, a cross on the wall inside"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The gate",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. One blow to the back of the head. A loose stone from the wall's top row in the hedge, blood on it. Her handbag still on her arm."
+      },
+      "facts": [
+        "f_body",
+        "f_stone",
+        "f_handbag"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a rough grey stone lying in a hedge beside a garden gate at night, no body visible"
+      }
+    },
+    {
+      "id": "ev_wall",
+      "type": "physical",
+      "title": "The garden wall",
+      "render": "object",
+      "body": {
+        "label": "A gap in the top row where a stone came loose."
+      },
+      "facts": [
+        "f_wall"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_verification",
+      "type": "document",
+      "title": "Exam-council verification and memo",
+      "render": "letter",
+      "body": {
+        "reply": "Index number on M. Ogola's certificate belongs to KALEKYE MULI, KITUI.",
+        "memo": "Unsent: \"Recommend termination and report to police, Monday.\""
+      },
+      "facts": [
+        "f_verification",
+        "f_memo"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "verification letter"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tender",
+      "type": "document",
+      "title": "Kaimenyi's tender file",
+      "render": "form",
+      "body": {
+        "text": "A tender flagged by Irene in March: \"Three quotes, same handwriting.\" Referred to the audit committee."
+      },
+      "facts": [
+        "f_tender"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "tender file"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_custody",
+      "type": "document",
+      "title": "Custody order",
+      "render": "form",
+      "body": {
+        "text": "Interim custody to the mother; hearing on Monday. Riungu Kirema, respondent."
+      },
+      "facts": [
+        "f_custody"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "custody order"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_neighbour",
+      "type": "witness",
+      "title": "Statement: Kawira Nkonge",
+      "render": "statement",
+      "body": {
+        "speaker": "p_kawira"
+      },
+      "facts": [
+        "f_neighbour",
+        "f_rumour",
+        "f_no_land"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_cert",
+      "type": "document",
+      "title": "Melvin's KCSE certificate",
+      "render": "form",
+      "body": {
+        "text": "KCSE, Melvin Ogola. An index number, a school, grades, the council's hologram strip."
+      },
+      "facts": [
+        "f_cert"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": false,
+        "kind": "KCSE certificate"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a photocopy of a Kenyan secondary-school exam certificate with an index number and a hologram strip, in an HR file"
+      }
+    },
+    {
+      "id": "ev_genuine_kcse",
+      "type": "document",
+      "title": "A genuine KCSE certificate",
+      "render": "form",
+      "body": {
+        "text": "Another employee's certificate of the same year: security fibres in the paper, a foil hologram."
+      },
+      "facts": [
+        "f_genuine"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "KCSE certificate"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_appointment",
+      "type": "document",
+      "title": "Melvin's appointment letter",
+      "render": "letter",
+      "body": {
+        "text": "Contract lab assistant from 2 March, signed by the hospital administrator. \"Subject to verification of certificates.\""
+      },
+      "facts": [
+        "f_appointment",
+        "f_no_rejects"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "appointment letter"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_roster",
+      "type": "document",
+      "title": "Lab duty roster",
+      "render": "logBook",
+      "body": {
+        "text": "M. Ogola, Friday 18:00–24:00. Two colleagues signed beside him."
+      },
+      "facts": [
+        "f_mel_duty"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kalekye",
+      "type": "witness",
+      "title": "Phone call: Kalekye Muli, Kitui",
+      "render": "statement",
+      "body": {
+        "speaker": "p_kalekye",
+        "photo": "A photo of her real certificate: the same index number, her name, different grades."
+      },
+      "facts": [
+        "f_kalekye",
+        "f_kalekye_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_melvin_text",
+      "type": "phone",
+      "title": "Melvin's text to his mother",
+      "render": "manifest",
+      "body": {
+        "text": "Friday 17:10, to \"Mum\": \"She knows. She's reporting on Monday. I'm finished.\""
+      },
+      "facts": [
+        "f_melvin_text"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Philomena Ogola's line",
+      "render": "manifest",
+      "body": {
+        "masts": "Irene's estate zone, Friday 20:15–20:55."
+      },
+      "facts": [
+        "f_rec_ph"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_melvin_text",
+          "f_neighbour"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_ph_home",
+      "type": "physical",
+      "title": "Philomena's house",
+      "render": "object",
+      "body": {
+        "line": "A church headscarf, washed, still damp on the line.",
+        "drawer": "A note: \"KCSE — 30,000 — paid\", with a Meru phone number."
+      },
+      "facts": [
+        "f_scarf",
+        "f_note"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_ph",
+          "f_neighbour"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a church headscarf hanging damp on a washing line at dawn, a small handwritten note on a kitchen table"
+      }
+    },
+    {
+      "id": "ev_kaimenyi",
+      "type": "physical",
+      "title": "Bar tab and CCTV still",
+      "render": "receipt",
+      "body": {
+        "text": "K. Mutethia, Friday 19:00–23:00; a CCTV still at the counter at 20:41."
+      },
+      "facts": [
+        "f_kaimenyi"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_riungu",
+      "type": "document",
+      "title": "Riungu's work roster",
+      "render": "logBook",
+      "body": {
+        "text": "Night manager, Meru hotel, Friday 18:00 to Saturday 06:00. His sister confirms."
+      },
+      "facts": [
+        "f_riungu"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_tod",
+        "f_aut_noother"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_compare",
+      "type": "forensic",
+      "title": "Comparison view: certificate vs genuine",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_cmp_index",
+        "f_cmp_signed",
+        "f_cmp_print",
+        "f_cmp_school",
+        "f_cmp_fields"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_cert",
+          "ev_genuine_kcse",
+          "ev_kalekye"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_fibres",
+      "type": "forensic",
+      "title": "Lab: fibres (stone vs headscarf)",
+      "render": "labReport",
+      "body": {
+        "test": "fibres"
+      },
+      "facts": [
+        "f_fibres"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "fibres",
+        "hours": 12,
+        "needs": [
+          "ev_body",
+          "ev_ph_home"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_docexam",
+      "type": "forensic",
+      "title": "Questioned Documents Lab: the certificate",
+      "render": "labReport",
+      "body": {
+        "test": "document"
+      },
+      "facts": [
+        "f_docexam"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "document",
+        "hours": 10,
+        "needs": [
+          "ev_cert",
+          "ev_genuine_kcse"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Irene Kagwiria was found dead at the gate of her home in Chuka at 22:30, struck on the head.",
+      "kind": "true",
+      "about": [
+        "p_irene",
+        "loc_irene"
+      ],
+      "at": {
+        "from": "22:30"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "She lay just inside her gate with one blow to the back of the head.",
+      "kind": "true",
+      "about": [
+        "p_irene",
+        "plc_gate"
+      ]
+    },
+    {
+      "id": "f_stone",
+      "text": "A loose stone from the garden wall's top row lies in the hedge, with blood on it.",
+      "kind": "true",
+      "about": [
+        "plc_gate"
+      ]
+    },
+    {
+      "id": "f_handbag",
+      "text": "Her handbag is still on her arm, untouched.",
+      "kind": "true",
+      "about": [
+        "p_irene"
+      ]
+    },
+    {
+      "id": "f_wall",
+      "text": "There is a gap in the top row of the garden wall where the stone came from.",
+      "kind": "true",
+      "about": [
+        "plc_gate"
+      ]
+    },
+    {
+      "id": "f_verification",
+      "text": "Exam-council reply: the index number on Melvin Ogola's certificate belongs to Kalekye Muli, Kitui.",
+      "kind": "true",
+      "about": [
+        "p_irene",
+        "p_melvin"
+      ]
+    },
+    {
+      "id": "f_memo",
+      "text": "Irene's unsent memo: \"Recommend termination and report to police, Monday.\"",
+      "kind": "true",
+      "about": [
+        "p_irene",
+        "p_melvin"
+      ]
+    },
+    {
+      "id": "f_tender",
+      "text": "Kaimenyi's tender file: flagged by Irene in March, \"three quotes, same handwriting\", referred to audit.",
+      "kind": "true",
+      "about": [
+        "p_irene",
+        "p_kaimenyi"
+      ]
+    },
+    {
+      "id": "f_custody",
+      "text": "Custody order: interim custody to Irene; hearing on Monday; Riungu Kirema, respondent.",
+      "kind": "true",
+      "about": [
+        "p_irene",
+        "p_riungu"
+      ]
+    },
+    {
+      "id": "f_neighbour",
+      "text": "Kawira: at about half past eight an older woman in a church headscarf stood at the gate, crying. She heard Irene say, \"I'm sorry, Mama, I can't.\"",
+      "kind": "true",
+      "about": [
+        "p_kawira",
+        "p_irene"
+      ],
+      "at": {
+        "from": "20:30"
+      }
+    },
+    {
+      "id": "f_rumour",
+      "text": "Kawira: \"People are saying Kaimenyi's car passed here at nine.\"",
+      "kind": "true",
+      "about": [
+        "p_kawira",
+        "p_kaimenyi"
+      ],
+      "at": {
+        "from": "21:00"
+      }
+    },
+    {
+      "id": "f_no_land",
+      "text": "Kawira: there was never a land quarrel on this road; Irene's plot is fenced and surveyed.",
+      "kind": "true",
+      "about": [
+        "p_kawira"
+      ]
+    },
+    {
+      "id": "f_cert",
+      "text": "Melvin's KCSE certificate: an index number, a school, grades and a hologram strip.",
+      "kind": "true",
+      "about": [
+        "p_melvin"
+      ]
+    },
+    {
+      "id": "f_genuine",
+      "text": "A genuine certificate of the same year: security fibres in the paper and a foil hologram.",
+      "kind": "true",
+      "about": [
+        "loc_hospital"
+      ]
+    },
+    {
+      "id": "f_appointment",
+      "text": "Melvin's appointment letter: contract lab assistant from 2 March, \"subject to verification of certificates\".",
+      "kind": "true",
+      "about": [
+        "p_melvin"
+      ]
+    },
+    {
+      "id": "f_no_rejects",
+      "text": "The appointment file: nobody was turned down for a post this year; every rejected applicant was told in writing in January.",
+      "kind": "true",
+      "about": [
+        "loc_hospital"
+      ]
+    },
+    {
+      "id": "f_mel_duty",
+      "text": "Lab roster: Melvin on duty Friday 18:00–24:00, two colleagues signed beside him.",
+      "kind": "true",
+      "about": [
+        "p_melvin"
+      ],
+      "where": {
+        "person": "p_melvin",
+        "place": "plc_lab",
+        "from": "18:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_kalekye",
+      "text": "Kalekye Muli, by phone: \"That's my number. I'm a teacher. I've never been to Chuka.\" Her photo: the same index number, her name, different grades.",
+      "kind": "true",
+      "about": [
+        "p_kalekye",
+        "p_melvin"
+      ]
+    },
+    {
+      "id": "f_kalekye_self",
+      "text": "Kalekye's school: she supervised evening prep in Kitui, 19:00–21:00.",
+      "kind": "true",
+      "about": [
+        "p_kalekye"
+      ],
+      "where": {
+        "person": "p_kalekye",
+        "place": "plc_kitui",
+        "from": "19:00",
+        "to": "21:00"
+      }
+    },
+    {
+      "id": "f_melvin_text",
+      "text": "Melvin to \"Mum\", Friday 17:10: \"She knows. She's reporting on Monday. I'm finished.\"",
+      "kind": "true",
+      "about": [
+        "p_melvin",
+        "p_philomena"
+      ],
+      "at": {
+        "from": "17:10"
+      }
+    },
+    {
+      "id": "f_rec_ph",
+      "text": "Records, Philomena's line: Irene's estate zone, Friday 20:15–20:55.",
+      "kind": "true",
+      "about": [
+        "p_philomena"
+      ],
+      "at": {
+        "from": "20:15",
+        "to": "20:55"
+      }
+    },
+    {
+      "id": "f_scarf",
+      "text": "On Philomena's line: a church headscarf, washed, still damp.",
+      "kind": "true",
+      "about": [
+        "p_philomena"
+      ]
+    },
+    {
+      "id": "f_note",
+      "text": "In her drawer: \"KCSE — 30,000 — paid\", with a Meru phone number.",
+      "kind": "true",
+      "about": [
+        "p_philomena"
+      ]
+    },
+    {
+      "id": "f_kaimenyi",
+      "text": "Bar tab and CCTV: Kaimenyi in a Chuka bar 19:00–23:00, on camera at the counter at 20:41.",
+      "kind": "true",
+      "about": [
+        "p_kaimenyi"
+      ],
+      "where": {
+        "person": "p_kaimenyi",
+        "place": "plc_bar",
+        "from": "19:00",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_riungu",
+      "text": "Riungu on night duty at a Meru hotel, Friday 18:00 to Saturday 06:00.",
+      "kind": "true",
+      "about": [
+        "p_riungu"
+      ],
+      "where": {
+        "person": "p_riungu",
+        "place": "plc_merohotel",
+        "from": "18:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Autopsy: one blow to the back of the head from a rough, heavy stone.",
+      "kind": "true",
+      "about": [
+        "p_irene"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 20:30 and 21:15.",
+      "kind": "true",
+      "about": [
+        "p_irene"
+      ],
+      "at": {
+        "from": "20:30",
+        "to": "21:15"
+      }
+    },
+    {
+      "id": "f_aut_noother",
+      "text": "Autopsy: no vehicle injuries, no cuts, no fall injuries.",
+      "kind": "true",
+      "about": [
+        "p_irene"
+      ]
+    },
+    {
+      "id": "f_cmp_index",
+      "text": "Comparison view: Kalekye's photo beside Melvin's certificate. The same index number; a different name and different grades.",
+      "kind": "true",
+      "about": [
+        "p_melvin",
+        "p_kalekye"
+      ]
+    },
+    {
+      "id": "f_cmp_signed",
+      "text": "A KCSE certificate is signed by the exam council's chief executive, who was in office that year.",
+      "kind": "true",
+      "about": [
+        "loc_hospital"
+      ]
+    },
+    {
+      "id": "f_cmp_print",
+      "text": "Every KCSE certificate is printed; under the magnifier the genuine one shows the same print dots. Dots tell nothing here.",
+      "kind": "true",
+      "about": [
+        "loc_hospital"
+      ]
+    },
+    {
+      "id": "f_cmp_school",
+      "text": "The school's name on Melvin's certificate is real and spelled correctly: the school he attended.",
+      "kind": "true",
+      "about": [
+        "p_melvin"
+      ]
+    },
+    {
+      "id": "f_cmp_fields",
+      "text": "A KCSE certificate has no witnesses and no vehicle numbers.",
+      "kind": "true",
+      "about": [
+        "loc_hospital"
+      ]
+    },
+    {
+      "id": "f_fibres",
+      "text": "Lab: fibres caught on the stone's rough edge match Philomena's church headscarf.",
+      "kind": "true",
+      "about": [
+        "p_philomena"
+      ]
+    },
+    {
+      "id": "f_docexam",
+      "text": "Wilfrida Ayugi: forged. The paper lacks the security fibres; the hologram strip is a sticker.",
+      "kind": "true",
+      "about": [
+        "p_melvin"
+      ]
+    },
+    {
+      "id": "f_ph_praying",
+      "text": "Philomena: \"I was at home all Friday evening, praying.\"",
+      "kind": "lie",
+      "about": [
+        "p_philomena"
+      ]
+    },
+    {
+      "id": "f_ph_reveal",
+      "text": "Philomena: she went to Irene's gate to beg. \"I'm his mother. I knelt on the road. She said no.\"",
+      "kind": "true",
+      "about": [
+        "p_philomena",
+        "p_irene"
+      ],
+      "where": {
+        "person": "p_philomena",
+        "place": "plc_gate",
+        "from": "20:30",
+        "to": "20:45"
+      }
+    },
+    {
+      "id": "f_ph_stone",
+      "text": "Philomena: \"I never touched a stone. I walked away crying.\"",
+      "kind": "lie",
+      "about": [
+        "p_philomena"
+      ]
+    },
+    {
+      "id": "f_mel_mine",
+      "text": "Melvin: \"The certificate is mine. I sat that exam.\"",
+      "kind": "lie",
+      "about": [
+        "p_melvin"
+      ]
+    },
+    {
+      "id": "f_mel_reveal",
+      "text": "Melvin: he failed. His mother bought the certificate. He told her Irene had found out. \"I didn't know she'd go there.\"",
+      "kind": "true",
+      "about": [
+        "p_melvin",
+        "p_philomena"
+      ]
+    },
+    {
+      "id": "f_kai_claim",
+      "text": "Kaimenyi: \"I was at the bar.\"",
+      "kind": "claim",
+      "about": [
+        "p_kaimenyi"
+      ]
+    },
+    {
+      "id": "f_kai_honest",
+      "text": "Kaimenyi: \"She flagged my tender. She flagged everybody. She was honest. That's all.\"",
+      "kind": "true",
+      "about": [
+        "p_kaimenyi",
+        "p_irene"
+      ]
+    },
+    {
+      "id": "f_riu_claim",
+      "text": "Riungu: \"I was at work in Meru.\"",
+      "kind": "claim",
+      "about": [
+        "p_riungu"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_philomena",
+      "stance": "cooperative",
+      "intro": "Philomena receives you in her best chair, her Bible on her knee. \"I was at home all Friday evening, praying.\"",
+      "claims": [
+        "f_ph_praying"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_ph_stone",
+          "after": "f_ph_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_melvin",
+      "stance": "cooperative",
+      "intro": "Melvin keeps his lab coat on, as if it might help. \"The certificate is mine. I sat that exam.\"",
+      "claims": [
+        "f_mel_mine"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_kaimenyi",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_verification"
+      ],
+      "intro": "Kaimenyi meets you in the car park with both phones face down. \"I was at the bar.\"",
+      "claims": [
+        "f_kai_claim"
+      ],
+      "yields": [
+        "ev_kaimenyi"
+      ],
+      "topics": [
+        {
+          "about": "ev_verification",
+          "reply": "\"She flagged my tender. She flagged everybody. She was honest. That's all.\"",
+          "reveals": [
+            "f_kai_honest"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_riungu",
+      "stance": "cooperative",
+      "intro": "Riungu answers from the hotel reception desk in Meru. \"I was at work in Meru. The girls are with my sister.\"",
+      "claims": [
+        "f_riu_claim"
+      ],
+      "yields": [
+        "ev_riungu"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_mel",
+      "claim": "f_mel_mine",
+      "brokenBy": [
+        "f_verification",
+        "f_kalekye"
+      ],
+      "reveals": [
+        "f_mel_reveal",
+        "ev_melvin_text"
+      ],
+      "reaction": "\"I failed. Mum bought it. I told her Irene found out. I didn't know she'd go there.\" He holds out his phone.",
+      "mark": "explains"
+    },
+    {
+      "id": "c_ph",
+      "claim": "f_ph_praying",
+      "brokenBy": [
+        "f_rec_ph",
+        "f_neighbour"
+      ],
+      "reveals": [
+        "f_ph_reveal"
+      ],
+      "reaction": "She closes the Bible. \"I went to beg her. I'm his mother. I knelt on the road. She said no.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_ph_stone",
+      "claim": "f_ph_stone",
+      "brokenBy": [
+        "f_fibres"
+      ],
+      "reveals": [],
+      "reaction": "Philomena reads the fibre result twice. \"Thirty years I taught children to tell the truth,\" she says, and stops.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_philomena",
+      "text": "Philomena Ogola",
+      "category": "person",
+      "ref": "p_philomena",
+      "unlock": {
+        "anyOf": [
+          "f_melvin_text"
+        ]
+      }
+    },
+    {
+      "id": "w_melvin",
+      "text": "Melvin Ogola",
+      "category": "person",
+      "ref": "p_melvin",
+      "unlock": {
+        "anyOf": [
+          "f_verification"
+        ]
+      }
+    },
+    {
+      "id": "w_kaimenyi",
+      "text": "Kaimenyi Mutethia",
+      "category": "person",
+      "ref": "p_kaimenyi",
+      "unlock": {
+        "anyOf": [
+          "f_tender"
+        ]
+      }
+    },
+    {
+      "id": "w_riungu",
+      "text": "Riungu Kirema",
+      "category": "person",
+      "ref": "p_riungu",
+      "unlock": {
+        "anyOf": [
+          "f_custody"
+        ]
+      }
+    },
+    {
+      "id": "w_kalekye",
+      "text": "Kalekye Muli",
+      "category": "person",
+      "ref": "p_kalekye",
+      "unlock": {
+        "anyOf": [
+          "f_verification"
+        ]
+      }
+    },
+    {
+      "id": "pl_gate",
+      "text": "Irene's gate",
+      "category": "place",
+      "ref": "plc_gate",
+      "unlock": {
+        "anyOf": [
+          "f_stone"
+        ]
+      }
+    },
+    {
+      "id": "pl_hr",
+      "text": "the hospital HR office",
+      "category": "place",
+      "ref": "plc_hr",
+      "unlock": {
+        "anyOf": [
+          "f_verification"
+        ]
+      }
+    },
+    {
+      "id": "pl_phhouse",
+      "text": "Philomena's house",
+      "category": "place",
+      "ref": "loc_philomena",
+      "unlock": {
+        "anyOf": [
+          "f_melvin_text"
+        ]
+      }
+    },
+    {
+      "id": "pl_bar",
+      "text": "the Chuka bar",
+      "category": "place",
+      "ref": "plc_bar",
+      "unlock": {
+        "anyOf": [
+          "f_rumour"
+        ]
+      }
+    },
+    {
+      "id": "pl_church",
+      "text": "the church",
+      "category": "place",
+      "ref": "plc_church",
+      "unlock": {
+        "anyOf": [
+          "f_neighbour"
+        ]
+      }
+    },
+    {
+      "id": "h_stone",
+      "text": "striking her with a stone from the garden wall",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_car",
+      "text": "hitting her with a car at the gate",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_fall",
+      "text": "a fall onto the step",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_rungu",
+      "text": "striking her with a rungu",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_panga",
+      "text": "a robbery with a panga",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_cert",
+      "text": "to stop Irene reporting her son's forged KCSE certificate",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_memo"
+        ]
+      }
+    },
+    {
+      "id": "m_tender",
+      "text": "a flagged tender",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_tender"
+        ]
+      }
+    },
+    {
+      "id": "m_custody",
+      "text": "a custody dispute",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_custody"
+        ]
+      }
+    },
+    {
+      "id": "m_job",
+      "text": "a job rejection",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_land",
+      "text": "a land quarrel with a neighbour",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "d_cert",
+      "text": "Melvin's KCSE certificate",
+      "category": "document",
+      "ref": "ev_cert",
+      "unlock": {
+        "anyOf": [
+          "f_cert"
+        ]
+      }
+    },
+    {
+      "id": "d_verif",
+      "text": "The exam-council verification letter",
+      "category": "document",
+      "ref": "ev_verification",
+      "unlock": {
+        "anyOf": [
+          "f_verification"
+        ]
+      }
+    },
+    {
+      "id": "d_tender",
+      "text": "Kaimenyi's tender file",
+      "category": "document",
+      "ref": "ev_tender",
+      "unlock": {
+        "anyOf": [
+          "f_tender"
+        ]
+      }
+    },
+    {
+      "id": "d_appt",
+      "text": "Melvin's appointment letter",
+      "category": "document",
+      "ref": "ev_appointment",
+      "unlock": {
+        "anyOf": [
+          "f_appointment"
+        ]
+      }
+    },
+    {
+      "id": "d_custody",
+      "text": "The custody order",
+      "category": "document",
+      "ref": "ev_custody",
+      "unlock": {
+        "anyOf": [
+          "f_custody"
+        ]
+      }
+    },
+    {
+      "id": "t_index",
+      "text": "its index number belongs to another candidate",
+      "category": "tell",
+      "by": [
+        "f_cmp_index",
+        "f_kalekye",
+        "f_verification"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_verification"
+        ]
+      }
+    },
+    {
+      "id": "t_registrar",
+      "text": "a registrar who had retired",
+      "category": "tell",
+      "by": [
+        "f_cmp_signed"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_cert"
+        ]
+      }
+    },
+    {
+      "id": "t_dots",
+      "text": "printer dots instead of ink",
+      "category": "tell",
+      "by": [
+        "f_cmp_print"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_cert"
+        ]
+      }
+    },
+    {
+      "id": "t_deadwit",
+      "text": "a witness who was dead",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_cert"
+        ]
+      }
+    },
+    {
+      "id": "t_chassis",
+      "text": "a chassis number that doesn't match",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_cert"
+        ]
+      }
+    },
+    {
+      "id": "t_school",
+      "text": "the wrong school's name",
+      "category": "tell",
+      "by": [
+        "f_cmp_school"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_cert"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. {document} was forged, as shown by {tell}.",
+    "fixed": {
+      "victim": "Irene Kagwiria"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_thu",
+                  "label": "Thursday",
+                  "from": null,
+                  "to": null,
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_fripm",
+                  "label": "Friday afternoon",
+                  "from": "14:00",
+                  "to": "17:00",
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_1710",
+                  "label": "Friday 17:10",
+                  "from": "17:10",
+                  "to": "17:10",
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_2030",
+                  "label": "Friday 20:30",
+                  "from": "20:30",
+                  "to": "20:30",
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Friday 20:30–20:55",
+                  "from": "20:30",
+                  "to": "20:55",
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_2100",
+                  "label": "Friday 21:00",
+                  "from": "21:00",
+                  "to": "21:00",
+                  "day": "Fri"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_found",
+                  "text": "Irene finds the index number is someone else's",
+                  "slot": "sl_thu",
+                  "by": [
+                    "f_verification"
+                  ],
+                  "why": "The exam council's reply came on Thursday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_verification"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_told",
+                  "text": "Irene tells Melvin",
+                  "slot": "sl_fripm",
+                  "by": [
+                    "f_mel_reveal",
+                    "f_melvin_text"
+                  ],
+                  "why": "He texted his mother at 17:10 that she knew.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_mel_reveal"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_text",
+                  "text": "Melvin texts his mother",
+                  "slot": "sl_1710",
+                  "by": [
+                    "f_melvin_text"
+                  ],
+                  "why": "His phone: 17:10.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_melvin_text"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_gate",
+                  "text": "Philomena at the gate",
+                  "slot": "sl_2030",
+                  "by": [
+                    "f_neighbour",
+                    "f_rec_ph"
+                  ],
+                  "why": "Kawira: about half past eight.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_neighbour"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Irene is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod",
+                    "f_rec_ph",
+                    "f_ph_reveal"
+                  ],
+                  "why": "After \"I'm sorry, Mama, I can't\" and before Philomena's phone left at 20:55.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_2100",
+                  "by": [
+                    "f_kaimenyi",
+                    "f_rumour"
+                  ],
+                  "why": "21:00 is when \"people say\" Kaimenyi's car passed. He was on a bar's CCTV at 20:41 and stayed until 23:00."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "Thursday a letter, Friday a text, half past eight a mother at the gate. It was over before nine.",
+          "fail": [
+            "Nine o'clock is a rumour. Check the bar's camera.",
+            "When did his mother learn Irene knew?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_gate"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her own gate, the stone from her own wall. Yes.",
+          "fail": [
+            "She left the HR office at five.",
+            "Philomena says she was praying at home. Her phone says otherwise."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_philomena"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her phone at the gate, her headscarf on the stone. That will hold. I'm sorry it does.",
+          "fail": [
+            "Melvin was in the lab with two colleagues.",
+            "Kalekye was supervising prep in Kitui."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_stone"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A stone from the top of her own wall. Yes.",
+          "fail": [
+            "No vehicle injuries.",
+            "Her handbag is still on her arm. Not a robbery."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_cert"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Monday, the police. A mother had one evening.",
+          "fail": [
+            "Riungu was on night duty in Meru.",
+            "Kaimenyi's tender went to audit in March. Old news."
+          ]
+        }
+      },
+      {
+        "id": "g_forgery",
+        "kind": "forgery",
+        "blanks": [
+          {
+            "id": "document",
+            "category": "document",
+            "answer": "d_cert"
+          },
+          {
+            "id": "tell",
+            "category": "tell",
+            "answer": "t_index"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Same number, different life. The index number gave it away.",
+          "fail": [
+            "The verification letter is the council's own. It's what caught the forgery.",
+            "Every KCSE certificate is printed. Look at the number."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_gate",
+      "from": "20:30",
+      "to": "20:55",
+      "note": "Kawira saw Philomena at the gate at about 20:30; her phone left the zone at 20:55. The autopsy allows 20:30–21:15."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_verification",
+          "f_kalekye",
+          "f_cert",
+          "f_cmp_index",
+          "f_docexam",
+          "f_memo"
+        ],
+        "concludes": "Melvin's certificate is forged: its index number is Kalekye's. Irene was reporting it on Monday.",
+        "answers": [
+          "document",
+          "tell"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_mel_mine",
+          "f_mel_reveal",
+          "f_melvin_text"
+        ],
+        "concludes": "His mother bought it, and knew on Friday afternoon that Irene had found out."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_neighbour",
+          "f_rec_ph",
+          "f_ph_praying",
+          "f_ph_reveal"
+        ],
+        "concludes": "Philomena was at the gate at half past eight, begging.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_body",
+          "f_stone",
+          "f_wall",
+          "f_aut_blow",
+          "f_aut_tod"
+        ],
+        "concludes": "Irene was struck at her gate with a stone from the top of her wall."
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_scarf",
+          "f_note",
+          "f_fibres",
+          "f_ph_stone"
+        ],
+        "concludes": "The fibres on the stone are from Philomena's headscarf. Philomena Ogola struck Irene with a stone from the garden wall, to stop her reporting her son's forged certificate.",
+        "answers": [
+          "who",
+          "how",
+          "why",
+          "where"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_hr",
+        "blank": "where",
+        "by": [
+          "f_body",
+          "f_stone"
+        ],
+        "why": "She died at her gate, the stone in her hedge."
+      },
+      {
+        "word": "pl_phhouse",
+        "blank": "where",
+        "by": [
+          "f_body",
+          "f_ph_reveal"
+        ],
+        "why": "Philomena went to Irene, at her gate."
+      },
+      {
+        "word": "pl_bar",
+        "blank": "where",
+        "by": [
+          "f_body",
+          "f_kaimenyi"
+        ],
+        "why": "The bar is Kaimenyi's alibi, not the scene."
+      },
+      {
+        "word": "pl_church",
+        "blank": "where",
+        "by": [
+          "f_body"
+        ],
+        "why": "She died at her gate."
+      },
+      {
+        "word": "w_melvin",
+        "blank": "who",
+        "by": [
+          "f_mel_duty"
+        ],
+        "why": "Melvin was on duty in the lab, 18:00–24:00, with two colleagues."
+      },
+      {
+        "word": "w_kaimenyi",
+        "blank": "who",
+        "by": [
+          "f_kaimenyi"
+        ],
+        "why": "Kaimenyi was in the bar, on camera at 20:41."
+      },
+      {
+        "word": "w_riungu",
+        "blank": "who",
+        "by": [
+          "f_riungu"
+        ],
+        "why": "Riungu was on night duty in Meru."
+      },
+      {
+        "word": "w_kalekye",
+        "blank": "who",
+        "by": [
+          "f_kalekye_self"
+        ],
+        "why": "Kalekye was supervising prep in Kitui."
+      },
+      {
+        "word": "h_car",
+        "blank": "how",
+        "by": [
+          "f_aut_noother"
+        ],
+        "why": "No vehicle injuries."
+      },
+      {
+        "word": "h_fall",
+        "blank": "how",
+        "by": [
+          "f_stone",
+          "f_aut_blow"
+        ],
+        "why": "A bloody stone in the hedge, and a stone-shaped wound."
+      },
+      {
+        "word": "h_rungu",
+        "blank": "how",
+        "by": [
+          "f_aut_blow",
+          "f_stone"
+        ],
+        "why": "A rough stone made the wound, and it is in the hedge."
+      },
+      {
+        "word": "h_panga",
+        "blank": "how",
+        "by": [
+          "f_aut_noother",
+          "f_handbag"
+        ],
+        "why": "No cuts, and her handbag is still on her arm."
+      },
+      {
+        "word": "m_tender",
+        "blank": "why",
+        "by": [
+          "f_kaimenyi",
+          "f_kai_honest"
+        ],
+        "why": "That was Kaimenyi's grievance, and he was in the bar."
+      },
+      {
+        "word": "m_custody",
+        "blank": "why",
+        "by": [
+          "f_riungu"
+        ],
+        "why": "That was Riungu's, and he was at work in Meru."
+      },
+      {
+        "word": "m_job",
+        "blank": "why",
+        "by": [
+          "f_no_rejects"
+        ],
+        "why": "Nobody was turned down for a post this year."
+      },
+      {
+        "word": "m_land",
+        "blank": "why",
+        "by": [
+          "f_no_land"
+        ],
+        "why": "No land quarrel on the road."
+      },
+      {
+        "word": "d_verif",
+        "blank": "document",
+        "by": [
+          "f_verification"
+        ],
+        "why": "The council's own reply. It caught the forgery."
+      },
+      {
+        "word": "d_tender",
+        "blank": "document",
+        "by": [
+          "f_tender"
+        ],
+        "why": "Irene's own flagged file."
+      },
+      {
+        "word": "d_appt",
+        "blank": "document",
+        "by": [
+          "f_appointment"
+        ],
+        "why": "Signed by the administrator, \"subject to verification\"."
+      },
+      {
+        "word": "d_custody",
+        "blank": "document",
+        "by": [
+          "f_custody"
+        ],
+        "why": "A court order."
+      },
+      {
+        "word": "t_registrar",
+        "blank": "tell",
+        "by": [
+          "f_cmp_signed"
+        ],
+        "why": "Signed by the council's chief executive, in office that year."
+      },
+      {
+        "word": "t_dots",
+        "blank": "tell",
+        "by": [
+          "f_cmp_print"
+        ],
+        "why": "Every KCSE certificate is printed."
+      },
+      {
+        "word": "t_deadwit",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "A KCSE certificate has no witnesses."
+      },
+      {
+        "word": "t_chassis",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "No vehicle numbers on a school certificate."
+      },
+      {
+        "word": "t_school",
+        "blank": "tell",
+        "by": [
+          "f_cmp_school"
+        ],
+        "why": "The school's name is real and right."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Melvin fails his KCSE. His mother, who spent her pension on his schooling, pays a man in Meru KSh 30,000 for a certificate. Its index number belongs to a stranger: Kalekye Muli, a teacher in Kitui.",
+        "image": null
+      },
+      {
+        "text": "In March the hospital hires him. On Thursday the exam council tells Irene the number is someone else's. On Friday afternoon she tells Melvin he'll be dismissed and reported on Monday.",
+        "image": null
+      },
+      {
+        "text": "17:10. Melvin texts his mother: \"She knows.\"",
+        "image": null
+      },
+      {
+        "text": "About 20:30, in her church headscarf, Philomena goes to Irene's gate to beg. She kneels on the road. Irene says, \"I'm sorry, Mama, I can't,\" and turns away. Philomena picks up a stone from the top of the garden wall.",
+        "image": "plc_gate"
+      },
+      {
+        "text": "By 20:55 she is gone. She washes her headscarf and hangs it on the line.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Two stamps: records on Philomena and a warrant on her house. Detain her after the search; the fibres (12 h) and the certificate examination (10 h) come back inside her 24 hours.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_irene",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_wall",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_verification",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_tender",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_custody",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_neighbour",
+        "hours": 1
+      },
+      {
+        "do": "travel",
+        "target": "loc_hospital",
+        "hours": 0.25,
+        "from": "loc_irene"
+      },
+      {
+        "do": "visit",
+        "target": "loc_hospital",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_cert",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_genuine_kcse",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_roster",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_kalekye",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_melvin"
+      },
+      {
+        "do": "press",
+        "target": "c_mel"
+      },
+      {
+        "do": "submit",
+        "target": "ev_docexam"
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "travel",
+        "target": "loc_philomena",
+        "hours": 0.25,
+        "from": "loc_hospital"
+      },
+      {
+        "do": "visit",
+        "target": "loc_philomena",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_philomena"
+      },
+      {
+        "do": "press",
+        "target": "c_ph"
+      },
+      {
+        "do": "search",
+        "target": "loc_philomena"
+      },
+      {
+        "do": "detain",
+        "target": "p_philomena"
+      },
+      {
+        "do": "submit",
+        "target": "ev_fibres"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 12
+      },
+      {
+        "do": "press",
+        "target": "c_ph_stone"
+      }
+    ],
+    "totalHours": 31.5
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_melvin_text",
+        "line": "When did his mother know, Amani? He told her himself."
+      },
+      "tier2": {
+        "facts": [
+          "f_melvin_text",
+          "f_neighbour"
+        ],
+        "line": "17:10 a text. 20:30 a woman at the gate."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_wall",
+        "line": "Look at the top of the wall."
+      },
+      "tier2": {
+        "facts": [
+          "f_wall",
+          "f_stone"
+        ],
+        "line": "A gap in the top row, and the stone in the hedge."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_neighbour",
+        "line": "An older woman in a church headscarf. Who calls Irene's \"no\" a death sentence?"
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_ph",
+          "f_fibres"
+        ],
+        "line": "Her phone at the estate, her headscarf on the stone."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_body",
+        "line": "What is lying in the hedge?"
+      },
+      "tier2": {
+        "facts": [
+          "f_stone",
+          "f_aut_blow"
+        ],
+        "line": "A rough stone with blood on it."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_verification",
+        "line": "Read the letter in her bag. Then the memo."
+      },
+      "tier2": {
+        "facts": [
+          "f_verification",
+          "f_memo"
+        ],
+        "line": "Someone else's number, and the police on Monday."
+      }
+    },
+    "g_forgery": {
+      "tier1": {
+        "point": "ev_kalekye",
+        "line": "Call the number on the letter. Ask her to send a photo."
+      },
+      "tier2": {
+        "facts": [
+          "f_cmp_index"
+        ],
+        "line": "Same index number. Different name."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "KCSE",
+      "def": "Kenya Certificate of Secondary Education: the national school-leaving exam."
+    },
+    {
+      "term": "namba ya mtihani",
+      "def": "An exam index number."
+    },
+    {
+      "term": "cheti",
+      "def": "A certificate."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address an older woman."
+    },
+    {
+      "term": "rungu",
+      "def": "A wooden club with a round head."
+    },
+    {
+      "term": "panga",
+      "def": "A machete."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "callAStranger"
+    ],
+    "beatNotes": "Calling a stranger. The desk phone calls a witness outside the region; Kalekye's photo of her real certificate arrives as a picture message beside the forged one. Same number, different life. The Meru number on Philomena's note goes to the Pattern File as a lead for the forgery market (not a spine thread)."
+  }
+}

@@ -1,0 +1,2639 @@
+{
+  "meta": {
+    "id": "case-066",
+    "number": 66,
+    "region": "mt-kenya",
+    "regionNumber": 7,
+    "title": "Parcel 2209",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 40,
+    "date": "Tuesday 12 May",
+    "folderTab": "NANYUKI"
+  },
+  "pattern": {
+    "crimePattern": "a land agent who sells titles for parcels that do not exist kills the retired police sergeant who found out and gave him two days to refund",
+    "noRealCaseRetold": true,
+    "notes": "Fictional agency, registry staff and parcel numbers. Mvua background: the oval seal bears the maker's mark \"MV\". The forgery's flaw (a parcel missing from the index map) is shown, never how a title is faked. The cultural reader is asked about the Kenyan-Asian casting (master list H, question 5).",
+    "tags": [
+      "blunt-force",
+      "land-fraud",
+      "document-fraud",
+      "three-liars",
+      "lawyered",
+      "records",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where",
+      "forgery",
+      "spine-background"
+    ]
+  },
+  "difficulty": {
+    "suspects": 5,
+    "chainLength": 6,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "forgery"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "records",
+      "warrant"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 02/12/05",
+    "date": "Tuesday 12 May",
+    "time": "08:15",
+    "reportedBy": "Navin Desai, land agent, Nanyuki",
+    "text": "A land agent reports a man found dead in his inner office on the main street of Nanyuki when he arrived at 08:00. The dead man is a retired police sergeant, Kipng'eno Chepkwony (45).",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_office",
+    "nodes": [
+      "loc_office",
+      "loc_registry",
+      "loc_plot",
+      "loc_desaihome"
+    ],
+    "edges": [
+      {
+        "a": "loc_office",
+        "b": "loc_registry",
+        "minutes": 5,
+        "by": "foot"
+      },
+      {
+        "a": "loc_office",
+        "b": "loc_plot",
+        "minutes": 25,
+        "by": "road"
+      },
+      {
+        "a": "loc_office",
+        "b": "loc_desaihome",
+        "minutes": 10,
+        "by": "road"
+      },
+      {
+        "a": "loc_registry",
+        "b": "loc_desaihome",
+        "minutes": 10,
+        "by": "road"
+      },
+      {
+        "a": "loc_registry",
+        "b": "loc_plot",
+        "minutes": 25,
+        "by": "road"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_kipngeno",
+      "role": "victim",
+      "name": "Sgt (rtd) Kipng'eno Chepkwony",
+      "age": 45,
+      "occupation": "Retired police sergeant, 22 years in the service",
+      "bio": "Spent his pension on a plot on the Timau road, to build a house and win his wife back.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_inner",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, mid 40s, a neat civilian jacket over a police-issue sweater, a short haircut, a straight, honest face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_desai",
+      "role": "suspect",
+      "name": "Navin Desai",
+      "age": 56,
+      "occupation": "Land agent, Desai Land & Property, Nanyuki",
+      "bio": "Thirty years selling plots on the plains. His advocate answers first.",
+      "community": "Kenyan-Asian",
+      "isCulprit": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_office",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan-Asian man, mid 50s, a pressed white shirt and a dark tie, silver-rimmed glasses, a still, careful face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_hilda",
+      "role": "suspect",
+      "name": "Hilda Muthee",
+      "age": 31,
+      "occupation": "Desai's office clerk",
+      "bio": "Types everything that leaves the office.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_likii",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Meru woman, early 30s, a cardigan over an office blouse, hair in a neat bun, a frightened, tight face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kahuthu",
+      "role": "suspect",
+      "name": "Mr. Peter Kahuthu",
+      "age": 58,
+      "occupation": "Licensed surveyor, Nyeri",
+      "bio": "Signed the survey for \"parcel 2209\".",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_title"
+      },
+      "at": "plc_nyeri",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, late 50s, a surveyor's khaki waistcoat full of pens, a weathered, guarded face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_ekidor",
+      "role": "suspect",
+      "name": "Cpl (rtd) Ekidor Lomuria",
+      "age": 47,
+      "occupation": "Kipng'eno's former colleague",
+      "redHerring": true,
+      "bio": "Borrowed KSh 60,000 from him last year.",
+      "community": "Turkana",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_kiplist"
+      },
+      "at": "plc_fellowship",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Turkana man, late 40s, a church small-group T-shirt, a lean, open face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_selly",
+      "role": "suspect",
+      "name": "Selly Jeruto",
+      "age": 42,
+      "occupation": "Kipng'eno's estranged wife",
+      "redHerring": true,
+      "bio": "Left him two years ago for her sister's house in Eldoret.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_kiplist"
+      },
+      "at": "plc_eldoret",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin woman, early 40s, a long dress and a headwrap, a reserved, sorrowful face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_zablon",
+      "role": "witness",
+      "name": "Zablon Okwach",
+      "age": 50,
+      "occupation": "Clerk, Nanyuki lands registry",
+      "bio": "Keeps the index maps. Has heard \"the registry lost the map\" a hundred times.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_registry",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_inner",
+      "name": "Desai's inner office",
+      "within": "loc_office"
+    },
+    {
+      "id": "plc_stairs",
+      "name": "The stairwell",
+      "within": "loc_office"
+    },
+    {
+      "id": "plc_likii",
+      "name": "Hilda's home, Likii"
+    },
+    {
+      "id": "plc_nyeri",
+      "name": "Nyeri town"
+    },
+    {
+      "id": "plc_fellowship",
+      "name": "A church fellowship meeting, Nanyuki"
+    },
+    {
+      "id": "plc_eldoret",
+      "name": "Selly's sister's house, Eldoret"
+    },
+    {
+      "id": "plc_zahome",
+      "name": "Zablon's home"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_office",
+      "name": "Desai Land & Property",
+      "kind": "scene",
+      "description": "Upstairs on the main street: an outer office with Hilda's desk and computer, an inner office with maps on the walls and a steel deed strongbox on a shelf. A narrow stairwell down to the street.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Inner office",
+          "pos": [
+            46,
+            58
+          ],
+          "yields": "ev_body",
+          "text": "Kipng'eno lies on the floor of the inner office."
+        },
+        {
+          "id": "hs_box",
+          "label": "Strongbox",
+          "pos": [
+            70,
+            30
+          ],
+          "yields": "ev_box",
+          "text": "A steel deed strongbox on its shelf. One corner is dented."
+        },
+        {
+          "id": "hs_jacket",
+          "label": "His jacket",
+          "pos": [
+            40,
+            66
+          ],
+          "yields": "ev_title",
+          "text": "In his jacket: a title, a survey, a handwritten list."
+        },
+        {
+          "id": "hs_survey",
+          "label": "The survey",
+          "pos": [
+            36,
+            70
+          ],
+          "yields": "ev_survey",
+          "text": "A surveyor's form for \"parcel 2209\"."
+        },
+        {
+          "id": "hs_list",
+          "label": "The list",
+          "pos": [
+            44,
+            74
+          ],
+          "yields": "ev_kiplist",
+          "text": "His handwritten list."
+        },
+        {
+          "id": "hs_pc",
+          "label": "Hilda's computer",
+          "pos": [
+            20,
+            40
+          ],
+          "yields": "ev_hilda",
+          "text": "The office computer's log."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a land agent's upstairs office on Nanyuki main street at dusk, survey maps pinned to the walls, a steel strongbox on a shelf, Mount Kenya's peak beyond the window, no people in focus"
+      }
+    },
+    {
+      "id": "loc_registry",
+      "name": "Nanyuki lands registry",
+      "kind": "location",
+      "description": "The registry's map room: index maps in wide drawers, every parcel numbered.",
+      "unlock": {
+        "fact": "f_title"
+      },
+      "hotspots": [
+        {
+          "id": "hs_map",
+          "label": "Index map drawer",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_index_map",
+          "text": "Zablon pulls the sheet for the Timau road."
+        },
+        {
+          "id": "hs_gen",
+          "label": "A genuine title",
+          "pos": [
+            62,
+            46
+          ],
+          "yields": "ev_genuine_title",
+          "text": "A genuine title from this registry, for comparison."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a lands registry map room in a Kenyan town, wide drawers of index maps, a large map sheet spread on a table with numbered parcels"
+      }
+    },
+    {
+      "id": "loc_plot",
+      "name": "\"Parcel 2209\", Timau road",
+      "kind": "location",
+      "description": "A wheat field with a farmer's fence round it. No beacons for any 2209.",
+      "unlock": {
+        "fact": "f_title"
+      },
+      "hotspots": [],
+      "image": {
+        "kind": "location",
+        "brief": "a wide wheat field on the plains below Mount Kenya, a farmer's barbed-wire fence, no survey beacons"
+      }
+    },
+    {
+      "id": "loc_desaihome",
+      "name": "Desai's house",
+      "kind": "location",
+      "description": "A bungalow behind a hedge. A bag by the back door, ready for the burn pit.",
+      "unlock": {
+        "fact": "f_rec_desai"
+      },
+      "hotspots": [
+        {
+          "id": "hs_bag",
+          "label": "Bag by the back door",
+          "pos": [
+            40,
+            50
+          ],
+          "yields": "ev_desai_home",
+          "text": "A bag by the back door, and a box in the study."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a bungalow study in Nanyuki, a box of blank forms on a desk, a plastic bag by a back door"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The inner office",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. One crushing, square-edged blow. He lay on the floor of the inner office."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the floor of a small office beside a desk, survey maps on the wall, no body visible"
+      }
+    },
+    {
+      "id": "ev_box",
+      "type": "physical",
+      "title": "Steel deed strongbox",
+      "render": "object",
+      "body": {
+        "label": "One corner dented, wiped. Inside: KSh 150,000 and title deeds."
+      },
+      "facts": [
+        "f_box",
+        "f_box_cash"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a steel deed strongbox with one dented corner on an office shelf"
+      }
+    },
+    {
+      "id": "ev_title",
+      "type": "document",
+      "title": "Title for \"parcel 2209\"",
+      "render": "form",
+      "body": {
+        "text": "Title for parcel 2209, Timau road, in the name of Kipng'eno Chepkwony. A sketch plan. An oval seal, slightly blurred."
+      },
+      "facts": [
+        "f_title"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": false,
+        "forger": "p_desai",
+        "kind": "title deed"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a Kenyan land title with a sketch plan and an oval seal, slightly blurred"
+      }
+    },
+    {
+      "id": "ev_survey",
+      "type": "document",
+      "title": "Kahuthu's survey",
+      "render": "form",
+      "body": {
+        "text": "Survey of parcel 2209, signed P. Kahuthu, licensed surveyor, 14 February."
+      },
+      "facts": [
+        "f_survey"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "survey form"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_kiplist",
+      "type": "document",
+      "title": "Kipng'eno's handwritten list",
+      "render": "note",
+      "body": {
+        "text": "Four other parcel numbers sold by Desai, \"not on map?\" beside each. \"Refund 2.8M by Wed or DCI.\" \"Ekidor 60k — paying.\" \"Fee to Desai paid in full.\" \"House for Selly.\""
+      },
+      "facts": [
+        "f_kiplist",
+        "f_fee_paid"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_hilda",
+      "type": "document",
+      "title": "Office computer log",
+      "render": "logBook",
+      "body": {
+        "log": "Hilda's login active until 18:40 on Monday.",
+        "print": "A document named \"2209 title final\" printed at 17:55 on 14 February."
+      },
+      "facts": [
+        "f_hilda_log"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "computer log"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_index_map",
+      "type": "document",
+      "title": "Index map, Timau road",
+      "render": "form",
+      "body": {
+        "text": "Parcels 2207, 2208, 2210. No 2209."
+      },
+      "facts": [
+        "f_index_map"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "index map"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_zablon",
+      "type": "witness",
+      "title": "Statement: Zablon Okwach",
+      "render": "statement",
+      "body": {
+        "speaker": "p_zablon"
+      },
+      "facts": [
+        "f_zablon",
+        "f_zablon_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_genuine_title",
+      "type": "document",
+      "title": "A genuine title, Nanyuki registry",
+      "render": "form",
+      "body": {
+        "text": "A round seal with the crest, crisp; signed by the Land Registrar, Nanyuki."
+      },
+      "facts": [
+        "f_genuine"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "title deed"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_fieldbook",
+      "type": "document",
+      "title": "Kahuthu's field book",
+      "render": "logBook",
+      "body": {
+        "text": "No field notes, no beacon coordinates for 2209. Just a signature on Desai's form."
+      },
+      "facts": [
+        "f_fieldbook"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records_kah",
+      "type": "phone",
+      "title": "Records: Peter Kahuthu's line",
+      "render": "manifest",
+      "body": {
+        "survey": "14 February: in Nyeri town all day.",
+        "monday": "Monday evening: Nyeri town."
+      },
+      "facts": [
+        "f_rec_kah",
+        "f_rec_kah_mon"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_index_map",
+          "f_survey"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_records_desai",
+      "type": "phone",
+      "title": "Records: Navin Desai's line",
+      "render": "manifest",
+      "body": {
+        "masts": "Nanyuki main-street office zone, Monday 18:50–21:30."
+      },
+      "facts": [
+        "f_rec_desai"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_index_map",
+          "f_kiplist"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_hilda_fare",
+      "type": "document",
+      "title": "Hilda's matatu fare",
+      "render": "receipt",
+      "body": {
+        "text": "Conductor's fare app: H. Muthee, Nanyuki to Likii, Monday 18:50."
+      },
+      "facts": [
+        "f_hilda_fare"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_desai_home",
+      "type": "physical",
+      "title": "Desai's back door and study",
+      "render": "object",
+      "body": {
+        "bag": "A shirt in a bag for burning; the cuff stained.",
+        "box": "A box of blank title forms and an oval seal.",
+        "slip": "A PesaPap print: \"MVUA HOLDINGS — title processing — Till 880 214\".",
+        "mark": "On the oval seal, a tiny maker's mark: \"MV\"."
+      },
+      "facts": [
+        "f_shirt",
+        "f_blanks",
+        "f_mvua_slip",
+        "f_mv_seal"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_desai",
+          "f_kiplist"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a box of blank land-title forms and a small oval seal with a tiny maker's mark, beside a shirt with a stained cuff"
+      }
+    },
+    {
+      "id": "ev_ekidor",
+      "type": "document",
+      "title": "Ekidor's repayment texts",
+      "render": "manifest",
+      "body": {
+        "texts": "Monthly PesaPap repayments to Kipng'eno: 10,000 every month since December.",
+        "fellowship": "His fellowship leader: at the meeting 18:30–21:00 on Monday."
+      },
+      "facts": [
+        "f_ekidor_paying",
+        "f_ekidor"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "repayment texts"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_selly",
+      "type": "document",
+      "title": "Selly's bus ticket",
+      "render": "receipt",
+      "body": {
+        "text": "Nanyuki to Eldoret, Saturday 08:00. Her sister: Selly has been in Eldoret since Saturday."
+      },
+      "facts": [
+        "f_selly"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "bus ticket"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_tod",
+        "f_aut_noother"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_compare",
+      "type": "forensic",
+      "title": "Comparison view: title over index map",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_cmp_map",
+        "f_cmp_seal",
+        "f_cmp_fields",
+        "f_cmp_registrar",
+        "f_cmp_date"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_title",
+          "ev_index_map",
+          "ev_genuine_title"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_blood",
+      "type": "forensic",
+      "title": "Lab: trace (shirt cuff)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_blood"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_desai_home"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_docexam",
+      "type": "forensic",
+      "title": "Questioned Documents Lab: the title and the seal",
+      "render": "labReport",
+      "body": {
+        "test": "document"
+      },
+      "facts": [
+        "f_docexam"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "document",
+        "hours": 10,
+        "needs": [
+          "ev_title",
+          "ev_genuine_title",
+          "ev_desai_home"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Kipng'eno Chepkwony was found dead in the inner office of Desai Land & Property at 08:00 by the agent, Navin Desai.",
+      "kind": "true",
+      "about": [
+        "p_kipngeno",
+        "loc_office"
+      ],
+      "at": {
+        "from": "08:00"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "He lay on the floor of the inner office with one crushing, square-edged blow.",
+      "kind": "true",
+      "about": [
+        "p_kipngeno",
+        "plc_inner"
+      ]
+    },
+    {
+      "id": "f_box",
+      "text": "The steel deed strongbox on the shelf has one dented corner, wiped clean.",
+      "kind": "true",
+      "about": [
+        "plc_inner"
+      ]
+    },
+    {
+      "id": "f_box_cash",
+      "text": "Inside the strongbox: KSh 150,000 and title deeds, untouched.",
+      "kind": "true",
+      "about": [
+        "plc_inner"
+      ]
+    },
+    {
+      "id": "f_title",
+      "text": "In his jacket: a title for \"parcel 2209\", Timau road, in his name, with a sketch plan and an oval seal.",
+      "kind": "true",
+      "about": [
+        "p_kipngeno",
+        "p_desai"
+      ]
+    },
+    {
+      "id": "f_survey",
+      "text": "A survey of parcel 2209, signed by P. Kahuthu, licensed surveyor, on 14 February.",
+      "kind": "true",
+      "about": [
+        "p_kahuthu"
+      ]
+    },
+    {
+      "id": "f_kiplist",
+      "text": "Kipng'eno's list: four other parcels sold by Desai, \"not on map?\" beside each, and \"Refund 2.8M by Wed or DCI.\"",
+      "kind": "true",
+      "about": [
+        "p_kipngeno",
+        "p_desai"
+      ]
+    },
+    {
+      "id": "f_fee_paid",
+      "text": "His list also says: \"Fee to Desai paid in full.\" \"Ekidor 60k — paying.\" \"House for Selly.\"",
+      "kind": "true",
+      "about": [
+        "p_kipngeno",
+        "p_ekidor",
+        "p_selly"
+      ]
+    },
+    {
+      "id": "f_hilda_log",
+      "text": "Office computer log: Hilda logged in until 18:40 on Monday; \"2209 title final\" was printed at 17:55 on 14 February.",
+      "kind": "true",
+      "about": [
+        "p_hilda"
+      ]
+    },
+    {
+      "id": "f_index_map",
+      "text": "Index map, Timau road: parcels 2207, 2208 and 2210. There is no parcel 2209.",
+      "kind": "true",
+      "about": [
+        "loc_registry"
+      ]
+    },
+    {
+      "id": "f_zablon",
+      "text": "Zablon: \"He came last Thursday. I showed him the map. He went white.\"",
+      "kind": "true",
+      "about": [
+        "p_zablon",
+        "p_kipngeno"
+      ]
+    },
+    {
+      "id": "f_zablon_self",
+      "text": "Zablon: the registry closes at 17:00; he was at home with his family all Monday evening.",
+      "kind": "true",
+      "about": [
+        "p_zablon"
+      ],
+      "where": {
+        "person": "p_zablon",
+        "place": "plc_zahome",
+        "from": "17:30",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_genuine",
+      "text": "A genuine title from this registry: a crisp round seal with the crest, signed by the Land Registrar, Nanyuki.",
+      "kind": "true",
+      "about": [
+        "loc_registry"
+      ]
+    },
+    {
+      "id": "f_fieldbook",
+      "text": "Kahuthu's field book: no notes and no beacon coordinates for 2209.",
+      "kind": "true",
+      "about": [
+        "p_kahuthu"
+      ]
+    },
+    {
+      "id": "f_rec_kah",
+      "text": "Records, Kahuthu's line: on 14 February, the survey date, he was in Nyeri town all day.",
+      "kind": "true",
+      "about": [
+        "p_kahuthu"
+      ]
+    },
+    {
+      "id": "f_rec_kah_mon",
+      "text": "Records, Kahuthu's line: Nyeri town all Monday evening.",
+      "kind": "true",
+      "about": [
+        "p_kahuthu"
+      ],
+      "where": {
+        "person": "p_kahuthu",
+        "place": "plc_nyeri",
+        "from": "17:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_rec_desai",
+      "text": "Records, Desai's line: the main-street office zone, Monday 18:50–21:30.",
+      "kind": "true",
+      "about": [
+        "p_desai"
+      ],
+      "at": {
+        "from": "18:50",
+        "to": "21:30"
+      }
+    },
+    {
+      "id": "f_hilda_fare",
+      "text": "Fare app: Hilda on a matatu from Nanyuki to Likii at 18:50 on Monday; home all evening.",
+      "kind": "true",
+      "about": [
+        "p_hilda"
+      ],
+      "where": {
+        "person": "p_hilda",
+        "place": "plc_likii",
+        "from": "18:50",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_shirt",
+      "text": "At Desai's back door: a shirt in a bag for burning, its cuff stained.",
+      "kind": "true",
+      "about": [
+        "p_desai"
+      ]
+    },
+    {
+      "id": "f_blanks",
+      "text": "In his study: a box of blank title forms and an oval seal.",
+      "kind": "true",
+      "about": [
+        "p_desai"
+      ]
+    },
+    {
+      "id": "f_mvua_slip",
+      "text": "In the box: a PesaPap print, \"MVUA HOLDINGS — title processing — Till 880 214\".",
+      "kind": "true",
+      "about": [
+        "p_desai"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_mv_seal",
+      "text": "The oval seal in Desai's box carries a tiny maker's mark: \"MV\".",
+      "kind": "true",
+      "about": [
+        "p_desai"
+      ],
+      "spine": "t_stamp"
+    },
+    {
+      "id": "f_ekidor_paying",
+      "text": "Ekidor's repayment texts: KSh 10,000 to Kipng'eno every month since December.",
+      "kind": "true",
+      "about": [
+        "p_ekidor"
+      ]
+    },
+    {
+      "id": "f_ekidor",
+      "text": "His fellowship leader: Ekidor was at the Monday meeting 18:30–21:00.",
+      "kind": "true",
+      "about": [
+        "p_ekidor"
+      ],
+      "where": {
+        "person": "p_ekidor",
+        "place": "plc_fellowship",
+        "from": "18:30",
+        "to": "21:00"
+      }
+    },
+    {
+      "id": "f_selly",
+      "text": "Selly's bus ticket and her sister: in Eldoret since Saturday.",
+      "kind": "true",
+      "about": [
+        "p_selly"
+      ],
+      "where": {
+        "person": "p_selly",
+        "place": "plc_eldoret",
+        "from": "00:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Autopsy: one blow from a heavy, square-edged metal object, matching the strongbox's corner.",
+      "kind": "true",
+      "about": [
+        "p_kipngeno"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 19:00 and 20:30 on Monday.",
+      "kind": "true",
+      "about": [
+        "p_kipngeno"
+      ],
+      "at": {
+        "from": "19:00",
+        "to": "20:30"
+      }
+    },
+    {
+      "id": "f_aut_noother",
+      "text": "Autopsy: no fall injuries, no strangulation, a sound heart.",
+      "kind": "true",
+      "about": [
+        "p_kipngeno"
+      ]
+    },
+    {
+      "id": "f_cmp_map",
+      "text": "Comparison view: the title's sketch plan laid over the index map sits on top of 2207 and 2208, a farm that already belongs to someone.",
+      "kind": "true",
+      "about": [
+        "p_desai"
+      ]
+    },
+    {
+      "id": "f_cmp_seal",
+      "text": "Under the raking light: the title's seal is oval and blurred; the registry's seal is round with a crest.",
+      "kind": "true",
+      "about": [
+        "p_desai"
+      ]
+    },
+    {
+      "id": "f_cmp_fields",
+      "text": "A title has no witnesses, no exam index number and no chassis number.",
+      "kind": "true",
+      "about": [
+        "loc_registry"
+      ]
+    },
+    {
+      "id": "f_cmp_registrar",
+      "text": "The title's signing registrar is the Land Registrar, Nanyuki, in post since 2021.",
+      "kind": "true",
+      "about": [
+        "loc_registry"
+      ]
+    },
+    {
+      "id": "f_cmp_date",
+      "text": "The title is dated Thursday 12 February: a weekday.",
+      "kind": "true",
+      "about": [
+        "loc_registry"
+      ]
+    },
+    {
+      "id": "f_blood",
+      "text": "Lab: Kipng'eno's blood on the shirt cuff.",
+      "kind": "true",
+      "about": [
+        "p_kipngeno",
+        "p_desai"
+      ]
+    },
+    {
+      "id": "f_docexam",
+      "text": "Wilfrida Ayugi: forged on a genuine-looking blank; the seal impression on the title was made by the seal in Desai's box.",
+      "kind": "true",
+      "about": [
+        "p_desai"
+      ]
+    },
+    {
+      "id": "f_des_home",
+      "text": "Desai: \"I went home at six on Monday and found him in the morning.\"",
+      "kind": "lie",
+      "about": [
+        "p_desai"
+      ]
+    },
+    {
+      "id": "f_des_genuine",
+      "text": "Desai: \"Parcel 2209 is a genuine title. The registry has lost the map.\"",
+      "kind": "lie",
+      "about": [
+        "p_desai"
+      ]
+    },
+    {
+      "id": "f_des_reveal",
+      "text": "Desai: Kipng'eno came at seven, shouting. He told him he'd refund him. \"That's all.\"",
+      "kind": "true",
+      "about": [
+        "p_desai",
+        "p_kipngeno"
+      ],
+      "where": {
+        "person": "p_desai",
+        "place": "plc_inner",
+        "from": "19:00",
+        "to": "19:30"
+      }
+    },
+    {
+      "id": "f_des_left",
+      "text": "Desai: \"He was alive when I locked up.\"",
+      "kind": "lie",
+      "about": [
+        "p_desai"
+      ]
+    },
+    {
+      "id": "f_hilda_five",
+      "text": "Hilda: \"I left at five every day. I never typed any titles.\"",
+      "kind": "lie",
+      "about": [
+        "p_hilda"
+      ]
+    },
+    {
+      "id": "f_hilda_reveal",
+      "text": "Hilda: Desai gave her drafts to type on blank forms, \"copies, the registry is slow\". She left at 18:40 on Monday; Kipng'eno came up the stairs as she went down.",
+      "kind": "true",
+      "about": [
+        "p_hilda",
+        "p_desai",
+        "p_kipngeno"
+      ],
+      "at": {
+        "from": "18:40"
+      }
+    },
+    {
+      "id": "f_kah_walked",
+      "text": "Kahuthu: \"I surveyed 2209 myself. I walked the beacons.\"",
+      "kind": "lie",
+      "about": [
+        "p_kahuthu"
+      ]
+    },
+    {
+      "id": "f_kah_reveal",
+      "text": "Kahuthu: Desai paid him 20,000 a signature. He never went. \"I'm finished, aren't I.\"",
+      "kind": "true",
+      "about": [
+        "p_kahuthu",
+        "p_desai"
+      ]
+    },
+    {
+      "id": "f_ekidor_claim",
+      "text": "Ekidor: \"I owed him 60,000. I was paying it. I was at fellowship.\"",
+      "kind": "claim",
+      "about": [
+        "p_ekidor"
+      ]
+    },
+    {
+      "id": "f_selly_claim",
+      "text": "Selly: \"I was in Eldoret.\"",
+      "kind": "claim",
+      "about": [
+        "p_selly"
+      ]
+    },
+    {
+      "id": "f_selly_house",
+      "text": "Selly: \"He put everything into that plot. He wanted to build a house to get me back.\"",
+      "kind": "true",
+      "about": [
+        "p_selly",
+        "p_kipngeno"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_desai",
+      "stance": "lawyered",
+      "lawyered": {
+        "advocate": "Advocate Benjamin Muchiri",
+        "reopenedBy": [
+          "f_index_map"
+        ],
+        "line": "On my advocate's advice, no comment."
+      },
+      "intro": "Desai sits at his outer desk with Advocate Muchiri beside him. \"On my advocate's advice, no comment.\"",
+      "claims": [
+        "f_des_home",
+        "f_des_genuine"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_des_left",
+          "after": "f_des_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_hilda",
+      "stance": "cooperative",
+      "intro": "Hilda grips her handbag on her knees. \"I left at five every day. I never typed any titles.\"",
+      "claims": [
+        "f_hilda_five"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_kahuthu",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_index_map"
+      ],
+      "intro": "Kahuthu keeps his waistcoat buttoned. \"I surveyed 2209 myself. I walked the beacons.\"",
+      "claims": [
+        "f_kah_walked"
+      ],
+      "yields": [
+        "ev_fieldbook"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_ekidor",
+      "stance": "cooperative",
+      "intro": "Ekidor holds out his phone before you ask. \"I owed him 60,000. I was paying it. I was at fellowship.\"",
+      "claims": [
+        "f_ekidor_claim"
+      ],
+      "yields": [
+        "ev_ekidor"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_selly",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_kiplist"
+      ],
+      "intro": "Selly answers from Eldoret, her sister's television in the background. \"I was in Eldoret.\"",
+      "claims": [
+        "f_selly_claim"
+      ],
+      "yields": [
+        "ev_selly"
+      ],
+      "topics": [
+        {
+          "about": "ev_kiplist",
+          "reply": "\"He put everything into that plot. He wanted to build a house to get me back.\"",
+          "reveals": [
+            "f_selly_house"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_zablon",
+      "stance": "cooperative",
+      "intro": "Zablon spreads the Timau road sheet across the map-room table.",
+      "claims": [],
+      "yields": [
+        "ev_zablon"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_hilda",
+      "claim": "f_hilda_five",
+      "brokenBy": [
+        "f_hilda_log"
+      ],
+      "reveals": [
+        "f_hilda_reveal",
+        "ev_hilda_fare"
+      ],
+      "reaction": "\"He gave me a draft and told me to type it on the blank forms. He said the registry was slow and these were copies. I left at 18:40 on Monday. Mr. Chepkwony came up the stairs as I went down.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_kah",
+      "claim": "f_kah_walked",
+      "brokenBy": [
+        "f_rec_kah",
+        "f_fieldbook"
+      ],
+      "reveals": [
+        "f_kah_reveal"
+      ],
+      "reaction": "\"Desai paid me 20,000 a signature. I never went. I'm finished, aren't I.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_des_home",
+      "claim": "f_des_home",
+      "brokenBy": [
+        "f_rec_desai",
+        "f_hilda_reveal"
+      ],
+      "reveals": [
+        "f_des_reveal"
+      ],
+      "reaction": "\"He came at seven, shouting. I told him I'd refund him. That's all.\" Advocate Muchiri: \"My client has nothing further.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_des_genuine",
+      "claim": "f_des_genuine",
+      "brokenBy": [
+        "f_docexam"
+      ],
+      "reveals": [],
+      "reaction": "Desai looks at Ayugi's report: his own seal, in his own box. Muchiri closes his notebook without writing anything.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_des_left",
+      "claim": "f_des_left",
+      "brokenBy": [
+        "f_blood"
+      ],
+      "reveals": [],
+      "reaction": "Advocate Muchiri, to Amani, as they stand: \"That's his blood on my client's cuff. I won't insult you by arguing.\"",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_desai",
+      "text": "Navin Desai",
+      "category": "person",
+      "ref": "p_desai",
+      "unlock": {
+        "anyOf": [
+          "f_title"
+        ]
+      }
+    },
+    {
+      "id": "w_hilda",
+      "text": "Hilda Muthee",
+      "category": "person",
+      "ref": "p_hilda",
+      "unlock": {
+        "anyOf": [
+          "f_hilda_log"
+        ]
+      }
+    },
+    {
+      "id": "w_kahuthu",
+      "text": "Peter Kahuthu",
+      "category": "person",
+      "ref": "p_kahuthu",
+      "unlock": {
+        "anyOf": [
+          "f_survey"
+        ]
+      }
+    },
+    {
+      "id": "w_ekidor",
+      "text": "Ekidor Lomuria",
+      "category": "person",
+      "ref": "p_ekidor",
+      "unlock": {
+        "anyOf": [
+          "f_fee_paid"
+        ]
+      }
+    },
+    {
+      "id": "w_selly",
+      "text": "Selly Jeruto",
+      "category": "person",
+      "ref": "p_selly",
+      "unlock": {
+        "anyOf": [
+          "f_fee_paid"
+        ]
+      }
+    },
+    {
+      "id": "w_zablon",
+      "text": "Zablon Okwach",
+      "category": "person",
+      "ref": "p_zablon",
+      "unlock": {
+        "anyOf": [
+          "f_index_map"
+        ]
+      }
+    },
+    {
+      "id": "pl_inner",
+      "text": "Desai's inner office",
+      "category": "place",
+      "ref": "plc_inner",
+      "unlock": {
+        "anyOf": [
+          "f_box"
+        ]
+      }
+    },
+    {
+      "id": "pl_registry",
+      "text": "the lands registry",
+      "category": "place",
+      "ref": "loc_registry",
+      "unlock": {
+        "anyOf": [
+          "f_title"
+        ]
+      }
+    },
+    {
+      "id": "pl_plot",
+      "text": "the Timau road plot",
+      "category": "place",
+      "ref": "loc_plot",
+      "unlock": {
+        "anyOf": [
+          "f_title"
+        ]
+      }
+    },
+    {
+      "id": "pl_dhouse",
+      "text": "Desai's house",
+      "category": "place",
+      "ref": "loc_desaihome",
+      "unlock": {
+        "anyOf": [
+          "f_title"
+        ]
+      }
+    },
+    {
+      "id": "pl_stairs",
+      "text": "the stairwell",
+      "category": "place",
+      "ref": "plc_stairs",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_box",
+      "text": "striking him with a steel deed strongbox",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_stairs",
+      "text": "a fall down the stairs",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_gun",
+      "text": "striking him with a gun butt",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_strangle",
+      "text": "strangling him",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_dci",
+      "text": "to stop him reporting the forged title deeds to the DCI",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_kiplist"
+        ]
+      }
+    },
+    {
+      "id": "m_debt",
+      "text": "an unpaid debt between colleagues",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_fee_paid"
+        ]
+      }
+    },
+    {
+      "id": "m_marriage",
+      "text": "a marriage gone bad",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_fee_paid"
+        ]
+      }
+    },
+    {
+      "id": "m_robbery",
+      "text": "a robbery for the deed box's cash",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_box"
+        ]
+      }
+    },
+    {
+      "id": "m_fees",
+      "text": "a quarrel over Desai's fees",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_title"
+        ]
+      }
+    },
+    {
+      "id": "d_title",
+      "text": "The title for parcel 2209",
+      "category": "document",
+      "ref": "ev_title",
+      "unlock": {
+        "anyOf": [
+          "f_title"
+        ]
+      }
+    },
+    {
+      "id": "d_survey",
+      "text": "Kahuthu's survey",
+      "category": "document",
+      "ref": "ev_survey",
+      "unlock": {
+        "anyOf": [
+          "f_survey"
+        ]
+      }
+    },
+    {
+      "id": "d_map",
+      "text": "The index map",
+      "category": "document",
+      "ref": "ev_index_map",
+      "unlock": {
+        "anyOf": [
+          "f_index_map"
+        ]
+      }
+    },
+    {
+      "id": "d_texts",
+      "text": "The repayment texts",
+      "category": "document",
+      "ref": "ev_ekidor",
+      "unlock": {
+        "anyOf": [
+          "f_ekidor_paying"
+        ]
+      }
+    },
+    {
+      "id": "d_ticket",
+      "text": "The Eldoret bus ticket",
+      "category": "document",
+      "ref": "ev_selly",
+      "unlock": {
+        "anyOf": [
+          "f_selly"
+        ]
+      }
+    },
+    {
+      "id": "t_map",
+      "text": "the parcel isn't on the registry index map",
+      "category": "tell",
+      "by": [
+        "f_index_map",
+        "f_cmp_map"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_index_map"
+        ]
+      }
+    },
+    {
+      "id": "t_deadwit",
+      "text": "its witness was dead",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_title"
+        ]
+      }
+    },
+    {
+      "id": "t_index",
+      "text": "its index number belongs to another candidate",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_title"
+        ]
+      }
+    },
+    {
+      "id": "t_registrar",
+      "text": "the registrar had retired",
+      "category": "tell",
+      "by": [
+        "f_cmp_registrar"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_title"
+        ]
+      }
+    },
+    {
+      "id": "t_sunday",
+      "text": "the date is a Sunday",
+      "category": "tell",
+      "by": [
+        "f_cmp_date"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_title"
+        ]
+      }
+    },
+    {
+      "id": "t_chassis",
+      "text": "the chassis number doesn't match",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_title"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. {document} was forged, as shown by {tell}.",
+    "fixed": {
+      "victim": "Kipng'eno Chepkwony"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_feb",
+                  "label": "14 February",
+                  "from": null,
+                  "to": null,
+                  "day": "14 Feb"
+                },
+                {
+                  "id": "sl_thu",
+                  "label": "Last Thursday",
+                  "from": null,
+                  "to": null,
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_1800",
+                  "label": "Monday 18:00",
+                  "from": "18:00",
+                  "to": "18:00",
+                  "day": "Mon"
+                },
+                {
+                  "id": "sl_1840",
+                  "label": "Monday 18:40",
+                  "from": "18:40",
+                  "to": "18:40",
+                  "day": "Mon"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Monday 19:00–20:30",
+                  "from": "19:00",
+                  "to": "20:30",
+                  "day": "Mon"
+                },
+                {
+                  "id": "sl_2130",
+                  "label": "Monday 21:30",
+                  "from": "21:30",
+                  "to": "21:30",
+                  "day": "Mon"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_survey",
+                  "text": "Kahuthu signs a survey he never did",
+                  "slot": "sl_feb",
+                  "by": [
+                    "f_survey",
+                    "f_rec_kah",
+                    "f_kah_reveal"
+                  ],
+                  "why": "The survey's date, and his phone in Nyeri all that day.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_survey"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_map",
+                  "text": "Kipng'eno sees the index map",
+                  "slot": "sl_thu",
+                  "by": [
+                    "f_zablon"
+                  ],
+                  "why": "Zablon: last Thursday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_zablon"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_stairs",
+                  "text": "Hilda leaves; Kipng'eno comes up the stairs",
+                  "slot": "sl_1840",
+                  "by": [
+                    "f_hilda_reveal",
+                    "f_hilda_log"
+                  ],
+                  "why": "Her login ends at 18:40; she passed him on the stairs.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_hilda_reveal"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Kipng'eno is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod",
+                    "f_des_reveal"
+                  ],
+                  "why": "The autopsy's window, with Desai in the office.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_leave",
+                  "text": "Desai's phone leaves the office",
+                  "slot": "sl_2130",
+                  "by": [
+                    "f_rec_desai"
+                  ],
+                  "why": "His records: out of the office zone at 21:30.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rec_desai"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_1800",
+                  "by": [
+                    "f_rec_desai",
+                    "f_hilda_reveal"
+                  ],
+                  "why": "18:00 is Desai's \"went home at six\". His phone was in the office until 21:30."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A survey nobody walked in February. A map on Thursday. A man on the stairs at twenty to seven. Desai's phone in the office until half past nine.",
+          "fail": [
+            "Six o'clock is the agent's story. His phone tells another.",
+            "When did the clerk pass him on the stairs?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_inner"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The inner office, beside the strongbox. Yes.",
+          "fail": [
+            "A fall down the stairs doesn't leave a man in the inner office.",
+            "The plot doesn't exist. He couldn't have died there."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_desai"
+          }
+        ],
+        "prosecutor": {
+          "pass": "His phone in the office, his seal on the title, the victim's blood on his cuff. That will hold, advocate or no advocate.",
+          "fail": [
+            "The surveyor was in Nyeri.",
+            "The clerk was on a matatu to Likii at 18:50."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_box"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A square-edged corner, dented and wiped. Yes.",
+          "fail": [
+            "No fall injuries.",
+            "A hundred and fifty thousand still in the box. Not a robbery."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_dci"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Wednesday or the DCI, and four more parcels on his list. That's why.",
+          "fail": [
+            "Ekidor was paying his debt every month.",
+            "The fee was paid in full. The quarrel was about the land not existing."
+          ]
+        }
+      },
+      {
+        "id": "g_forgery",
+        "kind": "forgery",
+        "blanks": [
+          {
+            "id": "document",
+            "category": "document",
+            "answer": "d_title"
+          },
+          {
+            "id": "tell",
+            "category": "tell",
+            "answer": "t_map"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A title for nothing. The map was never lost.",
+          "fail": [
+            "The surveyor sold his signature, but the survey is his. The title is what was forged.",
+            "The registrar is in post. Look at the map."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_inner",
+      "from": "19:00",
+      "to": "20:30",
+      "note": "From the autopsy; Kipng'eno came up the stairs at 18:40 and Desai's phone left at 21:30."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_title",
+          "f_index_map",
+          "f_cmp_map",
+          "f_zablon"
+        ],
+        "concludes": "Parcel 2209 doesn't exist: the title's plan sits on top of 2207 and 2208.",
+        "answers": [
+          "document",
+          "tell"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_cmp_seal",
+          "f_docexam"
+        ],
+        "concludes": "The title is forged, and its seal impression was made by the seal in Desai's own box."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_survey",
+          "f_rec_kah",
+          "f_fieldbook",
+          "f_kah_walked",
+          "f_kah_reveal"
+        ],
+        "concludes": "The survey was bought: Kahuthu never went."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_hilda_log",
+          "f_hilda_five",
+          "f_hilda_reveal"
+        ],
+        "concludes": "Hilda typed the titles; Kipng'eno came up the stairs as she left at 18:40."
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_rec_desai",
+          "f_des_home",
+          "f_des_reveal",
+          "f_kiplist"
+        ],
+        "concludes": "Desai was in the office with him until 21:30, with \"refund by Wednesday or the DCI\" hanging over him.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_body",
+          "f_box",
+          "f_aut_blow",
+          "f_aut_tod",
+          "f_shirt",
+          "f_blood",
+          "f_blanks",
+          "f_des_genuine",
+          "f_des_left"
+        ],
+        "concludes": "His blood on Desai's cuff, blank titles and the seal in his study. Navin Desai struck Kipng'eno with the steel deed strongbox in his inner office, to stop him reporting the forged titles to the DCI.",
+        "answers": [
+          "who",
+          "how",
+          "why",
+          "where"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_registry",
+        "blank": "where",
+        "by": [
+          "f_body",
+          "f_zablon_self"
+        ],
+        "why": "He died in the inner office; the registry closed at 17:00."
+      },
+      {
+        "word": "pl_plot",
+        "blank": "where",
+        "by": [
+          "f_index_map",
+          "f_body"
+        ],
+        "why": "The plot doesn't exist, and he lay in the office."
+      },
+      {
+        "word": "pl_dhouse",
+        "blank": "where",
+        "by": [
+          "f_body"
+        ],
+        "why": "He lay in the inner office."
+      },
+      {
+        "word": "pl_stairs",
+        "blank": "where",
+        "by": [
+          "f_body",
+          "f_aut_noother"
+        ],
+        "why": "He lay in the inner office, with no fall injuries."
+      },
+      {
+        "word": "w_hilda",
+        "blank": "who",
+        "by": [
+          "f_hilda_fare"
+        ],
+        "why": "Hilda was on a matatu to Likii at 18:50 and home all evening."
+      },
+      {
+        "word": "w_kahuthu",
+        "blank": "who",
+        "by": [
+          "f_rec_kah_mon"
+        ],
+        "why": "Kahuthu's phone was in Nyeri all Monday evening."
+      },
+      {
+        "word": "w_ekidor",
+        "blank": "who",
+        "by": [
+          "f_ekidor"
+        ],
+        "why": "Ekidor was at his fellowship meeting, 18:30–21:00."
+      },
+      {
+        "word": "w_selly",
+        "blank": "who",
+        "by": [
+          "f_selly"
+        ],
+        "why": "Selly has been in Eldoret since Saturday."
+      },
+      {
+        "word": "w_zablon",
+        "blank": "who",
+        "by": [
+          "f_zablon_self"
+        ],
+        "why": "Zablon was at home with his family."
+      },
+      {
+        "word": "h_stairs",
+        "blank": "how",
+        "by": [
+          "f_body",
+          "f_aut_noother"
+        ],
+        "why": "Found in the inner office, no fall injuries."
+      },
+      {
+        "word": "h_gun",
+        "blank": "how",
+        "by": [
+          "f_aut_blow",
+          "f_box"
+        ],
+        "why": "A square-edged blow matching the strongbox's corner."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_noother"
+        ],
+        "why": "A sound heart."
+      },
+      {
+        "word": "h_strangle",
+        "blank": "how",
+        "by": [
+          "f_aut_noother"
+        ],
+        "why": "No strangulation."
+      },
+      {
+        "word": "m_debt",
+        "blank": "why",
+        "by": [
+          "f_ekidor_paying",
+          "f_ekidor"
+        ],
+        "why": "Ekidor was paying monthly, and was at fellowship."
+      },
+      {
+        "word": "m_marriage",
+        "blank": "why",
+        "by": [
+          "f_selly",
+          "f_selly_house"
+        ],
+        "why": "Selly was in Eldoret, and he was building a house to win her back."
+      },
+      {
+        "word": "m_robbery",
+        "blank": "why",
+        "by": [
+          "f_box_cash"
+        ],
+        "why": "KSh 150,000 still in the box."
+      },
+      {
+        "word": "m_fees",
+        "blank": "why",
+        "by": [
+          "f_fee_paid"
+        ],
+        "why": "The fee was paid in full."
+      },
+      {
+        "word": "d_survey",
+        "blank": "document",
+        "by": [
+          "f_kah_reveal"
+        ],
+        "why": "A bought signature, but his own: the survey is a lie, not a forgery. And it doesn't prove the land doesn't exist."
+      },
+      {
+        "word": "d_map",
+        "blank": "document",
+        "by": [
+          "f_zablon"
+        ],
+        "why": "The registry's own map, never lost."
+      },
+      {
+        "word": "d_texts",
+        "blank": "document",
+        "by": [
+          "f_ekidor_paying"
+        ],
+        "why": "Real repayments."
+      },
+      {
+        "word": "d_ticket",
+        "blank": "document",
+        "by": [
+          "f_selly"
+        ],
+        "why": "A real ticket; her sister confirms."
+      },
+      {
+        "word": "t_deadwit",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "A title has no witnesses."
+      },
+      {
+        "word": "t_index",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "A title has no exam index number."
+      },
+      {
+        "word": "t_registrar",
+        "blank": "tell",
+        "by": [
+          "f_cmp_registrar"
+        ],
+        "why": "The registrar is in post."
+      },
+      {
+        "word": "t_sunday",
+        "blank": "tell",
+        "by": [
+          "f_cmp_date"
+        ],
+        "why": "Dated on a Thursday."
+      },
+      {
+        "word": "t_chassis",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "A title has no chassis number."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Desai sells Kipng'eno a title for \"parcel 2209\" on the Timau road for KSh 2.8 million, with a survey Kahuthu signed for 20,000 without walking a single beacon. Hilda typed the title on a blank form, believing it was a copy.",
+        "image": null
+      },
+      {
+        "text": "When Kipng'eno goes to fence his plot, a farmer chases him off. Last Thursday Zablon shows him the index map: 2208, then 2210.",
+        "image": null
+      },
+      {
+        "text": "Monday, 18:40. Hilda goes down the stairs as Kipng'eno comes up. He gives Desai until Wednesday to refund him, or he goes to the DCI with four more parcel numbers.",
+        "image": null
+      },
+      {
+        "text": "Desai says he'll fetch the money. He brings the steel deed strongbox to the desk and swings its corner into Kipng'eno's head.",
+        "image": "plc_inner"
+      },
+      {
+        "text": "At 21:30 his phone leaves the office. In the morning, he \"arrives and finds him\", and calls his advocate before he calls the police.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "Pattern File, t_mvua and t_stamp: \"MVUA HOLDINGS — title processing\", and the maker's mark on the oval seal: \"MV\". Amani's notebook: \"An oval seal marked MV. Mvua doesn't just pay forgers. It supplies the stamps.\""
+    }
+  ],
+  "clockPlan": {
+    "note": "Three stamps, the region maximum: records on Kahuthu, records on Desai, and a warrant on Desai's house. Desai stays silent until the index map is put in front of him. Detain him after the search; the cuff trace (12 h) and the title examination (10 h) come back inside his 24 hours.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_office",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_box",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_title",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_survey",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_kiplist",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_hilda",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_hilda"
+      },
+      {
+        "do": "press",
+        "target": "c_hilda"
+      },
+      {
+        "do": "travel",
+        "target": "loc_registry",
+        "hours": 0.25,
+        "from": "loc_office"
+      },
+      {
+        "do": "visit",
+        "target": "loc_registry",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_index_map",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_genuine_title",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_zablon"
+      },
+      {
+        "do": "records",
+        "target": "ev_records_kah"
+      },
+      {
+        "do": "records",
+        "target": "ev_records_desai"
+      },
+      {
+        "do": "interview",
+        "target": "p_kahuthu"
+      },
+      {
+        "do": "press",
+        "target": "c_kah"
+      },
+      {
+        "do": "travel",
+        "target": "loc_office",
+        "hours": 0.25,
+        "from": "loc_registry"
+      },
+      {
+        "do": "visit",
+        "target": "loc_office",
+        "hours": 1
+      },
+      {
+        "do": "reopen",
+        "target": "p_desai",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_desai"
+      },
+      {
+        "do": "press",
+        "target": "c_des_home"
+      },
+      {
+        "do": "travel",
+        "target": "loc_desaihome",
+        "hours": 0.25,
+        "from": "loc_office"
+      },
+      {
+        "do": "visit",
+        "target": "loc_desaihome",
+        "hours": 1
+      },
+      {
+        "do": "search",
+        "target": "loc_desaihome"
+      },
+      {
+        "do": "detain",
+        "target": "p_desai"
+      },
+      {
+        "do": "submit",
+        "target": "ev_blood"
+      },
+      {
+        "do": "submit",
+        "target": "ev_docexam"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 12
+      },
+      {
+        "do": "press",
+        "target": "c_des_genuine"
+      },
+      {
+        "do": "press",
+        "target": "c_des_left"
+      }
+    ],
+    "totalHours": 40.75
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_hilda",
+        "line": "When did the clerk log off, Amani? She passed someone on the stairs."
+      },
+      "tier2": {
+        "facts": [
+          "f_hilda_reveal",
+          "f_rec_desai"
+        ],
+        "line": "Kipng'eno up the stairs at 18:40. Desai's phone there until 21:30."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_box",
+        "line": "What on that shelf has a dented corner?"
+      },
+      "tier2": {
+        "facts": [
+          "f_box",
+          "f_body"
+        ],
+        "line": "The strongbox, in the inner office."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_records_desai",
+        "line": "He says he went home at six. Ask his phone."
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_desai",
+          "f_blood"
+        ],
+        "line": "In the office until 21:30, and the blood on his cuff."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "A square-edged metal object. Look at the shelf."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_blow",
+          "f_box"
+        ],
+        "line": "The strongbox's dented corner."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_kiplist",
+        "line": "Read the last line of his list."
+      },
+      "tier2": {
+        "facts": [
+          "f_kiplist"
+        ],
+        "line": "\"Refund 2.8M by Wed or DCI.\" And four more parcels."
+      }
+    },
+    "g_forgery": {
+      "tier1": {
+        "point": "ev_compare",
+        "line": "Lay the title's sketch plan over the index map."
+      },
+      "tier2": {
+        "facts": [
+          "f_cmp_map",
+          "f_index_map"
+        ],
+        "line": "2208, then 2210. The plan sits on someone else's farm."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "hati",
+      "def": "A title deed (hati miliki)."
+    },
+    {
+      "term": "ramani",
+      "def": "A map."
+    },
+    {
+      "term": "index map",
+      "def": "The registry's map of every numbered parcel."
+    },
+    {
+      "term": "beacon",
+      "def": "A survey marker at a parcel's corner."
+    },
+    {
+      "term": "mpima ardhi",
+      "def": "A land surveyor."
+    },
+    {
+      "term": "sajili ya ardhi",
+      "def": "The lands registry."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    },
+    {
+      "term": "matatu",
+      "def": "A shared minibus taxi."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "indexMapOverlay"
+    ],
+    "beatNotes": "The index-map overlay. The player lays the title's sketch plan over the registry's index map; 2207 and 2208 snap into place, and the title's plot sits on top of them, a farm that is already somebody's."
+  }
+}

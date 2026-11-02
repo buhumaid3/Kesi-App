@@ -1,0 +1,1126 @@
+{
+  "meta": {
+    "id": "case-013",
+    "number": 13,
+    "region": "eastlands",
+    "regionNumber": 2,
+    "title": "Barwaqo Mall",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 12,
+    "date": "Wednesday 11 June",
+    "folderTab": "EASTLEIGH"
+  },
+  "pattern": {
+    "crimePattern": "credit buyer paying with forged deposit slips kills the wholesaler who noticed",
+    "noRealCaseRetold": true,
+    "notes": "Fictional mall, bank and businesses on a real street. Casting reviewed in Part C: Somali victim and helpers, none as the culprit.",
+    "tags": [
+      "blunt-force",
+      "fraud",
+      "forged-document",
+      "spine-background"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 3,
+    "redHerrings": 0,
+    "liars": 1,
+    "groups": [
+      "who"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness"
+    ],
+    "gatedActions": [],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 33/11/06",
+    "date": "Wednesday 11 June",
+    "time": "19:12",
+    "reportedBy": "Fatuma Ali, tea seller, Barwaqo Mall",
+    "text": "Fatuma Ali, a tea seller, reports that Hodan Farah (34), fabric wholesaler, stall 2-14, Barwaqo Mall, First Avenue, Eastleigh, was found dead in her stall's storage cubicle at 19:05, shortly after the mall closed.",
+    "facts": [
+      "f_ob_found"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_hodan",
+      "role": "victim",
+      "name": "Hodan Farah",
+      "age": 34,
+      "occupation": "Wholesaler of printed fabric, stall 2-14",
+      "bio": "Sells printed cotton by the bale to retailers from all over Kenya. Gives credit to buyers she trusts.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_cubicle",
+      "image": {
+        "kind": "portrait",
+        "brief": "Somali Kenyan woman, mid 30s, patterned headscarf in deep green, a measuring tape around her neck, bolts of bright printed cotton behind her, shrewd and warm, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_josephine",
+      "role": "suspect",
+      "name": "Josephine Mueni",
+      "age": 52,
+      "occupation": "Clothing retailer from Machakos",
+      "bio": "Buys fabric on credit from Hodan and pays by bank deposit slip. Has done for five years.",
+      "community": "Kamba",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_invoice"
+      },
+      "at": "plc_stall",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 50s, a bright purple headscarf tied high, a large woven market bag on her shoulder, reading glasses, composed smile that does not reach her eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_abdirahman",
+      "role": "suspect",
+      "name": "Abdirahman Mohamed",
+      "age": 44,
+      "occupation": "Hodan's cousin and co-owner of the stall",
+      "bio": "He and Hodan are in a dispute over her late father's share of the business. The elders are mediating.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_stall_sign"
+      },
+      "at": "plc_mosque",
+      "image": {
+        "kind": "portrait",
+        "brief": "Somali Kenyan man, mid 40s, trimmed beard, white kanzu and a dark waistcoat, prayer cap, grave and tired, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_rajesh",
+      "role": "suspect",
+      "name": "Rajesh Patel",
+      "age": 58,
+      "occupation": "Fabric importer and supplier",
+      "bio": "Supplies Hodan from his godown in Industrial Area. They argued last month over his new prices.",
+      "community": "Kenyan-Asian",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_patel_letter"
+      },
+      "at": "plc_godown",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Asian man, late 50s, grey hair, short-sleeved checked shirt, a pen and a calculator in his breast pocket, businesslike and impatient, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_fatuma",
+      "role": "witness",
+      "name": "Fatuma Ali",
+      "age": 49,
+      "occupation": "Tea seller",
+      "bio": "Walks the four floors of Barwaqo Mall all day with two flasks of shaah. Found Hodan.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_mall",
+      "image": null
+    },
+    {
+      "id": "p_lameck",
+      "role": "witness",
+      "name": "Lameck Onyancha",
+      "age": 33,
+      "occupation": "Handcart porter",
+      "bio": "Pushes a mkokoteni in the lanes behind First Avenue. Carries bales to the matatu stages.",
+      "community": "Kisii",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_lameck"
+      },
+      "at": "plc_lane",
+      "image": null
+    },
+    {
+      "id": "p_sheikh",
+      "role": "witness",
+      "name": "Sheikh Ibrahim Hassan",
+      "age": 66,
+      "occupation": "Imam, mosque on 6th Street",
+      "statementOnly": true,
+      "bio": "Leads prayers at a mosque two streets from the mall.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_abdi_claim"
+      },
+      "at": "plc_mosque",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_stall",
+      "name": "Stall 2-14, second floor",
+      "within": "loc_mall"
+    },
+    {
+      "id": "plc_cubicle",
+      "name": "Hodan's storage cubicle behind stall 2-14",
+      "within": "loc_mall"
+    },
+    {
+      "id": "plc_lane",
+      "name": "Porters' lane behind First Avenue"
+    },
+    {
+      "id": "plc_mosque",
+      "name": "Mosque on 6th Street"
+    },
+    {
+      "id": "plc_godown",
+      "name": "Patel Textiles godown, Industrial Area"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_mall",
+      "name": "Barwaqo Mall, First Avenue, Eastleigh",
+      "kind": "scene",
+      "description": "Four floors of fabric and clothing stalls. Closing time is 19:00 and the shutters are coming down. Stall 2-14 on the second floor is stacked with bales of printed cotton. A storage cubicle at the back has a plywood door. On the ground floor, a bank branch, its hours painted on the glass.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Storage cubicle",
+          "pos": [
+            62,
+            48
+          ],
+          "yields": "ev_body",
+          "text": "Hodan lies between the bales. A steel bale hook is on the floor beside her. A glass of tea stands cold outside the door."
+        },
+        {
+          "id": "hs_invoice",
+          "label": "Invoice book on the counter",
+          "pos": [
+            30,
+            58
+          ],
+          "yields": "ev_invoice",
+          "text": "Hodan's carbon invoice book, open at today's page."
+        },
+        {
+          "id": "hs_slip",
+          "label": "Stapled to the invoice",
+          "pos": [
+            34,
+            52
+          ],
+          "yields": "ev_slip",
+          "text": "A bank deposit slip stapled to the last invoice. Something is written on it in pencil."
+        },
+        {
+          "id": "hs_sign",
+          "label": "Stall sign",
+          "pos": [
+            20,
+            20
+          ],
+          "yields": "ev_stallsign",
+          "text": "A painted sign over the stall."
+        },
+        {
+          "id": "hs_letter",
+          "label": "Letter under the cash box",
+          "pos": [
+            40,
+            64
+          ],
+          "yields": "ev_patel_letter",
+          "text": "A typed letter on a supplier's letterhead, folded twice and weighed down by the cash box."
+        },
+        {
+          "id": "hs_bank",
+          "label": "Bank glass, ground floor",
+          "pos": [
+            88,
+            82
+          ],
+          "yields": "ev_bankhours",
+          "text": "The bank branch at the mall entrance. Its opening hours are painted on the glass door."
+        },
+        {
+          "id": "hs_fatuma",
+          "label": "Tea seller",
+          "pos": [
+            76,
+            34
+          ],
+          "yields": "ev_fatuma",
+          "text": "Fatuma Ali sits on an upturned crate with her two flasks, shaking."
+        },
+        {
+          "id": "hs_lane",
+          "label": "Porters' lane outside",
+          "pos": [
+            96,
+            60
+          ],
+          "yields": "ev_lameck",
+          "text": "Behind the mall, the porters' lane. One porter, Lameck Onyancha, is counting coins and watching the police."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a wholesale fabric mall corridor in Eastleigh, Nairobi at closing time, stalls stacked with bales of bright printed cotton, shutters half down, fluorescent lights, a plywood storage door at the back of one stall, no people in focus"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body in the cubicle",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Struck with a steel bale hook, found on the floor. A glass of tea, cold, outside the door."
+      },
+      "facts": [
+        "f_body_hook"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a cramped storage cubicle stacked with bales of printed fabric, a steel bale hook lying on the cement floor, a small glass of milky tea standing outside the plywood door, no body visible"
+      }
+    },
+    {
+      "id": "ev_invoice",
+      "type": "physical",
+      "title": "Invoice book",
+      "render": "orderBook",
+      "body": {
+        "rows": [
+          {
+            "no": "3317",
+            "buyer": "J. Mueni",
+            "goods": "3 bales printed cotton",
+            "time": "18:20",
+            "paid": "bank slip"
+          }
+        ]
+      },
+      "facts": [
+        "f_invoice"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_slip",
+      "type": "physical",
+      "title": "Bank deposit slip",
+      "render": "form",
+      "body": {
+        "bank": "Umoja Bank, Eastleigh branch",
+        "stamped": "DEPOSITED 17:55",
+        "amount": "KSh 96,000",
+        "pencil": "FAKE? Bank closed. Call in the morning."
+      },
+      "facts": [
+        "f_slip"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a bank deposit slip stapled to a carbon invoice, a blue DEPOSITED rubber stamp with the time 17:55, and pencil handwriting in the margin reading \"FAKE? Bank closed.\""
+      }
+    },
+    {
+      "id": "ev_bankhours",
+      "type": "physical",
+      "title": "Bank hours on the glass",
+      "render": "board",
+      "body": {
+        "text": "UMOJA BANK — Eastleigh branch. Mon–Fri 08:30–16:00. Sat 09:00–12:00."
+      },
+      "facts": [
+        "f_bankhours"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_stallsign",
+      "type": "physical",
+      "title": "Stall sign",
+      "render": "board",
+      "body": {
+        "text": "FARAH & MOHAMED FABRICS — Wholesale — 2-14"
+      },
+      "facts": [
+        "f_stall_sign"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_patel_letter",
+      "type": "physical",
+      "title": "Letter from Patel Textiles",
+      "render": "note",
+      "body": {
+        "text": "New prices from the 1st, due to the exchange rate. Old prices cannot be honoured. — R. Patel, Patel Textiles, Industrial Area"
+      },
+      "facts": [
+        "f_patel_letter"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_fatuma",
+      "type": "witness",
+      "title": "Statement: Fatuma Ali",
+      "render": "statement",
+      "body": {
+        "speaker": "p_fatuma"
+      },
+      "facts": [
+        "f_fatuma_argue",
+        "f_fatuma_found",
+        "f_fatuma_rounds"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lameck",
+      "type": "witness",
+      "title": "Statement: Lameck Onyancha",
+      "render": "statement",
+      "body": {
+        "speaker": "p_lameck"
+      },
+      "facts": [
+        "f_lameck",
+        "f_lameck_hired"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_josephine_seen",
+      "type": "physical",
+      "title": "Amani's note: Josephine at the gate",
+      "render": "sceneNote",
+      "body": {
+        "note": "Josephine Mueni arrives at the mall gate at 20:30 when called. Purple headscarf. Large woven market bag."
+      },
+      "facts": [
+        "f_josephine_scarf"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_handbag",
+      "type": "physical",
+      "title": "Josephine's handbag, emptied",
+      "render": "object",
+      "body": {
+        "items": [
+          "purse",
+          "Machakos market licence",
+          "two blank Umoja Bank deposit slips, already stamped DEPOSITED",
+          "a business card"
+        ]
+      },
+      "facts": [
+        "f_handbag_slips",
+        "f_card_mvua"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "the contents of a woman's handbag spread on a fabric-stall counter: a purse, a folded market licence, two blank bank deposit slips with blue DEPOSITED stamps, and a plain business card reading MVUA HOLDINGS"
+      }
+    },
+    {
+      "id": "ev_mosque",
+      "type": "witness",
+      "title": "Statement: Sheikh Ibrahim Hassan",
+      "render": "statement",
+      "body": {
+        "speaker": "p_sheikh"
+      },
+      "facts": [
+        "f_mosque"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_godown",
+      "type": "physical",
+      "title": "Godown gate log",
+      "render": "visitorRegister",
+      "body": {
+        "rows": [
+          {
+            "name": "R. Patel",
+            "in": "17:00",
+            "out": "19:30"
+          }
+        ]
+      },
+      "facts": [
+        "f_godown"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Hodan Farah was found dead in the storage cubicle of stall 2-14 at 19:05, just after closing.",
+      "kind": "true",
+      "about": [
+        "p_hodan",
+        "plc_cubicle"
+      ]
+    },
+    {
+      "id": "f_body_hook",
+      "text": "Hodan was struck with a steel bale hook. It lies on the floor beside her.",
+      "kind": "true",
+      "about": [
+        "p_hodan",
+        "plc_cubicle"
+      ]
+    },
+    {
+      "id": "f_invoice",
+      "text": "Invoice No. 3317: 'J. Mueni — 3 bales printed cotton — 18:20 — paid: bank slip.'",
+      "kind": "true",
+      "about": [
+        "p_josephine",
+        "p_hodan"
+      ],
+      "where": {
+        "person": "p_josephine",
+        "place": "plc_stall",
+        "from": "18:15",
+        "to": "18:22"
+      }
+    },
+    {
+      "id": "f_slip",
+      "text": "The slip paying invoice 3317: Umoja Bank, KSh 96,000, stamped 'DEPOSITED 17:55'. In Hodan's pencil: 'FAKE? Bank closed. Call in the morning.'",
+      "kind": "true",
+      "about": [
+        "ev_slip",
+        "p_hodan"
+      ]
+    },
+    {
+      "id": "f_bankhours",
+      "text": "Painted on the bank's glass: Mon–Fri 08:30–16:00. On a Wednesday the bank was shut at 17:55.",
+      "kind": "true",
+      "about": [
+        "ev_bankhours"
+      ]
+    },
+    {
+      "id": "f_stall_sign",
+      "text": "The stall is 'Farah & Mohamed Fabrics': Hodan and her cousin Abdirahman Mohamed own it together.",
+      "kind": "true",
+      "about": [
+        "p_abdirahman",
+        "plc_stall"
+      ]
+    },
+    {
+      "id": "f_patel_letter",
+      "text": "Letter from R. Patel, Patel Textiles: new prices from the 1st, old prices cannot be honoured.",
+      "kind": "true",
+      "about": [
+        "p_rajesh"
+      ]
+    },
+    {
+      "id": "f_fatuma_argue",
+      "text": "Fatuma brought Hodan tea at 18:25. Hodan was in the cubicle arguing about \"the bank\" with a woman in a purple headscarf. Fatuma left the glass outside the door.",
+      "kind": "true",
+      "about": [
+        "p_fatuma",
+        "p_hodan",
+        "plc_cubicle"
+      ]
+    },
+    {
+      "id": "f_fatuma_found",
+      "text": "At 19:05 the tea was still outside the door, cold. Fatuma opened the cubicle and found Hodan.",
+      "kind": "true",
+      "about": [
+        "p_fatuma",
+        "plc_cubicle"
+      ]
+    },
+    {
+      "id": "f_fatuma_rounds",
+      "text": "Fatuma went straight up to the third floor after 18:25; two stallholders there bought tea from her at 18:35.",
+      "kind": "true",
+      "about": [
+        "p_fatuma"
+      ],
+      "where": {
+        "person": "p_fatuma",
+        "place": "loc_mall",
+        "from": "18:30",
+        "to": "18:40"
+      }
+    },
+    {
+      "id": "f_lameck",
+      "text": "Lameck: at 18:40 the bales were outside the shut cubicle. A woman in a purple headscarf came out alone: 'Mama Hodan is resting. Don't disturb her.' She paid him KSh 300.",
+      "kind": "true",
+      "about": [
+        "p_lameck",
+        "plc_cubicle"
+      ]
+    },
+    {
+      "id": "f_lameck_hired",
+      "text": "Lameck: the same woman hired him at 18:30 in the lane to carry three bales to the Machakos matatus. He came up at 18:40.",
+      "kind": "true",
+      "about": [
+        "p_lameck"
+      ],
+      "where": {
+        "person": "p_lameck",
+        "place": "plc_lane",
+        "from": "18:30",
+        "to": "18:40"
+      }
+    },
+    {
+      "id": "f_josephine_scarf",
+      "text": "Josephine Mueni is wearing a purple headscarf.",
+      "kind": "true",
+      "about": [
+        "p_josephine"
+      ]
+    },
+    {
+      "id": "f_handbag_slips",
+      "text": "Josephine's handbag holds two blank Umoja Bank deposit slips that are already stamped 'DEPOSITED'.",
+      "kind": "true",
+      "about": [
+        "p_josephine"
+      ]
+    },
+    {
+      "id": "f_card_mvua",
+      "text": "A business card in her handbag: 'Mvua Holdings — Fast Loans · Title Searches · Document Services — Till 880 214'.",
+      "kind": "true",
+      "about": [
+        "p_josephine"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_josephine_left",
+      "text": "Josephine: \"I left Eastleigh at four on the Machakos matatu. By six I was already home.\"",
+      "kind": "lie",
+      "about": [
+        "p_josephine"
+      ]
+    },
+    {
+      "id": "f_josephine_years",
+      "text": "Josephine: \"I have bought from Hodan for five years. Ask anyone in this mall.\"",
+      "kind": "claim",
+      "about": [
+        "p_josephine"
+      ]
+    },
+    {
+      "id": "f_josephine_admits",
+      "text": "Josephine admits she came back to stall 2-14 at 18:20 for three more bales. She says Hodan was alive and shouting when she left at about half past six.",
+      "kind": "true",
+      "about": [
+        "p_josephine",
+        "p_hodan"
+      ],
+      "where": {
+        "person": "p_josephine",
+        "place": "plc_stall",
+        "from": "18:20",
+        "to": "18:30"
+      }
+    },
+    {
+      "id": "f_abdi_claim",
+      "text": "Abdirahman: \"I was at the mosque from before Maghrib.\"",
+      "kind": "claim",
+      "about": [
+        "p_abdirahman"
+      ]
+    },
+    {
+      "id": "f_abdi_dispute",
+      "text": "Abdirahman: the dispute over her father's share is with the elders. \"It is not a matter for the police.\"",
+      "kind": "true",
+      "about": [
+        "p_abdirahman",
+        "p_hodan"
+      ]
+    },
+    {
+      "id": "f_abdi_slips",
+      "text": "Abdirahman: Josephine always paid by bank slip. Hodan trusted her and never checked.",
+      "kind": "true",
+      "about": [
+        "p_abdirahman",
+        "p_josephine"
+      ]
+    },
+    {
+      "id": "f_mosque",
+      "text": "Sheikh Ibrahim: Abdirahman came early for Maghrib, about 18:20, and stayed talking with him until about 19:00.",
+      "kind": "true",
+      "about": [
+        "p_sheikh",
+        "p_abdirahman"
+      ],
+      "where": {
+        "person": "p_abdirahman",
+        "place": "plc_mosque",
+        "from": "18:20",
+        "to": "19:00"
+      }
+    },
+    {
+      "id": "f_rajesh_claim",
+      "text": "Rajesh: \"I haven't been to Eastleigh in a week. I was at my godown all evening.\"",
+      "kind": "claim",
+      "about": [
+        "p_rajesh"
+      ]
+    },
+    {
+      "id": "f_rajesh_prices",
+      "text": "Rajesh: the price dispute was about the shilling falling. \"Nothing personal. Everybody got the same letter.\"",
+      "kind": "true",
+      "about": [
+        "p_rajesh",
+        "p_hodan"
+      ]
+    },
+    {
+      "id": "f_godown",
+      "text": "Patel Textiles gate log, Industrial Area: 'R. Patel — in 17:00 — out 19:30.'",
+      "kind": "true",
+      "about": [
+        "p_rajesh"
+      ],
+      "where": {
+        "person": "p_rajesh",
+        "place": "plc_godown",
+        "from": "17:00",
+        "to": "19:30"
+      }
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_josephine",
+      "stance": "cooperative",
+      "intro": "Josephine arrives at the gate at half past eight, called back from Machakos road. \"Hodan? No. No. Five years I have bought from her.\"",
+      "claims": [
+        "f_josephine_left",
+        "f_josephine_years"
+      ],
+      "yields": [
+        "ev_josephine_seen",
+        "ev_handbag"
+      ],
+      "topics": [
+        {
+          "about": "ev_slip",
+          "reply": "That is a deposit slip. I deposit, the bank stamps, I pay. Ask the bank.",
+          "reveals": []
+        },
+        {
+          "about": "f_bankhours",
+          "reply": "Maybe they had a late counter. I don't work in a bank.",
+          "reveals": []
+        },
+        {
+          "about": "f_lameck",
+          "reply": "Many women wear purple. Go to Gikomba and count them.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_abdirahman",
+      "stance": "cooperative",
+      "intro": "Abdirahman has come straight from the mosque, still barefoot in his sandals. \"My cousin. We fought over money. That is family. That is not this.\"",
+      "claims": [
+        "f_abdi_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_hodan",
+          "reply": "Our dispute is with the wazee, the elders. Her father's share. We would have settled it in a month.",
+          "reveals": [
+            "f_abdi_dispute"
+          ]
+        },
+        {
+          "about": "p_josephine",
+          "reply": "Mama Josephine from Machakos? She always paid by slip. Hodan trusted her. Hodan never even went to the bank to check.",
+          "reveals": [
+            "f_abdi_slips"
+          ]
+        },
+        {
+          "about": "p_sheikh",
+          "reply": "Ask the Sheikh. I came early for Maghrib and sat with him.",
+          "reveals": [
+            "ev_mosque"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_rajesh",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_invoice"
+      ],
+      "intro": "Rajesh Patel takes Amani's call in his godown, a forklift beeping behind him. \"Who is this? I'm busy.\"",
+      "claims": [
+        "f_rajesh_claim"
+      ],
+      "yields": [
+        "ev_godown"
+      ],
+      "topics": [
+        {
+          "about": "ev_patel_letter",
+          "reply": "Everybody got that letter. The shilling falls, I pay more in dollars, the price goes up. Nothing personal.",
+          "reveals": [
+            "f_rajesh_prices"
+          ]
+        },
+        {
+          "about": "p_hodan",
+          "reply": "She was the best buyer on First Avenue. She argued, she paid. I am very sorry.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_fatuma",
+      "stance": "cooperative",
+      "intro": "Fatuma holds a flask in each hand as if they might steady her. \"I bring her shaah every evening. Every evening.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_hodan",
+          "reply": "At twenty-five past six she was arguing about the bank with a woman. A woman in purple. I left the glass outside. I didn't want to disturb.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_lameck",
+      "stance": "cooperative",
+      "intro": "Lameck wipes his palms on his shirt. \"I carried bales for a woman. That is my work. I did nothing.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_josephine_seen",
+          "reply": "That is the woman. The purple. She told me Mama Hodan was resting. She paid me three hundred and I took her bales to the Machakos matatus.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_josephine_left",
+      "claim": "f_josephine_left",
+      "brokenBy": [
+        "f_invoice"
+      ],
+      "reveals": [
+        "f_josephine_admits"
+      ],
+      "reaction": "I came back for the bales, yes. Three bales, that is all. She was alive when I left. She was shouting at me, but she was alive.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_josephine",
+      "text": "Josephine Mueni",
+      "category": "person",
+      "ref": "p_josephine",
+      "unlock": {
+        "anyOf": [
+          "f_invoice"
+        ]
+      }
+    },
+    {
+      "id": "w_abdirahman",
+      "text": "Abdirahman Mohamed",
+      "category": "person",
+      "ref": "p_abdirahman",
+      "unlock": {
+        "anyOf": [
+          "f_stall_sign"
+        ]
+      }
+    },
+    {
+      "id": "w_rajesh",
+      "text": "Rajesh Patel",
+      "category": "person",
+      "ref": "p_rajesh",
+      "unlock": {
+        "anyOf": [
+          "f_patel_letter"
+        ]
+      }
+    },
+    {
+      "id": "w_fatuma",
+      "text": "Fatuma Ali",
+      "category": "person",
+      "ref": "p_fatuma",
+      "unlock": {
+        "anyOf": [
+          "f_ob_found",
+          "f_fatuma_argue"
+        ]
+      }
+    },
+    {
+      "id": "w_lameck",
+      "text": "Lameck Onyancha",
+      "category": "person",
+      "ref": "p_lameck",
+      "unlock": {
+        "anyOf": [
+          "f_lameck"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} at Barwaqo Mall.",
+    "fixed": {
+      "victim": "Hodan Farah"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_josephine"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A slip from a shut bank, a woman in purple at 18:25 and again at 18:40, and a lie about the matatu. That will hold.",
+          "fail": [
+            "Doesn't hold up. A family dispute with the elders isn't a woman in purple in the cubicle. Read the tea seller and the porter together.",
+            "No. Who was arguing with her about the bank, and who came out of that cubicle alone?"
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_mall",
+      "from": "18:25",
+      "to": "18:40",
+      "within": [
+        "plc_cubicle",
+        "plc_stall"
+      ]
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_josephine_left",
+          "f_invoice",
+          "f_josephine_admits"
+        ],
+        "concludes": "Josephine said she was home in Machakos by six, but Hodan wrote her invoice 3317 at 18:20. Pressed, she admits being at the stall at 18:20."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_slip",
+          "f_bankhours"
+        ],
+        "concludes": "The slip she paid with claims a deposit at 17:55 at a bank that shuts at 16:00. It is fake, and Hodan had noticed: that is why she died."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_fatuma_argue",
+          "f_lameck",
+          "f_josephine_scarf"
+        ],
+        "concludes": "At 18:25 Hodan was arguing about \"the bank\" with a woman in a purple headscarf. At 18:40 a woman in a purple headscarf came out of the shut cubicle alone and kept people away. Josephine wears a purple headscarf, and she had the reason. Josephine Mueni killed Hodan.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_abdirahman",
+        "blank": "who",
+        "by": [
+          "f_mosque"
+        ],
+        "why": "Sheikh Ibrahim sat with Abdirahman at the mosque from about 18:20 to 19:00."
+      },
+      {
+        "word": "w_rajesh",
+        "blank": "who",
+        "by": [
+          "f_godown"
+        ],
+        "why": "Rajesh was in his Industrial Area godown from 17:00 to 19:30."
+      },
+      {
+        "word": "w_fatuma",
+        "blank": "who",
+        "by": [
+          "f_fatuma_rounds"
+        ],
+        "why": "Fatuma left the tea at 18:25 and was selling on the third floor at 18:35; the woman she heard arguing was someone else."
+      },
+      {
+        "word": "w_lameck",
+        "blank": "who",
+        "by": [
+          "f_lameck_hired"
+        ],
+        "why": "Lameck was in the lane until 18:40 and arrived to find the cubicle already shut."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "For two months Josephine has paid Hodan with deposit slips that were never deposited. This week Hodan starts to look closely.",
+        "image": null
+      },
+      {
+        "text": "18:20. Josephine comes back for three more bales with another slip, stamped 17:55. Hodan writes invoice 3317, then looks at the stamp. The bank shuts at four.",
+        "image": "loc_mall"
+      },
+      {
+        "text": "18:25. In the cubicle, Hodan says she will go to the bank in the morning, and then the police. Fatuma leaves a glass of tea outside the door.",
+        "image": null
+      },
+      {
+        "text": "Josephine picks up the bale hook. Then she drags her bales out of the cubicle and shuts the door. At 18:30 she hires a porter in the lane.",
+        "image": null
+      },
+      {
+        "text": "18:40. \"Mama Hodan is resting. Don't disturb her.\" She pays the porter KSh 300 and rides to Machakos with the bales.",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_slip",
+        "line": "Hodan wrote on the slip before she died. Then walk down to the ground floor and read the glass."
+      },
+      "tier2": {
+        "facts": [
+          "f_fatuma_argue",
+          "f_lameck"
+        ],
+        "line": "The tea seller heard a woman at 18:25. The porter saw a woman at 18:40. Describe them both. Then look at who came to the gate."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "shaah",
+      "def": "Spiced tea, Somali style."
+    },
+    {
+      "term": "mkokoteni",
+      "def": "Wooden handcart pushed by porters."
+    },
+    {
+      "term": "maghrib",
+      "def": "The sunset prayer."
+    },
+    {
+      "term": "wazee",
+      "def": "Elders."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address or name a woman."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    },
+    {
+      "term": "kanzu",
+      "def": "Long white robe worn by men."
+    },
+    {
+      "term": "matatu",
+      "def": "Minibus taxi."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "signsAsEvidence"
+    ],
+    "beatNotes": "Signs and notices as evidence: for the first time something painted on a wall (the bank's hours on the glass) is a collectible fact. Teaches the player to read the environment, not just people and papers."
+  }
+}

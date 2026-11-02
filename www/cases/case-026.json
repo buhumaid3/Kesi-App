@@ -1,0 +1,1241 @@
+{
+  "meta": {
+    "id": "case-026",
+    "number": 26,
+    "region": "mombasa-old-town",
+    "regionNumber": 3,
+    "title": "Paid in Advance",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 16,
+    "date": "Tuesday 9 September",
+    "folderTab": "MAMA NGINA DR"
+  },
+  "pattern": {
+    "crimePattern": "mother kills the tuk-tuk driver she believes killed her son in an unsolved hit-and-run, and bribes a witness",
+    "noRealCaseRetold": true,
+    "notes": "Unsolved hit-and-runs are a real and painful pattern; no real case is depicted. Tone: Felister is a grieving mother, not a monster. Abdalla's guilt for the hit-and-run is stated as evidence, never as justification.",
+    "tags": [
+      "blunt-force",
+      "revenge",
+      "bribed-witness",
+      "records-request",
+      "archive"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 3,
+    "redHerrings": 1,
+    "liars": 1,
+    "groups": [
+      "who",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "document",
+      "phone"
+    ],
+    "gatedActions": [
+      "records"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 46/09/09",
+    "date": "Tuesday 9 September",
+    "time": "22:19",
+    "reportedBy": "Police patrol, Mama Ngina Drive",
+    "text": "A police patrol reports a tuk-tuk driver, Abdalla Swaleh (32), found slumped in his parked tuk-tuk on Mama Ngina Drive at 22:05. A tuk-tuk driver at the scene, Rajab Mwaringa, describes \"a tall man in a cap\" running away towards Likoni Road.",
+    "facts": [
+      "f_ob_found",
+      "f_ob_tallman"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_abdalla",
+      "role": "victim",
+      "name": "Abdalla Swaleh",
+      "age": 32,
+      "occupation": "Tuk-tuk driver",
+      "bio": "Rents his tuk-tuk by the day. Works the Mama Ngina Drive stage at night.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_tuktuk",
+      "image": {
+        "kind": "portrait",
+        "brief": "Swahili Kenyan man, early 30s, a cap worn backwards, a cheap smartwatch, a chain of prayer beads round the tuk-tuk mirror behind him, an easy grin, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_felister",
+      "role": "suspect",
+      "name": "Felister Mghanga",
+      "age": 47,
+      "occupation": "Unemployed; formerly a school cook",
+      "bio": "Her son Jeremy, 19, was killed by a hit-and-run tuk-tuk on New Year's night. The file was never solved.",
+      "community": "Taita",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_ap_fare"
+      },
+      "at": "plc_tuktuk",
+      "image": {
+        "kind": "portrait",
+        "brief": "Taita Kenyan woman, late 40s, a red kanga over her shoulders, a small framed photo of a young man held against her chest, eyes that have stopped crying, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_said",
+      "role": "suspect",
+      "name": "Said Omar Mbarak",
+      "age": 55,
+      "occupation": "Owns the tuk-tuk Abdalla rents",
+      "bio": "Abdalla is two weeks behind on the daily rent.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_owner"
+      },
+      "at": "plc_makadara",
+      "image": {
+        "kind": "portrait",
+        "brief": "Swahili Kenyan man, mid 50s, a crisp white kanzu, a football-club committee badge with no logo, reading glasses, businesslike, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kai",
+      "role": "suspect",
+      "name": "Omari Kai",
+      "age": 30,
+      "occupation": "Rival tuk-tuk driver",
+      "bio": "Fought Abdalla last week over the Mama Ngina Drive stage.",
+      "community": "Mijikenda",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_chiku_kai"
+      },
+      "at": "plc_bamburi",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 30, a tuk-tuk driver's reflective vest, a phone mounted on his wrist, defiant, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_rajab",
+      "role": "witness",
+      "name": "Rajab Mwaringa",
+      "age": 41,
+      "occupation": "Tuk-tuk driver",
+      "bio": "Told the patrol he saw a tall man in a cap run off.",
+      "community": "Mijikenda",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_bamburi",
+      "image": null
+    },
+    {
+      "id": "p_chiku",
+      "role": "witness",
+      "name": "Chiku Rashidi (Mama Chiku)",
+      "age": 60,
+      "occupation": "Coconut-water seller",
+      "bio": "Has sold madafu on the drive for twenty years.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_cart",
+      "image": null
+    },
+    {
+      "id": "p_ali",
+      "role": "witness",
+      "name": "Ali Bakari Mwamba",
+      "age": 63,
+      "occupation": "Secretary, Makadara football committee",
+      "statementOnly": true,
+      "bio": "Keeps the minutes at the evening match committee.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_said_claim"
+      },
+      "at": "plc_makadara",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_tuktuk",
+      "name": "Abdalla's tuk-tuk, parked up the drive",
+      "within": "loc_drive"
+    },
+    {
+      "id": "plc_cart",
+      "name": "Mama Chiku's coconut cart",
+      "within": "loc_drive"
+    },
+    {
+      "id": "plc_makadara",
+      "name": "Makadara grounds"
+    },
+    {
+      "id": "plc_bamburi",
+      "name": "Bamburi"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_drive",
+      "name": "Mama Ngina Drive",
+      "kind": "scene",
+      "description": "The seafront at night. Families walking, coconut-water carts lit by lamps, cassava crisps frying, tuk-tuks waiting for fares. A little way up the drive, one tuk-tuk stands alone with its lights off.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The tuk-tuk",
+          "pos": [
+            60,
+            50
+          ],
+          "yields": "ev_body",
+          "text": "Abdalla is slumped over the handlebar. His tyre lever lies in the footwell. His takings pouch is still on his belt."
+        },
+        {
+          "id": "hs_phone",
+          "label": "Dashboard holder",
+          "pos": [
+            56,
+            40
+          ],
+          "yields": "ev_abdalla_phone",
+          "text": "His phone in the dashboard holder. His brother arrives with the code."
+        },
+        {
+          "id": "hs_glovebox",
+          "label": "Glovebox",
+          "pos": [
+            64,
+            44
+          ],
+          "yields": "ev_glovebox",
+          "text": "Papers folded small: licence, insurance, and a receipt."
+        },
+        {
+          "id": "hs_sticker",
+          "label": "Logbook sticker",
+          "pos": [
+            70,
+            36
+          ],
+          "yields": "ev_owner",
+          "text": "An owner's sticker on the frame."
+        },
+        {
+          "id": "hs_chiku",
+          "label": "Coconut cart",
+          "pos": [
+            24,
+            64
+          ],
+          "yields": "ev_chiku",
+          "text": "Mama Chiku has stopped cutting coconuts. She is watching the patrol, and watching Rajab."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "Mama Ngina Drive in Mombasa at night, the seafront promenade, coconut-water carts lit by paraffin lamps, people walking, a line of tuk-tuks waiting, one tuk-tuk parked alone further up the drive with its lights off, the dark sea beyond, no people in focus"
+      }
+    },
+    {
+      "id": "loc_archive",
+      "name": "Station OB archive",
+      "kind": "location",
+      "description": "The coast station's Occurrence Books, bound by year, on steel shelves. Searchable by name or date, free.",
+      "unlock": {
+        "fact": "f_ap_fare"
+      },
+      "hotspots": [
+        {
+          "id": "hs_search",
+          "label": "Search: \"Mghanga\"",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_old_ob",
+          "text": "One entry from New Year's night."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a police station records room with steel shelves of bound Occurrence Books, a desk lamp over one open ledger, dust in the light"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body in the tuk-tuk",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Struck with the tuk-tuk's own tyre lever. Takings pouch on his belt, untouched."
+      },
+      "facts": [
+        "f_body_lever",
+        "f_body_takings"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the inside of a parked three-wheeler tuk-tuk at night, a steel tyre lever lying in the footwell, a phone in a dashboard holder, prayer beads hanging from the mirror, no body visible"
+      }
+    },
+    {
+      "id": "ev_abdalla_phone",
+      "type": "phone",
+      "title": "Abdalla's phone (unlocked by his brother)",
+      "render": "smsThread",
+      "body": {
+        "messages": [
+          {
+            "time": "21:28",
+            "text": "KSh 200 received from FELISTER MGHANGA. Ref: fare."
+          }
+        ],
+        "calls": "No calls after 21:20."
+      },
+      "facts": [
+        "f_ap_fare"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_chiku",
+      "type": "witness",
+      "title": "Statement: Mama Chiku",
+      "render": "statement",
+      "body": {
+        "speaker": "p_chiku"
+      },
+      "facts": [
+        "f_chiku_woman",
+        "f_chiku_rajab",
+        "f_chiku_kai",
+        "f_chiku_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Rajab Mwaringa's line",
+      "render": "mastRecord",
+      "body": {
+        "masts": "Bamburi until 22:02; Mama Ngina zone from 22:10.",
+        "calls": "Incoming 21:44 from FELISTER MGHANGA.",
+        "pesapap": "22:40 — KSh 3,000 from FELISTER MGHANGA."
+      },
+      "facts": [
+        "f_rec_mast",
+        "f_rec_call",
+        "f_rec_pay"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_chiku_rajab"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_glovebox",
+      "type": "physical",
+      "title": "Garage receipt in the glovebox",
+      "render": "receipt",
+      "body": {
+        "date": "2 January",
+        "work": "Front fork straightened, windscreen replaced",
+        "paid": "cash"
+      },
+      "facts": [
+        "f_garage"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a crumpled handwritten garage receipt dated 2 January listing front fork straightened and windscreen replaced, paid cash, lying in a tuk-tuk glovebox"
+      }
+    },
+    {
+      "id": "ev_owner",
+      "type": "physical",
+      "title": "Owner's sticker",
+      "render": "tag",
+      "body": {
+        "text": "Owner: S. O. Mbarak. Daily hire."
+      },
+      "facts": [
+        "f_owner"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_old_ob",
+      "type": "document",
+      "title": "OB 03/01/01 (archive)",
+      "render": "logBook",
+      "body": {
+        "entry": "Hit-and-run, Nyali Road, 23:50. Pedestrian Jeremy Mghanga, 19, died at scene. Three-wheeler, fled, no plate seen.",
+        "status": "Pending. No suspect."
+      },
+      "facts": [
+        "f_old_ob"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kanga",
+      "type": "physical",
+      "title": "Felister's red kanga",
+      "render": "object",
+      "body": {
+        "label": "Washed last night. Still damp this morning."
+      },
+      "facts": [
+        "f_kanga"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_handbag",
+      "type": "physical",
+      "title": "Felister's handbag",
+      "render": "object",
+      "body": {
+        "label": "Purse, ID, a photo of Jeremy. Nothing of Abdalla's."
+      },
+      "facts": [
+        "f_handbag"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_makadara",
+      "type": "witness",
+      "title": "Phone statement: Ali Bakari Mwamba",
+      "render": "statement",
+      "body": {
+        "speaker": "p_ali",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_makadara"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kai",
+      "type": "phone",
+      "title": "Omari Kai's phone (shown willingly)",
+      "render": "phoneLog",
+      "body": {
+        "pesapap": "21:15 — fare from a passenger to Bamburi.",
+        "masts": "Bamburi until 22:20 (his own log)."
+      },
+      "facts": [
+        "f_kai"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Tuk-tuk driver Abdalla Swaleh was found slumped in his parked tuk-tuk on Mama Ngina Drive at 22:05.",
+      "kind": "true",
+      "about": [
+        "p_abdalla",
+        "plc_tuktuk"
+      ]
+    },
+    {
+      "id": "f_ob_tallman",
+      "text": "At the scene, tuk-tuk driver Rajab Mwaringa told the patrol he saw \"a tall man in a cap\" run towards Likoni Road.",
+      "kind": "true",
+      "about": [
+        "p_rajab"
+      ]
+    },
+    {
+      "id": "f_body_lever",
+      "text": "Abdalla was struck with his own tuk-tuk's tyre lever, kept under the seat.",
+      "kind": "true",
+      "about": [
+        "p_abdalla",
+        "plc_tuktuk"
+      ]
+    },
+    {
+      "id": "f_body_takings",
+      "text": "His takings pouch is still on his belt, untouched.",
+      "kind": "true",
+      "about": [
+        "p_abdalla"
+      ]
+    },
+    {
+      "id": "f_ap_fare",
+      "text": "Abdalla's phone: last payment at 21:28, KSh 200 from FELISTER MGHANGA, reference 'fare'. No calls after 21:20.",
+      "kind": "true",
+      "about": [
+        "p_abdalla",
+        "p_felister"
+      ]
+    },
+    {
+      "id": "f_chiku_woman",
+      "text": "Mama Chiku: at about 21:30 a woman in a red kanga got into Abdalla's tuk-tuk \"like a passenger\". It drove a little way up and stopped. She never saw a tall man in a cap.",
+      "kind": "true",
+      "about": [
+        "p_chiku",
+        "plc_tuktuk"
+      ]
+    },
+    {
+      "id": "f_chiku_rajab",
+      "text": "Mama Chiku: Rajab only arrived after the police, \"about ten past ten\".",
+      "kind": "true",
+      "about": [
+        "p_chiku",
+        "p_rajab"
+      ]
+    },
+    {
+      "id": "f_chiku_kai",
+      "text": "Mama Chiku: last week Abdalla fought another driver, Omari Kai, over the Mama Ngina stage.",
+      "kind": "true",
+      "about": [
+        "p_chiku",
+        "p_kai"
+      ]
+    },
+    {
+      "id": "f_chiku_self",
+      "text": "Mama Chiku was at her cart in full view of the drive from 18:00.",
+      "kind": "true",
+      "about": [
+        "p_chiku"
+      ],
+      "where": {
+        "person": "p_chiku",
+        "place": "plc_cart",
+        "from": "18:00",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_rec_mast",
+      "text": "Records, Rajab's line: Bamburi mast until 22:02. Mama Ngina zone from 22:10.",
+      "kind": "true",
+      "about": [
+        "p_rajab"
+      ],
+      "where": {
+        "person": "p_rajab",
+        "place": "plc_bamburi",
+        "from": "21:00",
+        "to": "22:02"
+      }
+    },
+    {
+      "id": "f_rec_call",
+      "text": "Records, Rajab's line: an incoming call at 21:44 from FELISTER MGHANGA's number.",
+      "kind": "true",
+      "about": [
+        "p_rajab",
+        "p_felister"
+      ]
+    },
+    {
+      "id": "f_rec_pay",
+      "text": "PesaPap, Rajab's line: 22:40, KSh 3,000 from FELISTER MGHANGA.",
+      "kind": "true",
+      "about": [
+        "p_rajab",
+        "p_felister"
+      ]
+    },
+    {
+      "id": "f_garage",
+      "text": "Garage receipt in the glovebox, 2 January: 'Front fork straightened, windscreen replaced — cash.'",
+      "kind": "true",
+      "about": [
+        "p_abdalla"
+      ]
+    },
+    {
+      "id": "f_owner",
+      "text": "Owner's sticker: the tuk-tuk belongs to S. O. Mbarak, daily hire.",
+      "kind": "true",
+      "about": [
+        "p_said"
+      ]
+    },
+    {
+      "id": "f_old_ob",
+      "text": "Archive, OB 03/01/01: hit-and-run, Nyali Road, 23:50, New Year's night. Jeremy Mghanga, 19, died at the scene. \"Three-wheeler, fled, no plate seen.\" Pending, no suspect.",
+      "kind": "true",
+      "about": [
+        "p_felister"
+      ]
+    },
+    {
+      "id": "f_kanga",
+      "text": "Felister's red kanga was washed last night and is still damp this morning.",
+      "kind": "true",
+      "about": [
+        "p_felister"
+      ]
+    },
+    {
+      "id": "f_handbag",
+      "text": "Felister's handbag: purse, ID, a photo of Jeremy. Nothing of Abdalla's.",
+      "kind": "true",
+      "about": [
+        "p_felister"
+      ]
+    },
+    {
+      "id": "f_makadara",
+      "text": "Ali Bakari Mwamba: Said Omar Mbarak sat at the Makadara match committee from 19:00 to 22:30.",
+      "kind": "true",
+      "about": [
+        "p_ali",
+        "p_said"
+      ],
+      "where": {
+        "person": "p_said",
+        "place": "plc_makadara",
+        "from": "19:00",
+        "to": "22:30"
+      }
+    },
+    {
+      "id": "f_kai",
+      "text": "Omari Kai's own phone: a passenger paid him at 21:15 for a fare to Bamburi, and his phone stays on the Bamburi mast until 22:20.",
+      "kind": "true",
+      "about": [
+        "p_kai"
+      ],
+      "where": {
+        "person": "p_kai",
+        "place": "plc_bamburi",
+        "from": "21:15",
+        "to": "22:20"
+      }
+    },
+    {
+      "id": "f_rajab_tallman",
+      "text": "Rajab: \"At about 21:40 I saw a tall man in a cap hit him and run towards Likoni Road.\"",
+      "kind": "lie",
+      "about": [
+        "p_rajab"
+      ],
+      "redHerring": true
+    },
+    {
+      "id": "f_rajab_admits",
+      "text": "Rajab admits he saw nothing. Felister called him at 21:44, crying, and paid him KSh 3,000 to tell the police about a tall man in a cap. \"She said he killed her boy.\"",
+      "kind": "true",
+      "about": [
+        "p_rajab",
+        "p_felister"
+      ]
+    },
+    {
+      "id": "f_felister_ride",
+      "text": "Felister: she paid Abdalla a fare and rode along the drive at about half past nine.",
+      "kind": "true",
+      "about": [
+        "p_felister",
+        "plc_tuktuk"
+      ],
+      "where": {
+        "person": "p_felister",
+        "place": "plc_tuktuk",
+        "from": "21:28",
+        "to": "21:40"
+      }
+    },
+    {
+      "id": "f_felister_alive",
+      "text": "Felister: \"He was alive when I got out.\"",
+      "kind": "claim",
+      "about": [
+        "p_felister"
+      ]
+    },
+    {
+      "id": "f_felister_eight",
+      "text": "Felister, shown the old OB entry: \"Eight months. Nobody came. Nobody looked. I looked.\"",
+      "kind": "true",
+      "about": [
+        "p_felister"
+      ]
+    },
+    {
+      "id": "f_said_claim",
+      "text": "Said: \"I was at the football committee.\"",
+      "kind": "claim",
+      "about": [
+        "p_said"
+      ]
+    },
+    {
+      "id": "f_said_rent",
+      "text": "Said: Abdalla was two weeks behind on the daily rent for the tuk-tuk.",
+      "kind": "true",
+      "about": [
+        "p_said",
+        "p_abdalla"
+      ]
+    },
+    {
+      "id": "f_said_pothole",
+      "text": "Said: in January Abdalla told him the damage came from \"a pothole\". \"I believed him.\"",
+      "kind": "true",
+      "about": [
+        "p_said",
+        "p_abdalla"
+      ]
+    },
+    {
+      "id": "f_kai_claim",
+      "text": "Kai: \"I was on a fare to Bamburi.\"",
+      "kind": "claim",
+      "about": [
+        "p_kai"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_rajab",
+      "stance": "cooperative",
+      "intro": "Rajab stands by the patrol car, talking too fast. \"Tall. A cap. He ran that way. I saw it all.\"",
+      "claims": [
+        "f_rajab_tallman"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_felister",
+          "reply": "I don't know any Felister.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_felister",
+      "stance": "cooperative",
+      "intro": "Felister opens her door before Amani knocks, a red kanga folded over her arm. \"You came. Somebody finally came.\"",
+      "claims": [
+        "f_felister_ride",
+        "f_felister_alive"
+      ],
+      "yields": [
+        "ev_handbag"
+      ],
+      "topics": [
+        {
+          "about": "ev_old_ob",
+          "reply": "Eight months. Nobody came. Nobody looked. I looked.",
+          "reveals": [
+            "f_felister_eight"
+          ]
+        },
+        {
+          "about": "f_chiku_woman",
+          "reply": "She hands over the red kanga without being asked. \"It's still wet. I washed it last night.\"",
+          "reveals": [
+            "ev_kanga"
+          ]
+        },
+        {
+          "about": "ev_glovebox",
+          "reply": "A mechanic told me in August. The second of January. A smashed front and a new windscreen, cash, no questions.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_said",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_glovebox"
+      ],
+      "intro": "Said answers from the Makadara grounds, a whistle going behind him. \"My tuk-tuk? What has he done to my tuk-tuk?\"",
+      "claims": [
+        "f_said_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_abdalla",
+          "reply": "Two weeks behind on the daily rent. Good driver, bad payer.",
+          "reveals": [
+            "f_said_rent"
+          ]
+        },
+        {
+          "about": "ev_glovebox",
+          "reply": "In January he told me he hit a pothole. I believed him. I fixed nothing. He paid himself.",
+          "reveals": [
+            "f_said_pothole"
+          ]
+        },
+        {
+          "about": "p_ali",
+          "reply": "Ask the committee secretary. I sat at that table all evening.",
+          "reveals": [
+            "ev_makadara"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_kai",
+      "stance": "cooperative",
+      "intro": "Omari Kai holds out his phone before he is asked. \"Look. Bamburi. I was in Bamburi.\"",
+      "claims": [
+        "f_kai_claim"
+      ],
+      "yields": [
+        "ev_kai"
+      ],
+      "topics": [
+        {
+          "about": "p_abdalla",
+          "reply": "We fought over the stage. That's the stage. You don't kill a man for the stage.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_chiku",
+      "stance": "cooperative",
+      "intro": "Mama Chiku goes back to cutting coconuts so that her hands have something to do. \"I saw what I saw. I didn't see a tall man.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_rajab",
+          "reply": "Rajab? He came after the police. Ten past ten. Now he is telling the police a story.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_rajab_tallman",
+      "claim": "f_rajab_tallman",
+      "brokenBy": [
+        "f_rec_mast",
+        "f_chiku_rajab"
+      ],
+      "reveals": [
+        "f_rajab_admits"
+      ],
+      "reaction": "I didn't see anything. She called me crying. She gave me three thousand to say it. She said he killed her boy. I have a boy too.",
+      "mark": "explains"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_felister",
+      "text": "Felister Mghanga",
+      "category": "person",
+      "ref": "p_felister",
+      "unlock": {
+        "anyOf": [
+          "f_ap_fare"
+        ]
+      }
+    },
+    {
+      "id": "w_said",
+      "text": "Said Omar Mbarak",
+      "category": "person",
+      "ref": "p_said",
+      "unlock": {
+        "anyOf": [
+          "f_owner"
+        ]
+      }
+    },
+    {
+      "id": "w_kai",
+      "text": "Omari Kai",
+      "category": "person",
+      "ref": "p_kai",
+      "unlock": {
+        "anyOf": [
+          "f_chiku_kai"
+        ]
+      }
+    },
+    {
+      "id": "w_rajab",
+      "text": "Rajab Mwaringa",
+      "category": "person",
+      "ref": "p_rajab",
+      "unlock": {
+        "anyOf": [
+          "f_ob_tallman"
+        ]
+      }
+    },
+    {
+      "id": "w_chiku",
+      "text": "Chiku Rashidi",
+      "category": "person",
+      "ref": "p_chiku",
+      "unlock": {
+        "anyOf": [
+          "f_chiku_woman"
+        ]
+      }
+    },
+    {
+      "id": "m_son",
+      "text": "she believed his tuk-tuk had killed her son",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_old_ob",
+          "f_felister_eight"
+        ]
+      }
+    },
+    {
+      "id": "m_fare",
+      "text": "a dispute over the fare",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ap_fare"
+        ]
+      }
+    },
+    {
+      "id": "m_steal",
+      "text": "to steal from him",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_body_takings"
+        ]
+      }
+    },
+    {
+      "id": "m_rent",
+      "text": "the owner's unpaid daily rent",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_said_rent"
+        ]
+      }
+    },
+    {
+      "id": "m_roadrage",
+      "text": "a road-rage fight with a stranger",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob_tallman"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} because {why}.",
+    "fixed": {
+      "victim": "Abdalla Swaleh"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_felister"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Two files, then. His and her son's. Get me the garage.",
+          "fail": [
+            "Doesn't hold up. There is no tall man in a cap. Who paid the witness?",
+            "No. A rival in Bamburi and an owner at a committee table. Who got into that tuk-tuk at half past nine?"
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_son"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The second of January. A smashed fork and a new windscreen. She wasn't wrong about that.",
+          "fail": [
+            "She did it. But the fare was paid in advance. Look further back. Much further back.",
+            "That reason belongs to someone else, or to a man who doesn't exist."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_drive",
+      "from": "21:30",
+      "to": "21:44",
+      "within": [
+        "plc_tuktuk"
+      ]
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_ap_fare",
+          "f_chiku_woman",
+          "f_felister_ride"
+        ],
+        "concludes": "At 21:28 Felister paid Abdalla a fare. At 21:30 a woman in a red kanga got into his tuk-tuk, and it stopped up the drive. Felister says she rode with him."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_rajab_tallman",
+          "f_rec_mast",
+          "f_rec_call",
+          "f_rec_pay",
+          "f_rajab_admits"
+        ],
+        "concludes": "The tall man in a cap was invented. Rajab was in Bamburi until 22:02; Felister called him at 21:44 and paid him KSh 3,000 at 22:40."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_garage",
+          "f_old_ob",
+          "f_kanga"
+        ],
+        "concludes": "Abdalla's tuk-tuk was repaired, for cash, the day after Jeremy Mghanga was killed by a three-wheeler that fled. Felister is Jeremy's mother. Her red kanga was washed that night. Felister Mghanga killed him.",
+        "answers": [
+          "who",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_said",
+        "blank": "who",
+        "by": [
+          "f_makadara"
+        ],
+        "why": "Said sat at the Makadara committee from 19:00 to 22:30."
+      },
+      {
+        "word": "w_kai",
+        "blank": "who",
+        "by": [
+          "f_kai"
+        ],
+        "why": "Kai was on a fare to Bamburi from 21:15 and stayed on the Bamburi mast until 22:20."
+      },
+      {
+        "word": "w_rajab",
+        "blank": "who",
+        "by": [
+          "f_rec_mast"
+        ],
+        "why": "Rajab was in Bamburi until 22:02."
+      },
+      {
+        "word": "w_chiku",
+        "blank": "who",
+        "by": [
+          "f_chiku_self"
+        ],
+        "why": "Mama Chiku was at her cart in full view of the drive."
+      },
+      {
+        "word": "m_fare",
+        "blank": "why",
+        "by": [
+          "f_ap_fare"
+        ],
+        "why": "The fare was paid in advance by phone."
+      },
+      {
+        "word": "m_steal",
+        "blank": "why",
+        "by": [
+          "f_body_takings",
+          "f_handbag"
+        ],
+        "why": "His takings are untouched, and nothing of his is in her bag."
+      },
+      {
+        "word": "m_rent",
+        "blank": "why",
+        "by": [
+          "f_said_rent",
+          "f_makadara"
+        ],
+        "why": "The unpaid rent is Said's grievance, and Said was at the committee table."
+      },
+      {
+        "word": "m_roadrage",
+        "blank": "why",
+        "by": [
+          "f_rajab_admits"
+        ],
+        "why": "The stranger was invented by a bribed witness."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "New Year's night, 23:50. A three-wheeler hits Jeremy Mghanga on Nyali Road and drives off. The file stays open, and empty.",
+        "image": null
+      },
+      {
+        "text": "2 January. Abdalla's tuk-tuk comes into a garage with a bent front fork and a smashed windscreen. Cash. No questions.",
+        "image": null
+      },
+      {
+        "text": "August. A mechanic tells Felister. For weeks she watches Abdalla's stage.",
+        "image": null
+      },
+      {
+        "text": "21:28. She pays him two hundred shillings for a ride along the drive. When he stops, she asks if he remembers New Year's night. He laughs.",
+        "image": "loc_drive"
+      },
+      {
+        "text": "21:44. She calls a driver she knows and pays him three thousand to describe a man who was never there.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "OB 03/01/01 is reopened. The garage receipt closes it: Abdalla Swaleh's tuk-tuk killed Jeremy Mghanga. Halima files both."
+    }
+  ],
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_chiku",
+        "line": "Ask the coconut seller what she saw, and when the witness arrived."
+      },
+      "tier2": {
+        "facts": [
+          "f_ap_fare",
+          "f_chiku_woman"
+        ],
+        "line": "A fare paid at 21:28, and a woman in red climbing in at 21:30."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_glovebox",
+        "line": "What did the tuk-tuk need fixing in January? Then search the archive for her name."
+      },
+      "tier2": {
+        "facts": [
+          "f_garage",
+          "f_old_ob"
+        ],
+        "line": "A smashed front on 2 January. A hit-and-run on New Year's night. Her son."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "bajaji",
+      "def": "Three-wheeler taxi; a tuk-tuk."
+    },
+    {
+      "term": "madafu",
+      "def": "Green coconuts, sold for their water."
+    },
+    {
+      "term": "mihogo",
+      "def": "Cassava; here, fried cassava crisps."
+    },
+    {
+      "term": "kanga",
+      "def": "Printed cotton cloth, often with a proverb along the edge."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; \"Mama Chiku\" means Chiku's mother."
+    },
+    {
+      "term": "kanzu",
+      "def": "Long white robe worn by men."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "stationArchive"
+    ],
+    "beatNotes": "The station's own archive: old OB entries can be searched by name or date for free. The first time an old, unsolved file is evidence."
+  }
+}

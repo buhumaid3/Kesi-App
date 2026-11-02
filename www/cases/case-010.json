@@ -1,0 +1,1179 @@
+{
+  "meta": {
+    "id": "case-010",
+    "number": 10,
+    "region": "nairobi-cbd",
+    "regionNumber": 1,
+    "title": "The Printer of River Road",
+    "boss": true,
+    "schemaVersion": 1,
+    "estMinutes": 12,
+    "date": "Friday 23 May",
+    "folderTab": "RIVER ROAD"
+  },
+  "pattern": {
+    "crimePattern": "courier kills a craftsman who refused to finish a forged seal",
+    "noRealCaseRetold": true,
+    "notes": "Fictional print shop, courier company and shell company. River Road is a setting only. Opens the spine story.",
+    "tags": [
+      "blunt-force",
+      "forgery",
+      "staged-robbery",
+      "spine"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 3,
+    "redHerrings": 1,
+    "liars": 0,
+    "groups": [
+      "who"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness"
+    ],
+    "gatedActions": [],
+    "twist": "killer-on-no-customer-list"
+  },
+  "ob": {
+    "number": "OB 08/23/05",
+    "date": "Friday 23 May",
+    "time": "19:48",
+    "reportedBy": "Juma Mwakio, apprentice, Omar Printers & Rubber Stamps",
+    "text": "Apprentice Juma Mwakio reports that his employer, Rashid Omar Bakari (56), owner of Omar Printers & Rubber Stamps, River Road, was found dead in the back room of the shop at 19:40. Drawers ransacked. A customer was seen shouting at the deceased in the street earlier in the evening.",
+    "facts": [
+      "f_ob_found",
+      "f_ob_shouting"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_rashid",
+      "role": "victim",
+      "name": "Rashid Omar Bakari",
+      "age": 56,
+      "occupation": "Printer and rubber-stamp maker, Omar Printers",
+      "bio": "Thirty years on River Road. Makes every rubber stamp in the street worth having. Writes down the ID number of anyone who collects an official-looking stamp.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_omar",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Swahili man, mid 50s, white kofia, trimmed grey beard, ink-stained fingers, reading glasses on his nose, a rubber stamp in one hand, dignified and stubborn, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_tom",
+      "role": "suspect",
+      "name": "Tom Ochieng",
+      "age": 31,
+      "occupation": "Courier, Haraka Couriers",
+      "bio": "Rides for Haraka Couriers in a yellow rain jacket. Appears in no customer list: only on a carbon collection slip.",
+      "community": "Luo",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_slip_refused"
+      },
+      "at": "plc_haraka",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 30s, yellow courier rain jacket with HARAKA COURIERS on the chest, a helmet under his arm, blank careful expression, photographed against a police height chart as an arrest photo",
+        "ref": "reference"
+      }
+    },
+    {
+      "id": "p_hillary",
+      "role": "suspect",
+      "name": "Hillary Kosgei",
+      "age": 35,
+      "occupation": "Customer (wedding cards)",
+      "redHerring": true,
+      "bio": "His wedding cards were misprinted. He shouted at Rashid in front of the whole street at 17:00.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_ob_shouting"
+      },
+      "at": "plc_coach",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 30s, wedding-season haircut, a box of misprinted invitation cards under his arm, angry and embarrassed, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_elizabeth",
+      "role": "suspect",
+      "name": "Elizabeth Achola",
+      "age": 49,
+      "occupation": "Owner of the print shop next door",
+      "bio": "Her shop shares a wall with Rashid's. They've been fighting about the rent the landlord splits between them.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_achola_sales"
+      },
+      "at": "plc_achola",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 40s, printer's apron over a smart dress, reading glasses on a chain, a stack of fresh prints in her hands, sharp but fair face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_juma",
+      "role": "suspect",
+      "name": "Juma Mwakio",
+      "age": 19,
+      "occupation": "Rashid's apprentice",
+      "bio": "Learning the trade. Was out delivering wedding cards in Ngara. Found the body.",
+      "community": "Taita",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_ngara",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan teenager, 19, ink on his fingers and a smear on his cheek, oversized shop coat, devastated, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_abdullahi",
+      "role": "witness",
+      "name": "Abdullahi Gure",
+      "age": 64,
+      "occupation": "Night askari for the row of shops",
+      "bio": "Walks the River Road shopfronts from 18:00 with a rungu and a torch.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_street",
+      "image": null
+    },
+    {
+      "id": "p_zuhura",
+      "role": "witness",
+      "name": "Zuhura Mwakio (Mama Juma)",
+      "age": 46,
+      "occupation": "Juma's mother; the Ngara client",
+      "statementOnly": true,
+      "bio": "Her neighbour's daughter is getting married; Juma brought the cards.",
+      "community": "Taita",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_delivery"
+      },
+      "at": "plc_ngara",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_backroom",
+      "name": "Omar Printers back room",
+      "within": "loc_omar"
+    },
+    {
+      "id": "plc_street",
+      "name": "River Road shopfronts"
+    },
+    {
+      "id": "plc_achola",
+      "name": "Achola Prints, next door"
+    },
+    {
+      "id": "plc_ngara",
+      "name": "Zuhura Mwakio's house, Ngara"
+    },
+    {
+      "id": "plc_coach",
+      "name": "The 17:45 coach to Eldoret"
+    },
+    {
+      "id": "plc_haraka",
+      "name": "Haraka Couriers depot, Tom Mboya Street"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_omar",
+      "name": "Omar Printers & Rubber Stamps, River Road",
+      "kind": "scene",
+      "description": "Friday evening on River Road: printing shops, sign-writers and stamp-makers, all lit, all busy. Omar Printers has a front counter, an order book, a carbon collection-slip book, and a back room with a stamp-making bench and a wall of labelled drawers. Every drawer has been pulled out.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Back room, by the stamp bench",
+          "pos": [
+            56,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Rashid lies by his stamp bench. The handle of the stamp press is on the floor. Every drawer on the wall has been pulled out and tipped. Under the counter, the cash box is closed."
+        },
+        {
+          "id": "hs_drawer",
+          "label": "One drawer on the floor",
+          "pos": [
+            76,
+            40
+          ],
+          "yields": "ev_drawer",
+          "text": "Most drawers were pulled out and spilled. This one was emptied: not a single blank or proof left. Its label: 'Mvua — Friday'."
+        },
+        {
+          "id": "hs_orderbook",
+          "label": "Order book on the counter",
+          "pos": [
+            18,
+            70
+          ],
+          "yields": "ev_orderbook",
+          "text": "Rashid's order book: every job, client, deposit and collection date."
+        },
+        {
+          "id": "hs_carbon",
+          "label": "Under the order book",
+          "pos": [
+            22,
+            78
+          ],
+          "yields": "ev_slip",
+          "text": "A carbon-paper collection-slip book. The top copy has been torn out. The carbon copy beneath is still there."
+        },
+        {
+          "id": "hs_card",
+          "label": "Tucked inside the order book",
+          "pos": [
+            14,
+            64
+          ],
+          "yields": "ev_note",
+          "text": "A plain white card, slipped between two pages as a bookmark."
+        },
+        {
+          "id": "hs_street",
+          "label": "River Road outside",
+          "pos": [
+            90,
+            82
+          ],
+          "yields": "ev_abdullahi",
+          "text": "The night askari, Abdullahi Gure, leans on his rungu at the corner."
+        },
+        {
+          "id": "hs_achola",
+          "label": "Achola Prints next door",
+          "pos": [
+            96,
+            50
+          ],
+          "yields": "ev_achola_sales",
+          "text": "Elizabeth Achola's shop is still serving. She hands over her carbon receipt book before she's asked."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "River Road in Nairobi on a Friday night, narrow street of printing and rubber-stamp shops lit by bare bulbs and signage, sign-writers' boards, a small print shop with its shutter half down, no people in focus"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body and the room",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Struck with the stamp-press handle. Drawers ransacked. Cash box untouched under the counter: KSh 18,400."
+      },
+      "facts": [
+        "f_body_blow",
+        "f_body_cash"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the back room of a small rubber-stamp workshop with every wooden drawer pulled out and tipped on the floor, scattered rubber blanks and ink pads, a heavy brass stamp-press handle lying apart, no body visible"
+      }
+    },
+    {
+      "id": "ev_drawer",
+      "type": "physical",
+      "title": "Drawer: 'Mvua — Friday'",
+      "render": "object",
+      "body": {
+        "label": "Wooden drawer, label 'Mvua — Friday'. Emptied completely."
+      },
+      "facts": [
+        "f_drawer_mvua"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a single empty wooden drawer on a workshop floor, a handwritten paper label on its front reading 'Mvua — Friday', other spilled drawers around it full of rubber blanks"
+      }
+    },
+    {
+      "id": "ev_orderbook",
+      "type": "physical",
+      "title": "Order book",
+      "render": "orderBook",
+      "body": {
+        "rows": [
+          {
+            "date": "3 weeks ago",
+            "job": "Replica seal — REGISTRAR OF TITLES",
+            "client": "Mvua Holdings",
+            "deposit": "by PesaPap Till 880 214",
+            "collect": "Fri 19:00 by messenger"
+          },
+          {
+            "date": "this month",
+            "job": "Office stamp",
+            "client": "Kilele House Management",
+            "collect": "collected Tue"
+          },
+          {
+            "date": "this month",
+            "job": "Parish stamp",
+            "client": "St. Teresa's Church, Ngara",
+            "collect": "collected Mon"
+          },
+          {
+            "date": "this month",
+            "job": "Booking-office stamps",
+            "client": "Tana Express",
+            "collect": "due next Wed"
+          },
+          {
+            "date": "this month",
+            "job": "Wedding cards",
+            "client": "H. Kosgei",
+            "collect": "collected Thu (reprint due Mon)"
+          }
+        ]
+      },
+      "facts": [
+        "f_order_mvua",
+        "f_order_others"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_slip",
+      "type": "physical",
+      "title": "Carbon collection slip",
+      "render": "collectionSlip",
+      "body": {
+        "order": "Mvua",
+        "collector": "Tom Ochieng, ID 2xxxxxxx",
+        "company": "Haraka Couriers",
+        "time": "19:02",
+        "note": "REFUSED. Told him I won't finish it."
+      },
+      "facts": [
+        "f_slip_refused"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a blue carbon copy of a handwritten collection slip on thin paper: 'Mvua order. Collector: Tom Ochieng, Haraka Couriers. 19:02 — REFUSED', the ID number blurred out"
+      }
+    },
+    {
+      "id": "ev_note",
+      "type": "physical",
+      "title": "A card in the order book",
+      "render": "note",
+      "body": {
+        "text": "Kivuli wants it Friday. No excuses."
+      },
+      "facts": [
+        "f_note_kivuli"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a plain white card with one line written in neat black capitals: 'KIVULI WANTS IT FRIDAY. NO EXCUSES.', resting on the open page of a printer's order book"
+      }
+    },
+    {
+      "id": "ev_abdullahi",
+      "type": "witness",
+      "title": "Statement: Abdullahi Gure",
+      "render": "statement",
+      "body": {
+        "speaker": "p_abdullahi"
+      },
+      "facts": [
+        "f_abdullahi_jacket",
+        "f_abdullahi_shout",
+        "f_abdullahi_rounds"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_achola_sales",
+      "type": "physical",
+      "title": "Achola Prints receipt book",
+      "render": "receipt",
+      "body": {
+        "sales": [
+          "19:00",
+          "19:08",
+          "19:14",
+          "19:20"
+        ],
+        "note": "Customers waiting the whole time."
+      },
+      "facts": [
+        "f_achola_sales",
+        "f_achola_saw_askari"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_delivery",
+      "type": "physical",
+      "title": "Juma's delivery note",
+      "render": "receipt",
+      "body": {
+        "job": "Wedding cards ×120",
+        "to": "Z. Mwakio, Ngara",
+        "signed": "19:15"
+      },
+      "facts": [
+        "f_delivery"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_zuhura",
+      "type": "witness",
+      "title": "Phone: Mama Juma",
+      "render": "statement",
+      "body": {
+        "speaker": "p_zuhura",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_zuhura"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kosgei_ticket",
+      "type": "physical",
+      "title": "Hillary's coach ticket (photo)",
+      "render": "ticket",
+      "body": {
+        "route": "Nairobi → Eldoret",
+        "departs": "17:45",
+        "seat": "9"
+      },
+      "facts": [
+        "f_kosgei_ticket"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Rashid Omar Bakari was found dead in the back room of Omar Printers at 19:40.",
+      "kind": "true",
+      "about": [
+        "p_rashid",
+        "loc_omar"
+      ]
+    },
+    {
+      "id": "f_ob_shouting",
+      "text": "A customer, Hillary Kosgei, shouted at Rashid in the street earlier in the evening.",
+      "kind": "true",
+      "about": [
+        "p_hillary"
+      ]
+    },
+    {
+      "id": "f_body_blow",
+      "text": "Rashid was struck with the handle of his stamp press.",
+      "kind": "true",
+      "about": [
+        "p_rashid",
+        "plc_backroom"
+      ]
+    },
+    {
+      "id": "f_body_cash",
+      "text": "Every drawer was pulled out, but the cash box under the counter is untouched: KSh 18,400.",
+      "kind": "true",
+      "about": [
+        "loc_omar"
+      ]
+    },
+    {
+      "id": "f_drawer_mvua",
+      "text": "Only one drawer was completely emptied: the one labelled 'Mvua — Friday'.",
+      "kind": "true",
+      "about": [
+        "ev_drawer"
+      ],
+      "spine": "t_stamp"
+    },
+    {
+      "id": "f_order_mvua",
+      "text": "Order book: 'Replica seal — REGISTRAR OF TITLES — client: Mvua Holdings — deposit by Till 880 214 — collect Fri 19:00 by messenger.'",
+      "kind": "true",
+      "about": [
+        "ev_orderbook"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_order_others",
+      "text": "The month's other clients (Kilele House Management, St. Teresa's Church, Tana Express, H. Kosgei) had ordinary jobs already collected or not due tonight.",
+      "kind": "true",
+      "about": [
+        "ev_orderbook"
+      ]
+    },
+    {
+      "id": "f_slip_refused",
+      "text": "Carbon slip: 'Mvua order. Collector: Tom Ochieng, Haraka Couriers. 19:02 — REFUSED. Told him I won't finish it.'",
+      "kind": "true",
+      "about": [
+        "p_tom",
+        "p_rashid"
+      ],
+      "where": {
+        "person": "p_tom",
+        "place": "loc_omar",
+        "from": "19:00",
+        "to": "19:05"
+      },
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_note_kivuli",
+      "text": "A card in the order book: 'Kivuli wants it Friday. No excuses.'",
+      "kind": "true",
+      "about": [
+        "ev_note"
+      ],
+      "spine": "t_kivuli"
+    },
+    {
+      "id": "f_abdullahi_jacket",
+      "text": "At about 19:20 a man in a yellow Haraka Couriers rain jacket came out of Omar Printers with a brown envelope and walked fast towards Tom Mboya Street.",
+      "kind": "true",
+      "about": [
+        "p_abdullahi",
+        "loc_omar"
+      ]
+    },
+    {
+      "id": "f_abdullahi_shout",
+      "text": "Abdullahi: Hillary Kosgei shouted at Rashid at 17:00 and left. The whole street saw.",
+      "kind": "true",
+      "about": [
+        "p_abdullahi",
+        "p_hillary"
+      ]
+    },
+    {
+      "id": "f_abdullahi_rounds",
+      "text": "Abdullahi was on his rounds along the shopfronts all evening.",
+      "kind": "true",
+      "about": [
+        "p_abdullahi"
+      ]
+    },
+    {
+      "id": "f_achola_sales",
+      "text": "Achola Prints sold to customers at 19:00, 19:08, 19:14 and 19:20, with people waiting the whole time.",
+      "kind": "true",
+      "about": [
+        "p_elizabeth"
+      ],
+      "where": {
+        "person": "p_elizabeth",
+        "place": "plc_achola",
+        "from": "18:55",
+        "to": "19:25"
+      }
+    },
+    {
+      "id": "f_achola_saw_askari",
+      "text": "Elizabeth's customers saw Abdullahi pass on his rounds at 19:08 and 19:14.",
+      "kind": "true",
+      "about": [
+        "p_abdullahi"
+      ],
+      "where": {
+        "person": "p_abdullahi",
+        "place": "plc_street",
+        "from": "19:00",
+        "to": "19:25"
+      }
+    },
+    {
+      "id": "f_delivery",
+      "text": "Juma's delivery note: wedding cards to Z. Mwakio, Ngara, signed 19:15.",
+      "kind": "true",
+      "about": [
+        "p_juma"
+      ]
+    },
+    {
+      "id": "f_zuhura",
+      "text": "Mama Juma: Juma arrived in Ngara at 18:50 and stayed for tea until 19:30.",
+      "kind": "true",
+      "about": [
+        "p_juma",
+        "p_zuhura"
+      ],
+      "where": {
+        "person": "p_juma",
+        "place": "plc_ngara",
+        "from": "18:50",
+        "to": "19:30"
+      }
+    },
+    {
+      "id": "f_kosgei_ticket",
+      "text": "Hillary's coach ticket: Nairobi–Eldoret, departed 17:45. He's calling from Nakuru.",
+      "kind": "true",
+      "about": [
+        "p_hillary"
+      ],
+      "where": {
+        "person": "p_hillary",
+        "place": "plc_coach",
+        "from": "17:45",
+        "to": null
+      }
+    },
+    {
+      "id": "f_juma_rent",
+      "text": "Juma: Rashid and Elizabeth Achola next door have been fighting about the rent split for months.",
+      "kind": "true",
+      "about": [
+        "p_juma",
+        "p_elizabeth"
+      ]
+    },
+    {
+      "id": "f_juma_mvua",
+      "text": "Juma: Rashid said this week, 'That Mvua job is not a stamp. It's a key to other people's land.'",
+      "kind": "true",
+      "about": [
+        "p_juma",
+        "p_rashid"
+      ]
+    },
+    {
+      "id": "f_juma_ids",
+      "text": "Juma: Rashid always wrote down the name and ID of anyone collecting an official-looking stamp.",
+      "kind": "true",
+      "about": [
+        "p_juma",
+        "p_rashid"
+      ]
+    },
+    {
+      "id": "f_hillary_claim",
+      "text": "Hillary: \"I shouted, yes. My wedding is in two weeks. Then I went to the coach.\"",
+      "kind": "claim",
+      "about": [
+        "p_hillary"
+      ]
+    },
+    {
+      "id": "f_elizabeth_claim",
+      "text": "Elizabeth: \"We fought about rent like neighbours do. I was serving all evening.\"",
+      "kind": "claim",
+      "about": [
+        "p_elizabeth"
+      ]
+    },
+    {
+      "id": "f_juma_claim",
+      "text": "Juma: \"I was in Ngara with the cards. I came back at twenty to eight and found him.\"",
+      "kind": "claim",
+      "about": [
+        "p_juma"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_juma",
+      "stance": "cooperative",
+      "intro": "Juma sits on the shop step with his hands black with ink. \"He taught me to cut letters backwards. Backwards, so they print the right way.\"",
+      "claims": [
+        "f_juma_claim"
+      ],
+      "yields": [
+        "ev_delivery"
+      ],
+      "topics": [
+        {
+          "about": "p_rashid",
+          "reply": "He wrote down the ID of anyone who collected a stamp that looked official. Every time. He said a stamp is a promise.",
+          "reveals": [
+            "f_juma_ids"
+          ]
+        },
+        {
+          "about": "ev_drawer",
+          "reply": "Mvua. That job made him angry all week. He said, 'That's not a stamp, Juma. It's a key to other people's land.'",
+          "reveals": [
+            "f_juma_mvua"
+          ]
+        },
+        {
+          "about": "p_elizabeth",
+          "reply": "Mama Achola next door? They fight about rent every month. But she brings him tea when he's working late.",
+          "reveals": [
+            "f_juma_rent"
+          ]
+        },
+        {
+          "about": "p_zuhura",
+          "reply": "Call my mother. I was there with the cards, having tea.",
+          "reveals": [
+            "ev_zuhura"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_abdullahi",
+      "stance": "cooperative",
+      "intro": "Abdullahi taps his rungu on the kerb. \"I walk this row every night. I know every door on it.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_hillary",
+          "reply": "The wedding man shouted at five and went off with his box. He didn't come back.",
+          "reveals": []
+        },
+        {
+          "about": "p_tom",
+          "reply": "Yellow jacket. Haraka. Twenty past seven, out of Rashid's door with a brown envelope, walking fast. I thought, a late delivery.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_elizabeth",
+      "stance": "cooperative",
+      "intro": "Elizabeth keeps one hand on her receipt book. \"We fought about rent. I'd never hurt him. Here is every sale I made tonight.\"",
+      "claims": [
+        "f_elizabeth_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_rashid",
+          "reply": "He was a stubborn old goat and the best stamp fundi on this road. Who will cut my stamps now?",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_hillary",
+      "stance": "cooperative",
+      "intro": "Hillary, by phone from Nakuru, over bus noise: \"Dead? I shouted at him about my cards. My God.\"",
+      "claims": [
+        "f_hillary_claim"
+      ],
+      "yields": [
+        "ev_kosgei_ticket"
+      ],
+      "topics": [
+        {
+          "about": "p_rashid",
+          "reply": "He promised me a free reprint on Monday. I was rude to him. I'll have to live with that.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_tom",
+      "stance": "cooperative",
+      "intro": "Haraka Couriers' depot. Tom Ochieng hangs up his yellow jacket very slowly when Amani says the shop's name.",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_slip",
+          "reply": "I collect what I'm sent to collect.",
+          "reveals": []
+        },
+        {
+          "about": "ev_note",
+          "reply": "…",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [],
+  "words": [
+    {
+      "id": "w_tom",
+      "text": "Tom Ochieng",
+      "category": "person",
+      "ref": "p_tom",
+      "unlock": {
+        "anyOf": [
+          "f_slip_refused"
+        ]
+      }
+    },
+    {
+      "id": "w_hillary",
+      "text": "Hillary Kosgei",
+      "category": "person",
+      "ref": "p_hillary",
+      "unlock": {
+        "anyOf": [
+          "f_abdullahi_shout",
+          "f_kosgei_ticket"
+        ]
+      }
+    },
+    {
+      "id": "w_elizabeth",
+      "text": "Elizabeth Achola",
+      "category": "person",
+      "ref": "p_elizabeth",
+      "unlock": {
+        "anyOf": [
+          "f_juma_rent",
+          "f_achola_sales"
+        ]
+      }
+    },
+    {
+      "id": "w_juma",
+      "text": "Juma Mwakio",
+      "category": "person",
+      "ref": "p_juma",
+      "unlock": {
+        "anyOf": [
+          "f_juma_claim"
+        ]
+      }
+    },
+    {
+      "id": "w_abdullahi",
+      "text": "Abdullahi Gure",
+      "category": "person",
+      "ref": "p_abdullahi",
+      "unlock": {
+        "anyOf": [
+          "f_abdullahi_rounds"
+        ]
+      }
+    },
+    {
+      "id": "w_mvua",
+      "text": "Mvua Holdings",
+      "category": "client",
+      "unlock": {
+        "anyOf": [
+          "f_order_mvua"
+        ]
+      }
+    },
+    {
+      "id": "w_kilele",
+      "text": "Kilele House Management",
+      "category": "client",
+      "unlock": {
+        "anyOf": [
+          "f_order_others"
+        ]
+      }
+    },
+    {
+      "id": "w_teresa",
+      "text": "St. Teresa's Church, Ngara",
+      "category": "client",
+      "unlock": {
+        "anyOf": [
+          "f_order_others"
+        ]
+      }
+    },
+    {
+      "id": "w_tana",
+      "text": "Tana Express",
+      "category": "client",
+      "unlock": {
+        "anyOf": [
+          "f_order_others"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} when he refused to finish a stamp ordered by {client}.",
+    "fixed": {
+      "victim": "Rashid Omar Bakari"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_tom"
+          },
+          {
+            "id": "client",
+            "category": "client",
+            "answer": "w_mvua",
+            "spine": true
+          }
+        ],
+        "prosecutor": {
+          "pass": "Ochieng carried it out. But he didn't order it. Who is Mvua Holdings?",
+          "fail": [
+            "This doesn't hold up. A courier doesn't kill over a parcel unless someone is waiting for it. Look again.",
+            "No. Both names have to be right. Who came at seven, and for whose order?"
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_omar",
+      "from": "19:02",
+      "to": "19:20",
+      "within": [
+        "plc_backroom"
+      ]
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_body_cash",
+          "f_drawer_mvua"
+        ],
+        "concludes": "The robbery was staged: the cash was left, and the only drawer actually emptied was the Mvua order."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_order_mvua",
+          "f_slip_refused",
+          "f_juma_ids"
+        ],
+        "concludes": "The Mvua order was due for collection at 19:00. The collector who came at 19:02 and was refused was Tom Ochieng of Haraka Couriers."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_abdullahi_jacket",
+          "f_order_others"
+        ],
+        "concludes": "A man in a Haraka jacket left at 19:20 with an envelope, between the refusal and the body being found. Tom Ochieng killed Rashid for Mvua Holdings' order.",
+        "answers": [
+          "who",
+          "client"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_hillary",
+        "blank": "who",
+        "by": [
+          "f_kosgei_ticket"
+        ],
+        "why": "Hillary was on the 17:45 coach to Eldoret."
+      },
+      {
+        "word": "w_elizabeth",
+        "blank": "who",
+        "by": [
+          "f_achola_sales"
+        ],
+        "why": "Elizabeth was serving customers next door at 19:00, 19:08, 19:14 and 19:20."
+      },
+      {
+        "word": "w_juma",
+        "blank": "who",
+        "by": [
+          "f_delivery",
+          "f_zuhura"
+        ],
+        "why": "Juma was in Ngara from 18:50 to 19:30 with the cards."
+      },
+      {
+        "word": "w_abdullahi",
+        "blank": "who",
+        "by": [
+          "f_achola_saw_askari"
+        ],
+        "why": "Abdullahi was seen on his rounds by Elizabeth's customers at 19:08 and 19:14."
+      },
+      {
+        "word": "w_kilele",
+        "blank": "client",
+        "by": [
+          "f_order_others"
+        ],
+        "why": "Kilele House's office stamp was collected on Tuesday."
+      },
+      {
+        "word": "w_teresa",
+        "blank": "client",
+        "by": [
+          "f_order_others"
+        ],
+        "why": "St. Teresa's stamp was collected on Monday."
+      },
+      {
+        "word": "w_tana",
+        "blank": "client",
+        "by": [
+          "f_order_others"
+        ],
+        "why": "Tana Express's stamps aren't due until next Wednesday."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Three weeks ago a client calling itself Mvua Holdings pays a deposit by PesaPap for a 'replica' seal: REGISTRAR OF TITLES.",
+        "image": null
+      },
+      {
+        "text": "Rashid cuts the blank, then looks closely at the proof. It's for forging land titles. He refuses to finish it.",
+        "image": null
+      },
+      {
+        "text": "19:02. A courier in a yellow Haraka jacket comes to collect. Rashid writes down his name and ID, then 'REFUSED'. The courier has orders not to leave without it.",
+        "image": "loc_omar"
+      },
+      {
+        "text": "In the back room the courier strikes Rashid with the stamp-press handle, empties the Mvua drawer and pulls out every other drawer to make it look like thieves.",
+        "image": null
+      },
+      {
+        "text": "He leaves at 19:20 with a brown envelope. He misses two things: the carbon copy of the slip, and a card in the order book with a name on it.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "Tom Ochieng, arrested at the Haraka depot, says one word to Amani: \"Kivuli.\" Then nothing."
+    },
+    {
+      "beat": "The Pattern File unlocks: a second corkboard on the wall. Three pins are already on it: Till 880 214 from this case, the Mvua calendar from case 6 with the same till, and the card 'Kivuli wants it Friday'."
+    },
+    {
+      "beat": "Mwalimu's voice-note: \"You've seen that number before. Write it down somewhere I can't see it.\""
+    },
+    {
+      "beat": "Collectible: Juma gives Amani Rashid's brass shop stamp, 'Omar Printers — River Road'. It stamps every charge sheet from now on."
+    }
+  ],
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_slip",
+        "line": "Rashid wrote down everyone who collected official stamps. Look under the order book."
+      },
+      "tier2": {
+        "facts": [
+          "f_slip_refused",
+          "f_abdullahi_jacket"
+        ],
+        "line": "A courier refused at 19:02, and a courier's jacket leaving at 19:20. Then ask whose order he came for."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "kivuli",
+      "def": "Shadow."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    },
+    {
+      "term": "haraka",
+      "def": "Fast, quick."
+    },
+    {
+      "term": "muhuri",
+      "def": "Rubber stamp or seal."
+    },
+    {
+      "term": "askari",
+      "def": "Security guard."
+    },
+    {
+      "term": "rungu",
+      "def": "Wooden club carried by watchmen and herders."
+    },
+    {
+      "term": "kofia",
+      "def": "Embroidered cap, often worn by Muslim men."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; 'Mama Juma' means Juma's mother."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    },
+    {
+      "term": "fundi",
+      "def": "Craftsman, mechanic, skilled tradesman."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "twoBlankGroup",
+      "patternFileUnlock",
+      "deskCollectible"
+    ],
+    "beatNotes": "Two blanks in one group (preparing for multi-group sheets). After the verdict: the Pattern File unlocks with three pins, and the desk collectible system starts with Rashid's stamp."
+  }
+}

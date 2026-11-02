@@ -1,0 +1,30 @@
+/* Sign-painter treatment for display type (deliverable 7, §5.4).
+   Big Shoulders carries the shape; this layering carries the street: a hand-painted letter with an offset
+   shadow in the region's accent and a thin outline, the way Kenyan shop and matatu signs are lettered.
+   Used ONLY on region title cards, the case title on the verdict screen and "CASE CLOSED". Never on paper body text. */
+.sign {
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--signwhite);
+  -webkit-text-stroke: 1.5px var(--region-ink, var(--ink));
+  paint-order: stroke fill;
+  text-shadow:
+    3px 3px 0 var(--region-accent, var(--matatu-pink)),
+    4px 4px 0 var(--region-ink, var(--ink));
+}
+.sign--on-light { color: var(--ink); -webkit-text-stroke: 0; text-shadow: 3px 3px 0 var(--region-accent, var(--matatu-pink)); }
+.sign-card {           /* the region title card: a painted board on the desk */
+  background: var(--region);
+  color: var(--region-ink);
+  padding: 22px 20px 18px;
+  border-radius: 3px;
+  box-shadow: var(--shadow-lift), inset 0 0 0 4px rgba(255, 248, 236, 0.18);
+}
+.sign-card .sign { font-size: var(--t-display-xl); line-height: 0.95; }
+.sign-card small { display: block; margin-top: 8px; font: 500 13px var(--font-data); color: var(--region-ink); }
+@media (prefers-reduced-motion: no-preference) {
+  .sign-card.is-entering { animation: sign-in var(--dur-slow) var(--ease-settle) both; }
+  @keyframes sign-in { from { transform: translateY(-14px) rotate(-1.5deg); opacity: 0; } to { transform: none; opacity: 1; } }
+}

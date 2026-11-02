@@ -1,0 +1,960 @@
+{
+  "meta": {
+    "id": "case-009",
+    "number": 9,
+    "region": "nairobi-cbd",
+    "regionNumber": 1,
+    "title": "The Obvious Man",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 10,
+    "date": "Sunday 11 May",
+    "folderTab": "UHURU PARK"
+  },
+  "pattern": {
+    "crimePattern": "manager silences an employee who found him skimming",
+    "noRealCaseRetold": true,
+    "notes": "Uhuru Park is a setting only; fictional boat-hire business.",
+    "tags": [
+      "blunt-force",
+      "cover-up",
+      "theft"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 3,
+    "redHerrings": 1,
+    "liars": 0,
+    "groups": [
+      "who"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness"
+    ],
+    "gatedActions": [],
+    "twist": "obvious-suspect-innocent"
+  },
+  "ob": {
+    "number": "OB 16/11/05",
+    "date": "Sunday 11 May",
+    "time": "17:20",
+    "reportedBy": "Dennis Mbugua, junior attendant, Ziwani Boat Hire",
+    "text": "Junior attendant Dennis Mbugua reports that senior attendant Charles Maina (44) of Ziwani Boat Hire, Uhuru Park, was found dead in the boat shed at 17:05. The cash tin is missing. Several witnesses report a loud fight between the deceased and his brother that morning.",
+    "facts": [
+      "f_ob_found",
+      "f_ob_fight"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_charles",
+      "role": "victim",
+      "name": "Charles Maina",
+      "age": 44,
+      "occupation": "Senior attendant, Ziwani Boat Hire",
+      "bio": "Has rented out rowing boats on the Uhuru Park lake for twelve years. Keeps the fee book himself.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_shed",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, blue work overall, sunburnt forehead, a whistle on a lanyard, honest square face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_daniel",
+      "role": "suspect",
+      "name": "Daniel ole Sankale",
+      "age": 39,
+      "occupation": "Manager, Ziwani Boat Hire",
+      "bio": "Runs the boat hire for its owner. Wears the only green overall. Has been taking money from the Sunday takings.",
+      "community": "Maasai",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_uniforms"
+      },
+      "at": "loc_shed",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 30s, tall, green work overall with a manager's badge, a clipboard, calm and helpful expression, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_george",
+      "role": "suspect",
+      "name": "George Maina",
+      "age": 41,
+      "occupation": "Charles's brother; mitumba trader at Gikomba",
+      "redHerring": true,
+      "bio": "Fought with Charles at the shed this morning about their late mother's plot. His cap was found in the shed.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_gikomba",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 40s, bareheaded, a mitumba trader's money belt, red-eyed with grief and anger, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_dennis",
+      "role": "suspect",
+      "name": "Dennis Mbugua",
+      "age": 23,
+      "occupation": "Junior attendant",
+      "bio": "Rents out boats and fetches the ones that drift. Found Charles.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_lake",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan young man, early 20s, blue work overall soaked to the knees, life jacket over one shoulder, shocked, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_pendo",
+      "role": "witness",
+      "name": "Pendo Atieno",
+      "age": 55,
+      "occupation": "Ice-cream seller by the lake",
+      "bio": "Everyone calls her Mama Pendo. Her cart has stood by the shed for twenty years.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_cart",
+      "image": null
+    },
+    {
+      "id": "p_victor",
+      "role": "witness",
+      "name": "Victor Nyamweya",
+      "age": 31,
+      "occupation": "Park photographer",
+      "bio": "Takes instant photos of families and writes the time on the back of each print.",
+      "community": "Kisii",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_lawn",
+      "image": null
+    },
+    {
+      "id": "p_gikomba",
+      "role": "witness",
+      "name": "Margaret Wangari",
+      "age": 50,
+      "occupation": "Mitumba trader, Gikomba (next stall to George)",
+      "statementOnly": true,
+      "bio": "Statement by phone.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_george_claim"
+      },
+      "at": "plc_gikomba",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_cart",
+      "name": "Mama Pendo's ice-cream cart by the shed",
+      "within": "loc_shed"
+    },
+    {
+      "id": "plc_lake",
+      "name": "Out on the boating lake"
+    },
+    {
+      "id": "plc_lawn",
+      "name": "The lawn by the lake (photographer's pitch)"
+    },
+    {
+      "id": "plc_gikomba",
+      "name": "George's mitumba stall, Gikomba market"
+    },
+    {
+      "id": "plc_office",
+      "name": "Manager's office cupboard, by the shed",
+      "within": "loc_shed"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_shed",
+      "name": "Ziwani Boat Hire shed, Uhuru Park",
+      "kind": "scene",
+      "description": "A Sunday at Uhuru Park: families on the grass, rowing boats on the green lake, music from somewhere. The boat shed is a tin-roofed hut with oars racked on the wall, a fee book on a table and, until today, a cash tin. Attendants wear blue overalls; the manager wears green.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Inside the shed",
+          "pos": [
+            50,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Charles lies by the oar rack. An oar is on the floor beside him. The report says he was struck with it. The cash-tin shelf is empty."
+        },
+        {
+          "id": "hs_cap",
+          "label": "A cap on the bench",
+          "pos": [
+            32,
+            46
+          ],
+          "yields": "ev_cap",
+          "text": "A faded red cap with a Gikomba trader's market tag sewn inside: G. MAINA."
+        },
+        {
+          "id": "hs_feebook",
+          "label": "Fee book",
+          "pos": [
+            66,
+            44
+          ],
+          "yields": "ev_feebook",
+          "text": "Hire tickets for the day stapled in. Turn to the back page: pencil, in Charles's hand."
+        },
+        {
+          "id": "hs_cart",
+          "label": "Mama Pendo's ice-cream cart",
+          "pos": [
+            84,
+            70
+          ],
+          "yields": "ev_pendo",
+          "text": "The cart faces the shed door and the lake."
+        },
+        {
+          "id": "hs_victor",
+          "label": "The park photographer",
+          "pos": [
+            16,
+            76
+          ],
+          "yields": "ev_photo",
+          "text": "Victor sells Amani a print from this afternoon for KSh 100: 'Look in the background. I always look in the background.'"
+        },
+        {
+          "id": "hs_office",
+          "label": "Manager's office cupboard",
+          "pos": [
+            90,
+            30
+          ],
+          "yields": "ev_tin",
+          "unlock": {
+            "fact": "f_photo_green"
+          },
+          "text": "A locked cupboard. Daniel opens it when asked, slowly. Behind a box of life jackets: the cash tin."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a tin-roofed boat-hire shed beside a green park lake in Nairobi on a sunny Sunday, rowing boats tied up, oars racked on a wall, an ice-cream cart nearby, city skyline beyond the trees, no people in focus"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only."
+      },
+      "facts": [
+        "f_body_oar",
+        "f_tin_missing"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_cap",
+      "type": "physical",
+      "title": "George's cap",
+      "render": "object",
+      "body": {
+        "label": "Faded red cap. Inside: market tag 'G. MAINA'."
+      },
+      "facts": [
+        "f_cap"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a faded red baseball cap lying on a wooden bench inside a tin boat shed, a small sewn-in market name tag visible inside the band"
+      }
+    },
+    {
+      "id": "ev_feebook",
+      "type": "physical",
+      "title": "Fee book",
+      "render": "feeBook",
+      "body": {
+        "today": "46 hire tickets",
+        "lines": [
+          "16:00 tin count — D.S. (initialled)"
+        ],
+        "backPage": "D — 3 Sundays short."
+      },
+      "facts": [
+        "f_feebook_count",
+        "f_feebook_d"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_pendo",
+      "type": "witness",
+      "title": "Statement: Mama Pendo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_pendo"
+      },
+      "facts": [
+        "f_pendo_george_morning",
+        "f_pendo_alive",
+        "f_dennis_rowing",
+        "f_pendo_cart"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_photo",
+      "type": "physical",
+      "title": "Instant print, 16:12",
+      "render": "photo",
+      "body": {
+        "front": "A family of four by the lake, laughing. In the background, small: the shed door open, a man in a green overall walking away carrying a grey box.",
+        "back": "16:12 — V.N."
+      },
+      "facts": [
+        "f_photo_green"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "an instant photo print of a smiling Kenyan family by a park lake; in the blurred background a small figure in a green work overall walks away from an open tin shed carrying a grey metal box, his face turned away",
+        "ref": null
+      }
+    },
+    {
+      "id": "ev_victor",
+      "type": "witness",
+      "title": "Statement: Victor Nyamweya",
+      "render": "statement",
+      "body": {
+        "speaker": "p_victor"
+      },
+      "facts": [
+        "f_uniforms",
+        "f_victor_prints"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gikomba",
+      "type": "witness",
+      "title": "Phone: Gikomba neighbour",
+      "render": "statement",
+      "body": {
+        "speaker": "p_gikomba",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_gikomba"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tin",
+      "type": "physical",
+      "title": "The cash tin",
+      "render": "object",
+      "body": {
+        "label": "Grey cash tin, ZIWANI stencilled on the lid. Empty."
+      },
+      "facts": [
+        "f_tin_found"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Charles Maina was found dead in the boat shed at 17:05.",
+      "kind": "true",
+      "about": [
+        "p_charles",
+        "loc_shed"
+      ]
+    },
+    {
+      "id": "f_ob_fight",
+      "text": "Witnesses say Charles had a loud fight with his brother at the shed this morning.",
+      "kind": "true",
+      "about": [
+        "p_charles",
+        "p_george"
+      ]
+    },
+    {
+      "id": "f_body_oar",
+      "text": "Charles was struck with an oar from the rack.",
+      "kind": "true",
+      "about": [
+        "p_charles"
+      ]
+    },
+    {
+      "id": "f_tin_missing",
+      "text": "The cash tin is gone from its shelf.",
+      "kind": "true",
+      "about": [
+        "loc_shed"
+      ]
+    },
+    {
+      "id": "f_cap",
+      "text": "George Maina's cap is on the bench in the shed.",
+      "kind": "true",
+      "about": [
+        "p_george",
+        "ev_cap"
+      ]
+    },
+    {
+      "id": "f_feebook_count",
+      "text": "Fee book: '16:00 tin count — D.S.', initialled by the manager.",
+      "kind": "true",
+      "about": [
+        "p_daniel"
+      ],
+      "where": {
+        "person": "p_daniel",
+        "place": "loc_shed",
+        "from": "16:00",
+        "to": "16:05"
+      }
+    },
+    {
+      "id": "f_feebook_d",
+      "text": "Back page, Charles's pencil: 'D — 3 Sundays short.'",
+      "kind": "true",
+      "about": [
+        "p_charles"
+      ]
+    },
+    {
+      "id": "f_pendo_george_morning",
+      "text": "Mama Pendo saw George storm out of the shed bareheaded at 09:15 after shouting at Charles. He never came back.",
+      "kind": "true",
+      "about": [
+        "p_pendo",
+        "p_george"
+      ]
+    },
+    {
+      "id": "f_pendo_alive",
+      "text": "Mama Pendo saw Charles alive in the shed doorway at 15:55.",
+      "kind": "true",
+      "about": [
+        "p_pendo",
+        "p_charles"
+      ]
+    },
+    {
+      "id": "f_dennis_rowing",
+      "text": "Dennis was out on the lake fetching a drifting boat from 15:50 to 16:25. Mama Pendo watched; the children were cheering him.",
+      "kind": "true",
+      "about": [
+        "p_pendo",
+        "p_dennis"
+      ],
+      "where": {
+        "person": "p_dennis",
+        "place": "plc_lake",
+        "from": "15:50",
+        "to": "16:25"
+      }
+    },
+    {
+      "id": "f_photo_green",
+      "text": "Victor's print, timed 16:12: in the background, a man in a green overall leaves the shed carrying a grey box.",
+      "kind": "true",
+      "about": [
+        "ev_photo",
+        "loc_shed"
+      ]
+    },
+    {
+      "id": "f_uniforms",
+      "text": "Victor: \"Attendants wear blue. Only the manager, Daniel ole Sankale, wears green.\"",
+      "kind": "true",
+      "about": [
+        "p_victor",
+        "p_daniel"
+      ]
+    },
+    {
+      "id": "f_victor_prints",
+      "text": "Victor took photos of families on the lawn from 15:30 to 17:00; his print numbers run in sequence.",
+      "kind": "true",
+      "about": [
+        "p_victor"
+      ],
+      "where": {
+        "person": "p_victor",
+        "place": "plc_lawn",
+        "from": "15:30",
+        "to": "17:00"
+      }
+    },
+    {
+      "id": "f_pendo_cart",
+      "text": "Mama Pendo served ice cream at her cart all afternoon, in full view of the lake.",
+      "kind": "true",
+      "about": [
+        "p_pendo"
+      ],
+      "where": {
+        "person": "p_pendo",
+        "place": "plc_cart",
+        "from": "10:00",
+        "to": "17:30"
+      }
+    },
+    {
+      "id": "f_gikomba",
+      "text": "Gikomba neighbour: George was at his mitumba stall from 11:00 to 18:00, apart from five minutes when she watched it.",
+      "kind": "true",
+      "about": [
+        "p_george"
+      ],
+      "where": {
+        "person": "p_george",
+        "place": "plc_gikomba",
+        "from": "11:00",
+        "to": "18:00"
+      }
+    },
+    {
+      "id": "f_tin_found",
+      "text": "The cash tin was behind a box of life jackets in the manager's locked cupboard. Empty.",
+      "kind": "true",
+      "about": [
+        "p_daniel",
+        "ev_tin"
+      ]
+    },
+    {
+      "id": "f_george_claim",
+      "text": "George: \"I shouted at him about our mother's shamba and I left. I was at Gikomba all day.\"",
+      "kind": "claim",
+      "about": [
+        "p_george"
+      ]
+    },
+    {
+      "id": "f_george_cap",
+      "text": "George says he forgot his cap in the shed when he stormed out in the morning.",
+      "kind": "true",
+      "about": [
+        "p_george",
+        "ev_cap"
+      ]
+    },
+    {
+      "id": "f_daniel_claim",
+      "text": "Daniel: \"I was in the office doing the books all afternoon. I didn't hear anything.\"",
+      "kind": "claim",
+      "about": [
+        "p_daniel"
+      ]
+    },
+    {
+      "id": "f_daniel_denial",
+      "text": "Daniel: \"The brother was screaming at him this morning. Everyone heard.\"",
+      "kind": "claim",
+      "about": [
+        "p_daniel"
+      ]
+    },
+    {
+      "id": "f_dennis_claim",
+      "text": "Dennis: \"I was rowing out for the boat that drifted. When I came back he was on the floor.\"",
+      "kind": "claim",
+      "about": [
+        "p_dennis"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_dennis",
+      "stance": "cooperative",
+      "intro": "Dennis is still wet to the knees. \"I was on the water. I was on the water and he was on the floor.\"",
+      "claims": [
+        "f_dennis_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_george",
+          "reply": "His brother shouted at him at nine about their mother's shamba. Everyone heard. Then he left.",
+          "reveals": []
+        },
+        {
+          "about": "p_daniel",
+          "reply": "The manager? He was around. In and out of the office. He does the count at four.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_pendo",
+      "stance": "cooperative",
+      "intro": "Mama Pendo hands Amani an ice cream without asking and doesn't take money. \"Twenty years I've seen that shed. Twenty years.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_george",
+          "reply": "George came at nine, shouted, and stormed out with no cap, hands in the air. He never came back. I'd have seen him.",
+          "reveals": []
+        },
+        {
+          "about": "p_dennis",
+          "reply": "Dennis was rowing for that drifting boat from ten to four. The children were cheering. He was on the water the whole time.",
+          "reveals": []
+        },
+        {
+          "about": "p_daniel",
+          "reply": "The manager? He walks around a lot. I don't watch him. I watch the children near the water.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_victor",
+      "stance": "cooperative",
+      "intro": "Victor flips through a stack of prints. \"I write the time on every one. Customers like it. Police like it more.\"",
+      "claims": [],
+      "yields": [
+        "ev_victor"
+      ],
+      "topics": [
+        {
+          "about": "ev_photo",
+          "reply": "Look in the background. Green overall. Only one man in this park wears that colour of overall.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_george",
+      "stance": "cooperative",
+      "intro": "George arrives from Gikomba, out of breath, bareheaded. \"They're saying it was me. They're already saying it.\"",
+      "claims": [
+        "f_george_claim"
+      ],
+      "yields": [
+        "ev_gikomba"
+      ],
+      "topics": [
+        {
+          "about": "ev_cap",
+          "reply": "My cap? I left it there in the morning. I was so angry I didn't notice. Mama Pendo saw me go.",
+          "reveals": [
+            "f_george_cap"
+          ]
+        },
+        {
+          "about": "p_charles",
+          "reply": "We fought about Mother's plot. He wanted to sell, I didn't. I'd give him the whole shamba to have him back.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_daniel",
+      "stance": "cooperative",
+      "intro": "Daniel meets Amani at the shed with a clipboard and a sympathetic face. \"Terrible. The brother was here this morning, you know.\"",
+      "claims": [
+        "f_daniel_claim",
+        "f_daniel_denial"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_feebook",
+          "reply": "'D'? Could be anyone. Dennis. Delivery men. Charles kept strange notes.",
+          "reveals": []
+        },
+        {
+          "about": "ev_photo",
+          "reply": "Green overall? The owner sometimes wears one. Anyone can buy an overall.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [],
+  "words": [
+    {
+      "id": "w_daniel",
+      "text": "Daniel ole Sankale",
+      "category": "person",
+      "ref": "p_daniel",
+      "unlock": {
+        "anyOf": [
+          "f_uniforms",
+          "f_feebook_count"
+        ]
+      }
+    },
+    {
+      "id": "w_george",
+      "text": "George Maina",
+      "category": "person",
+      "ref": "p_george",
+      "unlock": {
+        "anyOf": [
+          "f_cap",
+          "f_pendo_george_morning"
+        ]
+      }
+    },
+    {
+      "id": "w_dennis",
+      "text": "Dennis Mbugua",
+      "category": "person",
+      "ref": "p_dennis",
+      "unlock": {
+        "anyOf": [
+          "f_dennis_rowing"
+        ]
+      }
+    },
+    {
+      "id": "w_pendo",
+      "text": "Pendo Atieno",
+      "category": "person",
+      "ref": "p_pendo",
+      "unlock": {
+        "anyOf": [
+          "f_pendo_alive"
+        ]
+      }
+    },
+    {
+      "id": "w_victor",
+      "text": "Victor Nyamweya",
+      "category": "person",
+      "ref": "p_victor",
+      "unlock": {
+        "anyOf": [
+          "f_uniforms"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} at Uhuru Park.",
+    "fixed": {
+      "victim": "Charles Maina"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_daniel"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Not the brother. The man in green, with the tin. That will hold, and I'm glad you didn't send me the brother.",
+          "fail": [
+            "This doesn't hold up. A fight in the morning is not a killing in the afternoon. Where was the brother?",
+            "No. Charles wrote down who he suspected. Read the back page, then look at the background of that photo."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_shed",
+      "from": "15:55",
+      "to": "16:25",
+      "within": [
+        "plc_cart",
+        "plc_office"
+      ]
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_pendo_george_morning",
+          "f_gikomba",
+          "f_george_cap"
+        ],
+        "concludes": "George left at 09:15 without his cap and was in Gikomba all afternoon. The cap means nothing."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_feebook_d"
+        ],
+        "concludes": "With the brother cleared, the only suspicion Charles himself wrote down was 'D': Daniel ole Sankale or Dennis Mbugua."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_photo_green",
+          "f_uniforms",
+          "f_dennis_rowing",
+          "f_feebook_count"
+        ],
+        "concludes": "At 16:12 a man in the manager's green overall left the shed with a box, while Dennis was out on the water. It was Daniel.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_george",
+        "blank": "who",
+        "by": [
+          "f_gikomba",
+          "f_pendo_george_morning"
+        ],
+        "why": "George left bareheaded at 09:15 and was at his stall in Gikomba from 11:00 to 18:00."
+      },
+      {
+        "word": "w_dennis",
+        "blank": "who",
+        "by": [
+          "f_dennis_rowing"
+        ],
+        "why": "Dennis was out on the lake from 15:50 to 16:25, watched by Mama Pendo and a crowd of children."
+      },
+      {
+        "word": "w_pendo",
+        "blank": "who",
+        "by": [
+          "f_pendo_cart"
+        ],
+        "why": "Mama Pendo served ice cream at her cart all afternoon in full view of the lake."
+      },
+      {
+        "word": "w_victor",
+        "blank": "who",
+        "by": [
+          "f_victor_prints"
+        ],
+        "why": "Victor was photographing families on the lawn; his print numbers run in sequence."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "For three Sundays the takings are short. Charles checks the fee book against the tin and writes in pencil: 'D — 3 Sundays short.' He tells the manager he'll report it to the owner on Monday.",
+        "image": null
+      },
+      {
+        "text": "09:15. George shouts at his brother about their mother's plot and storms off, leaving his cap. Everyone hears. Everyone remembers.",
+        "image": null
+      },
+      {
+        "text": "16:00. Daniel does the tin count. Dennis is out on the lake after a drifting boat. Daniel picks up an oar.",
+        "image": "loc_shed"
+      },
+      {
+        "text": "16:12. He walks out of the shed in his green overall with the grey tin under his arm, to make it look like a robbery. In the background of a family's photo.",
+        "image": null
+      },
+      {
+        "text": "That evening George collects his cap from the police. He holds it a long time before he puts it on.",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_feebook",
+        "line": "Everyone is looking at the brother. Charles wasn't. Read what he wrote on the back page."
+      },
+      "tier2": {
+        "facts": [
+          "f_photo_green",
+          "f_uniforms"
+        ],
+        "line": "A green overall in the background of a photograph, and only one man in the park who wears green."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "mitumba",
+      "def": "Second-hand clothes, sold in huge markets like Gikomba."
+    },
+    {
+      "term": "shamba",
+      "def": "Plot of farmland."
+    },
+    {
+      "term": "ziwa",
+      "def": "Lake."
+    },
+    {
+      "term": "mama",
+      "def": "Respectful way to address an older woman; 'Mama Pendo'."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "threeStepProof",
+      "pinnedFacts",
+      "photoZoom"
+    ],
+    "beatNotes": "First three-step proof. The notebook's pinned-facts tray (up to six facts) is introduced. First photograph at full size with the case-photo treatment and zoom: the green figure is only visible when zoomed into the background."
+  }
+}

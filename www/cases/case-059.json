@@ -1,0 +1,2000 @@
+{
+  "meta": {
+    "id": "case-059",
+    "number": 59,
+    "region": "maasai-mara",
+    "regionNumber": 6,
+    "title": "Repeater Log",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 30,
+    "date": "Saturday 14 March",
+    "folderTab": "LUGGA 4"
+  },
+  "pattern": {
+    "crimePattern": "safari-company owner kills the guide whose ethics report would ban his vehicles, stages a tyre-change accident, and fakes a radio alibi 45 km away",
+    "noRealCaseRetold": true,
+    "notes": "Fictional company, committee and repeaters. Radio repeater coverage is simplified to two sectors divided by hills; the cultural reader is asked to check guides' radio practice and the ethics committee.",
+    "tags": [
+      "blunt-force",
+      "staged-accident",
+      "radio-alibi",
+      "fraud-exposure",
+      "two-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where-culprit"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 4,
+    "redHerrings": 1,
+    "liars": 2,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 08/14/03",
+    "date": "Saturday 14 March",
+    "time": "16:10",
+    "reportedBy": "Guides on the sightings channel",
+    "text": "Guides report a senior guide, Leshan Nkapapa (33), found dead under his own vehicle at Lugga crossing 4 in the east of the reserve at 15:50. The jack collapsed while he was changing a tyre. Recorded as an accident.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_lugga",
+    "nodes": [
+      "loc_lugga",
+      "loc_radio",
+      "loc_bfe"
+    ],
+    "edges": [
+      {
+        "a": "loc_lugga",
+        "b": "loc_radio",
+        "minutes": 60,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_radio",
+        "b": "loc_bfe",
+        "minutes": 45,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_lugga",
+        "b": "loc_bfe",
+        "minutes": 70,
+        "by": "4x4"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_leshan",
+      "role": "victim",
+      "name": "Leshan Nkapapa",
+      "age": 33,
+      "occupation": "Senior guide; chair of the Mara Guides' Ethics Committee",
+      "bio": "Stubborn about cheetahs. Photographs every off-road track he finds.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_lugga",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Maasai man, early 30s, a guide's khaki uniform with a name badge, a camera with a long lens round his neck, a steady, serious face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_robert",
+      "role": "suspect",
+      "name": "Robert Nyang'au",
+      "age": 54,
+      "occupation": "Owner, Big Five Express Safaris",
+      "bio": "Six vehicles, big tips, and a reputation for getting guests closest to the cats.",
+      "community": "Kisii",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_leshan_call"
+      },
+      "at": "loc_lugga",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kisii man, mid 50s, a branded company fleece, sunglasses on his head, a loud, confident grin, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_nickson",
+      "role": "suspect",
+      "name": "Nickson Osoro",
+      "age": 31,
+      "occupation": "Robert's driver-guide",
+      "bio": "Drives Robert's own vehicle. Hasn't looked anyone in the eye since Saturday.",
+      "community": "Kisii",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_leshan_call"
+      },
+      "at": "loc_lugga",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kisii man, early 30s, a driver-guide's uniform, a cap pulled low, a pale, shaking face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_tobiko",
+      "role": "suspect",
+      "name": "Tobiko Kisemei",
+      "age": 40,
+      "occupation": "Guide",
+      "redHerring": true,
+      "bio": "Lost the committee chair to Leshan last year.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_report"
+      },
+      "at": "plc_northlodge",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Maasai man, about 40, a guide's uniform and a beaded belt, a proud, measured face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_nashilu",
+      "role": "witness",
+      "name": "Nashilu Sironka",
+      "age": 35,
+      "occupation": "Reserve radio controller",
+      "bio": "Runs the reserve radio office and its repeater logs.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_radio",
+      "image": null
+    },
+    {
+      "id": "p_ntoyai",
+      "role": "witness",
+      "name": "Ntoyai Meshami",
+      "age": 29,
+      "occupation": "Secretary, Mara Guides' Ethics Committee",
+      "statementOnly": true,
+      "bio": "Typed Leshan's report.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_report"
+      },
+      "at": "plc_committee",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_musiara",
+      "name": "Musiara marsh, 45 km west"
+    },
+    {
+      "id": "plc_talekgate",
+      "name": "Talek gate"
+    },
+    {
+      "id": "plc_bfecamp",
+      "name": "Big Five Express camp",
+      "within": "loc_bfe"
+    },
+    {
+      "id": "plc_double",
+      "name": "The Double Crossing"
+    },
+    {
+      "id": "plc_northlodge",
+      "name": "A lodge in the north of the reserve"
+    },
+    {
+      "id": "plc_committee",
+      "name": "The ethics committee office"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_lugga",
+      "name": "Lugga crossing 4",
+      "kind": "scene",
+      "description": "A dry sandy lugga in the east of the reserve, its banks cut by tracks. Leshan's game vehicle stands tilted, its front-left wheel flat, the jack lying on its side in the soft sand. Beyond, off-road tyre tracks circle a thicket where a cheetah family was resting.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Under the vehicle",
+          "pos": [
+            48,
+            64
+          ],
+          "yields": "ev_body",
+          "text": "Leshan lay under the front of his vehicle."
+        },
+        {
+          "id": "hs_tyre",
+          "label": "Front-left tyre",
+          "pos": [
+            36,
+            58
+          ],
+          "yields": "ev_tyre",
+          "text": "The flat tyre. No nail, no cut, no puncture."
+        },
+        {
+          "id": "hs_jack",
+          "label": "The jack",
+          "pos": [
+            56,
+            72
+          ],
+          "yields": "ev_jack",
+          "text": "The jack lies tipped over in soft sand."
+        },
+        {
+          "id": "hs_phone",
+          "label": "Leshan's phone and laptop",
+          "pos": [
+            76,
+            40
+          ],
+          "yields": "ev_leshan_phone",
+          "text": "His phone on the dashboard, his laptop bag on the seat. His wife unlocks the phone."
+        },
+        {
+          "id": "hs_laptop",
+          "label": "Laptop",
+          "pos": [
+            80,
+            50
+          ],
+          "yields": "ev_report",
+          "text": "The laptop, the committee report open."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a dry sandy lugga crossing in the east of the Maasai Mara, a safari game vehicle tilted on a flat front tyre, a jack lying on its side in soft sand, off-road tyre tracks circling a thicket in the background, no people in focus"
+      }
+    },
+    {
+      "id": "loc_radio",
+      "name": "Reserve radio office",
+      "kind": "location",
+      "description": "A concrete office with a wall map of the reserve, two repeater coverage areas shaded on it, and a printer for the repeater logs.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_log",
+          "label": "Repeater log",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_repeater",
+          "text": "Nashilu prints Saturday afternoon's repeater log."
+        },
+        {
+          "id": "hs_channel",
+          "label": "Sightings channel log",
+          "pos": [
+            70,
+            50
+          ],
+          "yields": "ev_channel",
+          "text": "The sightings channel log, every call of the week."
+        },
+        {
+          "id": "hs_ntoyai",
+          "label": "The committee secretary",
+          "pos": [
+            20,
+            62
+          ],
+          "yields": "ev_ntoyai",
+          "text": "Ntoyai Meshami has driven over with the committee's copy of Leshan's report."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a reserve radio office with a wall map showing two shaded radio coverage areas divided by hills, a radio desk with handsets, a printer"
+      }
+    },
+    {
+      "id": "loc_bfe",
+      "name": "Big Five Express camp",
+      "kind": "location",
+      "description": "Robert's camp: six vehicles in a row, his own at the end.",
+      "unlock": {
+        "fact": "f_rec_rob"
+      },
+      "hotspots": [
+        {
+          "id": "hs_vehicle",
+          "label": "Robert's vehicle",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_vehicle",
+          "text": "His own vehicle, BFE-01 on the door."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a safari company camp in the Mara with six game vehicles parked in a row, company branding on the doors"
+      }
+    },
+    {
+      "id": "loc_northlodge",
+      "name": "A lodge in the north",
+      "kind": "location",
+      "description": "A lodge where guides lunch with their clients.",
+      "unlock": {
+        "fact": "f_tobiko_claim"
+      },
+      "hotspots": [
+        {
+          "id": "hs_bill",
+          "label": "Lunch bill",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_tobiko",
+          "text": "The lodge's lunch bill for Saturday."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a safari lodge dining terrace at midday, tables with guests, a guide in uniform at the end of a table"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Under the vehicle",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. He lay under the front of the vehicle, which had come down on him."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the front of a tilted safari vehicle on soft sand, a wheel brace lying nowhere in sight, no body visible"
+      }
+    },
+    {
+      "id": "ev_tyre",
+      "type": "physical",
+      "title": "The flat tyre",
+      "render": "object",
+      "body": {
+        "label": "Front-left tyre flat but with no puncture. The valve core is missing from the valve stem."
+      },
+      "facts": [
+        "f_tyre"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_jack",
+      "type": "physical",
+      "title": "The jack",
+      "render": "sceneNote",
+      "body": {
+        "note": "Base set on soft sand, tipped over. No load marks of a slow slip."
+      },
+      "facts": [
+        "f_jack"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_leshan_phone",
+      "type": "phone",
+      "title": "Leshan's phone",
+      "render": "manifest",
+      "body": {
+        "call": "Incoming 14:10 from ROBERT NYANG'AU, 3 minutes."
+      },
+      "facts": [
+        "f_leshan_call"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_report",
+      "type": "physical",
+      "title": "Leshan's committee report",
+      "render": "form",
+      "body": {
+        "text": "Recommends a ban from the reserve on six Big Five Express vehicles for repeated off-roading and chasing cheetahs. Guests' videos attached."
+      },
+      "facts": [
+        "f_report"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_repeater",
+      "type": "physical",
+      "title": "Repeater log, Saturday",
+      "render": "logBook",
+      "body": {
+        "entry": "14:55 — handset BFE-01: \"Cheetah hunt at Musiara marsh…\" — relayed by the EAST repeater.",
+        "west": "West repeater: nothing from BFE-01 all afternoon."
+      },
+      "facts": [
+        "f_repeater"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_nashilu",
+      "type": "witness",
+      "title": "Statement: Nashilu Sironka",
+      "render": "statement",
+      "body": {
+        "speaker": "p_nashilu"
+      },
+      "facts": [
+        "f_nashilu",
+        "f_nashilu_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_channel",
+      "type": "physical",
+      "title": "Sightings channel log",
+      "render": "logBook",
+      "body": {
+        "week": "No leopard-sighting quarrel all week. Tips are recorded weekly by each company; no dispute logged."
+      },
+      "facts": [
+        "f_radio_clean"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Robert Nyang'au's line",
+      "render": "manifest",
+      "body": {
+        "masts": "East sector 14:30–15:25. West sector only from 17:10."
+      },
+      "facts": [
+        "f_rec_rob"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_leshan_call"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_vehicle",
+      "type": "physical",
+      "title": "Robert's vehicle",
+      "render": "object",
+      "body": {
+        "pocket": "A valve core loose in the driver's door pocket.",
+        "seat": "A wheel brace under the driver's seat, wiped."
+      },
+      "facts": [
+        "f_valve_core",
+        "f_brace"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_repeater",
+          "f_rec_rob"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a steel wheel brace wiped clean under a vehicle seat, and a tiny tyre valve core in a door pocket"
+      }
+    },
+    {
+      "id": "ev_tobiko",
+      "type": "physical",
+      "title": "Lodge lunch bill",
+      "render": "receipt",
+      "body": {
+        "bill": "T. Kisemei and four clients: 13:30–15:30, north lodge."
+      },
+      "facts": [
+        "f_tobiko"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ntoyai",
+      "type": "witness",
+      "title": "Statement: Ntoyai Meshami",
+      "render": "statement",
+      "body": {
+        "speaker": "p_ntoyai"
+      },
+      "facts": [
+        "f_ntoyai",
+        "f_no_land"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_nick_prints",
+      "type": "physical",
+      "title": "Nickson's prints (voluntary)",
+      "render": "form",
+      "body": {
+        "name": "N. Osoro"
+      },
+      "facts": [
+        "f_nick_prints"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rob_prints",
+      "type": "physical",
+      "title": "Fingerprints: Robert Nyang'au",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention; he refused."
+      },
+      "facts": [
+        "f_rob_prints"
+      ],
+      "gate": null,
+      "detention": "p_robert",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_tod",
+        "f_aut_noother"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_core",
+      "type": "forensic",
+      "title": "Comparison: valve core vs his valve stem",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_core_match"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_tyre",
+          "ev_vehicle"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_trace",
+      "type": "forensic",
+      "title": "Lab: trace (wheel brace)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_trace"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_vehicle"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints on the wheel brace",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_brace_prints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_vehicle",
+          "ev_rob_prints",
+          "ev_nick_prints"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Leshan Nkapapa was found dead under his own vehicle at Lugga crossing 4 at 15:50; the jack had collapsed while he changed a tyre. Recorded as an accident.",
+      "kind": "true",
+      "about": [
+        "p_leshan",
+        "loc_lugga"
+      ],
+      "at": {
+        "from": "15:50"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "He lay under the front of his vehicle, which had come down on him.",
+      "kind": "true",
+      "about": [
+        "p_leshan",
+        "loc_lugga"
+      ]
+    },
+    {
+      "id": "f_tyre",
+      "text": "Front-left tyre: flat, but with no puncture. The valve core is missing from the valve stem.",
+      "kind": "true",
+      "about": [
+        "p_leshan"
+      ]
+    },
+    {
+      "id": "f_jack",
+      "text": "The jack's base was set on soft sand and has tipped over; there are no load marks of a slow slip.",
+      "kind": "true",
+      "about": [
+        "loc_lugga"
+      ]
+    },
+    {
+      "id": "f_leshan_call",
+      "text": "Leshan's phone: an incoming call at 14:10 from ROBERT NYANG'AU, 3 minutes.",
+      "kind": "true",
+      "about": [
+        "p_leshan",
+        "p_robert"
+      ],
+      "at": {
+        "from": "14:10"
+      }
+    },
+    {
+      "id": "f_report",
+      "text": "Leshan's committee report recommends banning six Big Five Express vehicles from the reserve for repeated off-roading and chasing cheetahs, with guests' videos attached.",
+      "kind": "true",
+      "about": [
+        "p_leshan",
+        "p_robert"
+      ]
+    },
+    {
+      "id": "f_repeater",
+      "text": "Repeater log: at 14:55 handset BFE-01, Robert's, called \"Cheetah hunt at Musiara marsh…\". The EAST repeater relayed it. The west repeater logged nothing from BFE-01 all afternoon.",
+      "kind": "true",
+      "about": [
+        "p_robert"
+      ],
+      "at": {
+        "from": "14:55"
+      }
+    },
+    {
+      "id": "f_nashilu",
+      "text": "Nashilu: \"A handset at Musiara can only reach the west repeater. If the east one picked him up, he was in the east. Signals don't bounce over those hills.\"",
+      "kind": "true",
+      "about": [
+        "p_nashilu"
+      ]
+    },
+    {
+      "id": "f_nashilu_self",
+      "text": "Nashilu was at the radio office all afternoon, logging calls.",
+      "kind": "true",
+      "about": [
+        "p_nashilu"
+      ],
+      "where": {
+        "person": "p_nashilu",
+        "place": "loc_radio",
+        "from": "12:00",
+        "to": "18:00"
+      }
+    },
+    {
+      "id": "f_radio_clean",
+      "text": "Sightings channel log: no quarrel over a leopard sighting all week; each company's tips are recorded weekly with no dispute.",
+      "kind": "true",
+      "about": [
+        "loc_radio"
+      ]
+    },
+    {
+      "id": "f_rec_rob",
+      "text": "Records, Robert's line: east sector 14:30–15:25; west sector only from 17:10.",
+      "kind": "true",
+      "about": [
+        "p_robert"
+      ],
+      "at": {
+        "from": "14:30",
+        "to": "17:10"
+      }
+    },
+    {
+      "id": "f_valve_core",
+      "text": "In Robert's vehicle: a valve core loose in the driver's door pocket.",
+      "kind": "true",
+      "about": [
+        "p_robert"
+      ]
+    },
+    {
+      "id": "f_brace",
+      "text": "Under the driver's seat of Robert's vehicle: a wheel brace, wiped.",
+      "kind": "true",
+      "about": [
+        "p_robert"
+      ]
+    },
+    {
+      "id": "f_tobiko",
+      "text": "Lodge lunch bill: Tobiko with four clients at the north lodge from 13:30 to 15:30.",
+      "kind": "true",
+      "about": [
+        "p_tobiko"
+      ],
+      "where": {
+        "person": "p_tobiko",
+        "place": "plc_northlodge",
+        "from": "13:30",
+        "to": "15:30"
+      }
+    },
+    {
+      "id": "f_ntoyai",
+      "text": "Ntoyai: she was at the committee office all afternoon with two other members, filing Leshan's report.",
+      "kind": "true",
+      "about": [
+        "p_ntoyai"
+      ],
+      "where": {
+        "person": "p_ntoyai",
+        "place": "plc_committee",
+        "from": "12:00",
+        "to": "17:00"
+      }
+    },
+    {
+      "id": "f_no_land",
+      "text": "Ntoyai: neither Robert nor Leshan has any land-lease matter before the committee, or anywhere she knows of.",
+      "kind": "true",
+      "about": [
+        "p_ntoyai"
+      ]
+    },
+    {
+      "id": "f_nick_prints",
+      "text": "Nickson gives his fingerprints voluntarily.",
+      "kind": "true",
+      "about": [
+        "p_nickson"
+      ]
+    },
+    {
+      "id": "f_rob_prints",
+      "text": "Fingerprints taken from Robert in detention.",
+      "kind": "true",
+      "about": [
+        "p_robert"
+      ]
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Autopsy: a blow to the side of the head with a metal bar first; the crush injuries came after, with little bleeding.",
+      "kind": "true",
+      "about": [
+        "p_leshan"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 14:45 and 15:15.",
+      "kind": "true",
+      "about": [
+        "p_leshan"
+      ],
+      "at": {
+        "from": "14:45",
+        "to": "15:15"
+      }
+    },
+    {
+      "id": "f_aut_noother",
+      "text": "Autopsy: no goring, no vehicle impact, a sound heart.",
+      "kind": "true",
+      "about": [
+        "p_leshan"
+      ]
+    },
+    {
+      "id": "f_core_match",
+      "text": "Comparison: the valve core from Robert's door pocket is the same make and thread as Leshan's empty valve stem, with a scratch where it was pulled with pliers.",
+      "kind": "true",
+      "about": [
+        "p_leshan",
+        "p_robert"
+      ]
+    },
+    {
+      "id": "f_trace",
+      "text": "Lab: Leshan's blood and hair on the wheel brace.",
+      "kind": "true",
+      "about": [
+        "p_leshan",
+        "p_robert"
+      ]
+    },
+    {
+      "id": "f_brace_prints",
+      "text": "Lab: Robert's prints on the wheel brace's grip. Not Nickson's.",
+      "kind": "true",
+      "about": [
+        "p_robert",
+        "p_nickson"
+      ]
+    },
+    {
+      "id": "f_rob_musiara",
+      "text": "Robert: \"At three I was at Musiara marsh watching a cheetah hunt. I called it on the radio. Ask anyone.\"",
+      "kind": "lie",
+      "about": [
+        "p_robert"
+      ]
+    },
+    {
+      "id": "f_rob_bounce",
+      "text": "Robert: \"I may have been on my way. Signals bounce.\"",
+      "kind": "lie",
+      "about": [
+        "p_robert"
+      ]
+    },
+    {
+      "id": "f_rob_brace",
+      "text": "Robert: \"Nickson is lying to save himself. I never touched that brace.\"",
+      "kind": "lie",
+      "about": [
+        "p_robert"
+      ]
+    },
+    {
+      "id": "f_nick_musiara",
+      "text": "Nickson: \"We were at Musiara all afternoon watching the cheetahs.\"",
+      "kind": "lie",
+      "about": [
+        "p_nickson"
+      ]
+    },
+    {
+      "id": "f_nick_reveal",
+      "text": "Nickson: they were at the lugga. Mr Robert hit Leshan with the brace, then told Nickson to let the tyre down and set the jack.",
+      "kind": "true",
+      "about": [
+        "p_nickson",
+        "p_robert",
+        "p_leshan"
+      ],
+      "where": {
+        "person": "p_robert",
+        "place": "loc_lugga",
+        "from": "14:45",
+        "to": "15:05"
+      }
+    },
+    {
+      "id": "f_nick_self",
+      "text": "Nickson admits he let the tyre down and set the jack on the sand. \"I did it. I'll say it in court.\"",
+      "kind": "true",
+      "about": [
+        "p_nickson"
+      ],
+      "where": {
+        "person": "p_nickson",
+        "place": "loc_lugga",
+        "from": "14:45",
+        "to": "15:05"
+      }
+    },
+    {
+      "id": "f_tobiko_claim",
+      "text": "Tobiko: \"I was at lunch with clients.\"",
+      "kind": "claim",
+      "about": [
+        "p_tobiko"
+      ]
+    },
+    {
+      "id": "f_tobiko_fair",
+      "text": "Tobiko: \"Leshan beat me fairly. He was stubborn about cheetahs. He was right.\"",
+      "kind": "true",
+      "about": [
+        "p_tobiko",
+        "p_leshan"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_robert",
+      "stance": "cooperative",
+      "intro": "Robert talks over the radio crackle in his camp office. \"At three I was at Musiara marsh watching a cheetah hunt. I called it on the radio. Ask anyone.\"",
+      "claims": [
+        "f_rob_musiara"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_rob_bounce",
+          "after": "f_repeater"
+        },
+        {
+          "claim": "f_rob_brace",
+          "after": "f_nick_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_report",
+          "reply": "A committee of jealous guides. My drivers find the cats. That's why guests pay us.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_nickson",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_repeater"
+      ],
+      "intro": "Nickson sits in Robert's vehicle with the door shut. \"We were at Musiara all afternoon.\"",
+      "claims": [
+        "f_nick_musiara"
+      ],
+      "yields": [
+        "ev_nick_prints"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_tobiko",
+      "stance": "cooperative",
+      "intro": "Tobiko stands with his arms folded at the lodge terrace. \"I was at lunch with clients.\"",
+      "claims": [
+        "f_tobiko_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_report",
+          "reply": "Leshan beat me fairly. He was stubborn about cheetahs. He was right.",
+          "reveals": [
+            "f_tobiko_fair"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_nashilu",
+      "stance": "cooperative",
+      "intro": "Nashilu taps the wall map, one shaded half at a time. \"East. West. The hills in between. Nothing crosses.\"",
+      "claims": [],
+      "yields": [
+        "ev_nashilu"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_rob",
+      "claim": "f_rob_musiara",
+      "brokenBy": [
+        "f_repeater",
+        "f_rec_rob"
+      ],
+      "reveals": [],
+      "reaction": "He laughs, too loud. \"I may have been on my way. Signals bounce.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_rob_bounce",
+      "claim": "f_rob_bounce",
+      "brokenBy": [
+        "f_nashilu"
+      ],
+      "reveals": [],
+      "reaction": "Robert looks at the coverage map for the first time and doesn't laugh.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_nick",
+      "claim": "f_nick_musiara",
+      "brokenBy": [
+        "f_rec_rob",
+        "f_repeater"
+      ],
+      "reveals": [
+        "f_nick_reveal",
+        "f_nick_self"
+      ],
+      "reaction": "\"We were at the lugga. Mr Robert hit him with the brace. He told me to let the tyre down and set the jack. I did it. I'll say it in court.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_rob_brace",
+      "claim": "f_rob_brace",
+      "brokenBy": [
+        "f_brace_prints",
+        "f_trace"
+      ],
+      "reveals": [],
+      "reaction": "Robert sits back. \"Six vehicles,\" he says. \"Twenty years.\" He asks for a lawyer.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_robert",
+      "text": "Robert Nyang'au",
+      "category": "person",
+      "ref": "p_robert",
+      "unlock": {
+        "anyOf": [
+          "f_leshan_call"
+        ]
+      }
+    },
+    {
+      "id": "w_nickson",
+      "text": "Nickson Osoro",
+      "category": "person",
+      "ref": "p_nickson",
+      "unlock": {
+        "anyOf": [
+          "f_leshan_call"
+        ]
+      }
+    },
+    {
+      "id": "w_tobiko",
+      "text": "Tobiko Kisemei",
+      "category": "person",
+      "ref": "p_tobiko",
+      "unlock": {
+        "anyOf": [
+          "f_report"
+        ]
+      }
+    },
+    {
+      "id": "w_nashilu",
+      "text": "Nashilu Sironka",
+      "category": "person",
+      "ref": "p_nashilu",
+      "unlock": {
+        "anyOf": [
+          "f_repeater"
+        ]
+      }
+    },
+    {
+      "id": "w_ntoyai",
+      "text": "Ntoyai Meshami",
+      "category": "person",
+      "ref": "p_ntoyai",
+      "unlock": {
+        "anyOf": [
+          "f_report"
+        ]
+      }
+    },
+    {
+      "id": "pl_musiara",
+      "text": "Musiara marsh",
+      "category": "place",
+      "ref": "plc_musiara",
+      "unlock": {
+        "anyOf": [
+          "f_repeater"
+        ]
+      }
+    },
+    {
+      "id": "pl_lugga",
+      "text": "Lugga crossing 4",
+      "category": "place",
+      "ref": "loc_lugga",
+      "unlock": {
+        "anyOf": [
+          "f_nick_reveal"
+        ]
+      }
+    },
+    {
+      "id": "pl_talekgate",
+      "text": "Talek gate",
+      "category": "place",
+      "ref": "plc_talekgate",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_bfecamp",
+      "text": "his camp",
+      "category": "place",
+      "ref": "plc_bfecamp",
+      "unlock": {
+        "anyOf": [
+          "f_leshan_call"
+        ]
+      }
+    },
+    {
+      "id": "pl_double",
+      "text": "the Double Crossing",
+      "category": "place",
+      "ref": "plc_double",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_brace",
+      "text": "struck with a wheel brace, then put under the vehicle with the jack kicked out",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_jack",
+      "text": "crushed when the jack slipped while changing a tyre",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_buffalo",
+      "text": "gored by a buffalo",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_vehicle",
+      "text": "hit by a passing vehicle",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack under the car",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_ban",
+      "text": "Leshan's report would get his vehicles banned from the reserve",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_report"
+        ]
+      }
+    },
+    {
+      "id": "m_chair",
+      "text": "rivalry for the committee chair",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_report"
+        ]
+      }
+    },
+    {
+      "id": "m_tips",
+      "text": "a tip-sharing dispute",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_repeater"
+        ]
+      }
+    },
+    {
+      "id": "m_leopard",
+      "text": "a quarrel over a leopard sighting",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_repeater"
+        ]
+      }
+    },
+    {
+      "id": "m_land",
+      "text": "a land-lease matter",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} by {how}, because {why}; at the time of his radio alibi he was at {where}.",
+    "fixed": {
+      "victim": "Leshan Nkapapa"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_1410",
+                  "label": "14:10",
+                  "from": "14:10",
+                  "to": "14:10"
+                },
+                {
+                  "id": "sl_1450",
+                  "label": "14:50",
+                  "from": "14:50",
+                  "to": "14:50"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "14:45–15:15",
+                  "from": "14:45",
+                  "to": "15:15"
+                },
+                {
+                  "id": "sl_1455",
+                  "label": "14:55",
+                  "from": "14:55",
+                  "to": "14:55"
+                },
+                {
+                  "id": "sl_1710",
+                  "label": "17:10",
+                  "from": "17:10",
+                  "to": "17:10"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_call",
+                  "text": "Robert phones Leshan",
+                  "slot": "sl_1410",
+                  "by": [
+                    "f_leshan_call"
+                  ],
+                  "why": "Leshan's phone: 14:10, three minutes.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_leshan_call"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_meet",
+                  "text": "They meet at the lugga",
+                  "slot": "sl_1450",
+                  "by": [
+                    "f_nick_reveal",
+                    "f_rec_rob"
+                  ],
+                  "why": "Robert's phone is in the east from 14:30; Nickson puts the meeting at the lugga.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_nick_reveal"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Leshan is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod",
+                    "f_nick_reveal"
+                  ],
+                  "why": "The autopsy: 14:45 to 15:15.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_radio",
+                  "text": "Robert's \"Musiara\" radio call",
+                  "slot": "sl_1455",
+                  "by": [
+                    "f_repeater"
+                  ],
+                  "why": "The repeater log: 14:55, relayed by the east repeater.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_repeater"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_1710",
+                  "by": [
+                    "f_rec_rob"
+                  ],
+                  "why": "17:10 is when Robert's phone first reaches the west sector, two hours after the killing."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A call at ten past two, a meeting at ten to three, a killing and a radio call in the same quarter-hour. The repeater kept the time.",
+          "fail": [
+            "17:10 is when he first got to the west. Long after.",
+            "When did Robert call Leshan?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_lugga",
+            "subject": "culprit",
+            "at": "14:55"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The east repeater heard him. He was at the lugga, not 45 km west.",
+          "fail": [
+            "A handset at Musiara only reaches the west repeater.",
+            "His own phone stayed in the east until 15:25."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_robert"
+          }
+        ],
+        "prosecutor": {
+          "pass": "His call, his phone in the east, Leshan's valve core in his door, his prints on the brace. That will hold.",
+          "fail": [
+            "The driver let the tyre down. Whose prints are on the brace?",
+            "Tobiko was at lunch with clients in the north."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_brace"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A blow with a bar first, the crush after. Yes.",
+          "fail": [
+            "No puncture, a missing valve core. That tyre was let down.",
+            "The crush came after death, with little bleeding."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_ban"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Six vehicles, banned. That's the reason.",
+          "fail": [
+            "Tobiko lost the chair fairly, and says so.",
+            "Tips are recorded weekly. No dispute."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_lugga",
+      "from": "14:45",
+      "to": "15:15",
+      "note": "From the autopsy."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_tyre",
+          "f_jack",
+          "f_aut_blow",
+          "f_aut_tod"
+        ],
+        "concludes": "Not a tyre-change accident: no puncture, a missing valve core, a jack set on soft sand, and a blow before the crush."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_report",
+          "f_leshan_call"
+        ],
+        "concludes": "Leshan's report would ban Robert's vehicles; Robert called him at 14:10 to meet."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_repeater",
+          "f_nashilu",
+          "f_rec_rob",
+          "f_rob_musiara",
+          "f_nick_musiara",
+          "f_nick_reveal",
+          "f_nick_self"
+        ],
+        "concludes": "Robert's \"Musiara\" call was relayed by the east repeater, and his phone stayed in the east until 15:25. At 14:55 he was at Lugga crossing 4, not 45 km west.",
+        "answers": [
+          "where",
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_valve_core",
+          "f_core_match",
+          "f_brace",
+          "f_trace",
+          "f_brace_prints",
+          "f_rob_brace"
+        ],
+        "concludes": "Leshan's valve core and the brace with his blood and Robert's prints are in Robert's vehicle. Robert Nyang'au struck Leshan with a wheel brace and put him under his vehicle with the jack kicked out, because Leshan's report would get his vehicles banned.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_musiara",
+        "blank": "where",
+        "by": [
+          "f_repeater",
+          "f_nashilu",
+          "f_rec_rob"
+        ],
+        "why": "The east repeater relayed his call, and his phone was in the east until 15:25."
+      },
+      {
+        "word": "pl_talekgate",
+        "blank": "where",
+        "by": [
+          "f_nick_reveal",
+          "f_rec_rob"
+        ],
+        "why": "Nickson puts him at the lugga; his phone was in the east sector."
+      },
+      {
+        "word": "pl_bfecamp",
+        "blank": "where",
+        "by": [
+          "f_nick_reveal"
+        ],
+        "why": "He was at the lugga with Nickson, not at his camp."
+      },
+      {
+        "word": "pl_double",
+        "blank": "where",
+        "by": [
+          "f_nick_reveal",
+          "f_core_match"
+        ],
+        "why": "He was at the lugga, where Leshan's valve core was pulled."
+      },
+      {
+        "word": "w_nickson",
+        "blank": "who",
+        "by": [
+          "f_brace_prints",
+          "f_nick_reveal"
+        ],
+        "why": "Nickson was there and staged the tyre; he will be charged as an accessory. The brace carries Robert's prints, not his.",
+        "present": true
+      },
+      {
+        "word": "w_tobiko",
+        "blank": "who",
+        "by": [
+          "f_tobiko"
+        ],
+        "why": "Tobiko was at lunch with four clients in the north from 13:30 to 15:30."
+      },
+      {
+        "word": "w_nashilu",
+        "blank": "who",
+        "by": [
+          "f_nashilu_self"
+        ],
+        "why": "Nashilu was at the radio office all afternoon."
+      },
+      {
+        "word": "w_ntoyai",
+        "blank": "who",
+        "by": [
+          "f_ntoyai"
+        ],
+        "why": "Ntoyai was at the committee office with two members."
+      },
+      {
+        "word": "h_jack",
+        "blank": "how",
+        "by": [
+          "f_tyre",
+          "f_jack",
+          "f_aut_blow"
+        ],
+        "why": "No puncture, a pulled valve core, and a blow before the crush."
+      },
+      {
+        "word": "h_buffalo",
+        "blank": "how",
+        "by": [
+          "f_aut_noother"
+        ],
+        "why": "No goring."
+      },
+      {
+        "word": "h_vehicle",
+        "blank": "how",
+        "by": [
+          "f_aut_noother"
+        ],
+        "why": "No vehicle impact."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_noother",
+          "f_aut_blow"
+        ],
+        "why": "A sound heart; a blow killed him."
+      },
+      {
+        "word": "m_chair",
+        "blank": "why",
+        "by": [
+          "f_tobiko_fair",
+          "f_tobiko"
+        ],
+        "why": "That rivalry is Tobiko's, settled fairly, and he was at lunch."
+      },
+      {
+        "word": "m_tips",
+        "blank": "why",
+        "by": [
+          "f_radio_clean"
+        ],
+        "why": "Tips are recorded weekly; no dispute."
+      },
+      {
+        "word": "m_leopard",
+        "blank": "why",
+        "by": [
+          "f_radio_clean"
+        ],
+        "why": "No such quarrel on the channel log."
+      },
+      {
+        "word": "m_land",
+        "blank": "why",
+        "by": [
+          "f_no_land"
+        ],
+        "why": "Neither man has any land-lease matter."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Leshan's ethics committee report, with guests' videos, recommends banning Big Five Express's six vehicles for off-roading and chasing cheetahs for tips.",
+        "image": null
+      },
+      {
+        "text": "Saturday, 14:10. Robert phones Leshan to talk \"privately, before the report goes in\". Leshan is at Lugga crossing 4, photographing Big Five's tyre tracks around a cheetah family.",
+        "image": null
+      },
+      {
+        "text": "About 14:50. Robert strikes him with a wheel brace. Nickson pulls the valve core from a tyre, jacks the vehicle on soft sand, lays Leshan under it and kicks the jack out.",
+        "image": "loc_lugga"
+      },
+      {
+        "text": "14:55. Robert grabs his radio: \"Cheetah hunt at Musiara marsh, two of my vehicles there.\" The east repeater relays it.",
+        "image": null
+      },
+      {
+        "text": "He drives west and reaches the west sector at 17:10. Nashilu, at the radio office, already knows which repeater heard him.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Records on Robert's line, then a warrant on his vehicle. Detain him after the search; his prints come back in 6 h and the brace trace in 12 h, inside the 24.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_lugga",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_tyre",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_jack",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_leshan_phone",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_report",
+        "hours": 1
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "travel",
+        "target": "loc_radio",
+        "hours": 1,
+        "from": "loc_lugga"
+      },
+      {
+        "do": "visit",
+        "target": "loc_radio",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_repeater",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_nashilu"
+      },
+      {
+        "do": "travel",
+        "target": "loc_bfe",
+        "hours": 1,
+        "from": "loc_radio"
+      },
+      {
+        "do": "visit",
+        "target": "loc_bfe",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_robert"
+      },
+      {
+        "do": "press",
+        "target": "c_rob"
+      },
+      {
+        "do": "press",
+        "target": "c_rob_bounce"
+      },
+      {
+        "do": "interview",
+        "target": "p_nickson"
+      },
+      {
+        "do": "press",
+        "target": "c_nick"
+      },
+      {
+        "do": "search",
+        "target": "loc_bfe"
+      },
+      {
+        "do": "detain",
+        "target": "p_robert"
+      },
+      {
+        "do": "sample",
+        "target": "ev_rob_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_trace"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 12
+      },
+      {
+        "do": "interview",
+        "target": "p_robert"
+      },
+      {
+        "do": "press",
+        "target": "c_rob_brace"
+      }
+    ],
+    "totalHours": 40
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_leshan_phone",
+        "line": "Somebody called Leshan in the afternoon. Start there."
+      },
+      "tier2": {
+        "facts": [
+          "f_leshan_call",
+          "f_repeater"
+        ],
+        "line": "A call at 14:10. A radio call at 14:55, inside the time of death."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_repeater",
+        "line": "Which repeater relayed his \"Musiara\" call?"
+      },
+      "tier2": {
+        "facts": [
+          "f_repeater",
+          "f_nashilu"
+        ],
+        "line": "The east repeater. Musiara can only reach the west one."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_records",
+        "line": "His own phone tells you which side of the hills he was on."
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_rob",
+          "f_brace_prints"
+        ],
+        "line": "East sector until 15:25, and his prints on the brace."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_tyre",
+        "line": "A flat tyre with no puncture. What's missing from the valve?"
+      },
+      "tier2": {
+        "facts": [
+          "f_tyre",
+          "f_aut_blow"
+        ],
+        "line": "A pulled valve core, and a blow before the crush."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_report",
+        "line": "Read Leshan's committee report."
+      },
+      "tier2": {
+        "facts": [
+          "f_report"
+        ],
+        "line": "A ban on six Big Five Express vehicles."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "redio",
+      "def": "Radio."
+    },
+    {
+      "term": "duma",
+      "def": "Cheetah."
+    },
+    {
+      "term": "gurudumu",
+      "def": "A wheel or tyre."
+    },
+    {
+      "term": "dereva",
+      "def": "A driver."
+    },
+    {
+      "term": "lugga",
+      "def": "A dry, sandy stream bed."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "coverageMaps",
+      "whereCulprit"
+    ],
+    "beatNotes": "Coverage maps. The site map shades each repeater's coverage; dropping the 14:55 transmission onto the map lights only the east. WHERE is asked of the suspect, not the victim, for the first time."
+  }
+}

@@ -1,0 +1,1693 @@
+{
+  "meta": {
+    "id": "case-032",
+    "number": 32,
+    "region": "rift-valley",
+    "regionNumber": 4,
+    "title": "Greenhouse 7",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 18,
+    "date": "Thursday 9 October",
+    "folderTab": "NAIVASHA"
+  },
+  "pattern": {
+    "crimePattern": "passed-over employee poisons the new manager with farm insecticide",
+    "noRealCaseRetold": true,
+    "notes": "Fictional farm and fictional chemical brand (\"Rosetox\"). The poison is named only by class (organophosphate); no quantity, preparation or dose is given beyond the stock count the deduction needs.",
+    "tags": [
+      "poisoning",
+      "workplace",
+      "forensics",
+      "detention"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 3,
+    "redHerrings": 1,
+    "liars": 2,
+    "groups": [
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "forensic"
+    ],
+    "gatedActions": [],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 22/09/10",
+    "date": "Thursday 9 October",
+    "time": "13:20",
+    "reportedBy": "Lakeview Roses, Naivasha (farm office)",
+    "text": "Lakeview Roses, an export rose farm on the south shore of Lake Naivasha, reports that its new farm manager, Caroline Jerop (41), collapsed in greenhouse 7 at 12:10 after drinking tea from her flask, and died before the ambulance arrived.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_caroline",
+      "role": "victim",
+      "name": "Caroline Jerop",
+      "age": 41,
+      "occupation": "Farm manager, Lakeview Roses (two weeks in the post)",
+      "bio": "Came from a farm in Kericho two weeks ago. Brought her own green thermos everywhere.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_gh7",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 40s, short natural hair, a farm fleece over a collared shirt, a green thermos flask under her arm, brisk and kind, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_wambui",
+      "role": "suspect",
+      "name": "Wambui Nderitu",
+      "age": 46,
+      "occupation": "Packhouse manager (20 years)",
+      "bio": "Has run the packhouse for twenty years and trained half the farm, Caroline included. Expected to be made farm manager.",
+      "community": "Kikuyu",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_promotion"
+      },
+      "at": "plc_packhouse",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 40s, hair in a neat bun under a hairnet, packhouse dust coat, reading glasses on a cord, a smile that holds still, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_samuel",
+      "role": "suspect",
+      "name": "Samuel Kariithi",
+      "age": 55,
+      "occupation": "Former farm manager, demoted",
+      "redHerring": true,
+      "bio": "Ran the farm for nine years until the owners replaced him with Caroline. Has said so loudly, often.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_promotion"
+      },
+      "at": "plc_labour",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 50s, a tweed jacket over a farm shirt, a folder of papers under his arm, resentful and tired, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_hesbon",
+      "role": "suspect",
+      "name": "Hesbon Shitandi",
+      "age": 29,
+      "occupation": "Sprayer; holds the chemical-store key",
+      "bio": "Trained sprayer. The chemical-store key lives on his belt.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_doorrule"
+      },
+      "at": "plc_gh12",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan young man, late 20s, green spray overalls with the hood down, a respirator hanging at his neck, a single key on a chain at his belt, nervous, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_tabitha",
+      "role": "witness",
+      "name": "Tabitha Wangui",
+      "age": 58,
+      "occupation": "Packhouse tea lady",
+      "bio": "Has run the tea urn for twenty years. Knows everyone's cup.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_packhouse",
+      "image": null
+    },
+    {
+      "id": "p_daudi",
+      "role": "witness",
+      "name": "Daudi Lekalau",
+      "age": 39,
+      "occupation": "Farm guard",
+      "bio": "Walks the farm on a patrol route and writes every round in a log.",
+      "community": "Samburu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_patrol"
+      },
+      "at": "plc_gate",
+      "image": null
+    },
+    {
+      "id": "p_kevin",
+      "role": "witness",
+      "name": "Kevin Wekesa",
+      "age": 22,
+      "occupation": "Sprayer's assistant",
+      "statementOnly": true,
+      "bio": "Carries the knapsack tank behind Hesbon.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_spray_hesbon"
+      },
+      "at": "plc_gh12",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_gh7",
+      "name": "Greenhouse 7",
+      "within": "loc_farm"
+    },
+    {
+      "id": "plc_gh12",
+      "name": "Greenhouse 12, far end of the farm",
+      "within": "loc_farm"
+    },
+    {
+      "id": "plc_packhouse",
+      "name": "Packhouse and tea urn",
+      "within": "loc_farm"
+    },
+    {
+      "id": "plc_store",
+      "name": "Chemical store",
+      "within": "loc_farm"
+    },
+    {
+      "id": "plc_canteen",
+      "name": "Staff canteen",
+      "within": "loc_farm"
+    },
+    {
+      "id": "plc_gate",
+      "name": "Farm gate and patrol route",
+      "within": "loc_farm"
+    },
+    {
+      "id": "plc_labour",
+      "name": "Labour office, Naivasha town"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_farm",
+      "name": "Lakeview Roses, Lake Naivasha",
+      "kind": "scene",
+      "description": "Rows of polythene greenhouses down to the lake. A packhouse with a cold room and a tea urn. A small concrete chemical store with a steel door, and a rule painted on it. In greenhouse 7, a green thermos stands on a crate between the rose beds.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Greenhouse 7",
+          "pos": [
+            30,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Caroline collapsed between the rose beds. Her green thermos stands on a crate beside her, half full."
+        },
+        {
+          "id": "hs_thermos",
+          "label": "The green thermos",
+          "pos": [
+            36,
+            54
+          ],
+          "yields": "ev_thermos",
+          "text": "Her flask. Tea, still warm. The farm medic has kept everyone away from it."
+        },
+        {
+          "id": "hs_door",
+          "label": "Chemical-store door",
+          "pos": [
+            70,
+            30
+          ],
+          "yields": "ev_doorrule",
+          "text": "Painted on the steel door: a rule."
+        },
+        {
+          "id": "hs_storecard",
+          "label": "Stock card inside the store",
+          "pos": [
+            74,
+            36
+          ],
+          "yields": "ev_storecard",
+          "text": "The stock card for every bottle, counted again at 13:00 on the farm's orders."
+        },
+        {
+          "id": "hs_bottle",
+          "label": "Bottle #14",
+          "pos": [
+            78,
+            40
+          ],
+          "yields": "ev_bottle",
+          "text": "A 500 ml bottle of Rosetox on the shelf, number 14. Smudged prints on the shoulder of the bottle."
+        },
+        {
+          "id": "hs_spraylog",
+          "label": "Sprayer's log",
+          "pos": [
+            66,
+            44
+          ],
+          "yields": "ev_spraylog",
+          "text": "The spray log: every chemical, every greenhouse, every millilitre."
+        },
+        {
+          "id": "hs_patrol",
+          "label": "Guard post",
+          "pos": [
+            92,
+            70
+          ],
+          "yields": "ev_patrol",
+          "text": "The guard's patrol log hangs on a nail at the gate."
+        },
+        {
+          "id": "hs_canteen",
+          "label": "Canteen",
+          "pos": [
+            52,
+            80
+          ],
+          "yields": "ev_canteen",
+          "text": "The canteen keeps a receipt for every breakfast it sells."
+        },
+        {
+          "id": "hs_urn",
+          "label": "Tea urn",
+          "pos": [
+            14,
+            40
+          ],
+          "yields": "ev_tabitha",
+          "text": "Tabitha Wangui stands by the tea urn with her hands in her apron."
+        },
+        {
+          "id": "hs_board",
+          "label": "Notice board",
+          "pos": [
+            20,
+            24
+          ],
+          "yields": "ev_promotion",
+          "text": "The packhouse notice board. One notice has been written on."
+        },
+        {
+          "id": "hs_fumigation",
+          "label": "Fumigation board",
+          "pos": [
+            44,
+            20
+          ],
+          "yields": "ev_fumigation",
+          "text": "The fumigation schedule for every greenhouse."
+        },
+        {
+          "id": "hs_stock",
+          "label": "Export ledger",
+          "pos": [
+            10,
+            56
+          ],
+          "yields": "ev_stock",
+          "text": "The packhouse export ledger: stems in, stems packed, stems shipped."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "an export rose farm on the shore of Lake Naivasha, long rows of white polythene greenhouses, a packhouse with a tea urn, a small concrete chemical store with a steel door and a painted warning, the lake and acacia trees beyond, no people in focus"
+      }
+    },
+    {
+      "id": "loc_labour",
+      "name": "Labour office, Naivasha",
+      "kind": "location",
+      "description": "A county labour office with a waiting bench. Hearing minutes are typed and signed.",
+      "unlock": {
+        "fact": "f_samuel_claim"
+      },
+      "hotspots": [
+        {
+          "id": "hs_minutes",
+          "label": "Hearing minutes",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_hearing",
+          "text": "This morning's hearing: who attended, and when."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small government labour office in a Kenyan town, a wooden waiting bench, a typed notice board, files on a desk"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Greenhouse 7",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Collapsed at 12:10 between the rose beds. No injuries seen. Her thermos beside her."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the inside of a rose greenhouse, two long beds of red roses, a green thermos flask standing on an upturned crate between them, sunlight through white polythene, no body visible"
+      }
+    },
+    {
+      "id": "ev_thermos",
+      "type": "physical",
+      "title": "Caroline's green thermos",
+      "render": "object",
+      "body": {
+        "label": "Half full of tea. Kept aside by the farm medic."
+      },
+      "facts": [
+        "f_thermos"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_doorrule",
+      "type": "physical",
+      "title": "Rule on the store door",
+      "render": "board",
+      "body": {
+        "text": "CHEMICALS HANDLED BY TRAINED SPRAYERS ONLY."
+      },
+      "facts": [
+        "f_doorrule"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_storecard",
+      "type": "physical",
+      "title": "Stock card: Rosetox bottle #14",
+      "render": "tallyBook",
+      "body": {
+        "rows": [
+          {
+            "entry": "Bottle #14 opened last month: 500 ml"
+          },
+          {
+            "entry": "13:00 count today: 420 ml"
+          }
+        ]
+      },
+      "facts": [
+        "f_stock"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_spraylog",
+      "type": "physical",
+      "title": "Sprayer's log",
+      "render": "logBook",
+      "body": {
+        "rows": [
+          {
+            "entry": "Rosetox: no spraying recorded since bottle #14 was opened"
+          },
+          {
+            "entry": "Today 09:30–11:30: fungicide, greenhouse 12. H. Shitandi, K. Wekesa"
+          }
+        ]
+      },
+      "facts": [
+        "f_spray_none",
+        "f_spray_hesbon"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_bottle",
+      "type": "physical",
+      "title": "Rosetox bottle #14",
+      "render": "object",
+      "body": {
+        "label": "500 ml bottle, two sets of fingerprints on the shoulder."
+      },
+      "facts": [
+        "f_bottle"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a plain white 500 ml agricultural chemical bottle with a hand-numbered label 14 and a fictional brand name ROSETOX, fingerprint powder on its shoulder, on a steel shelf"
+      }
+    },
+    {
+      "id": "ev_patrol",
+      "type": "physical",
+      "title": "Guard's patrol log",
+      "render": "logBook",
+      "body": {
+        "rows": [
+          {
+            "time": "07:30",
+            "entry": "Chemical store door OPEN, nobody present."
+          },
+          {
+            "time": "08:00–14:00",
+            "entry": "Rounds every 30 min, gate to lake."
+          }
+        ]
+      },
+      "facts": [
+        "f_patrol",
+        "f_patrol_rounds"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_canteen",
+      "type": "physical",
+      "title": "Canteen receipt (Hesbon)",
+      "render": "receipt",
+      "body": {
+        "time": "07:22",
+        "item": "Tea and two mandazi",
+        "name": "H. Shitandi"
+      },
+      "facts": [
+        "f_canteen"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tabitha",
+      "type": "witness",
+      "title": "Statement: Tabitha Wangui",
+      "render": "statement",
+      "body": {
+        "speaker": "p_tabitha"
+      },
+      "facts": [
+        "f_tabitha_fill",
+        "f_tabitha_never"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_promotion",
+      "type": "physical",
+      "title": "Notice board",
+      "render": "board",
+      "body": {
+        "text": "Congratulations to Caroline Jerop, Farm Manager.",
+        "scrawl": "20 YEARS"
+      },
+      "facts": [
+        "f_promotion"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_fumigation",
+      "type": "physical",
+      "title": "Fumigation schedule",
+      "render": "timetable",
+      "body": {
+        "rows": [
+          {
+            "greenhouse": "7",
+            "last": "eight days ago"
+          }
+        ]
+      },
+      "facts": [
+        "f_fumigation"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_stock",
+      "type": "physical",
+      "title": "Export ledger",
+      "render": "ledger",
+      "body": {
+        "line": "Stems reconcile to the stem for the month."
+      },
+      "facts": [
+        "f_stock_export"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_hearing",
+      "type": "physical",
+      "title": "Labour hearing minutes",
+      "render": "logBook",
+      "body": {
+        "rows": [
+          {
+            "name": "S. Kariithi",
+            "present": "09:00–13:00"
+          }
+        ]
+      },
+      "facts": [
+        "f_hearing"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_volprints",
+      "type": "physical",
+      "title": "Prints given voluntarily",
+      "render": "form",
+      "body": {
+        "names": [
+          "H. Shitandi",
+          "T. Wangui"
+        ]
+      },
+      "facts": [
+        "f_volprints"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kevin",
+      "type": "witness",
+      "title": "Statement: Kevin Wekesa",
+      "render": "statement",
+      "body": {
+        "speaker": "p_kevin"
+      },
+      "facts": [
+        "f_kevin"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_wambui_prints",
+      "type": "physical",
+      "title": "Fingerprints: Wambui Nderitu",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention after she refused."
+      },
+      "facts": [
+        "f_wambui_prints"
+      ],
+      "gate": null,
+      "detention": "p_wambui",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_op",
+        "f_aut_noinjury",
+        "f_aut_time"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tox",
+      "type": "forensic",
+      "title": "Lab: toxicology",
+      "render": "labReport",
+      "body": {
+        "test": "toxicology"
+      },
+      "facts": [
+        "f_tox"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toxicology",
+        "hours": 18,
+        "needs": [
+          "ev_body",
+          "ev_thermos"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints on bottle #14",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_prints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_bottle",
+          "ev_volprints",
+          "ev_wambui_prints"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Caroline Jerop collapsed in greenhouse 7 at 12:10 after drinking tea from her flask, and died before the ambulance came.",
+      "kind": "true",
+      "about": [
+        "p_caroline",
+        "plc_gh7"
+      ]
+    },
+    {
+      "id": "f_body",
+      "text": "Caroline collapsed between the rose beds in greenhouse 7. No injuries were seen. Her thermos was beside her.",
+      "kind": "true",
+      "about": [
+        "p_caroline",
+        "plc_gh7"
+      ]
+    },
+    {
+      "id": "f_thermos",
+      "text": "Her green thermos is half full of tea. The farm medic kept it aside.",
+      "kind": "true",
+      "about": [
+        "p_caroline",
+        "ev_thermos"
+      ]
+    },
+    {
+      "id": "f_doorrule",
+      "text": "On the store door: 'Chemicals handled by trained sprayers only.' Packhouse staff are never trained or allowed.",
+      "kind": "true",
+      "about": [
+        "plc_store"
+      ]
+    },
+    {
+      "id": "f_stock",
+      "text": "Stock card, Rosetox bottle #14: opened last month at 500 ml; 420 ml at today's 13:00 count.",
+      "kind": "true",
+      "about": [
+        "ev_bottle"
+      ]
+    },
+    {
+      "id": "f_spray_none",
+      "text": "Spray log: no Rosetox spraying recorded since bottle #14 was opened. 500 − 420 = 80 ml unaccounted for.",
+      "kind": "true",
+      "about": [
+        "ev_bottle"
+      ]
+    },
+    {
+      "id": "f_spray_hesbon",
+      "text": "Spray log: today 09:30–11:30, fungicide in greenhouse 12 at the far end of the farm, H. Shitandi with K. Wekesa.",
+      "kind": "true",
+      "about": [
+        "p_hesbon"
+      ],
+      "where": {
+        "person": "p_hesbon",
+        "place": "plc_gh12",
+        "from": "09:30",
+        "to": "11:30"
+      }
+    },
+    {
+      "id": "f_kevin",
+      "text": "Kevin: he carried the tank behind Hesbon in greenhouse 12 from 09:30 to 11:30. Hesbon never left.",
+      "kind": "true",
+      "about": [
+        "p_kevin",
+        "p_hesbon"
+      ]
+    },
+    {
+      "id": "f_bottle",
+      "text": "Bottle #14 carries two sets of fingerprints on its shoulder.",
+      "kind": "true",
+      "about": [
+        "ev_bottle"
+      ]
+    },
+    {
+      "id": "f_patrol",
+      "text": "Guard's log: '07:30 — chemical store door OPEN, nobody present.'",
+      "kind": "true",
+      "about": [
+        "p_daudi",
+        "plc_store"
+      ]
+    },
+    {
+      "id": "f_patrol_rounds",
+      "text": "Guard's log: Daudi's rounds, gate to lake, every half hour from 08:00 to 14:00.",
+      "kind": "true",
+      "about": [
+        "p_daudi"
+      ],
+      "where": {
+        "person": "p_daudi",
+        "place": "plc_gate",
+        "from": "08:00",
+        "to": "14:00"
+      }
+    },
+    {
+      "id": "f_canteen",
+      "text": "Canteen receipt: H. Shitandi, tea and mandazi, 07:22. The canteen lady says he sat until about 07:45.",
+      "kind": "true",
+      "about": [
+        "p_hesbon"
+      ],
+      "where": {
+        "person": "p_hesbon",
+        "place": "plc_canteen",
+        "from": "07:22",
+        "to": "07:45"
+      }
+    },
+    {
+      "id": "f_tabitha_fill",
+      "text": "Tabitha: at 10:15 Wambui came to the urn and said, \"Let me fill the new madam's flask myself, as a welcome.\"",
+      "kind": "true",
+      "about": [
+        "p_tabitha",
+        "p_wambui"
+      ],
+      "where": {
+        "person": "p_wambui",
+        "place": "plc_packhouse",
+        "from": "10:10",
+        "to": "10:20"
+      }
+    },
+    {
+      "id": "f_tabitha_never",
+      "text": "Tabitha: in twenty years Wambui never filled anyone's flask. \"They didn't even eat together.\"",
+      "kind": "true",
+      "about": [
+        "p_tabitha",
+        "p_wambui"
+      ]
+    },
+    {
+      "id": "f_promotion",
+      "text": "Notice: 'Congratulations to Caroline Jerop, Farm Manager.' Underneath, scrawled in pen: '20 YEARS'.",
+      "kind": "true",
+      "about": [
+        "p_caroline",
+        "p_wambui",
+        "p_samuel"
+      ]
+    },
+    {
+      "id": "f_fumigation",
+      "text": "Fumigation schedule: greenhouse 7 was last fumigated eight days ago.",
+      "kind": "true",
+      "about": [
+        "plc_gh7"
+      ]
+    },
+    {
+      "id": "f_stock_export",
+      "text": "Export ledger: stems reconcile to the stem for the month. Nothing is missing.",
+      "kind": "true",
+      "about": [
+        "plc_packhouse"
+      ]
+    },
+    {
+      "id": "f_hearing",
+      "text": "Labour hearing minutes, Naivasha: S. Kariithi present 09:00–13:00.",
+      "kind": "true",
+      "about": [
+        "p_samuel"
+      ],
+      "where": {
+        "person": "p_samuel",
+        "place": "plc_labour",
+        "from": "09:00",
+        "to": "13:00"
+      }
+    },
+    {
+      "id": "f_volprints",
+      "text": "Prints given voluntarily for comparison: Hesbon Shitandi and Tabitha Wangui.",
+      "kind": "true",
+      "about": [
+        "p_hesbon",
+        "p_tabitha"
+      ]
+    },
+    {
+      "id": "f_wambui_prints",
+      "text": "Fingerprints taken from Wambui Nderitu in detention.",
+      "kind": "true",
+      "about": [
+        "p_wambui"
+      ]
+    },
+    {
+      "id": "f_aut_op",
+      "text": "Autopsy: no injuries. Pinpoint pupils and fluid on the lungs, consistent with organophosphate poisoning.",
+      "kind": "true",
+      "about": [
+        "p_caroline"
+      ]
+    },
+    {
+      "id": "f_aut_noinjury",
+      "text": "Autopsy: no blow, no sting, no allergic reaction.",
+      "kind": "true",
+      "about": [
+        "p_caroline"
+      ]
+    },
+    {
+      "id": "f_aut_time",
+      "text": "Autopsy: swallowed about 30–60 minutes before she collapsed at 12:10.",
+      "kind": "true",
+      "about": [
+        "p_caroline"
+      ]
+    },
+    {
+      "id": "f_tox",
+      "text": "Toxicology: an organophosphate, the same compound as Rosetox, in her stomach and in the thermos tea.",
+      "kind": "true",
+      "about": [
+        "p_caroline",
+        "ev_thermos"
+      ]
+    },
+    {
+      "id": "f_prints",
+      "text": "Lab: one set on bottle #14 is Hesbon's, as expected. The other matches Wambui Nderitu. Tabitha's prints are not on it.",
+      "kind": "true",
+      "about": [
+        "p_wambui",
+        "p_hesbon",
+        "p_tabitha"
+      ]
+    },
+    {
+      "id": "f_hesbon_locked",
+      "text": "Hesbon: \"The store was locked all day. The key never left my belt.\"",
+      "kind": "lie",
+      "about": [
+        "p_hesbon"
+      ]
+    },
+    {
+      "id": "f_hesbon_open",
+      "text": "Hesbon admits he left the store unlocked while he went for breakfast, from about 07:20 to 07:45.",
+      "kind": "true",
+      "about": [
+        "p_hesbon",
+        "plc_store"
+      ]
+    },
+    {
+      "id": "f_wam_never",
+      "text": "Wambui: \"I have never been inside the chemical store.\"",
+      "kind": "lie",
+      "about": [
+        "p_wambui"
+      ]
+    },
+    {
+      "id": "f_wam_happy",
+      "text": "Wambui: \"I was happy for her. I trained her myself.\"",
+      "kind": "claim",
+      "about": [
+        "p_wambui",
+        "p_caroline"
+      ]
+    },
+    {
+      "id": "f_wam_gloves",
+      "text": "Wambui admits she went into the store at about half past seven, \"for gloves\". The packhouse keeps its own gloves.",
+      "kind": "true",
+      "about": [
+        "p_wambui",
+        "plc_store"
+      ],
+      "where": {
+        "person": "p_wambui",
+        "place": "plc_store",
+        "from": "07:25",
+        "to": "07:35"
+      }
+    },
+    {
+      "id": "f_samuel_claim",
+      "text": "Samuel: \"I was at the labour office all morning.\"",
+      "kind": "claim",
+      "about": [
+        "p_samuel"
+      ]
+    },
+    {
+      "id": "f_samuel_trained",
+      "text": "Samuel: Wambui trained Caroline when she joined. \"Then Caroline got the job.\"",
+      "kind": "true",
+      "about": [
+        "p_samuel",
+        "p_wambui"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_hesbon",
+      "stance": "cooperative",
+      "intro": "Hesbon keeps one hand over the key on his belt. \"I'm a trained sprayer. I follow the rules.\"",
+      "claims": [
+        "f_hesbon_locked"
+      ],
+      "yields": [
+        "ev_volprints"
+      ],
+      "topics": [
+        {
+          "about": "ev_bottle",
+          "reply": "Fourteen? I haven't sprayed Rosetox this month. Take my prints. Take them.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_wambui",
+      "stance": "cooperative",
+      "intro": "Wambui sits very straight on a packing crate. \"Twenty years I have been here. I trained that girl myself.\"",
+      "claims": [
+        "f_wam_never",
+        "f_wam_happy"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_promotion",
+          "reply": "Somebody wrote on the notice. Not me. People are angry for me.",
+          "reveals": []
+        },
+        {
+          "about": "f_tabitha_fill",
+          "reply": "I filled her flask as a welcome. Is that a crime now?",
+          "reveals": []
+        },
+        {
+          "about": "ev_bottle",
+          "reply": "I will not give fingerprints like a thief. I have a lawyer's number.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_samuel",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_promotion"
+      ],
+      "intro": "Samuel takes the call outside the labour office. \"Nine years I ran that farm. Now they call me?\"",
+      "claims": [
+        "f_samuel_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_wambui",
+          "reply": "She trained Caroline. Then Caroline got the job. You understand?",
+          "reveals": [
+            "f_samuel_trained"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_tabitha",
+      "stance": "cooperative",
+      "intro": "Tabitha keeps wiping a clean cup. \"I make the tea. Everybody's cup, twenty years.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_wambui",
+          "reply": "In twenty years she never filled anybody's flask. Not one. They didn't even eat together.",
+          "reveals": []
+        },
+        {
+          "about": "p_hesbon",
+          "reply": "That boy eats breakfast every morning at seven-twenty. Like a clock.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_daudi",
+      "stance": "cooperative",
+      "intro": "Daudi holds his patrol log open at the morning page. \"I write what I see. Every round.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_doorrule",
+          "reply": "The store door was open at half past seven and nobody inside. I wrote it. I thought the sprayer was coming back.",
+          "reveals": []
+        },
+        {
+          "about": "p_kevin",
+          "reply": "The boy with the tank. He follows Hesbon all day.",
+          "reveals": [
+            "ev_kevin"
+          ]
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_hesbon",
+      "claim": "f_hesbon_locked",
+      "brokenBy": [
+        "f_patrol",
+        "f_canteen"
+      ],
+      "reveals": [
+        "f_hesbon_open"
+      ],
+      "reaction": "I left it open when I went for breakfast. Twenty minutes. Everybody does. If the farm finds out, I'm finished. Please.",
+      "mark": "explains"
+    },
+    {
+      "id": "c_wambui",
+      "claim": "f_wam_never",
+      "brokenBy": [
+        "f_prints"
+      ],
+      "reveals": [
+        "f_wam_gloves"
+      ],
+      "reaction": "Her hands go still on her knees. \"...I went in for gloves. Only gloves. At half past seven.\" The packhouse keeps its own gloves.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_wambui",
+      "text": "Wambui Nderitu",
+      "category": "person",
+      "ref": "p_wambui",
+      "unlock": {
+        "anyOf": [
+          "f_promotion",
+          "f_tabitha_fill"
+        ]
+      }
+    },
+    {
+      "id": "w_samuel",
+      "text": "Samuel Kariithi",
+      "category": "person",
+      "ref": "p_samuel",
+      "unlock": {
+        "anyOf": [
+          "f_promotion"
+        ]
+      }
+    },
+    {
+      "id": "w_hesbon",
+      "text": "Hesbon Shitandi",
+      "category": "person",
+      "ref": "p_hesbon",
+      "unlock": {
+        "anyOf": [
+          "f_doorrule"
+        ]
+      }
+    },
+    {
+      "id": "w_tabitha",
+      "text": "Tabitha Wangui",
+      "category": "person",
+      "ref": "p_tabitha",
+      "unlock": {
+        "anyOf": [
+          "f_tabitha_fill"
+        ]
+      }
+    },
+    {
+      "id": "w_daudi",
+      "text": "Daudi Lekalau",
+      "category": "person",
+      "ref": "p_daudi",
+      "unlock": {
+        "anyOf": [
+          "f_patrol"
+        ]
+      }
+    },
+    {
+      "id": "h_op",
+      "text": "organophosphate insecticide in her tea flask",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_op"
+        ]
+      }
+    },
+    {
+      "id": "h_heat",
+      "text": "heatstroke in the greenhouse",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_gas",
+      "text": "fumigation gas in the greenhouse",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_fumigation"
+        ]
+      }
+    },
+    {
+      "id": "h_blow",
+      "text": "a blow to the head",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_sting",
+      "text": "an allergic reaction to a sting",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_post",
+      "text": "Caroline got the farm-manager post Wambui had waited 20 years for",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_promotion"
+        ]
+      }
+    },
+    {
+      "id": "m_roses",
+      "text": "she'd caught her stealing export roses",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_stock_export"
+        ]
+      }
+    },
+    {
+      "id": "m_sprayer",
+      "text": "the sprayer's careless habits",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_hesbon_open"
+        ]
+      }
+    },
+    {
+      "id": "m_demoted",
+      "text": "the demoted manager's grudge",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_promotion"
+        ]
+      }
+    },
+    {
+      "id": "m_loan",
+      "text": "an unpaid loan between them",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_wam_happy"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Caroline Jerop"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_wambui"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her prints on a bottle she's never allowed to touch, and her hands on the flask at 10:15. That will hold.",
+          "fail": [
+            "Doesn't hold up. The sprayer lied about a door, not a death. Whose hands filled that flask?",
+            "No. Count the bottle, then read who stood at the urn at a quarter past ten."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_op"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Organophosphate, in her tea. The pathologist and the lab agree.",
+          "fail": [
+            "A hot greenhouse doesn't put insecticide in a thermos. Read the autopsy again.",
+            "Fumigation was eight days ago. Try again."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_post"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Twenty years, written on a notice board. That's the reason.",
+          "fail": [
+            "That grudge belongs to a man who was at the labour office. Not her reason.",
+            "The ledger reconciles. Look at the notice board instead."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_packhouse",
+      "from": "10:10",
+      "to": "10:20",
+      "note": "The act window: the poison went into the flask at the tea urn. Death followed at 12:10."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_stock",
+          "f_spray_none",
+          "f_hesbon_locked",
+          "f_patrol",
+          "f_canteen",
+          "f_hesbon_open",
+          "f_doorrule"
+        ],
+        "concludes": "80 ml of organophosphate is missing from bottle #14, and the store stood open and unattended while the sprayer ate breakfast. Only trained sprayers may handle it."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_aut_op",
+          "f_aut_time",
+          "f_tox",
+          "f_tabitha_fill",
+          "f_tabitha_never"
+        ],
+        "concludes": "The poison was in Caroline's thermos, and the thermos was filled at 10:15 by Wambui, who had never filled anyone's flask in twenty years."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_prints",
+          "f_wam_never",
+          "f_wam_gloves",
+          "f_promotion"
+        ],
+        "concludes": "Wambui's prints are on bottle #14 though packhouse staff never touch chemicals, and she lied about going in. Wambui Nderitu poisoned Caroline with organophosphate insecticide in her flask, because Caroline got the post she had waited twenty years for.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_samuel",
+        "blank": "who",
+        "by": [
+          "f_hearing"
+        ],
+        "why": "Samuel was at the Naivasha labour hearing from 09:00 to 13:00."
+      },
+      {
+        "word": "w_hesbon",
+        "blank": "who",
+        "by": [
+          "f_spray_hesbon",
+          "f_kevin"
+        ],
+        "why": "Hesbon was spraying greenhouse 12, at the far end of the farm, with his assistant from 09:30 to 11:30. His lie hid a careless habit."
+      },
+      {
+        "word": "w_tabitha",
+        "blank": "who",
+        "by": [
+          "f_prints"
+        ],
+        "why": "Tabitha filled every flask for twenty years, and her prints are not on the bottle; Wambui filled this one."
+      },
+      {
+        "word": "w_daudi",
+        "blank": "who",
+        "by": [
+          "f_patrol_rounds"
+        ],
+        "why": "Daudi was walking his logged rounds, gate to lake, every half hour."
+      },
+      {
+        "word": "h_heat",
+        "blank": "how",
+        "by": [
+          "f_tox"
+        ],
+        "why": "The tea in her flask and her stomach both carry organophosphate."
+      },
+      {
+        "word": "h_gas",
+        "blank": "how",
+        "by": [
+          "f_fumigation"
+        ],
+        "why": "Greenhouse 7 was last fumigated eight days ago."
+      },
+      {
+        "word": "h_blow",
+        "blank": "how",
+        "by": [
+          "f_aut_noinjury"
+        ],
+        "why": "There were no injuries."
+      },
+      {
+        "word": "h_sting",
+        "blank": "how",
+        "by": [
+          "f_aut_noinjury"
+        ],
+        "why": "No sting and no allergic reaction."
+      },
+      {
+        "word": "m_roses",
+        "blank": "why",
+        "by": [
+          "f_stock_export"
+        ],
+        "why": "The export ledger reconciles to the stem."
+      },
+      {
+        "word": "m_sprayer",
+        "blank": "why",
+        "by": [
+          "f_hesbon_open"
+        ],
+        "why": "The open store was Hesbon's failing, not a reason for Wambui to kill."
+      },
+      {
+        "word": "m_demoted",
+        "blank": "why",
+        "by": [
+          "f_hearing"
+        ],
+        "why": "That grudge is Samuel's, and Samuel was at the labour office."
+      },
+      {
+        "word": "m_loan",
+        "blank": "why",
+        "by": [
+          "f_tabitha_never"
+        ],
+        "why": "There was no money between them; they didn't even eat together."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Two weeks ago the owners make Caroline farm manager. Under the notice, someone writes \"20 YEARS\".",
+        "image": null
+      },
+      {
+        "text": "07:20. Hesbon goes to breakfast and leaves the chemical store unlocked, as he always does. At 07:30 the guard writes it down.",
+        "image": "loc_farm"
+      },
+      {
+        "text": "Wambui slips in and pours from bottle #14 into a small water bottle. She leaves her prints on its shoulder.",
+        "image": null
+      },
+      {
+        "text": "10:15. At the tea urn: \"Let me fill the new madam's flask myself, as a welcome.\"",
+        "image": null
+      },
+      {
+        "text": "At about 11:30, in greenhouse 7, Caroline pours her tea.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Detain Wambui once Tabitha has spoken; prints take 6 h; press inside the 24 hours. Toxicology (18 h) only adds a line to the verdict.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_farm",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_storecard",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_spraylog",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_hesbon"
+      },
+      {
+        "do": "press",
+        "target": "c_hesbon"
+      },
+      {
+        "do": "interview",
+        "target": "p_tabitha"
+      },
+      {
+        "do": "interview",
+        "target": "p_wambui"
+      },
+      {
+        "do": "detain",
+        "target": "p_wambui"
+      },
+      {
+        "do": "sample",
+        "target": "ev_wambui_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_tox"
+      },
+      {
+        "do": "visit",
+        "target": "loc_labour",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_samuel"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 2
+      },
+      {
+        "do": "interview",
+        "target": "p_wambui"
+      },
+      {
+        "do": "press",
+        "target": "c_wambui"
+      }
+    ],
+    "totalHours": 19
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_tabitha",
+        "line": "Ask the tea lady about the flasks. She knows everyone's cup."
+      },
+      "tier2": {
+        "facts": [
+          "f_tabitha_fill",
+          "f_bottle"
+        ],
+        "line": "Someone filled that flask who never filled flasks. Then there are two sets of prints on a bottle only sprayers touch."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Dr. Chebii names a class of chemical. Find it on the farm."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_op",
+          "f_spray_none"
+        ],
+        "line": "Organophosphate signs, and 80 ml missing from a bottle nobody sprayed. Where did the 80 ml go?"
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_promotion",
+        "line": "Read the notice board, and read what someone wrote under it."
+      },
+      "tier2": {
+        "facts": [
+          "f_promotion",
+          "f_samuel_trained"
+        ],
+        "line": "She trained the woman who got her job."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "chai",
+      "def": "Tea, usually with milk and sugar."
+    },
+    {
+      "term": "dawa",
+      "def": "Medicine; on a farm, the chemicals."
+    },
+    {
+      "term": "mandazi",
+      "def": "Fried dough, a little sweet. Sold everywhere with tea."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "countingAsEvidence"
+    ],
+    "beatNotes": "Counting as evidence: the stock card does arithmetic in the notebook (500 − 0 sprayed = 500 expected; 420 found; 80 missing). Simple maths becomes a deduction the player can see."
+  }
+}

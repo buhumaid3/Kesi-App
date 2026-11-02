@@ -1,0 +1,279 @@
+case-001.json  pass  errors 0  warnings 0  stamps 0  facts 30  options {"who":4}  images 0/8
+case-002.json  pass  errors 0  warnings 0  stamps 0  facts 28  options {"who":5}  images 0/8
+case-003.json  pass  errors 0  warnings 0  stamps 0  facts 24  options {"who":5}  images 0/8
+case-004.json  pass  errors 0  warnings 0  stamps 0  facts 22  options {"who":5}  images 0/7
+case-005.json  pass  errors 0  warnings 0  stamps 0  facts 22  options {"who":5}  images 0/7
+case-006.json  pass  errors 0  warnings 0  stamps 0  facts 20  options {"who":5}  images 0/7
+case-007.json  pass  errors 0  warnings 0  stamps 0  facts 21  options {"who":5}  images 0/6
+case-008.json  pass  errors 0  warnings 0  stamps 0  facts 23  options {"who":5}  images 0/6
+case-009.json  pass  errors 0  warnings 0  stamps 0  facts 21  options {"who":5}  images 0/7
+case-010.json  pass  errors 0  warnings 0  stamps 0  facts 23  options {"who":5,"client":4}  images 0/10
+case-011.json  pass  errors 0  warnings 0  stamps 0  facts 24  options {"who":5}  images 0/10
+case-012.json  pass  errors 0  warnings 0  stamps 1  facts 25  options {"who":5}  images 0/8
+case-013.json  pass  errors 0  warnings 0  stamps 0  facts 25  options {"who":5}  images 0/8
+case-014.json  pass  errors 0  warnings 0  stamps 0  facts 22  options {"who":5}  images 0/8
+case-015.json  pass  errors 0  warnings 0  stamps 1  facts 24  options {"who":5}  images 0/9
+case-016.json  pass  errors 0  warnings 0  stamps 0  facts 22  options {"who":5}  images 0/7
+case-017.json  pass  errors 0  warnings 1  stamps 0  facts 23  options {"who":5}  images 0/9
+   warn  curve: score 7 is below case 14's 8 (rule 13)
+case-018.json  pass  errors 0  warnings 1  stamps 0  facts 20  options {"who":5}  images 0/7
+   warn  curve: score 7 is below case 15's 8 (rule 13)
+case-019.json  pass  errors 0  warnings 0  stamps 1  facts 25  options {"who":5}  images 0/9
+case-020.json  pass  errors 0  warnings 0  stamps 1  facts 32  options {"who":5,"pin":5}  images 0/10
+case-021.json  pass  errors 0  warnings 0  stamps 1  facts 26  options {"who":5,"why":5}  images 0/7
+case-022.json  pass  errors 0  warnings 0  stamps 1  facts 27  options {"who":5,"why":5}  images 0/6
+case-023.json  pass  errors 0  warnings 0  stamps 1  facts 26  options {"who":5,"why":5}  images 0/9
+case-024.json  pass  errors 0  warnings 0  stamps 2  facts 28  options {"who":5,"why":5}  images 0/9
+case-025.json  pass  errors 0  warnings 0  stamps 1  facts 27  options {"who":5,"why":5}  images 0/8
+case-026.json  pass  errors 0  warnings 0  stamps 1  facts 28  options {"who":5,"why":5}  images 0/8
+case-027.json  pass  errors 0  warnings 1  stamps 1  facts 27  options {"who":5,"why":5}  images 0/7
+   warn  curve: score 11 is below case 24's 14 (rule 13)
+case-028.json  pass  errors 0  warnings 0  stamps 0  facts 22  options {"who":5,"why":5}  images 0/7
+case-029.json  pass  errors 0  warnings 0  stamps 1  facts 25  options {"who":5,"why":5}  images 0/8
+case-030.json  pass  errors 0  warnings 0  stamps 2  facts 37  options {"who":5,"why":5,"pin":5}  images 0/9
+case-031.json  pass  errors 0  warnings 0  stamps 0  facts 38  options {"who":5,"how":5,"why":5}  images 0/10
+case-032.json  pass  errors 0  warnings 0  stamps 0  facts 32  options {"who":5,"how":5,"why":5}  images 0/8
+case-033.json  pass  errors 0  warnings 0  stamps 2  facts 34  options {"who":5,"how":5,"why":5}  images 0/10
+case-034.json  pass  errors 0  warnings 0  stamps 2  facts 41  options {"who":5,"how":5,"why":5}  images 0/13
+case-035.json  pass  errors 0  warnings 0  stamps 1  facts 33  options {"who":5,"how":5,"why":5}  images 0/10
+case-036.json  pass  errors 0  warnings 1  stamps 2  facts 33  options {"who":5,"how":5,"why":5}  images 0/10
+   warn  curve: score 15 is below case 33's 16 (rule 13)
+case-037.json  pass  errors 0  warnings 1  stamps 1  facts 37  options {"who":5,"how":5,"why":5}  images 0/7
+   warn  curve: score 15 is below case 34's 18 (rule 13)
+case-038.json  pass  errors 0  warnings 1  stamps 1  facts 34  options {"who":5,"how":5,"why":5}  images 0/7
+   warn  curve: score 13 is below case 35's 14 (rule 13)
+case-039.json  pass  errors 0  warnings 1  stamps 1  facts 30  options {"who":5,"how":5,"why":5}  images 0/10
+   warn  curve: score 14 is below case 36's 15 (rule 13)
+case-040.json  pass  errors 0  warnings 0  stamps 3  facts 48  options {"who":5,"how":5,"why":5,"pin":5}  images 0/15
+case-041.json  pass  errors 0  warnings 0  stamps 1  facts 32  options {"when":5,"who":5,"how":5,"why":5}  images 0/12
+case-042.json  pass  errors 0  warnings 0  stamps 0  facts 33  options {"when":5,"who":5,"how":5,"why":5}  images 0/9
+case-043.json  pass  errors 0  warnings 0  stamps 1  facts 34  options {"when":24,"who":5,"how":5,"why":5}  images 0/9
+case-044.json  pass  errors 0  warnings 0  stamps 1  facts 37  options {"when":24,"who":5,"how":5,"why":5}  images 0/11
+case-045.json  pass  errors 0  warnings 0  stamps 1  facts 36  options {"when":120,"who":5,"how":5,"why":5}  images 0/11
+case-046.json  pass  errors 0  warnings 0  stamps 1  facts 35  options {"when":120,"who":5,"how":5,"why":5}  images 0/10
+case-047.json  pass  errors 0  warnings 0  stamps 1  facts 31  options {"when":120,"who":5,"how":5,"why":5}  images 0/9
+case-048.json  pass  errors 0  warnings 0  stamps 2  facts 34  options {"when":120,"who":5,"how":5,"why":5}  images 0/12
+case-049.json  pass  errors 0  warnings 0  stamps 1  facts 30  options {"when":120,"who":5,"how":5,"why":5}  images 0/10
+case-050.json  pass  errors 0  warnings 0  stamps 3  facts 49  options {"when":720,"who":5,"how":5,"why":5,"pin":5}  images 0/18
+case-051.json  pass  errors 0  warnings 0  stamps 1  facts 36  options {"when":120,"where":5,"who":5,"how":5,"why":5}  images 0/11
+case-052.json  pass  errors 0  warnings 0  stamps 2  facts 33  options {"when":120,"where":5,"who":5,"how":5,"why":5}  images 0/11
+case-053.json  pass  errors 0  warnings 0  stamps 2  facts 32  options {"when":120,"where":5,"who":5,"how":5,"why":5}  images 0/10
+case-054.json  pass  errors 0  warnings 0  stamps 2  facts 37  options {"when":120,"where":5,"who":5,"how":5,"why":5}  images 0/12
+case-055.json  pass  errors 0  warnings 1  stamps 1  facts 29  options {"when":720,"where":5,"who":5,"how":5,"why":5}  images 0/10
+   warn  curve: score 19 is below case 52's 21 (rule 13)
+case-056.json  pass  errors 0  warnings 0  stamps 1  facts 28  options {"when":120,"where":5,"who":5,"how":5,"why":5}  images 0/10
+case-057.json  pass  errors 0  warnings 1  stamps 1  facts 30  options {"when":120,"where":5,"who":5,"how":5,"why":5}  images 0/11
+   warn  curve: score 20 is below case 54's 23 (rule 13)
+case-058.json  pass  errors 0  warnings 0  stamps 1  facts 29  options {"when":120,"where":5,"who":5,"how":5,"why":5}  images 0/10
+case-059.json  pass  errors 0  warnings 0  stamps 2  facts 32  options {"when":120,"where":5,"who":5,"how":5,"why":5}  images 0/10
+case-060.json  pass  errors 0  warnings 0  stamps 3  facts 50  options {"when":720,"where1":6,"where2":6,"who":5,"how":5,"why":5,"pin":5}  images 0/15
+case-061.json  pass  errors 0  warnings 0  stamps 1  facts 43  options {"when":120,"where":5,"who":5,"how":5,"why":5,"document":5,"tell":6}  images 0/12
+case-062.json  pass  errors 0  warnings 0  stamps 2  facts 44  options {"when":720,"where":5,"who":5,"how":5,"why":5,"document":5,"tell":6}  images 0/12
+case-063.json  pass  errors 0  warnings 0  stamps 1  facts 43  options {"when":120,"where":5,"who":5,"how":5,"why":5,"document":5,"tell":6}  images 0/11
+case-064.json  pass  errors 0  warnings 0  stamps 2  facts 44  options {"when":720,"where":5,"who":5,"how":5,"why":5,"document":5,"tell":6}  images 0/13
+case-065.json  pass  errors 0  warnings 1  stamps 2  facts 43  options {"when":720,"where":5,"who":5,"how":5,"why":5,"document":5,"tell":6}  images 0/11
+   warn  curve: score 25 is below case 62's 27 (rule 13)
+case-066.json  pass  errors 0  warnings 0  stamps 3  facts 46  options {"when":720,"where":5,"who":6,"how":5,"why":5,"document":5,"tell":6}  images 0/14
+case-067.json  pass  errors 0  warnings 0  stamps 2  facts 39  options {"when":720,"where":5,"who":5,"how":5,"why":5,"document":5,"tell":6}  images 0/11
+case-068.json  pass  errors 0  warnings 0  stamps 2  facts 39  options {"when":720,"where":5,"who":5,"how":5,"why":5,"document":5,"tell":6}  images 0/13
+case-069.json  pass  errors 0  warnings 1  stamps 2  facts 42  options {"when":720,"where":5,"who":5,"how":5,"why":5,"document":5,"tell":6}  images 0/12
+   warn  curve: score 26 is below case 66's 29 (rule 13)
+case-070.json  pass  errors 0  warnings 0  stamps 3  facts 51  options {"when":720,"where1":6,"where2":6,"who":6,"how":5,"why":5,"document":5,"tell":6,"pin":5}  images 0/16
+case-071.json  pass  errors 0  warnings 0  stamps 1  facts 43  options {"when":720,"where":5,"who":5,"how":5,"why":5,"missing":5,"conclusion":6}  images 0/10
+case-072.json  pass  errors 0  warnings 0  stamps 2  facts 44  options {"when":720,"where":5,"who":5,"how":5,"why":5,"missing":5,"conclusion":6}  images 0/13
+case-073.json  pass  errors 0  warnings 0  stamps 1  facts 44  options {"when":720,"where":5,"who":5,"how":5,"why":5,"missing":5,"conclusion":6}  images 0/13
+case-074.json  pass  errors 0  warnings 0  stamps 2  facts 56  options {"when":720,"where":5,"who":5,"how":5,"why":5,"document":5,"tell":6,"missing":5,"conclusion":6}  images 0/13
+case-075.json  pass  errors 0  warnings 0  stamps 2  facts 42  options {"when":720,"where":5,"who":5,"how":5,"why":5,"missing":5,"conclusion":6}  images 0/12
+case-076.json  pass  errors 0  warnings 0  stamps 2  facts 42  options {"when":720,"where":5,"who":5,"how":5,"why":5,"missing":5,"conclusion":6}  images 0/16
+case-077.json  pass  errors 0  warnings 0  stamps 2  facts 45  options {"when":720,"where":5,"who":5,"how":5,"why":5,"document":5,"tell":6,"missing":5,"conclusion":6}  images 0/16
+case-078.json  pass  errors 0  warnings 0  stamps 2  facts 40  options {"when":720,"where":5,"who":5,"how":5,"why":5,"missing":5,"conclusion":6}  images 0/15
+case-079.json  pass  errors 0  warnings 0  stamps 2  facts 46  options {"when":720,"where":5,"who":6,"how":5,"why":5,"missing":5,"conclusion":6}  images 0/16
+case-080.json  pass  errors 0  warnings 0  stamps 3  facts 61  options {"when":720,"where1":6,"where2":6,"who":6,"how":5,"why":5,"document":5,"tell":6,"missing":5,"conclusion":6,"pin":5}  images 0/18
+case-081.json  pass  errors 0  warnings 0  stamps 2  facts 35  options {"when":720,"where":5,"who":5,"accomplice":6,"role":5,"how":5,"why":5}  images 0/15
+case-082.json  pass  errors 0  warnings 0  stamps 2  facts 36  options {"when":720,"where":5,"who":5,"accomplice":6,"role":5,"how":5,"why":5}  images 0/13
+case-083.json  pass  errors 0  warnings 0  stamps 2  facts 40  options {"when":720,"where":5,"who":5,"how":5,"why":5,"item":5,"ptell":6}  images 0/13
+case-084.json  pass  errors 0  warnings 0  stamps 2  facts 34  options {"when":720,"where":5,"who":6,"how":5,"why":5,"target":6}  images 0/14
+case-085.json  pass  errors 0  warnings 0  stamps 3  facts 44  options {"when":720,"where":5,"who1":6,"who2":6,"how":5,"why":5,"missing":5,"conclusion":6}  images 0/14
+case-086.json  pass  errors 0  warnings 0  stamps 3  facts 43  options {"when":720,"where":5,"who":6,"how":5,"why":5,"document":5,"tell":6,"item":5,"ptell":6}  images 0/15
+case-087.json  pass  errors 0  warnings 1  stamps 2  facts 33  options {"when":720,"where":5,"who":6,"how":5,"why":5,"target":6}  images 0/13
+   warn  curve: score 28 is below case 84's 29 (rule 13)
+case-088.json  pass  errors 0  warnings 1  stamps 2  facts 36  options {"when":720,"where":5,"who":5,"how":5,"why":5,"item":5,"ptell":6}  images 0/12
+   warn  curve: score 29 is below case 85's 30 (rule 13)
+case-089.json  pass  errors 0  warnings 0  stamps 2  facts 38  options {"when":720,"where":5,"who":6,"accomplice":6,"role":5,"how":5,"why":5,"missing":5,"conclusion":6}  images 0/13
+case-090.json  pass  errors 0  warnings 0  stamps 3  facts 48  options {"when":720,"where1":6,"where2":6,"who":7,"accomplice":6,"role":5,"how":5,"why":5,"item":5,"ptell":6,"pin":5}  images 0/17
+case-091.json  pass  errors 0  warnings 0  stamps 2  facts 45  options {"when":720,"where":5,"who":6,"how":5,"why":5,"item":5,"ptell":6,"missing":5,"conclusion":6,"pin":5}  images 0/15
+case-092.json  pass  errors 0  warnings 0  stamps 2  facts 43  options {"when":720,"where":5,"who":6,"how":5,"why":5,"missing":5,"conclusion":6,"pin":5}  images 0/13
+case-093.json  pass  errors 0  warnings 0  stamps 3  facts 39  options {"when":2520,"where":5,"who":6,"accomplice":6,"role":5,"how":5,"why":5,"item":5,"ptell":6,"pin":5}  images 0/15
+case-094.json  pass  errors 0  warnings 0  stamps 2  facts 30  options {"when":2520,"where":5,"who":6,"how":5,"why":5,"target":6,"document":5,"tell":6,"pin":5}  images 0/16
+case-095.json  pass  errors 0  warnings 0  stamps 2  facts 42  options {"when":720,"where":5,"who":6,"how":5,"why":5,"missing":5,"conclusion":6,"document":5,"tell":6,"pin":5}  images 0/13
+case-096.json  pass  errors 0  warnings 1  stamps 3  facts 40  options {"when":720,"where":5,"who":6,"accomplice":6,"role":5,"how":5,"why":5,"missing":5,"conclusion":6,"pin":5}  images 0/13
+   warn  curve: score 34 is below case 93's 35 (rule 13)
+case-097.json  pass  errors 0  warnings 0  stamps 3  facts 44  options {"when":720,"where":5,"who":7,"how":5,"why":5,"missing":5,"conclusion":6,"item":5,"ptell":6,"pin":5}  images 0/15
+case-098.json  pass  errors 0  warnings 0  stamps 3  facts 40  options {"when":720,"where":5,"who":7,"accomplice":6,"role":5,"how":5,"why":5,"document":5,"tell":6,"pin":5}  images 0/16
+case-099.json  pass  errors 0  warnings 0  stamps 3  facts 44  options {"when":720,"where":5,"who":7,"how":5,"why":5,"document":5,"tell":6,"missing":5,"conclusion":6,"pin":6}  images 0/13
+case-100.json  pass  errors 0  warnings 0  stamps 3  facts 54  options {"when":720,"where1":6,"where2":6,"who":8,"accomplice1":7,"role1":6,"accomplice2":7,"role2":6,"how":5,"why":5,"document":5,"tell":6,"missing":5,"conclusion":6,"pin1":5,"pin2":5,"pin3":5,"pin4":5,"pin5":5,"pin6":6}  images 0/18
+
+100 cases · 0 errors · 14 warnings · 1111 images not yet generated (rule 14)
+
+Region 6 negative tests (each mutation must FAIL):
+== 051 WHERE answer not the scene → FAIL (as expected)
+   ERROR no elimination for pl_launch in blank where (rule 5)
+   ERROR WHERE answer pl_talek (loc_talek) isn't the scene loc_launch (rule 6)
+   ERROR place word pl_launch is also inside the scene: ambiguous WHERE (rule 6)
+== 052 two options inside the scene → FAIL (as expected)
+   ERROR place word pl_crossing is also inside the scene: ambiguous WHERE (rule 6)
+== 059 culprit WHERE at wrong time → FAIL (as expected)
+   ERROR WHERE answer pl_lugga: no true fact puts the culprit at loc_lugga at 17:30 (rule 6)
+== 059 culprit WHERE no at → FAIL (as expected)
+   ERROR WHERE blank where: a culprit-location blank needs at HH:MM
+   ERROR WHERE answer pl_lugga: no true fact puts the culprit at loc_lugga at undefined (rule 6)
+== 060 subject other without note → FAIL (as expected)
+   ERROR WHERE blank where2: subject other needs a note
+== 060 WHERE blank uses person words → FAIL (as expected)
+   ERROR WHERE blank where1 must use place words
+   ERROR blank where1 answer pl_archive category mismatch
+   ERROR group g_where has 0 combinations (min 30, rule 9)
+== 059 visit without travel → FAIL (as expected)
+   ERROR clockPlan step 8 (visit loc_radio): visiting loc_radio without travelling there from loc_lugga (rule 16)
+== 059 travel too short → FAIL (as expected)
+   ERROR clockPlan step 8 (travel loc_radio): 0.5 h is less than the route's 60 min (rule 16)
+== 059 travel from wrong site → FAIL (as expected)
+   ERROR clockPlan step 12 (travel loc_bfe): 1 h is less than the route's 70 min (rule 16)
+   ERROR clockPlan step 12 (travel loc_bfe): travelling from loc_lugga, but the last site was loc_radio (rule 16)
+== 060 travel on a route not on the map → FAIL (as expected)
+   ERROR clockPlan step 14 (travel loc_registry): no route on the site map from loc_gate (rule 16)
+== 059 map edge to a non-place → FAIL (as expected)
+   ERROR map edge loc_lugga–loc_nowhere: loc_nowhere is not a map node
+== 060 travel over the 3 h campaign limit → FAIL (as expected)
+   ERROR clockPlan step 14 (travel loc_registry): 4 h is outside 0–3 h (rule 16)
+
+Region 7 negative tests (each mutation must FAIL):
+== 061 FORGERY answer is a genuine document → FAIL (as expected)
+   ERROR FORGERY answer d_loan (ev_loan) is not marked forged (rule 18)
+   ERROR document option d_logbook is also forged: ambiguous FORGERY (rule 18)
+== 061 two forged documents among the options → FAIL (as expected)
+   ERROR document option d_licence is also forged: ambiguous FORGERY (rule 18)
+== 062 accepted tell not proven → FAIL (as expected)
+   ERROR accepted tell t_traced: fact f_cmp_nostamp is not in the proof (rule 18)
+== 063 tell word without facts → FAIL (as expected)
+   ERROR tell word t_sunday has no facts (by)
+== 064 document word points at non-document evidence → FAIL (as expected)
+   ERROR document word d_nhif: ev_flask has no doc {genuine}
+== 065 document examination with wrong lab hours → FAIL (as expected)
+   ERROR ev_docexam: a document examination takes 10 lab hours
+== 066 FORGERY blank with the wrong category → FAIL (as expected)
+   ERROR FORGERY blank tell must be a document or a tell
+   ERROR blank tell answer t_map category mismatch
+   ERROR no elimination for m_dci in blank tell (rule 5)
+== 062 lawyered suspect without a reopening fact → FAIL (as expected)
+   ERROR lawyered p_thuo has no reopening fact
+   ERROR proof fact f_thuo_found unreachable (rule 2)
+   ERROR proof fact f_thuo_reveal unreachable (rule 2)
+== 066 lawyered suspect reopened by an unreachable fact → FAIL (as expected)
+   ERROR proof fact f_des_home unreachable (rule 2)
+   ERROR proof fact f_des_reveal unreachable (rule 2)
+   ERROR proof fact f_des_genuine unreachable (rule 2)
+== 070 lawyered settings on a cooperative stance → FAIL (as expected)
+   ERROR p_rahab has lawyered settings but stance cooperative
+== 068 four liars (region 7 allows 2–3) → FAIL (as expected)
+   ERROR 4 liars; region 7 needs 2–3 (rule 10)
+
+Region 8 negative tests (each mutation must FAIL):
+== 075 absence word points at a non-absence fact → FAIL (as expected)
+   ERROR absence word a_fault: f_brakes is not an absence fact
+== 076 missing Expected item without a "because" fact → FAIL (as expected)
+   ERROR expected item x_tracks at loc_compound: grounding fact undefined not found (no trick items)
+   ERROR proof fact f_abs_yard unreachable (rule 2)
+   ERROR answer word a_yard never unlocks (rule 2)
+   ERROR answer word k_never never unlocks (rule 2)
+== 077 absence fact on no Expected list → FAIL (as expected)
+   ERROR absence fact f_abs_call is on no location's Expected list
+   ERROR elimination fact f_abs_call unreachable (rule 2)
+   ERROR group g_absence has 24 combinations (min 30, rule 9)
+== 075 accepted absence not proven → FAIL (as expected)
+   ERROR accepted absence a_bleed: fact f_abs_bleed is not in the proof (rule 18)
+   ERROR accepted conclusion k_dead: fact f_abs_bleed is not in the proof (rule 18)
+== 078 conclusion word without facts → FAIL (as expected)
+   ERROR conclusion word k_lamp has no facts (by)
+== 072 ABSENCE blank with the wrong category → FAIL (as expected)
+   ERROR ABSENCE blank conclusion must be an absence or a conclusion
+   ERROR blank conclusion answer k_never category mismatch
+   ERROR no elimination for m_trade in blank conclusion (rule 5)
+   ERROR no elimination for m_boat in blank conclusion (rule 5)
+== 076 lab transport: press before the +4 h result is back → FAIL (as expected)
+   ERROR clockPlan step 38 (press c_den_bag): the lab result it needs isn't back at hour 35.35 (rule 16)
+== 080 travel leg over the 7 h region limit → FAIL (as expected)
+   ERROR clockPlan step 37 (travel loc_pit): 8 h is outside 0–7 h (rule 16)
+== 079 four liars (region 8 allows 2–3) → FAIL (as expected)
+   ERROR 4 liars; region 8 needs 2–3 (rule 10)
+== 074 Expected "present" item pointing at an absence fact → FAIL (as expected)
+   ERROR expected item x_flask is present but names an absence fact
+   ERROR proof fact f_abs_flask unreachable (rule 2)
+   ERROR proof fact f_darmi_full unreachable (rule 2)
+   ERROR answer word pl_house never unlocks (rule 2)
+
+Region 9 negative tests (each mutation must FAIL):
+== 081 ACCOMPLICE without a "nobody" option → FAIL (as expected)
+   ERROR ACCOMPLICE blank accomplice must offer "nobody"
+   ERROR group g_accomplice has 25 combinations (min 30, rule 9)
+== 081 ACCOMPLICE answer is not the accomplice → FAIL (as expected)
+   ERROR no elimination for w_brian in blank accomplice (rule 5)
+   ERROR ACCOMPLICE answer w_stephen is not the case's accomplice
+== 082 accomplice is also the culprit → FAIL (as expected)
+   ERROR p_felix can't be both culprit and accomplice
+   ERROR one accomplice per case (found 2)
+== 081 unknowing helper refuted by one fact only → FAIL (as expected)
+   ERROR unknowing helper p_rehema: the ACCOMPLICE refutation needs the evidence of what they knew (2+ facts)
+== 082 accepted role not proven → FAIL (as expected)
+   ERROR accepted role r_drove: fact f_affair is not in the proof (rule 18)
+== 083 PLANTED answer not marked planted → FAIL (as expected)
+   ERROR PLANTED answer i_apron (ev_apron) is not marked planted (rule 18)
+== 083 two planted items, second not accepted → FAIL (as expected)
+   ERROR item option i_signin is also planted: ambiguous PLANTED (rule 18)
+== 086 planted evidence framing the culprit → FAIL (as expected)
+   ERROR evidence ev_fob: planted evidence can't frame a culprit
+== 088 planted by an innocent → FAIL (as expected)
+   ERROR evidence ev_award: planted by p_tom, who is neither a culprit nor the accomplice
+== 084 REAL TARGET answer is not the intended target → FAIL (as expected)
+   ERROR REAL TARGET answer t_chloe is not the intended target
+== 087 intended target is the victim → FAIL (as expected)
+   ERROR REAL TARGET answer t_gerald is not the intended target
+   ERROR the intended target can't be the victim
+== 085 joint principals group not unordered → FAIL (as expected)
+   ERROR WHO group g_who with joint principals must be unordered
+== 085 only one culprit named by WHO → FAIL (as expected)
+   ERROR no elimination for w_michelle in blank who1 (rule 5)
+   ERROR no elimination for w_michelle in blank who2 (rule 5)
+   ERROR culprit p_michelle is not named by any WHO answer
+== 089 four liars (region 9 needs exactly 3) → FAIL (as expected)
+   ERROR 4 liars; region 9 needs 3–3 (rule 10)
+
+Region 10 negative tests (each mutation must FAIL):
+== 092 no SPINE group in region 10 → FAIL (as expected)
+   ERROR region 10: every case needs a SPINE group (K1)
+== 094 only two taught groups → FAIL (as expected)
+   ERROR region 10: only 2 of the taught groups (needs 3, K1)
+== 095 nine groups outside case 100 → FAIL (as expected)
+   ERROR 9 groups; only case 100 may have more than eight
+   ERROR hints for g_how2 incomplete
+== 093 planted by an innocent (no frames) → FAIL (as expected)
+   ERROR evidence ev_window: planted by p_okiror, who is neither a culprit nor the accomplice
+== 092 pin to a fact that is not a spine fact → FAIL (as expected)
+   ERROR pin word w_pin_mv: case-066:f_ob is not a spine fact (rule 15)
+== 092 pin to a later case → FAIL (as expected)
+   ERROR pin word w_pin_mv: case-095:f_diary_entry is not on the Pattern File when case 92 opens (rule 15)
+== 098 five liars (region 10 allows 3–4) → FAIL (as expected)
+   ERROR 5 liars; region 10 needs 3–4 (rule 10)
+== 096 two accomplices outside case 100 → FAIL (as expected)
+   ERROR one accomplice per case (found 2)
+== 100 two ACCOMPLICE groups naming the same person → FAIL (as expected)
+   ERROR no elimination for w_pius in blank accomplice2 (rule 5)
+   ERROR two ACCOMPLICE groups name the same accomplice
+== 100 three accomplices → FAIL (as expected)
+   ERROR one accomplice per case (found 3)
+   ERROR one accomplice per case (found 3)
+   ERROR 2 ACCOMPLICE groups but 3 accomplices
+== 100 not a boss case (spine facts in proof) → FAIL (as expected)
+   ERROR spine group g_spine outside a boss case or 91–99 (rule 15)
+== 099 accepted pin not proven → FAIL (as expected)
+   ERROR accepted pin w_pin_kadzo: case-095:f_ukarimu is not cited in the proof (rule 18)

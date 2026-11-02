@@ -1,0 +1,1101 @@
+{
+  "meta": {
+    "id": "case-001",
+    "number": 1,
+    "region": "nairobi-cbd",
+    "regionNumber": 1,
+    "title": "The Last Fare",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 5,
+    "date": "Friday 14 March",
+    "folderTab": "NGARA"
+  },
+  "pattern": {
+    "crimePattern": "debt dispute inside a drivers' savings group",
+    "noRealCaseRetold": true,
+    "notes": "Composite of common stage-level chama disputes; no identifiable real case. Fictional sacco and route.",
+    "tags": [
+      "blunt-force",
+      "workplace",
+      "debt"
+    ]
+  },
+  "difficulty": {
+    "suspects": 2,
+    "chainLength": 2,
+    "redHerrings": 0,
+    "liars": 0,
+    "groups": [
+      "who"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness"
+    ],
+    "gatedActions": [],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 41/14/03",
+    "date": "Friday 14 March",
+    "time": "22:52",
+    "reportedBy": "Kassim Juma, stage marshal, Ngara",
+    "text": "Stage marshal Kassim Juma reports that matatu driver Moses Wafula (41), route 9N, was found unresponsive behind his parked vehicle KDK 418T at Ngara stage at 22:40. Pronounced dead at the scene. Fare pouch on the body. The marshal states the deceased argued with his conductor earlier in the day.",
+    "facts": [
+      "f_ob_found",
+      "f_ob_argument"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_moses",
+      "role": "victim",
+      "name": "Moses Wafula",
+      "age": 41,
+      "occupation": "Matatu driver, route 9N; treasurer of the drivers' chama",
+      "bio": "Drove KDK 418T on the Ngara–Kencom route for nine years. Kept the drivers' chama book in his shirt pocket.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_stage",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 40s, short greying hair, maroon sacco driver's jacket over a checked shirt, tired but kind face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_peter",
+      "role": "suspect",
+      "name": "Peter Kamau",
+      "age": 38,
+      "occupation": "Matatu driver, route 9N",
+      "bio": "Drives KCZ 902M on the same route. Behind on his chama contributions. Back from his 22:30 trip at 23:15.",
+      "community": "Kikuyu",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_tally_peter"
+      },
+      "at": "loc_stage",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 30s, clean-shaven, maroon sacco driver's jacket zipped to the chin, jaw set, avoids the camera's eye slightly, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_brian",
+      "role": "suspect",
+      "name": "Brian Otieno",
+      "age": 24,
+      "occupation": "Makanga (conductor) on Moses's matatu",
+      "bio": "Moses's makanga. They argued that afternoon about his daily cut. Working the Kencom end tonight on another vehicle.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_kassim_brian"
+      },
+      "at": "plc_kencom",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 20s, lean, green conductor's reflective vest over a hoodie, a roll of notes folded between his fingers, defensive half-smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kassim",
+      "role": "witness",
+      "name": "Kassim Juma",
+      "age": 55,
+      "occupation": "Stage marshal, Ngara",
+      "bio": "Runs Ngara stage with a whistle and a tally book. Found the body at 22:40 and made the report.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_stage",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 50s, white kofia cap, grey beard, orange marshal's reflective vest, a whistle on a cord, a pencil behind one ear, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mercy",
+      "role": "witness",
+      "name": "Mercy Chebet",
+      "age": 30,
+      "occupation": "Smokie vendor at the stage",
+      "bio": "Sells smokie pasua from a glass-sided cart at the edge of the stage every night until the last trips.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_cart",
+      "statementOnly": false,
+      "image": null
+    },
+    {
+      "id": "p_wanjiru",
+      "role": "witness",
+      "name": "Wanjiru Gathoni",
+      "age": 47,
+      "occupation": "Stage marshal, Kencom",
+      "bio": "Marshal at the Kencom end of route 9N. Speaks to Amani over Kassim's radio.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_kassim_brian"
+      },
+      "at": "plc_kencom",
+      "statementOnly": true,
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_cart",
+      "name": "Mercy's smokie cart (edge of Ngara stage)",
+      "within": "loc_stage"
+    },
+    {
+      "id": "plc_kencom",
+      "name": "Kencom stage, city centre (other end of route 9N)"
+    },
+    {
+      "id": "plc_route",
+      "name": "On route 9N between Ngara and Kencom"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_stage",
+      "name": "Ngara matatu stage",
+      "kind": "scene",
+      "description": "Friday night, a little before 23:00. Sodium lights turn everything orange. Two bays are empty; matatu KDK 418T is parked in the third, its engine cold. A smokie cart glows at the edge of the stage. Most vehicles are out on their last trips.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Behind KDK 418T",
+          "pos": [
+            62,
+            58
+          ],
+          "yields": "ev_body",
+          "text": "Moses Wafula lies on his side behind his own matatu. One blow to the back of the head. His fare pouch is still zipped on his belt. His phone is in his pocket."
+        },
+        {
+          "id": "hs_gutter",
+          "label": "The empty bay next door",
+          "pos": [
+            38,
+            70
+          ],
+          "yields": "ev_spanner",
+          "text": "An oil stain marks where a matatu was parked until recently. In the gutter beside it, half under a flattened juice carton: a heavy wheel spanner."
+        },
+        {
+          "id": "hs_tally",
+          "label": "Kassim's tally book",
+          "pos": [
+            20,
+            40
+          ],
+          "yields": "ev_ngara_tally",
+          "text": "Kassim writes every plate in and out of the stage, with times. His pencil is behind his ear; the book is on his stool."
+        },
+        {
+          "id": "hs_cart",
+          "label": "Mercy's smokie cart",
+          "pos": [
+            84,
+            34
+          ],
+          "yields": null,
+          "text": "Smokies in a glass case, a bowl of kachumbari, a paraffin lamp. Mercy Chebet hasn't sold anything since 22:40."
+        },
+        {
+          "id": "hs_radio",
+          "label": "Kassim's two-way radio",
+          "pos": [
+            24,
+            46
+          ],
+          "yields": "ev_kencom_radio",
+          "unlock": {
+            "fact": "f_kassim_brian"
+          },
+          "text": "Kassim raises the Kencom marshal, Wanjiru Gathoni, and hands Amani the radio."
+        },
+        {
+          "id": "hs_kcz",
+          "label": "Matatu KCZ 902M (back at 23:15)",
+          "pos": [
+            40,
+            52
+          ],
+          "yields": "ev_toolroll",
+          "unlock": {
+            "fact": "f_tally_peter"
+          },
+          "text": "Peter Kamau's matatu pulls back into its bay at 23:15. He opens the side door when asked. Behind the driver's seat: a canvas tool roll."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "Nairobi matatu stage at night under orange sodium lights, a brightly painted matatu parked in a bay with neon underglow off, two empty bays with oil stains, a glass-sided smokie cart with a paraffin lamp at the edge, wet tarmac, no people in frame"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. No image of the body is shown."
+      },
+      "facts": [
+        "f_body_blow",
+        "f_body_pouch"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the rear corner of a parked matatu at night, a dropped maroon cap on the wet tarmac beside the rear wheel, police tape at the edge of frame, no body visible"
+      }
+    },
+    {
+      "id": "ev_spanner",
+      "type": "physical",
+      "title": "Wheel spanner",
+      "render": "object",
+      "body": {
+        "label": "Heavy wheel spanner. Handle painted in white: 9N-K."
+      },
+      "facts": [
+        "f_spanner_found",
+        "f_spanner_mark"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a heavy steel matatu wheel spanner lying in a roadside gutter beside a flattened juice carton, the handle hand-painted in white with '9N-K', photographed under orange street light"
+      }
+    },
+    {
+      "id": "ev_ngara_tally",
+      "type": "physical",
+      "title": "Ngara tally book",
+      "render": "tallyBook",
+      "body": {
+        "rows": [
+          {
+            "plate": "KDK 418T",
+            "driver": "M. Wafula",
+            "in": "21:58",
+            "out": "—"
+          },
+          {
+            "plate": "KCZ 902M",
+            "driver": "P. Kamau",
+            "in": "22:00",
+            "out": "22:31"
+          },
+          {
+            "plate": "KBT 551Q",
+            "driver": "J. Mbugua",
+            "in": "—",
+            "out": "21:40 (to Kencom)"
+          }
+        ],
+        "footer": "22:00–22:30: two vehicles parked. — K.J."
+      },
+      "facts": [
+        "f_tally_moses",
+        "f_tally_peter",
+        "f_tally_only2"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kassim",
+      "type": "witness",
+      "title": "Statement: Kassim Juma",
+      "render": "statement",
+      "body": {
+        "speaker": "p_kassim"
+      },
+      "facts": [
+        "f_kassim_last",
+        "f_kassim_found",
+        "f_kassim_jackets",
+        "f_kassim_marks",
+        "f_kassim_brian",
+        "f_kassim_cart"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mercy",
+      "type": "witness",
+      "title": "Statement: Mercy Chebet",
+      "render": "statement",
+      "body": {
+        "speaker": "p_mercy"
+      },
+      "facts": [
+        "f_mercy_shout",
+        "f_mercy_maroon",
+        "f_mercy_kassim"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kencom_radio",
+      "type": "witness",
+      "title": "Radio: Kencom marshal",
+      "render": "statement",
+      "body": {
+        "speaker": "p_wanjiru",
+        "channel": "radio"
+      },
+      "facts": [
+        "f_kencom_tally",
+        "f_gathoni"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_toolroll",
+      "type": "physical",
+      "title": "Peter's tool roll",
+      "render": "object",
+      "body": {
+        "label": "Canvas tool roll, eight slots. Every tool painted 9N-K. One slot empty."
+      },
+      "facts": [
+        "f_toolroll_gap",
+        "f_toolroll_marks"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "an unrolled canvas mechanic's tool roll on a matatu seat, spanners and screwdrivers with handles hand-painted in white '9N-K', one long slot conspicuously empty"
+      }
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Moses Wafula was found behind his matatu KDK 418T at Ngara stage at 22:40.",
+      "kind": "true",
+      "about": [
+        "p_moses",
+        "loc_stage"
+      ]
+    },
+    {
+      "id": "f_ob_argument",
+      "text": "Moses argued with his conductor earlier in the day.",
+      "kind": "true",
+      "about": [
+        "p_moses"
+      ]
+    },
+    {
+      "id": "f_body_blow",
+      "text": "Moses was struck once on the back of the head with a heavy object.",
+      "kind": "true",
+      "about": [
+        "p_moses"
+      ]
+    },
+    {
+      "id": "f_body_pouch",
+      "text": "His fare pouch (KSh 2,300) and his phone were untouched. Not a robbery.",
+      "kind": "true",
+      "about": [
+        "p_moses"
+      ]
+    },
+    {
+      "id": "f_spanner_found",
+      "text": "A heavy wheel spanner was in the gutter of the empty bay next to Moses's matatu.",
+      "kind": "true",
+      "about": [
+        "ev_spanner",
+        "loc_stage"
+      ]
+    },
+    {
+      "id": "f_spanner_mark",
+      "text": "The spanner's handle is painted 9N-K.",
+      "kind": "true",
+      "about": [
+        "ev_spanner"
+      ]
+    },
+    {
+      "id": "f_tally_moses",
+      "text": "Tally book: KDK 418T (M. Wafula) parked at 21:58 and never left.",
+      "kind": "true",
+      "about": [
+        "p_moses",
+        "loc_stage"
+      ],
+      "where": {
+        "person": "p_moses",
+        "place": "loc_stage",
+        "from": "21:58",
+        "to": null
+      }
+    },
+    {
+      "id": "f_tally_peter",
+      "text": "Tally book: KCZ 902M, driver P. Kamau, parked 22:00 and left on a trip at 22:31.",
+      "kind": "true",
+      "about": [
+        "p_peter",
+        "loc_stage"
+      ],
+      "where": {
+        "person": "p_peter",
+        "place": "loc_stage",
+        "from": "22:00",
+        "to": "22:31"
+      }
+    },
+    {
+      "id": "f_tally_only2",
+      "text": "Between 22:00 and 22:30 only two matatus were parked at the stage: Moses's and Peter's.",
+      "kind": "true",
+      "about": [
+        "loc_stage",
+        "p_moses",
+        "p_peter"
+      ]
+    },
+    {
+      "id": "f_kassim_last",
+      "text": "Kassim last saw Moses alive at 22:10, counting coins in his cab.",
+      "kind": "true",
+      "about": [
+        "p_kassim",
+        "p_moses"
+      ]
+    },
+    {
+      "id": "f_kassim_found",
+      "text": "Kassim found Moses at 22:40 when he went to ask why KDK 418T wasn't loading.",
+      "kind": "true",
+      "about": [
+        "p_kassim",
+        "p_moses"
+      ]
+    },
+    {
+      "id": "f_kassim_jackets",
+      "text": "On this sacco, drivers wear maroon jackets. Makangas wear green.",
+      "kind": "true",
+      "about": [
+        "loc_stage"
+      ]
+    },
+    {
+      "id": "f_kassim_marks",
+      "text": "Sacco drivers paint their tools with the route and their initial, because tools walk.",
+      "kind": "true",
+      "about": [
+        "loc_stage"
+      ]
+    },
+    {
+      "id": "f_kassim_brian",
+      "text": "Moses's makanga, Brian Otieno, is working the Kencom end tonight on KBT 551Q.",
+      "kind": "true",
+      "about": [
+        "p_brian",
+        "plc_kencom"
+      ]
+    },
+    {
+      "id": "f_kassim_cart",
+      "text": "Kassim was buying a smokie from Mercy at about 22:20 when they heard a shout. Mercy was at her cart.",
+      "kind": "true",
+      "about": [
+        "p_kassim",
+        "p_mercy",
+        "plc_cart"
+      ],
+      "where": {
+        "person": "p_mercy",
+        "place": "plc_cart",
+        "from": "22:15",
+        "to": "22:25"
+      }
+    },
+    {
+      "id": "f_mercy_shout",
+      "text": "Mercy heard a man shout behind the parked matatus at about 22:20.",
+      "kind": "true",
+      "about": [
+        "p_mercy",
+        "loc_stage"
+      ]
+    },
+    {
+      "id": "f_mercy_maroon",
+      "text": "Seconds later she saw a man in a maroon sacco jacket walk from behind Moses's matatu to the other parked matatu.",
+      "kind": "true",
+      "about": [
+        "p_mercy",
+        "loc_stage"
+      ]
+    },
+    {
+      "id": "f_mercy_kassim",
+      "text": "Kassim was at her cart buying a smokie when the shout came.",
+      "kind": "true",
+      "about": [
+        "p_mercy",
+        "p_kassim",
+        "plc_cart"
+      ],
+      "where": {
+        "person": "p_kassim",
+        "place": "plc_cart",
+        "from": "22:15",
+        "to": "22:25"
+      }
+    },
+    {
+      "id": "f_kencom_tally",
+      "text": "Kencom tally: KBT 551Q waited to fill from 21:50 to 22:45. Makanga: B. Otieno.",
+      "kind": "true",
+      "about": [
+        "p_brian",
+        "plc_kencom"
+      ],
+      "where": {
+        "person": "p_brian",
+        "place": "plc_kencom",
+        "from": "21:50",
+        "to": "22:45"
+      }
+    },
+    {
+      "id": "f_gathoni",
+      "text": "Wanjiru Gathoni: Brian never left the Kencom queue. She could hear him calling for passengers the whole time.",
+      "kind": "true",
+      "about": [
+        "p_brian",
+        "p_wanjiru",
+        "plc_kencom"
+      ]
+    },
+    {
+      "id": "f_toolroll_gap",
+      "text": "Peter's tool roll has one empty slot, long and spanner-shaped.",
+      "kind": "true",
+      "about": [
+        "p_peter",
+        "ev_toolroll"
+      ]
+    },
+    {
+      "id": "f_toolroll_marks",
+      "text": "Every tool in Peter's roll is painted 9N-K.",
+      "kind": "true",
+      "about": [
+        "p_peter",
+        "ev_toolroll"
+      ]
+    },
+    {
+      "id": "f_peter_claim_trip",
+      "text": "Peter: \"I left on my 22:30 trip like every Friday.\"",
+      "kind": "claim",
+      "about": [
+        "p_peter"
+      ]
+    },
+    {
+      "id": "f_peter_claim_denial",
+      "text": "Peter: \"I didn't touch him.\"",
+      "kind": "claim",
+      "about": [
+        "p_peter"
+      ]
+    },
+    {
+      "id": "f_peter_chama",
+      "text": "Peter admits he is three contributions behind in the drivers' chama.",
+      "kind": "true",
+      "about": [
+        "p_peter",
+        "p_moses"
+      ]
+    },
+    {
+      "id": "f_peter_lost_spanner",
+      "text": "Peter says his spanner \"went missing this week.\"",
+      "kind": "claim",
+      "about": [
+        "p_peter",
+        "ev_spanner"
+      ]
+    },
+    {
+      "id": "f_brian_claim",
+      "text": "Brian: \"I was at Kencom all night filling 551Q.\"",
+      "kind": "claim",
+      "about": [
+        "p_brian"
+      ]
+    },
+    {
+      "id": "f_brian_argument",
+      "text": "Brian says the argument was about Moses cutting his daily pay by KSh 200.",
+      "kind": "true",
+      "about": [
+        "p_brian",
+        "p_moses"
+      ]
+    },
+    {
+      "id": "f_brian_peter_debt",
+      "text": "Brian says everyone on 9N knows Kamau owes the chama.",
+      "kind": "true",
+      "about": [
+        "p_brian",
+        "p_peter"
+      ]
+    },
+    {
+      "id": "f_mercy_regular",
+      "text": "Mercy: Moses bought a smokie from her every night at ten. Tonight too.",
+      "kind": "true",
+      "about": [
+        "p_mercy",
+        "p_moses"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_kassim",
+      "stance": "cooperative",
+      "intro": "Kassim takes off his kofia and turns it in his hands. \"Nine years he parked in that bay. Nine years.\"",
+      "claims": [],
+      "yields": [
+        "ev_kassim"
+      ],
+      "topics": [
+        {
+          "about": "p_moses",
+          "reply": "Moses was the chama treasurer for the 9N drivers. Strict with the book. He'd chase you for fifty bob.",
+          "reveals": []
+        },
+        {
+          "about": "ev_spanner",
+          "reply": "9N is the route. K is the driver's initial. Every driver paints his tools, otherwise they walk to Githurai by morning.",
+          "reveals": [
+            "f_kassim_marks"
+          ]
+        },
+        {
+          "about": "p_brian",
+          "reply": "The boy shouts at everyone. He's at Kencom tonight on 551Q. Talk to Wanjiru on the radio if you want.",
+          "reveals": [
+            "f_kassim_brian"
+          ]
+        },
+        {
+          "about": "p_peter",
+          "reply": "Kamau? He drives KCZ 902M. Left on his 22:30 trip. He'll be back around quarter past eleven.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_mercy",
+      "stance": "cooperative",
+      "intro": "Mercy wipes the glass of her cart again and again. \"I keep thinking I'll see him walking over for his smokie.\"",
+      "claims": [],
+      "yields": [
+        "ev_mercy"
+      ],
+      "topics": [
+        {
+          "about": "p_moses",
+          "reply": "Every night at ten, one smokie pasua, extra kachumbari. Tonight too. He was laughing.",
+          "reveals": [
+            "f_mercy_regular"
+          ]
+        },
+        {
+          "about": "p_kassim",
+          "reply": "Mzee Kassim was right here with a smokie in his hand when we heard it. He dropped it.",
+          "reveals": []
+        },
+        {
+          "about": "p_peter",
+          "reply": "Kamau never buys from me. He says my smokies are small. I don't know him better than that.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_peter",
+      "stance": "cooperative",
+      "intro": "Peter keeps the engine running until Amani asks him to switch it off. \"Moses? Wueh. I heard on the radio.\"",
+      "claims": [
+        "f_peter_claim_trip",
+        "f_peter_claim_denial"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_moses",
+          "reply": "He kept the chama book. We all owe the book something. I didn't touch him.",
+          "reveals": []
+        },
+        {
+          "about": "f_brian_peter_debt",
+          "reply": "Chama, chama. Yes, I'm three contributions behind. So are half the drivers on 9N.",
+          "reveals": [
+            "f_peter_chama"
+          ]
+        },
+        {
+          "about": "ev_spanner",
+          "reply": "Every driver has a spanner. Mine went missing this week. Someone borrowed it.",
+          "reveals": [
+            "f_peter_lost_spanner"
+          ]
+        },
+        {
+          "about": "ev_toolroll",
+          "reply": "Look all you want. I told you, it went missing.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_brian",
+      "stance": "cooperative",
+      "intro": "Brian, over the radio, then in person at 23:30 when Kassim calls him back: \"I didn't even know until Mama Wanjiru told me.\"",
+      "claims": [
+        "f_brian_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_moses",
+          "reply": "He cut my daily pay by two hundred. I shouted. That's all. You don't kill a man for two hundred bob.",
+          "reveals": [
+            "f_brian_argument"
+          ]
+        },
+        {
+          "about": "p_peter",
+          "reply": "Kamau owes the chama. Everyone on 9N knows. Moses was going to the sacco chairman about it, that's what they were saying.",
+          "reveals": [
+            "f_brian_peter_debt"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_wanjiru",
+      "stance": "cooperative",
+      "intro": "Static, then a firm voice: \"Kencom, Gathoni speaking.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_brian",
+          "reply": "Otieno? He's been in my queue since ten to ten shouting 'Ngara, Ngara!' I'd have heard if he stopped.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [],
+  "words": [
+    {
+      "id": "w_peter",
+      "text": "Peter Kamau",
+      "category": "person",
+      "ref": "p_peter",
+      "unlock": {
+        "anyOf": [
+          "f_tally_peter"
+        ]
+      }
+    },
+    {
+      "id": "w_brian",
+      "text": "Brian Otieno",
+      "category": "person",
+      "ref": "p_brian",
+      "unlock": {
+        "anyOf": [
+          "f_kassim_brian"
+        ]
+      }
+    },
+    {
+      "id": "w_kassim",
+      "text": "Kassim Juma",
+      "category": "person",
+      "ref": "p_kassim",
+      "unlock": {
+        "anyOf": [
+          "f_kassim_last"
+        ]
+      }
+    },
+    {
+      "id": "w_mercy",
+      "text": "Mercy Chebet",
+      "category": "person",
+      "ref": "p_mercy",
+      "unlock": {
+        "anyOf": [
+          "f_mercy_shout"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} at Ngara stage.",
+    "fixed": {
+      "victim": "Moses Wafula"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_peter"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Kamau's spanner, Kamau's jacket, Kamau's bay. That will hold.",
+          "fail": [
+            "This doesn't hold up. Read me the stage again: who was actually parked there at twenty past ten?",
+            "No. A defence lawyer would walk this one out by lunch. Look at the weapon."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_stage",
+      "from": "22:10",
+      "to": "22:40",
+      "within": [
+        "plc_cart"
+      ]
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_spanner_mark",
+          "f_kassim_marks",
+          "f_toolroll_gap",
+          "f_toolroll_marks"
+        ],
+        "concludes": "The spanner is marked 9N-K, like every tool in Peter's roll, and his roll has a spanner-shaped gap. The weapon came from Peter's tools."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_mercy_maroon",
+          "f_kassim_jackets",
+          "f_tally_only2",
+          "f_tally_peter"
+        ],
+        "concludes": "The man who walked away from Moses's matatu at 22:20 wore a driver's maroon jacket, and the only other driver at the stage then was Peter Kamau.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_brian",
+        "blank": "who",
+        "by": [
+          "f_kencom_tally",
+          "f_gathoni"
+        ],
+        "why": "Brian was in the Kencom queue from 21:50 to 22:45, heard by the Kencom marshal the whole time."
+      },
+      {
+        "word": "w_kassim",
+        "blank": "who",
+        "by": [
+          "f_mercy_kassim"
+        ],
+        "why": "Kassim was at Mercy's cart buying a smokie when the shout came."
+      },
+      {
+        "word": "w_mercy",
+        "blank": "who",
+        "by": [
+          "f_kassim_cart"
+        ],
+        "why": "Mercy was at her own cart serving Kassim when the shout came."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Friday afternoon. Moses tells Peter he's three contributions behind and that on Monday he'll take the chama book to the sacco chairman. Peter could lose his route.",
+        "image": null
+      },
+      {
+        "text": "22:00. Peter parks KCZ 902M in the bay next to Moses. At ten, Moses buys his smokie and laughs with Mercy.",
+        "image": null
+      },
+      {
+        "text": "About 22:20. Only two matatus are parked. Peter takes the spanner from his tool roll, follows Moses behind KDK 418T and strikes once.",
+        "image": "loc_stage"
+      },
+      {
+        "text": "He walks back to his own matatu in his maroon jacket, drops the spanner in the gutter, and at 22:31 drives off on his last trip as if nothing happened.",
+        "image": null
+      },
+      {
+        "text": "The fare pouch stays on Moses's belt. It was never about the money in it.",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_spanner",
+        "line": "Start with what the killer left in the gutter. Then ask the marshal how drivers mark their things."
+      },
+      "tier2": {
+        "facts": [
+          "f_mercy_maroon",
+          "f_tally_only2"
+        ],
+        "line": "A maroon jacket at twenty past ten, and a tally book that says only two matatus were parked. Put those side by side."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "makanga",
+      "def": "Matatu conductor (Sheng)."
+    },
+    {
+      "term": "matatu",
+      "def": "Privately run minibus that carries most of Nairobi's commuters."
+    },
+    {
+      "term": "sacco",
+      "def": "Savings and credit cooperative; matatus run under a sacco on a fixed route."
+    },
+    {
+      "term": "chama",
+      "def": "Savings group whose members pay in regularly and borrow from the pot."
+    },
+    {
+      "term": "smokie",
+      "def": "A smoked sausage sold from street carts."
+    },
+    {
+      "term": "pasua",
+      "def": "Split open. A smokie pasua is split and filled with kachumbari."
+    },
+    {
+      "term": "kachumbari",
+      "def": "Fresh tomato and onion relish."
+    },
+    {
+      "term": "kofia",
+      "def": "Embroidered cap, often worn by Muslim men."
+    },
+    {
+      "term": "mzee",
+      "def": "Respectful word for an older man."
+    },
+    {
+      "term": "mama",
+      "def": "Respectful way to address or refer to an older woman."
+    },
+    {
+      "term": "wueh",
+      "def": "Exclamation of shock or dismay."
+    },
+    {
+      "term": "githurai",
+      "def": "A Nairobi suburb; 'walk to Githurai' means get stolen and resold."
+    },
+    {
+      "term": "bob",
+      "def": "Slang for shillings."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "guidedLoop"
+    ],
+    "beatNotes": "The whole loop, guided once by Mwalimu's voice-notes: OB → scene hotspots → facts dropping into the notebook → charge sheet → drag a name → submit → Halima's verdict → reconstruction. Every later case runs without guidance."
+  },
+  "tutorial": [
+    {
+      "trigger": "caseOpen",
+      "line": "That's the OB. Who, where, when. Tap the folder when you've read it."
+    },
+    {
+      "trigger": "sceneOpen",
+      "line": "This is the stage. Tap anything that looks wrong. Then tap anything that looks normal. Both matter."
+    },
+    {
+      "trigger": "firstFact",
+      "line": "See that line drop into your notebook? Every fact goes there by itself. You don't write, you think."
+    },
+    {
+      "trigger": "firstPerson",
+      "line": "People talk. Tap a face to hear what they saw. Ask about anything you've found by dragging it to them."
+    },
+    {
+      "trigger": "chargeSheetOpen",
+      "line": "The charge sheet. Drag a name into the blank. Only names you've actually met are in the bank."
+    },
+    {
+      "trigger": "beforeSubmit",
+      "line": "Before you send it to the prosecutor, say the reason out loud. If you can't, don't send it."
+    },
+    {
+      "trigger": "verdict",
+      "line": "Halima Abdi reads every sheet this unit sends. She doesn't do favours. Good."
+    }
+  ]
+}

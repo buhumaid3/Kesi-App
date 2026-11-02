@@ -1,0 +1,2852 @@
+{
+  "meta": {
+    "id": "case-060",
+    "number": 60,
+    "region": "maasai-mara",
+    "regionNumber": 6,
+    "title": "The Lease",
+    "boss": true,
+    "schemaVersion": 1,
+    "estMinutes": 40,
+    "date": "Saturday 21 March",
+    "folderTab": "ENKARE HQ"
+  },
+  "pattern": {
+    "crimePattern": "the landowners' own advocate, who registered their \"lease advances\" as land transfers, kills the conservancy manager who found out and takes the original leases",
+    "noRealCaseRetold": true,
+    "notes": "Fictional conservancy, trust, company and registry clerk. Close to real land disputes in the Mara, so the cultural reader is asked to check the lease model, trusts, cash advances and the registry process in Narok. No real advocate or official is portrayed.",
+    "tags": [
+      "blunt-force",
+      "land-fraud",
+      "two-liars",
+      "records",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where-two-blanks",
+      "spine",
+      "boss",
+      "story-choice"
+    ]
+  },
+  "difficulty": {
+    "suspects": 5,
+    "chainLength": 6,
+    "redHerrings": 2,
+    "liars": 2,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "spine"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "records",
+      "warrant"
+    ],
+    "twist": "the-landowners-own-lawyer"
+  },
+  "ob": {
+    "number": "OB 02/21/03",
+    "date": "Saturday 21 March",
+    "time": "06:40",
+    "reportedBy": "Conservancy rangers, Enkare Conservancy",
+    "text": "Rangers report the conservancy manager, Salaton Koikai (47), found dead in the archive room of the Enkare Conservancy headquarters at 06:15. The landowners' meeting he had called for 10:00 today has been postponed.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_hq",
+    "nodes": [
+      "loc_hq",
+      "loc_gate",
+      "loc_registry",
+      "loc_doreen",
+      "plc_lodge"
+    ],
+    "edges": [
+      {
+        "a": "loc_hq",
+        "b": "loc_gate",
+        "minutes": 10,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_hq",
+        "b": "plc_lodge",
+        "minutes": 20,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_gate",
+        "b": "loc_registry",
+        "minutes": 110,
+        "by": "road"
+      },
+      {
+        "a": "loc_hq",
+        "b": "loc_registry",
+        "minutes": 120,
+        "by": "road"
+      },
+      {
+        "a": "loc_registry",
+        "b": "loc_doreen",
+        "minutes": 5,
+        "by": "foot"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_salaton",
+      "role": "victim",
+      "name": "Salaton Koikai",
+      "age": 47,
+      "occupation": "Manager, Enkare Conservancy",
+      "bio": "Born on this land. The landowners' most trusted voice: he reads the lease list aloud every quarter under the tree.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_archive",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Maasai man, late 40s, a conservancy fleece over a checked shirt, a red shuka folded over one shoulder, reading glasses in his breast pocket, a calm, listening face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_doreen",
+      "role": "suspect",
+      "name": "Doreen Kathambi",
+      "age": 49,
+      "occupation": "Advocate, Narok; lawyer to the landowners' trust for eight years",
+      "bio": "Polished, precise, and patient. She reads every document aloud to her clients, slowly.",
+      "community": "Meru",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_salaton_call"
+      },
+      "at": "loc_doreen",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Meru woman, late 40s, a tailored charcoal suit, a red-and-gold fringed scarf at her neck, small gold earrings, a composed, attentive expression, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_isaiah",
+      "role": "suspect",
+      "name": "Isaiah Mbae",
+      "age": 33,
+      "occupation": "Her clerk and driver",
+      "bio": "Carries her files and her car keys. Says \"Madam\" before every sentence.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_gatelog"
+      },
+      "at": "loc_doreen",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Meru man, early 30s, a white shirt and a thin tie, a lanyard with car keys, a nervous, careful face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_tipape",
+      "role": "suspect",
+      "name": "Tipape ole Naurori",
+      "age": 61,
+      "occupation": "Landowner, Enkare",
+      "redHerring": true,
+      "bio": "Took Mvua's \"lease advance\" in October. On Wednesday he shouted at Salaton in the yard for \"making trouble\".",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_tipape_shout"
+      },
+      "at": "plc_wedding",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Maasai man, early 60s, a red-checked shuka, a beaded collar, a walking stick, a lined, angry, proud face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_hugo",
+      "role": "suspect",
+      "name": "Hugo Barclay",
+      "age": 55,
+      "occupation": "Investor",
+      "redHerring": true,
+      "bio": "Wanted the Enkare lodge concession. Salaton turned his bid down in January.",
+      "community": "Kenyan-European",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_hugo_bid"
+      },
+      "at": "plc_nbiclub",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan-European man, mid 50s, sunburnt, a linen jacket over an open-necked shirt, a heavy watch, a guarded, tired expression, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_lornah",
+      "role": "suspect",
+      "name": "Lornah Chemutai",
+      "age": 37,
+      "occupation": "Finance officer, Enkare Conservancy",
+      "bio": "Prepared this quarter's payment list: 352 families paid, 60 held back.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_hq",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin woman, late 30s, a conservancy polo shirt, braids tied back, a calculator in her hand, a worried, upright face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_naisula",
+      "role": "witness",
+      "name": "Sgt Naisula Koitamet",
+      "age": 39,
+      "occupation": "Ranger sergeant, Enkare HQ",
+      "bio": "Night duty at the ranger base. Walks the HQ yard every half hour.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_hq",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Maasai woman, late 30s, a ranger's green uniform with sergeant's stripes, a beret, a radio on her shoulder, a steady, grieving face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_jedidah",
+      "role": "witness",
+      "name": "Jedidah Lempaka",
+      "age": 31,
+      "occupation": "Clerk, Narok lands registry",
+      "bio": "Keeps the presentation book. Has not slept since she ran the searches for Salaton.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_search"
+      },
+      "at": "loc_registry",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_lodge",
+      "name": "Enkare Lodge"
+    },
+    {
+      "id": "plc_lodgeoff",
+      "name": "Enkare Lodge office",
+      "within": "plc_lodge"
+    },
+    {
+      "id": "plc_lodgesafe",
+      "name": "The lodge safe",
+      "within": "plc_lodge"
+    },
+    {
+      "id": "plc_carpark",
+      "name": "The HQ carpark by the ranger base",
+      "within": "loc_hq"
+    },
+    {
+      "id": "plc_rangerbase",
+      "name": "The ranger base",
+      "within": "loc_hq"
+    },
+    {
+      "id": "plc_tent",
+      "name": "The landowners' meeting tent",
+      "within": "loc_hq"
+    },
+    {
+      "id": "plc_burn",
+      "name": "The HQ burn pit",
+      "within": "loc_hq"
+    },
+    {
+      "id": "plc_home",
+      "name": "Salaton's home"
+    },
+    {
+      "id": "plc_safe",
+      "name": "Doreen's office safe",
+      "within": "loc_doreen"
+    },
+    {
+      "id": "plc_mvuanbi",
+      "name": "Mvua Holdings' Nairobi office"
+    },
+    {
+      "id": "plc_car",
+      "name": "Isaiah's car"
+    },
+    {
+      "id": "plc_narok",
+      "name": "Narok town"
+    },
+    {
+      "id": "plc_wedding",
+      "name": "A wedding in Ololulung'a"
+    },
+    {
+      "id": "plc_nbiclub",
+      "name": "A club in Nairobi"
+    },
+    {
+      "id": "plc_talekhome",
+      "name": "Lornah's home in Talek"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_hq",
+      "name": "Enkare Conservancy HQ",
+      "kind": "location",
+      "description": "Low stone offices round a yard, a ranger base, an acacia where the landowners meet, and the archive room at the end of the block. Salaton's office door is open. A hand-painted sign: \"Meeting of Landowners — Saturday 10:00 — POSTPONED\".",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_notebook",
+          "label": "Salaton's notebook",
+          "pos": [
+            34,
+            42
+          ],
+          "yields": "ev_notebook",
+          "text": "His notebook, open on the desk."
+        },
+        {
+          "id": "hs_search",
+          "label": "Registry searches",
+          "pos": [
+            44,
+            46
+          ],
+          "yields": "ev_search",
+          "text": "A stack of official searches from the Narok lands registry, paper-clipped."
+        },
+        {
+          "id": "hs_phone",
+          "label": "Salaton's phone",
+          "pos": [
+            54,
+            40
+          ],
+          "yields": "ev_salaton_phone",
+          "text": "His phone. His wife unlocks it."
+        },
+        {
+          "id": "hs_minutes",
+          "label": "Trust minutes",
+          "pos": [
+            64,
+            50
+          ],
+          "yields": "ev_minutes",
+          "text": "The landowners' trust minute book."
+        },
+        {
+          "id": "hs_bid",
+          "label": "Lodge concession file",
+          "pos": [
+            74,
+            44
+          ],
+          "yields": "ev_hugo_bid",
+          "text": "A file of bids for the lodge concession."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a Maasai Mara conservancy headquarters at night, low stone offices round a dusty yard, a floodlight by a ranger base, a large acacia tree, one window lit at the end of the block, no people in focus"
+      }
+    },
+    {
+      "id": "loc_archive",
+      "name": "The archive room",
+      "kind": "scene",
+      "description": "Floor-to-ceiling shelves of box files, one for every landowning family, numbered 1 to 412. A desk, a chair on its side, and a desk lamp with no base.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "By the desk",
+          "pos": [
+            48,
+            66
+          ],
+          "yields": "ev_body",
+          "text": "Salaton lay on the floor by the desk."
+        },
+        {
+          "id": "hs_shelf",
+          "label": "The empty shelf",
+          "pos": [
+            30,
+            30
+          ],
+          "yields": "ev_archive",
+          "text": "One shelf is empty. The label reads \"Families 101–160\"."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a conservancy archive room lit by a single bulb, floor-to-ceiling shelves of numbered box files with one shelf empty, a wooden desk, a desk lamp missing its base, a chair on its side, no people in focus"
+      }
+    },
+    {
+      "id": "loc_gate",
+      "name": "Conservancy gate",
+      "kind": "location",
+      "description": "A boom, a ranger hut and a logbook for every vehicle in and out at night.",
+      "unlock": {
+        "fact": "f_naisula_car"
+      },
+      "hotspots": [
+        {
+          "id": "hs_gatelog",
+          "label": "Gate logbook",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_gatelog",
+          "text": "Friday night's page."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a conservancy gate at dawn, a striped boom across a dirt road, a small ranger hut, a logbook open on a shelf"
+      }
+    },
+    {
+      "id": "loc_registry",
+      "name": "Narok lands registry",
+      "kind": "location",
+      "description": "A government office with a counter, a queue on benches, and the presentation book under the clerk's hand.",
+      "unlock": {
+        "fact": "f_search"
+      },
+      "hotspots": [
+        {
+          "id": "hs_transfers",
+          "label": "Registry copies of the transfers",
+          "pos": [
+            60,
+            40
+          ],
+          "yields": "ev_transfers",
+          "text": "The registry's copies of all 60 transfer forms."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a Kenyan lands registry office, a wooden counter, landowners waiting on benches, shelves of thick ledgers, a clerk behind the counter"
+      }
+    },
+    {
+      "id": "loc_doreen",
+      "name": "Doreen's office, Narok",
+      "kind": "location",
+      "description": "Kathambi Advocates, first floor. Certificates on the wall, a coat stand by the door, and a grey steel safe in the corner.",
+      "unlock": {
+        "fact": "f_rec_doreen"
+      },
+      "hotspots": [
+        {
+          "id": "hs_scarf",
+          "label": "Coat stand",
+          "pos": [
+            20,
+            40
+          ],
+          "yields": "ev_scarf",
+          "text": "A red-and-gold fringed scarf hangs on the coat stand."
+        },
+        {
+          "id": "hs_safe",
+          "label": "The safe",
+          "pos": [
+            80,
+            60
+          ],
+          "yields": "ev_safe",
+          "text": "A grey steel safe, locked."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "an advocate's office in a Kenyan town, framed certificates on the wall, a coat stand with a red-and-gold scarf, a grey steel safe in the corner, files on a desk"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "By the desk",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. He lay on the floor by the archive desk. His reading glasses were on the desk."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the floor beside a wooden archive desk, a pair of reading glasses on the desk, a chair on its side, no body visible"
+      }
+    },
+    {
+      "id": "ev_archive",
+      "type": "physical",
+      "title": "The archive room",
+      "render": "sceneNote",
+      "body": {
+        "shelf": "The shelf labelled \"Families 101–160\" is empty. Every other shelf is full.",
+        "lamp": "The desk lamp's heavy brass base lies on the floor under the desk.",
+        "fringe": "A thread of red-and-gold fringe caught on a shelf bracket."
+      },
+      "facts": [
+        "f_shelf",
+        "f_lamp",
+        "f_fringe"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a heavy round brass lamp base on a concrete floor, and a red-and-gold thread caught on a metal shelf bracket"
+      }
+    },
+    {
+      "id": "ev_notebook",
+      "type": "physical",
+      "title": "Salaton's notebook",
+      "render": "note",
+      "body": {
+        "text": "\"60 parcels → MVUA HOLDINGS. Registered by D. Kathambi, Advocate!! Meeting Saturday 10:00. Bring the originals.\""
+      },
+      "facts": [
+        "f_notebook"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_search",
+      "type": "physical",
+      "title": "Official registry searches",
+      "render": "form",
+      "body": {
+        "text": "60 parcels in Enkare, 8,000 acres, including the lodge site. Registered owner: MVUA HOLDINGS LTD. Transfers dated over the last six months."
+      },
+      "facts": [
+        "f_search"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_salaton_phone",
+      "type": "phone",
+      "title": "Salaton's phone",
+      "render": "manifest",
+      "body": {
+        "call": "Incoming Friday 19:05 from DOREEN KATHAMBI, 6 minutes."
+      },
+      "facts": [
+        "f_salaton_call"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_minutes",
+      "type": "physical",
+      "title": "Trust minute book",
+      "render": "logBook",
+      "body": {
+        "rates": "January: this year's lease rate agreed unanimously by the landowners' assembly.",
+        "fees": "Advocate's fees: paid every quarter, nothing owing."
+      },
+      "facts": [
+        "f_rates",
+        "f_fees"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_hugo_bid",
+      "type": "physical",
+      "title": "Lodge concession file",
+      "render": "letter",
+      "body": {
+        "text": "Hugo Barclay's bid for the Enkare lodge concession. Salaton's reply, January: \"Declined. The landowners will choose.\""
+      },
+      "facts": [
+        "f_hugo_bid"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_naisula",
+      "type": "witness",
+      "title": "Statement: Sgt Naisula Koitamet",
+      "render": "statement",
+      "body": {
+        "speaker": "p_naisula"
+      },
+      "facts": [
+        "f_naisula_car",
+        "f_naisula_driver",
+        "f_tipape_shout",
+        "f_naisula_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gatelog",
+      "type": "physical",
+      "title": "Gate logbook, Friday",
+      "render": "logBook",
+      "body": {
+        "in": "\"21:00 — KDC xxx — Kathambi Advocates — to HQ.\"",
+        "out": "\"22:40 — out.\""
+      },
+      "facts": [
+        "f_gatelog"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lornah",
+      "type": "witness",
+      "title": "Lornah's instruction",
+      "render": "letter",
+      "body": {
+        "text": "Salaton's handwriting: \"Lornah — hold the 60 payments (Families 101–160) until we verify ownership. S.K.\"",
+        "family": "Her husband: she was home in Talek from 18:00."
+      },
+      "facts": [
+        "f_instruction",
+        "f_lornah_home"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_jedidah",
+      "type": "witness",
+      "title": "Statement and presentation book: Jedidah Lempaka",
+      "render": "statement",
+      "body": {
+        "speaker": "p_jedidah",
+        "book": "All 60 transfers: \"presented by D. Kathambi, Advocate, for Mvua Holdings Ltd\"."
+      },
+      "facts": [
+        "f_presented"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_transfers",
+      "type": "physical",
+      "title": "Registry copies of the 60 transfers",
+      "render": "form",
+      "body": {
+        "paper": "Watermarked security paper, batch mark \"SP-0412-A\".",
+        "seal": "An oval REGISTRAR OF TITLES seal on every form.",
+        "signed": "Each signed with a thumbprint \"after the contents were read and explained by D. Kathambi, Advocate\"."
+      },
+      "facts": [
+        "f_transfers",
+        "f_transfer_seal"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records_doreen",
+      "type": "phone",
+      "title": "Records: Doreen Kathambi's line and PesaPap",
+      "render": "manifest",
+      "body": {
+        "masts": "Enkare HQ zone 21:05–22:40; Narok from 00:45.",
+        "pesapap": "Quarterly payments from MVUA HOLDINGS LTD, KSh 600,000 each."
+      },
+      "facts": [
+        "f_rec_doreen",
+        "f_mvua_pay"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_salaton_call"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_records_isaiah",
+      "type": "phone",
+      "title": "Records: Isaiah Mbae's line",
+      "render": "manifest",
+      "body": {
+        "masts": "Same masts, same times as Doreen's: Enkare HQ zone 21:05–22:40; Narok from 00:45."
+      },
+      "facts": [
+        "f_rec_isaiah"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_gatelog",
+          "f_naisula_driver"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_scarf",
+      "type": "physical",
+      "title": "Red-and-gold fringed scarf",
+      "render": "object",
+      "body": {
+        "label": "On Doreen's coat stand. One corner of the fringe is torn."
+      },
+      "facts": [
+        "f_scarf"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_safe",
+      "type": "physical",
+      "title": "Doreen's safe",
+      "render": "object",
+      "body": {
+        "leases": "The 60 original signed lease files from \"Families 101–160\". Every one reads LEASE.",
+        "slips": "Mvua Holdings payment slips.",
+        "folder": "A thin manila folder, labelled in pencil \"Leverage — E.W.\"",
+        "stamp": "Her commissioner-for-oaths stamp and its ink pad."
+      },
+      "facts": [
+        "f_safe_leases",
+        "f_safe_slips",
+        "f_leverage",
+        "f_leverage_label",
+        "f_comm_stamp"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_doreen",
+          "f_presented",
+          "f_gatelog"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "an open grey steel safe holding a stack of old box files, payment slips, and a thin manila folder with a pencilled label"
+      }
+    },
+    {
+      "id": "ev_wedding",
+      "type": "witness",
+      "title": "Statement: the wedding hosts, Ololulung'a",
+      "render": "statement",
+      "body": {
+        "speaker": "p_tipape"
+      },
+      "facts": [
+        "f_wedding"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_hugo",
+      "type": "physical",
+      "title": "Nairobi club bill",
+      "render": "receipt",
+      "body": {
+        "bill": "H. Barclay and two guests, Friday, dinner 19:30–23:30."
+      },
+      "facts": [
+        "f_hugo"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_dor_prints",
+      "type": "physical",
+      "title": "Fingerprints: Doreen Kathambi",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention; she refused."
+      },
+      "facts": [
+        "f_dor_prints"
+      ],
+      "gate": null,
+      "detention": "p_doreen",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_tod",
+        "f_aut_noother"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_fibre",
+      "type": "forensic",
+      "title": "Lab: fibre (shelf fringe vs scarf)",
+      "render": "labReport",
+      "body": {
+        "test": "fibre"
+      },
+      "facts": [
+        "f_fibre"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "fibre",
+        "hours": 12,
+        "needs": [
+          "ev_archive",
+          "ev_scarf"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: prints (archive door handle, lamp base)",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_prints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_archive",
+          "ev_dor_prints"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_paper",
+      "type": "forensic",
+      "title": "Lab: paper (transfer watermark batch)",
+      "render": "labReport",
+      "body": {
+        "test": "paper"
+      },
+      "facts": [
+        "f_paper"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "paper",
+        "hours": 8,
+        "needs": [
+          "ev_transfers"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Salaton Koikai was found dead in the archive room at Enkare Conservancy HQ at 06:15. The landowners' meeting he had called for 10:00 is postponed.",
+      "kind": "true",
+      "about": [
+        "p_salaton",
+        "loc_archive"
+      ],
+      "at": {
+        "from": "06:15"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "He lay on the archive floor by the desk; his reading glasses were on the desk.",
+      "kind": "true",
+      "about": [
+        "p_salaton",
+        "loc_archive"
+      ]
+    },
+    {
+      "id": "f_shelf",
+      "text": "The shelf labelled \"Families 101–160\" is empty. Every other shelf of the 412 families is full.",
+      "kind": "true",
+      "about": [
+        "loc_archive"
+      ]
+    },
+    {
+      "id": "f_lamp",
+      "text": "The archive desk lamp's heavy brass base lies on the floor under the desk.",
+      "kind": "true",
+      "about": [
+        "loc_archive"
+      ]
+    },
+    {
+      "id": "f_fringe",
+      "text": "A thread of red-and-gold fringe is caught on a shelf bracket by the empty shelf.",
+      "kind": "true",
+      "about": [
+        "loc_archive"
+      ]
+    },
+    {
+      "id": "f_notebook",
+      "text": "Salaton's notebook: \"60 parcels → MVUA HOLDINGS. Registered by D. Kathambi, Advocate!! Meeting Saturday 10:00. Bring the originals.\"",
+      "kind": "true",
+      "about": [
+        "p_salaton",
+        "p_doreen"
+      ]
+    },
+    {
+      "id": "f_search",
+      "text": "Registry searches: 60 Enkare parcels, 8,000 acres including the lodge site, are registered to MVUA HOLDINGS LTD, by transfers over the last six months.",
+      "kind": "true",
+      "about": [
+        "p_salaton"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_salaton_call",
+      "text": "Salaton's phone: an incoming call on Friday at 19:05 from DOREEN KATHAMBI, 6 minutes.",
+      "kind": "true",
+      "about": [
+        "p_salaton",
+        "p_doreen"
+      ],
+      "at": {
+        "from": "19:05"
+      }
+    },
+    {
+      "id": "f_rates",
+      "text": "Trust minutes: this year's lease rate was agreed unanimously by the landowners' assembly in January.",
+      "kind": "true",
+      "about": [
+        "loc_hq"
+      ]
+    },
+    {
+      "id": "f_fees",
+      "text": "Trust minutes: the advocate's fees are paid every quarter; nothing is owing.",
+      "kind": "true",
+      "about": [
+        "p_doreen"
+      ]
+    },
+    {
+      "id": "f_hugo_bid",
+      "text": "Hugo Barclay bid for the Enkare lodge concession; in January Salaton replied \"Declined. The landowners will choose.\"",
+      "kind": "true",
+      "about": [
+        "p_hugo",
+        "p_salaton"
+      ]
+    },
+    {
+      "id": "f_naisula_car",
+      "text": "Naisula: a car came to HQ at about 21:10. The archive light was on and she heard a woman's voice. The car left fast at about 22:30.",
+      "kind": "true",
+      "about": [
+        "p_naisula",
+        "loc_archive"
+      ],
+      "at": {
+        "from": "21:10",
+        "to": "22:30"
+      }
+    },
+    {
+      "id": "f_naisula_driver",
+      "text": "Naisula: the car parked under the floodlight by the ranger base, the driver at the wheel with the radio on. She passed it on her rounds at 21:10, 21:45 and 22:30.",
+      "kind": "true",
+      "about": [
+        "p_isaiah"
+      ],
+      "where": {
+        "person": "p_isaiah",
+        "place": "plc_carpark",
+        "from": "21:10",
+        "to": "22:30"
+      }
+    },
+    {
+      "id": "f_tipape_shout",
+      "text": "Naisula: on Wednesday Tipape ole Naurori shouted at Salaton in the yard for \"making trouble\".",
+      "kind": "true",
+      "about": [
+        "p_tipape",
+        "p_salaton"
+      ]
+    },
+    {
+      "id": "f_naisula_self",
+      "text": "Naisula was on duty at the ranger base all night.",
+      "kind": "true",
+      "about": [
+        "p_naisula"
+      ],
+      "where": {
+        "person": "p_naisula",
+        "place": "plc_rangerbase",
+        "from": "18:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_gatelog",
+      "text": "Gate logbook: \"21:00 — KDC xxx — Kathambi Advocates — to HQ.\" Then \"22:40 — out.\"",
+      "kind": "true",
+      "about": [
+        "p_doreen"
+      ],
+      "at": {
+        "from": "21:00",
+        "to": "22:40"
+      }
+    },
+    {
+      "id": "f_instruction",
+      "text": "Salaton's written instruction to Lornah: \"Hold the 60 payments (Families 101–160) until we verify ownership.\"",
+      "kind": "true",
+      "about": [
+        "p_lornah",
+        "p_salaton"
+      ]
+    },
+    {
+      "id": "f_lornah_home",
+      "text": "Lornah's husband: she was home in Talek from 18:00 on Friday.",
+      "kind": "true",
+      "about": [
+        "p_lornah"
+      ],
+      "where": {
+        "person": "p_lornah",
+        "place": "plc_talekhome",
+        "from": "18:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_presented",
+      "text": "Registry presentation book: all 60 transfers were \"presented by D. Kathambi, Advocate, for Mvua Holdings Ltd\".",
+      "kind": "true",
+      "about": [
+        "p_doreen"
+      ]
+    },
+    {
+      "id": "f_transfers",
+      "text": "The transfers are thumbprinted \"after the contents were read and explained by D. Kathambi, Advocate\", on watermarked security paper, batch mark \"SP-0412-A\".",
+      "kind": "true",
+      "about": [
+        "p_doreen"
+      ]
+    },
+    {
+      "id": "f_transfer_seal",
+      "text": "Every transfer carries an oval REGISTRAR OF TITLES seal.",
+      "kind": "true",
+      "about": [
+        "p_doreen"
+      ],
+      "spine": "t_stamp"
+    },
+    {
+      "id": "f_rec_doreen",
+      "text": "Records, Doreen's line: Enkare HQ zone 21:05–22:40; Narok from 00:45.",
+      "kind": "true",
+      "about": [
+        "p_doreen"
+      ],
+      "at": {
+        "from": "21:05",
+        "to": "00:45"
+      }
+    },
+    {
+      "id": "f_mvua_pay",
+      "text": "PesaPap: quarterly payments to Doreen from MVUA HOLDINGS LTD, KSh 600,000 each.",
+      "kind": "true",
+      "about": [
+        "p_doreen"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_rec_isaiah",
+      "text": "Records, Isaiah's line: the same masts at the same times as Doreen's.",
+      "kind": "true",
+      "about": [
+        "p_isaiah"
+      ],
+      "at": {
+        "from": "21:05",
+        "to": "00:45"
+      }
+    },
+    {
+      "id": "f_scarf",
+      "text": "Doreen's red-and-gold fringed scarf hangs on her coat stand; one corner of the fringe is torn.",
+      "kind": "true",
+      "about": [
+        "p_doreen"
+      ]
+    },
+    {
+      "id": "f_safe_leases",
+      "text": "In Doreen's safe: the 60 original signed lease files from \"Families 101–160\". Every one says LEASE.",
+      "kind": "true",
+      "about": [
+        "p_doreen"
+      ]
+    },
+    {
+      "id": "f_safe_slips",
+      "text": "In Doreen's safe: Mvua Holdings payment slips.",
+      "kind": "true",
+      "about": [
+        "p_doreen"
+      ]
+    },
+    {
+      "id": "f_leverage",
+      "text": "A photocopied police file: surveyor J. Mwenda's complaint about pressure over Bahati Block 9. \"NFA. Signed: E. Wairimu, Ch. Insp.\" Dated three weeks before he died.",
+      "kind": "true",
+      "about": [
+        "p_doreen"
+      ],
+      "spine": "t_joseph"
+    },
+    {
+      "id": "f_leverage_label",
+      "text": "The folder is labelled in pencil \"Leverage — E.W.\": Mvua holds something over a police officer.",
+      "kind": "true",
+      "about": [
+        "p_doreen"
+      ],
+      "spine": "t_kivuli"
+    },
+    {
+      "id": "f_comm_stamp",
+      "text": "In Doreen's safe: her commissioner-for-oaths stamp, \"D. KATHAMBI, ADVOCATE & COMMISSIONER FOR OATHS, NAROK\", and its ink pad. Seized as an exhibit.",
+      "kind": "true",
+      "about": [
+        "p_doreen"
+      ],
+      "spine": "t_stamp"
+    },
+    {
+      "id": "f_wedding",
+      "text": "The wedding hosts: Tipape was at his nephew's wedding feast in Ololulung'a, eating and dancing, from the afternoon until after midnight.",
+      "kind": "true",
+      "about": [
+        "p_tipape"
+      ],
+      "where": {
+        "person": "p_tipape",
+        "place": "plc_wedding",
+        "from": "16:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_hugo",
+      "text": "Club bill: Hugo Barclay at dinner in Nairobi with two guests, 19:30–23:30.",
+      "kind": "true",
+      "about": [
+        "p_hugo"
+      ],
+      "where": {
+        "person": "p_hugo",
+        "place": "plc_nbiclub",
+        "from": "19:30",
+        "to": "23:30"
+      }
+    },
+    {
+      "id": "f_dor_prints",
+      "text": "Fingerprints taken from Doreen in detention.",
+      "kind": "true",
+      "about": [
+        "p_doreen"
+      ]
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Autopsy: a single heavy blow to the head from a flat-edged circular object.",
+      "kind": "true",
+      "about": [
+        "p_salaton"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 21:30 and 22:15.",
+      "kind": "true",
+      "about": [
+        "p_salaton"
+      ],
+      "at": {
+        "from": "21:30",
+        "to": "22:15"
+      }
+    },
+    {
+      "id": "f_aut_noother",
+      "text": "Autopsy: no fall injuries, no other wounds, a sound heart.",
+      "kind": "true",
+      "about": [
+        "p_salaton"
+      ]
+    },
+    {
+      "id": "f_fibre",
+      "text": "Lab: the fringe on the shelf bracket matches the torn corner of Doreen's scarf.",
+      "kind": "true",
+      "about": [
+        "p_doreen"
+      ]
+    },
+    {
+      "id": "f_prints",
+      "text": "Lab: Doreen's prints on the archive door handle and on the brass lamp base.",
+      "kind": "true",
+      "about": [
+        "p_doreen"
+      ]
+    },
+    {
+      "id": "f_paper",
+      "text": "Lab: the transfer paper is batch SP-0412, the same as the container of \"printing paper\" seized at Shimanzi, from an earlier shipment.",
+      "kind": "true",
+      "about": [
+        "p_doreen"
+      ],
+      "spine": "t_stamp"
+    },
+    {
+      "id": "f_dor_office",
+      "text": "Doreen: \"I was in my Narok office all Friday evening, working late.\"",
+      "kind": "lie",
+      "about": [
+        "p_doreen"
+      ]
+    },
+    {
+      "id": "f_dor_willing",
+      "text": "Doreen: \"Every transfer was explained to my clients. They signed willingly.\"",
+      "kind": "lie",
+      "about": [
+        "p_doreen"
+      ]
+    },
+    {
+      "id": "f_dor_nothing",
+      "text": "Doreen: \"I took nothing from that room.\"",
+      "kind": "lie",
+      "about": [
+        "p_doreen"
+      ]
+    },
+    {
+      "id": "f_dor_reveal",
+      "text": "Doreen: she drove to HQ to \"explain the transfers\". Salaton was \"emotional\" and showed her the originals in the archive. She left him there.",
+      "kind": "true",
+      "about": [
+        "p_doreen",
+        "p_salaton"
+      ],
+      "where": {
+        "person": "p_doreen",
+        "place": "loc_archive",
+        "from": "21:10",
+        "to": "22:30"
+      }
+    },
+    {
+      "id": "f_isa_seven",
+      "text": "Isaiah: \"I drove Madam home at seven.\"",
+      "kind": "lie",
+      "about": [
+        "p_isaiah"
+      ]
+    },
+    {
+      "id": "f_isa_reveal",
+      "text": "Isaiah: he drove her to Enkare and waited in the car. She came out with two file boxes and said \"drive\". In Narok she locked them in the safe.",
+      "kind": "true",
+      "about": [
+        "p_isaiah",
+        "p_doreen"
+      ]
+    },
+    {
+      "id": "f_tipape_claim",
+      "text": "Tipape: \"I was at my nephew's wedding.\"",
+      "kind": "claim",
+      "about": [
+        "p_tipape"
+      ]
+    },
+    {
+      "id": "f_tipape_read",
+      "text": "Tipape: \"She told us it was an advance on the lease. She read it to us. Did she read it wrong?\"",
+      "kind": "true",
+      "about": [
+        "p_tipape",
+        "p_doreen"
+      ]
+    },
+    {
+      "id": "f_hugo_claim",
+      "text": "Hugo: \"I was in Nairobi.\"",
+      "kind": "claim",
+      "about": [
+        "p_hugo"
+      ]
+    },
+    {
+      "id": "f_hugo_regret",
+      "text": "Hugo: \"I wanted the lodge concession. I didn't want it like this.\"",
+      "kind": "true",
+      "about": [
+        "p_hugo"
+      ]
+    },
+    {
+      "id": "f_lornah_claim",
+      "text": "Lornah: \"Salaton told me to hold the 60 payments.\"",
+      "kind": "claim",
+      "about": [
+        "p_lornah"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_doreen",
+      "stance": "cooperative",
+      "intro": "Doreen receives you at her desk, a pen laid square to the blotter. \"I was in my Narok office all Friday evening, working late. And every transfer was explained to my clients. They signed willingly.\"",
+      "claims": [
+        "f_dor_office",
+        "f_dor_willing"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_dor_nothing",
+          "after": "f_dor_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_notebook",
+          "reply": "Salaton was a good man with a temper. He saw a search and assumed the worst.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_isaiah",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_gatelog"
+      ],
+      "intro": "Isaiah stands by the car with the keys in his fist. \"I drove Madam home at seven.\"",
+      "claims": [
+        "f_isa_seven"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_tipape",
+      "stance": "cooperative",
+      "intro": "Tipape plants his stick in the dust under the acacia. \"I was at my nephew's wedding. Ask the whole of Ololulung'a.\"",
+      "claims": [
+        "f_tipape_claim"
+      ],
+      "yields": [
+        "ev_wedding"
+      ],
+      "topics": [
+        {
+          "about": "ev_search",
+          "reply": "He reads the search twice, then sits down on the ground. \"She told us it was an advance on the lease. She read it to us. Did she read it wrong?\"",
+          "reveals": [
+            "f_tipape_read"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_hugo",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_search"
+      ],
+      "intro": "Hugo answers on a video call from Nairobi, a club's panelling behind him. \"I was in Nairobi.\"",
+      "claims": [
+        "f_hugo_claim"
+      ],
+      "yields": [
+        "ev_hugo"
+      ],
+      "topics": [
+        {
+          "about": "ev_search",
+          "reply": "He is quiet for a long time. \"I wanted the lodge concession. I didn't want it like this.\"",
+          "reveals": [
+            "f_hugo_regret"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_lornah",
+      "stance": "cooperative",
+      "intro": "Lornah has the payment list and a letter ready before you sit down. \"Salaton told me to hold the 60 payments.\"",
+      "claims": [
+        "f_lornah_claim"
+      ],
+      "yields": [
+        "ev_lornah"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_naisula",
+      "stance": "cooperative",
+      "intro": "Sergeant Naisula meets you at the ranger base with her notebook open at Friday night.",
+      "claims": [],
+      "yields": [
+        "ev_naisula"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_jedidah",
+      "stance": "cooperative",
+      "intro": "Jedidah turns the presentation book round on the counter so you can read it. \"Every one. I wrote her name sixty times.\"",
+      "claims": [],
+      "yields": [
+        "ev_jedidah"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_dor_office",
+      "claim": "f_dor_office",
+      "brokenBy": [
+        "f_gatelog",
+        "f_rec_doreen"
+      ],
+      "reveals": [
+        "f_dor_reveal"
+      ],
+      "reaction": "She caps her pen. \"I went to HQ to explain the transfers. Salaton was emotional. He had the originals out in the archive. I left him there.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_isa",
+      "claim": "f_isa_seven",
+      "brokenBy": [
+        "f_rec_isaiah",
+        "f_gatelog"
+      ],
+      "reveals": [
+        "f_isa_reveal"
+      ],
+      "reaction": "\"I drove her to Enkare. I waited in the car. She came out with two file boxes and said drive. In Narok she locked them in the safe. I didn't ask. Madam doesn't like questions.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_dor_nothing",
+      "claim": "f_dor_nothing",
+      "brokenBy": [
+        "f_safe_leases",
+        "f_isa_reveal"
+      ],
+      "reveals": [],
+      "reaction": "Doreen looks at the sixty box files on the table, and then at her own safe, open.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_dor_willing",
+      "claim": "f_dor_willing",
+      "brokenBy": [
+        "f_safe_leases",
+        "f_tipape_read",
+        "f_transfers"
+      ],
+      "reveals": [],
+      "reaction": "\"They trusted me to read it to them,\" she says, as if that settles it. Then she asks for a lawyer.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_doreen",
+      "text": "Doreen Kathambi",
+      "category": "person",
+      "ref": "p_doreen",
+      "unlock": {
+        "anyOf": [
+          "f_salaton_call"
+        ]
+      }
+    },
+    {
+      "id": "w_isaiah",
+      "text": "Isaiah Mbae",
+      "category": "person",
+      "ref": "p_isaiah",
+      "unlock": {
+        "anyOf": [
+          "f_gatelog"
+        ]
+      }
+    },
+    {
+      "id": "w_tipape",
+      "text": "Tipape ole Naurori",
+      "category": "person",
+      "ref": "p_tipape",
+      "unlock": {
+        "anyOf": [
+          "f_tipape_shout"
+        ]
+      }
+    },
+    {
+      "id": "w_hugo",
+      "text": "Hugo Barclay",
+      "category": "person",
+      "ref": "p_hugo",
+      "unlock": {
+        "anyOf": [
+          "f_hugo_bid"
+        ]
+      }
+    },
+    {
+      "id": "w_lornah",
+      "text": "Lornah Chemutai",
+      "category": "person",
+      "ref": "p_lornah",
+      "unlock": {
+        "anyOf": [
+          "f_instruction",
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_archive",
+      "text": "the HQ archive room",
+      "category": "place",
+      "ref": "loc_archive",
+      "unlock": {
+        "anyOf": [
+          "f_lamp",
+          "f_fringe"
+        ]
+      }
+    },
+    {
+      "id": "pl_lodgeoffice",
+      "text": "the Enkare Lodge office",
+      "category": "place",
+      "ref": "plc_lodgeoff",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_gate",
+      "text": "the conservancy gate",
+      "category": "place",
+      "ref": "loc_gate",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_registry",
+      "text": "the Narok lands registry",
+      "category": "place",
+      "ref": "loc_registry",
+      "unlock": {
+        "anyOf": [
+          "f_search"
+        ]
+      }
+    },
+    {
+      "id": "pl_home",
+      "text": "Salaton's home",
+      "category": "place",
+      "ref": "plc_home",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_tent",
+      "text": "the landowners' meeting tent",
+      "category": "place",
+      "ref": "plc_tent",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_safe",
+      "text": "Doreen's Narok office safe",
+      "category": "place",
+      "ref": "plc_safe",
+      "unlock": {
+        "anyOf": [
+          "f_isa_reveal"
+        ]
+      }
+    },
+    {
+      "id": "pl_mvuanbi",
+      "text": "Mvua's Nairobi office",
+      "category": "place",
+      "ref": "plc_mvuanbi",
+      "unlock": {
+        "anyOf": [
+          "f_search"
+        ]
+      }
+    },
+    {
+      "id": "pl_lodgesafe",
+      "text": "the lodge safe",
+      "category": "place",
+      "ref": "plc_lodgesafe",
+      "unlock": {
+        "anyOf": [
+          "f_shelf"
+        ]
+      }
+    },
+    {
+      "id": "pl_burned",
+      "text": "burned in the HQ burn pit",
+      "category": "place",
+      "ref": "plc_burn",
+      "unlock": {
+        "anyOf": [
+          "f_shelf"
+        ]
+      }
+    },
+    {
+      "id": "pl_registry_f",
+      "text": "the lands registry",
+      "category": "place",
+      "ref": "loc_registry",
+      "unlock": {
+        "anyOf": [
+          "f_search"
+        ]
+      }
+    },
+    {
+      "id": "pl_car",
+      "text": "Isaiah's car (left there)",
+      "category": "place",
+      "ref": "plc_car",
+      "unlock": {
+        "anyOf": [
+          "f_gatelog"
+        ]
+      }
+    },
+    {
+      "id": "h_lamp",
+      "text": "striking him with the brass base of the archive desk lamp",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack at his desk",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_ladder",
+      "text": "a fall from the archive ladder",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_intruders",
+      "text": "a blow from intruders after the files",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_shelf"
+        ]
+      }
+    },
+    {
+      "id": "h_rungu",
+      "text": "a blow with a ranger's rungu",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_transfers",
+      "text": "he had discovered the land transfers she registered and called the landowners together",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_notebook"
+        ]
+      }
+    },
+    {
+      "id": "m_anger",
+      "text": "a landowner's anger at his interference",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_tipape_shout"
+        ]
+      }
+    },
+    {
+      "id": "m_concession",
+      "text": "the lodge-concession bid",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_hugo_bid"
+        ]
+      }
+    },
+    {
+      "id": "m_fees",
+      "text": "unpaid legal fees from the trust",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_rates",
+      "text": "a quarrel about lease rates",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_container",
+      "text": "The container of \"printing paper\", Shimanzi (case 30)",
+      "category": "pin",
+      "pin": "case-030:f_container_oval",
+      "unlock": {
+        "anyOf": [
+          "f_paper"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_seal",
+      "text": "The REGISTRAR OF TITLES seal order, River Road (case 10)",
+      "category": "pin",
+      "pin": "case-010:f_order_mvua",
+      "unlock": {
+        "anyOf": [
+          "f_paper"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_ziwani",
+      "text": "The Ziwani Gardens title deeds (case 33)",
+      "category": "pin",
+      "pin": "case-033:f_brief_seal",
+      "unlock": {
+        "anyOf": [
+          "f_paper"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_flyer",
+      "text": "The Mvua lease-advance flyer (case 53)",
+      "category": "pin",
+      "pin": "case-053:f_flyer",
+      "unlock": {
+        "anyOf": [
+          "f_paper"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_upendo",
+      "text": "The Upendo receipts (case 20)",
+      "category": "pin",
+      "pin": "case-020:f_mh_receipts",
+      "unlock": {
+        "anyOf": [
+          "f_paper"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} in {where1} by {how}, because {why}; the lease files were taken to {where2}. The transfer forms are printed on the same security paper as {pin}.",
+    "fixed": {
+      "victim": "Salaton Koikai"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_1900",
+                  "label": "19:00",
+                  "from": "19:00",
+                  "to": "19:00"
+                },
+                {
+                  "id": "sl_1905",
+                  "label": "19:05",
+                  "from": "19:05",
+                  "to": "19:05"
+                },
+                {
+                  "id": "sl_2100",
+                  "label": "21:00",
+                  "from": "21:00",
+                  "to": "21:00"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "21:30–22:15",
+                  "from": "21:30",
+                  "to": "22:15"
+                },
+                {
+                  "id": "sl_2240",
+                  "label": "22:40",
+                  "from": "22:40",
+                  "to": "22:40"
+                },
+                {
+                  "id": "sl_0045",
+                  "label": "00:45",
+                  "from": "00:45",
+                  "to": "00:45"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_call",
+                  "text": "Doreen calls Salaton",
+                  "slot": "sl_1905",
+                  "by": [
+                    "f_salaton_call"
+                  ],
+                  "why": "Salaton's phone: 19:05, six minutes.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_salaton_call"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_enter",
+                  "text": "Her car enters the conservancy",
+                  "slot": "sl_2100",
+                  "by": [
+                    "f_gatelog"
+                  ],
+                  "why": "The gate log: 21:00, Kathambi Advocates, to HQ.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_gatelog"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Salaton is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod",
+                    "f_dor_reveal"
+                  ],
+                  "why": "The autopsy: 21:30 to 22:15, while she was in the archive.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_leave",
+                  "text": "Her car leaves",
+                  "slot": "sl_2240",
+                  "by": [
+                    "f_gatelog"
+                  ],
+                  "why": "The gate log: 22:40, out.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_gatelog"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_narok",
+                  "text": "Her phone reaches Narok",
+                  "slot": "sl_0045",
+                  "by": [
+                    "f_rec_doreen"
+                  ],
+                  "why": "Her records: Narok from 00:45.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rec_doreen"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_1900",
+                  "by": [
+                    "f_rec_isaiah",
+                    "f_gatelog"
+                  ],
+                  "why": "19:00 is Isaiah's \"home at seven\". His phone and the gate log put the car at Enkare from 21:00."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A call at five past seven, the gate at nine, the archive by half past, out at twenty to eleven, Narok at a quarter to one. Two hours on a dark road with sixty files in the boot.",
+          "fail": [
+            "Seven o'clock is the driver's story. The gate log says otherwise.",
+            "When did her phone reach Narok?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where1",
+            "category": "place",
+            "answer": "pl_archive",
+            "pool": [
+              "pl_archive",
+              "pl_lodgeoffice",
+              "pl_gate",
+              "pl_registry",
+              "pl_home",
+              "pl_tent"
+            ]
+          },
+          {
+            "id": "where2",
+            "category": "place",
+            "answer": "pl_safe",
+            "subject": "other",
+            "note": "Where the 60 original lease files were taken.",
+            "pool": [
+              "pl_safe",
+              "pl_mvuanbi",
+              "pl_lodgesafe",
+              "pl_burned",
+              "pl_registry_f",
+              "pl_car"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "Killed among the leases, and the leases locked in her own safe. Thirty-six ways to say it and you found the one.",
+          "fail": [
+            "The lamp base and the fringe are in one room. Which?",
+            "Isaiah watched her lock something away in Narok."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_doreen"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her call, her car, her scarf on the shelf, her prints on the lamp, his leases in her safe. That will hold in any court in this country.",
+          "fail": [
+            "Tipape was dancing at a wedding. Half of Ololulung'a saw him.",
+            "The driver sat at the wheel all night. Naisula passed him three times."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_lamp"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A flat-edged circle, and the lamp has no base. Yes.",
+          "fail": [
+            "A rungu has a round head, not a flat edge.",
+            "No fall injuries. Read the autopsy again."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_transfers"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Eight thousand acres, and the meeting at ten. That's why it had to be Friday night.",
+          "fail": [
+            "The lease rate was unanimous.",
+            "Her fees were paid every quarter."
+          ]
+        }
+      },
+      {
+        "id": "g_spine",
+        "kind": "spine",
+        "blanks": [
+          {
+            "id": "pin",
+            "category": "pin",
+            "answer": "w_pin_container",
+            "spine": true
+          }
+        ],
+        "prosecutor": {
+          "pass": "The paper came in on a ship we already caught.",
+          "fail": [
+            "The transfers carry that seal, yes. But the blank asks about the paper.",
+            "Read Eric's paper result, then look at the Pattern File."
+          ]
+        }
+      }
+    ],
+    "halima": "Sixty families, eight thousand acres, and the paper came in on a ship we already caught. Amani, they're not hiding any more. They're just fast."
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_archive",
+      "from": "21:30",
+      "to": "22:15",
+      "note": "From the autopsy; she was in the archive from about 21:10 to 22:30."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_search",
+          "f_presented",
+          "f_transfers",
+          "f_notebook"
+        ],
+        "concludes": "Sixty families' land was transferred to Mvua Holdings; Doreen presented every transfer; Salaton found out and called a meeting."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_instruction",
+          "f_tipape_read",
+          "f_safe_leases",
+          "f_dor_willing"
+        ],
+        "concludes": "The families only ever leased their land, and their own advocate read the transfers to them as \"advances\". Her \"willingly signed\" is false.",
+        "answers": [
+          "why"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_salaton_call",
+          "f_gatelog",
+          "f_naisula_car",
+          "f_rec_doreen",
+          "f_dor_office",
+          "f_dor_reveal"
+        ],
+        "concludes": "She called at 19:05, drove in at 21:00, was in the archive with him and left at 22:40; her phone reached Narok at 00:45.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_shelf",
+          "f_lamp",
+          "f_fringe",
+          "f_aut_blow",
+          "f_aut_tod",
+          "f_aut_noother",
+          "f_fibre",
+          "f_prints",
+          "f_scarf"
+        ],
+        "concludes": "He was killed in the archive room with the brass lamp base: her scarf fringe on the shelf, her prints on the base.",
+        "answers": [
+          "where1",
+          "how"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "s2",
+          "f_rec_isaiah",
+          "f_isa_seven",
+          "f_isa_reveal",
+          "f_safe_leases",
+          "f_dor_nothing"
+        ],
+        "concludes": "Isaiah drove her and two file boxes to Narok; the 60 original leases are in her safe. Doreen Kathambi killed Salaton Koikai and took the files.",
+        "answers": [
+          "where2",
+          "who"
+        ]
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_transfers",
+          "f_paper",
+          "case-030:f_container_oval"
+        ],
+        "concludes": "The transfers are on security paper batch SP-0412, the same as the container of \"printing paper\" seized at Shimanzi.",
+        "answers": [
+          "pin"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_lodgeoffice",
+        "blank": "where1",
+        "by": [
+          "f_lamp",
+          "f_fringe",
+          "f_prints"
+        ],
+        "why": "The lamp base, the fringe and her prints are in the archive room."
+      },
+      {
+        "word": "pl_gate",
+        "blank": "where1",
+        "by": [
+          "f_lamp",
+          "f_naisula_car"
+        ],
+        "why": "Naisula heard her voice in the lit archive; the lamp base is there."
+      },
+      {
+        "word": "pl_registry",
+        "blank": "where1",
+        "by": [
+          "f_lamp",
+          "f_rec_doreen"
+        ],
+        "why": "She was at HQ, not in Narok, until 22:40."
+      },
+      {
+        "word": "pl_home",
+        "blank": "where1",
+        "by": [
+          "f_body",
+          "f_lamp"
+        ],
+        "why": "He died where he lay, by the archive desk."
+      },
+      {
+        "word": "pl_tent",
+        "blank": "where1",
+        "by": [
+          "f_lamp",
+          "f_fringe"
+        ],
+        "why": "The meeting tent was empty; everything is in the archive."
+      },
+      {
+        "word": "pl_mvuanbi",
+        "blank": "where2",
+        "by": [
+          "f_safe_leases",
+          "f_isa_reveal"
+        ],
+        "why": "The files never left Narok: they are in her safe."
+      },
+      {
+        "word": "pl_lodgesafe",
+        "blank": "where2",
+        "by": [
+          "f_safe_leases",
+          "f_gatelog"
+        ],
+        "why": "Her car went from HQ to the gate and out; the files are in Narok."
+      },
+      {
+        "word": "pl_burned",
+        "blank": "where2",
+        "by": [
+          "f_safe_leases"
+        ],
+        "why": "Nothing was burned: all 60 are in her safe."
+      },
+      {
+        "word": "pl_registry_f",
+        "blank": "where2",
+        "by": [
+          "f_safe_leases",
+          "f_isa_reveal"
+        ],
+        "why": "She locked them in her own safe, not at the registry."
+      },
+      {
+        "word": "pl_car",
+        "blank": "where2",
+        "by": [
+          "f_isa_reveal",
+          "f_safe_leases"
+        ],
+        "why": "Isaiah watched her carry them up to the safe."
+      },
+      {
+        "word": "w_isaiah",
+        "blank": "who",
+        "by": [
+          "f_naisula_driver",
+          "f_isa_reveal"
+        ],
+        "why": "Isaiah sat at the wheel by the ranger base; Naisula passed him at 21:10, 21:45 and 22:30."
+      },
+      {
+        "word": "w_tipape",
+        "blank": "who",
+        "by": [
+          "f_wedding"
+        ],
+        "why": "Tipape was at the wedding feast in Ololulung'a until after midnight."
+      },
+      {
+        "word": "w_hugo",
+        "blank": "who",
+        "by": [
+          "f_hugo"
+        ],
+        "why": "Hugo was at dinner in Nairobi until 23:30."
+      },
+      {
+        "word": "w_lornah",
+        "blank": "who",
+        "by": [
+          "f_lornah_home",
+          "f_instruction"
+        ],
+        "why": "Lornah was home in Talek from 18:00, and held the payments on Salaton's written instruction."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_noother",
+          "f_aut_blow"
+        ],
+        "why": "A sound heart; a single blow killed him."
+      },
+      {
+        "word": "h_ladder",
+        "blank": "how",
+        "by": [
+          "f_aut_noother",
+          "f_aut_blow"
+        ],
+        "why": "No fall injuries; one flat-edged blow."
+      },
+      {
+        "word": "h_intruders",
+        "blank": "how",
+        "by": [
+          "f_shelf"
+        ],
+        "why": "Nothing else was touched: only \"Families 101–160\"."
+      },
+      {
+        "word": "h_rungu",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "The wound has a flat circular edge, not a rungu's round head."
+      },
+      {
+        "word": "m_anger",
+        "blank": "why",
+        "by": [
+          "f_wedding",
+          "f_tipape_read"
+        ],
+        "why": "That anger was Tipape's; he was at the wedding, and he was the one deceived."
+      },
+      {
+        "word": "m_concession",
+        "blank": "why",
+        "by": [
+          "f_hugo",
+          "f_hugo_regret"
+        ],
+        "why": "That bid was Hugo's, and he was in Nairobi."
+      },
+      {
+        "word": "m_fees",
+        "blank": "why",
+        "by": [
+          "f_fees"
+        ],
+        "why": "Her fees were paid every quarter."
+      },
+      {
+        "word": "m_rates",
+        "blank": "why",
+        "by": [
+          "f_rates"
+        ],
+        "why": "The lease rate was agreed unanimously."
+      },
+      {
+        "word": "w_pin_seal",
+        "blank": "pin",
+        "by": [
+          "case-010:f_order_mvua",
+          "f_paper"
+        ],
+        "why": "The transfers carry that seal, but the blank asks about the paper: batch SP-0412."
+      },
+      {
+        "word": "w_pin_ziwani",
+        "blank": "pin",
+        "by": [
+          "case-033:f_brief_seal",
+          "f_paper"
+        ],
+        "why": "The lab matched the batch to the Shimanzi container, not to the Ziwani deeds."
+      },
+      {
+        "word": "w_pin_flyer",
+        "blank": "pin",
+        "by": [
+          "case-053:f_flyer",
+          "f_paper"
+        ],
+        "why": "A flyer on a notice board, not security paper."
+      },
+      {
+        "word": "w_pin_upendo",
+        "blank": "pin",
+        "by": [
+          "case-020:f_mh_receipts",
+          "f_paper"
+        ],
+        "why": "Phone receipts, not paper."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Over six months, Mvua Holdings pays cash \"lease advances\" to 60 landowning families. Their trusted advocate, Doreen Kathambi, reads the papers to them as advances. They are transfer forms, on paper from a shipment like the one seized at Shimanzi.",
+        "image": null
+      },
+      {
+        "text": "She presents all 60 at the Narok lands registry. 8,000 acres at the heart of Enkare, the lodge site included, become Mvua's. Mvua pays her KSh 600,000 a quarter.",
+        "image": null
+      },
+      {
+        "text": "This quarter Salaton runs registry searches, has Lornah hold the 60 payments, and calls the landowners to a meeting for Saturday at 10:00. \"Bring the originals.\"",
+        "image": null
+      },
+      {
+        "text": "Friday 19:05, Doreen calls him. At 21:00 her car passes the gate. Isaiah waits at the wheel by the ranger base.",
+        "image": "loc_hq"
+      },
+      {
+        "text": "About 21:40, in the archive, Salaton shows her the original leases. She strikes him with the brass base of the desk lamp. Her scarf catches on a shelf bracket as she clears \"Families 101–160\".",
+        "image": "loc_archive"
+      },
+      {
+        "text": "22:40, out through the gate. By 00:45 she is in Narok, locking two boxes of leases in her office safe, on top of Mvua's payment slips and a thin folder marked in pencil.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "Under an acacia at HQ, the 60 families' original leases are handed back to the trust. The registry transfers are frozen pending a court case. Tipape stands up and tells everyone what he signed and why. Nobody shouts at him."
+    },
+    {
+      "beat": "Pattern File: the transfers (t_mvua, t_stamp) and the paper batch (t_stamp) are pinned. Under the payment slips in Doreen's safe, a thin folder labelled in pencil \"Leverage — E.W.\" A photocopied police file: surveyor J. Mwenda's complaint about pressure over Bahati Block 9. \"Action: NFA. Signed: E. Wairimu, Ch. Insp.\" Dated three weeks before Joseph Mwenda died. The signature is the one on every training memo on Amani's desk. Mwalimu's card gets a new label, \"E.W.\", and her portrait appears for the first time, small, pinned beside the folder."
+    },
+    {
+      "beat": "Amani's desk phone rings. It is Mwalimu.",
+      "choice": {
+        "id": "ch_answer_mwalimu",
+        "options": [
+          {
+            "id": "answer",
+            "label": "Answer",
+            "result": "\"You've found something with my name on it. I can hear it in your breathing. Not on the phone, Amani. Not yet. Finish your work in the mountains. Then come to my house, and I'll tell you everything.\""
+          },
+          {
+            "id": "let_ring",
+            "label": "Let it ring",
+            "result": "A minute later a voice-note arrives with the same words."
+          }
+        ],
+        "affectsSolution": false,
+        "effect": "Either way, from case 61 her hint calls arrive a beat late, and she greets Amani as \"Amani\", not \"Detective\"."
+      }
+    },
+    {
+      "beat": "Collectible: Corporal Lemayian Kantai's ranger whistle (case 54), presented to Amani by Sergeant Naisula on behalf of the Enkare rangers, on the day of the landowners' meeting."
+    }
+  ],
+  "clockPlan": {
+    "note": "Three stamps, the region maximum: records on Doreen, records on Isaiah, and the warrant on her safe. The paper test goes in from the registry; detain Doreen when the safe is opened. Prints (6 h) and fibre (12 h) come back well inside her 24 hours.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_archive",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_archive",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_notebook",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_search",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_salaton_phone",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_naisula"
+      },
+      {
+        "do": "interview",
+        "target": "p_lornah"
+      },
+      {
+        "do": "travel",
+        "target": "loc_gate",
+        "hours": 0.25,
+        "from": "loc_hq"
+      },
+      {
+        "do": "visit",
+        "target": "loc_gate",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_gatelog",
+        "hours": 0
+      },
+      {
+        "do": "records",
+        "target": "ev_records_doreen"
+      },
+      {
+        "do": "records",
+        "target": "ev_records_isaiah"
+      },
+      {
+        "do": "travel",
+        "target": "loc_registry",
+        "hours": 2,
+        "from": "loc_gate"
+      },
+      {
+        "do": "visit",
+        "target": "loc_registry",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_jedidah"
+      },
+      {
+        "do": "read",
+        "target": "ev_transfers",
+        "hours": 1
+      },
+      {
+        "do": "submit",
+        "target": "ev_paper"
+      },
+      {
+        "do": "travel",
+        "target": "loc_doreen",
+        "hours": 0.25,
+        "from": "loc_registry"
+      },
+      {
+        "do": "visit",
+        "target": "loc_doreen",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_doreen"
+      },
+      {
+        "do": "press",
+        "target": "c_dor_office"
+      },
+      {
+        "do": "interview",
+        "target": "p_isaiah"
+      },
+      {
+        "do": "press",
+        "target": "c_isa"
+      },
+      {
+        "do": "search",
+        "target": "loc_doreen"
+      },
+      {
+        "do": "detain",
+        "target": "p_doreen"
+      },
+      {
+        "do": "sample",
+        "target": "ev_dor_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_fibre"
+      },
+      {
+        "do": "press",
+        "target": "c_dor_nothing"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 12
+      },
+      {
+        "do": "interview",
+        "target": "p_doreen"
+      },
+      {
+        "do": "press",
+        "target": "c_dor_willing"
+      }
+    ],
+    "totalHours": 49.5
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_gatelog",
+        "line": "Gates keep diaries, Detective. Start with Friday night's page."
+      },
+      "tier2": {
+        "facts": [
+          "f_gatelog",
+          "f_rec_doreen"
+        ],
+        "line": "In at 21:00, out at 22:40, Narok at 00:45."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_archive",
+        "line": "Two questions here: where he died, and where sixty files went."
+      },
+      "tier2": {
+        "facts": [
+          "f_fringe",
+          "f_isa_reveal"
+        ],
+        "line": "A fringe on a shelf bracket. Two boxes carried upstairs in Narok."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_notebook",
+        "line": "He wrote a name in his notebook, with two exclamation marks."
+      },
+      "tier2": {
+        "facts": [
+          "f_presented",
+          "f_prints"
+        ],
+        "line": "Sixty presentations under one name, and the same name's prints on the lamp."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "A flat-edged circle. Look for something in that room missing a part."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_blow",
+          "f_lamp"
+        ],
+        "line": "The lamp's brass base, on the floor."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_search",
+        "line": "Whose name is on 8,000 acres of Enkare now?"
+      },
+      "tier2": {
+        "facts": [
+          "f_search",
+          "f_notebook"
+        ],
+        "line": "Mvua's, and Salaton called the landowners to see the originals."
+      }
+    },
+    "g_spine": {
+      "tier1": {
+        "point": "ev_paper",
+        "line": "Read Eric's paper result. You've seen that batch before."
+      },
+      "tier2": {
+        "facts": [
+          "f_paper",
+          "case-030:f_container_oval"
+        ],
+        "line": "Shimanzi. The container of \"printing paper\" with an empty oval on every sheet."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "ardhi",
+      "def": "Land."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    },
+    {
+      "term": "kodi ya ardhi",
+      "def": "A land lease; rent for land."
+    },
+    {
+      "term": "wakili",
+      "def": "An advocate, a lawyer."
+    },
+    {
+      "term": "msajili",
+      "def": "A registrar."
+    },
+    {
+      "term": "NFA",
+      "def": "No further action: a police file closed without a charge."
+    },
+    {
+      "term": "rungu",
+      "def": "A wooden club with a round head, carried by Maasai men and rangers."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "twoBlankWhere",
+      "answerablePhoneCall"
+    ],
+    "beatNotes": "Two-blank WHERE (6 × 6 = 36 combinations), and the phone call the player can choose to answer: the first story choice. It changes nothing in the solution, only how Mwalimu's words arrive."
+  }
+}

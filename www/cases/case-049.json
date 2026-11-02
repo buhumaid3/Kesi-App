@@ -1,0 +1,1762 @@
+{
+  "meta": {
+    "id": "case-049",
+    "number": 49,
+    "region": "kisumu-lake",
+    "regionNumber": 5,
+    "title": "Lwang'ni",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 27,
+    "date": "Wednesday 21 January",
+    "folderTab": "LWANG'NI"
+  },
+  "pattern": {
+    "crimePattern": "fish supplier kills the restaurant owner who exposed his frozen imported fish as fake \"fresh lake fish\"",
+    "noRealCaseRetold": true,
+    "notes": "Fictional restaurant, supplier and cold-logistics company. Imported frozen fish undercutting lake fishermen is a real trade issue; no real business is depicted. Inspection signs are given only in outline.",
+    "tags": [
+      "blunt-force",
+      "fraud-exposure",
+      "vehicle-tracker",
+      "warrant",
+      "forensics",
+      "when-strip"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 4,
+    "redHerrings": 2,
+    "liars": 1,
+    "groups": [
+      "when",
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "warrant"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 41/21/01",
+    "date": "Wednesday 21 January",
+    "time": "06:50",
+    "reportedBy": "Lazarus Ondiek, cook",
+    "text": "A cook reports the owner of a fish restaurant at Lwang'ni beach, Roselyne Nafula (51), found dead in her kitchen at 06:40 when he came to open up.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_roselyne",
+      "role": "victim",
+      "name": "Roselyne Nafula",
+      "age": 51,
+      "occupation": "Owner, Mama Nafula's Fish",
+      "bio": "Eighteen years frying whole tilapia at Lwang'ni. Marks every one of her kitchen tools with red tape.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_kitchen",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luhya woman, early 50s, a printed apron over a kitenge, a headscarf, strong arms, a no-nonsense smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_ephantus",
+      "role": "suspect",
+      "name": "Ephantus Mwangi",
+      "age": 57,
+      "occupation": "Fish supplier to 30 Lwang'ni restaurants",
+      "bio": "Supplies \"fresh lake tilapia\" by cold truck. Lost thirty customers in two days.",
+      "community": "Kikuyu",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_whatsapp"
+      },
+      "at": "plc_town",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, late 50s, a quilted vest over a checked shirt, a cold-truck company cap, aggrieved and loud, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_sylvia",
+      "role": "suspect",
+      "name": "Sylvia Akumu",
+      "age": 44,
+      "occupation": "Owner of the next restaurant",
+      "redHerring": true,
+      "bio": "Her touts and Roselyne's fight over every diner on the beach.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_hamisi"
+      },
+      "at": "plc_chama",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo woman, mid 40s, a smart blouse and gold earrings, sharp eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_lazarus",
+      "role": "suspect",
+      "name": "Lazarus Ondiek",
+      "age": 35,
+      "occupation": "Roselyne's cook",
+      "redHerring": true,
+      "bio": "She caught him taking from the till last month.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_nyalenda",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, mid 30s, a cook's white T-shirt stained with oil, a cloth over his shoulder, shaken, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_norah",
+      "role": "witness",
+      "name": "Norah Ayuma",
+      "age": 39,
+      "occupation": "County fisheries inspector",
+      "bio": "Tested Roselyne's five fish last week.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_whatsapp"
+      },
+      "at": "plc_nhome",
+      "image": null
+    },
+    {
+      "id": "p_hamisi",
+      "role": "witness",
+      "name": "Hamisi Opondo",
+      "age": 28,
+      "occupation": "Roselyne's tout",
+      "bio": "Calls diners in from the road with a menu board.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_kondele",
+      "image": null
+    },
+    {
+      "id": "p_everlyne",
+      "role": "witness",
+      "name": "Everlyne Akinyi",
+      "age": 33,
+      "occupation": "Cook at the next kitchen",
+      "statementOnly": true,
+      "bio": "Shares a tuk-tuk home with the other cooks every night.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_nyalenda",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_counter",
+      "name": "Roselyne's counter",
+      "within": "loc_kitchen"
+    },
+    {
+      "id": "plc_town",
+      "name": "Kisumu town (deliveries)"
+    },
+    {
+      "id": "plc_chama",
+      "name": "A chama meeting in Milimani"
+    },
+    {
+      "id": "plc_nyalenda",
+      "name": "The cooks' tuk-tuk to Nyalenda, then home"
+    },
+    {
+      "id": "plc_kondele",
+      "name": "Kondele"
+    },
+    {
+      "id": "plc_nhome",
+      "name": "Norah's home"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_kitchen",
+      "name": "Mama Nafula's Fish, Lwang'ni",
+      "kind": "scene",
+      "description": "An open-sided kitchen under a tin roof at the end of a row of fish restaurants: charcoal stoves, a frying vat, a live-fish tank, a counter with a cash drawer, tables running down to the water. Tools hang on hooks along the back wall, each with a strip of red tape.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Behind the counter",
+          "pos": [
+            50,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Roselyne lies behind her counter. The cash drawer beside her is still closed."
+        },
+        {
+          "id": "hs_hooks",
+          "label": "The tool wall",
+          "pos": [
+            76,
+            30
+          ],
+          "yields": "ev_hook",
+          "text": "A row of hooks, every tool with red tape on its handle. One hook is empty."
+        },
+        {
+          "id": "hs_phone",
+          "label": "Her phone",
+          "pos": [
+            30,
+            44
+          ],
+          "yields": "ev_till",
+          "text": "Her phone on the counter, face down. Her daughter unlocks it."
+        },
+        {
+          "id": "hs_wa",
+          "label": "Owners' WhatsApp group",
+          "pos": [
+            26,
+            52
+          ],
+          "yields": "ev_whatsapp",
+          "text": "On the same phone, the Lwang'ni owners' group."
+        },
+        {
+          "id": "hs_books",
+          "label": "Her notebook and files",
+          "pos": [
+            16,
+            60
+          ],
+          "yields": "ev_books",
+          "text": "A school exercise book of accounts and a plastic folder of receipts."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "an open-sided fish restaurant kitchen under a tin roof at Lwang'ni beach in Kisumu at night, charcoal stoves and a frying vat, a live-fish tank, a counter with a cash drawer, kitchen tools on hooks each marked with red tape, empty tables running down to the dark lake, no people in focus"
+      }
+    },
+    {
+      "id": "loc_norah",
+      "name": "County fisheries office",
+      "kind": "location",
+      "description": "A small county office with a sink, a fish-inspection tray and a filing cabinet.",
+      "unlock": {
+        "fact": "f_whatsapp"
+      },
+      "hotspots": [
+        {
+          "id": "hs_report",
+          "label": "Inspection report",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_inspection",
+          "text": "Last Wednesday's inspection report, with photographs."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small county fisheries inspection office in Kisumu, a steel inspection tray and a sink, a filing cabinet, photographs of fish pinned to a board"
+      }
+    },
+    {
+      "id": "loc_baridi",
+      "name": "Baridi Cold Logistics",
+      "kind": "location",
+      "description": "A depot of refrigerated trucks on the edge of town. The dispatcher's screen shows every truck as a dot.",
+      "unlock": {
+        "fact": "f_eph_town"
+      },
+      "hotspots": [
+        {
+          "id": "hs_gps",
+          "label": "Dispatcher's screen",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_tracker",
+          "text": "The dispatcher prints Tuesday night's log for Ephantus's truck."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a cold-logistics depot on the outskirts of Kisumu at night, refrigerated trucks in a row, a dispatcher's office with a GPS tracking screen"
+      }
+    },
+    {
+      "id": "loc_truck",
+      "name": "Ephantus's cold truck (search)",
+      "kind": "search",
+      "description": "A refrigerated truck, its cold box stacked with cartons of frozen fish.",
+      "unlock": {
+        "fact": "f_tracker"
+      },
+      "hotspots": [
+        {
+          "id": "hs_box",
+          "label": "The cold box",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_truck",
+          "text": "Between two cartons at the back of the cold box, something with a red stripe."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the inside of a refrigerated truck cold box, frost on the walls, stacked cartons of frozen fish, a wooden mallet handle with a strip of red tape wedged between two cartons"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Behind the counter",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Two head wounds. The cash drawer holds the night's takings, KSh 14,600."
+      },
+      "facts": [
+        "f_body",
+        "f_cash"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "behind a fish-restaurant counter at night, a closed cash drawer, a kitchen knife and onions on a board, no body visible"
+      }
+    },
+    {
+      "id": "ev_hook",
+      "type": "physical",
+      "title": "The empty hook",
+      "render": "sceneNote",
+      "body": {
+        "note": "The hook where the fish-gutting mallet always hangs is empty. Every tool on the wall has red tape on its handle."
+      },
+      "facts": [
+        "f_hook"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_till",
+      "type": "phone",
+      "title": "Roselyne's PesaPap till",
+      "render": "manifest",
+      "body": {
+        "last": "21:40 — KSh 1,200 — diner"
+      },
+      "facts": [
+        "f_till"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_whatsapp",
+      "type": "phone",
+      "title": "Owners' WhatsApp group",
+      "render": "manifest",
+      "body": {
+        "post": "Roselyne, last Wednesday: \"Don't buy from Ephantus. Frozen imported fish sold as fresh.\" With the inspection report attached.",
+        "replies": "30 replies cancelling orders within two days."
+      },
+      "facts": [
+        "f_whatsapp"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_books",
+      "type": "physical",
+      "title": "Roselyne's notebook and receipts",
+      "render": "ledger",
+      "body": {
+        "lazarus": "Lazarus — till short KSh 3,000 — warned him, deducted from wages. Settled.",
+        "supply": "Ephantus's invoices paid up to date.",
+        "plot": "County receipt: kitchen plot owned outright, R. Nafula."
+      },
+      "facts": [
+        "f_laz_till",
+        "f_supply_paid",
+        "f_owns_plot"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_hamisi",
+      "type": "witness",
+      "title": "Statement: Hamisi Opondo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_hamisi"
+      },
+      "facts": [
+        "f_hamisi",
+        "f_hamisi_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_cooks",
+      "type": "witness",
+      "title": "Statement: Everlyne Akinyi",
+      "render": "statement",
+      "body": {
+        "speaker": "p_everlyne"
+      },
+      "facts": [
+        "f_cooks"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_inspection",
+      "type": "physical",
+      "title": "Fisheries inspection report",
+      "render": "form",
+      "body": {
+        "sample": "Five tilapia \"supplied as fresh lake fish by E. Mwangi\".",
+        "result": "Previously frozen: cloudy, flat eyes; ice-crystal damage in gill tissue; packaging remnants of imported frozen fish."
+      },
+      "facts": [
+        "f_inspection"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tracker",
+      "type": "physical",
+      "title": "Truck GPS log",
+      "render": "logBook",
+      "body": {
+        "truck": "KCX-… (E. Mwangi)",
+        "log": "Tuesday: Kisumu CBD 20:30–22:00; Lwang'ni 22:10–22:35; Kisumu CBD from 22:50"
+      },
+      "facts": [
+        "f_tracker"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_truck",
+      "type": "physical",
+      "title": "In the cold box",
+      "render": "object",
+      "body": {
+        "label": "A fish-gutting mallet, frozen, a strip of red tape on the handle."
+      },
+      "facts": [
+        "f_truck_mallet"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_tracker",
+          "f_eph_admits"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a wooden fish-gutting mallet frosted with ice, a strip of red tape around its handle, lying on a cardboard carton of frozen fish"
+      }
+    },
+    {
+      "id": "ev_norah",
+      "type": "witness",
+      "title": "Statement: Norah Ayuma",
+      "render": "statement",
+      "body": {
+        "speaker": "p_norah"
+      },
+      "facts": [
+        "f_norah_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_chama",
+      "type": "physical",
+      "title": "Sylvia's chama minutes",
+      "render": "form",
+      "body": {
+        "meeting": "Members' house, Milimani, 20:00–23:00. Present: S. Akumu (treasurer, took the minutes)."
+      },
+      "facts": [
+        "f_chama"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lazarus",
+      "type": "witness",
+      "title": "Statement: Lazarus Ondiek",
+      "render": "statement",
+      "body": {
+        "speaker": "p_lazarus"
+      },
+      "facts": [
+        "f_laz_forgiven"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blows",
+        "f_aut_co",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_trace",
+      "type": "forensic",
+      "title": "Lab: trace (the frozen mallet)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_trace"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_truck"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_compare",
+      "type": "forensic",
+      "title": "Comparison: mallet vs wounds",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_mallet_match"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_autopsy",
+          "ev_truck"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Roselyne Nafula was found dead in her kitchen at Lwang'ni at 06:40 by her cook.",
+      "kind": "true",
+      "about": [
+        "p_roselyne",
+        "loc_kitchen"
+      ],
+      "at": {
+        "from": "06:40"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "Two head wounds. She lies behind her counter.",
+      "kind": "true",
+      "about": [
+        "p_roselyne",
+        "loc_kitchen"
+      ]
+    },
+    {
+      "id": "f_cash",
+      "text": "Her cash drawer still holds the night's takings: KSh 14,600.",
+      "kind": "true",
+      "about": [
+        "p_roselyne"
+      ]
+    },
+    {
+      "id": "f_hook",
+      "text": "The hook where her fish-gutting mallet always hangs is empty. Roselyne marks every kitchen tool with red tape.",
+      "kind": "true",
+      "about": [
+        "loc_kitchen"
+      ]
+    },
+    {
+      "id": "f_till",
+      "text": "Her PesaPap till: the last payment was at 21:40, from a diner.",
+      "kind": "true",
+      "about": [
+        "p_roselyne"
+      ],
+      "at": {
+        "from": "21:40"
+      }
+    },
+    {
+      "id": "f_whatsapp",
+      "text": "Roselyne's post in the owners' group, last Wednesday: \"Don't buy from Ephantus. Frozen imported fish sold as fresh.\" Thirty restaurants cancelled within two days.",
+      "kind": "true",
+      "about": [
+        "p_roselyne",
+        "p_ephantus"
+      ]
+    },
+    {
+      "id": "f_laz_till",
+      "text": "Roselyne's notebook: \"Lazarus — till short KSh 3,000 — warned him, deducted from wages.\" Marked settled.",
+      "kind": "true",
+      "about": [
+        "p_lazarus"
+      ]
+    },
+    {
+      "id": "f_supply_paid",
+      "text": "Her receipts: every one of Ephantus's supply invoices is paid up to date.",
+      "kind": "true",
+      "about": [
+        "p_ephantus"
+      ]
+    },
+    {
+      "id": "f_owns_plot",
+      "text": "County receipt: Roselyne owns the kitchen plot outright. There is no lease.",
+      "kind": "true",
+      "about": [
+        "p_roselyne"
+      ]
+    },
+    {
+      "id": "f_hamisi",
+      "text": "Hamisi: he pulled the front shutter at 22:05 and left. Roselyne was counting cash and said she'd prep tomorrow's onions. Sylvia's touts had fought with him earlier, \"like every night\".",
+      "kind": "true",
+      "about": [
+        "p_hamisi",
+        "p_roselyne",
+        "p_sylvia"
+      ],
+      "at": {
+        "from": "22:05"
+      }
+    },
+    {
+      "id": "f_hamisi_self",
+      "text": "Hamisi's PesaPap: a 22:07 tuk-tuk fare from Lwang'ni to Kondele.",
+      "kind": "true",
+      "about": [
+        "p_hamisi"
+      ],
+      "where": {
+        "person": "p_hamisi",
+        "place": "plc_kondele",
+        "from": "22:25",
+        "to": "23:59"
+      },
+      "at": {
+        "from": "22:07"
+      }
+    },
+    {
+      "id": "f_cooks",
+      "text": "Everlyne: Lazarus left with the other cooks at 22:00. They shared a tuk-tuk to Nyalenda and dropped him at his gate at 22:25, where his wife let him in.",
+      "kind": "true",
+      "about": [
+        "p_everlyne",
+        "p_lazarus"
+      ],
+      "where": {
+        "person": "p_lazarus",
+        "place": "plc_nyalenda",
+        "from": "22:00",
+        "to": "23:00"
+      },
+      "at": {
+        "from": "22:00"
+      }
+    },
+    {
+      "id": "f_inspection",
+      "text": "Fisheries inspection, last Wednesday: five tilapia \"supplied as fresh lake fish by E. Mwangi\" were previously frozen imported fish.",
+      "kind": "true",
+      "about": [
+        "p_norah",
+        "p_ephantus"
+      ]
+    },
+    {
+      "id": "f_norah_self",
+      "text": "Norah was off duty at home with her family on Tuesday evening from 18:00.",
+      "kind": "true",
+      "about": [
+        "p_norah"
+      ],
+      "where": {
+        "person": "p_norah",
+        "place": "plc_nhome",
+        "from": "18:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_tracker",
+      "text": "Truck GPS log: Ephantus's truck was at Lwang'ni from 22:10 to 22:35 on Tuesday night.",
+      "kind": "true",
+      "about": [
+        "p_ephantus"
+      ],
+      "at": {
+        "from": "22:10",
+        "to": "22:35"
+      }
+    },
+    {
+      "id": "f_truck_mallet",
+      "text": "In the cold box of Ephantus's truck, among the frozen cartons: a fish-gutting mallet, frozen, with a strip of red tape on the handle.",
+      "kind": "true",
+      "about": [
+        "p_ephantus",
+        "p_roselyne"
+      ]
+    },
+    {
+      "id": "f_chama",
+      "text": "Chama minutes: Sylvia took the minutes at a members' house in Milimani from 20:00 to 23:00.",
+      "kind": "true",
+      "about": [
+        "p_sylvia"
+      ],
+      "where": {
+        "person": "p_sylvia",
+        "place": "plc_chama",
+        "from": "20:00",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_laz_forgiven",
+      "text": "Lazarus: \"I took three thousand. She caught me and forgave me. She took it from my wages. I'd never touch her.\"",
+      "kind": "true",
+      "about": [
+        "p_lazarus",
+        "p_roselyne"
+      ]
+    },
+    {
+      "id": "f_sylvia_tea",
+      "text": "Sylvia: \"Our boys fight every night. Roselyne and I drank tea together every morning.\"",
+      "kind": "true",
+      "about": [
+        "p_sylvia",
+        "p_roselyne"
+      ]
+    },
+    {
+      "id": "f_aut_blows",
+      "text": "Autopsy: two blows with a heavy round-headed object.",
+      "kind": "true",
+      "about": [
+        "p_roselyne"
+      ]
+    },
+    {
+      "id": "f_aut_co",
+      "text": "Autopsy: blood carbon monoxide normal; no water in the lungs.",
+      "kind": "true",
+      "about": [
+        "p_roselyne"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 21:45 and 23:30.",
+      "kind": "true",
+      "about": [
+        "p_roselyne"
+      ],
+      "at": {
+        "from": "21:45",
+        "to": "23:30"
+      }
+    },
+    {
+      "id": "f_trace",
+      "text": "Lab: blood preserved by the cold on the mallet head is Roselyne's.",
+      "kind": "true",
+      "about": [
+        "p_roselyne",
+        "p_ephantus"
+      ]
+    },
+    {
+      "id": "f_mallet_match",
+      "text": "Dr. Chebii: the mallet's round head matches both wounds.",
+      "kind": "true",
+      "about": [
+        "p_roselyne"
+      ]
+    },
+    {
+      "id": "f_eph_town",
+      "text": "Ephantus: \"I haven't been to Lwang'ni since Friday. On Tuesday night I was delivering in town.\"",
+      "kind": "lie",
+      "about": [
+        "p_ephantus"
+      ]
+    },
+    {
+      "id": "f_eph_lied",
+      "text": "Ephantus: \"That woman lied about my fish.\"",
+      "kind": "claim",
+      "about": [
+        "p_ephantus",
+        "p_roselyne"
+      ]
+    },
+    {
+      "id": "f_eph_admits",
+      "text": "Ephantus admits he went to Roselyne's kitchen on Tuesday night \"to ask her to take back what she wrote\".",
+      "kind": "true",
+      "about": [
+        "p_ephantus",
+        "p_roselyne"
+      ],
+      "where": {
+        "person": "p_ephantus",
+        "place": "plc_counter",
+        "from": "22:12",
+        "to": "22:30"
+      }
+    },
+    {
+      "id": "f_eph_left",
+      "text": "Ephantus: \"She laughed. I left. She was counting money when I walked out.\"",
+      "kind": "lie",
+      "about": [
+        "p_ephantus"
+      ]
+    },
+    {
+      "id": "f_syl_claim",
+      "text": "Sylvia: \"I was at my chama.\"",
+      "kind": "claim",
+      "about": [
+        "p_sylvia"
+      ]
+    },
+    {
+      "id": "f_laz_claim",
+      "text": "Lazarus: \"I left at ten with the others.\"",
+      "kind": "claim",
+      "about": [
+        "p_lazarus"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_ephantus",
+      "stance": "cooperative",
+      "intro": "Ephantus stands by his truck at the depot, arms crossed. \"I haven't been to Lwang'ni since Friday. That woman lied about my fish and cost me everything.\"",
+      "claims": [
+        "f_eph_town",
+        "f_eph_lied"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_eph_left",
+          "after": "f_eph_admits"
+        }
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_inspection",
+          "reply": "Frozen, fresh, who can tell? Fish is fish. She wanted cheaper, she found an excuse.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_sylvia",
+      "stance": "cooperative",
+      "intro": "Sylvia is already frying at her own kitchen next door, red-eyed. \"Our boys fight. We don't.\"",
+      "claims": [
+        "f_syl_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_roselyne",
+          "reply": "Our boys fight every night. Roselyne and I drank tea together every morning. I was at my chama, I took the minutes. Here.",
+          "reveals": [
+            "f_sylvia_tea",
+            "ev_chama"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_lazarus",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_books"
+      ],
+      "intro": "Lazarus sits on an upturned crate by the frying vat, not looking at the counter. \"I left at ten with the others.\"",
+      "claims": [
+        "f_laz_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_books",
+          "reply": "I took three thousand. She caught me and forgave me. She took it from my wages. I'd never touch her.",
+          "reveals": [
+            "ev_lazarus"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_hamisi",
+      "stance": "cooperative",
+      "intro": "Hamisi leans his menu board against a table. \"I closed the front at five past ten. She was counting the money.\"",
+      "claims": [],
+      "yields": [
+        "ev_hamisi"
+      ],
+      "topics": [
+        {
+          "about": "p_lazarus",
+          "reply": "He went with the other cooks, ten o'clock. Ask Everlyne next door, they share a tuk-tuk.",
+          "reveals": [
+            "ev_cooks"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_norah",
+      "stance": "cooperative",
+      "intro": "Norah brings the inspection photographs out of a folder. \"She brought me five fish. All five had been frozen.\"",
+      "claims": [],
+      "yields": [
+        "ev_inspection",
+        "ev_norah"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_eph_town",
+      "claim": "f_eph_town",
+      "brokenBy": [
+        "f_tracker"
+      ],
+      "reveals": [
+        "f_eph_admits"
+      ],
+      "reaction": "He uncrosses his arms. \"...I went to ask her to take back what she wrote. She laughed. I left. She was counting money.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_eph_left",
+      "claim": "f_eph_left",
+      "brokenBy": [
+        "f_trace",
+        "f_mallet_match"
+      ],
+      "reveals": [],
+      "reaction": "Ephantus looks at the photograph of the frozen mallet with her red tape on it. \"Thirty restaurants in two days,\" he says. \"Thirty.\" He doesn't say anything else.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_ephantus",
+      "text": "Ephantus Mwangi",
+      "category": "person",
+      "ref": "p_ephantus",
+      "unlock": {
+        "anyOf": [
+          "f_whatsapp"
+        ]
+      }
+    },
+    {
+      "id": "w_sylvia",
+      "text": "Sylvia Akumu",
+      "category": "person",
+      "ref": "p_sylvia",
+      "unlock": {
+        "anyOf": [
+          "f_hamisi"
+        ]
+      }
+    },
+    {
+      "id": "w_lazarus",
+      "text": "Lazarus Ondiek",
+      "category": "person",
+      "ref": "p_lazarus",
+      "unlock": {
+        "anyOf": [
+          "f_laz_till"
+        ]
+      }
+    },
+    {
+      "id": "w_norah",
+      "text": "Norah Ayuma",
+      "category": "person",
+      "ref": "p_norah",
+      "unlock": {
+        "anyOf": [
+          "f_inspection"
+        ]
+      }
+    },
+    {
+      "id": "w_hamisi",
+      "text": "Hamisi Opondo",
+      "category": "person",
+      "ref": "p_hamisi",
+      "unlock": {
+        "anyOf": [
+          "f_hamisi"
+        ]
+      }
+    },
+    {
+      "id": "h_mallet",
+      "text": "struck with her own fish-gutting mallet",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_hook"
+        ]
+      }
+    },
+    {
+      "id": "h_slip",
+      "text": "slipped on the wet kitchen floor",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_co",
+      "text": "carbon monoxide from the charcoal stoves",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_robbers",
+      "text": "killed by robbers for the night's takings",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_tank",
+      "text": "drowned in the live-fish tank",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_fish",
+      "text": "she'd exposed that his \"fresh lake fish\" were imported frozen fish",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_whatsapp"
+        ]
+      }
+    },
+    {
+      "id": "m_touts",
+      "text": "the touts' fights over customers",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_hamisi"
+        ]
+      }
+    },
+    {
+      "id": "m_cook",
+      "text": "she'd caught the cook stealing",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_laz_till"
+        ]
+      }
+    },
+    {
+      "id": "m_supply",
+      "text": "an unpaid supply bill",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_eph_lied"
+        ]
+      }
+    },
+    {
+      "id": "m_lease",
+      "text": "a dispute over the restaurant's lease",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Roselyne Nafula"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_2140",
+                  "label": "21:40",
+                  "from": "21:40",
+                  "to": "21:40"
+                },
+                {
+                  "id": "sl_2200",
+                  "label": "22:00",
+                  "from": "22:00",
+                  "to": "22:00"
+                },
+                {
+                  "id": "sl_2210",
+                  "label": "22:10–22:35",
+                  "from": "22:10",
+                  "to": "22:35"
+                },
+                {
+                  "id": "sl_2330",
+                  "label": "23:30",
+                  "from": "23:30",
+                  "to": "23:30"
+                },
+                {
+                  "id": "sl_0640",
+                  "label": "06:40",
+                  "from": "06:40",
+                  "to": "06:40"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_pay",
+                  "text": "The last diner pays",
+                  "slot": "sl_2140",
+                  "by": [
+                    "f_till"
+                  ],
+                  "why": "Her till logs the last payment at 21:40.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_till"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_cooks",
+                  "text": "The cooks leave",
+                  "slot": "sl_2200",
+                  "by": [
+                    "f_cooks"
+                  ],
+                  "why": "Everlyne: the cooks left together at 22:00.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_cooks"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Roselyne is killed",
+                  "slot": "sl_2210",
+                  "by": [
+                    "f_hamisi",
+                    "f_tracker",
+                    "f_aut_tod",
+                    "f_eph_admits"
+                  ],
+                  "why": "Alive and counting cash at 22:05; the truck was at Lwang'ni from 22:10 to 22:35, and its driver admits he was in her kitchen.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_found",
+                  "text": "She's found",
+                  "slot": "sl_0640",
+                  "by": [
+                    "f_ob"
+                  ],
+                  "why": "Her cook found her at 06:40.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_ob"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_2330",
+                  "by": [
+                    "f_aut_tod",
+                    "f_tracker"
+                  ],
+                  "why": "23:30 is only the end of the autopsy range. The truck had left Lwang'ni by 22:35."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "Last diner at twenty to ten, cooks gone at ten, a truck at the beach from ten past to twenty-five to eleven. The truck kept the time.",
+          "fail": [
+            "Half past eleven is just the end of the doctor's range.",
+            "She was alive at five past ten. Who came after?"
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_ephantus"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A truck that says Lwang'ni while its driver says town, and her red-taped mallet frozen in his cold box with her blood on it. That will hold.",
+          "fail": [
+            "The neighbour was taking chama minutes in Milimani.",
+            "The cook was in a tuk-tuk at ten. He stole three thousand; he didn't kill her."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_mallet"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her own mallet, missing from its hook. Yes.",
+          "fail": [
+            "Two blows. She didn't slip.",
+            "The money is still in the drawer."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_fish"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Five fish on an inspector's tray and thirty cancelled orders. That's the reason.",
+          "fail": [
+            "His invoices were paid. Read her receipts.",
+            "She owned the plot outright. There's no lease to fight over."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_kitchen",
+      "from": "22:05",
+      "to": "22:35",
+      "within": [
+        "plc_counter"
+      ],
+      "note": "Alive and counting cash at 22:05; the autopsy allows 21:45–23:30."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_till",
+          "f_cooks",
+          "f_hamisi"
+        ],
+        "concludes": "The last diner paid at 21:40, the cooks left at 22:00, and at 22:05 Roselyne was alive and alone, counting the takings."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_inspection",
+          "f_whatsapp"
+        ],
+        "concludes": "She had exposed Ephantus's \"fresh lake fish\" as imported frozen fish, and cost him thirty restaurants in two days."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_eph_town",
+          "f_tracker",
+          "f_eph_admits",
+          "f_aut_tod"
+        ],
+        "concludes": "Ephantus wasn't delivering in town: his truck was at Lwang'ni from 22:10 to 22:35, inside the window, and he admits he went to her kitchen.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_hook",
+          "f_truck_mallet",
+          "f_trace",
+          "f_mallet_match",
+          "f_aut_blows",
+          "f_eph_left"
+        ],
+        "concludes": "Her red-taped mallet, missing from its hook, is frozen in his truck with her blood on it, and it matches both wounds. Ephantus Mwangi struck Roselyne with her own fish-gutting mallet because she'd exposed his frozen imported fish.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_sylvia",
+        "blank": "who",
+        "by": [
+          "f_chama"
+        ],
+        "why": "Sylvia was taking the minutes at her chama in Milimani from 20:00 to 23:00."
+      },
+      {
+        "word": "w_lazarus",
+        "blank": "who",
+        "by": [
+          "f_cooks"
+        ],
+        "why": "Lazarus left with the cooks at 22:00 and was dropped at his gate at 22:25."
+      },
+      {
+        "word": "w_norah",
+        "blank": "who",
+        "by": [
+          "f_norah_self"
+        ],
+        "why": "Norah was off duty at home with her family on Tuesday evening."
+      },
+      {
+        "word": "w_hamisi",
+        "blank": "who",
+        "by": [
+          "f_hamisi_self"
+        ],
+        "why": "Hamisi took a tuk-tuk to Kondele at 22:07."
+      },
+      {
+        "word": "h_slip",
+        "blank": "how",
+        "by": [
+          "f_aut_blows"
+        ],
+        "why": "Two blows with a heavy round-headed object."
+      },
+      {
+        "word": "h_co",
+        "blank": "how",
+        "by": [
+          "f_aut_co"
+        ],
+        "why": "Blood carbon monoxide normal."
+      },
+      {
+        "word": "h_robbers",
+        "blank": "how",
+        "by": [
+          "f_cash"
+        ],
+        "why": "The night's takings are still in the drawer."
+      },
+      {
+        "word": "h_tank",
+        "blank": "how",
+        "by": [
+          "f_aut_co"
+        ],
+        "why": "No water in her lungs."
+      },
+      {
+        "word": "m_touts",
+        "blank": "why",
+        "by": [
+          "f_sylvia_tea",
+          "f_chama"
+        ],
+        "why": "The touts' fights are Sylvia's, and Sylvia was at her chama."
+      },
+      {
+        "word": "m_cook",
+        "blank": "why",
+        "by": [
+          "f_laz_till",
+          "f_laz_forgiven"
+        ],
+        "why": "That theft was found, deducted and forgiven, and it's Lazarus's matter."
+      },
+      {
+        "word": "m_supply",
+        "blank": "why",
+        "by": [
+          "f_supply_paid"
+        ],
+        "why": "Every supply invoice was paid."
+      },
+      {
+        "word": "m_lease",
+        "blank": "why",
+        "by": [
+          "f_owns_plot"
+        ],
+        "why": "She owned the kitchen plot outright."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Roselyne notices that Ephantus's \"fresh lake tilapia\" have flat cloudy eyes and ice crystals in the gills. She takes five to the county fisheries inspector: imported, frozen, thawed.",
+        "image": null
+      },
+      {
+        "text": "She posts the result in the owners' group. Within two days thirty restaurants cancel his supply.",
+        "image": null
+      },
+      {
+        "text": "Tuesday, 22:05. Hamisi pulls the shutter; Roselyne counts the takings alone. At 22:10 Ephantus's cold truck pulls in at the beach.",
+        "image": null
+      },
+      {
+        "text": "In her kitchen he demands a retraction. She refuses and laughs. He takes her gutting mallet from its hook and strikes her twice.",
+        "image": "loc_kitchen"
+      },
+      {
+        "text": "He hides the mallet in the cold box among the frozen fish and drives away at 22:35. The truck's GPS keeps the time for him.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "One warrant on the truck. No detention needed. The trace result (12 h) breaks his second story.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_kitchen",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_hook",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_till",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_whatsapp",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_hamisi"
+      },
+      {
+        "do": "read",
+        "target": "ev_cooks",
+        "hours": 1
+      },
+      {
+        "do": "visit",
+        "target": "loc_norah",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_norah"
+      },
+      {
+        "do": "interview",
+        "target": "p_ephantus"
+      },
+      {
+        "do": "visit",
+        "target": "loc_baridi",
+        "hours": 2
+      },
+      {
+        "do": "read",
+        "target": "ev_tracker",
+        "hours": 1
+      },
+      {
+        "do": "press",
+        "target": "c_eph_town"
+      },
+      {
+        "do": "search",
+        "target": "loc_truck"
+      },
+      {
+        "do": "submit",
+        "target": "ev_trace"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 12
+      },
+      {
+        "do": "interview",
+        "target": "p_ephantus"
+      },
+      {
+        "do": "press",
+        "target": "c_eph_left"
+      }
+    ],
+    "totalHours": 33
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_tracker",
+        "line": "A machine keeps a diary too. Lay the truck's log next to the people's statements."
+      },
+      "tier2": {
+        "facts": [
+          "f_hamisi",
+          "f_tracker"
+        ],
+        "line": "Alive at 22:05. A truck at the beach from 22:10 to 22:35."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_whatsapp",
+        "line": "Read her post in the owners' group. Who lost thirty customers?"
+      },
+      "tier2": {
+        "facts": [
+          "f_eph_town",
+          "f_tracker"
+        ],
+        "line": "He says town. His own truck says Lwang'ni."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_hook",
+        "line": "She marks every tool with red tape. Which hook is empty?"
+      },
+      "tier2": {
+        "facts": [
+          "f_hook",
+          "f_truck_mallet"
+        ],
+        "line": "An empty hook in her kitchen, and a red-taped mallet in a cold box."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_inspection",
+        "line": "What did the inspector find in five \"fresh\" fish?"
+      },
+      "tier2": {
+        "facts": [
+          "f_inspection",
+          "f_whatsapp"
+        ],
+        "line": "Previously frozen, imported. Thirty restaurants cancelled."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "ngege",
+      "def": "Tilapia, the lake's most popular fish."
+    },
+    {
+      "term": "ugali",
+      "def": "A stiff maize-flour porridge, Kenya's staple food."
+    },
+    {
+      "term": "kachumbari",
+      "def": "A fresh tomato and onion salad."
+    },
+    {
+      "term": "samaki wa barafu",
+      "def": "Frozen fish (literally \"ice fish\")."
+    },
+    {
+      "term": "chama",
+      "def": "A savings group whose members pool money and lend to each other."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address or name a woman."
+    },
+    {
+      "term": "kitenge",
+      "def": "Brightly printed cotton cloth, often made into dresses."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "machineDiary"
+    ],
+    "beatNotes": "A machine's diary. The truck's GPS log is laid on the rail next to people's statements; the player sees a truck's \"statement\" contradict its driver's."
+  }
+}

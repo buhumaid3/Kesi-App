@@ -1,0 +1,1309 @@
+{
+  "meta": {
+    "id": "case-024",
+    "number": 24,
+    "region": "mombasa-old-town",
+    "regionNumber": 3,
+    "title": "Nahodha",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 16,
+    "date": "Wednesday 27 August",
+    "folderTab": "OLD PORT"
+  },
+  "pattern": {
+    "crimePattern": "tourist-cruise operator kills a dhow captain who would not sell his boat and mooring, and stages a drowning",
+    "noRealCaseRetold": true,
+    "notes": "Fictional dhow, captain and cruise company in the real Old Port dhow harbour. Arrives recorded as an accident.",
+    "tags": [
+      "blunt-force",
+      "business-rivalry",
+      "staged-accident",
+      "two-records-requests"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 4,
+    "redHerrings": 1,
+    "liars": 1,
+    "groups": [
+      "who",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "document",
+      "phone"
+    ],
+    "gatedActions": [
+      "records",
+      "records"
+    ],
+    "twist": "staged-accident-phone-travelled"
+  },
+  "ob": {
+    "number": "OB 05/27/08",
+    "date": "Wednesday 27 August",
+    "time": "06:22",
+    "reportedBy": "Fishermen at the Old Port; logged by harbour clerk Hamza Athumani",
+    "text": "Fishermen report that dhow captain Khamis Bwanaheri (61) was found in the water beside his moored dhow, Upepo Mwema, at the Old Port at 06:10. Logged by the harbour office as suspected accidental drowning. Detective Amani is asked to \"close it quickly\".",
+    "facts": [
+      "f_ob_found",
+      "f_ob_logged"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_khamis",
+      "role": "victim",
+      "name": "Khamis Bwanaheri",
+      "age": 61,
+      "occupation": "Nahodha (captain) of the dhow Upepo Mwema",
+      "bio": "From Lamu. Has sailed Upepo Mwema for thirty years. Never learned to read or write; does everything by voice.",
+      "community": "Bajuni",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_dhow",
+      "image": {
+        "kind": "portrait",
+        "brief": "Bajuni Kenyan man, early 60s, weathered face, white kofia, a faded kikoi and a sleeveless vest, strong hands with rope calluses, calm proud eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_ireri",
+      "role": "suspect",
+      "name": "James Ireri",
+      "age": 45,
+      "occupation": "Owner, Sunset Dhow Cruises",
+      "bio": "Runs sunset cruises for tourists from a jetty near the Old Port. Has tried twice to buy Upepo Mwema and its mooring.",
+      "community": "Embu",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_offer"
+      },
+      "at": "plc_kisauni",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, a branded polo shirt with a small embroidered sailboat and no other logo, sunglasses pushed up on his head, a friendly salesman's face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_swaleh",
+      "role": "suspect",
+      "name": "Swaleh Mbwana",
+      "age": 28,
+      "occupation": "Khamis's former crewman",
+      "redHerring": true,
+      "bio": "Sacked last week for siphoning fuel. Works nights as a watchman now.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_fumo_swaleh"
+      },
+      "at": "plc_coldroom",
+      "image": {
+        "kind": "portrait",
+        "brief": "Swahili Kenyan young man, late 20s, a watchman's jacket, a torch clipped to his belt, ashamed, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_abdalla",
+      "role": "suspect",
+      "name": "Abdalla Khamis",
+      "age": 30,
+      "occupation": "Khamis's son; captain of the family's second boat",
+      "bio": "Sails the family's smaller boat out of Lamu. Writes his father's letters for him.",
+      "community": "Bajuni",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_lamu",
+      "image": {
+        "kind": "portrait",
+        "brief": "Bajuni Kenyan man, about 30, a white kanzu, a short beard, a phone pressed to his ear, grief held very still, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_fumo",
+      "role": "witness",
+      "name": "Fumo Shali",
+      "age": 70,
+      "occupation": "Old fisherman",
+      "bio": "Sleeps on his own boat at the far mooring.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_far",
+      "image": null
+    },
+    {
+      "id": "p_hamza",
+      "role": "witness",
+      "name": "Hamza Athumani",
+      "age": 41,
+      "occupation": "Harbour office clerk",
+      "bio": "Logged the death as a drowning from the fishermen's report.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_ob_logged"
+      },
+      "at": "plc_hamza",
+      "image": null
+    },
+    {
+      "id": "p_lali",
+      "role": "witness",
+      "name": "Hassan Lali",
+      "age": 52,
+      "occupation": "Lamu harbour master's clerk",
+      "statementOnly": true,
+      "bio": "Keeps the Lamu harbour night book.",
+      "community": "Bajuni",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_abdalla_claim"
+      },
+      "at": "plc_lamu",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_dhow",
+      "name": "On board Upepo Mwema",
+      "within": "loc_harbour"
+    },
+    {
+      "id": "plc_kisauni",
+      "name": "Kisauni"
+    },
+    {
+      "id": "plc_coldroom",
+      "name": "Marikiti cold room (night watch)"
+    },
+    {
+      "id": "plc_lamu",
+      "name": "Lamu harbour"
+    },
+    {
+      "id": "plc_far",
+      "name": "Fumo's boat at the far mooring"
+    },
+    {
+      "id": "plc_hamza",
+      "name": "Hamza Athumani's home"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_harbour",
+      "name": "Old Port dhow harbour, below Fort Jesus",
+      "kind": "scene",
+      "description": "Before dawn. Wooden dhows swing on their buoys under the walls of Fort Jesus. Small rowing boats ferry crews out. Diesel, fish, wet rope. Upepo Mwema, \"good wind\", is moored nearest the steps.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Beside the hull",
+          "pos": [
+            44,
+            70
+          ],
+          "yields": "ev_body",
+          "text": "Khamis lies on the steps where the fishermen laid him. A wound on the side of his head."
+        },
+        {
+          "id": "hs_sandals",
+          "label": "On deck, at the rail",
+          "pos": [
+            54,
+            34
+          ],
+          "yields": "ev_sandals",
+          "text": "His sandals, side by side at the rail, very neatly placed."
+        },
+        {
+          "id": "hs_cabin",
+          "label": "Dhow cabin",
+          "pos": [
+            64,
+            40
+          ],
+          "yields": "ev_offer",
+          "text": "In the tiny cabin, a letter in a plastic sleeve pinned above the bunk."
+        },
+        {
+          "id": "hs_fumo",
+          "label": "Old fisherman on the steps",
+          "pos": [
+            20,
+            58
+          ],
+          "yields": "ev_fumo",
+          "text": "Fumo Shali sits on the harbour steps mending a net he isn't looking at."
+        },
+        {
+          "id": "hs_office",
+          "label": "Harbour office",
+          "pos": [
+            88,
+            22
+          ],
+          "yields": "ev_harbourlog",
+          "text": "The harbour office: night log, incident book, last year's reports."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the Old Port dhow harbour in Mombasa before dawn, wooden dhows moored to buoys under the massive walls of Fort Jesus, small rowing boats, harbour steps, lantern light on dark water, no people in focus"
+      }
+    },
+    {
+      "id": "loc_jetty",
+      "name": "Sunset Dhow Cruises jetty",
+      "kind": "location",
+      "description": "A small private jetty: a painted sign, a cruise dhow with fairy lights, and a rowing dinghy tied at the end.",
+      "unlock": {
+        "fact": "f_son_call"
+      },
+      "hotspots": [
+        {
+          "id": "hs_dinghy",
+          "label": "Rowing dinghy",
+          "pos": [
+            60,
+            66
+          ],
+          "yields": "ev_dinghy",
+          "text": "The dinghy's oars lie across the seats. Something blue is smeared on the bow."
+        },
+        {
+          "id": "hs_sign",
+          "label": "Jetty sign",
+          "pos": [
+            20,
+            30
+          ],
+          "text": "\"SUNSET DHOW CRUISES — Romantic sunsets, authentic dhow experience.\" The cruise dhow is new, built to look old."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small private wooden jetty at dawn with a tourist cruise dhow decorated with string lights, a rowing dinghy tied at the end with a smear of blue paint on its bow"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body from the water",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Head wound. Found in the water beside the dhow at 06:10. The harbour assumed he fell against the hull."
+      },
+      "facts": [
+        "f_body_wound"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "stone harbour steps at dawn, wet, a coiled rope and a fisherman's net, the dark hull of a wooden dhow beside them, no body visible"
+      }
+    },
+    {
+      "id": "ev_sandals",
+      "type": "physical",
+      "title": "Sandals on deck",
+      "render": "photo",
+      "body": {
+        "label": "Side by side, heels against the rail, toes pointing inboard."
+      },
+      "facts": [
+        "f_sandals"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a pair of worn leather sandals placed very neatly side by side on the wooden deck of a dhow beside the rail, dawn light"
+      }
+    },
+    {
+      "id": "ev_offer",
+      "type": "physical",
+      "title": "Offer for Upepo Mwema",
+      "render": "note",
+      "body": {
+        "text": "Sunset Dhow Cruises — offer for vessel Upepo Mwema and mooring: KSh 2.8 million.",
+        "handwritten": "HAPANA (in Arabic-script Swahili and in Latin letters)"
+      },
+      "facts": [
+        "f_offer"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_son_phone",
+      "type": "phone",
+      "title": "Abdalla's phone (by call from Lamu)",
+      "render": "smsThread",
+      "body": {
+        "messages": [
+          {
+            "time": "02:14",
+            "from": "Baba",
+            "text": "Naenda kuvua peke yangu, usijali."
+          }
+        ]
+      },
+      "facts": [
+        "f_son_sms"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_son",
+      "type": "witness",
+      "title": "Statement: Abdalla Khamis",
+      "render": "statement",
+      "body": {
+        "speaker": "p_abdalla",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_son_illiterate",
+        "f_son_call"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records_khamis",
+      "type": "phone",
+      "title": "Records: Khamis Bwanaheri's line",
+      "render": "mastRecord",
+      "body": {
+        "calls": "To Abdalla 23:30.",
+        "masts": "Old Town until 01:40; Kisauni 01:55–02:20. SMS sent 02:14 via Kisauni. Then off."
+      },
+      "facts": [
+        "f_rk_mast"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_son_sms"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_records_ireri",
+      "type": "phone",
+      "title": "Records: James Ireri's line",
+      "render": "mastRecord",
+      "body": {
+        "masts": "Old Town 23:50–01:40; Kisauni from 01:55 (his home zone).",
+        "pesapap": "Last month: KSh 40,000 to KHAMIS BWANAHERI, \"charter Upepo Mwema\", paid in full."
+      },
+      "facts": [
+        "f_ri_mast",
+        "f_ri_charter"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_son_call"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_fumo",
+      "type": "witness",
+      "title": "Statement: Fumo Shali",
+      "render": "statement",
+      "body": {
+        "speaker": "p_fumo"
+      },
+      "facts": [
+        "f_fumo",
+        "f_fumo_swaleh",
+        "f_fumo_capsize",
+        "f_fumo_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_dinghy",
+      "type": "physical",
+      "title": "Sunset Cruises dinghy",
+      "render": "object",
+      "body": {
+        "label": "Oars still wet at 07:00. A smear of blue hull paint on the bow: the same blue as Upepo Mwema."
+      },
+      "facts": [
+        "f_dinghy"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "the bow of a small wooden rowing dinghy with a fresh smear of bright blue paint, wet oars across the seats, harbour water behind"
+      }
+    },
+    {
+      "id": "ev_swaleh",
+      "type": "physical",
+      "title": "Swaleh's night-watch card",
+      "render": "ticket",
+      "body": {
+        "site": "Marikiti cold room",
+        "in": "20:00",
+        "out": "06:00"
+      },
+      "facts": [
+        "f_swaleh"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lamu",
+      "type": "witness",
+      "title": "Phone statement: Hassan Lali",
+      "render": "statement",
+      "body": {
+        "speaker": "p_lali",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_lamu"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_harbourlog",
+      "type": "document",
+      "title": "Harbour office books",
+      "render": "logBook",
+      "body": {
+        "rows": [
+          {
+            "entry": "No report on file against J. Ireri or Sunset Dhow Cruises."
+          },
+          {
+            "entry": "Last year: capsized tourist trip — operator \"Bahari Tours\", not Sunset."
+          },
+          {
+            "entry": "Night log: clerk H. Athumani off duty at home until 05:45. Drowning logged 06:20 from the fishermen's report."
+          }
+        ]
+      },
+      "facts": [
+        "f_harbour_noreport",
+        "f_harbour_capsize",
+        "f_hamza_home"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Khamis Bwanaheri, captain of Upepo Mwema, was found in the water beside his moored dhow at 06:10.",
+      "kind": "true",
+      "about": [
+        "p_khamis",
+        "plc_dhow"
+      ]
+    },
+    {
+      "id": "f_ob_logged",
+      "text": "Harbour clerk Hamza Athumani logged it as suspected accidental drowning.",
+      "kind": "true",
+      "about": [
+        "p_hamza"
+      ]
+    },
+    {
+      "id": "f_body_wound",
+      "text": "A wound on the side of his head. The harbour assumed he hit the hull falling in.",
+      "kind": "true",
+      "about": [
+        "p_khamis"
+      ]
+    },
+    {
+      "id": "f_sandals",
+      "text": "His sandals are side by side at the rail, very neatly placed, as if he took them off to go in.",
+      "kind": "true",
+      "about": [
+        "plc_dhow"
+      ]
+    },
+    {
+      "id": "f_offer",
+      "text": "In the cabin: an offer from Sunset Dhow Cruises (owner James Ireri) for Upepo Mwema and its mooring, KSh 2.8 million. Across it: 'HAPANA'.",
+      "kind": "true",
+      "about": [
+        "p_ireri",
+        "p_khamis"
+      ]
+    },
+    {
+      "id": "f_son_sms",
+      "text": "Abdalla's phone: SMS from his father's number at 02:14: 'Naenda kuvua peke yangu, usijali' (I'm going fishing alone, don't worry).",
+      "kind": "true",
+      "about": [
+        "p_abdalla",
+        "p_khamis"
+      ]
+    },
+    {
+      "id": "f_son_illiterate",
+      "text": "Abdalla: \"Baba never sent an SMS in his life. He can't read or write. He calls. I wrote HAPANA on that letter for him.\"",
+      "kind": "true",
+      "about": [
+        "p_abdalla",
+        "p_khamis"
+      ]
+    },
+    {
+      "id": "f_son_call",
+      "text": "Abdalla: his father called him at 23:30 to say \"the cruise man\" was coming at midnight about the mooring. The cruise man is James Ireri.",
+      "kind": "true",
+      "about": [
+        "p_abdalla",
+        "p_ireri"
+      ]
+    },
+    {
+      "id": "f_rk_mast",
+      "text": "Records, Khamis's line: call to Abdalla 23:30. Old Town mast until 01:40, then Kisauni 01:55–02:20. The 02:14 SMS was sent via Kisauni. Then the phone went off.",
+      "kind": "true",
+      "about": [
+        "p_khamis"
+      ]
+    },
+    {
+      "id": "f_ri_mast",
+      "text": "Records, Ireri's line: Old Town mast 23:50–01:40, Kisauni (his home zone) from 01:55.",
+      "kind": "true",
+      "about": [
+        "p_ireri"
+      ]
+    },
+    {
+      "id": "f_ri_charter",
+      "text": "PesaPap, Ireri's line, last month: KSh 40,000 to KHAMIS BWANAHERI, 'charter Upepo Mwema'. Paid in full.",
+      "kind": "true",
+      "about": [
+        "p_ireri",
+        "p_khamis"
+      ]
+    },
+    {
+      "id": "f_fumo",
+      "text": "Fumo: around midnight a small boat rowed out to Upepo Mwema. He heard raised voices. Then \"the oars going back fast\".",
+      "kind": "true",
+      "about": [
+        "p_fumo",
+        "plc_dhow"
+      ]
+    },
+    {
+      "id": "f_fumo_swaleh",
+      "text": "Fumo: Khamis sacked his crewman Swaleh last week for siphoning fuel.",
+      "kind": "true",
+      "about": [
+        "p_fumo",
+        "p_swaleh"
+      ]
+    },
+    {
+      "id": "f_fumo_capsize",
+      "text": "Fumo: \"People say the cruise men capsized a boat of tourists last year, and Khamis laughed at them.\"",
+      "kind": "true",
+      "about": [
+        "p_fumo"
+      ]
+    },
+    {
+      "id": "f_fumo_self",
+      "text": "Fumo slept on his own boat at the far mooring; the other fishermen there saw him.",
+      "kind": "true",
+      "about": [
+        "p_fumo"
+      ],
+      "where": {
+        "person": "p_fumo",
+        "place": "plc_far",
+        "from": "21:00",
+        "to": "05:30"
+      }
+    },
+    {
+      "id": "f_dinghy",
+      "text": "Ireri's rowing dinghy at the Sunset jetty: oars still wet at 07:00, and a smear of Upepo Mwema's blue hull paint on its bow.",
+      "kind": "true",
+      "about": [
+        "p_ireri",
+        "plc_dhow"
+      ]
+    },
+    {
+      "id": "f_swaleh",
+      "text": "Swaleh's night-watch card, Marikiti cold room: 20:00 to 06:00.",
+      "kind": "true",
+      "about": [
+        "p_swaleh"
+      ],
+      "where": {
+        "person": "p_swaleh",
+        "place": "plc_coldroom",
+        "from": "20:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_swaleh_rumour",
+      "text": "Swaleh: \"People say Mzee reported the cruise man for smuggling. I don't know.\"",
+      "kind": "true",
+      "about": [
+        "p_swaleh",
+        "p_ireri"
+      ]
+    },
+    {
+      "id": "f_swaleh_admits",
+      "text": "Swaleh admits he siphoned fuel. \"Mzee gave me a second chance three times.\"",
+      "kind": "true",
+      "about": [
+        "p_swaleh",
+        "p_khamis"
+      ]
+    },
+    {
+      "id": "f_lamu",
+      "text": "Hassan Lali: Abdalla's boat was moored in Lamu all night. He was seen at the 05:00 prayers.",
+      "kind": "true",
+      "about": [
+        "p_lali",
+        "p_abdalla"
+      ],
+      "where": {
+        "person": "p_abdalla",
+        "place": "plc_lamu",
+        "from": "18:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_harbour_noreport",
+      "text": "Harbour office: no report on file against Ireri or Sunset Dhow Cruises, for smuggling or anything else.",
+      "kind": "true",
+      "about": [
+        "p_ireri"
+      ]
+    },
+    {
+      "id": "f_harbour_capsize",
+      "text": "Harbour office: last year's capsized tourist trip was another operator's boat, not Sunset's.",
+      "kind": "true",
+      "about": [
+        "p_ireri"
+      ]
+    },
+    {
+      "id": "f_hamza_home",
+      "text": "Harbour night log: clerk Hamza Athumani was off duty at home until 05:45, and logged the drowning at 06:20 from the fishermen's report.",
+      "kind": "true",
+      "about": [
+        "p_hamza"
+      ],
+      "where": {
+        "person": "p_hamza",
+        "place": "plc_hamza",
+        "from": "20:00",
+        "to": "05:45"
+      }
+    },
+    {
+      "id": "f_ireri_home",
+      "text": "Ireri: \"I haven't been to the old harbour since Sunday. I was home in Kisauni all night.\"",
+      "kind": "lie",
+      "about": [
+        "p_ireri"
+      ]
+    },
+    {
+      "id": "f_ireri_friends",
+      "text": "Ireri: \"Khamis and I were friends. I chartered his dhow.\"",
+      "kind": "claim",
+      "about": [
+        "p_ireri",
+        "p_khamis"
+      ]
+    },
+    {
+      "id": "f_ireri_admits",
+      "text": "Ireri admits he rowed out to Upepo Mwema at midnight with a last offer. He says Khamis refused again and was alive when he rowed back.",
+      "kind": "true",
+      "about": [
+        "p_ireri",
+        "plc_dhow"
+      ],
+      "where": {
+        "person": "p_ireri",
+        "place": "plc_dhow",
+        "from": "00:00",
+        "to": "00:20"
+      }
+    },
+    {
+      "id": "f_swaleh_claim",
+      "text": "Swaleh: \"I was on night watch at Marikiti.\"",
+      "kind": "claim",
+      "about": [
+        "p_swaleh"
+      ]
+    },
+    {
+      "id": "f_abdalla_claim",
+      "text": "Abdalla: \"I was in Lamu. Ask the harbour office there.\"",
+      "kind": "claim",
+      "about": [
+        "p_abdalla"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_ireri",
+      "stance": "cooperative",
+      "intro": "Ireri meets Amani on his jetty with two coffees. \"Terrible. Terrible. Khamis was a legend on this water.\"",
+      "claims": [
+        "f_ireri_home",
+        "f_ireri_friends"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_offer",
+          "reply": "A fair offer. Twice. He liked to say no. Old men like to say no.",
+          "reveals": []
+        },
+        {
+          "about": "ev_sandals",
+          "reply": "He took them off to swim. He did that. Everyone knows.",
+          "reveals": []
+        },
+        {
+          "about": "p_swaleh",
+          "reply": "His crewman stole fuel and got sacked last week. Ask him where he was.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_swaleh",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_offer"
+      ],
+      "intro": "Swaleh won't look up from his torch. \"I did wrong. I know. But I didn't do this.\"",
+      "claims": [
+        "f_swaleh_claim"
+      ],
+      "yields": [
+        "ev_swaleh"
+      ],
+      "topics": [
+        {
+          "about": "f_fumo_swaleh",
+          "reply": "I took fuel. Mzee gave me a second chance three times. The fourth time he was right.",
+          "reveals": [
+            "f_swaleh_admits"
+          ]
+        },
+        {
+          "about": "p_ireri",
+          "reply": "People say Mzee reported the cruise man for smuggling. I don't know. People say many things.",
+          "reveals": [
+            "f_swaleh_rumour"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_abdalla",
+      "stance": "cooperative",
+      "intro": "Abdalla, on the phone from Lamu, very quiet. \"Baba is dead. They are saying he went fishing alone.\"",
+      "claims": [
+        "f_abdalla_claim"
+      ],
+      "yields": [
+        "ev_son_phone",
+        "ev_son"
+      ],
+      "topics": [
+        {
+          "about": "f_son_sms",
+          "reply": "I got that at two in the morning and I was afraid. Baba never sent an SMS in his life. He can't read. He calls.",
+          "reveals": []
+        },
+        {
+          "about": "ev_offer",
+          "reply": "I wrote HAPANA on it for him. He said, \"Write it twice, so they understand.\"",
+          "reveals": []
+        },
+        {
+          "about": "p_lali",
+          "reply": "Ask the Lamu harbour office. My boat was here all night.",
+          "reveals": [
+            "ev_lamu"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_fumo",
+      "stance": "cooperative",
+      "intro": "Fumo ties a knot and pulls it tight. \"Thirty years he moored beside me. He swam like a fish. He did not drown.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_sandals",
+          "reply": "Khamis never took his sandals off on deck. Never. His feet were too old for that wood.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_hamza",
+      "stance": "cooperative",
+      "intro": "Hamza holds the incident book open at the page. \"The fishermen said drowning. I wrote drowning.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_body",
+          "reply": "I came on duty at quarter to six. I didn't see him in the water. I took their word.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_ireri_home",
+      "claim": "f_ireri_home",
+      "brokenBy": [
+        "f_ri_mast",
+        "f_dinghy"
+      ],
+      "reveals": [
+        "f_ireri_admits"
+      ],
+      "reaction": "I rowed out at midnight. All right. I made him a fair offer, the last one. He said no again, like always. I rowed back. He was alive. He was laughing at me.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_ireri",
+      "text": "James Ireri",
+      "category": "person",
+      "ref": "p_ireri",
+      "unlock": {
+        "anyOf": [
+          "f_offer",
+          "f_son_call"
+        ]
+      }
+    },
+    {
+      "id": "w_swaleh",
+      "text": "Swaleh Mbwana",
+      "category": "person",
+      "ref": "p_swaleh",
+      "unlock": {
+        "anyOf": [
+          "f_fumo_swaleh"
+        ]
+      }
+    },
+    {
+      "id": "w_abdalla",
+      "text": "Abdalla Khamis",
+      "category": "person",
+      "ref": "p_abdalla",
+      "unlock": {
+        "anyOf": [
+          "f_son_sms"
+        ]
+      }
+    },
+    {
+      "id": "w_fumo",
+      "text": "Fumo Shali",
+      "category": "person",
+      "ref": "p_fumo",
+      "unlock": {
+        "anyOf": [
+          "f_fumo"
+        ]
+      }
+    },
+    {
+      "id": "w_hamza",
+      "text": "Hamza Athumani",
+      "category": "person",
+      "ref": "p_hamza",
+      "unlock": {
+        "anyOf": [
+          "f_ob_logged"
+        ]
+      }
+    },
+    {
+      "id": "m_mooring",
+      "text": "Khamis refused to sell him the dhow and its mooring",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_offer"
+        ]
+      }
+    },
+    {
+      "id": "m_charter",
+      "text": "an unpaid charter fee",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ri_charter",
+          "f_ireri_friends"
+        ]
+      }
+    },
+    {
+      "id": "m_smuggling",
+      "text": "Khamis had reported him for smuggling",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_swaleh_rumour"
+        ]
+      }
+    },
+    {
+      "id": "m_fuel",
+      "text": "the crewman's stolen fuel",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_fumo_swaleh"
+        ]
+      }
+    },
+    {
+      "id": "m_capsize",
+      "text": "revenge for a capsized tourist trip",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_fumo_capsize"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} because {why}.",
+    "fixed": {
+      "victim": "Khamis Bwanaheri"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_ireri"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A man who couldn't read sent a text from Kisauni. So did the man who rowed out at midnight. That will hold.",
+          "fail": [
+            "Doesn't hold up. You haven't even shown me this was a murder. Who sent that SMS?",
+            "No. A sacked crewman on night watch didn't carry the captain's phone to Kisauni."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_mooring"
+          }
+        ],
+        "prosecutor": {
+          "pass": "HAPANA, written twice so they'd understand. They understood.",
+          "fail": [
+            "He did it. But that's a rumour, not a reason. What did Khamis keep refusing?",
+            "Paid in full, nothing on file. Try again."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_harbour",
+      "from": "00:00",
+      "to": "01:40",
+      "within": [
+        "plc_dhow"
+      ]
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_son_sms",
+          "f_son_illiterate"
+        ],
+        "concludes": "The 02:14 SMS can't have come from Khamis, who couldn't read or write. Someone else had his phone."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_rk_mast",
+          "f_sandals"
+        ],
+        "concludes": "His phone left the Old Town zone at 01:40 and sent the SMS from Kisauni. Khamis was in the harbour; his phone travelled without him. The neat sandals are staging. This is murder."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_ri_mast",
+          "f_ireri_home",
+          "f_ireri_admits"
+        ],
+        "concludes": "Ireri's phone made exactly the same move: Old Town until 01:40, Kisauni from 01:55. Pressed, he admits rowing out to the dhow at midnight."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_fumo",
+          "f_dinghy",
+          "f_offer"
+        ],
+        "concludes": "A boat rowed out at midnight, voices were raised, and it rowed back fast; Ireri's dinghy carries the dhow's blue paint. Khamis had refused to sell. James Ireri killed him.",
+        "answers": [
+          "who",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_swaleh",
+        "blank": "who",
+        "by": [
+          "f_swaleh"
+        ],
+        "why": "Swaleh was on night watch at the Marikiti cold room from 20:00 to 06:00."
+      },
+      {
+        "word": "w_abdalla",
+        "blank": "who",
+        "by": [
+          "f_lamu"
+        ],
+        "why": "Abdalla's boat was moored in Lamu all night, and he was at the 05:00 prayers there."
+      },
+      {
+        "word": "w_fumo",
+        "blank": "who",
+        "by": [
+          "f_fumo_self"
+        ],
+        "why": "Fumo slept on his own boat at the far mooring, seen by the other fishermen."
+      },
+      {
+        "word": "w_hamza",
+        "blank": "who",
+        "by": [
+          "f_hamza_home"
+        ],
+        "why": "Hamza was off duty at home until 05:45."
+      },
+      {
+        "word": "m_charter",
+        "blank": "why",
+        "by": [
+          "f_ri_charter"
+        ],
+        "why": "The charter was paid in full last month."
+      },
+      {
+        "word": "m_smuggling",
+        "blank": "why",
+        "by": [
+          "f_harbour_noreport"
+        ],
+        "why": "There is no report against Ireri on file."
+      },
+      {
+        "word": "m_fuel",
+        "blank": "why",
+        "by": [
+          "f_swaleh",
+          "f_fumo_swaleh"
+        ],
+        "why": "That was Swaleh's dispute, and Swaleh was on night watch."
+      },
+      {
+        "word": "m_capsize",
+        "blank": "why",
+        "by": [
+          "f_harbour_capsize"
+        ],
+        "why": "The capsized trip was another operator's boat."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Twice Ireri offers to buy Upepo Mwema and her mooring. Twice Khamis dictates the same word to his son: HAPANA.",
+        "image": null
+      },
+      {
+        "text": "23:30. Khamis calls Abdalla: the cruise man is coming at midnight about the mooring.",
+        "image": null
+      },
+      {
+        "text": "Midnight. Ireri rows out with a last offer. They fight on deck. A belaying pin. Khamis goes over the side.",
+        "image": "loc_harbour"
+      },
+      {
+        "text": "Ireri sets the sandals neatly at the rail, takes Khamis's phone and rows back fast.",
+        "image": null
+      },
+      {
+        "text": "02:14, at home in Kisauni, he types: \"I'm going fishing alone, don't worry.\" Khamis had never sent a text in his life.",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_son",
+        "line": "Before you read the phone, read the man. Ask his son how his father talked to people."
+      },
+      "tier2": {
+        "facts": [
+          "f_rk_mast",
+          "f_ri_mast"
+        ],
+        "line": "Lay the two phones side by side. Where did each one go at twenty to two?"
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_offer",
+        "line": "What is pinned above his bunk?"
+      },
+      "tier2": {
+        "facts": [
+          "f_offer",
+          "f_son_call"
+        ],
+        "line": "An offer refused, and a midnight visit about the mooring."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "nahodha",
+      "def": "Captain of a dhow."
+    },
+    {
+      "term": "jahazi",
+      "def": "Dhow, a wooden sailing vessel."
+    },
+    {
+      "term": "hapana",
+      "def": "No."
+    },
+    {
+      "term": "kuvua",
+      "def": "To fish."
+    },
+    {
+      "term": "upepo mwema",
+      "def": "\"Good wind\", the dhow's name."
+    },
+    {
+      "term": "baba",
+      "def": "Father."
+    },
+    {
+      "term": "mzee",
+      "def": "Respectful word for an older man."
+    },
+    {
+      "term": "kofia",
+      "def": "Embroidered cap, often worn by Muslim men."
+    },
+    {
+      "term": "kikoi",
+      "def": "Woven cotton cloth, often striped, worn as a wrap."
+    },
+    {
+      "term": "kanzu",
+      "def": "Long white robe worn by men."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "overlayRecords"
+    ],
+    "beatNotes": "Overlaying two records: mast timelines from two phones stack on one strip, and matching moves line up. The first \"two phones moved together\" deduction. The case arrives logged as an accident; the player has to prove a murder happened at all."
+  }
+}

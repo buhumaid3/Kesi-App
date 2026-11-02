@@ -1,0 +1,2371 @@
+{
+  "meta": {
+    "id": "case-087",
+    "number": 87,
+    "region": "westlands-karen-runda",
+    "regionNumber": 9,
+    "title": "Girth",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 46,
+    "date": "Saturday 19 September",
+    "folderTab": "MBAGATHI RIDING CLUB"
+  },
+  "pattern": {
+    "crimePattern": "a mother whose son was paralysed by a horse sold as \"bombproof\" cuts the girth of the dealer's saddle; he cancels his ride and his exercise rider is killed",
+    "noRealCaseRetold": true,
+    "notes": "Fictional club, trainer and family. Second REAL TARGET case: the cut was meant for the trainer, who cancelled with a migraine at 06:45, after the saddle had been cut. WHERE asks where the crime was done: the tack room.",
+    "tags": [
+      "sabotage",
+      "riding",
+      "wrong-victim",
+      "revenge",
+      "real-target",
+      "three-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 6,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "realTarget"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": "the-rider-was-not-the-target"
+  },
+  "ob": {
+    "number": "OB 11/19/09",
+    "date": "Saturday 19 September",
+    "time": "09:40",
+    "reportedBy": "Mbagathi Riding Club, Karen",
+    "text": "A rider is reported killed in a fall during morning practice at a riding club in Karen: Tajeu Kipaa (29), exercise rider for trainer Gerald Kimani. Suspected riding accident.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_club",
+    "nodes": [
+      "loc_club",
+      "loc_ifrah",
+      "loc_icar"
+    ],
+    "edges": [
+      {
+        "a": "loc_club",
+        "b": "loc_ifrah",
+        "minutes": 10,
+        "by": "road"
+      },
+      {
+        "a": "loc_ifrah",
+        "b": "loc_icar",
+        "minutes": 1,
+        "by": "foot"
+      },
+      {
+        "a": "loc_club",
+        "b": "loc_icar",
+        "minutes": 10,
+        "by": "road"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_tajeu",
+      "role": "victim",
+      "name": "Tajeu Kipaa",
+      "age": 29,
+      "occupation": "Exercise rider for trainer Gerald Kimani",
+      "bio": "Schools Gerald's horses on Saturday mornings.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_polo",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Maasai man, late 20s, a riding helmet under one arm, a lean, cheerful face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_ifrah",
+      "role": "suspect",
+      "name": "Ifrah Warsame",
+      "age": 44,
+      "occupation": "Logistics businesswoman; keeps two horses at the club",
+      "bio": "Her son Zakaria was paralysed in a fall two years ago.",
+      "community": "Somali",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_book"
+      },
+      "at": "loc_ifrah",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Somali woman, mid 40s, a dark headscarf and riding gloves, a controlled, cold face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_gerald",
+      "role": "suspect",
+      "name": "Gerald Kimani",
+      "age": 56,
+      "occupation": "Trainer and horse dealer; Tajeu's employer",
+      "bio": "Rides his big bay, Kilele, in his own saddle every Saturday at 07:30.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "intendedTarget": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_ghome",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, mid 50s, a flat cap and a quilted gilet, an arrogant, then shaken face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_nicholas",
+      "role": "suspect",
+      "name": "Nicholas Barasa",
+      "age": 41,
+      "occupation": "Rival trainer",
+      "redHerring": true,
+      "bio": "Quarrelled with Gerald over a client.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_book"
+      },
+      "at": "plc_nyard",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luhya man, early 40s, a polo shirt and jodhpurs, a guarded face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_susan",
+      "role": "suspect",
+      "name": "Susan Kimani",
+      "age": 50,
+      "occupation": "Gerald's wife; co-owns the yard",
+      "redHerring": true,
+      "bio": "Keeps the yard's books.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_cafe",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, about 50, a cashmere jumper and pearls, a tense, composed face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kioko",
+      "role": "witness",
+      "name": "Mzee Kioko Musembi",
+      "age": 63,
+      "occupation": "Gerald's head groom for 20 years",
+      "bio": "Tacks up every horse in the yard.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_stables",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba man, early 60s, a groom's overalls and a woollen hat, a weathered, honest face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_said",
+      "role": "witness",
+      "name": "Dr. Amina Said",
+      "age": 45,
+      "occupation": "The club's vet",
+      "bio": "Was at the polo ground when Tajeu fell.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_polo",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Swahili woman, mid 40s, a vet's fleece and a stethoscope, a calm, precise face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_zakaria",
+      "role": "witness",
+      "name": "Zakaria Warsame",
+      "age": 20,
+      "occupation": "Ifrah's son",
+      "statementOnly": true,
+      "bio": "Uses a wheelchair since his fall from Shamal.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_ifrah",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_tack",
+      "name": "The tack room",
+      "within": "loc_club"
+    },
+    {
+      "id": "plc_polo",
+      "name": "The polo ground",
+      "within": "loc_club"
+    },
+    {
+      "id": "plc_stables",
+      "name": "The stable block",
+      "within": "loc_club"
+    },
+    {
+      "id": "plc_cafe",
+      "name": "The club café",
+      "within": "loc_club"
+    },
+    {
+      "id": "plc_gate",
+      "name": "The stable gate",
+      "within": "loc_club"
+    },
+    {
+      "id": "plc_ghome",
+      "name": "The Kimanis' house"
+    },
+    {
+      "id": "plc_nyard",
+      "name": "Nicholas's yard, across the road"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_club",
+      "name": "Mbagathi Riding Club",
+      "kind": "scene",
+      "description": "Paddocks, a polo ground, a long stable block, a tack room where every owner's saddles hang on named pegs, and a stable gate with a visitors' book.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_fall",
+          "label": "The polo ground",
+          "pos": [
+            70,
+            60
+          ],
+          "yields": "ev_fall",
+          "text": "By the goalpost. Gerald's saddle lies on the grass."
+        },
+        {
+          "id": "hs_strap",
+          "label": "The girth, under the magnifier",
+          "pos": [
+            72,
+            50
+          ],
+          "yields": "ev_strap",
+          "text": "Dr. Said lifts the saddle flap."
+        },
+        {
+          "id": "hs_said",
+          "label": "Dr. Said",
+          "pos": [
+            80,
+            70
+          ],
+          "yields": "ev_said",
+          "text": "The vet, who saw the fall."
+        },
+        {
+          "id": "hs_kioko",
+          "label": "Mzee Kioko",
+          "pos": [
+            30,
+            50
+          ],
+          "yields": "ev_kioko",
+          "text": "Kioko in the stable block."
+        },
+        {
+          "id": "hs_phones",
+          "label": "The phones",
+          "pos": [
+            25,
+            55
+          ],
+          "yields": "ev_call",
+          "text": "Kioko shows you his phone; Gerald's shows the same call.",
+          "unlock": {
+            "fact": "f_kioko"
+          }
+        },
+        {
+          "id": "hs_book",
+          "label": "Visitors' book",
+          "pos": [
+            10,
+            40
+          ],
+          "yields": "ev_book",
+          "text": "The stable gate's book."
+        },
+        {
+          "id": "hs_mare",
+          "label": "Ifrah's groom",
+          "pos": [
+            35,
+            30
+          ],
+          "yields": "ev_mare",
+          "text": "The groom who looks after Ifrah's mare.",
+          "unlock": {
+            "fact": "f_book"
+          }
+        },
+        {
+          "id": "hs_peg",
+          "label": "The tack room",
+          "pos": [
+            50,
+            30
+          ],
+          "yields": "ev_peg",
+          "text": "Gerald's peg by the door."
+        },
+        {
+          "id": "hs_nick",
+          "label": "The yard grooms",
+          "pos": [
+            40,
+            70
+          ],
+          "yields": "ev_nicholas",
+          "text": "A groom who was in the yard at seven.",
+          "unlock": {
+            "fact": "f_ni_never"
+          }
+        },
+        {
+          "id": "hs_cafe",
+          "label": "The club café",
+          "pos": [
+            90,
+            30
+          ],
+          "yields": "ev_susan",
+          "text": "The café's Saturday receipts.",
+          "unlock": {
+            "fact": "f_su_claim"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a Karen polo ground at 07:50 in morning mist, a riderless bay horse standing by a goalpost, a saddle on the grass, no people in focus"
+      }
+    },
+    {
+      "id": "loc_ifrah",
+      "name": "Ifrah's house, Karen",
+      "kind": "location",
+      "description": "A house ten minutes from the club, with a ramp to the front door.",
+      "unlock": {
+        "fact": "f_book"
+      },
+      "hotspots": [
+        {
+          "id": "hs_zakaria",
+          "label": "Zakaria",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_zakaria",
+          "text": "Zakaria, in his wheelchair by the window.",
+          "unlock": {
+            "fact": "f_records"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a modern Karen house with a wheelchair ramp to the front door, morning light"
+      }
+    },
+    {
+      "id": "loc_icar",
+      "name": "Ifrah's car",
+      "kind": "location",
+      "description": "Her car, parked in her driveway.",
+      "unlock": {
+        "fact": "f_records"
+      },
+      "hotspots": [
+        {
+          "id": "hs_car",
+          "label": "The car",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_car",
+          "text": "Search under warrant."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a dark SUV in a Karen driveway, its front door pocket open"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_fall",
+      "type": "physical",
+      "title": "The polo ground",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Tajeu by the goalpost. Gerald's saddle on the grass, its girth strap torn free on one side. Kilele stopped at once and stood."
+      },
+      "facts": [
+        "f_fall"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a saddle lying on a polo ground beside a goalpost, its girth strap torn free on one side, a bay horse standing nearby"
+      }
+    },
+    {
+      "id": "ev_strap",
+      "type": "physical",
+      "title": "The girth stitching",
+      "render": "object",
+      "body": {
+        "label": "Two-thirds of the stitching cut cleanly, with straight, even thread ends; the last third torn and frayed. Under the flap, where nobody looks."
+      },
+      "facts": [
+        "f_strap"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "close-up of a leather girth strap's stitching, two-thirds cut with clean thread ends, the last third frayed and torn"
+      }
+    },
+    {
+      "id": "ev_said",
+      "type": "witness",
+      "title": "Statement: Dr. Amina Said",
+      "render": "statement",
+      "body": {
+        "speaker": "p_said"
+      },
+      "facts": [
+        "f_said"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kioko",
+      "type": "witness",
+      "title": "Statement: Mzee Kioko Musembi",
+      "render": "statement",
+      "body": {
+        "speaker": "p_kioko"
+      },
+      "facts": [
+        "f_kioko",
+        "f_kioko_tack"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_call",
+      "type": "phone",
+      "title": "Gerald's and Kioko's phones",
+      "render": "manifest",
+      "body": {
+        "call": "06:45: Gerald to Kioko, 2 minutes."
+      },
+      "facts": [
+        "f_call"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_book",
+      "type": "document",
+      "title": "Stable gate visitors' book",
+      "render": "logBook",
+      "body": {
+        "text": "\"I. Warsame — 06:10 — to see mare.\" Then N. Barasa 06:55; S. Kimani 06:58. Gerald not in the book that day."
+      },
+      "facts": [
+        "f_book"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mare",
+      "type": "witness",
+      "title": "Statement: Ifrah's groom",
+      "render": "statement",
+      "body": {
+        "speaker": "p_ifrah"
+      },
+      "facts": [
+        "f_mare"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_peg",
+      "type": "physical",
+      "title": "The tack room",
+      "render": "object",
+      "body": {
+        "label": "No lock in the day. Gerald's saddle peg by the door; a cushion of saddle soap on the bench below; waxed thread snippets on the floor under the peg."
+      },
+      "facts": [
+        "f_peg"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_vetreport",
+      "type": "document",
+      "title": "A vet's report on Shamal",
+      "render": "form",
+      "body": {
+        "text": "Dated before the sale, addressed to Gerald Kimani: \"old thoracolumbar injury; bucking under pain likely; not suitable for a novice.\""
+      },
+      "facts": [
+        "f_vetreport"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_warranty",
+      "type": "document",
+      "title": "Gerald's sale letter",
+      "render": "form",
+      "body": {
+        "text": "To Zakaria Warsame: \"Shamal is bombproof, ideal for a young rider.\""
+      },
+      "facts": [
+        "f_warranty"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Ifrah's car tracker and phone",
+      "render": "manifest",
+      "body": {
+        "car": "At the club 06:08–06:31; home by 06:42.",
+        "phone": "06:33: a call to Zakaria, 40 seconds."
+      },
+      "facts": [
+        "f_records"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_strap",
+          "f_book",
+          "f_mare"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_zakaria",
+      "type": "witness",
+      "title": "Statement: Zakaria Warsame",
+      "render": "statement",
+      "body": {
+        "speaker": "p_zakaria"
+      },
+      "facts": [
+        "f_zakaria"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_car",
+      "type": "physical",
+      "title": "Ifrah's car",
+      "render": "object",
+      "body": {
+        "label": "In the driver's door pocket: a seam ripper, waxed linen thread and leather dust in its blade."
+      },
+      "facts": [
+        "f_ripper"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_records",
+          "f_peg",
+          "f_vetreport"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a small seam ripper with waxed thread caught in its blade in a car door pocket"
+      }
+    },
+    {
+      "id": "ev_nicholas",
+      "type": "witness",
+      "title": "Statement: a yard groom",
+      "render": "statement",
+      "body": {
+        "speaker": "p_kioko"
+      },
+      "facts": [
+        "f_nicholas"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_nyard",
+      "type": "witness",
+      "title": "Statement: Nicholas's grooms",
+      "render": "statement",
+      "body": {
+        "speaker": "p_nicholas"
+      },
+      "facts": [
+        "f_nyard"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_susan",
+      "type": "document",
+      "title": "Club café receipt",
+      "render": "form",
+      "body": {
+        "text": "S. Kimani with two owners, 07:00–08:00."
+      },
+      "facts": [
+        "f_cafe"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gguard",
+      "type": "witness",
+      "title": "Statement: the Kimanis' house guard",
+      "render": "statement",
+      "body": {
+        "speaker": "p_susan"
+      },
+      "facts": [
+        "f_ghome",
+        "f_shome"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_fall"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_toolmark",
+      "type": "forensic",
+      "title": "Lab: tool marks (stitching vs ripper)",
+      "render": "labReport",
+      "body": {
+        "test": "toolMarks"
+      },
+      "facts": [
+        "f_toolmark"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toolMarks",
+        "hours": 8,
+        "needs": [
+          "ev_strap",
+          "ev_car"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_leather",
+      "type": "forensic",
+      "title": "Lab: trace (leather dust on the blade)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_leather"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_strap",
+          "ev_car"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Tajeu Kipaa, exercise rider, was killed in a fall at morning practice at the Mbagathi Riding Club on Saturday.",
+      "kind": "true",
+      "about": [
+        "p_tajeu",
+        "loc_club"
+      ],
+      "at": {
+        "from": "07:50",
+        "to": null,
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_fall",
+      "text": "Tajeu lay by the goalpost. Gerald's saddle was on the grass, its girth torn free on one side. The horse, Kilele, stopped at once.",
+      "kind": "true",
+      "about": [
+        "p_tajeu",
+        "plc_polo"
+      ]
+    },
+    {
+      "id": "f_strap",
+      "text": "Under the flap, two-thirds of the girth's stitching was cut clean (straight thread ends); the last third tore.",
+      "kind": "true",
+      "about": [
+        "plc_polo"
+      ]
+    },
+    {
+      "id": "f_said",
+      "text": "Dr. Said: a worn girth tears along its whole length. At a canter the girth went, the saddle slid and Tajeu was thrown head-first into the post. No other horse was near.",
+      "kind": "true",
+      "about": [
+        "p_said",
+        "p_tajeu"
+      ],
+      "at": {
+        "from": "07:50",
+        "to": null,
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_kioko",
+      "text": "Kioko: \"Bwana Gerald always rides Kilele in his own saddle on Saturday. Nobody touches that saddle. At quarter to seven Bwana phoned: migraine, let Tajeu ride him in his saddle.\"",
+      "kind": "true",
+      "about": [
+        "p_kioko",
+        "p_gerald"
+      ]
+    },
+    {
+      "id": "f_kioko_tack",
+      "text": "Kioko: he tacked up at seven in front of two grooms and checked the girth for tightness. \"I don't lift the flap and look at the stitching. Nobody does.\"",
+      "kind": "true",
+      "about": [
+        "p_kioko"
+      ],
+      "at": {
+        "from": "07:00",
+        "to": null,
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_call",
+      "text": "Phones: Gerald called Kioko at 06:45 for 2 minutes.",
+      "kind": "true",
+      "about": [
+        "p_gerald",
+        "p_kioko"
+      ],
+      "at": {
+        "from": "06:45",
+        "to": null,
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_book",
+      "text": "Visitors' book: \"I. Warsame — 06:10 — to see mare.\" Then Nicholas Barasa 06:55 and Susan Kimani 06:58. Gerald isn't in it.",
+      "kind": "true",
+      "about": [
+        "p_ifrah",
+        "p_nicholas",
+        "p_susan"
+      ],
+      "at": {
+        "from": "06:10",
+        "to": null,
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_mare",
+      "text": "Ifrah's groom: Madam looked at the mare for a minute, said she'd left something, and walked to the tack room. She drove off at half past six.",
+      "kind": "true",
+      "about": [
+        "p_ifrah"
+      ],
+      "where": {
+        "person": "p_ifrah",
+        "place": "plc_tack",
+        "from": "06:12",
+        "to": "06:30"
+      }
+    },
+    {
+      "id": "f_peg",
+      "text": "In the tack room (no lock by day): Gerald's peg by the door, saddle soap on the bench, and waxed thread snippets on the floor under the peg.",
+      "kind": "true",
+      "about": [
+        "plc_tack"
+      ]
+    },
+    {
+      "id": "f_vetreport",
+      "text": "A vet's report on Shamal from before the sale, addressed to Gerald: \"old thoracolumbar injury; bucking under pain likely; not suitable for a novice.\"",
+      "kind": "true",
+      "about": [
+        "p_gerald"
+      ]
+    },
+    {
+      "id": "f_warranty",
+      "text": "Gerald's sale letter to Zakaria: \"Shamal is bombproof, ideal for a young rider.\" Three months later Shamal threw him at a jump.",
+      "kind": "true",
+      "about": [
+        "p_gerald",
+        "p_zakaria"
+      ]
+    },
+    {
+      "id": "f_records",
+      "text": "Records: Ifrah's car was at the club 06:08–06:31 and home by 06:42; she called Zakaria at 06:33 for 40 seconds.",
+      "kind": "true",
+      "about": [
+        "p_ifrah"
+      ],
+      "at": {
+        "from": "06:08",
+        "to": "06:31",
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_zakaria",
+      "text": "Zakaria: \"Mum called at half past six and said, 'It's done, my son.' I thought she meant she'd filed the new complaint.\"",
+      "kind": "true",
+      "about": [
+        "p_zakaria",
+        "p_ifrah"
+      ]
+    },
+    {
+      "id": "f_ripper",
+      "text": "In Ifrah's car door pocket: a seam ripper with waxed linen thread and leather dust in its blade.",
+      "kind": "true",
+      "about": [
+        "p_ifrah"
+      ]
+    },
+    {
+      "id": "f_nicholas",
+      "text": "A yard groom: Nicholas went into the tack room at 06:57 and came out within a minute with a borrowed bridle.",
+      "kind": "true",
+      "about": [
+        "p_nicholas"
+      ],
+      "at": {
+        "from": "06:57",
+        "to": null,
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_nyard",
+      "text": "Nicholas's grooms: he was feeding at his own yard across the road from 05:30 until he crossed over at 06:50.",
+      "kind": "true",
+      "about": [
+        "p_nicholas"
+      ],
+      "where": {
+        "person": "p_nicholas",
+        "place": "plc_nyard",
+        "from": "05:30",
+        "to": "06:50"
+      }
+    },
+    {
+      "id": "f_cafe",
+      "text": "Café receipt: Susan with two owners 07:00–08:00.",
+      "kind": "true",
+      "about": [
+        "p_susan"
+      ]
+    },
+    {
+      "id": "f_ghome",
+      "text": "The Kimanis' house guard: Gerald was at home all morning with a migraine; his car never left.",
+      "kind": "true",
+      "about": [
+        "p_gerald"
+      ],
+      "where": {
+        "person": "p_gerald",
+        "place": "plc_ghome",
+        "from": "22:00",
+        "to": "10:00"
+      }
+    },
+    {
+      "id": "f_shome",
+      "text": "The house guard: Susan left the house at 06:50.",
+      "kind": "true",
+      "about": [
+        "p_susan"
+      ],
+      "where": {
+        "person": "p_susan",
+        "place": "plc_ghome",
+        "from": "22:00",
+        "to": "06:50"
+      }
+    },
+    {
+      "id": "f_su_migraine",
+      "text": "Susan: \"Gerald gets migraines after a whisky night. He had one on Friday.\"",
+      "kind": "true",
+      "about": [
+        "p_susan",
+        "p_gerald"
+      ]
+    },
+    {
+      "id": "f_aut",
+      "text": "Post-mortem: head and neck injuries from a high-speed fall against a post. No heart disease.",
+      "kind": "true",
+      "about": [
+        "p_tajeu"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death at 07:50, witnessed.",
+      "kind": "true",
+      "about": [
+        "p_tajeu"
+      ],
+      "at": {
+        "from": "07:50",
+        "to": "07:50",
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_toolmark",
+      "text": "Lab: the cut stitching matches the seam ripper's blade; the waxed thread in the ripper is the saddle's.",
+      "kind": "true",
+      "about": [
+        "p_ifrah"
+      ]
+    },
+    {
+      "id": "f_leather",
+      "text": "Lab: the leather dust on the blade is the saddle flap's, with the same saddle-soap residue.",
+      "kind": "true",
+      "about": [
+        "p_ifrah"
+      ]
+    },
+    {
+      "id": "f_if_eight",
+      "text": "Ifrah: \"I came to the club at eight for practice. I never went into the tack room.\"",
+      "kind": "lie",
+      "about": [
+        "p_ifrah"
+      ]
+    },
+    {
+      "id": "f_if_reveal",
+      "text": "Ifrah: \"Gerald sold my boy a broken horse and swore it was safe. My son will never walk. Tajeu… Tajeu was never supposed to be on that horse.\"",
+      "kind": "true",
+      "about": [
+        "p_ifrah",
+        "p_gerald",
+        "p_tajeu"
+      ]
+    },
+    {
+      "id": "f_if_ripper",
+      "text": "Ifrah: \"I have never held a seam ripper in my life.\"",
+      "kind": "lie",
+      "about": [
+        "p_ifrah"
+      ]
+    },
+    {
+      "id": "f_ge_never",
+      "text": "Gerald: \"I never knew Shamal had any problem. That fall was bad luck.\"",
+      "kind": "lie",
+      "about": [
+        "p_gerald"
+      ]
+    },
+    {
+      "id": "f_ge_reveal",
+      "text": "Gerald: \"I had the report. I sold him anyway. It was a lot of money.\" Then: \"It was meant for me. It should have been me.\"",
+      "kind": "true",
+      "about": [
+        "p_gerald"
+      ]
+    },
+    {
+      "id": "f_ni_never",
+      "text": "Nicholas: \"I never went near the tack room.\"",
+      "kind": "lie",
+      "about": [
+        "p_nicholas"
+      ]
+    },
+    {
+      "id": "f_ni_reveal",
+      "text": "Nicholas: \"I borrowed a bridle without asking. I was embarrassed. That's all.\"",
+      "kind": "true",
+      "about": [
+        "p_nicholas"
+      ]
+    },
+    {
+      "id": "f_su_claim",
+      "text": "Susan: \"I was in the café.\"",
+      "kind": "claim",
+      "about": [
+        "p_susan"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_ifrah",
+      "stance": "cooperative",
+      "intro": "Ifrah meets you at her front door, controlled and cold, a folder already in her hand. \"I came to the club at eight for practice. I never went into the tack room. And you should read this.\"",
+      "claims": [
+        "f_if_eight"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_if_ripper",
+          "after": "f_if_reveal"
+        }
+      ],
+      "yields": [
+        "ev_vetreport",
+        "ev_warranty"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_gerald",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_kioko"
+      ],
+      "intro": "Gerald, grey with migraine, won't sit down. \"I never knew Shamal had any problem. That fall was bad luck.\"",
+      "claims": [
+        "f_ge_never"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_nicholas",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_book"
+      ],
+      "intro": "Nicholas keeps his hands in his gilet. \"I never went near the tack room.\"",
+      "claims": [
+        "f_ni_never"
+      ],
+      "yields": [
+        "ev_nyard"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_susan",
+      "stance": "cooperative",
+      "intro": "Susan sits very straight. \"I was in the café.\"",
+      "claims": [
+        "f_su_claim"
+      ],
+      "yields": [
+        "ev_gguard"
+      ],
+      "topics": [
+        {
+          "about": "ev_call",
+          "reply": "\"Gerald gets migraines after a whisky night. He had one on Friday.\"",
+          "reveals": [
+            "f_su_migraine"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_kioko",
+      "stance": "cooperative",
+      "intro": "Mzee Kioko holds Kilele's bridle and answers slowly.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_said",
+      "stance": "cooperative",
+      "intro": "Dr. Said answers precisely.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_ni",
+      "claim": "f_ni_never",
+      "brokenBy": [
+        "f_nicholas"
+      ],
+      "reveals": [
+        "f_ni_reveal"
+      ],
+      "reaction": "\"I borrowed a bridle without asking. I was embarrassed. That's all.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_ge",
+      "claim": "f_ge_never",
+      "brokenBy": [
+        "f_vetreport"
+      ],
+      "reveals": [
+        "f_ge_reveal"
+      ],
+      "reaction": "\"I had the report. I sold him anyway. It was a lot of money.\" (Filed separately for fraud.) Then, quietly: \"It was meant for me. It should have been me.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_if",
+      "claim": "f_if_eight",
+      "brokenBy": [
+        "f_book",
+        "f_mare",
+        "f_records"
+      ],
+      "reveals": [
+        "f_if_reveal"
+      ],
+      "reaction": "\"Gerald sold my boy a broken horse and swore it was safe. My son will never walk. Tajeu… Tajeu was never supposed to be on that horse.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_if_ripper",
+      "claim": "f_if_ripper",
+      "brokenBy": [
+        "f_toolmark"
+      ],
+      "reveals": [],
+      "reaction": "Ifrah takes off her riding gloves, one finger at a time, and puts them on the table.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_ifrah",
+      "text": "Ifrah Warsame",
+      "category": "person",
+      "ref": "p_ifrah",
+      "unlock": {
+        "anyOf": [
+          "f_book"
+        ]
+      }
+    },
+    {
+      "id": "w_gerald",
+      "text": "Gerald Kimani",
+      "category": "person",
+      "ref": "p_gerald",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_nicholas",
+      "text": "Nicholas Barasa",
+      "category": "person",
+      "ref": "p_nicholas",
+      "unlock": {
+        "anyOf": [
+          "f_book"
+        ]
+      }
+    },
+    {
+      "id": "w_susan",
+      "text": "Susan Kimani",
+      "category": "person",
+      "ref": "p_susan",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_kioko",
+      "text": "Kioko Musembi",
+      "category": "person",
+      "ref": "p_kioko",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_said",
+      "text": "Amina Said",
+      "category": "person",
+      "ref": "p_said",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "t_gerald",
+      "text": "Gerald Kimani",
+      "category": "target",
+      "ref": "p_gerald",
+      "unlock": {
+        "anyOf": [
+          "f_kioko"
+        ]
+      }
+    },
+    {
+      "id": "t_tajeu",
+      "text": "Tajeu Kipaa",
+      "category": "target",
+      "ref": "p_tajeu",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "t_nicholas",
+      "text": "Nicholas Barasa",
+      "category": "target",
+      "ref": "p_nicholas",
+      "unlock": {
+        "anyOf": [
+          "f_book"
+        ]
+      }
+    },
+    {
+      "id": "t_kioko",
+      "text": "Kioko Musembi",
+      "category": "target",
+      "ref": "p_kioko",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "t_susan",
+      "text": "Susan Kimani",
+      "category": "target",
+      "ref": "p_susan",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "t_said",
+      "text": "Dr. Amina Said",
+      "category": "target",
+      "ref": "p_said",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_tack",
+      "text": "the tack room",
+      "category": "place",
+      "ref": "plc_tack",
+      "unlock": {
+        "anyOf": [
+          "f_peg"
+        ]
+      }
+    },
+    {
+      "id": "pl_polo",
+      "text": "the polo ground",
+      "category": "place",
+      "ref": "plc_polo",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_stables",
+      "text": "the stable block",
+      "category": "place",
+      "ref": "plc_stables",
+      "unlock": {
+        "anyOf": [
+          "f_kioko_tack"
+        ]
+      }
+    },
+    {
+      "id": "pl_cafe",
+      "text": "the club café",
+      "category": "place",
+      "ref": "plc_cafe",
+      "unlock": {
+        "anyOf": [
+          "f_su_claim"
+        ]
+      }
+    },
+    {
+      "id": "pl_gate",
+      "text": "the stable gate",
+      "category": "place",
+      "ref": "plc_gate",
+      "unlock": {
+        "anyOf": [
+          "f_book"
+        ]
+      }
+    },
+    {
+      "id": "h_girth",
+      "text": "cutting the stitching of the saddle's girth so it would tear at speed, throwing the rider",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_strap"
+        ]
+      }
+    },
+    {
+      "id": "h_worn",
+      "text": "a worn girth that snapped",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_bolt",
+      "text": "the horse bolting and throwing him",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack in the saddle",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_kick",
+      "text": "a kick from another horse",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_revenge",
+      "text": "revenge on Gerald, who knowingly sold her son a dangerous horse that left him paralysed (the cut was meant for Gerald)",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_vetreport"
+        ]
+      }
+    },
+    {
+      "id": "m_rival",
+      "text": "a rival trainer's grudge against Gerald",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_book"
+        ]
+      }
+    },
+    {
+      "id": "m_wife",
+      "text": "a wife's grudge",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_tajeu",
+      "text": "a grudge against Tajeu",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_fees",
+      "text": "a dispute over livery fees",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_book"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. The killer meant to kill {target}.",
+    "fixed": {
+      "victim": "Tajeu Kipaa"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_2yr",
+                  "label": "Two years ago",
+                  "from": null,
+                  "to": null,
+                  "day": "2 years ago"
+                },
+                {
+                  "id": "sl_cut",
+                  "label": "Saturday 06:12–06:30",
+                  "from": "06:12",
+                  "to": "06:30",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_0645",
+                  "label": "Saturday 06:45",
+                  "from": "06:45",
+                  "to": "06:45",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_0700",
+                  "label": "Saturday 07:00",
+                  "from": "07:00",
+                  "to": "07:00",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_0750",
+                  "label": "Saturday 07:50",
+                  "from": "07:50",
+                  "to": "07:50",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_0800",
+                  "label": "Saturday 08:00",
+                  "from": "08:00",
+                  "to": "08:00",
+                  "day": "Sat"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_shamal",
+                  "text": "Zakaria is thrown from Shamal",
+                  "slot": "sl_2yr",
+                  "by": [
+                    "f_warranty",
+                    "f_if_reveal"
+                  ],
+                  "why": "Three months after the sale, two years ago.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_warranty"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_cut",
+                  "text": "Ifrah cuts the girth",
+                  "slot": "sl_cut",
+                  "by": [
+                    "f_mare",
+                    "f_records",
+                    "f_peg"
+                  ],
+                  "why": "Her groom saw her walk to the tack room; her car left at 06:31.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_mare"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_cancel",
+                  "text": "Gerald calls off his ride",
+                  "slot": "sl_0645",
+                  "by": [
+                    "f_call",
+                    "f_kioko"
+                  ],
+                  "why": "His call to Kioko: 06:45.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_call"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_tack",
+                  "text": "Kioko tacks up Kilele for Tajeu",
+                  "slot": "sl_0700",
+                  "by": [
+                    "f_kioko_tack"
+                  ],
+                  "why": "At seven, in front of two grooms.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_kioko_tack"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_fall",
+                  "text": "Tajeu is thrown",
+                  "slot": "sl_0750",
+                  "by": [
+                    "f_said",
+                    "f_aut_tod"
+                  ],
+                  "why": "Dr. Said saw it: 07:50.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_said"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_0800",
+                  "by": [
+                    "f_records",
+                    "f_book"
+                  ],
+                  "why": "\"Ifrah arrives for practice at eight\" is her story. Her car was at the club from 06:08 to 06:31."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A boy thrown two years ago. A seam ripper at quarter past six. A migraine at quarter to seven. A saddle on at seven. A fall at ten to eight.",
+          "fail": [
+            "Eight o'clock is her story.",
+            "Was the girth cut before or after Gerald cancelled?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_tack"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The crime was done in the tack room. The polo ground is only where it went off.",
+          "fail": [
+            "He died on the polo ground, but the killing was done before anyone mounted.",
+            "Kioko tacked up in the stable block and only checked the tightness."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_ifrah"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Twenty minutes alone at the tack room, a call home that said \"It's done\", and a seam ripper with his saddle's thread in it.",
+          "fail": [
+            "Nicholas was in the tack room for one minute, for a bridle.",
+            "Gerald never left his house."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_girth"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Two-thirds cut, so it would hold at a walk and go at a canter.",
+          "fail": [
+            "A worn girth tears along its whole length.",
+            "The saddle came off first; the horse stood."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_revenge"
+          }
+        ],
+        "prosecutor": {
+          "pass": "\"Bombproof.\" With the vet's report in his drawer.",
+          "fail": [
+            "Nobody knew Tajeu would ride until 06:45.",
+            "Her livery is paid."
+          ]
+        }
+      },
+      {
+        "id": "g_target",
+        "kind": "realTarget",
+        "blanks": [
+          {
+            "id": "target",
+            "category": "target",
+            "answer": "t_gerald"
+          }
+        ],
+        "prosecutor": {
+          "pass": "His saddle, his horse, his Saturday ride. He cancelled sixteen minutes after she drove away.",
+          "fail": [
+            "The saddle was cut before 06:31. Nobody knew Tajeu would ride it until 06:45.",
+            "Nicholas rides his own saddle."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_tack",
+      "from": "06:12",
+      "to": "06:30",
+      "note": "The act window: Ifrah alone at the tack room, 06:12–06:30, after which her car left at 06:31. Tajeu died of it at 07:50 on the polo ground."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_fall",
+          "f_strap",
+          "f_said",
+          "f_peg",
+          "f_aut",
+          "f_aut_tod"
+        ],
+        "concludes": "The girth was deliberately cut, under the flap, in the tack room.",
+        "answers": [
+          "how"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_kioko",
+          "f_kioko_tack",
+          "f_call",
+          "f_su_migraine",
+          "f_ge_reveal"
+        ],
+        "concludes": "The saddle was Gerald's alone; Tajeu rode only because Gerald cancelled at 06:45.",
+        "answers": [
+          "target"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_book",
+          "f_mare",
+          "f_records",
+          "f_if_eight",
+          "f_zakaria"
+        ],
+        "concludes": "Ifrah was at the tack room alone 06:12–06:30, before anyone knew Tajeu would ride.",
+        "answers": [
+          "when",
+          "where"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_vetreport",
+          "f_warranty",
+          "f_ge_never",
+          "f_if_reveal"
+        ],
+        "concludes": "Gerald knowingly sold her son a dangerous horse.",
+        "answers": [
+          "why"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_ripper",
+          "f_toolmark",
+          "f_leather"
+        ],
+        "concludes": "The seam ripper in her car cut the stitching."
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_if_ripper"
+        ],
+        "concludes": "Ifrah Warsame cut the girth of Gerald's saddle in the tack room; Tajeu rode it in his place.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_polo",
+        "blank": "where",
+        "by": [
+          "f_strap",
+          "f_kioko_tack"
+        ],
+        "why": "He died on the polo ground; the girth was cut before he mounted."
+      },
+      {
+        "word": "pl_stables",
+        "blank": "where",
+        "by": [
+          "f_kioko_tack"
+        ],
+        "why": "Kioko tacked up there and checked only the tightness."
+      },
+      {
+        "word": "pl_cafe",
+        "blank": "where",
+        "by": [
+          "f_cafe"
+        ],
+        "why": "Susan was in the café."
+      },
+      {
+        "word": "pl_gate",
+        "blank": "where",
+        "by": [
+          "f_book"
+        ],
+        "why": "Ifrah signed the book at the gate on the way in."
+      },
+      {
+        "word": "w_gerald",
+        "blank": "who",
+        "by": [
+          "f_ghome"
+        ],
+        "why": "Gerald was at home all morning; his car never left."
+      },
+      {
+        "word": "w_nicholas",
+        "blank": "who",
+        "by": [
+          "f_nyard"
+        ],
+        "why": "Nicholas was at his own yard until 06:50; his minute in the tack room was at 06:57, for a bridle."
+      },
+      {
+        "word": "w_susan",
+        "blank": "who",
+        "by": [
+          "f_shome"
+        ],
+        "why": "Susan was at home until 06:50."
+      },
+      {
+        "word": "w_kioko",
+        "blank": "who",
+        "by": [
+          "f_kioko_tack"
+        ],
+        "why": "Kioko tacked up in front of two grooms."
+      },
+      {
+        "word": "w_said",
+        "blank": "who",
+        "by": [
+          "f_said"
+        ],
+        "why": "Dr. Said was at the polo ground."
+      },
+      {
+        "word": "t_tajeu",
+        "blank": "target",
+        "by": [
+          "f_records",
+          "f_call"
+        ],
+        "why": "Nobody knew he'd ride until 06:45, and the saddle was cut before 06:31."
+      },
+      {
+        "word": "t_nicholas",
+        "blank": "target",
+        "by": [
+          "f_kioko"
+        ],
+        "why": "He rides his own saddle."
+      },
+      {
+        "word": "t_kioko",
+        "blank": "target",
+        "by": [
+          "f_kioko_tack"
+        ],
+        "why": "He doesn't ride."
+      },
+      {
+        "word": "t_susan",
+        "blank": "target",
+        "by": [
+          "f_kioko"
+        ],
+        "why": "She doesn't ride Kilele."
+      },
+      {
+        "word": "t_said",
+        "blank": "target",
+        "by": [
+          "f_said"
+        ],
+        "why": "The vet doesn't ride the yard's horses."
+      },
+      {
+        "word": "h_worn",
+        "blank": "how",
+        "by": [
+          "f_strap",
+          "f_said"
+        ],
+        "why": "Two-thirds cut clean."
+      },
+      {
+        "word": "h_bolt",
+        "blank": "how",
+        "by": [
+          "f_fall"
+        ],
+        "why": "The saddle came off first; the horse stopped at once."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "No heart disease."
+      },
+      {
+        "word": "h_kick",
+        "blank": "how",
+        "by": [
+          "f_said"
+        ],
+        "why": "No other horse near."
+      },
+      {
+        "word": "m_rival",
+        "blank": "why",
+        "by": [
+          "f_nyard",
+          "f_ni_reveal"
+        ],
+        "why": "Nicholas borrowed a bridle; he was at his yard during the cut."
+      },
+      {
+        "word": "m_wife",
+        "blank": "why",
+        "by": [
+          "f_shome"
+        ],
+        "why": "Susan was at home."
+      },
+      {
+        "word": "m_tajeu",
+        "blank": "why",
+        "by": [
+          "f_call",
+          "f_records"
+        ],
+        "why": "No one knew he'd ride."
+      },
+      {
+        "word": "m_fees",
+        "blank": "why",
+        "by": [
+          "f_vetreport"
+        ],
+        "why": "Her livery is paid, and fees don't explain a cut girth."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Two years ago Gerald sells Ifrah's son Zakaria a grey gelding, Shamal, warranted \"bombproof\". He has a vet's report on Shamal's old back injury. Three months later Shamal bucks Zakaria off at a jump; he will never walk again.",
+        "image": null
+      },
+      {
+        "text": "This month Ifrah finds the old vet's report in a clinic archive. She knows Gerald rides Kilele in his own saddle every Saturday at 07:30.",
+        "image": null
+      },
+      {
+        "text": "At 06:10 she signs in \"to see mare\", looks at the mare for a minute, and walks to the empty tack room. With a seam ripper she cuts two-thirds of the girth stitching on Gerald's saddle, under the flap.",
+        "image": "plc_tack"
+      },
+      {
+        "text": "At 06:31 she drives off and calls Zakaria: \"It's done.\" At 06:45 Gerald phones Kioko: migraine, let Tajeu ride. At 07:50, at a canter, the girth tears; the saddle slides and Tajeu is thrown into a goalpost.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Two stamps: records on Ifrah's car and phone, and a warrant on her car. Detain her after the search; the tool-mark test (8 h) and the leather trace (12 h) come back inside 24 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_club",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_fall",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_strap",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_said",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_said"
+      },
+      {
+        "do": "read",
+        "target": "ev_kioko",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_call",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_book",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_mare",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_peg",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_gerald"
+      },
+      {
+        "do": "interview",
+        "target": "p_susan"
+      },
+      {
+        "do": "read",
+        "target": "ev_gguard",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_nicholas"
+      },
+      {
+        "do": "read",
+        "target": "ev_nicholas",
+        "hours": 0
+      },
+      {
+        "do": "press",
+        "target": "c_ni"
+      },
+      {
+        "do": "travel",
+        "target": "loc_ifrah",
+        "hours": 0.25,
+        "from": "loc_club"
+      },
+      {
+        "do": "visit",
+        "target": "loc_ifrah",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_ifrah"
+      },
+      {
+        "do": "read",
+        "target": "ev_vetreport",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_warranty",
+        "hours": 0
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "read",
+        "target": "ev_zakaria",
+        "hours": 1
+      },
+      {
+        "do": "press",
+        "target": "c_if"
+      },
+      {
+        "do": "press",
+        "target": "c_ge"
+      },
+      {
+        "do": "travel",
+        "target": "loc_icar",
+        "hours": 0.1,
+        "from": "loc_ifrah"
+      },
+      {
+        "do": "search",
+        "target": "loc_icar"
+      },
+      {
+        "do": "detain",
+        "target": "p_ifrah"
+      },
+      {
+        "do": "submit",
+        "target": "ev_toolmark"
+      },
+      {
+        "do": "submit",
+        "target": "ev_leather"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 8
+      },
+      {
+        "do": "press",
+        "target": "c_if_ripper"
+      }
+    ],
+    "totalHours": 33.35
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_records",
+        "line": "Was the saddle cut before or after he cancelled, Amani?"
+      },
+      "tier2": {
+        "facts": [
+          "f_records",
+          "f_call"
+        ],
+        "line": "Her car left at 06:31. He cancelled at 06:45."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_peg",
+        "line": "Where does the saddle hang overnight?"
+      },
+      "tier2": {
+        "facts": [
+          "f_peg",
+          "f_strap"
+        ],
+        "line": "On Gerald's peg in the tack room, thread snippets under it."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_mare",
+        "line": "Ask the groom how long Madam looked at her mare."
+      },
+      "tier2": {
+        "facts": [
+          "f_mare",
+          "f_toolmark"
+        ],
+        "line": "One minute, then the tack room. And the seam ripper."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_strap",
+        "line": "Lift the flap. Cut, or torn?"
+      },
+      "tier2": {
+        "facts": [
+          "f_strap",
+          "f_said"
+        ],
+        "line": "Two-thirds cut, then torn at speed."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_vetreport",
+        "line": "What did Gerald know before he sold that horse?"
+      },
+      "tier2": {
+        "facts": [
+          "f_vetreport",
+          "f_warranty"
+        ],
+        "line": "\"Not suitable for a novice.\" And \"bombproof\"."
+      }
+    },
+    "g_target": {
+      "tier1": {
+        "point": "ev_kioko",
+        "line": "Whose saddle was it, and who was meant to ride?"
+      },
+      "tier2": {
+        "facts": [
+          "f_kioko",
+          "f_call"
+        ],
+        "line": "Gerald's, every Saturday. He cancelled at 06:45."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "farasi",
+      "def": "A horse."
+    },
+    {
+      "term": "tandiko",
+      "def": "A saddle."
+    },
+    {
+      "term": "mkanda wa tandiko",
+      "def": "A girth (the strap that holds a saddle on)."
+    },
+    {
+      "term": "uwanja wa polo",
+      "def": "A polo ground."
+    },
+    {
+      "term": "bwana",
+      "def": "Sir; the master of the yard."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "cutVersusTorn"
+    ],
+    "beatNotes": "Cut versus torn. The magnifier on the girth shows thread ends; the player drags a divider along the stitching to mark where the clean cut ends and the tear begins. The notebook converts it to a fact: \"Cut two-thirds through by hand. Designed to fail at speed.\""
+  }
+}

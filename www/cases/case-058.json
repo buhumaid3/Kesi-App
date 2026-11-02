@@ -1,0 +1,1859 @@
+{
+  "meta": {
+    "id": "case-058",
+    "number": 58,
+    "region": "maasai-mara",
+    "regionNumber": 6,
+    "title": "Bush Dinner",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 32,
+    "date": "Wednesday 11 March",
+    "folderTab": "NAIBOR RIDGE"
+  },
+  "pattern": {
+    "crimePattern": "husband smothers the hotelier wife who was divorcing him and removing him from her company, during the drumming at a bush dinner, and carries her home \"asleep\"",
+    "noRealCaseRetold": true,
+    "notes": "Fictional camp, hotel group and family. The Maasai performers are the camp's pride and are thanked by name in the reconstruction; they are not background noise. No method detail beyond \"a dinner-chair cushion\".",
+    "tags": [
+      "smothering",
+      "moved-body",
+      "relationship",
+      "two-liars",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 5,
+    "redHerrings": 1,
+    "liars": 2,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "warrant"
+    ],
+    "twist": "she-was-already-dead-in-the-vehicle"
+  },
+  "ob": {
+    "number": "OB 12/11/03",
+    "date": "Wednesday 11 March",
+    "time": "06:50",
+    "reportedBy": "Naibor Ridge Camp",
+    "text": "A luxury tented camp reports a guest, Laila Bajaber (44), hotel owner from Mombasa, found dead in her bed in tent 7 by the morning tea service at 06:15. Suspected death in her sleep.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_camp",
+    "nodes": [
+      "loc_camp",
+      "loc_dinner"
+    ],
+    "edges": [
+      {
+        "a": "loc_camp",
+        "b": "loc_dinner",
+        "minutes": 12,
+        "by": "game vehicle"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_laila",
+      "role": "victim",
+      "name": "Laila Bajaber",
+      "age": 44,
+      "occupation": "Owner of a Mombasa hotel group",
+      "bio": "At the camp for her wedding anniversary. Majority owner of four hotels on the coast.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_loo",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Swahili woman, mid 40s, an elegant silk headscarf, diamond stud earrings, a linen safari jacket, a confident, amused smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_faisal",
+      "role": "suspect",
+      "name": "Faisal Bajaber",
+      "age": 50,
+      "occupation": "Laila's husband; a director of her hotel group",
+      "bio": "Twenty years married. A director because his wife made him one.",
+      "community": "Swahili",
+      "isCulprit": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_tent7",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Swahili man, about 50, a white linen shirt, a neatly trimmed beard, a gold watch, a grieving face held very carefully, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_sylvester",
+      "role": "suspect",
+      "name": "Sylvester Karanja",
+      "age": 47,
+      "occupation": "Camp manager, Naibor Ridge",
+      "bio": "Runs the camp and its licence. The escort rule is his responsibility.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_camp",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, late 40s, a camp manager's pressed khaki uniform, a radio on his belt, polished and worried, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mwanakombo",
+      "role": "suspect",
+      "name": "Mwanakombo Ali",
+      "age": 29,
+      "occupation": "Laila's personal assistant",
+      "redHerring": true,
+      "bio": "Fired by Laila on Tuesday afternoon \"for being late with the board papers\".",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_photos"
+      },
+      "at": "plc_table",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Swahili young woman, late 20s, a buibui over a smart blouse, a phone and a folder of papers, defensive, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kakuta",
+      "role": "witness",
+      "name": "Kakuta Parsimei",
+      "age": 34,
+      "occupation": "Guide; drove the game vehicle",
+      "bio": "Notices everything. Drove the guests to and from the bush dinner.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_vehicle",
+      "image": null
+    },
+    {
+      "id": "p_lemanken",
+      "role": "witness",
+      "name": "Lemanken Sakuda",
+      "age": 26,
+      "occupation": "Night escort askari",
+      "bio": "Walks guests between the vehicle bay and their tents after dark.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_camp",
+      "image": null
+    },
+    {
+      "id": "p_salma",
+      "role": "witness",
+      "name": "Salma Bajaber",
+      "age": 41,
+      "occupation": "Laila's sister",
+      "statementOnly": true,
+      "bio": "Unlocked Laila's phone and flew up on the first plane.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_camp",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_tent7",
+      "name": "Tent 7",
+      "within": "loc_camp"
+    },
+    {
+      "id": "plc_lounge",
+      "name": "The camp lounge",
+      "within": "loc_camp"
+    },
+    {
+      "id": "plc_bay",
+      "name": "The camp vehicle bay",
+      "within": "loc_camp"
+    },
+    {
+      "id": "plc_loo",
+      "name": "The bush-loo tent at the dinner site",
+      "within": "loc_dinner"
+    },
+    {
+      "id": "plc_table",
+      "name": "The dinner table under the fig tree",
+      "within": "loc_dinner"
+    },
+    {
+      "id": "plc_fire",
+      "name": "The drummers' fire",
+      "within": "loc_dinner"
+    },
+    {
+      "id": "plc_vehicle",
+      "name": "The game vehicle",
+      "within": "loc_dinner"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_camp",
+      "name": "Naibor Ridge Camp, tent 7",
+      "kind": "scene",
+      "description": "Twelve tents on a ridge, gravel paths lit by low lamps. Tent 7: a canvas room with a wooden floor, a four-poster bed, Laila lying under the covers, her slippers set neatly by the bed.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_bed",
+          "label": "The bed",
+          "pos": [
+            46,
+            56
+          ],
+          "yields": "ev_tent7",
+          "text": "Laila lies under the covers. Her slippers are clean. The soles of her bare feet are not."
+        },
+        {
+          "id": "hs_phone",
+          "label": "Laila's phone",
+          "pos": [
+            76,
+            44
+          ],
+          "yields": "ev_laila_phone",
+          "text": "On the bedside table. Her sister unlocks it."
+        },
+        {
+          "id": "hs_inventory",
+          "label": "Kitchen store",
+          "pos": [
+            16,
+            30
+          ],
+          "yields": "ev_cushions",
+          "text": "The bush-dinner inventory clipboard in the camp kitchen."
+        },
+        {
+          "id": "hs_radio",
+          "label": "Manager's radio log",
+          "pos": [
+            26,
+            50
+          ],
+          "yields": "ev_radiolog",
+          "text": "The camp manager's radio log for last night."
+        },
+        {
+          "id": "hs_sister",
+          "label": "Laila's sister",
+          "pos": [
+            86,
+            60
+          ],
+          "yields": "ev_salma",
+          "text": "Salma Bajaber has just arrived on the first plane."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the inside of a luxury safari tent at dawn, a four-poster bed with white linen, a pair of clean slippers set neatly beside it, a wooden floor, the canvas lit by morning sun, no people in focus"
+      }
+    },
+    {
+      "id": "loc_dinner",
+      "name": "The bush-dinner site",
+      "kind": "location",
+      "description": "A huge fig tree 2 km from camp on red soil. A long table, lanterns burnt out, a circle of stones where the drummers' fire was. Forty metres off in the dark, a small \"bush loo\" tent.",
+      "unlock": {
+        "fact": "f_kakuta"
+      },
+      "hotspots": [
+        {
+          "id": "hs_loo",
+          "label": "The bush-loo tent",
+          "pos": [
+            80,
+            50
+          ],
+          "yields": "ev_loo",
+          "text": "A canvas loo tent. Something glints on the floor mat."
+        },
+        {
+          "id": "hs_table",
+          "label": "The table",
+          "pos": [
+            40,
+            50
+          ],
+          "yields": "ev_photos",
+          "text": "The guests' photographs of the evening, shared to the camp."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a long dinner table under a huge fig tree on red soil at night, lanterns, a circle of stones for a fire, a small canvas tent forty metres off in the dark"
+      }
+    },
+    {
+      "id": "loc_luggage",
+      "name": "Faisal's luggage (warrant)",
+      "kind": "search",
+      "description": "Two suitcases packed for the 11:00 flight, by the door of the camp office.",
+      "unlock": {
+        "fact": "f_cushions"
+      },
+      "hotspots": [
+        {
+          "id": "hs_case",
+          "label": "His suitcase",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_suitcase",
+          "text": "Under his shirts, something soft and square."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "an open hard suitcase on a camp office floor, folded shirts, a square embroidered cushion half hidden underneath"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_tent7",
+      "type": "physical",
+      "title": "Tent 7",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Under the covers. Her slippers by the bed are clean. The soles of her feet carry red soil; the camp paths are grey gravel."
+      },
+      "facts": [
+        "f_tent7"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a pair of clean white slippers on the wooden floor beside a four-poster bed in a safari tent, no body visible"
+      }
+    },
+    {
+      "id": "ev_loo",
+      "type": "physical",
+      "title": "The bush-loo tent",
+      "render": "sceneNote",
+      "body": {
+        "note": "A diamond stud earring on the floor mat. Scuffed sand inside the doorway."
+      },
+      "facts": [
+        "f_loo"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a single diamond stud earring lying on a woven floor mat inside a canvas tent, scuffed red sand in the doorway"
+      }
+    },
+    {
+      "id": "ev_cushions",
+      "type": "physical",
+      "title": "Bush-dinner inventory",
+      "render": "form",
+      "body": {
+        "out": "Fourteen chair cushions",
+        "back": "Thirteen returned"
+      },
+      "facts": [
+        "f_cushions"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kakuta",
+      "type": "witness",
+      "title": "Statement: Kakuta Parsimei",
+      "render": "statement",
+      "body": {
+        "speaker": "p_kakuta"
+      },
+      "facts": [
+        "f_kakuta",
+        "f_kakuta_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lemanken",
+      "type": "witness",
+      "title": "Statement: Lemanken Sakuda",
+      "render": "statement",
+      "body": {
+        "speaker": "p_lemanken"
+      },
+      "facts": [
+        "f_lemanken",
+        "f_lemanken_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_photos",
+      "type": "phone",
+      "title": "Guests' photos",
+      "render": "photo",
+      "body": {
+        "frames": "21:30 Laila at the table. 21:35–21:45 everyone watching the drumming: Laila's chair empty; Faisal's chair empty 21:37–21:44. 21:41, one frame: a man in a white linen shirt walking towards the loo tent with a cushion under his arm. 21:50 Faisal back; Laila's chair still empty."
+      },
+      "facts": [
+        "f_photos",
+        "f_photo_loo",
+        "f_pa_table"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_laila_phone",
+      "type": "phone",
+      "title": "Laila's phone",
+      "render": "manifest",
+      "body": {
+        "email": "Monday, from her lawyer: \"Petition filed. Board meeting Friday: resolution to remove F. Bajaber as director.\"",
+        "other": "No rival bid for any of her hotels in her email."
+      },
+      "facts": [
+        "f_email",
+        "f_no_rival"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_radiolog",
+      "type": "physical",
+      "title": "Manager's radio log",
+      "render": "logBook",
+      "body": {
+        "entries": "S. Karanja at camp all evening: calls logged 19:10 to 23:40."
+      },
+      "facts": [
+        "f_sylvester_radio"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_salma",
+      "type": "witness",
+      "title": "Statement: Salma Bajaber",
+      "render": "statement",
+      "body": {
+        "speaker": "p_salma"
+      },
+      "facts": [
+        "f_gift",
+        "f_jewellery"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_pa",
+      "type": "witness",
+      "title": "Statement: Mwanakombo Ali",
+      "render": "statement",
+      "body": {
+        "speaker": "p_mwanakombo"
+      },
+      "facts": [
+        "f_mwana_fired"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_suitcase",
+      "type": "physical",
+      "title": "Faisal's suitcase",
+      "render": "object",
+      "body": {
+        "label": "A dinner-chair cushion with the camp's embroidered logo, a lipstick smear on one face."
+      },
+      "facts": [
+        "f_suitcase"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_cushions",
+          "f_kakuta"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a square dinner-chair cushion with an embroidered camp logo and a faint lipstick smear, in an evidence bag"
+      }
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_smother",
+        "f_aut_lividity",
+        "f_aut_tod",
+        "f_aut_noasthma"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_tent7"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_fibre",
+      "type": "forensic",
+      "title": "Lab: fibres (airway vs the cushion)",
+      "render": "labReport",
+      "body": {
+        "test": "fibres"
+      },
+      "facts": [
+        "f_fibre"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "fibres",
+        "hours": 12,
+        "needs": [
+          "ev_autopsy",
+          "ev_suitcase"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tox",
+      "type": "forensic",
+      "title": "Lab: toxicology",
+      "render": "labReport",
+      "body": {
+        "test": "toxicology"
+      },
+      "facts": [
+        "f_tox"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toxicology",
+        "hours": 18,
+        "needs": [
+          "ev_autopsy"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Laila Bajaber was found dead in her bed in tent 7 by the morning tea service at 06:15. Suspected death in her sleep.",
+      "kind": "true",
+      "about": [
+        "p_laila",
+        "plc_tent7"
+      ],
+      "at": {
+        "from": "06:15"
+      }
+    },
+    {
+      "id": "f_tent7",
+      "text": "Tent 7: Laila under the covers; her slippers by the bed are clean; the soles of her feet carry red soil. The camp paths are grey gravel; the fig-tree site is red soil.",
+      "kind": "true",
+      "about": [
+        "p_laila",
+        "plc_tent7"
+      ]
+    },
+    {
+      "id": "f_loo",
+      "text": "Bush-loo tent at the dinner site: a diamond stud earring on the floor mat; scuffed sand inside the doorway.",
+      "kind": "true",
+      "about": [
+        "plc_loo"
+      ]
+    },
+    {
+      "id": "f_cushions",
+      "text": "Bush-dinner inventory: fourteen chair cushions sent out; thirteen returned.",
+      "kind": "true",
+      "about": [
+        "loc_dinner"
+      ]
+    },
+    {
+      "id": "f_kakuta",
+      "text": "Kakuta: \"Madam slept on his shoulder the whole drive. We hit the big bump at the lugga crossing hard. She didn't move at all. I remember thinking, she sleeps like the dead.\"",
+      "kind": "true",
+      "about": [
+        "p_kakuta",
+        "p_laila",
+        "p_faisal"
+      ]
+    },
+    {
+      "id": "f_kakuta_self",
+      "text": "Kakuta was at the vehicle through the drumming; he is in guests' photos at 21:40.",
+      "kind": "true",
+      "about": [
+        "p_kakuta"
+      ],
+      "where": {
+        "person": "p_kakuta",
+        "place": "plc_vehicle",
+        "from": "21:30",
+        "to": "22:10"
+      }
+    },
+    {
+      "id": "f_lemanken",
+      "text": "Lemanken: \"Mr Faisal waved me away at the vehicle. He said, 'My wife is asleep, I'll carry her.' I walked behind with the torch to the tent door.\" That was at 22:25.",
+      "kind": "true",
+      "about": [
+        "p_lemanken",
+        "p_faisal",
+        "p_laila"
+      ],
+      "at": {
+        "from": "22:25"
+      }
+    },
+    {
+      "id": "f_lemanken_self",
+      "text": "Lemanken was at the camp vehicle bay all evening until the vehicle returned at 22:22.",
+      "kind": "true",
+      "about": [
+        "p_lemanken"
+      ],
+      "where": {
+        "person": "p_lemanken",
+        "place": "plc_bay",
+        "from": "19:00",
+        "to": "22:30"
+      }
+    },
+    {
+      "id": "f_photos",
+      "text": "Guests' photos: Laila at the table at 21:30. In the drumming, 21:35–21:45, her chair is empty, and Faisal's is empty from 21:37 to 21:44. At 21:50 he is back; hers is still empty.",
+      "kind": "true",
+      "about": [
+        "p_laila",
+        "p_faisal"
+      ],
+      "at": {
+        "from": "21:30",
+        "to": "21:50"
+      }
+    },
+    {
+      "id": "f_photo_loo",
+      "text": "One frame at 21:41: in the lantern light, a man in a white linen shirt walks towards the loo tent with a dinner cushion under his arm. It is Faisal.",
+      "kind": "true",
+      "about": [
+        "p_faisal"
+      ],
+      "where": {
+        "person": "p_faisal",
+        "place": "plc_loo",
+        "from": "21:40",
+        "to": "21:43"
+      },
+      "at": {
+        "from": "21:41"
+      }
+    },
+    {
+      "id": "f_pa_table",
+      "text": "Guests' photos: Mwanakombo at the table through the whole drumming.",
+      "kind": "true",
+      "about": [
+        "p_mwanakombo"
+      ],
+      "where": {
+        "person": "p_mwanakombo",
+        "place": "plc_table",
+        "from": "21:30",
+        "to": "21:50"
+      }
+    },
+    {
+      "id": "f_email",
+      "text": "Laila's email from her lawyer, Monday: \"Petition filed. Board meeting Friday: resolution to remove F. Bajaber as director.\"",
+      "kind": "true",
+      "about": [
+        "p_laila",
+        "p_faisal"
+      ]
+    },
+    {
+      "id": "f_no_rival",
+      "text": "Laila's email: no rival bid for any of her hotels.",
+      "kind": "true",
+      "about": [
+        "p_laila"
+      ]
+    },
+    {
+      "id": "f_sylvester_radio",
+      "text": "Manager's radio log: Sylvester was at camp all evening; his calls are logged from 19:10 to 23:40.",
+      "kind": "true",
+      "about": [
+        "p_sylvester"
+      ],
+      "where": {
+        "person": "p_sylvester",
+        "place": "plc_lounge",
+        "from": "19:10",
+        "to": "23:40"
+      }
+    },
+    {
+      "id": "f_gift",
+      "text": "Salma: the anniversary gift was Laila's to him, a watch, and he liked it.",
+      "kind": "true",
+      "about": [
+        "p_salma",
+        "p_faisal"
+      ]
+    },
+    {
+      "id": "f_jewellery",
+      "text": "Salma: all of Laila's jewellery is accounted for, except one diamond stud earring.",
+      "kind": "true",
+      "about": [
+        "p_salma",
+        "p_laila"
+      ]
+    },
+    {
+      "id": "f_mwana_fired",
+      "text": "Mwanakombo: \"She fired me every month. She always rehired me.\"",
+      "kind": "true",
+      "about": [
+        "p_mwanakombo",
+        "p_laila"
+      ]
+    },
+    {
+      "id": "f_suitcase",
+      "text": "In Faisal's suitcase: a dinner-chair cushion with the camp's embroidered logo, a lipstick smear on one face.",
+      "kind": "true",
+      "about": [
+        "p_faisal"
+      ]
+    },
+    {
+      "id": "f_aut_smother",
+      "text": "Autopsy: smothering. Burst blood vessels in the eyes; fibres in the airway.",
+      "kind": "true",
+      "about": [
+        "p_laila"
+      ]
+    },
+    {
+      "id": "f_aut_lividity",
+      "text": "Autopsy: lividity in the buttocks and legs as well as the back. She sat upright for a while after death, then lay flat.",
+      "kind": "true",
+      "about": [
+        "p_laila"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 21:30 and 22:00.",
+      "kind": "true",
+      "about": [
+        "p_laila"
+      ],
+      "at": {
+        "from": "21:30",
+        "to": "22:00"
+      }
+    },
+    {
+      "id": "f_aut_noasthma",
+      "text": "Autopsy: no sign of asthma or allergy.",
+      "kind": "true",
+      "about": [
+        "p_laila"
+      ]
+    },
+    {
+      "id": "f_fibre",
+      "text": "Lab: the fibres in Laila's airway match the cushion from Faisal's suitcase.",
+      "kind": "true",
+      "about": [
+        "p_laila",
+        "p_faisal"
+      ]
+    },
+    {
+      "id": "f_tox",
+      "text": "Toxicology: a little wine; nothing else.",
+      "kind": "true",
+      "about": [
+        "p_laila"
+      ]
+    },
+    {
+      "id": "f_faisal_alive",
+      "text": "Faisal: \"She was alive in the vehicle. She walked into our tent, went to bed at half past ten, and I read until midnight.\"",
+      "kind": "lie",
+      "about": [
+        "p_faisal"
+      ]
+    },
+    {
+      "id": "f_faisal_asleep",
+      "text": "Faisal: \"She was tired. I carried her. She was asleep.\"",
+      "kind": "lie",
+      "about": [
+        "p_faisal"
+      ]
+    },
+    {
+      "id": "f_syl_escort",
+      "text": "Sylvester: \"Every guest was escorted to their tent and walked in on their own feet.\"",
+      "kind": "lie",
+      "about": [
+        "p_sylvester"
+      ]
+    },
+    {
+      "id": "f_syl_reveal",
+      "text": "Sylvester: he didn't check. \"If the conservancy hears guests walk around without escort, we lose our licence.\"",
+      "kind": "true",
+      "about": [
+        "p_sylvester"
+      ]
+    },
+    {
+      "id": "f_mwana_claim",
+      "text": "Mwanakombo: \"I was at the table the whole time.\"",
+      "kind": "claim",
+      "about": [
+        "p_mwanakombo"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_faisal",
+      "stance": "cooperative",
+      "intro": "Faisal sits on the veranda of tent 7 with his head in his hands. \"She was alive in the vehicle. She walked into our tent. She went to bed at half past ten and I read until midnight.\"",
+      "claims": [
+        "f_faisal_alive"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_faisal_asleep",
+          "after": "f_lemanken"
+        }
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_laila_phone",
+          "reply": "The divorce? A misunderstanding. We would have sorted it out. We always did.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_sylvester",
+      "stance": "cooperative",
+      "intro": "Sylvester has his radio in his hand and a guest list on a clipboard. \"Every guest was escorted to their tent and walked in on their own feet.\"",
+      "claims": [
+        "f_syl_escort"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_mwanakombo",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_photos"
+      ],
+      "intro": "Mwanakombo is packing her own bag. \"She fired me yesterday. I'm going home.\"",
+      "claims": [
+        "f_mwana_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_photos",
+          "reply": "Look at the photos; I'm in all of them. She fired me every month. She always rehired me.",
+          "reveals": [
+            "ev_pa"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_kakuta",
+      "stance": "cooperative",
+      "intro": "Kakuta leans on the game vehicle's bonnet. \"I drove them back. I'll tell you about the bump.\"",
+      "claims": [],
+      "yields": [
+        "ev_kakuta"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_lemanken",
+      "stance": "cooperative",
+      "intro": "Lemanken holds his torch in both hands. \"Guests insist. He insisted.\"",
+      "claims": [],
+      "yields": [
+        "ev_lemanken"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_sylvester",
+      "claim": "f_syl_escort",
+      "brokenBy": [
+        "f_lemanken"
+      ],
+      "reveals": [
+        "f_syl_reveal"
+      ],
+      "reaction": "\"I didn't check. If the conservancy hears guests walk around without escort, we lose our licence.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_faisal",
+      "claim": "f_faisal_alive",
+      "brokenBy": [
+        "f_lemanken",
+        "f_tent7",
+        "f_kakuta"
+      ],
+      "reveals": [],
+      "reaction": "He lifts his head. \"...She was tired. I carried her. She was asleep.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_faisal_asleep",
+      "claim": "f_faisal_asleep",
+      "brokenBy": [
+        "f_aut_lividity",
+        "f_fibre"
+      ],
+      "reveals": [],
+      "reaction": "Faisal looks at the cushion in its bag for a long time. \"Friday,\" he says. \"She was going to read it out to the board on Friday.\" He asks for a lawyer.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_faisal",
+      "text": "Faisal Bajaber",
+      "category": "person",
+      "ref": "p_faisal",
+      "unlock": {
+        "anyOf": [
+          "f_lemanken"
+        ]
+      }
+    },
+    {
+      "id": "w_sylvester",
+      "text": "Sylvester Karanja",
+      "category": "person",
+      "ref": "p_sylvester",
+      "unlock": {
+        "anyOf": [
+          "f_lemanken"
+        ]
+      }
+    },
+    {
+      "id": "w_mwanakombo",
+      "text": "Mwanakombo Ali",
+      "category": "person",
+      "ref": "p_mwanakombo",
+      "unlock": {
+        "anyOf": [
+          "f_photos"
+        ]
+      }
+    },
+    {
+      "id": "w_kakuta",
+      "text": "Kakuta Parsimei",
+      "category": "person",
+      "ref": "p_kakuta",
+      "unlock": {
+        "anyOf": [
+          "f_kakuta"
+        ]
+      }
+    },
+    {
+      "id": "w_lemanken",
+      "text": "Lemanken Sakuda",
+      "category": "person",
+      "ref": "p_lemanken",
+      "unlock": {
+        "anyOf": [
+          "f_lemanken"
+        ]
+      }
+    },
+    {
+      "id": "pl_tent7",
+      "text": "tent 7",
+      "category": "place",
+      "ref": "plc_tent7",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_loo",
+      "text": "the bush-loo tent at the dinner site",
+      "category": "place",
+      "ref": "plc_loo",
+      "unlock": {
+        "anyOf": [
+          "f_loo"
+        ]
+      }
+    },
+    {
+      "id": "pl_vehicle",
+      "text": "the game vehicle",
+      "category": "place",
+      "ref": "plc_vehicle",
+      "unlock": {
+        "anyOf": [
+          "f_kakuta"
+        ]
+      }
+    },
+    {
+      "id": "pl_lounge",
+      "text": "the camp lounge",
+      "category": "place",
+      "ref": "plc_lounge",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_fire",
+      "text": "the drummers' fire",
+      "category": "place",
+      "ref": "plc_fire",
+      "unlock": {
+        "anyOf": [
+          "f_photos"
+        ]
+      }
+    },
+    {
+      "id": "h_cushion",
+      "text": "smothered with a dinner-chair cushion during the drumming",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_smother"
+        ]
+      }
+    },
+    {
+      "id": "h_sleep",
+      "text": "died in her sleep in the tent",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_asthma",
+      "text": "an asthma attack",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_dinner",
+      "text": "a reaction to the dinner",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_photos"
+        ]
+      }
+    },
+    {
+      "id": "h_wine",
+      "text": "poisoned wine",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_photos"
+        ]
+      }
+    },
+    {
+      "id": "m_divorce",
+      "text": "she was divorcing him and removing him from her hotel group",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_email"
+        ]
+      }
+    },
+    {
+      "id": "m_fired",
+      "text": "she fired her assistant",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_photos"
+        ]
+      }
+    },
+    {
+      "id": "m_rival",
+      "text": "a rival hotelier's bid",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_email"
+        ]
+      }
+    },
+    {
+      "id": "m_necklace",
+      "text": "a stolen necklace",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_loo"
+        ]
+      }
+    },
+    {
+      "id": "m_gift",
+      "text": "a quarrel over the anniversary gift",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Laila Bajaber"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_2130",
+                  "label": "21:30",
+                  "from": "21:30",
+                  "to": "21:30"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "21:37–21:44",
+                  "from": "21:37",
+                  "to": "21:44"
+                },
+                {
+                  "id": "sl_2210",
+                  "label": "22:10",
+                  "from": "22:10",
+                  "to": "22:10"
+                },
+                {
+                  "id": "sl_2225",
+                  "label": "22:25",
+                  "from": "22:25",
+                  "to": "22:25"
+                },
+                {
+                  "id": "sl_2230",
+                  "label": "22:30",
+                  "from": "22:30",
+                  "to": "22:30"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_table",
+                  "text": "Laila last at the table",
+                  "slot": "sl_2130",
+                  "by": [
+                    "f_photos"
+                  ],
+                  "why": "The 21:30 photo.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_photos"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Laila is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_photos",
+                    "f_photo_loo",
+                    "f_aut_tod"
+                  ],
+                  "why": "During the drumming: Faisal's chair empty from 21:37 to 21:44, and the 21:41 frame of him walking to the loo tent with a cushion.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_vehicle",
+                  "text": "The vehicle leaves the dinner site",
+                  "slot": "sl_2210",
+                  "by": [
+                    "f_kakuta",
+                    "f_lemanken_self"
+                  ],
+                  "why": "Kakuta drove at 22:10, twelve minutes to camp.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_kakuta"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_carry",
+                  "text": "Faisal carries her into the tent",
+                  "slot": "sl_2225",
+                  "by": [
+                    "f_lemanken"
+                  ],
+                  "why": "Lemanken walked behind with the torch at 22:25.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_lemanken"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_2230",
+                  "by": [
+                    "f_lemanken",
+                    "f_aut_lividity"
+                  ],
+                  "why": "22:30 is when Faisal says she \"went to bed\". She was carried in at 22:25, already dead."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "At the table at half nine, dead during the drumming, a bump she didn't feel at ten past ten, carried in at 22:25. The camera saw more than the guests.",
+          "fail": [
+            "Half past ten is his story. She never walked into that tent.",
+            "Who left the table during the drumming, and when?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_loo"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Red soil on bare feet, her earring on the loo-tent mat, and a man with a cushion walking towards it at 21:41. She died in the loo tent.",
+          "fail": [
+            "Clean slippers and red soil on her soles. She didn't die in tent 7.",
+            "She was dead before the vehicle left. Read the guide's remark."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_faisal"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Out of his chair for seven minutes, photographed with a cushion, the cushion in his suitcase with her fibres on it. That will hold.",
+          "fail": [
+            "The manager lied about his escort rule. He was at camp all night.",
+            "The assistant is in every photo at the table."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_cushion"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Smothered with a dinner-chair cushion while the drums were loud. Yes.",
+          "fail": [
+            "Burst vessels and fibres in the airway. She didn't die in her sleep.",
+            "Toxicology: a little wine, nothing else."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_divorce"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A divorce petition on Monday and a board meeting on Friday. That's the reason.",
+          "fail": [
+            "She fired her assistant every month.",
+            "Her jewellery is all there but one earring, and we know where that is."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_loo",
+      "from": "21:35",
+      "to": "21:45",
+      "note": "During the drumming, 21:35–21:45; the autopsy allows 21:30–22:00."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_kakuta",
+          "f_aut_lividity",
+          "f_aut_smother"
+        ],
+        "concludes": "She didn't move at the lugga bump because she was already dead: she was smothered, and sat upright for a while after death before she lay flat."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_tent7",
+          "f_lemanken",
+          "f_faisal_alive",
+          "f_syl_escort",
+          "f_syl_reveal"
+        ],
+        "concludes": "She never walked into the tent: red soil on bare soles, clean slippers. Faisal waved the escort away and carried her; the manager's escort story was untrue."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_photos",
+          "f_photo_loo",
+          "f_loo",
+          "f_aut_tod"
+        ],
+        "concludes": "During the drumming both their chairs were empty; at 21:41 Faisal walked to the loo tent with a cushion, and her earring is on its floor mat. She died there, between 21:37 and 21:44.",
+        "answers": [
+          "where",
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_cushions",
+          "f_suitcase",
+          "f_fibre"
+        ],
+        "concludes": "The fourteenth cushion is in his suitcase, with her airway's fibres on it."
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_email",
+          "f_faisal_asleep"
+        ],
+        "concludes": "She was divorcing him and removing him from her company on Friday. At the bush-loo tent, Faisal Bajaber smothered Laila with a dinner-chair cushion during the drumming.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_tent7",
+        "blank": "where",
+        "by": [
+          "f_tent7",
+          "f_aut_lividity"
+        ],
+        "why": "Red soil on her bare soles and clean slippers; she sat dead for a while before she lay flat."
+      },
+      {
+        "word": "pl_vehicle",
+        "blank": "where",
+        "by": [
+          "f_aut_tod",
+          "f_kakuta"
+        ],
+        "why": "She died between 21:30 and 22:00, and the vehicle left at 22:10 with her already still."
+      },
+      {
+        "word": "pl_lounge",
+        "blank": "where",
+        "by": [
+          "f_photos",
+          "f_tent7"
+        ],
+        "why": "She was at the dinner site, 2 km away, and red soil is on her feet."
+      },
+      {
+        "word": "pl_fire",
+        "blank": "where",
+        "by": [
+          "f_photos",
+          "f_loo"
+        ],
+        "why": "Every guest at the fire is in the photos; her earring is in the loo tent."
+      },
+      {
+        "word": "w_sylvester",
+        "blank": "who",
+        "by": [
+          "f_sylvester_radio"
+        ],
+        "why": "Sylvester was at camp all evening; his radio calls are logged."
+      },
+      {
+        "word": "w_mwanakombo",
+        "blank": "who",
+        "by": [
+          "f_pa_table"
+        ],
+        "why": "Mwanakombo is in every photo at the table during the drumming."
+      },
+      {
+        "word": "w_kakuta",
+        "blank": "who",
+        "by": [
+          "f_kakuta_self"
+        ],
+        "why": "Kakuta was at the vehicle and is in the 21:40 photos."
+      },
+      {
+        "word": "w_lemanken",
+        "blank": "who",
+        "by": [
+          "f_lemanken_self"
+        ],
+        "why": "Lemanken was at the camp vehicle bay until the vehicle came back."
+      },
+      {
+        "word": "h_sleep",
+        "blank": "how",
+        "by": [
+          "f_aut_smother"
+        ],
+        "why": "Smothered, not asleep."
+      },
+      {
+        "word": "h_asthma",
+        "blank": "how",
+        "by": [
+          "f_aut_noasthma"
+        ],
+        "why": "No sign of asthma."
+      },
+      {
+        "word": "h_dinner",
+        "blank": "how",
+        "by": [
+          "f_tox"
+        ],
+        "why": "Toxicology: a little wine, nothing else."
+      },
+      {
+        "word": "h_wine",
+        "blank": "how",
+        "by": [
+          "f_tox"
+        ],
+        "why": "Nothing in the wine but wine."
+      },
+      {
+        "word": "m_fired",
+        "blank": "why",
+        "by": [
+          "f_mwana_fired",
+          "f_pa_table"
+        ],
+        "why": "That was Mwanakombo's grievance, a monthly one, and she was at the table."
+      },
+      {
+        "word": "m_rival",
+        "blank": "why",
+        "by": [
+          "f_no_rival"
+        ],
+        "why": "No rival bid in her email."
+      },
+      {
+        "word": "m_necklace",
+        "blank": "why",
+        "by": [
+          "f_jewellery"
+        ],
+        "why": "Her jewellery is all accounted for except the earring in the loo tent."
+      },
+      {
+        "word": "m_gift",
+        "blank": "why",
+        "by": [
+          "f_gift"
+        ],
+        "why": "The gift was hers to him, and he liked it."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "On Monday Laila files for divorce in Mombasa and, as majority owner, calls a board meeting to remove Faisal as a director. She tells him at lunch on Tuesday.",
+        "image": null
+      },
+      {
+        "text": "Tuesday night, the bush dinner under the fig tree. At 21:35 the drummers from the conservancy, led by Parsapaet ole Kaelo, begin ten minutes of drumming and song that hold every guest.",
+        "image": null
+      },
+      {
+        "text": "Laila walks to the loo tent in the dark. At 21:37 Faisal follows with the cushion from his chair, and smothers her inside the tent.",
+        "image": "plc_loo"
+      },
+      {
+        "text": "He sits her on a camp chair outside in the dark and comes back to the table: \"She's resting, she has a headache.\" At 22:10 he carries her to the vehicle, \"asleep\", her head on his shoulder. At the lugga bump she doesn't move.",
+        "image": null
+      },
+      {
+        "text": "At camp he waves the escort away, lays her in bed, sets her slippers neatly by the bed and packs the cushion. Kakuta, who notices everything, remembers thinking: she sleeps like the dead.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "One warrant on his luggage. Detain Faisal before the 11:00 flight; the fibre result comes back in 12 h, inside the 24.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_camp",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_tent7",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_kakuta"
+      },
+      {
+        "do": "interview",
+        "target": "p_lemanken"
+      },
+      {
+        "do": "interview",
+        "target": "p_sylvester"
+      },
+      {
+        "do": "press",
+        "target": "c_sylvester"
+      },
+      {
+        "do": "read",
+        "target": "ev_laila_phone",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_cushions",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_faisal"
+      },
+      {
+        "do": "press",
+        "target": "c_faisal"
+      },
+      {
+        "do": "detain",
+        "target": "p_faisal"
+      },
+      {
+        "do": "search",
+        "target": "loc_luggage"
+      },
+      {
+        "do": "submit",
+        "target": "ev_fibre"
+      },
+      {
+        "do": "travel",
+        "target": "loc_dinner",
+        "hours": 0.5,
+        "from": "loc_camp"
+      },
+      {
+        "do": "visit",
+        "target": "loc_dinner",
+        "hours": 2
+      },
+      {
+        "do": "read",
+        "target": "ev_loo",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_photos",
+        "hours": 1
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 6
+      },
+      {
+        "do": "interview",
+        "target": "p_faisal"
+      },
+      {
+        "do": "press",
+        "target": "c_faisal_asleep"
+      }
+    ],
+    "totalHours": 28.5
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_photos",
+        "line": "The guests photographed the drumming. Look at the chairs, not the drummers."
+      },
+      "tier2": {
+        "facts": [
+          "f_photos",
+          "f_photo_loo"
+        ],
+        "line": "Faisal's chair empty 21:37–21:44. A man with a cushion at 21:41."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_tent7",
+        "line": "Look at her slippers, then at her feet."
+      },
+      "tier2": {
+        "facts": [
+          "f_tent7",
+          "f_loo"
+        ],
+        "line": "Red soil on bare soles, and her earring on the loo-tent mat."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_lemanken",
+        "line": "Who wouldn't let the askari help?"
+      },
+      "tier2": {
+        "facts": [
+          "f_lemanken",
+          "f_suitcase"
+        ],
+        "line": "\"My wife is asleep, I'll carry her.\" And the missing cushion in his suitcase."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_kakuta",
+        "line": "A guide's throwaway line about a bump. Pin it."
+      },
+      "tier2": {
+        "facts": [
+          "f_kakuta",
+          "f_aut_smother"
+        ],
+        "line": "She didn't move at the bump. Smothered, fibres in her airway."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_laila_phone",
+        "line": "Read the email from her lawyer."
+      },
+      "tier2": {
+        "facts": [
+          "f_email"
+        ],
+        "line": "Petition filed. Board meeting Friday: remove F. Bajaber."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "hema",
+      "def": "A tent."
+    },
+    {
+      "term": "askari",
+      "def": "A guard; here, the camp's night escort."
+    },
+    {
+      "term": "ngoma",
+      "def": "Drums; a drum dance."
+    },
+    {
+      "term": "chakula cha porini",
+      "def": "A bush dinner (literally \"food of the wild\")."
+    },
+    {
+      "term": "lugga",
+      "def": "A dry, sandy stream bed."
+    },
+    {
+      "term": "ole",
+      "def": "Maa: \"son of\", used in Maasai names."
+    },
+    {
+      "term": "buibui",
+      "def": "A long black garment worn over clothes by some Muslim women."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "remarkAsEvidence"
+    ],
+    "beatNotes": "A witness's throwaway remark as evidence. The guide's line about the bump can be dragged into the notebook as a fact; it's the only way to the twist. The notebook teaches players to pin sentences, not just objects."
+  }
+}

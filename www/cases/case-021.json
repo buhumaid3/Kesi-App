@@ -1,0 +1,1327 @@
+{
+  "meta": {
+    "id": "case-021",
+    "number": 21,
+    "region": "mombasa-old-town",
+    "regionNumber": 3,
+    "title": "Kanga za Pwani",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 14,
+    "date": "Friday 8 August",
+    "folderTab": "BIASHARA ST"
+  },
+  "pattern": {
+    "crimePattern": "shop manager diverting customer payments to his own number kills the owner who found out",
+    "noRealCaseRetold": true,
+    "notes": "\"The till isn't working, pay this number\" is a widely reported everyday fraud. Fictional shop on a real street; fictional mobile-money service and network.",
+    "tags": [
+      "blunt-force",
+      "theft",
+      "records-request",
+      "first-why"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 3,
+    "redHerrings": 1,
+    "liars": 1,
+    "groups": [
+      "who",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone"
+    ],
+    "gatedActions": [
+      "records"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 17/08/08",
+    "date": "Friday 8 August",
+    "time": "13:41",
+    "reportedBy": "Abubakar Hassan, shopkeeper, Biashara Street, Mombasa",
+    "text": "Abubakar Hassan, a shopkeeper on Biashara Street, reports that his neighbour Mwanajuma Athman (58), owner of Kanga za Pwani, was found dead in the back store of her shop at 13:35, during Friday prayers.",
+    "facts": [
+      "f_ob_found"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_mwanajuma",
+      "role": "victim",
+      "name": "Mwanajuma Athman",
+      "age": 58,
+      "occupation": "Owner, Kanga za Pwani",
+      "bio": "Widow. Thirty-one years selling kanga on Biashara Street. Does her own books every Friday while the street is at prayer.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_shop",
+      "image": {
+        "kind": "portrait",
+        "brief": "Swahili Kenyan woman, late 50s, a black buibui with a brightly printed kanga over her shoulders, reading glasses on a cord, a ledger under her arm, shrewd and warm, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_dancan",
+      "role": "suspect",
+      "name": "Dancan Odhiambo",
+      "age": 34,
+      "occupation": "Shop manager, Kanga za Pwani",
+      "bio": "Has managed the shop for six years. Runs it alone on busy Saturdays.",
+      "community": "Luo",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_wagebook"
+      },
+      "at": "plc_mwembe",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 30s, neatly pressed short-sleeved shirt, a phone in a leather pouch on his belt, a measuring tape around his neck, polite and very calm, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_faiz",
+      "role": "suspect",
+      "name": "Faiz Athman",
+      "age": 27,
+      "occupation": "Mwanajuma's nephew",
+      "redHerring": true,
+      "bio": "Wants to run the shop now. Shouted at her on Tuesday about his late uncle's share.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_abubakar_tuesday"
+      },
+      "at": "plc_mosque",
+      "image": {
+        "kind": "portrait",
+        "brief": "Swahili Kenyan young man, late 20s, white kanzu and embroidered kofia, a short beard, ashamed and angry at once, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_rukia",
+      "role": "suspect",
+      "name": "Rukia Hamisi",
+      "age": 33,
+      "occupation": "Tenant, flat above the shop",
+      "bio": "Two months behind on the rent for the flat upstairs.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_rentcard"
+      },
+      "at": "plc_maternity",
+      "image": {
+        "kind": "portrait",
+        "brief": "Swahili Kenyan woman, early 30s, a lilac headscarf, a hospital visitor's sticker on her shoulder, exhausted and happy, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_abubakar",
+      "role": "witness",
+      "name": "Abubakar Hassan",
+      "age": 66,
+      "occupation": "Shopkeeper next door",
+      "bio": "Has sold kikoi next door for forty years. Found her.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_mosque",
+      "image": null
+    },
+    {
+      "id": "p_pili",
+      "role": "witness",
+      "name": "Pili Juma",
+      "age": 41,
+      "occupation": "Regular customer",
+      "bio": "Buys kanga for her shop in Ukunda every month.",
+      "community": "Mijikenda",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_sign"
+      },
+      "at": "plc_marikiti",
+      "image": null
+    },
+    {
+      "id": "p_salim",
+      "role": "witness",
+      "name": "Ustadh Salim Jeizan",
+      "age": 59,
+      "occupation": "Mosque committee member",
+      "statementOnly": true,
+      "bio": "Keeps the committee book at the mosque on the next street.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_faiz_claim"
+      },
+      "at": "plc_mosque",
+      "image": null
+    },
+    {
+      "id": "p_kassim",
+      "role": "witness",
+      "name": "Kassim Wanje",
+      "age": 48,
+      "occupation": "Kanga supplier, Mwembe Tayari",
+      "statementOnly": true,
+      "bio": "Loads bales onto the Malindi buses.",
+      "community": "Mijikenda",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_rec_mast"
+      },
+      "at": "plc_mwembe",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_store",
+      "name": "Back store",
+      "within": "loc_shop"
+    },
+    {
+      "id": "plc_mosque",
+      "name": "Mosque on the next street"
+    },
+    {
+      "id": "plc_mwembe",
+      "name": "Mwembe Tayari bus park"
+    },
+    {
+      "id": "plc_maternity",
+      "name": "Pwani Maternity Home"
+    },
+    {
+      "id": "plc_marikiti",
+      "name": "Marikiti market"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_shop",
+      "name": "Kanga za Pwani, Biashara Street",
+      "kind": "scene",
+      "description": "Friday, half past one. Biashara Street is nearly empty: shutters pulled half down for Jumaa, kangas still hanging in the doorways. Inside Kanga za Pwani, a front counter, shelves of folded cloth, and a back store stacked with bales.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Back store",
+          "pos": [
+            70,
+            58
+          ],
+          "yields": "ev_body",
+          "text": "Mwanajuma lies between the bales. The shop's long brass-tipped measuring rod is on the floor beside her."
+        },
+        {
+          "id": "hs_tea",
+          "label": "Counter",
+          "pos": [
+            40,
+            46
+          ],
+          "yields": "ev_tea",
+          "text": "Two glasses of spiced tea on a tray. One is empty. One has barely been touched."
+        },
+        {
+          "id": "hs_drawer",
+          "label": "Her drawer",
+          "pos": [
+            34,
+            54
+          ],
+          "yields": "ev_envelope",
+          "text": "Her accounts drawer, open. Papers, a will, a wage book. One envelope is empty."
+        },
+        {
+          "id": "hs_will",
+          "label": "Under the envelope",
+          "pos": [
+            30,
+            60
+          ],
+          "yields": "ev_will",
+          "text": "A copy of her will, folded in three."
+        },
+        {
+          "id": "hs_wages",
+          "label": "Wage book",
+          "pos": [
+            26,
+            50
+          ],
+          "yields": "ev_wagebook",
+          "text": "A small hardback wage book with a pencil tied to it."
+        },
+        {
+          "id": "hs_stock",
+          "label": "Stock book on the counter",
+          "pos": [
+            46,
+            40
+          ],
+          "yields": "ev_stockbook",
+          "text": "The stock book, open at last month. Something is clipped behind the page."
+        },
+        {
+          "id": "hs_sign",
+          "label": "Under the counter",
+          "pos": [
+            44,
+            66
+          ],
+          "yields": "ev_sign",
+          "text": "A piece of cardboard pushed out of sight, writing on one side."
+        },
+        {
+          "id": "hs_rent",
+          "label": "Nail by the stairs",
+          "pos": [
+            12,
+            30
+          ],
+          "yields": "ev_rentcard",
+          "text": "A rent card for the flat upstairs, hanging on a nail."
+        },
+        {
+          "id": "hs_abubakar",
+          "label": "Next door",
+          "pos": [
+            92,
+            44
+          ],
+          "yields": "ev_abubakar",
+          "text": "Abubakar Hassan stands in his own doorway in his prayer clothes, holding the door frame."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "Biashara Street in Mombasa at midday on a Friday, shop shutters pulled half down, brightly printed kangas hanging in doorways, an empty narrow street with coral-stone buildings, the interior of a small cloth shop with shelves of folded kangas and a back store of bales, no people in focus"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body in the back store",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Struck with the shop's brass-tipped measuring rod, found beside her."
+      },
+      "facts": [
+        "f_body_rod"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the back store of a kanga shop, bales of printed cloth stacked high, a long wooden measuring rod with a brass tip lying on the floor, a spilled stack of folded kangas, no body visible"
+      }
+    },
+    {
+      "id": "ev_tea",
+      "type": "physical",
+      "title": "Two glasses of tea",
+      "render": "object",
+      "body": {
+        "label": "Spiced tea in two glasses. One drunk. One barely touched."
+      },
+      "facts": [
+        "f_tea"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_envelope",
+      "type": "physical",
+      "title": "Empty statement envelope",
+      "render": "object",
+      "body": {
+        "label": "\"PesaPap Business — July statement.\" Empty."
+      },
+      "facts": [
+        "f_envelope"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_will",
+      "type": "physical",
+      "title": "Mwanajuma's will (copy)",
+      "render": "form",
+      "body": {
+        "text": "The shop and its stock to my daughter Zubeida Athman and my nephew Faiz Athman, jointly."
+      },
+      "facts": [
+        "f_will"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_wagebook",
+      "type": "physical",
+      "title": "Wage book",
+      "render": "ledger",
+      "body": {
+        "line": "D. Odhiambo — paid in full to end of July."
+      },
+      "facts": [
+        "f_wagebook"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_stockbook",
+      "type": "physical",
+      "title": "Stock book",
+      "render": "ledger",
+      "body": {
+        "line": "July: 1 bale \"Mombasa Raha\" MISSING.",
+        "clipped": "Supplier note: \"Bale found at our Malindi depot, sending back.\""
+      },
+      "facts": [
+        "f_stockbook"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_sign",
+      "type": "physical",
+      "title": "Cardboard sign",
+      "render": "board",
+      "body": {
+        "text": "TILL HAIFANYI KAZI — LIPA NAMBA HII: 07xx xxx 418"
+      },
+      "facts": [
+        "f_sign"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a hand-lettered cardboard sign on a shop counter reading TILL HAIFANYI KAZI LIPA NAMBA HII with a phone number whose middle digits are smudged"
+      }
+    },
+    {
+      "id": "ev_rentcard",
+      "type": "physical",
+      "title": "Rent card, upstairs flat",
+      "render": "form",
+      "body": {
+        "tenant": "R. Hamisi",
+        "arrears": "June, July",
+        "note": "In Mwanajuma's hand: 'Pay when you can.'"
+      },
+      "facts": [
+        "f_rentcard"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_abubakar",
+      "type": "witness",
+      "title": "Statement: Abubakar Hassan",
+      "render": "statement",
+      "body": {
+        "speaker": "p_abubakar"
+      },
+      "facts": [
+        "f_abubakar_alone",
+        "f_abubakar_tuesday"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_pili",
+      "type": "phone",
+      "title": "Pili's phone: payment confirmations",
+      "render": "smsThread",
+      "body": {
+        "messages": [
+          "Confirmed. KSh 6,400 sent to DANCAN ODHIAMBO 07xx xxx 418.",
+          "Confirmed. KSh 3,900 sent to DANCAN ODHIAMBO 07xx xxx 418."
+        ]
+      },
+      "facts": [
+        "f_pili_sms",
+        "f_pili_market"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: 07xx xxx 418 (Dancan Odhiambo)",
+      "render": "pesapapStatement",
+      "body": {
+        "pesapap": "112 incoming customer payments since December, KSh 341,900; each evening withdrawn at agents.",
+        "masts": "Friday: Biashara 12:30–13:20; Mwembe Tayari from 13:28."
+      },
+      "facts": [
+        "f_rec_pesapap",
+        "f_rec_mast"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_pili_sms"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_faiz",
+      "type": "witness",
+      "title": "Statement: Ustadh Salim Jeizan",
+      "render": "statement",
+      "body": {
+        "speaker": "p_salim"
+      },
+      "facts": [
+        "f_faiz_mosque",
+        "f_abubakar_mosque"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rukia",
+      "type": "document",
+      "title": "Maternity home register",
+      "render": "visitorRegister",
+      "body": {
+        "rows": [
+          {
+            "name": "R. Hamisi (birth companion)",
+            "in": "11:40",
+            "out": "15:20"
+          }
+        ],
+        "note": "Nurse: \"She never left her sister's side.\""
+      },
+      "facts": [
+        "f_rukia_register"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mwembe",
+      "type": "witness",
+      "title": "Statement: Kassim Wanje",
+      "render": "statement",
+      "body": {
+        "speaker": "p_kassim"
+      },
+      "facts": [
+        "f_kassim"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Abubakar Hassan found Mwanajuma Athman dead in the back store of Kanga za Pwani at 13:35, during Friday prayers.",
+      "kind": "true",
+      "about": [
+        "p_mwanajuma",
+        "p_abubakar"
+      ]
+    },
+    {
+      "id": "f_body_rod",
+      "text": "Mwanajuma was struck with the shop's brass-tipped measuring rod.",
+      "kind": "true",
+      "about": [
+        "p_mwanajuma",
+        "plc_store"
+      ]
+    },
+    {
+      "id": "f_tea",
+      "text": "Two glasses of spiced tea on the counter, one finished, one barely touched. She was expecting a visitor during prayers.",
+      "kind": "true",
+      "about": [
+        "loc_shop"
+      ]
+    },
+    {
+      "id": "f_envelope",
+      "text": "An empty envelope in her drawer: 'PesaPap Business — July statement'. The statement itself is gone.",
+      "kind": "true",
+      "about": [
+        "loc_shop"
+      ]
+    },
+    {
+      "id": "f_will",
+      "text": "Her will: the shop goes to her daughter and her nephew Faiz, jointly. Dancan isn't named.",
+      "kind": "true",
+      "about": [
+        "p_faiz",
+        "p_mwanajuma"
+      ]
+    },
+    {
+      "id": "f_wagebook",
+      "text": "Wage book: 'D. Odhiambo — paid in full to end of July.'",
+      "kind": "true",
+      "about": [
+        "p_dancan"
+      ]
+    },
+    {
+      "id": "f_stockbook",
+      "text": "Stock book: one bale 'missing' in July. Clipped behind it, the supplier's note: 'Bale found at our Malindi depot, sending back.'",
+      "kind": "true",
+      "about": [
+        "loc_shop"
+      ]
+    },
+    {
+      "id": "f_sign",
+      "text": "A cardboard sign under the counter: 'TILL HAIFANYI KAZI — LIPA NAMBA HII: 07xx xxx 418' (the till isn't working, pay this number).",
+      "kind": "true",
+      "about": [
+        "loc_shop"
+      ]
+    },
+    {
+      "id": "f_rentcard",
+      "text": "Rent card for the flat upstairs: tenant R. Hamisi, June and July unpaid. In Mwanajuma's hand: 'Pay when you can.' Dancan doesn't live in the building.",
+      "kind": "true",
+      "about": [
+        "p_rukia",
+        "p_mwanajuma"
+      ]
+    },
+    {
+      "id": "f_abubakar_alone",
+      "text": "Abubakar: he went to the mosque at 12:30. Mwanajuma stayed in, as every Friday, to do her books. At 13:35 her shutter was half down and the back light on. He went in and found her.",
+      "kind": "true",
+      "about": [
+        "p_abubakar",
+        "p_mwanajuma"
+      ]
+    },
+    {
+      "id": "f_abubakar_tuesday",
+      "text": "Abubakar: on Tuesday her nephew Faiz shouted at her in the street about his late uncle's share of the shop.",
+      "kind": "true",
+      "about": [
+        "p_abubakar",
+        "p_faiz"
+      ]
+    },
+    {
+      "id": "f_pili_sms",
+      "text": "Pili's phone: 'Confirmed. KSh 6,400 sent to DANCAN ODHIAMBO 07xx xxx 418.' Twice this month Dancan told her the till was broken and to pay his number.",
+      "kind": "true",
+      "about": [
+        "p_pili",
+        "p_dancan"
+      ]
+    },
+    {
+      "id": "f_pili_market",
+      "text": "Pili's phone also shows her paying stallholders at Marikiti market at 12:40 and 13:05.",
+      "kind": "true",
+      "about": [
+        "p_pili"
+      ]
+    },
+    {
+      "id": "f_rec_pesapap",
+      "text": "PesaPap, 07xx xxx 418: 112 incoming customer payments since December, KSh 341,900, mostly on Saturdays, each withdrawn at agents the same evening.",
+      "kind": "true",
+      "about": [
+        "p_dancan"
+      ]
+    },
+    {
+      "id": "f_rec_mast",
+      "text": "Jamii Mobile, 07xx xxx 418, Friday: on the Biashara mast 12:30–13:20, then Mwembe Tayari from 13:28.",
+      "kind": "true",
+      "about": [
+        "p_dancan"
+      ]
+    },
+    {
+      "id": "f_kassim",
+      "text": "Kassim: Dancan arrived at the Mwembe Tayari bus park at 13:30, sweating, and said three times that he had \"been waiting here an hour\".",
+      "kind": "true",
+      "about": [
+        "p_kassim",
+        "p_dancan"
+      ]
+    },
+    {
+      "id": "f_faiz_mosque",
+      "text": "Ustadh Salim: Faiz recited before the sermon and stayed through prayers and the committee tea, about 12:20 to 13:40, in front of several hundred people.",
+      "kind": "true",
+      "about": [
+        "p_salim",
+        "p_faiz"
+      ],
+      "where": {
+        "person": "p_faiz",
+        "place": "plc_mosque",
+        "from": "12:20",
+        "to": "13:40"
+      }
+    },
+    {
+      "id": "f_abubakar_mosque",
+      "text": "Ustadh Salim: the shopkeepers of Biashara Street, Abubakar Hassan among them, prayed in the front rows from about 12:35.",
+      "kind": "true",
+      "about": [
+        "p_salim",
+        "p_abubakar"
+      ],
+      "where": {
+        "person": "p_abubakar",
+        "place": "plc_mosque",
+        "from": "12:35",
+        "to": "13:30"
+      }
+    },
+    {
+      "id": "f_rukia_register",
+      "text": "Maternity home register: R. Hamisi signed in at 11:40 as birth companion for her sister, out at 15:20. The nurse says she never left.",
+      "kind": "true",
+      "about": [
+        "p_rukia"
+      ],
+      "where": {
+        "person": "p_rukia",
+        "place": "plc_maternity",
+        "from": "11:40",
+        "to": "15:20"
+      }
+    },
+    {
+      "id": "f_dancan_mwembe",
+      "text": "Dancan: \"I was at Mwembe Tayari from half past twelve, waiting for the Malindi bus with our stock.\"",
+      "kind": "lie",
+      "about": [
+        "p_dancan"
+      ]
+    },
+    {
+      "id": "f_dancan_till",
+      "text": "Dancan: \"The till works fine. Mama handled all the money.\"",
+      "kind": "lie",
+      "about": [
+        "p_dancan"
+      ]
+    },
+    {
+      "id": "f_dancan_shop",
+      "text": "Dancan admits he was at the shop at about one o'clock, \"for a minute\". He says she was fine when he left.",
+      "kind": "true",
+      "about": [
+        "p_dancan",
+        "loc_shop"
+      ],
+      "where": {
+        "person": "p_dancan",
+        "place": "loc_shop",
+        "from": "12:58",
+        "to": "13:02"
+      }
+    },
+    {
+      "id": "f_dancan_slow",
+      "text": "Dancan: \"Sometimes the till was slow. I was helping customers.\"",
+      "kind": "claim",
+      "about": [
+        "p_dancan"
+      ]
+    },
+    {
+      "id": "f_faiz_claim",
+      "text": "Faiz: \"I was in the mosque.\"",
+      "kind": "claim",
+      "about": [
+        "p_faiz"
+      ]
+    },
+    {
+      "id": "f_faiz_share",
+      "text": "Faiz: the will gives him half. \"I wanted to run it now, not when she's dead. I'm ashamed of what I said on Tuesday.\"",
+      "kind": "true",
+      "about": [
+        "p_faiz"
+      ]
+    },
+    {
+      "id": "f_rukia_claim",
+      "text": "Rukia: \"I was with my sister. She had a baby girl at two o'clock.\"",
+      "kind": "claim",
+      "about": [
+        "p_rukia"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_dancan",
+      "stance": "cooperative",
+      "intro": "Dancan arrives from Mwembe Tayari with two bales on a handcart and stops at the tape. \"Mama? Mama Mwanajuma?\"",
+      "claims": [
+        "f_dancan_mwembe",
+        "f_dancan_till"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_mwanajuma",
+          "reply": "Six years I worked for her. She trusted me with everything.",
+          "reveals": []
+        },
+        {
+          "about": "ev_envelope",
+          "reply": "Statements? Mama did the books. I sold cloth.",
+          "reveals": []
+        },
+        {
+          "about": "p_faiz",
+          "reply": "Her nephew wants the shop. On Tuesday he shouted at her in the street. Everybody heard.",
+          "reveals": []
+        },
+        {
+          "about": "f_dancan_mwembe",
+          "reply": "Ask Kassim, the supplier at the bus park. He saw me there. I was waiting an hour.",
+          "reveals": [
+            "ev_mwembe"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_faiz",
+      "stance": "cooperative",
+      "intro": "Faiz is still in his prayer clothes. He won't sit down. \"I shouted at her on Tuesday. The last thing I did was shout.\"",
+      "claims": [
+        "f_faiz_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_will",
+          "reply": "Half the shop, one day. I wanted to run it now, not when she's dead. I'm ashamed of what I said.",
+          "reveals": [
+            "f_faiz_share"
+          ]
+        },
+        {
+          "about": "p_salim",
+          "reply": "Ask Ustadh Salim. I recited before the sermon. Three hundred people watched me.",
+          "reveals": [
+            "ev_faiz"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_rukia",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_body"
+      ],
+      "intro": "Rukia takes the call in a maternity corridor, a newborn crying behind her. \"I am with my sister. What is it?\"",
+      "claims": [
+        "f_rukia_claim"
+      ],
+      "yields": [
+        "ev_rukia"
+      ],
+      "topics": [
+        {
+          "about": "ev_rentcard",
+          "reply": "Mama Mwanajuma told me to pay when I can. She was like that. Who does that any more?",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_abubakar",
+      "stance": "cooperative",
+      "intro": "Abubakar sits on his own step with his hands in his lap. \"Forty years next door. Every Friday she stayed in with her books.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_dancan",
+          "reply": "The manager. Polite boy. On Saturdays he runs the shop alone and it is always full.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_pili",
+      "stance": "cooperative",
+      "intro": "Pili answers from Marikiti market. \"Dancan? Yes, I know him. The till never works when I come.\"",
+      "claims": [],
+      "yields": [
+        "ev_pili"
+      ],
+      "topics": [
+        {
+          "about": "ev_sign",
+          "reply": "That sign! Twice this month he told me the till was broken and to pay his number. Look, here are the messages.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_dancan_mwembe",
+      "claim": "f_dancan_mwembe",
+      "brokenBy": [
+        "f_rec_mast"
+      ],
+      "reveals": [
+        "f_dancan_shop"
+      ],
+      "reaction": "I passed the shop at one. For a minute. To collect the bale list. She was fine when I left. She gave me tea.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_dancan_till",
+      "claim": "f_dancan_till",
+      "brokenBy": [
+        "f_sign",
+        "f_pili_sms"
+      ],
+      "reveals": [
+        "f_dancan_slow"
+      ],
+      "reaction": "Sometimes the till was slow. Customers were waiting. I was helping them. I was going to give her the money.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_dancan",
+      "text": "Dancan Odhiambo",
+      "category": "person",
+      "ref": "p_dancan",
+      "unlock": {
+        "anyOf": [
+          "f_wagebook",
+          "f_pili_sms"
+        ]
+      }
+    },
+    {
+      "id": "w_faiz",
+      "text": "Faiz Athman",
+      "category": "person",
+      "ref": "p_faiz",
+      "unlock": {
+        "anyOf": [
+          "f_abubakar_tuesday"
+        ]
+      }
+    },
+    {
+      "id": "w_rukia",
+      "text": "Rukia Hamisi",
+      "category": "person",
+      "ref": "p_rukia",
+      "unlock": {
+        "anyOf": [
+          "f_rentcard"
+        ]
+      }
+    },
+    {
+      "id": "w_abubakar",
+      "text": "Abubakar Hassan",
+      "category": "person",
+      "ref": "p_abubakar",
+      "unlock": {
+        "anyOf": [
+          "f_ob_found"
+        ]
+      }
+    },
+    {
+      "id": "w_pili",
+      "text": "Pili Juma",
+      "category": "person",
+      "ref": "p_pili",
+      "unlock": {
+        "anyOf": [
+          "f_pili_sms"
+        ]
+      }
+    },
+    {
+      "id": "m_divert",
+      "text": "she found out he was diverting the shop's payments to his own number",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_sign",
+          "f_pili_sms"
+        ]
+      }
+    },
+    {
+      "id": "m_inherit",
+      "text": "she was cutting him out of the inheritance",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_will"
+        ]
+      }
+    },
+    {
+      "id": "m_evict",
+      "text": "she was about to evict him",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_rentcard"
+        ]
+      }
+    },
+    {
+      "id": "m_wages",
+      "text": "his wages were unpaid",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_wagebook"
+        ]
+      }
+    },
+    {
+      "id": "m_bale",
+      "text": "she accused him of stealing a bale",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_stockbook"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} because {why}.",
+    "fixed": {
+      "victim": "Mwanajuma Athman"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_dancan"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The mast puts him on Biashara Street during prayers, and he admits the shop. He did it.",
+          "fail": [
+            "Doesn't hold up. A nephew who shouted on Tuesday was in front of three hundred people on Friday. Who was on that street?",
+            "No. Read his phone against his story. Where was it at one o'clock?"
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_divert"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Three hundred and forty thousand shillings, two glasses of tea. Clean.",
+          "fail": [
+            "He did it. Now tell me why, or his lawyer will tell the court a story.",
+            "That motive isn't his. Whose statement is missing from that drawer, and what was in it?"
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_shop",
+      "from": "12:30",
+      "to": "13:35",
+      "within": [
+        "plc_store"
+      ]
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_tea",
+          "f_abubakar_alone"
+        ],
+        "concludes": "Mwanajuma was alone in the shop during prayers, 12:30 to 13:35, and she had made tea for a visitor."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_dancan_mwembe",
+          "f_rec_mast",
+          "f_dancan_shop"
+        ],
+        "concludes": "Dancan said he was at Mwembe Tayari from 12:30, but his phone was on the Biashara mast until 13:20. Pressed, he admits being at the shop at one."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_sign",
+          "f_pili_sms",
+          "f_rec_pesapap",
+          "f_envelope"
+        ],
+        "concludes": "For eight months he had customers pay his own number: 112 payments, KSh 341,900. The July statement that would have shown it is gone. Dancan Odhiambo killed her because she had found out.",
+        "answers": [
+          "who",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_faiz",
+        "blank": "who",
+        "by": [
+          "f_faiz_mosque"
+        ],
+        "why": "Faiz was reciting and praying at the mosque from about 12:20 to 13:40, in front of several hundred people."
+      },
+      {
+        "word": "w_rukia",
+        "blank": "who",
+        "by": [
+          "f_rukia_register"
+        ],
+        "why": "Rukia was at the maternity home from 11:40 to 15:20 and never left her sister."
+      },
+      {
+        "word": "w_abubakar",
+        "blank": "who",
+        "by": [
+          "f_abubakar_mosque"
+        ],
+        "why": "Abubakar was praying in the front rows from 12:35."
+      },
+      {
+        "word": "w_pili",
+        "blank": "who",
+        "by": [
+          "f_pili_market"
+        ],
+        "why": "Pili was paying stallholders at Marikiti market at 12:40 and 13:05."
+      },
+      {
+        "word": "m_inherit",
+        "blank": "why",
+        "by": [
+          "f_will"
+        ],
+        "why": "The will concerns her daughter and Faiz. Dancan has no claim to be cut out of."
+      },
+      {
+        "word": "m_evict",
+        "blank": "why",
+        "by": [
+          "f_rentcard"
+        ],
+        "why": "Dancan doesn't live there. The tenant is Rukia, and Mwanajuma had told her to pay when she could."
+      },
+      {
+        "word": "m_wages",
+        "blank": "why",
+        "by": [
+          "f_wagebook"
+        ],
+        "why": "His wages were paid in full to the end of July."
+      },
+      {
+        "word": "m_bale",
+        "blank": "why",
+        "by": [
+          "f_stockbook"
+        ],
+        "why": "The \"missing\" bale turned up at the supplier's Malindi depot."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "December. On busy Saturdays a cardboard sign appears on the counter: \"The till isn't working, pay this number.\" The number is Dancan's.",
+        "image": null
+      },
+      {
+        "text": "Thursday. Mwanajuma reads the shop till's July statement. On the days Dancan ran the shop, the takings collapse.",
+        "image": null
+      },
+      {
+        "text": "Friday, 12:30. The street goes to prayer. She makes two glasses of tea and waits for him.",
+        "image": "loc_shop"
+      },
+      {
+        "text": "About 12:55. She shows him the statement and says she will go to the police tomorrow. He picks up the measuring rod.",
+        "image": null
+      },
+      {
+        "text": "He takes the statement, leaves by the back alley and walks to Mwembe Tayari, where he tells a supplier three times that he has been waiting an hour.",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_sign",
+        "line": "A sign under the counter, a number on it. Ask a regular customer what she paid to."
+      },
+      "tier2": {
+        "facts": [
+          "f_dancan_mwembe",
+          "f_rec_mast"
+        ],
+        "line": "He says Mwembe Tayari from half past twelve. A mast tells you the neighbourhood, not the door. Which neighbourhood was his phone in?"
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_envelope",
+        "line": "Something is missing from her drawer. What would a July statement show?"
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_pesapap",
+          "f_envelope"
+        ],
+        "line": "A hundred and twelve payments to his number, and the statement that would expose them is gone."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "kanga",
+      "def": "Printed cotton cloth, often with a proverb along the edge."
+    },
+    {
+      "term": "kikoi",
+      "def": "Woven cotton cloth, often striped, worn as a wrap."
+    },
+    {
+      "term": "jumaa",
+      "def": "Friday midday prayer."
+    },
+    {
+      "term": "lipa namba hii",
+      "def": "Pay this number."
+    },
+    {
+      "term": "namba",
+      "def": "Number."
+    },
+    {
+      "term": "kazi",
+      "def": "Work. \"Haifanyi kazi\": it isn't working."
+    },
+    {
+      "term": "wakala",
+      "def": "Mobile-money agent, where cash is deposited or withdrawn."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address or name a woman."
+    },
+    {
+      "term": "kanzu",
+      "def": "Long white robe worn by men."
+    },
+    {
+      "term": "kofia",
+      "def": "Embroidered cap, often worn by Muslim men."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    },
+    {
+      "term": "kangas",
+      "def": "Plural of kanga."
+    },
+    {
+      "term": "buibui",
+      "def": "Long black over-garment worn by many Muslim women on the coast."
+    }
+  ],
+  "tutorial": [
+    {
+      "trigger": "caseOpen",
+      "line": "New tools. Phone records need a court order: a stamp, and a reason tying that number to this case."
+    },
+    {
+      "trigger": "firstMast",
+      "line": "A mast tells you the neighbourhood, not the door. Use it to narrow. Never to pin."
+    },
+    {
+      "trigger": "firstWhy",
+      "line": "From now on Halima wants to know why. Who and why are judged separately. Get one right and she'll tell you."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "recordsRequest",
+      "mastMap",
+      "whyBlank"
+    ],
+    "beatNotes": "The records request (a form with the probable-cause fact pre-typed and a court-order stamp), the mast map (coverage circles over Old Town) and the WHY blank, confirmed as its own group. Mwalimu covers all three in under 30 seconds."
+  }
+}

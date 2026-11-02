@@ -1,0 +1,2536 @@
+{
+  "meta": {
+    "id": "case-064",
+    "number": 64,
+    "region": "mt-kenya",
+    "regionNumber": 7,
+    "title": "Two Wives",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 38,
+    "date": "Friday 24 April",
+    "folderTab": "EMBU TOWN"
+  },
+  "pattern": {
+    "crimePattern": "a woman discovers that her \"civil marriage\" certificate was forged by the man who gave it to her, and that her savings are in his name, and kills him",
+    "noRealCaseRetold": true,
+    "notes": "Fictional family and registry staff. Customary and civil marriage are presented respectfully; neither woman is caricatured. The forgery's flaw is shown, never how it was made.",
+    "tags": [
+      "blunt-force",
+      "relationship",
+      "document-fraud",
+      "victim-forger",
+      "three-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where",
+      "forgery"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 5,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "forgery"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": "the-forgery-was-the-victims-own"
+  },
+  "ob": {
+    "number": "OB 03/24/04",
+    "date": "Friday 24 April",
+    "time": "07:00",
+    "reportedBy": "Landlady, Embu town",
+    "text": "A landlady reports a man found dead in the sitting room of a rented house behind the main road in Embu town. Kinyua Mbogo (55), transport businessman. The door was open when she came up at 06:40.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_house",
+    "nodes": [
+      "loc_house",
+      "loc_registry",
+      "loc_fleet",
+      "loc_farm"
+    ],
+    "edges": [
+      {
+        "a": "loc_house",
+        "b": "loc_registry",
+        "minutes": 5,
+        "by": "road"
+      },
+      {
+        "a": "loc_house",
+        "b": "loc_fleet",
+        "minutes": 5,
+        "by": "road"
+      },
+      {
+        "a": "loc_registry",
+        "b": "loc_fleet",
+        "minutes": 5,
+        "by": "road"
+      },
+      {
+        "a": "loc_fleet",
+        "b": "loc_farm",
+        "minutes": 30,
+        "by": "road"
+      },
+      {
+        "a": "loc_house",
+        "b": "loc_farm",
+        "minutes": 30,
+        "by": "road"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_kinyua",
+      "role": "victim",
+      "name": "Kinyua Mbogo",
+      "age": 55,
+      "occupation": "Transport businessman (five matatus)",
+      "bio": "A farm at Runyenjes with his wife of thirty years, and a rented house in town with a younger woman.",
+      "community": "Embu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_sitting",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Embu man, mid 50s, a sports jacket over a polo shirt, a heavy watch, a confident, easy smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_doris",
+      "role": "suspect",
+      "name": "Doris Wawira",
+      "age": 33,
+      "occupation": "Hairdresser; his \"second wife\" in town",
+      "bio": "Married him, she believed, at a civil ceremony two years ago. On Tuesday she took the certificate to the registry.",
+      "community": "Embu",
+      "isCulprit": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_house",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Embu woman, early 30s, a neat wrap dress, braided hair pinned up, a controlled, unreadable face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_agatha",
+      "role": "suspect",
+      "name": "Agatha Wangari",
+      "age": 54,
+      "occupation": "His wife of thirty years, Runyenjes",
+      "redHerring": true,
+      "bio": "Knows about Doris. Has never set foot in her house. She says.",
+      "community": "Embu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_matatu"
+      },
+      "at": "loc_farm",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Embu woman, mid 50s, a headscarf and a long skirt, a church brooch, a proud, hurt face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mutugi",
+      "role": "suspect",
+      "name": "Mutugi Wambugu",
+      "age": 40,
+      "occupation": "Kinyua's driver",
+      "bio": "Drives the boss's own car. Knows where the boss sleeps, and who asks.",
+      "community": "Embu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_fleet",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Embu man, about 40, a driver's cap and a leather jacket, car keys on a long lanyard, an anxious, loyal face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_musili",
+      "role": "suspect",
+      "name": "Musili Kimeu",
+      "age": 45,
+      "occupation": "Debt collector for a lender",
+      "redHerring": true,
+      "bio": "Collects for a lender Kinyua owed KSh 400,000.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_debt"
+      },
+      "at": "plc_nairobi",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba man, mid 40s, a dark suit, a notebook in his hand, a flat, patient expression, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_rhoda",
+      "role": "witness",
+      "name": "Rhoda Njoki",
+      "age": 61,
+      "occupation": "The landlady",
+      "bio": "Lives next door with two tenants. Hears everything.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_rhoda",
+      "image": null
+    },
+    {
+      "id": "p_kaguru",
+      "role": "witness",
+      "name": "Kaguru Njiru",
+      "age": 52,
+      "occupation": "Matatu stage guard, Runyenjes",
+      "statementOnly": true,
+      "bio": "Knows every passenger on the Embu route by name.",
+      "community": "Embu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_rstage",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_sitting",
+      "name": "The sitting room of the Embu town house",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_rhoda",
+      "name": "Rhoda's house next door"
+    },
+    {
+      "id": "plc_stage",
+      "name": "The Embu matatu stage"
+    },
+    {
+      "id": "plc_rstage",
+      "name": "The Runyenjes matatu stage"
+    },
+    {
+      "id": "plc_nairobi",
+      "name": "A Nairobi lodging"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_house",
+      "name": "The rented house, Embu town",
+      "kind": "scene",
+      "description": "Two rooms behind the main road: a sitting room with a sofa set and a television, a back kitchen. A steel thermos flask stands on the drying rack. The front door was open.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Sitting room",
+          "pos": [
+            44,
+            56
+          ],
+          "yields": "ev_body",
+          "text": "Kinyua lies on the sitting-room floor."
+        },
+        {
+          "id": "hs_flask",
+          "label": "Drying rack",
+          "pos": [
+            72,
+            40
+          ],
+          "yields": "ev_flask",
+          "text": "A large steel thermos flask, washed. Dented."
+        },
+        {
+          "id": "hs_drawer",
+          "label": "Drawer",
+          "pos": [
+            30,
+            46
+          ],
+          "yields": "ev_certificate",
+          "text": "A drawer of papers: a marriage certificate on top."
+        },
+        {
+          "id": "hs_papers",
+          "label": "Under the certificate",
+          "pos": [
+            34,
+            52
+          ],
+          "yields": "ev_papers",
+          "text": "An NHIF form."
+        },
+        {
+          "id": "hs_bank",
+          "label": "Bank envelope",
+          "pos": [
+            36,
+            58
+          ],
+          "yields": "ev_bank",
+          "text": "A bank statement in Doris's name."
+        },
+        {
+          "id": "hs_back",
+          "label": "Back kitchen",
+          "pos": [
+            86,
+            50
+          ],
+          "yields": "ev_doris_home",
+          "text": "The back kitchen. Doris stands in the doorway: \"Not in there.\""
+        },
+        {
+          "id": "hs_phone",
+          "label": "Kinyua's phone",
+          "pos": [
+            50,
+            64
+          ],
+          "yields": "ev_kphone",
+          "text": "His phone, in his jacket. His wife unlocks it."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a modest rented sitting room in a Kenyan town at night, a sofa set and a television, a steel thermos flask upside down on a drying rack, the front door ajar, no people in focus"
+      }
+    },
+    {
+      "id": "loc_registry",
+      "name": "Embu civil registry",
+      "kind": "location",
+      "description": "A counter, a queue, and the bound marriage registers behind glass.",
+      "unlock": {
+        "fact": "f_cert"
+      },
+      "hotspots": [
+        {
+          "id": "hs_reg",
+          "label": "Marriage register",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_registry",
+          "text": "The register for that year, and the counter book."
+        },
+        {
+          "id": "hs_gen",
+          "label": "Specimen",
+          "pos": [
+            62,
+            46
+          ],
+          "yields": "ev_genuine_cert",
+          "text": "A genuine certificate of the same year."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a civil registry counter in a Kenyan county town, bound registers behind glass, a counter book open, people waiting"
+      }
+    },
+    {
+      "id": "loc_fleet",
+      "name": "Mbogo fleet yard",
+      "kind": "location",
+      "description": "Four matatus and a fifth, newer one, painted with a slogan. A fleet office with a logbook.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_fleetlog",
+          "label": "Fleet log",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_mutugi_log",
+          "text": "The fleet log and the yard guard's book."
+        },
+        {
+          "id": "hs_ntsa",
+          "label": "Vehicle file",
+          "pos": [
+            64,
+            46
+          ],
+          "yields": "ev_matatu",
+          "text": "The fifth matatu's registration record."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a matatu fleet yard in a Kenyan town, colourful painted minibuses parked in a row, a small office with a logbook"
+      }
+    },
+    {
+      "id": "loc_farm",
+      "name": "Mbogo farm, Runyenjes",
+      "kind": "location",
+      "description": "A farm of tea and bananas, a big house built over thirty years.",
+      "unlock": {
+        "fact": "f_matatu"
+      },
+      "hotspots": [],
+      "image": {
+        "kind": "location",
+        "brief": "a family farmhouse among banana trees and tea at Runyenjes, Embu, a long veranda"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The sitting room",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. One blow to the temple. KSh 22,000 in his jacket."
+      },
+      "facts": [
+        "f_body",
+        "f_cash"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a sitting-room floor beside a low table, a man's jacket over a chair, no body visible"
+      }
+    },
+    {
+      "id": "ev_flask",
+      "type": "physical",
+      "title": "The steel thermos flask",
+      "render": "object",
+      "body": {
+        "label": "Large, steel, washed. A fresh dent in the side. Its lid is missing."
+      },
+      "facts": [
+        "f_flask"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a large steel thermos flask with a fresh dent, upside down on a drying rack"
+      }
+    },
+    {
+      "id": "ev_certificate",
+      "type": "document",
+      "title": "Marriage certificate",
+      "render": "form",
+      "body": {
+        "text": "Kinyua Mbogo and Doris Wawira. A serial number. Signed \"Registrar J. M. Nthiga\". Witnesses: Doris's sister and Kinyua's friend."
+      },
+      "facts": [
+        "f_cert"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": false,
+        "forger": "p_kinyua",
+        "kind": "marriage certificate"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a Kenyan marriage certificate with a serial number and a registrar's signature, slightly creased"
+      }
+    },
+    {
+      "id": "ev_papers",
+      "type": "document",
+      "title": "NHIF form",
+      "render": "form",
+      "body": {
+        "nhif": "NHIF form, Tuesday: Doris adding Kinyua as spouse. Stamped \"certificate not verified\"."
+      },
+      "facts": [
+        "f_nhif"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "NHIF form"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_bank",
+      "type": "document",
+      "title": "Doris's bank statement",
+      "render": "form",
+      "body": {
+        "text": "KSh 600,000 withdrawn in January. Printed and stamped by the bank."
+      },
+      "facts": [
+        "f_bank",
+        "f_bank_real"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "bank statement"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_kphone",
+      "type": "phone",
+      "title": "Kinyua's phone",
+      "render": "manifest",
+      "body": {
+        "texts": "From M. Kimeu: \"Pay 400,000 by month-end, or the boss sends people.\" Repayment receipts every 5th."
+      },
+      "facts": [
+        "f_debt"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_registry",
+      "type": "document",
+      "title": "Marriage register and counter book",
+      "render": "logBook",
+      "body": {
+        "register": "That serial number belongs to another couple married the same year. Registrar Nthiga retired three years before the certificate's date.",
+        "counter": "\"Doris Wawira, Tue, enquiry re certificate — referred to police.\""
+      },
+      "facts": [
+        "f_registry",
+        "f_counter"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "registry counter book"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_genuine_cert",
+      "type": "document",
+      "title": "A genuine certificate of that year",
+      "render": "form",
+      "body": {
+        "text": "Security paper, an embossed seal, a serial in the register."
+      },
+      "facts": [
+        "f_genuine"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "marriage certificate"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_matatu",
+      "type": "document",
+      "title": "Fifth matatu: registration record",
+      "render": "form",
+      "body": {
+        "text": "Bought in January, registered to Kinyua Mbogo alone."
+      },
+      "facts": [
+        "f_matatu"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "matatu registration"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_landlady",
+      "type": "witness",
+      "title": "Statement: Rhoda Njoki",
+      "render": "statement",
+      "body": {
+        "speaker": "p_rhoda"
+      },
+      "facts": [
+        "f_landlady",
+        "f_knock",
+        "f_rhoda_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Doris Wawira's line",
+      "render": "manifest",
+      "body": {
+        "masts": "Embu town house zone all Thursday evening.",
+        "calls": "A call to her cousin at 23:40, 40 minutes."
+      },
+      "facts": [
+        "f_rec_doris"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_counter",
+          "f_landlady"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_doris_home",
+      "type": "physical",
+      "title": "The back kitchen and bin",
+      "render": "object",
+      "body": {
+        "bin": "A wet tea cloth in the bin, stained.",
+        "sink": "The flask's lid in the sink, washed."
+      },
+      "facts": [
+        "f_cloth",
+        "f_lid"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_doris",
+          "f_cert"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a wet checked tea cloth in a kitchen bin, a steel flask lid in a sink"
+      }
+    },
+    {
+      "id": "ev_agatha",
+      "type": "witness",
+      "title": "Statement: Kaguru Njiru (stage guard)",
+      "render": "statement",
+      "body": {
+        "speaker": "p_kaguru"
+      },
+      "facts": [
+        "f_agatha_seen"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mutugi_log",
+      "type": "document",
+      "title": "Fleet log and yard book",
+      "render": "logBook",
+      "body": {
+        "log": "Mutugi signed off at 19:00. The boss's car parked in the yard all night.",
+        "guard": "Yard guard: Mutugi sat with the drivers until after 22:00.",
+        "wages": "Mutugi's wages: paid to the end of March."
+      },
+      "facts": [
+        "f_mutugi_log",
+        "f_fleetguard",
+        "f_mutugi_paid"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_musili",
+      "type": "document",
+      "title": "Musili's office log and lodging receipt",
+      "render": "receipt",
+      "body": {
+        "office": "At the lender's Embu office until 18:00.",
+        "lodging": "Nairobi lodging: checked in 20:40."
+      },
+      "facts": [
+        "f_musili",
+        "f_debt_paid"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_tod",
+        "f_aut_noother"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_compare",
+      "type": "forensic",
+      "title": "Comparison view: certificate vs genuine",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_cmp_serial",
+        "f_cmp_ink",
+        "f_cmp_trace",
+        "f_cmp_county",
+        "f_cmp_fields"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_certificate",
+          "ev_genuine_cert",
+          "ev_registry"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_blood",
+      "type": "forensic",
+      "title": "Lab: trace (tea cloth)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_blood"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_doris_home"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_docexam",
+      "type": "forensic",
+      "title": "Questioned Documents Lab: the certificate",
+      "render": "labReport",
+      "body": {
+        "test": "document"
+      },
+      "facts": [
+        "f_docexam"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "document",
+        "hours": 10,
+        "needs": [
+          "ev_certificate",
+          "ev_genuine_cert"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Kinyua Mbogo was found dead in the sitting room of a rented house in Embu town; the door was open at 06:40.",
+      "kind": "true",
+      "about": [
+        "p_kinyua",
+        "loc_house"
+      ],
+      "at": {
+        "from": "06:40"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "He lay on the sitting-room floor with one blow to the temple.",
+      "kind": "true",
+      "about": [
+        "p_kinyua",
+        "plc_sitting"
+      ]
+    },
+    {
+      "id": "f_cash",
+      "text": "KSh 22,000 was still in his jacket.",
+      "kind": "true",
+      "about": [
+        "p_kinyua"
+      ]
+    },
+    {
+      "id": "f_flask",
+      "text": "A large steel thermos flask stands washed on the drying rack, with a fresh dent; its lid is missing.",
+      "kind": "true",
+      "about": [
+        "plc_sitting"
+      ]
+    },
+    {
+      "id": "f_cert",
+      "text": "Marriage certificate: Kinyua Mbogo and Doris Wawira, a serial number, signed \"Registrar J. M. Nthiga\".",
+      "kind": "true",
+      "about": [
+        "p_kinyua",
+        "p_doris"
+      ]
+    },
+    {
+      "id": "f_nhif",
+      "text": "NHIF form, Tuesday: Doris adding Kinyua as her spouse; stamped \"certificate not verified\".",
+      "kind": "true",
+      "about": [
+        "p_doris"
+      ]
+    },
+    {
+      "id": "f_bank",
+      "text": "Doris's bank statement: KSh 600,000 withdrawn in January.",
+      "kind": "true",
+      "about": [
+        "p_doris"
+      ]
+    },
+    {
+      "id": "f_bank_real",
+      "text": "The statement is printed and stamped by the bank, and the bank confirms it.",
+      "kind": "true",
+      "about": [
+        "p_doris"
+      ]
+    },
+    {
+      "id": "f_debt",
+      "text": "Kinyua's phone: Musili Kimeu demanding KSh 400,000 \"by month-end\"; repayment receipts on the 5th of every month.",
+      "kind": "true",
+      "about": [
+        "p_kinyua",
+        "p_musili"
+      ]
+    },
+    {
+      "id": "f_registry",
+      "text": "Registry: the certificate's serial belongs to another couple married the same year, and Registrar Nthiga retired three years before its date.",
+      "kind": "true",
+      "about": [
+        "p_kinyua"
+      ]
+    },
+    {
+      "id": "f_counter",
+      "text": "Counter book: \"Doris Wawira, Tue, enquiry re certificate — referred to police.\"",
+      "kind": "true",
+      "about": [
+        "p_doris"
+      ]
+    },
+    {
+      "id": "f_genuine",
+      "text": "A genuine certificate of that year: security paper, an embossed seal, a serial in the register.",
+      "kind": "true",
+      "about": [
+        "loc_registry"
+      ]
+    },
+    {
+      "id": "f_matatu",
+      "text": "The fifth matatu was bought in January and registered to Kinyua Mbogo alone.",
+      "kind": "true",
+      "about": [
+        "p_kinyua",
+        "p_doris"
+      ]
+    },
+    {
+      "id": "f_landlady",
+      "text": "Rhoda: his voice from about a quarter to nine; shouting at about nine, a woman's and his; then quiet.",
+      "kind": "true",
+      "about": [
+        "p_rhoda",
+        "p_kinyua"
+      ],
+      "at": {
+        "from": "20:45",
+        "to": "21:05"
+      }
+    },
+    {
+      "id": "f_knock",
+      "text": "Rhoda: at about ten a car stopped and someone knocked once at a locked door, then went.",
+      "kind": "true",
+      "about": [
+        "p_rhoda"
+      ],
+      "at": {
+        "from": "22:00"
+      }
+    },
+    {
+      "id": "f_rhoda_self",
+      "text": "Rhoda was in her own house next door all evening with her two tenants.",
+      "kind": "true",
+      "about": [
+        "p_rhoda"
+      ],
+      "where": {
+        "person": "p_rhoda",
+        "place": "plc_rhoda",
+        "from": "18:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_rec_doris",
+      "text": "Records, Doris's line: the Embu town house zone all Thursday evening; a 40-minute call to her cousin at 23:40.",
+      "kind": "true",
+      "about": [
+        "p_doris"
+      ],
+      "at": {
+        "from": "18:00",
+        "to": "23:40"
+      }
+    },
+    {
+      "id": "f_cloth",
+      "text": "In the back-kitchen bin: a wet tea cloth, stained.",
+      "kind": "true",
+      "about": [
+        "p_doris"
+      ]
+    },
+    {
+      "id": "f_lid",
+      "text": "In the sink: the flask's lid, washed.",
+      "kind": "true",
+      "about": [
+        "p_doris"
+      ]
+    },
+    {
+      "id": "f_agatha_seen",
+      "text": "Kaguru: Agatha waited at the Runyenjes stage from about 20:50, took the 21:15 matatu to Embu town, and asked the way to \"that woman's house\".",
+      "kind": "true",
+      "about": [
+        "p_kaguru",
+        "p_agatha"
+      ],
+      "where": {
+        "person": "p_agatha",
+        "place": "plc_rstage",
+        "from": "20:50",
+        "to": "21:15"
+      }
+    },
+    {
+      "id": "f_mutugi_log",
+      "text": "Fleet log: Mutugi signed off at 19:00; the boss's car stayed parked in the yard all night.",
+      "kind": "true",
+      "about": [
+        "p_mutugi"
+      ]
+    },
+    {
+      "id": "f_fleetguard",
+      "text": "Yard guard: Mutugi sat with the drivers at the yard until after 22:00.",
+      "kind": "true",
+      "about": [
+        "p_mutugi"
+      ],
+      "where": {
+        "person": "p_mutugi",
+        "place": "loc_fleet",
+        "from": "19:00",
+        "to": "22:00"
+      }
+    },
+    {
+      "id": "f_mutugi_paid",
+      "text": "Fleet log: Mutugi's wages paid to the end of March.",
+      "kind": "true",
+      "about": [
+        "p_mutugi"
+      ]
+    },
+    {
+      "id": "f_musili",
+      "text": "Musili: at the lender's Embu office until 18:00; checked into a Nairobi lodging at 20:40.",
+      "kind": "true",
+      "about": [
+        "p_musili"
+      ],
+      "where": {
+        "person": "p_musili",
+        "place": "plc_nairobi",
+        "from": "20:40",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_debt_paid",
+      "text": "Lender's ledger: Kinyua's repayments were up to date, KSh 50,000 every 5th.",
+      "kind": "true",
+      "about": [
+        "p_musili",
+        "p_kinyua"
+      ]
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Autopsy: one blow from a heavy, rounded object, matching the flask's dent.",
+      "kind": "true",
+      "about": [
+        "p_kinyua"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 20:30 and 21:30.",
+      "kind": "true",
+      "about": [
+        "p_kinyua"
+      ],
+      "at": {
+        "from": "20:30",
+        "to": "21:30"
+      }
+    },
+    {
+      "id": "f_aut_noother",
+      "text": "Autopsy: no strangulation, no fall injuries, toxicology clean.",
+      "kind": "true",
+      "about": [
+        "p_kinyua"
+      ]
+    },
+    {
+      "id": "f_cmp_serial",
+      "text": "Comparison view: the certificate's serial, looked up in the register, belongs to another couple; its signing registrar had retired.",
+      "kind": "true",
+      "about": [
+        "p_kinyua"
+      ]
+    },
+    {
+      "id": "f_cmp_ink",
+      "text": "Under the magnifier: the registrar's signature is ballpoint ink, not printed dots.",
+      "kind": "true",
+      "about": [
+        "loc_registry"
+      ]
+    },
+    {
+      "id": "f_cmp_trace",
+      "text": "Under the raking light: no pencil line under the signature.",
+      "kind": "true",
+      "about": [
+        "loc_registry"
+      ]
+    },
+    {
+      "id": "f_cmp_county",
+      "text": "\"Embu\" is spelled correctly in the county box.",
+      "kind": "true",
+      "about": [
+        "loc_registry"
+      ]
+    },
+    {
+      "id": "f_cmp_fields",
+      "text": "A marriage certificate has no chassis numbers; both its witnesses are alive (Doris's sister, Kinyua's friend).",
+      "kind": "true",
+      "about": [
+        "loc_registry"
+      ]
+    },
+    {
+      "id": "f_blood",
+      "text": "Lab: Kinyua's blood on the tea cloth.",
+      "kind": "true",
+      "about": [
+        "p_kinyua",
+        "p_doris"
+      ]
+    },
+    {
+      "id": "f_docexam",
+      "text": "Wilfrida Ayugi: forged. Printed on ordinary paper; the seal is photocopied.",
+      "kind": "true",
+      "about": [
+        "p_kinyua"
+      ]
+    },
+    {
+      "id": "f_dor_never",
+      "text": "Doris: \"He never came to the house on Thursday. I found him on Friday morning.\"",
+      "kind": "lie",
+      "about": [
+        "p_doris"
+      ]
+    },
+    {
+      "id": "f_dor_married",
+      "text": "Doris: \"We were legally married.\"",
+      "kind": "lie",
+      "about": [
+        "p_doris"
+      ]
+    },
+    {
+      "id": "f_dor_reveal",
+      "text": "Doris: she found out on Tuesday she was \"nothing. Not a wife. Not on his papers.\" He came on Thursday; they shouted.",
+      "kind": "true",
+      "about": [
+        "p_doris",
+        "p_kinyua"
+      ],
+      "where": {
+        "person": "p_doris",
+        "place": "plc_sitting",
+        "from": "20:45",
+        "to": "21:15"
+      }
+    },
+    {
+      "id": "f_dor_flask",
+      "text": "Doris: \"I made him tea. That's all the flask did.\"",
+      "kind": "lie",
+      "about": [
+        "p_doris"
+      ]
+    },
+    {
+      "id": "f_ag_home",
+      "text": "Agatha: \"I was home in Runyenjes all night.\"",
+      "kind": "lie",
+      "about": [
+        "p_agatha"
+      ]
+    },
+    {
+      "id": "f_ag_reveal",
+      "text": "Agatha: she went to see \"the woman\", knocked once, was ashamed, and left. \"He was already quiet in there.\"",
+      "kind": "true",
+      "about": [
+        "p_agatha"
+      ]
+    },
+    {
+      "id": "f_mu_drove",
+      "text": "Mutugi: \"I drove him home to Runyenjes at nine.\"",
+      "kind": "lie",
+      "about": [
+        "p_mutugi"
+      ]
+    },
+    {
+      "id": "f_mu_reveal",
+      "text": "Mutugi: the boss told him to say that, always. He went to town. Mama Agatha begged him for the house; he told her.",
+      "kind": "true",
+      "about": [
+        "p_mutugi",
+        "p_agatha"
+      ]
+    },
+    {
+      "id": "f_musili_claim",
+      "text": "Musili: \"He owed my boss 400,000. I don't kill people who owe money. Dead men don't pay.\"",
+      "kind": "claim",
+      "about": [
+        "p_musili"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_doris",
+      "stance": "cooperative",
+      "intro": "Doris sits very straight on the sofa set, hands folded. \"He never came to the house on Thursday. I found him on Friday morning. We were legally married.\"",
+      "claims": [
+        "f_dor_never",
+        "f_dor_married"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_dor_flask",
+          "after": "f_dor_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_matatu",
+          "reply": "\"Six hundred thousand. Everything I saved from the salon. He said a matatu in his name was a matatu in ours.\"",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_agatha",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_matatu"
+      ],
+      "intro": "Agatha receives you on the veranda and doesn't offer a chair. \"I was home in Runyenjes all night.\"",
+      "claims": [
+        "f_ag_home"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_mutugi",
+      "stance": "cooperative",
+      "intro": "Mutugi turns his cap in his hands. \"I drove him home to Runyenjes at nine.\"",
+      "claims": [
+        "f_mu_drove"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_musili",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_kphone"
+      ],
+      "intro": "Musili answers from Nairobi, unbothered. \"He owed my boss 400,000. I don't kill people who owe money. Dead men don't pay.\"",
+      "claims": [
+        "f_musili_claim"
+      ],
+      "yields": [
+        "ev_musili"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_rhoda",
+      "stance": "cooperative",
+      "intro": "Rhoda has been waiting at her door since dawn. \"I hear everything in this compound. Everything.\"",
+      "claims": [],
+      "yields": [
+        "ev_landlady"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_dor_never",
+      "claim": "f_dor_never",
+      "brokenBy": [
+        "f_landlady",
+        "f_rec_doris"
+      ],
+      "reveals": [
+        "f_dor_reveal"
+      ],
+      "reaction": "\"I found out on Tuesday I was nothing. Not a wife. Not on his papers. Nothing. He came. We shouted. That's all I'll say.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_dor_married",
+      "claim": "f_dor_married",
+      "brokenBy": [
+        "f_registry",
+        "f_counter"
+      ],
+      "reveals": [],
+      "reaction": "She looks at the counter-book line in her own name. \"They told me to go to the police,\" she says. \"So I went home.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_mu",
+      "claim": "f_mu_drove",
+      "brokenBy": [
+        "f_mutugi_log"
+      ],
+      "reveals": [
+        "f_mu_reveal",
+        "ev_agatha"
+      ],
+      "reaction": "\"He told me to say that, always. He went to town. Mama Agatha begged me to tell her the house. I told her. The stage guard saw her go.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_ag",
+      "claim": "f_ag_home",
+      "brokenBy": [
+        "f_agatha_seen"
+      ],
+      "reveals": [
+        "f_ag_reveal"
+      ],
+      "reaction": "\"I went to see her. To see the woman. I knocked once and I was ashamed and I left. He was already quiet in there. I didn't know why.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_dor_flask",
+      "claim": "f_dor_flask",
+      "brokenBy": [
+        "f_blood"
+      ],
+      "reveals": [],
+      "reaction": "Doris looks at the lab sheet, then at her own hands. \"He laughed,\" she says. \"He said a customary wife outranks a paper one.\"",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_doris",
+      "text": "Doris Wawira",
+      "category": "person",
+      "ref": "p_doris",
+      "unlock": {
+        "anyOf": [
+          "f_cert"
+        ]
+      }
+    },
+    {
+      "id": "w_agatha",
+      "text": "Agatha Wangari",
+      "category": "person",
+      "ref": "p_agatha",
+      "unlock": {
+        "anyOf": [
+          "f_matatu"
+        ]
+      }
+    },
+    {
+      "id": "w_mutugi",
+      "text": "Mutugi Wambugu",
+      "category": "person",
+      "ref": "p_mutugi",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_musili",
+      "text": "Musili Kimeu",
+      "category": "person",
+      "ref": "p_musili",
+      "unlock": {
+        "anyOf": [
+          "f_debt"
+        ]
+      }
+    },
+    {
+      "id": "w_rhoda",
+      "text": "Rhoda Njoki",
+      "category": "person",
+      "ref": "p_rhoda",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_sitting",
+      "text": "the sitting room of the Embu town house",
+      "category": "place",
+      "ref": "plc_sitting",
+      "unlock": {
+        "anyOf": [
+          "f_flask"
+        ]
+      }
+    },
+    {
+      "id": "pl_farm",
+      "text": "the Runyenjes farm",
+      "category": "place",
+      "ref": "loc_farm",
+      "unlock": {
+        "anyOf": [
+          "f_matatu"
+        ]
+      }
+    },
+    {
+      "id": "pl_fleet",
+      "text": "the fleet yard",
+      "category": "place",
+      "ref": "loc_fleet",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_registry",
+      "text": "the civil registry",
+      "category": "place",
+      "ref": "loc_registry",
+      "unlock": {
+        "anyOf": [
+          "f_cert"
+        ]
+      }
+    },
+    {
+      "id": "pl_stage",
+      "text": "the matatu stage",
+      "category": "place",
+      "ref": "plc_stage",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_flask",
+      "text": "striking him with a steel thermos flask",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_spanner",
+      "text": "striking him with a matatu wheel spanner",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_fall",
+      "text": "a fall against the table",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_tea",
+      "text": "poisoned tea",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_flask"
+        ]
+      }
+    },
+    {
+      "id": "h_strangled",
+      "text": "strangling him",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_cert",
+      "text": "she discovered the marriage certificate he gave her was forged and that her savings were in his name",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_registry"
+        ]
+      }
+    },
+    {
+      "id": "m_jealous",
+      "text": "the first wife's jealousy",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_matatu"
+        ]
+      }
+    },
+    {
+      "id": "m_loan",
+      "text": "an unpaid loan",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_debt"
+        ]
+      }
+    },
+    {
+      "id": "m_driver",
+      "text": "a driver's grievance",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_robbery",
+      "text": "a robbery",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "d_cert",
+      "text": "The marriage certificate",
+      "category": "document",
+      "ref": "ev_certificate",
+      "unlock": {
+        "anyOf": [
+          "f_cert"
+        ]
+      }
+    },
+    {
+      "id": "d_matatu",
+      "text": "The matatu registration",
+      "category": "document",
+      "ref": "ev_matatu",
+      "unlock": {
+        "anyOf": [
+          "f_matatu"
+        ]
+      }
+    },
+    {
+      "id": "d_bank",
+      "text": "Doris's bank statement",
+      "category": "document",
+      "ref": "ev_bank",
+      "unlock": {
+        "anyOf": [
+          "f_bank"
+        ]
+      }
+    },
+    {
+      "id": "d_counter",
+      "text": "The registry counter book",
+      "category": "document",
+      "ref": "ev_registry",
+      "unlock": {
+        "anyOf": [
+          "f_counter"
+        ]
+      }
+    },
+    {
+      "id": "d_nhif",
+      "text": "The NHIF form",
+      "category": "document",
+      "ref": "ev_papers",
+      "unlock": {
+        "anyOf": [
+          "f_nhif"
+        ]
+      }
+    },
+    {
+      "id": "t_serial",
+      "text": "its serial number belongs to another couple and its registrar had retired",
+      "category": "tell",
+      "by": [
+        "f_registry",
+        "f_cmp_serial"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_registry"
+        ]
+      }
+    },
+    {
+      "id": "t_dots",
+      "text": "printer dots instead of ink",
+      "category": "tell",
+      "by": [
+        "f_cmp_ink"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_cert"
+        ]
+      }
+    },
+    {
+      "id": "t_traced",
+      "text": "a traced signature",
+      "category": "tell",
+      "by": [
+        "f_cmp_trace"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_cert"
+        ]
+      }
+    },
+    {
+      "id": "t_chassis",
+      "text": "a chassis number that doesn't match",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_cert"
+        ]
+      }
+    },
+    {
+      "id": "t_deadwit",
+      "text": "a witness who was dead",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_cert"
+        ]
+      }
+    },
+    {
+      "id": "t_county",
+      "text": "a misspelled county",
+      "category": "tell",
+      "by": [
+        "f_cmp_county"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_cert"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. {document} was forged, as shown by {tell}.",
+    "fixed": {
+      "victim": "Kinyua Mbogo"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_tue",
+                  "label": "Tuesday",
+                  "from": null,
+                  "to": null,
+                  "day": "Tue"
+                },
+                {
+                  "id": "sl_2045",
+                  "label": "Thursday 20:45",
+                  "from": "20:45",
+                  "to": "20:45",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_2100",
+                  "label": "Thursday 21:00",
+                  "from": "21:00",
+                  "to": "21:00",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Thursday 20:55–21:15",
+                  "from": "20:55",
+                  "to": "21:15",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_2200",
+                  "label": "Thursday 22:00",
+                  "from": "22:00",
+                  "to": "22:00",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_fri",
+                  "label": "Friday 07:00",
+                  "from": "07:00",
+                  "to": "07:00",
+                  "day": "Fri"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_registry",
+                  "text": "Doris learns the truth at the registry",
+                  "slot": "sl_tue",
+                  "by": [
+                    "f_counter",
+                    "f_nhif"
+                  ],
+                  "why": "The counter book and the NHIF stamp: Tuesday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_counter"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_arrive",
+                  "text": "Kinyua arrives at the house",
+                  "slot": "sl_2045",
+                  "by": [
+                    "f_landlady"
+                  ],
+                  "why": "Rhoda heard his voice from about a quarter to nine.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_landlady"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_shout",
+                  "text": "The shouting",
+                  "slot": "sl_2100",
+                  "by": [
+                    "f_landlady"
+                  ],
+                  "why": "Rhoda: about nine.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_landlady"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Kinyua is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_landlady",
+                    "f_aut_tod",
+                    "f_dor_reveal"
+                  ],
+                  "why": "The shouting, then quiet, inside the autopsy's hour.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_knock",
+                  "text": "Agatha knocks and leaves",
+                  "slot": "sl_2200",
+                  "by": [
+                    "f_knock",
+                    "f_ag_reveal"
+                  ],
+                  "why": "Rhoda: a knock at about ten, at a locked door.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_knock"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_fri",
+                  "by": [
+                    "f_aut_tod",
+                    "f_landlady"
+                  ],
+                  "why": "Friday morning is when Doris says she \"found him\". He died on Thursday night."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "Tuesday at the registry. Thursday: a car, shouting, quiet. The first wife at a locked door an hour too late.",
+          "fail": [
+            "Friday morning is her story, not his death.",
+            "Who knocked at ten, and was the door open?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_sitting"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The sitting room, beside the low table. Yes.",
+          "fail": [
+            "The driver said Runyenjes. The fleet log says otherwise.",
+            "Agatha got no further than the door."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_doris"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her house, her shouting, her flask, his blood on her tea cloth. That will hold.",
+          "fail": [
+            "Agatha was at the Runyenjes stage at nine.",
+            "Musili was checking into a Nairobi lodging."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_flask"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A rounded blow and a dented flask. Yes.",
+          "fail": [
+            "A spanner doesn't leave a rounded wound.",
+            "Toxicology is clean. The tea wasn't the weapon. The flask was."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_cert"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Not a wife, not insured, not on the matatu. That's why.",
+          "fail": [
+            "His loan repayments were up to date.",
+            "Twenty-two thousand shillings in his jacket. Not a robbery."
+          ]
+        }
+      },
+      {
+        "id": "g_forgery",
+        "kind": "forgery",
+        "blanks": [
+          {
+            "id": "document",
+            "category": "document",
+            "answer": "d_cert"
+          },
+          {
+            "id": "tell",
+            "category": "tell",
+            "answer": "t_serial"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The paper was his lie. It was her motive.",
+          "fail": [
+            "The matatu record is real. That's the problem.",
+            "The ink and the spelling are fine. Look the serial up."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_sitting",
+      "from": "20:55",
+      "to": "21:15",
+      "note": "The shouting at about nine, then quiet; the autopsy allows 20:30–21:30."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_cert",
+          "f_registry",
+          "f_cmp_serial",
+          "f_docexam",
+          "f_counter",
+          "f_nhif"
+        ],
+        "concludes": "The marriage was a forgery, Kinyua's own: the serial belongs to another couple and the registrar had retired. Doris learned it on Tuesday.",
+        "answers": [
+          "document",
+          "tell"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_matatu",
+          "f_bank"
+        ],
+        "concludes": "She had put KSh 600,000 into a matatu in his name only."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_landlady",
+          "f_rec_doris",
+          "f_dor_never",
+          "f_dor_reveal",
+          "f_dor_married"
+        ],
+        "concludes": "He came at a quarter to nine; the shouting at nine was Doris's and his.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_mu_drove",
+          "f_mutugi_log",
+          "f_mu_reveal",
+          "f_ag_home",
+          "f_agatha_seen",
+          "f_ag_reveal",
+          "f_knock"
+        ],
+        "concludes": "Agatha came at ten to a locked door, an hour after he was quiet; the driver lied for the boss, as always."
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_body",
+          "f_flask",
+          "f_aut_blow",
+          "f_cloth",
+          "f_lid",
+          "f_blood",
+          "f_dor_flask"
+        ],
+        "concludes": "His blood on her tea cloth, the flask's lid washed in her sink. Doris Wawira struck Kinyua with a steel thermos flask in the sitting room, because she had discovered his forged marriage certificate and that her savings were in his name.",
+        "answers": [
+          "who",
+          "how",
+          "why",
+          "where"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_farm",
+        "blank": "where",
+        "by": [
+          "f_body",
+          "f_mutugi_log"
+        ],
+        "why": "He never went home to Runyenjes; he died in the town house."
+      },
+      {
+        "word": "pl_fleet",
+        "blank": "where",
+        "by": [
+          "f_body"
+        ],
+        "why": "He lay in the sitting room."
+      },
+      {
+        "word": "pl_registry",
+        "blank": "where",
+        "by": [
+          "f_body"
+        ],
+        "why": "He lay in the sitting room."
+      },
+      {
+        "word": "pl_stage",
+        "blank": "where",
+        "by": [
+          "f_body",
+          "f_flask"
+        ],
+        "why": "The flask and the body are in the house."
+      },
+      {
+        "word": "w_agatha",
+        "blank": "who",
+        "by": [
+          "f_agatha_seen",
+          "f_knock"
+        ],
+        "why": "Agatha was at the Runyenjes stage until 21:15, and knocked at a locked door at ten."
+      },
+      {
+        "word": "w_mutugi",
+        "blank": "who",
+        "by": [
+          "f_fleetguard"
+        ],
+        "why": "Mutugi sat with the drivers at the fleet yard until after 22:00."
+      },
+      {
+        "word": "w_musili",
+        "blank": "who",
+        "by": [
+          "f_musili"
+        ],
+        "why": "Musili checked into a Nairobi lodging at 20:40."
+      },
+      {
+        "word": "w_rhoda",
+        "blank": "who",
+        "by": [
+          "f_rhoda_self"
+        ],
+        "why": "Rhoda was next door with her two tenants."
+      },
+      {
+        "word": "h_spanner",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "The wound is rounded, matching the flask."
+      },
+      {
+        "word": "h_fall",
+        "blank": "how",
+        "by": [
+          "f_aut_noother",
+          "f_aut_blow"
+        ],
+        "why": "No fall injuries; the wound matches the dented flask."
+      },
+      {
+        "word": "h_tea",
+        "blank": "how",
+        "by": [
+          "f_aut_noother"
+        ],
+        "why": "Toxicology clean."
+      },
+      {
+        "word": "h_strangled",
+        "blank": "how",
+        "by": [
+          "f_aut_noother"
+        ],
+        "why": "No strangulation."
+      },
+      {
+        "word": "m_jealous",
+        "blank": "why",
+        "by": [
+          "f_agatha_seen",
+          "f_ag_reveal"
+        ],
+        "why": "That was Agatha's pain, and she arrived after he was dead."
+      },
+      {
+        "word": "m_loan",
+        "blank": "why",
+        "by": [
+          "f_debt_paid",
+          "f_musili"
+        ],
+        "why": "His repayments were up to date, and Musili was in Nairobi."
+      },
+      {
+        "word": "m_driver",
+        "blank": "why",
+        "by": [
+          "f_mutugi_paid"
+        ],
+        "why": "Mutugi was paid, and fond of him."
+      },
+      {
+        "word": "m_robbery",
+        "blank": "why",
+        "by": [
+          "f_cash"
+        ],
+        "why": "KSh 22,000 still in his jacket."
+      },
+      {
+        "word": "d_matatu",
+        "blank": "document",
+        "by": [
+          "f_matatu"
+        ],
+        "why": "A genuine record, and that is the problem."
+      },
+      {
+        "word": "d_bank",
+        "blank": "document",
+        "by": [
+          "f_bank_real"
+        ],
+        "why": "The bank confirms its statement."
+      },
+      {
+        "word": "d_counter",
+        "blank": "document",
+        "by": [
+          "f_counter"
+        ],
+        "why": "The registry's own book."
+      },
+      {
+        "word": "d_nhif",
+        "blank": "document",
+        "by": [
+          "f_nhif"
+        ],
+        "why": "A genuine form, stamped by NHIF."
+      },
+      {
+        "word": "t_dots",
+        "blank": "tell",
+        "by": [
+          "f_cmp_ink"
+        ],
+        "why": "The signature is ballpoint ink."
+      },
+      {
+        "word": "t_traced",
+        "blank": "tell",
+        "by": [
+          "f_cmp_trace"
+        ],
+        "why": "No pencil line under the signature."
+      },
+      {
+        "word": "t_chassis",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "A marriage certificate has no chassis number."
+      },
+      {
+        "word": "t_deadwit",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "Both witnesses are alive."
+      },
+      {
+        "word": "t_county",
+        "blank": "tell",
+        "by": [
+          "f_cmp_county"
+        ],
+        "why": "\"Embu\" is spelled right."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Two years ago Kinyua \"marries\" Doris at what she believes is a civil ceremony, and gives her a certificate. He is already married under customary law. The certificate's serial belongs to another couple; its registrar had retired.",
+        "image": null
+      },
+      {
+        "text": "In January Doris puts KSh 600,000 of her savings into his fifth matatu. It is registered to him alone.",
+        "image": null
+      },
+      {
+        "text": "Tuesday. At the registry, to add him to her NHIF cover, she learns her marriage doesn't exist. The counter clerk tells her to go to the police.",
+        "image": null
+      },
+      {
+        "text": "Thursday, about 20:45, he comes to the house. She confronts him. He laughs: a customary wife outranks a paper one. She hits him with the heavy steel flask from the table.",
+        "image": "plc_sitting"
+      },
+      {
+        "text": "About 22:00 Agatha, who begged the address from the driver, knocks once at a locked door and goes home ashamed. Doris washes the flask and calls her cousin at 23:40.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Two stamps: records on Doris and a warrant on the back kitchen. Detain her after the search; the cloth trace (12 h) and the certificate examination (10 h) come back inside her 24 hours.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_house",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_flask",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_certificate",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_papers",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_bank",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_rhoda"
+      },
+      {
+        "do": "interview",
+        "target": "p_doris"
+      },
+      {
+        "do": "travel",
+        "target": "loc_registry",
+        "hours": 0.25,
+        "from": "loc_house"
+      },
+      {
+        "do": "visit",
+        "target": "loc_registry",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_registry",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_genuine_cert",
+        "hours": 0
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "press",
+        "target": "c_dor_never"
+      },
+      {
+        "do": "press",
+        "target": "c_dor_married"
+      },
+      {
+        "do": "travel",
+        "target": "loc_house",
+        "hours": 0.25,
+        "from": "loc_registry"
+      },
+      {
+        "do": "search",
+        "target": "loc_house"
+      },
+      {
+        "do": "detain",
+        "target": "p_doris"
+      },
+      {
+        "do": "submit",
+        "target": "ev_blood"
+      },
+      {
+        "do": "submit",
+        "target": "ev_docexam"
+      },
+      {
+        "do": "travel",
+        "target": "loc_fleet",
+        "hours": 0.25,
+        "from": "loc_house"
+      },
+      {
+        "do": "visit",
+        "target": "loc_fleet",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_mutugi_log",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_matatu",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_mutugi"
+      },
+      {
+        "do": "press",
+        "target": "c_mu"
+      },
+      {
+        "do": "travel",
+        "target": "loc_farm",
+        "hours": 0.5,
+        "from": "loc_fleet"
+      },
+      {
+        "do": "visit",
+        "target": "loc_farm",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_agatha"
+      },
+      {
+        "do": "press",
+        "target": "c_ag"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 4
+      },
+      {
+        "do": "press",
+        "target": "c_dor_flask"
+      }
+    ],
+    "totalHours": 29.25
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_landlady",
+        "line": "The landlady hears everything, Amani. Ask her when."
+      },
+      "tier2": {
+        "facts": [
+          "f_landlady",
+          "f_knock"
+        ],
+        "line": "Shouting at nine, then quiet. A knock at ten."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_body",
+        "line": "The driver says Runyenjes. Where is the body?"
+      },
+      "tier2": {
+        "facts": [
+          "f_body",
+          "f_mutugi_log"
+        ],
+        "line": "The sitting room. The car never left the yard."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_flask",
+        "line": "Who washes a flask and loses its lid?"
+      },
+      "tier2": {
+        "facts": [
+          "f_cloth",
+          "f_blood"
+        ],
+        "line": "The tea cloth in her bin, and whose blood is on it."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "A rounded blow. Look at the drying rack."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_blow",
+          "f_flask"
+        ],
+        "line": "The dented flask."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_registry",
+        "line": "What did Doris learn at the registry on Tuesday?"
+      },
+      "tier2": {
+        "facts": [
+          "f_registry",
+          "f_matatu"
+        ],
+        "line": "No marriage, and her savings in his name."
+      }
+    },
+    "g_forgery": {
+      "tier1": {
+        "point": "ev_compare",
+        "line": "Look the serial up in the register. Then look up the registrar."
+      },
+      "tier2": {
+        "facts": [
+          "f_cmp_serial"
+        ],
+        "line": "Another couple's number. A registrar three years retired."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "cheti cha ndoa",
+      "def": "A marriage certificate."
+    },
+    {
+      "term": "mke wa pili",
+      "def": "A second wife."
+    },
+    {
+      "term": "ndoa ya kimila",
+      "def": "A customary marriage."
+    },
+    {
+      "term": "chupa ya chai",
+      "def": "A thermos flask."
+    },
+    {
+      "term": "msajili",
+      "def": "A registrar."
+    },
+    {
+      "term": "matatu",
+      "def": "A shared minibus taxi."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address an older woman."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "victimForgery"
+    ],
+    "beatNotes": "Victim-made forgeries. The FORGERY sentence reads the same, but the case file marks the forger as the victim; the verdict screen says: \"The paper was his lie. It was her motive.\""
+  }
+}

@@ -1,0 +1,1892 @@
+{
+  "meta": {
+    "id": "case-048",
+    "number": 48,
+    "region": "kisumu-lake",
+    "regionNumber": 5,
+    "title": "The Magnet",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 28,
+    "date": "Tuesday 13 January",
+    "folderTab": "MACALDER"
+  },
+  "pattern": {
+    "crimePattern": "miner whose late husband was cheated kills the gold buyer with a rigged scale and hides the body in a shaft collapse",
+    "noRealCaseRetold": true,
+    "notes": "Fictional buyer, miners' group and shaft. Rigged scales are a known grievance in artisanal mining; the miners themselves are shown as hard-working and wronged, not stigmatised. Mercury is named only as a decoy method; no handling detail.",
+    "tags": [
+      "blunt-force",
+      "staged-accident",
+      "mining",
+      "revenge",
+      "two-liars",
+      "records",
+      "warrant",
+      "forensics",
+      "when-strip"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 4,
+    "redHerrings": 1,
+    "liars": 2,
+    "groups": [
+      "when",
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": "dead-before-the-collapse"
+  },
+  "ob": {
+    "number": "OB 30/13/01",
+    "date": "Tuesday 13 January",
+    "time": "09:20",
+    "reportedBy": "Macalder Miners' Group",
+    "text": "Miners at Macalder report that shaft 7 partly collapsed at about 07:30. At 09:00 they dug out a gold buyer, Rosebella Ogutu (45), at the bottom under fallen earth and timber. Recorded as a mining accident.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_rosebella",
+      "role": "victim",
+      "name": "Rosebella Ogutu",
+      "age": 45,
+      "occupation": "Gold buyer, kiosk at the edge of the fields",
+      "bio": "Has bought gold at Macalder for twelve years with a small digital scale and a big ledger.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_shaft7",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo woman, mid 40s, a bright headwrap and a fleece jacket, reading glasses, a small digital scale in front of her, a businesswoman's practised smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_robi",
+      "role": "suspect",
+      "name": "Robi Wambura",
+      "age": 38,
+      "occupation": "Miner",
+      "bio": "Her husband died in shaft 7 three years ago. She has sold her gold to Rosebella ever since.",
+      "community": "Kuria",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_husband_death"
+      },
+      "at": "plc_ponds",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kuria woman, late 30s, a dusty wrap and a man's old work jacket, red clay on her hands, steady unblinking eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mwikwabe",
+      "role": "suspect",
+      "name": "Mwikwabe Marwa",
+      "age": 50,
+      "occupation": "Owner of shaft 7",
+      "bio": "Owns two shafts. Can't afford new timber. Says so to no one.",
+      "community": "Kuria",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_shaft12",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kuria man, about 50, a hard hat pushed back, a mud-caked overall, a heavy, worried face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_jairus",
+      "role": "suspect",
+      "name": "Jairus Ochanda",
+      "age": 42,
+      "occupation": "Rival gold buyer",
+      "redHerring": true,
+      "bio": "Buys gold in Migori town and at the fields. Has wanted Rosebella's customers for years.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_boke"
+      },
+      "at": "plc_migori",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, early 40s, a neat polo shirt and a bum bag, a jeweller's loupe on a cord round his neck, shrewd, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_boke",
+      "role": "witness",
+      "name": "Boke Nyamohanga",
+      "age": 30,
+      "occupation": "Miner",
+      "bio": "Works the shaft next to shaft 7 with her partner.",
+      "community": "Kuria",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_shaft8",
+      "image": null
+    },
+    {
+      "id": "p_nyakerario",
+      "role": "witness",
+      "name": "Nyakerario Gati",
+      "age": 52,
+      "occupation": "Washing-pond attendant",
+      "bio": "Keeps the pond log: who comes to wash ore, and when.",
+      "community": "Kuria",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_ponds",
+      "image": null
+    },
+    {
+      "id": "p_chacha",
+      "role": "witness",
+      "name": "Chacha Mwita",
+      "age": 35,
+      "occupation": "Crew leader at Mwikwabe's shaft 12",
+      "statementOnly": true,
+      "bio": "Leads the crew at Mwikwabe's other shaft.",
+      "community": "Kuria",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_shaft12",
+      "image": null
+    },
+    {
+      "id": "p_magige",
+      "role": "witness",
+      "name": "Peter Magige",
+      "age": 47,
+      "occupation": "Gold seller, Migori market",
+      "statementOnly": true,
+      "bio": "Sells to Jairus most mornings.",
+      "community": "Kuria",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_migori",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_shaft7",
+      "name": "Shaft 7 and its rim",
+      "within": "loc_shaft7"
+    },
+    {
+      "id": "plc_shaftzone",
+      "name": "Macalder shafts (mast zone)"
+    },
+    {
+      "id": "plc_shaft8",
+      "name": "Shaft 8, next to shaft 7"
+    },
+    {
+      "id": "plc_shaft12",
+      "name": "Mwikwabe's shaft 12, across the field"
+    },
+    {
+      "id": "plc_ponds",
+      "name": "Washing ponds"
+    },
+    {
+      "id": "plc_migori",
+      "name": "Migori town gold market"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_shaft7",
+      "name": "Shaft 7, Macalder",
+      "kind": "scene",
+      "description": "A narrow hand-dug shaft in red earth, its mouth ringed with a band of darker red clay. Timber props line the walls, grey and soft. Half the shaft has fallen in. One prop lies across the mouth.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The bottom of the shaft",
+          "pos": [
+            50,
+            70
+          ],
+          "yields": "ev_body",
+          "text": "The miners dug Rosebella out at 09:00 and laid her under a sheet by the rim."
+        },
+        {
+          "id": "hs_prop",
+          "label": "The prop across the mouth",
+          "pos": [
+            36,
+            40
+          ],
+          "yields": "ev_prop",
+          "text": "A sound, heavy prop lies across the shaft mouth. The others are rotten through."
+        },
+        {
+          "id": "hs_rim",
+          "label": "Red clay of the rim",
+          "pos": [
+            70,
+            30
+          ],
+          "yields": "ev_rimclay",
+          "text": "A band of dark red clay runs round shaft 7's mouth and nowhere else. Amani bags some."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a narrow hand-dug artisanal gold-mine shaft in red earth at Macalder in Migori county at dawn, grey rotten timber props, half the shaft collapsed, one heavy prop lying across the mouth, a band of darker red clay around the rim, other shafts and spoil heaps beyond, no people in focus"
+      }
+    },
+    {
+      "id": "loc_kiosk",
+      "name": "Rosebella's kiosk",
+      "kind": "location",
+      "description": "A small wooden kiosk at the edge of the fields, a padlocked hatch, a counter, a digital scale under a plastic cover, a ledger.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_scale",
+          "label": "The scale",
+          "pos": [
+            44,
+            46
+          ],
+          "yields": "ev_scale",
+          "text": "A small digital gold scale. When you lift the pan, something underneath catches the light."
+        },
+        {
+          "id": "hs_ledger",
+          "label": "Purchase ledger",
+          "pos": [
+            70,
+            56
+          ],
+          "yields": "ev_ledger",
+          "text": "Rosebella's purchase book: every seller, every gram, every shilling."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small wooden gold-buying kiosk at the edge of artisanal mining fields, a counter with a digital scale under a plastic cover, a purchase ledger, miners waiting outside"
+      }
+    },
+    {
+      "id": "loc_ponds",
+      "name": "Washing ponds",
+      "kind": "location",
+      "description": "Muddy ponds where women wash pounded ore in shallow pans, swirling and tipping. A shelter of iron sheets where the attendant keeps a log.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_pondlog",
+          "label": "Pond log",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_pondlog",
+          "text": "Nyakerario's pond log, this morning's page."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "women washing gold ore in shallow pans at muddy washing ponds at Macalder, an iron-sheet shelter with a logbook, red earth and spoil heaps"
+      }
+    },
+    {
+      "id": "loc_office",
+      "name": "Miners' group office",
+      "kind": "location",
+      "description": "A one-room office with a shaft register and a list of the field's dead painted on a board.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_shaftreg",
+          "label": "Shaft register",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_shaftreg",
+          "text": "The shaft register, open at shaft 7."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small one-room miners' group office at an artisanal gold field, a shaft register on a table, a painted board on the wall"
+      }
+    },
+    {
+      "id": "loc_shelter",
+      "name": "Robi's shelter (search)",
+      "kind": "search",
+      "description": "A lean-to of sacking and iron sheets where Robi keeps her tools and ore sacks.",
+      "unlock": {
+        "fact": "f_rec_robi"
+      },
+      "hotspots": [
+        {
+          "id": "hs_sack",
+          "label": "Her ore sack",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_stone",
+          "text": "In the bottom of her ore sack, a round pounding stone, washed clean."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a lean-to shelter of sacking and iron sheets at a gold field, ore sacks and pounding stones, a miner's pan"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Shaft 7",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Dug out from the bottom of shaft 7 at 09:00, under fallen earth and timber. One head wound."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the collapsed mouth of a hand-dug mine shaft, fallen red earth and broken grey timber props, a sheet laid on the rim, no body visible"
+      }
+    },
+    {
+      "id": "ev_scale",
+      "type": "physical",
+      "title": "Rosebella's scale",
+      "render": "object",
+      "body": {
+        "label": "Under the pan, a small magnet glued in place."
+      },
+      "facts": [
+        "f_scale"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a small digital gold scale with its weighing pan lifted to show a small round magnet glued underneath"
+      }
+    },
+    {
+      "id": "ev_refweight",
+      "type": "physical",
+      "title": "Certified 1 g reference weight",
+      "render": "object",
+      "body": {
+        "label": "In a little plastic case with a school's label: CERTIFIED 1.000 g."
+      },
+      "facts": [
+        "f_refweight"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ledger",
+      "type": "physical",
+      "title": "Rosebella's purchase ledger",
+      "render": "ledger",
+      "body": {
+        "entries": "J. Wambura: six years of sales. R. Wambura: three years. Every sale paid."
+      },
+      "facts": [
+        "f_ledger"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_boke",
+      "type": "witness",
+      "title": "Statement: Boke Nyamohanga",
+      "render": "statement",
+      "body": {
+        "speaker": "p_boke"
+      },
+      "facts": [
+        "f_boke",
+        "f_boke_self",
+        "f_kiosk_closed"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_pondlog",
+      "type": "physical",
+      "title": "Pond log",
+      "render": "logBook",
+      "body": {
+        "entry": "\"R. Wambura — 06:40\""
+      },
+      "facts": [
+        "f_pondlog"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_nyakerario",
+      "type": "witness",
+      "title": "Statement: Nyakerario Gati",
+      "render": "statement",
+      "body": {
+        "speaker": "p_nyakerario"
+      },
+      "facts": [
+        "f_nyak",
+        "f_nyak_self",
+        "f_no_pond_dispute"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_prop",
+      "type": "physical",
+      "title": "The props",
+      "render": "sceneNote",
+      "body": {
+        "note": "Most props rotten through. One sound prop has fresh stone-strike marks at its base; it lies across the shaft mouth."
+      },
+      "facts": [
+        "f_prop"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rimclay",
+      "type": "physical",
+      "title": "Shaft 7 rim clay",
+      "render": "object",
+      "body": {
+        "label": "Dark red clay from the band round shaft 7's mouth."
+      },
+      "facts": [
+        "f_rimclay"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_shaftreg",
+      "type": "physical",
+      "title": "Shaft register",
+      "render": "ledger",
+      "body": {
+        "shaft7": "Owner M. Marwa. \"Props to be replaced — unsafe\", three weeks ago. Never signed off.",
+        "past": "Fatality, three years ago: J. Wambura."
+      },
+      "facts": [
+        "f_shaftreg",
+        "f_husband_death"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Robi Wambura's line",
+      "render": "manifest",
+      "body": {
+        "masts": "Shafts zone 05:35–06:30; washing ponds zone 06:35–07:10; shafts zone 07:18–07:35"
+      },
+      "facts": [
+        "f_rec_robi"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_pondlog"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_stone",
+      "type": "physical",
+      "title": "Robi's ore sack",
+      "render": "object",
+      "body": {
+        "label": "A round ore-pounding stone, washed. Red clay in a crack."
+      },
+      "facts": [
+        "f_stone"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_robi",
+          "f_nyak"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a round grey ore-pounding stone, washed clean, a thread of dark red clay caught in a crack, on an evidence cloth"
+      }
+    },
+    {
+      "id": "ev_chacha",
+      "type": "witness",
+      "title": "Statement: Chacha Mwita",
+      "render": "statement",
+      "body": {
+        "speaker": "p_chacha"
+      },
+      "facts": [
+        "f_mwik_crew"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_magige",
+      "type": "witness",
+      "title": "Statement: Peter Magige",
+      "render": "statement",
+      "body": {
+        "speaker": "p_magige"
+      },
+      "facts": [
+        "f_jairus_market"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_nodust",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_weigh",
+      "type": "forensic",
+      "title": "Test: the reference weight on her scale",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_scale_test"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_scale",
+          "ev_refweight"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_compare",
+      "type": "forensic",
+      "title": "Comparison: stone vs wound",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_stone_match"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_autopsy",
+          "ev_stone"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_soil",
+      "type": "forensic",
+      "title": "Lab: clay (stone crack vs shaft 7 rim)",
+      "render": "labReport",
+      "body": {
+        "test": "soil"
+      },
+      "facts": [
+        "f_soil"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "soil",
+        "hours": 8,
+        "needs": [
+          "ev_stone",
+          "ev_rimclay"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Shaft 7 partly collapsed at about 07:30. At 09:00 miners dug out gold buyer Rosebella Ogutu at the bottom. Recorded as a mining accident.",
+      "kind": "true",
+      "about": [
+        "p_rosebella",
+        "loc_shaft7"
+      ],
+      "at": {
+        "from": "07:30"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "Rosebella was at the bottom of shaft 7 under fallen earth and timber, with one head wound.",
+      "kind": "true",
+      "about": [
+        "p_rosebella",
+        "loc_shaft7"
+      ]
+    },
+    {
+      "id": "f_scale",
+      "text": "Under the pan of Rosebella's digital scale, a small magnet is glued in place.",
+      "kind": "true",
+      "about": [
+        "p_rosebella"
+      ]
+    },
+    {
+      "id": "f_refweight",
+      "text": "A certified 1-gram reference weight in a plastic case, with a school's label.",
+      "kind": "true",
+      "about": [
+        "p_robi"
+      ]
+    },
+    {
+      "id": "f_scale_test",
+      "text": "On Rosebella's scale the certified 1 g weight reads 0.90 g. With the magnet removed, it reads 1.00 g. Every sale was weighed about 10% light.",
+      "kind": "true",
+      "about": [
+        "p_rosebella"
+      ]
+    },
+    {
+      "id": "f_ledger",
+      "text": "Rosebella's ledger: Robi's husband sold to her for six years, Robi for three. Every sale was paid, short but paid.",
+      "kind": "true",
+      "about": [
+        "p_rosebella",
+        "p_robi"
+      ]
+    },
+    {
+      "id": "f_boke",
+      "text": "Boke: at about 05:50, from the next shaft, she heard two women arguing at shaft 7: \"You've cheated us for years — my husband too!\" Then quiet.",
+      "kind": "true",
+      "about": [
+        "p_boke"
+      ],
+      "at": {
+        "from": "05:50"
+      }
+    },
+    {
+      "id": "f_boke_self",
+      "text": "Boke was down her own shaft hauling, in view of her partner, from 05:30.",
+      "kind": "true",
+      "about": [
+        "p_boke"
+      ],
+      "where": {
+        "person": "p_boke",
+        "place": "plc_shaft8",
+        "from": "05:30",
+        "to": "09:00"
+      }
+    },
+    {
+      "id": "f_kiosk_closed",
+      "text": "Boke: at 06:30 the miners queued at Rosebella's kiosk to sell. It never opened, for the first time in twelve years.",
+      "kind": "true",
+      "about": [
+        "p_boke",
+        "p_rosebella"
+      ],
+      "at": {
+        "from": "06:30"
+      }
+    },
+    {
+      "id": "f_pondlog",
+      "text": "Pond log: \"R. Wambura — 06:40\".",
+      "kind": "true",
+      "about": [
+        "p_robi"
+      ],
+      "at": {
+        "from": "06:40"
+      }
+    },
+    {
+      "id": "f_nyak",
+      "text": "Nyakerario: Robi arrived at about 06:40, out of breath. She left her pan \"to go and check something\" at about 07:15 and came back at 07:40, shaking.",
+      "kind": "true",
+      "about": [
+        "p_nyakerario",
+        "p_robi"
+      ],
+      "at": {
+        "from": "07:15",
+        "to": "07:40"
+      }
+    },
+    {
+      "id": "f_nyak_self",
+      "text": "Nyakerario was at the ponds with the log from 05:30.",
+      "kind": "true",
+      "about": [
+        "p_nyakerario"
+      ],
+      "where": {
+        "person": "p_nyakerario",
+        "place": "plc_ponds",
+        "from": "05:30",
+        "to": "09:00"
+      }
+    },
+    {
+      "id": "f_no_pond_dispute",
+      "text": "Nyakerario: there has never been a dispute over places at the ponds. \"Everyone washes where she washes.\"",
+      "kind": "true",
+      "about": [
+        "p_nyakerario"
+      ]
+    },
+    {
+      "id": "f_prop",
+      "text": "Shaft 7's props are rotten through, except one sound prop with fresh stone-strike marks at its base, now lying across the mouth.",
+      "kind": "true",
+      "about": [
+        "loc_shaft7"
+      ]
+    },
+    {
+      "id": "f_rimclay",
+      "text": "A band of dark red clay runs round shaft 7's mouth and nowhere else in the field.",
+      "kind": "true",
+      "about": [
+        "loc_shaft7"
+      ]
+    },
+    {
+      "id": "f_shaftreg",
+      "text": "Shaft register: shaft 7, owner M. Marwa, \"props to be replaced — unsafe\", written three weeks ago and never signed off.",
+      "kind": "true",
+      "about": [
+        "p_mwikwabe"
+      ]
+    },
+    {
+      "id": "f_husband_death",
+      "text": "Shaft register: a fatality in shaft 7 three years ago, J. Wambura, Robi's husband.",
+      "kind": "true",
+      "about": [
+        "p_robi"
+      ]
+    },
+    {
+      "id": "f_rec_robi",
+      "text": "Records, Robi's line: shafts zone 05:35–06:30; washing ponds zone 06:35–07:10; shafts zone again 07:18–07:35.",
+      "kind": "true",
+      "about": [
+        "p_robi"
+      ],
+      "at": {
+        "from": "05:35",
+        "to": "07:35"
+      }
+    },
+    {
+      "id": "f_stone",
+      "text": "In Robi's ore sack: a round pounding stone, washed, with red clay in a crack.",
+      "kind": "true",
+      "about": [
+        "p_robi"
+      ]
+    },
+    {
+      "id": "f_mwik_crew",
+      "text": "Chacha: Mwikwabe was at shaft 12 across the field with his crew from 05:30 until the shouting at 07:30.",
+      "kind": "true",
+      "about": [
+        "p_chacha",
+        "p_mwikwabe"
+      ],
+      "where": {
+        "person": "p_mwikwabe",
+        "place": "plc_shaft12",
+        "from": "05:30",
+        "to": "07:30"
+      }
+    },
+    {
+      "id": "f_jairus_market",
+      "text": "Peter Magige: Jairus was buying at the Migori town gold market from 05:30. \"He's always first.\"",
+      "kind": "true",
+      "about": [
+        "p_magige",
+        "p_jairus"
+      ],
+      "where": {
+        "person": "p_jairus",
+        "place": "plc_migori",
+        "from": "05:30",
+        "to": "09:00"
+      }
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Autopsy: one blow to the head from a heavy rounded stone, before death.",
+      "kind": "true",
+      "about": [
+        "p_rosebella"
+      ]
+    },
+    {
+      "id": "f_aut_nodust",
+      "text": "Autopsy: no soil or dust in the airways. She was not breathing when the earth fell on her.",
+      "kind": "true",
+      "about": [
+        "p_rosebella"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 05:45 and 07:00.",
+      "kind": "true",
+      "about": [
+        "p_rosebella"
+      ],
+      "at": {
+        "from": "05:45",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_stone_match",
+      "text": "Dr. Chebii: the pounding stone is consistent with the wound.",
+      "kind": "true",
+      "about": [
+        "p_rosebella"
+      ]
+    },
+    {
+      "id": "f_soil",
+      "text": "Lab: the clay in the stone's crack is the dark red band found only at shaft 7's mouth.",
+      "kind": "true",
+      "about": [
+        "p_robi"
+      ]
+    },
+    {
+      "id": "f_robi_ponds",
+      "text": "Robi: \"I was at the washing ponds from five o'clock.\"",
+      "kind": "lie",
+      "about": [
+        "p_robi"
+      ]
+    },
+    {
+      "id": "f_robi_thief",
+      "text": "Robi: \"Rosebella was a thief. Weigh my reference weight on her scale.\"",
+      "kind": "claim",
+      "about": [
+        "p_robi",
+        "p_rosebella"
+      ]
+    },
+    {
+      "id": "f_robi_reveal",
+      "text": "Robi admits she met Rosebella beside shaft 7 at dawn with the reference weight and told her she'd tell the whole field.",
+      "kind": "true",
+      "about": [
+        "p_robi",
+        "p_rosebella"
+      ],
+      "where": {
+        "person": "p_robi",
+        "place": "plc_shaft7",
+        "from": "05:45",
+        "to": "05:55"
+      }
+    },
+    {
+      "id": "f_robi_left",
+      "text": "Robi: \"She laughed at me and at my husband. She was alive when I left. Then I went to the ponds.\"",
+      "kind": "lie",
+      "about": [
+        "p_robi"
+      ]
+    },
+    {
+      "id": "f_mwik_props",
+      "text": "Mwikwabe: \"Shaft 7 was propped properly. It was inspected last week.\"",
+      "kind": "lie",
+      "about": [
+        "p_mwikwabe"
+      ]
+    },
+    {
+      "id": "f_mwik_reveal",
+      "text": "Mwikwabe: the props were rotten and he couldn't afford timber. Only one prop in shaft 7 was sound. \"I knew that shaft could fall.\"",
+      "kind": "true",
+      "about": [
+        "p_mwikwabe"
+      ]
+    },
+    {
+      "id": "f_jairus_claim",
+      "text": "Jairus: \"I was at the Migori market.\"",
+      "kind": "claim",
+      "about": [
+        "p_jairus"
+      ]
+    },
+    {
+      "id": "f_jairus_rumour",
+      "text": "Jairus: \"Everyone said her scale was light. Nobody could prove it.\"",
+      "kind": "true",
+      "about": [
+        "p_jairus",
+        "p_rosebella"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_robi",
+      "stance": "cooperative",
+      "intro": "Robi keeps washing ore while she talks, swirling the pan without looking down. \"I was at the ponds from five o'clock. Weigh my reference weight on her scale.\"",
+      "claims": [
+        "f_robi_ponds",
+        "f_robi_thief"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_robi_left",
+          "after": "f_robi_reveal"
+        }
+      ],
+      "yields": [
+        "ev_refweight"
+      ],
+      "topics": [
+        {
+          "about": "f_husband_death",
+          "reply": "Three years. He went down that shaft and they brought him up dead. And she weighed his gold light for six years before that.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_mwikwabe",
+      "stance": "cooperative",
+      "intro": "Mwikwabe stands at the rim of shaft 7 with his hat in his hands. \"Shaft 7 was propped properly. It was inspected last week.\"",
+      "claims": [
+        "f_mwik_props"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_rosebella",
+          "reply": "I was at shaft 12 with my crew all morning. Ask Chacha.",
+          "reveals": [
+            "ev_chacha"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_jairus",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_scale"
+      ],
+      "intro": "Jairus weighs a speck of gold on his own scale at a Migori stall without looking up. \"I buy honest. Ask anyone.\"",
+      "claims": [
+        "f_jairus_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_scale",
+          "reply": "Everyone said her scale was light. Nobody could prove it. I was here from half past five. Peter will tell you; he sold to me first.",
+          "reveals": [
+            "f_jairus_rumour",
+            "ev_magige"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_boke",
+      "stance": "cooperative",
+      "intro": "Boke climbs out of shaft 8 with a bucket on a rope. \"I heard them. I thought it was the usual morning shouting.\"",
+      "claims": [],
+      "yields": [
+        "ev_boke"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_nyakerario",
+      "stance": "cooperative",
+      "intro": "Nyakerario runs a muddy finger down her log. \"Robi came at twenty to seven. Out of breath. Then she went off again.\"",
+      "claims": [],
+      "yields": [
+        "ev_nyakerario"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_robi",
+      "claim": "f_robi_ponds",
+      "brokenBy": [
+        "f_pondlog",
+        "f_rec_robi"
+      ],
+      "reveals": [
+        "f_robi_reveal"
+      ],
+      "reaction": "She stops swirling the pan. \"I went to show her the weight. I told her I'd tell the whole field. She laughed at me and at my husband. Then I went to the ponds.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_mwik",
+      "claim": "f_mwik_props",
+      "brokenBy": [
+        "f_shaftreg",
+        "f_prop"
+      ],
+      "reveals": [
+        "f_mwik_reveal"
+      ],
+      "reaction": "\"The props were rotten. I couldn't afford timber. I told the women to be careful. I didn't kill her, I killed nobody. But I knew that shaft could fall.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_robi_left",
+      "claim": "f_robi_left",
+      "brokenBy": [
+        "f_aut_nodust",
+        "f_soil"
+      ],
+      "reveals": [],
+      "reaction": "Robi puts the pan down in the mud. \"She said nobody would believe a miner.\" She holds out her red hands, palms up, and says nothing more.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_robi",
+      "text": "Robi Wambura",
+      "category": "person",
+      "ref": "p_robi",
+      "unlock": {
+        "anyOf": [
+          "f_husband_death"
+        ]
+      }
+    },
+    {
+      "id": "w_mwikwabe",
+      "text": "Mwikwabe Marwa",
+      "category": "person",
+      "ref": "p_mwikwabe",
+      "unlock": {
+        "anyOf": [
+          "f_shaftreg"
+        ]
+      }
+    },
+    {
+      "id": "w_jairus",
+      "text": "Jairus Ochanda",
+      "category": "person",
+      "ref": "p_jairus",
+      "unlock": {
+        "anyOf": [
+          "f_jairus_claim"
+        ]
+      }
+    },
+    {
+      "id": "w_boke",
+      "text": "Boke Nyamohanga",
+      "category": "person",
+      "ref": "p_boke",
+      "unlock": {
+        "anyOf": [
+          "f_boke"
+        ]
+      }
+    },
+    {
+      "id": "w_nyakerario",
+      "text": "Nyakerario Gati",
+      "category": "person",
+      "ref": "p_nyakerario",
+      "unlock": {
+        "anyOf": [
+          "f_pondlog"
+        ]
+      }
+    },
+    {
+      "id": "h_stone",
+      "text": "struck with an ore-pounding stone and pushed into the shaft, which she then made collapse",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_collapse",
+      "text": "buried when the shaft collapsed by accident",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_fell",
+      "text": "fell into the shaft by accident",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_mercury",
+      "text": "poisoned by mercury fumes at the ponds",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_pondlog"
+        ]
+      }
+    },
+    {
+      "id": "h_prop",
+      "text": "struck by a falling prop",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_prop"
+        ]
+      }
+    },
+    {
+      "id": "m_scale",
+      "text": "Rosebella had cheated the miners for years with a rigged scale, her late husband among them",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_scale"
+        ]
+      }
+    },
+    {
+      "id": "m_rival",
+      "text": "competition between gold buyers",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_jairus_claim"
+        ]
+      }
+    },
+    {
+      "id": "m_props",
+      "text": "the shaft owner's unsafe props",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_shaftreg"
+        ]
+      }
+    },
+    {
+      "id": "m_debt",
+      "text": "an unpaid gold debt",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ledger"
+        ]
+      }
+    },
+    {
+      "id": "m_pond",
+      "text": "a quarrel over a place at the ponds",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_pondlog"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Rosebella Ogutu"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_0550",
+                  "label": "05:50",
+                  "from": "05:50",
+                  "to": "05:50"
+                },
+                {
+                  "id": "sl_0550_0630",
+                  "label": "05:50–06:30",
+                  "from": "05:50",
+                  "to": "06:30"
+                },
+                {
+                  "id": "sl_0640",
+                  "label": "06:40",
+                  "from": "06:40",
+                  "to": "06:40"
+                },
+                {
+                  "id": "sl_0730",
+                  "label": "07:30",
+                  "from": "07:30",
+                  "to": "07:30"
+                },
+                {
+                  "id": "sl_0900",
+                  "label": "09:00",
+                  "from": "09:00",
+                  "to": "09:00"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_arg",
+                  "text": "The argument at shaft 7",
+                  "slot": "sl_0550",
+                  "by": [
+                    "f_boke"
+                  ],
+                  "why": "Boke heard it from the next shaft at about 05:50.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_boke"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Rosebella is killed",
+                  "slot": "sl_0550_0630",
+                  "by": [
+                    "f_aut_tod",
+                    "f_boke",
+                    "f_kiosk_closed",
+                    "f_aut_nodust"
+                  ],
+                  "why": "The argument ended in silence at about 05:50, and her kiosk never opened at 06:30. She was dead long before the collapse.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_collapse",
+                  "text": "The shaft collapses",
+                  "slot": "sl_0730",
+                  "by": [
+                    "f_ob",
+                    "f_nyak",
+                    "f_rec_robi"
+                  ],
+                  "why": "The miners heard it fall at about 07:30, while Robi was back in the shafts zone.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_ob"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_found",
+                  "text": "The body is found",
+                  "slot": "sl_0900",
+                  "by": [
+                    "f_ob"
+                  ],
+                  "why": "The miners dug her out at 09:00.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_ob"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_0640",
+                  "by": [
+                    "f_pondlog",
+                    "f_nyak"
+                  ],
+                  "why": "06:40 is when Robi arrived at the ponds, out of breath: after the killing, not part of it."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "An argument at ten to six, a kiosk that never opened, and a collapse two hours later to bury it. That's the morning.",
+          "fail": [
+            "The shaft fell at half past seven. She wasn't breathing when it did.",
+            "06:40 is when Robi got to the ponds. What happened before that?"
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_robi"
+          }
+        ],
+        "prosecutor": {
+          "pass": "In the shafts zone at the argument, back again for the collapse, and shaft 7's clay in the crack of her stone. That will hold.",
+          "fail": [
+            "The shaft owner's failing is his timber. He was at shaft 12 with his crew.",
+            "The rival was buying in Migori from half past five."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_stone"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A stone first, the shaft second, and the one good prop knocked out to finish it. Yes.",
+          "fail": [
+            "No dust in her airways. The collapse didn't kill her.",
+            "A rounded stone, not timber. Read the wound."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_scale"
+          }
+        ],
+        "prosecutor": {
+          "pass": "She'll go to court. So will that scale. And somebody needs to go to that shaft owner about his timber.",
+          "fail": [
+            "She was paid for every sale. Short, but paid. Why short?",
+            "The props are Mwikwabe's failing, not a reason to kill."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_shaft7",
+      "from": "05:50",
+      "to": "06:30",
+      "within": [
+        "plc_shaft7"
+      ],
+      "note": "From the argument at 05:50 to the kiosk that never opened at 06:30. The autopsy allows 05:45–07:00."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_body",
+          "f_aut_blow",
+          "f_aut_nodust"
+        ],
+        "concludes": "Rosebella was struck with a rounded stone and was already dead when the shaft fell on her: there is no dust in her airways. The collapse didn't kill her."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_boke",
+          "f_robi_ponds",
+          "f_pondlog",
+          "f_rec_robi",
+          "f_robi_reveal",
+          "f_kiosk_closed",
+          "f_aut_tod"
+        ],
+        "concludes": "The argument at shaft 7 at 05:50 was with Robi, who was in the shafts zone until 06:30, not at the ponds from five. Rosebella's kiosk never opened at 06:30: she died between 05:50 and 06:30.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_prop",
+          "f_shaftreg",
+          "f_mwik_props",
+          "f_mwik_reveal",
+          "f_nyak"
+        ],
+        "concludes": "The rotten shaft only fell because its one sound prop was struck out. Robi left the ponds at 07:15 and was back in the shafts zone from 07:18 to 07:35."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_stone",
+          "f_soil",
+          "f_stone_match",
+          "f_robi_left",
+          "f_scale",
+          "f_scale_test",
+          "f_ledger",
+          "f_husband_death"
+        ],
+        "concludes": "The stone in her sack carries shaft 7's clay and matches the wound. The scale weighed 10% light for years, including every gram her husband sold. Robi Wambura struck Rosebella with an ore-pounding stone, pushed her into the shaft and made it collapse.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_mwikwabe",
+        "blank": "who",
+        "by": [
+          "f_mwik_crew"
+        ],
+        "why": "Mwikwabe was at shaft 12 across the field with his crew from 05:30. His lie hid his rotten props."
+      },
+      {
+        "word": "w_jairus",
+        "blank": "who",
+        "by": [
+          "f_jairus_market"
+        ],
+        "why": "Jairus was buying at the Migori town market from 05:30."
+      },
+      {
+        "word": "w_boke",
+        "blank": "who",
+        "by": [
+          "f_boke_self"
+        ],
+        "why": "Boke was down her own shaft, hauling, in view of her partner."
+      },
+      {
+        "word": "w_nyakerario",
+        "blank": "who",
+        "by": [
+          "f_nyak_self"
+        ],
+        "why": "Nyakerario was at the ponds with her log."
+      },
+      {
+        "word": "h_collapse",
+        "blank": "how",
+        "by": [
+          "f_aut_nodust"
+        ],
+        "why": "She was dead before the collapse."
+      },
+      {
+        "word": "h_fell",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "The blow came first."
+      },
+      {
+        "word": "h_mercury",
+        "blank": "how",
+        "by": [
+          "f_aut_blow",
+          "f_body"
+        ],
+        "why": "She died of a blow, at the shaft, not the ponds."
+      },
+      {
+        "word": "h_prop",
+        "blank": "how",
+        "by": [
+          "f_aut_blow",
+          "f_stone_match"
+        ],
+        "why": "The wound is from a rounded stone, not timber."
+      },
+      {
+        "word": "m_rival",
+        "blank": "why",
+        "by": [
+          "f_jairus_market"
+        ],
+        "why": "That rivalry is Jairus's, and he was in Migori."
+      },
+      {
+        "word": "m_props",
+        "blank": "why",
+        "by": [
+          "f_mwik_reveal"
+        ],
+        "why": "The props are Mwikwabe's failing, not a motive."
+      },
+      {
+        "word": "m_debt",
+        "blank": "why",
+        "by": [
+          "f_ledger"
+        ],
+        "why": "Robi was paid, short but paid, for every sale."
+      },
+      {
+        "word": "m_pond",
+        "blank": "why",
+        "by": [
+          "f_no_pond_dispute"
+        ],
+        "why": "There has never been a dispute over places at the ponds."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "For twelve years Rosebella weighs Macalder's gold on a scale with a magnet glued under its pan. Every reading is about 10% light. Robi's husband sells to her for six years, until shaft 7 kills him.",
+        "image": null
+      },
+      {
+        "text": "A schoolteacher gives Robi a certified 1-gram weight. On Monday she weighs it on Rosebella's scale: 0.90 g.",
+        "image": null
+      },
+      {
+        "text": "Tuesday, 05:50. Before the kiosk opens, Robi meets Rosebella beside shaft 7 with the weight in her hand. Rosebella laughs and says nobody will believe a miner. Robi strikes her with a pounding stone and pushes her into the shaft.",
+        "image": "loc_shaft7"
+      },
+      {
+        "text": "At 06:40 she arrives at the ponds, out of breath. At 07:15 she leaves her pan. At about 07:25, back at shaft 7, she knocks out the one sound prop.",
+        "image": null
+      },
+      {
+        "text": "07:30. The rotten props give way and the earth falls. At 09:00 the miners dig out the buyer whose kiosk never opened.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Two stamps: records on Robi's line, then a warrant on her shelter. The clay test (8 h) breaks her second story. No detention needed.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_shaft7",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_prop",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_rimclay",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_boke"
+      },
+      {
+        "do": "visit",
+        "target": "loc_kiosk",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_scale",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_ledger",
+        "hours": 1
+      },
+      {
+        "do": "visit",
+        "target": "loc_ponds",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_pondlog",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_nyakerario"
+      },
+      {
+        "do": "interview",
+        "target": "p_robi"
+      },
+      {
+        "do": "visit",
+        "target": "loc_office",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_shaftreg",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_mwikwabe"
+      },
+      {
+        "do": "press",
+        "target": "c_mwik"
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "press",
+        "target": "c_robi"
+      },
+      {
+        "do": "search",
+        "target": "loc_shelter"
+      },
+      {
+        "do": "submit",
+        "target": "ev_soil"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 8
+      },
+      {
+        "do": "interview",
+        "target": "p_robi"
+      },
+      {
+        "do": "press",
+        "target": "c_robi_left"
+      }
+    ],
+    "totalHours": 35
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Was she breathing when the shaft fell? Then the collapse isn't when she died."
+      },
+      "tier2": {
+        "facts": [
+          "f_boke",
+          "f_kiosk_closed"
+        ],
+        "line": "An argument at 05:50, then quiet. A kiosk that never opened at 06:30."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_pondlog",
+        "line": "She says she was at the ponds from five. What does the pond log say?"
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_robi",
+          "f_nyak"
+        ],
+        "line": "In the shafts zone until 06:30, and back there 07:18–07:35, right before the collapse."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_prop",
+        "line": "Most of those props are rotten. Look at the one that isn't."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_nodust",
+          "f_prop"
+        ],
+        "line": "No dust in her airways, and stone-strike marks on the only sound prop."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_scale",
+        "line": "Lift the pan. Then put the reference weight on it, with and without what you find."
+      },
+      "tier2": {
+        "facts": [
+          "f_scale_test",
+          "f_ledger"
+        ],
+        "line": "0.90 g for a gram, for twelve years. Her husband sold for six of them."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "dhahabu",
+      "def": "Gold."
+    },
+    {
+      "term": "mizani",
+      "def": "A weighing scale."
+    },
+    {
+      "term": "shimo",
+      "def": "A pit or mine shaft."
+    },
+    {
+      "term": "sumaku",
+      "def": "A magnet."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "testingAnInstrument"
+    ],
+    "beatNotes": "Testing an instrument. The player puts the reference weight on the scale (0.90 g), lifts the pan, removes the magnet in the 3D view and weighs it again (1.00 g). The deduction is something the player does with their own hands."
+  }
+}

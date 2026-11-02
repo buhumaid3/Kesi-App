@@ -1,0 +1,2232 @@
+{
+  "meta": {
+    "id": "case-040",
+    "number": 40,
+    "region": "rift-valley",
+    "regionNumber": 4,
+    "title": "Beacon BH9/14",
+    "boss": true,
+    "schemaVersion": 1,
+    "estMinutes": 30,
+    "date": "Saturday 29 November",
+    "folderTab": "BAHATI"
+  },
+  "pattern": {
+    "crimePattern": "land-company director kills the surveyor who refused to certify a falsified re-survey, and stages a roadside robbery",
+    "noRealCaseRetold": true,
+    "notes": "Fictional land company, block and beacon numbers. Survey procedure shown in outline only; a professional surveyor's read is listed in the open questions. Spine boss case: the falsified survey is Joseph Mwenda's.",
+    "tags": [
+      "blunt-force",
+      "staged-robbery",
+      "moved-body",
+      "land-fraud",
+      "two-liars",
+      "forensics",
+      "detention",
+      "spine",
+      "boss"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 5,
+    "redHerrings": 1,
+    "liars": 2,
+    "groups": [
+      "who",
+      "how",
+      "why",
+      "spine"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "records",
+      "warrant"
+    ],
+    "twist": "the-robbery-is-a-copy-of-josephs-death"
+  },
+  "ob": {
+    "number": "OB 04/29/11",
+    "date": "Saturday 29 November",
+    "time": "06:50",
+    "reportedBy": "Wesley Koros, milk transporter",
+    "text": "A milk transporter reports a man found dead on the verge of the Bahati–Nakuru road at 06:40. He is identified as Titus Kibiwott (56), a licensed land surveyor. Wallet and phone missing. Recorded as robbery with violence.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_titus",
+      "role": "victim",
+      "name": "Titus Kibiwott",
+      "age": 56,
+      "occupation": "Licensed land surveyor",
+      "bio": "Thirty years surveying the farms around Nakuru. Never signs what he hasn't measured himself.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_beacon",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 50s, a khaki surveyor's jacket with many pockets, a measuring staff over his shoulder, a field notebook in his breast pocket, patient and stubborn, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_calvin",
+      "role": "suspect",
+      "name": "Calvin Wamalwa",
+      "age": 44,
+      "occupation": "Director, Bahati Highlands Land Ltd",
+      "bio": "His company is selling Bahati Block 9 as sixty new plots. Hired Titus to \"re-establish\" the boundaries.",
+      "community": "Luhya",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_contract"
+      },
+      "at": "plc_nakuru",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, an expensive open-necked shirt and a navy blazer, a smartwatch, the keys of a double-cab pickup in his hand, smooth and watchful, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_elias",
+      "role": "suspect",
+      "name": "Elias Kipkoech",
+      "age": 38,
+      "occupation": "Calvin's driver",
+      "bio": "Drives Calvin everywhere. Hasn't slept.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_contract"
+      },
+      "at": "plc_nakuru",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 30s, a driver's plain shirt and cap, red eyes, hands that won't keep still, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_simon",
+      "role": "suspect",
+      "name": "Simon Gacheru",
+      "age": 49,
+      "occupation": "Farmer, Bahati",
+      "redHerring": true,
+      "bio": "Threatened Titus at Bahati market last week over a fence Titus had moved on another job.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_simon_threat"
+      },
+      "at": "plc_subukia",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 40s, a farmer's coat and gumboots, a flat cap, a hot temper cooling into embarrassment, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_nicholas",
+      "role": "suspect",
+      "name": "Nicholas Kemboi",
+      "age": 50,
+      "occupation": "Rival surveyor",
+      "bio": "Hired first by Bahati Highlands, then dropped.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_kemboi_dropped"
+      },
+      "at": "plc_rongai",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 50, a surveyor's reflective vest over a shirt and tie, a tablet in a rugged case, cool and cynical, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_priscilla",
+      "role": "witness",
+      "name": "Priscilla Kibiwott",
+      "age": 53,
+      "occupation": "Titus's widow",
+      "bio": "Married to Titus for thirty years. Waited with supper on Friday night.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_home",
+      "image": null
+    },
+    {
+      "id": "p_hannah",
+      "role": "witness",
+      "name": "Hannah Chesang",
+      "age": 35,
+      "occupation": "Clerk, Nakuru Survey Records Office",
+      "bio": "Keeps the old field books, maps and the microfilm reader.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_fb4471"
+      },
+      "at": "loc_records",
+      "image": null
+    },
+    {
+      "id": "p_wesley",
+      "role": "witness",
+      "name": "Wesley Koros",
+      "age": 40,
+      "occupation": "Milk transporter",
+      "bio": "Collects milk along the Bahati road from 05:30. Found Titus.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_road",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_beacon",
+      "name": "Beacon BH9/14",
+      "within": "loc_block9"
+    },
+    {
+      "id": "plc_home",
+      "name": "The Kibiwott house"
+    },
+    {
+      "id": "plc_nakuru",
+      "name": "Nakuru town"
+    },
+    {
+      "id": "plc_subukia",
+      "name": "Dowry negotiation, Subukia"
+    },
+    {
+      "id": "plc_rongai",
+      "name": "A client's farm, Rongai"
+    },
+    {
+      "id": "plc_hbus",
+      "name": "Nakuru bus from the records office"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_road",
+      "name": "Bahati–Nakuru road verge",
+      "kind": "scene",
+      "description": "Dawn on the Bahati road: grey murram verge, a culvert, a cypress hedge. Titus lies on his back on the verge. His pockets are turned out.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The verge",
+          "pos": [
+            44,
+            62
+          ],
+          "yields": "ev_body",
+          "text": "Titus lies on his back on the grey murram. His pockets are turned out; his wallet and phone are gone."
+        },
+        {
+          "id": "hs_obpair",
+          "label": "The OB, and the old file",
+          "pos": [
+            16,
+            30
+          ],
+          "yields": "ev_ob_pair",
+          "text": "Back at the station the OB is open at this morning's entry. Beside it, Amani puts the old folder from the drawer."
+        },
+        {
+          "id": "hs_wesley",
+          "label": "Milk lorry",
+          "pos": [
+            86,
+            60
+          ],
+          "yields": "ev_wesley",
+          "text": "Wesley Koros stands by his milk lorry with the engine still running."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the grassy murram verge of a rural road near Bahati at dawn, a cypress hedge, a culvert, a milk lorry parked further along, red highland soil in the fields beyond, no people in focus"
+      }
+    },
+    {
+      "id": "loc_block9",
+      "name": "Bahati Block 9",
+      "kind": "location",
+      "description": "Green highland farms on red volcanic soil, cypress hedges, red-painted survey beacons at the plot corners. At one corner the beacon has been pulled out of the ground. A car is parked at the edge of the block.",
+      "unlock": {
+        "fact": "f_priscilla_14"
+      },
+      "hotspots": [
+        {
+          "id": "hs_hole",
+          "label": "Beacon BH9/14",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_beacon_hole",
+          "text": "Where beacon BH9/14 should stand there is a fresh hole, red-painted concrete crumbs around it. A lens cap lies in the grass."
+        },
+        {
+          "id": "hs_soil",
+          "label": "Red soil",
+          "pos": [
+            60,
+            60
+          ],
+          "yields": "ev_block9soil",
+          "text": "Red volcanic soil with flecks of survey paint. Amani bags some."
+        },
+        {
+          "id": "hs_car",
+          "label": "Titus's car",
+          "pos": [
+            86,
+            40
+          ],
+          "yields": "ev_titus_car",
+          "text": "Titus's car, parked at the edge of the block. The glovebox is unlocked."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "green highland farmland at Bahati near Nakuru at dusk, red volcanic soil, cypress hedges, a red-painted survey beacon of iron set in concrete in the grass, a freshly dug hole beside where another should be, no people in focus"
+      }
+    },
+    {
+      "id": "loc_records",
+      "name": "Nakuru Survey Records Office",
+      "kind": "location",
+      "description": "Shelves of old field books and rolled maps. A microfilm reader in the corner under a dust cover. A clerk with a register of withdrawals.",
+      "unlock": {
+        "fact": "f_fb4471"
+      },
+      "hotspots": [
+        {
+          "id": "hs_register",
+          "label": "Withdrawals register",
+          "pos": [
+            40,
+            50
+          ],
+          "yields": "ev_hannah",
+          "text": "Hannah Chesang opens the withdrawals register at FB 4471."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a government survey records office in Nakuru, metal shelves of old field books and rolled maps, a microfilm reader under a dust cover, a clerk's desk with a register"
+      }
+    },
+    {
+      "id": "loc_office",
+      "name": "Titus's office, Nakuru",
+      "kind": "location",
+      "description": "A small surveyor's office: maps on every surface, a theodolite in its case, a contract file open on the desk.",
+      "unlock": {
+        "fact": "f_priscilla_refused"
+      },
+      "hotspots": [
+        {
+          "id": "hs_contract",
+          "label": "Contract file",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_contract",
+          "text": "The Bahati Highlands contract, and a note in Titus's hand."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small land surveyor's office in Nakuru, maps pinned on every wall, a theodolite case on a shelf, a contract file open on a desk"
+      }
+    },
+    {
+      "id": "loc_pickup",
+      "name": "Calvin's double-cab pickup (search)",
+      "kind": "search",
+      "description": "A white double-cab pickup in a Nakuru car park, washed this morning.",
+      "unlock": {
+        "fact": "f_rec_calvin_mast"
+      },
+      "hotspots": [
+        {
+          "id": "hs_bed",
+          "label": "The load bed",
+          "pos": [
+            50,
+            60
+          ],
+          "yields": "ev_pickup",
+          "text": "A ribbed plastic bed liner, washed, but the grooves are not quite clean."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the load bed of a white double-cab pickup with a ribbed black plastic liner, recently washed, red soil crumbs in one corner"
+      }
+    },
+    {
+      "id": "loc_quarry",
+      "name": "Flooded quarry, Kiamaina",
+      "kind": "location",
+      "description": "An old stone quarry filled with green water. Divers from the county go in at the edge Elias points to.",
+      "unlock": {
+        "fact": "f_elias_quarry"
+      },
+      "hotspots": [
+        {
+          "id": "hs_dive",
+          "label": "The water's edge",
+          "pos": [
+            50,
+            60
+          ],
+          "yields": "ev_quarry",
+          "text": "The divers come up with an iron bar, red concrete still on one end, and a plastic bag."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "an old flooded stone quarry at Kiamaina near Nakuru, green water, rough rock walls, police divers at the edge"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "On the verge",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. On his back on grey murram. Pockets turned out; wallet and phone missing. Red soil on his clothes."
+      },
+      "facts": [
+        "f_road"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the grey murram verge of a rural road at dawn with a surveyor's cap lying in the grass and a turned-out leather wallet nowhere to be seen, no body visible"
+      }
+    },
+    {
+      "id": "ev_ob_pair",
+      "type": "physical",
+      "title": "Two OB entries",
+      "render": "form",
+      "body": {
+        "today": "Surveyor found on the Bahati road verge; wallet and phone missing. Robbery with violence.",
+        "twelveYearsAgo": "Surveyor (J. Mwenda) found on the Bahati road verge; wallet and phone missing. Robbery with violence. File closed in nine days."
+      },
+      "facts": [
+        "f_ob_pair"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "two pages of a police Occurrence Book side by side, one new, one yellowed with age, with almost identical handwritten entries"
+      }
+    },
+    {
+      "id": "ev_wesley",
+      "type": "witness",
+      "title": "Statement: Wesley Koros",
+      "render": "statement",
+      "body": {
+        "speaker": "p_wesley"
+      },
+      "facts": [
+        "f_wesley"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_priscilla",
+      "type": "witness",
+      "title": "Statement: Priscilla Kibiwott",
+      "render": "statement",
+      "body": {
+        "speaker": "p_priscilla"
+      },
+      "facts": [
+        "f_priscilla_refused",
+        "f_priscilla_14",
+        "f_simon_threat",
+        "f_priscilla_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_beacon_hole",
+      "type": "physical",
+      "title": "Beacon BH9/14",
+      "render": "sceneNote",
+      "body": {
+        "note": "Beacon pulled out of the ground. Fresh hole, red-painted concrete crumbs. Titus's camera lens cap in the grass."
+      },
+      "facts": [
+        "f_beacon_hole"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_block9soil",
+      "type": "physical",
+      "title": "Soil from Block 9",
+      "render": "object",
+      "body": {
+        "label": "Red volcanic soil with red survey-paint flecks."
+      },
+      "facts": [
+        "f_block9soil"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_titus_car",
+      "type": "physical",
+      "title": "Titus's glovebox",
+      "render": "form",
+      "body": {
+        "copy": "Microfilm photocopy: Field book FB 4471, Bahati Block 9, original survey, surveyor J. MWENDA. Beacon positions.",
+        "map": "Amended map, eleven years ago, with Titus's pencil arrows on every moved beacon."
+      },
+      "facts": [
+        "f_fb4471",
+        "f_amended"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a grainy microfilm photocopy of a handwritten survey field book page headed FB 4471 BAHATI BLOCK 9, with beacon sketches and the surveyor's name J. MWENDA legible at the bottom"
+      }
+    },
+    {
+      "id": "ev_hannah",
+      "type": "witness",
+      "title": "Statement: Hannah Chesang",
+      "render": "statement",
+      "body": {
+        "speaker": "p_hannah"
+      },
+      "facts": [
+        "f_hannah_withdrawn",
+        "f_hannah_microfilm",
+        "f_hannah_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_contract",
+      "type": "physical",
+      "title": "Bahati Highlands contract",
+      "render": "form",
+      "body": {
+        "client": "Bahati Highlands Land Ltd",
+        "signed": "C. Wamalwa",
+        "deposit": "Paid by PesaPap",
+        "note": "Will not sign. Amendment is false. — T.K.",
+        "file": "First surveyor N. Kemboi dropped in July."
+      },
+      "facts": [
+        "f_contract",
+        "f_contract_paid",
+        "f_kemboi_dropped"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rec_titus",
+      "type": "phone",
+      "title": "Records: Titus Kibiwott's line",
+      "render": "manifest",
+      "body": {
+        "masts": "Bahati North (Block 9) 18:20–19:10; Bahati Road 19:25; then off"
+      },
+      "facts": [
+        "f_rec_titus"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_priscilla_14"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_rec_calvin",
+      "type": "phone",
+      "title": "Records: Calvin Wamalwa's line",
+      "render": "manifest",
+      "body": {
+        "masts": "Bahati North 18:10–19:12; Bahati Road 19:25; Nakuru town from 19:50",
+        "pesapap": "Monthly receipts from MVUA HOLDINGS LTD"
+      },
+      "facts": [
+        "f_rec_calvin_mast",
+        "f_rec_calvin_mvua"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_contract"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_pickup",
+      "type": "physical",
+      "title": "Calvin's pickup bed",
+      "render": "object",
+      "body": {
+        "label": "Ribbed bed liner, ribs 4 cm apart. Washed; traces left in the grooves. Red-painted concrete crumbs in one corner."
+      },
+      "facts": [
+        "f_pickup"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_calvin_mast"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_ruracio",
+      "type": "witness",
+      "title": "Statement: dowry elders, Subukia",
+      "render": "statement",
+      "body": {
+        "speaker": "p_simon"
+      },
+      "facts": [
+        "f_ruracio"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kemboi",
+      "type": "physical",
+      "title": "Client's receipt (Kemboi)",
+      "render": "receipt",
+      "body": {
+        "place": "Rongai",
+        "time": "17:00–20:30",
+        "signed": "by the client"
+      },
+      "facts": [
+        "f_kemboi"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_quarry",
+      "type": "physical",
+      "title": "From the quarry",
+      "render": "object",
+      "body": {
+        "label": "An iron beacon bar, red-painted concrete still on one end. A bag holding Titus's wallet and phone."
+      },
+      "facts": [
+        "f_quarry"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "an iron survey beacon bar with a lump of red-painted concrete still attached to one end, lying wet on a rock beside a dripping plastic bag"
+      }
+    },
+    {
+      "id": "ev_elias_prints",
+      "type": "physical",
+      "title": "Elias's prints (given voluntarily)",
+      "render": "form",
+      "body": {
+        "name": "E. Kipkoech"
+      },
+      "facts": [
+        "f_elias_prints"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_calvin_prints",
+      "type": "physical",
+      "title": "Fingerprints: Calvin Wamalwa",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention."
+      },
+      "facts": [
+        "f_calvin_prints"
+      ],
+      "gate": null,
+      "detention": "p_calvin",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_bar",
+        "f_aut_lividity",
+        "f_aut_tod",
+        "f_aut_single"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_soil",
+      "type": "forensic",
+      "title": "Lab: soil (clothes vs verge vs Block 9)",
+      "render": "labReport",
+      "body": {
+        "test": "soil"
+      },
+      "facts": [
+        "f_soil"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "soil",
+        "hours": 8,
+        "needs": [
+          "ev_body",
+          "ev_block9soil"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_trace",
+      "type": "forensic",
+      "title": "Lab: trace (pickup bed)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_trace"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_pickup"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_compare",
+      "type": "forensic",
+      "title": "On-site comparison: bar vs wounds",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_bar_match"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_autopsy",
+          "ev_quarry"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_barprints",
+      "type": "forensic",
+      "title": "Lab: fingerprints on the beacon bar",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_bar_prints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_quarry",
+          "ev_calvin_prints",
+          "ev_elias_prints"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Titus Kibiwott, land surveyor, was found dead on the Bahati–Nakuru road verge at 06:40. Wallet and phone missing. Recorded as robbery with violence.",
+      "kind": "true",
+      "about": [
+        "p_titus",
+        "loc_road"
+      ]
+    },
+    {
+      "id": "f_road",
+      "text": "The verge where he lay is grey murram. There is red soil on his clothes. His pockets are turned out.",
+      "kind": "true",
+      "about": [
+        "p_titus",
+        "loc_road"
+      ]
+    },
+    {
+      "id": "f_ob_pair",
+      "text": "Twelve years ago: 'Surveyor (J. Mwenda) found on the Bahati road verge; wallet and phone missing. Robbery with violence.' Almost word for word today's entry.",
+      "kind": "true",
+      "about": [
+        "loc_road"
+      ],
+      "spine": "t_joseph"
+    },
+    {
+      "id": "f_wesley",
+      "text": "Wesley: he was collecting milk along the road from 05:30 and found Titus at 06:40.",
+      "kind": "true",
+      "about": [
+        "p_wesley"
+      ],
+      "where": {
+        "person": "p_wesley",
+        "place": "loc_road",
+        "from": "05:30",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_priscilla_refused",
+      "text": "Priscilla: Titus refused to sign the Block 9 re-establishment. On Thursday night he kept saying, \"Mwenda was right. They moved Mwenda's beacons.\"",
+      "kind": "true",
+      "about": [
+        "p_priscilla",
+        "p_titus"
+      ]
+    },
+    {
+      "id": "f_priscilla_14",
+      "text": "Priscilla: at 18:00 on Friday he said he was going to \"photograph fourteen\" and would be back for supper. He never came back.",
+      "kind": "true",
+      "about": [
+        "p_priscilla",
+        "p_titus"
+      ]
+    },
+    {
+      "id": "f_priscilla_self",
+      "text": "Priscilla was at home all evening with her sister, waiting with supper.",
+      "kind": "true",
+      "about": [
+        "p_priscilla"
+      ],
+      "where": {
+        "person": "p_priscilla",
+        "place": "plc_home",
+        "from": "17:00",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_simon_threat",
+      "text": "Priscilla: last week at Bahati market, a farmer, Simon Gacheru, shouted that Titus had moved his fence and would pay for it.",
+      "kind": "true",
+      "about": [
+        "p_priscilla",
+        "p_simon"
+      ]
+    },
+    {
+      "id": "f_beacon_hole",
+      "text": "Beacon BH9/14 has been pulled out of the ground: a fresh hole, red-painted concrete crumbs. Titus's lens cap lies in the grass.",
+      "kind": "true",
+      "about": [
+        "plc_beacon"
+      ]
+    },
+    {
+      "id": "f_block9soil",
+      "text": "Block 9 soil: red volcanic, with flecks of red survey paint.",
+      "kind": "true",
+      "about": [
+        "loc_block9"
+      ]
+    },
+    {
+      "id": "f_fb4471",
+      "text": "In Titus's glovebox: a microfilm photocopy of field book FB 4471, Bahati Block 9, the original survey, surveyed by J. MWENDA.",
+      "kind": "true",
+      "about": [
+        "p_titus"
+      ],
+      "spine": "t_joseph"
+    },
+    {
+      "id": "f_amended",
+      "text": "Also in the glovebox: the amended map of Block 9, registered eleven years ago, with Titus's pencil arrows on every moved beacon.",
+      "kind": "true",
+      "about": [
+        "p_titus"
+      ]
+    },
+    {
+      "id": "f_hannah_withdrawn",
+      "text": "Hannah: the original FB 4471 is listed 'withdrawn — Registry — 11 years ago'. It has never come back.",
+      "kind": "true",
+      "about": [
+        "p_hannah"
+      ],
+      "spine": "t_registry"
+    },
+    {
+      "id": "f_hannah_microfilm",
+      "text": "Hannah: Titus spent two days last week at the microfilm reader.",
+      "kind": "true",
+      "about": [
+        "p_hannah",
+        "p_titus"
+      ]
+    },
+    {
+      "id": "f_hannah_self",
+      "text": "Hannah closed the office at 17:00 and took the Nakuru bus; she has the ticket.",
+      "kind": "true",
+      "about": [
+        "p_hannah"
+      ],
+      "where": {
+        "person": "p_hannah",
+        "place": "plc_hbus",
+        "from": "17:10",
+        "to": "18:40"
+      }
+    },
+    {
+      "id": "f_contract",
+      "text": "Contract with Bahati Highlands Land Ltd, signed for the company by C. Wamalwa. Titus's note: 'Will not sign. Amendment is false.'",
+      "kind": "true",
+      "about": [
+        "p_calvin",
+        "p_titus"
+      ]
+    },
+    {
+      "id": "f_contract_paid",
+      "text": "The contract deposit was paid in full by PesaPap from BAHATI HIGHLANDS LAND LTD.",
+      "kind": "true",
+      "about": [
+        "p_calvin"
+      ]
+    },
+    {
+      "id": "f_kemboi_dropped",
+      "text": "Contract file: the company's first surveyor, N. Kemboi, was dropped in July.",
+      "kind": "true",
+      "about": [
+        "p_nicholas"
+      ]
+    },
+    {
+      "id": "f_rec_titus",
+      "text": "Records, Titus's line: Bahati North (Block 9) mast 18:20–19:10, Bahati Road mast 19:25, then off.",
+      "kind": "true",
+      "about": [
+        "p_titus"
+      ]
+    },
+    {
+      "id": "f_rec_calvin_mast",
+      "text": "Records, Calvin's line: Bahati North 18:10–19:12, Bahati Road 19:25, Nakuru town from 19:50. The same move as Titus's phone.",
+      "kind": "true",
+      "about": [
+        "p_calvin"
+      ]
+    },
+    {
+      "id": "f_rec_calvin_mvua",
+      "text": "Records, Calvin's PesaPap: monthly receipts from 'MVUA HOLDINGS LTD'.",
+      "kind": "true",
+      "about": [
+        "p_calvin"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_pickup",
+      "text": "Calvin's pickup: a ribbed bed liner, ribs 4 cm apart, washed but with traces in the grooves, and red-painted concrete crumbs in one corner.",
+      "kind": "true",
+      "about": [
+        "p_calvin"
+      ]
+    },
+    {
+      "id": "f_ruracio",
+      "text": "The Subukia elders: Simon Gacheru negotiated his nephew's ruracio from 16:00 to 22:00, in front of twenty people.",
+      "kind": "true",
+      "about": [
+        "p_simon"
+      ],
+      "where": {
+        "person": "p_simon",
+        "place": "plc_subukia",
+        "from": "16:00",
+        "to": "22:00"
+      }
+    },
+    {
+      "id": "f_kemboi",
+      "text": "Client's receipt: Nicholas Kemboi was at a client's farm in Rongai from 17:00 to 20:30.",
+      "kind": "true",
+      "about": [
+        "p_nicholas"
+      ],
+      "where": {
+        "person": "p_nicholas",
+        "place": "plc_rongai",
+        "from": "17:00",
+        "to": "20:30"
+      }
+    },
+    {
+      "id": "f_quarry",
+      "text": "From the Kiamaina quarry: the beacon bar, red concrete still attached, and a bag with Titus's wallet and phone.",
+      "kind": "true",
+      "about": [
+        "p_titus"
+      ]
+    },
+    {
+      "id": "f_elias_prints",
+      "text": "Elias gives his fingerprints voluntarily.",
+      "kind": "true",
+      "about": [
+        "p_elias"
+      ]
+    },
+    {
+      "id": "f_calvin_prints",
+      "text": "Fingerprints taken from Calvin Wamalwa in detention.",
+      "kind": "true",
+      "about": [
+        "p_calvin"
+      ]
+    },
+    {
+      "id": "f_aut_bar",
+      "text": "Autopsy: struck with a cylindrical iron bar about 2.5 cm across. Fragments of concrete and red paint in the wounds.",
+      "kind": "true",
+      "about": [
+        "p_titus"
+      ]
+    },
+    {
+      "id": "f_aut_lividity",
+      "text": "Autopsy: lividity fixed on his right side in parallel stripes about 4 cm apart. He lay on a ribbed surface for over an hour after death, then was moved onto his back.",
+      "kind": "true",
+      "about": [
+        "p_titus"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 18:30 and 20:00.",
+      "kind": "true",
+      "about": [
+        "p_titus"
+      ]
+    },
+    {
+      "id": "f_aut_single",
+      "text": "Autopsy: all the blows came from one attacker, standing in front of him.",
+      "kind": "true",
+      "about": [
+        "p_titus"
+      ]
+    },
+    {
+      "id": "f_soil",
+      "text": "Lab: his clothes carry red volcanic soil and red survey-paint flecks from Block 9. The verge where he lay is grey murram. He died at Block 9.",
+      "kind": "true",
+      "about": [
+        "p_titus",
+        "loc_block9"
+      ]
+    },
+    {
+      "id": "f_trace",
+      "text": "Lab: human blood and red survey paint in the grooves of Calvin's pickup bed.",
+      "kind": "true",
+      "about": [
+        "p_calvin"
+      ]
+    },
+    {
+      "id": "f_bar_match",
+      "text": "Dr. Chebii: the beacon bar from the quarry matches the wounds.",
+      "kind": "true",
+      "about": [
+        "p_titus"
+      ]
+    },
+    {
+      "id": "f_bar_prints",
+      "text": "Lab: Calvin's prints are on the grip end of the beacon bar. Elias's prints are not on it.",
+      "kind": "true",
+      "about": [
+        "p_calvin",
+        "p_elias"
+      ]
+    },
+    {
+      "id": "f_cal_nairobi",
+      "text": "Calvin: \"I was in Nairobi from Friday morning until Sunday.\"",
+      "kind": "lie",
+      "about": [
+        "p_calvin"
+      ]
+    },
+    {
+      "id": "f_cal_paid",
+      "text": "Calvin: \"Titus was paid well. I'm sorry for his family.\"",
+      "kind": "claim",
+      "about": [
+        "p_calvin",
+        "p_titus"
+      ]
+    },
+    {
+      "id": "f_cal_didnt",
+      "text": "Calvin: \"I came back early. I drove past the farm. I didn't see him.\"",
+      "kind": "lie",
+      "about": [
+        "p_calvin"
+      ]
+    },
+    {
+      "id": "f_cal_fundi",
+      "text": "Calvin, in interview: \"Fundi brings the money. A man at the registry fixes the maps. Nobody meets the one at the top.\"",
+      "kind": "true",
+      "about": [
+        "p_calvin"
+      ],
+      "spine": "t_fundi"
+    },
+    {
+      "id": "f_elias_nairobi",
+      "text": "Elias: \"I drove Mr Calvin to Nairobi on Friday afternoon. We stayed until Sunday.\"",
+      "kind": "lie",
+      "about": [
+        "p_elias",
+        "p_calvin"
+      ]
+    },
+    {
+      "id": "f_elias_driver",
+      "text": "Elias: he drives Mr Calvin everywhere. \"He doesn't drive himself. Never.\"",
+      "kind": "true",
+      "about": [
+        "p_elias",
+        "p_calvin"
+      ]
+    },
+    {
+      "id": "f_elias_confess",
+      "text": "Elias: \"We were at the farm. Mr Calvin pulled out the beacon and hit him. I only drove. I helped lift him.\"",
+      "kind": "true",
+      "about": [
+        "p_elias",
+        "p_calvin"
+      ],
+      "where": {
+        "person": "p_calvin",
+        "place": "plc_beacon",
+        "from": "18:15",
+        "to": "19:10"
+      }
+    },
+    {
+      "id": "f_elias_present",
+      "text": "Elias admits he was at Block 9 with Calvin, at the pickup, and helped move Titus to the road.",
+      "kind": "true",
+      "about": [
+        "p_elias"
+      ],
+      "where": {
+        "person": "p_elias",
+        "place": "loc_block9",
+        "from": "18:15",
+        "to": "19:10"
+      }
+    },
+    {
+      "id": "f_elias_quarry",
+      "text": "Elias: \"The bar is in the quarry at Kiamaina. With the wallet and the phone.\"",
+      "kind": "true",
+      "about": [
+        "p_elias"
+      ]
+    },
+    {
+      "id": "f_simon_claim",
+      "text": "Simon: \"I was at my nephew's ruracio in Subukia.\"",
+      "kind": "claim",
+      "about": [
+        "p_simon"
+      ]
+    },
+    {
+      "id": "f_simon_fence",
+      "text": "Simon: \"I shouted at him. He was right about my fence and I was wrong.\"",
+      "kind": "true",
+      "about": [
+        "p_simon",
+        "p_titus"
+      ]
+    },
+    {
+      "id": "f_nic_claim",
+      "text": "Nicholas: \"I was with a client in Rongai.\"",
+      "kind": "claim",
+      "about": [
+        "p_nicholas"
+      ]
+    },
+    {
+      "id": "f_nic_why",
+      "text": "Nicholas: \"They dropped me because I asked for more money to sign. Titus wouldn't sign for any money. That's the difference between us.\"",
+      "kind": "true",
+      "about": [
+        "p_nicholas",
+        "p_titus"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_calvin",
+      "stance": "cooperative",
+      "intro": "Calvin takes the call on speaker, a television in the background. \"Titus? Terrible. I'm in Nairobi; I'll come up on Sunday.\"",
+      "claims": [
+        "f_cal_nairobi",
+        "f_cal_paid"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_cal_didnt",
+          "after": "f_rec_calvin_mast"
+        }
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_contract",
+          "reply": "He was paid well. Re-establishment is routine. Surveyors sign them every day.",
+          "reveals": []
+        },
+        {
+          "about": "f_rec_calvin_mvua",
+          "reply": "Mvua? Investors. Everyone has investors. ...Fundi brings the money. A man at the registry fixes the maps. Nobody meets the one at the top.",
+          "reveals": [
+            "f_cal_fundi"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_elias",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_rec_calvin"
+      ],
+      "intro": "Elias sits in the driver's seat with both hands on the wheel of a parked car. \"I drive. That's all I do.\"",
+      "claims": [
+        "f_elias_nairobi"
+      ],
+      "yields": [
+        "ev_elias_prints"
+      ],
+      "topics": [
+        {
+          "about": "p_calvin",
+          "reply": "I drive him everywhere. He doesn't drive himself. Never.",
+          "reveals": [
+            "f_elias_driver"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_simon",
+      "stance": "cooperative",
+      "intro": "Simon answers with a dowry negotiation going on loudly behind him. \"Titus? I shouted at him. Is he...?\"",
+      "claims": [
+        "f_simon_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "f_simon_threat",
+          "reply": "I shouted at him. He was right about my fence and I was wrong. I owe him an apology I can't give now.",
+          "reveals": [
+            "f_simon_fence"
+          ]
+        },
+        {
+          "about": "p_titus",
+          "reply": "Ask the elders here. Twenty people, six hours, arguing about cows.",
+          "reveals": [
+            "ev_ruracio"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_nicholas",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_contract"
+      ],
+      "intro": "Nicholas leans against his car at a Rongai farm gate. \"Bahati Highlands? I worked for them for a month.\"",
+      "claims": [
+        "f_nic_claim"
+      ],
+      "yields": [
+        "ev_kemboi"
+      ],
+      "topics": [
+        {
+          "about": "p_titus",
+          "reply": "They dropped me because I asked for more money to sign. Titus wouldn't sign for any money. That's the difference between us.",
+          "reveals": [
+            "f_nic_why"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_priscilla",
+      "stance": "cooperative",
+      "intro": "Priscilla still has his supper covered on the table. \"He said he was going to photograph fourteen.\"",
+      "claims": [],
+      "yields": [
+        "ev_priscilla"
+      ],
+      "topics": [
+        {
+          "about": "p_titus",
+          "reply": "Thursday night he kept saying, \"Mwenda was right. They moved Mwenda's beacons.\" I didn't know who Mwenda was.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_hannah",
+      "stance": "cooperative",
+      "intro": "Hannah lifts the dust cover off the microfilm reader. \"He sat here for two days.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_titus_car",
+          "reply": "FB 4471. Withdrawn by the registry eleven years ago. It never came back. The microfilm is the only copy left.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_wesley",
+      "stance": "cooperative",
+      "intro": "Wesley keeps his hands on the warm bonnet of his lorry. \"I collect milk on this road every morning. Every morning.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_body",
+          "reply": "His pockets were turned out. I thought, robbers. Everybody thinks robbers on this road.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_cal_nairobi",
+      "claim": "f_cal_nairobi",
+      "brokenBy": [
+        "f_rec_calvin_mast"
+      ],
+      "reveals": [],
+      "reaction": "He switches off the television. \"...I came back early. I drove past the farm. I didn't see him.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_elias",
+      "claim": "f_elias_nairobi",
+      "brokenBy": [
+        "f_rec_calvin_mast",
+        "f_elias_driver"
+      ],
+      "reveals": [
+        "f_elias_confess",
+        "f_elias_present",
+        "f_elias_quarry"
+      ],
+      "reaction": "We were at the farm. Mr Calvin hit him with the beacon. I only drove. I helped lift him. I have not slept. The bar is in the quarry at Kiamaina, with the wallet.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_cal_didnt",
+      "claim": "f_cal_didnt",
+      "brokenBy": [
+        "f_trace",
+        "f_bar_prints"
+      ],
+      "reveals": [],
+      "reaction": "Calvin looks at the photograph of his own pickup bed for a long time. Then he folds his hands and says nothing at all.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_calvin",
+      "text": "Calvin Wamalwa",
+      "category": "person",
+      "ref": "p_calvin",
+      "unlock": {
+        "anyOf": [
+          "f_contract"
+        ]
+      }
+    },
+    {
+      "id": "w_elias",
+      "text": "Elias Kipkoech",
+      "category": "person",
+      "ref": "p_elias",
+      "unlock": {
+        "anyOf": [
+          "f_elias_driver",
+          "f_elias_nairobi"
+        ]
+      }
+    },
+    {
+      "id": "w_simon",
+      "text": "Simon Gacheru",
+      "category": "person",
+      "ref": "p_simon",
+      "unlock": {
+        "anyOf": [
+          "f_simon_threat"
+        ]
+      }
+    },
+    {
+      "id": "w_nicholas",
+      "text": "Nicholas Kemboi",
+      "category": "person",
+      "ref": "p_nicholas",
+      "unlock": {
+        "anyOf": [
+          "f_kemboi_dropped"
+        ]
+      }
+    },
+    {
+      "id": "w_hannah",
+      "text": "Hannah Chesang",
+      "category": "person",
+      "ref": "p_hannah",
+      "unlock": {
+        "anyOf": [
+          "f_hannah_withdrawn"
+        ]
+      }
+    },
+    {
+      "id": "h_beacon",
+      "text": "struck with a survey beacon bar at the farm, then moved to the roadside",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_bar"
+        ]
+      }
+    },
+    {
+      "id": "h_robbers",
+      "text": "attacked by robbers on the roadside",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_vehicle",
+      "text": "hit by a passing vehicle",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_road"
+        ]
+      }
+    },
+    {
+      "id": "h_strangled",
+      "text": "strangled",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_tod"
+        ]
+      }
+    },
+    {
+      "id": "h_ditch",
+      "text": "fell into the roadside ditch",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_road"
+        ]
+      }
+    },
+    {
+      "id": "m_resurvey",
+      "text": "Titus refused to sign a re-survey that would make the forged plots legal",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_contract"
+        ]
+      }
+    },
+    {
+      "id": "m_robbery",
+      "text": "robbery",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_fence",
+      "text": "a farmer's fence grudge",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_simon_threat"
+        ]
+      }
+    },
+    {
+      "id": "m_fees",
+      "text": "unpaid survey fees",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_contract"
+        ]
+      }
+    },
+    {
+      "id": "m_rival",
+      "text": "a rival surveyor's lost contract",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_kemboi_dropped"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_joseph",
+      "text": "Mwenda, J. — the closed file in the drawer (\"Bahati — old matter\", case 30)",
+      "category": "pin",
+      "pin": "case-030:f_file_bahati",
+      "unlock": {
+        "anyOf": [
+          "f_fb4471"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_rashid",
+      "text": "Rashid Omar Bakari — River Road (case 10)",
+      "category": "pin",
+      "pin": "case-010:f_order_mvua",
+      "unlock": {
+        "anyOf": [
+          "f_fb4471"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_naomi",
+      "text": "Naomi Chepkemoi — Shimanzi (case 30)",
+      "category": "pin",
+      "pin": "case-030:f_container_oval",
+      "unlock": {
+        "anyOf": [
+          "f_fb4471"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_hezekiah",
+      "text": "Hezekiah Onsongo — Ziwani Gardens (case 33)",
+      "category": "pin",
+      "pin": "case-033:f_brief_seal",
+      "unlock": {
+        "anyOf": [
+          "f_fb4471"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_gichuru",
+      "text": "Daniel Gichuru — Pwani Clearing (case 30)",
+      "category": "pin",
+      "pin": "case-030:f_rec_gich_mvua",
+      "unlock": {
+        "anyOf": [
+          "f_fb4471"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} by {how}, because {why}. The survey Titus refused to falsify was first made, twelve years ago, by {pin}.",
+    "fixed": {
+      "victim": "Titus Kibiwott"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_calvin"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Two phones on the same mast, a pickup bed with his blood in it, and his prints on the bar. The driver lifted; Calvin struck.",
+          "fail": [
+            "Doesn't hold up. The driver lifted him. Who held the bar? The lab can tell you.",
+            "No. A farmer who shouted at a market was at a ruracio all night. Follow the phones."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_beacon"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Red soil on a grey verge, stripes on his side, a beacon bar in a quarry. Killed at the farm, moved to the road.",
+          "fail": [
+            "The verge is grey murram. Read the soil.",
+            "There are stripes on his side. What was he lying on for an hour?"
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_resurvey"
+          }
+        ],
+        "prosecutor": {
+          "pass": "\"Will not sign. Amendment is false.\" That's the reason.",
+          "fail": [
+            "The wallet is in the quarry with the bar. It was never a robbery.",
+            "The deposit was paid. That isn't it."
+          ]
+        }
+      },
+      {
+        "id": "g_spine",
+        "kind": "spine",
+        "blanks": [
+          {
+            "id": "pin",
+            "category": "pin",
+            "answer": "w_pin_joseph",
+            "spine": true
+          }
+        ],
+        "prosecutor": {
+          "pass": "Amani. That's your father's name on the field book. Do you want me to take this one to court myself?",
+          "fail": [
+            "Read the name at the bottom of the field book in his glovebox.",
+            "That pin is a different crime. Who surveyed Block 9 first?"
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_block9",
+      "from": "18:20",
+      "to": "19:10",
+      "within": [
+        "plc_beacon"
+      ],
+      "note": "Where he died, not where he was found."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_ob_pair",
+          "f_road",
+          "f_aut_lividity",
+          "f_soil",
+          "f_aut_tod"
+        ],
+        "concludes": "The roadside isn't where Titus died: Block 9 soil and survey paint are on his clothes, the verge is grey, and striped lividity shows he lay on a ribbed surface for over an hour before being moved. The robbery is staged, exactly as in Joseph Mwenda's file."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_priscilla_refused",
+          "f_priscilla_14",
+          "f_fb4471",
+          "f_amended",
+          "f_contract",
+          "f_hannah_withdrawn",
+          "f_hannah_microfilm",
+          "f_beacon_hole"
+        ],
+        "concludes": "Titus refused to certify a re-survey that moved the beacons of the original Block 9 survey, found on microfilm after the field book \"withdrawn by the registry\" vanished. He went to beacon 14 on Friday evening; it has been pulled out of the ground."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_rec_titus",
+          "f_cal_nairobi",
+          "f_rec_calvin_mast"
+        ],
+        "concludes": "Both phones were at Block 9 from about 18:20 to 19:10 and on the Bahati road at 19:25. Calvin wasn't in Nairobi."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_pickup",
+          "f_trace",
+          "f_aut_bar"
+        ],
+        "concludes": "Calvin's pickup bed has ribs 4 cm apart, and blood and survey paint in its grooves."
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_elias_nairobi",
+          "f_elias_confess",
+          "f_quarry",
+          "f_bar_match",
+          "f_bar_prints",
+          "f_aut_single"
+        ],
+        "concludes": "The driver breaks: Calvin pulled the beacon and struck him. The bar comes out of the quarry with the wallet, it matches the wounds, and Calvin's prints are on its grip. Calvin Wamalwa struck Titus with a beacon bar at the farm and moved him to the road, because Titus refused to make the forged plots legal.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      },
+      {
+        "id": "s6",
+        "from": [
+          "f_fb4471",
+          "case-030:f_file_bahati"
+        ],
+        "concludes": "The original survey of Block 9 was made twelve years ago by J. Mwenda, field book FB 4471. The Pattern File has carried \"Bahati — old matter — closed 12 yrs\" since case 30. It is the folder in the drawer.",
+        "answers": [
+          "pin"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_simon",
+        "blank": "who",
+        "by": [
+          "f_ruracio"
+        ],
+        "why": "Simon was negotiating a ruracio in Subukia from 16:00 to 22:00 in front of twenty people."
+      },
+      {
+        "word": "w_nicholas",
+        "blank": "who",
+        "by": [
+          "f_kemboi"
+        ],
+        "why": "Nicholas was at a client's farm in Rongai from 17:00 to 20:30."
+      },
+      {
+        "word": "w_elias",
+        "blank": "who",
+        "by": [
+          "f_bar_prints",
+          "f_aut_single",
+          "f_elias_confess"
+        ],
+        "why": "Elias was there and helped move Titus, and will be charged as an accessory. But one attacker struck from in front, and the bar carries Calvin's prints, not his.",
+        "present": true
+      },
+      {
+        "word": "w_hannah",
+        "blank": "who",
+        "by": [
+          "f_hannah_self"
+        ],
+        "why": "Hannah closed the records office at 17:00 and was on the Nakuru bus."
+      },
+      {
+        "word": "h_robbers",
+        "blank": "how",
+        "by": [
+          "f_soil",
+          "f_aut_lividity"
+        ],
+        "why": "He died at Block 9 and lay on a ribbed surface before he reached the road."
+      },
+      {
+        "word": "h_vehicle",
+        "blank": "how",
+        "by": [
+          "f_aut_bar"
+        ],
+        "why": "Bar wounds, no vehicle injuries."
+      },
+      {
+        "word": "h_strangled",
+        "blank": "how",
+        "by": [
+          "f_aut_bar"
+        ],
+        "why": "He was struck with a bar."
+      },
+      {
+        "word": "h_ditch",
+        "blank": "how",
+        "by": [
+          "f_aut_bar",
+          "f_soil"
+        ],
+        "why": "Bar wounds, and he died at the farm, not the road."
+      },
+      {
+        "word": "m_robbery",
+        "blank": "why",
+        "by": [
+          "f_quarry",
+          "f_soil"
+        ],
+        "why": "The robbery was staged; the wallet was thrown into the quarry with the bar."
+      },
+      {
+        "word": "m_fence",
+        "blank": "why",
+        "by": [
+          "f_ruracio",
+          "f_simon_fence"
+        ],
+        "why": "That grudge is Simon's, and he was at the ruracio."
+      },
+      {
+        "word": "m_fees",
+        "blank": "why",
+        "by": [
+          "f_contract_paid"
+        ],
+        "why": "The deposit was paid in full."
+      },
+      {
+        "word": "m_rival",
+        "blank": "why",
+        "by": [
+          "f_kemboi"
+        ],
+        "why": "That loss is Nicholas's, and he was in Rongai."
+      },
+      {
+        "word": "w_pin_rashid",
+        "blank": "pin",
+        "by": [
+          "case-010:f_order_mvua"
+        ],
+        "why": "Rashid made the forged seal; he didn't survey Block 9."
+      },
+      {
+        "word": "w_pin_naomi",
+        "blank": "pin",
+        "by": [
+          "case-030:f_container_oval"
+        ],
+        "why": "Naomi refused the title paper; she had nothing to do with the survey."
+      },
+      {
+        "word": "w_pin_hezekiah",
+        "blank": "pin",
+        "by": [
+          "case-033:f_brief_seal"
+        ],
+        "why": "Hezekiah sold flooded plots at Ziwani, not Bahati Block 9."
+      },
+      {
+        "word": "w_pin_gichuru",
+        "blank": "pin",
+        "by": [
+          "case-030:f_rec_gich_mvua"
+        ],
+        "why": "Gichuru moved paper for Mvua at the coast; the Bahati line in his drawer points elsewhere."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Bahati Highlands hires Titus to \"re-establish\" Block 9 from an amended map. He finds the original survey on microfilm: field book FB 4471, J. Mwenda. Every beacon has been moved.",
+        "image": null
+      },
+      {
+        "text": "\"Will not sign. Amendment is false.\" On Thursday night he tells his wife, \"Mwenda was right.\"",
+        "image": null
+      },
+      {
+        "text": "Friday, 18:20. He goes to beacon BH9/14 to photograph it. Calvin and his driver are waiting. Calvin pulls the beacon out of the ground.",
+        "image": "loc_block9"
+      },
+      {
+        "text": "They lay him in the ribbed bed of the double-cab and drive 7 km to the Bahati road. They leave him on the verge, turn out his pockets, and throw the wallet, the phone and the bar into the quarry at Kiamaina.",
+        "image": null
+      },
+      {
+        "text": "Saturday, 06:50. \"Surveyor found on the Bahati road verge. Wallet and phone missing. Robbery with violence.\" Twelve years ago, almost word for word.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "Calvin, in interview: \"Fundi brings the money. A man at the registry fixes the maps. Nobody meets the one at the top.\""
+    },
+    {
+      "beat": "Joseph's evidence box is released from the Nakuru evidence store, unopened for twelve years: his surveying compass, a pencil, a photograph of a younger Amani on his shoulders at a beacon, and a carbon copy of his own field-book summary for Block 9."
+    },
+    {
+      "beat": "The closing officer's name on the copy of Joseph's file in the box has been cut out with a blade, neatly."
+    },
+    {
+      "beat": "Mwalimu's voice-note, the shortest yet: \"I knew your father. Not well. Well enough. Go home and sleep.\""
+    },
+    {
+      "beat": "Collectible: Joseph Mwenda's surveying compass. It sits on the desk from now on, next to the dhow compass from Lamu, pointing a slightly different north."
+    }
+  ],
+  "clockPlan": {
+    "note": "Three stamps, the region maximum. Detain Calvin once the pickup is searched; inside his 24 hours: the driver, the quarry, the bar prints (6 h) and the trace result (12 h), then the press. No rush.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_road",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_priscilla"
+      },
+      {
+        "do": "visit",
+        "target": "loc_block9",
+        "hours": 2
+      },
+      {
+        "do": "read",
+        "target": "ev_beacon_hole",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_block9soil",
+        "hours": 0
+      },
+      {
+        "do": "submit",
+        "target": "ev_soil"
+      },
+      {
+        "do": "read",
+        "target": "ev_titus_car",
+        "hours": 1
+      },
+      {
+        "do": "visit",
+        "target": "loc_records",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_hannah"
+      },
+      {
+        "do": "records",
+        "target": "ev_rec_titus"
+      },
+      {
+        "do": "visit",
+        "target": "loc_office",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_contract",
+        "hours": 1
+      },
+      {
+        "do": "records",
+        "target": "ev_rec_calvin"
+      },
+      {
+        "do": "interview",
+        "target": "p_calvin"
+      },
+      {
+        "do": "press",
+        "target": "c_cal_nairobi"
+      },
+      {
+        "do": "search",
+        "target": "loc_pickup"
+      },
+      {
+        "do": "submit",
+        "target": "ev_trace"
+      },
+      {
+        "do": "detain",
+        "target": "p_calvin"
+      },
+      {
+        "do": "sample",
+        "target": "ev_calvin_prints"
+      },
+      {
+        "do": "interview",
+        "target": "p_elias"
+      },
+      {
+        "do": "press",
+        "target": "c_elias"
+      },
+      {
+        "do": "visit",
+        "target": "loc_quarry",
+        "hours": 3
+      },
+      {
+        "do": "submit",
+        "target": "ev_barprints"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 6
+      },
+      {
+        "do": "interview",
+        "target": "p_calvin"
+      },
+      {
+        "do": "press",
+        "target": "c_cal_didnt"
+      }
+    ],
+    "totalHours": 42
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_contract",
+        "line": "Titus wrote a note on his contract. Read whose company it is, and ask his phone where he went."
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_titus",
+          "f_rec_calvin_mast"
+        ],
+        "line": "Two phones, the same mast at Block 9, the same mast on the road at 19:25."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Read the lividity. Then compare the soil on his clothes with the soil on the verge."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_lividity",
+          "f_soil"
+        ],
+        "line": "Stripes 4 cm apart, red soil on a grey verge. He died somewhere else and rode to the road."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_titus_car",
+        "line": "Open his glovebox. He carried two maps of the same land."
+      },
+      "tier2": {
+        "facts": [
+          "f_contract",
+          "f_amended"
+        ],
+        "line": "\"Amendment is false.\" Every beacon moved, and he wouldn't sign."
+      }
+    },
+    "g_spine": {
+      "tier1": {
+        "point": "ev_titus_car",
+        "line": "Read the name at the bottom of the field book, Detective. Slowly."
+      },
+      "tier2": {
+        "facts": [
+          "f_fb4471",
+          "case-030:f_file_bahati"
+        ],
+        "line": "FB 4471, J. Mwenda. And a line in a drawer at Shimanzi: \"Bahati — old matter — closed 12 yrs\"."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "beacon",
+      "def": "Survey boundary marker: an iron pin set in concrete, painted red, at a plot corner."
+    },
+    {
+      "term": "field book",
+      "def": "A surveyor's notebook of original measurements. The legal record of where beacons stand."
+    },
+    {
+      "term": "ramani",
+      "def": "Map."
+    },
+    {
+      "term": "ruracio",
+      "def": "Kikuyu dowry negotiation between two families."
+    },
+    {
+      "term": "mpima ardhi",
+      "def": "Land surveyor."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    },
+    {
+      "term": "fundi",
+      "def": "Craftsman, mechanic, skilled tradesman. Here, a nickname."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "coldCaseSideBySide"
+    ],
+    "beatNotes": "A cold case read against a live one: the OB pair view (today's entry beside Joseph's twelve-year-old one, without comment), and the moment the field-book photocopy's name is read aloud by the game's typewriter: J. MWENDA."
+  }
+}

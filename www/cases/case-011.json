@@ -1,0 +1,1170 @@
+{
+  "meta": {
+    "id": "case-011",
+    "number": 11,
+    "region": "eastlands",
+    "regionNumber": 2,
+    "title": "Number Seven",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 10,
+    "date": "Monday 26 May",
+    "folderTab": "KAYOLE"
+  },
+  "pattern": {
+    "crimePattern": "co-signer of a defaulted motorbike loan kills the borrower",
+    "noRealCaseRetold": true,
+    "notes": "Composite of common boda-boda loan and repossession disputes. Fictional stage, kiosk and petrol station; Kayole and Fedha are settings only.",
+    "tags": [
+      "blunt-force",
+      "debt",
+      "first-liar"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 2,
+    "redHerrings": 0,
+    "liars": 1,
+    "groups": [
+      "who"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness"
+    ],
+    "gatedActions": [],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 27/26/05",
+    "date": "Monday 26 May",
+    "time": "21:04",
+    "reportedBy": "Teresia Ndunge, roast-maize seller, Kayole Spine Road stage",
+    "text": "Teresia Ndunge, a roast-maize seller, reports that a boda-boda rider, Erick Odongo (32), vest No. 7, was found face down in the county drainage trench beside the Kayole Spine Road stage at 20:52. His motorbike is still parked at the stage with the key in it.",
+    "facts": [
+      "f_ob_found",
+      "f_ob_bike"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_erick",
+      "role": "victim",
+      "name": "Erick Odongo",
+      "age": 32,
+      "occupation": "Boda-boda rider, vest No. 7",
+      "bio": "Rides from the Kayole Spine Road stage. Bought his motorbike on a loan his ex-girlfriend co-signed, then stopped paying.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_stage",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 30s, orange reflective rider vest with a large number 7 on the chest, a motorbike helmet pushed up on his head, easy grin, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_sharon",
+      "role": "suspect",
+      "name": "Sharon Nanjala",
+      "age": 26,
+      "occupation": "Runs a phone-charging and mandazi kiosk",
+      "bio": "Erick's ex-girlfriend. Co-signed the loan on his motorbike. When he stopped paying, the lender started taking her things.",
+      "community": "Luhya",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_body_tag"
+      },
+      "at": "loc_kiosk",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 20s, hair in a short wrap, apron dusted with flour over a sweater, bright yellow gumboots visible at the bottom of the frame, tired and guarded expression, standing in front of a small kiosk hung with phone-charging cables, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_jackson",
+      "role": "suspect",
+      "name": "Jackson Mutuku",
+      "age": 47,
+      "occupation": "Stage chairman",
+      "bio": "Runs the stage: fees, the rider roster, the fines. Fined Erick last week for unpaid stage fees.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_stagebook_fine"
+      },
+      "at": "loc_chief",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 40s, neat moustache, reflective vest worn over a collared shirt and a sleeveless sweater, a notebook in his breast pocket, official and impatient, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_abednego",
+      "role": "suspect",
+      "name": "Abednego Kerich",
+      "age": 30,
+      "occupation": "Boda-boda rider, vest No. 12",
+      "bio": "Rival rider. He and Erick came to blows over a customer on Sunday.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_stagebook_fight"
+      },
+      "at": "plc_fedha",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 30, lean, reflective rider vest with a large number 12, a knitted cap, a healing scrape on one cheekbone, wary and defensive, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_teresia",
+      "role": "witness",
+      "name": "Teresia Ndunge",
+      "age": 51,
+      "occupation": "Roast-maize seller",
+      "bio": "Has roasted maize on the same corner of the stage for nine years. Found Erick when she went to tip out her ash.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_brazier",
+      "image": null
+    },
+    {
+      "id": "p_peninah",
+      "role": "witness",
+      "name": "Peninah Chelimo",
+      "age": 23,
+      "occupation": "Pump attendant, Petro Mashariki, Fedha",
+      "statementOnly": true,
+      "bio": "Works the night pumps at a fictional petrol station in Fedha, about 25 minutes from the Kayole stage by boda at night.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_fuel"
+      },
+      "at": "plc_fedha",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_trench",
+      "name": "County drainage trench beside the stage",
+      "within": "loc_stage"
+    },
+    {
+      "id": "plc_brazier",
+      "name": "Teresia's maize brazier",
+      "within": "loc_stage"
+    },
+    {
+      "id": "plc_fedha",
+      "name": "Petro Mashariki petrol station, Fedha"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_stage",
+      "name": "Kayole Spine Road boda-boda stage",
+      "kind": "scene",
+      "description": "Monday night. A row of motorbikes under a sodium light, riders in numbered vests, a roast-maize brazier and a padlocked phone-charging kiosk. Along the road the county is digging a drainage trench. The stage ground is red murram. The trench floor is grey clay.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "In the trench",
+          "pos": [
+            42,
+            74
+          ],
+          "yields": "ev_body",
+          "text": "Erick lies face down in the bottom of the trench, in wet grey clay. One side of his head is badly hurt. His phone is in his jacket pocket."
+        },
+        {
+          "id": "hs_sign",
+          "label": "County signboard",
+          "pos": [
+            18,
+            46
+          ],
+          "yields": "ev_signboard",
+          "text": "A county board on two poles at the edge of the trench, freshly painted."
+        },
+        {
+          "id": "hs_prints",
+          "label": "Trench floor",
+          "pos": [
+            56,
+            82
+          ],
+          "yields": "ev_prints",
+          "text": "Beside the body, in the soft clay: small boot prints, going in and coming out."
+        },
+        {
+          "id": "hs_stagebook",
+          "label": "Stage shelter",
+          "pos": [
+            80,
+            38
+          ],
+          "yields": "ev_stagebook",
+          "text": "The riders' shelter. On a nail hangs the stage book, where the chairman writes fees, fines and complaints."
+        },
+        {
+          "id": "hs_brazier",
+          "label": "Maize brazier",
+          "pos": [
+            70,
+            60
+          ],
+          "yields": "ev_teresia",
+          "text": "Teresia Ndunge stands by her brazier with her arms folded tight. The coals are almost out."
+        },
+        {
+          "id": "hs_bike",
+          "label": "Erick's motorbike",
+          "pos": [
+            88,
+            66
+          ],
+          "text": "A red motorbike, key still in the ignition, a loan-company sticker on the mudguard: \"Financed by Pikipiki Credit. Do not sell.\""
+        },
+        {
+          "id": "hs_kiosk",
+          "label": "Charging kiosk",
+          "pos": [
+            30,
+            30
+          ],
+          "text": "A small kiosk hung with charging cables and a sign: \"CHARGING 20/- · MANDAZI 10/-\". The shutter is down and padlocked."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "night at a roadside boda-boda stage in an Eastlands estate of Nairobi, motorbikes in a row under an orange sodium streetlight, red murram ground, a freshly dug drainage trench with grey clay walls and a county signboard beside it, a small padlocked kiosk hung with phone-charging cables, a roast-maize brazier glowing, no people in focus"
+      }
+    },
+    {
+      "id": "loc_kiosk",
+      "name": "Sharon's kiosk (opened for Amani)",
+      "kind": "location",
+      "description": "Sharon unlocks the shutter herself. Inside: a power strip with twelve sockets, a basket of mandazi under a cloth, a charcoal jiko, a stool, and an exercise book on the counter. A gap on the floor where a fridge used to stand.",
+      "unlock": {
+        "fact": "f_sharon_debt"
+      },
+      "hotspots": [
+        {
+          "id": "hs_chargebook",
+          "label": "Exercise book on the counter",
+          "pos": [
+            44,
+            52
+          ],
+          "yields": "ev_chargelog",
+          "text": "Her charge book: every phone she charges, the time and the 20 bob, in her own handwriting."
+        },
+        {
+          "id": "hs_gumboots",
+          "label": "Under the stool",
+          "pos": [
+            70,
+            80
+          ],
+          "yields": "ev_gumboots",
+          "text": "A pair of yellow gumboots, pushed out of sight under the stool."
+        },
+        {
+          "id": "hs_poker",
+          "label": "By the jiko",
+          "pos": [
+            24,
+            70
+          ],
+          "yields": "ev_poker",
+          "text": "The iron poker for the charcoal jiko, leaning against the wall. Cleaner than anything else in the kiosk."
+        },
+        {
+          "id": "hs_fridge",
+          "label": "The empty corner",
+          "pos": [
+            86,
+            46
+          ],
+          "text": "A clean rectangle on the dusty floor and an unplugged cable. Something heavy stood here until very recently."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "inside a tiny roadside kiosk at night, a power strip crowded with phone chargers, a basket of mandazi under a cloth, a charcoal jiko on the floor, an exercise book on the counter, an empty clean rectangle on the floor where a fridge once stood"
+      }
+    },
+    {
+      "id": "loc_chief",
+      "name": "Chief's office, Kayole",
+      "kind": "location",
+      "description": "A low government building with a noticeboard. Tonight's baraza on stage fees has just ended; plastic chairs are being stacked.",
+      "unlock": {
+        "fact": "f_jackson_claim"
+      },
+      "hotspots": [
+        {
+          "id": "hs_attendance",
+          "label": "Attendance sheet",
+          "pos": [
+            52,
+            44
+          ],
+          "yields": "ev_baraza",
+          "text": "The chief's clerk shows the baraza attendance sheet and the minutes she typed during the meeting."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the yard of a small chief's office in a Nairobi estate at night, plastic chairs being stacked, a noticeboard with typed notices, a single bulb over the door"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body in the trench",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Struck on the left side of the head. Fell or pushed into the trench. Lying in grey clay. Phone and a kiosk charging tag in his jacket pocket."
+      },
+      "facts": [
+        "f_body_blow",
+        "f_body_tag"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a freshly dug roadside drainage trench at night lit by a torch beam, grey clay walls and floor, a dropped motorbike helmet on the edge, red murram dust above, no body visible"
+      }
+    },
+    {
+      "id": "ev_signboard",
+      "type": "physical",
+      "title": "County signboard",
+      "render": "board",
+      "body": {
+        "text": "DRAINAGE WORKS IN PROGRESS. GREY CLAY SUBSOIL EXPOSED. KEEP OFF. — County Roads Department"
+      },
+      "facts": [
+        "f_sign_clay"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "physical",
+      "title": "Boot prints in the trench",
+      "render": "sketch",
+      "body": {
+        "note": "Small gumboot prints, chevron tread, about size 37. Down into the trench beside the body; back up and out."
+      },
+      "facts": [
+        "f_prints"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "close-up of small gumboot prints with a chevron tread pressed into wet grey clay at the bottom of a trench, a ruler laid beside one print for scale, torchlight"
+      }
+    },
+    {
+      "id": "ev_stagebook",
+      "type": "physical",
+      "title": "Stage book",
+      "render": "logBook",
+      "body": {
+        "rows": [
+          {
+            "date": "Sun",
+            "entry": "No. 7 E. Odongo and No. 12 A. Kerich fought over a customer. Both warned."
+          },
+          {
+            "date": "Tue",
+            "entry": "No. 7 E. Odongo: stage fees KSh 1,000 unpaid. Fined. — J. Mutuku, chairman"
+          }
+        ]
+      },
+      "facts": [
+        "f_stagebook_fight",
+        "f_stagebook_fine"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_teresia",
+      "type": "witness",
+      "title": "Statement: Teresia Ndunge",
+      "render": "statement",
+      "body": {
+        "speaker": "p_teresia"
+      },
+      "facts": [
+        "f_teresia_maize",
+        "f_teresia_thud",
+        "f_teresia_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_chargelog",
+      "type": "physical",
+      "title": "Sharon's charge book",
+      "render": "tallyBook",
+      "body": {
+        "rows": [
+          {
+            "time": "19:40",
+            "entry": "Tecno, blue case — 20/-"
+          },
+          {
+            "time": "20:10",
+            "entry": "Itel — 20/-"
+          },
+          {
+            "time": "20:25",
+            "entry": "Samsung, cracked — 20/-"
+          }
+        ],
+        "note": "All in the same hand as the kiosk price sign."
+      },
+      "facts": [
+        "f_chargelog"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gumboots",
+      "type": "physical",
+      "title": "Yellow gumboots",
+      "render": "object",
+      "body": {
+        "label": "Yellow gumboots, size 37, chevron tread. Grey clay to the ankle."
+      },
+      "facts": [
+        "f_gumboots"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a pair of yellow rubber gumboots, size 37, chevron tread visible on one upturned sole, caked with wet grey clay up to the ankle, standing on a red murram floor"
+      }
+    },
+    {
+      "id": "ev_poker",
+      "type": "physical",
+      "title": "Jiko poker",
+      "render": "object",
+      "body": {
+        "label": "Iron poker, about 60 cm. Recently wiped. A smear of grey clay on the handle."
+      },
+      "facts": [
+        "f_poker"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_baraza",
+      "type": "physical",
+      "title": "Baraza attendance sheet",
+      "render": "visitorRegister",
+      "body": {
+        "rows": [
+          {
+            "name": "J. Mutuku (stage chairman)",
+            "in": "18:55"
+          }
+        ],
+        "minutes": "20:30 — Mr Mutuku spoke on the stage-fee schedule. Meeting closed 21:00."
+      },
+      "facts": [
+        "f_baraza"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_fuel",
+      "type": "physical",
+      "title": "Fuel receipt (Abednego)",
+      "render": "receipt",
+      "body": {
+        "station": "Petro Mashariki, Fedha",
+        "time": "20:28",
+        "amount": "KSh 300",
+        "plate": "KMxx 12x",
+        "paid": "Cash (coins)"
+      },
+      "facts": [
+        "f_fuel"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_peninah",
+      "type": "witness",
+      "title": "Phone statement: Peninah Chelimo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_peninah",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_peninah"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Teresia Ndunge found boda rider Erick Odongo, vest No. 7, face down in the drainage trench at 20:52.",
+      "kind": "true",
+      "about": [
+        "p_erick",
+        "p_teresia",
+        "plc_trench"
+      ]
+    },
+    {
+      "id": "f_ob_bike",
+      "text": "Erick's motorbike is still parked at the stage with the key in it.",
+      "kind": "true",
+      "about": [
+        "p_erick",
+        "loc_stage"
+      ]
+    },
+    {
+      "id": "f_body_blow",
+      "text": "Erick was struck on the side of the head and fell or was pushed into the trench. He lies in grey clay.",
+      "kind": "true",
+      "about": [
+        "p_erick",
+        "plc_trench"
+      ]
+    },
+    {
+      "id": "f_body_tag",
+      "text": "In Erick's pocket: his phone, fully charged, and a paper tag from Sharon's charging kiosk: 'No. 7 — 20/-'.",
+      "kind": "true",
+      "about": [
+        "p_erick",
+        "p_sharon"
+      ]
+    },
+    {
+      "id": "f_sign_clay",
+      "text": "County signboard: 'Grey clay subsoil exposed.' The stage and road are red murram. Grey clay is only inside the trench.",
+      "kind": "true",
+      "about": [
+        "plc_trench",
+        "ev_signboard"
+      ]
+    },
+    {
+      "id": "f_prints",
+      "text": "Small gumboot prints, chevron tread, about size 37, go down into the trench beside the body and climb back out.",
+      "kind": "true",
+      "about": [
+        "plc_trench"
+      ]
+    },
+    {
+      "id": "f_stagebook_fight",
+      "text": "Stage book, Sunday: 'No. 7 E. Odongo and No. 12 A. Kerich fought over a customer. Both warned.'",
+      "kind": "true",
+      "about": [
+        "p_erick",
+        "p_abednego"
+      ]
+    },
+    {
+      "id": "f_stagebook_fine",
+      "text": "Stage book, Tuesday: 'No. 7 E. Odongo: stage fees KSh 1,000 unpaid. Fined. — J. Mutuku, chairman.'",
+      "kind": "true",
+      "about": [
+        "p_erick",
+        "p_jackson"
+      ]
+    },
+    {
+      "id": "f_teresia_maize",
+      "text": "Teresia sold Erick a maize cob at 20:20. He walked off eating it, towards the trench.",
+      "kind": "true",
+      "about": [
+        "p_teresia",
+        "p_erick"
+      ]
+    },
+    {
+      "id": "f_teresia_thud",
+      "text": "At about 20:35 Teresia heard a shout and a thud from the trench. She thought it was a drunk.",
+      "kind": "true",
+      "about": [
+        "p_teresia",
+        "plc_trench"
+      ]
+    },
+    {
+      "id": "f_teresia_self",
+      "text": "Teresia stayed at her brazier all evening. Two regulars ate maize beside her from 20:15 to 20:45. Her open sandals carry red murram dust, no clay.",
+      "kind": "true",
+      "about": [
+        "p_teresia"
+      ],
+      "where": {
+        "person": "p_teresia",
+        "place": "plc_brazier",
+        "from": "20:15",
+        "to": "20:45"
+      }
+    },
+    {
+      "id": "f_chargelog",
+      "text": "Sharon's charge book, in her handwriting: phones charged at 19:40, 20:10 and 20:25.",
+      "kind": "true",
+      "about": [
+        "p_sharon",
+        "ev_chargelog"
+      ],
+      "where": {
+        "person": "p_sharon",
+        "place": "loc_kiosk",
+        "from": "19:40",
+        "to": "20:25"
+      }
+    },
+    {
+      "id": "f_gumboots",
+      "text": "Yellow gumboots in her kiosk: size 37, chevron tread, grey clay up to the ankle.",
+      "kind": "true",
+      "about": [
+        "p_sharon",
+        "ev_gumboots"
+      ]
+    },
+    {
+      "id": "f_poker",
+      "text": "The kiosk's iron jiko poker has been wiped, but there is a smear of grey clay on the handle.",
+      "kind": "true",
+      "about": [
+        "ev_poker",
+        "p_sharon"
+      ]
+    },
+    {
+      "id": "f_sharon_debt",
+      "text": "Sharon: \"Erick owed me money. Everyone at this stage knows that.\"",
+      "kind": "claim",
+      "about": [
+        "p_sharon",
+        "p_erick"
+      ]
+    },
+    {
+      "id": "f_sharon_home",
+      "text": "Sharon: \"I closed the kiosk at half past seven and went home to Kayole Junction.\"",
+      "kind": "lie",
+      "about": [
+        "p_sharon"
+      ]
+    },
+    {
+      "id": "f_sharon_admits",
+      "text": "Sharon admits Erick came to charge his phone at 20:15 and they shouted about the loan. He walked off to the trench. She says she locked up at about 20:40.",
+      "kind": "true",
+      "about": [
+        "p_sharon",
+        "p_erick"
+      ],
+      "where": {
+        "person": "p_sharon",
+        "place": "loc_kiosk",
+        "from": "20:15",
+        "to": "20:40"
+      }
+    },
+    {
+      "id": "f_jackson_claim",
+      "text": "Jackson: \"I was at the chief's baraza on stage fees all evening.\"",
+      "kind": "claim",
+      "about": [
+        "p_jackson"
+      ]
+    },
+    {
+      "id": "f_jackson_fridge",
+      "text": "Jackson: the loan company's men took Sharon's fridge this morning, because Erick stopped paying the bike loan she co-signed.",
+      "kind": "true",
+      "about": [
+        "p_jackson",
+        "p_sharon",
+        "p_erick"
+      ]
+    },
+    {
+      "id": "f_baraza",
+      "text": "Chief's baraza sheet: J. Mutuku signed in at 18:55. The minutes record him speaking at 20:30. The meeting closed at 21:00.",
+      "kind": "true",
+      "about": [
+        "p_jackson",
+        "loc_chief"
+      ],
+      "where": {
+        "person": "p_jackson",
+        "place": "loc_chief",
+        "from": "18:55",
+        "to": "21:00"
+      }
+    },
+    {
+      "id": "f_abednego_claim",
+      "text": "Abednego: \"I took a customer to Fedha at eight.\"",
+      "kind": "claim",
+      "about": [
+        "p_abednego"
+      ]
+    },
+    {
+      "id": "f_abednego_fight",
+      "text": "Abednego: the Sunday fight was over a customer at the stage. Erick pushed first. They haven't spoken since.",
+      "kind": "true",
+      "about": [
+        "p_abednego",
+        "p_erick"
+      ]
+    },
+    {
+      "id": "f_fuel",
+      "text": "Fuel receipt from Petro Mashariki, Fedha, printed at the pump: 20:28, the plate of Abednego's motorbike, paid in coins.",
+      "kind": "true",
+      "about": [
+        "p_abednego",
+        "p_peninah"
+      ],
+      "where": {
+        "person": "p_abednego",
+        "place": "plc_fedha",
+        "from": "20:26",
+        "to": "20:30"
+      }
+    },
+    {
+      "id": "f_peninah",
+      "text": "Peninah: Abednego rode in about 20:15, queued, paid at 20:28 in coins, argued about change, and left about 20:40 with a passenger towards Utawala, away from Kayole.",
+      "kind": "true",
+      "about": [
+        "p_peninah",
+        "p_abednego"
+      ],
+      "where": {
+        "person": "p_abednego",
+        "place": "plc_fedha",
+        "from": "20:15",
+        "to": "20:40"
+      }
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_sharon",
+      "stance": "cooperative",
+      "intro": "Sharon keeps her hands in her apron pocket. \"I heard. Everybody heard. Ask me what you want.\"",
+      "claims": [
+        "f_sharon_debt",
+        "f_sharon_home"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_erick",
+          "reply": "Two years we were together. Then he wanted a bike, and the bank wanted a name that pays. Mine.",
+          "reveals": []
+        },
+        {
+          "about": "f_jackson_fridge",
+          "reply": "Seventy thousand on a bike I never rode. This morning they carried my fridge out in front of the whole stage. You want me to cry? I'm finished crying.",
+          "reveals": []
+        },
+        {
+          "about": "ev_gumboots",
+          "reply": "Everyone at this stage wears gumboots when it rains. Look at the road.",
+          "reveals": []
+        },
+        {
+          "about": "ev_poker",
+          "reply": "It's a poker. I poke the jiko with it.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_jackson",
+      "stance": "cooperative",
+      "intro": "Jackson arrives straight from the baraza, still holding his copy of the fee schedule. \"One of mine. Number Seven. What happened?\"",
+      "claims": [
+        "f_jackson_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_erick",
+          "reply": "He owed the stage a thousand. I fined him, yes. That is my job. You do not kill a man over a thousand bob.",
+          "reveals": []
+        },
+        {
+          "about": "p_sharon",
+          "reply": "That boy ruined her. She signed for his bike, he stopped paying. The loan people came this morning and took her fridge.",
+          "reveals": [
+            "f_jackson_fridge"
+          ]
+        },
+        {
+          "about": "p_abednego",
+          "reply": "Twelve and Seven fought on Sunday over a customer. Boys. I warned them both.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_abednego",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_body",
+        "ev_teresia"
+      ],
+      "intro": "Abednego sits on his bike with the engine off and won't look at the trench. \"Number Seven? I don't know anything about Number Seven.\"",
+      "claims": [
+        "f_abednego_claim"
+      ],
+      "yields": [
+        "ev_fuel"
+      ],
+      "topics": [
+        {
+          "about": "ev_fuel",
+          "reply": "Call the girl at the pump. She remembers me. I paid in coins and she was angry.",
+          "reveals": [
+            "ev_peninah"
+          ]
+        },
+        {
+          "about": "f_stagebook_fight",
+          "reply": "He pushed me first. Over a customer. On Sunday. That doesn't mean I'd put him in a hole.",
+          "reveals": [
+            "f_abednego_fight"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_teresia",
+      "stance": "cooperative",
+      "intro": "Teresia pours water on the last coals. \"Nine years on this corner. Nobody ever died in front of me before.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_erick",
+          "reply": "He bought maize from me every night. Tonight too, twenty past eight. He walked off eating it, towards the trench, to relieve himself like they all do.",
+          "reveals": []
+        },
+        {
+          "about": "p_sharon",
+          "reply": "Sharon? They were together, before. Her shutter was down when I found him. I didn't see her close it; I was busy with customers.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_sharon_home",
+      "claim": "f_sharon_home",
+      "brokenBy": [
+        "f_chargelog"
+      ],
+      "reveals": [
+        "f_sharon_admits"
+      ],
+      "reaction": "...Fine. I stayed. He came at quarter past eight with his phone, like nothing happened, like my fridge was still there. We shouted. He laughed and walked off to the trench. I locked up and went home. That is all.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_sharon",
+      "text": "Sharon Nanjala",
+      "category": "person",
+      "ref": "p_sharon",
+      "unlock": {
+        "anyOf": [
+          "f_body_tag",
+          "f_jackson_fridge"
+        ]
+      }
+    },
+    {
+      "id": "w_jackson",
+      "text": "Jackson Mutuku",
+      "category": "person",
+      "ref": "p_jackson",
+      "unlock": {
+        "anyOf": [
+          "f_stagebook_fine"
+        ]
+      }
+    },
+    {
+      "id": "w_abednego",
+      "text": "Abednego Kerich",
+      "category": "person",
+      "ref": "p_abednego",
+      "unlock": {
+        "anyOf": [
+          "f_stagebook_fight"
+        ]
+      }
+    },
+    {
+      "id": "w_teresia",
+      "text": "Teresia Ndunge",
+      "category": "person",
+      "ref": "p_teresia",
+      "unlock": {
+        "anyOf": [
+          "f_teresia_maize"
+        ]
+      }
+    },
+    {
+      "id": "w_peninah",
+      "text": "Peninah Chelimo",
+      "category": "person",
+      "ref": "p_peninah",
+      "unlock": {
+        "anyOf": [
+          "f_peninah"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} at the Kayole stage.",
+    "fixed": {
+      "victim": "Erick Odongo"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_sharon"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The book puts her at the kiosk, the boots put her in the trench. That will hold.",
+          "fail": [
+            "Doesn't hold up. Somebody went down into that trench and came back out. Who carried the clay home?",
+            "No. A man with a grudge isn't a man at the scene. Check where everyone actually was at half past eight."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_stage",
+      "from": "20:20",
+      "to": "20:37",
+      "within": [
+        "plc_trench",
+        "loc_kiosk"
+      ]
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_sharon_home",
+          "f_chargelog",
+          "f_sharon_admits"
+        ],
+        "concludes": "Sharon said she closed at 19:30, but her own charge book has entries at 20:10 and 20:25. Pressed, she admits Erick was with her from 20:15 and she stayed until about 20:40."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "f_sign_clay",
+          "f_prints",
+          "f_gumboots"
+        ],
+        "concludes": "Whoever went down into the trench wore size-37 chevron gumboots and came out with grey clay that exists only in the trench. Sharon's gumboots carry that clay."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s1",
+          "s2",
+          "f_teresia_thud",
+          "f_poker"
+        ],
+        "concludes": "Sharon was at the stage when Erick was struck at about 20:35, her boots went into the trench, and the clay is on her poker too. Sharon Nanjala killed Erick.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_jackson",
+        "blank": "who",
+        "by": [
+          "f_baraza"
+        ],
+        "why": "Jackson was at the chief's baraza from 18:55 to 21:00; the minutes have him speaking at 20:30."
+      },
+      {
+        "word": "w_abednego",
+        "blank": "who",
+        "by": [
+          "f_fuel",
+          "f_peninah"
+        ],
+        "why": "Abednego was at the Fedha pump from about 20:15 to 20:40, 25 minutes from the stage; the receipt prints his plate at 20:28."
+      },
+      {
+        "word": "w_teresia",
+        "blank": "who",
+        "by": [
+          "f_teresia_self"
+        ],
+        "why": "Teresia stayed at her brazier with two regulars beside her from 20:15 to 20:45, and her sandals carry no clay."
+      },
+      {
+        "word": "w_peninah",
+        "blank": "who",
+        "by": [
+          "f_fuel"
+        ],
+        "why": "Peninah was working the pump in Fedha; her own pump printed a receipt at 20:28."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Morning. Two men from Pikipiki Credit carry Sharon's fridge out of her kiosk in front of the whole stage. The loan she co-signed for Erick's bike is three months behind.",
+        "image": null
+      },
+      {
+        "text": "20:15. Erick comes to her kiosk to charge his phone, as if nothing happened. She tells him what they took. He laughs.",
+        "image": null
+      },
+      {
+        "text": "20:20. He buys a maize cob from Teresia and walks off towards the trench. Sharon puts on her gumboots and follows him with the jiko poker.",
+        "image": "loc_stage"
+      },
+      {
+        "text": "About 20:35. One blow at the edge of the trench. He falls in. She climbs down to look, then climbs out with grey clay on her boots.",
+        "image": null
+      },
+      {
+        "text": "She wipes the poker, pushes her boots under the stool, pulls the shutter down and goes home. Her charge book stays on the counter with the times in her own hand.",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_chargelog",
+        "line": "She says she went home at half seven. She runs a charging kiosk. Charging kiosks keep books."
+      },
+      "tier2": {
+        "facts": [
+          "f_sign_clay",
+          "f_gumboots"
+        ],
+        "line": "Read the county sign again: where does grey clay come from? Then look at whose boots are carrying it."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "boda",
+      "def": "Short for boda-boda: a motorbike taxi."
+    },
+    {
+      "term": "mandazi",
+      "def": "Fried dough, a little sweet. Sold everywhere with tea."
+    },
+    {
+      "term": "baraza",
+      "def": "Public meeting called by the chief, usually in the chief's yard."
+    },
+    {
+      "term": "jiko",
+      "def": "Charcoal stove."
+    },
+    {
+      "term": "mahindi choma",
+      "def": "Roast maize, cooked over coals at the roadside."
+    },
+    {
+      "term": "bob",
+      "def": "Slang for shillings."
+    }
+  ],
+  "tutorial": [
+    {
+      "trigger": "caseOpen",
+      "line": "From today, people will lie to you. Each person has a statement sheet. Drag a fact onto a claim to press it."
+    },
+    {
+      "trigger": "firstStatementSheet",
+      "line": "Read the claims. Then find the one fact that cannot be true at the same time. Only then press."
+    },
+    {
+      "trigger": "wrongPress",
+      "line": "That cost you a stamp. Press only when the fact and the claim cannot both be true."
+    },
+    {
+      "trigger": "firstBroken",
+      "line": "Good. A broken claim is a lie, not a confession. Ask yourself what the lie was hiding."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "pressClaim",
+      "credibilityStamps"
+    ],
+    "beatNotes": "Statement sheets and pressing: claims appear as typed lines; the player drags a fact onto a claim. Correct press: a red BROKEN stamp thumps down, a beat of silence, then the reaction. Wrong press: a stamp tears off the folder. Credibility stamps go live (5 per case)."
+  }
+}

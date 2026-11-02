@@ -1,0 +1,1955 @@
+{
+  "meta": {
+    "id": "case-053",
+    "number": 53,
+    "region": "maasai-mara",
+    "regionNumber": 6,
+    "title": "Enkiteng Blue",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 28,
+    "date": "Sunday 15 February",
+    "folderTab": "TALEK"
+  },
+  "pattern": {
+    "crimePattern": "curio middleman kills the beadwork co-op treasurer whose direct export deal cut out his five-fold markup, and leaves her in a dry river bed",
+    "noRealCaseRetold": true,
+    "notes": "Fictional co-op, middleman, exporter and bead colour. Middlemen underpaying beadwork groups is a real grievance; no real business or group is depicted. The Mvua flyer is a deliberate decoy in the WHY bank.",
+    "tags": [
+      "blunt-force",
+      "moved-body",
+      "business-rivalry",
+      "two-liars",
+      "records",
+      "warrant",
+      "forensics",
+      "when-strip",
+      "where",
+      "spine-background"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 4,
+    "redHerrings": 1,
+    "liars": 2,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 07/15/02",
+    "date": "Sunday 15 February",
+    "time": "06:45",
+    "reportedBy": "Moseka Nchoko, boda rider",
+    "text": "A boda rider reports a woman's body in the dry bed of the Talek river below the bridge at 06:30. She is identified as Nashipae Kores (44), treasurer of the Enkiteng Women's Beadwork Group.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_bridge",
+    "nodes": [
+      "loc_bridge",
+      "loc_coop",
+      "loc_curios"
+    ],
+    "edges": [
+      {
+        "a": "loc_bridge",
+        "b": "loc_coop",
+        "minutes": 5,
+        "by": "foot"
+      },
+      {
+        "a": "loc_coop",
+        "b": "loc_curios",
+        "minutes": 3,
+        "by": "foot"
+      },
+      {
+        "a": "loc_bridge",
+        "b": "loc_curios",
+        "minutes": 6,
+        "by": "foot"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_nashipae",
+      "role": "victim",
+      "name": "Nashipae Kores",
+      "age": 44,
+      "occupation": "Treasurer and lead designer, Enkiteng Women's Beadwork Group",
+      "bio": "Designs the co-op's collars and bracelets. Found a fair-trade buyer online in January.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_coop",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Maasai woman, mid 40s, a wide beaded collar of her own design in turquoise, red and white, a blue shuka, shaved head, a warm, sharp gaze, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_gitonga",
+      "role": "suspect",
+      "name": "Gitonga Murithi",
+      "age": 58,
+      "occupation": "Owner, Murithi Curios, Talek",
+      "bio": "Has bought the co-op's beadwork for ten years. Calls himself their friend.",
+      "community": "Meru",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_catalogue"
+      },
+      "at": "loc_curios",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Meru man, late 50s, a cardigan over a collared shirt, a tape measure round his neck, a hurt, aggrieved expression, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_elvis",
+      "role": "suspect",
+      "name": "Elvis Mutembei",
+      "age": 26,
+      "occupation": "Gitonga's shop assistant",
+      "bio": "Minds the shop and the till book. Does what the boss says.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_catalogue"
+      },
+      "at": "loc_curios",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Meru young man, mid 20s, a neat shirt, a pen behind his ear, an anxious face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_seenoi",
+      "role": "suspect",
+      "name": "Seenoi Kamaamia",
+      "age": 33,
+      "occupation": "Co-op member",
+      "redHerring": true,
+      "bio": "Quarrelled with Nashipae about payment shares before the meeting.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_minutes"
+      },
+      "at": "plc_seenoi",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Maasai woman, early 30s, beaded earrings, a red shuka over a T-shirt, a baby on her back, defiant, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_nasieku",
+      "role": "witness",
+      "name": "Nasieku Mpaayei",
+      "age": 50,
+      "occupation": "Chairlady, Enkiteng Women's Beadwork Group",
+      "bio": "Runs the co-op meetings and keeps the minutes.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_coop",
+      "image": null
+    },
+    {
+      "id": "p_moseka",
+      "role": "witness",
+      "name": "Moseka Nchoko",
+      "age": 30,
+      "occupation": "Boda rider",
+      "bio": "Rides the first fares of the morning across the Talek bridge.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_stage",
+      "image": null
+    },
+    {
+      "id": "p_nkoile",
+      "role": "witness",
+      "name": "Nkoile Kamaamia",
+      "age": 61,
+      "occupation": "Seenoi's mother-in-law",
+      "statementOnly": true,
+      "bio": "Lives in the same manyatta as Seenoi.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_seenoi",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_seenoi",
+      "name": "Seenoi's manyatta"
+    },
+    {
+      "id": "plc_nhome",
+      "name": "Nashipae's home"
+    },
+    {
+      "id": "plc_market",
+      "name": "Talek market ground"
+    },
+    {
+      "id": "plc_stage",
+      "name": "The Talek boda stage"
+    },
+    {
+      "id": "plc_nasieku",
+      "name": "Nasieku's home"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_bridge",
+      "name": "Talek bridge and river bed",
+      "kind": "scene",
+      "description": "In February the Talek river is a dry bed of pale sand under a concrete bridge. Nashipae lies on the sand below the bank. Tyre tracks run down the bank and back up.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The river bed",
+          "pos": [
+            46,
+            66
+          ],
+          "yields": "ev_body",
+          "text": "Nashipae lies on the sand below the bridge, her bag beside her."
+        },
+        {
+          "id": "hs_beads",
+          "label": "In her hair",
+          "pos": [
+            40,
+            58
+          ],
+          "yields": "ev_beads_body",
+          "text": "Tiny glass beads caught in her hair and the folds of her shuka."
+        },
+        {
+          "id": "hs_tracks",
+          "label": "The bank",
+          "pos": [
+            76,
+            40
+          ],
+          "yields": "ev_bridge",
+          "text": "Tyre tracks run down the bank to the sand and back up."
+        },
+        {
+          "id": "hs_bag",
+          "label": "Her bag",
+          "pos": [
+            54,
+            72
+          ],
+          "yields": "ev_bag",
+          "text": "A cloth bag, its contents untouched."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the dry sandy bed of the Talek river under a concrete bridge at dawn, pale sand, tyre tracks running down the bank and back up, Talek town's rooftops beyond, no people in focus"
+      }
+    },
+    {
+      "id": "loc_coop",
+      "name": "Enkiteng Women's Beadwork Group store",
+      "kind": "location",
+      "description": "A small store with long tables and rows of glass jars of beads sorted by colour: red, white, orange, green, and a deep turquoise. The floor has been swept, badly.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_jars",
+          "label": "The bead jars",
+          "pos": [
+            44,
+            40
+          ],
+          "yields": "ev_store",
+          "text": "One gap in the row of jars. Beads in the cracks of the floor. Something glints under the table."
+        },
+        {
+          "id": "hs_minutes",
+          "label": "Minutes book",
+          "pos": [
+            76,
+            44
+          ],
+          "yields": "ev_minutes",
+          "text": "The co-op's minutes and receipt books on the chairlady's chair."
+        },
+        {
+          "id": "hs_board",
+          "label": "Notice board",
+          "pos": [
+            16,
+            30
+          ],
+          "yields": "ev_flyer",
+          "text": "A printed flyer pinned among the meeting notices."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small beadwork co-operative store in Talek, long wooden tables with rows of glass jars of seed beads sorted by colour, one jar missing from a deep turquoise row, beads scattered in the cracks of a concrete floor"
+      }
+    },
+    {
+      "id": "loc_curios",
+      "name": "Murithi Curios, Talek",
+      "kind": "location",
+      "description": "A curio wholesaler on the main street: carvings, shukas, and shelves of Maasai beadwork with price labels. A till book on the counter.",
+      "unlock": {
+        "fact": "f_catalogue"
+      },
+      "hotspots": [
+        {
+          "id": "hs_till",
+          "label": "Till book",
+          "pos": [
+            40,
+            50
+          ],
+          "yields": "ev_till",
+          "text": "The shop's till book, Saturday's page."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a curio wholesale shop on Talek's main street, wood carvings, folded shukas, shelves of Maasai beadwork with price labels, a till book on a wooden counter"
+      }
+    },
+    {
+      "id": "loc_pickup",
+      "name": "Gitonga's pickup (search)",
+      "kind": "search",
+      "description": "A blue single-cab pickup parked behind the shop.",
+      "unlock": {
+        "fact": "f_rec_git"
+      },
+      "hotspots": [
+        {
+          "id": "hs_bed",
+          "label": "Load bed",
+          "pos": [
+            50,
+            60
+          ],
+          "yields": "ev_pickup",
+          "text": "The ribbed load bed. Something catches the light in the grooves."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the ribbed metal load bed of a blue pickup truck, a few tiny turquoise glass beads caught in the grooves"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "In the river bed",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. One head wound. No marks of a struggle in the sand around her."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "pale sand of a dry river bed below a bridge, a cloth bag lying on the sand, no body visible"
+      }
+    },
+    {
+      "id": "ev_beads_body",
+      "type": "physical",
+      "title": "Beads in her hair",
+      "render": "object",
+      "body": {
+        "label": "Loose glass seed beads in her hair and clothing folds. Many of them a deep turquoise."
+      },
+      "facts": [
+        "f_beads_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "tiny deep turquoise glass seed beads on a white evidence card under a magnifier"
+      }
+    },
+    {
+      "id": "ev_bridge",
+      "type": "physical",
+      "title": "The river bank",
+      "render": "sceneNote",
+      "body": {
+        "note": "No signs of a struggle in the sand. Pickup tyre tracks down the bank and back up."
+      },
+      "facts": [
+        "f_bridge"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_bag",
+      "type": "physical",
+      "title": "Nashipae's bag",
+      "render": "object",
+      "body": {
+        "cash": "KSh 6,200.",
+        "contract": "A signed direct export contract with a fair-trade buyer.",
+        "printout": "A printed page from a Nairobi exporter's catalogue."
+      },
+      "facts": [
+        "f_bag_cash",
+        "f_contract",
+        "f_catalogue"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_store",
+      "type": "physical",
+      "title": "The co-op store",
+      "render": "sceneNote",
+      "body": {
+        "note": "One jar missing from the turquoise row. The floor swept, but beads in the cracks. A shard of thick glass under the table."
+      },
+      "facts": [
+        "f_store"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_minutes",
+      "type": "physical",
+      "title": "Minutes and receipt books",
+      "render": "ledger",
+      "body": {
+        "meeting": "Saturday meeting ended 19:30. \"Nashipae to stay and pack the export order.\"",
+        "vote": "Payment shares: voted and settled.",
+        "receipts": "Murithi Curios, last order: paid in full, 2 February."
+      },
+      "facts": [
+        "f_minutes",
+        "f_shares",
+        "f_order_paid"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_nasieku",
+      "type": "witness",
+      "title": "Statement: Nasieku Mpaayei",
+      "render": "statement",
+      "body": {
+        "speaker": "p_nasieku"
+      },
+      "facts": [
+        "f_beads_note",
+        "f_stock",
+        "f_nasieku_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_flyer",
+      "type": "physical",
+      "title": "Notice-board flyer",
+      "render": "note",
+      "body": {
+        "text": "Landowners! Advance payments on your conservancy lease — cash today. Mvua Holdings. Till 880 214."
+      },
+      "facts": [
+        "f_flyer"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Gitonga Murithi's line",
+      "render": "manifest",
+      "body": {
+        "masts": "Talek 19:00–21:40; Narok road from 22:00."
+      },
+      "facts": [
+        "f_rec_git"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_contract",
+          "f_catalogue"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_till",
+      "type": "physical",
+      "title": "Murithi Curios till book",
+      "render": "ledger",
+      "body": {
+        "saturday": "Sales at 19:55, 20:20, 20:40, 21:00, 21:20 and 21:35, each initialled E.M."
+      },
+      "facts": [
+        "f_till"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_nkoile",
+      "type": "witness",
+      "title": "Statement: Nkoile Kamaamia",
+      "render": "statement",
+      "body": {
+        "speaker": "p_nkoile"
+      },
+      "facts": [
+        "f_seenoi_home"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_moseka",
+      "type": "witness",
+      "title": "Statement: Moseka Nchoko",
+      "render": "statement",
+      "body": {
+        "speaker": "p_moseka"
+      },
+      "facts": [
+        "f_moseka"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_pickup",
+      "type": "physical",
+      "title": "Gitonga's pickup",
+      "render": "object",
+      "body": {
+        "label": "Deep turquoise beads in the ridges of the load bed. Tyre tread matching the tracks on the river bank."
+      },
+      "facts": [
+        "f_pickup"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_git",
+          "f_git_admits"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_glass",
+        "f_aut_nofall",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_glass",
+      "type": "forensic",
+      "title": "Lab: glass (wound vs the shard)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_glass_match"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 8,
+        "needs": [
+          "ev_autopsy",
+          "ev_store"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Nashipae Kores was found dead in the dry bed of the Talek river below the bridge at 06:30.",
+      "kind": "true",
+      "about": [
+        "p_nashipae",
+        "loc_bridge"
+      ],
+      "at": {
+        "from": "06:30"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "One head wound. No marks of a struggle in the sand around her.",
+      "kind": "true",
+      "about": [
+        "p_nashipae",
+        "loc_bridge"
+      ]
+    },
+    {
+      "id": "f_beads_body",
+      "text": "Loose glass seed beads in her hair and clothing folds, many of them a deep turquoise.",
+      "kind": "true",
+      "about": [
+        "p_nashipae"
+      ]
+    },
+    {
+      "id": "f_bridge",
+      "text": "No signs of a struggle in the sand; pickup tyre tracks run down the bank and back up.",
+      "kind": "true",
+      "about": [
+        "loc_bridge"
+      ]
+    },
+    {
+      "id": "f_bag_cash",
+      "text": "Her bag lies beside her with KSh 6,200 inside, untouched.",
+      "kind": "true",
+      "about": [
+        "p_nashipae"
+      ]
+    },
+    {
+      "id": "f_contract",
+      "text": "In her bag: a signed direct export contract with a fair-trade buyer, at five times Gitonga's price.",
+      "kind": "true",
+      "about": [
+        "p_nashipae"
+      ]
+    },
+    {
+      "id": "f_catalogue",
+      "text": "In her bag: a printout of a Nairobi exporter's catalogue, the co-op's designs at KSh 1,500 each, \"sourced through Murithi Curios\". Gitonga pays KSh 300.",
+      "kind": "true",
+      "about": [
+        "p_nashipae",
+        "p_gitonga"
+      ]
+    },
+    {
+      "id": "f_store",
+      "text": "Co-op store: one jar missing from the turquoise row; the floor swept, but beads in the cracks; a shard of thick glass under the table.",
+      "kind": "true",
+      "about": [
+        "loc_coop"
+      ]
+    },
+    {
+      "id": "f_minutes",
+      "text": "Minutes: the Saturday meeting ended at 19:30. \"Nashipae to stay and pack the export order.\" Seenoi had argued about payment shares.",
+      "kind": "true",
+      "about": [
+        "p_nasieku",
+        "p_nashipae",
+        "p_seenoi"
+      ],
+      "at": {
+        "from": "19:30"
+      }
+    },
+    {
+      "id": "f_shares",
+      "text": "Minutes: the payment-share quarrel was voted on and settled at that meeting.",
+      "kind": "true",
+      "about": [
+        "p_seenoi"
+      ]
+    },
+    {
+      "id": "f_order_paid",
+      "text": "Receipt book: Murithi Curios' last order was paid in full on 2 February.",
+      "kind": "true",
+      "about": [
+        "p_gitonga"
+      ]
+    },
+    {
+      "id": "f_beads_note",
+      "text": "Nasieku: \"Enkiteng blue is ours alone. We import that batch. Nobody in Talek has it but us.\"",
+      "kind": "true",
+      "about": [
+        "p_nasieku"
+      ]
+    },
+    {
+      "id": "f_stock",
+      "text": "Nasieku: the bead stock tallies, every jar, except the one that's missing.",
+      "kind": "true",
+      "about": [
+        "p_nasieku"
+      ]
+    },
+    {
+      "id": "f_nasieku_self",
+      "text": "Nasieku went home to her family after the meeting.",
+      "kind": "true",
+      "about": [
+        "p_nasieku"
+      ],
+      "where": {
+        "person": "p_nasieku",
+        "place": "plc_nasieku",
+        "from": "19:45",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_flyer",
+      "text": "Co-op notice board: \"Landowners! Advance payments on your conservancy lease — cash today. Mvua Holdings. Till 880 214.\"",
+      "kind": "true",
+      "about": [
+        "loc_coop"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_rec_git",
+      "text": "Records, Gitonga's line: Talek mast 19:00–21:40, then the Narok road from 22:00.",
+      "kind": "true",
+      "about": [
+        "p_gitonga"
+      ],
+      "at": {
+        "from": "19:00",
+        "to": "22:00"
+      }
+    },
+    {
+      "id": "f_till",
+      "text": "Murithi Curios till book: sales at 19:55, 20:20, 20:40, 21:00, 21:20 and 21:35, each initialled by Elvis.",
+      "kind": "true",
+      "about": [
+        "p_elvis"
+      ],
+      "where": {
+        "person": "p_elvis",
+        "place": "loc_curios",
+        "from": "19:55",
+        "to": "21:35"
+      }
+    },
+    {
+      "id": "f_seenoi_home",
+      "text": "Nkoile: Seenoi was home at the manyatta from 19:45, milking and cooking.",
+      "kind": "true",
+      "about": [
+        "p_nkoile",
+        "p_seenoi"
+      ],
+      "where": {
+        "person": "p_seenoi",
+        "place": "plc_seenoi",
+        "from": "19:45",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_moseka",
+      "text": "Moseka: he found her at 06:30 crossing the bridge. The boda stage register has him at the stage from 18:00 to 06:15.",
+      "kind": "true",
+      "about": [
+        "p_moseka"
+      ],
+      "where": {
+        "person": "p_moseka",
+        "place": "plc_stage",
+        "from": "18:00",
+        "to": "06:15"
+      },
+      "at": {
+        "from": "06:30"
+      }
+    },
+    {
+      "id": "f_pickup",
+      "text": "Gitonga's pickup: deep turquoise beads in the ridges of the load bed; its tyre tread matches the tracks on the river bank.",
+      "kind": "true",
+      "about": [
+        "p_gitonga"
+      ]
+    },
+    {
+      "id": "f_aut_glass",
+      "text": "Autopsy: a heavy blow from a smooth, curved glass object. Fine glass fragments in the wound.",
+      "kind": "true",
+      "about": [
+        "p_nashipae"
+      ]
+    },
+    {
+      "id": "f_aut_nofall",
+      "text": "Autopsy: no injuries from a fall onto sand, and no marks of strangling.",
+      "kind": "true",
+      "about": [
+        "p_nashipae"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 20:00 and 21:30.",
+      "kind": "true",
+      "about": [
+        "p_nashipae"
+      ],
+      "at": {
+        "from": "20:00",
+        "to": "21:30"
+      }
+    },
+    {
+      "id": "f_glass_match",
+      "text": "Lab: the glass in the wound and the shard under the co-op table are the same thick bead-jar glass.",
+      "kind": "true",
+      "about": [
+        "p_nashipae",
+        "loc_coop"
+      ]
+    },
+    {
+      "id": "f_git_claim",
+      "text": "Gitonga: \"I closed my shop at seven and drove to Narok.\"",
+      "kind": "lie",
+      "about": [
+        "p_gitonga"
+      ]
+    },
+    {
+      "id": "f_git_friend",
+      "text": "Gitonga: \"I've supported those women for ten years.\"",
+      "kind": "claim",
+      "about": [
+        "p_gitonga"
+      ]
+    },
+    {
+      "id": "f_git_admits",
+      "text": "Gitonga admits he went to the co-op store on Saturday evening \"to talk to her\".",
+      "kind": "true",
+      "about": [
+        "p_gitonga",
+        "p_nashipae"
+      ],
+      "where": {
+        "person": "p_gitonga",
+        "place": "loc_coop",
+        "from": "20:25",
+        "to": "20:50"
+      }
+    },
+    {
+      "id": "f_git_packing",
+      "text": "Gitonga: \"Business is business. I left her packing.\"",
+      "kind": "lie",
+      "about": [
+        "p_gitonga"
+      ]
+    },
+    {
+      "id": "f_elvis_claim",
+      "text": "Elvis: \"Boss left for Narok at seven.\"",
+      "kind": "lie",
+      "about": [
+        "p_elvis",
+        "p_gitonga"
+      ]
+    },
+    {
+      "id": "f_elvis_reveal",
+      "text": "Elvis: the boss left for Narok at ten. He came back from the co-op at about nine and swept out his pickup, and told Elvis what to say.",
+      "kind": "true",
+      "about": [
+        "p_elvis",
+        "p_gitonga"
+      ],
+      "at": {
+        "from": "21:00"
+      }
+    },
+    {
+      "id": "f_seenoi_claim",
+      "text": "Seenoi: \"I was home.\"",
+      "kind": "claim",
+      "about": [
+        "p_seenoi"
+      ]
+    },
+    {
+      "id": "f_nasieku_gitonga",
+      "text": "Nasieku: \"We trusted him. We had nobody else to sell to.\"",
+      "kind": "true",
+      "about": [
+        "p_nasieku",
+        "p_gitonga"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_gitonga",
+      "stance": "cooperative",
+      "intro": "Gitonga meets you at his shop door, hand on his heart. \"Nashipae! Ten years I have bought their work. I closed at seven and drove to Narok.\"",
+      "claims": [
+        "f_git_claim",
+        "f_git_friend"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_git_packing",
+          "after": "f_git_admits"
+        }
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "f_catalogue",
+          "reply": "That is the market. I take the risk; I carry the stock. They could not reach Nairobi without me.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_elvis",
+      "stance": "cooperative",
+      "intro": "Elvis keeps folding the same shuka on the counter. \"Boss left for Narok at seven.\"",
+      "claims": [
+        "f_elvis_claim"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_seenoi",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_minutes"
+      ],
+      "intro": "Seenoi bounces the baby on her back and doesn't sit. \"I was home.\"",
+      "claims": [
+        "f_seenoi_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "f_minutes",
+          "reply": "We argued, yes. Then we voted, and I lost, and that was the end of it. Ask my mother-in-law where I was.",
+          "reveals": [
+            "ev_nkoile"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_nasieku",
+      "stance": "cooperative",
+      "intro": "Nasieku stands among the jars, turning one in her hands. \"This colour. Look at this colour.\"",
+      "claims": [],
+      "yields": [
+        "ev_nasieku"
+      ],
+      "topics": [
+        {
+          "about": "p_gitonga",
+          "reply": "We trusted him. We had nobody else to sell to.",
+          "reveals": [
+            "f_nasieku_gitonga"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_moseka",
+      "stance": "cooperative",
+      "intro": "Moseka sits on his motorbike at the bridge. \"I saw her from the bridge at half past six. I called the post.\"",
+      "claims": [],
+      "yields": [
+        "ev_moseka"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_elvis",
+      "claim": "f_elvis_claim",
+      "brokenBy": [
+        "f_rec_git"
+      ],
+      "reveals": [
+        "f_elvis_reveal"
+      ],
+      "reaction": "\"He left at ten. He came back from the co-op at nine, sweeping his pickup. He told me what to say.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_git",
+      "claim": "f_git_claim",
+      "brokenBy": [
+        "f_rec_git",
+        "f_elvis_reveal"
+      ],
+      "reveals": [
+        "f_git_admits"
+      ],
+      "reaction": "His hand comes off his heart. \"...I went to talk to her. Business is business. I left her packing.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_git_packing",
+      "claim": "f_git_packing",
+      "brokenBy": [
+        "f_pickup",
+        "f_glass_match"
+      ],
+      "reveals": [],
+      "reaction": "Gitonga looks at the turquoise beads in the evidence bag. \"Three hundred shillings,\" he says quietly. \"That was a fair price in this town.\" Then nothing.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_gitonga",
+      "text": "Gitonga Murithi",
+      "category": "person",
+      "ref": "p_gitonga",
+      "unlock": {
+        "anyOf": [
+          "f_catalogue"
+        ]
+      }
+    },
+    {
+      "id": "w_elvis",
+      "text": "Elvis Mutembei",
+      "category": "person",
+      "ref": "p_elvis",
+      "unlock": {
+        "anyOf": [
+          "f_catalogue"
+        ]
+      }
+    },
+    {
+      "id": "w_seenoi",
+      "text": "Seenoi Kamaamia",
+      "category": "person",
+      "ref": "p_seenoi",
+      "unlock": {
+        "anyOf": [
+          "f_minutes"
+        ]
+      }
+    },
+    {
+      "id": "w_nasieku",
+      "text": "Nasieku Mpaayei",
+      "category": "person",
+      "ref": "p_nasieku",
+      "unlock": {
+        "anyOf": [
+          "f_minutes"
+        ]
+      }
+    },
+    {
+      "id": "w_moseka",
+      "text": "Moseka Nchoko",
+      "category": "person",
+      "ref": "p_moseka",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_riverbed",
+      "text": "the river bed under the bridge",
+      "category": "place",
+      "ref": "loc_bridge",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_coop",
+      "text": "the co-op store",
+      "category": "place",
+      "ref": "loc_coop",
+      "unlock": {
+        "anyOf": [
+          "f_minutes"
+        ]
+      }
+    },
+    {
+      "id": "pl_curios",
+      "text": "Murithi Curios",
+      "category": "place",
+      "ref": "loc_curios",
+      "unlock": {
+        "anyOf": [
+          "f_catalogue"
+        ]
+      }
+    },
+    {
+      "id": "pl_home",
+      "text": "her home",
+      "category": "place",
+      "ref": "plc_nhome",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_market",
+      "text": "Talek market",
+      "category": "place",
+      "ref": "plc_market",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_jar",
+      "text": "struck with a glass bead jar",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_glass"
+        ]
+      }
+    },
+    {
+      "id": "h_bridge",
+      "text": "fell from the bridge",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_robbed",
+      "text": "robbed and struck on the road",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_rock",
+      "text": "struck with a rock in the river bed",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_wire",
+      "text": "strangled with beading wire",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_beads_body"
+        ]
+      }
+    },
+    {
+      "id": "m_export",
+      "text": "her direct export deal was cutting him out",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_contract"
+        ]
+      }
+    },
+    {
+      "id": "m_shares",
+      "text": "a quarrel over payment shares",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_minutes"
+        ]
+      }
+    },
+    {
+      "id": "m_order",
+      "text": "an unpaid bead order",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_catalogue"
+        ]
+      }
+    },
+    {
+      "id": "m_stolen",
+      "text": "stolen beads",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_store"
+        ]
+      }
+    },
+    {
+      "id": "m_mvua",
+      "text": "the Mvua lease advances",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_flyer"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Nashipae Kores"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_1900",
+                  "label": "19:00",
+                  "from": "19:00",
+                  "to": "19:00"
+                },
+                {
+                  "id": "sl_1930",
+                  "label": "19:30",
+                  "from": "19:30",
+                  "to": "19:30"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "20:00–21:30",
+                  "from": "20:00",
+                  "to": "21:30"
+                },
+                {
+                  "id": "sl_2200",
+                  "label": "22:00",
+                  "from": "22:00",
+                  "to": "22:00"
+                },
+                {
+                  "id": "sl_0630",
+                  "label": "06:30",
+                  "from": "06:30",
+                  "to": "06:30"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_meeting",
+                  "text": "The co-op meeting ends",
+                  "slot": "sl_1930",
+                  "by": [
+                    "f_minutes"
+                  ],
+                  "why": "The minutes: closed at 19:30, Nashipae staying to pack.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_minutes"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Nashipae is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod",
+                    "f_git_admits",
+                    "f_elvis_reveal"
+                  ],
+                  "why": "Gitonga was at the store from about 20:25 and back at his shop sweeping his pickup by nine. The autopsy: 20:00–21:30.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_leaves",
+                  "text": "Gitonga's phone leaves Talek",
+                  "slot": "sl_2200",
+                  "by": [
+                    "f_rec_git"
+                  ],
+                  "why": "On the Narok road from 22:00.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rec_git"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_found",
+                  "text": "She's found",
+                  "slot": "sl_0630",
+                  "by": [
+                    "f_moseka"
+                  ],
+                  "why": "Moseka saw her from the bridge at 06:30.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_moseka"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_1900",
+                  "by": [
+                    "f_rec_git"
+                  ],
+                  "why": "19:00 is when Gitonga says he left for Narok. His phone stayed in Talek until 21:40."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "Meeting over at half seven, dead before half nine, his phone on the Narok road at ten, found at half six. That's the night.",
+          "fail": [
+            "Seven o'clock is his story. His phone says otherwise.",
+            "She stayed after the meeting to pack. When did the meeting end?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_coop"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Enkiteng blue in her hair, a missing jar, a shard under the table. She died among the beads.",
+          "fail": [
+            "No struggle in the sand and no fall injuries. The river bed is where she was left.",
+            "Which colour is in her hair, and who owns it?"
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_gitonga"
+          }
+        ],
+        "prosecutor": {
+          "pass": "In Talek until 21:40, at the store by his own account, and the co-op's colour in his pickup bed. That will hold.",
+          "fail": [
+            "The assistant was selling from the till every twenty minutes.",
+            "Seenoi lost a vote, and went home to milk."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_jar"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Glass in the wound, the same glass as the shard. Yes.",
+          "fail": [
+            "Glass fragments, not stone.",
+            "Her bag and cash weren't touched. No robbers."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_export"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Three hundred shillings in, fifteen hundred out, and a contract that ended it. That's the reason.",
+          "fail": [
+            "The flyer is on the wall for everyone. What's in her bag?",
+            "His last order was paid."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_coop",
+      "from": "20:00",
+      "to": "21:30",
+      "note": "From the autopsy; Gitonga was at the store from about 20:25 and back at his shop by about 21:00."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_beads_body",
+          "f_beads_note",
+          "f_store",
+          "f_aut_glass",
+          "f_glass_match",
+          "f_bridge",
+          "f_aut_nofall",
+          "f_body"
+        ],
+        "concludes": "She was struck with a bead jar inside the co-op store, among the Enkiteng blue beads that exist nowhere else in Talek. The river bed is only where she was left: no struggle, no fall injuries, tyre tracks.",
+        "answers": [
+          "where"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_contract",
+          "f_catalogue"
+        ],
+        "concludes": "Her direct export contract was about to cut Gitonga out of a five-fold markup."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_git_claim",
+          "f_rec_git",
+          "f_elvis_claim",
+          "f_elvis_reveal",
+          "f_git_admits",
+          "f_minutes",
+          "f_aut_tod"
+        ],
+        "concludes": "Gitonga was in Talek until 21:40, not on the road at seven; he went to the store, and was back sweeping his pickup by nine. She died between 20:00 and 21:30.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_pickup",
+          "f_git_packing"
+        ],
+        "concludes": "His pickup made the tracks into the river bed, and Enkiteng blue beads are in its load bed. At the co-op store, Gitonga Murithi struck Nashipae with a glass bead jar because her direct export deal was cutting him out.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_riverbed",
+        "blank": "where",
+        "by": [
+          "f_bridge",
+          "f_aut_nofall"
+        ],
+        "why": "No struggle in the sand, no fall injuries, and tyre tracks down the bank."
+      },
+      {
+        "word": "pl_curios",
+        "blank": "where",
+        "by": [
+          "f_glass_match",
+          "f_beads_body"
+        ],
+        "why": "The glass and the beads come from the co-op store."
+      },
+      {
+        "word": "pl_home",
+        "blank": "where",
+        "by": [
+          "f_minutes",
+          "f_glass_match"
+        ],
+        "why": "She stayed at the store to pack, and the glass in the wound is the store's."
+      },
+      {
+        "word": "pl_market",
+        "blank": "where",
+        "by": [
+          "f_beads_body",
+          "f_glass_match"
+        ],
+        "why": "The beads and glass on her come from the co-op store."
+      },
+      {
+        "word": "w_elvis",
+        "blank": "who",
+        "by": [
+          "f_till"
+        ],
+        "why": "Elvis rang up sales every twenty minutes at the shop from 19:55 to 21:35."
+      },
+      {
+        "word": "w_seenoi",
+        "blank": "who",
+        "by": [
+          "f_seenoi_home"
+        ],
+        "why": "Seenoi was home at the manyatta from 19:45."
+      },
+      {
+        "word": "w_nasieku",
+        "blank": "who",
+        "by": [
+          "f_nasieku_self"
+        ],
+        "why": "Nasieku went home to her family after the meeting."
+      },
+      {
+        "word": "w_moseka",
+        "blank": "who",
+        "by": [
+          "f_moseka"
+        ],
+        "why": "Moseka was at the boda stage all night by its register, and found her at dawn."
+      },
+      {
+        "word": "h_bridge",
+        "blank": "how",
+        "by": [
+          "f_aut_nofall",
+          "f_aut_glass"
+        ],
+        "why": "No fall injuries; glass in the wound."
+      },
+      {
+        "word": "h_robbed",
+        "blank": "how",
+        "by": [
+          "f_bag_cash"
+        ],
+        "why": "Her bag and its cash were untouched."
+      },
+      {
+        "word": "h_rock",
+        "blank": "how",
+        "by": [
+          "f_aut_glass"
+        ],
+        "why": "Glass fragments, not stone."
+      },
+      {
+        "word": "h_wire",
+        "blank": "how",
+        "by": [
+          "f_aut_nofall"
+        ],
+        "why": "No marks of strangling."
+      },
+      {
+        "word": "m_shares",
+        "blank": "why",
+        "by": [
+          "f_shares"
+        ],
+        "why": "That quarrel was Seenoi's, voted on and settled."
+      },
+      {
+        "word": "m_order",
+        "blank": "why",
+        "by": [
+          "f_order_paid"
+        ],
+        "why": "Gitonga's last order was paid."
+      },
+      {
+        "word": "m_stolen",
+        "blank": "why",
+        "by": [
+          "f_stock"
+        ],
+        "why": "The stock tallies except the broken jar."
+      },
+      {
+        "word": "m_mvua",
+        "blank": "why",
+        "by": [
+          "f_flyer",
+          "f_contract"
+        ],
+        "why": "A flyer on the wall for everyone; nothing in her bag or his books ties it to either of them."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "For ten years Gitonga pays the co-op KSh 300 a piece and sells the same pieces to a Nairobi exporter for KSh 1,500.",
+        "image": null
+      },
+      {
+        "text": "In January Nashipae finds the exporter's catalogue online and signs a direct contract with a fair-trade buyer, at five times his price.",
+        "image": null
+      },
+      {
+        "text": "Saturday, 19:30. The meeting ends; she stays to pack the first export order. At about 20:30 Gitonga comes to make her cancel. She refuses.",
+        "image": null
+      },
+      {
+        "text": "He strikes her with a heavy glass jar of Enkiteng blue beads. It breaks; beads scatter across the floor.",
+        "image": "loc_coop"
+      },
+      {
+        "text": "He drives her 400 m to the bridge and leaves her in the dry river bed, sweeps the floor badly, and tells Elvis to say he left for Narok at seven. At 22:00 his phone is on the Narok road.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Records on Gitonga's line, then a warrant on his pickup. The glass match takes 8 h. Every site is on foot in Talek.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_bridge",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_beads_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_bridge",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_bag",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_moseka"
+      },
+      {
+        "do": "travel",
+        "target": "loc_coop",
+        "hours": 0.5,
+        "from": "loc_bridge"
+      },
+      {
+        "do": "visit",
+        "target": "loc_coop",
+        "hours": 2
+      },
+      {
+        "do": "interview",
+        "target": "p_nasieku"
+      },
+      {
+        "do": "read",
+        "target": "ev_store",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_minutes",
+        "hours": 1
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "travel",
+        "target": "loc_curios",
+        "hours": 0.5,
+        "from": "loc_coop"
+      },
+      {
+        "do": "visit",
+        "target": "loc_curios",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_till",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_elvis"
+      },
+      {
+        "do": "press",
+        "target": "c_elvis"
+      },
+      {
+        "do": "interview",
+        "target": "p_gitonga"
+      },
+      {
+        "do": "press",
+        "target": "c_git"
+      },
+      {
+        "do": "search",
+        "target": "loc_pickup"
+      },
+      {
+        "do": "submit",
+        "target": "ev_glass"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 8
+      },
+      {
+        "do": "interview",
+        "target": "p_gitonga"
+      },
+      {
+        "do": "press",
+        "target": "c_git_packing"
+      }
+    ],
+    "totalHours": 36
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_minutes",
+        "line": "When did the meeting end, and when did his phone leave Talek?"
+      },
+      "tier2": {
+        "facts": [
+          "f_minutes",
+          "f_rec_git"
+        ],
+        "line": "Meeting over at 19:30. His phone in Talek until 21:40."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_beads_body",
+        "line": "Sort the beads in her hair by colour. Which colour exists nowhere else in town?"
+      },
+      "tier2": {
+        "facts": [
+          "f_beads_note",
+          "f_store"
+        ],
+        "line": "Enkiteng blue is the co-op's alone, and a turquoise jar is missing from its row."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_bag",
+        "line": "Read the catalogue printout in her bag. Whose shop is named on it?"
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_git",
+          "f_elvis_reveal"
+        ],
+        "line": "His phone stayed in Talek. His assistant saw him sweep his pickup at nine."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "What did Dr. Chebii find in the wound?"
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_glass",
+          "f_glass_match"
+        ],
+        "line": "Glass, the same thick glass as the shard under the co-op table."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_bag",
+        "line": "Compare the two prices: what he paid, and what the catalogue charges."
+      },
+      "tier2": {
+        "facts": [
+          "f_contract",
+          "f_catalogue"
+        ],
+        "line": "KSh 300 in, KSh 1,500 out, and a contract that went around him."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "shanga",
+      "def": "Beads."
+    },
+    {
+      "term": "enkiteng",
+      "def": "Maa: cow. The co-op's name."
+    },
+    {
+      "term": "mtungi",
+      "def": "A jar."
+    },
+    {
+      "term": "mnunuzi wa kati",
+      "def": "A middleman: a buyer who sells on."
+    },
+    {
+      "term": "shuka",
+      "def": "A Maasai cloth worn wrapped round the body."
+    },
+    {
+      "term": "boda",
+      "def": "Short for boda-boda: a motorbike taxi."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    },
+    {
+      "term": "manyatta",
+      "def": "A Maasai homestead: a ring of houses inside a thorn fence."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "colourAsEvidence"
+    ],
+    "beatNotes": "Colour as evidence. Beads can be sorted by colour in the comparison view; the one colour that exists nowhere else in town lights up. A first look at \"signature materials\", used again later."
+  }
+}

@@ -1,0 +1,2749 @@
+{
+  "meta": {
+    "id": "case-079",
+    "number": 79,
+    "region": "northern-frontier",
+    "regionNumber": 8,
+    "title": "Empty Slot",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 42,
+    "date": "Friday 31 July",
+    "folderTab": "SLOT B4"
+  },
+  "pattern": {
+    "crimePattern": "a transporter kills the night nurse guarding his drunk brother's blood-alcohol sample after a fatal crash, takes the sample and wets the floor to stage a slip",
+    "noRealCaseRetold": true,
+    "notes": "Fictional people and hospital. The pedestrian killed in the crash (Mzee Bonsa Tura, 64) is offstage and told only in the traffic officer's report. The empty rack slot is the absence: a chain-of-custody book that says what should be there.",
+    "tags": [
+      "blunt-force",
+      "staged-accident",
+      "evidence-tampering",
+      "protecting-family",
+      "bribery",
+      "three-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where",
+      "absence"
+    ]
+  },
+  "difficulty": {
+    "suspects": 5,
+    "chainLength": 6,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "absence"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 02/31/07",
+    "date": "Friday 31 July",
+    "time": "07:15",
+    "reportedBy": "Morning shift, Moyale sub-county hospital",
+    "text": "The morning shift at Moyale sub-county hospital reports a night nurse found dead on the floor of the laboratory annex: Kavata Mutua (30). Suspected fall on a wet floor.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_annex",
+    "nodes": [
+      "loc_annex",
+      "loc_casualty",
+      "loc_gate",
+      "loc_carpark",
+      "loc_crash"
+    ],
+    "edges": [
+      {
+        "a": "loc_annex",
+        "b": "loc_casualty",
+        "minutes": 2,
+        "by": "foot"
+      },
+      {
+        "a": "loc_annex",
+        "b": "loc_gate",
+        "minutes": 3,
+        "by": "foot"
+      },
+      {
+        "a": "loc_casualty",
+        "b": "loc_gate",
+        "minutes": 2,
+        "by": "foot"
+      },
+      {
+        "a": "loc_gate",
+        "b": "loc_carpark",
+        "minutes": 1,
+        "by": "foot"
+      },
+      {
+        "a": "loc_casualty",
+        "b": "loc_carpark",
+        "minutes": 2,
+        "by": "foot"
+      },
+      {
+        "a": "loc_gate",
+        "b": "loc_crash",
+        "minutes": 10,
+        "by": "road"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_kavata",
+      "role": "victim",
+      "name": "Kavata Mutua",
+      "age": 30,
+      "occupation": "Nurse, Moyale sub-county hospital",
+      "bio": "On night duty in casualty and responsible for the lab fridge overnight.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_annex",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba woman, about 30, a nurse's white uniform and cap, a fob watch, a calm, conscientious face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mahat",
+      "role": "suspect",
+      "name": "Mahat Dekow",
+      "age": 34,
+      "occupation": "Transporter; elder brother of last night's driver",
+      "bio": "Runs three lorries across the border. Arrived at casualty after his brother's crash.",
+      "community": "Somali",
+      "isCulprit": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_casualty",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Somali man, mid 30s, a pressed shirt and a kofia, a controlled, watchful face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_yusuf",
+      "role": "suspect",
+      "name": "Yusuf Dekow",
+      "age": 24,
+      "occupation": "Mahat's younger brother",
+      "bio": "Drove the family pickup into a pedestrian at 01:30; brought in injured.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_casualty",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Somali man, mid 20s, a bandaged forehead and a hospital gown, a frightened, guilty face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_adano",
+      "role": "suspect",
+      "name": "Adano Sharamo",
+      "age": 49,
+      "occupation": "Hospital night watchman",
+      "bio": "Holds the keys to the side doors.",
+      "community": "Borana",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_gate",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Borana man, late 40s, a watchman's greatcoat and a key ring, a frightened, evasive face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_fatma",
+      "role": "suspect",
+      "name": "Fatma Hassan",
+      "age": 36,
+      "occupation": "Clinical officer",
+      "redHerring": true,
+      "bio": "Argued with Kavata last week over night rotas.",
+      "community": "Burji",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_nurse2_rota"
+      },
+      "at": "plc_fatma",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Burji woman, mid 30s, a clinical coat over a patterned headscarf, a brisk, impatient face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_daniel",
+      "role": "suspect",
+      "name": "Cpl. Daniel Musyoka",
+      "age": 33,
+      "occupation": "Soldier posted at Moyale; Kavata's ex-boyfriend",
+      "redHerring": true,
+      "bio": "She ended it a month ago.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_nurse2_daniel"
+      },
+      "at": "plc_camp",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba man, early 30s, army fatigues, a closed, wounded face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_galgallo",
+      "role": "witness",
+      "name": "Cpl. Ali Galgallo",
+      "age": 40,
+      "occupation": "Traffic officer",
+      "bio": "Brought Yusuf to casualty and asked for a blood-alcohol sample.",
+      "community": "Gabra",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_casualty",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Gabra man, about 40, a traffic police uniform with a reflective sash, a tired, honest face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_nurse2",
+      "role": "witness",
+      "name": "Halima Boru",
+      "age": 41,
+      "occupation": "The other night nurse",
+      "statementOnly": true,
+      "bio": "Kept the casualty observation charts.",
+      "community": "Borana",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_casualty",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_corridor",
+      "name": "The hospital corridor"
+    },
+    {
+      "id": "plc_fatma",
+      "name": "Fatma's house"
+    },
+    {
+      "id": "plc_camp",
+      "name": "The army camp"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_annex",
+      "name": "The laboratory annex",
+      "kind": "scene",
+      "description": "A small room off the corridor: a fridge with numbered sample racks, a steel bench, a chain-of-custody book on a shelf, a side door to the yard.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The floor",
+          "pos": [
+            50,
+            70
+          ],
+          "yields": "ev_body",
+          "text": "Kavata on the floor by the bench, water pooled around her."
+        },
+        {
+          "id": "hs_fridge",
+          "label": "The fridge rack",
+          "pos": [
+            75,
+            40
+          ],
+          "yields": "ev_slot",
+          "text": "Rack B, slot by slot."
+        },
+        {
+          "id": "hs_book",
+          "label": "Chain-of-custody book",
+          "pos": [
+            30,
+            30
+          ],
+          "yields": "ev_custody",
+          "text": "The book on the shelf."
+        },
+        {
+          "id": "hs_dispatch",
+          "label": "The 06:00 vehicle list",
+          "pos": [
+            25,
+            45
+          ],
+          "yields": "ev_vehlist",
+          "text": "The list the morning driver signed."
+        },
+        {
+          "id": "hs_templog",
+          "label": "Fridge temperature log",
+          "pos": [
+            80,
+            30
+          ],
+          "yields": "ev_templog",
+          "text": "The log card taped to the fridge door."
+        },
+        {
+          "id": "hs_floor",
+          "label": "The water",
+          "pos": [
+            55,
+            80
+          ],
+          "yields": "ev_floor",
+          "text": "The water on the floor; a jerrycan in the corridor."
+        },
+        {
+          "id": "hs_ext",
+          "label": "The extinguisher",
+          "pos": [
+            85,
+            70
+          ],
+          "yields": "ev_extinguisher",
+          "text": "A fire extinguisher standing in the corner; an empty bracket outside."
+        },
+        {
+          "id": "hs_door",
+          "label": "The side door",
+          "pos": [
+            10,
+            60
+          ],
+          "yields": "ev_side_door",
+          "text": "The annex side door to the yard."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small hospital laboratory annex at night, a sample fridge glowing with numbered racks and one empty slot, a steel bench, a wet floor"
+      },
+      "expected": [
+        {
+          "id": "x_b4",
+          "text": "Yusuf's sample in slot B4, or a signature for its removal",
+          "because": "f_custody",
+          "present": false,
+          "fact": "f_abs_slot"
+        },
+        {
+          "id": "x_list",
+          "text": "Yusuf's sample on the 06:00 vehicle's list",
+          "because": "f_vehlist",
+          "present": false,
+          "fact": "f_abs_list"
+        },
+        {
+          "id": "x_sink",
+          "text": "A floor gets wet from something: a sink, a mop bucket, a spill",
+          "because": "f_floor",
+          "present": false,
+          "fact": "f_abs_sink"
+        },
+        {
+          "id": "x_bracket",
+          "text": "The corridor extinguisher on its wall bracket",
+          "because": "f_ext_rule",
+          "present": false,
+          "fact": "f_abs_bracket"
+        },
+        {
+          "id": "x_force",
+          "text": "A stranger breaking in at night forces the door",
+          "because": "f_side_door",
+          "present": false,
+          "fact": "f_abs_force"
+        },
+        {
+          "id": "x_others",
+          "text": "Every other logged sample in its slot",
+          "because": "f_custody",
+          "present": true
+        }
+      ]
+    },
+    {
+      "id": "loc_casualty",
+      "name": "Casualty",
+      "kind": "location",
+      "description": "Four beds, a drip stand, a nurses' table with observation charts.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_charts",
+          "label": "Observation charts",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_nurse2",
+          "text": "Halima Boru, the other night nurse, and her charts."
+        },
+        {
+          "id": "hs_galgallo",
+          "label": "Cpl. Galgallo's report",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_galgallo",
+          "text": "The traffic officer's notebook."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small hospital casualty ward at dawn, four beds, a drip stand, a nurses' table with charts"
+      }
+    },
+    {
+      "id": "loc_gate",
+      "name": "The hospital gate",
+      "kind": "location",
+      "description": "A gatehouse with a barrier and a gate book.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_gatebook",
+          "label": "Gate book",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_gatebook",
+          "text": "Last night's gate book."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a hospital gatehouse at night with a barrier pole and a lamp, a lorry waiting outside"
+      }
+    },
+    {
+      "id": "loc_carpark",
+      "name": "The hospital car park",
+      "kind": "location",
+      "description": "A sandy yard with a few vehicles. Mahat's car is parked by the wall.",
+      "unlock": {
+        "fact": "f_adano_reveal"
+      },
+      "hotspots": [
+        {
+          "id": "hs_car",
+          "label": "Mahat's car",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_car",
+          "text": "Search under warrant."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a sandy hospital car park at dawn, a dark saloon car parked by a wall"
+      }
+    },
+    {
+      "id": "loc_crash",
+      "name": "The crash site, Moyale–Marsabit road",
+      "kind": "location",
+      "description": "A pickup against a pole 3 km out of town; skid marks; a chalk outline cleared away.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_crash",
+          "label": "The pickup",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_crash",
+          "text": "The family pickup, front crushed against the pole."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a pickup with a crushed front against a roadside pole on a desert highway at dawn, no people in focus"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Kavata on the annex floor",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. A head injury. Water pooled around her. The drugs cupboard locked and full."
+      },
+      "facts": [
+        "f_body",
+        "f_drugs"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a hospital lab floor with a pool of water around a fallen nurse's cap, a steel bench with a square edge, no body visible"
+      }
+    },
+    {
+      "id": "ev_slot",
+      "type": "physical",
+      "title": "Fridge rack B",
+      "render": "object",
+      "body": {
+        "label": "Slot B4 empty. Every other logged sample in its slot."
+      },
+      "facts": [
+        "f_slot"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a sample fridge rack with numbered slots holding sealed tubes, one slot empty"
+      }
+    },
+    {
+      "id": "ev_custody",
+      "type": "document",
+      "title": "Chain-of-custody book",
+      "render": "logBook",
+      "body": {
+        "text": "02:10 — Y. Dekow — blood (alcohol) — police request Cpl. Galgallo — B4 — K. Mutua. For the 06:00 vehicle. No signature for removal."
+      },
+      "facts": [
+        "f_custody"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_vehlist",
+      "type": "document",
+      "title": "06:00 vehicle list",
+      "render": "form",
+      "body": {
+        "text": "Eleven samples to Marsabit, slot by slot. Nothing for B4. Signed by the driver, 06:05."
+      },
+      "facts": [
+        "f_vehlist"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_templog",
+      "type": "document",
+      "title": "Fridge temperature log",
+      "render": "logBook",
+      "body": {
+        "text": "Last entry: 03:38, 4°C, K.M."
+      },
+      "facts": [
+        "f_templog"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_floor",
+      "type": "physical",
+      "title": "The water on the floor",
+      "render": "object",
+      "body": {
+        "label": "Clean tap water. The annex has no sink and no mop bucket. The jerrycan from the corridor is empty, its cap off."
+      },
+      "facts": [
+        "f_floor"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_extinguisher",
+      "type": "physical",
+      "title": "The fire extinguisher",
+      "render": "object",
+      "body": {
+        "label": "The corridor's wall bracket is empty. The steel extinguisher stands in the annex corner, its base wiped.",
+        "rule": "Hospital safety notice: one extinguisher per corridor, on its bracket."
+      },
+      "facts": [
+        "f_ext",
+        "f_ext_rule"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a red steel fire extinguisher standing in a corner with a wiped curved base, an empty wall bracket visible through a doorway"
+      }
+    },
+    {
+      "id": "ev_side_door",
+      "type": "physical",
+      "title": "The annex side door",
+      "render": "object",
+      "body": {
+        "label": "Unlocked from outside with a key. The lock shows no damage."
+      },
+      "facts": [
+        "f_side_door"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_galgallo",
+      "type": "witness",
+      "title": "Statement: Cpl. Ali Galgallo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_galgallo"
+      },
+      "facts": [
+        "f_galgallo",
+        "f_crash",
+        "f_gal_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_nurse2",
+      "type": "witness",
+      "title": "Statement: Halima Boru, night nurse",
+      "render": "statement",
+      "body": {
+        "speaker": "p_nurse2"
+      },
+      "facts": [
+        "f_nurse2_saw",
+        "f_nurse2_back",
+        "f_yusuf_drip",
+        "f_nurse2_rota",
+        "f_nurse2_daniel"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gatebook",
+      "type": "document",
+      "title": "Hospital gate book",
+      "render": "logBook",
+      "body": {
+        "text": "03:41 — lorry KCx for casualty delivery, let in by A. Sharamo. Adano signs every half hour after, to 07:00."
+      },
+      "facts": [
+        "f_gatebook"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_crash",
+      "type": "physical",
+      "title": "The crash site",
+      "render": "object",
+      "body": {
+        "label": "The family pickup against a pole. Beer bottles in the cab."
+      },
+      "facts": [
+        "f_bottles"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_yusuf_bar",
+      "type": "document",
+      "title": "A Moyale bar: Yusuf's tab",
+      "render": "form",
+      "body": {
+        "text": "Thursday 21:00–01:15: eleven beers, Y. Dekow."
+      },
+      "facts": [
+        "f_yusuf_bar"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Mahat's line and PesaPap",
+      "render": "manifest",
+      "body": {
+        "mast": "The Moyale mast covers the whole town; location is no help.",
+        "calls": "03:20: a call to Adano Sharamo.",
+        "pesapap": "03:25: KSh 5,000 to Adano Sharamo."
+      },
+      "facts": [
+        "f_rec_mahat"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_abs_slot",
+          "f_galgallo"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_car",
+      "type": "physical",
+      "title": "Mahat's car",
+      "render": "object",
+      "body": {
+        "label": "Under the driver's seat: a torn sample label, \"B4 — Y. Dekow — 02:10\". Fragments of a plastic tube in the footwell. Drops of blood on the floor mat."
+      },
+      "facts": [
+        "f_label",
+        "f_mat"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_mahat",
+          "f_adano_reveal"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a torn white sample label reading B4 under a car seat, fragments of a plastic tube on a floor mat"
+      }
+    },
+    {
+      "id": "ev_fatma",
+      "type": "document",
+      "title": "Rota and ward book",
+      "render": "logBook",
+      "body": {
+        "text": "Fatma Hassan off duty Thursday night; called in at 07:30 Friday."
+      },
+      "facts": [
+        "f_fatma"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_daniel",
+      "type": "document",
+      "title": "Army camp gate log",
+      "render": "logBook",
+      "body": {
+        "text": "Cpl. D. Musyoka: in camp from 18:00 Thursday; no exit recorded until 08:00 Friday."
+      },
+      "facts": [
+        "f_daniel"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mahat_prints",
+      "type": "physical",
+      "title": "Fingerprints: Mahat Dekow",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention; he refused."
+      },
+      "facts": [
+        "f_mah_printset"
+      ],
+      "gate": null,
+      "detention": "p_mahat",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Dr. Chebii, Marsabit)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_blood",
+      "type": "forensic",
+      "title": "Lab: trace (extinguisher seam, car mat)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_blood"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_extinguisher",
+          "ev_car"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints (extinguisher handle)",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_prints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_extinguisher",
+          "ev_mahat_prints"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Kavata Mutua was found dead on the floor of the laboratory annex at Moyale sub-county hospital on Friday morning; a fall on a wet floor is suspected.",
+      "kind": "true",
+      "about": [
+        "p_kavata",
+        "loc_annex"
+      ],
+      "at": {
+        "from": "07:00",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "Kavata has a head injury; water is pooled around her by the steel bench.",
+      "kind": "true",
+      "about": [
+        "p_kavata",
+        "loc_annex"
+      ]
+    },
+    {
+      "id": "f_drugs",
+      "text": "The drugs cupboard is locked and full.",
+      "kind": "true",
+      "about": [
+        "loc_annex"
+      ]
+    },
+    {
+      "id": "f_slot",
+      "text": "Rack B: slot B4 is empty; every other logged sample is in its slot.",
+      "kind": "true",
+      "about": [
+        "loc_annex"
+      ]
+    },
+    {
+      "id": "f_custody",
+      "text": "Custody book: 02:10, Y. Dekow, blood (alcohol), police request Cpl. Galgallo, slot B4, K. Mutua, for the 06:00 vehicle. No signature for removal.",
+      "kind": "true",
+      "about": [
+        "p_yusuf",
+        "p_kavata"
+      ],
+      "at": {
+        "from": "02:10",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_vehlist",
+      "text": "The 06:00 vehicle list: eleven samples to Marsabit, signed by the driver at 06:05.",
+      "kind": "true",
+      "about": [
+        "loc_annex"
+      ]
+    },
+    {
+      "id": "f_templog",
+      "text": "Fridge temperature log: Kavata's last entry at 03:38.",
+      "kind": "true",
+      "about": [
+        "p_kavata"
+      ],
+      "at": {
+        "from": "03:38",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_floor",
+      "text": "The water on the floor is clean tap water; the jerrycan from the corridor is empty, its cap off.",
+      "kind": "true",
+      "about": [
+        "loc_annex"
+      ]
+    },
+    {
+      "id": "f_ext",
+      "text": "The corridor's extinguisher bracket is empty; the steel extinguisher stands in the annex corner, its curved base wiped.",
+      "kind": "true",
+      "about": [
+        "plc_corridor"
+      ]
+    },
+    {
+      "id": "f_ext_rule",
+      "text": "Hospital safety notice: one extinguisher per corridor, on its bracket.",
+      "kind": "true",
+      "about": [
+        "plc_corridor"
+      ]
+    },
+    {
+      "id": "f_side_door",
+      "text": "The annex side door was unlocked from outside with a key; the lock is undamaged.",
+      "kind": "true",
+      "about": [
+        "loc_annex"
+      ]
+    },
+    {
+      "id": "f_galgallo",
+      "text": "Cpl. Galgallo: \"I asked for the sample. The nurse took it in front of me. The brother arrived at about twenty to three and was asking everyone where it goes.\"",
+      "kind": "true",
+      "about": [
+        "p_galgallo",
+        "p_mahat"
+      ],
+      "at": {
+        "from": "02:40",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_crash",
+      "text": "Cpl. Galgallo: at 01:30 Yusuf drove the family pickup into Mzee Bonsa Tura, 64, walking home from night prayers, killing him, then hit a pole.",
+      "kind": "true",
+      "about": [
+        "p_yusuf"
+      ],
+      "at": {
+        "from": "01:30",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_gal_self",
+      "text": "Cpl. Galgallo went back to the crash site at 02:20 and stayed with the body until 05:00.",
+      "kind": "true",
+      "about": [
+        "p_galgallo"
+      ],
+      "where": {
+        "person": "p_galgallo",
+        "place": "loc_crash",
+        "from": "02:20",
+        "to": "05:00"
+      }
+    },
+    {
+      "id": "f_nurse2_saw",
+      "text": "Halima Boru: at three the brother was at the lab door talking to Kavata; she shook her head.",
+      "kind": "true",
+      "about": [
+        "p_mahat",
+        "p_kavata"
+      ],
+      "at": {
+        "from": "03:00",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_nurse2_back",
+      "text": "Halima Boru: Mahat came back into casualty at 03:55, his sleeves wet.",
+      "kind": "true",
+      "about": [
+        "p_mahat"
+      ],
+      "at": {
+        "from": "03:55",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_yusuf_drip",
+      "text": "Halima's chart: Yusuf on a drip from 03:00, asleep at every 30-minute check.",
+      "kind": "true",
+      "about": [
+        "p_yusuf"
+      ],
+      "where": {
+        "person": "p_yusuf",
+        "place": "loc_casualty",
+        "from": "03:00",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_nurse2_rota",
+      "text": "Halima Boru: Kavata argued with the clinical officer, Fatma Hassan, last week over the night rotas.",
+      "kind": "true",
+      "about": [
+        "p_fatma"
+      ]
+    },
+    {
+      "id": "f_nurse2_daniel",
+      "text": "Halima Boru: Kavata ended it with a soldier, Daniel Musyoka, a month ago.",
+      "kind": "true",
+      "about": [
+        "p_daniel"
+      ]
+    },
+    {
+      "id": "f_gatebook",
+      "text": "Gate book: Adano let a lorry in at 03:41 and signed every half hour after, to 07:00.",
+      "kind": "true",
+      "about": [
+        "p_adano"
+      ],
+      "where": {
+        "person": "p_adano",
+        "place": "loc_gate",
+        "from": "03:40",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_bottles",
+      "text": "Beer bottles in the cab of the crashed pickup.",
+      "kind": "true",
+      "about": [
+        "p_yusuf"
+      ]
+    },
+    {
+      "id": "f_yusuf_bar",
+      "text": "Bar tab: Yusuf drank eleven beers between 21:00 and 01:15.",
+      "kind": "true",
+      "about": [
+        "p_yusuf"
+      ]
+    },
+    {
+      "id": "f_rec_mahat",
+      "text": "Records: Mahat called Adano at 03:20 and sent him KSh 5,000 at 03:25.",
+      "kind": "true",
+      "about": [
+        "p_mahat",
+        "p_adano"
+      ],
+      "at": {
+        "from": "03:25",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_label",
+      "text": "Under the driver's seat of Mahat's car: a torn sample label, \"B4 — Y. Dekow — 02:10\", and fragments of a tube.",
+      "kind": "true",
+      "about": [
+        "p_mahat"
+      ]
+    },
+    {
+      "id": "f_mat",
+      "text": "Drops of blood on the floor mat of Mahat's car.",
+      "kind": "true",
+      "about": [
+        "p_mahat"
+      ]
+    },
+    {
+      "id": "f_fatma",
+      "text": "Rota: Fatma was off duty on Thursday night, at home with her family, and called in at 07:30.",
+      "kind": "true",
+      "about": [
+        "p_fatma"
+      ],
+      "where": {
+        "person": "p_fatma",
+        "place": "plc_fatma",
+        "from": "18:00",
+        "to": "07:30"
+      }
+    },
+    {
+      "id": "f_daniel",
+      "text": "Camp gate log: Daniel was in camp all night, no exit.",
+      "kind": "true",
+      "about": [
+        "p_daniel"
+      ],
+      "where": {
+        "person": "p_daniel",
+        "place": "plc_camp",
+        "from": "18:00",
+        "to": "08:00"
+      }
+    },
+    {
+      "id": "f_mah_printset",
+      "text": "Fingerprints taken from Mahat in detention.",
+      "kind": "true",
+      "about": [
+        "p_mahat"
+      ]
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Post-mortem: one heavy blow from a curved metal base, not a fall against the bench (the bench edge is square).",
+      "kind": "true",
+      "about": [
+        "p_kavata"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Friday between 03:30 and 04:30.",
+      "kind": "true",
+      "about": [
+        "p_kavata"
+      ],
+      "at": {
+        "from": "03:30",
+        "to": "04:30",
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_blood",
+      "text": "Lab: Kavata's blood in the extinguisher's base seam and on the car mat.",
+      "kind": "true",
+      "about": [
+        "p_kavata",
+        "p_mahat"
+      ]
+    },
+    {
+      "id": "f_prints",
+      "text": "Lab: a partial print under the extinguisher's trigger matches Mahat.",
+      "kind": "true",
+      "about": [
+        "p_mahat"
+      ]
+    },
+    {
+      "id": "f_abs_slot",
+      "text": "Missing: slot B4 is empty and the custody book has no removal signature.",
+      "kind": "true",
+      "about": [
+        "loc_annex"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_list",
+      "text": "Missing: there's no sample on the morning vehicle's list.",
+      "kind": "true",
+      "about": [
+        "loc_annex"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_sink",
+      "text": "Missing: there's no sink or mop for the water on the floor.",
+      "kind": "true",
+      "about": [
+        "loc_annex"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_bracket",
+      "text": "Missing: the extinguisher is missing from its bracket.",
+      "kind": "true",
+      "about": [
+        "plc_corridor"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_force",
+      "text": "Missing: the side door wasn't forced.",
+      "kind": "true",
+      "about": [
+        "loc_annex"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_mah_casualty",
+      "text": "Mahat: \"I sat with my brother in casualty until morning. I never went near the lab.\"",
+      "kind": "lie",
+      "about": [
+        "p_mahat"
+      ]
+    },
+    {
+      "id": "f_mah_reveal",
+      "text": "Mahat: \"My brother made one mistake. That sample was ten years of his life. I asked her nicely first.\"",
+      "kind": "true",
+      "about": [
+        "p_mahat",
+        "p_kavata"
+      ],
+      "where": {
+        "person": "p_mahat",
+        "place": "loc_annex",
+        "from": "03:40",
+        "to": "03:55"
+      }
+    },
+    {
+      "id": "f_mah_ext",
+      "text": "Mahat: \"I never touched any extinguisher.\"",
+      "kind": "lie",
+      "about": [
+        "p_mahat"
+      ]
+    },
+    {
+      "id": "f_yus_sober",
+      "text": "Yusuf: \"I hadn't been drinking. The old man walked into the road.\"",
+      "kind": "lie",
+      "about": [
+        "p_yusuf"
+      ]
+    },
+    {
+      "id": "f_yus_reveal",
+      "text": "Yusuf: \"I was drunk. I killed Mzee Bonsa. My brother kept saying 'I'll fix it.' I was asleep from four with the drip.\"",
+      "kind": "true",
+      "about": [
+        "p_yusuf",
+        "p_mahat"
+      ]
+    },
+    {
+      "id": "f_ad_patrol",
+      "text": "Adano: \"I patrolled. Nobody went into the annex.\"",
+      "kind": "lie",
+      "about": [
+        "p_adano"
+      ]
+    },
+    {
+      "id": "f_adano_reveal",
+      "text": "Adano: \"Mahat called and sent five thousand. He said a family matter, his brother's papers. I opened the side door at twenty to four and went to the gate. I didn't know.\"",
+      "kind": "true",
+      "about": [
+        "p_adano",
+        "p_mahat"
+      ],
+      "at": {
+        "from": "03:40",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_fat_claim",
+      "text": "Fatma: \"We argued about rotas. I was at home.\"",
+      "kind": "claim",
+      "about": [
+        "p_fatma"
+      ]
+    },
+    {
+      "id": "f_dan_claim",
+      "text": "Daniel: \"We were finished. I was in camp.\"",
+      "kind": "claim",
+      "about": [
+        "p_daniel"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_mahat",
+      "stance": "cooperative",
+      "intro": "Mahat sits by his brother's bed, controlled and polite. \"I sat with my brother in casualty until morning. I never went near the lab.\"",
+      "claims": [
+        "f_mah_casualty"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_mah_ext",
+          "after": "f_mah_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_yusuf",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_galgallo"
+      ],
+      "intro": "Yusuf turns his bandaged head away. \"I hadn't been drinking. The old man walked into the road.\"",
+      "claims": [
+        "f_yus_sober"
+      ],
+      "yields": [
+        "ev_yusuf_bar"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_adano",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_side_door"
+      ],
+      "intro": "Adano won't let go of his key ring. \"I patrolled. Nobody went into the annex.\"",
+      "claims": [
+        "f_ad_patrol"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_fatma",
+      "stance": "cooperative",
+      "intro": "Fatma comes in for the morning shift. \"We argued about rotas. I was at home.\"",
+      "claims": [
+        "f_fat_claim"
+      ],
+      "yields": [
+        "ev_fatma"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_daniel",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_body"
+      ],
+      "intro": "Daniel stands at attention in the corridor. \"We were finished. I was in camp.\"",
+      "claims": [
+        "f_dan_claim"
+      ],
+      "yields": [
+        "ev_daniel"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_galgallo",
+      "stance": "cooperative",
+      "intro": "Cpl. Galgallo reads from his notebook.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_yusuf",
+      "claim": "f_yus_sober",
+      "brokenBy": [
+        "f_yusuf_bar",
+        "f_bottles"
+      ],
+      "reveals": [
+        "f_yus_reveal"
+      ],
+      "reaction": "\"I was drunk. I killed Mzee Bonsa. My brother kept saying 'I'll fix it.' I was asleep from four with the drip.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_adano",
+      "claim": "f_ad_patrol",
+      "brokenBy": [
+        "f_rec_mahat"
+      ],
+      "reveals": [
+        "f_adano_reveal"
+      ],
+      "reaction": "\"Mahat called and sent five thousand. He said a family matter, his brother's papers. I opened the side door at twenty to four and went to the gate. I didn't know.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_mahat",
+      "claim": "f_mah_casualty",
+      "brokenBy": [
+        "f_rec_mahat",
+        "f_adano_reveal",
+        "f_nurse2_back"
+      ],
+      "reveals": [
+        "f_mah_reveal"
+      ],
+      "reaction": "\"My brother made one mistake. That sample was ten years of his life. I asked her nicely first.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_mah_ext",
+      "claim": "f_mah_ext",
+      "brokenBy": [
+        "f_prints"
+      ],
+      "reveals": [],
+      "reaction": "Mahat reads the print report twice and asks for his lawyer from Nairobi by name.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_mahat",
+      "text": "Mahat Dekow",
+      "category": "person",
+      "ref": "p_mahat",
+      "unlock": {
+        "anyOf": [
+          "f_galgallo"
+        ]
+      }
+    },
+    {
+      "id": "w_yusuf",
+      "text": "Yusuf Dekow",
+      "category": "person",
+      "ref": "p_yusuf",
+      "unlock": {
+        "anyOf": [
+          "f_custody"
+        ]
+      }
+    },
+    {
+      "id": "w_adano",
+      "text": "Adano Sharamo",
+      "category": "person",
+      "ref": "p_adano",
+      "unlock": {
+        "anyOf": [
+          "f_side_door"
+        ]
+      }
+    },
+    {
+      "id": "w_fatma",
+      "text": "Fatma Hassan",
+      "category": "person",
+      "ref": "p_fatma",
+      "unlock": {
+        "anyOf": [
+          "f_nurse2_rota"
+        ]
+      }
+    },
+    {
+      "id": "w_daniel",
+      "text": "Daniel Musyoka",
+      "category": "person",
+      "ref": "p_daniel",
+      "unlock": {
+        "anyOf": [
+          "f_nurse2_daniel"
+        ]
+      }
+    },
+    {
+      "id": "w_galgallo",
+      "text": "Ali Galgallo",
+      "category": "person",
+      "ref": "p_galgallo",
+      "unlock": {
+        "anyOf": [
+          "f_custody"
+        ]
+      }
+    },
+    {
+      "id": "pl_annex",
+      "text": "the lab annex",
+      "category": "place",
+      "ref": "loc_annex",
+      "unlock": {
+        "anyOf": [
+          "f_slot"
+        ]
+      }
+    },
+    {
+      "id": "pl_casualty",
+      "text": "casualty",
+      "category": "place",
+      "ref": "loc_casualty",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_corridor",
+      "text": "the hospital corridor",
+      "category": "place",
+      "ref": "plc_corridor",
+      "unlock": {
+        "anyOf": [
+          "f_ext"
+        ]
+      }
+    },
+    {
+      "id": "pl_crash",
+      "text": "the crash site",
+      "category": "place",
+      "ref": "loc_crash",
+      "unlock": {
+        "anyOf": [
+          "f_crash"
+        ]
+      }
+    },
+    {
+      "id": "pl_car",
+      "text": "Mahat's car",
+      "category": "place",
+      "ref": "loc_carpark",
+      "unlock": {
+        "anyOf": [
+          "f_adano_reveal"
+        ]
+      }
+    },
+    {
+      "id": "h_ext",
+      "text": "striking her with the lab corridor's fire extinguisher",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_slip",
+      "text": "a slip on a wet floor against the bench",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_stool",
+      "text": "striking her with a stool",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_seizure",
+      "text": "a seizure and a fall",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_strangle",
+      "text": "strangling her",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_sample",
+      "text": "to destroy his brother's blood-alcohol sample after a fatal crash",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_custody"
+        ]
+      }
+    },
+    {
+      "id": "m_rota",
+      "text": "a rota quarrel",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_nurse2_rota"
+        ]
+      }
+    },
+    {
+      "id": "m_jealous",
+      "text": "an ex-boyfriend's jealousy",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_nurse2_daniel"
+        ]
+      }
+    },
+    {
+      "id": "m_watch",
+      "text": "a bribed watchman covering a theft",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_side_door"
+        ]
+      }
+    },
+    {
+      "id": "m_drugs",
+      "text": "theft of hospital drugs",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "a_slot",
+      "text": "slot B4 is empty and the custody book has no removal signature",
+      "category": "absence",
+      "ref": "f_abs_slot",
+      "unlock": {
+        "anyOf": [
+          "f_abs_slot"
+        ]
+      }
+    },
+    {
+      "id": "a_list",
+      "text": "there's no sample on the morning vehicle's list",
+      "category": "absence",
+      "ref": "f_abs_list",
+      "unlock": {
+        "anyOf": [
+          "f_abs_list"
+        ]
+      }
+    },
+    {
+      "id": "a_sink",
+      "text": "there's no sink or mop for the water on the floor",
+      "category": "absence",
+      "ref": "f_abs_sink",
+      "unlock": {
+        "anyOf": [
+          "f_abs_sink"
+        ]
+      }
+    },
+    {
+      "id": "a_bracket",
+      "text": "the extinguisher is missing from its bracket",
+      "category": "absence",
+      "ref": "f_abs_bracket",
+      "unlock": {
+        "anyOf": [
+          "f_abs_bracket"
+        ]
+      }
+    },
+    {
+      "id": "a_force",
+      "text": "the side door wasn't forced",
+      "category": "absence",
+      "ref": "f_abs_force",
+      "unlock": {
+        "anyOf": [
+          "f_abs_force"
+        ]
+      }
+    },
+    {
+      "id": "k_taken",
+      "text": "someone took Yusuf's sample without signing for it",
+      "category": "conclusion",
+      "by": [
+        "f_abs_slot",
+        "f_custody",
+        "f_slot",
+        "f_abs_list",
+        "f_vehlist"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_slot"
+        ]
+      }
+    },
+    {
+      "id": "k_early",
+      "text": "the sample went to Marsabit early",
+      "category": "conclusion",
+      "by": [
+        "f_vehlist"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_slot"
+        ]
+      }
+    },
+    {
+      "id": "k_slip",
+      "text": "the nurse slipped on a wet floor",
+      "category": "conclusion",
+      "by": [
+        "f_aut_blow"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_slot"
+        ]
+      }
+    },
+    {
+      "id": "k_stranger",
+      "text": "a stranger broke in",
+      "category": "conclusion",
+      "by": [
+        "f_side_door"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_slot"
+        ]
+      }
+    },
+    {
+      "id": "k_never",
+      "text": "the sample was never taken",
+      "category": "conclusion",
+      "by": [
+        "f_galgallo"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_slot"
+        ]
+      }
+    },
+    {
+      "id": "k_fatma",
+      "text": "the clinical officer moved it",
+      "category": "conclusion",
+      "by": [
+        "f_fatma"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_slot"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. That {missing} shows that {conclusion}.",
+    "fixed": {
+      "victim": "Kavata Mutua"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_0130",
+                  "label": "Friday 01:30",
+                  "from": "01:30",
+                  "to": "01:30",
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_0210",
+                  "label": "Friday 02:10",
+                  "from": "02:10",
+                  "to": "02:10",
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_0300",
+                  "label": "Friday 03:00",
+                  "from": "03:00",
+                  "to": "03:00",
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_0325",
+                  "label": "Friday 03:25",
+                  "from": "03:25",
+                  "to": "03:25",
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Friday 03:40–03:55",
+                  "from": "03:40",
+                  "to": "03:55",
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_0500",
+                  "label": "Friday 05:00",
+                  "from": "05:00",
+                  "to": "05:00",
+                  "day": "Fri"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_crash",
+                  "text": "Yusuf hits Mzee Bonsa",
+                  "slot": "sl_0130",
+                  "by": [
+                    "f_crash"
+                  ],
+                  "why": "Cpl. Galgallo: 01:30.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_crash"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_sample",
+                  "text": "Kavata takes the sample",
+                  "slot": "sl_0210",
+                  "by": [
+                    "f_custody"
+                  ],
+                  "why": "The custody book: 02:10.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_custody"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_bribe",
+                  "text": "Mahat offers Kavata a bribe",
+                  "slot": "sl_0300",
+                  "by": [
+                    "f_nurse2_saw",
+                    "f_mah_reveal"
+                  ],
+                  "why": "Halima saw them at the lab door at three; she shook her head.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_nurse2_saw"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_pay",
+                  "text": "Mahat pays the watchman",
+                  "slot": "sl_0325",
+                  "by": [
+                    "f_rec_mahat"
+                  ],
+                  "why": "PesaPap: 03:25.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rec_mahat"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Kavata is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_adano_reveal",
+                    "f_templog",
+                    "f_nurse2_back",
+                    "f_aut_tod"
+                  ],
+                  "why": "Adano opened the side door at 03:40; Mahat was back in casualty, sleeves wet, at 03:55.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_0500",
+                  "by": [
+                    "f_nurse2_back",
+                    "f_aut_tod",
+                    "f_templog"
+                  ],
+                  "why": "\"Slipped near the end of her shift\"? Her last fridge check was 03:38 and he was back with wet sleeves at 03:55."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A crash at half past one, a sample at ten past two, a refusal at three, five thousand shillings at twenty-five past, and a side door at twenty to four.",
+          "fail": [
+            "Five o'clock is the slip story. Her last fridge entry was 03:38.",
+            "When did the watchman open the door?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_annex"
+          }
+        ],
+        "prosecutor": {
+          "pass": "In the annex, by the fridge she was guarding.",
+          "fail": [
+            "The extinguisher came from the corridor. She died in the annex.",
+            "His car carried the label away, not her."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_mahat"
+          }
+        ],
+        "prosecutor": {
+          "pass": "His call, his five thousand, his print under the trigger, and her blood on his car mat with the label.",
+          "fail": [
+            "Yusuf was asleep on a drip.",
+            "Adano opened a door and went to the gate."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_ext"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A curved steel base, wiped, and a jerrycan emptied to make a slip.",
+          "fail": [
+            "The bench edge is square; the wound is curved.",
+            "The stools are light plastic."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_sample"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Eleven beers and a dead man on the road. That sample was his brother's ten years.",
+          "fail": [
+            "The drugs cupboard is locked and full.",
+            "Fatma was at home; Daniel was in camp."
+          ]
+        }
+      },
+      {
+        "id": "g_absence",
+        "kind": "absence",
+        "blanks": [
+          {
+            "id": "missing",
+            "category": "absence",
+            "answer": "a_slot",
+            "accept": [
+              "a_list"
+            ]
+          },
+          {
+            "id": "conclusion",
+            "category": "conclusion",
+            "answer": "k_taken"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Logged into B4 at 02:10, never signed out, never on the vehicle. Someone took it.",
+          "fail": [
+            "An unforced door tells me someone had a key, not what they took.",
+            "No sink tells me the water was poured. What was missing from the fridge?"
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_annex",
+      "from": "03:40",
+      "to": "03:55",
+      "note": "From Adano opening the side door at 03:40 to Mahat's return to casualty at 03:55; her last fridge entry was 03:38 and the post-mortem allows 03:30–04:30."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_custody",
+          "f_galgallo",
+          "f_slot",
+          "f_abs_slot",
+          "f_vehlist",
+          "f_abs_list"
+        ],
+        "concludes": "Yusuf's alcohol sample was taken, logged into B4, and removed without a signature; it never went on the vehicle.",
+        "answers": [
+          "missing",
+          "conclusion"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_body",
+          "f_floor",
+          "f_abs_sink",
+          "f_ext",
+          "f_ext_rule",
+          "f_aut_blow",
+          "f_aut_tod"
+        ],
+        "concludes": "Not a slip: the floor was wetted on purpose and she was struck with the corridor extinguisher.",
+        "answers": [
+          "how"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_ad_patrol",
+          "f_rec_mahat",
+          "f_adano_reveal",
+          "f_side_door",
+          "f_templog",
+          "f_nurse2_saw",
+          "f_nurse2_back"
+        ],
+        "concludes": "Mahat paid the watchman to open the side door at 03:40 and was back in casualty with wet sleeves at 03:55.",
+        "answers": [
+          "when",
+          "where"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_crash",
+          "f_yus_sober",
+          "f_yusuf_bar",
+          "f_bottles",
+          "f_yus_reveal"
+        ],
+        "concludes": "The sample would have convicted his brother of a drunken fatal crash.",
+        "answers": [
+          "why"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_mah_casualty",
+          "f_mah_reveal",
+          "f_label",
+          "f_mat"
+        ],
+        "concludes": "His story breaks; the torn B4 label and blood are in his car."
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_blood",
+          "f_prints",
+          "f_mah_ext"
+        ],
+        "concludes": "Mahat Dekow struck Kavata with the corridor extinguisher in the lab annex and took his brother's blood-alcohol sample.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_casualty",
+        "blank": "where",
+        "by": [
+          "f_body"
+        ],
+        "why": "She was found in the annex."
+      },
+      {
+        "word": "pl_corridor",
+        "blank": "where",
+        "by": [
+          "f_body",
+          "f_ext"
+        ],
+        "why": "The extinguisher came from the corridor; she was struck in the annex."
+      },
+      {
+        "word": "pl_crash",
+        "blank": "where",
+        "by": [
+          "f_templog"
+        ],
+        "why": "She was at the fridge at 03:38."
+      },
+      {
+        "word": "pl_car",
+        "blank": "where",
+        "by": [
+          "f_body"
+        ],
+        "why": "The car carried the label, not her."
+      },
+      {
+        "word": "w_yusuf",
+        "blank": "who",
+        "by": [
+          "f_yusuf_drip"
+        ],
+        "why": "Yusuf was asleep on a drip from 03:00, checked every 30 minutes."
+      },
+      {
+        "word": "w_adano",
+        "blank": "who",
+        "by": [
+          "f_gatebook"
+        ],
+        "why": "Adano was at the gate from 03:40, signing the book."
+      },
+      {
+        "word": "w_fatma",
+        "blank": "who",
+        "by": [
+          "f_fatma"
+        ],
+        "why": "Fatma was at home."
+      },
+      {
+        "word": "w_daniel",
+        "blank": "who",
+        "by": [
+          "f_daniel"
+        ],
+        "why": "Daniel was in camp."
+      },
+      {
+        "word": "w_galgallo",
+        "blank": "who",
+        "by": [
+          "f_gal_self"
+        ],
+        "why": "Cpl. Galgallo was with the body at the crash site until 05:00."
+      },
+      {
+        "word": "h_slip",
+        "blank": "how",
+        "by": [
+          "f_aut_blow",
+          "f_floor"
+        ],
+        "why": "The bench edge is square, the wound curved, and the water was poured."
+      },
+      {
+        "word": "h_stool",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "A curved metal base; the stools are light plastic."
+      },
+      {
+        "word": "h_seizure",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "A blow."
+      },
+      {
+        "word": "h_strangle",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "A blow to the head."
+      },
+      {
+        "word": "m_rota",
+        "blank": "why",
+        "by": [
+          "f_fatma"
+        ],
+        "why": "Fatma was at home."
+      },
+      {
+        "word": "m_jealous",
+        "blank": "why",
+        "by": [
+          "f_daniel"
+        ],
+        "why": "Daniel was in camp."
+      },
+      {
+        "word": "m_watch",
+        "blank": "why",
+        "by": [
+          "f_adano_reveal",
+          "f_gatebook"
+        ],
+        "why": "Adano opened a door and went to the gate; he was never in the annex."
+      },
+      {
+        "word": "m_drugs",
+        "blank": "why",
+        "by": [
+          "f_drugs"
+        ],
+        "why": "The drugs cupboard is locked and full."
+      },
+      {
+        "word": "a_sink",
+        "blank": "missing",
+        "by": [
+          "f_abs_sink",
+          "f_floor"
+        ],
+        "why": "It shows the water was staged, not what was taken."
+      },
+      {
+        "word": "a_bracket",
+        "blank": "missing",
+        "by": [
+          "f_abs_bracket",
+          "f_ext"
+        ],
+        "why": "It shows the weapon."
+      },
+      {
+        "word": "a_force",
+        "blank": "missing",
+        "by": [
+          "f_abs_force",
+          "f_adano_reveal"
+        ],
+        "why": "It shows someone had a key."
+      },
+      {
+        "word": "k_early",
+        "blank": "conclusion",
+        "by": [
+          "f_vehlist"
+        ],
+        "why": "The vehicle left at 06:00 without it."
+      },
+      {
+        "word": "k_slip",
+        "blank": "conclusion",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "A curved blow."
+      },
+      {
+        "word": "k_stranger",
+        "blank": "conclusion",
+        "by": [
+          "f_side_door",
+          "f_adano_reveal"
+        ],
+        "why": "The door was opened with a key."
+      },
+      {
+        "word": "k_never",
+        "blank": "conclusion",
+        "by": [
+          "f_galgallo",
+          "f_custody"
+        ],
+        "why": "Galgallo watched her take it."
+      },
+      {
+        "word": "k_fatma",
+        "blank": "conclusion",
+        "by": [
+          "f_fatma"
+        ],
+        "why": "Fatma was at home."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Friday, 01:30. Yusuf, drunk, drives the family pickup into Mzee Bonsa Tura, walking home from night prayers, and hits a pole. Cpl. Galgallo brings him to casualty and asks for a blood-alcohol sample.",
+        "image": null
+      },
+      {
+        "text": "02:10. Kavata takes it, seals it, logs it and puts it in slot B4 for the 06:00 vehicle. Mahat arrives at 02:40 asking where it goes. At 03:00 he offers her KSh 100,000 at the lab door. She refuses.",
+        "image": null
+      },
+      {
+        "text": "03:20. He calls the watchman; at 03:25 he sends him KSh 5,000. At 03:40 Adano opens the annex side door \"for a family matter\" and goes to the gate.",
+        "image": null
+      },
+      {
+        "text": "Mahat comes in as Kavata checks the fridge. He reaches for the rack; she holds on. He strikes her with the steel extinguisher from the corridor.",
+        "image": "loc_annex"
+      },
+      {
+        "text": "He takes the tube from B4, tears off its label, empties the corridor jerrycan around her, wipes the extinguisher and stands it in the corner. At 03:55 he is back beside his brother's bed, his sleeves wet.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Two stamps: records on Mahat's line and a warrant on his car. Detain Mahat after the search; he refuses prints, so they are taken in detention. Prints (6 h + 4) and blood (12 h + 4) come back inside 24 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_annex",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_slot",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_custody",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_vehlist",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_templog",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_floor",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_extinguisher",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_side_door",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_casualty",
+        "hours": 0.25,
+        "from": "loc_annex"
+      },
+      {
+        "do": "visit",
+        "target": "loc_casualty",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_galgallo",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_nurse2",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_galgallo"
+      },
+      {
+        "do": "interview",
+        "target": "p_mahat"
+      },
+      {
+        "do": "interview",
+        "target": "p_yusuf"
+      },
+      {
+        "do": "press",
+        "target": "c_yusuf"
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "travel",
+        "target": "loc_gate",
+        "hours": 0.25,
+        "from": "loc_casualty"
+      },
+      {
+        "do": "visit",
+        "target": "loc_gate",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_gatebook",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_adano"
+      },
+      {
+        "do": "press",
+        "target": "c_adano"
+      },
+      {
+        "do": "travel",
+        "target": "loc_casualty",
+        "hours": 0.25,
+        "from": "loc_gate"
+      },
+      {
+        "do": "visit",
+        "target": "loc_casualty",
+        "hours": 1
+      },
+      {
+        "do": "press",
+        "target": "c_mahat"
+      },
+      {
+        "do": "interview",
+        "target": "p_fatma"
+      },
+      {
+        "do": "interview",
+        "target": "p_daniel"
+      },
+      {
+        "do": "travel",
+        "target": "loc_carpark",
+        "hours": 0.25,
+        "from": "loc_casualty"
+      },
+      {
+        "do": "search",
+        "target": "loc_carpark"
+      },
+      {
+        "do": "detain",
+        "target": "p_mahat"
+      },
+      {
+        "do": "sample",
+        "target": "ev_mahat_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_blood"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 16
+      },
+      {
+        "do": "press",
+        "target": "c_mah_ext"
+      }
+    ],
+    "totalHours": 46
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_records",
+        "line": "Money moves on the clock too, Amani."
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_mahat",
+          "f_adano_reveal"
+        ],
+        "line": "Five thousand at 03:25. A side door at 03:40."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_templog",
+        "line": "Where was she at 03:38?"
+      },
+      "tier2": {
+        "facts": [
+          "f_templog",
+          "f_body"
+        ],
+        "line": "At the fridge, in the annex. Where she lay."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_nurse2",
+        "line": "Ask the other night nurse who came back with wet sleeves."
+      },
+      "tier2": {
+        "facts": [
+          "f_nurse2_back",
+          "f_label",
+          "f_prints"
+        ],
+        "line": "Mahat at 03:55. The label in his car. His print under the trigger."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_extinguisher",
+        "line": "Something left its bracket in the corridor."
+      },
+      "tier2": {
+        "facts": [
+          "f_ext",
+          "f_aut_blow"
+        ],
+        "line": "A curved steel base, wiped."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_custody",
+        "line": "What was in slot B4?"
+      },
+      "tier2": {
+        "facts": [
+          "f_custody",
+          "f_yus_reveal"
+        ],
+        "line": "His brother's blood alcohol, after a fatal crash."
+      }
+    },
+    "g_absence": {
+      "tier1": {
+        "point": "ev_slot",
+        "line": "Lay the custody book over the rack."
+      },
+      "tier2": {
+        "facts": [
+          "f_abs_slot",
+          "f_custody"
+        ],
+        "line": "B4 logged at 02:10. Empty. No signature."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "sampuli",
+      "def": "A sample."
+    },
+    {
+      "term": "friji",
+      "def": "A fridge."
+    },
+    {
+      "term": "mlinzi",
+      "def": "A watchman."
+    },
+    {
+      "term": "hongo",
+      "def": "A bribe."
+    },
+    {
+      "term": "kizima moto",
+      "def": "A fire extinguisher."
+    },
+    {
+      "term": "mpaka",
+      "def": "A border."
+    },
+    {
+      "term": "mzee",
+      "def": "An old man; a respectful way to address an elder."
+    },
+    {
+      "term": "kofia",
+      "def": "A brimless embroidered cap."
+    },
+    {
+      "term": "pesa",
+      "def": "Money."
+    },
+    {
+      "term": "pesapap",
+      "def": "A fictional mobile-money service (\"pesa\" is money)."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "theRack"
+    ],
+    "beatNotes": "The rack. The fridge view shows the rack as a grid of slots with tube icons; the custody book sits beside it. Dragging each book line onto its slot fills the grid. B4 stays empty, and the empty square pulses once."
+  }
+}

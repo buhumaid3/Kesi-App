@@ -1,0 +1,2095 @@
+{
+  "meta": {
+    "id": "case-051",
+    "number": 51,
+    "region": "maasai-mara",
+    "regionNumber": 6,
+    "title": "Balloon Away",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 28,
+    "date": "Thursday 5 February",
+    "folderTab": "ENKARE"
+  },
+  "pattern": {
+    "crimePattern": "chase-vehicle driver kills the balloon crew chief who caught him selling the company's propane, and moves her to the landing site",
+    "noRealCaseRetold": true,
+    "notes": "Fictional balloon company, conservancy and lodge. Balloon operations shown in outline (inflation, chase vehicles, landing breakfast); the cultural reader is asked to check them. No propane handling detail beyond counting cylinders.",
+    "tags": [
+      "blunt-force",
+      "moved-body",
+      "theft",
+      "two-liars",
+      "records",
+      "forensics",
+      "when-strip",
+      "where"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 4,
+    "redHerrings": 1,
+    "liars": 2,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 03/05/02",
+    "date": "Thursday 5 February",
+    "time": "08:10",
+    "reportedBy": "Sunrise Balloon Safaris",
+    "text": "A balloon safari company reports its ground-crew chief, Naserian Nkoitoi (31), found dead under the folded balloon envelope at the morning landing site on the plains beside Enkare Conservancy at 07:35. Recorded as a suspected landing accident.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_landing",
+    "nodes": [
+      "loc_landing",
+      "loc_launch",
+      "loc_camp",
+      "loc_talek"
+    ],
+    "edges": [
+      {
+        "a": "loc_launch",
+        "b": "loc_landing",
+        "minutes": 40,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_launch",
+        "b": "loc_camp",
+        "minutes": 20,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_landing",
+        "b": "loc_camp",
+        "minutes": 45,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_launch",
+        "b": "loc_talek",
+        "minutes": 60,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_camp",
+        "b": "loc_talek",
+        "minutes": 50,
+        "by": "road"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_naserian",
+      "role": "victim",
+      "name": "Naserian Nkoitoi",
+      "age": 31,
+      "occupation": "Ground-crew chief, Sunrise Balloon Safaris",
+      "bio": "The company's first woman crew chief. Counts every propane cylinder after every launch, with a pencil and a tick.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_launch",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Maasai woman, early 30s, short hair, a company fleece over a red shuka, beaded earrings, a clipboard and pencil, the confident face of someone who runs a crew, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_musyoki",
+      "role": "suspect",
+      "name": "Musyoki Mutunga",
+      "age": 44,
+      "occupation": "Chase-vehicle 2 driver and crewman",
+      "bio": "Eleven years with the company. Drives the vehicle that tows the fan trailer.",
+      "community": "Kamba",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_radio_0735"
+      },
+      "at": "loc_launch",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba man, mid 40s, a crew T-shirt and a reflective vest, work gloves tucked in his belt, a wide friendly face that doesn't quite settle, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_graham",
+      "role": "suspect",
+      "name": "Graham Fenwick",
+      "age": 61,
+      "occupation": "Balloon pilot",
+      "redHerring": true,
+      "bio": "Born in Nanyuki. Thirty years flying balloons over the Mara. Argued with Naserian about the wind.",
+      "community": "Kenyan-European",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_air",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan-European man, early 60s, sun-creased face, a pilot's khaki shirt with wings, a hat pushed back, gruff, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_simon",
+      "role": "suspect",
+      "name": "Simon Saitabao",
+      "age": 27,
+      "occupation": "Chase-vehicle 1 driver",
+      "bio": "Drives the breakfast vehicle. New to the job and anxious to keep it.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_route1",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Maasai young man, late 20s, a crew T-shirt, a beaded bracelet, car keys in his hand, nervous, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_zablon",
+      "role": "suspect",
+      "name": "Zablon Onkware",
+      "age": 50,
+      "occupation": "Storekeeper, a Talek lodge",
+      "bio": "Keeps the store of a lodge in Talek town: flour, fuel, gas.",
+      "community": "Kisii",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_cylinders"
+      },
+      "at": "loc_talek",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kisii man, about 50, a storekeeper's brown dust coat, reading glasses, a stock book under his arm, ashamed, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_nkirote",
+      "role": "witness",
+      "name": "Nkirote Mwiti",
+      "age": 35,
+      "occupation": "Base radio operator",
+      "bio": "Runs the base radio at the company camp and logs every call.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_camp",
+      "image": null
+    },
+    {
+      "id": "p_kerubo",
+      "role": "witness",
+      "name": "Kerubo Nyamweya",
+      "age": 29,
+      "occupation": "Lodge kitchen supervisor, Talek",
+      "statementOnly": true,
+      "bio": "Opens the lodge kitchen with the storekeeper every morning.",
+      "community": "Kisii",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_talek",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_trailer",
+      "name": "Vehicle 2 and its fan trailer, at the launch site",
+      "within": "loc_launch"
+    },
+    {
+      "id": "plc_track",
+      "name": "Vehicle 2 on the track"
+    },
+    {
+      "id": "plc_route1",
+      "name": "Vehicle 1 on the track and at the landing site"
+    },
+    {
+      "id": "plc_air",
+      "name": "In the balloon basket"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_landing",
+      "name": "The landing site",
+      "kind": "scene",
+      "description": "Open plain of short dry grass and red soil, 14 km from the launch site. The balloon envelope lies folded in a long red-and-yellow sausage on the grass. A breakfast table with white cloth and champagne flutes stands a little way off.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Under the envelope",
+          "pos": [
+            44,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Naserian lies under the end of the folded envelope."
+        },
+        {
+          "id": "hs_ground",
+          "label": "The landing ground",
+          "pos": [
+            70,
+            74
+          ],
+          "yields": "ev_landsoil",
+          "text": "Dry red soil and short, grazed grass. Amani bags some."
+        },
+        {
+          "id": "hs_photos",
+          "label": "The guests",
+          "pos": [
+            82,
+            40
+          ],
+          "yields": "ev_photos",
+          "text": "Twelve guests with phones full of photographs of the landing and the toast."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "open short-grass plain in the Maasai Mara in early morning light, a red-and-yellow hot-air balloon envelope folded on the dry red soil, a breakfast table with a white cloth and champagne flutes in the distance, acacia trees on the horizon, no people in focus"
+      }
+    },
+    {
+      "id": "loc_launch",
+      "name": "The launch site",
+      "kind": "location",
+      "description": "A clearing in long grass beside the conservancy, black cotton soil still damp from the dew, burner scorch marks, a row of propane cylinders in a cage.",
+      "unlock": {
+        "fact": "f_tracker"
+      },
+      "hotspots": [
+        {
+          "id": "hs_cylinders",
+          "label": "Cylinder cage",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_cylinders",
+          "text": "The cylinder register on a clipboard wired to the cage."
+        },
+        {
+          "id": "hs_soil",
+          "label": "Launch-site ground",
+          "pos": [
+            66,
+            70
+          ],
+          "yields": "ev_launchsoil",
+          "text": "Damp black clay and long seeding grass. Amani bags some."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a balloon launch clearing in long grass at dawn, damp black cotton soil, a cage of propane cylinders, burner scorch marks on the ground, the Mara plains beyond"
+      }
+    },
+    {
+      "id": "loc_camp",
+      "name": "Sunrise Balloon Safaris camp",
+      "kind": "location",
+      "description": "The company's base: a radio room, a fleet office, a yard where the chase vehicles park with their trailers.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_v2",
+          "label": "Vehicle 2 and trailer",
+          "pos": [
+            70,
+            50
+          ],
+          "yields": "ev_wrench",
+          "text": "Chase vehicle 2's toolbox. The lid's rubber seal has a smear."
+        },
+        {
+          "id": "hs_trailer",
+          "label": "The fan trailer",
+          "pos": [
+            84,
+            56
+          ],
+          "yields": "ev_cover",
+          "text": "In the trailer, a spare envelope cover, folded wet."
+        },
+        {
+          "id": "hs_fleet",
+          "label": "Fleet office",
+          "pos": [
+            36,
+            40
+          ],
+          "yields": "ev_tracker",
+          "text": "The fleet manager prints this morning's tracker log."
+        },
+        {
+          "id": "hs_files",
+          "label": "Payroll and roster",
+          "pos": [
+            20,
+            46
+          ],
+          "yields": "ev_files",
+          "text": "The crew payroll and the crew-chief appointment file."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a balloon safari company base camp in the Mara, a radio room with a mast, two chase vehicles with trailers parked in a yard, a fleet office"
+      }
+    },
+    {
+      "id": "loc_talek",
+      "name": "Lodge store, Talek",
+      "kind": "location",
+      "description": "A lodge supply store on Talek's main street: sacks of flour, crates of soda, and a row of gas cylinders by the back door.",
+      "unlock": {
+        "fact": "f_cylinders"
+      },
+      "hotspots": [
+        {
+          "id": "hs_gas",
+          "label": "Gas cylinders",
+          "pos": [
+            60,
+            50
+          ],
+          "yields": "ev_lodge_store",
+          "text": "Three tall cylinders with their serial tags filed off."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the inside of a lodge supply store in Talek town, sacks of flour and crates of soda, a row of tall propane cylinders by a back door"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Under the envelope",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. One head wound. Mud on her boots and the back of her jacket."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the end of a folded red-and-yellow balloon envelope on dry short grass, a crew clipboard lying nearby, no body visible"
+      }
+    },
+    {
+      "id": "ev_radio",
+      "type": "physical",
+      "title": "Base radio log",
+      "render": "logBook",
+      "body": {
+        "entries": [
+          "06:25 — Naserian: \"Balloon away, launch clear, counting cylinders.\"",
+          "07:00 — base calls Naserian: no answer.",
+          "07:35 — Musyoki: \"Naserian is under the envelope!\""
+        ]
+      },
+      "facts": [
+        "f_radio_0625",
+        "f_radio_0700",
+        "f_radio_0735"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_photos",
+      "type": "phone",
+      "title": "Guests' photos",
+      "render": "photo",
+      "body": {
+        "frames": "07:22–07:35: the balloon landing, the champagne toast. No Naserian in any photo. Chase vehicle 2 arrives in the background at 07:28."
+      },
+      "facts": [
+        "f_photos"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_landsoil",
+      "type": "physical",
+      "title": "Landing-site soil",
+      "render": "object",
+      "body": {
+        "label": "Dry red soil and short grass."
+      },
+      "facts": [
+        "f_landing_ground"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_launchsoil",
+      "type": "physical",
+      "title": "Launch-site soil",
+      "render": "object",
+      "body": {
+        "label": "Damp black cotton clay with long-grass seeds."
+      },
+      "facts": [
+        "f_launch_ground"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tracker",
+      "type": "physical",
+      "title": "Fleet tracker log",
+      "render": "logBook",
+      "body": {
+        "v1": "Vehicle 1: leaves the launch site 06:20; at the landing site from 07:00.",
+        "v2": "Vehicle 2: stationary at the launch site 06:20–06:52; arrives at the landing site 07:28."
+      },
+      "facts": [
+        "f_tracker"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_cylinders",
+      "type": "physical",
+      "title": "Cylinder register",
+      "render": "ledger",
+      "body": {
+        "today": "Twelve cylinders out. Pencil ticks stop at cylinder 9.",
+        "missing": "Three serial tags missing from the count.",
+        "margin": "Her pencil: \"Zablon — Talek lodge store?\""
+      },
+      "facts": [
+        "f_cylinders"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lodge_store",
+      "type": "physical",
+      "title": "Talek lodge store",
+      "render": "receipt",
+      "body": {
+        "cylinders": "Three cylinders, serial tags filed off, the Sunrise logo faint under new paint.",
+        "receipts": "PesaPap: Z. Onkware to MUSYOKI MUTUNGA, weekly since October."
+      },
+      "facts": [
+        "f_lodge_cyl",
+        "f_receipts"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Musyoki Mutunga's line",
+      "render": "manifest",
+      "body": {
+        "pesapap": "Weekly receipts from Z. ONKWARE since October.",
+        "masts": "Launch-site zone 06:15–06:50; then the landing-site zone from 07:25."
+      },
+      "facts": [
+        "f_rec_mus_pay",
+        "f_rec_mus_mast"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_receipts"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_wrench",
+      "type": "physical",
+      "title": "Vehicle 2 toolbox",
+      "render": "object",
+      "body": {
+        "label": "A cylinder valve wrench with a hexagonal jaw, washed. A smear on the lid's rubber seal."
+      },
+      "facts": [
+        "f_wrench"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a heavy steel cylinder valve wrench with a hexagonal jaw, recently washed, lying in an open vehicle toolbox"
+      }
+    },
+    {
+      "id": "ev_cover",
+      "type": "physical",
+      "title": "Spare envelope cover",
+      "render": "object",
+      "body": {
+        "label": "Folded wet in the fan trailer. Black clay and long-grass seeds in its folds."
+      },
+      "facts": [
+        "f_cover"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_files",
+      "type": "physical",
+      "title": "Payroll and crew file",
+      "render": "form",
+      "body": {
+        "payroll": "January wages paid in full to every crew member, 31 January.",
+        "file": "Crew-chief post, last year: one application, N. Nkoitoi. M. Mutunga did not apply."
+      },
+      "facts": [
+        "f_wages_paid",
+        "f_no_application"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_graham",
+      "type": "physical",
+      "title": "Flight GPS log",
+      "render": "logBook",
+      "body": {
+        "flight": "Airborne 06:15, landed 07:20, twelve guests.",
+        "note": "Pre-flight: wind marginal (crew chief). Go decision: pilot."
+      },
+      "facts": [
+        "f_graham_air",
+        "f_go_decision"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kerubo",
+      "type": "witness",
+      "title": "Statement: Kerubo Nyamweya",
+      "render": "statement",
+      "body": {
+        "speaker": "p_kerubo"
+      },
+      "facts": [
+        "f_zablon_talek"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_nkirote",
+      "type": "witness",
+      "title": "Statement: Nkirote Mwiti",
+      "render": "statement",
+      "body": {
+        "speaker": "p_nkirote"
+      },
+      "facts": [
+        "f_nkirote_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_wrench",
+        "f_aut_nocrush",
+        "f_aut_lividity",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_soil",
+      "type": "forensic",
+      "title": "Lab: soil (boots vs both sites)",
+      "render": "labReport",
+      "body": {
+        "test": "soil"
+      },
+      "facts": [
+        "f_soil_lab"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "soil",
+        "hours": 8,
+        "needs": [
+          "ev_body",
+          "ev_launchsoil",
+          "ev_landsoil"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_trace",
+      "type": "forensic",
+      "title": "Lab: trace (valve wrench)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_trace"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_wrench"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Naserian Nkoitoi, ground-crew chief, was found dead under the folded balloon envelope at the landing site at 07:35. Recorded as a suspected landing accident.",
+      "kind": "true",
+      "about": [
+        "p_naserian",
+        "loc_landing"
+      ],
+      "at": {
+        "from": "07:35"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "One head wound. Damp mud on her boots and the back of her jacket.",
+      "kind": "true",
+      "about": [
+        "p_naserian",
+        "loc_landing"
+      ]
+    },
+    {
+      "id": "f_radio_0625",
+      "text": "Base radio log, 06:25, Naserian: \"Balloon away, launch clear, counting cylinders.\"",
+      "kind": "true",
+      "about": [
+        "p_naserian",
+        "loc_launch"
+      ],
+      "at": {
+        "from": "06:25"
+      }
+    },
+    {
+      "id": "f_radio_0700",
+      "text": "Base radio log, 07:00: base calls Naserian. No answer.",
+      "kind": "true",
+      "about": [
+        "p_naserian"
+      ],
+      "at": {
+        "from": "07:00"
+      }
+    },
+    {
+      "id": "f_radio_0735",
+      "text": "Base radio log, 07:35, Musyoki: \"Naserian is under the envelope!\"",
+      "kind": "true",
+      "about": [
+        "p_musyoki"
+      ],
+      "at": {
+        "from": "07:35"
+      }
+    },
+    {
+      "id": "f_photos",
+      "text": "Guests' photos, 07:22–07:35: the landing and the toast. Naserian is in none of them. Chase vehicle 2 arrives in the background at 07:28.",
+      "kind": "true",
+      "about": [
+        "loc_landing"
+      ],
+      "at": {
+        "from": "07:22",
+        "to": "07:35"
+      }
+    },
+    {
+      "id": "f_landing_ground",
+      "text": "The landing site is dry red soil and short, grazed grass.",
+      "kind": "true",
+      "about": [
+        "loc_landing"
+      ]
+    },
+    {
+      "id": "f_launch_ground",
+      "text": "The launch site is damp black cotton clay with long, seeding grass.",
+      "kind": "true",
+      "about": [
+        "loc_launch"
+      ]
+    },
+    {
+      "id": "f_tracker",
+      "text": "Fleet tracker: vehicle 1 left the launch site at 06:20. Vehicle 2 stayed at the launch site from 06:20 to 06:52, then drove to the landing site, arriving 07:28.",
+      "kind": "true",
+      "about": [
+        "p_musyoki",
+        "p_simon"
+      ],
+      "at": {
+        "from": "06:20",
+        "to": "07:28"
+      }
+    },
+    {
+      "id": "f_cylinders",
+      "text": "Cylinder register: three serial tags missing from today's count. Naserian's ticks stop at cylinder 9 of 12. In the margin: \"Zablon — Talek lodge store?\"",
+      "kind": "true",
+      "about": [
+        "p_naserian",
+        "p_zablon"
+      ]
+    },
+    {
+      "id": "f_lodge_cyl",
+      "text": "In the Talek lodge store: three cylinders with their serial tags filed off, the Sunrise logo still faint under new paint.",
+      "kind": "true",
+      "about": [
+        "p_zablon"
+      ]
+    },
+    {
+      "id": "f_receipts",
+      "text": "Zablon's PesaPap receipts: weekly payments to MUSYOKI MUTUNGA since October.",
+      "kind": "true",
+      "about": [
+        "p_zablon",
+        "p_musyoki"
+      ]
+    },
+    {
+      "id": "f_rec_mus_pay",
+      "text": "Records, Musyoki's PesaPap: weekly receipts from Z. ONKWARE since October.",
+      "kind": "true",
+      "about": [
+        "p_musyoki"
+      ]
+    },
+    {
+      "id": "f_rec_mus_mast",
+      "text": "Records, Musyoki's line: launch-site zone 06:15–06:50; landing-site zone from 07:25.",
+      "kind": "true",
+      "about": [
+        "p_musyoki"
+      ],
+      "at": {
+        "from": "06:15",
+        "to": "06:50"
+      }
+    },
+    {
+      "id": "f_wrench",
+      "text": "Vehicle 2's toolbox: a cylinder valve wrench with a hexagonal jaw, washed. The lid's rubber seal has a smear.",
+      "kind": "true",
+      "about": [
+        "p_musyoki"
+      ]
+    },
+    {
+      "id": "f_cover",
+      "text": "In vehicle 2's fan trailer: a spare envelope cover, folded wet, with black clay and long-grass seeds in its folds.",
+      "kind": "true",
+      "about": [
+        "p_musyoki"
+      ]
+    },
+    {
+      "id": "f_wages_paid",
+      "text": "Payroll: January wages paid in full to every crew member on 31 January.",
+      "kind": "true",
+      "about": [
+        "loc_camp"
+      ]
+    },
+    {
+      "id": "f_no_application",
+      "text": "Crew file: Naserian was the only applicant for crew chief last year. Musyoki didn't apply.",
+      "kind": "true",
+      "about": [
+        "p_musyoki",
+        "p_naserian"
+      ]
+    },
+    {
+      "id": "f_graham_air",
+      "text": "Flight GPS log: airborne from 06:15 to 07:20 with twelve guests.",
+      "kind": "true",
+      "about": [
+        "p_graham"
+      ],
+      "where": {
+        "person": "p_graham",
+        "place": "plc_air",
+        "from": "06:15",
+        "to": "07:20"
+      },
+      "at": {
+        "from": "06:15",
+        "to": "07:20"
+      }
+    },
+    {
+      "id": "f_go_decision",
+      "text": "Flight log, pre-flight: \"Wind marginal (crew chief). Go decision: pilot.\"",
+      "kind": "true",
+      "about": [
+        "p_graham",
+        "p_naserian"
+      ]
+    },
+    {
+      "id": "f_zablon_talek",
+      "text": "Kerubo: Zablon opened the lodge store with her at 06:30, as every day, an hour's drive from the launch site.",
+      "kind": "true",
+      "about": [
+        "p_kerubo",
+        "p_zablon"
+      ],
+      "where": {
+        "person": "p_zablon",
+        "place": "loc_talek",
+        "from": "06:15",
+        "to": "08:30"
+      }
+    },
+    {
+      "id": "f_nkirote_self",
+      "text": "Nkirote was at the base radio all morning; her own log entries run every few minutes from 05:30.",
+      "kind": "true",
+      "about": [
+        "p_nkirote"
+      ],
+      "where": {
+        "person": "p_nkirote",
+        "place": "loc_camp",
+        "from": "05:30",
+        "to": "08:30"
+      }
+    },
+    {
+      "id": "f_aut_wrench",
+      "text": "Autopsy: a single blow with a heavy metal tool with a hexagonal jaw.",
+      "kind": "true",
+      "about": [
+        "p_naserian"
+      ]
+    },
+    {
+      "id": "f_aut_nocrush",
+      "text": "Autopsy: no crush injuries of the kind a landing basket causes, no burns, no trampling.",
+      "kind": "true",
+      "about": [
+        "p_naserian"
+      ]
+    },
+    {
+      "id": "f_aut_lividity",
+      "text": "Autopsy: lividity shows she lay curled on her side for a while, and was then laid flat.",
+      "kind": "true",
+      "about": [
+        "p_naserian"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 06:25 and 07:00.",
+      "kind": "true",
+      "about": [
+        "p_naserian"
+      ],
+      "at": {
+        "from": "06:25",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_soil_lab",
+      "text": "Lab: the clay and seeds on her boots and jacket are from the launch site, not the landing site.",
+      "kind": "true",
+      "about": [
+        "p_naserian",
+        "loc_launch"
+      ]
+    },
+    {
+      "id": "f_trace",
+      "text": "Lab: Naserian's blood in the jaw of the valve wrench.",
+      "kind": "true",
+      "about": [
+        "p_naserian",
+        "p_musyoki"
+      ]
+    },
+    {
+      "id": "f_mus_together",
+      "text": "Musyoki: \"I left the launch site with Simon at twenty past six and found her at the landing site.\"",
+      "kind": "lie",
+      "about": [
+        "p_musyoki"
+      ]
+    },
+    {
+      "id": "f_mus_stayed",
+      "text": "Musyoki admits he stayed at the launch site after vehicle 1 left, \"to load the fan\".",
+      "kind": "true",
+      "about": [
+        "p_musyoki"
+      ],
+      "where": {
+        "person": "p_musyoki",
+        "place": "plc_trailer",
+        "from": "06:20",
+        "to": "06:52"
+      }
+    },
+    {
+      "id": "f_mus_fine",
+      "text": "Musyoki: \"She was counting. She was fine when I left.\"",
+      "kind": "lie",
+      "about": [
+        "p_musyoki"
+      ]
+    },
+    {
+      "id": "f_simon_together",
+      "text": "Simon: \"Both vehicles left together at 06:20.\"",
+      "kind": "lie",
+      "about": [
+        "p_simon"
+      ]
+    },
+    {
+      "id": "f_simon_ahead",
+      "text": "Simon: he went ahead alone with the breakfast at 06:20, against the rule, and set up the table at the landing site.",
+      "kind": "true",
+      "about": [
+        "p_simon"
+      ],
+      "where": {
+        "person": "p_simon",
+        "place": "plc_route1",
+        "from": "06:20",
+        "to": "07:40"
+      }
+    },
+    {
+      "id": "f_graham_claim",
+      "text": "Graham: \"I was flying twelve guests over the Mara.\"",
+      "kind": "claim",
+      "about": [
+        "p_graham"
+      ]
+    },
+    {
+      "id": "f_graham_wind",
+      "text": "Graham: \"She said the wind was marginal. She was right. I was lucky.\"",
+      "kind": "true",
+      "about": [
+        "p_graham",
+        "p_naserian"
+      ]
+    },
+    {
+      "id": "f_zab_claim",
+      "text": "Zablon: \"I bought gas from Musyoki. I didn't ask where from.\"",
+      "kind": "claim",
+      "about": [
+        "p_zablon",
+        "p_musyoki"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_musyoki",
+      "stance": "cooperative",
+      "intro": "Musyoki sits on the trailer hitch, cap in his hands. \"I left with Simon at twenty past six. I found her. I found her under the envelope.\"",
+      "claims": [
+        "f_mus_together"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_mus_fine",
+          "after": "f_mus_stayed"
+        }
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_cylinders",
+          "reply": "Tags fall off. The cage is old. Ask the camp to buy a new one.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_simon",
+      "stance": "cooperative",
+      "intro": "Simon keeps glancing at the fleet office. \"Both vehicles left together at 06:20. That's the rule.\"",
+      "claims": [
+        "f_simon_together"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_graham",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_radio"
+      ],
+      "intro": "Graham is folding the burner covers and doesn't stop. \"I fly. The ground is the crew's business.\"",
+      "claims": [
+        "f_graham_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_naserian",
+          "reply": "She said the wind was marginal. She was right. I was lucky. It's in my log; read it.",
+          "reveals": [
+            "f_graham_wind",
+            "ev_graham"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_zablon",
+      "stance": "cooperative",
+      "intro": "Zablon stands among his flour sacks, not meeting your eye. \"I bought gas from Musyoki. I didn't ask where from.\"",
+      "claims": [
+        "f_zab_claim"
+      ],
+      "yields": [
+        "ev_lodge_store"
+      ],
+      "topics": [
+        {
+          "about": "p_naserian",
+          "reply": "I never met her. I opened the store at half past six this morning. Kerubo opens the kitchen with me every day.",
+          "reveals": [
+            "ev_kerubo"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_nkirote",
+      "stance": "cooperative",
+      "intro": "Nkirote has the base log open in front of her and her headset round her neck. \"She called at twenty-five past six. Then nothing.\"",
+      "claims": [],
+      "yields": [
+        "ev_radio",
+        "ev_nkirote"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_mus",
+      "claim": "f_mus_together",
+      "brokenBy": [
+        "f_tracker"
+      ],
+      "reveals": [
+        "f_mus_stayed"
+      ],
+      "reaction": "\"...I stayed to load the fan. She was counting. She was fine when I left.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_simon",
+      "claim": "f_simon_together",
+      "brokenBy": [
+        "f_tracker"
+      ],
+      "reveals": [
+        "f_simon_ahead"
+      ],
+      "reaction": "\"I went ahead. We're not supposed to. The breakfast was late. Musyoki stayed behind.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_mus_fine",
+      "claim": "f_mus_fine",
+      "brokenBy": [
+        "f_trace",
+        "f_soil_lab"
+      ],
+      "reveals": [],
+      "reaction": "Musyoki looks at the lab sheet for a long time. \"Three cylinders,\" he says. \"Three. She would have had me sacked for three cylinders.\" Then he stops.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_musyoki",
+      "text": "Musyoki Mutunga",
+      "category": "person",
+      "ref": "p_musyoki",
+      "unlock": {
+        "anyOf": [
+          "f_radio_0735"
+        ]
+      }
+    },
+    {
+      "id": "w_graham",
+      "text": "Graham Fenwick",
+      "category": "person",
+      "ref": "p_graham",
+      "unlock": {
+        "anyOf": [
+          "f_go_decision",
+          "f_graham_claim"
+        ]
+      }
+    },
+    {
+      "id": "w_simon",
+      "text": "Simon Saitabao",
+      "category": "person",
+      "ref": "p_simon",
+      "unlock": {
+        "anyOf": [
+          "f_tracker"
+        ]
+      }
+    },
+    {
+      "id": "w_zablon",
+      "text": "Zablon Onkware",
+      "category": "person",
+      "ref": "p_zablon",
+      "unlock": {
+        "anyOf": [
+          "f_cylinders"
+        ]
+      }
+    },
+    {
+      "id": "w_nkirote",
+      "text": "Nkirote Mwiti",
+      "category": "person",
+      "ref": "p_nkirote",
+      "unlock": {
+        "anyOf": [
+          "f_radio_0625"
+        ]
+      }
+    },
+    {
+      "id": "pl_launch",
+      "text": "the launch site",
+      "category": "place",
+      "ref": "loc_launch",
+      "unlock": {
+        "anyOf": [
+          "f_radio_0625"
+        ]
+      }
+    },
+    {
+      "id": "pl_landing",
+      "text": "the landing site",
+      "category": "place",
+      "ref": "loc_landing",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_track",
+      "text": "vehicle 2 on the track",
+      "category": "place",
+      "ref": "plc_track",
+      "unlock": {
+        "anyOf": [
+          "f_tracker"
+        ]
+      }
+    },
+    {
+      "id": "pl_talek",
+      "text": "the Talek lodge store",
+      "category": "place",
+      "ref": "loc_talek",
+      "unlock": {
+        "anyOf": [
+          "f_cylinders"
+        ]
+      }
+    },
+    {
+      "id": "pl_camp",
+      "text": "the company camp",
+      "category": "place",
+      "ref": "loc_camp",
+      "unlock": {
+        "anyOf": [
+          "f_radio_0700"
+        ]
+      }
+    },
+    {
+      "id": "h_wrench",
+      "text": "struck with a cylinder valve wrench",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_wrench"
+        ]
+      }
+    },
+    {
+      "id": "h_basket",
+      "text": "struck by the basket on landing",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_burn",
+      "text": "burned in a propane flash",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_wildebeest",
+      "text": "trampled by wildebeest",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_fell",
+      "text": "fell from a chase vehicle",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_tracker"
+        ]
+      }
+    },
+    {
+      "id": "m_propane",
+      "text": "she'd caught him stealing and selling the company's propane",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_cylinders"
+        ]
+      }
+    },
+    {
+      "id": "m_wind",
+      "text": "the argument about the wind",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_go_decision"
+        ]
+      }
+    },
+    {
+      "id": "m_split",
+      "text": "the chase vehicles splitting up",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_tracker"
+        ]
+      }
+    },
+    {
+      "id": "m_wages",
+      "text": "unpaid crew wages",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_promo",
+      "text": "jealousy over her promotion",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_radio_0625"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Naserian Nkoitoi"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_0615",
+                  "label": "06:15",
+                  "from": "06:15",
+                  "to": "06:15"
+                },
+                {
+                  "id": "sl_0625",
+                  "label": "06:25",
+                  "from": "06:25",
+                  "to": "06:25"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "06:25–06:52",
+                  "from": "06:25",
+                  "to": "06:52"
+                },
+                {
+                  "id": "sl_0720",
+                  "label": "07:20",
+                  "from": "07:20",
+                  "to": "07:20"
+                },
+                {
+                  "id": "sl_0735",
+                  "label": "07:35",
+                  "from": "07:35",
+                  "to": "07:35"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_lift",
+                  "text": "Lift-off",
+                  "slot": "sl_0615",
+                  "by": [
+                    "f_graham_air"
+                  ],
+                  "why": "The flight GPS log: airborne at 06:15.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_graham_air"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_radio",
+                  "text": "Naserian's last radio call",
+                  "slot": "sl_0625",
+                  "by": [
+                    "f_radio_0625"
+                  ],
+                  "why": "\"Balloon away, launch clear, counting cylinders\": 06:25.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_radio_0625"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Naserian is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_radio_0625",
+                    "f_tracker",
+                    "f_aut_tod",
+                    "f_mus_stayed"
+                  ],
+                  "why": "Alive on the radio at 06:25; vehicle 2 left the launch site at 06:52 with her in the trailer cover.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_found",
+                  "text": "Musyoki \"finds\" her",
+                  "slot": "sl_0735",
+                  "by": [
+                    "f_radio_0735"
+                  ],
+                  "why": "His radio call at 07:35.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_radio_0735"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_0720",
+                  "by": [
+                    "f_graham_air",
+                    "f_photos"
+                  ],
+                  "why": "07:20 is when the balloon landed. Naserian wasn't there: she's in none of the photos."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "Lift-off, her last call at twenty-five past, dead before vehicle 2 moved at 06:52, \"found\" at 07:35. That's the morning.",
+          "fail": [
+            "20 past 7 is the landing. She never reached it alive.",
+            "She was on the radio at 06:25. Start there."
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_launch"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Black clay on her boots, curled up somewhere before she was laid flat, and her last call from the launch site. She died where she was counting.",
+          "fail": [
+            "The landing site is red soil and short grass. Look at her boots.",
+            "Vehicle 2 didn't move until 06:52. Where was it?"
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_musyoki"
+          }
+        ],
+        "prosecutor": {
+          "pass": "His vehicle sat at the launch site for thirty-two minutes after he says he left, his wrench carries her blood, and his name is on the store's receipts. That will hold.",
+          "fail": [
+            "The pilot was in the air with twelve witnesses.",
+            "Simon broke the rule and went ahead. Who stayed behind?"
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_wrench"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A hexagonal jaw, one blow. Yes.",
+          "fail": [
+            "No crush injuries. The basket never touched her.",
+            "One blow from a tool with a hexagonal jaw. What opens a gas cylinder?"
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_propane"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Three tags missing and a weekly receipt from Talek. That's the reason.",
+          "fail": [
+            "The wind argument was the pilot's, and he was flying.",
+            "He never applied for her job."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_launch",
+      "from": "06:25",
+      "to": "06:52",
+      "within": [
+        "plc_trailer"
+      ],
+      "note": "Alive on the radio at 06:25; vehicle 2 left the launch site with her at 06:52. The autopsy allows 06:25–07:00."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_radio_0625",
+          "f_aut_tod",
+          "f_body",
+          "f_launch_ground",
+          "f_landing_ground",
+          "f_soil_lab",
+          "f_photos",
+          "f_aut_lividity"
+        ],
+        "concludes": "Naserian was alive at the launch site at 06:25 and died soon after. The clay on her boots is the launch site's; she lay curled up before she was laid flat, and she never reached the landing site alive.",
+        "answers": [
+          "where"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_tracker",
+          "f_mus_together",
+          "f_simon_together",
+          "f_simon_ahead",
+          "f_mus_stayed",
+          "f_radio_0700",
+          "f_radio_0735"
+        ],
+        "concludes": "Simon left at 06:20; Musyoki and vehicle 2 stayed at the launch site until 06:52. She died between 06:25 and 06:52, and Musyoki \"found\" her at 07:35.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_cylinders",
+          "f_lodge_cyl",
+          "f_receipts",
+          "f_rec_mus_pay"
+        ],
+        "concludes": "Musyoki has been selling the company's propane to a Talek lodge store for months; Naserian's count stopped three short."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_wrench",
+          "f_cover",
+          "f_aut_wrench",
+          "f_trace",
+          "f_mus_fine"
+        ],
+        "concludes": "The valve wrench in his toolbox carries her blood, and the trailer cover holds the launch-site clay. At the launch site, Musyoki Mutunga struck Naserian with a cylinder valve wrench because she'd caught him stealing and selling the company's propane.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_landing",
+        "blank": "where",
+        "by": [
+          "f_soil_lab",
+          "f_photos",
+          "f_aut_lividity"
+        ],
+        "why": "Her boots carry the launch site's clay, she's in none of the landing photos, and she lay curled up somewhere else first."
+      },
+      {
+        "word": "pl_track",
+        "blank": "where",
+        "by": [
+          "f_tracker"
+        ],
+        "why": "Vehicle 2 didn't move from the launch site until 06:52, after she was dead."
+      },
+      {
+        "word": "pl_talek",
+        "blank": "where",
+        "by": [
+          "f_radio_0625",
+          "f_aut_tod"
+        ],
+        "why": "She radioed from the launch site at 06:25, an hour from Talek, and was dead within half an hour."
+      },
+      {
+        "word": "pl_camp",
+        "blank": "where",
+        "by": [
+          "f_radio_0625",
+          "f_radio_0700"
+        ],
+        "why": "She never came back to the camp; the camp was calling her at 07:00."
+      },
+      {
+        "word": "w_graham",
+        "blank": "who",
+        "by": [
+          "f_graham_air"
+        ],
+        "why": "Graham was in the air with twelve guests from 06:15 to 07:20."
+      },
+      {
+        "word": "w_simon",
+        "blank": "who",
+        "by": [
+          "f_simon_ahead",
+          "f_tracker"
+        ],
+        "why": "Simon left the launch site at 06:20 and was setting up breakfast. He broke the rule; he didn't kill her."
+      },
+      {
+        "word": "w_zablon",
+        "blank": "who",
+        "by": [
+          "f_zablon_talek"
+        ],
+        "why": "Zablon was opening the lodge store in Talek, an hour away."
+      },
+      {
+        "word": "w_nkirote",
+        "blank": "who",
+        "by": [
+          "f_nkirote_self"
+        ],
+        "why": "Nkirote was at the base radio all morning, logging every few minutes."
+      },
+      {
+        "word": "h_basket",
+        "blank": "how",
+        "by": [
+          "f_aut_nocrush",
+          "f_soil_lab"
+        ],
+        "why": "No crush injuries, and she died at the launch site, not the landing."
+      },
+      {
+        "word": "h_burn",
+        "blank": "how",
+        "by": [
+          "f_aut_nocrush"
+        ],
+        "why": "No burns."
+      },
+      {
+        "word": "h_wildebeest",
+        "blank": "how",
+        "by": [
+          "f_aut_nocrush"
+        ],
+        "why": "No trampling injuries."
+      },
+      {
+        "word": "h_fell",
+        "blank": "how",
+        "by": [
+          "f_aut_wrench"
+        ],
+        "why": "One blow from a tool with a hexagonal jaw, not a fall."
+      },
+      {
+        "word": "m_wind",
+        "blank": "why",
+        "by": [
+          "f_graham_wind",
+          "f_graham_air"
+        ],
+        "why": "That argument was the pilot's, and he was flying."
+      },
+      {
+        "word": "m_split",
+        "blank": "why",
+        "by": [
+          "f_simon_ahead"
+        ],
+        "why": "Splitting up was Simon's rule-breaking, not a motive."
+      },
+      {
+        "word": "m_wages",
+        "blank": "why",
+        "by": [
+          "f_wages_paid"
+        ],
+        "why": "Every crew member was paid in full on 31 January."
+      },
+      {
+        "word": "m_promo",
+        "blank": "why",
+        "by": [
+          "f_no_application"
+        ],
+        "why": "Musyoki never applied for the crew-chief post."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "For months Musyoki takes two or three full propane cylinders a week from the cage and sells them to the Talek lodge store. Zablon pays by PesaPap and doesn't ask.",
+        "image": null
+      },
+      {
+        "text": "Thursday, 06:15. The balloon lifts with Graham and twelve guests. At 06:20 Simon drives ahead with the breakfast, against the rule. Musyoki stays behind \"to load the fan\".",
+        "image": null
+      },
+      {
+        "text": "06:25. Naserian radios: \"Balloon away, launch clear, counting cylinders.\" At cylinder 9 she stops ticking. Three tags are missing.",
+        "image": null
+      },
+      {
+        "text": "About 06:30 she confronts him. He strikes her once with the valve wrench, wraps her in the spare envelope cover and lays her in the fan trailer.",
+        "image": "loc_launch"
+      },
+      {
+        "text": "06:52, vehicle 2 leaves the launch site. While the guests toast the landing, he lays her under the folded envelope. At 07:35 he shouts on the radio that he's found her.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "One records request. Travel follows the site map. No detention needed: the wrench and the soil go to the lab and come back in 12 and 8 hours.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_landing",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_photos",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_landsoil",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_camp",
+        "hours": 1,
+        "from": "loc_landing"
+      },
+      {
+        "do": "visit",
+        "target": "loc_camp",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_nkirote"
+      },
+      {
+        "do": "read",
+        "target": "ev_tracker",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_wrench",
+        "hours": 1
+      },
+      {
+        "do": "submit",
+        "target": "ev_trace"
+      },
+      {
+        "do": "read",
+        "target": "ev_cover",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_files",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_simon"
+      },
+      {
+        "do": "press",
+        "target": "c_simon"
+      },
+      {
+        "do": "interview",
+        "target": "p_musyoki"
+      },
+      {
+        "do": "press",
+        "target": "c_mus"
+      },
+      {
+        "do": "travel",
+        "target": "loc_launch",
+        "hours": 1,
+        "from": "loc_camp"
+      },
+      {
+        "do": "visit",
+        "target": "loc_launch",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_cylinders",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_launchsoil",
+        "hours": 0
+      },
+      {
+        "do": "submit",
+        "target": "ev_soil"
+      },
+      {
+        "do": "travel",
+        "target": "loc_talek",
+        "hours": 1,
+        "from": "loc_launch"
+      },
+      {
+        "do": "visit",
+        "target": "loc_talek",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_zablon"
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_musyoki"
+      },
+      {
+        "do": "press",
+        "target": "c_mus_fine"
+      }
+    ],
+    "totalHours": 30
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_radio",
+        "line": "The base logs every call. When did she last speak, and when did vehicle 2 move?"
+      },
+      "tier2": {
+        "facts": [
+          "f_radio_0625",
+          "f_tracker"
+        ],
+        "line": "A call at 06:25. A vehicle that sat still until 06:52."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_landsoil",
+        "line": "Compare the ground where she was found with what's on her boots."
+      },
+      "tier2": {
+        "facts": [
+          "f_launch_ground",
+          "f_landing_ground"
+        ],
+        "line": "Black clay and long-grass seeds, on a plain of red soil and short grass."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_tracker",
+        "line": "Two chase vehicles. One left at 06:20. Where was the other?"
+      },
+      "tier2": {
+        "facts": [
+          "f_tracker",
+          "f_receipts"
+        ],
+        "line": "Vehicle 2 sat at the launch site until 06:52, and its driver is paid weekly by a Talek store."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Dr. Chebii describes the jaw of the tool. What on a balloon crew has a hexagonal jaw?"
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_wrench",
+          "f_wrench"
+        ],
+        "line": "One blow, a hexagonal jaw, and a washed valve wrench in vehicle 2."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_cylinders",
+        "line": "Where did her count stop? Read the margin."
+      },
+      "tier2": {
+        "facts": [
+          "f_cylinders",
+          "f_lodge_cyl"
+        ],
+        "line": "Three tags missing, and three cylinders with filed tags in a Talek store."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "puto",
+      "def": "Balloon."
+    },
+    {
+      "term": "gesi",
+      "def": "Gas; here, propane."
+    },
+    {
+      "term": "enkare",
+      "def": "Maa: water. The conservancy's name."
+    },
+    {
+      "term": "shuka",
+      "def": "A Maasai cloth worn wrapped round the body, often red."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "siteMap",
+      "whereBlank"
+    ],
+    "beatNotes": "The site map with travel times, and the WHERE blank. Moving between sites now spends the clock visibly; a small 4×4 icon drives the track. The body pin on the landing site and the clay on her boots point at two different places."
+  }
+}

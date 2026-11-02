@@ -1,0 +1,2509 @@
+{
+  "meta": {
+    "id": "case-081",
+    "number": 81,
+    "region": "westlands-karen-runda",
+    "regionNumber": 9,
+    "title": "Two Keys",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 40,
+    "date": "Sunday 16 August",
+    "folderTab": "KAREN"
+  },
+  "pattern": {
+    "crimePattern": "a daughter-in-law who nursed an old man for six years kills him with his own insulin the weekend before he sells the family land, using a key her son had copied",
+    "noRealCaseRetold": true,
+    "notes": "Fictional family, school trust and house. Teaches the ACCOMPLICE group plainly: the son knowingly had the key cut; the housekeeper lent the spare without knowing why and is refuted by what she knew.",
+    "tags": [
+      "insulin",
+      "poison",
+      "land",
+      "inheritance",
+      "accomplice",
+      "three-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 5,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "accomplice",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 07/16/08",
+    "date": "Sunday 16 August",
+    "time": "10:30",
+    "reportedBy": "Advocate Simon Maina, for the Ngong Hills Academy Trust",
+    "text": "An advocate for a school trust reports that his client, Mzee Josiah Kamande (79), died in his sleep at his house in Karen on Saturday night, two days before he was due to sign a land sale. The family doctor was ready to certify natural causes.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_house",
+    "nodes": [
+      "loc_house",
+      "loc_cottage",
+      "loc_stables",
+      "loc_kiosk",
+      "loc_club"
+    ],
+    "edges": [
+      {
+        "a": "loc_house",
+        "b": "loc_cottage",
+        "minutes": 1,
+        "by": "foot"
+      },
+      {
+        "a": "loc_house",
+        "b": "loc_stables",
+        "minutes": 3,
+        "by": "foot"
+      },
+      {
+        "a": "loc_cottage",
+        "b": "loc_stables",
+        "minutes": 3,
+        "by": "foot"
+      },
+      {
+        "a": "loc_house",
+        "b": "loc_kiosk",
+        "minutes": 10,
+        "by": "road"
+      },
+      {
+        "a": "loc_house",
+        "b": "loc_club",
+        "minutes": 40,
+        "by": "road"
+      },
+      {
+        "a": "loc_kiosk",
+        "b": "loc_club",
+        "minutes": 40,
+        "by": "road"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_kamande",
+      "role": "victim",
+      "name": "Mzee Josiah Kamande",
+      "age": 79,
+      "occupation": "Retired veterinary surgeon; widower",
+      "bio": "Diabetic: gives himself his evening insulin by pen and logs every dose. About to sell 8 of his 12 acres to a school trust.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_bedroom",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, late 70s, white hair, a tweed jacket over a cardigan, reading glasses, a stern, dignified face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_lilian",
+      "role": "suspect",
+      "name": "Lilian Kamande",
+      "age": 53,
+      "occupation": "His daughter-in-law; manages his medicines and appointments",
+      "bio": "Has nursed him for six years and lives in the house.",
+      "community": "Kikuyu",
+      "isCulprit": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_house",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, early 50s, a neat cardigan and a short relaxed bob, a tired, devoted-looking face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_brian",
+      "role": "suspect",
+      "name": "Brian Kamande",
+      "age": 24,
+      "occupation": "Lilian's son; Mzee's grandson",
+      "bio": "Lives in a flat in Westlands.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "accomplice": true,
+      "unlock": {
+        "fact": "f_rehema"
+      },
+      "at": "plc_flat",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, mid 20s, a hoodie and a thin chain, a scared, evasive face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_stephen",
+      "role": "suspect",
+      "name": "Stephen Kamande",
+      "age": 55,
+      "occupation": "Mzee's son; Brian's uncle",
+      "redHerring": true,
+      "bio": "Heavily in debt; has borrowed against the land for years.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_sale"
+      },
+      "at": "plc_stroom",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, mid 50s, a rumpled golf shirt, a heavy, ashamed face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_rehema",
+      "role": "suspect",
+      "name": "Rehema Atieno",
+      "age": 58,
+      "occupation": "Housekeeper for 22 years",
+      "redHerring": true,
+      "bio": "Keeps the spare bedroom key in a tin in her cottage.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unknowingHelper": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_cottage",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo woman, late 50s, a housekeeper's blue dress and headscarf, red-eyed, upright, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mbithi",
+      "role": "witness",
+      "name": "Dr. Anne Mbithi",
+      "age": 50,
+      "occupation": "Director, Ngong Hills Academy Trust",
+      "bio": "Her trust was buying 8 acres for a school.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_sale"
+      },
+      "at": "plc_langata",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba woman, about 50, a navy blazer and pearl earrings, a calm, businesslike face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_maina",
+      "role": "witness",
+      "name": "Advocate Simon Maina",
+      "age": 61,
+      "occupation": "The trust's advocate, and Mzee's friend",
+      "bio": "Reported the death.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_house",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, early 60s, a grey suit and a walking stick, a grave, careful face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_cutter",
+      "role": "witness",
+      "name": "Daudi Ngugi",
+      "age": 44,
+      "occupation": "Key-cutter, Karen shopping centre",
+      "statementOnly": true,
+      "bio": "Runs the key kiosk in the car park.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_kiosk",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_bedroom",
+      "name": "Mzee's bedroom",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_sitting",
+      "name": "The sitting room",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_stroom",
+      "name": "Stephen's room, east wing",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_lilroom",
+      "name": "Lilian's room, west wing",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_flat",
+      "name": "Brian's flat, Westlands"
+    },
+    {
+      "id": "plc_langata",
+      "name": "Langata"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_house",
+      "name": "The Kamande house, Karen",
+      "kind": "scene",
+      "description": "A long 1950s stone bungalow on 12 acres under old trees. A house alarm with internal motion sensors. Mzee's bedroom has a heavy mortice lock fitted after a burglary two years ago.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The bedroom",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_body",
+          "text": "Mzee in bed. Rehema found the door locked at 06:30."
+        },
+        {
+          "id": "hs_pen",
+          "label": "Bedside table",
+          "pos": [
+            62,
+            45
+          ],
+          "yields": "ev_pen",
+          "text": "His insulin pen and the pharmacy bag."
+        },
+        {
+          "id": "hs_log",
+          "label": "The insulin logbook",
+          "pos": [
+            66,
+            52
+          ],
+          "yields": "ev_logbook",
+          "text": "A worn notebook beside the pen."
+        },
+        {
+          "id": "hs_desk",
+          "label": "Mzee's desk",
+          "pos": [
+            25,
+            40
+          ],
+          "yields": "ev_sale",
+          "text": "Papers squared on the blotter."
+        },
+        {
+          "id": "hs_panel",
+          "label": "Alarm panel",
+          "pos": [
+            10,
+            60
+          ],
+          "yields": "ev_alarm",
+          "text": "The alarm panel by the front door. The company sends the night's log."
+        },
+        {
+          "id": "hs_maina",
+          "label": "Advocate Maina",
+          "pos": [
+            80,
+            70
+          ],
+          "yields": "ev_maina",
+          "text": "Advocate Maina, waiting in the hall."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a long 1950s Karen stone bungalow under old trees at dawn, one bedroom window with its curtain closed, no people in focus"
+      }
+    },
+    {
+      "id": "loc_cottage",
+      "name": "Rehema's cottage",
+      "kind": "location",
+      "description": "A small cottage 60 m behind the main house, outside the alarmed building. A tin on the shelf by the door.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_rehema",
+          "label": "Rehema",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_rehema",
+          "text": "Rehema, sitting very straight at her table."
+        },
+        {
+          "id": "hs_heard",
+          "label": "Rehema's night",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_stephen",
+          "text": "What Rehema heard from the cottage on Saturday night.",
+          "unlock": {
+            "fact": "f_st_club"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small housekeeper's cottage behind a stone house, a tin on a shelf by the door, morning light"
+      }
+    },
+    {
+      "id": "loc_kiosk",
+      "name": "Key-cutter's kiosk, Karen shopping centre",
+      "kind": "location",
+      "description": "A kiosk in the car park: a key-cutting machine, racks of blanks, a receipt book.",
+      "unlock": {
+        "fact": "f_rehema"
+      },
+      "hotspots": [
+        {
+          "id": "hs_receipt",
+          "label": "Receipt book and car-park camera",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_kiosk",
+          "text": "Saturday's receipts, and the car-park camera."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small key-cutting kiosk in a shopping-centre car park, racks of brass key blanks, a cutting machine"
+      }
+    },
+    {
+      "id": "loc_stables",
+      "name": "The old stables",
+      "kind": "location",
+      "description": "Disused stables at the bottom of the plot, and a pit latrine behind them.",
+      "unlock": {
+        "fact": "f_br_reveal"
+      },
+      "hotspots": [
+        {
+          "id": "hs_latrine",
+          "label": "The pit latrine",
+          "pos": [
+            50,
+            60
+          ],
+          "yields": "ev_latrine",
+          "text": "Search under warrant (the property's outbuildings)."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "disused stone stables at the bottom of a Karen plot, a small pit latrine behind them, overgrown grass"
+      }
+    },
+    {
+      "id": "loc_club",
+      "name": "Stephen's club, Westlands",
+      "kind": "location",
+      "description": "A members' club with a long bar and a bar-tab book.",
+      "unlock": {
+        "fact": "f_st_club"
+      },
+      "hotspots": [
+        {
+          "id": "hs_tab",
+          "label": "The bar tab",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_tab",
+          "text": "Saturday's tabs."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a members' club bar in Westlands, a long polished counter, leather stools"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Mzee in his bed",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. In bed, peaceful. The bedroom door was locked at 06:30; Rehema opened it with the spare from her tin. His own key on the bedside table."
+      },
+      "facts": [
+        "f_body",
+        "f_locked"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "an old-fashioned bedroom with a heavy mortice-locked door, a bedside table with a key and an insulin pen, curtains drawn, no body visible"
+      }
+    },
+    {
+      "id": "ev_maina",
+      "type": "witness",
+      "title": "Statement: Advocate Simon Maina",
+      "render": "statement",
+      "body": {
+        "speaker": "p_maina"
+      },
+      "facts": [
+        "f_maina"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_sale",
+      "type": "document",
+      "title": "Papers on Mzee's desk",
+      "render": "form",
+      "body": {
+        "sale": "Sale of 8 acres to the Ngong Hills Academy Trust, signing Monday.",
+        "trust": "A draft trust deed: the money for his grandchildren's education and a veterinary scholarship.",
+        "letter": "To Stephen: \"You will have the house. The land has carried your debts long enough.\""
+      },
+      "facts": [
+        "f_sale"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_pen",
+      "type": "physical",
+      "title": "His insulin pen",
+      "render": "object",
+      "body": {
+        "label": "A new, full pen dispensed on Friday (pharmacy label). The dose counter shows far more than 40 units used."
+      },
+      "facts": [
+        "f_pen"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a disposable insulin pen on a bedside table beside a pharmacy bag, its dose window showing a large number"
+      }
+    },
+    {
+      "id": "ev_logbook",
+      "type": "document",
+      "title": "Mzee's insulin logbook",
+      "render": "logBook",
+      "body": {
+        "text": "Six years of entries: dose, time, site. Friday: 20 units, stomach left. Saturday 20:00: 20 units, stomach right. Every entry ever: \"stomach\"."
+      },
+      "facts": [
+        "f_logbook"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_alarm",
+      "type": "document",
+      "title": "Alarm company night log",
+      "render": "logBook",
+      "body": {
+        "mode": "Night mode from 22:30: perimeter armed, internal sensors log only.",
+        "log": "Corridor sensor outside the master bedroom: 23:34 and 23:41. East-wing sensor: no movement. No door opened until 05:50."
+      },
+      "facts": [
+        "f_alarm",
+        "f_perimeter",
+        "f_eastwing"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rehema",
+      "type": "witness",
+      "title": "Statement: Rehema Atieno",
+      "render": "statement",
+      "body": {
+        "speaker": "p_rehema"
+      },
+      "facts": [
+        "f_rehema",
+        "f_reh_cottage"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_stephen",
+      "type": "witness",
+      "title": "Statement: Rehema, on Saturday night",
+      "render": "statement",
+      "body": {
+        "speaker": "p_rehema"
+      },
+      "facts": [
+        "f_reh_shout"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tab",
+      "type": "document",
+      "title": "Stephen's bar tab",
+      "render": "form",
+      "body": {
+        "text": "S. Kamande: tab closed 21:55 Saturday."
+      },
+      "facts": [
+        "f_tab"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kiosk",
+      "type": "document",
+      "title": "Key-cutter's receipt book",
+      "render": "logBook",
+      "body": {
+        "receipt": "Saturday 16:12: one mortice key, KSh 600.",
+        "cutter": "Daudi Ngugi: \"A young man, a Kamande. He said it was his grandfather's spare.\"",
+        "camera": "The car-park camera: Brian's car, 16:05–16:20."
+      },
+      "facts": [
+        "f_kiosk"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Brian's line and PesaPap",
+      "render": "manifest",
+      "body": {
+        "pesapap": "Saturday 16:14: KSh 600 to the key-cutter's till.",
+        "calls": "Saturday 15:40: a call from Lilian, 3 minutes. Sunday 07:05: Brian to Lilian, 40 seconds."
+      },
+      "facts": [
+        "f_rec_brian"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_kiosk",
+          "f_rehema"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_latrine",
+      "type": "physical",
+      "title": "The old stables latrine",
+      "render": "object",
+      "body": {
+        "label": "A freshly cut mortice key, still bright."
+      },
+      "facts": [
+        "f_newkey"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_brian",
+          "f_alarm"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a bright freshly cut brass mortice key in a police evidence tray, a little dirt on it"
+      }
+    },
+    {
+      "id": "ev_flatgate",
+      "type": "document",
+      "title": "Brian's building gate log",
+      "render": "logBook",
+      "body": {
+        "text": "B. Kamande in at 21:00 Saturday; out again Sunday 06:40."
+      },
+      "facts": [
+        "f_brian_flat"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mbithi",
+      "type": "document",
+      "title": "Academy board minutes",
+      "render": "form",
+      "body": {
+        "text": "Dr. Mbithi chaired a parents' meeting until 21:00 Saturday, then home to Langata."
+      },
+      "facts": [
+        "f_mbithi"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lil_prints",
+      "type": "physical",
+      "title": "Fingerprints: Lilian Kamande",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention."
+      },
+      "facts": [
+        "f_lil_printset"
+      ],
+      "gate": null,
+      "detention": "p_lilian",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_hypo",
+        "f_aut_site",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tox",
+      "type": "forensic",
+      "title": "Lab: toxicology (insulin assay)",
+      "render": "labReport",
+      "body": {
+        "test": "toxicology"
+      },
+      "facts": [
+        "f_tox"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toxicology",
+        "hours": 18,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_keymatch",
+      "type": "forensic",
+      "title": "Lab: tool marks (key vs lock and blanks)",
+      "render": "labReport",
+      "body": {
+        "test": "toolMarks"
+      },
+      "facts": [
+        "f_keymatch"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toolMarks",
+        "hours": 8,
+        "needs": [
+          "ev_latrine",
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints (insulin pen)",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_prints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_pen",
+          "ev_lil_prints"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Mzee Josiah Kamande was found dead in bed in his Karen house on Sunday morning, two days before a land sale; the family doctor was ready to certify natural causes.",
+      "kind": "true",
+      "about": [
+        "p_kamande",
+        "loc_house"
+      ],
+      "at": {
+        "from": "06:30",
+        "to": null,
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "Mzee lies in bed, peaceful. His own key is on the bedside table.",
+      "kind": "true",
+      "about": [
+        "p_kamande",
+        "plc_bedroom"
+      ]
+    },
+    {
+      "id": "f_locked",
+      "text": "The bedroom door was locked when Rehema came with tea at 06:30; she opened it with the spare from her tin. There are only two keys.",
+      "kind": "true",
+      "about": [
+        "plc_bedroom",
+        "p_rehema"
+      ]
+    },
+    {
+      "id": "f_maina",
+      "text": "Advocate Maina: on Thursday Mzee told him, \"If anything happens to me before Monday, look at my family.\"",
+      "kind": "true",
+      "about": [
+        "p_maina",
+        "p_kamande"
+      ]
+    },
+    {
+      "id": "f_sale",
+      "text": "On the desk: the sale of 8 acres to the school trust, signing Monday; a trust deed for the grandchildren's education; and a letter to Stephen: \"The land has carried your debts long enough.\"",
+      "kind": "true",
+      "about": [
+        "p_kamande",
+        "p_stephen"
+      ]
+    },
+    {
+      "id": "f_pen",
+      "text": "His insulin pen was new and full on Friday; the dose counter now shows far more than 40 units used.",
+      "kind": "true",
+      "about": [
+        "p_kamande"
+      ]
+    },
+    {
+      "id": "f_logbook",
+      "text": "His logbook: 20 units Friday night and 20 units at 20:00 Saturday. In six years every dose is logged in the stomach.",
+      "kind": "true",
+      "about": [
+        "p_kamande"
+      ],
+      "at": {
+        "from": "20:00",
+        "to": null,
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_alarm",
+      "text": "Alarm log: the corridor sensor outside Mzee's bedroom fired at 23:34 and 23:41. No other internal movement between 22:30 and 05:50.",
+      "kind": "true",
+      "about": [
+        "plc_bedroom"
+      ],
+      "at": {
+        "from": "23:34",
+        "to": "23:41",
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_perimeter",
+      "text": "Alarm log: the perimeter was armed from 22:30 and no outside door opened until 05:50. Rehema's cottage is outside the alarmed building.",
+      "kind": "true",
+      "about": [
+        "p_rehema"
+      ],
+      "where": {
+        "person": "p_rehema",
+        "place": "loc_cottage",
+        "from": "22:30",
+        "to": "05:50"
+      }
+    },
+    {
+      "id": "f_eastwing",
+      "text": "Alarm log: the east-wing sensor, outside Stephen's room, never fired after 22:35.",
+      "kind": "true",
+      "about": [
+        "p_stephen"
+      ],
+      "where": {
+        "person": "p_stephen",
+        "place": "plc_stroom",
+        "from": "22:35",
+        "to": "05:50"
+      }
+    },
+    {
+      "id": "f_rehema",
+      "text": "Rehema: \"Brian came at about four and asked for the spare key, for Mzee's reading glasses from the drawer. He brought it back before five.\"",
+      "kind": "true",
+      "about": [
+        "p_rehema",
+        "p_brian"
+      ],
+      "at": {
+        "from": "16:00",
+        "to": "17:00",
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_reh_cottage",
+      "text": "Rehema: \"Mzee locked his door because he said a house full of debt is a house full of thieves.\"",
+      "kind": "true",
+      "about": [
+        "p_rehema",
+        "p_kamande"
+      ]
+    },
+    {
+      "id": "f_reh_shout",
+      "text": "Rehema: at about 22:30 Stephen shouted at his father in the sitting room, \"Just sign over two acres to me!\", then his room door slammed.",
+      "kind": "true",
+      "about": [
+        "p_stephen"
+      ],
+      "at": {
+        "from": "22:30",
+        "to": null,
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_tab",
+      "text": "Stephen's club tab closed at 21:55 on Saturday.",
+      "kind": "true",
+      "about": [
+        "p_stephen"
+      ],
+      "at": {
+        "from": "21:55",
+        "to": null,
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_kiosk",
+      "text": "Kiosk receipt: Saturday 16:12, one mortice key cut, KSh 600. The cutter remembers \"a young man, a Kamande\"; the car-park camera shows Brian's car.",
+      "kind": "true",
+      "about": [
+        "p_brian"
+      ],
+      "at": {
+        "from": "16:12",
+        "to": null,
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_rec_brian",
+      "text": "Records: Lilian called Brian at 15:40 on Saturday (3 min); Brian paid the key-cutter at 16:14; on Sunday at 07:05 Brian called Lilian (40 s).",
+      "kind": "true",
+      "about": [
+        "p_brian",
+        "p_lilian"
+      ],
+      "at": {
+        "from": "15:40",
+        "to": null,
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_newkey",
+      "text": "In the old stables latrine: a freshly cut mortice key, still bright.",
+      "kind": "true",
+      "about": [
+        "loc_stables"
+      ]
+    },
+    {
+      "id": "f_brian_flat",
+      "text": "Brian's building gate log: in at 21:00 Saturday, out again at 06:40 Sunday.",
+      "kind": "true",
+      "about": [
+        "p_brian"
+      ],
+      "where": {
+        "person": "p_brian",
+        "place": "plc_flat",
+        "from": "21:00",
+        "to": "06:40"
+      }
+    },
+    {
+      "id": "f_mbithi",
+      "text": "Dr. Mbithi chaired a parents' meeting until 21:00 on Saturday, then went home to Langata.",
+      "kind": "true",
+      "about": [
+        "p_mbithi"
+      ],
+      "where": {
+        "person": "p_mbithi",
+        "place": "plc_langata",
+        "from": "21:30",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_lil_printset",
+      "text": "Fingerprints taken from Lilian in detention.",
+      "kind": "true",
+      "about": [
+        "p_lilian"
+      ]
+    },
+    {
+      "id": "f_aut_hypo",
+      "text": "Post-mortem: no heart attack; signs of severe low blood sugar.",
+      "kind": "true",
+      "about": [
+        "p_kamande"
+      ]
+    },
+    {
+      "id": "f_aut_site",
+      "text": "Post-mortem: two fresh injection points, one in the stomach and one in the upper left arm, a site he never used.",
+      "kind": "true",
+      "about": [
+        "p_kamande"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Sunday between 01:30 and 04:00.",
+      "kind": "true",
+      "about": [
+        "p_kamande"
+      ],
+      "at": {
+        "from": "01:30",
+        "to": "04:00",
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_tox",
+      "text": "Lab: a very high insulin concentration at the arm site, far above the rest of the body.",
+      "kind": "true",
+      "about": [
+        "p_kamande"
+      ]
+    },
+    {
+      "id": "f_keymatch",
+      "text": "Lab: the latrine key was cut on the kiosk's machine from the same brand of blank, and it opens the bedroom lock.",
+      "kind": "true",
+      "about": [
+        "plc_bedroom"
+      ]
+    },
+    {
+      "id": "f_prints",
+      "text": "Lab: Mzee's prints on the pen, and a partial of Lilian's on the dose knob. She handles his medicines every day.",
+      "kind": "true",
+      "about": [
+        "p_lilian"
+      ]
+    },
+    {
+      "id": "f_lil_bed",
+      "text": "Lilian: \"I went to bed at ten and didn't leave my room all night. Stephen came in drunk and went to bed.\"",
+      "kind": "lie",
+      "about": [
+        "p_lilian"
+      ]
+    },
+    {
+      "id": "f_lil_reveal",
+      "text": "Lilian: \"I've washed that old man, fed him, counted his tablets for six years. And on Monday he would give the land to strangers' children.\"",
+      "kind": "true",
+      "about": [
+        "p_lilian",
+        "p_kamande"
+      ],
+      "where": {
+        "person": "p_lilian",
+        "place": "plc_bedroom",
+        "from": "23:34",
+        "to": "23:41"
+      }
+    },
+    {
+      "id": "f_lil_key",
+      "text": "Lilian: \"I have never had a key to his room. Only Mzee and Rehema.\"",
+      "kind": "lie",
+      "about": [
+        "p_lilian"
+      ]
+    },
+    {
+      "id": "f_br_never",
+      "text": "Brian: \"I never touched Grandpa's key. I was in Westlands all afternoon.\"",
+      "kind": "lie",
+      "about": [
+        "p_brian"
+      ]
+    },
+    {
+      "id": "f_br_reveal",
+      "text": "Brian: \"Mum asked me to get a copy. She said one day he'd fall behind that door. On Sunday morning she called and said 'throw it away'. I threw it in the old latrine. I knew then.\"",
+      "kind": "true",
+      "about": [
+        "p_brian",
+        "p_lilian"
+      ]
+    },
+    {
+      "id": "f_st_club",
+      "text": "Stephen: \"I was at my club until one in the morning.\"",
+      "kind": "lie",
+      "about": [
+        "p_stephen"
+      ]
+    },
+    {
+      "id": "f_st_reveal",
+      "text": "Stephen: \"I came home at half past ten and begged him for two acres. He said no. I went to my room and drank. I didn't go near him after that.\"",
+      "kind": "true",
+      "about": [
+        "p_stephen",
+        "p_kamande"
+      ]
+    },
+    {
+      "id": "f_reh_claim",
+      "text": "Rehema: \"I lent the key to Brian for the glasses and he brought it back.\"",
+      "kind": "claim",
+      "about": [
+        "p_rehema"
+      ]
+    },
+    {
+      "id": "f_mbithi_claim",
+      "text": "Dr. Mbithi: \"His death kills the sale. The trust gains nothing from it.\"",
+      "kind": "claim",
+      "about": [
+        "p_mbithi"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_lilian",
+      "stance": "cooperative",
+      "intro": "Lilian sits on the sofa with his medicine box on her knees, tired and gentle. \"I went to bed at ten and didn't leave my room all night. Stephen came in drunk and went to bed.\"",
+      "claims": [
+        "f_lil_bed"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_lil_key",
+          "after": "f_lil_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_brian",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_rehema"
+      ],
+      "intro": "Brian keeps his hood up in his mother's sitting room. \"I never touched Grandpa's key. I was in Westlands all afternoon.\"",
+      "claims": [
+        "f_br_never"
+      ],
+      "yields": [
+        "ev_flatgate"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_stephen",
+      "stance": "cooperative",
+      "intro": "Stephen hasn't slept. \"I was at my club until one in the morning.\"",
+      "claims": [
+        "f_st_club"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_rehema",
+      "stance": "cooperative",
+      "intro": "Rehema answers before you finish asking. \"I lent the key to Brian for the glasses and he brought it back.\"",
+      "claims": [
+        "f_reh_claim"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_mbithi",
+      "stance": "cooperative",
+      "intro": "Dr. Mbithi drives over from Langata. \"His death kills the sale. The trust gains nothing from it.\"",
+      "claims": [
+        "f_mbithi_claim"
+      ],
+      "yields": [
+        "ev_mbithi"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_maina",
+      "stance": "cooperative",
+      "intro": "Advocate Maina waits in the hall with his hat in his hands.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_br",
+      "claim": "f_br_never",
+      "brokenBy": [
+        "f_rehema",
+        "f_kiosk",
+        "f_rec_brian"
+      ],
+      "reveals": [
+        "f_br_reveal"
+      ],
+      "reaction": "\"Mum asked me to get a copy. She said one day he'd fall behind that door and we couldn't reach him. On Sunday morning she called and said 'throw it away'. I threw it in the old latrine. I knew then.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_st",
+      "claim": "f_st_club",
+      "brokenBy": [
+        "f_tab",
+        "f_reh_shout"
+      ],
+      "reveals": [
+        "f_st_reveal"
+      ],
+      "reaction": "\"I came home at half past ten and begged him for two acres. He said no. I went to my room and drank. I didn't go near him after that, I swear it.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_lil",
+      "claim": "f_lil_bed",
+      "brokenBy": [
+        "f_alarm",
+        "f_br_reveal"
+      ],
+      "reveals": [
+        "f_lil_reveal"
+      ],
+      "reaction": "\"I've washed that old man, fed him, counted his tablets for six years. And on Monday he would give the land to strangers' children.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_lil_key",
+      "claim": "f_lil_key",
+      "brokenBy": [
+        "f_keymatch"
+      ],
+      "reveals": [],
+      "reaction": "Lilian puts the medicine box down on the floor and folds her hands.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_lilian",
+      "text": "Lilian Kamande",
+      "category": "person",
+      "ref": "p_lilian",
+      "unlock": {
+        "anyOf": [
+          "f_lil_bed"
+        ]
+      }
+    },
+    {
+      "id": "w_brian",
+      "text": "Brian Kamande",
+      "category": "person",
+      "ref": "p_brian",
+      "unlock": {
+        "anyOf": [
+          "f_rehema"
+        ]
+      }
+    },
+    {
+      "id": "w_stephen",
+      "text": "Stephen Kamande",
+      "category": "person",
+      "ref": "p_stephen",
+      "unlock": {
+        "anyOf": [
+          "f_sale"
+        ]
+      }
+    },
+    {
+      "id": "w_rehema",
+      "text": "Rehema Atieno",
+      "category": "person",
+      "ref": "p_rehema",
+      "unlock": {
+        "anyOf": [
+          "f_locked"
+        ]
+      }
+    },
+    {
+      "id": "w_mbithi",
+      "text": "Anne Mbithi",
+      "category": "person",
+      "ref": "p_mbithi",
+      "unlock": {
+        "anyOf": [
+          "f_sale"
+        ]
+      }
+    },
+    {
+      "id": "w_maina",
+      "text": "Simon Maina",
+      "category": "person",
+      "ref": "p_maina",
+      "unlock": {
+        "anyOf": [
+          "f_maina"
+        ]
+      }
+    },
+    {
+      "id": "w_nobody",
+      "text": "nobody",
+      "category": "person",
+      "nobody": true,
+      "unlock": {
+        "start": true
+      }
+    },
+    {
+      "id": "r_key",
+      "text": "had a copy of the bedroom key cut",
+      "category": "role",
+      "by": [
+        "f_kiosk",
+        "f_rec_brian",
+        "f_br_reveal"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_kiosk"
+        ]
+      }
+    },
+    {
+      "id": "r_alibi",
+      "text": "gave a false alibi",
+      "category": "role",
+      "by": [
+        "f_st_club"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_st_club"
+        ]
+      }
+    },
+    {
+      "id": "r_lure",
+      "text": "lured the victim",
+      "category": "role",
+      "by": [
+        "f_body"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_rehema"
+        ]
+      }
+    },
+    {
+      "id": "r_weapon",
+      "text": "disposed of the weapon",
+      "category": "role",
+      "by": [
+        "f_pen"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_rehema"
+        ]
+      }
+    },
+    {
+      "id": "r_alarm",
+      "text": "switched off the alarm",
+      "category": "role",
+      "by": [
+        "f_alarm"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_rehema"
+        ]
+      }
+    },
+    {
+      "id": "pl_bedroom",
+      "text": "Mzee's bedroom",
+      "category": "place",
+      "ref": "plc_bedroom",
+      "unlock": {
+        "anyOf": [
+          "f_alarm"
+        ]
+      }
+    },
+    {
+      "id": "pl_sitting",
+      "text": "the sitting room",
+      "category": "place",
+      "ref": "plc_sitting",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_cottage",
+      "text": "the housekeeper's cottage",
+      "category": "place",
+      "ref": "loc_cottage",
+      "unlock": {
+        "anyOf": [
+          "f_locked"
+        ]
+      }
+    },
+    {
+      "id": "pl_kiosk",
+      "text": "the key-cutter's kiosk",
+      "category": "place",
+      "ref": "loc_kiosk",
+      "unlock": {
+        "anyOf": [
+          "f_kiosk"
+        ]
+      }
+    },
+    {
+      "id": "pl_stables",
+      "text": "the old stables",
+      "category": "place",
+      "ref": "loc_stables",
+      "unlock": {
+        "anyOf": [
+          "f_br_reveal"
+        ]
+      }
+    },
+    {
+      "id": "h_insulin",
+      "text": "injecting an overdose of insulin from his own pen",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_site"
+        ]
+      }
+    },
+    {
+      "id": "h_age",
+      "text": "dying in his sleep of old age",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_mistake",
+      "text": "taking too much insulin by mistake",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_pen"
+        ]
+      }
+    },
+    {
+      "id": "h_smother",
+      "text": "smothering him",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_tablets",
+      "text": "doubling his heart tablets",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_land",
+      "text": "to stop him selling the family land and putting the money in a trust",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_sale"
+        ]
+      }
+    },
+    {
+      "id": "m_drunk",
+      "text": "a son's drunken anger over two acres",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_sale"
+        ]
+      }
+    },
+    {
+      "id": "m_theft",
+      "text": "a housekeeper's theft",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_locked"
+        ]
+      }
+    },
+    {
+      "id": "m_trust",
+      "text": "the school trust wanted the land cheaply",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_sale"
+        ]
+      }
+    },
+    {
+      "id": "m_grandson",
+      "text": "an inheritance for the grandson",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_sale"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. The killer was helped by {accomplice}, who {role}.",
+    "fixed": {
+      "victim": "Mzee Josiah Kamande"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_1540",
+                  "label": "Saturday 15:40",
+                  "from": "15:40",
+                  "to": "15:40",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_1612",
+                  "label": "Saturday 16:12",
+                  "from": "16:12",
+                  "to": "16:12",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_2230",
+                  "label": "Saturday 22:30",
+                  "from": "22:30",
+                  "to": "22:30",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Saturday 23:34–23:41",
+                  "from": "23:34",
+                  "to": "23:41",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_0100",
+                  "label": "Sunday 01:00",
+                  "from": "01:00",
+                  "to": "01:00",
+                  "day": "Sun"
+                },
+                {
+                  "id": "sl_dies",
+                  "label": "Sunday 01:30–04:00",
+                  "from": "01:30",
+                  "to": "04:00",
+                  "day": "Sun"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_call",
+                  "text": "Lilian calls Brian",
+                  "slot": "sl_1540",
+                  "by": [
+                    "f_rec_brian"
+                  ],
+                  "why": "Records: 15:40, three minutes.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rec_brian"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_cut",
+                  "text": "Brian has the key cut",
+                  "slot": "sl_1612",
+                  "by": [
+                    "f_kiosk"
+                  ],
+                  "why": "The kiosk receipt: 16:12.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_kiosk"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_shout",
+                  "text": "Stephen shouts at his father",
+                  "slot": "sl_2230",
+                  "by": [
+                    "f_reh_shout"
+                  ],
+                  "why": "Rehema heard him at about half past ten.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_reh_shout"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_enter",
+                  "text": "Lilian enters the bedroom",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_alarm",
+                    "f_lil_reveal"
+                  ],
+                  "why": "The corridor sensor: 23:34 and 23:41.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_alarm"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_dies",
+                  "text": "Mzee dies",
+                  "slot": "sl_dies",
+                  "by": [
+                    "f_aut_tod"
+                  ],
+                  "why": "The post-mortem: between half past one and four.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_0100",
+                  "by": [
+                    "f_tab",
+                    "f_reh_shout"
+                  ],
+                  "why": "\"Home from the club at one\" is Stephen's story. His tab closed at 21:55 and he was shouting in the sitting room by half past ten."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A call at twenty to four, a key at twelve minutes past, a shouting son at half ten, a sensor at 23:34, and an old man dead before dawn.",
+          "fail": [
+            "One in the morning is Stephen's lie.",
+            "When did someone stand at his door?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_bedroom"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Behind his own locked door.",
+          "fail": [
+            "The key was cut at the kiosk. He died in his bed.",
+            "Stephen shouted in the sitting room. Nobody hurt him there."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_lilian",
+            "pool": [
+              "w_lilian",
+              "w_brian",
+              "w_stephen",
+              "w_rehema",
+              "w_mbithi"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her call, her son's key, the sensor at his door, and his insulin in his arm.",
+          "fail": [
+            "Stephen's wing never stirred after 22:35.",
+            "Brian was behind his own gate in Westlands from nine."
+          ]
+        }
+      },
+      {
+        "id": "g_accomplice",
+        "kind": "accomplice",
+        "blanks": [
+          {
+            "id": "accomplice",
+            "category": "person",
+            "answer": "w_brian",
+            "pool": [
+              "w_brian",
+              "w_stephen",
+              "w_rehema",
+              "w_mbithi",
+              "w_maina",
+              "w_nobody"
+            ]
+          },
+          {
+            "id": "role",
+            "category": "role",
+            "answer": "r_key"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Most people who kill don't do it alone. He held the door open by having it copied.",
+          "fail": [
+            "Rehema lent the key for reading glasses and told you so at once. She didn't know.",
+            "Stephen lied for himself, not for her."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_insulin"
+          }
+        ],
+        "prosecutor": {
+          "pass": "His own pen, in an arm he never used.",
+          "fail": [
+            "He logged every dose for six years. Always the stomach.",
+            "Low blood sugar, and insulin pooled at the arm. Not his heart."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_land"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Monday he signed. Saturday night he died. The land stays in the family.",
+          "fail": [
+            "The trust gains nothing: the sale dies with him.",
+            "Stephen shouted, but he never left his wing."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_bedroom",
+      "from": "23:34",
+      "to": "23:41",
+      "note": "The act window: the corridor sensor at 23:34 and 23:41. He died of it between 01:30 and 04:00."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_maina",
+          "f_sale"
+        ],
+        "concludes": "He was about to sell the land and cut the family's debts off from it."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_pen",
+          "f_logbook",
+          "f_aut_hypo",
+          "f_aut_site",
+          "f_aut_tod",
+          "f_tox"
+        ],
+        "concludes": "A huge extra insulin dose, in a place he never used: not his own hand.",
+        "answers": [
+          "how",
+          "why"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_body",
+          "f_locked",
+          "f_rehema",
+          "f_br_never",
+          "f_kiosk",
+          "f_rec_brian",
+          "f_br_reveal"
+        ],
+        "concludes": "A copy of the only spare key was cut on Saturday by Brian, at Lilian's request.",
+        "answers": [
+          "accomplice",
+          "role"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_alarm",
+          "f_perimeter",
+          "f_eastwing",
+          "f_lil_bed",
+          "f_lil_reveal",
+          "f_st_club",
+          "f_tab",
+          "f_reh_shout",
+          "f_st_reveal"
+        ],
+        "concludes": "Someone stood at the bedroom door at 23:34 and 23:41; Lilian says she never left her room, and Stephen's wing never stirred.",
+        "answers": [
+          "when",
+          "where"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_newkey",
+          "f_keymatch",
+          "f_prints",
+          "f_lil_key"
+        ],
+        "concludes": "Lilian Kamande let herself in with the copied key and injected Mzee with his own insulin, to stop the land sale; Brian had the key cut.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_sitting",
+        "blank": "where",
+        "by": [
+          "f_reh_shout",
+          "f_body"
+        ],
+        "why": "Stephen shouted there at 22:30; Mzee died in his bed."
+      },
+      {
+        "word": "pl_cottage",
+        "blank": "where",
+        "by": [
+          "f_perimeter"
+        ],
+        "why": "The cottage is outside the house; no door opened all night."
+      },
+      {
+        "word": "pl_kiosk",
+        "blank": "where",
+        "by": [
+          "f_kiosk"
+        ],
+        "why": "The key was cut there in the afternoon."
+      },
+      {
+        "word": "pl_stables",
+        "blank": "where",
+        "by": [
+          "f_newkey"
+        ],
+        "why": "The key was thrown away there on Sunday."
+      },
+      {
+        "word": "w_brian",
+        "blank": "who",
+        "by": [
+          "f_brian_flat"
+        ],
+        "why": "Brian was in his Westlands building from 21:00."
+      },
+      {
+        "word": "w_stephen",
+        "blank": "who",
+        "by": [
+          "f_eastwing"
+        ],
+        "why": "The east-wing sensor never fired after 22:35."
+      },
+      {
+        "word": "w_rehema",
+        "blank": "who",
+        "by": [
+          "f_perimeter"
+        ],
+        "why": "Rehema's cottage is outside the armed perimeter; no door opened."
+      },
+      {
+        "word": "w_mbithi",
+        "blank": "who",
+        "by": [
+          "f_mbithi"
+        ],
+        "why": "Dr. Mbithi was home in Langata."
+      },
+      {
+        "word": "w_stephen",
+        "blank": "accomplice",
+        "by": [
+          "f_st_club",
+          "f_st_reveal"
+        ],
+        "why": "Stephen lied for himself, not for Lilian."
+      },
+      {
+        "word": "w_rehema",
+        "blank": "accomplice",
+        "by": [
+          "f_rehema",
+          "f_br_reveal"
+        ],
+        "why": "Rehema lent the key \"for the glasses\" and said so at once; Brian never told her why. She didn't know."
+      },
+      {
+        "word": "w_mbithi",
+        "blank": "accomplice",
+        "by": [
+          "f_mbithi_claim",
+          "f_mbithi"
+        ],
+        "why": "The trust gains nothing; she was in Langata."
+      },
+      {
+        "word": "w_maina",
+        "blank": "accomplice",
+        "by": [
+          "f_maina"
+        ],
+        "why": "Maina is the one who asked for the investigation."
+      },
+      {
+        "word": "w_nobody",
+        "blank": "accomplice",
+        "by": [
+          "f_kiosk",
+          "f_br_reveal"
+        ],
+        "why": "A copied key needed someone to cut it."
+      },
+      {
+        "word": "r_alibi",
+        "blank": "role",
+        "by": [
+          "f_st_reveal"
+        ],
+        "why": "Nobody lied to cover Lilian; Stephen lied about himself."
+      },
+      {
+        "word": "r_lure",
+        "blank": "role",
+        "by": [
+          "f_body"
+        ],
+        "why": "He was asleep in his own bed."
+      },
+      {
+        "word": "r_weapon",
+        "blank": "role",
+        "by": [
+          "f_pen"
+        ],
+        "why": "The weapon, his pen, stayed on the bedside table. What was thrown away was the key."
+      },
+      {
+        "word": "r_alarm",
+        "blank": "role",
+        "by": [
+          "f_alarm"
+        ],
+        "why": "The alarm logged everything; nobody disarmed it."
+      },
+      {
+        "word": "h_age",
+        "blank": "how",
+        "by": [
+          "f_aut_hypo",
+          "f_tox"
+        ],
+        "why": "Low blood sugar and insulin pooled in the arm."
+      },
+      {
+        "word": "h_mistake",
+        "blank": "how",
+        "by": [
+          "f_logbook",
+          "f_aut_site"
+        ],
+        "why": "His 20:00 dose went in the stomach; the second went in the arm while he slept."
+      },
+      {
+        "word": "h_smother",
+        "blank": "how",
+        "by": [
+          "f_aut_hypo"
+        ],
+        "why": "No signs of smothering."
+      },
+      {
+        "word": "h_tablets",
+        "blank": "how",
+        "by": [
+          "f_tox"
+        ],
+        "why": "The assay found insulin."
+      },
+      {
+        "word": "m_drunk",
+        "blank": "why",
+        "by": [
+          "f_eastwing",
+          "f_st_reveal"
+        ],
+        "why": "Stephen never left his wing after 22:35."
+      },
+      {
+        "word": "m_theft",
+        "blank": "why",
+        "by": [
+          "f_rehema"
+        ],
+        "why": "Nothing is missing; Rehema raised the alarm."
+      },
+      {
+        "word": "m_trust",
+        "blank": "why",
+        "by": [
+          "f_mbithi_claim"
+        ],
+        "why": "The sale dies with him."
+      },
+      {
+        "word": "m_grandson",
+        "blank": "why",
+        "by": [
+          "f_sale"
+        ],
+        "why": "The trust would have paid Brian's fees anyway."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Mzee Kamande plans to sell 8 of his 12 acres to a school trust on Monday and put the money into his grandchildren's education. Stephen will keep the house but not the land he has borrowed against for years.",
+        "image": null
+      },
+      {
+        "text": "Saturday, 15:40. Lilian calls Brian. At four he borrows Rehema's spare \"for Grandpa's glasses\", has a copy cut at the Karen kiosk at 16:12, and returns the original before five.",
+        "image": null
+      },
+      {
+        "text": "At 20:00 Mzee gives himself his evening dose in the stomach and logs it. At 22:30 Stephen comes home drunk, shouts for two acres, and goes to his room.",
+        "image": null
+      },
+      {
+        "text": "At 23:34 Lilian lets herself into the bedroom with the copy while he sleeps and injects a large dose from his own pen into his upper arm. At 23:41 she locks the door behind her.",
+        "image": "plc_bedroom"
+      },
+      {
+        "text": "He dies between half past one and four. At 07:05 Brian calls his mother. She says \"throw it away\", and he drops the key into the old stables latrine.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Two stamps: records on Brian and a warrant on the outbuildings. The insulin assay (18 h) goes with the body first thing; detain Lilian after the latrine search; the key comparison (8 h) and prints (6 h) come back inside 24 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_house",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_maina",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_sale",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_pen",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_logbook",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_alarm",
+        "hours": 1
+      },
+      {
+        "do": "submit",
+        "target": "ev_tox"
+      },
+      {
+        "do": "interview",
+        "target": "p_lilian"
+      },
+      {
+        "do": "interview",
+        "target": "p_stephen"
+      },
+      {
+        "do": "travel",
+        "target": "loc_cottage",
+        "hours": 0.1,
+        "from": "loc_house"
+      },
+      {
+        "do": "visit",
+        "target": "loc_cottage",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_rehema",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_rehema"
+      },
+      {
+        "do": "read",
+        "target": "ev_stephen",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_house",
+        "hours": 0.1,
+        "from": "loc_cottage"
+      },
+      {
+        "do": "visit",
+        "target": "loc_house",
+        "hours": 1
+      },
+      {
+        "do": "press",
+        "target": "c_st"
+      },
+      {
+        "do": "interview",
+        "target": "p_brian"
+      },
+      {
+        "do": "travel",
+        "target": "loc_kiosk",
+        "hours": 0.25,
+        "from": "loc_house"
+      },
+      {
+        "do": "visit",
+        "target": "loc_kiosk",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_kiosk",
+        "hours": 0
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "press",
+        "target": "c_br"
+      },
+      {
+        "do": "travel",
+        "target": "loc_club",
+        "hours": 0.75,
+        "from": "loc_kiosk"
+      },
+      {
+        "do": "visit",
+        "target": "loc_club",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_tab",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_house",
+        "hours": 0.75,
+        "from": "loc_club"
+      },
+      {
+        "do": "visit",
+        "target": "loc_house",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_mbithi"
+      },
+      {
+        "do": "press",
+        "target": "c_lil"
+      },
+      {
+        "do": "travel",
+        "target": "loc_stables",
+        "hours": 0.1,
+        "from": "loc_house"
+      },
+      {
+        "do": "search",
+        "target": "loc_stables"
+      },
+      {
+        "do": "detain",
+        "target": "p_lilian"
+      },
+      {
+        "do": "sample",
+        "target": "ev_lil_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_keymatch"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 8
+      },
+      {
+        "do": "press",
+        "target": "c_lil_key"
+      }
+    ],
+    "totalHours": 39.05
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_alarm",
+        "line": "The alarm saw everything that moved inside, Amani."
+      },
+      "tier2": {
+        "facts": [
+          "f_alarm",
+          "f_kiosk"
+        ],
+        "line": "A key cut at 16:12. The corridor at 23:34."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_body",
+        "line": "The door was locked. Who could open it?"
+      },
+      "tier2": {
+        "facts": [
+          "f_locked",
+          "f_alarm"
+        ],
+        "line": "His bedroom, behind a mortice lock with two keys."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_records",
+        "line": "Who called the boy before he went for the key?"
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_brian",
+          "f_lil_reveal"
+        ],
+        "line": "His mother, at 15:40."
+      }
+    },
+    "g_accomplice": {
+      "tier1": {
+        "point": "ev_kiosk",
+        "line": "Most people who kill don't do it alone. Find who held the door."
+      },
+      "tier2": {
+        "facts": [
+          "f_kiosk",
+          "f_br_reveal"
+        ],
+        "line": "Brian had the spare copied. Rehema only lent it."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_logbook",
+        "line": "A vet logs his doses. Read where he puts them."
+      },
+      "tier2": {
+        "facts": [
+          "f_logbook",
+          "f_aut_site"
+        ],
+        "line": "Always the stomach. The second mark is in his arm."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_sale",
+        "line": "What was he signing on Monday?"
+      },
+      "tier2": {
+        "facts": [
+          "f_sale",
+          "f_maina"
+        ],
+        "line": "The land, sold to a school. \"Look at my family.\""
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "ufunguo",
+      "def": "A key."
+    },
+    {
+      "term": "sindano ya insulini",
+      "def": "An insulin pen."
+    },
+    {
+      "term": "mkwe",
+      "def": "An in-law."
+    },
+    {
+      "term": "shamba",
+      "def": "A farm or plot of land."
+    },
+    {
+      "term": "mzee",
+      "def": "An old man; a respectful way to address an elder."
+    },
+    {
+      "term": "pesa",
+      "def": "Money."
+    },
+    {
+      "term": "pesapap",
+      "def": "A fictional mobile-money service (\"pesa\" is money)."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "secondSentence"
+    ],
+    "beatNotes": "The second sentence. When the WHO group is filled, a second line slides out beneath it on the charge sheet: \"…helped by ____, who ____.\" The first time, Mwalimu calls, unprompted, her first hint call in weeks: \"Most people who kill don't do it alone, Amani. Find who held the door.\""
+  }
+}

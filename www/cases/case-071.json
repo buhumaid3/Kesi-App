@@ -1,0 +1,2511 @@
+{
+  "meta": {
+    "id": "case-071",
+    "number": 71,
+    "region": "northern-frontier",
+    "regionNumber": 8,
+    "title": "Quiet Dogs",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 34,
+    "date": "Friday 12 June",
+    "folderTab": "BULA PESA"
+  },
+  "pattern": {
+    "crimePattern": "a housekeeper the guard dogs know kills her employer to stop him reporting her brother for stock theft",
+    "noRealCaseRetold": true,
+    "notes": "Fictional families, market staff and compound. Teaches the absence mechanic plainly: every expectation on the Expected list is grounded in a neighbour's or a son's statement.",
+    "tags": [
+      "blunt-force",
+      "protecting",
+      "stock-theft",
+      "two-liars",
+      "records",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where",
+      "absence"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 4,
+    "redHerrings": 2,
+    "liars": 2,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "absence"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 06/12/06",
+    "date": "Friday 12 June",
+    "time": "06:40",
+    "reportedBy": "Milk seller, Bula Pesa, Isiolo",
+    "text": "A woman delivering milk reports a livestock trader, Hussein Adan Ibrahim (52), found dead in the yard of his walled compound in Bula Pesa, Isiolo. The main gate was bolted from inside; she saw him through the gap under it.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_compound",
+    "nodes": [
+      "loc_compound",
+      "loc_market",
+      "loc_wabera",
+      "loc_camp"
+    ],
+    "edges": [
+      {
+        "a": "loc_compound",
+        "b": "loc_market",
+        "minutes": 10,
+        "by": "road"
+      },
+      {
+        "a": "loc_compound",
+        "b": "loc_wabera",
+        "minutes": 10,
+        "by": "road"
+      },
+      {
+        "a": "loc_market",
+        "b": "loc_wabera",
+        "minutes": 10,
+        "by": "road"
+      },
+      {
+        "a": "loc_market",
+        "b": "loc_camp",
+        "minutes": 30,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_camp",
+        "b": "loc_wabera",
+        "minutes": 30,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_compound",
+        "b": "loc_camp",
+        "minutes": 30,
+        "by": "4x4"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_hussein",
+      "role": "victim",
+      "name": "Hussein Adan Ibrahim",
+      "age": 52,
+      "occupation": "Livestock trader, Isiolo",
+      "bio": "Trucks goats and sheep from the whole north to the Nairobi abattoirs. Marks his flock with a notch in the left ear.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_yard",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Somali man, early 50s, a white kanzu and a checked shawl, a henna-red beard, a shrewd, tired face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kaltuma",
+      "role": "suspect",
+      "name": "Kaltuma Wako",
+      "age": 29,
+      "occupation": "Hussein's housekeeper for four years",
+      "bio": "Feeds the dogs at half past five and goes home. Has a gate key.",
+      "community": "Borana",
+      "isCulprit": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_wabera",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Borana woman, late 20s, a purple shawl over her head and shoulders, a quiet, careful face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_jillo",
+      "role": "suspect",
+      "name": "Jillo Wako",
+      "age": 19,
+      "occupation": "Kaltuma's brother; Hussein's herder",
+      "bio": "Herds Hussein's goats at a grazing camp 12 km out. Owes money to men who don't wait.",
+      "community": "Borana",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_ledger"
+      },
+      "at": "loc_camp",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Borana youth, 19, a herder's shuka and a staff, a frightened, boyish face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_dahir",
+      "role": "suspect",
+      "name": "Mohamed Dahir",
+      "age": 47,
+      "occupation": "Rival livestock trader",
+      "redHerring": true,
+      "bio": "Fought with Hussein last week over a disputed truck of goats.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_truck"
+      },
+      "at": "plc_modogashe",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Somali man, late 40s, a trader's waistcoat over a shirt, a loud, open face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_yasin",
+      "role": "suspect",
+      "name": "Yasin Hussein",
+      "age": 24,
+      "occupation": "Hussein's son; university student, Nairobi",
+      "redHerring": true,
+      "bio": "Argued with his father over fees on the phone last week.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_nairobi",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Somali man, mid 20s, a university hoodie, red eyes, a grieving, defensive face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_godana",
+      "role": "witness",
+      "name": "Godana Huka",
+      "age": 56,
+      "occupation": "Counting clerk, Isiolo livestock market",
+      "bio": "Counts every animal through the market gate and writes down its owner's mark.",
+      "community": "Borana",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_market",
+      "image": null
+    },
+    {
+      "id": "p_safiya",
+      "role": "witness",
+      "name": "Mama Safiya Noor",
+      "age": 61,
+      "occupation": "Next-door neighbour",
+      "bio": "Her kitchen window is three metres from Hussein's wall.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_compound",
+      "image": null
+    },
+    {
+      "id": "p_wario",
+      "role": "witness",
+      "name": "Wario Bonaya",
+      "age": 26,
+      "occupation": "Boda rider, Wabera",
+      "statementOnly": true,
+      "bio": "Works the night stage in Wabera.",
+      "community": "Borana",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_wabera",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_yard",
+      "name": "The yard of Hussein's compound",
+      "within": "loc_compound"
+    },
+    {
+      "id": "plc_lane",
+      "name": "The lane behind the compounds"
+    },
+    {
+      "id": "plc_modogashe",
+      "name": "Modogashe, on the Garissa road"
+    },
+    {
+      "id": "plc_nairobi",
+      "name": "Nairobi"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_compound",
+      "name": "Hussein's compound, Bula Pesa",
+      "kind": "scene",
+      "description": "A stone house, a yard with a water tank, a corrugated iron gate bolted from inside, a wall topped with set broken glass, and a small back door to the lane on a spring latch. Two big brown guard dogs, Simba and Baraka, lie chained in their corner, quiet.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "By the house door",
+          "pos": [
+            46,
+            58
+          ],
+          "yields": "ev_body",
+          "text": "Hussein lies in the yard by the house door."
+        },
+        {
+          "id": "hs_stick",
+          "label": "Beside him",
+          "pos": [
+            50,
+            66
+          ],
+          "yields": "ev_stick",
+          "text": "His heavy herding stick on the ground."
+        },
+        {
+          "id": "hs_gate",
+          "label": "Gate and back door",
+          "pos": [
+            10,
+            50
+          ],
+          "yields": "ev_gate",
+          "text": "The main gate and the back door to the lane."
+        },
+        {
+          "id": "hs_wall",
+          "label": "The wall",
+          "pos": [
+            30,
+            20
+          ],
+          "yields": "ev_wall",
+          "text": "The glass-topped wall."
+        },
+        {
+          "id": "hs_dogs",
+          "label": "Dogs' corner",
+          "pos": [
+            80,
+            70
+          ],
+          "yields": "ev_bowls",
+          "text": "Simba and Baraka, and their bowls."
+        },
+        {
+          "id": "hs_house",
+          "label": "Inside the house",
+          "pos": [
+            60,
+            40
+          ],
+          "yields": "ev_house",
+          "text": "The sitting room and his cash drawer."
+        },
+        {
+          "id": "hs_tank",
+          "label": "Water tank",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_tank",
+          "text": "The concrete base of the water tank."
+        },
+        {
+          "id": "hs_safiya",
+          "label": "Over the wall",
+          "pos": [
+            20,
+            30
+          ],
+          "yields": "ev_safiya",
+          "text": "Mama Safiya calls from her kitchen window."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a walled compound in Bula Pesa, Isiolo, at night, a corrugated iron gate, broken glass set along the top of a wall, two big brown dogs lying quiet by the gate, no people in focus"
+      },
+      "expected": [
+        {
+          "id": "x_bark",
+          "text": "The dogs bark at anyone they don't know",
+          "because": "f_safiya_routine",
+          "present": false,
+          "fact": "f_abs_dogs"
+        },
+        {
+          "id": "x_bowls",
+          "text": "The bowls are licked clean by dark",
+          "because": "f_feeding_routine",
+          "present": false,
+          "fact": "f_abs_bowls"
+        },
+        {
+          "id": "x_chain",
+          "text": "The dogs are chained at night",
+          "because": "f_feeding_routine",
+          "present": true
+        },
+        {
+          "id": "x_climb",
+          "text": "Anyone who climbs the wall leaves marks in the dust and the glass",
+          "because": "f_wall_glass",
+          "present": false,
+          "fact": "f_abs_climb"
+        },
+        {
+          "id": "x_prints",
+          "text": "The stick carries the prints of the people who handle it daily",
+          "because": "f_stick_handled",
+          "present": false,
+          "fact": "f_abs_prints"
+        },
+        {
+          "id": "x_cash",
+          "text": "His cash is gone if this was a robbery",
+          "because": "f_cash_kept",
+          "present": false,
+          "fact": "f_abs_stolen"
+        },
+        {
+          "id": "x_tyres",
+          "text": "A car that stops at the gate leaves tracks in the soft sand",
+          "because": "f_sand_gate",
+          "present": false,
+          "fact": "f_abs_tyres"
+        }
+      ]
+    },
+    {
+      "id": "loc_market",
+      "name": "Isiolo livestock market",
+      "kind": "location",
+      "description": "Goats, sheep and camels from the whole north, and a counting office at the gate with a sale register.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_ledger",
+          "label": "Sale register",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_ledger",
+          "text": "Godana's register for last Saturday."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the Isiolo livestock market, crowded pens of goats and camels, lorries waiting, a small counting office with a register"
+      }
+    },
+    {
+      "id": "loc_wabera",
+      "name": "Kaltuma's home, Wabera",
+      "kind": "location",
+      "description": "A two-room house in Wabera estate with a washing line in the yard.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_line",
+          "label": "Washing line",
+          "pos": [
+            40,
+            30
+          ],
+          "yields": "ev_shawl",
+          "text": "A purple shawl on the line."
+        },
+        {
+          "id": "hs_stage",
+          "label": "Boda stage",
+          "pos": [
+            80,
+            60
+          ],
+          "yields": "ev_boda",
+          "text": "The night boda stage on the corner. Wario Bonaya."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small house in an Isiolo estate at dawn, a purple shawl drying on a washing line"
+      }
+    },
+    {
+      "id": "loc_camp",
+      "name": "Grazing camp, 12 km out",
+      "kind": "location",
+      "description": "A thorn-fenced camp, Hussein's goats, three herders and a fire.",
+      "unlock": {
+        "fact": "f_ledger"
+      },
+      "hotspots": [],
+      "image": {
+        "kind": "location",
+        "brief": "a herders' grazing camp on the dry plains outside Isiolo, a thorn fence, goats, a small fire"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The yard",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. One heavy blow to the side of the head. He lay by the house door."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a packed-earth yard by a house door at dawn, a heavy hardwood herding stick lying on the ground, no body visible"
+      }
+    },
+    {
+      "id": "ev_stick",
+      "type": "physical",
+      "title": "His herding stick",
+      "render": "object",
+      "body": {
+        "label": "Heavy hardwood, a split in the grip. Not a single print on it.",
+        "note": "Yasin: \"Father carried it everywhere; Kaltuma moves it to sweep.\""
+      },
+      "facts": [
+        "f_stick",
+        "f_stick_handled"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gate",
+      "type": "physical",
+      "title": "Gate and back door",
+      "render": "object",
+      "body": {
+        "gate": "Main gate bolted from inside.",
+        "back": "The back door to the lane has a spring latch that locks when pulled shut from outside.",
+        "sand": "Mama Safiya: every car that stops at the gate leaves tracks in the soft sand. There are none."
+      },
+      "facts": [
+        "f_gate",
+        "f_sand_gate"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_wall",
+      "type": "physical",
+      "title": "The wall",
+      "render": "object",
+      "body": {
+        "label": "Broken glass on top intact; dust on the top undisturbed."
+      },
+      "facts": [
+        "f_wall_glass"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_bowls",
+      "type": "physical",
+      "title": "Dogs' corner",
+      "render": "object",
+      "body": {
+        "label": "Both bowls hold fresh ugali and meat scraps, barely touched. The dogs are on their chains."
+      },
+      "facts": [
+        "f_bowls"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_house",
+      "type": "physical",
+      "title": "Inside the house",
+      "render": "object",
+      "body": {
+        "label": "The cash drawer in the sitting room: KSh 47,000, untouched."
+      },
+      "facts": [
+        "f_cash_kept"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tank",
+      "type": "physical",
+      "title": "The water tank base",
+      "render": "object",
+      "body": {
+        "label": "Clean concrete; no blood, no mark."
+      },
+      "facts": [
+        "f_tank"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_safiya",
+      "type": "witness",
+      "title": "Statement: Mama Safiya Noor",
+      "render": "statement",
+      "body": {
+        "speaker": "p_safiya"
+      },
+      "facts": [
+        "f_safiya_routine",
+        "f_feeding_routine",
+        "f_truck"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_yasin_call",
+      "type": "witness",
+      "title": "Phone call: Yasin Hussein",
+      "render": "statement",
+      "body": {
+        "speaker": "p_yasin"
+      },
+      "facts": [
+        "f_fees_row",
+        "f_keys",
+        "f_wages"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ledger",
+      "type": "document",
+      "title": "Market sale register, Saturday",
+      "render": "logBook",
+      "body": {
+        "entry": "30 goats, left-ear notch (Hussein's mark). Seller \"Hassan Roba\". KSh 165,000 cash. Herder who brought them: Jillo Wako."
+      },
+      "facts": [
+        "f_ledger"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_godana",
+      "type": "witness",
+      "title": "Statement: Godana Huka",
+      "render": "statement",
+      "body": {
+        "speaker": "p_godana"
+      },
+      "facts": [
+        "f_godana",
+        "f_godana_home"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_jillo_debt",
+      "type": "document",
+      "title": "Jillo's notebook",
+      "render": "note",
+      "body": {
+        "text": "\"Owed — 160,000 — pay by Sat.\""
+      },
+      "facts": [
+        "f_jillo_debt"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_herders",
+      "type": "witness",
+      "title": "Statement: two herders at the camp",
+      "render": "statement",
+      "body": {
+        "speaker": "p_jillo"
+      },
+      "facts": [
+        "f_camp"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_boda",
+      "type": "witness",
+      "title": "Statement: Wario Bonaya",
+      "render": "statement",
+      "body": {
+        "speaker": "p_wario"
+      },
+      "facts": [
+        "f_boda"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_shawl",
+      "type": "physical",
+      "title": "Purple shawl",
+      "render": "object",
+      "body": {
+        "label": "Freshly washed, on the line at 07:30 on Friday."
+      },
+      "facts": [
+        "f_shawl"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Kaltuma Wako's line",
+      "render": "manifest",
+      "body": {
+        "mast": "The Isiolo mast covers the whole town: location useless.",
+        "calls": "Thursday 21:42: a 9-minute call to Jillo Wako."
+      },
+      "facts": [
+        "f_rec_ka"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_abs_bowls",
+          "f_boda"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_dahir",
+      "type": "document",
+      "title": "Modogashe checkpoint log",
+      "render": "logBook",
+      "body": {
+        "text": "Mohamed Dahir's lorry logged at Modogashe at 20:55 on Thursday, heading for Garissa."
+      },
+      "facts": [
+        "f_dahir"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_yasin",
+      "type": "document",
+      "title": "Hostel register and bus ticket",
+      "render": "receipt",
+      "body": {
+        "text": "Yasin in Nairobi since Monday."
+      },
+      "facts": [
+        "f_yasin"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Dr. Chebii, Isiolo)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_tod",
+        "f_aut_noother"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_fibres",
+      "type": "forensic",
+      "title": "Lab: fibres (stick grip vs shawl)",
+      "render": "labReport",
+      "body": {
+        "test": "fibres"
+      },
+      "facts": [
+        "f_fibres"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "fibres",
+        "hours": 12,
+        "needs": [
+          "ev_stick",
+          "ev_shawl"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Hussein Adan Ibrahim was found dead in the yard of his compound in Bula Pesa on Friday morning; the main gate was bolted from inside.",
+      "kind": "true",
+      "about": [
+        "p_hussein",
+        "loc_compound"
+      ],
+      "at": {
+        "from": "06:40"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "He lay in the yard by the house door with one heavy blow to the side of the head.",
+      "kind": "true",
+      "about": [
+        "p_hussein",
+        "plc_yard"
+      ]
+    },
+    {
+      "id": "f_stick",
+      "text": "His heavy hardwood herding stick lay beside him. There is not a single fingerprint on it.",
+      "kind": "true",
+      "about": [
+        "plc_yard"
+      ]
+    },
+    {
+      "id": "f_stick_handled",
+      "text": "Yasin: his father carried the stick everywhere, and Kaltuma moved it every day to sweep.",
+      "kind": "true",
+      "about": [
+        "p_yasin",
+        "p_kaltuma"
+      ]
+    },
+    {
+      "id": "f_gate",
+      "text": "The main gate is bolted from inside; the back door to the lane has a spring latch that locks when pulled shut from outside.",
+      "kind": "true",
+      "about": [
+        "loc_compound"
+      ]
+    },
+    {
+      "id": "f_sand_gate",
+      "text": "Mama Safiya: every car that stops at Hussein's gate leaves tracks in the soft sand.",
+      "kind": "true",
+      "about": [
+        "p_safiya"
+      ]
+    },
+    {
+      "id": "f_wall_glass",
+      "text": "The broken glass along the wall top is intact, and the dust on it undisturbed.",
+      "kind": "true",
+      "about": [
+        "loc_compound"
+      ]
+    },
+    {
+      "id": "f_bowls",
+      "text": "The dogs' bowls hold fresh ugali and meat scraps, barely touched.",
+      "kind": "true",
+      "about": [
+        "loc_compound"
+      ]
+    },
+    {
+      "id": "f_cash_kept",
+      "text": "Hussein's cash drawer: KSh 47,000, untouched.",
+      "kind": "true",
+      "about": [
+        "p_hussein"
+      ]
+    },
+    {
+      "id": "f_tank",
+      "text": "The concrete base of the water tank is clean: no blood, no mark.",
+      "kind": "true",
+      "about": [
+        "plc_yard"
+      ]
+    },
+    {
+      "id": "f_safiya_routine",
+      "text": "Mama Safiya: \"Those dogs bark at the bread boy every morning at five. They bark at me. They barked at the milk woman this morning. Last night: nothing. Not once.\"",
+      "kind": "true",
+      "about": [
+        "p_safiya"
+      ]
+    },
+    {
+      "id": "f_feeding_routine",
+      "text": "Mama Safiya: Kaltuma feeds the dogs at half past five, chains them and goes home; the bowls are always licked clean by dark.",
+      "kind": "true",
+      "about": [
+        "p_safiya",
+        "p_kaltuma"
+      ]
+    },
+    {
+      "id": "f_truck",
+      "text": "Mama Safiya: last week Mohamed Dahir shouted at Hussein in the street over a truck of goats.",
+      "kind": "true",
+      "about": [
+        "p_safiya",
+        "p_dahir"
+      ]
+    },
+    {
+      "id": "f_fees_row",
+      "text": "Yasin: he argued with his father last week, on the phone, about his fees.",
+      "kind": "true",
+      "about": [
+        "p_yasin"
+      ]
+    },
+    {
+      "id": "f_keys",
+      "text": "Yasin: only his father and Kaltuma have gate keys.",
+      "kind": "true",
+      "about": [
+        "p_yasin",
+        "p_kaltuma"
+      ]
+    },
+    {
+      "id": "f_ledger",
+      "text": "Market register, Saturday: 30 goats with Hussein's ear-notch, sold for KSh 165,000 by \"Hassan Roba\"; the herder who brought them was Jillo Wako.",
+      "kind": "true",
+      "about": [
+        "p_jillo",
+        "p_hussein"
+      ]
+    },
+    {
+      "id": "f_godana",
+      "text": "Godana: he told Hussein on Wednesday. \"He went quiet. He said, 'The boy has eaten my trust.' He said Friday, the police.\"",
+      "kind": "true",
+      "about": [
+        "p_godana",
+        "p_hussein",
+        "p_jillo"
+      ]
+    },
+    {
+      "id": "f_godana_home",
+      "text": "Godana was at home with his family on Thursday evening; he has no key to the compound, and the dogs bark at him.",
+      "kind": "true",
+      "about": [
+        "p_godana"
+      ]
+    },
+    {
+      "id": "f_jillo_debt",
+      "text": "Jillo's notebook: \"Owed — 160,000 — pay by Sat.\"",
+      "kind": "true",
+      "about": [
+        "p_jillo"
+      ]
+    },
+    {
+      "id": "f_camp",
+      "text": "Two herders: Jillo was at the grazing camp 12 km out all Thursday night.",
+      "kind": "true",
+      "about": [
+        "p_jillo"
+      ],
+      "where": {
+        "person": "p_jillo",
+        "place": "loc_camp",
+        "from": "18:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_boda",
+      "text": "Wario Bonaya: at about 21:05 on Thursday he took a young woman in a purple shawl from Wabera to Bula Pesa, and dropped her in the lane behind the compounds.",
+      "kind": "true",
+      "about": [
+        "p_wario"
+      ],
+      "at": {
+        "from": "21:05"
+      }
+    },
+    {
+      "id": "f_shawl",
+      "text": "At Kaltuma's home: a purple shawl, freshly washed, on the line at 07:30 on Friday.",
+      "kind": "true",
+      "about": [
+        "p_kaltuma"
+      ]
+    },
+    {
+      "id": "f_rec_ka",
+      "text": "Records, Kaltuma's line: the Isiolo mast covers the whole town; on Thursday at 21:42, a 9-minute call to Jillo.",
+      "kind": "true",
+      "about": [
+        "p_kaltuma",
+        "p_jillo"
+      ],
+      "at": {
+        "from": "21:42"
+      }
+    },
+    {
+      "id": "f_dahir",
+      "text": "Modogashe checkpoint: Mohamed Dahir's lorry logged at 20:55 on Thursday, heading for Garissa.",
+      "kind": "true",
+      "about": [
+        "p_dahir"
+      ],
+      "where": {
+        "person": "p_dahir",
+        "place": "plc_modogashe",
+        "from": "20:55",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_yasin",
+      "text": "Hostel register and bus ticket: Yasin has been in Nairobi since Monday.",
+      "kind": "true",
+      "about": [
+        "p_yasin"
+      ],
+      "where": {
+        "person": "p_yasin",
+        "place": "plc_nairobi",
+        "from": "00:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Post-mortem: one blow from a heavy, rounded wooden object.",
+      "kind": "true",
+      "about": [
+        "p_hussein"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death between 21:00 and 22:30 on Thursday.",
+      "kind": "true",
+      "about": [
+        "p_hussein"
+      ],
+      "at": {
+        "from": "21:00",
+        "to": "22:30"
+      }
+    },
+    {
+      "id": "f_aut_noother",
+      "text": "Post-mortem: no stab wounds, no poison, no other injury.",
+      "kind": "true",
+      "about": [
+        "p_hussein"
+      ]
+    },
+    {
+      "id": "f_fibres",
+      "text": "Lab: purple wool fibres caught in the stick's split grip match Kaltuma's shawl.",
+      "kind": "true",
+      "about": [
+        "p_kaltuma"
+      ]
+    },
+    {
+      "id": "f_abs_dogs",
+      "text": "Missing: the dogs didn't bark last night. Not once.",
+      "kind": "true",
+      "about": [
+        "loc_compound"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_bowls",
+      "text": "Missing: the bowls weren't licked clean. The dogs were fed again, after dark.",
+      "kind": "true",
+      "about": [
+        "loc_compound"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_climb",
+      "text": "Missing: there are no climbing marks on the wall.",
+      "kind": "true",
+      "about": [
+        "loc_compound"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_prints",
+      "text": "Missing: there are no fingerprints on the stick. It was wiped.",
+      "kind": "true",
+      "about": [
+        "plc_yard"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_stolen",
+      "text": "Missing: nothing was stolen.",
+      "kind": "true",
+      "about": [
+        "p_hussein"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_tyres",
+      "text": "Missing: there are no tyre tracks at the gate.",
+      "kind": "true",
+      "about": [
+        "loc_compound"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_ka_home",
+      "text": "Kaltuma: \"I fed the dogs at half past five and went home. I was home all night.\"",
+      "kind": "lie",
+      "about": [
+        "p_kaltuma"
+      ]
+    },
+    {
+      "id": "f_ka_reveal",
+      "text": "Kaltuma: she went back at night to beg for Jillo. \"The dogs know me. I fed them so they'd be quiet.\" He said Friday, the police.",
+      "kind": "true",
+      "about": [
+        "p_kaltuma",
+        "p_hussein"
+      ],
+      "where": {
+        "person": "p_kaltuma",
+        "place": "plc_yard",
+        "from": "21:10",
+        "to": "21:40"
+      }
+    },
+    {
+      "id": "f_ka_stick",
+      "text": "Kaltuma: \"I don't remember picking up the stick. I never touched it.\"",
+      "kind": "lie",
+      "about": [
+        "p_kaltuma"
+      ]
+    },
+    {
+      "id": "f_ji_never",
+      "text": "Jillo: \"I never sold the boss's goats.\"",
+      "kind": "lie",
+      "about": [
+        "p_jillo"
+      ]
+    },
+    {
+      "id": "f_ji_reveal",
+      "text": "Jillo: he sold them to pay men who don't wait. His sister called him at night crying, \"It's finished.\" He thought she meant his job.",
+      "kind": "true",
+      "about": [
+        "p_jillo",
+        "p_kaltuma"
+      ]
+    },
+    {
+      "id": "f_dahir_claim",
+      "text": "Dahir: \"We fought over a truck. I was on the Garissa road.\"",
+      "kind": "claim",
+      "about": [
+        "p_dahir"
+      ]
+    },
+    {
+      "id": "f_yasin_claim",
+      "text": "Yasin: \"I was in Nairobi. Father argued with everyone about money. He never hurt anyone.\"",
+      "kind": "claim",
+      "about": [
+        "p_yasin"
+      ]
+    },
+    {
+      "id": "f_wages",
+      "text": "Yasin: Kaltuma was paid to the end of the month, as always.",
+      "kind": "true",
+      "about": [
+        "p_yasin",
+        "p_kaltuma"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_kaltuma",
+      "stance": "cooperative",
+      "intro": "Kaltuma sits on a stool in Mama Safiya's kitchen, the purple shawl gone from her shoulders. \"I fed the dogs at half past five and went home. I was home all night.\"",
+      "claims": [
+        "f_ka_home"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_ka_stick",
+          "after": "f_ka_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_jillo",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_ledger"
+      ],
+      "intro": "Jillo stands at the camp fence with his staff. \"I never sold the boss's goats.\"",
+      "claims": [
+        "f_ji_never"
+      ],
+      "yields": [
+        "ev_jillo_debt",
+        "ev_herders"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_dahir",
+      "stance": "cooperative",
+      "intro": "Dahir answers from Garissa, shouting over a lorry engine. \"We fought over a truck. I was on the Garissa road.\"",
+      "claims": [
+        "f_dahir_claim"
+      ],
+      "yields": [
+        "ev_dahir"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_yasin",
+      "stance": "cooperative",
+      "intro": "Yasin calls from the Nairobi bus stage, crying. \"I was in Nairobi. Father argued with everyone about money. He never hurt anyone.\"",
+      "claims": [
+        "f_yasin_claim"
+      ],
+      "yields": [
+        "ev_yasin",
+        "ev_yasin_call"
+      ],
+      "topics": [
+        {
+          "about": "ev_stick",
+          "reply": "\"Father carried it everywhere. Kaltuma moved it every day to sweep. Only he and Kaltuma have gate keys.\"",
+          "reveals": [
+            "f_stick_handled",
+            "f_keys"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_godana",
+      "stance": "cooperative",
+      "intro": "Godana opens his register on the counting-office table.",
+      "claims": [],
+      "yields": [
+        "ev_godana"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_safiya",
+      "stance": "cooperative",
+      "intro": "Mama Safiya leans out of her kitchen window. \"Those dogs. Let me tell you about those dogs.\"",
+      "claims": [],
+      "yields": [
+        "ev_safiya"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_ji",
+      "claim": "f_ji_never",
+      "brokenBy": [
+        "f_ledger",
+        "f_jillo_debt"
+      ],
+      "reveals": [
+        "f_ji_reveal"
+      ],
+      "reaction": "\"I sold them. I owed money to men who don't wait. My sister called me at night crying and said 'it's finished'. I thought she meant my job.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_ka",
+      "claim": "f_ka_home",
+      "brokenBy": [
+        "f_abs_bowls",
+        "f_boda"
+      ],
+      "reveals": [
+        "f_ka_reveal"
+      ],
+      "reaction": "She pulls her hands into her sleeves. \"I went back to beg for Jillo. The dogs know me. I fed them so they'd be quiet. He said Friday, the police.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_ka_stick",
+      "claim": "f_ka_stick",
+      "brokenBy": [
+        "f_fibres"
+      ],
+      "reveals": [],
+      "reaction": "Kaltuma looks at the purple thread in the evidence bag for a long time. \"He said Friday,\" she says again, very quietly.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_kaltuma",
+      "text": "Kaltuma Wako",
+      "category": "person",
+      "ref": "p_kaltuma",
+      "unlock": {
+        "anyOf": [
+          "f_feeding_routine"
+        ]
+      }
+    },
+    {
+      "id": "w_jillo",
+      "text": "Jillo Wako",
+      "category": "person",
+      "ref": "p_jillo",
+      "unlock": {
+        "anyOf": [
+          "f_ledger"
+        ]
+      }
+    },
+    {
+      "id": "w_dahir",
+      "text": "Mohamed Dahir",
+      "category": "person",
+      "ref": "p_dahir",
+      "unlock": {
+        "anyOf": [
+          "f_truck"
+        ]
+      }
+    },
+    {
+      "id": "w_yasin",
+      "text": "Yasin Hussein",
+      "category": "person",
+      "ref": "p_yasin",
+      "unlock": {
+        "anyOf": [
+          "f_fees_row"
+        ]
+      }
+    },
+    {
+      "id": "w_godana",
+      "text": "Godana Huka",
+      "category": "person",
+      "ref": "p_godana",
+      "unlock": {
+        "anyOf": [
+          "f_ledger"
+        ]
+      }
+    },
+    {
+      "id": "pl_yard",
+      "text": "the yard of Hussein's compound",
+      "category": "place",
+      "ref": "plc_yard",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "pl_market",
+      "text": "the livestock market",
+      "category": "place",
+      "ref": "loc_market",
+      "unlock": {
+        "anyOf": [
+          "f_ledger"
+        ]
+      }
+    },
+    {
+      "id": "pl_lane",
+      "text": "the lane behind the compounds",
+      "category": "place",
+      "ref": "plc_lane",
+      "unlock": {
+        "anyOf": [
+          "f_gate"
+        ]
+      }
+    },
+    {
+      "id": "pl_wabera",
+      "text": "Kaltuma's home in Wabera",
+      "category": "place",
+      "ref": "loc_wabera",
+      "unlock": {
+        "anyOf": [
+          "f_boda"
+        ]
+      }
+    },
+    {
+      "id": "pl_garissa",
+      "text": "the Garissa road",
+      "category": "place",
+      "ref": "plc_modogashe",
+      "unlock": {
+        "anyOf": [
+          "f_truck"
+        ]
+      }
+    },
+    {
+      "id": "h_stick",
+      "text": "striking him with his own herding stick",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_bar",
+      "text": "striking him with a metal bar",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_tank",
+      "text": "a fall onto the water tank's base",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_stab",
+      "text": "stabbing him",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_poison",
+      "text": "poisoning him",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_jillo",
+      "text": "to stop him reporting her brother for stealing his goats",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_godana"
+        ]
+      }
+    },
+    {
+      "id": "m_truck",
+      "text": "a rival's quarrel over a truck",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_truck"
+        ]
+      }
+    },
+    {
+      "id": "m_fees",
+      "text": "a son's anger over fees",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_fees_row"
+        ]
+      }
+    },
+    {
+      "id": "m_robbery",
+      "text": "a robbery",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_wages",
+      "text": "unpaid wages",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_feeding_routine"
+        ]
+      }
+    },
+    {
+      "id": "a_dogs",
+      "text": "the dogs didn't bark",
+      "category": "absence",
+      "ref": "f_abs_dogs",
+      "unlock": {
+        "anyOf": [
+          "f_abs_dogs"
+        ]
+      }
+    },
+    {
+      "id": "a_climb",
+      "text": "there are no climbing marks on the wall",
+      "category": "absence",
+      "ref": "f_abs_climb",
+      "unlock": {
+        "anyOf": [
+          "f_abs_climb"
+        ]
+      }
+    },
+    {
+      "id": "a_prints",
+      "text": "there are no fingerprints on the stick",
+      "category": "absence",
+      "ref": "f_abs_prints",
+      "unlock": {
+        "anyOf": [
+          "f_abs_prints"
+        ]
+      }
+    },
+    {
+      "id": "a_stolen",
+      "text": "nothing was stolen",
+      "category": "absence",
+      "ref": "f_abs_stolen",
+      "unlock": {
+        "anyOf": [
+          "f_abs_stolen"
+        ]
+      }
+    },
+    {
+      "id": "a_tyres",
+      "text": "there are no tyre tracks at the gate",
+      "category": "absence",
+      "ref": "f_abs_tyres",
+      "unlock": {
+        "anyOf": [
+          "f_abs_tyres"
+        ]
+      }
+    },
+    {
+      "id": "k_knew",
+      "text": "the killer was someone the dogs knew",
+      "category": "conclusion",
+      "by": [
+        "f_abs_dogs",
+        "f_safiya_routine"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_dogs"
+        ]
+      }
+    },
+    {
+      "id": "k_wall",
+      "text": "the killer came over the wall",
+      "category": "conclusion",
+      "by": [
+        "f_abs_climb"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_dogs"
+        ]
+      }
+    },
+    {
+      "id": "k_robbery",
+      "text": "it was a robbery",
+      "category": "conclusion",
+      "by": [
+        "f_abs_stolen"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_dogs"
+        ]
+      }
+    },
+    {
+      "id": "k_car",
+      "text": "the killer arrived by car",
+      "category": "conclusion",
+      "by": [
+        "f_abs_tyres"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_dogs"
+        ]
+      }
+    },
+    {
+      "id": "k_dark",
+      "text": "Hussein died before dark",
+      "category": "conclusion",
+      "by": [
+        "f_aut_tod"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_dogs"
+        ]
+      }
+    },
+    {
+      "id": "k_stranger",
+      "text": "the killer was a stranger",
+      "category": "conclusion",
+      "by": [
+        "f_abs_dogs"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_dogs"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. That {missing} shows that {conclusion}.",
+    "fixed": {
+      "victim": "Hussein Adan Ibrahim"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_wed",
+                  "label": "Wednesday",
+                  "from": null,
+                  "to": null,
+                  "day": "Wed"
+                },
+                {
+                  "id": "sl_1730",
+                  "label": "Thursday 17:30",
+                  "from": "17:30",
+                  "to": "17:30",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_2105",
+                  "label": "Thursday 21:05",
+                  "from": "21:05",
+                  "to": "21:05",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Thursday 21:05–21:40",
+                  "from": "21:05",
+                  "to": "21:40",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_2142",
+                  "label": "Thursday 21:42",
+                  "from": "21:42",
+                  "to": "21:42",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_0030",
+                  "label": "Friday 00:30",
+                  "from": "00:30",
+                  "to": "00:30",
+                  "day": "Fri"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_godana",
+                  "text": "Godana tells Hussein about the goats",
+                  "slot": "sl_wed",
+                  "by": [
+                    "f_godana"
+                  ],
+                  "why": "Godana: Wednesday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_godana"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_feed",
+                  "text": "Kaltuma feeds the dogs and leaves",
+                  "slot": "sl_1730",
+                  "by": [
+                    "f_feeding_routine"
+                  ],
+                  "why": "Her routine, every day: half past five.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_feeding_routine"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_boda",
+                  "text": "The boda drops her in the lane",
+                  "slot": "sl_2105",
+                  "by": [
+                    "f_boda"
+                  ],
+                  "why": "Wario: about 21:05.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_boda"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Hussein is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod",
+                    "f_ka_reveal",
+                    "f_boda",
+                    "f_rec_ka"
+                  ],
+                  "why": "After the boda dropped her and before she called Jillo crying, inside the post-mortem window.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_call",
+                  "text": "Kaltuma calls Jillo, crying",
+                  "slot": "sl_2142",
+                  "by": [
+                    "f_rec_ka",
+                    "f_ji_reveal"
+                  ],
+                  "why": "Her records: 21:42, nine minutes.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rec_ka"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_0030",
+                  "by": [
+                    "f_aut_tod"
+                  ],
+                  "why": "After midnight is too late: the post-mortem window closes at 22:30."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "Fed at half past five, back at five past nine, a call to her brother at twenty to ten. The dogs never said a word.",
+          "fail": [
+            "After midnight is too late. Read the post-mortem.",
+            "When did the boda drop her in the lane?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_yard"
+          }
+        ],
+        "prosecutor": {
+          "pass": "His own yard, by his own door. Yes.",
+          "fail": [
+            "She came in by the lane. She didn't kill him in it.",
+            "Dahir was on the Garissa road. The killing wasn't."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_kaltuma"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The dogs' friend, a key, a purple shawl in the lane and on the stick. That will hold.",
+          "fail": [
+            "Jillo was at the camp with two herders.",
+            "Godana has no key, and the dogs bark at him."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_stick"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A rounded wooden blow, and his own stick wiped clean.",
+          "fail": [
+            "The tank's base is clean.",
+            "A metal bar doesn't leave wool in a wooden grip."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_jillo"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Stock theft carries years. A sister had one night.",
+          "fail": [
+            "Forty-seven thousand in his drawer. Not a robbery.",
+            "She was paid to the end of the month."
+          ]
+        }
+      },
+      {
+        "id": "g_absence",
+        "kind": "absence",
+        "blanks": [
+          {
+            "id": "missing",
+            "category": "absence",
+            "answer": "a_dogs"
+          },
+          {
+            "id": "conclusion",
+            "category": "conclusion",
+            "answer": "k_knew"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The dogs that bark at the bread boy said nothing. They knew who came. Write that on a dotted card, Amani.",
+          "fail": [
+            "No climbing marks says nobody climbed. It doesn't say who the dogs knew.",
+            "Nothing was stolen. That's against a robbery, not for it."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_yard",
+      "from": "21:05",
+      "to": "21:40",
+      "note": "From the boda drop at 21:05 to her call to Jillo at 21:42; the post-mortem allows 21:00–22:30."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_ledger",
+          "f_godana",
+          "f_jillo_debt",
+          "f_ji_never",
+          "f_ji_reveal"
+        ],
+        "concludes": "Jillo stole 30 of Hussein's goats; Hussein was going to the police on Friday."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_safiya_routine",
+          "f_abs_dogs",
+          "f_abs_climb",
+          "f_wall_glass",
+          "f_gate"
+        ],
+        "concludes": "Whoever came in didn't climb, and the dogs knew them.",
+        "answers": [
+          "missing",
+          "conclusion"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_feeding_routine",
+          "f_bowls",
+          "f_abs_bowls",
+          "f_boda",
+          "f_ka_home",
+          "f_ka_reveal",
+          "f_rec_ka"
+        ],
+        "concludes": "Kaltuma came back at night through the lane and fed the dogs again to keep them quiet.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_body",
+          "f_stick",
+          "f_abs_prints",
+          "f_aut_blow",
+          "f_aut_tod",
+          "f_shawl",
+          "f_fibres",
+          "f_ka_stick"
+        ],
+        "concludes": "Her shawl's wool is in the grip of his wiped stick. Kaltuma Wako struck Hussein with his herding stick in the yard, to stop him reporting her brother for stealing his goats.",
+        "answers": [
+          "who",
+          "how",
+          "why",
+          "where"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_market",
+        "blank": "where",
+        "by": [
+          "f_body"
+        ],
+        "why": "He died in his own yard."
+      },
+      {
+        "word": "pl_lane",
+        "blank": "where",
+        "by": [
+          "f_body",
+          "f_boda"
+        ],
+        "why": "She was dropped in the lane; he died in the yard."
+      },
+      {
+        "word": "pl_wabera",
+        "blank": "where",
+        "by": [
+          "f_body",
+          "f_ka_reveal"
+        ],
+        "why": "She went to him."
+      },
+      {
+        "word": "pl_garissa",
+        "blank": "where",
+        "by": [
+          "f_body",
+          "f_dahir"
+        ],
+        "why": "That is Dahir's alibi, not the scene."
+      },
+      {
+        "word": "w_jillo",
+        "blank": "who",
+        "by": [
+          "f_camp"
+        ],
+        "why": "Jillo was at the grazing camp 12 km out all night, with two herders."
+      },
+      {
+        "word": "w_dahir",
+        "blank": "who",
+        "by": [
+          "f_dahir"
+        ],
+        "why": "Dahir's lorry was at Modogashe at 20:55, two and a half hours away."
+      },
+      {
+        "word": "w_yasin",
+        "blank": "who",
+        "by": [
+          "f_yasin"
+        ],
+        "why": "Yasin was in Nairobi."
+      },
+      {
+        "word": "w_godana",
+        "blank": "who",
+        "by": [
+          "f_godana_home",
+          "f_keys"
+        ],
+        "why": "Godana was home, has no key, and the dogs bark at him."
+      },
+      {
+        "word": "h_bar",
+        "blank": "how",
+        "by": [
+          "f_aut_blow",
+          "f_fibres"
+        ],
+        "why": "A wooden object, with wool in its grip."
+      },
+      {
+        "word": "h_tank",
+        "blank": "how",
+        "by": [
+          "f_tank"
+        ],
+        "why": "The tank's base is clean."
+      },
+      {
+        "word": "h_stab",
+        "blank": "how",
+        "by": [
+          "f_aut_noother"
+        ],
+        "why": "No stab wounds."
+      },
+      {
+        "word": "h_poison",
+        "blank": "how",
+        "by": [
+          "f_aut_noother"
+        ],
+        "why": "No poison."
+      },
+      {
+        "word": "m_truck",
+        "blank": "why",
+        "by": [
+          "f_dahir"
+        ],
+        "why": "That was Dahir's quarrel, and he was on the Garissa road."
+      },
+      {
+        "word": "m_fees",
+        "blank": "why",
+        "by": [
+          "f_yasin"
+        ],
+        "why": "That was Yasin's, and he was in Nairobi."
+      },
+      {
+        "word": "m_robbery",
+        "blank": "why",
+        "by": [
+          "f_cash_kept",
+          "f_abs_stolen"
+        ],
+        "why": "KSh 47,000 untouched."
+      },
+      {
+        "word": "m_wages",
+        "blank": "why",
+        "by": [
+          "f_wages"
+        ],
+        "why": "She was paid to the end of the month."
+      },
+      {
+        "word": "a_climb",
+        "blank": "missing",
+        "by": [
+          "f_abs_climb",
+          "f_abs_dogs"
+        ],
+        "why": "It shows nobody climbed in. It doesn't say who the dogs let in quietly."
+      },
+      {
+        "word": "a_prints",
+        "blank": "missing",
+        "by": [
+          "f_abs_prints"
+        ],
+        "why": "A wiped stick shows care, not who the dogs knew."
+      },
+      {
+        "word": "a_stolen",
+        "blank": "missing",
+        "by": [
+          "f_abs_stolen"
+        ],
+        "why": "It rules out a robbery; it doesn't identify anyone."
+      },
+      {
+        "word": "a_tyres",
+        "blank": "missing",
+        "by": [
+          "f_abs_tyres",
+          "f_boda"
+        ],
+        "why": "It says nobody came by car; she came by boda to the lane."
+      },
+      {
+        "word": "k_wall",
+        "blank": "conclusion",
+        "by": [
+          "f_abs_climb"
+        ],
+        "why": "The missing marks say the opposite: nobody came over the wall."
+      },
+      {
+        "word": "k_robbery",
+        "blank": "conclusion",
+        "by": [
+          "f_abs_stolen"
+        ],
+        "why": "Nothing was taken."
+      },
+      {
+        "word": "k_car",
+        "blank": "conclusion",
+        "by": [
+          "f_abs_tyres"
+        ],
+        "why": "No tyre tracks at the gate."
+      },
+      {
+        "word": "k_dark",
+        "blank": "conclusion",
+        "by": [
+          "f_aut_tod"
+        ],
+        "why": "He died between 21:00 and 22:30."
+      },
+      {
+        "word": "k_stranger",
+        "blank": "conclusion",
+        "by": [
+          "f_abs_dogs",
+          "f_safiya_routine"
+        ],
+        "why": "The dogs bark at strangers. They didn't."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Saturday. Jillo sells 30 of Hussein's goats at the Isiolo market under a friend's name, to pay a debt he is ashamed of.",
+        "image": null
+      },
+      {
+        "text": "Wednesday. Godana mentions the ear-notched goats. Hussein tells Jillo he will hand him to the police on Friday morning.",
+        "image": null
+      },
+      {
+        "text": "Thursday, 17:30. Kaltuma feeds the dogs, chains them and goes home as always.",
+        "image": null
+      },
+      {
+        "text": "21:05. A boda drops her in the lane. She lets herself in, feeds the dogs again so they stay quiet, and begs Hussein in the yard to forgive Jillo. \"Friday. The police.\" As he turns away she picks up his herding stick.",
+        "image": "plc_yard"
+      },
+      {
+        "text": "She wipes the stick, bolts the gate from inside, and leaves by the back door on its spring latch. At 21:42 she calls Jillo, crying: \"It's finished.\"",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "One stamp: records on Kaltuma. Detain her at her home; the fibres take 12 h plus 4 h transport, back at detention hour 16.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_compound",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_stick",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_gate",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_wall",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_bowls",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_house",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_tank",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_safiya"
+      },
+      {
+        "do": "interview",
+        "target": "p_yasin"
+      },
+      {
+        "do": "travel",
+        "target": "loc_market",
+        "hours": 0.25,
+        "from": "loc_compound"
+      },
+      {
+        "do": "visit",
+        "target": "loc_market",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_ledger",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_godana"
+      },
+      {
+        "do": "travel",
+        "target": "loc_camp",
+        "hours": 0.5,
+        "from": "loc_market"
+      },
+      {
+        "do": "visit",
+        "target": "loc_camp",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_jillo"
+      },
+      {
+        "do": "press",
+        "target": "c_ji"
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "travel",
+        "target": "loc_wabera",
+        "hours": 0.5,
+        "from": "loc_camp"
+      },
+      {
+        "do": "visit",
+        "target": "loc_wabera",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_boda",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_shawl",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_kaltuma"
+      },
+      {
+        "do": "press",
+        "target": "c_ka"
+      },
+      {
+        "do": "detain",
+        "target": "p_kaltuma"
+      },
+      {
+        "do": "submit",
+        "target": "ev_fibres"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 16
+      },
+      {
+        "do": "press",
+        "target": "c_ka_stick"
+      }
+    ],
+    "totalHours": 37.25
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_boda",
+        "line": "Who rides to Bula Pesa at night, Amani? Ask the boda stage."
+      },
+      "tier2": {
+        "facts": [
+          "f_boda",
+          "f_rec_ka"
+        ],
+        "line": "Dropped in the lane at 21:05. A call to her brother at 21:42."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_body",
+        "line": "Where was he lying?"
+      },
+      "tier2": {
+        "facts": [
+          "f_body"
+        ],
+        "line": "In his own yard, by the door."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_bowls",
+        "line": "Somebody fed the dogs after dark."
+      },
+      "tier2": {
+        "facts": [
+          "f_abs_bowls",
+          "f_fibres"
+        ],
+        "line": "The bowls were full again, and her wool is in the stick."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_stick",
+        "line": "A stick he carried every day, with no prints at all."
+      },
+      "tier2": {
+        "facts": [
+          "f_abs_prints",
+          "f_aut_blow"
+        ],
+        "line": "Wiped, and a rounded wooden blow."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_ledger",
+        "line": "Read Saturday's sale register. Whose mark?"
+      },
+      "tier2": {
+        "facts": [
+          "f_ledger",
+          "f_godana"
+        ],
+        "line": "Hussein's goats, Jillo's hands. Friday, the police."
+      }
+    },
+    "g_absence": {
+      "tier1": {
+        "point": "ev_safiya",
+        "line": "Ask the neighbour about the dogs. Then write down what didn't happen."
+      },
+      "tier2": {
+        "facts": [
+          "f_safiya_routine",
+          "f_abs_dogs"
+        ],
+        "line": "They bark at everyone. Last night, nothing."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "mbwa",
+      "def": "A dog."
+    },
+    {
+      "term": "mbuzi",
+      "def": "A goat."
+    },
+    {
+      "term": "soko la mifugo",
+      "def": "A livestock market."
+    },
+    {
+      "term": "boda",
+      "def": "Boda-boda: a motorbike taxi."
+    },
+    {
+      "term": "ugali",
+      "def": "A stiff maize porridge."
+    },
+    {
+      "term": "pesa",
+      "def": "Money; Bula Pesa is an estate in Isiolo."
+    },
+    {
+      "term": "simba",
+      "def": "Lion; here, a dog's name."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "expectedList",
+      "absenceGroup"
+    ],
+    "beatNotes": "The Expected list and the dotted card. At the dogs' corner the notebook shows expectations from Mama Safiya's statement: the dogs bark at strangers (absent last night), the bowls are licked clean by dark (absent), the dogs are chained at night (present). The player taps \"note as missing\"; a dotted card drops onto the board with a soft paper sound."
+  }
+}

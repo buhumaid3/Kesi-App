@@ -1,0 +1,2975 @@
+{
+  "meta": {
+    "id": "case-095",
+    "number": 95,
+    "region": "final-files",
+    "regionNumber": 10,
+    "title": "The Commander's Diary",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 50,
+    "date": "Tuesday 10 November",
+    "folderTab": "NAKURU"
+  },
+  "pattern": {
+    "crimePattern": "a writer paid by a foundation forges a letter of authority to reach a dead commander's diaries, kills his widow when caught taking one, and finds she took the wrong year",
+    "noRealCaseRetold": true,
+    "notes": "Fictional widow, writer, family and foundation; Milimani, Nakuru is a setting only. Mwalimu reads the diary entry over the phone in-case: \"Call from Lands House, 4th floor (Records), re: Mwenda complaint. Instructed: close it.\" It closes the same complaint as the NFA file in case 60. The Ukarimu Foundation is new here and is pinned to t_kivuli.",
+    "tags": [
+      "blunt-force",
+      "theft",
+      "commissioned",
+      "wrong-item",
+      "absence",
+      "forgery",
+      "spine",
+      "three-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 7,
+    "redHerrings": 3,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "absence",
+      "forgery",
+      "spine"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": "the-killer-stole-the-wrong-volume"
+  },
+  "ob": {
+    "number": "OB 09/10/11",
+    "date": "Tuesday 10 November",
+    "time": "08:00",
+    "reportedBy": "Mama Atieno Owuor, house help",
+    "text": "A house help reports her employer, Mama Felistus Koech (74), widow of the late Supt. Wilson Koech, found dead in her sitting room in Milimani estate, Nakuru. A bookshelf has been disturbed.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_house",
+    "nodes": [
+      "loc_house",
+      "loc_hotel",
+      "loc_kibet"
+    ],
+    "edges": [
+      {
+        "a": "loc_house",
+        "b": "loc_hotel",
+        "minutes": 10,
+        "by": "car"
+      },
+      {
+        "a": "loc_house",
+        "b": "loc_kibet",
+        "minutes": 15,
+        "by": "car"
+      },
+      {
+        "a": "loc_hotel",
+        "b": "loc_kibet",
+        "minutes": 10,
+        "by": "car"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_felistus",
+      "role": "victim",
+      "name": "Mama Felistus Koech",
+      "age": 74,
+      "occupation": "Retired teacher; widow of Supt. Wilson Koech",
+      "bio": "Kept her husband's thirty diaries exactly as he left them.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_sitting",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin woman, mid 70s, reading glasses on a chain and a wool shawl, a polite, sharp face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kadzo",
+      "role": "suspect",
+      "name": "Kadzo Mwamuye",
+      "age": 46,
+      "occupation": "Writer of a grant-funded history of the Rift Valley police",
+      "bio": "Staying at a hotel in Nakuru town.",
+      "community": "Mijikenda",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_letter"
+      },
+      "at": "plc_hotelroom",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Mijikenda woman, mid 40s, spectacles and a cloth book bag, a scholarly, careful face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kibet",
+      "role": "suspect",
+      "name": "Kibet Koech",
+      "age": 24,
+      "occupation": "Felistus's grandson",
+      "redHerring": true,
+      "bio": "Wanted to sell his grandfather's diaries online.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_atieno"
+      },
+      "at": "plc_flat",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, mid 20s, a gaming headset round his neck and a hoodie, an ashamed face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_jepchumba",
+      "role": "suspect",
+      "name": "Dr. Jepchumba Koech",
+      "age": 48,
+      "occupation": "Felistus's daughter; a doctor in Eldoret",
+      "redHerring": true,
+      "bio": "Quarrelled with her mother about the house.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_atieno"
+      },
+      "at": "plc_eldoret",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin woman, late 40s, a doctor's white coat and stethoscope, a defensive, grieving face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kariuki",
+      "role": "suspect",
+      "name": "Kariuki Gitonga",
+      "age": 60,
+      "occupation": "Neighbour",
+      "redHerring": true,
+      "bio": "In a quarrel with Felistus over a hedge.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_hedge"
+      },
+      "at": "plc_church",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, about 60, a cardigan and a church badge, a stubborn, decent face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_atieno",
+      "role": "witness",
+      "name": "Mama Atieno Owuor",
+      "age": 55,
+      "occupation": "Felistus's house help for nine years",
+      "bio": "Dusts the diary shelf every Monday.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_kaptembwo",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo woman, mid 50s, a work apron and a headscarf, an honest, grieving face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mwalimu",
+      "role": "witness",
+      "name": "Ch. Insp. (rtd) Esther Wairimu, \"Mwalimu\"",
+      "age": 63,
+      "occupation": "Amani's first commander",
+      "bio": "Borrowed one diary from Felistus two weeks ago.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_notebook"
+      },
+      "at": "plc_nyeri",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, early 60s, short grey hair and reading glasses, holding a hardback diary, ID-photo framing",
+        "ref": "rc_mwalimu"
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_sitting",
+      "name": "The sitting room",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_kitchen",
+      "name": "The kitchen",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_hotelroom",
+      "name": "Kadzo's hotel room",
+      "within": "loc_hotel"
+    },
+    {
+      "id": "plc_flat",
+      "name": "Kibet's flat",
+      "within": "loc_kibet"
+    },
+    {
+      "id": "plc_nyeri",
+      "name": "Mwalimu's house near Nyeri"
+    },
+    {
+      "id": "plc_eldoret",
+      "name": "The hospital in Eldoret"
+    },
+    {
+      "id": "plc_church",
+      "name": "Kariuki's church hall"
+    },
+    {
+      "id": "plc_kaptembwo",
+      "name": "Kaptembwo"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_house",
+      "name": "The Koech house, Milimani, Nakuru",
+      "kind": "scene",
+      "description": "An old government bungalow under jacarandas. A sitting room lined with books; one shelf holds thirty hardback diaries, one per year, each labelled on the spine.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The sitting room",
+          "pos": [
+            45,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Where Felistus fell; a tea tray."
+        },
+        {
+          "id": "hs_shelf",
+          "label": "The diary shelf",
+          "pos": [
+            75,
+            30
+          ],
+          "yields": "ev_shelf",
+          "text": "Thirty labelled hardback diaries."
+        },
+        {
+          "id": "hs_notebook",
+          "label": "Her household notebook",
+          "pos": [
+            20,
+            40
+          ],
+          "yields": "ev_notebook",
+          "text": "By the telephone."
+        },
+        {
+          "id": "hs_desk",
+          "label": "Her desk",
+          "pos": [
+            15,
+            70
+          ],
+          "yields": "ev_letter",
+          "text": "A letter on headed paper."
+        },
+        {
+          "id": "hs_phone",
+          "label": "Felistus's phone",
+          "pos": [
+            30,
+            55
+          ],
+          "yields": "ev_phone",
+          "text": "On the arm of her chair."
+        },
+        {
+          "id": "hs_atieno",
+          "label": "Mama Atieno",
+          "pos": [
+            90,
+            70
+          ],
+          "yields": "ev_atieno",
+          "text": "At the gate."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a sitting room in an old Nakuru bungalow lined with bookshelves, one gap in a row of thirty labelled hardback diaries, a tea tray with two cups, no people in focus"
+      },
+      "expected": [
+        {
+          "id": "x_full",
+          "text": "A full run of thirty diaries: Atieno dusted it on Monday morning and it was full",
+          "because": "f_atieno_dust",
+          "present": false,
+          "fact": "f_abs_diary"
+        },
+        {
+          "id": "x_pair",
+          "text": "The pair of brass candlesticks on the side table",
+          "because": "f_dustring",
+          "present": false,
+          "fact": "f_abs_candle"
+        },
+        {
+          "id": "x_tea",
+          "text": "Felistus's own tea, drunk",
+          "because": "f_body",
+          "present": false,
+          "fact": "f_abs_tea"
+        },
+        {
+          "id": "x_hq",
+          "text": "A letter from Police Headquarters on file there",
+          "because": "f_letterhead",
+          "present": false,
+          "fact": "f_abs_hq"
+        },
+        {
+          "id": "x_help",
+          "text": "Mama Atieno in the house in the evening",
+          "because": "f_atieno",
+          "present": false,
+          "fact": "f_abs_atieno"
+        }
+      ]
+    },
+    {
+      "id": "loc_hotel",
+      "name": "Kadzo's hotel, Nakuru town",
+      "kind": "location",
+      "description": "A business hotel on Kenyatta Avenue; room 214.",
+      "unlock": {
+        "fact": "f_rec_mast"
+      },
+      "hotspots": [
+        {
+          "id": "hs_room",
+          "label": "Room 214",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_hotel",
+          "text": "Search under warrant."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a plain business-hotel room in Nakuru, a suitcase open on the bed, a towel-wrapped object and a hardback diary inside"
+      }
+    },
+    {
+      "id": "loc_kibet",
+      "name": "Kibet's flat",
+      "kind": "location",
+      "description": "A bedsitter in town: a gaming chair, two screens, three phones on charge.",
+      "unlock": {
+        "fact": "f_atieno"
+      },
+      "hotspots": [
+        {
+          "id": "hs_kphone",
+          "label": "Kibet's phone",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_kibet",
+          "text": "Messages."
+        },
+        {
+          "id": "hs_stream",
+          "label": "The stream log",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_stream",
+          "text": "His friends' game stream."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small bedsitter flat with a gaming chair and two screens, phones on charge"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Felistus in the sitting room",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. One blow to the head. Two cups of tea on a tray, both full. On the side table, one brass candlestick and a clean ring in the dust where its pair stood."
+      },
+      "facts": [
+        "f_body",
+        "f_dustring"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a side table with one brass candlestick and a clean ring in the dust beside it, a tea tray with two full cups, no body visible"
+      }
+    },
+    {
+      "id": "ev_shelf",
+      "type": "physical",
+      "title": "The diary shelf",
+      "render": "object",
+      "body": {
+        "label": "Twenty-nine diaries and one gap: the jacket labelled twelve years ago."
+      },
+      "facts": [
+        "f_shelf"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_notebook",
+      "type": "document",
+      "title": "Felistus's household notebook",
+      "render": "logBook",
+      "body": {
+        "text": "\"Lent to Esther Wairimu: W.'s diary for [twelve years ago]. Put [the next year] in its jacket so the shelf looks right. Esther to return by Christmas.\""
+      },
+      "facts": [
+        "f_notebook"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "household notebook"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_letter",
+      "type": "document",
+      "title": "Kadzo's letter of introduction",
+      "render": "letter",
+      "body": {
+        "text": "On Inspector-General's letterhead: \"authorising access to the private papers of retired officers for a history of the National Police Service\"."
+      },
+      "facts": [
+        "f_letter"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": false,
+        "forger": "p_kadzo",
+        "kind": "letter of introduction"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "an official-looking letter on a police letterhead lying on a desk beside reading glasses"
+      }
+    },
+    {
+      "id": "ev_phone",
+      "type": "phone",
+      "title": "Felistus's phone",
+      "render": "manifest",
+      "body": {
+        "calls": "Mon 18:20, Jepchumba, 30 min."
+      },
+      "facts": [
+        "f_call"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_atieno",
+      "type": "witness",
+      "title": "Statement: Mama Atieno Owuor",
+      "render": "statement",
+      "body": {
+        "speaker": "p_atieno"
+      },
+      "facts": [
+        "f_atieno",
+        "f_atieno_dust",
+        "f_atieno_self",
+        "f_hedge"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kibet",
+      "type": "phone",
+      "title": "Kibet's messages with Kadzo",
+      "render": "manifest",
+      "body": {
+        "text": "\"KSh 20k and I'll tell you where Grandpa's diaries are.\""
+      },
+      "facts": [
+        "f_kibet_msgs"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_stream",
+      "type": "document",
+      "title": "The game stream log",
+      "render": "logBook",
+      "body": {
+        "text": "Kibet live on the stream with two friends, 19:00–23:30."
+      },
+      "facts": [
+        "f_kibet_stream"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "stream log"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_jepchumba",
+      "type": "document",
+      "title": "Hospital duty roster, Eldoret",
+      "render": "logBook",
+      "body": {
+        "text": "Dr. J. Koech, on duty 18:00–08:00 Monday."
+      },
+      "facts": [
+        "f_jep_roster"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "hospital roster"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_kariuki",
+      "type": "witness",
+      "title": "Statement: Kariuki's church group",
+      "render": "statement",
+      "body": {
+        "speaker": "p_kariuki"
+      },
+      "facts": [
+        "f_kariuki"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mwalimu",
+      "type": "witness",
+      "title": "Mwalimu, by phone",
+      "render": "statement",
+      "body": {
+        "speaker": "p_mwalimu"
+      },
+      "facts": [
+        "f_mwalimu",
+        "f_diary_entry"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Kadzo's line and PesaPap",
+      "render": "manifest",
+      "body": {
+        "mast": "Milimani, Mon 19:25–20:00.",
+        "pay": "Grant payments from the Ukarimu Foundation.",
+        "text": "Tue 07:10 to \"Maina — Ukarimu\": \"It's the wrong year. The old woman switched them.\""
+      },
+      "facts": [
+        "f_rec_mast",
+        "f_ukarimu",
+        "f_wrongyear"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_atieno",
+          "f_letterhead",
+          "f_abs_diary"
+        ]
+      },
+      "doc": {
+        "genuine": true,
+        "kind": "grant agreement"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_hotel",
+      "type": "physical",
+      "title": "Kadzo's suitcase, room 214",
+      "render": "object",
+      "body": {
+        "diary": "The diary in the old jacket: inside, the following year.",
+        "candle": "A brass candlestick wrapped in a towel."
+      },
+      "facts": [
+        "f_diary",
+        "f_candle"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_mast",
+          "f_letter"
+        ]
+      },
+      "doc": {
+        "genuine": true,
+        "kind": "diary"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "an open suitcase in a hotel room holding a towel-wrapped brass candlestick and a hardback diary"
+      }
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Nakuru County)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_letterhead",
+      "type": "forensic",
+      "title": "Comparison: a current Inspector-General's letter",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_letterhead"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_letter"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_docexam",
+      "type": "forensic",
+      "title": "Lab: document examination (the letter)",
+      "render": "labReport",
+      "body": {
+        "test": "document"
+      },
+      "facts": [
+        "f_docexam"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "document",
+        "hours": 10,
+        "needs": [
+          "ev_letter"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_blood",
+      "type": "forensic",
+      "title": "Lab: trace (the candlestick)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_blood"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_hotel"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints (candlestick, teacup)",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_prints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_hotel",
+          "ev_body"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Mama Felistus Koech was found dead in her sitting room in Milimani, Nakuru, on Tuesday morning; a bookshelf had been disturbed.",
+      "kind": "true",
+      "about": [
+        "p_felistus",
+        "loc_house"
+      ],
+      "at": {
+        "from": "08:00",
+        "to": null,
+        "day": "Tue"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "One blow to the head. Two cups of tea on the tray, both full.",
+      "kind": "true",
+      "about": [
+        "p_felistus",
+        "plc_sitting"
+      ]
+    },
+    {
+      "id": "f_dustring",
+      "text": "On the side table: one brass candlestick, and a clean ring in the dust where its pair stood.",
+      "kind": "true",
+      "about": [
+        "plc_sitting"
+      ]
+    },
+    {
+      "id": "f_shelf",
+      "text": "Twenty-nine diaries and one gap, where the jacket labelled twelve years ago stood.",
+      "kind": "true",
+      "about": [
+        "plc_sitting"
+      ]
+    },
+    {
+      "id": "f_notebook",
+      "text": "Felistus's notebook: she lent Esther Wairimu the diary for twelve years ago and put the next year's volume in its jacket \"so the shelf looks right\".",
+      "kind": "true",
+      "about": [
+        "p_felistus",
+        "p_mwalimu"
+      ]
+    },
+    {
+      "id": "f_letter",
+      "text": "On Felistus's desk: Kadzo Mwamuye's letter of introduction on Inspector-General's letterhead, authorising access to retired officers' papers.",
+      "kind": "true",
+      "about": [
+        "p_kadzo"
+      ]
+    },
+    {
+      "id": "f_call",
+      "text": "Felistus's phone: a 30-minute call with Jepchumba on Monday at 18:20.",
+      "kind": "true",
+      "about": [
+        "p_felistus",
+        "p_jepchumba"
+      ],
+      "at": {
+        "from": "18:20",
+        "to": null,
+        "day": "Mon"
+      }
+    },
+    {
+      "id": "f_atieno",
+      "text": "Atieno: \"The writer came twice last week with a police letter. Mama said, 'She asks about one year only.' Last night Mama sent me home at seven: the writer was coming.\"",
+      "kind": "true",
+      "about": [
+        "p_atieno",
+        "p_kadzo"
+      ]
+    },
+    {
+      "id": "f_atieno_dust",
+      "text": "Atieno: she dusts the diary shelf every Monday morning; this Monday it was full.",
+      "kind": "true",
+      "about": [
+        "p_atieno"
+      ]
+    },
+    {
+      "id": "f_atieno_self",
+      "text": "The matatu conductor: Atieno rode home to Kaptembwo at 19:05.",
+      "kind": "true",
+      "about": [
+        "p_atieno"
+      ],
+      "where": {
+        "person": "p_atieno",
+        "place": "plc_kaptembwo",
+        "from": "19:30",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_hedge",
+      "text": "Atieno: Mama was quarrelling with Mr. Kariuki next door about his hedge; the grandson wanted to sell the diaries online.",
+      "kind": "true",
+      "about": [
+        "p_kariuki",
+        "p_kibet"
+      ]
+    },
+    {
+      "id": "f_kibet_msgs",
+      "text": "Kibet's phone, to Kadzo, last week: \"KSh 20k and I'll tell you where Grandpa's diaries are.\"",
+      "kind": "true",
+      "about": [
+        "p_kibet",
+        "p_kadzo"
+      ]
+    },
+    {
+      "id": "f_kibet_stream",
+      "text": "Stream log: Kibet was live from his flat with two friends, 19:00–23:30.",
+      "kind": "true",
+      "about": [
+        "p_kibet"
+      ],
+      "where": {
+        "person": "p_kibet",
+        "place": "plc_flat",
+        "from": "19:00",
+        "to": "23:30"
+      }
+    },
+    {
+      "id": "f_jep_roster",
+      "text": "Hospital roster: Dr. Jepchumba Koech was on duty in Eldoret from 18:00 Monday to 08:00 Tuesday.",
+      "kind": "true",
+      "about": [
+        "p_jepchumba"
+      ],
+      "where": {
+        "person": "p_jepchumba",
+        "place": "plc_eldoret",
+        "from": "18:00",
+        "to": "08:00"
+      }
+    },
+    {
+      "id": "f_kariuki",
+      "text": "His church group: Kariuki was at a meeting in the church hall 18:30–21:00.",
+      "kind": "true",
+      "about": [
+        "p_kariuki"
+      ],
+      "where": {
+        "person": "p_kariuki",
+        "place": "plc_church",
+        "from": "18:30",
+        "to": "21:00"
+      }
+    },
+    {
+      "id": "f_mwalimu",
+      "text": "Mwalimu: \"I have it. I borrowed it two weeks ago. I've read the page every night since.\" She was at home near Nyeri, three hours away.",
+      "kind": "true",
+      "about": [
+        "p_mwalimu"
+      ],
+      "where": {
+        "person": "p_mwalimu",
+        "place": "plc_nyeri",
+        "from": "17:00",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_diary_entry",
+      "text": "Mwalimu reads it aloud: \"Call from Lands House, 4th floor (Records), re: Mwenda complaint (Bahati Block 9). Instructed: close it. Do not minute. Told Wairimu NFA. She objected.\"",
+      "kind": "true",
+      "about": [
+        "p_mwalimu"
+      ],
+      "spine": "t_kivuli"
+    },
+    {
+      "id": "f_rec_mast",
+      "text": "Records: Kadzo's phone was in Milimani from 19:25 to 20:00 on Monday.",
+      "kind": "true",
+      "about": [
+        "p_kadzo"
+      ],
+      "at": {
+        "from": "19:25",
+        "to": "20:00",
+        "day": "Mon"
+      }
+    },
+    {
+      "id": "f_ukarimu",
+      "text": "Records: Kadzo's grant is paid by the Ukarimu Foundation.",
+      "kind": "true",
+      "about": [
+        "p_kadzo"
+      ],
+      "spine": "t_kivuli"
+    },
+    {
+      "id": "f_wrongyear",
+      "text": "Records: Tuesday 07:10, Kadzo to \"Maina — Ukarimu\": \"It's the wrong year. The old woman switched them.\"",
+      "kind": "true",
+      "about": [
+        "p_kadzo"
+      ],
+      "at": {
+        "from": "07:10",
+        "to": null,
+        "day": "Tue"
+      }
+    },
+    {
+      "id": "f_diary",
+      "text": "In Kadzo's suitcase: the jacket labelled twelve years ago, holding the following year's diary.",
+      "kind": "true",
+      "about": [
+        "p_kadzo"
+      ]
+    },
+    {
+      "id": "f_candle",
+      "text": "In Kadzo's suitcase: a brass candlestick wrapped in a towel, the pair of the one on the side table.",
+      "kind": "true",
+      "about": [
+        "p_kadzo"
+      ]
+    },
+    {
+      "id": "f_aut",
+      "text": "Post-mortem: one blow from a heavy brass object with a square base.",
+      "kind": "true",
+      "about": [
+        "p_felistus"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Monday between 19:30 and 20:00.",
+      "kind": "true",
+      "about": [
+        "p_felistus"
+      ],
+      "at": {
+        "from": "19:30",
+        "to": "20:00",
+        "day": "Mon"
+      }
+    },
+    {
+      "id": "f_letterhead",
+      "text": "Comparison: the letter uses a letterhead the Inspector-General's office replaced three years ago; its phone number now rings a florist.",
+      "kind": "true",
+      "about": [
+        "p_kadzo"
+      ]
+    },
+    {
+      "id": "f_docexam",
+      "text": "Document lab: the letter was printed at home; the signature was scanned from an old public notice.",
+      "kind": "true",
+      "about": [
+        "p_kadzo"
+      ]
+    },
+    {
+      "id": "f_blood",
+      "text": "Lab: Felistus's blood on the candlestick's square base.",
+      "kind": "true",
+      "about": [
+        "p_felistus",
+        "p_kadzo"
+      ]
+    },
+    {
+      "id": "f_prints",
+      "text": "Lab: Kadzo's prints on the untouched teacup and, partial, on the candlestick's stem.",
+      "kind": "true",
+      "about": [
+        "p_kadzo"
+      ]
+    },
+    {
+      "id": "f_abs_diary",
+      "text": "Missing: one diary is gone from a shelf that was full on Monday.",
+      "kind": "true",
+      "about": [
+        "plc_sitting"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_candle",
+      "text": "Missing: one brass candlestick is gone from a pair.",
+      "kind": "true",
+      "about": [
+        "plc_sitting"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_tea",
+      "text": "Missing: Felistus drank none of her tea.",
+      "kind": "true",
+      "about": [
+        "p_felistus"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_atieno",
+      "text": "Missing: Mama Atieno wasn't in the house that evening.",
+      "kind": "true",
+      "about": [
+        "p_atieno"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_hq",
+      "text": "Missing: there's no record of Kadzo's research at Police Headquarters.",
+      "kind": "true",
+      "about": [
+        "p_kadzo"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_kz_sat",
+      "text": "Kadzo: \"I last visited Mrs. Koech on Saturday.\"",
+      "kind": "lie",
+      "about": [
+        "p_kadzo"
+      ]
+    },
+    {
+      "id": "f_kz_letter",
+      "text": "Kadzo: \"My letter is genuine. Police Headquarters authorised my research.\"",
+      "kind": "lie",
+      "about": [
+        "p_kadzo"
+      ]
+    },
+    {
+      "id": "f_kz_reveal",
+      "text": "Kadzo: \"Three million shillings for one book. She went to make tea and I took it off the shelf. She caught me with it. And then it was the wrong year.\"",
+      "kind": "true",
+      "about": [
+        "p_kadzo",
+        "p_felistus"
+      ],
+      "where": {
+        "person": "p_kadzo",
+        "place": "plc_sitting",
+        "from": "19:25",
+        "to": "19:55"
+      }
+    },
+    {
+      "id": "f_kz_candle",
+      "text": "Kadzo: \"I never touched any candlestick.\"",
+      "kind": "lie",
+      "about": [
+        "p_kadzo"
+      ]
+    },
+    {
+      "id": "f_kb_never",
+      "text": "Kibet: \"I never told anyone about Grandpa's diaries.\"",
+      "kind": "lie",
+      "about": [
+        "p_kibet"
+      ]
+    },
+    {
+      "id": "f_kb_reveal",
+      "text": "Kibet: \"She paid me twenty thousand. I thought she wanted to write a book. I sent my grandmother a writer.\"",
+      "kind": "true",
+      "about": [
+        "p_kibet"
+      ]
+    },
+    {
+      "id": "f_jp_month",
+      "text": "Jepchumba: \"I hadn't spoken to Mother in a month. We fought about the house.\"",
+      "kind": "lie",
+      "about": [
+        "p_jepchumba"
+      ]
+    },
+    {
+      "id": "f_jp_reveal",
+      "text": "Jepchumba: \"We spoke on Monday evening. We made up. I didn't want you to know, because it hurts that it was the last time.\"",
+      "kind": "true",
+      "about": [
+        "p_jepchumba"
+      ]
+    },
+    {
+      "id": "f_ka_claim",
+      "text": "Kariuki: \"We quarrelled about a hedge. I was at church.\"",
+      "kind": "claim",
+      "about": [
+        "p_kariuki"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_kadzo",
+      "stance": "cooperative",
+      "intro": "Kadzo sets a notebook and two pens on the table. \"I last visited Mrs. Koech on Saturday. My letter is genuine; Police Headquarters authorised my research.\"",
+      "claims": [
+        "f_kz_sat",
+        "f_kz_letter"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_kz_candle",
+          "after": "f_kz_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_kibet",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_shelf"
+      ],
+      "intro": "Kibet keeps his headset on. \"I never told anyone about Grandpa's diaries.\"",
+      "claims": [
+        "f_kb_never"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_jepchumba",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_body"
+      ],
+      "intro": "Dr. Jepchumba, by phone from a ward: \"I hadn't spoken to Mother in a month. We fought about the house.\"",
+      "claims": [
+        "f_jp_month"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_kariuki",
+      "stance": "cooperative",
+      "intro": "Kariuki takes off his cap. \"We quarrelled about a hedge. I was at church.\"",
+      "claims": [
+        "f_ka_claim"
+      ],
+      "yields": [
+        "ev_kariuki"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_atieno",
+      "stance": "cooperative",
+      "intro": "Mama Atieno holds her apron in both hands and tells it straight.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_mwalimu",
+      "stance": "cooperative",
+      "intro": "Mwalimu answers on the first ring. \"I have the diary, Amani.\"",
+      "claims": [],
+      "yields": [
+        "ev_mwalimu"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_kibet",
+      "claim": "f_kb_never",
+      "brokenBy": [
+        "f_kibet_msgs"
+      ],
+      "reveals": [
+        "f_kb_reveal"
+      ],
+      "reaction": "\"She paid me twenty thousand. I thought she wanted to write a book. I sent my grandmother a writer.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_jep",
+      "claim": "f_jp_month",
+      "brokenBy": [
+        "f_call"
+      ],
+      "reveals": [
+        "f_jp_reveal",
+        "ev_jepchumba"
+      ],
+      "reaction": "\"We spoke on Monday evening. We made up. I didn't want you to know because it hurts that it was the last time.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_kz_sat",
+      "claim": "f_kz_sat",
+      "brokenBy": [
+        "f_rec_mast",
+        "f_atieno"
+      ],
+      "reveals": [
+        "f_kz_reveal"
+      ],
+      "reaction": "\"Three million shillings for one book. I'm a writer; I've never seen three million in my life. She caught me with it. And then it was the wrong year.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_kz_letter",
+      "claim": "f_kz_letter",
+      "brokenBy": [
+        "f_letterhead",
+        "f_docexam"
+      ],
+      "reveals": [],
+      "reaction": "Kadzo takes off her spectacles and cleans them for a long time.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_kz_candle",
+      "claim": "f_kz_candle",
+      "brokenBy": [
+        "f_blood",
+        "f_prints"
+      ],
+      "reveals": [],
+      "reaction": "Kadzo closes her notebook.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_kadzo",
+      "text": "Kadzo Mwamuye",
+      "category": "person",
+      "ref": "p_kadzo",
+      "unlock": {
+        "anyOf": [
+          "f_letter"
+        ]
+      }
+    },
+    {
+      "id": "w_kibet",
+      "text": "Kibet Koech",
+      "category": "person",
+      "ref": "p_kibet",
+      "unlock": {
+        "anyOf": [
+          "f_hedge"
+        ]
+      }
+    },
+    {
+      "id": "w_jepchumba",
+      "text": "Jepchumba Koech",
+      "category": "person",
+      "ref": "p_jepchumba",
+      "unlock": {
+        "anyOf": [
+          "f_atieno"
+        ]
+      }
+    },
+    {
+      "id": "w_kariuki",
+      "text": "Kariuki Gitonga",
+      "category": "person",
+      "ref": "p_kariuki",
+      "unlock": {
+        "anyOf": [
+          "f_hedge"
+        ]
+      }
+    },
+    {
+      "id": "w_atieno",
+      "text": "Atieno Owuor",
+      "category": "person",
+      "ref": "p_atieno",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_mwalimu",
+      "text": "Esther Wairimu",
+      "category": "person",
+      "ref": "p_mwalimu",
+      "unlock": {
+        "anyOf": [
+          "f_notebook"
+        ]
+      }
+    },
+    {
+      "id": "pl_sitting",
+      "text": "the sitting room of the Koech house",
+      "category": "place",
+      "ref": "plc_sitting",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "pl_kitchen",
+      "text": "the kitchen",
+      "category": "place",
+      "ref": "plc_kitchen",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "pl_hotel",
+      "text": "Kadzo's hotel room",
+      "category": "place",
+      "ref": "plc_hotelroom",
+      "unlock": {
+        "anyOf": [
+          "f_rec_mast"
+        ]
+      }
+    },
+    {
+      "id": "pl_nyeri",
+      "text": "Mwalimu's house",
+      "category": "place",
+      "ref": "plc_nyeri",
+      "unlock": {
+        "anyOf": [
+          "f_notebook"
+        ]
+      }
+    },
+    {
+      "id": "pl_flat",
+      "text": "Kibet's flat",
+      "category": "place",
+      "ref": "plc_flat",
+      "unlock": {
+        "anyOf": [
+          "f_hedge"
+        ]
+      }
+    },
+    {
+      "id": "h_candle",
+      "text": "striking her with a brass candlestick",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut"
+        ]
+      }
+    },
+    {
+      "id": "h_fall",
+      "text": "a fall against the bookshelf",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_bar",
+      "text": "a burglar's iron bar",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_tea",
+      "text": "poisoned tea",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_diary",
+      "text": "she'd been paid to obtain the commander's diary for the year Joseph died, and Felistus caught her taking it",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_atieno"
+        ]
+      }
+    },
+    {
+      "id": "m_greed",
+      "text": "a grandson's greed for the diaries",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_hedge"
+        ]
+      }
+    },
+    {
+      "id": "m_house",
+      "text": "a daughter's quarrel about the house",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_atieno"
+        ]
+      }
+    },
+    {
+      "id": "m_hedge",
+      "text": "a hedge dispute",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_hedge"
+        ]
+      }
+    },
+    {
+      "id": "m_brass",
+      "text": "a burglar after the brass",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_dustring"
+        ]
+      }
+    },
+    {
+      "id": "a_diary",
+      "text": "one diary is missing from a shelf that was full on Monday",
+      "category": "absence",
+      "ref": "f_abs_diary",
+      "unlock": {
+        "anyOf": [
+          "f_abs_diary"
+        ]
+      }
+    },
+    {
+      "id": "a_candle",
+      "text": "one brass candlestick is missing from a pair",
+      "category": "absence",
+      "ref": "f_abs_candle",
+      "unlock": {
+        "anyOf": [
+          "f_abs_candle"
+        ]
+      }
+    },
+    {
+      "id": "a_tea",
+      "text": "Felistus drank none of her tea",
+      "category": "absence",
+      "ref": "f_abs_tea",
+      "unlock": {
+        "anyOf": [
+          "f_abs_tea"
+        ]
+      }
+    },
+    {
+      "id": "a_help",
+      "text": "Mama Atieno wasn't in the house that evening",
+      "category": "absence",
+      "ref": "f_abs_atieno",
+      "unlock": {
+        "anyOf": [
+          "f_abs_atieno"
+        ]
+      }
+    },
+    {
+      "id": "a_hq",
+      "text": "there's no record of Kadzo's research at Police Headquarters",
+      "category": "absence",
+      "ref": "f_abs_hq",
+      "unlock": {
+        "anyOf": [
+          "f_abs_hq"
+        ]
+      }
+    },
+    {
+      "id": "k_one",
+      "text": "the killer came for one particular diary",
+      "category": "conclusion",
+      "by": [
+        "f_abs_diary",
+        "f_atieno",
+        "f_atieno_dust",
+        "f_shelf"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_diary"
+        ]
+      }
+    },
+    {
+      "id": "k_burglar",
+      "text": "the killer was a burglar after brass",
+      "category": "conclusion",
+      "by": [
+        "f_dustring"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_diary"
+        ]
+      }
+    },
+    {
+      "id": "k_beforetea",
+      "text": "Felistus died before tea was served",
+      "category": "conclusion",
+      "by": [
+        "f_body"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_diary"
+        ]
+      }
+    },
+    {
+      "id": "k_help",
+      "text": "the house help let the killer in",
+      "category": "conclusion",
+      "by": [
+        "f_atieno_self"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_diary"
+        ]
+      }
+    },
+    {
+      "id": "k_novisit",
+      "text": "Kadzo never visited that evening",
+      "category": "conclusion",
+      "by": [
+        "f_rec_mast"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_diary"
+        ]
+      }
+    },
+    {
+      "id": "k_moved",
+      "text": "Felistus moved the diary herself",
+      "category": "conclusion",
+      "by": [
+        "f_notebook"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_diary"
+        ]
+      }
+    },
+    {
+      "id": "d_letter",
+      "text": "Kadzo's letter of introduction",
+      "category": "document",
+      "ref": "ev_letter",
+      "unlock": {
+        "anyOf": [
+          "f_letter"
+        ]
+      }
+    },
+    {
+      "id": "d_notebook",
+      "text": "Felistus's household notebook",
+      "category": "document",
+      "ref": "ev_notebook",
+      "unlock": {
+        "anyOf": [
+          "f_notebook"
+        ]
+      }
+    },
+    {
+      "id": "d_diary",
+      "text": "the diary in the wrong jacket",
+      "category": "document",
+      "ref": "ev_hotel",
+      "unlock": {
+        "anyOf": [
+          "f_diary"
+        ]
+      }
+    },
+    {
+      "id": "d_roster",
+      "text": "the hospital roster",
+      "category": "document",
+      "ref": "ev_jepchumba",
+      "unlock": {
+        "anyOf": [
+          "f_jep_roster"
+        ]
+      }
+    },
+    {
+      "id": "d_grant",
+      "text": "the grant agreement",
+      "category": "document",
+      "ref": "ev_records",
+      "unlock": {
+        "anyOf": [
+          "f_ukarimu"
+        ]
+      }
+    },
+    {
+      "id": "t_letterhead",
+      "text": "it uses a letterhead the Inspector-General's office replaced three years ago",
+      "category": "tell",
+      "by": [
+        "f_letterhead",
+        "f_docexam"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_letterhead"
+        ]
+      }
+    },
+    {
+      "id": "t_id",
+      "text": "the ID number belongs to someone else",
+      "category": "tell",
+      "by": [
+        "f_letter"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_letter"
+        ]
+      }
+    },
+    {
+      "id": "t_typed",
+      "text": "typing over a pre-signed blank",
+      "category": "tell",
+      "by": [
+        "f_letter"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_letter"
+        ]
+      }
+    },
+    {
+      "id": "t_retired",
+      "text": "a retired stamp",
+      "category": "tell",
+      "by": [
+        "f_letter"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_letter"
+        ]
+      }
+    },
+    {
+      "id": "t_parcel",
+      "text": "a parcel missing from the index map",
+      "category": "tell",
+      "by": [
+        "f_letter"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_letter"
+        ]
+      }
+    },
+    {
+      "id": "t_batch",
+      "text": "a batch number that doesn't exist",
+      "category": "tell",
+      "by": [
+        "f_letter"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_letter"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_nfa",
+      "text": "The NFA complaint signed \"E. Wairimu\" in Doreen Kathambi's \"Leverage — E.W.\" folder (case 60)",
+      "category": "pin",
+      "pin": "case-060:f_leverage",
+      "unlock": {
+        "anyOf": [
+          "f_diary_entry"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_fb",
+      "text": "Joseph Mwenda's field book from drawer 14 (case 80)",
+      "category": "pin",
+      "pin": "case-080:f_fieldbook",
+      "unlock": {
+        "anyOf": [
+          "f_diary_entry"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_book",
+      "text": "The black book's first entry, \"For: 4th Floor, Lands House — Records\" (case 92)",
+      "category": "pin",
+      "pin": "case-092:f_book_first",
+      "unlock": {
+        "anyOf": [
+          "f_diary_entry"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_msingi",
+      "text": "The Msingi Trust's directors (case 91)",
+      "category": "pin",
+      "pin": "case-091:f_directors",
+      "unlock": {
+        "anyOf": [
+          "f_diary_entry"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_photo",
+      "text": "The 4th-floor launch photo (case 86)",
+      "category": "pin",
+      "pin": "case-086:f_photo",
+      "unlock": {
+        "anyOf": [
+          "f_diary_entry"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. That {missing} shows that {conclusion}. {document} was forged, as shown by {tell}. The commander's diary closes the same complaint as {pin}.",
+    "fixed": {
+      "victim": "Felistus Koech"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_2w",
+                  "label": "Two weeks ago",
+                  "from": null,
+                  "to": null,
+                  "day": "2 weeks ago"
+                },
+                {
+                  "id": "sl_lastwk",
+                  "label": "Last week",
+                  "from": null,
+                  "to": null,
+                  "day": "last week"
+                },
+                {
+                  "id": "sl_sat",
+                  "label": "Saturday",
+                  "from": null,
+                  "to": null,
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_1820",
+                  "label": "Monday 18:20",
+                  "from": "18:20",
+                  "to": "18:20",
+                  "day": "Mon"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Monday 19:30–20:00",
+                  "from": "19:30",
+                  "to": "20:00",
+                  "day": "Mon"
+                },
+                {
+                  "id": "sl_0710",
+                  "label": "Tuesday 07:10",
+                  "from": "07:10",
+                  "to": "07:10",
+                  "day": "Tue"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_borrow",
+                  "text": "Mwalimu borrows the real diary",
+                  "slot": "sl_2w",
+                  "by": [
+                    "f_notebook",
+                    "f_mwalimu"
+                  ],
+                  "why": "Two weeks ago.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_notebook"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_sale",
+                  "text": "Kibet sells Kadzo the address",
+                  "slot": "sl_lastwk",
+                  "by": [
+                    "f_kibet_msgs"
+                  ],
+                  "why": "Last week.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_kibet_msgs"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_call",
+                  "text": "Felistus and Jepchumba make up on the phone",
+                  "slot": "sl_1820",
+                  "by": [
+                    "f_call"
+                  ],
+                  "why": "Twenty past six.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_call"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_kill",
+                  "text": "Felistus is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod",
+                    "f_rec_mast"
+                  ],
+                  "why": "Between half past seven and eight.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_text",
+                  "text": "Kadzo texts \"wrong year\"",
+                  "slot": "sl_0710",
+                  "by": [
+                    "f_wrongyear"
+                  ],
+                  "why": "Ten past seven next morning.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_wrongyear"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_sat",
+                  "by": [
+                    "f_rec_mast",
+                    "f_atieno"
+                  ],
+                  "why": "Saturday was her story. Her phone was in Milimani on Monday night."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "Two weeks, last week, twenty past six, half past seven, and \"wrong year\" over breakfast.",
+          "fail": [
+            "Her last visit wasn't Saturday.",
+            "When did Mwalimu borrow it?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_sitting"
+          }
+        ],
+        "prosecutor": {
+          "pass": "In her sitting room, in front of the shelf, while the tea went cold.",
+          "fail": [
+            "Felistus was in the kitchen making tea; she died in the sitting room.",
+            "The hotel is where the diary went."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_kadzo"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her phone in Milimani, her prints on the cup, the candlestick in her suitcase.",
+          "fail": [
+            "Kibet was streaming.",
+            "Jepchumba was on a ward in Eldoret."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_candle"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A square brass base. The pair of the one on the table.",
+          "fail": [
+            "Her tea was untouched.",
+            "One blow, not a fall."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_diary"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Three million for one year's diary.",
+          "fail": [
+            "A brass thief takes both candlesticks.",
+            "The hedge man was at church."
+          ]
+        }
+      },
+      {
+        "id": "g_absence",
+        "kind": "absence",
+        "blanks": [
+          {
+            "id": "missing",
+            "category": "absence",
+            "answer": "a_diary"
+          },
+          {
+            "id": "conclusion",
+            "category": "conclusion",
+            "answer": "k_one"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Thirty years of diaries and the thief took one.",
+          "fail": [
+            "The candlestick tells you the weapon, not the reason.",
+            "The cold tea tells you she was interrupted."
+          ]
+        }
+      },
+      {
+        "id": "g_forgery",
+        "kind": "forgery",
+        "blanks": [
+          {
+            "id": "document",
+            "category": "document",
+            "answer": "d_letter"
+          },
+          {
+            "id": "tell",
+            "category": "tell",
+            "answer": "t_letterhead"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A letterhead three years out of date, and a number that rings a florist.",
+          "fail": [
+            "The diary in the wrong jacket was switched by its owner. That's not a forgery.",
+            "There's no stamp on it."
+          ]
+        }
+      },
+      {
+        "id": "g_spine",
+        "kind": "spine",
+        "blanks": [
+          {
+            "id": "pin",
+            "category": "pin",
+            "answer": "w_pin_nfa",
+            "spine": true
+          }
+        ],
+        "prosecutor": {
+          "pass": "\"Told Wairimu NFA. She objected.\" The same file Doreen kept as leverage.",
+          "fail": [
+            "The black book is the same office, but a seal, not a complaint.",
+            "The field book is Joseph's own, not the complaint."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_sitting",
+      "from": "19:30",
+      "to": "20:00",
+      "note": "The post-mortem; Kadzo's phone in Milimani 19:25–20:00."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_shelf",
+          "f_atieno",
+          "f_atieno_dust",
+          "f_abs_diary",
+          "f_body",
+          "f_dustring",
+          "f_aut",
+          "f_aut_tod"
+        ],
+        "concludes": "Someone came for one diary, the year Joseph died.",
+        "answers": [
+          "missing",
+          "conclusion",
+          "where"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_letter",
+          "f_letterhead",
+          "f_docexam",
+          "f_abs_hq",
+          "f_kz_letter"
+        ],
+        "concludes": "Kadzo's authority was forged.",
+        "answers": [
+          "document",
+          "tell"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_rec_mast",
+          "f_ukarimu",
+          "f_kibet_msgs",
+          "f_kb_never",
+          "f_kb_reveal",
+          "f_kz_sat",
+          "f_kz_reveal"
+        ],
+        "concludes": "Kadzo was in Milimani at the time, had bought the address, and was paid by the Ukarimu Foundation.",
+        "answers": [
+          "why"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_notebook",
+          "f_mwalimu",
+          "f_wrongyear",
+          "f_diary"
+        ],
+        "concludes": "The real diary was with Mwalimu; Kadzo took the switched volume.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_diary_entry",
+          "case-060:f_leverage"
+        ],
+        "concludes": "The real diary closes the Mwenda complaint on a call from Lands House, 4th floor: the same NFA file Doreen kept.",
+        "answers": [
+          "pin"
+        ]
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_candle",
+          "f_blood",
+          "f_prints"
+        ],
+        "concludes": "The candlestick in her suitcase, Felistus's blood on it, her prints on the cup and stem."
+      },
+      {
+        "id": "s7",
+        "from": [
+          "s6",
+          "f_kz_candle"
+        ],
+        "concludes": "Kadzo Mwamuye struck Felistus with the brass candlestick when she was caught taking the diary.",
+        "answers": [
+          "who",
+          "how"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_kitchen",
+        "blank": "where",
+        "by": [
+          "f_body",
+          "f_kz_reveal"
+        ],
+        "why": "Felistus was making tea there; she died in the sitting room."
+      },
+      {
+        "word": "pl_hotel",
+        "blank": "where",
+        "by": [
+          "f_diary"
+        ],
+        "why": "Where the diary went."
+      },
+      {
+        "word": "pl_nyeri",
+        "blank": "where",
+        "by": [
+          "f_mwalimu"
+        ],
+        "why": "Where the real diary was."
+      },
+      {
+        "word": "pl_flat",
+        "blank": "where",
+        "by": [
+          "f_kibet_stream"
+        ],
+        "why": "Kibet was streaming there."
+      },
+      {
+        "word": "w_kibet",
+        "blank": "who",
+        "by": [
+          "f_kibet_stream"
+        ],
+        "why": "Live on the stream from his flat."
+      },
+      {
+        "word": "w_jepchumba",
+        "blank": "who",
+        "by": [
+          "f_jep_roster"
+        ],
+        "why": "On duty in Eldoret."
+      },
+      {
+        "word": "w_kariuki",
+        "blank": "who",
+        "by": [
+          "f_kariuki"
+        ],
+        "why": "At church."
+      },
+      {
+        "word": "w_atieno",
+        "blank": "who",
+        "by": [
+          "f_atieno_self"
+        ],
+        "why": "Sent home at seven."
+      },
+      {
+        "word": "w_mwalimu",
+        "blank": "who",
+        "by": [
+          "f_mwalimu"
+        ],
+        "why": "Three hours away near Nyeri."
+      },
+      {
+        "word": "h_fall",
+        "blank": "how",
+        "by": [
+          "f_aut",
+          "f_blood"
+        ],
+        "why": "A square brass base; blood on the candlestick."
+      },
+      {
+        "word": "h_bar",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "Brass, square base."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "A blow."
+      },
+      {
+        "word": "h_tea",
+        "blank": "how",
+        "by": [
+          "f_body",
+          "f_aut"
+        ],
+        "why": "Her cup was full."
+      },
+      {
+        "word": "m_greed",
+        "blank": "why",
+        "by": [
+          "f_kibet_stream"
+        ],
+        "why": "Kibet was streaming."
+      },
+      {
+        "word": "m_house",
+        "blank": "why",
+        "by": [
+          "f_jep_roster",
+          "f_call"
+        ],
+        "why": "They made up, and she was in Eldoret."
+      },
+      {
+        "word": "m_hedge",
+        "blank": "why",
+        "by": [
+          "f_kariuki"
+        ],
+        "why": "Kariuki was at church."
+      },
+      {
+        "word": "m_brass",
+        "blank": "why",
+        "by": [
+          "f_dustring",
+          "f_shelf"
+        ],
+        "why": "Only one candlestick and one diary gone."
+      },
+      {
+        "word": "a_candle",
+        "blank": "missing",
+        "by": [
+          "f_abs_candle",
+          "f_aut"
+        ],
+        "why": "That shows the weapon, not the reason she came."
+      },
+      {
+        "word": "a_tea",
+        "blank": "missing",
+        "by": [
+          "f_abs_tea"
+        ],
+        "why": "That shows she was interrupted."
+      },
+      {
+        "word": "a_help",
+        "blank": "missing",
+        "by": [
+          "f_abs_atieno",
+          "f_atieno"
+        ],
+        "why": "That shows Felistus expected the writer."
+      },
+      {
+        "word": "a_hq",
+        "blank": "missing",
+        "by": [
+          "f_abs_hq"
+        ],
+        "why": "That shows the letter was forged, not what she came for."
+      },
+      {
+        "word": "k_burglar",
+        "blank": "conclusion",
+        "by": [
+          "f_dustring",
+          "f_shelf"
+        ],
+        "why": "A burglar takes the pair, and more."
+      },
+      {
+        "word": "k_beforetea",
+        "blank": "conclusion",
+        "by": [
+          "f_body"
+        ],
+        "why": "Two cups were poured."
+      },
+      {
+        "word": "k_help",
+        "blank": "conclusion",
+        "by": [
+          "f_atieno_self"
+        ],
+        "why": "Atieno was on a matatu."
+      },
+      {
+        "word": "k_novisit",
+        "blank": "conclusion",
+        "by": [
+          "f_rec_mast"
+        ],
+        "why": "Her phone was in Milimani."
+      },
+      {
+        "word": "k_moved",
+        "blank": "conclusion",
+        "by": [
+          "f_notebook",
+          "f_diary"
+        ],
+        "why": "Felistus switched the volumes; the jacket left in Kadzo's bag."
+      },
+      {
+        "word": "d_notebook",
+        "blank": "document",
+        "by": [
+          "f_notebook"
+        ],
+        "why": "Felistus's own, genuine."
+      },
+      {
+        "word": "d_diary",
+        "blank": "document",
+        "by": [
+          "f_notebook",
+          "f_diary"
+        ],
+        "why": "A switch made by its owner, not a forgery."
+      },
+      {
+        "word": "d_roster",
+        "blank": "document",
+        "by": [
+          "f_jep_roster"
+        ],
+        "why": "Genuine."
+      },
+      {
+        "word": "d_grant",
+        "blank": "document",
+        "by": [
+          "f_ukarimu"
+        ],
+        "why": "Real money from a real foundation."
+      },
+      {
+        "word": "t_id",
+        "blank": "tell",
+        "by": [
+          "f_letterhead"
+        ],
+        "why": "There's no ID number on it."
+      },
+      {
+        "word": "t_typed",
+        "blank": "tell",
+        "by": [
+          "f_docexam"
+        ],
+        "why": "Printed whole, signature scanned."
+      },
+      {
+        "word": "t_retired",
+        "blank": "tell",
+        "by": [
+          "f_letter"
+        ],
+        "why": "No stamp."
+      },
+      {
+        "word": "t_parcel",
+        "blank": "tell",
+        "by": [
+          "f_letter"
+        ],
+        "why": "No land parcel."
+      },
+      {
+        "word": "t_batch",
+        "blank": "tell",
+        "by": [
+          "f_letter"
+        ],
+        "why": "No batch number."
+      },
+      {
+        "word": "w_pin_fb",
+        "blank": "pin",
+        "by": [
+          "case-080:f_fieldbook",
+          "f_diary_entry"
+        ],
+        "why": "Joseph's own book, not the complaint."
+      },
+      {
+        "word": "w_pin_book",
+        "blank": "pin",
+        "by": [
+          "case-092:f_book_first",
+          "f_diary_entry"
+        ],
+        "why": "The same office, but a seal order, not a complaint."
+      },
+      {
+        "word": "w_pin_msingi",
+        "blank": "pin",
+        "by": [
+          "case-091:f_directors",
+          "f_diary_entry"
+        ],
+        "why": "Nominee directors, not a complaint."
+      },
+      {
+        "word": "w_pin_photo",
+        "blank": "pin",
+        "by": [
+          "case-086:f_photo",
+          "f_diary_entry"
+        ],
+        "why": "People on the floor, not the complaint."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "After her confession in case 70, Mwalimu asks Felistus for her husband's diary for the year Joseph died. Felistus lends it, and slips the next year's volume into the old jacket so the shelf won't show a gap.",
+        "image": null
+      },
+      {
+        "text": "Kadzo, whose \"history\" is funded by the Ukarimu Foundation, is offered three million more to bring back that one diary. She buys the address from Kibet and comes twice with a forged letter. Felistus refuses her both times.",
+        "image": null
+      },
+      {
+        "text": "On Monday at 19:25 Kadzo comes a third time. When Felistus goes to make tea, Kadzo pulls the labelled jacket off the shelf. Felistus comes back and tries to take it; Kadzo strikes her with a brass candlestick.",
+        "image": "plc_sitting"
+      },
+      {
+        "text": "She leaves at 19:55 with the diary and the candlestick. In her hotel room she opens it: the following year. At 07:10 she texts \"Maina — Ukarimu\": wrong year.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "Mwalimu drives to Nairobi. In Halima's office she gives a sworn statement about the Mwenda complaint and the nine-day file, and hands over the diary."
+    },
+    {
+      "beat": "Halima reads the entry twice. \"'She objected.' You never told us that part, Esther.\" Mwalimu: \"It didn't matter. I signed.\""
+    },
+    {
+      "beat": "The Ukarimu Foundation is pinned to the Pattern File. Amani's notebook: \"Records, 4th floor. Third time.\"",
+      "files": [
+        {
+          "thread": "t_kivuli",
+          "text": "Supt. Koech's diary: the Mwenda complaint was closed on a call from \"Lands House, 4th floor (Records)\". The Ukarimu Foundation paid the writer who came for it."
+        },
+        {
+          "thread": "t_joseph",
+          "text": "Mwalimu's sworn statement filed with the commander's diary."
+        }
+      ]
+    }
+  ],
+  "clockPlan": {
+    "note": "Two stamps: records on Kadzo's line and a warrant on her hotel room. Detain Kadzo after the search; prints (6 h) and blood (12 h) inside 24 h. The document exam (10 h) is submitted early.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_house",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_shelf",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_atieno",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_atieno"
+      },
+      {
+        "do": "read",
+        "target": "ev_notebook",
+        "hours": 0.5
+      },
+      {
+        "do": "read",
+        "target": "ev_letter",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_phone",
+        "hours": 0
+      },
+      {
+        "do": "submit",
+        "target": "ev_letterhead"
+      },
+      {
+        "do": "submit",
+        "target": "ev_docexam"
+      },
+      {
+        "do": "interview",
+        "target": "p_mwalimu"
+      },
+      {
+        "do": "interview",
+        "target": "p_jepchumba"
+      },
+      {
+        "do": "press",
+        "target": "c_jep"
+      },
+      {
+        "do": "interview",
+        "target": "p_kariuki"
+      },
+      {
+        "do": "travel",
+        "target": "loc_kibet",
+        "hours": 0.25,
+        "from": "loc_house"
+      },
+      {
+        "do": "visit",
+        "target": "loc_kibet",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_kibet",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_stream",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_kibet"
+      },
+      {
+        "do": "press",
+        "target": "c_kibet"
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "interview",
+        "target": "p_kadzo"
+      },
+      {
+        "do": "press",
+        "target": "c_kz_sat"
+      },
+      {
+        "do": "press",
+        "target": "c_kz_letter"
+      },
+      {
+        "do": "travel",
+        "target": "loc_hotel",
+        "hours": 0.25,
+        "from": "loc_kibet"
+      },
+      {
+        "do": "search",
+        "target": "loc_hotel"
+      },
+      {
+        "do": "read",
+        "target": "ev_hotel",
+        "hours": 0
+      },
+      {
+        "do": "detain",
+        "target": "p_kadzo"
+      },
+      {
+        "do": "submit",
+        "target": "ev_blood"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 12
+      },
+      {
+        "do": "press",
+        "target": "c_kz_candle"
+      }
+    ],
+    "totalHours": 40
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_notebook",
+        "line": "When did the real diary leave the house?"
+      },
+      "tier2": {
+        "facts": [
+          "f_notebook",
+          "f_aut_tod"
+        ],
+        "line": "Two weeks ago. She died between half seven and eight."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_body",
+        "line": "Where is the tea tray?"
+      },
+      "tier2": {
+        "facts": [
+          "f_body"
+        ],
+        "line": "In the sitting room."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_letter",
+        "line": "Who brought a letter to this house?"
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_mast",
+          "f_prints"
+        ],
+        "line": "Kadzo's phone in Milimani; her prints on the cup."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_body",
+        "line": "Look at the side table."
+      },
+      "tier2": {
+        "facts": [
+          "f_dustring",
+          "f_aut"
+        ],
+        "line": "A candlestick missing from a pair."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_atieno",
+        "line": "\"She asks about one year only.\""
+      },
+      "tier2": {
+        "facts": [
+          "f_atieno",
+          "f_ukarimu"
+        ],
+        "line": "Paid to bring back one diary."
+      }
+    },
+    "g_absence": {
+      "tier1": {
+        "point": "ev_shelf",
+        "line": "What's missing from a shelf Atieno dusted on Monday?"
+      },
+      "tier2": {
+        "facts": [
+          "f_abs_diary",
+          "f_atieno_dust"
+        ],
+        "line": "One diary out of thirty."
+      }
+    },
+    "g_forgery": {
+      "tier1": {
+        "point": "ev_letterhead",
+        "line": "Compare it with a current letter."
+      },
+      "tier2": {
+        "facts": [
+          "f_letterhead"
+        ],
+        "line": "A letterhead three years out of date."
+      }
+    },
+    "g_spine": {
+      "tier1": {
+        "point": "ev_mwalimu",
+        "line": "Ask Mwalimu to read you the page."
+      },
+      "tier2": {
+        "facts": [
+          "f_diary_entry"
+        ],
+        "line": "\"Told Wairimu NFA.\" The same complaint as in Doreen's folder."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "shajara",
+      "def": "A diary."
+    },
+    {
+      "term": "rafu ya vitabu",
+      "def": "A bookshelf."
+    },
+    {
+      "term": "barua ya utambulisho",
+      "def": "A letter of introduction."
+    },
+    {
+      "term": "kinara cha shaba",
+      "def": "A brass candlestick."
+    },
+    {
+      "term": "mjane",
+      "def": "A widow."
+    },
+    {
+      "term": "Mwalimu",
+      "def": "\"Teacher\": Esther Wairimu's nickname from her years as Amani's first commander."
+    },
+    {
+      "term": "Ukarimu",
+      "def": "\"Generosity\"; the name of the foundation paying Kadzo's grant."
+    },
+    {
+      "term": "NFA",
+      "def": "No Further Action: police shorthand for closing a file."
+    },
+    {
+      "term": "PesaPap",
+      "def": "A mobile-money service (fictional)."
+    },
+    {
+      "term": "matatu",
+      "def": "A shared minibus taxi."
+    },
+    {
+      "term": "mama",
+      "def": "A respectful way to address or refer to an older woman."
+    }
+  ],
+  "ui": {
+    "beats": [],
+    "beatNotes": "No new mechanics."
+  }
+}

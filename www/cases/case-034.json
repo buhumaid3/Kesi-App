@@ -1,0 +1,1926 @@
+{
+  "meta": {
+    "id": "case-034",
+    "number": 34,
+    "region": "rift-valley",
+    "regionNumber": 4,
+    "title": "The Fence Line",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 22,
+    "date": "Tuesday 21 October",
+    "folderTab": "ELEMENTAITA"
+  },
+  "pattern": {
+    "crimePattern": "son-in-law kills a rancher who would not sell, stages a riding accident and pays the foreman to blame herders",
+    "noRealCaseRetold": true,
+    "notes": "Fictional ranch near a real lake. The case deliberately puts a pastoralist community under suspicion and clears it on the evidence; herders are portrayed with dignity and no \"warrior\" clichés.",
+    "tags": [
+      "blunt-force",
+      "staged-accident",
+      "scapegoating",
+      "inheritance",
+      "two-liars",
+      "forensics"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 4,
+    "redHerrings": 1,
+    "liars": 2,
+    "groups": [
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": "staged-accident-and-staged-blame"
+  },
+  "ob": {
+    "number": "OB 18/21/10",
+    "date": "Tuesday 21 October",
+    "time": "09:05",
+    "reportedBy": "Sankau Kipury, head of security, Olkeri Ranch",
+    "text": "The head of security of Olkeri Ranch, near Lake Elementaita, reports the owner, Robert Hollis (64), found dead beside the boundary fence at 07:50, his horse grazing nearby. The ranch foreman reports herders cutting the fence at dawn. A local radio station is already blaming herders.",
+    "facts": [
+      "f_ob",
+      "f_ob_herders"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_robert",
+      "role": "victim",
+      "name": "Robert Hollis",
+      "age": 64,
+      "occupation": "Owner, Olkeri Ranch",
+      "bio": "Third-generation Kenyan, born on the ranch. Rides the fence line alone every morning at six.",
+      "community": "Kenyan-European",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_fence",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man of European descent, mid 60s, weathered sunburnt face, a battered felt hat, a faded khaki shirt, a riding crop in one hand, gruff and kind, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_andrew",
+      "role": "suspect",
+      "name": "Andrew Kerr",
+      "age": 43,
+      "occupation": "Robert's son-in-law; property consultant",
+      "bio": "Married to Robert's daughter, Clare. Has brought Robert three offers from a developer who wants to subdivide the ranch.",
+      "community": "Kenyan-European",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_offer"
+      },
+      "at": "plc_hotel",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man of European descent, early 40s, well-cut fleece over a pressed shirt, an expensive watch, carefully polite expression, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_gerald",
+      "role": "suspect",
+      "name": "Gerald Muriithi",
+      "age": 50,
+      "occupation": "Ranch foreman",
+      "bio": "Fifteen years on Olkeri. Reported seeing herders cutting the fence.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_ob_herders"
+      },
+      "at": "plc_stables",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 50, ranch overalls, a wide-brimmed hat, work gloves stuffed in a pocket, eyes that won't settle, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kasaine",
+      "role": "suspect",
+      "name": "Kasaine ole Sopia",
+      "age": 38,
+      "occupation": "Leader of the herding families camped near the ranch",
+      "redHerring": true,
+      "bio": "Brought his families' herds to the area for water in the drought. Everyone on the radio has already decided he did it.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_ob_herders"
+      },
+      "at": "plc_waterpoint",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Maasai man, late 30s, a red and blue checked shuka over a plain shirt, a herder's stick held loosely, calm, direct and dignified expression, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_clare",
+      "role": "suspect",
+      "name": "Clare Kerr",
+      "age": 40,
+      "occupation": "Robert's daughter; veterinarian",
+      "bio": "A vet in Nairobi. Would inherit the ranch under her father's old will.",
+      "community": "Kenyan-European",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_will"
+      },
+      "at": "plc_nairobi",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman of European descent, about 40, a vet's scrubs top under a cardigan, hair tied back, red-eyed, holding a phone to her ear, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_sankau",
+      "role": "witness",
+      "name": "Sankau Kipury",
+      "age": 45,
+      "occupation": "Head of security, Olkeri Ranch",
+      "bio": "Twenty years on Olkeri. Knows every crossing on the fence and who uses it.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_maingate",
+      "image": null
+    },
+    {
+      "id": "p_nelson",
+      "role": "witness",
+      "name": "Nelson Lekuta",
+      "age": 24,
+      "occupation": "Groom",
+      "bio": "Looks after the horses. Saddled Robert's horse this morning.",
+      "community": "Samburu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_stables",
+      "image": null
+    },
+    {
+      "id": "p_bernard",
+      "role": "witness",
+      "name": "Bernard Oduor",
+      "age": 52,
+      "occupation": "Night porter, a Nakuru hotel",
+      "statementOnly": true,
+      "bio": "Keeps the hotel's night log of every guest going out and coming in.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_andrew_hotel"
+      },
+      "at": "plc_hotel",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_cut",
+      "name": "The cut in the boundary fence",
+      "within": "loc_fence"
+    },
+    {
+      "id": "plc_stables",
+      "name": "Stables and tack room"
+    },
+    {
+      "id": "plc_workshop",
+      "name": "Ranch workshop"
+    },
+    {
+      "id": "plc_maingate",
+      "name": "Ranch main gate"
+    },
+    {
+      "id": "plc_waterpoint",
+      "name": "Community water point, 10 km away"
+    },
+    {
+      "id": "plc_hotel",
+      "name": "Hotel, Nakuru town"
+    },
+    {
+      "id": "plc_nairobi",
+      "name": "Animal hospital, Karen, Nairobi"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_fence",
+      "name": "Boundary fence, Olkeri Ranch",
+      "kind": "scene",
+      "description": "Acacia and dry grass running down to the white edge of Lake Elementaita. A long high-tensile wire fence. At one point it has been cut. Robert lies beside a rock. His horse grazes twenty metres off, saddle on, reins trailing.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_scene",
+          "label": "By the rock",
+          "pos": [
+            44,
+            62
+          ],
+          "yields": "ev_scene",
+          "text": "Robert lies on his back beside a rock. The horse is calm. The saddle is still straight."
+        },
+        {
+          "id": "hs_cut",
+          "label": "The cut wire",
+          "pos": [
+            60,
+            46
+          ],
+          "yields": "ev_cut",
+          "text": "The wire has been cut clean through, both strands, at the same height."
+        },
+        {
+          "id": "hs_tracks",
+          "label": "Tyre tracks",
+          "pos": [
+            80,
+            70
+          ],
+          "yields": "ev_tracks",
+          "text": "Fresh tyre tracks on the fence track, with a deep, aggressive tread."
+        },
+        {
+          "id": "hs_soil",
+          "label": "Track soil",
+          "pos": [
+            84,
+            76
+          ],
+          "yields": "ev_tracksoil",
+          "text": "White, soda-dusted soil, the kind you only find near the lake edge. Amani bags some."
+        },
+        {
+          "id": "hs_sankau",
+          "label": "Head of security",
+          "pos": [
+            20,
+            40
+          ],
+          "yields": "ev_sankau",
+          "text": "Sankau Kipury stands by the cut with his arms folded, looking at the wire, not at the radio in the foreman's hand."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a ranch boundary fence at dawn near Lake Elementaita in the Rift Valley, acacia trees, dry golden grass, a long wire fence with one section cut, a saddled horse grazing in the distance, the white soda edge of the lake beyond, no people in focus"
+      }
+    },
+    {
+      "id": "loc_ranch",
+      "name": "Olkeri ranch yard",
+      "kind": "location",
+      "description": "The stables, a tack room with a painted tool board, the workshop, the main house with Robert's study.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_board",
+          "label": "Farrier's tool board",
+          "pos": [
+            30,
+            40
+          ],
+          "yields": "ev_toolboard",
+          "text": "The farrier's kit hangs on a board, every tool painted round in outline so a gap shows at once."
+        },
+        {
+          "id": "hs_cutters",
+          "label": "Workshop",
+          "pos": [
+            60,
+            50
+          ],
+          "yields": "ev_cutters",
+          "text": "The workshop bench. A pair of heavy bolt cutters lies on top of the vice."
+        },
+        {
+          "id": "hs_nelson",
+          "label": "Stables",
+          "pos": [
+            16,
+            60
+          ],
+          "yields": "ev_nelson",
+          "text": "Nelson Lekuta is brushing a horse that doesn't need brushing."
+        },
+        {
+          "id": "hs_study",
+          "label": "Robert's study",
+          "pos": [
+            86,
+            30
+          ],
+          "yields": "ev_will",
+          "text": "A draft will on the desk, with an appointment card clipped to it."
+        },
+        {
+          "id": "hs_offer",
+          "label": "Study drawer",
+          "pos": [
+            90,
+            40
+          ],
+          "yields": "ev_offer",
+          "text": "A developer's offer, folded, with a note written across it."
+        },
+        {
+          "id": "hs_stock",
+          "label": "Ranch office",
+          "pos": [
+            74,
+            62
+          ],
+          "yields": "ev_stockcount",
+          "text": "The cattle register."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a working ranch yard in the Kenyan Rift Valley, stables, a tack room with a painted tool board, a tin-roofed workshop, a stone main house, acacia trees"
+      }
+    },
+    {
+      "id": "loc_water",
+      "name": "Community water point",
+      "kind": "location",
+      "description": "A borehole and troughs 10 km from the ranch. An attendant's hut with a log book. Cattle everywhere.",
+      "unlock": {
+        "fact": "f_kas_claim"
+      },
+      "hotspots": [
+        {
+          "id": "hs_waterlog",
+          "label": "Attendant's log",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_waterpoint",
+          "text": "Every herd watered, every time, signed by the herd's leader."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a community borehole water point in dry Kenyan rangeland, long concrete troughs, herds of cattle drinking, an attendant's small hut, dust in the morning light"
+      }
+    },
+    {
+      "id": "loc_hotel",
+      "name": "Hotel, Nakuru town",
+      "kind": "location",
+      "description": "A business hotel with a night desk and a night log.",
+      "unlock": {
+        "fact": "f_andrew_hotel"
+      },
+      "hotspots": [
+        {
+          "id": "hs_nightlog",
+          "label": "Night log",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_porter",
+          "text": "The night porter's log: every guest who goes out after midnight, and when they come back."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the reception desk of a business hotel in Nakuru at night, a night porter's log book open on the counter, a key board behind"
+      }
+    },
+    {
+      "id": "loc_car",
+      "name": "Andrew Kerr's 4×4 (search)",
+      "kind": "search",
+      "description": "A grey 4×4 parked in the hotel car park, mud on the sills.",
+      "unlock": {
+        "fact": "f_rec_pay"
+      },
+      "hotspots": [
+        {
+          "id": "hs_car",
+          "label": "Tyres and rear seat",
+          "pos": [
+            50,
+            60
+          ],
+          "yields": "ev_vehicle",
+          "text": "All-terrain tyres. Under the rear seat, something wrapped in a towel."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a grey four-wheel-drive vehicle with all-terrain tyres in a hotel car park, white dust on its sills"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_scene",
+      "type": "physical",
+      "title": "The fence line",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Robert beside a rock. Horse calm, saddle on. Fence cut."
+      },
+      "facts": [
+        "f_scene"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a large rock beside a ranch fence in dry grass at dawn, a riding hat lying in the grass, a saddled horse calmly grazing some distance away, no body visible"
+      }
+    },
+    {
+      "id": "ev_cut",
+      "type": "physical",
+      "title": "The cut wire",
+      "render": "object",
+      "body": {
+        "label": "High-tensile wire, cut clean and straight, both strands, with heavy bolt cutters."
+      },
+      "facts": [
+        "f_cut"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tracks",
+      "type": "physical",
+      "title": "Tyre tracks on the fence track",
+      "render": "sketch",
+      "body": {
+        "note": "Aggressive all-terrain tread. From the public road to the cut and back the same way."
+      },
+      "facts": [
+        "f_tracks"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tracksoil",
+      "type": "physical",
+      "title": "Soil from the fence track",
+      "render": "object",
+      "body": {
+        "label": "White, soda-dusted soil from the lake edge."
+      },
+      "facts": [
+        "f_tracksoil"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_sankau",
+      "type": "witness",
+      "title": "Statement: Sankau Kipury",
+      "render": "statement",
+      "body": {
+        "speaker": "p_sankau"
+      },
+      "facts": [
+        "f_sankau_cross",
+        "f_sankau_ride",
+        "f_sankau_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_toolboard",
+      "type": "physical",
+      "title": "Farrier's tool board",
+      "render": "board",
+      "body": {
+        "note": "Every tool painted in outline. The hammer outline is empty."
+      },
+      "facts": [
+        "f_toolboard"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a wooden tool board in a ranch tack room with farrier tools hanging inside painted white outlines, one outline of a hammer empty"
+      }
+    },
+    {
+      "id": "ev_cutters",
+      "type": "physical",
+      "title": "Workshop bolt cutters",
+      "render": "object",
+      "body": {
+        "label": "Heavy bolt cutters, fresh bright wire marks on the jaws."
+      },
+      "facts": [
+        "f_cutters"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_nelson",
+      "type": "witness",
+      "title": "Statement: Nelson Lekuta",
+      "render": "statement",
+      "body": {
+        "speaker": "p_nelson"
+      },
+      "facts": [
+        "f_nelson_hammer",
+        "f_nelson_ride",
+        "f_nelson_gerald"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_will",
+      "type": "physical",
+      "title": "Draft will",
+      "render": "form",
+      "body": {
+        "text": "The ranch to the Olkeri Conservation Trust.",
+        "appointment": "Signing: Monday, 10:00, advocate's office, Nakuru"
+      },
+      "facts": [
+        "f_will"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_offer",
+      "type": "physical",
+      "title": "Developer's offer",
+      "render": "note",
+      "body": {
+        "text": "Offer for subdivision into plots.",
+        "note": "No. Never. Tell Andrew again. — R.H."
+      },
+      "facts": [
+        "f_offer"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_stockcount",
+      "type": "physical",
+      "title": "Cattle register",
+      "render": "ledger",
+      "body": {
+        "line": "Count reconciled last week: every head accounted for."
+      },
+      "facts": [
+        "f_stock"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_waterpoint",
+      "type": "physical",
+      "title": "Water-point log",
+      "render": "logBook",
+      "body": {
+        "rows": [
+          {
+            "herd": "ole Sopia families",
+            "in": "05:30",
+            "out": "08:00",
+            "signed": "K. ole Sopia (both)"
+          }
+        ]
+      },
+      "facts": [
+        "f_waterpoint"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rec_gerald",
+      "type": "phone",
+      "title": "Records: Gerald Muriithi's line",
+      "render": "manifest",
+      "body": {
+        "pesapap": "05:10 KSh 20,000 received from ANDREW KERR",
+        "masts": "Ranch workshop zone 05:15–05:40"
+      },
+      "facts": [
+        "f_rec_pay",
+        "f_rec_mast"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_waterpoint"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_porter",
+      "type": "physical",
+      "title": "Hotel night log",
+      "render": "visitorRegister",
+      "body": {
+        "rows": [
+          {
+            "room": "14",
+            "name": "Mr A. Kerr",
+            "out": "04:50 (own vehicle)",
+            "back": "07:40"
+          }
+        ]
+      },
+      "facts": [
+        "f_porter"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_vehicle",
+      "type": "physical",
+      "title": "Andrew's 4×4",
+      "render": "object",
+      "body": {
+        "label": "All-terrain tyres. Under the rear seat, wrapped in a towel: a farrier's hammer, wiped."
+      },
+      "facts": [
+        "f_veh_tyres",
+        "f_veh_hammer"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_pay"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a farrier's hammer with a square striking face lying on a folded towel on the floor of a vehicle, under the rear seat"
+      }
+    },
+    {
+      "id": "ev_clare",
+      "type": "witness",
+      "title": "Phone statement: Clare Kerr",
+      "render": "statement",
+      "body": {
+        "speaker": "p_clare",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_clare_will",
+        "f_clare_money",
+        "f_clare_where"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_square",
+        "f_aut_nofall",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_scene"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_toolmarks",
+      "type": "forensic",
+      "title": "Lab: tool marks (wounds vs hammer)",
+      "render": "labReport",
+      "body": {
+        "test": "toolMarks"
+      },
+      "facts": [
+        "f_toolmarks"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toolMarks",
+        "hours": 8,
+        "needs": [
+          "ev_autopsy",
+          "ev_vehicle"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_soil",
+      "type": "forensic",
+      "title": "Lab: soil (tyres vs fence track)",
+      "render": "labReport",
+      "body": {
+        "test": "soil"
+      },
+      "facts": [
+        "f_soil"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "soil",
+        "hours": 8,
+        "needs": [
+          "ev_vehicle",
+          "ev_tracksoil"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Robert Hollis, owner of Olkeri Ranch, was found dead beside the boundary fence at 07:50, his horse grazing nearby.",
+      "kind": "true",
+      "about": [
+        "p_robert",
+        "loc_fence"
+      ]
+    },
+    {
+      "id": "f_ob_herders",
+      "text": "The ranch foreman reports herders cutting the fence at dawn. A local radio station is already blaming herders.",
+      "kind": "true",
+      "about": [
+        "p_gerald",
+        "p_kasaine"
+      ]
+    },
+    {
+      "id": "f_scene",
+      "text": "Robert lies beside a rock. His horse is calm, the saddle still straight. The fence is cut nearby.",
+      "kind": "true",
+      "about": [
+        "p_robert",
+        "loc_fence"
+      ]
+    },
+    {
+      "id": "f_cut",
+      "text": "The high-tensile wire was cut clean and straight through, both strands, with heavy bolt cutters.",
+      "kind": "true",
+      "about": [
+        "plc_cut"
+      ]
+    },
+    {
+      "id": "f_tracks",
+      "text": "Fresh tyre tracks with an aggressive all-terrain tread run from the public road to the cut and back. No ranch vehicle uses that track.",
+      "kind": "true",
+      "about": [
+        "loc_fence"
+      ]
+    },
+    {
+      "id": "f_tracksoil",
+      "text": "The fence track is white, soda-dusted soil found only near the lake edge.",
+      "kind": "true",
+      "about": [
+        "loc_fence"
+      ]
+    },
+    {
+      "id": "f_sankau_cross",
+      "text": "Sankau: every crossing the herders made this year was through the old gate or under lifted wire. \"Nobody carries bolt cutters to graze cattle.\"",
+      "kind": "true",
+      "about": [
+        "p_sankau",
+        "p_kasaine"
+      ]
+    },
+    {
+      "id": "f_sankau_ride",
+      "text": "Sankau: the cut is about twenty minutes' ride from the stables.",
+      "kind": "true",
+      "about": [
+        "p_sankau",
+        "plc_cut"
+      ]
+    },
+    {
+      "id": "f_sankau_self",
+      "text": "Sankau was on the main gate from 05:00 with two guards.",
+      "kind": "true",
+      "about": [
+        "p_sankau"
+      ],
+      "where": {
+        "person": "p_sankau",
+        "place": "plc_maingate",
+        "from": "05:00",
+        "to": "08:00"
+      }
+    },
+    {
+      "id": "f_toolboard",
+      "text": "Tack room: the farrier's kit hangs in painted outlines. The hammer outline is empty.",
+      "kind": "true",
+      "about": [
+        "plc_stables"
+      ]
+    },
+    {
+      "id": "f_cutters",
+      "text": "The workshop bolt cutters have fresh, bright wire marks on their jaws.",
+      "kind": "true",
+      "about": [
+        "plc_workshop"
+      ]
+    },
+    {
+      "id": "f_nelson_hammer",
+      "text": "Nelson: the farrier's hammer was on its board when he swept the tack room at 05:10. When he saddled up at 05:50, its outline was empty.",
+      "kind": "true",
+      "about": [
+        "p_nelson",
+        "plc_stables"
+      ]
+    },
+    {
+      "id": "f_nelson_ride",
+      "text": "Nelson: he saddled Robert's horse at 05:50. Robert rode out alone at 06:00, towards the boundary fence.",
+      "kind": "true",
+      "about": [
+        "p_nelson",
+        "p_robert"
+      ]
+    },
+    {
+      "id": "f_nelson_gerald",
+      "text": "Nelson: Gerald mucked out the stables with him from 06:05 until 07:00, then ran into the yard shouting about herders.",
+      "kind": "true",
+      "about": [
+        "p_nelson",
+        "p_gerald"
+      ],
+      "where": {
+        "person": "p_gerald",
+        "place": "plc_stables",
+        "from": "06:05",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_will",
+      "text": "Draft new will: the ranch to the \"Olkeri Conservation Trust\". Signing appointment: Monday at 10:00.",
+      "kind": "true",
+      "about": [
+        "p_robert"
+      ]
+    },
+    {
+      "id": "f_offer",
+      "text": "Developer's offer to subdivide the ranch into plots. Robert's note across it: 'No. Never. Tell Andrew again.'",
+      "kind": "true",
+      "about": [
+        "p_robert",
+        "p_andrew"
+      ]
+    },
+    {
+      "id": "f_stock",
+      "text": "Cattle register: the count reconciled last week; every head accounted for.",
+      "kind": "true",
+      "about": [
+        "loc_ranch"
+      ]
+    },
+    {
+      "id": "f_waterpoint",
+      "text": "Water-point log: the ole Sopia herds watered 05:30–08:00, 10 km from the ranch. Kasaine signed at 05:30 and 08:00; the attendant saw him throughout.",
+      "kind": "true",
+      "about": [
+        "p_kasaine"
+      ],
+      "where": {
+        "person": "p_kasaine",
+        "place": "plc_waterpoint",
+        "from": "05:30",
+        "to": "08:00"
+      }
+    },
+    {
+      "id": "f_rec_pay",
+      "text": "Records, Gerald's line: at 05:10, KSh 20,000 received from ANDREW KERR.",
+      "kind": "true",
+      "about": [
+        "p_gerald",
+        "p_andrew"
+      ]
+    },
+    {
+      "id": "f_rec_mast",
+      "text": "Records: Gerald's phone in the ranch workshop zone 05:15–05:40.",
+      "kind": "true",
+      "about": [
+        "p_gerald"
+      ],
+      "where": {
+        "person": "p_gerald",
+        "place": "plc_workshop",
+        "from": "05:15",
+        "to": "05:40"
+      }
+    },
+    {
+      "id": "f_porter",
+      "text": "Hotel night log: 'Room 14, Mr A. Kerr, went out 04:50 in his vehicle, back 07:40.'",
+      "kind": "true",
+      "about": [
+        "p_andrew",
+        "p_bernard"
+      ]
+    },
+    {
+      "id": "f_veh_tyres",
+      "text": "Andrew's 4×4 has all-terrain tyres with the same tread as the tracks at the cut.",
+      "kind": "true",
+      "about": [
+        "p_andrew"
+      ]
+    },
+    {
+      "id": "f_veh_hammer",
+      "text": "Under the rear seat, wrapped in a towel: a farrier's hammer, wiped.",
+      "kind": "true",
+      "about": [
+        "p_andrew"
+      ]
+    },
+    {
+      "id": "f_clare_will",
+      "text": "Clare: she knew about the new will and \"was relieved\". She hasn't spoken to Andrew since Friday. \"There is no divorce. There's nothing.\"",
+      "kind": "true",
+      "about": [
+        "p_clare",
+        "p_andrew"
+      ]
+    },
+    {
+      "id": "f_clare_money",
+      "text": "Clare: her father never lent Andrew money. \"Andrew has his own firm. He wanted the ranch sold, not a loan.\"",
+      "kind": "true",
+      "about": [
+        "p_clare",
+        "p_andrew"
+      ]
+    },
+    {
+      "id": "f_clare_where",
+      "text": "Clare was on night call at an animal hospital in Karen, Nairobi, 22:00–08:00; the clinic log has her treating a dog at 06:30.",
+      "kind": "true",
+      "about": [
+        "p_clare"
+      ],
+      "where": {
+        "person": "p_clare",
+        "place": "plc_nairobi",
+        "from": "22:00",
+        "to": "08:00"
+      }
+    },
+    {
+      "id": "f_aut_square",
+      "text": "Autopsy: two impacts to the head from a square-faced object about 2.5 cm across, struck from above by a standing attacker.",
+      "kind": "true",
+      "about": [
+        "p_robert"
+      ]
+    },
+    {
+      "id": "f_aut_nofall",
+      "text": "Autopsy: no injuries of a fall from a horse: no shoulder or wrist fractures, no hoof marks.",
+      "kind": "true",
+      "about": [
+        "p_robert"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 06:00 and 07:00.",
+      "kind": "true",
+      "about": [
+        "p_robert"
+      ]
+    },
+    {
+      "id": "f_toolmarks",
+      "text": "Lab: the hammer's square face matches the wound dimensions. A trace of blood remains on the face.",
+      "kind": "true",
+      "about": [
+        "p_andrew",
+        "p_robert"
+      ]
+    },
+    {
+      "id": "f_soil",
+      "text": "Lab: the soil in the 4×4's treads matches the white, soda-dusted soil of the fence track.",
+      "kind": "true",
+      "about": [
+        "p_andrew",
+        "loc_fence"
+      ]
+    },
+    {
+      "id": "f_gerald_herders",
+      "text": "Gerald: \"At six I saw two herders cutting the fence with wire cutters. I ran to report it.\"",
+      "kind": "lie",
+      "about": [
+        "p_gerald",
+        "p_kasaine"
+      ]
+    },
+    {
+      "id": "f_gerald_cut",
+      "text": "Gerald admits he cut the fence himself, with the workshop bolt cutters, before dawn. \"There were no herders.\"",
+      "kind": "true",
+      "about": [
+        "p_gerald",
+        "plc_cut"
+      ]
+    },
+    {
+      "id": "f_gerald_own",
+      "text": "Gerald: \"Nobody paid me. It was my own idea, to scare Mzee into selling.\"",
+      "kind": "lie",
+      "about": [
+        "p_gerald"
+      ]
+    },
+    {
+      "id": "f_gerald_andrew",
+      "text": "Gerald admits Andrew paid him KSh 20,000 to cut the fence and blame the herders, and to leave the farrier's hammer at the cut \"for the posts\".",
+      "kind": "true",
+      "about": [
+        "p_gerald",
+        "p_andrew"
+      ]
+    },
+    {
+      "id": "f_andrew_hotel",
+      "text": "Andrew: \"I was asleep at the hotel in Nakuru until Clare called me at eight.\"",
+      "kind": "lie",
+      "about": [
+        "p_andrew"
+      ]
+    },
+    {
+      "id": "f_andrew_loved",
+      "text": "Andrew: \"Robert was a stubborn old man, but I loved him.\"",
+      "kind": "claim",
+      "about": [
+        "p_andrew",
+        "p_robert"
+      ]
+    },
+    {
+      "id": "f_andrew_drive",
+      "text": "Andrew: \"I went for a drive to clear my head. I never went near the ranch.\"",
+      "kind": "lie",
+      "about": [
+        "p_andrew"
+      ]
+    },
+    {
+      "id": "f_andrew_admits",
+      "text": "Andrew admits he was at the cut at about 06:20 \"to talk to Robert one more time\". He says Robert rode on alive.",
+      "kind": "true",
+      "about": [
+        "p_andrew",
+        "plc_cut"
+      ],
+      "where": {
+        "person": "p_andrew",
+        "place": "plc_cut",
+        "from": "06:15",
+        "to": "06:35"
+      }
+    },
+    {
+      "id": "f_kas_claim",
+      "text": "Kasaine: \"We were at the water point. Ask the attendant. Our names are in his book.\"",
+      "kind": "claim",
+      "about": [
+        "p_kasaine"
+      ]
+    },
+    {
+      "id": "f_clare_claim",
+      "text": "Clare: \"I was in Nairobi, at work.\"",
+      "kind": "claim",
+      "about": [
+        "p_clare"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_gerald",
+      "stance": "cooperative",
+      "intro": "Gerald holds the transistor radio that is still talking about herders. \"I saw them. Two of them. With wire cutters.\"",
+      "claims": [
+        "f_gerald_herders"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_gerald_own",
+          "after": "f_gerald_cut"
+        }
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_robert",
+          "reply": "Fifteen years I worked for Mzee. Fifteen years.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_andrew",
+      "stance": "cooperative",
+      "intro": "Andrew meets Amani in the hotel lobby, showered and shaved. \"This is a nightmare. Clare is driving up now. Whatever you need.\"",
+      "claims": [
+        "f_andrew_hotel",
+        "f_andrew_loved"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_andrew_drive",
+          "after": "f_porter"
+        }
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_offer",
+          "reply": "It was a good offer. He was sitting on land he couldn't afford to run. I was trying to help.",
+          "reveals": []
+        },
+        {
+          "about": "ev_will",
+          "reply": "A conservation trust. Well. That's what he wanted.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_kasaine",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_cut"
+      ],
+      "intro": "Kasaine stands at the water point with his stick across his shoulders. \"Every time something happens on a ranch, the radio says herders.\"",
+      "claims": [
+        "f_kas_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_cut",
+          "reply": "Bolt cutters? We don't cut fences. We go through the old gate. Ask the ranch's own guard.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_clare",
+      "stance": "cooperative",
+      "intro": "Clare is on the phone from the Naivasha road, driving. \"I knew he was changing the will. I was relieved, actually.\"",
+      "claims": [
+        "f_clare_claim"
+      ],
+      "yields": [
+        "ev_clare"
+      ],
+      "topics": [
+        {
+          "about": "p_andrew",
+          "reply": "We haven't spoken since Friday. He wanted Dad to sell. Dad wouldn't. That's all it ever was.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_sankau",
+      "stance": "cooperative",
+      "intro": "Sankau keeps his eyes on the wire. \"This is not how herders cross. I have watched this fence for twenty years.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_kasaine",
+          "reply": "Ole Sopia's families water at the borehole every morning. Ten kilometres away. Their names are in the attendant's book.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_nelson",
+      "stance": "cooperative",
+      "intro": "Nelson stops brushing. \"I saddled him myself. At ten to six.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_toolboard",
+          "reply": "The hammer was on the board when I swept. Ten past five. When I came back to saddle, the outline was empty.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_gerald_herders",
+      "claim": "f_gerald_herders",
+      "brokenBy": [
+        "f_waterpoint",
+        "f_sankau_cross"
+      ],
+      "reveals": [
+        "f_gerald_cut"
+      ],
+      "reaction": "...There were no herders. I cut it. Before dawn. With the workshop cutters. I needed the money.",
+      "mark": "explains"
+    },
+    {
+      "id": "c_gerald_own",
+      "claim": "f_gerald_own",
+      "brokenBy": [
+        "f_rec_pay"
+      ],
+      "reveals": [
+        "f_gerald_andrew"
+      ],
+      "reaction": "Mr Andrew paid me twenty thousand to cut it and say the herders did. And to leave the farrier's hammer at the cut, \"for the posts\". He said it was to make the old man sell. I didn't know anything else would happen.",
+      "mark": "explains"
+    },
+    {
+      "id": "c_andrew_hotel",
+      "claim": "f_andrew_hotel",
+      "brokenBy": [
+        "f_porter"
+      ],
+      "reveals": [],
+      "reaction": "I went for a drive. To clear my head. Is that a crime now?",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_andrew_drive",
+      "claim": "f_andrew_drive",
+      "brokenBy": [
+        "f_soil",
+        "f_toolmarks"
+      ],
+      "reveals": [
+        "f_andrew_admits"
+      ],
+      "reaction": "A long pause. \"...I went to the cut. To talk to him one more time. He rode on. He was alive.\" He asks for a lawyer.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_andrew",
+      "text": "Andrew Kerr",
+      "category": "person",
+      "ref": "p_andrew",
+      "unlock": {
+        "anyOf": [
+          "f_offer",
+          "f_rec_pay"
+        ]
+      }
+    },
+    {
+      "id": "w_gerald",
+      "text": "Gerald Muriithi",
+      "category": "person",
+      "ref": "p_gerald",
+      "unlock": {
+        "anyOf": [
+          "f_ob_herders"
+        ]
+      }
+    },
+    {
+      "id": "w_kasaine",
+      "text": "Kasaine ole Sopia",
+      "category": "person",
+      "ref": "p_kasaine",
+      "unlock": {
+        "anyOf": [
+          "f_kas_claim"
+        ]
+      }
+    },
+    {
+      "id": "w_clare",
+      "text": "Clare Kerr",
+      "category": "person",
+      "ref": "p_clare",
+      "unlock": {
+        "anyOf": [
+          "f_will"
+        ]
+      }
+    },
+    {
+      "id": "w_sankau",
+      "text": "Sankau Kipury",
+      "category": "person",
+      "ref": "p_sankau",
+      "unlock": {
+        "anyOf": [
+          "f_sankau_self"
+        ]
+      }
+    },
+    {
+      "id": "h_hammer",
+      "text": "struck with a farrier's hammer and staged as a fall from his horse",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_square"
+        ]
+      }
+    },
+    {
+      "id": "h_thrown",
+      "text": "thrown from his horse onto a rock",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_scene"
+        ]
+      }
+    },
+    {
+      "id": "h_kicked",
+      "text": "kicked by his horse",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_scene"
+        ]
+      }
+    },
+    {
+      "id": "h_herders",
+      "text": "attacked by herders with sticks",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob_herders"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack in the saddle",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_tod"
+        ]
+      }
+    },
+    {
+      "id": "m_trust",
+      "text": "Robert refused to sell and was about to leave the ranch to a conservation trust",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_will"
+        ]
+      }
+    },
+    {
+      "id": "m_grazing",
+      "text": "a grazing dispute with the herders",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob_herders"
+        ]
+      }
+    },
+    {
+      "id": "m_cattle",
+      "text": "he'd caught Andrew stealing cattle",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_stock"
+        ]
+      }
+    },
+    {
+      "id": "m_divorce",
+      "text": "a quarrel over Clare's divorce",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_clare_claim"
+        ]
+      }
+    },
+    {
+      "id": "m_debt",
+      "text": "an unpaid debt",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_offer"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Robert Hollis"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_andrew"
+          }
+        ],
+        "prosecutor": {
+          "pass": "He paid the foreman, left the hotel at ten to five, his tyres are at the cut and the hammer is under his seat. That will hold.",
+          "fail": [
+            "Doesn't hold up. The radio decided this before you did. Open the water-point book before you open your mouth.",
+            "No. The foreman is a liar and a vandal. Who paid him?"
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_hammer"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Two square blows from a standing man, and no fall at all. Staged. Yes.",
+          "fail": [
+            "Read what Dr. Chebii did NOT find: no fractures, no hoof marks.",
+            "Herders with sticks don't leave square wounds."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_trust"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A will signed on Monday would have ended the sale for ever. That's the reason.",
+          "fail": [
+            "The cattle count reconciles. Try again.",
+            "There is no divorce. Read the study, not the gossip."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_fence",
+      "from": "06:20",
+      "to": "07:00",
+      "within": [
+        "plc_cut"
+      ],
+      "note": "Robert rode out at 06:00; the cut is twenty minutes away; autopsy 06:00–07:00."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_waterpoint",
+          "f_sankau_cross",
+          "f_cut",
+          "f_gerald_herders",
+          "f_gerald_cut"
+        ],
+        "concludes": "The herders were 10 km away watering their cattle, and the fence was cut with heavy bolt cutters, not \"wire cutters\". Pressed, the foreman admits he cut it himself. His herders never existed."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_gerald_own",
+          "f_rec_pay",
+          "f_gerald_andrew"
+        ],
+        "concludes": "Andrew paid the foreman KSh 20,000 at 05:10 to cut the fence, blame the herders and leave the farrier's hammer at the cut."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_aut_square",
+          "f_aut_nofall",
+          "f_toolboard",
+          "f_nelson_hammer",
+          "f_nelson_ride",
+          "f_sankau_ride"
+        ],
+        "concludes": "Robert rode out alone at 06:00 to the cut, twenty minutes away. He was struck twice with a square-faced hammer by a standing man, and never fell from his horse. The farrier's hammer left its board before dawn."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_andrew_hotel",
+          "f_porter",
+          "f_tracks",
+          "f_veh_tyres",
+          "f_veh_hammer",
+          "f_toolmarks",
+          "f_soil",
+          "f_andrew_admits",
+          "f_will",
+          "f_offer"
+        ],
+        "concludes": "Andrew left his hotel at 04:50; his tyres and the lake-edge soil put his 4×4 at the cut; the hammer under his seat matches the wounds; he admits being there at 06:20. Robert was about to sign the ranch to a trust. Andrew Kerr killed him with a farrier's hammer and staged a fall from his horse.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_gerald",
+        "blank": "who",
+        "by": [
+          "f_nelson_gerald"
+        ],
+        "why": "Gerald was mucking out the stables with the groom from 06:05 to 07:00. He cut the fence before dawn; he did not strike Robert."
+      },
+      {
+        "word": "w_kasaine",
+        "blank": "who",
+        "by": [
+          "f_waterpoint"
+        ],
+        "why": "Kasaine was at the water point 10 km away from 05:30 to 08:00, signed in and seen throughout."
+      },
+      {
+        "word": "w_clare",
+        "blank": "who",
+        "by": [
+          "f_clare_where"
+        ],
+        "why": "Clare was on night call at an animal hospital in Karen, Nairobi."
+      },
+      {
+        "word": "w_sankau",
+        "blank": "who",
+        "by": [
+          "f_sankau_self"
+        ],
+        "why": "Sankau was on the main gate from 05:00 with two guards."
+      },
+      {
+        "word": "h_thrown",
+        "blank": "how",
+        "by": [
+          "f_aut_nofall"
+        ],
+        "why": "No injuries of a fall from a horse, and the wounds are square."
+      },
+      {
+        "word": "h_kicked",
+        "blank": "how",
+        "by": [
+          "f_aut_nofall"
+        ],
+        "why": "No hoof marks."
+      },
+      {
+        "word": "h_herders",
+        "blank": "how",
+        "by": [
+          "f_aut_square",
+          "f_waterpoint"
+        ],
+        "why": "Square-faced blows, not sticks, and the herders were 10 km away."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_square"
+        ],
+        "why": "Two blows to the head killed him."
+      },
+      {
+        "word": "m_grazing",
+        "blank": "why",
+        "by": [
+          "f_waterpoint"
+        ],
+        "why": "Not Andrew's quarrel, and the herders were at the water point."
+      },
+      {
+        "word": "m_cattle",
+        "blank": "why",
+        "by": [
+          "f_stock"
+        ],
+        "why": "The cattle count reconciled last week."
+      },
+      {
+        "word": "m_divorce",
+        "blank": "why",
+        "by": [
+          "f_clare_will"
+        ],
+        "why": "There is no divorce."
+      },
+      {
+        "word": "m_debt",
+        "blank": "why",
+        "by": [
+          "f_clare_money"
+        ],
+        "why": "Robert never lent Andrew money."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Robert turns down a third developer's offer: \"No. Never. Tell Andrew again.\" On Monday he will sign the ranch over to a conservation trust.",
+        "image": null
+      },
+      {
+        "text": "04:50. Andrew leaves his Nakuru hotel. At 05:10 he sends the foreman KSh 20,000: cut the fence, blame the herders, leave the farrier's hammer at the cut.",
+        "image": null
+      },
+      {
+        "text": "06:00. Robert rides out alone, as every morning. Ten kilometres away the ole Sopia herds are drinking at the borehole.",
+        "image": "loc_fence"
+      },
+      {
+        "text": "About 06:20. Robert stops at the cut. Andrew is waiting with the hammer. Two blows. He lays Robert by a rock, as if thrown, and drives back the way he came.",
+        "image": null
+      },
+      {
+        "text": "07:00. Gerald runs into the yard shouting about herders. By eight the radio has a story. Sankau opens the water-point book instead.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Records on the foreman, then the hotel, then the warrant on the 4×4. Detain Andrew once the hammer and soil go to the lab; both come back in 8 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_fence",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_tracksoil",
+        "hours": 1
+      },
+      {
+        "do": "visit",
+        "target": "loc_ranch",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_toolboard",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_nelson"
+      },
+      {
+        "do": "interview",
+        "target": "p_sankau"
+      },
+      {
+        "do": "visit",
+        "target": "loc_water",
+        "hours": 2
+      },
+      {
+        "do": "interview",
+        "target": "p_gerald"
+      },
+      {
+        "do": "press",
+        "target": "c_gerald_herders"
+      },
+      {
+        "do": "records",
+        "target": "ev_rec_gerald"
+      },
+      {
+        "do": "interview",
+        "target": "p_gerald"
+      },
+      {
+        "do": "press",
+        "target": "c_gerald_own"
+      },
+      {
+        "do": "visit",
+        "target": "loc_hotel",
+        "hours": 2
+      },
+      {
+        "do": "interview",
+        "target": "p_andrew"
+      },
+      {
+        "do": "press",
+        "target": "c_andrew_hotel"
+      },
+      {
+        "do": "search",
+        "target": "loc_car"
+      },
+      {
+        "do": "submit",
+        "target": "ev_toolmarks"
+      },
+      {
+        "do": "submit",
+        "target": "ev_soil"
+      },
+      {
+        "do": "detain",
+        "target": "p_andrew"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 8
+      },
+      {
+        "do": "interview",
+        "target": "p_andrew"
+      },
+      {
+        "do": "press",
+        "target": "c_andrew_drive"
+      }
+    ],
+    "totalHours": 37
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_waterpoint",
+        "line": "Before you believe the radio, read the water-point book. Then ask who pays a foreman to lie."
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_pay",
+          "f_porter"
+        ],
+        "line": "Twenty thousand at ten past five, from a man who left his hotel at ten to five."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_toolboard",
+        "line": "Look at the tool board in the tack room. Something is missing from its outline."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_square",
+          "f_aut_nofall"
+        ],
+        "line": "Square wounds, and none of the injuries a fall from a horse makes. He never fell."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_will",
+        "line": "Read what is on Robert's desk, and what appointment is clipped to it."
+      },
+      "tier2": {
+        "facts": [
+          "f_will",
+          "f_offer"
+        ],
+        "line": "A trust on Monday means no sale, ever. Who wanted the sale?"
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "ole",
+      "def": "Maa: \"son of\", used in names."
+    },
+    {
+      "term": "boma",
+      "def": "A homestead or livestock enclosure."
+    },
+    {
+      "term": "wafugaji",
+      "def": "Herders; pastoralists."
+    },
+    {
+      "term": "mzee",
+      "def": "Respectful word for an older man."
+    },
+    {
+      "term": "shuka",
+      "def": "A cloth wrap, often red-checked, worn by Maasai men and women."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "twoLiars",
+      "outlineBoard"
+    ],
+    "beatNotes": "Two liars in one case, one covering for the other, and the outline board (an empty silhouette where a tool should be) as a hotspot type used again later. Sankau, when the herders are cleared: \"Thank you for opening the book before the mouth.\""
+  }
+}

@@ -1,0 +1,2416 @@
+{
+  "meta": {
+    "id": "case-088",
+    "number": 88,
+    "region": "westlands-karen-runda",
+    "regionNumber": 9,
+    "title": "The Nanny",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 46,
+    "date": "Sunday 20 September",
+    "folderTab": "LAVINGTON"
+  },
+  "pattern": {
+    "crimePattern": "a wife strikes her husband with her crystal award as he leaves her, then plants his watch, money and the award on the nanny, whose own baby monitor proves where she was",
+    "noRealCaseRetold": true,
+    "notes": "Fictional family, agency and compound. PLANTED with two planted items (the award and the money), so the second is an accepted alternative. The nanny everyone is ready to blame is the witness who clears herself, on the nursery camera.",
+    "tags": [
+      "blunt-force",
+      "staged-fall",
+      "framed",
+      "planted",
+      "relationship",
+      "lawyered",
+      "three-liars",
+      "records",
+      "records",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where"
+    ]
+  },
+  "difficulty": {
+    "suspects": 5,
+    "chainLength": 6,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "planted"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic",
+      "cctv"
+    ],
+    "gatedActions": [
+      "records",
+      "records"
+    ],
+    "twist": "the-nanny-was-framed-by-her-employer"
+  },
+  "ob": {
+    "number": "OB 05/20/09",
+    "date": "Sunday 20 September",
+    "time": "06:15",
+    "reportedBy": "Nduku Kilonzo, Lavington",
+    "text": "A woman in Lavington reports finding her husband, property developer Jeff Gitau (45), dead at the foot of the stairs of their maisonette, and says the nanny has stolen his watch and money.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_house",
+    "nodes": [
+      "loc_house",
+      "loc_gate"
+    ],
+    "edges": [
+      {
+        "a": "loc_house",
+        "b": "loc_gate",
+        "minutes": 2,
+        "by": "foot"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_jeff",
+      "role": "victim",
+      "name": "Jeff Gitau",
+      "age": 45,
+      "occupation": "Property developer",
+      "bio": "The house is in his company's name.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_stairtop",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, mid 40s, a fitted shirt and an expensive watch, a confident, restless face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_nduku",
+      "role": "suspect",
+      "name": "Nduku Kilonzo",
+      "age": 43,
+      "occupation": "His wife; head of a PR agency",
+      "bio": "Her agency's awards line the stairway.",
+      "community": "Kamba",
+      "isCulprit": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_house",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba woman, early 40s, a tailored blazer and statement earrings, a composed, brittle face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_nekesa",
+      "role": "suspect",
+      "name": "Nekesa Wanyama",
+      "age": 26,
+      "occupation": "The family's nanny for a year",
+      "redHerring": true,
+      "bio": "From Bungoma. Cares for the couple's ten-month-old daughter and lives in the room off the kitchen.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_nursery",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luhya woman, mid 20s, a plain uniform dress and a cardigan, a frightened, then steady face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mwikali",
+      "role": "suspect",
+      "name": "Mwikali Kilonzo",
+      "age": 40,
+      "occupation": "Nduku's sister",
+      "bio": "Lives in Machakos.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_calls"
+      },
+      "at": "plc_machakos",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba woman, about 40, a church-going dress, a guarded, ashamed face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_sheila",
+      "role": "suspect",
+      "name": "Sheila Achieng",
+      "age": 34,
+      "occupation": "Jeff's girlfriend",
+      "redHerring": true,
+      "bio": "Lives in Kilimani.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_texts"
+      },
+      "at": "plc_kilimani",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo woman, mid 30s, an office blazer, red-eyed and frightened, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_tom",
+      "role": "suspect",
+      "name": "Tom Gitau",
+      "age": 49,
+      "occupation": "Jeff's brother and business partner",
+      "bio": "At a family wedding in Naivasha.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_ob"
+      },
+      "at": "plc_naivasha",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, late 40s, a suit from a wedding, a stunned face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_saidi",
+      "role": "witness",
+      "name": "Saidi Mwinyi",
+      "age": 58,
+      "occupation": "Compound guard",
+      "bio": "Keeps the visitors' book at the gate.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_gate",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Swahili man, late 50s, a guard's greatcoat and a kofia, a careful, honest face, ID-photo framing",
+        "ref": null
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_stairtop",
+      "name": "The top of the stairs",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_nursery",
+      "name": "The nursery",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_nannyroom",
+      "name": "The nanny's room",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_kitchen",
+      "name": "The kitchen",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_machakos",
+      "name": "Machakos"
+    },
+    {
+      "id": "plc_kilimani",
+      "name": "Sheila's flat, Kilimani"
+    },
+    {
+      "id": "plc_naivasha",
+      "name": "Naivasha"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_house",
+      "name": "The Gitau maisonette, Lavington",
+      "kind": "scene",
+      "description": "An open-plan living room, a curved staircase, three bedrooms upstairs, a nursery with a baby-monitor camera, and the nanny's room off the kitchen downstairs.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The foot of the stairs",
+          "pos": [
+            50,
+            75
+          ],
+          "yields": "ev_body",
+          "text": "Jeff at the foot of the stairs; a packed bag at the top."
+        },
+        {
+          "id": "hs_story",
+          "label": "Nduku's first statement",
+          "pos": [
+            20,
+            60
+          ],
+          "yields": "ev_nduku_story",
+          "text": "Nduku in the living room, in her dressing gown."
+        },
+        {
+          "id": "hs_handbag",
+          "label": "Nekesa's handbag",
+          "pos": [
+            80,
+            70
+          ],
+          "yields": "ev_handbag",
+          "text": "Nekesa's handbag on the kitchen counter.",
+          "unlock": {
+            "fact": "f_nd_story"
+          }
+        },
+        {
+          "id": "hs_award",
+          "label": "Under Nekesa's bed",
+          "pos": [
+            85,
+            50
+          ],
+          "yields": "ev_award",
+          "text": "Something heavy under the nanny's bed.",
+          "unlock": {
+            "fact": "f_nd_story"
+          }
+        },
+        {
+          "id": "hs_dust",
+          "label": "The floor under the bed",
+          "pos": [
+            88,
+            55
+          ],
+          "yields": "ev_dust",
+          "text": "The floor under the award, under the magnifier.",
+          "unlock": {
+            "fact": "f_award"
+          }
+        },
+        {
+          "id": "hs_phone",
+          "label": "Jeff's phone",
+          "pos": [
+            55,
+            70
+          ],
+          "yields": "ev_texts",
+          "text": "Jeff's phone, in his pocket."
+        },
+        {
+          "id": "hs_nekesa",
+          "label": "Nekesa",
+          "pos": [
+            60,
+            30
+          ],
+          "yields": "ev_nekesa",
+          "text": "Nekesa in the nursery with the baby.",
+          "unlock": {
+            "fact": "f_ne_claim"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a Lavington maisonette's curved staircase at night, a packed weekend bag at the top, a baby monitor's green light in a nursery doorway, no people in focus"
+      },
+      "expected": [
+        {
+          "id": "x_dust",
+          "text": "Something that has lain under a bed for weeks gathers dust on top and protects the floor beneath",
+          "because": "f_dust_rule",
+          "present": false,
+          "fact": "f_abs_dust"
+        },
+        {
+          "id": "x_bag",
+          "text": "His bag, packed for the weekend",
+          "because": "f_body",
+          "present": true
+        }
+      ]
+    },
+    {
+      "id": "loc_gate",
+      "name": "The compound gate",
+      "kind": "location",
+      "description": "A gatehouse for six maisonettes, a visitors' book and a gate camera.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_saidi",
+          "label": "Saidi Mwinyi",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_saidi",
+          "text": "Saidi at the gatehouse."
+        },
+        {
+          "id": "hs_taxi",
+          "label": "The visitors' book",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_taxi",
+          "text": "Last night's entries.",
+          "unlock": {
+            "fact": "f_texts"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small compound gatehouse in Lavington at dawn, a guard's stool, a visitors' book on a shelf"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Jeff at the foot of the stairs",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. A head wound and injuries from a fall. His packed weekend bag at the top of the stairs. No forced door or window."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the foot of a curved staircase at dawn, a weekend bag at the top step, an awards shelf on the stair wall with one empty space, no body visible"
+      }
+    },
+    {
+      "id": "ev_nduku_story",
+      "type": "witness",
+      "title": "Nduku's first statement",
+      "render": "statement",
+      "body": {
+        "speaker": "p_nduku"
+      },
+      "facts": [
+        "f_nd_story"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_handbag",
+      "type": "physical",
+      "title": "Nekesa's handbag",
+      "render": "object",
+      "body": {
+        "label": "His watch and KSh 80,000 in a bank envelope."
+      },
+      "facts": [
+        "f_handbag"
+      ],
+      "gate": null,
+      "planted": {
+        "by": "p_nduku",
+        "frames": "p_nekesa"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a cheap handbag open on a kitchen counter, a gold watch and a bank envelope of cash inside"
+      }
+    },
+    {
+      "id": "ev_award",
+      "type": "physical",
+      "title": "Nduku's crystal award",
+      "render": "object",
+      "body": {
+        "label": "Under Nekesa's bed: a heavy crystal PR award, wiped, a chip on one corner."
+      },
+      "facts": [
+        "f_award"
+      ],
+      "gate": null,
+      "planted": {
+        "by": "p_nduku",
+        "frames": "p_nekesa"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a heavy crystal award with a chipped corner on a dusty floor under a narrow bed"
+      }
+    },
+    {
+      "id": "ev_dust",
+      "type": "physical",
+      "title": "The floor under the bed",
+      "render": "object",
+      "body": {
+        "label": "A layer of dust beneath the award's base, undisturbed. The award's top is clean."
+      },
+      "facts": [
+        "f_dust",
+        "f_dust_rule"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_texts",
+      "type": "phone",
+      "title": "Jeff's phone",
+      "render": "manifest",
+      "body": {
+        "sheila": "22:50, Sheila: \"Taxi booked for you at 11:15.\"",
+        "jeff": "22:52, Jeff: \"Packing now. Telling her.\""
+      },
+      "facts": [
+        "f_texts"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "texts"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_monitor",
+      "type": "cctv",
+      "title": "Records ①: baby-monitor cloud",
+      "render": "object",
+      "body": {
+        "video": "Nekesa in the nursery, in frame, 22:48–23:44, rocking and singing to the baby.",
+        "audio": "23:05–23:08: a man and a woman shouting in the hallway (\"You're not taking that bag anywhere!\"). 23:08: a heavy thud and a crash. Nekesa freezes, holds the baby, and doesn't leave the room."
+      },
+      "facts": [
+        "f_monitor",
+        "f_nekesa_cam"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_body",
+          "f_dust"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_nekesa",
+      "type": "witness",
+      "title": "Statement: Nekesa Wanyama",
+      "render": "statement",
+      "body": {
+        "speaker": "p_nekesa"
+      },
+      "facts": [
+        "f_nekesa"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_saidi",
+      "type": "witness",
+      "title": "Statement: Saidi Mwinyi",
+      "render": "statement",
+      "body": {
+        "speaker": "p_saidi"
+      },
+      "facts": [
+        "f_saidi",
+        "f_saidi_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_taxi",
+      "type": "document",
+      "title": "Visitors' book: the taxi",
+      "render": "logBook",
+      "body": {
+        "text": "23:12: taxi for J. Gitau, waiting outside. 23:40: taxi left, no passenger. No other visitor after 21:00."
+      },
+      "facts": [
+        "f_taxi"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_calls",
+      "type": "phone",
+      "title": "Records ②: Nduku's line",
+      "render": "manifest",
+      "body": {
+        "calls": "23:30: Nduku to Mwikali, 14 minutes. 23:20: Jeff's phone, in his pocket, rang: Sheila, unanswered."
+      },
+      "facts": [
+        "f_calls"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_monitor",
+          "f_saidi"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tom",
+      "type": "document",
+      "title": "Naivasha hotel register",
+      "render": "logBook",
+      "body": {
+        "text": "T. Gitau, a family wedding, Friday to Sunday."
+      },
+      "facts": [
+        "f_tom"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_nd_prints",
+      "type": "physical",
+      "title": "Fingerprints: Nduku Kilonzo",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention."
+      },
+      "facts": [
+        "f_nd_printset"
+      ],
+      "gate": null,
+      "detention": "p_nduku",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_awardblood",
+      "type": "forensic",
+      "title": "Lab: trace (the award's chip)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_awardblood"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_award"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints (envelope and watch)",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_envprints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_handbag",
+          "ev_nd_prints"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Jeff Gitau was found dead at the foot of the stairs of his Lavington maisonette on Sunday morning; his wife says the nanny stole his watch and money. His brother Tom is at a wedding in Naivasha.",
+      "kind": "true",
+      "about": [
+        "p_jeff",
+        "loc_house",
+        "p_tom"
+      ],
+      "at": {
+        "from": "06:15",
+        "to": null,
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "A head wound and fall injuries. His packed weekend bag at the top of the stairs. No forced door or window.",
+      "kind": "true",
+      "about": [
+        "p_jeff",
+        "plc_stairtop"
+      ]
+    },
+    {
+      "id": "f_nd_story",
+      "text": "Nduku: \"I slept through everything. In the morning I found him. His watch and the money in his bag are gone. The nanny's been strange for weeks.\"",
+      "kind": "true",
+      "about": [
+        "p_nduku",
+        "p_nekesa"
+      ]
+    },
+    {
+      "id": "f_handbag",
+      "text": "In Nekesa's handbag in the kitchen: Jeff's watch and KSh 80,000 in a bank envelope.",
+      "kind": "true",
+      "about": [
+        "p_nekesa",
+        "plc_kitchen"
+      ]
+    },
+    {
+      "id": "f_award",
+      "text": "Under Nekesa's bed: Nduku's heavy crystal PR award, wiped, chipped on one corner.",
+      "kind": "true",
+      "about": [
+        "p_nduku",
+        "plc_nannyroom"
+      ]
+    },
+    {
+      "id": "f_dust",
+      "text": "Under the award, the floor's layer of dust is undisturbed beneath its base; the award's top is clean.",
+      "kind": "true",
+      "about": [
+        "plc_nannyroom"
+      ]
+    },
+    {
+      "id": "f_dust_rule",
+      "text": "Anything that has lain under a bed for weeks gathers dust on top and protects the floor beneath it.",
+      "kind": "true",
+      "about": [
+        "plc_nannyroom"
+      ]
+    },
+    {
+      "id": "f_texts",
+      "text": "Jeff's phone: Sheila, 22:50, \"Taxi booked for you at 11:15.\" Jeff, 22:52, \"Packing now. Telling her.\"",
+      "kind": "true",
+      "about": [
+        "p_jeff",
+        "p_sheila"
+      ],
+      "at": {
+        "from": "22:50",
+        "to": null,
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_monitor",
+      "text": "Baby monitor audio: a man and a woman shouting in the hallway 23:05–23:08 (\"You're not taking that bag anywhere!\"), then a heavy thud and a crash at 23:08.",
+      "kind": "true",
+      "about": [
+        "plc_stairtop"
+      ],
+      "at": {
+        "from": "23:05",
+        "to": "23:08",
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_nekesa_cam",
+      "text": "Baby monitor video: Nekesa in the nursery, in frame, 22:48–23:44, rocking and singing to the baby. At the crash she freezes and stays.",
+      "kind": "true",
+      "about": [
+        "p_nekesa"
+      ],
+      "where": {
+        "person": "p_nekesa",
+        "place": "plc_nursery",
+        "from": "22:48",
+        "to": "23:44"
+      }
+    },
+    {
+      "id": "f_nekesa",
+      "text": "Nekesa: \"I heard shouting and a crash. Madam came to the nursery door at half past eleven and said, 'Stay with the baby, it's nothing, Jeff dropped his bag.' I was afraid. I stayed.\"",
+      "kind": "true",
+      "about": [
+        "p_nekesa",
+        "p_nduku"
+      ]
+    },
+    {
+      "id": "f_saidi",
+      "text": "Saidi: \"Bwana Jeff told me at nine he'd be leaving with a bag around eleven. His car never left.\"",
+      "kind": "true",
+      "about": [
+        "p_saidi",
+        "p_jeff"
+      ],
+      "at": {
+        "from": "21:00",
+        "to": null,
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_saidi_self",
+      "text": "Saidi was at the gate all night (gate camera).",
+      "kind": "true",
+      "about": [
+        "p_saidi"
+      ],
+      "where": {
+        "person": "p_saidi",
+        "place": "loc_gate",
+        "from": "18:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_taxi",
+      "text": "Visitors' book: a taxi for J. Gitau waited outside from 23:12 and left with no passenger at 23:40. No other visitor after 21:00.",
+      "kind": "true",
+      "about": [
+        "p_jeff"
+      ],
+      "at": {
+        "from": "23:12",
+        "to": "23:40",
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_calls",
+      "text": "Records ②: Nduku called her sister Mwikali at 23:30 for 14 minutes. At 23:20 Sheila rang Jeff's phone; nobody answered.",
+      "kind": "true",
+      "about": [
+        "p_nduku",
+        "p_mwikali"
+      ],
+      "at": {
+        "from": "23:30",
+        "to": null,
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_tom",
+      "text": "Tom was at a family wedding in Naivasha, Friday to Sunday.",
+      "kind": "true",
+      "about": [
+        "p_tom"
+      ],
+      "where": {
+        "person": "p_tom",
+        "place": "plc_naivasha",
+        "from": "00:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_mw_home",
+      "text": "Mwikali's phone was at her home in Machakos all night; the call came to her there.",
+      "kind": "true",
+      "about": [
+        "p_mwikali"
+      ],
+      "where": {
+        "person": "p_mwikali",
+        "place": "plc_machakos",
+        "from": "18:00",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_sh_home",
+      "text": "Sheila's phone was at her flat in Kilimani all night, and she never came to the compound.",
+      "kind": "true",
+      "about": [
+        "p_sheila"
+      ],
+      "where": {
+        "person": "p_sheila",
+        "place": "plc_kilimani",
+        "from": "20:00",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_tom_said",
+      "text": "Tom: \"Jeff told me on Friday he was leaving her. He was afraid of how she'd take it.\"",
+      "kind": "true",
+      "about": [
+        "p_tom",
+        "p_jeff"
+      ]
+    },
+    {
+      "id": "f_nd_printset",
+      "text": "Fingerprints taken from Nduku in detention.",
+      "kind": "true",
+      "about": [
+        "p_nduku"
+      ]
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Post-mortem: one blow to the temple from a sharp-edged heavy object, then the fall injuries.",
+      "kind": "true",
+      "about": [
+        "p_jeff"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Saturday between 23:00 and 23:30.",
+      "kind": "true",
+      "about": [
+        "p_jeff"
+      ],
+      "at": {
+        "from": "23:00",
+        "to": "23:30",
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_awardblood",
+      "text": "Lab: Jeff's blood in the award's chipped corner, though the rest was wiped.",
+      "kind": "true",
+      "about": [
+        "p_jeff"
+      ]
+    },
+    {
+      "id": "f_envprints",
+      "text": "Lab: Nduku's prints on the bank envelope and the watch strap. None of Nekesa's.",
+      "kind": "true",
+      "about": [
+        "p_nduku"
+      ]
+    },
+    {
+      "id": "f_abs_dust",
+      "text": "Missing: there's no dust on top of the award, and none disturbed beneath it.",
+      "kind": "true",
+      "about": [
+        "plc_nannyroom"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_nd_slept",
+      "text": "Nduku: \"I slept through everything.\"",
+      "kind": "lie",
+      "about": [
+        "p_nduku"
+      ]
+    },
+    {
+      "id": "f_nd_nanny",
+      "text": "Nduku: \"The nanny stole from us.\"",
+      "kind": "lie",
+      "about": [
+        "p_nduku"
+      ]
+    },
+    {
+      "id": "f_nd_reveal",
+      "text": "Nduku: \"He packed a bag in front of me and said the house was his company's. Twenty years. I don't remember picking up the award.\" Advocate Gachoki: \"Nothing further.\"",
+      "kind": "true",
+      "about": [
+        "p_nduku",
+        "p_jeff"
+      ],
+      "where": {
+        "person": "p_nduku",
+        "place": "plc_stairtop",
+        "from": "23:05",
+        "to": "23:08"
+      }
+    },
+    {
+      "id": "f_nd_money",
+      "text": "Nduku: \"I never touched his money or his watch.\"",
+      "kind": "lie",
+      "about": [
+        "p_nduku"
+      ]
+    },
+    {
+      "id": "f_mw_none",
+      "text": "Mwikali: \"Nduku didn't call me that night.\"",
+      "kind": "lie",
+      "about": [
+        "p_mwikali"
+      ]
+    },
+    {
+      "id": "f_mw_reveal",
+      "text": "Mwikali: \"She called at half eleven crying. She said, 'Jeff fell. I've done something terrible. I'll handle it.' I told her to call the police. She said no.\"",
+      "kind": "true",
+      "about": [
+        "p_mwikali",
+        "p_nduku"
+      ]
+    },
+    {
+      "id": "f_sh_ended",
+      "text": "Sheila: \"Jeff wasn't coming to me. We'd ended it.\"",
+      "kind": "lie",
+      "about": [
+        "p_sheila"
+      ]
+    },
+    {
+      "id": "f_sh_reveal",
+      "text": "Sheila: \"He was coming. I booked the taxi. I waited until two. I thought he'd changed his mind.\"",
+      "kind": "true",
+      "about": [
+        "p_sheila",
+        "p_jeff"
+      ]
+    },
+    {
+      "id": "f_ne_claim",
+      "text": "Nekesa: \"I never took anything. I was with the baby.\"",
+      "kind": "claim",
+      "about": [
+        "p_nekesa"
+      ]
+    },
+    {
+      "id": "f_ne_fear",
+      "text": "Nekesa: \"I'm from Bungoma. If they say a nanny stole, who'll believe me?\"",
+      "kind": "true",
+      "about": [
+        "p_nekesa"
+      ]
+    },
+    {
+      "id": "f_tom_claim",
+      "text": "Tom: \"I was in Naivasha.\"",
+      "kind": "claim",
+      "about": [
+        "p_tom"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_nduku",
+      "stance": "lawyered",
+      "lawyered": {
+        "advocate": "Advocate Lucas Gachoki",
+        "reopenedBy": [
+          "f_monitor"
+        ],
+        "line": "My client is a grieving widow. No comment."
+      },
+      "intro": "Nduku sits with Advocate Lucas Gachoki, who checks his watch. \"My client is a grieving widow. No comment.\"",
+      "claims": [
+        "f_nd_slept",
+        "f_nd_nanny"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_nd_money",
+          "after": "f_nd_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_nekesa",
+      "stance": "cooperative",
+      "intro": "Nekesa holds the baby and doesn't sit. \"I never took anything. I was with the baby.\"",
+      "claims": [
+        "f_ne_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_handbag",
+          "reply": "\"I'm from Bungoma. If they say a nanny stole, who'll believe me?\"",
+          "reveals": [
+            "f_ne_fear"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_mwikali",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_calls"
+      ],
+      "intro": "Mwikali answers from Machakos, her voice tight. \"Nduku didn't call me that night.\"",
+      "claims": [
+        "f_mw_none"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_sheila",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_texts"
+      ],
+      "intro": "Sheila won't take her sunglasses off. \"Jeff wasn't coming to me. We'd ended it.\"",
+      "claims": [
+        "f_sh_ended"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_tom",
+      "stance": "cooperative",
+      "intro": "Tom drives back from Naivasha. \"I was in Naivasha.\"",
+      "claims": [
+        "f_tom_claim"
+      ],
+      "yields": [
+        "ev_tom"
+      ],
+      "topics": [
+        {
+          "about": "ev_body",
+          "reply": "\"Jeff told me on Friday he was leaving her. He was afraid of how she'd take it.\"",
+          "reveals": [
+            "f_tom_said"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_saidi",
+      "stance": "cooperative",
+      "intro": "Saidi opens his book at last night's page.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_sh",
+      "claim": "f_sh_ended",
+      "brokenBy": [
+        "f_texts",
+        "f_taxi"
+      ],
+      "reveals": [
+        "f_sh_reveal",
+        "f_sh_home"
+      ],
+      "reaction": "\"He was coming. I booked the taxi. I waited until two. I thought he'd changed his mind.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_mw",
+      "claim": "f_mw_none",
+      "brokenBy": [
+        "f_calls"
+      ],
+      "reveals": [
+        "f_mw_reveal",
+        "f_mw_home"
+      ],
+      "reaction": "\"She called at half eleven crying. She said, 'Jeff fell. I've done something terrible. I'll handle it.' I told her to call the police. She said no.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_nd_slept",
+      "claim": "f_nd_slept",
+      "brokenBy": [
+        "f_monitor",
+        "f_calls"
+      ],
+      "reveals": [
+        "f_nd_reveal"
+      ],
+      "reaction": "\"He packed a bag in front of me and said the house was his company's. Twenty years. I don't remember picking up the award.\" Advocate Gachoki: \"Nothing further.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_nd_nanny",
+      "claim": "f_nd_nanny",
+      "brokenBy": [
+        "f_dust",
+        "f_nekesa_cam"
+      ],
+      "reveals": [],
+      "reaction": "Nduku looks at the nursery video, at Nekesa singing to her daughter, and turns her face away.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_nd_money",
+      "claim": "f_nd_money",
+      "brokenBy": [
+        "f_envprints"
+      ],
+      "reveals": [],
+      "reaction": "Advocate Gachoki reads the print report and closes his folder.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_nduku",
+      "text": "Nduku Kilonzo",
+      "category": "person",
+      "ref": "p_nduku",
+      "unlock": {
+        "anyOf": [
+          "f_nd_story"
+        ]
+      }
+    },
+    {
+      "id": "w_nekesa",
+      "text": "Nekesa Wanyama",
+      "category": "person",
+      "ref": "p_nekesa",
+      "unlock": {
+        "anyOf": [
+          "f_nd_story"
+        ]
+      }
+    },
+    {
+      "id": "w_mwikali",
+      "text": "Mwikali Kilonzo",
+      "category": "person",
+      "ref": "p_mwikali",
+      "unlock": {
+        "anyOf": [
+          "f_calls"
+        ]
+      }
+    },
+    {
+      "id": "w_sheila",
+      "text": "Sheila Achieng",
+      "category": "person",
+      "ref": "p_sheila",
+      "unlock": {
+        "anyOf": [
+          "f_texts"
+        ]
+      }
+    },
+    {
+      "id": "w_tom",
+      "text": "Tom Gitau",
+      "category": "person",
+      "ref": "p_tom",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "i_award",
+      "text": "the crystal award under Nekesa's bed",
+      "category": "item",
+      "ref": "ev_award",
+      "unlock": {
+        "anyOf": [
+          "f_award"
+        ]
+      }
+    },
+    {
+      "id": "i_handbag",
+      "text": "the watch and money in Nekesa's handbag",
+      "category": "item",
+      "ref": "ev_handbag",
+      "unlock": {
+        "anyOf": [
+          "f_handbag"
+        ]
+      }
+    },
+    {
+      "id": "i_bag",
+      "text": "the packed bag at the top of the stairs",
+      "category": "item",
+      "ref": "ev_body",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "i_monitor",
+      "text": "the baby-monitor video",
+      "category": "item",
+      "ref": "ev_monitor",
+      "unlock": {
+        "anyOf": [
+          "f_monitor"
+        ]
+      }
+    },
+    {
+      "id": "i_texts",
+      "text": "Sheila's texts",
+      "category": "item",
+      "ref": "ev_texts",
+      "unlock": {
+        "anyOf": [
+          "f_texts"
+        ]
+      }
+    },
+    {
+      "id": "p_dust",
+      "text": "there's dust under it, not on it: it was put there recently",
+      "category": "plantTell",
+      "by": [
+        "f_dust",
+        "f_dust_rule",
+        "f_abs_dust"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_dust"
+        ]
+      }
+    },
+    {
+      "id": "p_envprints",
+      "text": "the envelope carries Nduku's prints, not Nekesa's",
+      "category": "plantTell",
+      "by": [
+        "f_envprints"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_handbag"
+        ]
+      }
+    },
+    {
+      "id": "p_smear",
+      "text": "a wiped smear, not spatter",
+      "category": "plantTell",
+      "by": [
+        "f_award"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_award"
+        ]
+      }
+    },
+    {
+      "id": "p_print",
+      "text": "prints under the printed text",
+      "category": "plantTell",
+      "by": [
+        "f_award"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_award"
+        ]
+      }
+    },
+    {
+      "id": "p_time",
+      "text": "a timestamp before the item existed",
+      "category": "plantTell",
+      "by": [
+        "f_award"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_award"
+        ]
+      }
+    },
+    {
+      "id": "p_reach",
+      "text": "placed where she couldn't reach",
+      "category": "plantTell",
+      "by": [
+        "f_award"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_award"
+        ]
+      }
+    },
+    {
+      "id": "pl_stairtop",
+      "text": "the top of the stairs",
+      "category": "place",
+      "ref": "plc_stairtop",
+      "unlock": {
+        "anyOf": [
+          "f_monitor"
+        ]
+      }
+    },
+    {
+      "id": "pl_nursery",
+      "text": "the nursery",
+      "category": "place",
+      "ref": "plc_nursery",
+      "unlock": {
+        "anyOf": [
+          "f_nd_story"
+        ]
+      }
+    },
+    {
+      "id": "pl_nannyroom",
+      "text": "the nanny's room",
+      "category": "place",
+      "ref": "plc_nannyroom",
+      "unlock": {
+        "anyOf": [
+          "f_award"
+        ]
+      }
+    },
+    {
+      "id": "pl_kitchen",
+      "text": "the kitchen",
+      "category": "place",
+      "ref": "plc_kitchen",
+      "unlock": {
+        "anyOf": [
+          "f_handbag"
+        ]
+      }
+    },
+    {
+      "id": "pl_gate",
+      "text": "the compound gate",
+      "category": "place",
+      "ref": "loc_gate",
+      "unlock": {
+        "anyOf": [
+          "f_saidi"
+        ]
+      }
+    },
+    {
+      "id": "h_award",
+      "text": "striking him with her crystal award at the top of the stairs, so that he fell",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_fall",
+      "text": "an accidental fall down the stairs",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_burglar",
+      "text": "striking him with a burglar's bar",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_nd_story"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack, then a fall",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_push",
+      "text": "pushing him down the stairs",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_leaving",
+      "text": "he was leaving her for another woman and taking the house",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_texts"
+        ]
+      }
+    },
+    {
+      "id": "m_theft",
+      "text": "a nanny's theft discovered",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_nd_story"
+        ]
+      }
+    },
+    {
+      "id": "m_quarrel",
+      "text": "a girlfriend's quarrel",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_texts"
+        ]
+      }
+    },
+    {
+      "id": "m_business",
+      "text": "a brother's business dispute",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_robbery",
+      "text": "a robbery",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_nd_story"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. {item} was planted, as shown by {ptell}.",
+    "fixed": {
+      "victim": "Jeff Gitau"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_2100",
+                  "label": "Saturday 21:00",
+                  "from": "21:00",
+                  "to": "21:00",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_2250",
+                  "label": "Saturday 22:50",
+                  "from": "22:50",
+                  "to": "22:50",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Saturday 23:05–23:08",
+                  "from": "23:05",
+                  "to": "23:08",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_2330",
+                  "label": "Saturday 23:30",
+                  "from": "23:30",
+                  "to": "23:30",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_0300",
+                  "label": "Sunday 03:00",
+                  "from": "03:00",
+                  "to": "03:00",
+                  "day": "Sun"
+                },
+                {
+                  "id": "sl_0615",
+                  "label": "Sunday 06:15",
+                  "from": "06:15",
+                  "to": "06:15",
+                  "day": "Sun"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_guard",
+                  "text": "Jeff tells the guard he's leaving at eleven",
+                  "slot": "sl_2100",
+                  "by": [
+                    "f_saidi"
+                  ],
+                  "why": "Saidi: at nine.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_saidi"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_taxi",
+                  "text": "Sheila books the taxi",
+                  "slot": "sl_2250",
+                  "by": [
+                    "f_texts"
+                  ],
+                  "why": "Her text: 22:50.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_texts"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_kill",
+                  "text": "The shouting, then Jeff is struck and falls",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_monitor",
+                    "f_aut_tod",
+                    "f_nd_reveal"
+                  ],
+                  "why": "The monitor: shouting from 23:05, a thud at 23:08.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_monitor"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_call",
+                  "text": "Nduku calls her sister",
+                  "slot": "sl_2330",
+                  "by": [
+                    "f_calls"
+                  ],
+                  "why": "Records: 23:30, 14 minutes.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_calls"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_found",
+                  "text": "Nduku \"finds\" him and calls the police",
+                  "slot": "sl_0615",
+                  "by": [
+                    "f_ob"
+                  ],
+                  "why": "Her OB report: 06:15.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_ob"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_0300",
+                  "by": [
+                    "f_aut_tod",
+                    "f_taxi"
+                  ],
+                  "why": "\"A robbery in the night\"? He was dead by half past eleven, and nobody came through the gate after nine."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A bag at nine, a taxi at ten to eleven, shouting at five past, a thud at eight minutes past, a sister at half past, and the police at quarter past six.",
+          "fail": [
+            "Three in the morning is the robbery story. Read the post-mortem.",
+            "When did the monitor hear the thud?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_stairtop"
+          }
+        ],
+        "prosecutor": {
+          "pass": "At the top of the stairs, beside his packed bag.",
+          "fail": [
+            "The nursery is where the witness was.",
+            "The award went under the nanny's bed afterwards."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_nduku"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A woman's voice at the top of the stairs, her award with his blood, her prints on the envelope, and her midnight call to her sister.",
+          "fail": [
+            "Nekesa is on camera with the baby the whole time.",
+            "Sheila's taxi left empty. She never came."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_award"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A sharp-edged heavy blow first, then the stairs.",
+          "fail": [
+            "The blow came before the fall.",
+            "No forced entry. Nothing else taken."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_leaving"
+          }
+        ],
+        "prosecutor": {
+          "pass": "\"Packing now. Telling her.\" And the house in his company's name.",
+          "fail": [
+            "The theft was planted.",
+            "Tom was in Naivasha."
+          ]
+        }
+      },
+      {
+        "id": "g_planted",
+        "kind": "planted",
+        "blanks": [
+          {
+            "id": "item",
+            "category": "item",
+            "answer": "i_award",
+            "accept": [
+              "i_handbag"
+            ]
+          },
+          {
+            "id": "ptell",
+            "category": "plantTell",
+            "answer": "p_dust",
+            "accept": [
+              "p_envprints"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "Clean on top, dust undisturbed beneath. It went under that bed last night. And her prints, not the nanny's, are on the envelope.",
+          "fail": [
+            "The packed bag is Jeff's own.",
+            "The baby monitor is the one honest witness in that house."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_stairtop",
+      "from": "23:05",
+      "to": "23:08",
+      "note": "The monitor's shouting from 23:05 and the thud at 23:08; the post-mortem allows 23:00–23:30."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_nd_story",
+          "f_award",
+          "f_handbag",
+          "f_dust",
+          "f_dust_rule",
+          "f_abs_dust",
+          "f_envprints"
+        ],
+        "concludes": "The award and the money were placed to frame Nekesa.",
+        "answers": [
+          "item",
+          "ptell"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_monitor",
+          "f_nekesa_cam",
+          "f_ne_claim",
+          "f_nekesa",
+          "f_nd_nanny"
+        ],
+        "concludes": "Nekesa was in the nursery the whole time; a man and a woman fought at the top of the stairs at 23:05."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_saidi",
+          "f_texts",
+          "f_taxi",
+          "f_sh_ended",
+          "f_sh_reveal",
+          "f_tom_said"
+        ],
+        "concludes": "Jeff was leaving for Sheila that night.",
+        "answers": [
+          "why"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_calls",
+          "f_mw_none",
+          "f_mw_reveal"
+        ],
+        "concludes": "Nduku called her sister at 23:30: \"I've done something terrible.\""
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_body",
+          "f_aut_blow",
+          "f_aut_tod",
+          "f_awardblood",
+          "f_nd_slept",
+          "f_nd_reveal"
+        ],
+        "concludes": "He was struck with her award at the top of the stairs, then fell.",
+        "answers": [
+          "when",
+          "where",
+          "how"
+        ]
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_nd_money"
+        ],
+        "concludes": "Nduku Kilonzo struck Jeff with her crystal award at the top of the stairs and framed the nanny.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_nursery",
+        "blank": "where",
+        "by": [
+          "f_nekesa_cam"
+        ],
+        "why": "The nursery is where Nekesa was, with the baby."
+      },
+      {
+        "word": "pl_nannyroom",
+        "blank": "where",
+        "by": [
+          "f_dust"
+        ],
+        "why": "The award was put under the bed afterwards."
+      },
+      {
+        "word": "pl_kitchen",
+        "blank": "where",
+        "by": [
+          "f_handbag",
+          "f_monitor"
+        ],
+        "why": "The money went into the handbag afterwards; the fight was in the upstairs hallway."
+      },
+      {
+        "word": "pl_gate",
+        "blank": "where",
+        "by": [
+          "f_saidi",
+          "f_body"
+        ],
+        "why": "His car never left; he died inside."
+      },
+      {
+        "word": "w_nekesa",
+        "blank": "who",
+        "by": [
+          "f_nekesa_cam"
+        ],
+        "why": "Nekesa is on camera in the nursery 22:48–23:44."
+      },
+      {
+        "word": "w_mwikali",
+        "blank": "who",
+        "by": [
+          "f_mw_home"
+        ],
+        "why": "Mwikali was in Machakos."
+      },
+      {
+        "word": "w_sheila",
+        "blank": "who",
+        "by": [
+          "f_sh_home"
+        ],
+        "why": "Sheila was in Kilimani; her taxi left empty."
+      },
+      {
+        "word": "w_tom",
+        "blank": "who",
+        "by": [
+          "f_tom"
+        ],
+        "why": "Tom was in Naivasha."
+      },
+      {
+        "word": "h_fall",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "The blow came first."
+      },
+      {
+        "word": "h_burglar",
+        "blank": "how",
+        "by": [
+          "f_body",
+          "f_awardblood"
+        ],
+        "why": "No forced entry; the award carries his blood."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "A blow, then the fall."
+      },
+      {
+        "word": "h_push",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "The temple wound."
+      },
+      {
+        "word": "m_theft",
+        "blank": "why",
+        "by": [
+          "f_envprints",
+          "f_dust"
+        ],
+        "why": "The \"theft\" was planted."
+      },
+      {
+        "word": "m_quarrel",
+        "blank": "why",
+        "by": [
+          "f_sh_reveal",
+          "f_sh_home"
+        ],
+        "why": "Sheila was waiting for him in Kilimani."
+      },
+      {
+        "word": "m_business",
+        "blank": "why",
+        "by": [
+          "f_tom"
+        ],
+        "why": "Tom was in Naivasha."
+      },
+      {
+        "word": "m_robbery",
+        "blank": "why",
+        "by": [
+          "f_body",
+          "f_envprints"
+        ],
+        "why": "Nothing else taken, and the money was planted."
+      },
+      {
+        "word": "i_bag",
+        "blank": "item",
+        "by": [
+          "f_texts"
+        ],
+        "why": "The packed bag is Jeff's own: \"Packing now.\""
+      },
+      {
+        "word": "i_monitor",
+        "blank": "item",
+        "by": [
+          "f_nekesa_cam"
+        ],
+        "why": "The monitor is a genuine record."
+      },
+      {
+        "word": "i_texts",
+        "blank": "item",
+        "by": [
+          "f_taxi"
+        ],
+        "why": "The texts are genuine; the taxi came."
+      },
+      {
+        "word": "p_smear",
+        "blank": "ptell",
+        "by": [
+          "f_awardblood"
+        ],
+        "why": "The award was wiped; it's the dust that dates it."
+      },
+      {
+        "word": "p_print",
+        "blank": "ptell",
+        "by": [
+          "f_award"
+        ],
+        "why": "An award has no printed text to print under."
+      },
+      {
+        "word": "p_time",
+        "blank": "ptell",
+        "by": [
+          "f_award"
+        ],
+        "why": "The award is years old."
+      },
+      {
+        "word": "p_reach",
+        "blank": "ptell",
+        "by": [
+          "f_award"
+        ],
+        "why": "Nekesa could reach under her own bed."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "On Saturday evening Jeff tells Nduku he is leaving her for Sheila, that he will file for divorce on Monday, and that the house is in his company's name. At nine he tells the guard he'll leave with a bag at eleven.",
+        "image": null
+      },
+      {
+        "text": "At 22:52 he texts Sheila: \"Packing now. Telling her.\" At 23:05 he comes out of the bedroom with his bag; Nduku follows him to the top of the stairs. They shout. At 23:08 she strikes him with her crystal award and he falls.",
+        "image": "plc_stairtop"
+      },
+      {
+        "text": "Nekesa, in the nursery with the baby, freezes. Nduku takes the watch and KSh 80,000 from his bag and pushes them into Nekesa's handbag, wipes the award and slides it under Nekesa's bed. At 23:30 she calls her sister, crying.",
+        "image": null
+      },
+      {
+        "text": "At 23:40 the taxi leaves without him. At 06:15 Nduku \"finds\" him and tells the police the nanny did it in a robbery.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Two stamps: the baby-monitor cloud (which also reopens Nduku) and her phone records. The award's blood trace (12 h) goes first thing; detain Nduku after the calls, and the prints (6 h) come back inside 24 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_house",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_nduku_story",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_handbag",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_award",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_dust",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_texts",
+        "hours": 1
+      },
+      {
+        "do": "submit",
+        "target": "ev_awardblood"
+      },
+      {
+        "do": "interview",
+        "target": "p_nekesa"
+      },
+      {
+        "do": "read",
+        "target": "ev_nekesa",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_gate",
+        "hours": 0.1,
+        "from": "loc_house"
+      },
+      {
+        "do": "visit",
+        "target": "loc_gate",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_saidi",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_saidi"
+      },
+      {
+        "do": "read",
+        "target": "ev_taxi",
+        "hours": 0
+      },
+      {
+        "do": "records",
+        "target": "ev_monitor"
+      },
+      {
+        "do": "records",
+        "target": "ev_calls"
+      },
+      {
+        "do": "interview",
+        "target": "p_sheila"
+      },
+      {
+        "do": "press",
+        "target": "c_sh"
+      },
+      {
+        "do": "interview",
+        "target": "p_mwikali"
+      },
+      {
+        "do": "press",
+        "target": "c_mw"
+      },
+      {
+        "do": "interview",
+        "target": "p_tom"
+      },
+      {
+        "do": "travel",
+        "target": "loc_house",
+        "hours": 0.1,
+        "from": "loc_gate"
+      },
+      {
+        "do": "visit",
+        "target": "loc_house",
+        "hours": 1
+      },
+      {
+        "do": "reopen",
+        "target": "p_nduku",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_nduku"
+      },
+      {
+        "do": "press",
+        "target": "c_nd_slept"
+      },
+      {
+        "do": "press",
+        "target": "c_nd_nanny"
+      },
+      {
+        "do": "detain",
+        "target": "p_nduku"
+      },
+      {
+        "do": "sample",
+        "target": "ev_nd_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 6
+      },
+      {
+        "do": "press",
+        "target": "c_nd_money"
+      }
+    ],
+    "totalHours": 35.2
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_monitor",
+        "line": "The baby monitor was listening, Amani."
+      },
+      "tier2": {
+        "facts": [
+          "f_monitor",
+          "f_calls"
+        ],
+        "line": "Shouting from 23:05, a thud at 23:08, a call to her sister at 23:30."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_body",
+        "line": "Where was the bag when he fell?"
+      },
+      "tier2": {
+        "facts": [
+          "f_body",
+          "f_monitor"
+        ],
+        "line": "At the top of the stairs, in the hallway the monitor heard."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_calls",
+        "line": "Who did she call at half past eleven?"
+      },
+      "tier2": {
+        "facts": [
+          "f_calls",
+          "f_mw_reveal"
+        ],
+        "line": "Her sister. \"I've done something terrible.\""
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Did the fall come first, or the blow?"
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_blow",
+          "f_awardblood"
+        ],
+        "line": "The blow. His blood in the award's chip."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_texts",
+        "line": "Read his last texts."
+      },
+      "tier2": {
+        "facts": [
+          "f_texts",
+          "f_saidi"
+        ],
+        "line": "\"Packing now. Telling her.\" He was leaving at eleven."
+      }
+    },
+    "g_planted": {
+      "tier1": {
+        "point": "ev_dust",
+        "line": "Look at the dust under the award, and on it."
+      },
+      "tier2": {
+        "facts": [
+          "f_dust",
+          "f_dust_rule"
+        ],
+        "line": "Dust under it, none on it. It went there last night."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "yaya",
+      "def": "A nanny."
+    },
+    {
+      "term": "ngazi",
+      "def": "Stairs."
+    },
+    {
+      "term": "tuzo",
+      "def": "An award."
+    },
+    {
+      "term": "saa ya mkono",
+      "def": "A wristwatch."
+    },
+    {
+      "term": "kusingiziwa",
+      "def": "To be falsely accused; framed."
+    },
+    {
+      "term": "bwana",
+      "def": "Sir; the master of the house."
+    },
+    {
+      "term": "kofia",
+      "def": "A brimless embroidered cap."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "listening"
+    ],
+    "beatNotes": "Listening. Audio evidence arrives: the baby-monitor clip plays as a waveform on the desk. The player can scrub it and drag a marker to a moment (\"23:08: thud\"). The marker becomes a timed fact for the WHEN strip."
+  }
+}

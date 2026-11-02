@@ -1,0 +1,1885 @@
+{
+  "meta": {
+    "id": "case-044",
+    "number": 44,
+    "region": "kisumu-lake",
+    "regionNumber": 5,
+    "title": "The Paddy Canal",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 25,
+    "date": "Tuesday 23 December",
+    "folderTab": "AHERO"
+  },
+  "pattern": {
+    "crimePattern": "co-wife left with nothing kills the widow who inherited the paddies and stages a hippo attack",
+    "noRealCaseRetold": true,
+    "notes": "Fictional tenants, paddy numbers and scheme staff. The co-wife relationship is written with sadness, not as a joke or a cultural judgement; the scheme clerk names the rule that left one widow with everything. Scheme tenancy procedure is for the cultural reader to confirm.",
+    "tags": [
+      "drowning",
+      "staged-animal-attack",
+      "inheritance",
+      "land",
+      "warrant",
+      "forensics",
+      "when-strip",
+      "spine-background"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 4,
+    "redHerrings": 2,
+    "liars": 1,
+    "groups": [
+      "when",
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "forensic"
+    ],
+    "gatedActions": [
+      "warrant"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 17/23/12",
+    "date": "Tuesday 23 December",
+    "time": "08:10",
+    "reportedBy": "Mzee Oyugi Ndiege, bird-scarer",
+    "text": "A bird-scarer at the Ahero irrigation scheme reports a woman, Jacinta Oketch (46), found face down in an irrigation canal at 07:50. Villagers gathering on the bund say a hippo got her.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_jacinta",
+      "role": "victim",
+      "name": "Jacinta Oketch",
+      "age": 46,
+      "occupation": "Rice tenant farmer; secretary, block water committee",
+      "bio": "Widowed last year. Holds her late husband's three paddies. Writes the water committee's minutes in a neat round hand.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_canal",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo woman, mid 40s, a faded headscarf and a work dress, gumboots, a jembe over her shoulder, a quiet, capable face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_violet",
+      "role": "suspect",
+      "name": "Violet Makokha",
+      "age": 41,
+      "occupation": "Jacinta's co-wife",
+      "bio": "Their late husband's second wife. Works Jacinta's paddies for a third of the harvest.",
+      "community": "Luhya",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_tenancy"
+      },
+      "at": "plc_vhome",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luhya woman, early 40s, a wrap skirt and a plain blouse, hands folded, quiet and very still, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_silas",
+      "role": "suspect",
+      "name": "Silas Oketch",
+      "age": 50,
+      "occupation": "Their late husband's brother",
+      "redHerring": true,
+      "bio": "Lodged an objection to the tenancy transfer. Says a woman can't hold three paddies.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_silas_objection"
+      },
+      "at": "plc_market",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, about 50, a loud checked shirt and a trilby, a rice farmer's broad hands, a combative jaw, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_nahashon",
+      "role": "suspect",
+      "name": "Nahashon Rop",
+      "age": 47,
+      "occupation": "Scheme water bailiff",
+      "redHerring": true,
+      "bio": "Opens the sluices by turn. Jacinta accused him of selling water turns.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_waterturns"
+      },
+      "at": "plc_blockc",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, late 40s, a scheme overall and a cap, a large sluice key on a chain, guarded, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_oyugi",
+      "role": "witness",
+      "name": "Mzee Oyugi Ndiege",
+      "age": 70,
+      "occupation": "Bird-scarer",
+      "bio": "Has scared birds off the ripening rice at dawn for forty years. Knows every animal that comes up the river.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_bund",
+      "image": null
+    },
+    {
+      "id": "p_clement",
+      "role": "witness",
+      "name": "Clement Ndolo",
+      "age": 39,
+      "occupation": "Scheme tenancy clerk",
+      "bio": "Keeps the tenancy register. Has opinions about it he doesn't usually say aloud.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_office",
+      "image": null
+    },
+    {
+      "id": "p_pamela",
+      "role": "witness",
+      "name": "Pamela Achieng",
+      "age": 52,
+      "occupation": "Violet's neighbour",
+      "statementOnly": true,
+      "bio": "Draws water at the shared tap before dawn.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_tenancy"
+      },
+      "at": "plc_tap",
+      "image": null
+    },
+    {
+      "id": "p_kevin",
+      "role": "witness",
+      "name": "Kevin Otieno",
+      "age": 36,
+      "occupation": "Rice trader, Ahero market",
+      "statementOnly": true,
+      "bio": "Buys at the early-morning rice auction.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_market",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_inlet",
+      "name": "Jacinta's paddy inlet (paddy 114)",
+      "within": "loc_canal"
+    },
+    {
+      "id": "plc_canalbank",
+      "name": "The canal bank below paddy 114",
+      "within": "loc_canal"
+    },
+    {
+      "id": "plc_bund",
+      "name": "The next bund (bird-scaring platform)"
+    },
+    {
+      "id": "plc_vhome",
+      "name": "Violet's house"
+    },
+    {
+      "id": "plc_tap",
+      "name": "The shared tap outside Violet's house"
+    },
+    {
+      "id": "plc_market",
+      "name": "Ahero market (rice auction)"
+    },
+    {
+      "id": "plc_blockc",
+      "name": "Main sluice, block C, 3 km away"
+    },
+    {
+      "id": "plc_ctown",
+      "name": "Clement's house, Ahero town"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_canal",
+      "name": "Paddy 114 canal, Ahero scheme",
+      "kind": "scene",
+      "description": "Flat green paddies to the horizon, divided by raised earth bunds and straight canals of brown water. A wooden inlet gate stands half open. The soft black bank is flattened in a wide trail down into the water. Villagers stand on the bund, saying \"kiboko\".",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The canal",
+          "pos": [
+            44,
+            64
+          ],
+          "yields": "ev_body",
+          "text": "Jacinta was lifted from the water onto the bank, face down where she was found."
+        },
+        {
+          "id": "hs_inlet",
+          "label": "The inlet gate",
+          "pos": [
+            24,
+            42
+          ],
+          "yields": "ev_inlet",
+          "text": "Her paddy's wooden inlet gate, opened about halfway. A jembe lies on the bund beside it."
+        },
+        {
+          "id": "hs_trail",
+          "label": "The flattened bank",
+          "pos": [
+            62,
+            56
+          ],
+          "yields": "ev_trail",
+          "text": "A wide trail of flattened grass and mud runs from the paddy edge down into the canal."
+        },
+        {
+          "id": "hs_log",
+          "label": "Upstream bank",
+          "pos": [
+            84,
+            50
+          ],
+          "yields": "ev_log",
+          "text": "A heavy muddy log lies in the grass a little way along the bank."
+        },
+        {
+          "id": "hs_reeds",
+          "label": "Reeds 40 m upstream",
+          "pos": [
+            94,
+            30
+          ],
+          "yields": "ev_handle",
+          "text": "Something pale and straight among the reeds."
+        },
+        {
+          "id": "hs_mud",
+          "label": "Canal-bank mud",
+          "pos": [
+            54,
+            74
+          ],
+          "yields": "ev_canalmud",
+          "text": "Black cotton clay of the canal bank. Amani bags some."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "flat green rice paddies of the Ahero irrigation scheme near Kisumu at dawn, raised earth bunds and a straight canal of brown water, a half-open wooden inlet gate, a flattened muddy trail down the soft black bank, a bird-scarer's platform in the distance, no people in focus"
+      }
+    },
+    {
+      "id": "loc_office",
+      "name": "Scheme office, Ahero",
+      "kind": "location",
+      "description": "A low government office at the scheme gate: a counter, a tenancy register as thick as a Bible, a noticeboard of water-turn rotas and flyers.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_register",
+          "label": "Tenancy register",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_tenancy",
+          "text": "The tenancy register, open at paddies 114 to 116."
+        },
+        {
+          "id": "hs_minutes",
+          "label": "Water committee minutes",
+          "pos": [
+            62,
+            44
+          ],
+          "yields": "ev_waterturns",
+          "text": "Block water committee minutes, in Jacinta's handwriting."
+        },
+        {
+          "id": "hs_board",
+          "label": "Noticeboard",
+          "pos": [
+            82,
+            30
+          ],
+          "yields": "ev_flyer",
+          "text": "Among the water-turn rotas, a bright printed flyer."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a low government irrigation-scheme office at Ahero, a wooden counter with a huge tenancy register, a noticeboard of water rotas and flyers, rice paddies through the window"
+      }
+    },
+    {
+      "id": "loc_village",
+      "name": "Violet's homestead",
+      "kind": "location",
+      "description": "A small mud-walled house in a compound of three, a granary on stilts, a shared tap by the path where women draw water before dawn.",
+      "unlock": {
+        "fact": "f_tenancy"
+      },
+      "hotspots": [
+        {
+          "id": "hs_tap",
+          "label": "The shared tap",
+          "pos": [
+            30,
+            60
+          ],
+          "yields": "ev_neighbour",
+          "text": "Pamela Achieng, filling a jerrycan at the tap, watches you arrive."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small rural homestead near Ahero, mud-walled houses with iron roofs, a granary on stilts, a shared water tap by the path, rice fields beyond"
+      }
+    },
+    {
+      "id": "loc_vsearch",
+      "name": "Violet's house and granary (search)",
+      "kind": "search",
+      "description": "Inside, a bed, a basin, washing on a line. Outside, the granary on its stilts.",
+      "unlock": {
+        "fact": "f_clement"
+      },
+      "hotspots": [
+        {
+          "id": "hs_granary",
+          "label": "The granary",
+          "pos": [
+            60,
+            40
+          ],
+          "yields": "ev_violet_house",
+          "text": "Under the rice sacks in the granary, something wrapped in a cloth."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the inside of a rural granary on stilts, rice sacks, a cloth bundle half hidden underneath, a wrap skirt drying on a line outside"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "At the canal",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Found face down in the canal at 07:50. Mud on her shoulders."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a straight irrigation canal of brown water between green rice paddies at dawn, a flattened muddy bank, a jembe lying on the bund, no body visible"
+      }
+    },
+    {
+      "id": "ev_oyugi",
+      "type": "witness",
+      "title": "Statement: Mzee Oyugi Ndiege",
+      "render": "statement",
+      "body": {
+        "speaker": "p_oyugi",
+        "sketch": "His sketch of a hippo footprint: round, plate-sized, four toes."
+      },
+      "facts": [
+        "f_oyugi",
+        "f_oyugi_self"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a pencil sketch on a sheet of exercise-book paper of a round hippo footprint with four toes, and beside it a drawing of a flat drag trail with no prints"
+      }
+    },
+    {
+      "id": "ev_inlet",
+      "type": "physical",
+      "title": "Her inlet gate",
+      "render": "sceneNote",
+      "body": {
+        "note": "A square-edged wooden gate, opened about halfway. Jacinta's own jembe lies on the bund, intact."
+      },
+      "facts": [
+        "f_inlet"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_trail",
+      "type": "physical",
+      "title": "The flattened trail",
+      "render": "sceneNote",
+      "body": {
+        "note": "A wide flattened trail from the paddy edge into the canal. No footprints of any kind. No rice eaten."
+      },
+      "facts": [
+        "f_trail"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_log",
+      "type": "physical",
+      "title": "Muddy log",
+      "render": "object",
+      "body": {
+        "label": "A heavy log, its underside caked with fresh black clay, lying where the trail begins."
+      },
+      "facts": [
+        "f_log"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_handle",
+      "type": "physical",
+      "title": "Jembe handle (reeds)",
+      "render": "object",
+      "body": {
+        "label": "A wooden jembe handle, freshly snapped at the socket end."
+      },
+      "facts": [
+        "f_handle"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a wooden hoe handle freshly snapped at one end, lying among green reeds at a canal edge"
+      }
+    },
+    {
+      "id": "ev_canalmud",
+      "type": "physical",
+      "title": "Canal-bank mud",
+      "render": "object",
+      "body": {
+        "label": "Black cotton clay from the bank below paddy 114."
+      },
+      "facts": [
+        "f_canalmud"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tenancy",
+      "type": "physical",
+      "title": "Tenancy register",
+      "render": "ledger",
+      "body": {
+        "entry": "Paddies 114–116: transferred to JACINTA OKETCH on the late tenant's written nomination.",
+        "request": "Pencilled request from Violet Makokha to split the tenancy — refused: \"only the tenant can request\".",
+        "objection": "Objection by S. Oketch — dismissed."
+      },
+      "facts": [
+        "f_tenancy",
+        "f_silas_objection"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_waterturns",
+      "type": "physical",
+      "title": "Water committee minutes",
+      "render": "form",
+      "body": {
+        "item": "Complaint by the secretary: water turns sold by the bailiff. To be heard in January. Bailiff warned in writing, 1 December.",
+        "other": "No water dispute recorded between any tenants of paddies 114–116."
+      },
+      "facts": [
+        "f_waterturns",
+        "f_no_quarrel"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_flyer",
+      "type": "physical",
+      "title": "Noticeboard flyer",
+      "render": "note",
+      "body": {
+        "text": "Get a title deed for your scheme plot! Mvua Holdings. Till 880 214."
+      },
+      "facts": [
+        "f_flyer"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_clement",
+      "type": "witness",
+      "title": "Statement: Clement Ndolo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_clement"
+      },
+      "facts": [
+        "f_clement",
+        "f_clement_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_neighbour",
+      "type": "witness",
+      "title": "Statement: Pamela Achieng",
+      "render": "statement",
+      "body": {
+        "speaker": "p_pamela"
+      },
+      "facts": [
+        "f_neighbour"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_market",
+      "type": "witness",
+      "title": "Statement: Kevin Otieno",
+      "render": "statement",
+      "body": {
+        "speaker": "p_kevin"
+      },
+      "facts": [
+        "f_market"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_sluice",
+      "type": "physical",
+      "title": "Bailiff's sluice log",
+      "render": "logBook",
+      "body": {
+        "entry": "Main sluice, block C — opened 05:45, closed 07:00 — witnessed: two tenants (signed)"
+      },
+      "facts": [
+        "f_sluice"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_violet_house",
+      "type": "physical",
+      "title": "Violet's house and granary",
+      "render": "object",
+      "body": {
+        "label": "A wrap skirt, washed but still damp, canal mud in the hem stitching. In the granary, wrapped in a cloth: a jembe blade with no handle."
+      },
+      "facts": [
+        "f_skirt",
+        "f_blade"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_neighbour",
+          "f_clement"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_drown",
+        "f_aut_nobite",
+        "f_aut_tod",
+        "f_aut_heart"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_fit",
+      "type": "forensic",
+      "title": "Comparison: handle vs blade socket",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_handle_fit"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_handle",
+          "ev_violet_house"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_soil",
+      "type": "forensic",
+      "title": "Lab: soil (skirt hem vs canal bank)",
+      "render": "labReport",
+      "body": {
+        "test": "soil"
+      },
+      "facts": [
+        "f_soil_match"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "soil",
+        "hours": 8,
+        "needs": [
+          "ev_violet_house",
+          "ev_canalmud"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Jacinta Oketch was found face down in an irrigation canal at Ahero at 07:50. Villagers say a hippo got her.",
+      "kind": "true",
+      "about": [
+        "p_jacinta",
+        "loc_canal"
+      ],
+      "at": {
+        "from": "07:50"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "She was found face down in the canal below her paddy, mud on her shoulders.",
+      "kind": "true",
+      "about": [
+        "p_jacinta",
+        "loc_canal"
+      ]
+    },
+    {
+      "id": "f_oyugi",
+      "text": "Mzee Oyugi: he started scaring at 06:15 on the next bund. He saw Jacinta walk to her inlet \"just after six\" with her jembe. He heard nothing. At 07:50 he saw her in the water.",
+      "kind": "true",
+      "about": [
+        "p_oyugi",
+        "p_jacinta"
+      ],
+      "at": {
+        "from": "06:00"
+      }
+    },
+    {
+      "id": "f_oyugi_self",
+      "text": "Mzee Oyugi was on his bird-scaring platform from 06:15, in view of two other bird-scarers.",
+      "kind": "true",
+      "about": [
+        "p_oyugi"
+      ],
+      "where": {
+        "person": "p_oyugi",
+        "place": "plc_bund",
+        "from": "06:15",
+        "to": "08:00"
+      }
+    },
+    {
+      "id": "f_inlet",
+      "text": "Her inlet gate is a square-edged wooden board, opened about halfway. Her own jembe lies on the bund beside it, intact.",
+      "kind": "true",
+      "about": [
+        "p_jacinta"
+      ]
+    },
+    {
+      "id": "f_trail",
+      "text": "The \"hippo trail\" is a wide flattened strip into the canal, with no footprints of any kind and no rice eaten.",
+      "kind": "true",
+      "about": [
+        "loc_canal"
+      ]
+    },
+    {
+      "id": "f_hippo_sign",
+      "text": "Mzee Oyugi: \"A hippo leaves round prints the size of a plate, four toes, and it eats the rice. This is a drag mark. There's no footprint at all.\"",
+      "kind": "true",
+      "about": [
+        "p_oyugi"
+      ]
+    },
+    {
+      "id": "f_log",
+      "text": "A heavy log with fresh black clay caked on its underside lies where the trail begins.",
+      "kind": "true",
+      "about": [
+        "loc_canal"
+      ]
+    },
+    {
+      "id": "f_handle",
+      "text": "In the reeds 40 m upstream: a jembe handle, freshly snapped at the socket end, as if it broke on a heavy blow.",
+      "kind": "true",
+      "about": [
+        "loc_canal"
+      ]
+    },
+    {
+      "id": "f_canalmud",
+      "text": "The canal bank below paddy 114 is black cotton clay.",
+      "kind": "true",
+      "about": [
+        "loc_canal"
+      ]
+    },
+    {
+      "id": "f_tenancy",
+      "text": "Tenancy register: paddies 114–116 transferred to Jacinta Oketch on the late husband's nomination. Violet Makokha's request to split them was refused: \"only the tenant can request\".",
+      "kind": "true",
+      "about": [
+        "p_jacinta",
+        "p_violet"
+      ]
+    },
+    {
+      "id": "f_silas_objection",
+      "text": "Tenancy register: an objection by Silas Oketch to the transfer, dismissed.",
+      "kind": "true",
+      "about": [
+        "p_silas"
+      ]
+    },
+    {
+      "id": "f_waterturns",
+      "text": "Water committee minutes: Jacinta's complaint that the bailiff sold water turns is due to be heard in January. He was warned in writing on 1 December.",
+      "kind": "true",
+      "about": [
+        "p_jacinta",
+        "p_nahashon"
+      ]
+    },
+    {
+      "id": "f_no_quarrel",
+      "text": "The minutes record no water dispute of any kind between the tenants of paddies 114–116.",
+      "kind": "true",
+      "about": [
+        "p_jacinta",
+        "p_violet"
+      ]
+    },
+    {
+      "id": "f_flyer",
+      "text": "A flyer on the scheme noticeboard: \"Get a title deed for your scheme plot! Mvua Holdings. Till 880 214.\" Scheme land is public land; it can't be titled.",
+      "kind": "true",
+      "about": [
+        "loc_office"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_clement",
+      "text": "Clement: Violet came to the office twice to plead for a split. The second time she said, \"Then I'll have to wait for her to go.\"",
+      "kind": "true",
+      "about": [
+        "p_clement",
+        "p_violet"
+      ]
+    },
+    {
+      "id": "f_clement_self",
+      "text": "Clement was at home in Ahero town until he caught the 07:30 matatu to the scheme; the office opens at 08:00. The conductor knows him.",
+      "kind": "true",
+      "about": [
+        "p_clement"
+      ],
+      "where": {
+        "person": "p_clement",
+        "place": "plc_ctown",
+        "from": "05:30",
+        "to": "07:30"
+      }
+    },
+    {
+      "id": "f_clement_rules",
+      "text": "Clement: \"The rules give the paddies to the nominated wife. One widow gets everything, the other gets permission. I wrote it down because it's the rule.\"",
+      "kind": "true",
+      "about": [
+        "p_clement"
+      ]
+    },
+    {
+      "id": "f_share",
+      "text": "Clement: Violet works Jacinta's paddies for a third of the harvest. There are no debts or loans between them on the scheme's books.",
+      "kind": "true",
+      "about": [
+        "p_clement",
+        "p_violet"
+      ]
+    },
+    {
+      "id": "f_neighbour",
+      "text": "Pamela: she saw Violet arrive home at about 06:40, wet to the waist, and wash at the tap.",
+      "kind": "true",
+      "about": [
+        "p_pamela",
+        "p_violet"
+      ],
+      "where": {
+        "person": "p_violet",
+        "place": "plc_tap",
+        "from": "06:40",
+        "to": "06:50"
+      },
+      "at": {
+        "from": "06:40"
+      }
+    },
+    {
+      "id": "f_market",
+      "text": "Kevin: Silas was at the early-morning rice auction at Ahero market from 05:30 to 08:00, bidding loudly.",
+      "kind": "true",
+      "about": [
+        "p_kevin",
+        "p_silas"
+      ],
+      "where": {
+        "person": "p_silas",
+        "place": "plc_market",
+        "from": "05:30",
+        "to": "08:00"
+      }
+    },
+    {
+      "id": "f_sluice",
+      "text": "Sluice log: Nahashon opened the main sluice at block C, 3 km away, from 05:45 to 07:00, witnessed by two tenants.",
+      "kind": "true",
+      "about": [
+        "p_nahashon"
+      ],
+      "where": {
+        "person": "p_nahashon",
+        "place": "plc_blockc",
+        "from": "05:45",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_skirt",
+      "text": "In Violet's house: a wrap skirt, washed but still damp, with mud in the hem stitching.",
+      "kind": "true",
+      "about": [
+        "p_violet"
+      ]
+    },
+    {
+      "id": "f_blade",
+      "text": "Hidden in Violet's granary, wrapped in a cloth: a jembe blade with no handle, splintered wood still jammed in the socket.",
+      "kind": "true",
+      "about": [
+        "p_violet"
+      ]
+    },
+    {
+      "id": "f_aut_drown",
+      "text": "Autopsy: drowning. First, a blow to the back of the head from a long rounded wooden object. Bruises on both shoulders from being held down.",
+      "kind": "true",
+      "about": [
+        "p_jacinta"
+      ]
+    },
+    {
+      "id": "f_aut_nobite",
+      "text": "Autopsy: no bite or crush injuries of any kind.",
+      "kind": "true",
+      "about": [
+        "p_jacinta"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 05:30 and 07:30.",
+      "kind": "true",
+      "about": [
+        "p_jacinta"
+      ],
+      "at": {
+        "from": "05:30",
+        "to": "07:30"
+      }
+    },
+    {
+      "id": "f_aut_heart",
+      "text": "Autopsy: a healthy heart.",
+      "kind": "true",
+      "about": [
+        "p_jacinta"
+      ]
+    },
+    {
+      "id": "f_handle_fit",
+      "text": "Comparison: the snapped end of the handle from the reeds fits the splintered wood in the socket of the blade from Violet's granary.",
+      "kind": "true",
+      "about": [
+        "p_violet"
+      ]
+    },
+    {
+      "id": "f_soil_match",
+      "text": "Lab: the mud in the skirt's hem is the black cotton clay of the canal bank below paddy 114.",
+      "kind": "true",
+      "about": [
+        "p_violet"
+      ]
+    },
+    {
+      "id": "f_vio_house",
+      "text": "Violet: \"I didn't leave the house until eight. I heard the news from the neighbours.\"",
+      "kind": "lie",
+      "about": [
+        "p_violet"
+      ]
+    },
+    {
+      "id": "f_vio_sisters",
+      "text": "Violet: \"We were sisters. Ask anyone.\"",
+      "kind": "claim",
+      "about": [
+        "p_violet",
+        "p_jacinta"
+      ]
+    },
+    {
+      "id": "f_vio_canal",
+      "text": "Violet admits she was at the canal below the paddies at dawn, \"to wash\".",
+      "kind": "true",
+      "about": [
+        "p_violet"
+      ],
+      "where": {
+        "person": "p_violet",
+        "place": "plc_canalbank",
+        "from": "06:05",
+        "to": "06:30"
+      }
+    },
+    {
+      "id": "f_silas_claim",
+      "text": "Silas: \"I was at the rice auction.\"",
+      "kind": "claim",
+      "about": [
+        "p_silas"
+      ]
+    },
+    {
+      "id": "f_silas_view",
+      "text": "Silas: \"My brother's land should be with the family. A woman can't hold three paddies.\" An ugly view; not a crime.",
+      "kind": "true",
+      "about": [
+        "p_silas"
+      ]
+    },
+    {
+      "id": "f_nah_claim",
+      "text": "Nahashon: \"I was opening the main sluice at block C.\"",
+      "kind": "claim",
+      "about": [
+        "p_nahashon"
+      ]
+    },
+    {
+      "id": "f_nah_warned",
+      "text": "Nahashon: \"Yes, she reported me. I've already been warned. I'll lose my job, not my mind.\"",
+      "kind": "true",
+      "about": [
+        "p_nahashon",
+        "p_jacinta"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_violet",
+      "stance": "cooperative",
+      "intro": "Violet sits on a low stool outside her house, hands folded in her lap. She doesn't cry. \"I didn't leave the house until eight.\"",
+      "claims": [
+        "f_vio_house",
+        "f_vio_sisters"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_tenancy",
+          "reply": "He wrote her name. Not mine. I asked them to divide it. They said only she could ask. She never asked.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_silas",
+      "stance": "cooperative",
+      "intro": "Silas talks over everyone at the market tea kiosk. \"A hippo! I told them, fence that canal!\"",
+      "claims": [
+        "f_silas_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "f_silas_objection",
+          "reply": "My brother's land should be with the family. A woman can't hold three paddies. I said so and I'll say it again.",
+          "reveals": [
+            "f_silas_view"
+          ]
+        },
+        {
+          "about": "p_jacinta",
+          "reply": "Ask the traders. I was bidding from half past five. I bought six bags.",
+          "reveals": [
+            "ev_market"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_nahashon",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_waterturns"
+      ],
+      "intro": "Nahashon turns his sluice key over in his hands. \"I open gates. That's what I do.\"",
+      "claims": [
+        "f_nah_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_waterturns",
+          "reply": "Yes, she reported me. I've already been warned. I'll lose my job, not my mind. I was at block C, ask the tenants who signed.",
+          "reveals": [
+            "f_nah_warned",
+            "ev_sluice"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_oyugi",
+      "stance": "cooperative",
+      "intro": "Mzee Oyugi leans on his bird-scaring rattle. \"Kiboko? No. I have seen kiboko for forty years.\"",
+      "claims": [],
+      "yields": [
+        "ev_oyugi"
+      ],
+      "topics": [
+        {
+          "about": "ev_trail",
+          "reply": "A hippo leaves round prints the size of a plate, four toes, and it eats the rice. This is a drag mark. There's no footprint at all. Here, I'll draw it for you.",
+          "reveals": [
+            "f_hippo_sign"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_clement",
+      "stance": "cooperative",
+      "intro": "Clement closes the register gently, as if it might hurt someone. \"I wrote her name in this book. I've been thinking about that all morning.\"",
+      "claims": [],
+      "yields": [
+        "ev_clement"
+      ],
+      "topics": [
+        {
+          "about": "p_violet",
+          "reply": "She works Jacinta's paddies for a third of the harvest. No debts, no loans. The rules give the paddies to the nominated wife. One widow gets everything, the other gets permission.",
+          "reveals": [
+            "f_share",
+            "f_clement_rules"
+          ]
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_violet",
+      "claim": "f_vio_house",
+      "brokenBy": [
+        "f_neighbour"
+      ],
+      "reveals": [
+        "f_vio_canal"
+      ],
+      "reaction": "Her hands stay folded. \"...I went to the canal to wash. That's all. I didn't see her.\"",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_violet",
+      "text": "Violet Makokha",
+      "category": "person",
+      "ref": "p_violet",
+      "unlock": {
+        "anyOf": [
+          "f_tenancy"
+        ]
+      }
+    },
+    {
+      "id": "w_silas",
+      "text": "Silas Oketch",
+      "category": "person",
+      "ref": "p_silas",
+      "unlock": {
+        "anyOf": [
+          "f_silas_objection"
+        ]
+      }
+    },
+    {
+      "id": "w_nahashon",
+      "text": "Nahashon Rop",
+      "category": "person",
+      "ref": "p_nahashon",
+      "unlock": {
+        "anyOf": [
+          "f_waterturns"
+        ]
+      }
+    },
+    {
+      "id": "w_oyugi",
+      "text": "Oyugi Ndiege",
+      "category": "person",
+      "ref": "p_oyugi",
+      "unlock": {
+        "anyOf": [
+          "f_oyugi"
+        ]
+      }
+    },
+    {
+      "id": "w_clement",
+      "text": "Clement Ndolo",
+      "category": "person",
+      "ref": "p_clement",
+      "unlock": {
+        "anyOf": [
+          "f_clement"
+        ]
+      }
+    },
+    {
+      "id": "h_jembe",
+      "text": "struck with a jembe handle and held under the water, then made to look like a hippo attack",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_drown"
+        ]
+      }
+    },
+    {
+      "id": "h_hippo",
+      "text": "killed by a hippo",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_slip",
+      "text": "slipped and drowned in the canal",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_gate",
+      "text": "struck by the canal gate",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_inlet"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack while working",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_paddies",
+      "text": "the paddies went to Jacinta and Violet was left with nothing",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_tenancy"
+        ]
+      }
+    },
+    {
+      "id": "m_bailiff",
+      "text": "she'd reported the bailiff for selling water turns",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_waterturns"
+        ]
+      }
+    },
+    {
+      "id": "m_silas",
+      "text": "the brother-in-law's claim on the paddies",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_silas_objection"
+        ]
+      }
+    },
+    {
+      "id": "m_water",
+      "text": "a quarrel over water for the paddies",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_waterturns"
+        ]
+      }
+    },
+    {
+      "id": "m_debt",
+      "text": "a debt between the co-wives",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_vio_sisters"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Jacinta Oketch"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_0600",
+                  "label": "about 06:00",
+                  "from": "06:00",
+                  "to": "06:05"
+                },
+                {
+                  "id": "sl_0600_0640",
+                  "label": "06:00–06:40",
+                  "from": "06:00",
+                  "to": "06:40"
+                },
+                {
+                  "id": "sl_0640",
+                  "label": "06:40",
+                  "from": "06:40",
+                  "to": "06:45"
+                },
+                {
+                  "id": "sl_0750",
+                  "label": "07:50",
+                  "from": "07:50",
+                  "to": "07:55"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_walk",
+                  "text": "Jacinta walks to her inlet",
+                  "slot": "sl_0600",
+                  "by": [
+                    "f_oyugi"
+                  ],
+                  "why": "Mzee Oyugi saw her walk to her inlet \"just after six\".",
+                  "unlock": {
+                    "anyOf": [
+                      "f_oyugi"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Jacinta is killed",
+                  "slot": "sl_0600_0640",
+                  "by": [
+                    "f_aut_tod",
+                    "f_oyugi",
+                    "f_neighbour"
+                  ],
+                  "why": "After she reached her inlet just after six, and before Violet came home wet at 06:40.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_home",
+                  "text": "Violet is seen home, wet to the waist",
+                  "slot": "sl_0640",
+                  "by": [
+                    "f_neighbour"
+                  ],
+                  "why": "Pamela saw her arrive at about 06:40 and wash at the tap.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_neighbour"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_0750",
+                  "by": [
+                    "f_oyugi",
+                    "f_ob"
+                  ],
+                  "why": "07:50 is when Mzee Oyugi saw her in the water: when she was found, not when she died."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "At her inlet just after six, Violet home wet at twenty to seven. Forty minutes. That's when.",
+          "fail": [
+            "Ten to eight is when he found her, Detective.",
+            "Who saw her alive, and who came home wet?"
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_violet"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Home at 06:40 wet to the waist, canal clay in her hem, and the handle fits the blade in her granary. That will hold.",
+          "fail": [
+            "The brother-in-law's opinions are ugly. He was at the auction.",
+            "The bailiff was at block C with two witnesses. Look closer to home."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_jembe"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A blow, then held under, then a log dragged through the mud for the villagers to see. Yes.",
+          "fail": [
+            "No bites, no prints, no eaten rice. Ask the old man what a hippo leaves.",
+            "Hold-down bruises on her shoulders. She didn't slip."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_paddies"
+          }
+        ],
+        "prosecutor": {
+          "pass": "One widow with three paddies, one with permission. \"I'll have to wait for her to go.\" That's the reason. Write to the scheme too.",
+          "fail": [
+            "The minutes record no water quarrel between them.",
+            "That complaint is the bailiff's problem, and he was 3 km away."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_canal",
+      "from": "06:00",
+      "to": "06:40",
+      "within": [
+        "plc_inlet",
+        "plc_canalbank"
+      ],
+      "note": "Alive at her inlet just after 06:00; Violet home wet at 06:40. The autopsy allows 05:30–07:30."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_trail",
+          "f_hippo_sign",
+          "f_log",
+          "f_aut_drown",
+          "f_aut_nobite"
+        ],
+        "concludes": "There was no hippo: no footprints, no eaten rice, no bite or crush injuries. Jacinta was struck from behind and held under, and the trail was made by dragging a log."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_tenancy",
+          "f_clement"
+        ],
+        "concludes": "All three paddies went to Jacinta on the nomination. Violet was refused a split and told the clerk she'd \"have to wait for her to go\"."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_oyugi",
+          "f_aut_tod",
+          "f_vio_house",
+          "f_neighbour",
+          "f_vio_canal"
+        ],
+        "concludes": "Jacinta reached her inlet just after six. Violet didn't stay home until eight: she was at the canal at dawn and came home at 06:40, wet to the waist. Jacinta died between 06:00 and 06:40.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_handle",
+          "f_blade",
+          "f_handle_fit",
+          "f_skirt",
+          "f_soil_match"
+        ],
+        "concludes": "The snapped handle in the reeds fits the blade hidden in Violet's granary, and her skirt carries the canal-bank clay. Violet Makokha struck Jacinta with a jembe handle and held her under the water, then staged a hippo attack, because the paddies had gone to Jacinta and left her with nothing.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_silas",
+        "blank": "who",
+        "by": [
+          "f_market"
+        ],
+        "why": "Silas was at the rice auction from 05:30 to 08:00."
+      },
+      {
+        "word": "w_nahashon",
+        "blank": "who",
+        "by": [
+          "f_sluice"
+        ],
+        "why": "Nahashon was opening the main sluice at block C, 3 km away, from 05:45 to 07:00, with two witnesses."
+      },
+      {
+        "word": "w_oyugi",
+        "blank": "who",
+        "by": [
+          "f_oyugi_self"
+        ],
+        "why": "Mzee Oyugi was on his bird-scaring platform from 06:15 in view of two others."
+      },
+      {
+        "word": "w_clement",
+        "blank": "who",
+        "by": [
+          "f_clement_self"
+        ],
+        "why": "Clement was at home in Ahero town until the 07:30 matatu."
+      },
+      {
+        "word": "h_hippo",
+        "blank": "how",
+        "by": [
+          "f_aut_nobite",
+          "f_trail",
+          "f_hippo_sign"
+        ],
+        "why": "No bite or crush injuries, no prints, no rice eaten."
+      },
+      {
+        "word": "h_slip",
+        "blank": "how",
+        "by": [
+          "f_aut_drown"
+        ],
+        "why": "A blow came first, and she was held down by the shoulders."
+      },
+      {
+        "word": "h_gate",
+        "blank": "how",
+        "by": [
+          "f_inlet",
+          "f_aut_drown"
+        ],
+        "why": "The gate is a square-edged board; the wound is from a long rounded object."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_heart",
+          "f_aut_drown"
+        ],
+        "why": "A healthy heart; she drowned after a blow."
+      },
+      {
+        "word": "m_bailiff",
+        "blank": "why",
+        "by": [
+          "f_nah_warned",
+          "f_sluice"
+        ],
+        "why": "That grievance is Nahashon's, and he was at block C."
+      },
+      {
+        "word": "m_silas",
+        "blank": "why",
+        "by": [
+          "f_silas_objection",
+          "f_market"
+        ],
+        "why": "That claim is Silas's, already dismissed, and he was at the auction."
+      },
+      {
+        "word": "m_water",
+        "blank": "why",
+        "by": [
+          "f_no_quarrel"
+        ],
+        "why": "No water dispute was ever recorded between the co-wives."
+      },
+      {
+        "word": "m_debt",
+        "blank": "why",
+        "by": [
+          "f_share"
+        ],
+        "why": "No debts or loans: Violet worked the paddies for a share."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Last year their husband dies. On his written nomination the scheme transfers all three paddies to Jacinta, the first wife. Violet may work them \"if she behaves\".",
+        "image": null
+      },
+      {
+        "text": "Violet asks the clerk to split the tenancy. Only the tenant can ask. The second time, she says she'll have to wait for Jacinta to go.",
+        "image": null
+      },
+      {
+        "text": "Tuesday, just after 06:00. Jacinta walks to her inlet with her jembe. Violet follows along the bund with her own.",
+        "image": null
+      },
+      {
+        "text": "At the inlet Violet strikes her from behind so hard the handle snaps at the socket, and holds her under the brown water.",
+        "image": "loc_canal"
+      },
+      {
+        "text": "She throws the handle into the reeds, drags a log through the soft bank to make a trail, and takes the blade home. At 06:40 Pamela sees her washing at the tap, wet to the waist. By eight the village is saying kiboko.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "No detention needed. One warrant. The soil result (8 h) confirms the skirt.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_canal",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_inlet",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_trail",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_log",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_oyugi"
+      },
+      {
+        "do": "read",
+        "target": "ev_handle",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_canalmud",
+        "hours": 0
+      },
+      {
+        "do": "visit",
+        "target": "loc_office",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_tenancy",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_clement"
+      },
+      {
+        "do": "visit",
+        "target": "loc_village",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_neighbour",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_violet"
+      },
+      {
+        "do": "press",
+        "target": "c_violet"
+      },
+      {
+        "do": "search",
+        "target": "loc_vsearch"
+      },
+      {
+        "do": "submit",
+        "target": "ev_soil"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 8
+      }
+    ],
+    "totalHours": 25
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_oyugi",
+        "line": "The old man saw her alive. Somebody else saw something at twenty to seven."
+      },
+      "tier2": {
+        "facts": [
+          "f_oyugi",
+          "f_neighbour"
+        ],
+        "line": "At her inlet just after six. Violet home, soaking, at 06:40."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_tenancy",
+        "line": "Read the tenancy register, and the request in pencil."
+      },
+      "tier2": {
+        "facts": [
+          "f_neighbour",
+          "f_handle_fit"
+        ],
+        "line": "Wet to the waist at 06:40, and a blade in a granary that fits the handle in the reeds."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_trail",
+        "line": "Ask the old bird-scarer what a hippo leaves behind."
+      },
+      "tier2": {
+        "facts": [
+          "f_hippo_sign",
+          "f_aut_drown"
+        ],
+        "line": "No prints, a drag mark, a blow from behind, and bruises from being held down."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_clement",
+        "line": "The clerk remembers what she said the second time she came."
+      },
+      "tier2": {
+        "facts": [
+          "f_tenancy",
+          "f_clement"
+        ],
+        "line": "Three paddies to one widow. \"Then I'll have to wait for her to go.\""
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "jembe",
+      "def": "A heavy hand hoe."
+    },
+    {
+      "term": "mpunga",
+      "def": "Rice (the growing plant or unhusked grain)."
+    },
+    {
+      "term": "kiboko",
+      "def": "Hippopotamus."
+    },
+    {
+      "term": "mke mwenza",
+      "def": "Co-wife: another wife of the same husband."
+    },
+    {
+      "term": "mzee",
+      "def": "Respectful word for an older man."
+    },
+    {
+      "term": "matatu",
+      "def": "A shared minibus taxi."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "expertWitness"
+    ],
+    "beatNotes": "Expert eyes. An old bird-scarer's knowledge (what a hippo trail looks like) is evidence in its own right: his pencil sketch from the statement is laid side by side with the scene photo of the drag trail."
+  }
+}

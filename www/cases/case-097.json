@@ -1,0 +1,3192 @@
+{
+  "meta": {
+    "id": "case-097",
+    "number": 97,
+    "region": "final-files",
+    "regionNumber": 10,
+    "title": "Steam",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 52,
+    "date": "Saturday 21 November",
+    "folderTab": "MUTHAIGA"
+  },
+  "pattern": {
+    "crimePattern": "a spa manager paid through a foundation \"sponsorship\" locks an old member with a heart condition in a steam room at full heat, then plants an old pill bottle to make it look like his heart",
+    "noRealCaseRetold": true,
+    "notes": "Fictional members' club, spa and staff; Muthaiga is a setting only. Stanley Rotich, one of the three fourth-floor names, is the victim and so is eliminated as Kivuli. Margaret Kabiru is a red herring here, in full view at breakfast. The note signed \"M.\" and the Ukarimu envelope are t_kivuli spine facts.",
+    "tags": [
+      "heat",
+      "staged-natural-death",
+      "commissioned",
+      "absence",
+      "planted",
+      "spine",
+      "three-liars",
+      "records",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where"
+    ]
+  },
+  "difficulty": {
+    "suspects": 6,
+    "chainLength": 7,
+    "redHerrings": 3,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "absence",
+      "planted",
+      "spine"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "records",
+      "warrant"
+    ],
+    "twist": "one-of-the-three-is-the-victim"
+  },
+  "ob": {
+    "number": "OB 03/21/11",
+    "date": "Saturday 21 November",
+    "time": "08:30",
+    "reportedBy": "Gladys Mugo, club secretary",
+    "text": "The Aberdare Members' Club, Muthaiga, reports a member found dead in its steam room after his early swim: Stanley Rotich (66), one of the three fourth-floor names. Suspected heart failure.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_spa",
+    "nodes": [
+      "loc_spa",
+      "loc_club",
+      "loc_laundry",
+      "loc_sagal"
+    ],
+    "edges": [
+      {
+        "a": "loc_spa",
+        "b": "loc_club",
+        "minutes": 2,
+        "by": "foot"
+      },
+      {
+        "a": "loc_spa",
+        "b": "loc_laundry",
+        "minutes": 3,
+        "by": "foot"
+      },
+      {
+        "a": "loc_club",
+        "b": "loc_laundry",
+        "minutes": 4,
+        "by": "foot"
+      },
+      {
+        "a": "loc_club",
+        "b": "loc_sagal",
+        "minutes": 30,
+        "by": "car"
+      },
+      {
+        "a": "loc_spa",
+        "b": "loc_sagal",
+        "minutes": 30,
+        "by": "car"
+      },
+      {
+        "a": "loc_laundry",
+        "b": "loc_sagal",
+        "minutes": 30,
+        "by": "car"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_rotich",
+      "role": "victim",
+      "name": "Stanley Rotich",
+      "age": 66,
+      "occupation": "Chairman of a private-equity firm; Chief Valuer at Lands House twelve years ago",
+      "bio": "Swims his lengths at six every morning; a known heart condition.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_steam",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, mid 60s, silver hair, a club robe, a tired, guarded face, ID-photo framing",
+        "ref": "reference"
+      }
+    },
+    {
+      "id": "p_sagal",
+      "role": "suspect",
+      "name": "Sagal Ahmed",
+      "age": 36,
+      "occupation": "The club's spa manager",
+      "bio": "Runs the spa wing; her mother is ill in Garissa.",
+      "community": "Somali",
+      "isCulprit": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_office",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Somali woman, mid 30s, a spa manager's tunic and a navy hijab, a professional, composed face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_ibrahim",
+      "role": "suspect",
+      "name": "Ibrahim Kahindi",
+      "age": 27,
+      "occupation": "Spa attendant, morning shift",
+      "bio": "Signs the 15-minute check sheet.",
+      "community": "Mijikenda",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_laundry",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Mijikenda man, late 20s, a white spa attendant's uniform, a frightened face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_ezra",
+      "role": "suspect",
+      "name": "Ezra Rotich",
+      "age": 38,
+      "occupation": "Stanley's son",
+      "redHerring": true,
+      "bio": "Argued with his father at the club at 05:50 about the firm.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_members"
+      },
+      "at": "plc_petrol",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, late 30s, a sharp jacket over a T-shirt, a defensive, grieving face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_lawrence",
+      "role": "suspect",
+      "name": "Lawrence Ole Sein",
+      "age": 59,
+      "occupation": "Rotich's business partner",
+      "redHerring": true,
+      "bio": "Splitting the firm with him.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_ezra_rev"
+      },
+      "at": "plc_joburg",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Maasai man, late 50s, a tailored suit, a calm, businesslike face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kabiru",
+      "role": "suspect",
+      "name": "Margaret Kabiru",
+      "age": 61,
+      "occupation": "Fellow member; a fourth-floor name",
+      "redHerring": true,
+      "bio": "Hosting a foundation donors' breakfast on the terrace.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_terrace",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, early 60s, pearls and a cream jacket at a breakfast table, a gracious, composed, grieving face, ID-photo framing",
+        "ref": "reference"
+      }
+    },
+    {
+      "id": "p_oduya",
+      "role": "suspect",
+      "name": "Raphael Oduya",
+      "age": 63,
+      "occupation": "Fellow member; a fourth-floor name",
+      "bio": "Under police interview after case 96.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_oduyahome",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, early 60s, a grey suit and a lanyard-less neck, a guarded, heavy face, ID-photo framing",
+        "ref": "reference"
+      }
+    },
+    {
+      "id": "p_gladys",
+      "role": "witness",
+      "name": "Gladys Mugo",
+      "age": 54,
+      "occupation": "Club secretary",
+      "bio": "Thirty years at the club; runs the gate log.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_secretary",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, mid 50s, reading glasses and a twinset, a precise, shaken face, ID-photo framing",
+        "ref": null
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_steam",
+      "name": "The steam room",
+      "within": "loc_spa"
+    },
+    {
+      "id": "plc_office",
+      "name": "The spa office",
+      "within": "loc_spa"
+    },
+    {
+      "id": "plc_deck",
+      "name": "The pool deck",
+      "within": "loc_club"
+    },
+    {
+      "id": "plc_terrace",
+      "name": "The breakfast terrace",
+      "within": "loc_club"
+    },
+    {
+      "id": "plc_secretary",
+      "name": "The secretary's office",
+      "within": "loc_club"
+    },
+    {
+      "id": "plc_laundry",
+      "name": "The laundry",
+      "within": "loc_laundry"
+    },
+    {
+      "id": "plc_petrol",
+      "name": "A petrol station in Westlands"
+    },
+    {
+      "id": "plc_joburg",
+      "name": "Johannesburg"
+    },
+    {
+      "id": "plc_oduyahome",
+      "name": "Oduya's house"
+    },
+    {
+      "id": "plc_sagalflat",
+      "name": "Sagal's flat",
+      "within": "loc_sagal"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_spa",
+      "name": "The spa wing, Aberdare Members' Club",
+      "kind": "scene",
+      "description": "An old stone spa wing: a steam room with a fogged glass door, a sauna, changing rooms and a spa office with the digital heat panel.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The steam room bench",
+          "pos": [
+            40,
+            55
+          ],
+          "yields": "ev_body",
+          "text": "Where Rotich was found."
+        },
+        {
+          "id": "hs_pills",
+          "label": "The pill bottle",
+          "pos": [
+            48,
+            62
+          ],
+          "yields": "ev_pills",
+          "text": "Open on the bench, pills spilled."
+        },
+        {
+          "id": "hs_locker",
+          "label": "Rotich's locker",
+          "pos": [
+            80,
+            40
+          ],
+          "yields": "ev_locker",
+          "text": "His clothes and things."
+        },
+        {
+          "id": "hs_check",
+          "label": "The check sheet",
+          "pos": [
+            20,
+            30
+          ],
+          "yields": "ev_checksheet",
+          "text": "On a clipboard by the door."
+        },
+        {
+          "id": "hs_bin",
+          "label": "The spa office bin",
+          "pos": [
+            15,
+            70
+          ],
+          "yields": "ev_wedge",
+          "text": "Under the desk."
+        },
+        {
+          "id": "hs_door",
+          "label": "Under the steam-room door",
+          "pos": [
+            55,
+            80
+          ],
+          "yields": "ev_door",
+          "text": "The tiles outside."
+        },
+        {
+          "id": "hs_sigbook",
+          "label": "The staff signature book",
+          "pos": [
+            25,
+            50
+          ],
+          "yields": "ev_sigbook",
+          "text": "In the spa office."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a steam room door in an old stone club, fogged glass, a rubber wedge on wet tiles, no people in focus"
+      },
+      "expected": [
+        {
+          "id": "x_prints",
+          "text": "His own prints on a bottle he reached for",
+          "because": "f_bottleprints",
+          "present": false,
+          "fact": "f_abs_prints"
+        },
+        {
+          "id": "x_checks",
+          "text": "The attendant's checks at 06:15, 06:30 and 06:45",
+          "because": "f_laundry",
+          "present": false,
+          "fact": "f_abs_checks"
+        },
+        {
+          "id": "x_dose",
+          "text": "Saturday's pills still in his organiser",
+          "because": "f_locker",
+          "present": false,
+          "fact": "f_abs_dose"
+        },
+        {
+          "id": "x_hot",
+          "text": "A steam room still hot when he was found",
+          "because": "f_body",
+          "present": false,
+          "fact": "f_abs_hot"
+        },
+        {
+          "id": "x_others",
+          "text": "Other members in the spa that morning",
+          "because": "f_gatelog",
+          "present": false,
+          "fact": "f_abs_others"
+        }
+      ]
+    },
+    {
+      "id": "loc_club",
+      "name": "The clubhouse",
+      "kind": "location",
+      "description": "Lawns, a pool, a stone terrace laid for breakfast, the secretary's office by the front gate.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_gladys",
+          "label": "Gladys and the gate log",
+          "pos": [
+            20,
+            40
+          ],
+          "yields": "ev_gatelog",
+          "text": "The secretary's office."
+        },
+        {
+          "id": "hs_members",
+          "label": "Members on the pool deck",
+          "pos": [
+            60,
+            60
+          ],
+          "yields": "ev_members",
+          "text": "Two early swimmers."
+        },
+        {
+          "id": "hs_terrace",
+          "label": "The terrace",
+          "pos": [
+            80,
+            30
+          ],
+          "yields": "ev_kabiru",
+          "text": "The donors' breakfast."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "an old stone clubhouse terrace laid for breakfast above a pool and lawns, early morning"
+      }
+    },
+    {
+      "id": "loc_laundry",
+      "name": "The club laundry",
+      "kind": "location",
+      "description": "Across the compound: machines, folding tables, towels in stacks.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_laundry",
+          "label": "The laundry staff",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_laundry",
+          "text": "The morning shift."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a club laundry room with industrial machines and stacks of white towels"
+      }
+    },
+    {
+      "id": "loc_sagal",
+      "name": "Sagal's flat, South B",
+      "kind": "location",
+      "description": "A neat two-room flat; prayer mat, a photo of an older woman, a wardrobe.",
+      "unlock": {
+        "fact": "f_sponsor"
+      },
+      "hotspots": [
+        {
+          "id": "hs_wardrobe",
+          "label": "The wardrobe",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_sagal_home",
+          "text": "Search under warrant."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a neat small flat, an open wardrobe with an empty printed envelope on a shelf"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Rotich in the steam room",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Collapsed on the bench, skin flushed. The steam room at normal temperature when found."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a tiled steam room bench in thinning steam, a folded towel, no body visible"
+      }
+    },
+    {
+      "id": "ev_pills",
+      "type": "physical",
+      "title": "The pill bottle on the bench",
+      "render": "object",
+      "body": {
+        "label": "His heart-pill bottle, open, a few pills spilled. Pharmacy label dated eight months ago."
+      },
+      "facts": [
+        "f_pills"
+      ],
+      "gate": null,
+      "planted": {
+        "by": "p_sagal"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "an open plastic pill bottle on a wet tiled bench, a few white tablets spilled"
+      }
+    },
+    {
+      "id": "ev_locker",
+      "type": "physical",
+      "title": "Rotich's locker",
+      "render": "object",
+      "body": {
+        "label": "Trousers, wallet, phone, and a daily pill organiser with Saturday's slot already empty. His wife: he takes them at home with breakfast; that prescription was stopped six months ago."
+      },
+      "facts": [
+        "f_locker"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_checksheet",
+      "type": "document",
+      "title": "The spa check sheet",
+      "render": "logBook",
+      "body": {
+        "text": "06:15, 06:30, 06:45 — \"I.K.\""
+      },
+      "facts": [
+        "f_checksheet"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_sigbook",
+      "type": "document",
+      "title": "Staff signature book",
+      "render": "logBook",
+      "body": {
+        "text": "Specimen initials of every spa staff member."
+      },
+      "facts": [
+        "f_sigbook"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_wedge",
+      "type": "physical",
+      "title": "A rubber door wedge",
+      "render": "object",
+      "body": {
+        "label": "In the spa office bin, still damp; marks on it match the steam-room door's bottom edge."
+      },
+      "facts": [
+        "f_wedge"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_door",
+      "type": "physical",
+      "title": "Under the steam-room door",
+      "render": "object",
+      "body": {
+        "label": "Scuffs on the tile where something was jammed."
+      },
+      "facts": [
+        "f_door"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gatelog",
+      "type": "document",
+      "title": "Gate log (Gladys)",
+      "render": "logBook",
+      "body": {
+        "text": "Rotich in 05:40. Ezra Rotich in 05:45, out 06:02. No other member in the spa before 07:00."
+      },
+      "facts": [
+        "f_gatelog",
+        "f_gladys_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_members",
+      "type": "witness",
+      "title": "Statement: two early swimmers",
+      "render": "statement",
+      "body": {
+        "speaker": "p_gladys"
+      },
+      "facts": [
+        "f_members"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kabiru",
+      "type": "witness",
+      "title": "The terrace staff and four members",
+      "render": "statement",
+      "body": {
+        "speaker": "p_kabiru"
+      },
+      "facts": [
+        "f_kabiru"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_laundry",
+      "type": "witness",
+      "title": "Statement: the laundry staff",
+      "render": "statement",
+      "body": {
+        "speaker": "p_ibrahim"
+      },
+      "facts": [
+        "f_laundry"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ezra",
+      "type": "document",
+      "title": "Ezra's fuel receipt",
+      "render": "logBook",
+      "body": {
+        "text": "Westlands petrol station, 06:20, and its camera to 07:00."
+      },
+      "facts": [
+        "f_ezra_fuel"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_oduya",
+      "type": "document",
+      "title": "Oduya's guard and the DCI interview record",
+      "render": "logBook",
+      "body": {
+        "text": "At home until 06:40 (guard); at DCI headquarters 07:00–12:00."
+      },
+      "facts": [
+        "f_oduya"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lawrence",
+      "type": "document",
+      "title": "Flight record",
+      "render": "logBook",
+      "body": {
+        "text": "Lawrence Ole Sein: Nairobi–Johannesburg, Tuesday; no return."
+      },
+      "facts": [
+        "f_lawrence"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_panel",
+      "type": "phone",
+      "title": "Records ①: the heat panel's cloud log",
+      "render": "manifest",
+      "body": {
+        "text": "06:12 steam room MAX — user SPA-MGR. 06:40 NORMAL — SPA-MGR."
+      },
+      "facts": [
+        "f_panel"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_bottleprints",
+          "f_locker"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_sponsorship",
+      "type": "phone",
+      "title": "Records ②: the club's and Sagal's accounts",
+      "render": "manifest",
+      "body": {
+        "club": "Wed: KSh 1.5 million \"wellness sponsorship\" from the Ukarimu Foundation.",
+        "sagal": "Thu: KSh 500,000 cash deposit at a bank agent."
+      },
+      "facts": [
+        "f_sponsor",
+        "f_deposit"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_panel",
+          "f_checksheet"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_sagal_home",
+      "type": "physical",
+      "title": "Sagal's wardrobe",
+      "render": "object",
+      "body": {
+        "envelope": "An empty cash envelope printed with the Ukarimu Foundation logo.",
+        "note": "\"For the arrangement. — M.\""
+      },
+      "facts": [
+        "f_envelope",
+        "f_note_m"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_sponsor",
+          "f_panel",
+          "f_wedge"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "an empty cash envelope with a printed foundation logo and a small handwritten note on a wardrobe shelf"
+      }
+    },
+    {
+      "id": "ev_sg_prints",
+      "type": "physical",
+      "title": "Fingerprints: Sagal Ahmed",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention."
+      },
+      "facts": [
+        "f_sg_printset"
+      ],
+      "gate": null,
+      "detention": "p_sagal",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Government Pathologist)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_bottlelab",
+      "type": "forensic",
+      "title": "Lab: fingerprints (pill bottle)",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_bottleprints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_pills"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_hand",
+      "type": "forensic",
+      "title": "Lab: handwriting (check-sheet initials)",
+      "render": "labReport",
+      "body": {
+        "test": "handwriting"
+      },
+      "facts": [
+        "f_handlab"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "handwriting",
+        "hours": 10,
+        "needs": [
+          "ev_checksheet",
+          "ev_sigbook"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_wedgelab",
+      "type": "forensic",
+      "title": "Lab: fingerprints (the wedge)",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_wedgeprints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_wedge",
+          "ev_sg_prints"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Stanley Rotich was found dead in the steam room of the Aberdare Members' Club on Saturday morning after his swim.",
+      "kind": "true",
+      "about": [
+        "p_rotich",
+        "loc_spa"
+      ],
+      "at": {
+        "from": "06:55",
+        "to": null,
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "Rotich collapsed on the bench, skin flushed; the steam room was at normal temperature when he was found.",
+      "kind": "true",
+      "about": [
+        "p_rotich",
+        "plc_steam"
+      ]
+    },
+    {
+      "id": "f_pills",
+      "text": "His heart-pill bottle lies open on the bench, a few pills spilled. The pharmacy label is eight months old.",
+      "kind": "true",
+      "about": [
+        "p_rotich",
+        "plc_steam"
+      ]
+    },
+    {
+      "id": "f_locker",
+      "text": "His locker holds a daily pill organiser with Saturday's slot already empty. His wife: he takes them at home; the bottle's prescription stopped six months ago.",
+      "kind": "true",
+      "about": [
+        "p_rotich"
+      ]
+    },
+    {
+      "id": "f_checksheet",
+      "text": "Check sheet: 06:15, 06:30 and 06:45 initialled \"I.K.\"",
+      "kind": "true",
+      "about": [
+        "p_ibrahim",
+        "plc_steam"
+      ]
+    },
+    {
+      "id": "f_sigbook",
+      "text": "The staff signature book holds every spa staff member's specimen initials.",
+      "kind": "true",
+      "about": [
+        "plc_office"
+      ]
+    },
+    {
+      "id": "f_wedge",
+      "text": "In the spa office bin: a damp rubber door wedge, its marks matching the steam-room door's bottom edge.",
+      "kind": "true",
+      "about": [
+        "plc_office"
+      ]
+    },
+    {
+      "id": "f_door",
+      "text": "Scuffs on the tile under the steam-room door where something was jammed.",
+      "kind": "true",
+      "about": [
+        "plc_steam"
+      ]
+    },
+    {
+      "id": "f_gatelog",
+      "text": "Gate log: Rotich in at 05:40; Ezra in at 05:45 and out at 06:02. No other member used the spa before 07:00.",
+      "kind": "true",
+      "about": [
+        "p_rotich",
+        "p_ezra"
+      ]
+    },
+    {
+      "id": "f_gladys_self",
+      "text": "Gladys was in her office at the gate from 06:00, on the gate camera.",
+      "kind": "true",
+      "about": [
+        "p_gladys"
+      ],
+      "where": {
+        "person": "p_gladys",
+        "place": "plc_secretary",
+        "from": "06:00",
+        "to": "07:30"
+      }
+    },
+    {
+      "id": "f_members",
+      "text": "Two swimmers: Rotich and a younger man argued on the pool deck at 05:50 about \"the firm\". Rotich left the pool at 06:08.",
+      "kind": "true",
+      "about": [
+        "p_rotich",
+        "p_ezra"
+      ],
+      "at": {
+        "from": "05:50",
+        "to": null,
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_kabiru",
+      "text": "Terrace staff and four members: Margaret Kabiru hosted a donors' breakfast on the terrace, 06:00–07:30, in full view.",
+      "kind": "true",
+      "about": [
+        "p_kabiru"
+      ],
+      "where": {
+        "person": "p_kabiru",
+        "place": "plc_terrace",
+        "from": "06:00",
+        "to": "07:30"
+      }
+    },
+    {
+      "id": "f_laundry",
+      "text": "Laundry staff: Ibrahim came at 06:10, \"sent by Madam Sagal to count towels\", and left at 06:50.",
+      "kind": "true",
+      "about": [
+        "p_ibrahim",
+        "p_sagal"
+      ],
+      "where": {
+        "person": "p_ibrahim",
+        "place": "plc_laundry",
+        "from": "06:10",
+        "to": "06:50"
+      }
+    },
+    {
+      "id": "f_ezra_fuel",
+      "text": "Ezra's receipt and the forecourt camera: he was at a Westlands petrol station from 06:20 to 07:00.",
+      "kind": "true",
+      "about": [
+        "p_ezra"
+      ],
+      "where": {
+        "person": "p_ezra",
+        "place": "plc_petrol",
+        "from": "06:20",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_oduya",
+      "text": "Oduya's guard: at home until 06:40; then at DCI headquarters for interview from 07:00.",
+      "kind": "true",
+      "about": [
+        "p_oduya"
+      ],
+      "where": {
+        "person": "p_oduya",
+        "place": "plc_oduyahome",
+        "from": "05:00",
+        "to": "06:45"
+      }
+    },
+    {
+      "id": "f_lawrence",
+      "text": "Flight record: Lawrence Ole Sein has been in Johannesburg since Tuesday.",
+      "kind": "true",
+      "about": [
+        "p_lawrence"
+      ],
+      "where": {
+        "person": "p_lawrence",
+        "place": "plc_joburg",
+        "from": "00:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_panel",
+      "text": "Records ①: the steam room was set to MAX at 06:12 and back to NORMAL at 06:40, both with user code SPA-MGR: Sagal's.",
+      "kind": "true",
+      "about": [
+        "p_sagal",
+        "plc_steam"
+      ],
+      "at": {
+        "from": "06:12",
+        "to": "06:40",
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_sponsor",
+      "text": "Records ②: on Wednesday the club spa received a KSh 1.5 million \"wellness sponsorship\" from the Ukarimu Foundation.",
+      "kind": "true",
+      "about": [
+        "p_sagal"
+      ],
+      "spine": "t_kivuli"
+    },
+    {
+      "id": "f_deposit",
+      "text": "Records ②: on Thursday KSh 500,000 in cash was deposited into Sagal's account at a bank agent.",
+      "kind": "true",
+      "about": [
+        "p_sagal"
+      ]
+    },
+    {
+      "id": "f_envelope",
+      "text": "In Sagal's wardrobe: an empty cash envelope printed with the Ukarimu Foundation logo.",
+      "kind": "true",
+      "about": [
+        "p_sagal"
+      ]
+    },
+    {
+      "id": "f_note_m",
+      "text": "With it, a note: \"For the arrangement. — M.\"",
+      "kind": "true",
+      "about": [
+        "p_sagal"
+      ],
+      "spine": "t_kivuli"
+    },
+    {
+      "id": "f_sg_printset",
+      "text": "Fingerprints taken from Sagal in detention.",
+      "kind": "true",
+      "about": [
+        "p_sagal"
+      ]
+    },
+    {
+      "id": "f_aut",
+      "text": "Post-mortem: heatstroke with heart strain; a core temperature far above anything a normal steam session produces.",
+      "kind": "true",
+      "about": [
+        "p_rotich"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Saturday between 06:25 and 06:45.",
+      "kind": "true",
+      "about": [
+        "p_rotich"
+      ],
+      "at": {
+        "from": "06:25",
+        "to": "06:45",
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_bottleprints",
+      "text": "Lab: no fingerprints at all on the pill bottle, not even Rotich's.",
+      "kind": "true",
+      "about": [
+        "plc_steam"
+      ]
+    },
+    {
+      "id": "f_handlab",
+      "text": "Handwriting: the \"I.K.\" initials at 06:15, 06:30 and 06:45 are Sagal's, not Ibrahim's.",
+      "kind": "true",
+      "about": [
+        "p_sagal"
+      ]
+    },
+    {
+      "id": "f_wedgeprints",
+      "text": "Lab: Sagal's prints on the wedge.",
+      "kind": "true",
+      "about": [
+        "p_sagal"
+      ]
+    },
+    {
+      "id": "f_abs_prints",
+      "text": "Missing: there are no fingerprints at all on his pill bottle.",
+      "kind": "true",
+      "about": [
+        "plc_steam"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_checks",
+      "text": "Missing: the attendant's checks between 06:15 and 06:45 weren't done.",
+      "kind": "true",
+      "about": [
+        "plc_steam"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_dose",
+      "text": "Missing: Saturday's pills were already gone from his organiser.",
+      "kind": "true",
+      "about": [
+        "p_rotich"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_hot",
+      "text": "Missing: the steam room wasn't hot when he was found.",
+      "kind": "true",
+      "about": [
+        "plc_steam"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_others",
+      "text": "Missing: nobody else used the spa that morning.",
+      "kind": "true",
+      "about": [
+        "loc_spa"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_sg_normal",
+      "text": "Sagal: \"The steam room was at normal temperature all morning. Mr. Rotich must have had a heart attack.\"",
+      "kind": "lie",
+      "about": [
+        "p_sagal"
+      ]
+    },
+    {
+      "id": "f_sg_reveal",
+      "text": "Sagal: \"I sent Ibrahim for towels, set it to the top and wedged the door. At twenty to seven I turned it down, took the wedge, and put an old bottle by him.\"",
+      "kind": "true",
+      "about": [
+        "p_sagal",
+        "p_rotich"
+      ],
+      "where": {
+        "person": "p_sagal",
+        "place": "plc_steam",
+        "from": "06:40",
+        "to": "06:45"
+      }
+    },
+    {
+      "id": "f_sg_paid",
+      "text": "Sagal: \"I've never been paid by anyone but the club.\"",
+      "kind": "lie",
+      "about": [
+        "p_sagal"
+      ]
+    },
+    {
+      "id": "f_sg_young",
+      "text": "Sagal: \"A young man from the foundation came on Tuesday. He said an old member would 'cause trouble for good people', and 'it should be the steam, he has a heart'. Half a million.\"",
+      "kind": "true",
+      "about": [
+        "p_sagal"
+      ],
+      "spine": "t_kivuli"
+    },
+    {
+      "id": "f_sg_wedge",
+      "text": "Sagal: \"I've never touched that wedge.\"",
+      "kind": "lie",
+      "about": [
+        "p_sagal"
+      ]
+    },
+    {
+      "id": "f_ib_checked",
+      "text": "Ibrahim: \"I checked the steam room every fifteen minutes.\"",
+      "kind": "lie",
+      "about": [
+        "p_ibrahim"
+      ]
+    },
+    {
+      "id": "f_ib_reveal",
+      "text": "Ibrahim: \"Madam sent me to count towels at six. I came back at ten to seven. When I saw my initials in her writing I was afraid to say.\"",
+      "kind": "true",
+      "about": [
+        "p_ibrahim",
+        "p_sagal"
+      ]
+    },
+    {
+      "id": "f_ez_never",
+      "text": "Ezra: \"I didn't go to the club on Saturday.\"",
+      "kind": "lie",
+      "about": [
+        "p_ezra"
+      ]
+    },
+    {
+      "id": "f_ezra_rev",
+      "text": "Ezra: \"We argued about the firm and his split with Lawrence. He said, 'After today, nothing will be the same, for any of us.' I left at two minutes past six.\"",
+      "kind": "true",
+      "about": [
+        "p_ezra",
+        "p_lawrence"
+      ]
+    },
+    {
+      "id": "f_kb_claim",
+      "text": "Kabiru: \"Stanley and I served together twenty years. I was at breakfast with my donors when Gladys came running. He'd been troubled lately. We all are, at our age.\"",
+      "kind": "claim",
+      "about": [
+        "p_kabiru"
+      ]
+    },
+    {
+      "id": "f_od_claim",
+      "text": "Oduya: \"I was at the DCI, as you know.\"",
+      "kind": "claim",
+      "about": [
+        "p_oduya"
+      ]
+    },
+    {
+      "id": "f_lw_claim",
+      "text": "Lawrence: \"I was in Johannesburg.\"",
+      "kind": "claim",
+      "about": [
+        "p_lawrence"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_sagal",
+      "stance": "cooperative",
+      "intro": "Sagal brings her own clipboard. \"The steam room was at normal temperature all morning. Mr. Rotich must have had a heart attack.\"",
+      "claims": [
+        "f_sg_normal"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_sg_paid",
+          "after": "f_sg_reveal"
+        },
+        {
+          "claim": "f_sg_wedge",
+          "after": "f_sg_young"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_ibrahim",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_checksheet"
+      ],
+      "intro": "Ibrahim stands to attention in his whites. \"I checked the steam room every fifteen minutes.\"",
+      "claims": [
+        "f_ib_checked"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_ezra",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_body"
+      ],
+      "intro": "Ezra keeps his car keys in his fist. \"I didn't go to the club on Saturday.\"",
+      "claims": [
+        "f_ez_never"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_kabiru",
+      "stance": "cooperative",
+      "intro": "Margaret Kabiru receives Amani on the terrace as if she were a guest.",
+      "claims": [
+        "f_kb_claim"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_oduya",
+      "stance": "cooperative",
+      "intro": "Raphael Oduya, with his advocate beside him, says one sentence. \"I was at the DCI, as you know.\"",
+      "claims": [
+        "f_od_claim"
+      ],
+      "yields": [
+        "ev_oduya"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_lawrence",
+      "stance": "cooperative",
+      "intro": "Lawrence, by phone from Johannesburg: \"I was in Johannesburg.\"",
+      "claims": [
+        "f_lw_claim"
+      ],
+      "yields": [
+        "ev_lawrence"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_gladys",
+      "stance": "cooperative",
+      "intro": "Gladys has the gate log open before Amani sits down.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_ib",
+      "claim": "f_ib_checked",
+      "brokenBy": [
+        "f_laundry"
+      ],
+      "reveals": [
+        "f_ib_reveal"
+      ],
+      "reaction": "\"Madam sent me to count towels at six. I came back at ten to seven. When I saw my initials on the sheet in her writing I was afraid to say.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_ez",
+      "claim": "f_ez_never",
+      "brokenBy": [
+        "f_gatelog",
+        "f_members"
+      ],
+      "reveals": [
+        "f_ezra_rev",
+        "ev_ezra"
+      ],
+      "reaction": "\"We argued about the firm. He said, 'After today, nothing will be the same, for any of us.' I left at two minutes past six. Those were his last words to me.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_sg_normal",
+      "claim": "f_sg_normal",
+      "brokenBy": [
+        "f_panel",
+        "f_aut",
+        "f_wedge"
+      ],
+      "reveals": [
+        "f_sg_reveal"
+      ],
+      "reaction": "Sagal puts down her clipboard. \"I sent Ibrahim for towels,\" she says, very evenly, \"and I set it to the top.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_sg_paid",
+      "claim": "f_sg_paid",
+      "brokenBy": [
+        "f_deposit",
+        "f_envelope"
+      ],
+      "reveals": [
+        "f_sg_young"
+      ],
+      "reaction": "\"A young man from the foundation came on Tuesday. He said an old member was going to cause trouble for good people. Half a million. I have a sick mother in Garissa. I'm not asking you to forgive me.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_sg_wedge",
+      "claim": "f_sg_wedge",
+      "brokenBy": [
+        "f_wedgeprints"
+      ],
+      "reveals": [],
+      "reaction": "Sagal folds her hands in her lap and says nothing more.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_sagal",
+      "text": "Sagal Ahmed",
+      "category": "person",
+      "ref": "p_sagal",
+      "unlock": {
+        "anyOf": [
+          "f_panel"
+        ]
+      }
+    },
+    {
+      "id": "w_ibrahim",
+      "text": "Ibrahim Kahindi",
+      "category": "person",
+      "ref": "p_ibrahim",
+      "unlock": {
+        "anyOf": [
+          "f_checksheet"
+        ]
+      }
+    },
+    {
+      "id": "w_ezra",
+      "text": "Ezra Rotich",
+      "category": "person",
+      "ref": "p_ezra",
+      "unlock": {
+        "anyOf": [
+          "f_members"
+        ]
+      }
+    },
+    {
+      "id": "w_lawrence",
+      "text": "Lawrence Ole Sein",
+      "category": "person",
+      "ref": "p_lawrence",
+      "unlock": {
+        "anyOf": [
+          "f_ezra_rev"
+        ]
+      }
+    },
+    {
+      "id": "w_kabiru",
+      "text": "Margaret Kabiru",
+      "category": "person",
+      "ref": "p_kabiru",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_oduya",
+      "text": "Raphael Oduya",
+      "category": "person",
+      "ref": "p_oduya",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_gladys",
+      "text": "Gladys Mugo",
+      "category": "person",
+      "ref": "p_gladys",
+      "unlock": {
+        "anyOf": [
+          "f_gatelog"
+        ]
+      }
+    },
+    {
+      "id": "pl_steam",
+      "text": "the steam room",
+      "category": "place",
+      "ref": "plc_steam",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "pl_office",
+      "text": "the spa office",
+      "category": "place",
+      "ref": "plc_office",
+      "unlock": {
+        "anyOf": [
+          "f_wedge"
+        ]
+      }
+    },
+    {
+      "id": "pl_deck",
+      "text": "the pool deck",
+      "category": "place",
+      "ref": "plc_deck",
+      "unlock": {
+        "anyOf": [
+          "f_members"
+        ]
+      }
+    },
+    {
+      "id": "pl_terrace",
+      "text": "the breakfast terrace",
+      "category": "place",
+      "ref": "plc_terrace",
+      "unlock": {
+        "anyOf": [
+          "f_kabiru"
+        ]
+      }
+    },
+    {
+      "id": "pl_laundry",
+      "text": "the laundry",
+      "category": "place",
+      "ref": "plc_laundry",
+      "unlock": {
+        "anyOf": [
+          "f_laundry"
+        ]
+      }
+    },
+    {
+      "id": "h_heat",
+      "text": "locking him in the steam room at maximum heat until he collapsed",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack in the steam",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_overdose",
+      "text": "an overdose of his heart pills",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_pills"
+        ]
+      }
+    },
+    {
+      "id": "h_drown",
+      "text": "drowning in the pool",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_members"
+        ]
+      }
+    },
+    {
+      "id": "h_allergy",
+      "text": "an allergic reaction",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_paid",
+      "text": "she was paid to silence him before he testified about the fourth floor",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_deposit"
+        ]
+      }
+    },
+    {
+      "id": "m_son",
+      "text": "a son's quarrel over the firm",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_members"
+        ]
+      }
+    },
+    {
+      "id": "m_partner",
+      "text": "a partner's split",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ezra_rev"
+        ]
+      }
+    },
+    {
+      "id": "m_neglect",
+      "text": "an attendant's negligence",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_checksheet"
+        ]
+      }
+    },
+    {
+      "id": "m_grudge",
+      "text": "a spa manager's grudge",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_panel"
+        ]
+      }
+    },
+    {
+      "id": "a_prints",
+      "text": "there are no fingerprints at all on his pill bottle",
+      "category": "absence",
+      "ref": "f_abs_prints",
+      "unlock": {
+        "anyOf": [
+          "f_abs_prints"
+        ]
+      }
+    },
+    {
+      "id": "a_checks",
+      "text": "the attendant's checks between 06:15 and 06:45 weren't done",
+      "category": "absence",
+      "ref": "f_abs_checks",
+      "unlock": {
+        "anyOf": [
+          "f_abs_checks"
+        ]
+      }
+    },
+    {
+      "id": "a_dose",
+      "text": "Saturday's pills were already gone from his organiser",
+      "category": "absence",
+      "ref": "f_abs_dose",
+      "unlock": {
+        "anyOf": [
+          "f_abs_dose"
+        ]
+      }
+    },
+    {
+      "id": "a_hot",
+      "text": "the steam room wasn't hot when he was found",
+      "category": "absence",
+      "ref": "f_abs_hot",
+      "unlock": {
+        "anyOf": [
+          "f_abs_hot"
+        ]
+      }
+    },
+    {
+      "id": "a_others",
+      "text": "nobody else used the spa that morning",
+      "category": "absence",
+      "ref": "f_abs_others",
+      "unlock": {
+        "anyOf": [
+          "f_abs_others"
+        ]
+      }
+    },
+    {
+      "id": "k_placed",
+      "text": "the pill bottle was placed there by someone else",
+      "category": "conclusion",
+      "by": [
+        "f_abs_prints",
+        "f_bottleprints",
+        "f_locker",
+        "f_pills"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_prints"
+        ]
+      }
+    },
+    {
+      "id": "k_reached",
+      "text": "he reached for his pills as his heart failed",
+      "category": "conclusion",
+      "by": [
+        "f_bottleprints"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_prints"
+        ]
+      }
+    },
+    {
+      "id": "k_cold",
+      "text": "the steam room never got hot",
+      "category": "conclusion",
+      "by": [
+        "f_panel",
+        "f_aut"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_prints"
+        ]
+      }
+    },
+    {
+      "id": "k_attendant",
+      "text": "the attendant left him to die",
+      "category": "conclusion",
+      "by": [
+        "f_laundry"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_prints"
+        ]
+      }
+    },
+    {
+      "id": "k_forgot",
+      "text": "he forgot his morning pills",
+      "category": "conclusion",
+      "by": [
+        "f_locker"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_prints"
+        ]
+      }
+    },
+    {
+      "id": "k_before6",
+      "text": "he died before six",
+      "category": "conclusion",
+      "by": [
+        "f_members",
+        "f_aut_tod"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_prints"
+        ]
+      }
+    },
+    {
+      "id": "i_bottle",
+      "text": "the open pill bottle on the bench",
+      "category": "item",
+      "ref": "ev_pills",
+      "unlock": {
+        "anyOf": [
+          "f_pills"
+        ]
+      }
+    },
+    {
+      "id": "i_initials",
+      "text": "the check-sheet initials for 06:15–06:45",
+      "category": "item",
+      "ref": "ev_checksheet",
+      "unlock": {
+        "anyOf": [
+          "f_checksheet"
+        ]
+      }
+    },
+    {
+      "id": "i_wedge",
+      "text": "the rubber wedge in the bin",
+      "category": "item",
+      "ref": "ev_wedge",
+      "unlock": {
+        "anyOf": [
+          "f_wedge"
+        ]
+      }
+    },
+    {
+      "id": "i_panel",
+      "text": "the panel log",
+      "category": "item",
+      "ref": "ev_panel",
+      "unlock": {
+        "anyOf": [
+          "f_panel"
+        ]
+      }
+    },
+    {
+      "id": "i_sponsor",
+      "text": "the sponsorship payment",
+      "category": "item",
+      "ref": "ev_sponsorship",
+      "unlock": {
+        "anyOf": [
+          "f_sponsor"
+        ]
+      }
+    },
+    {
+      "id": "p_noprints",
+      "text": "it carries no prints at all, and it's from a prescription he stopped six months ago",
+      "category": "plantTell",
+      "by": [
+        "f_bottleprints",
+        "f_locker"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_bottleprints"
+        ]
+      }
+    },
+    {
+      "id": "p_smear",
+      "text": "a wiped smear, not spatter",
+      "category": "plantTell",
+      "by": [
+        "f_ob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_pills"
+        ]
+      }
+    },
+    {
+      "id": "p_dust",
+      "text": "dust under it, not on it",
+      "category": "plantTell",
+      "by": [
+        "f_ob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_pills"
+        ]
+      }
+    },
+    {
+      "id": "p_print",
+      "text": "prints under the printed text",
+      "category": "plantTell",
+      "by": [
+        "f_ob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_pills"
+        ]
+      }
+    },
+    {
+      "id": "p_early",
+      "text": "it was reported missing before the murder",
+      "category": "plantTell",
+      "by": [
+        "f_ob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_pills"
+        ]
+      }
+    },
+    {
+      "id": "p_reach",
+      "text": "placed where he couldn't reach",
+      "category": "plantTell",
+      "by": [
+        "f_ob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_pills"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_ukarimu",
+      "text": "The Ukarimu Foundation, which funded Kadzo's \"history\" (case 95)",
+      "category": "pin",
+      "pin": "case-095:f_ukarimu",
+      "unlock": {
+        "anyOf": [
+          "f_sponsor"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_msingi",
+      "text": "The Msingi Trust's directors (case 91)",
+      "category": "pin",
+      "pin": "case-091:f_directors",
+      "unlock": {
+        "anyOf": [
+          "f_sponsor"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_till",
+      "text": "The Mvua till (case 10)",
+      "category": "pin",
+      "pin": "case-010:f_order_mvua",
+      "unlock": {
+        "anyOf": [
+          "f_sponsor"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_mlinzi",
+      "text": "Mlinzi Bora Security's two million (case 90)",
+      "category": "pin",
+      "pin": "case-090:f_till2m",
+      "unlock": {
+        "anyOf": [
+          "f_sponsor"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_mv",
+      "text": "Desai's oval \"MV\" seal (case 66)",
+      "category": "pin",
+      "pin": "case-066:f_mv_seal",
+      "unlock": {
+        "anyOf": [
+          "f_sponsor"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. That {missing} shows that {conclusion}. {item} was planted, as shown by {ptell}. The money that paid for Stanley Rotich's death came from {pin}.",
+    "fixed": {
+      "victim": "Stanley Rotich"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_wed",
+                  "label": "Wednesday",
+                  "from": null,
+                  "to": null,
+                  "day": "Wed"
+                },
+                {
+                  "id": "sl_thu",
+                  "label": "Thursday",
+                  "from": null,
+                  "to": null,
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_0602",
+                  "label": "Saturday 06:02",
+                  "from": "06:02",
+                  "to": "06:02",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_0612",
+                  "label": "Saturday 06:12",
+                  "from": "06:12",
+                  "to": "06:12",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Saturday 06:25–06:45",
+                  "from": "06:25",
+                  "to": "06:45",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_0655",
+                  "label": "Saturday 06:55",
+                  "from": "06:55",
+                  "to": "06:55",
+                  "day": "Sat"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_sponsor",
+                  "text": "The foundation's sponsorship lands",
+                  "slot": "sl_wed",
+                  "by": [
+                    "f_sponsor"
+                  ],
+                  "why": "Wednesday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_sponsor"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_cash",
+                  "text": "Sagal deposits half a million",
+                  "slot": "sl_thu",
+                  "by": [
+                    "f_deposit"
+                  ],
+                  "why": "Thursday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_deposit"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_max",
+                  "text": "Sagal sets the steam to MAX",
+                  "slot": "sl_0612",
+                  "by": [
+                    "f_panel",
+                    "f_laundry"
+                  ],
+                  "why": "Two minutes after she sent Ibrahim away.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_panel"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_die",
+                  "text": "Rotich dies",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod"
+                  ],
+                  "why": "Between twenty-five past and quarter to seven.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_found",
+                  "text": "Sagal \"finds\" him",
+                  "slot": "sl_0655",
+                  "by": [
+                    "f_ob"
+                  ],
+                  "why": "Five to seven.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_ob"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_0602",
+                  "by": [
+                    "f_gatelog",
+                    "f_members"
+                  ],
+                  "why": "Ezra signed out at 06:02; his father was still in the pool until 06:08."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "Money on Wednesday, cash on Thursday, the dial at twelve past six, death by quarter to seven, and a \"discovery\" at five to.",
+          "fail": [
+            "Ezra had gone before his father left the pool.",
+            "When did the panel change?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_steam"
+          }
+        ],
+        "prosecutor": {
+          "pass": "In the steam room, behind a wedged door.",
+          "fail": [
+            "The office is where she turned the dial.",
+            "He left the pool alive."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_sagal"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her code on the panel, her hand on the sheet, her prints on the wedge, the foundation's envelope in her wardrobe.",
+          "fail": [
+            "Ibrahim was counting towels.",
+            "Kabiru was hosting breakfast in front of twenty people."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_heat"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Maximum heat, a wedged door, a man with a heart.",
+          "fail": [
+            "A heart attack doesn't raise a man's core temperature like that.",
+            "He'd already taken Saturday's pills at home."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_paid"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Half a million, three days before his letter reached us.",
+          "fail": [
+            "Ezra left before the dial moved.",
+            "There was no grudge. There was an envelope."
+          ]
+        }
+      },
+      {
+        "id": "g_absence",
+        "kind": "absence",
+        "blanks": [
+          {
+            "id": "missing",
+            "category": "absence",
+            "answer": "a_prints"
+          },
+          {
+            "id": "conclusion",
+            "category": "conclusion",
+            "answer": "k_placed"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A man reaching for his pills leaves his prints. This bottle had none.",
+          "fail": [
+            "The missing checks tell you the attendant was away.",
+            "A cold room tells you someone turned it down."
+          ]
+        }
+      },
+      {
+        "id": "g_planted",
+        "kind": "planted",
+        "blanks": [
+          {
+            "id": "item",
+            "category": "item",
+            "answer": "i_bottle"
+          },
+          {
+            "id": "ptell",
+            "category": "plantTell",
+            "answer": "p_noprints"
+          }
+        ],
+        "prosecutor": {
+          "pass": "No prints, and a prescription stopped six months ago.",
+          "fail": [
+            "The initials were forged, not planted.",
+            "The wedge was thrown away, not left to be found."
+          ]
+        }
+      },
+      {
+        "id": "g_spine",
+        "kind": "spine",
+        "blanks": [
+          {
+            "id": "pin",
+            "category": "pin",
+            "answer": "w_pin_ukarimu",
+            "spine": true
+          }
+        ],
+        "prosecutor": {
+          "pass": "The Ukarimu Foundation again: a writer's grant in Nakuru, a spa's \"sponsorship\" in Muthaiga.",
+          "fail": [
+            "Mvua's till paid for seals.",
+            "Mlinzi Bora was paid by Mvua, not by a foundation."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_steam",
+      "from": "06:25",
+      "to": "06:45",
+      "note": "The post-mortem; the panel at MAX from 06:12 to 06:40."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_pills",
+          "f_bottleprints",
+          "f_abs_prints",
+          "f_locker",
+          "f_body"
+        ],
+        "concludes": "The pill bottle was planted: no prints, an old prescription, and he'd taken his pills at home.",
+        "answers": [
+          "missing",
+          "conclusion",
+          "item",
+          "ptell"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_panel",
+          "f_aut",
+          "f_aut_tod",
+          "f_door"
+        ],
+        "concludes": "The steam room was set to MAX with Sagal's code while he was inside.",
+        "answers": [
+          "how",
+          "where"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_laundry",
+          "f_checksheet",
+          "f_handlab",
+          "f_ib_checked",
+          "f_ib_reveal"
+        ],
+        "concludes": "Sagal sent the attendant away and forged his checks."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_wedge",
+          "f_sg_normal",
+          "f_sg_reveal"
+        ],
+        "concludes": "She wedged the door shut and came back at 06:40 to turn it down.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_sponsor",
+          "f_deposit",
+          "f_envelope",
+          "f_note_m",
+          "f_sg_paid",
+          "f_sg_young",
+          "case-095:f_ukarimu"
+        ],
+        "concludes": "She was paid from the Ukarimu Foundation, which funded Kadzo in case 95.",
+        "answers": [
+          "why",
+          "pin"
+        ]
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_gatelog",
+          "f_members",
+          "f_ez_never",
+          "f_ezra_rev"
+        ],
+        "concludes": "Ezra left before his father went into the steam."
+      },
+      {
+        "id": "s7",
+        "from": [
+          "s6",
+          "f_wedgeprints",
+          "f_sg_wedge"
+        ],
+        "concludes": "Sagal Ahmed locked Stanley Rotich in the steam room at maximum heat for money.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_office",
+        "blank": "where",
+        "by": [
+          "f_panel",
+          "f_body"
+        ],
+        "why": "Where she turned the dial; he died in the steam room."
+      },
+      {
+        "word": "pl_deck",
+        "blank": "where",
+        "by": [
+          "f_members"
+        ],
+        "why": "He left the pool alive at 06:08."
+      },
+      {
+        "word": "pl_terrace",
+        "blank": "where",
+        "by": [
+          "f_kabiru"
+        ],
+        "why": "The breakfast."
+      },
+      {
+        "word": "pl_laundry",
+        "blank": "where",
+        "by": [
+          "f_laundry"
+        ],
+        "why": "Where Ibrahim was sent."
+      },
+      {
+        "word": "w_ibrahim",
+        "blank": "who",
+        "by": [
+          "f_laundry"
+        ],
+        "why": "In the laundry."
+      },
+      {
+        "word": "w_ezra",
+        "blank": "who",
+        "by": [
+          "f_ezra_fuel",
+          "f_gatelog"
+        ],
+        "why": "Out at 06:02; at a petrol station from 06:20."
+      },
+      {
+        "word": "w_lawrence",
+        "blank": "who",
+        "by": [
+          "f_lawrence"
+        ],
+        "why": "In Johannesburg."
+      },
+      {
+        "word": "w_kabiru",
+        "blank": "who",
+        "by": [
+          "f_kabiru"
+        ],
+        "why": "At breakfast in full view."
+      },
+      {
+        "word": "w_oduya",
+        "blank": "who",
+        "by": [
+          "f_oduya"
+        ],
+        "why": "At home, then at the DCI."
+      },
+      {
+        "word": "w_gladys",
+        "blank": "who",
+        "by": [
+          "f_gladys_self"
+        ],
+        "why": "In her office on camera."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut",
+          "f_panel"
+        ],
+        "why": "Core temperature and the panel log."
+      },
+      {
+        "word": "h_overdose",
+        "blank": "how",
+        "by": [
+          "f_aut",
+          "f_locker"
+        ],
+        "why": "Heatstroke; the bottle was planted."
+      },
+      {
+        "word": "h_drown",
+        "blank": "how",
+        "by": [
+          "f_members",
+          "f_aut"
+        ],
+        "why": "He left the pool at 06:08."
+      },
+      {
+        "word": "h_allergy",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "Heatstroke."
+      },
+      {
+        "word": "m_son",
+        "blank": "why",
+        "by": [
+          "f_ezra_fuel"
+        ],
+        "why": "Ezra was at the petrol station."
+      },
+      {
+        "word": "m_partner",
+        "blank": "why",
+        "by": [
+          "f_lawrence"
+        ],
+        "why": "Lawrence was in Johannesburg."
+      },
+      {
+        "word": "m_neglect",
+        "blank": "why",
+        "by": [
+          "f_laundry",
+          "f_handlab"
+        ],
+        "why": "Ibrahim was sent away and his initials forged."
+      },
+      {
+        "word": "m_grudge",
+        "blank": "why",
+        "by": [
+          "f_deposit"
+        ],
+        "why": "The money is the motive."
+      },
+      {
+        "word": "a_checks",
+        "blank": "missing",
+        "by": [
+          "f_abs_checks",
+          "f_laundry"
+        ],
+        "why": "That shows the attendant was sent away."
+      },
+      {
+        "word": "a_dose",
+        "blank": "missing",
+        "by": [
+          "f_abs_dose",
+          "f_locker"
+        ],
+        "why": "It explains the bottle, but the prints tell you who placed it."
+      },
+      {
+        "word": "a_hot",
+        "blank": "missing",
+        "by": [
+          "f_abs_hot",
+          "f_panel"
+        ],
+        "why": "Someone turned it down."
+      },
+      {
+        "word": "a_others",
+        "blank": "missing",
+        "by": [
+          "f_abs_others"
+        ],
+        "why": "He was alone."
+      },
+      {
+        "word": "k_reached",
+        "blank": "conclusion",
+        "by": [
+          "f_bottleprints"
+        ],
+        "why": "He'd have left prints."
+      },
+      {
+        "word": "k_cold",
+        "blank": "conclusion",
+        "by": [
+          "f_panel",
+          "f_aut"
+        ],
+        "why": "MAX from 06:12."
+      },
+      {
+        "word": "k_attendant",
+        "blank": "conclusion",
+        "by": [
+          "f_laundry",
+          "f_ib_reveal"
+        ],
+        "why": "He was sent away."
+      },
+      {
+        "word": "k_forgot",
+        "blank": "conclusion",
+        "by": [
+          "f_locker"
+        ],
+        "why": "Saturday's slot was empty."
+      },
+      {
+        "word": "k_before6",
+        "blank": "conclusion",
+        "by": [
+          "f_members",
+          "f_aut_tod"
+        ],
+        "why": "He swam until 06:08."
+      },
+      {
+        "word": "i_initials",
+        "blank": "item",
+        "by": [
+          "f_handlab"
+        ],
+        "why": "Forged, not planted."
+      },
+      {
+        "word": "i_wedge",
+        "blank": "item",
+        "by": [
+          "f_wedge"
+        ],
+        "why": "Thrown away, not left to be found."
+      },
+      {
+        "word": "i_panel",
+        "blank": "item",
+        "by": [
+          "f_panel"
+        ],
+        "why": "A genuine log."
+      },
+      {
+        "word": "i_sponsor",
+        "blank": "item",
+        "by": [
+          "f_sponsor"
+        ],
+        "why": "Real money."
+      },
+      {
+        "word": "p_smear",
+        "blank": "ptell",
+        "by": [
+          "f_bottleprints"
+        ],
+        "why": "No smear: no prints at all."
+      },
+      {
+        "word": "p_dust",
+        "blank": "ptell",
+        "by": [
+          "f_body"
+        ],
+        "why": "A wet steam room has no dust."
+      },
+      {
+        "word": "p_print",
+        "blank": "ptell",
+        "by": [
+          "f_bottleprints"
+        ],
+        "why": "There are no prints at all."
+      },
+      {
+        "word": "p_early",
+        "blank": "ptell",
+        "by": [
+          "f_locker"
+        ],
+        "why": "Nothing was reported missing."
+      },
+      {
+        "word": "p_reach",
+        "blank": "ptell",
+        "by": [
+          "f_pills"
+        ],
+        "why": "It was right beside him."
+      },
+      {
+        "word": "w_pin_msingi",
+        "blank": "pin",
+        "by": [
+          "case-091:f_directors",
+          "f_sponsor"
+        ],
+        "why": "Nominee directors, not a foundation."
+      },
+      {
+        "word": "w_pin_till",
+        "blank": "pin",
+        "by": [
+          "case-010:f_order_mvua",
+          "f_sponsor"
+        ],
+        "why": "Mvua's till, not the foundation."
+      },
+      {
+        "word": "w_pin_mlinzi",
+        "blank": "pin",
+        "by": [
+          "case-090:f_till2m",
+          "f_sponsor"
+        ],
+        "why": "Paid by Mvua's till."
+      },
+      {
+        "word": "w_pin_mv",
+        "blank": "pin",
+        "by": [
+          "case-066:f_mv_seal",
+          "f_sponsor"
+        ],
+        "why": "A seal, not money."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "After case 96 Stanley Rotich understands the net is closing on the fourth floor. On Wednesday he posts a registered letter to Halima offering to testify. The same day the Ukarimu Foundation \"sponsors\" the club spa; on Thursday Sagal banks half a million in cash.",
+        "image": null
+      },
+      {
+        "text": "On Saturday Rotich swims at six as always, argues with his son on the deck, and goes into the steam at 06:10. At 06:08 Sagal has sent Ibrahim to count towels; at 06:12 she sets the steam room to MAX with her own code, and wedges the door from outside.",
+        "image": null
+      },
+      {
+        "text": "Rotich, 66, with a heart condition, collapses within twenty minutes. At 06:40 she turns the heat down, takes the wedge, and sets an old pill bottle open beside him, spilling a few pills.",
+        "image": "plc_steam"
+      },
+      {
+        "text": "She initials the check sheet for 06:15, 06:30 and 06:45 in Ibrahim's name, throws the wedge in her bin, and at 06:55 \"finds\" him.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "On Monday Rotich's registered letter reaches Halima: \"I am not the one they call K. Neither is Raphael Oduya: he carries envelopes and always has. The desk was Records. I will say whose desk in court, under oath, if you will protect my grandchildren. — S.K. Rotich\""
+    },
+    {
+      "beat": "Halima, to Amani: \"He'd decided to stop. Three days too late.\"",
+      "files": [
+        {
+          "thread": "t_kivuli",
+          "text": "Stanley Rotich eliminated (deceased); his letter pinned: \"The desk was Records.\" Sagal's \"young man from the foundation\" and the note signed \"M.\" pinned beside the Ukarimu Foundation."
+        }
+      ]
+    },
+    {
+      "beat": "In the Pattern File, Rotich's card turns sepia: \"eliminated: deceased\", in Amani's hand. Notebook: \"Records. 'Tell her.' A foundation. A young man called M.\""
+    }
+  ],
+  "clockPlan": {
+    "note": "Three stamps (the maximum): the panel log, the accounts, and a warrant on Sagal's flat. The bottle prints (6 h) and handwriting (10 h) go in early; the wedge prints (6 h) after detention.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_spa",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_pills",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_locker",
+        "hours": 0.5
+      },
+      {
+        "do": "read",
+        "target": "ev_checksheet",
+        "hours": 0.5
+      },
+      {
+        "do": "read",
+        "target": "ev_sigbook",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_wedge",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_door",
+        "hours": 0
+      },
+      {
+        "do": "submit",
+        "target": "ev_bottlelab"
+      },
+      {
+        "do": "submit",
+        "target": "ev_hand"
+      },
+      {
+        "do": "travel",
+        "target": "loc_club",
+        "hours": 0.25,
+        "from": "loc_spa"
+      },
+      {
+        "do": "visit",
+        "target": "loc_club",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_gatelog",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_gladys"
+      },
+      {
+        "do": "read",
+        "target": "ev_members",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_kabiru",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_kabiru"
+      },
+      {
+        "do": "interview",
+        "target": "p_ezra"
+      },
+      {
+        "do": "press",
+        "target": "c_ez"
+      },
+      {
+        "do": "read",
+        "target": "ev_ezra",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_oduya"
+      },
+      {
+        "do": "interview",
+        "target": "p_lawrence"
+      },
+      {
+        "do": "travel",
+        "target": "loc_laundry",
+        "hours": 0.25,
+        "from": "loc_club"
+      },
+      {
+        "do": "visit",
+        "target": "loc_laundry",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_laundry",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_ibrahim"
+      },
+      {
+        "do": "press",
+        "target": "c_ib"
+      },
+      {
+        "do": "records",
+        "target": "ev_panel"
+      },
+      {
+        "do": "interview",
+        "target": "p_sagal"
+      },
+      {
+        "do": "press",
+        "target": "c_sg_normal"
+      },
+      {
+        "do": "records",
+        "target": "ev_sponsorship"
+      },
+      {
+        "do": "travel",
+        "target": "loc_sagal",
+        "hours": 1,
+        "from": "loc_laundry"
+      },
+      {
+        "do": "search",
+        "target": "loc_sagal"
+      },
+      {
+        "do": "read",
+        "target": "ev_sagal_home",
+        "hours": 0
+      },
+      {
+        "do": "press",
+        "target": "c_sg_paid"
+      },
+      {
+        "do": "detain",
+        "target": "p_sagal"
+      },
+      {
+        "do": "sample",
+        "target": "ev_sg_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_wedgelab"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 6
+      },
+      {
+        "do": "press",
+        "target": "c_sg_wedge"
+      }
+    ],
+    "totalHours": 40.5
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_panel",
+        "line": "When did the dial move?"
+      },
+      "tier2": {
+        "facts": [
+          "f_panel",
+          "f_aut_tod"
+        ],
+        "line": "MAX at 06:12; dead by 06:45."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_door",
+        "line": "Look under the steam-room door."
+      },
+      "tier2": {
+        "facts": [
+          "f_door",
+          "f_body"
+        ],
+        "line": "Wedged shut, with him inside."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_panel",
+        "line": "Whose code is SPA-MGR?"
+      },
+      "tier2": {
+        "facts": [
+          "f_panel",
+          "f_handlab"
+        ],
+        "line": "Sagal's, and her hand on the check sheet."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "What does the core temperature say?"
+      },
+      "tier2": {
+        "facts": [
+          "f_aut",
+          "f_panel"
+        ],
+        "line": "Heatstroke, at MAX."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_sponsorship",
+        "line": "Follow the sponsorship."
+      },
+      "tier2": {
+        "facts": [
+          "f_deposit",
+          "f_sg_young"
+        ],
+        "line": "Half a million, from a young man at the foundation."
+      }
+    },
+    "g_absence": {
+      "tier1": {
+        "point": "ev_bottlelab",
+        "line": "Whose prints are on the bottle?"
+      },
+      "tier2": {
+        "facts": [
+          "f_abs_prints"
+        ],
+        "line": "Nobody's. Not even his."
+      }
+    },
+    "g_planted": {
+      "tier1": {
+        "point": "ev_locker",
+        "line": "Check his pill organiser."
+      },
+      "tier2": {
+        "facts": [
+          "f_locker",
+          "f_bottleprints"
+        ],
+        "line": "An old prescription, no prints."
+      }
+    },
+    "g_spine": {
+      "tier1": {
+        "point": "ev_sponsorship",
+        "line": "Where have you seen that foundation before?"
+      },
+      "tier2": {
+        "facts": [
+          "f_sponsor"
+        ],
+        "line": "Kadzo's grant, in Nakuru."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "chumba cha mvuke",
+      "def": "A steam room."
+    },
+    {
+      "term": "joto",
+      "def": "Heat."
+    },
+    {
+      "term": "dawa za moyo",
+      "def": "Heart pills."
+    },
+    {
+      "term": "barua iliyosajiliwa",
+      "def": "A registered letter."
+    },
+    {
+      "term": "mfadhili",
+      "def": "A sponsor or donor."
+    },
+    {
+      "term": "Ukarimu",
+      "def": "\"Generosity\"; the name of a foundation."
+    },
+    {
+      "term": "Mvua",
+      "def": "Mvua Holdings, the shell company behind the forged titles (\"mvua\" means rain)."
+    },
+    {
+      "term": "mlinzi",
+      "def": "A guard."
+    },
+    {
+      "term": "Mlinzi Bora",
+      "def": "\"Good Guard\": a security company paid by Mvua (case 90)."
+    },
+    {
+      "term": "Madam",
+      "def": "How Kenyan staff often address a female manager."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "sepiaCard"
+    ],
+    "beatNotes": "No new mechanics. After the verdict, Rotich's card in the Pattern File turns sepia with \"eliminated: deceased\" in Amani's hand."
+  }
+}

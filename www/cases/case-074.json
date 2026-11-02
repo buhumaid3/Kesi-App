@@ -1,0 +1,3045 @@
+{
+  "meta": {
+    "id": "case-074",
+    "number": 74,
+    "region": "northern-frontier",
+    "regionNumber": 8,
+    "title": "Page Eleven",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 42,
+    "date": "Friday 26 June",
+    "folderTab": "GARBA TULA"
+  },
+  "pattern": {
+    "crimePattern": "a committee secretary bribed to forge a community-land vote poisons the elder who found the torn-out page, then guides the detective through the case",
+    "noRealCaseRetold": true,
+    "notes": "Fictional committee, company (Waso Range Investments) and people. The land conflict is inside one community and one company, never between communities (region rule). The poison is named only as cattle-dip concentrate; no dose or method of mixing is given. Spine background: Till 880 214 and a file \"withdrawn — J.E.\".",
+    "tags": [
+      "poison",
+      "land",
+      "bribery",
+      "document-fraud",
+      "ally-killer",
+      "three-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where",
+      "forgery",
+      "absence",
+      "spine-background"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 6,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "forgery",
+      "absence"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": "the-ally-is-the-killer"
+  },
+  "ob": {
+    "number": "OB 27/26/06",
+    "date": "Friday 26 June",
+    "time": "06:30",
+    "reportedBy": "Family of the deceased, Garba Tula",
+    "text": "A family reports an elder, Boru Tadicha (66), chairman of the Garba Tula community land management committee, found dead in his bed at 04:30. Suspected heart failure. The family asks for a police look because \"he had enemies over the land\".",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_boru",
+    "nodes": [
+      "loc_boru",
+      "loc_office",
+      "loc_dabaso",
+      "loc_registry",
+      "loc_waso"
+    ],
+    "edges": [
+      {
+        "a": "loc_boru",
+        "b": "loc_office",
+        "minutes": 5,
+        "by": "foot"
+      },
+      {
+        "a": "loc_boru",
+        "b": "loc_dabaso",
+        "minutes": 10,
+        "by": "foot"
+      },
+      {
+        "a": "loc_office",
+        "b": "loc_dabaso",
+        "minutes": 10,
+        "by": "foot"
+      },
+      {
+        "a": "loc_office",
+        "b": "loc_registry",
+        "minutes": 120,
+        "by": "road"
+      },
+      {
+        "a": "loc_boru",
+        "b": "loc_registry",
+        "minutes": 120,
+        "by": "road"
+      },
+      {
+        "a": "loc_registry",
+        "b": "loc_waso",
+        "minutes": 10,
+        "by": "road"
+      },
+      {
+        "a": "loc_waso",
+        "b": "loc_dabaso",
+        "minutes": 120,
+        "by": "road"
+      },
+      {
+        "a": "loc_waso",
+        "b": "loc_boru",
+        "minutes": 120,
+        "by": "road"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_boru",
+      "role": "victim",
+      "name": "Elder Boru Tadicha",
+      "age": 66,
+      "occupation": "Chairman, Garba Tula community land management committee",
+      "bio": "Ninety camels and his pride. Led the community against the 99-year lease.",
+      "community": "Borana",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_boru",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Borana elder, mid 60s, a white turban and a checked shawl, a carved walking stick, a dignified, stern face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_dabaso",
+      "role": "suspect",
+      "name": "Dabaso Tadicha",
+      "age": 61,
+      "occupation": "Boru's cousin; committee secretary; keeper of the minute book",
+      "bio": "Boru's partner against the lease, everyone says. Offers himself to Amani as guide and translator on the first morning.",
+      "community": "Borana",
+      "isCulprit": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_dabaso",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Borana man, early 60s, a white kofia cap, prayer beads in one hand, a gentle, helpful face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kennedy",
+      "role": "suspect",
+      "name": "Kennedy Mulwa",
+      "age": 44,
+      "occupation": "Waso Range Investments' community liaison officer",
+      "bio": "Wants a 99-year lease on 40,000 acres of dry-season grazing for a \"ranch\".",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_filed_minutes"
+      },
+      "at": "loc_waso",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba man, mid 40s, a company polo shirt under a blazer, a lanyard, a smooth, careful face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_galgalo",
+      "role": "suspect",
+      "name": "Galgalo Boru",
+      "age": 35,
+      "occupation": "Boru's son",
+      "redHerring": true,
+      "bio": "Quarrelled with his father in public. Wanted the lease money.",
+      "community": "Borana",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_son_row"
+      },
+      "at": "plc_isiolo",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Borana man, mid 30s, a leather jacket and a phone, a defensive, bitter face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mercy",
+      "role": "suspect",
+      "name": "Mercy Achieng",
+      "age": 39,
+      "occupation": "County lands officer, Isiolo",
+      "redHerring": true,
+      "bio": "Filed the minutes the secretary brought her.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_filed_minutes"
+      },
+      "at": "plc_meru",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo woman, late 30s, a county ID lanyard, braided hair, a cautious, honest face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_darmi",
+      "role": "witness",
+      "name": "Mama Darmi Boru",
+      "age": 60,
+      "occupation": "Boru's wife",
+      "bio": "Nursed him through the night. Speaks Borana; Dabaso translates.",
+      "community": "Borana",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_boru",
+      "image": null
+    },
+    {
+      "id": "p_hawo",
+      "role": "witness",
+      "name": "Hawo Diba",
+      "age": 48,
+      "occupation": "Chair, Garba Tula women's group; keeps the tally at every community meeting",
+      "statementOnly": true,
+      "bio": "Counts every hand at every assembly and makes the chief sign it.",
+      "community": "Borana",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_office",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_dipstore",
+      "name": "The committee's cattle-dip store",
+      "within": "loc_office"
+    },
+    {
+      "id": "plc_isiolo",
+      "name": "Isiolo town"
+    },
+    {
+      "id": "plc_meru",
+      "name": "A training workshop in Meru"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_boru",
+      "name": "Boru's house, Garba Tula",
+      "kind": "scene",
+      "description": "A stone house at the edge of town. His bedroom; a sitting room with a low table, two washed cups upside down, no flask. Camels return across the plain at dusk.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The bedroom",
+          "pos": [
+            40,
+            50
+          ],
+          "yields": "ev_body",
+          "text": "Boru lies in his bed. The clinical officer is still there."
+        },
+        {
+          "id": "hs_darmi",
+          "label": "Mama Darmi",
+          "pos": [
+            60,
+            60
+          ],
+          "yields": "ev_darmi_dab",
+          "text": "Mama Darmi speaks. Dabaso translates."
+        },
+        {
+          "id": "hs_halake",
+          "label": "Halake and Mama Darmi",
+          "pos": [
+            64,
+            66
+          ],
+          "yields": "ev_darmi_hal",
+          "text": "Insp. Halake sits with Mama Darmi and asks again, in Borana.",
+          "unlock": {
+            "fact": "f_abs_flask"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a stone house on the plains at Garba Tula at dusk, camels returning across the plain, a low table inside with two washed cups upside down, no people in focus"
+      },
+      "expected": [
+        {
+          "id": "x_flask",
+          "text": "Dabaso's red flask, left at the committee office as always",
+          "because": "f_members_flask",
+          "present": false,
+          "fact": "f_abs_flask"
+        },
+        {
+          "id": "x_tea",
+          "text": "Leftover tea kept in the flask for the morning",
+          "because": "f_tea_routine",
+          "present": false,
+          "fact": "f_abs_tea"
+        }
+      ]
+    },
+    {
+      "id": "loc_office",
+      "name": "Committee office",
+      "kind": "location",
+      "description": "A tin-roofed office with a desk, the minute book in a drawer, and the cattle-dip store behind it.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_book",
+          "label": "Minute book",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_minutebook",
+          "text": "Dabaso hands you the minute book, helpfully."
+        },
+        {
+          "id": "hs_tally",
+          "label": "Tally sheets",
+          "pos": [
+            60,
+            40
+          ],
+          "yields": "ev_attendance",
+          "text": "Hawo Diba brings her tally sheets from April."
+        },
+        {
+          "id": "hs_members",
+          "label": "Committee members",
+          "pos": [
+            70,
+            60
+          ],
+          "yields": "ev_members",
+          "text": "Three committee members on the bench outside."
+        },
+        {
+          "id": "hs_dip",
+          "label": "Dip store register",
+          "pos": [
+            86,
+            50
+          ],
+          "yields": "ev_dipreg",
+          "text": "The register of the cattle-dip store."
+        },
+        {
+          "id": "hs_letters",
+          "label": "Recent letters",
+          "pos": [
+            30,
+            60
+          ],
+          "yields": "ev_letters",
+          "text": "This year's committee letters, stamped."
+        },
+        {
+          "id": "hs_door",
+          "label": "The door",
+          "pos": [
+            10,
+            50
+          ],
+          "yields": "ev_door",
+          "text": "The office door and its lock."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a tin-roofed committee office on the plains, a desk with a ledger-like minute book, a steel door with an old padlock, a small store shed behind"
+      },
+      "expected": [
+        {
+          "id": "x_page",
+          "text": "Every meeting recorded in the numbered minute book",
+          "because": "f_book_rule",
+          "present": false,
+          "fact": "f_abs_page"
+        },
+        {
+          "id": "x_breakin",
+          "text": "A break-in leaves a forced lock or a broken door",
+          "because": "f_dab_breakin",
+          "present": false,
+          "fact": "f_abs_breakin"
+        }
+      ]
+    },
+    {
+      "id": "loc_registry",
+      "name": "Isiolo county land registry",
+      "kind": "location",
+      "description": "The county's community-land files, and a counter where Mercy Achieng filed the minutes.",
+      "unlock": {
+        "fact": "f_abs_page"
+      },
+      "hotspots": [
+        {
+          "id": "hs_filed",
+          "label": "Filed minutes",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_filed_minutes",
+          "text": "The minutes the county holds for the April assembly."
+        },
+        {
+          "id": "hs_index",
+          "label": "File index",
+          "pos": [
+            60,
+            50
+          ],
+          "yields": "ev_withdrawn",
+          "text": "The index card for Garba Tula's registration file."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a county land registry in Isiolo, steel cabinets, a file index drawer open on a counter"
+      },
+      "expected": [
+        {
+          "id": "x_file",
+          "text": "The community's registration file on its shelf",
+          "because": "f_file_rule",
+          "present": false,
+          "fact": "f_abs_file"
+        }
+      ]
+    },
+    {
+      "id": "loc_waso",
+      "name": "Waso Range office, Isiolo",
+      "kind": "location",
+      "description": "A rented office with a map of the plains, 40,000 acres shaded.",
+      "unlock": {
+        "fact": "f_filed_minutes"
+      },
+      "hotspots": [],
+      "image": {
+        "kind": "location",
+        "brief": "a small company office in Isiolo, a wall map with a large area shaded, a desk with files"
+      }
+    },
+    {
+      "id": "loc_dabaso",
+      "name": "Dabaso's home",
+      "kind": "location",
+      "description": "A neat house with a prayer mat by the door and a desk under the window.",
+      "unlock": {
+        "fact": "f_till"
+      },
+      "hotspots": [
+        {
+          "id": "hs_desk",
+          "label": "Kitchen and desk",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_dabaso_home",
+          "text": "The kitchen shelf and the desk drawer."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a neat house interior at Garba Tula, a red thermos flask on a kitchen shelf, a desk drawer slightly open"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Boru's bed",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Signs of a violent illness in the night. The clinical officer noted pinpoint pupils."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a simple bed with tangled bedding in a stone room at dawn, a clinical officer's bag on a chair, no body visible"
+      }
+    },
+    {
+      "id": "ev_darmi_dab",
+      "type": "witness",
+      "title": "Mama Darmi (as Dabaso translates)",
+      "render": "statement",
+      "body": {
+        "speaker": "p_darmi"
+      },
+      "facts": [
+        "f_darmi_dab",
+        "f_darmi_meal"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_darmi_hal",
+      "type": "witness",
+      "title": "Mama Darmi (to Halake, in Borana)",
+      "render": "statement",
+      "body": {
+        "speaker": "p_darmi"
+      },
+      "facts": [
+        "f_darmi_full",
+        "f_darmi_night"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_minutebook",
+      "type": "document",
+      "title": "Committee minute book",
+      "render": "logBook",
+      "body": {
+        "text": "Pages 10 and 12 present. Page 11 torn out; a ragged stub in the binding with a few letters of ink."
+      },
+      "facts": [
+        "f_page11"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "minute book"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_attendance",
+      "type": "document",
+      "title": "April assembly tally sheets",
+      "render": "form",
+      "body": {
+        "text": "253 present. Against the lease: 212. For: 41. Signed by the women's group chair and the area chief."
+      },
+      "facts": [
+        "f_attendance",
+        "f_no_feud"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "attendance sheets"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_members",
+      "type": "witness",
+      "title": "Statement: three committee members",
+      "render": "statement",
+      "body": {
+        "speaker": "p_hawo"
+      },
+      "facts": [
+        "f_members_flask",
+        "f_book_rule",
+        "f_son_row",
+        "f_tea_routine"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_dipreg",
+      "type": "document",
+      "title": "Cattle-dip store register",
+      "render": "logBook",
+      "body": {
+        "text": "Wednesday: one bottle of dip concentrate signed out to \"D.T.\"."
+      },
+      "facts": [
+        "f_dipreg"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "dip-store register"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_letters",
+      "type": "document",
+      "title": "This year's committee letters",
+      "render": "form",
+      "body": {
+        "text": "Stamped \"GARBA TULA COMMUNITY LAND MANAGEMENT COMMITTEE\": the stamp issued when the committee was re-registered under the new law."
+      },
+      "facts": [
+        "f_newstamp"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_door",
+      "type": "physical",
+      "title": "The office door",
+      "render": "object",
+      "body": {
+        "label": "Steel door, old padlock, hasp and frame undamaged. No sign it was ever forced."
+      },
+      "facts": [
+        "f_door"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_filed_minutes",
+      "type": "document",
+      "title": "Minutes filed at the county",
+      "render": "form",
+      "body": {
+        "text": "Typed \"minutes\" of the April assembly: \"Resolved: the lease is approved.\" Stamped \"GARBA TULA GRAZING COMMITTEE\". Signed \"D. Tadicha, Secretary\". Received 20 May."
+      },
+      "facts": [
+        "f_filed_minutes"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": false,
+        "forger": "p_dabaso",
+        "kind": "committee minutes"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "typed meeting minutes with a round committee stamp and a secretary's signature"
+      }
+    },
+    {
+      "id": "ev_withdrawn",
+      "type": "document",
+      "title": "Registry file index",
+      "render": "logBook",
+      "body": {
+        "text": "Garba Tula community registration file: \"Withdrawn — Registry, Nairobi — digitisation — initials J.E.\" Three weeks after the minutes were filed. Not returned."
+      },
+      "facts": [
+        "f_withdrawn",
+        "f_file_rule"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Dabaso Tadicha's PesaPap and line",
+      "render": "manifest",
+      "body": {
+        "pesapap": "12 May: KSh 3,000,000 received from Till 880 214, reference \"consultancy — WRI\".",
+        "calls": "Friday 07:40: a call to Kennedy Mulwa."
+      },
+      "facts": [
+        "f_till",
+        "f_till_mvua",
+        "f_dab_call"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_abs_page",
+          "f_filed_minutes"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_dabaso_home",
+      "type": "physical",
+      "title": "Dabaso's kitchen and desk",
+      "render": "object",
+      "body": {
+        "flask": "A red thermos flask, washed.",
+        "bottle": "A part-used bottle of cattle-dip concentrate.",
+        "stamp": "In the desk drawer: the old \"GARBA TULA GRAZING COMMITTEE\" stamp.",
+        "letter": "A Waso Range letter: \"Further to the minutes filed…\""
+      },
+      "facts": [
+        "f_redflask",
+        "f_bottle",
+        "f_oldstamp",
+        "f_waso_letter"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_till",
+          "f_darmi_full"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a red thermos flask on a kitchen shelf beside a small bottle of livestock dip, an old round rubber stamp in an open drawer"
+      }
+    },
+    {
+      "id": "ev_kennedy",
+      "type": "document",
+      "title": "Kennedy's hotel receipt",
+      "render": "receipt",
+      "body": {
+        "text": "Isiolo hotel, Thursday 18:00 to Friday 08:00; dinner 20:15."
+      },
+      "facts": [
+        "f_kennedy"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_consent",
+      "type": "document",
+      "title": "Galgalo's consent (from Kennedy's file)",
+      "render": "form",
+      "body": {
+        "text": "Galgalo Boru consents to the lease over his family grazing rights. \"KSh 200,000 on signature of the lease.\""
+      },
+      "facts": [
+        "f_consent"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "consent"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_galgalo",
+      "type": "witness",
+      "title": "Statement: Galgalo's lodging and friends",
+      "render": "statement",
+      "body": {
+        "speaker": "p_galgalo"
+      },
+      "facts": [
+        "f_galgalo"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mercy",
+      "type": "document",
+      "title": "County workshop register",
+      "render": "logBook",
+      "body": {
+        "text": "M. Achieng at a training workshop in Meru, Wednesday to Friday."
+      },
+      "facts": [
+        "f_mercy"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Dr. Chebii, Isiolo)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_op",
+        "f_aut_tod",
+        "f_aut_noother"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_compare",
+      "type": "forensic",
+      "title": "Comparison view: the two stamps",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_cmp_stamp",
+        "f_cmp_fields",
+        "f_cmp_date"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_filed_minutes",
+          "ev_letters"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tox",
+      "type": "forensic",
+      "title": "Lab: toxicology (blood, flask seal)",
+      "render": "labReport",
+      "body": {
+        "test": "toxicology"
+      },
+      "facts": [
+        "f_tox"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toxicology",
+        "hours": 18,
+        "needs": [
+          "ev_body",
+          "ev_dabaso_home"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_hand",
+      "type": "forensic",
+      "title": "Questioned Documents Lab: the page-11 stub",
+      "render": "labReport",
+      "body": {
+        "test": "handwriting"
+      },
+      "facts": [
+        "f_hand"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "handwriting",
+        "hours": 10,
+        "needs": [
+          "ev_minutebook"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_docexam",
+      "type": "forensic",
+      "title": "Questioned Documents Lab: the filed minutes",
+      "render": "labReport",
+      "body": {
+        "test": "document"
+      },
+      "facts": [
+        "f_docexam"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "document",
+        "hours": 10,
+        "needs": [
+          "ev_filed_minutes",
+          "ev_dabaso_home"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Elder Boru Tadicha was found dead in his bed at 04:30 on Friday; the family suspects his enemies over the land.",
+      "kind": "true",
+      "about": [
+        "p_boru",
+        "loc_boru"
+      ],
+      "at": {
+        "from": "04:30",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "Signs of a violent illness in the night; the clinical officer noted pinpoint pupils.",
+      "kind": "true",
+      "about": [
+        "p_boru"
+      ]
+    },
+    {
+      "id": "f_darmi_dab",
+      "text": "Mama Darmi, as Dabaso translates: \"We had tea and talked about Saturday. Boru was sick by eleven. He said it was the heart. By four he was gone.\"",
+      "kind": "true",
+      "about": [
+        "p_darmi",
+        "p_dabaso"
+      ]
+    },
+    {
+      "id": "f_darmi_meal",
+      "text": "Mama Darmi: she ate the same evening meal as Boru and was well.",
+      "kind": "true",
+      "about": [
+        "p_darmi"
+      ]
+    },
+    {
+      "id": "f_darmi_full",
+      "text": "Mama Darmi, to Halake in Borana: \"Dabaso came at eight with tea in his red flask. They drank and talked about Saturday. He took the flask when he left at nine.\"",
+      "kind": "true",
+      "about": [
+        "p_darmi",
+        "p_dabaso"
+      ],
+      "where": {
+        "person": "p_dabaso",
+        "place": "loc_boru",
+        "from": "20:00",
+        "to": "21:00"
+      },
+      "at": {
+        "from": "20:00",
+        "to": "21:00",
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_darmi_night",
+      "text": "Mama Darmi: she drinks no camel milk and took none of the tea. She washed the cups in the night, nursed him and called the clinical officer at 01:00.",
+      "kind": "true",
+      "about": [
+        "p_darmi"
+      ]
+    },
+    {
+      "id": "f_page11",
+      "text": "Minute book: pages 10 and 12 are there; page 11 is torn out, a ragged stub left in the binding with a few letters of ink.",
+      "kind": "true",
+      "about": [
+        "loc_office"
+      ]
+    },
+    {
+      "id": "f_attendance",
+      "text": "April assembly tally: 253 present; 212 against the lease, 41 for. Signed by the women's group chair and the area chief.",
+      "kind": "true",
+      "about": [
+        "p_hawo"
+      ]
+    },
+    {
+      "id": "f_no_feud",
+      "text": "Hawo Diba: Boru and Dabaso were the closest of cousins. \"Brothers, people said.\"",
+      "kind": "true",
+      "about": [
+        "p_hawo"
+      ]
+    },
+    {
+      "id": "f_members_flask",
+      "text": "Three committee members: Dabaso always leaves his red flask at the office after visits. It isn't there.",
+      "kind": "true",
+      "about": [
+        "p_dabaso"
+      ]
+    },
+    {
+      "id": "f_book_rule",
+      "text": "The members: every assembly is minuted in the numbered book; the April vote was on page 11.",
+      "kind": "true",
+      "about": [
+        "loc_office"
+      ]
+    },
+    {
+      "id": "f_son_row",
+      "text": "The members: Galgalo quarrelled with his father at the market over the lease money.",
+      "kind": "true",
+      "about": [
+        "p_galgalo",
+        "p_boru"
+      ]
+    },
+    {
+      "id": "f_tea_routine",
+      "text": "The members: Mama Darmi always keeps leftover tea in the flask for the morning.",
+      "kind": "true",
+      "about": [
+        "p_darmi"
+      ]
+    },
+    {
+      "id": "f_dipreg",
+      "text": "Dip-store register: on Wednesday one bottle of dip concentrate was signed out to \"D.T.\".",
+      "kind": "true",
+      "about": [
+        "p_dabaso"
+      ]
+    },
+    {
+      "id": "f_newstamp",
+      "text": "This year's letters carry the stamp issued on re-registration: \"GARBA TULA COMMUNITY LAND MANAGEMENT COMMITTEE\".",
+      "kind": "true",
+      "about": [
+        "loc_office"
+      ]
+    },
+    {
+      "id": "f_door",
+      "text": "The office door's padlock, hasp and frame are undamaged; it was never forced.",
+      "kind": "true",
+      "about": [
+        "loc_office"
+      ]
+    },
+    {
+      "id": "f_filed_minutes",
+      "text": "County file: typed \"minutes\" of the April assembly, \"the lease is approved\", stamped \"GARBA TULA GRAZING COMMITTEE\", signed \"D. Tadicha, Secretary\", received 20 May.",
+      "kind": "true",
+      "about": [
+        "p_dabaso"
+      ]
+    },
+    {
+      "id": "f_withdrawn",
+      "text": "Registry index: the Garba Tula registration file, \"Withdrawn — Registry, Nairobi — digitisation — initials J.E.\", three weeks after the minutes were filed.",
+      "kind": "true",
+      "about": [
+        "loc_registry"
+      ],
+      "spine": "t_registry"
+    },
+    {
+      "id": "f_file_rule",
+      "text": "The index: every community's registration file is kept at the county registry. Garba Tula's shelf is empty.",
+      "kind": "true",
+      "about": [
+        "loc_registry"
+      ]
+    },
+    {
+      "id": "f_till",
+      "text": "PesaPap: on 12 May Dabaso received KSh 3,000,000 through a business till, reference \"consultancy — WRI\".",
+      "kind": "true",
+      "about": [
+        "p_dabaso"
+      ]
+    },
+    {
+      "id": "f_till_mvua",
+      "text": "The paying till is 880 214: Mvua Holdings.",
+      "kind": "true",
+      "about": [
+        "p_dabaso"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_dab_call",
+      "text": "Records: on Friday at 07:40 Dabaso called Kennedy Mulwa.",
+      "kind": "true",
+      "about": [
+        "p_dabaso",
+        "p_kennedy"
+      ]
+    },
+    {
+      "id": "f_redflask",
+      "text": "In Dabaso's kitchen: his red thermos flask, washed.",
+      "kind": "true",
+      "about": [
+        "p_dabaso"
+      ]
+    },
+    {
+      "id": "f_bottle",
+      "text": "A part-used bottle of cattle-dip concentrate, from the committee store.",
+      "kind": "true",
+      "about": [
+        "p_dabaso"
+      ]
+    },
+    {
+      "id": "f_oldstamp",
+      "text": "In his desk drawer: the old \"GARBA TULA GRAZING COMMITTEE\" stamp, retired at re-registration.",
+      "kind": "true",
+      "about": [
+        "p_dabaso"
+      ]
+    },
+    {
+      "id": "f_waso_letter",
+      "text": "A Waso Range letter to Dabaso: \"Further to the minutes filed…\"",
+      "kind": "true",
+      "about": [
+        "p_dabaso",
+        "p_kennedy"
+      ]
+    },
+    {
+      "id": "f_kennedy",
+      "text": "Hotel receipt: Kennedy in Isiolo, Thursday 18:00 to Friday 08:00; dinner at 20:15.",
+      "kind": "true",
+      "about": [
+        "p_kennedy"
+      ],
+      "where": {
+        "person": "p_kennedy",
+        "place": "plc_isiolo",
+        "from": "18:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_consent",
+      "text": "Galgalo's signed consent to the lease over his family grazing rights, \"KSh 200,000 on signature\".",
+      "kind": "true",
+      "about": [
+        "p_galgalo"
+      ]
+    },
+    {
+      "id": "f_galgalo",
+      "text": "His lodging and two friends: Galgalo in Isiolo town all Thursday night.",
+      "kind": "true",
+      "about": [
+        "p_galgalo"
+      ],
+      "where": {
+        "person": "p_galgalo",
+        "place": "plc_isiolo",
+        "from": "17:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_mercy",
+      "text": "Workshop register: Mercy in Meru, Wednesday to Friday.",
+      "kind": "true",
+      "about": [
+        "p_mercy"
+      ],
+      "where": {
+        "person": "p_mercy",
+        "place": "plc_meru",
+        "from": "00:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_aut_op",
+      "text": "Post-mortem: no heart disease. Signs consistent with organophosphate poisoning.",
+      "kind": "true",
+      "about": [
+        "p_boru"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death between 02:00 and 05:00 on Friday.",
+      "kind": "true",
+      "about": [
+        "p_boru"
+      ],
+      "at": {
+        "from": "02:00",
+        "to": "05:00",
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_aut_noother",
+      "text": "Post-mortem: no snakebite, no smothering.",
+      "kind": "true",
+      "about": [
+        "p_boru"
+      ]
+    },
+    {
+      "id": "f_cmp_stamp",
+      "text": "Comparison view: the filed minutes carry the old stamp, \"GARBA TULA GRAZING COMMITTEE\", retired when the committee was re-registered; this year's letters carry the new one.",
+      "kind": "true",
+      "about": [
+        "p_dabaso"
+      ]
+    },
+    {
+      "id": "f_cmp_fields",
+      "text": "Minutes carry no parcel map, no batch or index numbers, and no witnesses: only the secretary's signature.",
+      "kind": "true",
+      "about": [
+        "loc_registry"
+      ]
+    },
+    {
+      "id": "f_cmp_date",
+      "text": "The minutes are dated the April assembly day, when Dabaso himself read out the tally.",
+      "kind": "true",
+      "about": [
+        "p_dabaso"
+      ]
+    },
+    {
+      "id": "f_tox",
+      "text": "Lab: organophosphate of the type in the dip concentrate, in Boru's blood and in the residue under the red flask's lid seal.",
+      "kind": "true",
+      "about": [
+        "p_boru",
+        "p_dabaso"
+      ]
+    },
+    {
+      "id": "f_hand",
+      "text": "Wilfrida Ayugi: the letters on the page-11 stub are in Dabaso's hand, as on pages 10 and 12. \"The page was written. That says nothing about who tore it.\"",
+      "kind": "true",
+      "about": [
+        "p_dabaso"
+      ]
+    },
+    {
+      "id": "f_docexam",
+      "text": "Wilfrida Ayugi: the filed minutes were typed on an inkjet; the stamp impression matches the old stamp from Dabaso's desk.",
+      "kind": "true",
+      "about": [
+        "p_dabaso"
+      ]
+    },
+    {
+      "id": "f_abs_flask",
+      "text": "Missing: Dabaso's red flask is not at the house or the office.",
+      "kind": "true",
+      "about": [
+        "loc_boru"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_tea",
+      "text": "Missing: there is no tea left in the house.",
+      "kind": "true",
+      "about": [
+        "loc_boru"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_page",
+      "text": "Missing: page eleven is torn out of the minute book.",
+      "kind": "true",
+      "about": [
+        "loc_office"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_breakin",
+      "text": "Missing: there are no signs of a break-in at the office.",
+      "kind": "true",
+      "about": [
+        "loc_office"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_file",
+      "text": "Missing: the county's registration file is gone.",
+      "kind": "true",
+      "about": [
+        "loc_registry"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_dab_left",
+      "text": "Dabaso: \"I left Boru at nine, healthy. I took my flask home.\"",
+      "kind": "claim",
+      "about": [
+        "p_dabaso"
+      ]
+    },
+    {
+      "id": "f_dab_breakin",
+      "text": "Dabaso: \"Page eleven? Torn out by the company's people when they broke into the office in May.\"",
+      "kind": "lie",
+      "about": [
+        "p_dabaso"
+      ]
+    },
+    {
+      "id": "f_dab_money",
+      "text": "Dabaso: \"I've never taken a shilling from Waso Range.\"",
+      "kind": "lie",
+      "about": [
+        "p_dabaso"
+      ]
+    },
+    {
+      "id": "f_dab_reveal",
+      "text": "Dabaso: \"Three million shillings. My cows died in the drought, Amani. All of them. Boru had ninety camels and his pride.\" He stops there.",
+      "kind": "true",
+      "about": [
+        "p_dabaso",
+        "p_boru"
+      ]
+    },
+    {
+      "id": "f_dab_flask",
+      "text": "Dabaso: \"That flask held tea. Only tea.\"",
+      "kind": "lie",
+      "about": [
+        "p_dabaso"
+      ]
+    },
+    {
+      "id": "f_ken_never",
+      "text": "Kennedy: \"Waso Range never paid anyone on the committee.\"",
+      "kind": "lie",
+      "about": [
+        "p_kennedy"
+      ]
+    },
+    {
+      "id": "f_ken_reveal",
+      "text": "Kennedy: the payment came from a \"facilitation account\" in Nairobi; he was told the minutes were \"sorted\" and didn't ask how.",
+      "kind": "true",
+      "about": [
+        "p_kennedy"
+      ]
+    },
+    {
+      "id": "f_gal_where",
+      "text": "Galgalo: \"I argued with my father. I was in Isiolo.\"",
+      "kind": "claim",
+      "about": [
+        "p_galgalo"
+      ]
+    },
+    {
+      "id": "f_gal_never",
+      "text": "Galgalo: \"I never signed anything with Waso Range.\"",
+      "kind": "lie",
+      "about": [
+        "p_galgalo"
+      ]
+    },
+    {
+      "id": "f_gal_reveal",
+      "text": "Galgalo: he signed for his share, two hundred thousand. \"Father would have disowned me. I didn't kill him.\"",
+      "kind": "true",
+      "about": [
+        "p_galgalo"
+      ]
+    },
+    {
+      "id": "f_mercy_claim",
+      "text": "Mercy: \"I filed what the secretary brought me. I was in Meru.\"",
+      "kind": "claim",
+      "about": [
+        "p_mercy"
+      ]
+    },
+    {
+      "id": "f_mercy_file",
+      "text": "Mercy: \"The registration file was withdrawn by Nairobi. That happens. It's never happened twice in a month before.\"",
+      "kind": "true",
+      "about": [
+        "p_mercy"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_dabaso",
+      "stance": "cooperative",
+      "intro": "Dabaso meets you at Boru's gate with his prayer beads. \"I will translate for you, Amani. I left Boru at nine, healthy. I took my flask home.\"",
+      "claims": [
+        "f_dab_left",
+        "f_dab_breakin",
+        "f_dab_money"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_dab_flask",
+          "after": "f_redflask"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_kennedy",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_filed_minutes"
+      ],
+      "intro": "Kennedy offers you a company bottle of water. \"Waso Range never paid anyone on the committee.\"",
+      "claims": [
+        "f_ken_never"
+      ],
+      "yields": [
+        "ev_kennedy"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_galgalo",
+      "stance": "cooperative",
+      "intro": "Galgalo answers from Isiolo. \"I argued with my father. I was in Isiolo. I never signed anything with Waso Range.\"",
+      "claims": [
+        "f_gal_where",
+        "f_gal_never"
+      ],
+      "yields": [
+        "ev_galgalo"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_mercy",
+      "stance": "cooperative",
+      "intro": "Mercy answers from the Meru workshop. \"I filed what the secretary brought me. I was in Meru.\"",
+      "claims": [
+        "f_mercy_claim"
+      ],
+      "yields": [
+        "ev_mercy"
+      ],
+      "topics": [
+        {
+          "about": "ev_withdrawn",
+          "reply": "\"The registration file was withdrawn by Nairobi. That happens. It's never happened twice in a month before.\"",
+          "reveals": [
+            "f_mercy_file"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_darmi",
+      "stance": "cooperative",
+      "intro": "Mama Darmi sits on the floor of the sitting room in a shawl.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_dab_breakin",
+      "claim": "f_dab_breakin",
+      "brokenBy": [
+        "f_attendance",
+        "f_abs_breakin",
+        "f_door"
+      ],
+      "reveals": [],
+      "reaction": "Dabaso looks at the tally sheets in Hawo's handwriting, 212 to 41, and puts his beads away.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_ken",
+      "claim": "f_ken_never",
+      "brokenBy": [
+        "f_till"
+      ],
+      "reveals": [
+        "f_ken_reveal",
+        "ev_consent"
+      ],
+      "reaction": "\"The payment came from a facilitation account in Nairobi. I was told the minutes were 'sorted'. I don't ask how things are sorted.\" He opens his file and takes out a consent form.",
+      "mark": "explains"
+    },
+    {
+      "id": "c_dab_money",
+      "claim": "f_dab_money",
+      "brokenBy": [
+        "f_till"
+      ],
+      "reveals": [
+        "f_dab_reveal"
+      ],
+      "reaction": "\"Three million shillings. My cows died in the drought, Amani. All of them. Boru had ninety camels and his pride.\" He stops there.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_gal",
+      "claim": "f_gal_never",
+      "brokenBy": [
+        "f_consent"
+      ],
+      "reveals": [
+        "f_gal_reveal"
+      ],
+      "reaction": "\"I signed for my share. Two hundred thousand. Father would have disowned me. I didn't kill him.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_dab_flask",
+      "claim": "f_dab_flask",
+      "brokenBy": [
+        "f_tox"
+      ],
+      "reveals": [],
+      "reaction": "Dabaso reads the toxicology line. Halake, quietly: \"In the north we say the hyena that hunts with you knows where you sleep.\"",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_dabaso",
+      "text": "Dabaso Tadicha",
+      "category": "person",
+      "ref": "p_dabaso",
+      "unlock": {
+        "anyOf": [
+          "f_abs_flask"
+        ]
+      }
+    },
+    {
+      "id": "w_kennedy",
+      "text": "Kennedy Mulwa",
+      "category": "person",
+      "ref": "p_kennedy",
+      "unlock": {
+        "anyOf": [
+          "f_filed_minutes"
+        ]
+      }
+    },
+    {
+      "id": "w_galgalo",
+      "text": "Galgalo Boru",
+      "category": "person",
+      "ref": "p_galgalo",
+      "unlock": {
+        "anyOf": [
+          "f_son_row"
+        ]
+      }
+    },
+    {
+      "id": "w_mercy",
+      "text": "Mercy Achieng",
+      "category": "person",
+      "ref": "p_mercy",
+      "unlock": {
+        "anyOf": [
+          "f_filed_minutes"
+        ]
+      }
+    },
+    {
+      "id": "w_darmi",
+      "text": "Mama Darmi Boru",
+      "category": "person",
+      "ref": "p_darmi",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_house",
+      "text": "Boru's house",
+      "category": "place",
+      "ref": "loc_boru",
+      "unlock": {
+        "anyOf": [
+          "f_darmi_full"
+        ]
+      }
+    },
+    {
+      "id": "pl_office",
+      "text": "the committee office",
+      "category": "place",
+      "ref": "loc_office",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_dip",
+      "text": "the cattle-dip store",
+      "category": "place",
+      "ref": "plc_dipstore",
+      "unlock": {
+        "anyOf": [
+          "f_dipreg"
+        ]
+      }
+    },
+    {
+      "id": "pl_registry",
+      "text": "the county land registry",
+      "category": "place",
+      "ref": "loc_registry",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_dhome",
+      "text": "Dabaso's home",
+      "category": "place",
+      "ref": "loc_dabaso",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_dip",
+      "text": "organophosphate cattle-dip poison in his evening tea",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_op"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "heart failure",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_food",
+      "text": "food poisoning from the evening meal",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_snake",
+      "text": "a snakebite",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_smother",
+      "text": "smothering",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_minutes",
+      "text": "to stop him exposing the forged minutes that approved the lease",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_filed_minutes"
+        ]
+      }
+    },
+    {
+      "id": "m_son",
+      "text": "a son's greed for the lease money",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_son_row"
+        ]
+      }
+    },
+    {
+      "id": "m_company",
+      "text": "the company's direct order",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_filed_minutes"
+        ]
+      }
+    },
+    {
+      "id": "m_feud",
+      "text": "an old family feud over camels",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_county",
+      "text": "a county officer's cover-up",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_filed_minutes"
+        ]
+      }
+    },
+    {
+      "id": "d_minutes",
+      "text": "The typed April minutes filed at the county",
+      "category": "document",
+      "ref": "ev_filed_minutes",
+      "unlock": {
+        "anyOf": [
+          "f_filed_minutes"
+        ]
+      }
+    },
+    {
+      "id": "d_book",
+      "text": "The minute book",
+      "category": "document",
+      "ref": "ev_minutebook",
+      "unlock": {
+        "anyOf": [
+          "f_page11"
+        ]
+      }
+    },
+    {
+      "id": "d_tally",
+      "text": "The attendance sheets",
+      "category": "document",
+      "ref": "ev_attendance",
+      "unlock": {
+        "anyOf": [
+          "f_attendance"
+        ]
+      }
+    },
+    {
+      "id": "d_consent",
+      "text": "Galgalo's consent",
+      "category": "document",
+      "ref": "ev_consent",
+      "unlock": {
+        "anyOf": [
+          "f_consent"
+        ]
+      }
+    },
+    {
+      "id": "d_dipreg",
+      "text": "The dip-store register",
+      "category": "document",
+      "ref": "ev_dipreg",
+      "unlock": {
+        "anyOf": [
+          "f_dipreg"
+        ]
+      }
+    },
+    {
+      "id": "t_oldstamp",
+      "text": "it is stamped with the committee's retired stamp",
+      "category": "tell",
+      "by": [
+        "f_cmp_stamp",
+        "f_newstamp"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_newstamp"
+        ]
+      }
+    },
+    {
+      "id": "t_deadwit",
+      "text": "a witness who was dead",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_filed_minutes"
+        ]
+      }
+    },
+    {
+      "id": "t_parcel",
+      "text": "a parcel missing from the index map",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_filed_minutes"
+        ]
+      }
+    },
+    {
+      "id": "t_batch",
+      "text": "a batch number that doesn't exist",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_filed_minutes"
+        ]
+      }
+    },
+    {
+      "id": "t_index",
+      "text": "an index number belonging to someone else",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_filed_minutes"
+        ]
+      }
+    },
+    {
+      "id": "t_coma",
+      "text": "a date when the signer was in a coma",
+      "category": "tell",
+      "by": [
+        "f_cmp_date"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_filed_minutes"
+        ]
+      }
+    },
+    {
+      "id": "a_page",
+      "text": "page eleven is torn out of the minute book",
+      "category": "absence",
+      "ref": "f_abs_page",
+      "unlock": {
+        "anyOf": [
+          "f_abs_page"
+        ]
+      }
+    },
+    {
+      "id": "a_flask",
+      "text": "the red flask is missing",
+      "category": "absence",
+      "ref": "f_abs_flask",
+      "unlock": {
+        "anyOf": [
+          "f_abs_flask"
+        ]
+      }
+    },
+    {
+      "id": "a_file",
+      "text": "the county's registration file is missing",
+      "category": "absence",
+      "ref": "f_abs_file",
+      "unlock": {
+        "anyOf": [
+          "f_abs_file"
+        ]
+      }
+    },
+    {
+      "id": "a_breakin",
+      "text": "there are no signs of a break-in at the office",
+      "category": "absence",
+      "ref": "f_abs_breakin",
+      "unlock": {
+        "anyOf": [
+          "f_abs_breakin"
+        ]
+      }
+    },
+    {
+      "id": "a_tea",
+      "text": "there is no tea left in the house",
+      "category": "absence",
+      "ref": "f_abs_tea",
+      "unlock": {
+        "anyOf": [
+          "f_abs_tea"
+        ]
+      }
+    },
+    {
+      "id": "k_inside",
+      "text": "the real record of the vote was removed from inside the committee",
+      "category": "conclusion",
+      "by": [
+        "f_abs_page",
+        "f_attendance",
+        "f_abs_breakin"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_page"
+        ]
+      }
+    },
+    {
+      "id": "k_breakin",
+      "text": "the company's people broke in and stole it",
+      "category": "conclusion",
+      "by": [
+        "f_abs_breakin"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_page"
+        ]
+      }
+    },
+    {
+      "id": "k_heart",
+      "text": "Boru died of heart failure",
+      "category": "conclusion",
+      "by": [
+        "f_aut_op"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_page"
+        ]
+      }
+    },
+    {
+      "id": "k_approved",
+      "text": "the vote approved the lease",
+      "category": "conclusion",
+      "by": [
+        "f_attendance"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_page"
+        ]
+      }
+    },
+    {
+      "id": "k_novisit",
+      "text": "nobody visited Boru that night",
+      "category": "conclusion",
+      "by": [
+        "f_darmi_full"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_page"
+        ]
+      }
+    },
+    {
+      "id": "k_galgalo",
+      "text": "Galgalo hid the book",
+      "category": "conclusion",
+      "by": [
+        "f_page11"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_page"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. {document} was forged, as shown by {tell}. That {missing} shows that {conclusion}.",
+    "fixed": {
+      "victim": "Boru Tadicha"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_apr",
+                  "label": "April (the assembly)",
+                  "from": null,
+                  "to": null,
+                  "day": "April"
+                },
+                {
+                  "id": "sl_may12",
+                  "label": "12 May",
+                  "from": null,
+                  "to": null,
+                  "day": "12 May"
+                },
+                {
+                  "id": "sl_may20",
+                  "label": "20 May",
+                  "from": null,
+                  "to": null,
+                  "day": "20 May"
+                },
+                {
+                  "id": "sl_tue",
+                  "label": "Tuesday",
+                  "from": null,
+                  "to": null,
+                  "day": "Tue"
+                },
+                {
+                  "id": "sl_act",
+                  "label": "Thursday 20:00–21:00",
+                  "from": "20:00",
+                  "to": "21:00",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_fri",
+                  "label": "Friday 04:00",
+                  "from": "04:00",
+                  "to": "04:00",
+                  "day": "Fri"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_vote",
+                  "text": "The assembly votes 212 to 41 against",
+                  "slot": "sl_apr",
+                  "by": [
+                    "f_attendance"
+                  ],
+                  "why": "The tally sheets: April.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_attendance"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_pay",
+                  "text": "Dabaso receives KSh 3 million",
+                  "slot": "sl_may12",
+                  "by": [
+                    "f_till"
+                  ],
+                  "why": "PesaPap: 12 May.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_till"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_filed",
+                  "text": "The forged minutes are filed",
+                  "slot": "sl_may20",
+                  "by": [
+                    "f_filed_minutes"
+                  ],
+                  "why": "Received at the county: 20 May.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_filed_minutes"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_found",
+                  "text": "Boru finds page eleven gone",
+                  "slot": "sl_tue",
+                  "by": [
+                    "f_abs_page",
+                    "f_darmi_full"
+                  ],
+                  "why": "Mama Darmi: he opened the book on Tuesday to prepare Saturday's assembly.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_abs_page"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_tea",
+                  "text": "Dabaso brings the red flask",
+                  "slot": "sl_act",
+                  "by": [
+                    "f_darmi_full",
+                    "f_tox"
+                  ],
+                  "why": "Mama Darmi: eight to nine on Thursday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_darmi_full"
+                    ]
+                  },
+                  "act": true
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_fri",
+                  "by": [
+                    "f_aut_op"
+                  ],
+                  "why": "Friday 04:00 is when \"his heart\" gave out. It wasn't his heart."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A vote in April, a payment and a filing in May, a torn page found on Tuesday, a flask on Thursday. He planned the poisoning around the assembly.",
+          "fail": [
+            "His heart was sound.",
+            "When did the money arrive, and when were the minutes filed?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_house"
+          }
+        ],
+        "prosecutor": {
+          "pass": "His own sitting room, his cousin's tea. Yes.",
+          "fail": [
+            "The dip came from the store. He drank it at home.",
+            "The minutes were forged in Isiolo. He died in Garba Tula."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_dabaso"
+          }
+        ],
+        "prosecutor": {
+          "pass": "His flask, his dip bottle, his old stamp, his three million. And he translated for you all morning.",
+          "fail": [
+            "Kennedy was at dinner in Isiolo.",
+            "Mama Darmi drinks no camel milk, and nursed him all night."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_dip"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Cattle dip in camel-milk tea. Yes.",
+          "fail": [
+            "Mama Darmi ate the same meal and was well.",
+            "No bite."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_minutes"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The book was going to the assembly on Saturday and the police after. That's why.",
+          "fail": [
+            "Galgalo was bought, but he was in Isiolo.",
+            "The cousins were close. No feud."
+          ]
+        }
+      },
+      {
+        "id": "g_forgery",
+        "kind": "forgery",
+        "blanks": [
+          {
+            "id": "document",
+            "category": "document",
+            "answer": "d_minutes"
+          },
+          {
+            "id": "tell",
+            "category": "tell",
+            "answer": "t_oldstamp"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A stamp retired with the old law. Nobody uses it but the man who kept it.",
+          "fail": [
+            "The tally sheets are Hawo's and the chief's.",
+            "The date is real. Look at the stamp."
+          ]
+        }
+      },
+      {
+        "id": "g_absence",
+        "kind": "absence",
+        "blanks": [
+          {
+            "id": "missing",
+            "category": "absence",
+            "answer": "a_page",
+            "accept": [
+              "a_breakin"
+            ]
+          },
+          {
+            "id": "conclusion",
+            "category": "conclusion",
+            "answer": "k_inside"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A torn page and an unforced door. It came out from inside.",
+          "fail": [
+            "A missing flask says who brought the tea, not who tore the book.",
+            "The file was withdrawn by Nairobi. That's another hand."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_boru",
+      "from": "20:00",
+      "to": "21:00",
+      "note": "The act window: the poisoned tea, 20:00–21:00. He died of it between 02:00 and 05:00."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_attendance",
+          "f_book_rule",
+          "f_page11",
+          "f_abs_page",
+          "f_door",
+          "f_abs_breakin",
+          "f_dab_breakin"
+        ],
+        "concludes": "The assembly rejected the lease, and page eleven was removed from inside: there was no break-in.",
+        "answers": [
+          "missing",
+          "conclusion"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_filed_minutes",
+          "f_newstamp",
+          "f_cmp_stamp",
+          "f_oldstamp",
+          "f_docexam",
+          "f_hand"
+        ],
+        "concludes": "The filed \"approval\" is forged with the retired stamp, kept in Dabaso's desk.",
+        "answers": [
+          "document",
+          "tell"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_till",
+          "f_dab_money",
+          "f_dab_reveal",
+          "f_ken_never",
+          "f_ken_reveal"
+        ],
+        "concludes": "Dabaso was paid KSh 3 million through a \"facilitation\" till."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_darmi_dab",
+          "f_members_flask",
+          "f_abs_flask",
+          "f_darmi_full",
+          "f_dab_left"
+        ],
+        "concludes": "Dabaso brought the tea in his red flask and took it away; his translation left that out.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_aut_op",
+          "f_aut_tod",
+          "f_dipreg",
+          "f_redflask",
+          "f_bottle"
+        ],
+        "concludes": "Boru died of organophosphate poisoning; the dip was signed out to \"D.T.\" on Wednesday."
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_tox",
+          "f_dab_flask"
+        ],
+        "concludes": "The same poison is in the seal of Dabaso's flask. Dabaso Tadicha poisoned Boru with cattle dip in his evening tea at his house, to stop him exposing the forged minutes.",
+        "answers": [
+          "who",
+          "how",
+          "why",
+          "where"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_office",
+        "blank": "where",
+        "by": [
+          "f_darmi_full"
+        ],
+        "why": "He drank the tea at home."
+      },
+      {
+        "word": "pl_dip",
+        "blank": "where",
+        "by": [
+          "f_darmi_full",
+          "f_dipreg"
+        ],
+        "why": "The poison came from the store; he drank it at home."
+      },
+      {
+        "word": "pl_registry",
+        "blank": "where",
+        "by": [
+          "f_darmi_full"
+        ],
+        "why": "He died in Garba Tula."
+      },
+      {
+        "word": "pl_dhome",
+        "blank": "where",
+        "by": [
+          "f_darmi_full"
+        ],
+        "why": "Dabaso came to him."
+      },
+      {
+        "word": "w_kennedy",
+        "blank": "who",
+        "by": [
+          "f_kennedy"
+        ],
+        "why": "Kennedy was at his Isiolo hotel, two hours away; dinner at 20:15."
+      },
+      {
+        "word": "w_galgalo",
+        "blank": "who",
+        "by": [
+          "f_galgalo"
+        ],
+        "why": "Galgalo was in Isiolo town all night."
+      },
+      {
+        "word": "w_mercy",
+        "blank": "who",
+        "by": [
+          "f_mercy"
+        ],
+        "why": "Mercy was at a workshop in Meru."
+      },
+      {
+        "word": "w_darmi",
+        "blank": "who",
+        "by": [
+          "f_darmi_night"
+        ],
+        "why": "Mama Darmi drank none of the tea, nursed him all night and called the clinical officer."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_op"
+        ],
+        "why": "No heart disease."
+      },
+      {
+        "word": "h_food",
+        "blank": "how",
+        "by": [
+          "f_darmi_meal"
+        ],
+        "why": "Mama Darmi ate the same meal and was well."
+      },
+      {
+        "word": "h_snake",
+        "blank": "how",
+        "by": [
+          "f_aut_noother"
+        ],
+        "why": "No bite."
+      },
+      {
+        "word": "h_smother",
+        "blank": "how",
+        "by": [
+          "f_aut_noother"
+        ],
+        "why": "No smothering."
+      },
+      {
+        "word": "m_son",
+        "blank": "why",
+        "by": [
+          "f_galgalo",
+          "f_gal_reveal"
+        ],
+        "why": "Galgalo was bought, but he was in Isiolo."
+      },
+      {
+        "word": "m_company",
+        "blank": "why",
+        "by": [
+          "f_ken_reveal",
+          "f_kennedy"
+        ],
+        "why": "The company paid for paper, not for this; Kennedy was in Isiolo."
+      },
+      {
+        "word": "m_feud",
+        "blank": "why",
+        "by": [
+          "f_no_feud"
+        ],
+        "why": "The cousins were close."
+      },
+      {
+        "word": "m_county",
+        "blank": "why",
+        "by": [
+          "f_mercy",
+          "f_mercy_file"
+        ],
+        "why": "Mercy filed what she was given and was in Meru."
+      },
+      {
+        "word": "d_book",
+        "blank": "document",
+        "by": [
+          "f_hand"
+        ],
+        "why": "The minute book is genuine; its page was torn out."
+      },
+      {
+        "word": "d_tally",
+        "blank": "document",
+        "by": [
+          "f_attendance"
+        ],
+        "why": "Signed by the women's chair and the chief."
+      },
+      {
+        "word": "d_consent",
+        "blank": "document",
+        "by": [
+          "f_gal_reveal"
+        ],
+        "why": "Galgalo signed it himself."
+      },
+      {
+        "word": "d_dipreg",
+        "blank": "document",
+        "by": [
+          "f_dipreg"
+        ],
+        "why": "The store's own register."
+      },
+      {
+        "word": "t_deadwit",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "Minutes have no witnesses."
+      },
+      {
+        "word": "t_parcel",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "No parcel map in minutes."
+      },
+      {
+        "word": "t_batch",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "No batch numbers."
+      },
+      {
+        "word": "t_index",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "No index numbers."
+      },
+      {
+        "word": "t_coma",
+        "blank": "tell",
+        "by": [
+          "f_cmp_date"
+        ],
+        "why": "Dabaso read the tally himself that day."
+      },
+      {
+        "word": "a_flask",
+        "blank": "missing",
+        "by": [
+          "f_abs_flask",
+          "f_darmi_full"
+        ],
+        "why": "It shows who brought the tea, not who tore the book."
+      },
+      {
+        "word": "a_file",
+        "blank": "missing",
+        "by": [
+          "f_abs_file",
+          "f_withdrawn"
+        ],
+        "why": "The registry file was withdrawn by Nairobi, another hand."
+      },
+      {
+        "word": "a_tea",
+        "blank": "missing",
+        "by": [
+          "f_abs_tea",
+          "f_darmi_full"
+        ],
+        "why": "The flask left with Dabaso; it says nothing about the vote."
+      },
+      {
+        "word": "k_breakin",
+        "blank": "conclusion",
+        "by": [
+          "f_abs_breakin",
+          "f_door"
+        ],
+        "why": "No break-in."
+      },
+      {
+        "word": "k_heart",
+        "blank": "conclusion",
+        "by": [
+          "f_aut_op"
+        ],
+        "why": "Poison, not his heart."
+      },
+      {
+        "word": "k_approved",
+        "blank": "conclusion",
+        "by": [
+          "f_attendance"
+        ],
+        "why": "212 against, 41 for."
+      },
+      {
+        "word": "k_novisit",
+        "blank": "conclusion",
+        "by": [
+          "f_darmi_full"
+        ],
+        "why": "Dabaso visited."
+      },
+      {
+        "word": "k_galgalo",
+        "blank": "conclusion",
+        "by": [
+          "f_page11",
+          "f_door"
+        ],
+        "why": "The book was in the office; only its page is gone."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "April. The community assembly rejects the lease, 212 to 41. Dabaso, as secretary, records it on page 11.",
+        "image": null
+      },
+      {
+        "text": "May. Waso Range pays him KSh 3 million through Till 880 214. He tears out page 11, types \"minutes\" approving the lease, stamps them with the committee's retired stamp and files them. Three weeks later the county's copy of the registration file is \"withdrawn — J.E.\".",
+        "image": null
+      },
+      {
+        "text": "Tuesday. Boru opens the book to prepare Saturday's assembly and finds page 11 gone. He tells Dabaso, his oldest ally, that the book is going to the assembly and the police.",
+        "image": null
+      },
+      {
+        "text": "Thursday, 20:00. Dabaso brings camel-milk tea in his red flask, mixed with dip concentrate from the committee store. Boru drinks two cups. Dabaso leaves at 21:00 with the flask.",
+        "image": "loc_boru"
+      },
+      {
+        "text": "Boru is sick by eleven and dead by four. On Friday morning Dabaso is the first relative at the house, and offers to translate.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "Pattern File, t_mvua: KSh 3 million from Till 880 214. t_registry: the Garba Tula file \"withdrawn — Registry, Nairobi — J.E.\". Amani's notebook: \"Withdrawn. Like Dad's field book in Nakuru. Same word.\""
+    }
+  ],
+  "clockPlan": {
+    "note": "Two stamps: records on Dabaso and a warrant on his home. Detain him after the search; toxicology takes 18 h plus 4 h transport and lands at detention hour 23, the tightest in the region. The post-mortem at Isiolo runs in parallel.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_boru",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_darmi_dab",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_dabaso"
+      },
+      {
+        "do": "travel",
+        "target": "loc_office",
+        "hours": 0.25,
+        "from": "loc_boru"
+      },
+      {
+        "do": "visit",
+        "target": "loc_office",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_minutebook",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_attendance",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_members",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_dipreg",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_letters",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_door",
+        "hours": 0
+      },
+      {
+        "do": "press",
+        "target": "c_dab_breakin"
+      },
+      {
+        "do": "submit",
+        "target": "ev_hand"
+      },
+      {
+        "do": "travel",
+        "target": "loc_boru",
+        "hours": 0.25,
+        "from": "loc_office"
+      },
+      {
+        "do": "visit",
+        "target": "loc_boru",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_darmi_hal",
+        "hours": 1
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "press",
+        "target": "c_dab_money"
+      },
+      {
+        "do": "travel",
+        "target": "loc_registry",
+        "hours": 2,
+        "from": "loc_boru"
+      },
+      {
+        "do": "visit",
+        "target": "loc_registry",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_filed_minutes",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_withdrawn",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_mercy"
+      },
+      {
+        "do": "travel",
+        "target": "loc_waso",
+        "hours": 0.25,
+        "from": "loc_registry"
+      },
+      {
+        "do": "visit",
+        "target": "loc_waso",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_kennedy"
+      },
+      {
+        "do": "press",
+        "target": "c_ken"
+      },
+      {
+        "do": "interview",
+        "target": "p_galgalo"
+      },
+      {
+        "do": "press",
+        "target": "c_gal"
+      },
+      {
+        "do": "travel",
+        "target": "loc_dabaso",
+        "hours": 2,
+        "from": "loc_waso"
+      },
+      {
+        "do": "visit",
+        "target": "loc_dabaso",
+        "hours": 1
+      },
+      {
+        "do": "search",
+        "target": "loc_dabaso"
+      },
+      {
+        "do": "detain",
+        "target": "p_dabaso"
+      },
+      {
+        "do": "submit",
+        "target": "ev_tox"
+      },
+      {
+        "do": "submit",
+        "target": "ev_docexam"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 21
+      },
+      {
+        "do": "press",
+        "target": "c_dab_flask"
+      }
+    ],
+    "totalHours": 53.75
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_attendance",
+        "line": "This strip starts in April, Amani. Follow the vote, then the money."
+      },
+      "tier2": {
+        "facts": [
+          "f_till",
+          "f_darmi_full"
+        ],
+        "line": "Three million on 12 May. A red flask at eight on Thursday."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_darmi_hal",
+        "line": "Ask Mama Darmi again, without a translator."
+      },
+      "tier2": {
+        "facts": [
+          "f_darmi_full"
+        ],
+        "line": "Tea in his sitting room, eight to nine."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_members",
+        "line": "Where does Dabaso always leave his flask?"
+      },
+      "tier2": {
+        "facts": [
+          "f_abs_flask",
+          "f_tox"
+        ],
+        "line": "Not at the office this time. And the poison in its seal."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_dipreg",
+        "line": "What was signed out of the dip store on Wednesday?"
+      },
+      "tier2": {
+        "facts": [
+          "f_dipreg",
+          "f_aut_op"
+        ],
+        "line": "Dip concentrate to \"D.T.\", and organophosphate poisoning."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_filed_minutes",
+        "line": "Compare what the county holds with Hawo's tally."
+      },
+      "tier2": {
+        "facts": [
+          "f_filed_minutes",
+          "f_attendance"
+        ],
+        "line": "\"Approved\", filed. 212 against, counted."
+      }
+    },
+    "g_forgery": {
+      "tier1": {
+        "point": "ev_compare",
+        "line": "Lay this year's stamp beside the one on the minutes."
+      },
+      "tier2": {
+        "facts": [
+          "f_cmp_stamp"
+        ],
+        "line": "Grazing Committee: the old name, retired."
+      }
+    },
+    "g_absence": {
+      "tier1": {
+        "point": "ev_minutebook",
+        "line": "Count the pages. Then check the door."
+      },
+      "tier2": {
+        "facts": [
+          "f_abs_page",
+          "f_abs_breakin"
+        ],
+        "line": "Page eleven gone, the lock never forced."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "ardhi ya jamii",
+      "def": "Community land."
+    },
+    {
+      "term": "kamati",
+      "def": "A committee."
+    },
+    {
+      "term": "kumbukumbu za mkutano",
+      "def": "Minutes of a meeting."
+    },
+    {
+      "term": "josho",
+      "def": "A cattle dip."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    },
+    {
+      "term": "chai ya maziwa ya ngamia",
+      "def": "Tea made with camel milk."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address an older woman."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "allysTranslations"
+    ],
+    "beatNotes": "The ally's translations. For the first half of the case Dabaso's translations appear in the notebook in his handwriting. They are accurate, but one thing is missing: \"he brought the tea in his red flask\" becomes \"we had tea\". The full sentence appears when Halake re-interviews Mama Darmi in Borana. The notebook shows the two side by side. Translations are evidence too."
+  }
+}

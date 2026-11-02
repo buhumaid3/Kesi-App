@@ -1,0 +1,2684 @@
+{
+  "meta": {
+    "id": "case-092",
+    "number": 92,
+    "region": "final-files",
+    "regionNumber": 10,
+    "title": "The Black Book",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 48,
+    "date": "Thursday 15 October",
+    "folderTab": "KIRINYAGA ROAD"
+  },
+  "pattern": {
+    "crimePattern": "a near-blind master engraver kills his partner of thirty years in a blackout, in the workshop he can walk without light, to stop him taking their book of forged-seal orders to the prosecutor",
+    "noRealCaseRetold": true,
+    "notes": "Fictional shop and engravers on a real street of engravers. Closes t_stamp: the first forged REGISTRAR OF TITLES seal was cut twelve years ago \"for 4th Floor, Lands House — Records\". Hamisi is the son of Rashid, case 10's victim; Juma was Rashid's apprentice.",
+    "tags": [
+      "blunt-force",
+      "blackout",
+      "cover-up",
+      "forged-seals",
+      "absence",
+      "spine",
+      "three-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 6,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "absence",
+      "spine"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": "the-near-blind-partner-did-it-in-the-dark"
+  },
+  "ob": {
+    "number": "OB 27/15/10",
+    "date": "Thursday 15 October",
+    "time": "21:10",
+    "reportedBy": "Kassim Odhiambo, sign-writer, Kirinyaga Road",
+    "text": "A neighbour reports an engraver found dead in the back room of a seals-and-stamps shop on Kirinyaga Road after a power cut: Jeremiah Owino (64), co-founder of Owino & Mwakazi Seals.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_shop",
+    "nodes": [
+      "loc_shop",
+      "loc_droom",
+      "loc_kassim"
+    ],
+    "edges": [
+      {
+        "a": "loc_shop",
+        "b": "loc_droom",
+        "minutes": 1,
+        "by": "foot"
+      },
+      {
+        "a": "loc_shop",
+        "b": "loc_kassim",
+        "minutes": 1,
+        "by": "foot"
+      },
+      {
+        "a": "loc_droom",
+        "b": "loc_kassim",
+        "minutes": 2,
+        "by": "foot"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_jeremiah",
+      "role": "victim",
+      "name": "Jeremiah Owino",
+      "age": 64,
+      "occupation": "Engraver; co-founder of Owino & Mwakazi Seals",
+      "bio": "Thirty years at the same bench.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_back",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, mid 60s, a leather apron and reading glasses, a tired, decent face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_daudi",
+      "role": "suspect",
+      "name": "Mzee Daudi Mwakazi",
+      "age": 72,
+      "occupation": "Co-founder and master engraver",
+      "bio": "His eyesight is mostly gone; he works by touch and lives in the curtained room behind the workshop.",
+      "community": "Taita",
+      "isCulprit": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_droom",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Taita man, early 70s, cloudy eyes, a worn leather apron and a cardigan, a gentle, very calm face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_hamisi",
+      "role": "suspect",
+      "name": "Hamisi Rashid",
+      "age": 27,
+      "occupation": "Son of Rashid Omar Bakari, the printer killed in case 10",
+      "redHerring": true,
+      "bio": "Lives with his uncle in Eastleigh.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_kas_hamisi"
+      },
+      "at": "plc_eastleigh",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Swahili man, late 20s, a kanzu over jeans, a furious, grieving face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_juma",
+      "role": "suspect",
+      "name": "Juma Mwakio",
+      "age": 21,
+      "occupation": "The shop's apprentice; once Rashid's apprentice",
+      "redHerring": true,
+      "bio": "Studies in the evenings.",
+      "community": "Taita",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_class",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Taita man, early 20s, grown up since case 10, an apprentice's apron, an ashamed face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_zainabu",
+      "role": "suspect",
+      "name": "Mama Zainabu Ali",
+      "age": 58,
+      "occupation": "The building's landlady",
+      "bio": "In a rent dispute with the partners.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_rentnote"
+      },
+      "at": "plc_southc",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Swahili woman, late 50s, a buibui and a ledger under her arm, a shrewd face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_pamela",
+      "role": "witness",
+      "name": "Mama Pamela Owino",
+      "age": 61,
+      "occupation": "Jeremiah's wife",
+      "bio": "Lives in Umoja.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_umoja",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo woman, early 60s, a church headscarf, a stunned, grieving face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kassim",
+      "role": "witness",
+      "name": "Kassim Odhiambo",
+      "age": 45,
+      "occupation": "Sign-writer next door",
+      "bio": "Keeps a paraffin lamp by his counter.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_kassim",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, mid 40s, paint-stained overalls and a brush behind his ear, an alert, honest face, ID-photo framing",
+        "ref": null
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_back",
+      "name": "The back engraving room",
+      "within": "loc_shop"
+    },
+    {
+      "id": "plc_counter",
+      "name": "The front counter",
+      "within": "loc_shop"
+    },
+    {
+      "id": "plc_stage",
+      "name": "The matatu stage"
+    },
+    {
+      "id": "plc_road",
+      "name": "Kirinyaga Road outside"
+    },
+    {
+      "id": "plc_eastleigh",
+      "name": "Hamisi's uncle's house, Eastleigh"
+    },
+    {
+      "id": "plc_class",
+      "name": "Juma's evening class"
+    },
+    {
+      "id": "plc_southc",
+      "name": "Zainabu's house, South C"
+    },
+    {
+      "id": "plc_umoja",
+      "name": "Umoja"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_shop",
+      "name": "Owino & Mwakazi Seals, Kirinyaga Road",
+      "kind": "scene",
+      "description": "A counter, glass cases of rubber stamps and brass seals, and a back engraving room with hand gravers, an embossing press, two benches and a wall of tools on pegs. A curtain to the old partner's room.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The back room",
+          "pos": [
+            50,
+            55
+          ],
+          "yields": "ev_body",
+          "text": "Jeremiah on the floor by his bench; his phone torch still glowing."
+        },
+        {
+          "id": "hs_pegs",
+          "label": "The tool wall",
+          "pos": [
+            75,
+            40
+          ],
+          "yields": "ev_embosser",
+          "text": "The wall of tools on their pegs."
+        },
+        {
+          "id": "hs_lamp",
+          "label": "Under the counter",
+          "pos": [
+            20,
+            60
+          ],
+          "yields": "ev_no_light",
+          "text": "The shop's paraffin lamp; the till."
+        },
+        {
+          "id": "hs_daybook",
+          "label": "The day book",
+          "pos": [
+            25,
+            40
+          ],
+          "yields": "ev_daybook",
+          "text": "The shop's day book of orders."
+        },
+        {
+          "id": "hs_pamela",
+          "label": "Mama Pamela",
+          "pos": [
+            10,
+            30
+          ],
+          "yields": "ev_pamela",
+          "text": "Jeremiah's wife, brought from Umoja."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a Kirinyaga Road engraving workshop in a blackout, glass cases of brass seals, a wall of hand tools on pegs, one phone torch glowing on a bench, no people in focus"
+      },
+      "expected": [
+        {
+          "id": "x_light",
+          "text": "In a 45-minute blackout, anyone moving through a crowded workshop needs light",
+          "because": "f_kassim_lights",
+          "present": false,
+          "fact": "f_abs_light"
+        },
+        {
+          "id": "x_book",
+          "text": "The book he was packing, in his bag",
+          "because": "f_odpp",
+          "present": false,
+          "fact": "f_abs_book"
+        },
+        {
+          "id": "x_front",
+          "text": "A stranger coming in through the front",
+          "because": "f_kassim",
+          "present": false,
+          "fact": "f_abs_front"
+        },
+        {
+          "id": "x_forced",
+          "text": "A forced door or window if a robber came in",
+          "because": "f_ob",
+          "present": false,
+          "fact": "f_abs_forced"
+        },
+        {
+          "id": "x_daybook",
+          "text": "Every order in the shop's day book",
+          "because": "f_daybook",
+          "present": false,
+          "fact": "f_abs_daybook"
+        }
+      ]
+    },
+    {
+      "id": "loc_kassim",
+      "name": "Kassim's sign-writing shop",
+      "kind": "location",
+      "description": "Next door; a counter with a paraffin lamp and a clear view of Owino's front.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_kassim",
+          "label": "Kassim",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_kassim",
+          "text": "Kassim at his counter."
+        },
+        {
+          "id": "hs_outage",
+          "label": "Kenya Power outage log",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_outage",
+          "text": "The block's outage log, sent over."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small sign-writer's shop on Kirinyaga Road, a paraffin lamp on the counter, a view of the engravers next door"
+      }
+    },
+    {
+      "id": "loc_droom",
+      "name": "Daudi's sleeping room",
+      "kind": "location",
+      "description": "A curtained room twelve steps from the back bench: a mattress, a stool, a cardigan on a nail.",
+      "unlock": {
+        "fact": "f_odpp"
+      },
+      "hotspots": [
+        {
+          "id": "hs_droom",
+          "label": "The room",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_room",
+          "text": "Search under warrant."
+        },
+        {
+          "id": "hs_book",
+          "label": "The black book",
+          "pos": [
+            30,
+            70
+          ],
+          "yields": "ev_book",
+          "text": "Open the book from the mattress.",
+          "unlock": {
+            "fact": "f_book"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small curtained back room with a thin mattress on the floor, a stool and a cardigan hanging on a nail"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Jeremiah in the back room",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. One heavy blow to the head. His phone on the floor, torch still on, battery nearly dead. His bag open and empty. The till untouched: KSh 6,300."
+      },
+      "facts": [
+        "f_body",
+        "f_till"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a workshop floor by an engraver's bench, a phone lying face-up with its torch on, an open empty bag, no body visible"
+      }
+    },
+    {
+      "id": "ev_embosser",
+      "type": "physical",
+      "title": "The tool wall",
+      "render": "object",
+      "body": {
+        "label": "The cast-iron hand embosser on its peg, wiped, hung upside down (handle up): the only tool on the wall hung that way."
+      },
+      "facts": [
+        "f_embosser"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a wall of engraving tools on pegs, one heavy cast-iron hand embosser hanging upside down among them"
+      }
+    },
+    {
+      "id": "ev_no_light",
+      "type": "physical",
+      "title": "The lamp under the counter",
+      "render": "object",
+      "body": {
+        "label": "The shop's paraffin lamp: cold, wick dry. No torch in Daudi's room. No other phone light used."
+      },
+      "facts": [
+        "f_lamp"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_daybook",
+      "type": "document",
+      "title": "The shop's day book",
+      "render": "logBook",
+      "body": {
+        "text": "Thirty years of ordinary orders: rubber stamps, office seals. No order from \"Lands\" anywhere in it."
+      },
+      "facts": [
+        "f_daybook"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_pamela",
+      "type": "witness",
+      "title": "Statement: Mama Pamela Owino",
+      "render": "statement",
+      "body": {
+        "speaker": "p_pamela"
+      },
+      "facts": [
+        "f_pamela",
+        "f_pamela_self",
+        "f_rentnote"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kassim",
+      "type": "witness",
+      "title": "Statement: Kassim Odhiambo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_kassim"
+      },
+      "facts": [
+        "f_kassim",
+        "f_kassim_lights",
+        "f_kas_hamisi",
+        "f_kassim_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_outage",
+      "type": "document",
+      "title": "Kenya Power outage log",
+      "render": "logBook",
+      "body": {
+        "text": "Kirinyaga Road block: off 19:40, on 20:25."
+      },
+      "facts": [
+        "f_outage"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_odpp",
+      "type": "phone",
+      "title": "Records: Jeremiah's line and the ODPP",
+      "render": "manifest",
+      "body": {
+        "call": "19:20: Jeremiah to the ODPP switchboard, 6 minutes.",
+        "note": "Duty clerk: \"Mr J. Owino, engraver, Kirinyaga Rd, will bring 'a book of orders' 9 a.m. re: forged seals. Asked for Prosecutor Abdi.\""
+      },
+      "facts": [
+        "f_odpp"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_body",
+          "f_kassim"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_conductor",
+      "type": "witness",
+      "title": "Statement: the Eastleigh matatu's conductor",
+      "render": "statement",
+      "body": {
+        "speaker": "p_hamisi"
+      },
+      "facts": [
+        "f_ha_matatu"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_juma",
+      "type": "witness",
+      "title": "Juma's mother and the job board",
+      "render": "statement",
+      "body": {
+        "speaker": "p_juma"
+      },
+      "facts": [
+        "f_ju_class"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_zainabu",
+      "type": "document",
+      "title": "Zainabu's rent book and her daughter's statement",
+      "render": "logBook",
+      "body": {
+        "text": "At home in South C all evening."
+      },
+      "facts": [
+        "f_zainabu"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_room",
+      "type": "physical",
+      "title": "Daudi's sleeping room",
+      "render": "object",
+      "body": {
+        "book": "Inside the mattress: a hard-backed black book.",
+        "cardigan": "His cardigan, a blood spot on the right cuff."
+      },
+      "facts": [
+        "f_book",
+        "f_cardigan"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_odpp",
+          "f_abs_light",
+          "f_embosser"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a hard-backed black notebook pulled from inside a thin mattress, a cardigan with a small dark spot on the cuff"
+      }
+    },
+    {
+      "id": "ev_book",
+      "type": "document",
+      "title": "The black book",
+      "render": "logBook",
+      "body": {
+        "first": "First entry, twelve years ago: \"REGISTRAR OF TITLES, round, brass. For: 4th Floor, Lands House — Records. Collected by driver.\"",
+        "later": "The oval \"MV\" seal (case 66); commissioner stamps; payments by Till 880 214.",
+        "after10": "After case 10: \"Finish Rashid's seal from his proof.\" (the proof from Rashid's \"Mvua — Friday\" drawer)."
+      },
+      "facts": [
+        "f_book_first",
+        "f_book_proof",
+        "f_book_orders"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_da_prints",
+      "type": "physical",
+      "title": "Fingerprints: Mzee Daudi Mwakazi",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention."
+      },
+      "facts": [
+        "f_da_printset"
+      ],
+      "gate": null,
+      "detention": "p_daudi",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_blood",
+      "type": "forensic",
+      "title": "Lab: trace (cardigan cuff, embosser hinge)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_blood"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_room",
+          "ev_embosser"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints (embosser hinge)",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_hinge"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_embosser",
+          "ev_da_prints"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Jeremiah Owino was found dead in the back room of Owino & Mwakazi Seals on Thursday evening after a power cut. No door or window was forced.",
+      "kind": "true",
+      "about": [
+        "p_jeremiah",
+        "loc_shop"
+      ],
+      "at": {
+        "from": "20:30",
+        "to": null,
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "One heavy blow to the head. His phone on the floor, its torch still on; his bag open and empty.",
+      "kind": "true",
+      "about": [
+        "p_jeremiah",
+        "plc_back"
+      ]
+    },
+    {
+      "id": "f_till",
+      "text": "The till is untouched: KSh 6,300. The brass stock is all there.",
+      "kind": "true",
+      "about": [
+        "loc_shop"
+      ]
+    },
+    {
+      "id": "f_embosser",
+      "text": "The cast-iron hand embosser hangs on its peg wiped and upside down, handle up: the only tool on the wall hung that way.",
+      "kind": "true",
+      "about": [
+        "plc_back"
+      ]
+    },
+    {
+      "id": "f_lamp",
+      "text": "The shop's paraffin lamp is cold, its wick dry; Daudi's room has no torch; no other phone light was used.",
+      "kind": "true",
+      "about": [
+        "loc_shop"
+      ]
+    },
+    {
+      "id": "f_daybook",
+      "text": "The shop's day book holds thirty years of ordinary orders, and no \"Lands\" order anywhere.",
+      "kind": "true",
+      "about": [
+        "loc_shop"
+      ]
+    },
+    {
+      "id": "f_pamela",
+      "text": "Pamela: at lunch Jeremiah said, \"Tomorrow I'll sleep well for the first time in twelve years.\" He said Daudi would understand.",
+      "kind": "true",
+      "about": [
+        "p_pamela",
+        "p_jeremiah",
+        "p_daudi"
+      ]
+    },
+    {
+      "id": "f_pamela_self",
+      "text": "Pamela was at home in Umoja all evening.",
+      "kind": "true",
+      "about": [
+        "p_pamela"
+      ],
+      "where": {
+        "person": "p_pamela",
+        "place": "plc_umoja",
+        "from": "17:00",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_rentnote",
+      "text": "Pamela: the landlady, Mama Zainabu, was fighting them over the rent.",
+      "kind": "true",
+      "about": [
+        "p_zainabu"
+      ]
+    },
+    {
+      "id": "f_kassim",
+      "text": "Kassim: Owino's front stayed dark except a small light at the back, Jeremiah's phone. Nobody came in or out of the front; he'd have seen any light moving.",
+      "kind": "true",
+      "about": [
+        "p_kassim",
+        "loc_shop"
+      ]
+    },
+    {
+      "id": "f_kassim_lights",
+      "text": "Kassim: when the power went every shop lit a torch or a lamp. \"Everyone does.\"",
+      "kind": "true",
+      "about": [
+        "p_kassim"
+      ]
+    },
+    {
+      "id": "f_kas_hamisi",
+      "text": "Kassim: at 18:30 a young man shouted at Jeremiah, \"You made the seal my father refused to make!\", then walked off towards the stage.",
+      "kind": "true",
+      "about": [
+        "p_jeremiah"
+      ],
+      "at": {
+        "from": "18:30",
+        "to": null,
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_kassim_self",
+      "text": "Kassim was at his own counter with a lamp, in view of three customers.",
+      "kind": "true",
+      "about": [
+        "p_kassim"
+      ],
+      "where": {
+        "person": "p_kassim",
+        "place": "loc_kassim",
+        "from": "18:00",
+        "to": "21:00"
+      }
+    },
+    {
+      "id": "f_outage",
+      "text": "Kenya Power: the block was off from 19:40 to 20:25.",
+      "kind": "true",
+      "about": [
+        "loc_shop"
+      ],
+      "at": {
+        "from": "19:40",
+        "to": "20:25",
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_odpp",
+      "text": "Records: at 19:20 Jeremiah called the ODPP for 6 minutes; the duty clerk noted he'd bring \"a book of orders\" at 9 a.m. about forged seals, and asked for Prosecutor Abdi.",
+      "kind": "true",
+      "about": [
+        "p_jeremiah"
+      ],
+      "at": {
+        "from": "19:20",
+        "to": null,
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_ha_matatu",
+      "text": "The conductor: Hamisi took the 18:50 matatu to Eastleigh; his uncle had him home by 19:30.",
+      "kind": "true",
+      "about": [
+        "p_hamisi"
+      ],
+      "where": {
+        "person": "p_hamisi",
+        "place": "plc_eastleigh",
+        "from": "19:30",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_ju_class",
+      "text": "Juma's mother and the job board: he signed off at 19:30, was at the stage at 19:35 and at his evening class until 21:30.",
+      "kind": "true",
+      "about": [
+        "p_juma"
+      ],
+      "where": {
+        "person": "p_juma",
+        "place": "plc_class",
+        "from": "19:35",
+        "to": "21:30"
+      }
+    },
+    {
+      "id": "f_zainabu",
+      "text": "Zainabu's daughter: she was home in South C all evening.",
+      "kind": "true",
+      "about": [
+        "p_zainabu"
+      ],
+      "where": {
+        "person": "p_zainabu",
+        "place": "plc_southc",
+        "from": "17:00",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_book",
+      "text": "Inside Daudi's mattress: a hard-backed black book.",
+      "kind": "true",
+      "about": [
+        "p_daudi"
+      ]
+    },
+    {
+      "id": "f_cardigan",
+      "text": "Daudi's cardigan has a blood spot on the right cuff.",
+      "kind": "true",
+      "about": [
+        "p_daudi"
+      ]
+    },
+    {
+      "id": "f_book_first",
+      "text": "The black book's first entry, twelve years ago: \"REGISTRAR OF TITLES, round, brass. For: 4th Floor, Lands House — Records. Collected by driver.\"",
+      "kind": "true",
+      "about": [
+        "p_daudi"
+      ],
+      "spine": "t_stamp"
+    },
+    {
+      "id": "f_book_proof",
+      "text": "An entry after case 10: \"Finish Rashid's seal from his proof\": the proof taken from Rashid's \"Mvua — Friday\" drawer.",
+      "kind": "true",
+      "about": [
+        "p_daudi"
+      ],
+      "spine": "t_stamp"
+    },
+    {
+      "id": "f_book_orders",
+      "text": "Later entries: the oval \"MV\" seal, commissioner stamps, a co-op stamp; payments by Till 880 214.",
+      "kind": "true",
+      "about": [
+        "p_daudi"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_da_printset",
+      "text": "Fingerprints taken from Daudi in detention.",
+      "kind": "true",
+      "about": [
+        "p_daudi"
+      ]
+    },
+    {
+      "id": "f_aut",
+      "text": "Post-mortem: one blow from a heavy cast-iron object with a rounded jaw, matching the embosser.",
+      "kind": "true",
+      "about": [
+        "p_jeremiah"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Thursday between 19:40 and 20:25.",
+      "kind": "true",
+      "about": [
+        "p_jeremiah"
+      ],
+      "at": {
+        "from": "19:40",
+        "to": "20:25",
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_blood",
+      "text": "Lab: Jeremiah's blood on Daudi's cardigan cuff and in the embosser's jaw hinge.",
+      "kind": "true",
+      "about": [
+        "p_jeremiah",
+        "p_daudi"
+      ]
+    },
+    {
+      "id": "f_hinge",
+      "text": "Lab: a partial print in the embosser's hinge is Daudi's. He uses it daily; the hang and the blood are what matter.",
+      "kind": "true",
+      "about": [
+        "p_daudi"
+      ]
+    },
+    {
+      "id": "f_abs_light",
+      "text": "Missing: no torch, lamp or phone light was used by the killer in a forty-five-minute blackout.",
+      "kind": "true",
+      "about": [
+        "loc_shop"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_book",
+      "text": "Missing: there's no black book in Jeremiah's bag.",
+      "kind": "true",
+      "about": [
+        "p_jeremiah"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_front",
+      "text": "Missing: nobody came in or out of the front.",
+      "kind": "true",
+      "about": [
+        "plc_counter"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_forced",
+      "text": "Missing: there's no forced entry.",
+      "kind": "true",
+      "about": [
+        "loc_shop"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_daybook",
+      "text": "Missing: there's no record of the old Lands order in the shop's day book.",
+      "kind": "true",
+      "about": [
+        "loc_shop"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_da_asleep",
+      "text": "Daudi: \"I was asleep from half past seven. I heard nothing.\"",
+      "kind": "lie",
+      "about": [
+        "p_daudi"
+      ]
+    },
+    {
+      "id": "f_da_nobook",
+      "text": "Daudi: \"There is no black book. Jeremiah kept the orders in his head.\"",
+      "kind": "lie",
+      "about": [
+        "p_daudi"
+      ]
+    },
+    {
+      "id": "f_da_reveal",
+      "text": "Daudi: \"I don't need light in that room. I've been blind in it for five years. He was going to put two old men in prison for cutting brass. Thirty years together.\"",
+      "kind": "true",
+      "about": [
+        "p_daudi",
+        "p_jeremiah"
+      ],
+      "where": {
+        "person": "p_daudi",
+        "place": "plc_back",
+        "from": "19:40",
+        "to": "20:25"
+      }
+    },
+    {
+      "id": "f_da_embosser",
+      "text": "Daudi: \"I haven't touched the embosser since Tuesday.\"",
+      "kind": "lie",
+      "about": [
+        "p_daudi"
+      ]
+    },
+    {
+      "id": "f_ha_never",
+      "text": "Hamisi: \"I never went to that shop.\"",
+      "kind": "lie",
+      "about": [
+        "p_hamisi"
+      ]
+    },
+    {
+      "id": "f_ha_reveal",
+      "text": "Hamisi: \"I went to shout at him. My father died refusing to make that seal, and these men finished it. I left at ten to seven. I'm glad someone will pay. I'm sorry it's like this.\"",
+      "kind": "true",
+      "about": [
+        "p_hamisi"
+      ]
+    },
+    {
+      "id": "f_ha_book",
+      "text": "Hamisi: \"Juma told me on Sunday that Mzee Daudi keeps a black book of the Lands orders.\"",
+      "kind": "true",
+      "about": [
+        "p_hamisi",
+        "p_juma"
+      ]
+    },
+    {
+      "id": "f_ju_never",
+      "text": "Juma: \"I never told anyone about any book.\"",
+      "kind": "lie",
+      "about": [
+        "p_juma"
+      ]
+    },
+    {
+      "id": "f_ju_reveal",
+      "text": "Juma: \"I told Hamisi on Sunday. He's my old boss's son. I thought he deserved to know. I didn't think anyone would die. Again.\"",
+      "kind": "true",
+      "about": [
+        "p_juma"
+      ]
+    },
+    {
+      "id": "f_za_claim",
+      "text": "Zainabu: \"We argued about rent. I was home.\"",
+      "kind": "claim",
+      "about": [
+        "p_zainabu"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_daudi",
+      "stance": "cooperative",
+      "intro": "Mzee Daudi sits on his stool, very calm, his hands folded on his apron. \"I was asleep from half past seven. I heard nothing. And there is no black book. Jeremiah kept the orders in his head.\"",
+      "claims": [
+        "f_da_asleep",
+        "f_da_nobook"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_da_embosser",
+          "after": "f_da_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_hamisi",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_kassim"
+      ],
+      "intro": "Hamisi stands in the doorway and won't come in. \"I never went to that shop.\"",
+      "claims": [
+        "f_ha_never"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_juma",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_body"
+      ],
+      "intro": "Juma keeps his eyes on the floor. \"I never told anyone about any book.\"",
+      "claims": [
+        "f_ju_never"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_zainabu",
+      "stance": "cooperative",
+      "intro": "Mama Zainabu has her rent book under her arm. \"We argued about rent. I was home.\"",
+      "claims": [
+        "f_za_claim"
+      ],
+      "yields": [
+        "ev_zainabu"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_pamela",
+      "stance": "cooperative",
+      "intro": "Mama Pamela holds Jeremiah's reading glasses.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_kassim",
+      "stance": "cooperative",
+      "intro": "Kassim wipes paint off his hands and tells it exactly.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_ha",
+      "claim": "f_ha_never",
+      "brokenBy": [
+        "f_kas_hamisi"
+      ],
+      "reveals": [
+        "f_ha_reveal",
+        "f_ha_book",
+        "ev_conductor"
+      ],
+      "reaction": "\"I went to shout at him. My father died refusing to make that seal, and these men finished it. I left at ten to seven. I'm glad someone will pay. I'm sorry it's like this.\" Then: \"Juma told me about the book.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_ju",
+      "claim": "f_ju_never",
+      "brokenBy": [
+        "f_ha_book"
+      ],
+      "reveals": [
+        "f_ju_reveal",
+        "ev_juma"
+      ],
+      "reaction": "\"I told Hamisi on Sunday. He's my old boss's son. I thought he deserved to know. I didn't think anyone would die. Again.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_da_asleep",
+      "claim": "f_da_asleep",
+      "brokenBy": [
+        "f_abs_light",
+        "f_embosser",
+        "f_kassim"
+      ],
+      "reveals": [
+        "f_da_reveal"
+      ],
+      "reaction": "\"I don't need light in that room. I've been blind in it for five years. He was going to take my book to the prosecutor and put two old men in prison for cutting brass. Thirty years together.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_da_nobook",
+      "claim": "f_da_nobook",
+      "brokenBy": [
+        "f_book"
+      ],
+      "reveals": [],
+      "reaction": "Daudi runs his fingers over the black book's cover and says nothing at all.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_da_emb",
+      "claim": "f_da_embosser",
+      "brokenBy": [
+        "f_blood"
+      ],
+      "reveals": [],
+      "reaction": "Daudi turns his cloudy eyes to the wall of tools he can't see, and nods once.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_daudi",
+      "text": "Daudi Mwakazi",
+      "category": "person",
+      "ref": "p_daudi",
+      "unlock": {
+        "anyOf": [
+          "f_embosser"
+        ]
+      }
+    },
+    {
+      "id": "w_hamisi",
+      "text": "Hamisi Rashid",
+      "category": "person",
+      "ref": "p_hamisi",
+      "unlock": {
+        "anyOf": [
+          "f_kas_hamisi"
+        ]
+      }
+    },
+    {
+      "id": "w_juma",
+      "text": "Juma Mwakio",
+      "category": "person",
+      "ref": "p_juma",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_zainabu",
+      "text": "Zainabu Ali",
+      "category": "person",
+      "ref": "p_zainabu",
+      "unlock": {
+        "anyOf": [
+          "f_rentnote"
+        ]
+      }
+    },
+    {
+      "id": "w_pamela",
+      "text": "Pamela Owino",
+      "category": "person",
+      "ref": "p_pamela",
+      "unlock": {
+        "anyOf": [
+          "f_pamela"
+        ]
+      }
+    },
+    {
+      "id": "w_kassim",
+      "text": "Kassim Odhiambo",
+      "category": "person",
+      "ref": "p_kassim",
+      "unlock": {
+        "anyOf": [
+          "f_kassim"
+        ]
+      }
+    },
+    {
+      "id": "pl_back",
+      "text": "the back engraving room",
+      "category": "place",
+      "ref": "plc_back",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "pl_counter",
+      "text": "the front counter",
+      "category": "place",
+      "ref": "plc_counter",
+      "unlock": {
+        "anyOf": [
+          "f_lamp"
+        ]
+      }
+    },
+    {
+      "id": "pl_droom",
+      "text": "Daudi's sleeping room",
+      "category": "place",
+      "ref": "loc_droom",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_stage",
+      "text": "the matatu stage",
+      "category": "place",
+      "ref": "plc_stage",
+      "unlock": {
+        "anyOf": [
+          "f_kas_hamisi"
+        ]
+      }
+    },
+    {
+      "id": "pl_road",
+      "text": "Kirinyaga Road outside",
+      "category": "place",
+      "ref": "plc_road",
+      "unlock": {
+        "anyOf": [
+          "f_kassim"
+        ]
+      }
+    },
+    {
+      "id": "h_embosser",
+      "text": "striking him with a cast-iron hand embosser in the dark",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut"
+        ]
+      }
+    },
+    {
+      "id": "h_fall",
+      "text": "a fall in the dark",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_bar",
+      "text": "a robbery with an iron bar",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_graver",
+      "text": "stabbing him with a graver",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_book",
+      "text": "to stop Jeremiah taking the black book of forged-seal orders to the prosecutor",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_odpp"
+        ]
+      }
+    },
+    {
+      "id": "m_son",
+      "text": "a son's revenge for case 10",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_kas_hamisi"
+        ]
+      }
+    },
+    {
+      "id": "m_rent",
+      "text": "a rent dispute",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_rentnote"
+        ]
+      }
+    },
+    {
+      "id": "m_secret",
+      "text": "an apprentice's secret",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_brass",
+      "text": "theft of the brass stock",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "a_light",
+      "text": "no torch, lamp or phone light was used by the killer in a forty-five-minute blackout",
+      "category": "absence",
+      "ref": "f_abs_light",
+      "unlock": {
+        "anyOf": [
+          "f_abs_light"
+        ]
+      }
+    },
+    {
+      "id": "a_book",
+      "text": "there's no black book in Jeremiah's bag",
+      "category": "absence",
+      "ref": "f_abs_book",
+      "unlock": {
+        "anyOf": [
+          "f_abs_book"
+        ]
+      }
+    },
+    {
+      "id": "a_front",
+      "text": "nobody came in or out of the front",
+      "category": "absence",
+      "ref": "f_abs_front",
+      "unlock": {
+        "anyOf": [
+          "f_abs_front"
+        ]
+      }
+    },
+    {
+      "id": "a_forced",
+      "text": "there's no forced entry",
+      "category": "absence",
+      "ref": "f_abs_forced",
+      "unlock": {
+        "anyOf": [
+          "f_abs_forced"
+        ]
+      }
+    },
+    {
+      "id": "a_daybook",
+      "text": "there's no record of the old Lands order in the shop's day book",
+      "category": "absence",
+      "ref": "f_abs_daybook",
+      "unlock": {
+        "anyOf": [
+          "f_abs_daybook"
+        ]
+      }
+    },
+    {
+      "id": "k_knew",
+      "text": "the killer knew the shop well enough to move in the dark",
+      "category": "conclusion",
+      "by": [
+        "f_abs_light",
+        "f_kassim_lights",
+        "f_lamp",
+        "f_embosser"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_light"
+        ]
+      }
+    },
+    {
+      "id": "k_robber",
+      "text": "a robber came in from the street",
+      "category": "conclusion",
+      "by": [
+        "f_kassim",
+        "f_till"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_light"
+        ]
+      }
+    },
+    {
+      "id": "k_fell",
+      "text": "Jeremiah fell in the dark",
+      "category": "conclusion",
+      "by": [
+        "f_aut"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_light"
+        ]
+      }
+    },
+    {
+      "id": "k_hamisi",
+      "text": "Hamisi came back after the power went",
+      "category": "conclusion",
+      "by": [
+        "f_ha_matatu"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_light"
+        ]
+      }
+    },
+    {
+      "id": "k_torch",
+      "text": "the killer brought a torch and took it away",
+      "category": "conclusion",
+      "by": [
+        "f_kassim"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_light"
+        ]
+      }
+    },
+    {
+      "id": "k_after",
+      "text": "Jeremiah was killed after the power came back",
+      "category": "conclusion",
+      "by": [
+        "f_aut_tod",
+        "f_kassim"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_light"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_proof",
+      "text": "The seal proof from Rashid's \"Mvua — Friday\" drawer (case 10)",
+      "category": "pin",
+      "pin": "case-010:f_drawer_mvua",
+      "unlock": {
+        "anyOf": [
+          "f_book_proof"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_mv",
+      "text": "The oval \"MV\" seal in Desai's box (case 66)",
+      "category": "pin",
+      "pin": "case-066:f_mv_seal",
+      "unlock": {
+        "anyOf": [
+          "f_book_proof"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_doreen",
+      "text": "Doreen Kathambi's commissioner stamp (case 60)",
+      "category": "pin",
+      "pin": "case-060:f_comm_stamp",
+      "unlock": {
+        "anyOf": [
+          "f_book_proof"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_container",
+      "text": "The container of security paper, Shimanzi (case 30)",
+      "category": "pin",
+      "pin": "case-030:f_container_oval",
+      "unlock": {
+        "anyOf": [
+          "f_book_proof"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_fb",
+      "text": "Field book FB 4471 (case 40)",
+      "category": "pin",
+      "pin": "case-040:f_hannah_withdrawn",
+      "unlock": {
+        "anyOf": [
+          "f_book_proof"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. That {missing} shows that {conclusion}. The black book shows the forged REGISTRAR OF TITLES seal was finished from {pin}.",
+    "fixed": {
+      "victim": "Jeremiah Owino"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_12y",
+                  "label": "Twelve years ago",
+                  "from": null,
+                  "to": null,
+                  "day": "12 years ago"
+                },
+                {
+                  "id": "sl_1830",
+                  "label": "Thursday 18:30",
+                  "from": "18:30",
+                  "to": "18:30",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_1920",
+                  "label": "Thursday 19:20",
+                  "from": "19:20",
+                  "to": "19:20",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_1930",
+                  "label": "Thursday 19:30",
+                  "from": "19:30",
+                  "to": "19:30",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Thursday 19:40–20:25",
+                  "from": "19:40",
+                  "to": "20:25",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_2030",
+                  "label": "Thursday 20:30",
+                  "from": "20:30",
+                  "to": "20:30",
+                  "day": "Thu"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_first",
+                  "text": "The first Lands seal is cut",
+                  "slot": "sl_12y",
+                  "by": [
+                    "f_book_first"
+                  ],
+                  "why": "The black book's first entry.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_book_first"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_shout",
+                  "text": "Hamisi shouts at Jeremiah",
+                  "slot": "sl_1830",
+                  "by": [
+                    "f_kas_hamisi"
+                  ],
+                  "why": "Kassim: half past six.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_kas_hamisi"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_odpp",
+                  "text": "Jeremiah phones the ODPP",
+                  "slot": "sl_1920",
+                  "by": [
+                    "f_odpp"
+                  ],
+                  "why": "Records: 19:20.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_odpp"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_tells",
+                  "text": "Jeremiah tells Daudi",
+                  "slot": "sl_1930",
+                  "by": [
+                    "f_pamela",
+                    "f_da_reveal",
+                    "f_ju_class"
+                  ],
+                  "why": "After the call, as Juma signed off.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_da_reveal"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_kill",
+                  "text": "Jeremiah is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_outage",
+                    "f_aut_tod",
+                    "f_kassim"
+                  ],
+                  "why": "In the blackout, 19:40–20:25.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_outage"
+                    ]
+                  },
+                  "act": true
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_2030",
+                  "by": [
+                    "f_kassim",
+                    "f_aut_tod"
+                  ],
+                  "why": "\"After the power came back\"? Kassim found him dead the moment the lights returned."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A seal twelve years ago, a shout at half six, a call at twenty past seven, a word to Daudi at half past, and the dark at twenty to eight.",
+          "fail": [
+            "He was already dead when the power came back.",
+            "When did the lights go?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_back"
+          }
+        ],
+        "prosecutor": {
+          "pass": "At his own bench in the back room, twelve steps from Daudi's bed.",
+          "fail": [
+            "Nobody came through the front.",
+            "The book went back to Daudi's room afterwards."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_daudi"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A man who needs no light, a tool hung by feel, the book in his mattress, the blood on his cuff.",
+          "fail": [
+            "Hamisi was on a matatu to Eastleigh at ten to seven.",
+            "Juma was at his class."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_embosser"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The cast-iron embosser, wiped and hung upside down.",
+          "fail": [
+            "One blow; not a fall.",
+            "A graver punctures. This was a blow."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_book"
+          }
+        ],
+        "prosecutor": {
+          "pass": "\"A book of orders, 9 a.m.\" He never got there.",
+          "fail": [
+            "The till and the brass are untouched.",
+            "The rent argument is a quarrel, not a reason to kill."
+          ]
+        }
+      },
+      {
+        "id": "g_absence",
+        "kind": "absence",
+        "blanks": [
+          {
+            "id": "missing",
+            "category": "absence",
+            "answer": "a_light"
+          },
+          {
+            "id": "conclusion",
+            "category": "conclusion",
+            "answer": "k_knew"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Every shop on the street lit a lamp. Whoever did this didn't need one.",
+          "fail": [
+            "A missing book tells you why. I asked how they moved.",
+            "No forced door says it was someone inside, not how they saw."
+          ]
+        }
+      },
+      {
+        "id": "g_spine",
+        "kind": "spine",
+        "blanks": [
+          {
+            "id": "pin",
+            "category": "pin",
+            "answer": "w_pin_proof",
+            "spine": true
+          }
+        ],
+        "prosecutor": {
+          "pass": "Rashid's proof, taken from his drawer the night he died. They finished what he refused.",
+          "fail": [
+            "The MV seal was made here too, but not from a proof.",
+            "Read the entry after case 10 again."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_back",
+      "from": "19:40",
+      "to": "20:25",
+      "note": "The blackout, 19:40–20:25; the post-mortem agrees."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_odpp",
+          "f_pamela"
+        ],
+        "concludes": "Jeremiah was taking a book of forged-seal orders to the prosecutor in the morning, and told Daudi.",
+        "answers": [
+          "why"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_outage",
+          "f_kassim",
+          "f_kassim_lights",
+          "f_lamp",
+          "f_abs_light"
+        ],
+        "concludes": "The killer moved through the workshop in the dark without any light and never used the front door.",
+        "answers": [
+          "missing",
+          "conclusion"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_body",
+          "f_embosser",
+          "f_aut",
+          "f_aut_tod"
+        ],
+        "concludes": "The weapon was rehung by touch, upside down.",
+        "answers": [
+          "how",
+          "where"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_ha_never",
+          "f_kas_hamisi",
+          "f_ha_reveal",
+          "f_ha_matatu",
+          "f_ha_book",
+          "f_ju_never",
+          "f_ju_reveal",
+          "f_ju_class"
+        ],
+        "concludes": "The obvious suspect left at 18:50; the apprentice left at 19:30."
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_da_asleep",
+          "f_da_reveal",
+          "f_book",
+          "f_da_nobook",
+          "f_book_first",
+          "f_book_proof",
+          "case-010:f_drawer_mvua"
+        ],
+        "concludes": "The book was in Daudi's mattress: twelve years of Lands orders, the last finished from Rashid's proof.",
+        "answers": [
+          "when",
+          "pin"
+        ]
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_cardigan",
+          "f_blood",
+          "f_hinge",
+          "f_da_embosser"
+        ],
+        "concludes": "Mzee Daudi Mwakazi struck Jeremiah with the embosser in the dark to keep the book from the prosecutor.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_counter",
+        "blank": "where",
+        "by": [
+          "f_kassim",
+          "f_body"
+        ],
+        "why": "The front stayed dark; he died at the back bench."
+      },
+      {
+        "word": "pl_droom",
+        "blank": "where",
+        "by": [
+          "f_body"
+        ],
+        "why": "The book went there afterwards."
+      },
+      {
+        "word": "pl_stage",
+        "blank": "where",
+        "by": [
+          "f_ha_matatu"
+        ],
+        "why": "Hamisi left from the stage."
+      },
+      {
+        "word": "pl_road",
+        "blank": "where",
+        "by": [
+          "f_kassim"
+        ],
+        "why": "Nobody came in from the road."
+      },
+      {
+        "word": "w_hamisi",
+        "blank": "who",
+        "by": [
+          "f_ha_matatu"
+        ],
+        "why": "Hamisi was in Eastleigh from 19:30."
+      },
+      {
+        "word": "w_juma",
+        "blank": "who",
+        "by": [
+          "f_ju_class"
+        ],
+        "why": "Juma was at his class."
+      },
+      {
+        "word": "w_zainabu",
+        "blank": "who",
+        "by": [
+          "f_zainabu"
+        ],
+        "why": "Zainabu was home in South C."
+      },
+      {
+        "word": "w_pamela",
+        "blank": "who",
+        "by": [
+          "f_pamela_self"
+        ],
+        "why": "Pamela was in Umoja."
+      },
+      {
+        "word": "w_kassim",
+        "blank": "who",
+        "by": [
+          "f_kassim_self"
+        ],
+        "why": "Kassim was at his counter in view of three customers."
+      },
+      {
+        "word": "h_fall",
+        "blank": "how",
+        "by": [
+          "f_aut",
+          "f_blood"
+        ],
+        "why": "One blow; blood on the embosser."
+      },
+      {
+        "word": "h_bar",
+        "blank": "how",
+        "by": [
+          "f_till",
+          "f_kassim"
+        ],
+        "why": "Nothing taken; nobody came in the front."
+      },
+      {
+        "word": "h_graver",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "A blow, not a puncture."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "A blow."
+      },
+      {
+        "word": "m_son",
+        "blank": "why",
+        "by": [
+          "f_ha_matatu"
+        ],
+        "why": "Hamisi was in Eastleigh."
+      },
+      {
+        "word": "m_rent",
+        "blank": "why",
+        "by": [
+          "f_zainabu"
+        ],
+        "why": "Zainabu was home."
+      },
+      {
+        "word": "m_secret",
+        "blank": "why",
+        "by": [
+          "f_ju_class"
+        ],
+        "why": "Juma was at his class."
+      },
+      {
+        "word": "m_brass",
+        "blank": "why",
+        "by": [
+          "f_till"
+        ],
+        "why": "Stock intact."
+      },
+      {
+        "word": "a_book",
+        "blank": "missing",
+        "by": [
+          "f_abs_book"
+        ],
+        "why": "It tells you what was taken, not how the killer moved."
+      },
+      {
+        "word": "a_front",
+        "blank": "missing",
+        "by": [
+          "f_abs_front"
+        ],
+        "why": "It shows someone inside, not how they saw."
+      },
+      {
+        "word": "a_forced",
+        "blank": "missing",
+        "by": [
+          "f_abs_forced"
+        ],
+        "why": "Same: someone inside."
+      },
+      {
+        "word": "a_daybook",
+        "blank": "missing",
+        "by": [
+          "f_abs_daybook"
+        ],
+        "why": "It shows the orders were kept elsewhere."
+      },
+      {
+        "word": "k_robber",
+        "blank": "conclusion",
+        "by": [
+          "f_kassim",
+          "f_till"
+        ],
+        "why": "Nobody came from the street; the till is full."
+      },
+      {
+        "word": "k_fell",
+        "blank": "conclusion",
+        "by": [
+          "f_aut"
+        ],
+        "why": "One blow."
+      },
+      {
+        "word": "k_hamisi",
+        "blank": "conclusion",
+        "by": [
+          "f_ha_matatu"
+        ],
+        "why": "Hamisi was in Eastleigh."
+      },
+      {
+        "word": "k_torch",
+        "blank": "conclusion",
+        "by": [
+          "f_kassim"
+        ],
+        "why": "Kassim would have seen a moving light."
+      },
+      {
+        "word": "k_after",
+        "blank": "conclusion",
+        "by": [
+          "f_kassim",
+          "f_aut_tod"
+        ],
+        "why": "Kassim found him as the power returned."
+      },
+      {
+        "word": "w_pin_mv",
+        "blank": "pin",
+        "by": [
+          "case-066:f_mv_seal",
+          "f_book_orders"
+        ],
+        "why": "Made here too, but not finished from a proof."
+      },
+      {
+        "word": "w_pin_doreen",
+        "blank": "pin",
+        "by": [
+          "case-060:f_comm_stamp",
+          "f_book_orders"
+        ],
+        "why": "A commissioner stamp, not the Registrar's seal."
+      },
+      {
+        "word": "w_pin_container",
+        "blank": "pin",
+        "by": [
+          "case-030:f_container_oval",
+          "f_book_proof"
+        ],
+        "why": "Paper, not a seal proof."
+      },
+      {
+        "word": "w_pin_fb",
+        "blank": "pin",
+        "by": [
+          "case-040:f_hannah_withdrawn",
+          "f_book_proof"
+        ],
+        "why": "A field book, not a seal."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Twelve years ago a \"client from Lands\" asks Owino & Mwakazi to cut a round REGISTRAR OF TITLES seal; Daudi, the better engraver, does it. Each new order, later paid through Till 880 214, goes into a black book in Daudi's room.",
+        "image": null
+      },
+      {
+        "text": "After the papers report Kiprop's murder and Halima's release, Jeremiah decides to go to the prosecutor first. At 19:20 he arranges to bring \"a book\" in the morning. At 19:30 he tells Daudi. Daudi says nothing.",
+        "image": null
+      },
+      {
+        "text": "At 19:40 the block's power goes. Daudi walks the twelve steps he has known for thirty years, takes the cast-iron embosser from its peg, and strikes Jeremiah, who is packing the book by the light of his phone.",
+        "image": "plc_back"
+      },
+      {
+        "text": "He takes the book back to his mattress, hangs the embosser on its peg by touch, upside down, and lies down. At 20:25 the power returns and Kassim comes in to borrow a ladder.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "The black book's first entry, \"For: 4th Floor, Lands House — Records\", is pinned to the Pattern File.",
+      "files": [
+        {
+          "thread": "t_stamp",
+          "text": "Traced to source: the first forged REGISTRAR OF TITLES seal, cut twelve years ago \"for 4th Floor, Lands House — Records\"."
+        }
+      ]
+    },
+    {
+      "beat": "Hamisi sits at the back of the court at Daudi's plea hearing. Afterwards he asks Amani if he can have his father's half-finished seal proof when the case is closed. Halima says yes."
+    },
+    {
+      "beat": "Amani's notebook: \"Records, 4th floor. Mwalimu said a desk on the Lands side. Now the brass says which desk.\""
+    }
+  ],
+  "clockPlan": {
+    "note": "Two stamps: records on Jeremiah's line and a warrant on Daudi's room. Detain Daudi after the search; prints (6 h) and the blood trace (12 h) come back inside 24 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_shop",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_embosser",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_no_light",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_daybook",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_pamela",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_pamela"
+      },
+      {
+        "do": "travel",
+        "target": "loc_kassim",
+        "hours": 0.25,
+        "from": "loc_shop"
+      },
+      {
+        "do": "visit",
+        "target": "loc_kassim",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_kassim",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_outage",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_kassim"
+      },
+      {
+        "do": "records",
+        "target": "ev_odpp"
+      },
+      {
+        "do": "interview",
+        "target": "p_hamisi"
+      },
+      {
+        "do": "press",
+        "target": "c_ha"
+      },
+      {
+        "do": "read",
+        "target": "ev_conductor",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_shop",
+        "hours": 0.25,
+        "from": "loc_kassim"
+      },
+      {
+        "do": "visit",
+        "target": "loc_shop",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_juma"
+      },
+      {
+        "do": "press",
+        "target": "c_ju"
+      },
+      {
+        "do": "read",
+        "target": "ev_juma",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_zainabu"
+      },
+      {
+        "do": "interview",
+        "target": "p_daudi"
+      },
+      {
+        "do": "press",
+        "target": "c_da_asleep"
+      },
+      {
+        "do": "travel",
+        "target": "loc_droom",
+        "hours": 0.25,
+        "from": "loc_shop"
+      },
+      {
+        "do": "search",
+        "target": "loc_droom"
+      },
+      {
+        "do": "read",
+        "target": "ev_book",
+        "hours": 1
+      },
+      {
+        "do": "press",
+        "target": "c_da_nobook"
+      },
+      {
+        "do": "detain",
+        "target": "p_daudi"
+      },
+      {
+        "do": "sample",
+        "target": "ev_da_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_blood"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 11
+      },
+      {
+        "do": "press",
+        "target": "c_da_emb"
+      }
+    ],
+    "totalHours": 39.75
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_outage",
+        "line": "When did the lights go, Amani, and when did they come back?"
+      },
+      "tier2": {
+        "facts": [
+          "f_outage",
+          "f_odpp"
+        ],
+        "line": "Off at 19:40, on at 20:25. The ODPP call at 19:20."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_body",
+        "line": "Where was he packing the book?"
+      },
+      "tier2": {
+        "facts": [
+          "f_body"
+        ],
+        "line": "At his bench in the back room."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_embosser",
+        "line": "Look at how the tools are hung. Which one is wrong?"
+      },
+      "tier2": {
+        "facts": [
+          "f_embosser",
+          "f_blood"
+        ],
+        "line": "Upside down, by feel. Blood on Daudi's cuff."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Dr. Chebii says cast iron, with a rounded jaw."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut",
+          "f_embosser"
+        ],
+        "line": "The hand embosser."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_odpp",
+        "line": "Who did Jeremiah call at twenty past seven?"
+      },
+      "tier2": {
+        "facts": [
+          "f_odpp",
+          "f_pamela"
+        ],
+        "line": "The prosecutor's office. A book of orders, at nine."
+      }
+    },
+    "g_absence": {
+      "tier1": {
+        "point": "ev_kassim",
+        "line": "Ask Kassim what every shop does in a blackout."
+      },
+      "tier2": {
+        "facts": [
+          "f_abs_light",
+          "f_kassim_lights"
+        ],
+        "line": "Everyone lights a lamp. The killer didn't."
+      }
+    },
+    "g_spine": {
+      "tier1": {
+        "point": "ev_book",
+        "line": "Read the entry after case 10."
+      },
+      "tier2": {
+        "facts": [
+          "f_book_proof"
+        ],
+        "line": "\"Finish Rashid's seal from his proof.\""
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "muhuri",
+      "def": "A seal or stamp."
+    },
+    {
+      "term": "mchoraji wa chuma",
+      "def": "An engraver."
+    },
+    {
+      "term": "stima imepotea",
+      "def": "\"The power's gone.\""
+    },
+    {
+      "term": "taa ya chemli",
+      "def": "A paraffin lamp."
+    },
+    {
+      "term": "kitabu cheusi",
+      "def": "A black book."
+    },
+    {
+      "term": "matatu",
+      "def": "A shared minibus taxi."
+    },
+    {
+      "term": "kanzu",
+      "def": "A long white robe worn by men."
+    },
+    {
+      "term": "Mvua",
+      "def": "Mvua Holdings, the shell company behind the forged titles (\"mvua\" means rain)."
+    },
+    {
+      "term": "Kirinyaga",
+      "def": "Kirinyaga Road, a Nairobi street of engravers and sign-writers."
+    },
+    {
+      "term": "buibui",
+      "def": "A black over-garment worn by some Muslim women."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "blackoutScene"
+    ],
+    "beatNotes": "No new mechanics. The blackout plays as a scene: the scene photo dims to black and the player can only tap where Kassim saw light; then the power returns."
+  }
+}

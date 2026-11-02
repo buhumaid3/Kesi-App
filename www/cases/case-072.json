@@ -1,0 +1,2549 @@
+{
+  "meta": {
+    "id": "case-072",
+    "number": 72,
+    "region": "northern-frontier",
+    "regionNumber": 8,
+    "title": "Dry Nets",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 38,
+    "date": "Monday 15 June",
+    "folderTab": "LOIYANGALANI"
+  },
+  "pattern": {
+    "crimePattern": "a fish buyer who lends against catches kills the co-op chairman who signed with a rival buyer, then stages a drowning in the night storm",
+    "noRealCaseRetold": true,
+    "notes": "Fictional co-op, buyers and company (\"Sibiloi Fresh\"). Lake Turkana's night winds and alkaline water are described for the cultural reader to check.",
+    "tags": [
+      "blunt-force",
+      "staged-accident",
+      "moved-body",
+      "business-rivalry",
+      "two-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where",
+      "absence"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 5,
+    "redHerrings": 2,
+    "liars": 2,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "absence"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": "he-never-went-out-on-the-lake"
+  },
+  "ob": {
+    "number": "OB 13/15/06",
+    "date": "Monday 15 June",
+    "time": "07:15",
+    "reportedBy": "Fishermen's co-operative, Loiyangalani",
+    "text": "The fishermen's co-operative at Loiyangalani reports its chairman, Ekal Lokwawi (41), drowned in Sunday night's storm. His boat was found capsized in the shallows at dawn, the body beside it.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_beach",
+    "nodes": [
+      "loc_beach",
+      "loc_store",
+      "loc_office",
+      "loc_loice",
+      "loc_village"
+    ],
+    "edges": [
+      {
+        "a": "loc_beach",
+        "b": "loc_store",
+        "minutes": 2,
+        "by": "foot"
+      },
+      {
+        "a": "loc_beach",
+        "b": "loc_office",
+        "minutes": 5,
+        "by": "foot"
+      },
+      {
+        "a": "loc_store",
+        "b": "loc_office",
+        "minutes": 5,
+        "by": "foot"
+      },
+      {
+        "a": "loc_beach",
+        "b": "loc_village",
+        "minutes": 10,
+        "by": "foot"
+      },
+      {
+        "a": "loc_village",
+        "b": "loc_loice",
+        "minutes": 5,
+        "by": "foot"
+      },
+      {
+        "a": "loc_office",
+        "b": "loc_loice",
+        "minutes": 10,
+        "by": "foot"
+      },
+      {
+        "a": "loc_store",
+        "b": "loc_loice",
+        "minutes": 10,
+        "by": "foot"
+      },
+      {
+        "a": "loc_office",
+        "b": "loc_village",
+        "minutes": 10,
+        "by": "foot"
+      },
+      {
+        "a": "loc_store",
+        "b": "loc_village",
+        "minutes": 10,
+        "by": "foot"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_ekal",
+      "role": "victim",
+      "name": "Ekal Lokwawi",
+      "age": 41,
+      "occupation": "Chairman, Loiyangalani fishermen's co-operative",
+      "bio": "Wrote the landing-register rule himself: no boat goes out at night unsigned.",
+      "community": "Turkana",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_coopstore",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Turkana man, early 40s, a fisherman's faded T-shirt, a beaded necklace, a broad, determined face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_loice",
+      "role": "suspect",
+      "name": "Loice Akwam",
+      "age": 36,
+      "occupation": "Fish buyer; trucks dried fish to Kitale",
+      "bio": "Buys nearly all the co-op's dried fish and lends the fishermen cash in the lean months against their catches.",
+      "community": "Turkana",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_contract"
+      },
+      "at": "loc_loice",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Turkana woman, mid 30s, a bright headwrap, a ledger under her arm, a businesslike, closed face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_lomulen",
+      "role": "suspect",
+      "name": "Lomulen Echakan",
+      "age": 27,
+      "occupation": "Ekal's boat crewman",
+      "bio": "Says they went out together and Ekal fell overboard.",
+      "community": "Turkana",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_bar",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Turkana man, late 20s, a torn fishing vest, bloodshot eyes, an ashamed, frightened face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_lokol",
+      "role": "suspect",
+      "name": "Lokol Lokwawi",
+      "age": 45,
+      "occupation": "Ekal's elder brother",
+      "redHerring": true,
+      "bio": "Says the boat was their father's and should be his.",
+      "community": "Turkana",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_boat_row"
+      },
+      "at": "plc_wedding",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Turkana man, mid 40s, a herder's blanket over one shoulder, an angry, grieving face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_joyce",
+      "role": "suspect",
+      "name": "Joyce Napeyok",
+      "age": 33,
+      "occupation": "Co-op treasurer",
+      "redHerring": true,
+      "bio": "Ekal accused her of a cash shortfall last month.",
+      "community": "Turkana",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_shortfall"
+      },
+      "at": "plc_mission",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Turkana woman, early 30s, a neat blouse, a cash book held to her chest, a guarded, intelligent face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_akuwom",
+      "role": "witness",
+      "name": "Akuwom Etir",
+      "age": 58,
+      "occupation": "Keeper of the co-op landing register",
+      "bio": "Signs every boat out and in. Closes the book at dark.",
+      "community": "Turkana",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_office",
+      "image": null
+    },
+    {
+      "id": "p_bar",
+      "role": "witness",
+      "name": "Mama Lokiru",
+      "age": 50,
+      "occupation": "Owner of the village bar",
+      "statementOnly": true,
+      "bio": "Runs the only bar in Loiyangalani that stays open past midnight.",
+      "community": "Turkana",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_bar",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_coopstore",
+      "name": "The co-op fish store",
+      "within": "loc_store"
+    },
+    {
+      "id": "plc_lake",
+      "name": "The lake"
+    },
+    {
+      "id": "plc_bar",
+      "name": "The village bar",
+      "within": "loc_village"
+    },
+    {
+      "id": "plc_wedding",
+      "name": "A wedding in the village"
+    },
+    {
+      "id": "plc_mission",
+      "name": "The Catholic mission"
+    },
+    {
+      "id": "plc_akhome",
+      "name": "Akuwom's home"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_beach",
+      "name": "Co-op landing beach",
+      "kind": "scene",
+      "description": "Doum palms, fish drying on racks, boats pulled up on the shingle, the jade lake flat and still now the wind has dropped. Ekal's boat \"Napak\" lies capsized in the shallows.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The shallows",
+          "pos": [
+            60,
+            70
+          ],
+          "yields": "ev_body",
+          "text": "Ekal lies face down in 30 cm of water beside his boat."
+        },
+        {
+          "id": "hs_boat",
+          "label": "The boat \"Napak\"",
+          "pos": [
+            66,
+            60
+          ],
+          "yields": "ev_boat",
+          "text": "The capsized boat. Nets under the thwart."
+        },
+        {
+          "id": "hs_skin",
+          "label": "His clothes",
+          "pos": [
+            58,
+            74
+          ],
+          "yields": "ev_crust",
+          "text": "His shirt-collar and skin above the waterline."
+        },
+        {
+          "id": "hs_sand",
+          "label": "Windward side",
+          "pos": [
+            70,
+            56
+          ],
+          "yields": "ev_sand",
+          "text": "The windward side of the boat and the body."
+        },
+        {
+          "id": "hs_tracks",
+          "label": "Between the store and the water",
+          "pos": [
+            40,
+            50
+          ],
+          "yields": "ev_tracks",
+          "text": "Drag marks. Cpl Ewoi crouches beside them."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "Loiyangalani beach on Lake Turkana at dawn, a capsized wooden boat in jade-green shallows, doum palms and fish-drying racks, the wind dropped, no people in focus"
+      },
+      "expected": [
+        {
+          "id": "x_nets",
+          "text": "A boat that fished through a windy night comes in with wet, tangled nets, signed out in the register",
+          "because": "f_akuwom_nets",
+          "present": false,
+          "fact": "f_abs_nets"
+        },
+        {
+          "id": "x_crust",
+          "text": "A man soaked in the lake and left to dry has a white crust on his skin and clothes",
+          "because": "f_crust_rule",
+          "present": false,
+          "fact": "f_abs_crust"
+        },
+        {
+          "id": "x_sand",
+          "text": "The night wind piles sand against the windward side of everything on the beach",
+          "because": "f_wind_rule",
+          "present": false,
+          "fact": "f_abs_sand"
+        },
+        {
+          "id": "x_fish",
+          "text": "A boat that fished all night has fish or scales in it",
+          "because": "f_akuwom_nets",
+          "present": false,
+          "fact": "f_abs_fish"
+        },
+        {
+          "id": "x_water",
+          "text": "A man who fell in alive and drowned breathes lake water",
+          "because": "f_lom_went",
+          "present": false,
+          "fact": "f_abs_water"
+        }
+      ]
+    },
+    {
+      "id": "loc_store",
+      "name": "Co-op fish store",
+      "kind": "location",
+      "description": "A stone store with a palm-thatch roof, racks of drying mats, and a rack of wooden fish clubs by the door.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_floor",
+          "label": "The floor",
+          "pos": [
+            50,
+            60
+          ],
+          "yields": "ev_store",
+          "text": "A swept earth floor, a fresh layer of sand, and the club rack."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a stone fish store with a palm-thatch roof by Lake Turkana, drying mats rolled on racks, a wooden rack of fish clubs by the door with one gap"
+      }
+    },
+    {
+      "id": "loc_office",
+      "name": "Co-op office",
+      "kind": "location",
+      "description": "A one-room office: the landing register, a cash box, a noticeboard.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_register",
+          "label": "Landing register",
+          "pos": [
+            30,
+            40
+          ],
+          "yields": "ev_register",
+          "text": "Sunday's page."
+        },
+        {
+          "id": "hs_contract",
+          "label": "Noticeboard and file",
+          "pos": [
+            60,
+            40
+          ],
+          "yields": "ev_contract",
+          "text": "A new agreement and a notice to members."
+        },
+        {
+          "id": "hs_cash",
+          "label": "Cash box",
+          "pos": [
+            70,
+            60
+          ],
+          "yields": "ev_cashbox",
+          "text": "The co-op cash box."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small co-operative office on the Lake Turkana shore, a register open on a table, a noticeboard with a new notice, a cash box"
+      }
+    },
+    {
+      "id": "loc_loice",
+      "name": "Loice's fish store",
+      "kind": "location",
+      "description": "A larger store of dried fish in sacks, waiting for the Kitale truck.",
+      "unlock": {
+        "fact": "f_rec_lo"
+      },
+      "hotspots": [
+        {
+          "id": "hs_lsacks",
+          "label": "Behind the sacks",
+          "pos": [
+            60,
+            50
+          ],
+          "yields": "ev_loice_store",
+          "text": "Behind the sacks of dried tilapia."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a fish trader's store of sacks of dried tilapia on Lake Turkana, a palm-fibre mat rolled in a corner, a pair of tyre-sole sandals by the door"
+      }
+    },
+    {
+      "id": "loc_village",
+      "name": "Loiyangalani village",
+      "kind": "location",
+      "description": "Stone and palm-thatch houses, a spring, a bar, the mission.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_barowner",
+          "label": "The bar",
+          "pos": [
+            40,
+            50
+          ],
+          "yields": "ev_lomulen",
+          "text": "Mama Lokiru, the bar owner."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "Loiyangalani village at dusk, stone and palm-thatch houses, doum palms, a small bar with a painted sign"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The shallows",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Face down in 30 cm of water beside his boat. One blow to the back of the head."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a capsized wooden fishing boat in clear shallow water at dawn, a paddle floating, no body visible"
+      }
+    },
+    {
+      "id": "ev_boat",
+      "type": "physical",
+      "title": "The boat \"Napak\"",
+      "render": "object",
+      "body": {
+        "nets": "Nets folded and dry under the thwart. No weed, no scales, no fish.",
+        "oars": "Both oars in the boat, unmarked. The gunwale edge clean."
+      },
+      "facts": [
+        "f_nets",
+        "f_oars"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_crust",
+      "type": "physical",
+      "title": "His skin and clothes",
+      "render": "object",
+      "body": {
+        "label": "No white crust above the waterline; his clothes are wet only where they lay in the water."
+      },
+      "facts": [
+        "f_crust"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_sand",
+      "type": "physical",
+      "title": "The windward side",
+      "render": "object",
+      "body": {
+        "label": "Sand drifted against every boat and post on the beach. None against the body or the boat's windward side."
+      },
+      "facts": [
+        "f_sand"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tracks",
+      "type": "physical",
+      "title": "Tracker's reading (Cpl Ewoi Lomuke)",
+      "render": "object",
+      "body": {
+        "whose": "One person in tyre-sole sandals.",
+        "way": "Walking backwards from the store to the water, dragging something heavy on a mat.",
+        "age": "Sharp edges: made after the wind dropped, about 04:30–05:30."
+      },
+      "facts": [
+        "f_tracks"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "drag marks in beach sand with tyre-tread sandal prints walking backwards beside them, sharp-edged"
+      }
+    },
+    {
+      "id": "ev_store",
+      "type": "physical",
+      "title": "The co-op fish store",
+      "render": "object",
+      "body": {
+        "floor": "Swept, but a dark stain soaked into the earth under a fresh layer of sand.",
+        "rack": "One club missing from the rack of twelve."
+      },
+      "facts": [
+        "f_stain",
+        "f_clubs"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_register",
+      "type": "document",
+      "title": "Landing register, Sunday",
+      "render": "logBook",
+      "body": {
+        "text": "Six boats signed out 18:00–19:30. \"Napak\", Ekal's boat, not signed out. Closed by Akuwom at 19:30."
+      },
+      "facts": [
+        "f_register"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_contract",
+      "type": "document",
+      "title": "Sibiloi Fresh agreement and notice",
+      "render": "form",
+      "body": {
+        "contract": "Signed Friday by Ekal for the co-op: fresh fish to Sibiloi Fresh, Kitale.",
+        "notice": "\"Loice's advances can be repaid in cash.\""
+      },
+      "facts": [
+        "f_contract"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_cashbox",
+      "type": "physical",
+      "title": "Co-op cash box",
+      "render": "object",
+      "body": {
+        "label": "Locked; the cash matches the book."
+      },
+      "facts": [
+        "f_cashbox"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_akuwom",
+      "type": "witness",
+      "title": "Statement: Akuwom Etir",
+      "render": "statement",
+      "body": {
+        "speaker": "p_akuwom"
+      },
+      "facts": [
+        "f_akuwom_nets",
+        "f_crust_rule",
+        "f_wind_rule",
+        "f_boat_row",
+        "f_shortfall",
+        "f_akuwom_home"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Loice Akwam's line",
+      "render": "manifest",
+      "body": {
+        "mast": "The Loiyangalani mast covers the whole shore: location useless.",
+        "call": "04:12 Monday: a call to her truck driver. Driver: \"She said, don't come before seven.\""
+      },
+      "facts": [
+        "f_rec_lo"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_contract",
+          "f_tracks"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_loice_store",
+      "type": "physical",
+      "title": "Behind Loice's sacks",
+      "render": "object",
+      "body": {
+        "sandals": "Tyre-sole sandals, sand still in the treads.",
+        "mat": "A palm-fibre mat, damp, stained.",
+        "club": "The missing fish club, washed.",
+        "ledger": "Her ledger: KSh 1.4 million lent to 38 fishermen against catches."
+      },
+      "facts": [
+        "f_sandals",
+        "f_mat",
+        "f_club",
+        "f_advances"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_lo",
+          "f_tracks",
+          "f_stain"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a pair of sandals cut from car tyres, sand in the treads, beside a rolled palm-fibre mat and a wooden fish club"
+      }
+    },
+    {
+      "id": "ev_lomulen",
+      "type": "witness",
+      "title": "Statement: Mama Lokiru (bar owner)",
+      "render": "statement",
+      "body": {
+        "speaker": "p_bar"
+      },
+      "facts": [
+        "f_lomulen_bar"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lokol",
+      "type": "witness",
+      "title": "Statement: Lokol's wife and neighbours",
+      "render": "statement",
+      "body": {
+        "speaker": "p_lokol"
+      },
+      "facts": [
+        "f_lokol"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_joyce",
+      "type": "witness",
+      "title": "Statement: the mission sisters",
+      "render": "statement",
+      "body": {
+        "speaker": "p_joyce"
+      },
+      "facts": [
+        "f_joyce"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Dr. Chebii, Marsabit)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_nowater",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_blood",
+      "type": "forensic",
+      "title": "Lab: trace (store stain, mat)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_blood"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_store",
+          "ev_loice_store"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tread",
+      "type": "forensic",
+      "title": "Lab: tread (drag-mark prints vs sandals)",
+      "render": "labReport",
+      "body": {
+        "test": "toolMarks"
+      },
+      "facts": [
+        "f_tread"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toolMarks",
+        "hours": 8,
+        "needs": [
+          "ev_tracks",
+          "ev_loice_store"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Ekal Lokwawi was found dead in the shallows at dawn beside his capsized boat, \"drowned in the storm\".",
+      "kind": "true",
+      "about": [
+        "p_ekal",
+        "loc_beach"
+      ],
+      "at": {
+        "from": "06:00"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "He lay face down in 30 cm of water beside his boat, with one blow to the back of the head.",
+      "kind": "true",
+      "about": [
+        "p_ekal",
+        "loc_beach"
+      ]
+    },
+    {
+      "id": "f_nets",
+      "text": "His nets are folded and dry under the thwart: no weed, no scales, no fish.",
+      "kind": "true",
+      "about": [
+        "loc_beach"
+      ]
+    },
+    {
+      "id": "f_oars",
+      "text": "Both oars are in the boat, unmarked; the gunwale's edge is clean.",
+      "kind": "true",
+      "about": [
+        "loc_beach"
+      ]
+    },
+    {
+      "id": "f_crust",
+      "text": "There is no white alkaline crust on his skin or collar above the waterline; his clothes are wet only where they lay in the water.",
+      "kind": "true",
+      "about": [
+        "p_ekal"
+      ]
+    },
+    {
+      "id": "f_sand",
+      "text": "Sand drifted against every boat and post on the beach overnight, but none against the body or the boat's windward side.",
+      "kind": "true",
+      "about": [
+        "loc_beach"
+      ]
+    },
+    {
+      "id": "f_tracks",
+      "text": "Ewoi: one person in tyre-sole sandals walked backwards from the fish store to the water, dragging something heavy on a mat, after the wind dropped (about 04:30–05:30).",
+      "kind": "true",
+      "about": [
+        "loc_beach",
+        "plc_coopstore"
+      ],
+      "at": {
+        "from": "04:30",
+        "to": "05:30",
+        "day": "Mon"
+      }
+    },
+    {
+      "id": "f_stain",
+      "text": "Co-op fish store: the floor has been swept, but there is a dark stain soaked into the earth under a fresh layer of sand.",
+      "kind": "true",
+      "about": [
+        "plc_coopstore"
+      ]
+    },
+    {
+      "id": "f_clubs",
+      "text": "One wooden fish club is missing from the rack of twelve by the store door.",
+      "kind": "true",
+      "about": [
+        "plc_coopstore"
+      ]
+    },
+    {
+      "id": "f_register",
+      "text": "Landing register, Sunday: six boats signed out 18:00–19:30. Ekal's boat, \"Napak\", is not signed out. Akuwom closed the book at 19:30.",
+      "kind": "true",
+      "about": [
+        "p_ekal",
+        "p_akuwom"
+      ]
+    },
+    {
+      "id": "f_contract",
+      "text": "On Friday Ekal signed the co-op's fresh fish to Sibiloi Fresh of Kitale, and posted a notice: \"Loice's advances can be repaid in cash.\"",
+      "kind": "true",
+      "about": [
+        "p_ekal",
+        "p_loice"
+      ]
+    },
+    {
+      "id": "f_cashbox",
+      "text": "The co-op cash box is locked and matches the book.",
+      "kind": "true",
+      "about": [
+        "loc_office"
+      ]
+    },
+    {
+      "id": "f_akuwom_nets",
+      "text": "Akuwom: every boat that fishes at night signs out; Ekal wrote the rule. A boat that fished a windy night comes back with wet, tangled nets and scales in the bilge.",
+      "kind": "true",
+      "about": [
+        "p_akuwom",
+        "p_ekal"
+      ]
+    },
+    {
+      "id": "f_crust_rule",
+      "text": "Akuwom: the lake is bitter water. Anyone soaked in it and left to dry has a fine white crust on skin and clothes.",
+      "kind": "true",
+      "about": [
+        "p_akuwom"
+      ]
+    },
+    {
+      "id": "f_wind_rule",
+      "text": "Akuwom: the easterly blew from six until near dawn. It piles sand against everything on the beach.",
+      "kind": "true",
+      "about": [
+        "p_akuwom"
+      ]
+    },
+    {
+      "id": "f_boat_row",
+      "text": "Akuwom: Ekal and his brother Lokol quarrelled over who owned the boat, their father's.",
+      "kind": "true",
+      "about": [
+        "p_akuwom",
+        "p_lokol"
+      ]
+    },
+    {
+      "id": "f_shortfall",
+      "text": "Akuwom: last month Ekal accused the treasurer, Joyce, of a cash shortfall. She found the money.",
+      "kind": "true",
+      "about": [
+        "p_akuwom",
+        "p_joyce"
+      ]
+    },
+    {
+      "id": "f_akuwom_home",
+      "text": "Akuwom closed the register at 19:30 and was home with his family all night.",
+      "kind": "true",
+      "about": [
+        "p_akuwom"
+      ],
+      "where": {
+        "person": "p_akuwom",
+        "place": "plc_akhome",
+        "from": "19:45",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_rec_lo",
+      "text": "Records, Loice's line: the mast covers the whole shore; at 04:12 on Monday she called her truck driver. The driver: \"She said, don't come before seven.\"",
+      "kind": "true",
+      "about": [
+        "p_loice"
+      ],
+      "at": {
+        "from": "04:12",
+        "to": null,
+        "day": "Mon"
+      }
+    },
+    {
+      "id": "f_sandals",
+      "text": "Behind Loice's sacks: tyre-sole sandals with beach sand still in the treads.",
+      "kind": "true",
+      "about": [
+        "p_loice"
+      ]
+    },
+    {
+      "id": "f_mat",
+      "text": "A palm-fibre drying mat, damp and stained.",
+      "kind": "true",
+      "about": [
+        "p_loice"
+      ]
+    },
+    {
+      "id": "f_club",
+      "text": "The missing fish club from the co-op rack, washed.",
+      "kind": "true",
+      "about": [
+        "p_loice"
+      ]
+    },
+    {
+      "id": "f_advances",
+      "text": "Loice's ledger: KSh 1.4 million lent to 38 fishermen against their catches.",
+      "kind": "true",
+      "about": [
+        "p_loice"
+      ]
+    },
+    {
+      "id": "f_lomulen_bar",
+      "text": "Mama Lokiru: Lomulen drank in her bar from 19:00 until she closed at 01:00, then slept on the bench.",
+      "kind": "true",
+      "about": [
+        "p_bar",
+        "p_lomulen"
+      ],
+      "where": {
+        "person": "p_lomulen",
+        "place": "plc_bar",
+        "from": "19:00",
+        "to": "01:00"
+      }
+    },
+    {
+      "id": "f_lokol",
+      "text": "Lokol's wife and neighbours: he was at a goat slaughter for a wedding until late, then home.",
+      "kind": "true",
+      "about": [
+        "p_lokol"
+      ],
+      "where": {
+        "person": "p_lokol",
+        "place": "plc_wedding",
+        "from": "17:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_joyce",
+      "text": "The mission sisters: Joyce taught the adult literacy class until 21:00, then stayed the night with them while the sand blew.",
+      "kind": "true",
+      "about": [
+        "p_joyce"
+      ],
+      "where": {
+        "person": "p_joyce",
+        "place": "plc_mission",
+        "from": "17:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Post-mortem: one blow to the back of the head with a heavy wooden object, fatal.",
+      "kind": "true",
+      "about": [
+        "p_ekal"
+      ]
+    },
+    {
+      "id": "f_aut_nowater",
+      "text": "Post-mortem: no water in the lungs, no froth in the airways. He was dead before he entered the water.",
+      "kind": "true",
+      "about": [
+        "p_ekal"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Sunday between 20:00 and 22:00.",
+      "kind": "true",
+      "about": [
+        "p_ekal"
+      ],
+      "at": {
+        "from": "20:00",
+        "to": "22:00",
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_blood",
+      "text": "Lab: Ekal's blood in the store-floor stain and on the mat.",
+      "kind": "true",
+      "about": [
+        "p_ekal",
+        "p_loice"
+      ]
+    },
+    {
+      "id": "f_tread",
+      "text": "Lab: the drag-mark prints match Loice's sandals, including a cut in the left heel.",
+      "kind": "true",
+      "about": [
+        "p_loice"
+      ]
+    },
+    {
+      "id": "f_abs_nets",
+      "text": "Missing: his nets are dry, and the register has no entry for his boat.",
+      "kind": "true",
+      "about": [
+        "loc_beach"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_crust",
+      "text": "Missing: there is no alkaline crust on his clothes.",
+      "kind": "true",
+      "about": [
+        "p_ekal"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_sand",
+      "text": "Missing: there is no drifted sand against the body or the boat.",
+      "kind": "true",
+      "about": [
+        "loc_beach"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_fish",
+      "text": "Missing: there are no fish or scales in the boat.",
+      "kind": "true",
+      "about": [
+        "loc_beach"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_water",
+      "text": "Missing: there is no lake water in his lungs.",
+      "kind": "true",
+      "about": [
+        "p_ekal"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_lo_home",
+      "text": "Loice: \"I was at home all night. I didn't see Ekal after Friday.\"",
+      "kind": "lie",
+      "about": [
+        "p_loice"
+      ]
+    },
+    {
+      "id": "f_lo_loyal",
+      "text": "Loice: \"Sibiloi Fresh doesn't worry me. My fishermen are loyal.\"",
+      "kind": "lie",
+      "about": [
+        "p_loice"
+      ]
+    },
+    {
+      "id": "f_lo_reveal",
+      "text": "Loice: she went to the co-op store on Sunday evening \"to talk business\". He laughed at her in front of her own debts. \"That's all I'll say.\"",
+      "kind": "true",
+      "about": [
+        "p_loice",
+        "p_ekal"
+      ],
+      "where": {
+        "person": "p_loice",
+        "place": "plc_coopstore",
+        "from": "20:30",
+        "to": "20:50"
+      }
+    },
+    {
+      "id": "f_lom_went",
+      "text": "Lomulen: \"We went out together at eight. The wind turned the boat over and he went in. I swam to shore.\"",
+      "kind": "lie",
+      "about": [
+        "p_lomulen"
+      ]
+    },
+    {
+      "id": "f_lom_reveal",
+      "text": "Lomulen: he was drunk and never went to the beach. When they found Ekal he was afraid they'd say he had left him alone.",
+      "kind": "true",
+      "about": [
+        "p_lomulen"
+      ]
+    },
+    {
+      "id": "f_lokol_claim",
+      "text": "Lokol: \"The boat was our father's. We fought about it. I was at a wedding.\"",
+      "kind": "claim",
+      "about": [
+        "p_lokol"
+      ]
+    },
+    {
+      "id": "f_joyce_claim",
+      "text": "Joyce: \"He accused me of a shortfall. I found the money. I was at the mission.\"",
+      "kind": "claim",
+      "about": [
+        "p_joyce"
+      ]
+    },
+    {
+      "id": "f_joyce_loice",
+      "text": "Joyce: on Saturday Loice came to the co-op shouting that Ekal would starve the shore.",
+      "kind": "true",
+      "about": [
+        "p_joyce",
+        "p_loice"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_loice",
+      "stance": "cooperative",
+      "intro": "Loice sits on a sack of dried tilapia with her ledger closed on her knee. \"I was at home all night. I didn't see Ekal after Friday. And Sibiloi Fresh doesn't worry me. My fishermen are loyal.\"",
+      "claims": [
+        "f_lo_home",
+        "f_lo_loyal"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_lomulen",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_boat"
+      ],
+      "intro": "Lomulen sits on the bar bench, not looking up. \"We went out together at eight. The wind turned the boat over and he went in. I swam to shore.\"",
+      "claims": [
+        "f_lom_went"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_lokol",
+      "stance": "cooperative",
+      "intro": "Lokol stands at the water's edge with his blanket pulled round him. \"The boat was our father's. We fought about it. I was at a wedding.\"",
+      "claims": [
+        "f_lokol_claim"
+      ],
+      "yields": [
+        "ev_lokol"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_joyce",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_contract"
+      ],
+      "intro": "Joyce holds the cash book to her chest. \"He accused me of a shortfall. I found the money. I was at the mission.\"",
+      "claims": [
+        "f_joyce_claim"
+      ],
+      "yields": [
+        "ev_joyce"
+      ],
+      "topics": [
+        {
+          "about": "ev_contract",
+          "reply": "\"Loice came to the co-op on Saturday shouting that Ekal would starve the shore.\"",
+          "reveals": [
+            "f_joyce_loice"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_akuwom",
+      "stance": "cooperative",
+      "intro": "Akuwom opens the landing register with both hands, like a Bible.",
+      "claims": [],
+      "yields": [
+        "ev_akuwom"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_lom",
+      "claim": "f_lom_went",
+      "brokenBy": [
+        "f_register",
+        "f_abs_nets",
+        "f_lomulen_bar"
+      ],
+      "reveals": [
+        "f_lom_reveal"
+      ],
+      "reaction": "\"I was drunk. I never went to the beach. When they found him I was afraid they'd say I left him alone. I said the first thing.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_lo_home",
+      "claim": "f_lo_home",
+      "brokenBy": [
+        "f_rec_lo",
+        "f_sandals"
+      ],
+      "reveals": [
+        "f_lo_reveal"
+      ],
+      "reaction": "Loice opens the ledger and closes it again. \"I went to talk business. He laughed at me in front of my own debts. That's all I'll say.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_lo_loyal",
+      "claim": "f_lo_loyal",
+      "brokenBy": [
+        "f_contract",
+        "f_advances"
+      ],
+      "reveals": [],
+      "reaction": "She looks at the notice on the photograph: advances repaid in cash. \"Thirty-eight of them owe me,\" she says. \"Thirty-eight.\"",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_loice",
+      "text": "Loice Akwam",
+      "category": "person",
+      "ref": "p_loice",
+      "unlock": {
+        "anyOf": [
+          "f_contract"
+        ]
+      }
+    },
+    {
+      "id": "w_lomulen",
+      "text": "Lomulen Echakan",
+      "category": "person",
+      "ref": "p_lomulen",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_lokol",
+      "text": "Lokol Lokwawi",
+      "category": "person",
+      "ref": "p_lokol",
+      "unlock": {
+        "anyOf": [
+          "f_boat_row"
+        ]
+      }
+    },
+    {
+      "id": "w_joyce",
+      "text": "Joyce Napeyok",
+      "category": "person",
+      "ref": "p_joyce",
+      "unlock": {
+        "anyOf": [
+          "f_shortfall"
+        ]
+      }
+    },
+    {
+      "id": "w_akuwom",
+      "text": "Akuwom Etir",
+      "category": "person",
+      "ref": "p_akuwom",
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "pl_coopstore",
+      "text": "the co-op fish store",
+      "category": "place",
+      "ref": "plc_coopstore",
+      "unlock": {
+        "anyOf": [
+          "f_stain"
+        ]
+      }
+    },
+    {
+      "id": "pl_beach",
+      "text": "the landing beach",
+      "category": "place",
+      "ref": "loc_beach",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_lake",
+      "text": "the lake",
+      "category": "place",
+      "ref": "plc_lake",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_lstore",
+      "text": "Loice's store",
+      "category": "place",
+      "ref": "loc_loice",
+      "unlock": {
+        "anyOf": [
+          "f_contract"
+        ]
+      }
+    },
+    {
+      "id": "pl_bar",
+      "text": "the village bar",
+      "category": "place",
+      "ref": "plc_bar",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_club",
+      "text": "striking him with a wooden fish club",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_drown",
+      "text": "drowning in the storm",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_gunwale",
+      "text": "being struck by the gunwale as the boat capsized",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_oar",
+      "text": "striking him with an oar",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_trade",
+      "text": "he'd signed the co-op's fish to a rival buyer and freed the fishermen from her advances",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_contract"
+        ]
+      }
+    },
+    {
+      "id": "m_boat",
+      "text": "a brothers' quarrel over the boat",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_boat_row"
+        ]
+      }
+    },
+    {
+      "id": "m_treasurer",
+      "text": "an accused treasurer's revenge",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_shortfall"
+        ]
+      }
+    },
+    {
+      "id": "m_crew",
+      "text": "a crewman's fear of blame",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_cash",
+      "text": "theft of the co-op's cash",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "a_nets",
+      "text": "his nets are dry and the register has no entry for his boat",
+      "category": "absence",
+      "ref": "f_abs_nets",
+      "unlock": {
+        "anyOf": [
+          "f_abs_nets"
+        ]
+      }
+    },
+    {
+      "id": "a_crust",
+      "text": "there is no alkaline crust on his clothes",
+      "category": "absence",
+      "ref": "f_abs_crust",
+      "unlock": {
+        "anyOf": [
+          "f_abs_crust"
+        ]
+      }
+    },
+    {
+      "id": "a_sand",
+      "text": "there is no drifted sand against the body",
+      "category": "absence",
+      "ref": "f_abs_sand",
+      "unlock": {
+        "anyOf": [
+          "f_abs_sand"
+        ]
+      }
+    },
+    {
+      "id": "a_fish",
+      "text": "there are no fish in the boat",
+      "category": "absence",
+      "ref": "f_abs_fish",
+      "unlock": {
+        "anyOf": [
+          "f_abs_fish"
+        ]
+      }
+    },
+    {
+      "id": "a_water",
+      "text": "there is no lake water in his lungs",
+      "category": "absence",
+      "ref": "f_abs_water",
+      "unlock": {
+        "anyOf": [
+          "f_abs_water"
+        ]
+      }
+    },
+    {
+      "id": "k_never",
+      "text": "he never went out on the lake",
+      "category": "conclusion",
+      "by": [
+        "f_abs_nets",
+        "f_register",
+        "f_abs_crust"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_nets"
+        ]
+      }
+    },
+    {
+      "id": "k_storm",
+      "text": "he drowned in the storm",
+      "category": "conclusion",
+      "by": [
+        "f_abs_water"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_nets"
+        ]
+      }
+    },
+    {
+      "id": "k_stolen",
+      "text": "the boat was stolen",
+      "category": "conclusion",
+      "by": [
+        "f_nets"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_nets"
+        ]
+      }
+    },
+    {
+      "id": "k_dawn",
+      "text": "he fell from the boat at dawn",
+      "category": "conclusion",
+      "by": [
+        "f_aut_tod"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_nets"
+        ]
+      }
+    },
+    {
+      "id": "k_crew",
+      "text": "Lomulen was with him",
+      "category": "conclusion",
+      "by": [
+        "f_lomulen_bar"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_nets"
+        ]
+      }
+    },
+    {
+      "id": "k_midnight",
+      "text": "he was killed on the beach at midnight",
+      "category": "conclusion",
+      "by": [
+        "f_stain",
+        "f_aut_tod"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_nets"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. That {missing} shows that {conclusion}.",
+    "fixed": {
+      "victim": "Ekal Lokwawi"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_fri",
+                  "label": "Friday",
+                  "from": null,
+                  "to": null,
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_2000",
+                  "label": "Sunday 20:00",
+                  "from": "20:00",
+                  "to": "20:00",
+                  "day": "Sun"
+                },
+                {
+                  "id": "sl_2030",
+                  "label": "Sunday 20:30",
+                  "from": "20:30",
+                  "to": "20:30",
+                  "day": "Sun"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Sunday 20:00–22:00",
+                  "from": "20:00",
+                  "to": "22:00",
+                  "day": "Sun"
+                },
+                {
+                  "id": "sl_0412",
+                  "label": "Monday 04:12",
+                  "from": "04:12",
+                  "to": "04:12",
+                  "day": "Mon"
+                },
+                {
+                  "id": "sl_drag",
+                  "label": "Monday 04:30–05:30",
+                  "from": "04:30",
+                  "to": "05:30",
+                  "day": "Mon"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_contract",
+                  "text": "Ekal signs with Sibiloi Fresh",
+                  "slot": "sl_fri",
+                  "by": [
+                    "f_contract"
+                  ],
+                  "why": "The agreement: Friday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_contract"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_argue",
+                  "text": "Loice and Ekal argue in the fish store",
+                  "slot": "sl_2030",
+                  "by": [
+                    "f_lo_reveal",
+                    "f_joyce_loice"
+                  ],
+                  "why": "Loice: she went to the store to talk business, about half past eight.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_lo_reveal"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Ekal is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod",
+                    "f_aut_nowater",
+                    "f_stain"
+                  ],
+                  "why": "The post-mortem: Sunday 20:00–22:00, dead before the water.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_call",
+                  "text": "Loice tells her driver not to come",
+                  "slot": "sl_0412",
+                  "by": [
+                    "f_rec_lo"
+                  ],
+                  "why": "Her records: 04:12.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rec_lo"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_drag",
+                  "text": "The body is dragged to the water",
+                  "slot": "sl_drag",
+                  "by": [
+                    "f_tracks",
+                    "f_abs_sand"
+                  ],
+                  "why": "Ewoi: sharp-edged tracks, after the wind dropped; no drifted sand on the body.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_tracks"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_2000",
+                  "by": [
+                    "f_register",
+                    "f_abs_nets"
+                  ],
+                  "why": "20:00 is when Lomulen says the boat went out. It was never signed out, and the nets are dry."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "Signed Friday, argued Sunday evening, dead by ten, the driver warned at twelve past four, the body dragged once the wind dropped.",
+          "fail": [
+            "The boat never went out at eight. Ask the register.",
+            "When were the tracks made? Ask Ewoi about the edges."
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_coopstore"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The store, with sand thrown over his blood. Yes.",
+          "fail": [
+            "He went into the water dead. He didn't die there.",
+            "The tracks start at the store door."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_loice"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her sandals on the beach, his blood on her mat, the club behind her sacks. That will hold.",
+          "fail": [
+            "Lomulen slept on a bar bench.",
+            "Akuwom closed the book at half past seven and went home."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_club"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The twelfth club, washed. Yes.",
+          "fail": [
+            "No water in his lungs.",
+            "The oars are clean and the gunwale too."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_trade"
+          }
+        ],
+        "prosecutor": {
+          "pass": "One point four million in advances, and a notice saying pay her in cash. That's her hold on half the shore, gone.",
+          "fail": [
+            "Lokol was at a wedding.",
+            "The cash box balances."
+          ]
+        }
+      },
+      {
+        "id": "g_absence",
+        "kind": "absence",
+        "blanks": [
+          {
+            "id": "missing",
+            "category": "absence",
+            "answer": "a_nets",
+            "accept": [
+              "a_crust"
+            ]
+          },
+          {
+            "id": "conclusion",
+            "category": "conclusion",
+            "answer": "k_never"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Dry nets, no line in the book, no crust on his collar. He never left the shore.",
+          "fail": [
+            "No water in his lungs says dead before the water. Not that he never went out.",
+            "No drifted sand says when he was moved, not where he'd been."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_coopstore",
+      "from": "20:00",
+      "to": "22:00",
+      "note": "From the post-mortem; Loice met him at the store at about 20:30."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_nets",
+          "f_akuwom_nets",
+          "f_register",
+          "f_abs_nets",
+          "f_crust",
+          "f_crust_rule",
+          "f_abs_crust",
+          "f_aut_nowater"
+        ],
+        "concludes": "He never went out on the lake, and he was dead before he went into the water.",
+        "answers": [
+          "missing",
+          "conclusion"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_lom_went",
+          "f_lomulen_bar",
+          "f_lom_reveal"
+        ],
+        "concludes": "His crewman never went to the beach; the \"fell overboard\" story was fear."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_sand",
+          "f_wind_rule",
+          "f_abs_sand",
+          "f_tracks",
+          "f_rec_lo"
+        ],
+        "concludes": "The body was dragged from the store to the water after the wind dropped, by someone in tyre-sole sandals; Loice warned her driver off at 04:12.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_stain",
+          "f_clubs",
+          "f_aut_blow",
+          "f_aut_tod",
+          "f_lo_home",
+          "f_lo_reveal"
+        ],
+        "concludes": "He was killed in the co-op fish store with one of its clubs, where Loice met him."
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_contract",
+          "f_advances",
+          "f_lo_loyal",
+          "f_sandals",
+          "f_mat",
+          "f_club",
+          "f_blood",
+          "f_tread"
+        ],
+        "concludes": "Her sandals, the bloodied mat and the washed club. Loice Akwam struck Ekal with a wooden fish club in the co-op store, because he had signed the co-op's fish to a rival buyer and freed the fishermen from her advances.",
+        "answers": [
+          "who",
+          "how",
+          "why",
+          "where"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_beach",
+        "blank": "where",
+        "by": [
+          "f_aut_nowater",
+          "f_tracks"
+        ],
+        "why": "He was dragged to the beach dead."
+      },
+      {
+        "word": "pl_lake",
+        "blank": "where",
+        "by": [
+          "f_abs_nets",
+          "f_aut_nowater"
+        ],
+        "why": "He never went out on it, and didn't drown."
+      },
+      {
+        "word": "pl_lstore",
+        "blank": "where",
+        "by": [
+          "f_stain",
+          "f_tracks"
+        ],
+        "why": "The blood and the tracks start at the co-op store."
+      },
+      {
+        "word": "pl_bar",
+        "blank": "where",
+        "by": [
+          "f_stain"
+        ],
+        "why": "He died in the co-op store."
+      },
+      {
+        "word": "w_lomulen",
+        "blank": "who",
+        "by": [
+          "f_lomulen_bar"
+        ],
+        "why": "Lomulen drank in the bar from 19:00 and slept there."
+      },
+      {
+        "word": "w_lokol",
+        "blank": "who",
+        "by": [
+          "f_lokol"
+        ],
+        "why": "Lokol was at the wedding slaughter, then home."
+      },
+      {
+        "word": "w_joyce",
+        "blank": "who",
+        "by": [
+          "f_joyce"
+        ],
+        "why": "Joyce was at the mission all night."
+      },
+      {
+        "word": "w_akuwom",
+        "blank": "who",
+        "by": [
+          "f_akuwom_home"
+        ],
+        "why": "Akuwom closed the book at 19:30 and was home."
+      },
+      {
+        "word": "h_drown",
+        "blank": "how",
+        "by": [
+          "f_aut_nowater"
+        ],
+        "why": "No water in the lungs."
+      },
+      {
+        "word": "h_gunwale",
+        "blank": "how",
+        "by": [
+          "f_oars",
+          "f_abs_nets"
+        ],
+        "why": "The gunwale is clean, and he never went out."
+      },
+      {
+        "word": "h_oar",
+        "blank": "how",
+        "by": [
+          "f_oars",
+          "f_club"
+        ],
+        "why": "The oars are unmarked; the club is the weapon."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "A fatal blow."
+      },
+      {
+        "word": "m_boat",
+        "blank": "why",
+        "by": [
+          "f_lokol"
+        ],
+        "why": "That was Lokol's quarrel, and he was at a wedding."
+      },
+      {
+        "word": "m_treasurer",
+        "blank": "why",
+        "by": [
+          "f_joyce",
+          "f_shortfall"
+        ],
+        "why": "Joyce found the money, and was at the mission."
+      },
+      {
+        "word": "m_crew",
+        "blank": "why",
+        "by": [
+          "f_lom_reveal",
+          "f_lomulen_bar"
+        ],
+        "why": "Lomulen's fear came after the fact; he was in the bar."
+      },
+      {
+        "word": "m_cash",
+        "blank": "why",
+        "by": [
+          "f_cashbox"
+        ],
+        "why": "The cash box balances."
+      },
+      {
+        "word": "a_sand",
+        "blank": "missing",
+        "by": [
+          "f_abs_sand",
+          "f_tracks"
+        ],
+        "why": "It shows the body was moved after the wind dropped, not that he never went out."
+      },
+      {
+        "word": "a_fish",
+        "blank": "missing",
+        "by": [
+          "f_abs_fish"
+        ],
+        "why": "An empty boat can mean a bad night. The dry nets and the register are what show he never went."
+      },
+      {
+        "word": "a_water",
+        "blank": "missing",
+        "by": [
+          "f_abs_water",
+          "f_aut_nowater"
+        ],
+        "why": "It shows he was dead before the water, not whether he went out."
+      },
+      {
+        "word": "k_storm",
+        "blank": "conclusion",
+        "by": [
+          "f_aut_nowater"
+        ],
+        "why": "No water in his lungs."
+      },
+      {
+        "word": "k_stolen",
+        "blank": "conclusion",
+        "by": [
+          "f_body",
+          "f_nets"
+        ],
+        "why": "The boat was beside him, its nets folded."
+      },
+      {
+        "word": "k_dawn",
+        "blank": "conclusion",
+        "by": [
+          "f_aut_tod"
+        ],
+        "why": "He died between 20:00 and 22:00."
+      },
+      {
+        "word": "k_crew",
+        "blank": "conclusion",
+        "by": [
+          "f_lomulen_bar"
+        ],
+        "why": "Lomulen was in the bar."
+      },
+      {
+        "word": "k_midnight",
+        "blank": "conclusion",
+        "by": [
+          "f_stain",
+          "f_aut_tod"
+        ],
+        "why": "He was killed in the store before 22:00."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "For years Loice has bought nearly all the co-op's dried fish and lent the fishermen cash against their catches. On Friday Ekal signs the co-op to Sibiloi Fresh and tells the fishermen they can repay her in cash.",
+        "image": null
+      },
+      {
+        "text": "Sunday, about 20:30, in the wind. Loice meets Ekal at the co-op fish store to argue. He laughs. She takes a club from the rack by the door.",
+        "image": "plc_coopstore"
+      },
+      {
+        "text": "She sweeps sand over the stain and waits. At 04:12 she tells her driver not to come before seven.",
+        "image": null
+      },
+      {
+        "text": "About 04:30, when the wind drops, she drags him on a palm-fibre mat 80 metres to the shallows, rolls him in beside his boat, and tips the boat over.",
+        "image": null
+      },
+      {
+        "text": "Lomulen, drunk on the bar bench all night, wakes to the news and tells the co-op they went out together.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Two stamps: records on Loice and a warrant on her store. Detain her after the search; blood (12 h) and tread (8 h) each take 4 h more to reach the lab, still inside 24 h. The post-mortem drive to Marsabit runs in parallel.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_beach",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_boat",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_crust",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_sand",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_tracks",
+        "hours": 1
+      },
+      {
+        "do": "travel",
+        "target": "loc_office",
+        "hours": 0.25,
+        "from": "loc_beach"
+      },
+      {
+        "do": "visit",
+        "target": "loc_office",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_register",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_contract",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_cashbox",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_akuwom"
+      },
+      {
+        "do": "travel",
+        "target": "loc_store",
+        "hours": 0.25,
+        "from": "loc_office"
+      },
+      {
+        "do": "visit",
+        "target": "loc_store",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_store",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_village",
+        "hours": 0.25,
+        "from": "loc_store"
+      },
+      {
+        "do": "visit",
+        "target": "loc_village",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_lomulen",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_lomulen"
+      },
+      {
+        "do": "press",
+        "target": "c_lom"
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "travel",
+        "target": "loc_loice",
+        "hours": 0.25,
+        "from": "loc_village"
+      },
+      {
+        "do": "visit",
+        "target": "loc_loice",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_loice"
+      },
+      {
+        "do": "search",
+        "target": "loc_loice"
+      },
+      {
+        "do": "press",
+        "target": "c_lo_loyal"
+      },
+      {
+        "do": "detain",
+        "target": "p_loice"
+      },
+      {
+        "do": "submit",
+        "target": "ev_blood"
+      },
+      {
+        "do": "submit",
+        "target": "ev_tread"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 12
+      },
+      {
+        "do": "press",
+        "target": "c_lo_home"
+      }
+    ],
+    "totalHours": 34
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_tracks",
+        "line": "Ask Ewoi how old the drag marks are, Amani."
+      },
+      "tier2": {
+        "facts": [
+          "f_tracks",
+          "f_aut_tod"
+        ],
+        "line": "Dead by ten. Dragged after the wind dropped."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_store",
+        "line": "Why sweep fresh sand over a store floor?"
+      },
+      "tier2": {
+        "facts": [
+          "f_stain",
+          "f_tracks"
+        ],
+        "line": "The stain, and the tracks starting at the door."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_contract",
+        "line": "Who loses most from Friday's agreement?"
+      },
+      "tier2": {
+        "facts": [
+          "f_tread",
+          "f_blood"
+        ],
+        "line": "Her sandals on the beach, his blood on her mat."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_store",
+        "line": "Count the clubs on the rack."
+      },
+      "tier2": {
+        "facts": [
+          "f_clubs",
+          "f_aut_blow"
+        ],
+        "line": "Eleven, and a heavy wooden blow."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_contract",
+        "line": "Read the notice to members."
+      },
+      "tier2": {
+        "facts": [
+          "f_contract",
+          "f_advances"
+        ],
+        "line": "Her advances repaid in cash, and her hold on the shore gone."
+      }
+    },
+    "g_absence": {
+      "tier1": {
+        "point": "ev_boat",
+        "line": "What does a boat look like after a windy night's fishing? Ask Akuwom."
+      },
+      "tier2": {
+        "facts": [
+          "f_abs_nets",
+          "f_abs_crust"
+        ],
+        "line": "Dry nets, no register line, no crust."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "akala",
+      "def": "Sandals cut from car tyres."
+    },
+    {
+      "term": "samaki",
+      "def": "Fish."
+    },
+    {
+      "term": "wavu",
+      "def": "A fishing net."
+    },
+    {
+      "term": "upepo",
+      "def": "Wind."
+    },
+    {
+      "term": "BMU",
+      "def": "Beach Management Unit; here, the fishermen's co-op."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "trackersReading"
+    ],
+    "beatNotes": "The tracker's reading. The player photographs the drag marks; Ewoi crouches and three labels appear on the photo: tyre-sole sandals; walking backwards, dragging; sharp edges, after the wind."
+  }
+}

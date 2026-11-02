@@ -1,0 +1,2324 @@
+{
+  "meta": {
+    "id": "case-067",
+    "number": 67,
+    "region": "mt-kenya",
+    "regionNumber": 7,
+    "title": "Point Lenana",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 42,
+    "date": "Friday 15 May",
+    "folderTab": "NARO MORU GATE"
+  },
+  "pattern": {
+    "crimePattern": "a client who blames a mountain guide for her brother's altitude death kills her near the summit and forges her signature in the park exit register",
+    "noRealCaseRetold": true,
+    "notes": "Fictional guide, client, porter and rangers. Altitude deaths and guides' grief are treated with care; the inquiry found the guide blameless and the case never suggests otherwise. Route details are simplified for the cultural reader to check.",
+    "tags": [
+      "blunt-force",
+      "revenge",
+      "document-fraud",
+      "missing-person",
+      "two-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where",
+      "forgery"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 6,
+    "redHerrings": 2,
+    "liars": 2,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "forgery"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": "she-never-came-down"
+  },
+  "ob": {
+    "number": "OB 11/15/05",
+    "date": "Friday 15 May",
+    "time": "10:00",
+    "reportedBy": "KWS rangers, Naro Moru gate",
+    "text": "KWS rangers at the Naro Moru gate report a mountain guide, Nkatha Mutuma (33), missing. Her clients checked out on Wednesday. The exit register shows she signed out with them.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_gate",
+    "nodes": [
+      "loc_gate",
+      "loc_hotel"
+    ],
+    "edges": [
+      {
+        "a": "loc_gate",
+        "b": "loc_hotel",
+        "minutes": 40,
+        "by": "road"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_nkatha",
+      "role": "victim",
+      "name": "Nkatha Mutuma",
+      "age": 33,
+      "occupation": "Mountain guide, Naro Moru",
+      "bio": "Fourteen years on the mountain. Turns clients back when they need turning back, and has the reviews to show for it.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_scree",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Meru woman, early 30s, a bright mountain jacket and a beanie, a guide's badge, wind-burned cheeks and a broad, steady smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_wakio",
+      "role": "suspect",
+      "name": "Wakio Mwandawiro",
+      "age": 28,
+      "occupation": "Client; booked Nkatha by name",
+      "bio": "An accountant from Mombasa. Asked for Nkatha, and only Nkatha.",
+      "community": "Taita",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_hutbook"
+      },
+      "at": "loc_hotel",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Taita woman, late 20s, a new red summit jacket, hair tied back, a composed, closed face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_murimi",
+      "role": "suspect",
+      "name": "Murimi Nderi",
+      "age": 36,
+      "occupation": "Porter on the trip",
+      "bio": "Carried for Nkatha for six years. Has a bad knee and a big family.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_gate",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, mid 30s, a porter's fleece and gaiters, a knee strapped, an evasive, frightened face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mwirigi",
+      "role": "suspect",
+      "name": "Mwirigi Thiongo",
+      "age": 41,
+      "occupation": "Rival guide",
+      "redHerring": true,
+      "bio": "Lost three regular clients to Nkatha this year.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_rival"
+      },
+      "at": "plc_sirimon",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Meru man, early 40s, a weathered guide's jacket, a radio on his chest, a proud, irritated face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_muriungi",
+      "role": "suspect",
+      "name": "Muriungi Kathurima",
+      "age": 35,
+      "occupation": "Nkatha's boyfriend",
+      "redHerring": true,
+      "bio": "Quarrelled with her before the climb about how often she is away.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_boyfriend"
+      },
+      "at": "plc_meru",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Meru man, mid 30s, an office shirt and lanyard, red eyes, a frightened, sleepless face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_josphine",
+      "role": "witness",
+      "name": "Josphine Nyaguthii",
+      "age": 39,
+      "occupation": "KWS ranger, Naro Moru gate",
+      "bio": "Keeps the gate register. Remembers faces, usually.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_gate",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_scree",
+      "name": "The scree below the Point Lenana ridge",
+      "within": "loc_scree"
+    },
+    {
+      "id": "plc_mackinder",
+      "name": "Mackinder's Camp"
+    },
+    {
+      "id": "plc_bog",
+      "name": "The vertical bog"
+    },
+    {
+      "id": "plc_town",
+      "name": "Naro Moru town"
+    },
+    {
+      "id": "plc_sirimon",
+      "name": "The Sirimon route, other side of the mountain"
+    },
+    {
+      "id": "plc_meru",
+      "name": "An office in Meru"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_gate",
+      "name": "Naro Moru gate, Mt Kenya National Park",
+      "kind": "location",
+      "description": "A forest gate with a boom, a ranger post and the register every climber, guide and porter signs, in and out. The mountain is hidden in cloud.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_exit",
+          "label": "Exit register",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_register",
+          "text": "Wednesday's exit page."
+        },
+        {
+          "id": "hs_entry",
+          "label": "Entry page",
+          "pos": [
+            46,
+            46
+          ],
+          "yields": "ev_entry",
+          "text": "The same register, Sunday's entry page."
+        },
+        {
+          "id": "hs_card",
+          "label": "Guide register",
+          "pos": [
+            60,
+            40
+          ],
+          "yields": "ev_card",
+          "text": "The KWS register of licensed guides."
+        },
+        {
+          "id": "hs_radio",
+          "label": "Radio to Mackinder's",
+          "pos": [
+            70,
+            50
+          ],
+          "yields": "ev_hutbook",
+          "text": "Radio the hut keeper at Mackinder's Camp for the hut log."
+        },
+        {
+          "id": "hs_archive",
+          "label": "Incident archive",
+          "pos": [
+            80,
+            30
+          ],
+          "yields": "ev_baraka",
+          "text": "The gate's incident archive, by year."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the Naro Moru forest gate of Mount Kenya National Park, a striped boom and a ranger post among tall trees, a register on a counter, cloud on the mountain, no people in focus"
+      }
+    },
+    {
+      "id": "loc_scree",
+      "name": "Point Lenana ridge, the scree slope",
+      "kind": "scene",
+      "description": "Above the Teleki valley, below the summit path. Loose grey scree, the peaks of Batian and Nelion beyond. The search team has marked a spot 120 m below the ridge.",
+      "unlock": {
+        "fact": "f_mu_reveal"
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The marked spot",
+          "pos": [
+            50,
+            70
+          ],
+          "yields": "ev_search",
+          "text": "Where the search team found her."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a steep grey scree slope below a high rocky ridge on Mount Kenya at dawn, the jagged peaks of Batian and Nelion beyond, a small search-team marker flag, no people in focus"
+      }
+    },
+    {
+      "id": "loc_hotel",
+      "name": "Wakio's hotel, Nanyuki",
+      "kind": "location",
+      "description": "A hotel on the Nanyuki road. Room 14 has a view of the mountain and a flight confirmation on the desk.",
+      "unlock": {
+        "fact": "f_rec_wakio"
+      },
+      "hotspots": [
+        {
+          "id": "hs_reg",
+          "label": "Reception",
+          "pos": [
+            20,
+            40
+          ],
+          "yields": "ev_hotelreg",
+          "text": "The hotel's registration card for room 14."
+        },
+        {
+          "id": "hs_room",
+          "label": "Room 14",
+          "pos": [
+            60,
+            50
+          ],
+          "yields": "ev_wakio_pole",
+          "text": "Her trekking poles lean in the corner."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a hotel room in Nanyuki with a window view of Mount Kenya, two trekking poles leaning in a corner, a flight printout on a desk"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_register",
+      "type": "document",
+      "title": "Exit register, Wednesday",
+      "render": "logBook",
+      "body": {
+        "entry": "16:20: W. Mwandawiro, M. Nderi, and \"N. Mutuma\" in the guide's column."
+      },
+      "facts": [
+        "f_register"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": false,
+        "forger": "p_wakio",
+        "kind": "park exit register"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a park gate exit register, three signatures on one line, the guide's column in careful printed letters"
+      }
+    },
+    {
+      "id": "ev_entry",
+      "type": "document",
+      "title": "Register, entry page",
+      "render": "logBook",
+      "body": {
+        "entry": "Sunday: Nkatha's entry signature, a quick looped \"Nkatha M.\""
+      },
+      "facts": [
+        "f_entry"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "entry register"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_card",
+      "type": "document",
+      "title": "Nkatha's guide licence",
+      "render": "form",
+      "body": {
+        "text": "KWS guide register: her licence card and specimen signature, looped, matching the entry."
+      },
+      "facts": [
+        "f_card"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "guide licence"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_josphine",
+      "type": "witness",
+      "title": "Statement: Josphine Nyaguthii",
+      "render": "statement",
+      "body": {
+        "speaker": "p_josphine"
+      },
+      "facts": [
+        "f_josphine",
+        "f_jos_self",
+        "f_kit",
+        "f_rival",
+        "f_boyfriend",
+        "f_paid"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_hutbook",
+      "type": "document",
+      "title": "Mackinder's Camp hut log (by radio)",
+      "render": "logBook",
+      "body": {
+        "log": "Wednesday: Wakio and Nkatha out for the summit 02:30. Murimi stayed (sore knee). Wakio back 08:40, alone.",
+        "keeper": "Hut keeper: Murimi in the porters' room all morning."
+      },
+      "facts": [
+        "f_hutbook",
+        "f_murimi_hut"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "hut log"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_baraka",
+      "type": "document",
+      "title": "KWS incident report, three years ago",
+      "render": "form",
+      "body": {
+        "text": "Baraka Mwandawiro, 22, died of high-altitude cerebral oedema below Point Lenana. Guide: Nkatha Mutuma. Inquiry: no fault; he hid his symptoms."
+      },
+      "facts": [
+        "f_baraka"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "KWS incident report"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Wakio Mwandawiro's line",
+      "render": "manifest",
+      "body": {
+        "mountain": "No signal on the mountain.",
+        "pesapap": "Wednesday 17:05, gate area: KSh 20,000 to MURIMI NDERI."
+      },
+      "facts": [
+        "f_rec_wakio"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_hutbook",
+          "f_entry"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_receipt",
+      "type": "document",
+      "title": "Murimi's PesaPap receipt",
+      "render": "manifest",
+      "body": {
+        "text": "Received KSh 20,000 from WAKIO MWANDAWIRO, Wednesday 17:05."
+      },
+      "facts": [
+        "f_receipt"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "PesaPap receipt"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_search",
+      "type": "physical",
+      "title": "The search team's find",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Nkatha's body 120 m below the ridge path. Her own two poles strapped to her pack, intact. Her purse in the pack: KSh 6,000.",
+        "tip": "In the rocks beside her: the broken carbide tip of a trekking pole."
+      },
+      "facts": [
+        "f_body",
+        "f_tip",
+        "f_purse"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a small broken carbide trekking-pole tip lying among grey scree stones, a search marker flag nearby, no body visible"
+      }
+    },
+    {
+      "id": "ev_hotelreg",
+      "type": "document",
+      "title": "Hotel registration card",
+      "render": "form",
+      "body": {
+        "text": "Room 14: W. Mwandawiro, in her own hand. Flight from Nanyuki airstrip on Saturday at 14:00."
+      },
+      "facts": [
+        "f_hotelreg"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_wakio_pole",
+      "type": "physical",
+      "title": "Wakio's trekking poles",
+      "render": "object",
+      "body": {
+        "label": "Her left pole is missing its tip."
+      },
+      "facts": [
+        "f_pole"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_wakio",
+          "f_mu_reveal"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a trekking pole with its carbide tip snapped off, leaning in a hotel room corner"
+      }
+    },
+    {
+      "id": "ev_mwirigi",
+      "type": "document",
+      "title": "Shipton's Camp hut log",
+      "render": "logBook",
+      "body": {
+        "text": "Mwirigi Thiongo guiding a group on the Sirimon route all week; Wednesday at Shipton's Camp."
+      },
+      "facts": [
+        "f_mwirigi"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_muriungi",
+      "type": "document",
+      "title": "Meru workplace roster",
+      "render": "logBook",
+      "body": {
+        "text": "M. Kathurima at work in Meru, Sunday to Wednesday."
+      },
+      "facts": [
+        "f_muriungi"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Dr. Chebii, Nanyuki)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blows",
+        "f_aut_tod",
+        "f_aut_noother"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_search"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_compare",
+      "type": "forensic",
+      "title": "Comparison view: exit vs entry signature",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_cmp_sig",
+        "f_cmp_noseal",
+        "f_cmp_fields",
+        "f_cmp_date"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_register",
+          "ev_entry",
+          "ev_card"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tool",
+      "type": "forensic",
+      "title": "Lab: tool marks (tip vs pole)",
+      "render": "labReport",
+      "body": {
+        "test": "toolMarks"
+      },
+      "facts": [
+        "f_toolmatch"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toolMarks",
+        "hours": 8,
+        "needs": [
+          "ev_search",
+          "ev_wakio_pole"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_hand",
+      "type": "forensic",
+      "title": "Questioned Documents Lab: handwriting",
+      "render": "labReport",
+      "body": {
+        "test": "handwriting"
+      },
+      "facts": [
+        "f_hand"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "handwriting",
+        "hours": 10,
+        "needs": [
+          "ev_register",
+          "ev_hotelreg"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Nkatha Mutuma, mountain guide, is reported missing. Her clients checked out on Wednesday; the exit register shows her signing out with them.",
+      "kind": "true",
+      "about": [
+        "p_nkatha",
+        "loc_gate"
+      ],
+      "at": {
+        "from": "10:00"
+      }
+    },
+    {
+      "id": "f_register",
+      "text": "Exit register, Wednesday 16:20: W. Mwandawiro, M. Nderi, and \"N. Mutuma\" in the guide's column.",
+      "kind": "true",
+      "about": [
+        "p_wakio",
+        "p_murimi",
+        "p_nkatha"
+      ],
+      "at": {
+        "from": "16:20"
+      }
+    },
+    {
+      "id": "f_entry",
+      "text": "Register, Sunday entry page: Nkatha's signature is a quick looped \"Nkatha M.\"",
+      "kind": "true",
+      "about": [
+        "p_nkatha"
+      ]
+    },
+    {
+      "id": "f_card",
+      "text": "Nkatha's guide licence: her specimen signature, looped, matching the entry.",
+      "kind": "true",
+      "about": [
+        "p_nkatha"
+      ]
+    },
+    {
+      "id": "f_josphine",
+      "text": "Josphine: \"Three came in. At checkout I was dealing with a bus of students. The woman signed the book for the group. I didn't see the guide's face.\"",
+      "kind": "true",
+      "about": [
+        "p_josphine",
+        "p_wakio"
+      ]
+    },
+    {
+      "id": "f_jos_self",
+      "text": "Josphine was on duty at the gate all week.",
+      "kind": "true",
+      "about": [
+        "p_josphine"
+      ],
+      "where": {
+        "person": "p_josphine",
+        "place": "loc_gate",
+        "from": "00:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_kit",
+      "text": "Josphine: the trip's declared kit was poles and crampons; no ice axe.",
+      "kind": "true",
+      "about": [
+        "p_josphine"
+      ]
+    },
+    {
+      "id": "f_rival",
+      "text": "Josphine: Mwirigi Thiongo lost three regular clients to Nkatha this year and \"said things\".",
+      "kind": "true",
+      "about": [
+        "p_josphine",
+        "p_mwirigi"
+      ]
+    },
+    {
+      "id": "f_boyfriend",
+      "text": "Josphine: Nkatha's boyfriend, Muriungi, phoned the gate twice on Thursday asking where she was.",
+      "kind": "true",
+      "about": [
+        "p_josphine",
+        "p_muriungi"
+      ]
+    },
+    {
+      "id": "f_paid",
+      "text": "Josphine: the porter's fee was paid in full at checkout, on the trip voucher.",
+      "kind": "true",
+      "about": [
+        "p_murimi"
+      ]
+    },
+    {
+      "id": "f_hutbook",
+      "text": "Mackinder's hut log: Wakio and Nkatha out for the summit at 02:30 on Wednesday; Murimi stayed with a sore knee. Wakio back at 08:40, alone.",
+      "kind": "true",
+      "about": [
+        "p_wakio",
+        "p_nkatha",
+        "p_murimi"
+      ],
+      "at": {
+        "from": "02:30",
+        "to": "08:40"
+      }
+    },
+    {
+      "id": "f_murimi_hut",
+      "text": "The hut keeper: Murimi was in the porters' room all that morning.",
+      "kind": "true",
+      "about": [
+        "p_murimi"
+      ],
+      "where": {
+        "person": "p_murimi",
+        "place": "plc_mackinder",
+        "from": "02:30",
+        "to": "08:40"
+      }
+    },
+    {
+      "id": "f_baraka",
+      "text": "KWS incident report: three years ago Baraka Mwandawiro, 22, died of high-altitude cerebral oedema; guide Nkatha Mutuma; no fault, he hid his symptoms.",
+      "kind": "true",
+      "about": [
+        "p_nkatha",
+        "p_wakio"
+      ]
+    },
+    {
+      "id": "f_rec_wakio",
+      "text": "Records, Wakio's line: no signal on the mountain; on Wednesday at 17:05, at the gate, KSh 20,000 to Murimi Nderi.",
+      "kind": "true",
+      "about": [
+        "p_wakio",
+        "p_murimi"
+      ],
+      "at": {
+        "from": "17:05"
+      }
+    },
+    {
+      "id": "f_receipt",
+      "text": "Murimi's receipt: KSh 20,000 from Wakio Mwandawiro, Wednesday 17:05.",
+      "kind": "true",
+      "about": [
+        "p_murimi",
+        "p_wakio"
+      ]
+    },
+    {
+      "id": "f_body",
+      "text": "Nkatha lay 120 m below the ridge path; her own two poles strapped to her pack, intact.",
+      "kind": "true",
+      "about": [
+        "p_nkatha",
+        "plc_scree"
+      ]
+    },
+    {
+      "id": "f_tip",
+      "text": "Beside her in the rocks: the broken carbide tip of a trekking pole, not from hers.",
+      "kind": "true",
+      "about": [
+        "plc_scree"
+      ]
+    },
+    {
+      "id": "f_purse",
+      "text": "Her purse is in her pack with KSh 6,000.",
+      "kind": "true",
+      "about": [
+        "p_nkatha"
+      ]
+    },
+    {
+      "id": "f_hotelreg",
+      "text": "Hotel registration card, room 14, in Wakio's own hand; a flight from Nanyuki airstrip on Saturday at 14:00.",
+      "kind": "true",
+      "about": [
+        "p_wakio"
+      ]
+    },
+    {
+      "id": "f_pole",
+      "text": "Wakio's left trekking pole is missing its tip.",
+      "kind": "true",
+      "about": [
+        "p_wakio"
+      ]
+    },
+    {
+      "id": "f_mwirigi",
+      "text": "Shipton's Camp hut log: Mwirigi guiding on the Sirimon route all week, at Shipton's on Wednesday.",
+      "kind": "true",
+      "about": [
+        "p_mwirigi"
+      ],
+      "where": {
+        "person": "p_mwirigi",
+        "place": "plc_sirimon",
+        "from": "00:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_muriungi",
+      "text": "Meru roster: Muriungi at work in Meru, Sunday to Wednesday.",
+      "kind": "true",
+      "about": [
+        "p_muriungi"
+      ],
+      "where": {
+        "person": "p_muriungi",
+        "place": "plc_meru",
+        "from": "00:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_aut_blows",
+      "text": "Post-mortem: two blows to the head from a narrow, pointed object before the fall; the fall injuries came after.",
+      "kind": "true",
+      "about": [
+        "p_nkatha"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Wednesday morning, between 05:30 and 07:30.",
+      "kind": "true",
+      "about": [
+        "p_nkatha"
+      ],
+      "at": {
+        "from": "05:30",
+        "to": "07:30",
+        "day": "Wed"
+      }
+    },
+    {
+      "id": "f_aut_noother",
+      "text": "Post-mortem: no altitude oedema, no hypothermia; she died the same morning.",
+      "kind": "true",
+      "about": [
+        "p_nkatha"
+      ]
+    },
+    {
+      "id": "f_cmp_sig",
+      "text": "Comparison view: the entry signature traced on tracing paper and slid over \"N. Mutuma\". Careful, printed, slanting the other way. The loops refuse to line up.",
+      "kind": "true",
+      "about": [
+        "p_nkatha"
+      ]
+    },
+    {
+      "id": "f_cmp_noseal",
+      "text": "A park register has no stamp or seal at all; every line is ballpoint ink.",
+      "kind": "true",
+      "about": [
+        "loc_gate"
+      ]
+    },
+    {
+      "id": "f_cmp_fields",
+      "text": "A park register has no witness column, no index number and no parcel numbers: name, ID, role, time.",
+      "kind": "true",
+      "about": [
+        "loc_gate"
+      ]
+    },
+    {
+      "id": "f_cmp_date",
+      "text": "The exit line is dated Wednesday, three days after the Sunday entry.",
+      "kind": "true",
+      "about": [
+        "loc_gate"
+      ]
+    },
+    {
+      "id": "f_toolmatch",
+      "text": "Lab: the carbide tip fits Wakio's broken left pole exactly.",
+      "kind": "true",
+      "about": [
+        "p_wakio"
+      ]
+    },
+    {
+      "id": "f_hand",
+      "text": "Wilfrida Ayugi: the exit \"N. Mutuma\", Wakio's own exit signature and her hotel card. \"Same hand wrote all three.\"",
+      "kind": "true",
+      "about": [
+        "p_wakio"
+      ]
+    },
+    {
+      "id": "f_wak_down",
+      "text": "Wakio: \"Nkatha came down with us and signed out. She said she was going to see friends in Naro Moru.\"",
+      "kind": "lie",
+      "about": [
+        "p_wakio"
+      ]
+    },
+    {
+      "id": "f_wak_never",
+      "text": "Wakio: \"I'd never met her before this climb.\"",
+      "kind": "lie",
+      "about": [
+        "p_wakio"
+      ]
+    },
+    {
+      "id": "f_wak_reveal",
+      "text": "Wakio: Nkatha \"walked my brother up a mountain until his brain swelled\". On the ridge at dawn, alone with her, \"I asked her one question.\"",
+      "kind": "true",
+      "about": [
+        "p_wakio",
+        "p_nkatha"
+      ],
+      "where": {
+        "person": "p_wakio",
+        "place": "plc_scree",
+        "from": "05:45",
+        "to": "06:30"
+      }
+    },
+    {
+      "id": "f_wak_pole",
+      "text": "Wakio: \"I never raised my pole to her. She slipped.\"",
+      "kind": "lie",
+      "about": [
+        "p_wakio"
+      ]
+    },
+    {
+      "id": "f_mu_saw",
+      "text": "Murimi: \"I saw Nkatha at the gate. She left with us.\"",
+      "kind": "lie",
+      "about": [
+        "p_murimi"
+      ]
+    },
+    {
+      "id": "f_mu_reveal",
+      "text": "Murimi: Madam said Nkatha had gone ahead with another group and paid him to say she came down. \"Madam came down from the ridge alone. Look below the summit path.\"",
+      "kind": "true",
+      "about": [
+        "p_murimi",
+        "p_wakio"
+      ]
+    },
+    {
+      "id": "f_mwi_claim",
+      "text": "Mwirigi: \"I hated losing clients to her. I was on Sirimon.\"",
+      "kind": "claim",
+      "about": [
+        "p_mwirigi"
+      ]
+    },
+    {
+      "id": "f_mur_claim",
+      "text": "Muriungi: \"We fought about her being away so much. I was at work.\"",
+      "kind": "claim",
+      "about": [
+        "p_muriungi"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_wakio",
+      "stance": "cooperative",
+      "intro": "Wakio sits by her hotel window with the mountain behind her. \"Nkatha came down with us and signed out. She said she was going to see friends in Naro Moru. I'd never met her before this climb.\"",
+      "claims": [
+        "f_wak_down",
+        "f_wak_never"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_wak_pole",
+          "after": "f_wak_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_murimi",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_hutbook"
+      ],
+      "intro": "Murimi rubs his strapped knee and won't look up. \"I saw Nkatha at the gate. She left with us.\"",
+      "claims": [
+        "f_mu_saw"
+      ],
+      "yields": [
+        "ev_receipt"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_mwirigi",
+      "stance": "cooperative",
+      "intro": "Mwirigi answers on the radio from Shipton's Camp, wind in the handset. \"I hated losing clients to her. I was on Sirimon.\"",
+      "claims": [
+        "f_mwi_claim"
+      ],
+      "yields": [
+        "ev_mwirigi"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_muriungi",
+      "stance": "cooperative",
+      "intro": "Muriungi has driven from Meru and hasn't slept. \"We fought about her being away so much. I was at work.\"",
+      "claims": [
+        "f_mur_claim"
+      ],
+      "yields": [
+        "ev_muriungi"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_josphine",
+      "stance": "cooperative",
+      "intro": "Josphine turns the register round on the counter. \"Three came in. I remember that.\"",
+      "claims": [],
+      "yields": [
+        "ev_josphine"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_mu",
+      "claim": "f_mu_saw",
+      "brokenBy": [
+        "f_rec_wakio",
+        "f_hutbook"
+      ],
+      "reveals": [
+        "f_mu_reveal"
+      ],
+      "reaction": "\"Madam said Nkatha went ahead with another group. She paid me to say she came down. I needed the money. The guide's body is up there? On the ridge below the summit path, then. Madam came down from the ridge alone.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_wak_down",
+      "claim": "f_wak_down",
+      "brokenBy": [
+        "f_hutbook",
+        "f_mu_reveal"
+      ],
+      "reveals": [
+        "f_wak_reveal"
+      ],
+      "reaction": "Wakio turns from the window. \"She killed my brother. She walked him up a mountain until his brain swelled. I asked her one question at the top.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_wak_never",
+      "claim": "f_wak_never",
+      "brokenBy": [
+        "f_baraka"
+      ],
+      "reveals": [],
+      "reaction": "She looks at the incident report, her brother's name typed in it, and her mouth goes tight.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_wak_pole",
+      "claim": "f_wak_pole",
+      "brokenBy": [
+        "f_toolmatch"
+      ],
+      "reveals": [],
+      "reaction": "Wakio looks at the tip in its evidence bag. \"He begged her not to turn back,\" she says. \"She told me that. As if it helped.\"",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_wakio",
+      "text": "Wakio Mwandawiro",
+      "category": "person",
+      "ref": "p_wakio",
+      "unlock": {
+        "anyOf": [
+          "f_hutbook"
+        ]
+      }
+    },
+    {
+      "id": "w_murimi",
+      "text": "Murimi Nderi",
+      "category": "person",
+      "ref": "p_murimi",
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "w_mwirigi",
+      "text": "Mwirigi Thiongo",
+      "category": "person",
+      "ref": "p_mwirigi",
+      "unlock": {
+        "anyOf": [
+          "f_rival"
+        ]
+      }
+    },
+    {
+      "id": "w_muriungi",
+      "text": "Muriungi Kathurima",
+      "category": "person",
+      "ref": "p_muriungi",
+      "unlock": {
+        "anyOf": [
+          "f_boyfriend"
+        ]
+      }
+    },
+    {
+      "id": "w_josphine",
+      "text": "Josphine Nyaguthii",
+      "category": "person",
+      "ref": "p_josphine",
+      "unlock": {
+        "anyOf": [
+          "f_josphine"
+        ]
+      }
+    },
+    {
+      "id": "pl_scree",
+      "text": "the scree below the Point Lenana ridge",
+      "category": "place",
+      "ref": "plc_scree",
+      "unlock": {
+        "anyOf": [
+          "f_mu_reveal"
+        ]
+      }
+    },
+    {
+      "id": "pl_mackinder",
+      "text": "Mackinder's Camp",
+      "category": "place",
+      "ref": "plc_mackinder",
+      "unlock": {
+        "anyOf": [
+          "f_hutbook"
+        ]
+      }
+    },
+    {
+      "id": "pl_gate",
+      "text": "the Naro Moru gate",
+      "category": "place",
+      "ref": "loc_gate",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_bog",
+      "text": "the vertical bog",
+      "category": "place",
+      "ref": "plc_bog",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_town",
+      "text": "Naro Moru town",
+      "category": "place",
+      "ref": "plc_town",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_pole",
+      "text": "striking her with a trekking pole and pushing her down the scree",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blows"
+        ]
+      }
+    },
+    {
+      "id": "h_fall",
+      "text": "a fall in the dark",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_altitude",
+      "text": "altitude sickness",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_cold",
+      "text": "hypothermia",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_axe",
+      "text": "striking her with an ice axe",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_tip"
+        ]
+      }
+    },
+    {
+      "id": "m_brother",
+      "text": "revenge for her brother's death on an earlier climb",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_baraka"
+        ]
+      }
+    },
+    {
+      "id": "m_rival",
+      "text": "a rival guide's lost clients",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_rival"
+        ]
+      }
+    },
+    {
+      "id": "m_jealous",
+      "text": "a boyfriend's jealousy",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_boyfriend"
+        ]
+      }
+    },
+    {
+      "id": "m_wages",
+      "text": "a porter's unpaid wages",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "m_robbery",
+      "text": "a robbery of the guide's tips",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "d_register",
+      "text": "The park exit register",
+      "category": "document",
+      "ref": "ev_register",
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "d_hutlog",
+      "text": "The hut log",
+      "category": "document",
+      "ref": "ev_hutbook",
+      "unlock": {
+        "anyOf": [
+          "f_hutbook"
+        ]
+      }
+    },
+    {
+      "id": "d_licence",
+      "text": "Nkatha's guide licence",
+      "category": "document",
+      "ref": "ev_card",
+      "unlock": {
+        "anyOf": [
+          "f_card"
+        ]
+      }
+    },
+    {
+      "id": "d_incident",
+      "text": "The KWS incident report",
+      "category": "document",
+      "ref": "ev_baraka",
+      "unlock": {
+        "anyOf": [
+          "f_baraka"
+        ]
+      }
+    },
+    {
+      "id": "d_receipt",
+      "text": "The PesaPap receipt",
+      "category": "document",
+      "ref": "ev_receipt",
+      "unlock": {
+        "anyOf": [
+          "f_receipt"
+        ]
+      }
+    },
+    {
+      "id": "t_sig",
+      "text": "Nkatha's exit signature doesn't match her entry signature or her licence",
+      "category": "tell",
+      "by": [
+        "f_cmp_sig",
+        "f_entry",
+        "f_card"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_entry"
+        ]
+      }
+    },
+    {
+      "id": "t_dots",
+      "text": "a seal printed in dots",
+      "category": "tell",
+      "by": [
+        "f_cmp_noseal"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "t_index",
+      "text": "an index number that belongs to someone else",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "t_parcel",
+      "text": "a parcel missing from the map",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "t_date",
+      "text": "a date before the climb began",
+      "category": "tell",
+      "by": [
+        "f_cmp_date"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "t_deadwit",
+      "text": "a witness who was dead",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. {document} was forged, as shown by {tell}.",
+    "fixed": {
+      "victim": "Nkatha Mutuma"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_0230",
+                  "label": "Wednesday 02:30",
+                  "from": "02:30",
+                  "to": "02:30",
+                  "day": "Wed"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Wednesday 05:30–07:30",
+                  "from": "05:30",
+                  "to": "07:30",
+                  "day": "Wed"
+                },
+                {
+                  "id": "sl_0840",
+                  "label": "Wednesday 08:40",
+                  "from": "08:40",
+                  "to": "08:40",
+                  "day": "Wed"
+                },
+                {
+                  "id": "sl_1620",
+                  "label": "Wednesday 16:20",
+                  "from": "16:20",
+                  "to": "16:20",
+                  "day": "Wed"
+                },
+                {
+                  "id": "sl_1705",
+                  "label": "Wednesday 17:05",
+                  "from": "17:05",
+                  "to": "17:05",
+                  "day": "Wed"
+                },
+                {
+                  "id": "sl_thu",
+                  "label": "Thursday",
+                  "from": null,
+                  "to": null,
+                  "day": "Thu"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_leave",
+                  "text": "Wakio and Nkatha leave Mackinder's for the summit",
+                  "slot": "sl_0230",
+                  "by": [
+                    "f_hutbook"
+                  ],
+                  "why": "The hut log: 02:30.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_hutbook"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Nkatha is killed near Point Lenana",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod",
+                    "f_wak_reveal"
+                  ],
+                  "why": "The post-mortem: summit morning, 05:30–07:30.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_back",
+                  "text": "Wakio returns to Mackinder's alone",
+                  "slot": "sl_0840",
+                  "by": [
+                    "f_hutbook"
+                  ],
+                  "why": "The hut log: 08:40, alone.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_hutbook"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_forge",
+                  "text": "The exit register is signed \"N. Mutuma\"",
+                  "slot": "sl_1620",
+                  "by": [
+                    "f_register",
+                    "f_hand"
+                  ],
+                  "why": "The exit line: 16:20, in Wakio's hand.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_register"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_pay",
+                  "text": "Wakio pays Murimi",
+                  "slot": "sl_1705",
+                  "by": [
+                    "f_rec_wakio",
+                    "f_receipt"
+                  ],
+                  "why": "PesaPap: 17:05, from the gate area.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rec_wakio"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_thu",
+                  "by": [
+                    "f_aut_tod",
+                    "f_body"
+                  ],
+                  "why": "Thursday is when Nkatha was supposedly \"seeing friends in Naro Moru\". She died on Wednesday at dawn."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "Out at half past two, dead at dawn, the client back alone at twenty to nine, a forged line at twenty past four and a payment at five past five.",
+          "fail": [
+            "Nkatha never saw Thursday.",
+            "Who came back to the hut at 08:40, and how many of them?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_scree"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The ridge, and the scree below it. She never came down.",
+          "fail": [
+            "The gate saw a signature, not a guide.",
+            "Murimi was in the porters' room at Mackinder's."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_wakio"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Alone with her on the ridge, back alone, her hand on the register, her pole's tip beside the body. That will hold.",
+          "fail": [
+            "The porter was in the hut with a bad knee.",
+            "Mwirigi was on the other side of the mountain."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_pole"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Two blows with a narrow point before the fall. Her pole, not the mountain.",
+          "fail": [
+            "She was struck before she fell.",
+            "Nobody on that trip carried an ice axe."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_brother"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Three years of grief, booked by name. The inquiry cleared Nkatha. Wakio never did.",
+          "fail": [
+            "The porter was paid in full, and then some.",
+            "Six thousand shillings in her pack."
+          ]
+        }
+      },
+      {
+        "id": "g_forgery",
+        "kind": "forgery",
+        "blanks": [
+          {
+            "id": "document",
+            "category": "document",
+            "answer": "d_register"
+          },
+          {
+            "id": "tell",
+            "category": "tell",
+            "answer": "t_sig"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Trace the loops. They don't line up. Nkatha never signed out.",
+          "fail": [
+            "The hut log is the hut keeper's. It's what tells the truth.",
+            "A gate register has no seal. Compare the signatures."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_scree",
+      "from": "05:30",
+      "to": "07:30",
+      "note": "From the post-mortem, summit morning; Wakio and Nkatha left Mackinder's at 02:30 and Wakio came back alone at 08:40."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_register",
+          "f_entry",
+          "f_card",
+          "f_cmp_sig",
+          "f_josphine"
+        ],
+        "concludes": "Nkatha never signed out: the exit signature is not hers.",
+        "answers": [
+          "document",
+          "tell"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_hutbook",
+          "f_murimi_hut"
+        ],
+        "concludes": "Only Wakio and Nkatha went to the summit; Wakio came back alone."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_rec_wakio",
+          "f_mu_saw",
+          "f_mu_reveal"
+        ],
+        "concludes": "Wakio paid Murimi to say she came down, and told him where she had been; the search finds the body.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_body",
+          "f_tip",
+          "f_aut_blows",
+          "f_aut_tod",
+          "f_wak_down",
+          "f_wak_reveal"
+        ],
+        "concludes": "Nkatha was struck twice with a narrow point on the ridge and fell down the scree."
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_baraka",
+          "f_wak_never"
+        ],
+        "concludes": "Wakio's brother died with Nkatha as his guide; she booked her by name."
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_pole",
+          "f_toolmatch",
+          "f_hand",
+          "f_wak_pole"
+        ],
+        "concludes": "The tip fits Wakio's pole, and her hand wrote \"N. Mutuma\". Wakio Mwandawiro struck Nkatha with her trekking pole and pushed her down the scree below the Point Lenana ridge, in revenge for her brother's death.",
+        "answers": [
+          "who",
+          "how",
+          "why",
+          "where"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_mackinder",
+        "blank": "where",
+        "by": [
+          "f_hutbook",
+          "f_body"
+        ],
+        "why": "They left Mackinder's together; Nkatha lay below the ridge."
+      },
+      {
+        "word": "pl_gate",
+        "blank": "where",
+        "by": [
+          "f_cmp_sig",
+          "f_body"
+        ],
+        "why": "She never came back to the gate."
+      },
+      {
+        "word": "pl_bog",
+        "blank": "where",
+        "by": [
+          "f_body"
+        ],
+        "why": "She lay below the summit ridge."
+      },
+      {
+        "word": "pl_town",
+        "blank": "where",
+        "by": [
+          "f_body",
+          "f_aut_tod"
+        ],
+        "why": "She died on the mountain on Wednesday morning."
+      },
+      {
+        "word": "w_murimi",
+        "blank": "who",
+        "by": [
+          "f_murimi_hut"
+        ],
+        "why": "Murimi was in the porters' room at Mackinder's all morning."
+      },
+      {
+        "word": "w_mwirigi",
+        "blank": "who",
+        "by": [
+          "f_mwirigi"
+        ],
+        "why": "Mwirigi was on the Sirimon route all week."
+      },
+      {
+        "word": "w_muriungi",
+        "blank": "who",
+        "by": [
+          "f_muriungi"
+        ],
+        "why": "Muriungi was at work in Meru."
+      },
+      {
+        "word": "w_josphine",
+        "blank": "who",
+        "by": [
+          "f_jos_self"
+        ],
+        "why": "Josphine was on duty at the gate."
+      },
+      {
+        "word": "h_fall",
+        "blank": "how",
+        "by": [
+          "f_aut_blows"
+        ],
+        "why": "Two blows before the fall."
+      },
+      {
+        "word": "h_altitude",
+        "blank": "how",
+        "by": [
+          "f_aut_noother"
+        ],
+        "why": "No altitude oedema."
+      },
+      {
+        "word": "h_cold",
+        "blank": "how",
+        "by": [
+          "f_aut_noother"
+        ],
+        "why": "No hypothermia; she died the same morning."
+      },
+      {
+        "word": "h_axe",
+        "blank": "how",
+        "by": [
+          "f_kit",
+          "f_aut_blows"
+        ],
+        "why": "No ice axe on the trip; the wounds are narrow and round, like a pole's tip."
+      },
+      {
+        "word": "m_rival",
+        "blank": "why",
+        "by": [
+          "f_mwirigi"
+        ],
+        "why": "That grievance was Mwirigi's, and he was on Sirimon."
+      },
+      {
+        "word": "m_jealous",
+        "blank": "why",
+        "by": [
+          "f_muriungi"
+        ],
+        "why": "That was Muriungi's, and he was in Meru."
+      },
+      {
+        "word": "m_wages",
+        "blank": "why",
+        "by": [
+          "f_paid",
+          "f_receipt"
+        ],
+        "why": "Murimi was paid in full, and then some."
+      },
+      {
+        "word": "m_robbery",
+        "blank": "why",
+        "by": [
+          "f_purse"
+        ],
+        "why": "Her purse is in her pack."
+      },
+      {
+        "word": "d_hutlog",
+        "blank": "document",
+        "by": [
+          "f_murimi_hut"
+        ],
+        "why": "The hut keeper's own log."
+      },
+      {
+        "word": "d_licence",
+        "blank": "document",
+        "by": [
+          "f_card"
+        ],
+        "why": "Her licence in the KWS register."
+      },
+      {
+        "word": "d_incident",
+        "blank": "document",
+        "by": [
+          "f_baraka"
+        ],
+        "why": "A KWS report from the archive."
+      },
+      {
+        "word": "d_receipt",
+        "blank": "document",
+        "by": [
+          "f_rec_wakio"
+        ],
+        "why": "It matches the phone records."
+      },
+      {
+        "word": "t_dots",
+        "blank": "tell",
+        "by": [
+          "f_cmp_noseal"
+        ],
+        "why": "A park register has no seal."
+      },
+      {
+        "word": "t_index",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "No index numbers in a gate register."
+      },
+      {
+        "word": "t_parcel",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "No parcels in a gate register."
+      },
+      {
+        "word": "t_date",
+        "blank": "tell",
+        "by": [
+          "f_cmp_date"
+        ],
+        "why": "Dated three days after the entry."
+      },
+      {
+        "word": "t_deadwit",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "A gate register has no witnesses."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Three years ago Wakio's brother Baraka dies of altitude sickness below Point Lenana. His guide is Nkatha. The inquiry finds no fault: he hid his symptoms. Wakio never accepts it, and books Nkatha by name.",
+        "image": null
+      },
+      {
+        "text": "Wednesday, 02:30. Wakio and Nkatha leave Mackinder's for the summit. Murimi stays behind with his knee.",
+        "image": null
+      },
+      {
+        "text": "At dawn on the ridge, alone, Wakio asks about Baraka. Nkatha tells her the truth: he begged her not to turn back. Wakio strikes her twice with her trekking pole and pushes her down the scree.",
+        "image": "plc_scree"
+      },
+      {
+        "text": "08:40. Wakio is back at the hut alone: \"She went ahead to check on another group.\" At the gate at 16:20, while the ranger deals with a bus of students, she signs the guide's column herself.",
+        "image": null
+      },
+      {
+        "text": "17:05. KSh 20,000 to Murimi, to say Nkatha came down with them. Her flight leaves Nanyuki airstrip on Saturday.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Two stamps: records on Wakio and a warrant on her hotel room. The mountain costs time: the search team needs 8 hours to reach the scree. Wakio flies on Saturday at 14:00, so detain her once the warrant finds the broken pole; the tool marks (8 h) and handwriting (10 h) come back inside 24 hours. No rush needed.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_gate",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_register",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_entry",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_card",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_josphine"
+      },
+      {
+        "do": "read",
+        "target": "ev_hutbook",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_baraka",
+        "hours": 1
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "interview",
+        "target": "p_murimi"
+      },
+      {
+        "do": "press",
+        "target": "c_mu"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 8
+      },
+      {
+        "do": "visit",
+        "target": "loc_scree",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_search",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_hotel",
+        "hours": 1,
+        "from": "loc_gate"
+      },
+      {
+        "do": "visit",
+        "target": "loc_hotel",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_hotelreg",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_wakio"
+      },
+      {
+        "do": "press",
+        "target": "c_wak_down"
+      },
+      {
+        "do": "press",
+        "target": "c_wak_never"
+      },
+      {
+        "do": "search",
+        "target": "loc_hotel"
+      },
+      {
+        "do": "detain",
+        "target": "p_wakio"
+      },
+      {
+        "do": "submit",
+        "target": "ev_tool"
+      },
+      {
+        "do": "submit",
+        "target": "ev_hand"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 10
+      },
+      {
+        "do": "press",
+        "target": "c_wak_pole"
+      }
+    ],
+    "totalHours": 40
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_hutbook",
+        "line": "Radio the hut, Amani. Who went up, and who came back?"
+      },
+      "tier2": {
+        "facts": [
+          "f_hutbook",
+          "f_rec_wakio"
+        ],
+        "line": "Two out at 02:30, one back at 08:40. A payment at 17:05."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_josphine",
+        "line": "Nobody saw the guide's face at the gate. Then where is she?"
+      },
+      "tier2": {
+        "facts": [
+          "f_mu_reveal",
+          "f_body"
+        ],
+        "line": "Below the summit path. The porter knows."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_records",
+        "line": "Why would a client pay a porter twenty thousand at the gate?"
+      },
+      "tier2": {
+        "facts": [
+          "f_toolmatch",
+          "f_hand"
+        ],
+        "line": "Her pole's tip, and her hand on the register."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_search",
+        "line": "Her own poles are intact. Whose tip is in the rocks?"
+      },
+      "tier2": {
+        "facts": [
+          "f_tip",
+          "f_aut_blows"
+        ],
+        "line": "A carbide tip, and two narrow blows before the fall."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_baraka",
+        "line": "Look in the incident archive under her surname."
+      },
+      "tier2": {
+        "facts": [
+          "f_baraka"
+        ],
+        "line": "Her brother, three years ago. Nkatha was his guide."
+      }
+    },
+    "g_forgery": {
+      "tier1": {
+        "point": "ev_compare",
+        "line": "Trace her entry signature. Slide it over the exit."
+      },
+      "tier2": {
+        "facts": [
+          "f_cmp_sig"
+        ],
+        "line": "The loops won't line up."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "Kirinyaga",
+      "def": "The Kikuyu name for Mount Kenya."
+    },
+    {
+      "term": "porter",
+      "def": "A carrier on a mountain trek."
+    },
+    {
+      "term": "scree",
+      "def": "A slope of loose broken rock."
+    },
+    {
+      "term": "KWS",
+      "def": "Kenya Wildlife Service."
+    },
+    {
+      "term": "mwongozo",
+      "def": "A guide."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "signatureOverlay"
+    ],
+    "beatNotes": "The signature overlay. The register page sits under a sheet of tracing paper; the player traces the entry signature, slides it over the exit signature, and the loops refuse to line up."
+  }
+}

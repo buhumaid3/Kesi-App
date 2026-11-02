@@ -1,0 +1,2963 @@
+{
+  "meta": {
+    "id": "case-077",
+    "number": 77,
+    "region": "northern-frontier",
+    "regionNumber": 8,
+    "title": "Full Bottles",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 42,
+    "date": "Friday 17 July",
+    "folderTab": "CHALBI"
+  },
+  "pattern": {
+    "crimePattern": "a committee chairwoman sedates and smothers a county auditor who found a falsified child death record, then stages a desert breakdown",
+    "noRealCaseRetold": true,
+    "notes": "Fictional people, guesthouse, dispensary and committee. The child's death a year ago is told only in a register, a clinical note and a referral form, in report language, and never shown. Open decision for the user: the child death in the back-story (see the region report). Spine background: Abdia Golicha's letter about the \"digitisation\" man (t_registry); Abdia is the victim of case 80.",
+    "tags": [
+      "smothering",
+      "sedative",
+      "staged-accident",
+      "cover-up",
+      "falsified-record",
+      "three-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where",
+      "forgery",
+      "absence",
+      "spine-background"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 6,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "forgery",
+      "absence"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": "she-was-never-stranded"
+  },
+  "ob": {
+    "number": "OB 18/17/07",
+    "date": "Friday 17 July",
+    "time": "10:40",
+    "reportedBy": "A camel herder, by radio from Kalacha mission",
+    "text": "A camel herder reports a county vehicle stuck in the sand 8 km out in the Chalbi desert from Kalacha, and a woman dead in its shade: Ubah Osman (38), Marsabit county public-health officer. Suspected death from heat after a breakdown.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_car",
+    "nodes": [
+      "loc_car",
+      "loc_guest",
+      "loc_disp",
+      "loc_mission",
+      "loc_shanko"
+    ],
+    "edges": [
+      {
+        "a": "loc_car",
+        "b": "loc_guest",
+        "minutes": 30,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_guest",
+        "b": "loc_disp",
+        "minutes": 5,
+        "by": "foot"
+      },
+      {
+        "a": "loc_guest",
+        "b": "loc_shanko",
+        "minutes": 2,
+        "by": "foot"
+      },
+      {
+        "a": "loc_guest",
+        "b": "loc_mission",
+        "minutes": 8,
+        "by": "foot"
+      },
+      {
+        "a": "loc_disp",
+        "b": "loc_mission",
+        "minutes": 6,
+        "by": "foot"
+      },
+      {
+        "a": "loc_car",
+        "b": "loc_mission",
+        "minutes": 30,
+        "by": "4x4"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_ubah",
+      "role": "victim",
+      "name": "Ubah Osman",
+      "age": 38,
+      "occupation": "Marsabit county public-health officer",
+      "bio": "Auditing child deaths in the county's dispensaries for a nutrition programme. Tall, careful, trained in desert driving.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_room",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Somali woman, late 30s, a dark hijab, rimless glasses, a county lanyard, a level, intelligent face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_shanko",
+      "role": "suspect",
+      "name": "Shanko Jirma",
+      "age": 63,
+      "occupation": "Chairwoman of the Kalacha borehole committee; runs the guesthouse",
+      "bio": "Has run the borehole committee for fifteen years. Ubah stayed in her guesthouse.",
+      "community": "Gabra",
+      "isCulprit": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_guest",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Gabra woman, early 60s, a white headscarf, a dignified, unbending face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_arero",
+      "role": "suspect",
+      "name": "Arero Jirma",
+      "age": 30,
+      "occupation": "Shanko's son; drives the committee's water bowser",
+      "redHerring": true,
+      "bio": "Delivers water to the settlements by bowser.",
+      "community": "Gabra",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_notes"
+      },
+      "at": "plc_horr",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Gabra man, about 30, a driver's cap and overalls, an ashamed, haunted face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_peter",
+      "role": "suspect",
+      "name": "Peter Langat",
+      "age": 45,
+      "occupation": "Clinical officer in charge, Kalacha dispensary",
+      "bio": "Has run the dispensary for six years.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_disp",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, mid 40s, a white clinical coat, a frightened, worn face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_elema",
+      "role": "suspect",
+      "name": "Elema Qampicha",
+      "age": 40,
+      "occupation": "Herder; father of Diba, who died a year ago",
+      "redHerring": true,
+      "bio": "Accepted the elders' settlement for his son's death.",
+      "community": "Gabra",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_register"
+      },
+      "at": "plc_settlement",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Gabra man, about 40, a herder's cloth and a stick, a grieving, steady face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_agnes",
+      "role": "witness",
+      "name": "Sister Agnes Wambui",
+      "age": 58,
+      "occupation": "Catholic sister at the Kalacha mission",
+      "bio": "Keeps the mission's radio and its night prayers.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_mission",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, late 50s, a grey religious habit and veil, kind, watchful eyes, ID-photo framing",
+        "ref": null
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_room",
+      "name": "Ubah's room in the guesthouse",
+      "within": "loc_guest"
+    },
+    {
+      "id": "plc_water",
+      "name": "The watering point"
+    },
+    {
+      "id": "plc_horr",
+      "name": "North Horr"
+    },
+    {
+      "id": "plc_settlement",
+      "name": "Elema's settlement, 30 km out"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_car",
+      "name": "The Chalbi, 8 km from Kalacha",
+      "kind": "scene",
+      "description": "A white county car sunk to its axles in soft sand on the flat, salt-crusted Chalbi. Heat shimmer to every horizon.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_car",
+          "label": "The car and the shade",
+          "pos": [
+            50,
+            60
+          ],
+          "yields": "ev_car",
+          "text": "The car, and Ubah in its shade."
+        },
+        {
+          "id": "hs_bottles",
+          "label": "The back seat",
+          "pos": [
+            60,
+            45
+          ],
+          "yields": "ev_bottles",
+          "text": "Two 5-litre bottles on the back seat."
+        },
+        {
+          "id": "hs_wheels",
+          "label": "The wheels",
+          "pos": [
+            40,
+            75
+          ],
+          "yields": "ev_dig",
+          "text": "The wheels in the sand; the roof rack."
+        },
+        {
+          "id": "hs_tracks",
+          "label": "The sand around the car",
+          "pos": [
+            25,
+            60
+          ],
+          "yields": "ev_tracks",
+          "text": "Cpl Ewoi circles the car slowly."
+        },
+        {
+          "id": "hs_tablet",
+          "label": "Ubah's tablet",
+          "pos": [
+            55,
+            50
+          ],
+          "yields": "ev_tablet",
+          "text": "Her tablet on the passenger seat."
+        },
+        {
+          "id": "hs_bag",
+          "label": "Ubah's bag",
+          "pos": [
+            58,
+            52
+          ],
+          "yields": "ev_letter",
+          "text": "Her shoulder bag, a letter folded in the pocket."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a white county 4x4 sunk to its axles in soft sand on the flat white Chalbi desert under a blazing sky, two full water bottles visible through the window, no people in focus"
+      },
+      "expected": [
+        {
+          "id": "x_water",
+          "text": "Someone stranded by a stuck car drinks her water and digs, laying branches under the wheels",
+          "because": "f_halake_water",
+          "present": false,
+          "fact": "f_abs_bottles"
+        },
+        {
+          "id": "x_feet",
+          "text": "Her footprints around the car: anyone stuck walks round it, digs, looks for help",
+          "because": "f_tracks",
+          "present": false,
+          "fact": "f_abs_feet"
+        },
+        {
+          "id": "x_call",
+          "text": "A stranded woman with a phone tries to call for help while she still has a signal",
+          "because": "f_rec_ubah",
+          "present": false,
+          "fact": "f_abs_call"
+        },
+        {
+          "id": "x_dehyd",
+          "text": "A death from heat leaves the body dehydrated",
+          "because": "f_aut_smother",
+          "present": false,
+          "fact": "f_abs_dehyd"
+        },
+        {
+          "id": "x_cash",
+          "text": "Her county cash float in the glovebox",
+          "because": "f_tablet",
+          "present": true
+        }
+      ]
+    },
+    {
+      "id": "loc_guest",
+      "name": "Shanko's guesthouse, Kalacha",
+      "kind": "location",
+      "description": "Four rooms around a courtyard by the spring-fed pool and the doum palms. A register on a table by the door.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_register",
+          "label": "Guest register",
+          "pos": [
+            30,
+            40
+          ],
+          "yields": "ev_guest",
+          "text": "The register by the door."
+        },
+        {
+          "id": "hs_room",
+          "label": "Ubah's room",
+          "pos": [
+            70,
+            50
+          ],
+          "yields": "ev_room",
+          "text": "A made bed. Two pillows without cases.",
+          "unlock": {
+            "fact": "f_sh_dawn"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small oasis guesthouse in Kalacha, four doors around a sandy courtyard, doum palms and a spring-fed pool beyond"
+      },
+      "expected": [
+        {
+          "id": "x_checkout",
+          "text": "A guest leaving at dawn signs out and pays",
+          "because": "f_sh_dawn",
+          "present": false,
+          "fact": "f_abs_checkout"
+        }
+      ]
+    },
+    {
+      "id": "loc_disp",
+      "name": "Kalacha dispensary",
+      "kind": "location",
+      "description": "Two rooms, a veranda with a bench, a register shelf and a filing cabinet.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_reg",
+          "label": "The death register",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_register",
+          "text": "Last year's death register."
+        },
+        {
+          "id": "hs_notes",
+          "label": "Peter's clinical notebook",
+          "pos": [
+            60,
+            40
+          ],
+          "yields": "ev_notes",
+          "text": "His notebook for the same night; Ubah photographed the page.",
+          "unlock": {
+            "fact": "f_register"
+          }
+        },
+        {
+          "id": "hs_ref",
+          "label": "Referral file",
+          "pos": [
+            75,
+            50
+          ],
+          "yields": "ev_referral",
+          "text": "The referral form copy in the file.",
+          "unlock": {
+            "fact": "f_register"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small rural dispensary with a veranda and a bench in an oasis village, a register shelf and a filing cabinet inside"
+      }
+    },
+    {
+      "id": "loc_mission",
+      "name": "Kalacha mission",
+      "kind": "location",
+      "description": "A church, a radio room and the sisters' house under the doum palms.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_agnes",
+          "label": "Sister Agnes",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_agnes",
+          "text": "Sister Agnes, at the radio."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small stone mission church under doum palms in an oasis village, a radio mast beside it"
+      }
+    },
+    {
+      "id": "loc_shanko",
+      "name": "Shanko's house",
+      "kind": "location",
+      "description": "A house of stone beside the guesthouse; a line of washing in the yard.",
+      "unlock": {
+        "fact": "f_tablet"
+      },
+      "hotspots": [
+        {
+          "id": "hs_shanko_home",
+          "label": "Her house",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_shanko_home",
+          "text": "Search under warrant."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small stone house in an oasis village, a washing line with a single white pillowcase drying"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_car",
+      "type": "physical",
+      "title": "The county car in the sand",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Ubah lies in the car's shade. The car is sunk to the axles. The driver's seat is pushed far forward; Ubah was 1.78 m tall (county ID). Cash float KSh 23,000 in the glovebox."
+      },
+      "facts": [
+        "f_car",
+        "f_seat",
+        "f_cash"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a white county 4x4 sunk in soft white sand, the driver's seat pushed close to the wheel, a tape measure on the seat rail, no body visible"
+      }
+    },
+    {
+      "id": "ev_bottles",
+      "type": "physical",
+      "title": "The back seat",
+      "render": "object",
+      "body": {
+        "label": "Two 5-litre water bottles, full and sealed. Insp. Halake: \"Someone dying of heat beside a stuck car drinks her water. And digs.\""
+      },
+      "facts": [
+        "f_halake_water",
+        "f_bottles"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "two full sealed 5-litre water bottles on the back seat of a car, sunlight through the window"
+      }
+    },
+    {
+      "id": "ev_dig",
+      "type": "physical",
+      "title": "The wheels",
+      "render": "object",
+      "body": {
+        "label": "No digging under the wheels, no branches laid. The sand ladders are still strapped to the roof rack. Her county file: a desert-driving course."
+      },
+      "facts": [
+        "f_dig"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tracks",
+      "type": "physical",
+      "title": "Tracker's reading (Cpl Ewoi Lomuke)",
+      "render": "object",
+      "body": {
+        "her": "No footprints of Ubah's anywhere around the car.",
+        "other": "One set of an older woman's sandals, short stride, worn heel, from the driver's door walking back towards Kalacha.",
+        "age": "Wind-softened: the night before last."
+      },
+      "facts": [
+        "f_tracks"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a single line of worn sandal prints with a short stride leading away from a car door across white desert sand"
+      }
+    },
+    {
+      "id": "ev_tablet",
+      "type": "physical",
+      "title": "Ubah's tablet",
+      "render": "manifest",
+      "body": {
+        "draft": "Wednesday 19:10: \"Kalacha: one child death misrecorded. Report to OCS Marsabit Thursday.\"",
+        "photos": "Photographs of a dispensary register page, a clinical notebook page and a referral form."
+      },
+      "facts": [
+        "f_tablet"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_letter",
+      "type": "document",
+      "title": "A letter in Ubah's bag",
+      "render": "note",
+      "body": {
+        "text": "From her college friend Abdia Golicha, Isiolo land registry: \"They've sent a man from Nairobi to 'digitise' us. Files go into his boxes and don't come back. I've started keeping my own list. Don't laugh.\""
+      },
+      "facts": [
+        "f_letter"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "letter"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_guest",
+      "type": "document",
+      "title": "Guesthouse register",
+      "render": "logBook",
+      "body": {
+        "text": "Ubah Osman, county health: in Tuesday. No check-out. No payment."
+      },
+      "facts": [
+        "f_guest"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "guest register"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_room",
+      "type": "physical",
+      "title": "Ubah's room",
+      "render": "object",
+      "body": {
+        "label": "The bed made up tight. Two pillows with no cases. Her suitcase still under the bed."
+      },
+      "facts": [
+        "f_room"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_register",
+      "type": "document",
+      "title": "Kalacha dispensary death register",
+      "render": "logBook",
+      "body": {
+        "text": "A year ago: \"Diba Elema, 6 — fell from a donkey cart — dead on arrival.\" In Peter Langat's hand, one ink."
+      },
+      "facts": [
+        "f_register"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "death register"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_notes",
+      "type": "document",
+      "title": "Peter Langat's clinical notebook",
+      "render": "note",
+      "body": {
+        "text": "Same night: \"Crush injuries chest and pelvis; consistent with vehicle; mother says the water truck.\""
+      },
+      "facts": [
+        "f_notes"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "clinical notes"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_referral",
+      "type": "document",
+      "title": "Referral form copy (dispensary file)",
+      "render": "form",
+      "body": {
+        "text": "Diba Elema, 6. Cause: \"fall\". Signed P. Langat, clinical officer."
+      },
+      "facts": [
+        "f_referral"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": false,
+        "forger": "p_peter",
+        "kind": "referral form"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a dispensary referral form with a handwritten cause box, the word \"fall\" in slightly different ink"
+      }
+    },
+    {
+      "id": "ev_bowserlog",
+      "type": "document",
+      "title": "Committee bowser log",
+      "render": "logBook",
+      "body": {
+        "text": "Wednesday: bowser to North Horr, departed 16:00, driver A. Jirma. Returned Thursday 12:10."
+      },
+      "facts": [
+        "f_bowserlog"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "bowser log"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_agnes",
+      "type": "witness",
+      "title": "Statement: Sister Agnes Wambui",
+      "render": "statement",
+      "body": {
+        "speaker": "p_agnes"
+      },
+      "facts": [
+        "f_agnes",
+        "f_agnes_self",
+        "f_peter_night"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Ubah's line",
+      "render": "manifest",
+      "body": {
+        "mast": "Kalacha has one mast, covering the village only.",
+        "ubah": "Ubah's phone on the Kalacha mast until 01:08 on Thursday, when it left coverage, moving east. No call made after 20:30 on Wednesday."
+      },
+      "facts": [
+        "f_rec_ubah"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_abs_bottles",
+          "f_abs_feet",
+          "f_tracks"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_shanko_home",
+      "type": "physical",
+      "title": "Shanko's house",
+      "render": "object",
+      "body": {
+        "sandals": "Her sandals: worn heels, the Chalbi's white sand in the treads.",
+        "strip": "A sleeping-tablet strip, six missing, filled last week (pharmacy label: S. Jirma).",
+        "pillowcase": "One pillowcase, washed, drying on the line."
+      },
+      "facts": [
+        "f_sandals",
+        "f_strip",
+        "f_pillowcase"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_ubah",
+          "f_guest",
+          "f_tablet"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a pair of worn leather sandals with white sand in the treads, a blister strip of tablets with six empty, a pillowcase on a washing line"
+      }
+    },
+    {
+      "id": "ev_arero",
+      "type": "witness",
+      "title": "North Horr customers",
+      "render": "statement",
+      "body": {
+        "speaker": "p_arero"
+      },
+      "facts": [
+        "f_arero"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_elema",
+      "type": "witness",
+      "title": "Elders at Elema's settlement",
+      "render": "statement",
+      "body": {
+        "speaker": "p_elema"
+      },
+      "facts": [
+        "f_elema"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_raking",
+      "type": "forensic",
+      "title": "Document view: raking light on the referral form",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_raking"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_referral",
+          "ev_notes"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Dr. Chebii, Marsabit)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_smother",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_car"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tox",
+      "type": "forensic",
+      "title": "Lab: toxicology (blood)",
+      "render": "labReport",
+      "body": {
+        "test": "toxicology"
+      },
+      "facts": [
+        "f_tox"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toxicology",
+        "hours": 18,
+        "needs": [
+          "ev_car"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tread",
+      "type": "forensic",
+      "title": "Lab: tread (sandal prints vs Shanko's sandals)",
+      "render": "labReport",
+      "body": {
+        "test": "toolMarks"
+      },
+      "facts": [
+        "f_tread"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toolMarks",
+        "hours": 8,
+        "needs": [
+          "ev_tracks",
+          "ev_shanko_home"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_fibres",
+      "type": "forensic",
+      "title": "Lab: fibres (nasal lint vs pillowcase)",
+      "render": "labReport",
+      "body": {
+        "test": "fibres"
+      },
+      "facts": [
+        "f_fibres"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "fibres",
+        "hours": 12,
+        "needs": [
+          "ev_car",
+          "ev_shanko_home"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Ubah Osman was found dead beside a county car stuck 8 km out in the Chalbi on Friday morning; heat after a breakdown is suspected.",
+      "kind": "true",
+      "about": [
+        "p_ubah",
+        "loc_car"
+      ],
+      "at": {
+        "from": "10:00",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_car",
+      "text": "The county car is sunk to its axles in soft sand; Ubah lay in its shade.",
+      "kind": "true",
+      "about": [
+        "loc_car"
+      ]
+    },
+    {
+      "id": "f_seat",
+      "text": "The driver's seat is pushed far forward. Ubah was 1.78 m tall: there is no way she drove with the seat there.",
+      "kind": "true",
+      "about": [
+        "p_ubah"
+      ]
+    },
+    {
+      "id": "f_cash",
+      "text": "Her cash float, KSh 23,000, is still in the glovebox.",
+      "kind": "true",
+      "about": [
+        "loc_car"
+      ]
+    },
+    {
+      "id": "f_halake_water",
+      "text": "Halake: someone dying of heat beside a stuck car drinks her water, and digs.",
+      "kind": "true",
+      "about": [
+        "loc_car"
+      ]
+    },
+    {
+      "id": "f_bottles",
+      "text": "On the back seat: two 5-litre water bottles, full and sealed.",
+      "kind": "true",
+      "about": [
+        "loc_car"
+      ]
+    },
+    {
+      "id": "f_dig",
+      "text": "There is no digging under the wheels and no branches; the sand ladders are still on the roof. Ubah had done a desert-driving course.",
+      "kind": "true",
+      "about": [
+        "loc_car"
+      ]
+    },
+    {
+      "id": "f_tracks",
+      "text": "Ewoi: no footprints of Ubah's around the car; one set of an older woman's sandals, short stride, worn heel, from the driver's door back towards Kalacha. The night before last.",
+      "kind": "true",
+      "about": [
+        "loc_car"
+      ]
+    },
+    {
+      "id": "f_tablet",
+      "text": "Ubah's audit draft, Wednesday 19:10: \"Kalacha: one child death misrecorded. Report to OCS Marsabit Thursday.\"",
+      "kind": "true",
+      "about": [
+        "p_ubah"
+      ],
+      "at": {
+        "from": "19:10",
+        "to": null,
+        "day": "Wed"
+      }
+    },
+    {
+      "id": "f_letter",
+      "text": "A letter from Abdia Golicha, Isiolo land registry: a man from Nairobi is \"digitising\" the registry; files go into his boxes and don't come back. She is keeping her own list.",
+      "kind": "true",
+      "about": [
+        "p_ubah"
+      ],
+      "spine": "t_registry"
+    },
+    {
+      "id": "f_guest",
+      "text": "Guesthouse register: Ubah checked in on Tuesday. No check-out, no payment.",
+      "kind": "true",
+      "about": [
+        "loc_guest"
+      ]
+    },
+    {
+      "id": "f_room",
+      "text": "In Ubah's room: the bed made up tight, two pillows with no cases, her suitcase still under the bed.",
+      "kind": "true",
+      "about": [
+        "plc_room"
+      ]
+    },
+    {
+      "id": "f_register",
+      "text": "Death register, a year ago: \"Diba Elema, 6 — fell from a donkey cart — dead on arrival\", in Peter Langat's hand.",
+      "kind": "true",
+      "about": [
+        "p_peter",
+        "p_elema"
+      ]
+    },
+    {
+      "id": "f_notes",
+      "text": "Peter's clinical notes, the same night: \"Crush injuries chest and pelvis; consistent with vehicle; mother says the water truck.\"",
+      "kind": "true",
+      "about": [
+        "p_peter"
+      ]
+    },
+    {
+      "id": "f_referral",
+      "text": "The referral form copy for Diba Elema gives the cause as \"fall\", signed P. Langat.",
+      "kind": "true",
+      "about": [
+        "p_peter"
+      ]
+    },
+    {
+      "id": "f_raking",
+      "text": "Under raking light: the cause box first read \"RTA\" (road traffic accident); it was overwritten as \"fall\" in a different ink.",
+      "kind": "true",
+      "about": [
+        "p_peter"
+      ]
+    },
+    {
+      "id": "f_bowserlog",
+      "text": "Bowser log: Arero drove the bowser to North Horr at 16:00 on Wednesday and returned at 12:10 on Thursday.",
+      "kind": "true",
+      "about": [
+        "p_arero"
+      ]
+    },
+    {
+      "id": "f_agnes",
+      "text": "Sister Agnes: at 03:40 on Thursday, ringing for night prayer, she saw a woman in a white headscarf walking in from the Chalbi, slowly.",
+      "kind": "true",
+      "about": [
+        "p_agnes"
+      ],
+      "at": {
+        "from": "03:40",
+        "to": null,
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_agnes_self",
+      "text": "Sister Agnes was at the mission all night with the other sisters.",
+      "kind": "true",
+      "about": [
+        "p_agnes"
+      ],
+      "where": {
+        "person": "p_agnes",
+        "place": "loc_mission",
+        "from": "20:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_peter_night",
+      "text": "Sister Agnes: Peter sat up all night at the dispensary with a feverish child and her mother; she took them soup at midnight.",
+      "kind": "true",
+      "about": [
+        "p_peter"
+      ],
+      "where": {
+        "person": "p_peter",
+        "place": "loc_disp",
+        "from": "18:00",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_rec_ubah",
+      "text": "Records: Ubah's phone stayed on the Kalacha mast until 01:08 on Thursday, when it left coverage moving east. She made no call after 20:30 on Wednesday.",
+      "kind": "true",
+      "about": [
+        "p_ubah"
+      ],
+      "at": {
+        "from": "01:08",
+        "to": null,
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_sandals",
+      "text": "Shanko's sandals: worn heels, the Chalbi's white sand in the treads.",
+      "kind": "true",
+      "about": [
+        "p_shanko"
+      ]
+    },
+    {
+      "id": "f_strip",
+      "text": "In Shanko's house: a sleeping-tablet strip in her name, six missing, filled last week.",
+      "kind": "true",
+      "about": [
+        "p_shanko"
+      ]
+    },
+    {
+      "id": "f_pillowcase",
+      "text": "One pillowcase, washed, drying on Shanko's line.",
+      "kind": "true",
+      "about": [
+        "p_shanko"
+      ]
+    },
+    {
+      "id": "f_arero",
+      "text": "North Horr customers: Arero delivered water there on Wednesday night and slept by the bowser.",
+      "kind": "true",
+      "about": [
+        "p_arero"
+      ],
+      "where": {
+        "person": "p_arero",
+        "place": "plc_horr",
+        "from": "18:00",
+        "to": "08:00"
+      }
+    },
+    {
+      "id": "f_elema",
+      "text": "The elders: Elema was with his family and herds 30 km away; he accepted the settlement a year ago and never met Ubah.",
+      "kind": "true",
+      "about": [
+        "p_elema"
+      ],
+      "where": {
+        "person": "p_elema",
+        "place": "plc_settlement",
+        "from": "18:00",
+        "to": "08:00"
+      }
+    },
+    {
+      "id": "f_aut_smother",
+      "text": "Post-mortem: not heatstroke. Small bleeding spots in the eyes and bruising inside the lips: smothering.",
+      "kind": "true",
+      "about": [
+        "p_ubah"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Wednesday night between 23:00 and 01:00, before the car reached the desert.",
+      "kind": "true",
+      "about": [
+        "p_ubah"
+      ],
+      "at": {
+        "from": "23:00",
+        "to": "01:00",
+        "day": "Wed"
+      }
+    },
+    {
+      "id": "f_tox",
+      "text": "Lab: a sedative in Ubah's blood matching Shanko's prescription.",
+      "kind": "true",
+      "about": [
+        "p_ubah",
+        "p_shanko"
+      ]
+    },
+    {
+      "id": "f_tread",
+      "text": "Lab: the sandal prints by the car match Shanko's sandals.",
+      "kind": "true",
+      "about": [
+        "p_shanko"
+      ]
+    },
+    {
+      "id": "f_fibres",
+      "text": "Lab: the lint in Ubah's nose matches the washed pillowcase.",
+      "kind": "true",
+      "about": [
+        "p_ubah",
+        "p_shanko"
+      ]
+    },
+    {
+      "id": "f_abs_bottles",
+      "text": "Missing: her water bottles are full and there's no digging at the wheels.",
+      "kind": "true",
+      "about": [
+        "loc_car"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_feet",
+      "text": "Missing: there are no footprints of hers around the car.",
+      "kind": "true",
+      "about": [
+        "loc_car"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_call",
+      "text": "Missing: she made no call for help.",
+      "kind": "true",
+      "about": [
+        "p_ubah"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_dehyd",
+      "text": "Missing: there's no dehydration in the body.",
+      "kind": "true",
+      "about": [
+        "p_ubah"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_checkout",
+      "text": "Missing: there's no check-out in the register.",
+      "kind": "true",
+      "about": [
+        "loc_guest"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_sh_dawn",
+      "text": "Shanko: \"Ubah left at dawn on Thursday to drive to North Horr. I warned her about the sand.\"",
+      "kind": "lie",
+      "about": [
+        "p_shanko"
+      ]
+    },
+    {
+      "id": "f_sh_reveal",
+      "text": "Shanko: \"She was going to put my son in prison for a child the elders had already settled. The family forgave. The camels were paid. Why should Marsabit undo what the elders did?\"",
+      "kind": "true",
+      "about": [
+        "p_shanko",
+        "p_arero"
+      ],
+      "where": {
+        "person": "p_shanko",
+        "place": "plc_room",
+        "from": "23:00",
+        "to": "01:00"
+      }
+    },
+    {
+      "id": "f_sh_milk",
+      "text": "Shanko: \"I gave her nothing but camel milk.\"",
+      "kind": "lie",
+      "about": [
+        "p_shanko"
+      ]
+    },
+    {
+      "id": "f_ar_cart",
+      "text": "Arero: \"I never hit any child. The boy fell from a cart.\"",
+      "kind": "lie",
+      "about": [
+        "p_arero"
+      ]
+    },
+    {
+      "id": "f_ar_reveal",
+      "text": "Arero: \"I hit him. At the watering point, in the dusk. I've seen him every night since. My mother arranged everything.\"",
+      "kind": "true",
+      "about": [
+        "p_arero",
+        "p_shanko"
+      ]
+    },
+    {
+      "id": "f_pe_reg",
+      "text": "Peter: \"The register is accurate.\"",
+      "kind": "lie",
+      "about": [
+        "p_peter"
+      ]
+    },
+    {
+      "id": "f_pe_reveal",
+      "text": "Peter: \"Shanko paid me fifty thousand. I changed the form. I've been waiting for someone to notice for a year.\"",
+      "kind": "true",
+      "about": [
+        "p_peter",
+        "p_shanko"
+      ]
+    },
+    {
+      "id": "f_el_claim",
+      "text": "Elema: \"We accepted the elders' settlement. My son is with God.\"",
+      "kind": "claim",
+      "about": [
+        "p_elema"
+      ]
+    },
+    {
+      "id": "f_el_says",
+      "text": "Elema: \"The bowser hit him. Everyone knew. If the law wants to know how my son died, I want to know too.\"",
+      "kind": "true",
+      "about": [
+        "p_elema",
+        "p_arero"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_shanko",
+      "stance": "cooperative",
+      "intro": "Shanko receives you in the courtyard with tea, dignified and firm. \"Ubah left at dawn on Thursday to drive to North Horr. I warned her about the sand.\"",
+      "claims": [
+        "f_sh_dawn"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_sh_milk",
+          "after": "f_sh_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_arero",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_notes"
+      ],
+      "intro": "Arero comes back with the bowser and won't sit down. \"I never hit any child. The boy fell from a cart.\"",
+      "claims": [
+        "f_ar_cart"
+      ],
+      "yields": [
+        "ev_arero",
+        "ev_bowserlog"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_peter",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_register"
+      ],
+      "intro": "Peter stands behind his desk with his hands flat on it. \"The register is accurate.\"",
+      "claims": [
+        "f_pe_reg"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_elema",
+      "stance": "cooperative",
+      "intro": "Elema has walked in from his settlement. \"We accepted the elders' settlement. My son is with God.\"",
+      "claims": [
+        "f_el_claim"
+      ],
+      "yields": [
+        "ev_elema"
+      ],
+      "topics": [
+        {
+          "about": "ev_notes",
+          "reply": "\"The bowser hit him. Everyone knew. If the law wants to know how my son died, I want to know too.\"",
+          "reveals": [
+            "f_el_says"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_agnes",
+      "stance": "cooperative",
+      "intro": "Sister Agnes has the radio log open and answers precisely.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_peter",
+      "claim": "f_pe_reg",
+      "brokenBy": [
+        "f_notes",
+        "f_raking"
+      ],
+      "reveals": [
+        "f_pe_reveal"
+      ],
+      "reaction": "\"Shanko paid me fifty thousand. I changed the form. I've been waiting for someone to notice for a year.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_arero",
+      "claim": "f_ar_cart",
+      "brokenBy": [
+        "f_notes",
+        "f_raking",
+        "f_el_says"
+      ],
+      "reveals": [
+        "f_ar_reveal"
+      ],
+      "reaction": "\"I hit him. At the watering point, in the dusk. I've seen him every night since. My mother arranged everything.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_shanko",
+      "claim": "f_sh_dawn",
+      "brokenBy": [
+        "f_rec_ubah",
+        "f_abs_checkout",
+        "f_aut_tod"
+      ],
+      "reveals": [
+        "f_sh_reveal"
+      ],
+      "reaction": "\"She was going to put my son in prison for a child the elders had already settled. The family forgave. The camels were paid. Why should Marsabit undo what the elders did?\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_sh_milk",
+      "claim": "f_sh_milk",
+      "brokenBy": [
+        "f_tox"
+      ],
+      "reveals": [],
+      "reaction": "Shanko folds her hands in her lap and looks at the doum palms. She says nothing more without the elders.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_shanko",
+      "text": "Shanko Jirma",
+      "category": "person",
+      "ref": "p_shanko",
+      "unlock": {
+        "anyOf": [
+          "f_sh_dawn"
+        ]
+      }
+    },
+    {
+      "id": "w_arero",
+      "text": "Arero Jirma",
+      "category": "person",
+      "ref": "p_arero",
+      "unlock": {
+        "anyOf": [
+          "f_notes"
+        ]
+      }
+    },
+    {
+      "id": "w_peter",
+      "text": "Peter Langat",
+      "category": "person",
+      "ref": "p_peter",
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "w_elema",
+      "text": "Elema Qampicha",
+      "category": "person",
+      "ref": "p_elema",
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "w_agnes",
+      "text": "Agnes Wambui",
+      "category": "person",
+      "ref": "p_agnes",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_room",
+      "text": "Ubah's room in the guesthouse",
+      "category": "place",
+      "ref": "plc_room",
+      "unlock": {
+        "anyOf": [
+          "f_room"
+        ]
+      }
+    },
+    {
+      "id": "pl_car",
+      "text": "the stuck car in the Chalbi",
+      "category": "place",
+      "ref": "loc_car",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_disp",
+      "text": "the dispensary",
+      "category": "place",
+      "ref": "loc_disp",
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "pl_water",
+      "text": "the watering point",
+      "category": "place",
+      "ref": "plc_water",
+      "unlock": {
+        "anyOf": [
+          "f_ar_reveal",
+          "f_notes"
+        ]
+      }
+    },
+    {
+      "id": "pl_horr",
+      "text": "North Horr",
+      "category": "place",
+      "ref": "plc_horr",
+      "unlock": {
+        "anyOf": [
+          "f_sh_dawn"
+        ]
+      }
+    },
+    {
+      "id": "h_smother",
+      "text": "sedating her with sleeping tablets and smothering her with a pillow, then driving her into the desert",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_smother"
+        ]
+      }
+    },
+    {
+      "id": "h_heat",
+      "text": "heat, after a breakdown",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_snake",
+      "text": "a snakebite in the desert",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_bandits",
+      "text": "an attack by bandits on the track",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_overdose",
+      "text": "a sedative overdose, alone",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_smother"
+        ]
+      }
+    },
+    {
+      "id": "m_cover",
+      "text": "to hide that her son's bowser killed a child and she'd had the death record falsified",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_tablet"
+        ]
+      }
+    },
+    {
+      "id": "m_revenge",
+      "text": "a grieving father's revenge",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "m_fear",
+      "text": "a bribed clinical officer's fear",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "m_son",
+      "text": "the son's fear of prison",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_notes"
+        ]
+      }
+    },
+    {
+      "id": "m_car",
+      "text": "a robbery of the county car",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "d_referral",
+      "text": "The dispensary referral form",
+      "category": "document",
+      "ref": "ev_referral",
+      "unlock": {
+        "anyOf": [
+          "f_referral"
+        ]
+      }
+    },
+    {
+      "id": "d_register",
+      "text": "The death register",
+      "category": "document",
+      "ref": "ev_register",
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "d_notes",
+      "text": "Peter's clinical notes",
+      "category": "document",
+      "ref": "ev_notes",
+      "unlock": {
+        "anyOf": [
+          "f_notes"
+        ]
+      }
+    },
+    {
+      "id": "d_guest",
+      "text": "The guesthouse register",
+      "category": "document",
+      "ref": "ev_guest",
+      "unlock": {
+        "anyOf": [
+          "f_guest"
+        ]
+      }
+    },
+    {
+      "id": "d_bowser",
+      "text": "The bowser log",
+      "category": "document",
+      "ref": "ev_bowserlog",
+      "unlock": {
+        "anyOf": [
+          "f_bowserlog"
+        ]
+      }
+    },
+    {
+      "id": "t_rta",
+      "text": "\"RTA\" was overwritten as \"fall\" in different ink",
+      "category": "tell",
+      "by": [
+        "f_raking",
+        "f_notes"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_raking"
+        ]
+      }
+    },
+    {
+      "id": "t_dots",
+      "text": "a stamp printed in dots",
+      "category": "tell",
+      "by": [
+        "f_raking"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_referral"
+        ]
+      }
+    },
+    {
+      "id": "t_parcel",
+      "text": "a parcel missing from the map",
+      "category": "tell",
+      "by": [
+        "f_raking"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_referral"
+        ]
+      }
+    },
+    {
+      "id": "t_retired",
+      "text": "a retired stamp",
+      "category": "tell",
+      "by": [
+        "f_raking"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_referral"
+        ]
+      }
+    },
+    {
+      "id": "t_deadwit",
+      "text": "a witness who was dead",
+      "category": "tell",
+      "by": [
+        "f_raking"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_referral"
+        ]
+      }
+    },
+    {
+      "id": "t_batch",
+      "text": "a batch number that doesn't exist",
+      "category": "tell",
+      "by": [
+        "f_raking"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_referral"
+        ]
+      }
+    },
+    {
+      "id": "a_bottles",
+      "text": "her water bottles are full and there's no digging at the wheels",
+      "category": "absence",
+      "ref": "f_abs_bottles",
+      "unlock": {
+        "anyOf": [
+          "f_abs_bottles"
+        ]
+      }
+    },
+    {
+      "id": "a_feet",
+      "text": "there are no footprints of hers around the car",
+      "category": "absence",
+      "ref": "f_abs_feet",
+      "unlock": {
+        "anyOf": [
+          "f_abs_feet"
+        ]
+      }
+    },
+    {
+      "id": "a_call",
+      "text": "she made no call for help",
+      "category": "absence",
+      "ref": "f_abs_call",
+      "unlock": {
+        "anyOf": [
+          "f_abs_call"
+        ]
+      }
+    },
+    {
+      "id": "a_checkout",
+      "text": "there's no check-out in the register",
+      "category": "absence",
+      "ref": "f_abs_checkout",
+      "unlock": {
+        "anyOf": [
+          "f_abs_checkout"
+        ]
+      }
+    },
+    {
+      "id": "a_dehyd",
+      "text": "there's no dehydration in the body",
+      "category": "absence",
+      "ref": "f_abs_dehyd",
+      "unlock": {
+        "anyOf": [
+          "f_abs_dehyd"
+        ]
+      }
+    },
+    {
+      "id": "k_never",
+      "text": "she never sat stranded by the car alive",
+      "category": "conclusion",
+      "by": [
+        "f_abs_bottles",
+        "f_dig",
+        "f_bottles",
+        "f_abs_feet",
+        "f_abs_dehyd",
+        "f_aut_smother"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_bottles"
+        ]
+      }
+    },
+    {
+      "id": "k_heat",
+      "text": "she died of heat waiting for help",
+      "category": "conclusion",
+      "by": [
+        "f_aut_smother"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_bottles"
+        ]
+      }
+    },
+    {
+      "id": "k_lost",
+      "text": "she got lost driving at dawn",
+      "category": "conclusion",
+      "by": [
+        "f_rec_ubah"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_bottles"
+        ]
+      }
+    },
+    {
+      "id": "k_walked",
+      "text": "she walked away and came back",
+      "category": "conclusion",
+      "by": [
+        "f_tracks"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_bottles"
+        ]
+      }
+    },
+    {
+      "id": "k_robbed",
+      "text": "she was robbed by travellers",
+      "category": "conclusion",
+      "by": [
+        "f_cash"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_bottles"
+        ]
+      }
+    },
+    {
+      "id": "k_thu",
+      "text": "she died on Thursday afternoon",
+      "category": "conclusion",
+      "by": [
+        "f_aut_tod"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_bottles"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. {document} was forged, as shown by {tell}. That {missing} shows that {conclusion}.",
+    "fixed": {
+      "victim": "Ubah Osman"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_year",
+                  "label": "A year ago",
+                  "from": null,
+                  "to": null,
+                  "day": "a year ago"
+                },
+                {
+                  "id": "sl_1910",
+                  "label": "Wednesday 19:10",
+                  "from": "19:10",
+                  "to": "19:10",
+                  "day": "Wed"
+                },
+                {
+                  "id": "sl_2015",
+                  "label": "Wednesday 20:15",
+                  "from": "20:15",
+                  "to": "20:15",
+                  "day": "Wed"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Wednesday 23:00–01:00",
+                  "from": "23:00",
+                  "to": "01:00",
+                  "day": "Wed"
+                },
+                {
+                  "id": "sl_0108",
+                  "label": "Thursday 01:08",
+                  "from": "01:08",
+                  "to": "01:08",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_dawn",
+                  "label": "Thursday 06:00",
+                  "from": "06:00",
+                  "to": "06:00",
+                  "day": "Thu"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_diba",
+                  "text": "Diba is killed by the bowser",
+                  "slot": "sl_year",
+                  "by": [
+                    "f_notes",
+                    "f_ar_reveal"
+                  ],
+                  "why": "The clinical notes: a year ago.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_notes"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_draft",
+                  "text": "Ubah drafts her report",
+                  "slot": "sl_1910",
+                  "by": [
+                    "f_tablet"
+                  ],
+                  "why": "Her tablet: 19:10.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_tablet"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_dinner",
+                  "text": "Ubah tells Shanko at dinner",
+                  "slot": "sl_2015",
+                  "by": [
+                    "f_sh_reveal",
+                    "f_tablet"
+                  ],
+                  "why": "After the draft and before she slept: dinner at the guesthouse.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_sh_reveal"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Ubah is smothered",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod",
+                    "f_aut_smother",
+                    "f_rec_ubah"
+                  ],
+                  "why": "Dead before the car left the village.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_car",
+                  "text": "The car leaves Kalacha",
+                  "slot": "sl_0108",
+                  "by": [
+                    "f_rec_ubah"
+                  ],
+                  "why": "Her phone leaves the mast at 01:08.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rec_ubah"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_dawn",
+                  "by": [
+                    "f_rec_ubah",
+                    "f_aut_tod"
+                  ],
+                  "why": "\"She left at dawn\" is Shanko's story. The phone left at 01:08 and she was already dead."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A child a year ago, a draft at ten past seven, dinner, and a car leaving at eight minutes past one with a dead woman in it.",
+          "fail": [
+            "Dawn is Shanko's word. The mast says 01:08.",
+            "When did she tell Shanko?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_room"
+          }
+        ],
+        "prosecutor": {
+          "pass": "In a guesthouse bed, not in the desert.",
+          "fail": [
+            "She was dead before the car moved.",
+            "North Horr is where Shanko said she was going."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_shanko"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her tablets in the blood, her pillowcase in the nose, her sandals walking home. And a seat set for a short woman.",
+          "fail": [
+            "Arero was at North Horr with the bowser.",
+            "Peter sat up with a sick child all night."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_smother"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Sedated, smothered, driven out. Yes.",
+          "fail": [
+            "Not heatstroke. Read the post-mortem.",
+            "A sedative, yes, but the eyes and lips say a pillow."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_cover"
+          }
+        ],
+        "prosecutor": {
+          "pass": "\"Report to OCS Marsabit Thursday.\" She didn't live to Thursday.",
+          "fail": [
+            "Elema accepted the settlement and never met her.",
+            "The cash is in the glovebox."
+          ]
+        }
+      },
+      {
+        "id": "g_forgery",
+        "kind": "forgery",
+        "blanks": [
+          {
+            "id": "document",
+            "category": "document",
+            "answer": "d_referral"
+          },
+          {
+            "id": "tell",
+            "category": "tell",
+            "answer": "t_rta"
+          }
+        ],
+        "prosecutor": {
+          "pass": "RTA under \"fall\", in another ink. The register is a lie, but this is the paper that was changed.",
+          "fail": [
+            "The register was written once, in one ink. It's false, not altered.",
+            "Peter's own notes are the truth."
+          ]
+        }
+      },
+      {
+        "id": "g_absence",
+        "kind": "absence",
+        "blanks": [
+          {
+            "id": "missing",
+            "category": "absence",
+            "answer": "a_bottles",
+            "accept": [
+              "a_feet",
+              "a_dehyd"
+            ]
+          },
+          {
+            "id": "conclusion",
+            "category": "conclusion",
+            "answer": "k_never"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Full bottles, clean wheels, no footprints of hers. She never sat by that car alive.",
+          "fail": [
+            "No check-out tells me Shanko lied, not where Ubah died.",
+            "No call for help? Nobody calls when they're already dead."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_room",
+      "from": "23:00",
+      "to": "01:00",
+      "note": "The post-mortem window, Wednesday 23:00 to Thursday 01:00, before her phone left the Kalacha mast at 01:08."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_register",
+          "f_notes",
+          "f_referral",
+          "f_raking",
+          "f_pe_reg",
+          "f_pe_reveal",
+          "f_ar_cart",
+          "f_ar_reveal",
+          "f_el_says"
+        ],
+        "concludes": "Diba's death record was falsified: the referral form was changed from \"RTA\" to \"fall\", for money.",
+        "answers": [
+          "document",
+          "tell"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_tablet"
+        ],
+        "concludes": "Ubah found it and was reporting to Marsabit on Thursday."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_car",
+          "f_halake_water",
+          "f_bottles",
+          "f_dig",
+          "f_abs_bottles",
+          "f_tracks",
+          "f_abs_feet",
+          "f_seat"
+        ],
+        "concludes": "She was never stranded alive; someone shorter drove the car out and walked back.",
+        "answers": [
+          "missing",
+          "conclusion"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_aut_smother",
+          "f_aut_tod",
+          "f_abs_dehyd",
+          "f_tox"
+        ],
+        "concludes": "She was sedated and smothered before the car left the village.",
+        "answers": [
+          "how"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_rec_ubah",
+          "f_guest",
+          "f_abs_checkout",
+          "f_sh_dawn",
+          "f_sh_reveal",
+          "f_room",
+          "f_agnes"
+        ],
+        "concludes": "The car left Kalacha at 01:08 with a dead woman in it; Shanko's \"dawn\" is a lie, and a woman in a white headscarf walked in from the Chalbi at 03:40.",
+        "answers": [
+          "when",
+          "where"
+        ]
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_sandals",
+          "f_strip",
+          "f_pillowcase",
+          "f_tread",
+          "f_fibres",
+          "f_sh_milk"
+        ],
+        "concludes": "Shanko Jirma sedated Ubah, smothered her in her guesthouse room and drove her into the desert, to hide that her son's bowser killed a child and the record was falsified.",
+        "answers": [
+          "who",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_car",
+        "blank": "where",
+        "by": [
+          "f_aut_tod",
+          "f_rec_ubah"
+        ],
+        "why": "She was dead before the car left Kalacha."
+      },
+      {
+        "word": "pl_disp",
+        "blank": "where",
+        "by": [
+          "f_peter_night"
+        ],
+        "why": "Peter sat up there all night with a patient."
+      },
+      {
+        "word": "pl_water",
+        "blank": "where",
+        "by": [
+          "f_notes"
+        ],
+        "why": "The watering point is where Diba died, a year ago."
+      },
+      {
+        "word": "pl_horr",
+        "blank": "where",
+        "by": [
+          "f_rec_ubah"
+        ],
+        "why": "She never got near North Horr."
+      },
+      {
+        "word": "w_arero",
+        "blank": "who",
+        "by": [
+          "f_arero",
+          "f_bowserlog"
+        ],
+        "why": "Arero was at North Horr with the bowser all night."
+      },
+      {
+        "word": "w_peter",
+        "blank": "who",
+        "by": [
+          "f_peter_night"
+        ],
+        "why": "Peter sat up at the dispensary with a sick child."
+      },
+      {
+        "word": "w_elema",
+        "blank": "who",
+        "by": [
+          "f_elema"
+        ],
+        "why": "Elema was 30 km away."
+      },
+      {
+        "word": "w_agnes",
+        "blank": "who",
+        "by": [
+          "f_agnes_self"
+        ],
+        "why": "Sister Agnes was at the mission with the other sisters."
+      },
+      {
+        "word": "h_heat",
+        "blank": "how",
+        "by": [
+          "f_aut_smother",
+          "f_bottles"
+        ],
+        "why": "Not heatstroke; full bottles."
+      },
+      {
+        "word": "h_snake",
+        "blank": "how",
+        "by": [
+          "f_aut_smother"
+        ],
+        "why": "No bite."
+      },
+      {
+        "word": "h_bandits",
+        "blank": "how",
+        "by": [
+          "f_tracks",
+          "f_cash"
+        ],
+        "why": "No other tracks; cash intact."
+      },
+      {
+        "word": "h_overdose",
+        "blank": "how",
+        "by": [
+          "f_aut_smother"
+        ],
+        "why": "Smothering signs in the eyes and lips."
+      },
+      {
+        "word": "m_revenge",
+        "blank": "why",
+        "by": [
+          "f_elema"
+        ],
+        "why": "Elema accepted the settlement and never met her."
+      },
+      {
+        "word": "m_fear",
+        "blank": "why",
+        "by": [
+          "f_peter_night",
+          "f_pe_reveal"
+        ],
+        "why": "Peter's fear was real, but he was at the dispensary all night."
+      },
+      {
+        "word": "m_son",
+        "blank": "why",
+        "by": [
+          "f_arero"
+        ],
+        "why": "Arero was at North Horr."
+      },
+      {
+        "word": "m_car",
+        "blank": "why",
+        "by": [
+          "f_cash"
+        ],
+        "why": "Car and cash intact."
+      },
+      {
+        "word": "d_register",
+        "blank": "document",
+        "by": [
+          "f_register"
+        ],
+        "why": "The register entry is false, but written once, in one ink: not altered."
+      },
+      {
+        "word": "d_notes",
+        "blank": "document",
+        "by": [
+          "f_notes"
+        ],
+        "why": "Peter's notes are the true record."
+      },
+      {
+        "word": "d_guest",
+        "blank": "document",
+        "by": [
+          "f_guest"
+        ],
+        "why": "The register is honest: it has no check-out."
+      },
+      {
+        "word": "d_bowser",
+        "blank": "document",
+        "by": [
+          "f_arero"
+        ],
+        "why": "The customers at North Horr confirm it."
+      },
+      {
+        "word": "t_dots",
+        "blank": "tell",
+        "by": [
+          "f_raking"
+        ],
+        "why": "The form has no stamp."
+      },
+      {
+        "word": "t_parcel",
+        "blank": "tell",
+        "by": [
+          "f_raking"
+        ],
+        "why": "A referral form has no map."
+      },
+      {
+        "word": "t_retired",
+        "blank": "tell",
+        "by": [
+          "f_raking"
+        ],
+        "why": "No stamp."
+      },
+      {
+        "word": "t_deadwit",
+        "blank": "tell",
+        "by": [
+          "f_raking"
+        ],
+        "why": "No witnesses on a referral form."
+      },
+      {
+        "word": "t_batch",
+        "blank": "tell",
+        "by": [
+          "f_raking"
+        ],
+        "why": "No batch numbers."
+      },
+      {
+        "word": "a_call",
+        "blank": "missing",
+        "by": [
+          "f_abs_call",
+          "f_rec_ubah"
+        ],
+        "why": "It fits the truth, but it doesn't show she was never stranded: a woman with no signal can't call."
+      },
+      {
+        "word": "a_checkout",
+        "blank": "missing",
+        "by": [
+          "f_abs_checkout"
+        ],
+        "why": "It breaks Shanko's story; it says nothing about the car."
+      },
+      {
+        "word": "k_heat",
+        "blank": "conclusion",
+        "by": [
+          "f_aut_smother"
+        ],
+        "why": "Smothered."
+      },
+      {
+        "word": "k_lost",
+        "blank": "conclusion",
+        "by": [
+          "f_rec_ubah",
+          "f_aut_tod"
+        ],
+        "why": "She was dead before the car moved."
+      },
+      {
+        "word": "k_walked",
+        "blank": "conclusion",
+        "by": [
+          "f_tracks"
+        ],
+        "why": "No footprints of hers."
+      },
+      {
+        "word": "k_robbed",
+        "blank": "conclusion",
+        "by": [
+          "f_cash"
+        ],
+        "why": "Cash intact."
+      },
+      {
+        "word": "k_thu",
+        "blank": "conclusion",
+        "by": [
+          "f_aut_tod"
+        ],
+        "why": "She died on Wednesday night."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "A year ago, at dusk, Arero's bowser hits six-year-old Diba Elema at the watering point. Shanko settles with the family through the elders, in camels, and pays Peter Langat KSh 50,000 to change the referral form from \"RTA\" to \"fall\".",
+        "image": null
+      },
+      {
+        "text": "This week Ubah Osman audits child deaths. On Wednesday she compares the register with Peter's notes and the referral form, and at 19:10 drafts: \"Report to OCS Marsabit Thursday.\"",
+        "image": null
+      },
+      {
+        "text": "At dinner she tells Shanko. Shanko crushes six of her sleeping tablets into Ubah's camel milk. At about 23:30, with Ubah asleep, she smothers her with a pillow.",
+        "image": "plc_room"
+      },
+      {
+        "text": "At 01:00 she puts Ubah in the passenger seat, pulls the driver's seat forward and drives 8 km into the Chalbi. She runs the car into soft sand, lays Ubah in its shade, and walks home under the stars.",
+        "image": null
+      },
+      {
+        "text": "At 03:40 Sister Agnes, ringing for night prayer, sees a woman in a white headscarf walking in from the desert. In the morning Shanko washes one pillowcase.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "Pattern File, t_registry: Abdia Golicha's letter. Amani's notebook: \"Abdia Golicha. Isiolo land registry. A man from Nairobi with boxes. Remember the name.\""
+    }
+  ],
+  "clockPlan": {
+    "note": "Two stamps: records on Ubah's line and a warrant on Shanko's house. The body goes to Marsabit in the first hour; toxicology leaves with it (18 h + 4) and returns at about detention hour 14. Tread (8 h + 4) and fibres (12 h + 4) come back inside 24 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_car",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_car",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_bottles",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_dig",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_tracks",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_tablet",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_letter",
+        "hours": 0
+      },
+      {
+        "do": "submit",
+        "target": "ev_tox"
+      },
+      {
+        "do": "travel",
+        "target": "loc_guest",
+        "hours": 0.5,
+        "from": "loc_car"
+      },
+      {
+        "do": "visit",
+        "target": "loc_guest",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_guest",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_shanko"
+      },
+      {
+        "do": "read",
+        "target": "ev_room",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_disp",
+        "hours": 0.25,
+        "from": "loc_guest"
+      },
+      {
+        "do": "visit",
+        "target": "loc_disp",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_register",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_notes",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_referral",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_peter"
+      },
+      {
+        "do": "press",
+        "target": "c_peter"
+      },
+      {
+        "do": "travel",
+        "target": "loc_mission",
+        "hours": 0.25,
+        "from": "loc_disp"
+      },
+      {
+        "do": "visit",
+        "target": "loc_mission",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_agnes",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_agnes"
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "interview",
+        "target": "p_elema"
+      },
+      {
+        "do": "interview",
+        "target": "p_arero"
+      },
+      {
+        "do": "press",
+        "target": "c_arero"
+      },
+      {
+        "do": "travel",
+        "target": "loc_guest",
+        "hours": 0.25,
+        "from": "loc_mission"
+      },
+      {
+        "do": "visit",
+        "target": "loc_guest",
+        "hours": 1
+      },
+      {
+        "do": "press",
+        "target": "c_shanko"
+      },
+      {
+        "do": "search",
+        "target": "loc_shanko"
+      },
+      {
+        "do": "detain",
+        "target": "p_shanko"
+      },
+      {
+        "do": "submit",
+        "target": "ev_tread"
+      },
+      {
+        "do": "submit",
+        "target": "ev_fibres"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 16
+      },
+      {
+        "do": "press",
+        "target": "c_sh_milk"
+      }
+    ],
+    "totalHours": 44.25
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_records",
+        "line": "When did her phone leave Kalacha, Amani?"
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_ubah",
+          "f_aut_tod"
+        ],
+        "line": "01:08. And she was dead by then."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_room",
+        "line": "Look at her bed. Count the pillowcases."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_tod",
+          "f_room"
+        ],
+        "line": "Dead before the car left. Two pillows, no cases."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_car",
+        "line": "Sit in the driver's seat. Who fits?"
+      },
+      "tier2": {
+        "facts": [
+          "f_seat",
+          "f_tread",
+          "f_fibres"
+        ],
+        "line": "A short woman's seat, her sandals, her pillowcase."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Dr. Chebii says it wasn't the heat. What was it?"
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_smother",
+          "f_tox"
+        ],
+        "line": "A sedative in the blood, then a pillow."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_tablet",
+        "line": "Read her draft."
+      },
+      "tier2": {
+        "facts": [
+          "f_tablet",
+          "f_ar_reveal"
+        ],
+        "line": "Report Thursday. And Shanko's son drove the bowser."
+      }
+    },
+    "g_forgery": {
+      "tier1": {
+        "point": "ev_referral",
+        "line": "Put the referral form under a raking light."
+      },
+      "tier2": {
+        "facts": [
+          "f_raking"
+        ],
+        "line": "\"RTA\", overwritten as \"fall\" in another ink."
+      }
+    },
+    "g_absence": {
+      "tier1": {
+        "point": "ev_bottles",
+        "line": "What does someone stranded in the Chalbi do first?"
+      },
+      "tier2": {
+        "facts": [
+          "f_abs_bottles",
+          "f_abs_feet"
+        ],
+        "line": "Full bottles. No digging. Not one footprint of hers."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "bowser",
+      "def": "A water truck."
+    },
+    {
+      "term": "kisima",
+      "def": "A well or borehole."
+    },
+    {
+      "term": "zahanati",
+      "def": "A dispensary, a small rural clinic."
+    },
+    {
+      "term": "jangwa",
+      "def": "A desert."
+    },
+    {
+      "term": "mito",
+      "def": "Pillows."
+    },
+    {
+      "term": "wazee",
+      "def": "Elders."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "theSeat"
+    ],
+    "beatNotes": "The seat. The car's interior photo has a measuring tape the player can lay along the seat rail; the notebook compares it with Ubah's height from her county ID. A small, physical absence: there's no way she drove with the seat there."
+  }
+}

@@ -1,0 +1,1024 @@
+{
+  "meta": {
+    "id": "case-017",
+    "number": 17,
+    "region": "eastlands",
+    "regionNumber": 2,
+    "title": "Visitor Badge 14",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 14,
+    "date": "Wednesday 2 July",
+    "folderTab": "PIPELINE"
+  },
+  "pattern": {
+    "crimePattern": "fake land agent kills a buyer who discovered the title was not his to sell; a friend gives him an alibi",
+    "noRealCaseRetold": true,
+    "notes": "Fictional block, fictional parcel number. Fake plot sales on the city's edge are a widely reported pattern; no real case or company is depicted.",
+    "tags": [
+      "blunt-force",
+      "land-fraud",
+      "alibi-friend",
+      "spine-background"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 3,
+    "redHerrings": 0,
+    "liars": 1,
+    "groups": [
+      "who"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness"
+    ],
+    "gatedActions": [],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 06/02/07",
+    "date": "Wednesday 2 July",
+    "time": "22:41",
+    "reportedBy": "Saida Abdallah, resident, flat C-11-03, Tumaini Towers, Pipeline",
+    "text": "Saida Abdallah, resident of Tumaini Towers, Embakasi Pipeline, reports that her neighbour, Pauline Kanana (43), a primary-school teacher, was found dead in flat C-11-04, eleventh floor, at 22:35. The door was ajar.",
+    "facts": [
+      "f_ob_found"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_pauline",
+      "role": "victim",
+      "name": "Pauline Kanana",
+      "age": 43,
+      "occupation": "Primary-school teacher",
+      "bio": "Saved for eleven years to buy a plot in Kitengela. Paid KSh 650,000 for it in March.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_flat",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 40s, short natural hair, small gold stud earrings, a teacher's lanyard, a red marking pen clipped to her blouse, calm and determined, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_evans",
+      "role": "suspect",
+      "name": "Evans Nyakundi",
+      "age": 55,
+      "occupation": "\"Land agent\"",
+      "bio": "Sells plots on the city's edge from a folder of agreements. Sold Pauline the Kitengela plot.",
+      "community": "Kisii",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_letter"
+      },
+      "at": "plc_towerC",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 50s, grey suit slightly too big, a leather document folder under his arm, gold-rimmed glasses, a salesman's smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_philip",
+      "role": "suspect",
+      "name": "Philip Masinde",
+      "age": 52,
+      "occupation": "Evans's friend; tenant, flat A-3-02",
+      "bio": "Has known Evans since school. Says Evans spent the whole evening in his flat.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_evans_ask"
+      },
+      "at": "plc_towerA",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 50s, round face, a cardigan over a vest, slippers, a television remote still in his hand, uneasy, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_martin",
+      "role": "suspect",
+      "name": "Martin Sang",
+      "age": 47,
+      "occupation": "Pauline's ex-husband; cargo handler",
+      "bio": "Separated from Pauline for six years. They have been arguing over their son's school fees.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_saida_martin"
+      },
+      "at": "plc_jkia",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 40s, cargo-terminal hi-vis vest over a jumper, an ID badge on a lanyard, tired eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_saida",
+      "role": "witness",
+      "name": "Saida Abdallah",
+      "age": 36,
+      "occupation": "Neighbour, C-11-03",
+      "bio": "Lives through the wall from Pauline. Found her.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_towerC",
+      "image": null
+    },
+    {
+      "id": "p_julius",
+      "role": "witness",
+      "name": "Julius Mwaniki",
+      "age": 61,
+      "occupation": "Gate guard",
+      "bio": "Runs the one compound gate: gate book, laminated visitor badges, a torch.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_gate",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_towerC",
+      "name": "Tower C stairwell and landings",
+      "within": "loc_flat"
+    },
+    {
+      "id": "plc_gate",
+      "name": "Compound gate and gate yard"
+    },
+    {
+      "id": "plc_towerA",
+      "name": "Tower A, flat A-3-02"
+    },
+    {
+      "id": "plc_jkia",
+      "name": "Cargo terminal, JKIA"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_flat",
+      "name": "Flat C-11-04, Tumaini Towers, Pipeline",
+      "kind": "scene",
+      "description": "Eleven floors up, no lift. A tidy two-bedroom flat: a sofa with lace covers, exercise books stacked for marking, a charcoal iron on its trivet by the ironing board. A document folder lies open on the table.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Living room",
+          "pos": [
+            40,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Pauline lies by the ironing board. Her heavy charcoal iron is on the floor beside her."
+        },
+        {
+          "id": "hs_letter",
+          "label": "Table",
+          "pos": [
+            62,
+            46
+          ],
+          "yields": "ev_letter",
+          "text": "A carbon copy of a handwritten letter, signed by Pauline, on top of her marking."
+        },
+        {
+          "id": "hs_folder",
+          "label": "Document folder",
+          "pos": [
+            70,
+            52
+          ],
+          "yields": "ev_agreement",
+          "text": "Her document folder, open: a sale agreement for a plot."
+        },
+        {
+          "id": "hs_search",
+          "label": "Under the agreement",
+          "pos": [
+            74,
+            58
+          ],
+          "yields": "ev_search",
+          "text": "An official land search result, folded behind the agreement."
+        },
+        {
+          "id": "hs_sofa",
+          "label": "Under the sofa",
+          "pos": [
+            24,
+            74
+          ],
+          "yields": "ev_badge",
+          "text": "Something flat and laminated has slid under the sofa's lace skirt."
+        },
+        {
+          "id": "hs_saida",
+          "label": "Door of C-11-03",
+          "pos": [
+            90,
+            40
+          ],
+          "yields": "ev_saida",
+          "text": "Saida Abdallah stands in her own doorway, the security chain still hanging loose."
+        },
+        {
+          "id": "hs_window",
+          "label": "Window",
+          "pos": [
+            10,
+            20
+          ],
+          "text": "Three towers, twelve storeys each. From here the gate yard is a small lit square far below."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a tidy eleventh-floor flat in a Nairobi high-rise estate at night, a sofa with lace covers, stacks of school exercise books, an old charcoal iron on a trivet beside an ironing board, an open document folder on a table, city lights and two other tower blocks through the window, no people in focus"
+      }
+    },
+    {
+      "id": "loc_gate",
+      "name": "Compound gate, Tumaini Towers",
+      "kind": "location",
+      "description": "One steel gate for three towers. A guard hut, a gate book on a chain, a board of numbered laminated visitor badges on hooks. Hook 14 is empty.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_gatebook",
+          "label": "Gate book",
+          "pos": [
+            40,
+            50
+          ],
+          "yields": "ev_gatebook",
+          "text": "Every visitor signs in, says which flat, and takes a badge. They hand it back on the way out."
+        },
+        {
+          "id": "hs_julius",
+          "label": "Guard hut",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_julius",
+          "text": "Julius Mwaniki is already holding the gate book open at tonight's page."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the steel gate of a high-rise housing compound in Nairobi at night, a guard hut, a gate book on a chain, a pegboard of numbered laminated visitor badges with one hook empty, three tall residential towers behind"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body in the living room",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Struck with her own heavy charcoal iron."
+      },
+      "facts": [
+        "f_body_iron"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a living room floor beside an ironing board, an old heavy charcoal iron lying on its side on the tiles, a toppled pile of exercise books, no body visible"
+      }
+    },
+    {
+      "id": "ev_letter",
+      "type": "physical",
+      "title": "Letter to Evans Nyakundi (copy)",
+      "render": "note",
+      "body": {
+        "text": "Mr Evans Nyakundi: refund my KSh 650,000 by Friday or I report you to the police. A copy of my search goes with this letter. — P. Kanana"
+      },
+      "facts": [
+        "f_letter"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_agreement",
+      "type": "physical",
+      "title": "Sale agreement, Kitengela plot",
+      "render": "form",
+      "body": {
+        "parcel": "Kitengela (fictional parcel number)",
+        "price": "KSh 650,000",
+        "vendor": "Evans Nyakundi",
+        "stamp": "Title search — certified — REGISTRAR OF TITLES (oval)"
+      },
+      "facts": [
+        "f_agreement",
+        "f_agreement_stamp"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a typed land sale agreement on a table, signatures at the bottom, an oval rubber-stamp impression in purple ink in the corner reading TITLE SEARCH CERTIFIED REGISTRAR OF TITLES"
+      }
+    },
+    {
+      "id": "ev_search",
+      "type": "physical",
+      "title": "Pauline's official search",
+      "render": "form",
+      "body": {
+        "result": "Parcel registered to a different person. No transfer to E. Nyakundi on record."
+      },
+      "facts": [
+        "f_search"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_badge",
+      "type": "physical",
+      "title": "Visitor badge No. 14",
+      "render": "tag",
+      "body": {
+        "number": "14",
+        "text": "TUMAINI TOWERS — VISITOR — RETURN AT GATE"
+      },
+      "facts": [
+        "f_badge"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a laminated visitor badge with a large number 14 and the words TUMAINI TOWERS VISITOR, lying half under a sofa skirt of white lace on a tiled floor"
+      }
+    },
+    {
+      "id": "ev_saida",
+      "type": "witness",
+      "title": "Statement: Saida Abdallah",
+      "render": "statement",
+      "body": {
+        "speaker": "p_saida"
+      },
+      "facts": [
+        "f_saida_up",
+        "f_saida_voices",
+        "f_saida_crash",
+        "f_saida_door",
+        "f_saida_martin"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gatebook",
+      "type": "physical",
+      "title": "Gate book",
+      "render": "visitorRegister",
+      "body": {
+        "rows": [
+          {
+            "time": "20:10",
+            "name": "Evans N.",
+            "visiting": "C-11-04",
+            "badge": "14",
+            "returned": ""
+          }
+        ],
+        "note": "22:00 — Badge 14 NOT RETURNED. — J.M."
+      },
+      "facts": [
+        "f_gatebook"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_julius",
+      "type": "witness",
+      "title": "Statement: Julius Mwaniki",
+      "render": "statement",
+      "body": {
+        "speaker": "p_julius"
+      },
+      "facts": [
+        "f_julius_van",
+        "f_julius_yard",
+        "f_julius_gate"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_clockcard",
+      "type": "physical",
+      "title": "Martin's clock card",
+      "render": "ticket",
+      "body": {
+        "site": "Cargo terminal, JKIA",
+        "in": "18:52",
+        "out": "07:04"
+      },
+      "facts": [
+        "f_clockcard"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Saida Abdallah found her neighbour Pauline Kanana dead in flat C-11-04 at 22:35. The door was ajar.",
+      "kind": "true",
+      "about": [
+        "p_pauline",
+        "p_saida",
+        "loc_flat"
+      ]
+    },
+    {
+      "id": "f_body_iron",
+      "text": "Pauline was struck with her own heavy charcoal iron.",
+      "kind": "true",
+      "about": [
+        "p_pauline",
+        "loc_flat"
+      ]
+    },
+    {
+      "id": "f_letter",
+      "text": "Pauline's letter, copy: 'Mr Evans Nyakundi: refund my KSh 650,000 by Friday or I report you to the police.'",
+      "kind": "true",
+      "about": [
+        "p_evans",
+        "p_pauline"
+      ]
+    },
+    {
+      "id": "f_agreement",
+      "text": "Sale agreement: a Kitengela plot for KSh 650,000, Evans Nyakundi signing as vendor.",
+      "kind": "true",
+      "about": [
+        "p_evans",
+        "ev_agreement"
+      ]
+    },
+    {
+      "id": "f_agreement_stamp",
+      "text": "In the corner of the agreement, an oval rubber-stamp impression: 'Title search — certified — REGISTRAR OF TITLES'.",
+      "kind": "true",
+      "about": [
+        "ev_agreement"
+      ],
+      "spine": "t_stamp"
+    },
+    {
+      "id": "f_search",
+      "text": "Pauline's own official search: the parcel is registered to a different person entirely. Evans never owned it.",
+      "kind": "true",
+      "about": [
+        "p_evans",
+        "p_pauline"
+      ]
+    },
+    {
+      "id": "f_badge",
+      "text": "Laminated visitor badge No. 14 was lying under Pauline's sofa.",
+      "kind": "true",
+      "about": [
+        "loc_flat",
+        "ev_badge"
+      ]
+    },
+    {
+      "id": "f_saida_up",
+      "text": "Saida: Pauline came up the stairs with her shopping at 20:05.",
+      "kind": "true",
+      "about": [
+        "p_saida",
+        "p_pauline"
+      ]
+    },
+    {
+      "id": "f_saida_voices",
+      "text": "Saida: from about 20:15 she heard voices through the wall: Pauline's and a man's.",
+      "kind": "true",
+      "about": [
+        "p_saida",
+        "loc_flat"
+      ]
+    },
+    {
+      "id": "f_saida_crash",
+      "text": "Saida: at about 20:45 there was a crash, then quiet. At 22:35 she saw the door ajar and found Pauline.",
+      "kind": "true",
+      "about": [
+        "p_saida",
+        "loc_flat"
+      ]
+    },
+    {
+      "id": "f_saida_door",
+      "text": "Saida stayed in her own flat with the security chain on until she looked out at 22:35.",
+      "kind": "true",
+      "about": [
+        "p_saida"
+      ]
+    },
+    {
+      "id": "f_saida_martin",
+      "text": "Saida: last week Pauline's ex-husband, Martin, shouted at her on the stairs about their son's school fees.",
+      "kind": "true",
+      "about": [
+        "p_saida",
+        "p_martin",
+        "p_pauline"
+      ]
+    },
+    {
+      "id": "f_gatebook",
+      "text": "Gate book: '20:10 — Evans N. — visiting C-11-04 — badge 14.' The return column is blank. At 22:00: 'Badge 14 NOT RETURNED.'",
+      "kind": "true",
+      "about": [
+        "p_evans",
+        "plc_gate"
+      ],
+      "where": {
+        "person": "p_evans",
+        "place": "plc_towerC",
+        "from": "20:10",
+        "to": null
+      }
+    },
+    {
+      "id": "f_julius_van",
+      "text": "Julius: a delivery van blocked the gate at about 20:55. While he moved it on, he didn't see who went out.",
+      "kind": "true",
+      "about": [
+        "p_julius",
+        "plc_gate"
+      ]
+    },
+    {
+      "id": "f_julius_yard",
+      "text": "Julius: from Tower A, the only way to Tower C is across the yard in front of his hut. Until the van came at 20:55, nobody from A crossed it, Philip included.",
+      "kind": "true",
+      "about": [
+        "p_julius",
+        "p_philip"
+      ],
+      "where": {
+        "person": "p_philip",
+        "place": "plc_towerA",
+        "from": "19:00",
+        "to": "20:55"
+      }
+    },
+    {
+      "id": "f_julius_gate",
+      "text": "Julius was at the gate from 18:00; residents and the van driver saw him there all evening.",
+      "kind": "true",
+      "about": [
+        "p_julius"
+      ],
+      "where": {
+        "person": "p_julius",
+        "place": "plc_gate",
+        "from": "18:00",
+        "to": "22:40"
+      }
+    },
+    {
+      "id": "f_clockcard",
+      "text": "Martin's clock card, cargo terminal, JKIA: in 18:52, out 07:04.",
+      "kind": "true",
+      "about": [
+        "p_martin"
+      ],
+      "where": {
+        "person": "p_martin",
+        "place": "plc_jkia",
+        "from": "18:52",
+        "to": "07:04"
+      }
+    },
+    {
+      "id": "f_philip_alibi",
+      "text": "Philip: \"Evans was with me in my flat, A-3-02, from seven until ten. We watched the news and the football.\"",
+      "kind": "lie",
+      "about": [
+        "p_philip",
+        "p_evans"
+      ]
+    },
+    {
+      "id": "f_philip_admits",
+      "text": "Philip admits he fell asleep after the seven o'clock news. When he woke up, Evans was there and asked him to say he'd been there all evening.",
+      "kind": "true",
+      "about": [
+        "p_philip",
+        "p_evans"
+      ]
+    },
+    {
+      "id": "f_evans_ask",
+      "text": "Evans: \"Ask Philip where I was.\"",
+      "kind": "claim",
+      "about": [
+        "p_evans",
+        "p_philip"
+      ]
+    },
+    {
+      "id": "f_evans_plot",
+      "text": "Evans: \"That plot is clean. She was confused.\"",
+      "kind": "claim",
+      "about": [
+        "p_evans"
+      ]
+    },
+    {
+      "id": "f_martin_claim",
+      "text": "Martin: \"I was at work all night.\"",
+      "kind": "claim",
+      "about": [
+        "p_martin"
+      ]
+    },
+    {
+      "id": "f_martin_fees",
+      "text": "Martin: he and Pauline argued about the fees, \"but I would never touch her. She is my son's mother.\"",
+      "kind": "true",
+      "about": [
+        "p_martin",
+        "p_pauline"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_evans",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_letter"
+      ],
+      "intro": "Evans sits with his folder on his knees and his hands flat on top of it. \"I am a businessman. I have nothing to say.\"",
+      "claims": [
+        "f_evans_ask",
+        "f_evans_plot"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_search",
+          "reply": "Searches go wrong. Clerks make mistakes. Land is complicated.",
+          "reveals": []
+        },
+        {
+          "about": "ev_agreement",
+          "reply": "Every paper is stamped. Certified. Look at it.",
+          "reveals": []
+        },
+        {
+          "about": "ev_badge",
+          "reply": "Badges. Everyone has badges in this place.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_philip",
+      "stance": "cooperative",
+      "intro": "Philip opens the door of A-3-02 in his slippers, the television still on behind him. \"Evans? Yes, he was here. All evening.\"",
+      "claims": [
+        "f_philip_alibi"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_evans",
+          "reply": "We were at school together in Kakamega. He sells plots. He does well.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_martin",
+      "stance": "cooperative",
+      "intro": "Martin takes the call on his break at the cargo terminal. A forklift reverses behind him. \"Pauline? Pauline?\"",
+      "claims": [
+        "f_martin_claim"
+      ],
+      "yields": [
+        "ev_clockcard"
+      ],
+      "topics": [
+        {
+          "about": "p_pauline",
+          "reply": "We argued about the fees. Shouted, even. But I would never touch her. She is my son's mother.",
+          "reveals": [
+            "f_martin_fees"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_saida",
+      "stance": "cooperative",
+      "intro": "Saida holds the end of her door chain as if it were still fastened. \"I heard it all through that wall. I just didn't know what I was hearing.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_evans",
+          "reply": "A man in a grey suit came to see her last month with papers. She was so happy that day. \"My plot,\" she said.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_julius",
+      "stance": "cooperative",
+      "intro": "Julius taps the empty hook on his badge board. \"Fourteen. Every badge comes back. Every one. Except tonight.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_evans",
+          "reply": "He signed in at ten past eight for C-11-04. Polite. A suit. I gave him fourteen.",
+          "reveals": []
+        },
+        {
+          "about": "p_philip",
+          "reply": "Mzee Philip in Tower A? To get to Tower C you cross my yard. Nobody from A crossed it before that van came. After that, I was busy shouting at a driver.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_philip_alibi",
+      "claim": "f_philip_alibi",
+      "brokenBy": [
+        "f_gatebook"
+      ],
+      "reveals": [
+        "f_philip_admits"
+      ],
+      "reaction": "...I fell asleep after the seven o'clock news. When I woke up he was there, sweating, on my sofa. He asked me to say he had been there the whole time. I didn't ask why. I didn't want to know why.",
+      "mark": "explains",
+      "greys": [
+        "f_evans_ask"
+      ]
+    }
+  ],
+  "words": [
+    {
+      "id": "w_evans",
+      "text": "Evans Nyakundi",
+      "category": "person",
+      "ref": "p_evans",
+      "unlock": {
+        "anyOf": [
+          "f_letter",
+          "f_gatebook"
+        ]
+      }
+    },
+    {
+      "id": "w_philip",
+      "text": "Philip Masinde",
+      "category": "person",
+      "ref": "p_philip",
+      "unlock": {
+        "anyOf": [
+          "f_evans_ask"
+        ]
+      }
+    },
+    {
+      "id": "w_martin",
+      "text": "Martin Sang",
+      "category": "person",
+      "ref": "p_martin",
+      "unlock": {
+        "anyOf": [
+          "f_saida_martin"
+        ]
+      }
+    },
+    {
+      "id": "w_saida",
+      "text": "Saida Abdallah",
+      "category": "person",
+      "ref": "p_saida",
+      "unlock": {
+        "anyOf": [
+          "f_ob_found"
+        ]
+      }
+    },
+    {
+      "id": "w_julius",
+      "text": "Julius Mwaniki",
+      "category": "person",
+      "ref": "p_julius",
+      "unlock": {
+        "anyOf": [
+          "f_julius_gate"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} at Tumaini Towers.",
+    "fixed": {
+      "victim": "Pauline Kanana"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_evans"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A friend's alibi that fell asleep, a gate book that didn't, and badge fourteen under her sofa. That will hold.",
+          "fail": [
+            "Doesn't hold up. A man who lies for a friend has a friend. Who did he lie for?",
+            "No. The ex-husband was clocked in at the airport. Follow the badge."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_flat",
+      "from": "20:15",
+      "to": "20:50",
+      "within": [
+        "plc_towerC"
+      ]
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_philip_alibi",
+          "f_gatebook",
+          "f_philip_admits"
+        ],
+        "concludes": "Philip said Evans was in A-3-02 from seven, but Evans signed in at the gate at 20:10 to visit C-11-04. Pressed, Philip admits he was asleep and Evans asked him to lie."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_saida_up",
+          "f_saida_voices",
+          "f_saida_crash"
+        ],
+        "concludes": "Pauline was alive at 20:05. A man was with her from about 20:15, and the crash came at 20:45: inside Evans's visit."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_badge",
+          "f_letter",
+          "f_search"
+        ],
+        "concludes": "The badge issued to Evans at 20:10, never returned, is under her sofa. She had found out his plot was not his to sell. Evans Nyakundi killed Pauline.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_philip",
+        "blank": "who",
+        "by": [
+          "f_julius_yard"
+        ],
+        "why": "Nobody from Tower A crossed the gate yard, the only way to Tower C, before 20:55; the crash was at 20:45."
+      },
+      {
+        "word": "w_martin",
+        "blank": "who",
+        "by": [
+          "f_clockcard"
+        ],
+        "why": "Martin was clocked in at the JKIA cargo terminal from 18:52 to 07:04."
+      },
+      {
+        "word": "w_saida",
+        "blank": "who",
+        "by": [
+          "f_saida_door"
+        ],
+        "why": "Saida stayed in her own flat with the chain on; she is the one whose timings fix the window."
+      },
+      {
+        "word": "w_julius",
+        "blank": "who",
+        "by": [
+          "f_julius_gate"
+        ],
+        "why": "Julius was at the gate all evening, seen by residents and the van driver."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "March. Pauline pays Evans KSh 650,000 for a plot in Kitengela. The agreement carries a certified stamp from the registrar.",
+        "image": null
+      },
+      {
+        "text": "June. A friend at the lands office runs a real search. The plot belongs to someone else. On Monday she writes to Evans: refund by Friday, or the police.",
+        "image": null
+      },
+      {
+        "text": "20:10. Evans signs in at the gate for C-11-04 and takes badge 14. He climbs eleven floors.",
+        "image": "loc_flat"
+      },
+      {
+        "text": "He tries to talk her round. She tells him the police already have a copy. At 20:45 he picks up the iron.",
+        "image": null
+      },
+      {
+        "text": "20:55. A delivery van blocks the gate and the guard steps out to move it. Evans crosses the yard to Tower A unseen. Badge 14 stays under her sofa. He wakes his old friend: \"Say I was here.\"",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_gatebook",
+        "line": "Philip says his friend was in Tower A all evening. The gate keeps its own book. Read it."
+      },
+      "tier2": {
+        "facts": [
+          "f_gatebook",
+          "f_badge"
+        ],
+        "line": "Badge 14 went out at the gate at 20:10 and never came back. Where did it end up?"
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "ploti",
+      "def": "A plot of land."
+    },
+    {
+      "term": "hati",
+      "def": "Title deed."
+    },
+    {
+      "term": "mzee",
+      "def": "Respectful word for an older man."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "linkedClaims"
+    ],
+    "beatNotes": "Linked claims: when Philip's alibi breaks, Evans's whereabouts (\"Ask Philip where I was\"), which depended on it, turn grey in the notebook automatically. The player sees one broken claim knock out another."
+  }
+}

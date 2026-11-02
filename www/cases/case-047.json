@@ -1,0 +1,1774 @@
+{
+  "meta": {
+    "id": "case-047",
+    "number": 47,
+    "region": "kisumu-lake",
+    "regionNumber": 5,
+    "title": "Disco Matanga",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 27,
+    "date": "Thursday 8 January",
+    "folderTab": "SIAYA"
+  },
+  "pattern": {
+    "crimePattern": "humiliated ex-girlfriend strikes the young man who read her messages aloud at a funeral disco, during a generator blackout",
+    "noRealCaseRetold": true,
+    "notes": "Fictional family and homestead. The disco matanga is shown with affection, as a community keeping a family company through the night; the crime is one person's moment, not a comment on the custom. Her messages are never shown, only described.",
+    "tags": [
+      "blunt-force",
+      "humiliation",
+      "funeral",
+      "two-liars",
+      "warrant",
+      "forensics",
+      "when-strip",
+      "spine-background"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 4,
+    "redHerrings": 1,
+    "liars": 2,
+    "groups": [
+      "when",
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "forensic"
+    ],
+    "gatedActions": [
+      "warrant"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 14/08/01",
+    "date": "Thursday 8 January",
+    "time": "06:05",
+    "reportedBy": "Fidelis Oyoo, DJ",
+    "text": "Mourners report a young man, Brighton Onyiso (24), found dead behind a maize store near a funeral compound outside Siaya town at about 05:40, after the all-night funeral disco for his grandfather.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_brighton",
+      "role": "victim",
+      "name": "Brighton Onyiso",
+      "age": 24,
+      "occupation": "Grandson of the late Mzee Olang'",
+      "bio": "Loud, funny, careless with people. Came home from Kisumu for the funeral.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_store",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo young man, mid 20s, a fashionable shirt and a gold chain, a black mourning ribbon on his sleeve, a cocky grin, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mitchelle",
+      "role": "suspect",
+      "name": "Mitchelle Aoko",
+      "age": 22,
+      "occupation": "Brighton's ex-girlfriend",
+      "bio": "He left her in November. She came to the funeral anyway; her family knew the Mzee.",
+      "community": "Luo",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_fidelis"
+      },
+      "at": "plc_tent",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo young woman, early 20s, a black mourning dress, a red-and-white beaded bracelet on one wrist, tear-swollen eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_arnold",
+      "role": "suspect",
+      "name": "Arnold Olang'",
+      "age": 31,
+      "occupation": "Brighton's cousin",
+      "redHerring": true,
+      "bio": "In a family dispute over the late Mzee's land. Says the maize in the store is half his.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_maize"
+      },
+      "at": "plc_backpath",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, early 30s, a farmer's work jacket over a funeral shirt, maize dust on his trousers, defensive, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_sharleen",
+      "role": "suspect",
+      "name": "Sharleen Ongalo",
+      "age": 21,
+      "occupation": "Brighton's new girlfriend",
+      "bio": "Came with him from Kisumu. Barely knew anyone.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_fidelis"
+      },
+      "at": "plc_generator",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo young woman, early 20s, a black dress and braids, a phone torch still in her hand, scared, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_fidelis",
+      "role": "witness",
+      "name": "Fidelis Oyoo",
+      "age": 30,
+      "occupation": "The DJ",
+      "bio": "Has played a hundred funerals. Keeps every playlist.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_generator",
+      "image": null
+    },
+    {
+      "id": "p_turfosa",
+      "role": "witness",
+      "name": "Turfosa Okal",
+      "age": 56,
+      "occupation": "Head caterer",
+      "bio": "Fed four hundred people through the night from three open fires.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_kitchen",
+      "image": null
+    },
+    {
+      "id": "p_maureen",
+      "role": "witness",
+      "name": "Maureen Atieno",
+      "age": 26,
+      "occupation": "Turfosa's helper",
+      "statementOnly": true,
+      "bio": "Kept the kitchen fires going all night.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_kitchen",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_behind",
+      "name": "Behind the maize store",
+      "within": "loc_store"
+    },
+    {
+      "id": "plc_tent",
+      "name": "The funeral tent"
+    },
+    {
+      "id": "plc_generator",
+      "name": "The hired generator"
+    },
+    {
+      "id": "plc_kitchen",
+      "name": "The kitchen fires"
+    },
+    {
+      "id": "plc_backpath",
+      "name": "The back path from the store's front door to Arnold's house"
+    },
+    {
+      "id": "plc_mhome",
+      "name": "Mitchelle's room"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_store",
+      "name": "Behind the maize store",
+      "kind": "scene",
+      "description": "A mud-and-iron maize store at the edge of the funeral compound. Behind it, long grass and the dark beyond the generator's lights. A cigarette lies half smoked in the dust.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Behind the store",
+          "pos": [
+            48,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Brighton was found lying in the dust behind the store at 05:40."
+        },
+        {
+          "id": "hs_beads",
+          "label": "In the dust",
+          "pos": [
+            56,
+            70
+          ],
+          "yields": "ev_beads",
+          "text": "Small red and white glass beads, scattered, and a broken elastic."
+        },
+        {
+          "id": "hs_grass",
+          "label": "Long grass, 30 m",
+          "pos": [
+            84,
+            40
+          ],
+          "yields": "ev_pestle",
+          "text": "In the long grass, a pale length of wood."
+        },
+        {
+          "id": "hs_maize",
+          "label": "The store's front door",
+          "pos": [
+            18,
+            50
+          ],
+          "yields": "ev_maize",
+          "text": "Inside the store, gaps in the stacked sacks. Drag marks lead out of the front door to a path."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the back of a small mud-walled maize store with an iron roof at night at the edge of a rural funeral compound near Siaya, long grass, a generator's glow and a white funeral tent in the distance, scattered red and white beads in the dust, no people in focus"
+      }
+    },
+    {
+      "id": "loc_compound",
+      "name": "The funeral compound",
+      "kind": "location",
+      "description": "A big white tent full of plastic chairs, a DJ booth on a table, a hired generator thumping behind it, three open fires where the caterers pound and stir. Mourners sleep on the chairs; the burial is at noon.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_booth",
+          "label": "DJ booth",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_playlist",
+          "text": "The DJ's laptop, its track history still on the screen."
+        },
+        {
+          "id": "hs_gen",
+          "label": "Generator",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_generator",
+          "text": "A hire sheet clipped to the generator's handle."
+        },
+        {
+          "id": "hs_wreath",
+          "label": "The wreaths",
+          "pos": [
+            24,
+            30
+          ],
+          "yields": "ev_wreath",
+          "text": "A row of wreaths by the coffin. One is larger than the others."
+        },
+        {
+          "id": "hs_letter",
+          "label": "Family table",
+          "pos": [
+            16,
+            56
+          ],
+          "yields": "ev_land_letter",
+          "text": "A letter from the clan elders on the family table."
+        },
+        {
+          "id": "hs_kitchen",
+          "label": "Kitchen fires",
+          "pos": [
+            86,
+            64
+          ],
+          "yields": "ev_maureen",
+          "text": "Maureen Atieno, still feeding the fires, waves you over."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a rural funeral compound near Siaya at night, a large white tent with plastic chairs, a DJ booth with speakers, a hired generator, women cooking over open fires with long wooden pestles, hundreds of mourners, warm lights against the dark"
+      }
+    },
+    {
+      "id": "loc_msearch",
+      "name": "Mitchelle's room (search)",
+      "kind": "search",
+      "description": "A small room in her family's house: a bed, a mirror, a dress over a chair.",
+      "unlock": {
+        "fact": "f_mit_reveal"
+      },
+      "hotspots": [
+        {
+          "id": "hs_room",
+          "label": "Her room",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_mitchelle_home",
+          "text": "On the dresser, a little dish. Over the chair, a black dress."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small bedroom in a rural Kenyan house, a mirror and a dresser with a small dish, a black dress hanging over a chair"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Behind the store",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. One head wound. A half-smoked cigarette beside him."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the dusty ground behind a rural maize store at dawn, a half-smoked cigarette in the dust, long grass beyond, no body visible"
+      }
+    },
+    {
+      "id": "ev_beads",
+      "type": "physical",
+      "title": "Scattered beads",
+      "render": "object",
+      "body": {
+        "label": "Small red and white glass beads on a broken elastic."
+      },
+      "facts": [
+        "f_beads"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "small red and white glass beads scattered in dust beside a snapped piece of elastic thread"
+      }
+    },
+    {
+      "id": "ev_pestle",
+      "type": "physical",
+      "title": "Wooden pestle",
+      "render": "object",
+      "body": {
+        "label": "A long wooden pounding pestle from the funeral kitchen, in the grass 30 m behind the store."
+      },
+      "facts": [
+        "f_pestle"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_maize",
+      "type": "physical",
+      "title": "The maize store",
+      "render": "sceneNote",
+      "body": {
+        "note": "Four sacks missing since the evening. Drag marks from the front door to the back path. Arnold's handcart outside his house has maize dust in it."
+      },
+      "facts": [
+        "f_maize"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_playlist",
+      "type": "physical",
+      "title": "DJ's track history",
+      "render": "timetable",
+      "body": {
+        "tracks": [
+          "01:00 — mic break",
+          "02:10 — \"Brighton's request\" (announced)",
+          "02:38 — last track before the silence",
+          "03:05 — next track"
+        ]
+      },
+      "facts": [
+        "f_playlist"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_generator",
+      "type": "physical",
+      "title": "Generator hire sheet",
+      "render": "form",
+      "body": {
+        "note": "Out of fuel about 02:40; refuelled 03:05."
+      },
+      "facts": [
+        "f_generator"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_fidelis",
+      "type": "witness",
+      "title": "Statement: Fidelis Oyoo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_fidelis"
+      },
+      "facts": [
+        "f_fidelis",
+        "f_fidelis_dance",
+        "f_fidelis_self",
+        "f_dj_paid"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_turfosa",
+      "type": "witness",
+      "title": "Statement: Turfosa Okal",
+      "render": "statement",
+      "body": {
+        "speaker": "p_turfosa"
+      },
+      "facts": [
+        "f_turfosa",
+        "f_turfosa_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_maureen",
+      "type": "witness",
+      "title": "Statement: Maureen Atieno",
+      "render": "statement",
+      "body": {
+        "speaker": "p_maureen"
+      },
+      "facts": [
+        "f_maureen"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_sharleen",
+      "type": "witness",
+      "title": "Statement: Sharleen and two friends",
+      "render": "statement",
+      "body": {
+        "speaker": "p_sharleen"
+      },
+      "facts": [
+        "f_sharleen"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_wreath",
+      "type": "physical",
+      "title": "A printed wreath",
+      "render": "note",
+      "body": {
+        "card": "Rest in peace, Mzee Olang'. From your friends at Mvua Holdings."
+      },
+      "facts": [
+        "f_wreath"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_land_letter",
+      "type": "physical",
+      "title": "Clan elders' letter",
+      "render": "note",
+      "body": {
+        "text": "The dispute over the late Mzee's land will be settled by the elders after the burial. Parties: Arnold Olang' and his uncles."
+      },
+      "facts": [
+        "f_land_letter"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mitchelle_home",
+      "type": "physical",
+      "title": "Mitchelle's room",
+      "render": "object",
+      "body": {
+        "dish": "The rest of a red-and-white beaded bracelet in a dish.",
+        "dress": "A black dress with grass seeds in the hem."
+      },
+      "facts": [
+        "f_bracelet",
+        "f_dress"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_turfosa",
+          "f_beads"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_tod",
+        "f_aut_single"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_compare",
+      "type": "forensic",
+      "title": "Comparison: pestle vs wound",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_pestle_match"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_autopsy",
+          "ev_pestle"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_beadmatch",
+      "type": "forensic",
+      "title": "Comparison: beads vs bracelet",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_beads_match"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_beads",
+          "ev_mitchelle_home"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Brighton Onyiso was found dead behind a maize store at the funeral compound at about 05:40, after the all-night disco matanga.",
+      "kind": "true",
+      "about": [
+        "p_brighton",
+        "loc_store"
+      ],
+      "at": {
+        "from": "05:40"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "One head wound. A half-smoked cigarette lies beside him in the dust.",
+      "kind": "true",
+      "about": [
+        "p_brighton",
+        "loc_store"
+      ]
+    },
+    {
+      "id": "f_beads",
+      "text": "Beside the body: small red and white glass beads, scattered, on a broken elastic.",
+      "kind": "true",
+      "about": [
+        "loc_store"
+      ]
+    },
+    {
+      "id": "f_pestle",
+      "text": "In the long grass 30 m behind the store: a long wooden pounding pestle from the funeral kitchen.",
+      "kind": "true",
+      "about": [
+        "loc_store"
+      ]
+    },
+    {
+      "id": "f_maize",
+      "text": "Four sacks are missing from the store since the evening, with drag marks out of the front door to the back path. Arnold's handcart has maize dust in it.",
+      "kind": "true",
+      "about": [
+        "p_arnold"
+      ]
+    },
+    {
+      "id": "f_playlist",
+      "text": "DJ's track history: 02:10, \"Brighton's request\", announced on the mic. Last track before the silence: 02:38. Next track: 03:05.",
+      "kind": "true",
+      "about": [
+        "p_fidelis",
+        "p_brighton"
+      ],
+      "at": {
+        "from": "02:10",
+        "to": "03:05"
+      }
+    },
+    {
+      "id": "f_generator",
+      "text": "Generator hire sheet: \"Out of fuel about 02:40; refuelled 03:05.\"",
+      "kind": "true",
+      "about": [
+        "loc_compound"
+      ],
+      "at": {
+        "from": "02:40",
+        "to": "03:05"
+      }
+    },
+    {
+      "id": "f_fidelis",
+      "text": "Fidelis: at 01:00 Brighton took the mic and read a girl's messages out to the whole tent, laughing. The girl was Mitchelle. \"It was ugly.\"",
+      "kind": "true",
+      "about": [
+        "p_fidelis",
+        "p_brighton",
+        "p_mitchelle"
+      ],
+      "at": {
+        "from": "01:00"
+      }
+    },
+    {
+      "id": "f_fidelis_dance",
+      "text": "Fidelis: Brighton danced to his 02:10 request and stayed on the floor until the music died at 02:40, then walked off into the dark towards the store, lighting a cigarette.",
+      "kind": "true",
+      "about": [
+        "p_fidelis",
+        "p_brighton"
+      ],
+      "at": {
+        "from": "02:40"
+      }
+    },
+    {
+      "id": "f_fidelis_self",
+      "text": "Fidelis was at the generator with his boys from 02:40 to 03:05, refuelling by torchlight.",
+      "kind": "true",
+      "about": [
+        "p_fidelis"
+      ],
+      "where": {
+        "person": "p_fidelis",
+        "place": "plc_generator",
+        "from": "02:40",
+        "to": "03:05"
+      }
+    },
+    {
+      "id": "f_dj_paid",
+      "text": "Fidelis: the family paid him in full in advance. \"Nobody owes the DJ at a matanga.\"",
+      "kind": "true",
+      "about": [
+        "p_fidelis"
+      ]
+    },
+    {
+      "id": "f_turfosa",
+      "text": "Turfosa: \"When the music died, I saw the girl Brighton shamed walking towards the maize store with her arms folded.\" One of the kitchen's long pestles was missing in the morning.",
+      "kind": "true",
+      "about": [
+        "p_turfosa",
+        "p_mitchelle"
+      ]
+    },
+    {
+      "id": "f_turfosa_self",
+      "text": "Turfosa was at her fires with three helpers all night.",
+      "kind": "true",
+      "about": [
+        "p_turfosa"
+      ],
+      "where": {
+        "person": "p_turfosa",
+        "place": "plc_kitchen",
+        "from": "20:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_maureen",
+      "text": "Maureen: Arnold went off down the back path with a loaded handcart at about 02:35 and came back past the fires with it empty at 03:07, just after the music.",
+      "kind": "true",
+      "about": [
+        "p_maureen",
+        "p_arnold"
+      ],
+      "where": {
+        "person": "p_arnold",
+        "place": "plc_backpath",
+        "from": "02:35",
+        "to": "03:07"
+      },
+      "at": {
+        "from": "02:35",
+        "to": "03:07"
+      }
+    },
+    {
+      "id": "f_sharleen",
+      "text": "Sharleen's friends: during the blackout she held a phone torch for the DJ's boys at the generator, then danced with them when the music came back.",
+      "kind": "true",
+      "about": [
+        "p_sharleen"
+      ],
+      "where": {
+        "person": "p_sharleen",
+        "place": "plc_generator",
+        "from": "02:40",
+        "to": "03:10"
+      }
+    },
+    {
+      "id": "f_wreath",
+      "text": "A printed wreath: \"Rest in peace, Mzee Olang'. From your friends at Mvua Holdings.\" The family say he \"sold land to some Nairobi company\" months before he died.",
+      "kind": "true",
+      "about": [
+        "loc_compound"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_land_letter",
+      "text": "Clan elders' letter: the dispute over the late Mzee's land will be settled after the burial. The parties are Arnold and his uncles. Brighton is not a party.",
+      "kind": "true",
+      "about": [
+        "p_arnold"
+      ]
+    },
+    {
+      "id": "f_bracelet",
+      "text": "In Mitchelle's room: the rest of a red-and-white beaded bracelet in a dish.",
+      "kind": "true",
+      "about": [
+        "p_mitchelle"
+      ]
+    },
+    {
+      "id": "f_dress",
+      "text": "Her black dress has grass seeds caught in the hem.",
+      "kind": "true",
+      "about": [
+        "p_mitchelle"
+      ]
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Autopsy: one heavy blow with a long rounded wooden object.",
+      "kind": "true",
+      "about": [
+        "p_brighton"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 02:00 and 03:30.",
+      "kind": "true",
+      "about": [
+        "p_brighton"
+      ],
+      "at": {
+        "from": "02:00",
+        "to": "03:30"
+      }
+    },
+    {
+      "id": "f_aut_single",
+      "text": "Autopsy: no other injuries at all; no sign of a fight, a fall or an electrical burn.",
+      "kind": "true",
+      "about": [
+        "p_brighton"
+      ]
+    },
+    {
+      "id": "f_pestle_match",
+      "text": "Dr. Chebii: the pestle's rounded end matches the wound.",
+      "kind": "true",
+      "about": [
+        "p_brighton"
+      ]
+    },
+    {
+      "id": "f_beads_match",
+      "text": "Comparison: the scattered beads and the bracelet in Mitchelle's dish are the same beads on the same elastic; the broken ends match.",
+      "kind": "true",
+      "about": [
+        "p_mitchelle"
+      ]
+    },
+    {
+      "id": "f_mit_midnight",
+      "text": "Mitchelle: \"I left the disco at midnight and went home to sleep.\"",
+      "kind": "lie",
+      "about": [
+        "p_mitchelle"
+      ]
+    },
+    {
+      "id": "f_mit_nothing",
+      "text": "Mitchelle: \"He was nothing to me any more.\"",
+      "kind": "claim",
+      "about": [
+        "p_mitchelle",
+        "p_brighton"
+      ]
+    },
+    {
+      "id": "f_mit_reveal",
+      "text": "Mitchelle admits she followed Brighton towards the store when the music stopped, \"to tell him what he was\".",
+      "kind": "true",
+      "about": [
+        "p_mitchelle",
+        "p_brighton"
+      ],
+      "where": {
+        "person": "p_mitchelle",
+        "place": "plc_behind",
+        "from": "02:42",
+        "to": "02:50"
+      }
+    },
+    {
+      "id": "f_mit_alive",
+      "text": "Mitchelle: \"I told him. He laughed. I walked away and he was smoking.\"",
+      "kind": "lie",
+      "about": [
+        "p_mitchelle",
+        "p_brighton"
+      ]
+    },
+    {
+      "id": "f_arn_tent",
+      "text": "Arnold: \"I never left the funeral tent all night.\"",
+      "kind": "lie",
+      "about": [
+        "p_arnold"
+      ]
+    },
+    {
+      "id": "f_arn_reveal",
+      "text": "Arnold: he took four sacks, \"half mine\", out of the front door at about 02:30 and went the back way to his house with his cart. He didn't see Brighton.",
+      "kind": "true",
+      "about": [
+        "p_arnold"
+      ]
+    },
+    {
+      "id": "f_sha_claim",
+      "text": "Sharleen: \"I was at the generator holding the torch.\"",
+      "kind": "claim",
+      "about": [
+        "p_sharleen"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_mitchelle",
+      "stance": "cooperative",
+      "intro": "Mitchelle sits on a bench at the edge of the tent, her arms folded tight. \"I left at midnight. I went home to sleep.\"",
+      "claims": [
+        "f_mit_midnight",
+        "f_mit_nothing"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_mit_alive",
+          "after": "f_mit_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_arnold",
+      "stance": "cooperative",
+      "intro": "Arnold stands by the store with his hands in his pockets. \"I never left the tent all night. Ask anyone.\"",
+      "claims": [
+        "f_arn_tent"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_land_letter",
+          "reply": "The elders will settle it after the burial. That land is my father's side. Brighton had nothing to do with it.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_sharleen",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_fidelis"
+      ],
+      "intro": "Sharleen hasn't taken off the jacket Brighton lent her. \"I don't know anyone here.\"",
+      "claims": [
+        "f_sha_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_fidelis",
+          "reply": "He read her messages. I told him to stop. He didn't. When the lights went I was holding the torch for the DJ's boys. My friends were there.",
+          "reveals": [
+            "ev_sharleen"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_fidelis",
+      "stance": "cooperative",
+      "intro": "Fidelis scrolls back through the night on his laptop. \"Every track has a time. Everything.\"",
+      "claims": [],
+      "yields": [
+        "ev_fidelis"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_turfosa",
+      "stance": "cooperative",
+      "intro": "Turfosa wipes her hands on her apron by the fires. \"Four hundred people, and I counted my pestles. One is gone.\"",
+      "claims": [],
+      "yields": [
+        "ev_turfosa"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_mit_midnight",
+      "claim": "f_mit_midnight",
+      "brokenBy": [
+        "f_fidelis",
+        "f_turfosa"
+      ],
+      "reveals": [
+        "f_mit_reveal"
+      ],
+      "reaction": "She unfolds her arms. \"He read my messages to everyone. My whole village heard. I wanted to tell him what he was. That's all.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_arnold",
+      "claim": "f_arn_tent",
+      "brokenBy": [
+        "f_maize"
+      ],
+      "reveals": [
+        "f_arn_reveal"
+      ],
+      "reaction": "\"...I took four sacks. That maize is half mine. I went the back way with my cart at about half past two and came back before the music. I didn't see Brighton.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_mit_alive",
+      "claim": "f_mit_alive",
+      "brokenBy": [
+        "f_beads_match",
+        "f_pestle"
+      ],
+      "reveals": [],
+      "reaction": "Mitchelle looks at the beads in the evidence bag, then at her bare wrist. She doesn't say anything for a long time. \"He laughed,\" she says at last.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_mitchelle",
+      "text": "Mitchelle Aoko",
+      "category": "person",
+      "ref": "p_mitchelle",
+      "unlock": {
+        "anyOf": [
+          "f_fidelis"
+        ]
+      }
+    },
+    {
+      "id": "w_arnold",
+      "text": "Arnold Olang'",
+      "category": "person",
+      "ref": "p_arnold",
+      "unlock": {
+        "anyOf": [
+          "f_maize"
+        ]
+      }
+    },
+    {
+      "id": "w_sharleen",
+      "text": "Sharleen Ongalo",
+      "category": "person",
+      "ref": "p_sharleen",
+      "unlock": {
+        "anyOf": [
+          "f_fidelis"
+        ]
+      }
+    },
+    {
+      "id": "w_fidelis",
+      "text": "Fidelis Oyoo",
+      "category": "person",
+      "ref": "p_fidelis",
+      "unlock": {
+        "anyOf": [
+          "f_playlist"
+        ]
+      }
+    },
+    {
+      "id": "w_turfosa",
+      "text": "Turfosa Okal",
+      "category": "person",
+      "ref": "p_turfosa",
+      "unlock": {
+        "anyOf": [
+          "f_turfosa"
+        ]
+      }
+    },
+    {
+      "id": "h_pestle",
+      "text": "struck with a caterer's pounding pestle",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_pestle"
+        ]
+      }
+    },
+    {
+      "id": "h_fall",
+      "text": "fell drunk and hit his head on the store wall",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_sack",
+      "text": "struck with a sack of maize",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_maize"
+        ]
+      }
+    },
+    {
+      "id": "h_cable",
+      "text": "electrocuted by the generator cable",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_generator"
+        ]
+      }
+    },
+    {
+      "id": "h_fight",
+      "text": "a fight with several young men",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_messages",
+      "text": "he'd humiliated her in front of the whole funeral by reading her messages aloud",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_fidelis"
+        ]
+      }
+    },
+    {
+      "id": "m_land",
+      "text": "the family dispute over the old man's land",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_land_letter"
+        ]
+      }
+    },
+    {
+      "id": "m_maize",
+      "text": "he caught the cousin stealing maize",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_maize"
+        ]
+      }
+    },
+    {
+      "id": "m_dj",
+      "text": "a debt for DJ fees",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_playlist"
+        ]
+      }
+    },
+    {
+      "id": "m_jealous",
+      "text": "the new girlfriend's jealousy",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_fidelis"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Brighton Onyiso"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_0000",
+                  "label": "00:00",
+                  "from": "00:00",
+                  "to": "00:00"
+                },
+                {
+                  "id": "sl_0100",
+                  "label": "01:00",
+                  "from": "01:00",
+                  "to": "01:00"
+                },
+                {
+                  "id": "sl_0210",
+                  "label": "02:10",
+                  "from": "02:10",
+                  "to": "02:10"
+                },
+                {
+                  "id": "sl_0240",
+                  "label": "02:40–03:05",
+                  "from": "02:40",
+                  "to": "03:05"
+                },
+                {
+                  "id": "sl_0305",
+                  "label": "03:05",
+                  "from": "03:05",
+                  "to": "03:05"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_mic",
+                  "text": "Brighton reads Mitchelle's messages on the mic",
+                  "slot": "sl_0100",
+                  "by": [
+                    "f_fidelis"
+                  ],
+                  "why": "The DJ: at 01:00, in front of the whole tent.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_fidelis"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_dance",
+                  "text": "Brighton dances to his request",
+                  "slot": "sl_0210",
+                  "by": [
+                    "f_playlist",
+                    "f_fidelis_dance"
+                  ],
+                  "why": "The playlist logs \"Brighton's request\" at 02:10; the whole tent saw him dance.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_playlist"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Brighton is killed",
+                  "slot": "sl_0240",
+                  "by": [
+                    "f_generator",
+                    "f_playlist",
+                    "f_fidelis_dance",
+                    "f_aut_tod",
+                    "f_turfosa"
+                  ],
+                  "why": "He danced until the music died at 02:40 and walked off to smoke. The music came back at 03:05. Turfosa saw Mitchelle walk to the store in the silence.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_generator"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_music",
+                  "text": "The music comes back",
+                  "slot": "sl_0305",
+                  "by": [
+                    "f_playlist",
+                    "f_generator"
+                  ],
+                  "why": "Refuelled at 03:05; the next track starts at 03:05.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_generator"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_0000",
+                  "by": [
+                    "f_fidelis",
+                    "f_turfosa"
+                  ],
+                  "why": "Midnight is when Mitchelle says she left. She was in the tent at 01:00 and walking to the store at 02:40."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "The messages at one, his song at ten past two, and twenty-five minutes of silence. The playlist has a gap. That's when.",
+          "fail": [
+            "Midnight is her story, not the night.",
+            "He was dancing at ten past two. When could nobody hear a thing?"
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_mitchelle"
+          }
+        ],
+        "prosecutor": {
+          "pass": "In the tent at one, walking to the store in the dark, and her bracelet in the dust beside him. That will hold.",
+          "fail": [
+            "The cousin was stealing maize down the back path. He's a thief. Look again.",
+            "The new girlfriend held a torch for the DJ's boys."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_pestle"
+          }
+        ],
+        "prosecutor": {
+          "pass": "One blow with a kitchen pestle in the dark. Yes.",
+          "fail": [
+            "One wound and nothing else. No fight.",
+            "A long rounded wooden object. What went missing from the kitchen?"
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_messages"
+          }
+        ],
+        "prosecutor": {
+          "pass": "He read her messages to four hundred people at her neighbour's funeral. The court will understand. It will still convict.",
+          "fail": [
+            "Brighton isn't a party to the land dispute.",
+            "He never went near the back path. Read the cousin's story again."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_store",
+      "from": "02:40",
+      "to": "03:05",
+      "within": [
+        "plc_behind"
+      ],
+      "note": "Dancing until the music died at 02:40; the generator came back at 03:05. The autopsy allows 02:00–03:30."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_playlist",
+          "f_generator",
+          "f_fidelis_dance",
+          "f_aut_tod"
+        ],
+        "concludes": "Brighton was alive and dancing from 02:10 until the music died at 02:40. The only stretch when nobody could hear anything was the generator silence, 02:40 to 03:05.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_mit_midnight",
+          "f_fidelis"
+        ],
+        "concludes": "Mitchelle didn't leave at midnight. At 01:00 Brighton humiliated her in front of the whole tent."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_turfosa",
+          "f_mit_reveal",
+          "f_pestle",
+          "f_aut_blow",
+          "f_pestle_match"
+        ],
+        "concludes": "In the silence she walked to the store. The kitchen's missing pestle, from the grass behind it, matches the wound."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_beads",
+          "f_bracelet",
+          "f_beads_match",
+          "f_mit_alive",
+          "f_dress"
+        ],
+        "concludes": "Her broken bracelet is beside the body. Mitchelle Aoko struck Brighton with a caterer's pounding pestle because he'd humiliated her in front of the whole funeral.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_arnold",
+        "blank": "who",
+        "by": [
+          "f_maureen",
+          "f_arn_reveal"
+        ],
+        "why": "Arnold was down the back path with his handcart from 02:35 until he came back past the fires at 03:07. His crime is the maize."
+      },
+      {
+        "word": "w_sharleen",
+        "blank": "who",
+        "by": [
+          "f_sharleen"
+        ],
+        "why": "Sharleen held the torch at the generator through the blackout."
+      },
+      {
+        "word": "w_fidelis",
+        "blank": "who",
+        "by": [
+          "f_fidelis_self"
+        ],
+        "why": "Fidelis was refuelling the generator with his boys."
+      },
+      {
+        "word": "w_turfosa",
+        "blank": "who",
+        "by": [
+          "f_turfosa_self"
+        ],
+        "why": "Turfosa was at her fires with three helpers."
+      },
+      {
+        "word": "h_fall",
+        "blank": "how",
+        "by": [
+          "f_aut_blow",
+          "f_aut_single"
+        ],
+        "why": "A single heavy blow from a long object, not a fall."
+      },
+      {
+        "word": "h_sack",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "The wound is from a long rounded wooden object."
+      },
+      {
+        "word": "h_cable",
+        "blank": "how",
+        "by": [
+          "f_aut_single"
+        ],
+        "why": "No electrical burn."
+      },
+      {
+        "word": "h_fight",
+        "blank": "how",
+        "by": [
+          "f_aut_single"
+        ],
+        "why": "One blow and no other injuries."
+      },
+      {
+        "word": "m_land",
+        "blank": "why",
+        "by": [
+          "f_land_letter"
+        ],
+        "why": "Brighton isn't a party to the land dispute."
+      },
+      {
+        "word": "m_maize",
+        "blank": "why",
+        "by": [
+          "f_maureen",
+          "f_arn_reveal"
+        ],
+        "why": "Arnold was on the back path; Brighton never went there."
+      },
+      {
+        "word": "m_dj",
+        "blank": "why",
+        "by": [
+          "f_dj_paid"
+        ],
+        "why": "The DJ was paid by the family in advance."
+      },
+      {
+        "word": "m_jealous",
+        "blank": "why",
+        "by": [
+          "f_sharleen"
+        ],
+        "why": "That would be Sharleen's, and she was at the generator."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Mzee Ezekiel Olang' dies at 81. The night before the burial the family holds a disco matanga: a tent, a DJ, a generator, food through the night.",
+        "image": null
+      },
+      {
+        "text": "01:00. Brighton, who left Mitchelle in November, takes the DJ's microphone, reads her messages to him aloud to the tent, and laughs.",
+        "image": null
+      },
+      {
+        "text": "02:10. He dances to his request. At 02:40 the generator runs dry, the music dies, and he walks off behind the maize store to smoke.",
+        "image": null
+      },
+      {
+        "text": "In the dark and quiet, Mitchelle takes a pestle from the kitchen and follows him. She strikes him once. Her bracelet snaps.",
+        "image": "loc_store"
+      },
+      {
+        "text": "She throws the pestle into the grass. At 03:05 the music comes back and the tent dances on. At noon the family were to bury their grandfather.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "No detention needed. One warrant on her room. Every comparison is immediate.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_store",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_beads",
+        "hours": 1
+      },
+      {
+        "do": "visit",
+        "target": "loc_compound",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_fidelis"
+      },
+      {
+        "do": "read",
+        "target": "ev_playlist",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_generator",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_turfosa"
+      },
+      {
+        "do": "read",
+        "target": "ev_pestle",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_mitchelle"
+      },
+      {
+        "do": "press",
+        "target": "c_mit_midnight"
+      },
+      {
+        "do": "read",
+        "target": "ev_maize",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_arnold"
+      },
+      {
+        "do": "press",
+        "target": "c_arnold"
+      },
+      {
+        "do": "read",
+        "target": "ev_maureen",
+        "hours": 1
+      },
+      {
+        "do": "search",
+        "target": "loc_msearch"
+      },
+      {
+        "do": "interview",
+        "target": "p_mitchelle"
+      },
+      {
+        "do": "press",
+        "target": "c_mit_alive"
+      }
+    ],
+    "totalHours": 21
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_playlist",
+        "line": "A playlist is a clock. Look for the gap."
+      },
+      "tier2": {
+        "facts": [
+          "f_playlist",
+          "f_generator"
+        ],
+        "line": "Last track 02:38, generator dry at 02:40, music back at 03:05."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_turfosa",
+        "line": "The caterer saw someone walk towards the store when the music died."
+      },
+      "tier2": {
+        "facts": [
+          "f_turfosa",
+          "f_beads"
+        ],
+        "line": "Arms folded, walking to the store. Red and white beads in the dust."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_turfosa",
+        "line": "Turfosa counted her pestles in the morning."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_blow",
+          "f_pestle"
+        ],
+        "line": "A long rounded wooden object, and a pestle in the long grass."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_fidelis",
+        "line": "What did Brighton do with the DJ's microphone at one o'clock?"
+      },
+      "tier2": {
+        "facts": [
+          "f_fidelis",
+          "f_mit_midnight"
+        ],
+        "line": "Her messages, read aloud to the whole tent. She says she'd left by then."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "matanga",
+      "def": "A funeral, and the days of mourning before the burial."
+    },
+    {
+      "term": "disco matanga",
+      "def": "An all-night funeral disco to keep the bereaved family company and raise money for the funeral."
+    },
+    {
+      "term": "mchi",
+      "def": "A long wooden pestle for pounding grain."
+    },
+    {
+      "term": "shamba",
+      "def": "A farm or plot of land."
+    },
+    {
+      "term": "wazee wa ukoo",
+      "def": "Clan elders."
+    },
+    {
+      "term": "mzee",
+      "def": "Respectful word for an older man."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "playlistAsClock"
+    ],
+    "beatNotes": "A playlist as a clock. The DJ's track history drops onto the rail as a ribbon of song titles; the generator silence shows as a gap you can see, and the event cards snap into it."
+  }
+}

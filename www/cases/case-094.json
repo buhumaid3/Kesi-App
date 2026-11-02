@@ -1,0 +1,2759 @@
+{
+  "meta": {
+    "id": "case-094",
+    "number": 94,
+    "region": "final-files",
+    "regionNumber": 10,
+    "title": "Cellmate",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 50,
+    "date": "Tuesday 3 November",
+    "folderTab": "INDUSTRIAL AREA"
+  },
+  "pattern": {
+    "crimePattern": "a remand prisoner's sister books a poisoned food parcel in for the man her brother fears, under the man's wife's name; the cell's food captain eats it instead",
+    "noRealCaseRetold": true,
+    "notes": "Fictional prisoners, officers and families; the remand prison is a setting only and its officers are shown as overworked and mostly honest. Fundi names the man in the government car as Raphael Oduya (the 4th-floor photo, case 86). His full confession comes after the verdict and closes t_fundi.",
+    "tags": [
+      "poisoning",
+      "wrong-victim",
+      "real-target",
+      "forgery",
+      "spine",
+      "three-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where"
+    ]
+  },
+  "difficulty": {
+    "suspects": 5,
+    "chainLength": 6,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "realTarget",
+      "forgery",
+      "spine"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": "the-poison-was-meant-for-fundi"
+  },
+  "ob": {
+    "number": "OB 18/03/11",
+    "date": "Tuesday 3 November",
+    "time": "19:00",
+    "reportedBy": "Industrial Area Remand Prison",
+    "text": "A remand prisoner, Douglas Njuguna (29), died at 17:40 after eating from a food parcel; two cellmates are in hospital. The parcel was booked in for Benedict Mbuvi, \"Fundi\" (case 50).",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_cell",
+    "nodes": [
+      "loc_cell",
+      "loc_gate",
+      "loc_rhobi"
+    ],
+    "edges": [
+      {
+        "a": "loc_cell",
+        "b": "loc_gate",
+        "minutes": 5,
+        "by": "foot"
+      },
+      {
+        "a": "loc_gate",
+        "b": "loc_rhobi",
+        "minutes": 45,
+        "by": "car"
+      },
+      {
+        "a": "loc_cell",
+        "b": "loc_rhobi",
+        "minutes": 50,
+        "by": "car"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_douglas",
+      "role": "victim",
+      "name": "Douglas Njuguna",
+      "age": 29,
+      "occupation": "Remand prisoner, accused of phone theft",
+      "bio": "The \"food captain\" of cell 4: he shares out every parcel.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_cell4",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, late 20s, remand whites, a cheeky, likeable face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_rhobi",
+      "role": "suspect",
+      "name": "Rhobi Chacha",
+      "age": 52,
+      "occupation": "Market trader, Kitengela; sister of Major (rtd) Daniel Mwita",
+      "bio": "Visits her brother in Block A every Tuesday at 11:30.",
+      "community": "Kuria",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_idcheck"
+      },
+      "at": "plc_rkitchen",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kuria woman, early 50s, a neat church dress and headscarf, a polite, very firm face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_fundi",
+      "role": "suspect",
+      "name": "Benedict Mbuvi, \"Fundi\"",
+      "age": 53,
+      "occupation": "Remand prisoner since case 50",
+      "bio": "Older and thinner; the limp is gone.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "intendedTarget": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_court",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba man, early 50s, remand whites hanging loose on him, a grey, hollow face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mumo",
+      "role": "suspect",
+      "name": "Sgt. Jacinta Mumo",
+      "age": 41,
+      "occupation": "Prison officer at the parcel desk",
+      "bio": "Forty visitors a morning, one officer.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_desk",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba woman, early 40s, a Kenya Prisons Service uniform and beret, a defensive, exhausted face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mutheu",
+      "role": "suspect",
+      "name": "Mutheu Mbuvi",
+      "age": 50,
+      "occupation": "Fundi's wife; a clerk in Machakos",
+      "redHerring": true,
+      "bio": "Visits on Saturdays.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_tag"
+      },
+      "at": "plc_machakos",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba woman, about 50, an office blouse and a cardigan, a frightened face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_musa",
+      "role": "suspect",
+      "name": "\"Sharp\" Musa Abdalla",
+      "age": 35,
+      "occupation": "Block C prisoner",
+      "redHerring": true,
+      "bio": "Known for stealing from other men's parcels.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_punish",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Swahili man, mid 30s, remand whites, a scar through one eyebrow, a sly face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_lucy",
+      "role": "witness",
+      "name": "Lucy Wanza",
+      "age": 45,
+      "occupation": "Prison welfare officer",
+      "bio": "Honest, thorough, and furious.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_welfare",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba woman, mid 40s, a cardigan over a welfare officer's blouse, a lanyard, a determined face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_victor",
+      "role": "witness",
+      "name": "Victor Omondi",
+      "age": 24,
+      "occupation": "Cellmate, in hospital",
+      "statementOnly": true,
+      "bio": "Ate two spoons and lived.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_cell4",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, mid 20s, in a hospital gown, a pale, shaken face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mwita",
+      "role": "witness",
+      "name": "Major (rtd) Daniel Mwita",
+      "age": 58,
+      "occupation": "Remand prisoner, Block A (case 90)",
+      "statementOnly": true,
+      "bio": "Says nothing.",
+      "community": "Kuria",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_visits"
+      },
+      "at": "plc_blocka",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kuria man, late 50s, remand whites worn like a uniform, a hard, closed face, ID-photo framing",
+        "ref": null
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_cell4",
+      "name": "Cell 4, Block C",
+      "within": "loc_cell"
+    },
+    {
+      "id": "plc_blocka",
+      "name": "Block A"
+    },
+    {
+      "id": "plc_desk",
+      "name": "The visitors' gate and parcel desk",
+      "within": "loc_gate"
+    },
+    {
+      "id": "plc_welfare",
+      "name": "The welfare office",
+      "within": "loc_gate"
+    },
+    {
+      "id": "plc_punish",
+      "name": "The punishment block"
+    },
+    {
+      "id": "plc_court",
+      "name": "Milimani Law Courts"
+    },
+    {
+      "id": "plc_machakos",
+      "name": "Machakos"
+    },
+    {
+      "id": "plc_rkitchen",
+      "name": "Rhobi's kitchen, Kitengela",
+      "within": "loc_rhobi"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_cell",
+      "name": "Cell 4, Block C",
+      "kind": "scene",
+      "description": "A remand cell for eight men: mats, a bucket, a shelf of plastic containers from home. Douglas was carried out at 17:20.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Where Douglas fell",
+          "pos": [
+            40,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "The floor by the mats."
+        },
+        {
+          "id": "hs_container",
+          "label": "The container",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_container",
+          "text": "A plastic tub on the shelf, half empty."
+        },
+        {
+          "id": "hs_victor",
+          "label": "Victor's statement",
+          "pos": [
+            20,
+            30
+          ],
+          "yields": "ev_victor",
+          "text": "Taken at the hospital."
+        },
+        {
+          "id": "hs_musa",
+          "label": "The block officers",
+          "pos": [
+            85,
+            70
+          ],
+          "yields": "ev_musa",
+          "text": "The Block C duty book."
+        },
+        {
+          "id": "hs_fundi",
+          "label": "Fundi's mattress",
+          "pos": [
+            55,
+            75
+          ],
+          "yields": "ev_note",
+          "text": "A folded paper under the mattress.",
+          "unlock": {
+            "fact": "f_fu_reveal"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a crowded remand prison cell, sleeping mats on a concrete floor, a shelf of plastic food containers, no people in focus"
+      }
+    },
+    {
+      "id": "loc_gate",
+      "name": "The visitors' gate and parcel desk",
+      "kind": "location",
+      "description": "A queue outside a barred window, a desk stacked with labelled food containers, a ledger chained to the counter.",
+      "unlock": {
+        "fact": "f_tag"
+      },
+      "hotspots": [
+        {
+          "id": "hs_register",
+          "label": "The visitor register",
+          "pos": [
+            30,
+            40
+          ],
+          "yields": "ev_register",
+          "text": "Tuesday's page."
+        },
+        {
+          "id": "hs_visits",
+          "label": "Past registers",
+          "pos": [
+            60,
+            40
+          ],
+          "yields": "ev_visits",
+          "text": "Three months of Tuesdays."
+        },
+        {
+          "id": "hs_court",
+          "label": "The escort log",
+          "pos": [
+            80,
+            30
+          ],
+          "yields": "ev_courtlist",
+          "text": "Who went to court today."
+        },
+        {
+          "id": "hs_lucy",
+          "label": "Lucy Wanza",
+          "pos": [
+            15,
+            70
+          ],
+          "yields": "ev_lucy",
+          "text": "The welfare office."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a prison parcel desk with a queue at a barred window and a stack of plastic food containers with paper tags"
+      }
+    },
+    {
+      "id": "loc_rhobi",
+      "name": "Rhobi's house, Kitengela",
+      "kind": "location",
+      "description": "A tidy stone house with a kitchen garden; plastic containers drying by the sink.",
+      "unlock": {
+        "fact": "f_agrovet"
+      },
+      "hotspots": [
+        {
+          "id": "hs_kitchen",
+          "label": "The kitchen",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_kitchen",
+          "text": "Search under warrant."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a tidy kitchen in a stone house in Kitengela, a set of plastic food containers drying by the sink, one missing from the stack"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Douglas in cell 4",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Collapsed after vomiting; two cellmates taken to hospital with the same symptoms."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a concrete cell floor beside sleeping mats, a spilled plastic spoon, no body visible"
+      }
+    },
+    {
+      "id": "ev_container",
+      "type": "physical",
+      "title": "The parcel container",
+      "render": "object",
+      "body": {
+        "label": "A plastic tub of chicken stew and rice. Tag: \"For: B. Mbuvi, Block C — From: Mrs. Mbuvi — 12:15\"."
+      },
+      "facts": [
+        "f_tag"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "parcel tag"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a plastic food tub with a paper parcel tag tied to it, half-eaten stew inside"
+      }
+    },
+    {
+      "id": "ev_victor",
+      "type": "witness",
+      "title": "Statement: Victor Omondi (hospital)",
+      "render": "statement",
+      "body": {
+        "speaker": "p_victor"
+      },
+      "facts": [
+        "f_share"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_musa",
+      "type": "document",
+      "title": "Block C duty book",
+      "render": "logBook",
+      "body": {
+        "text": "Musa Abdalla: punishment block, Monday 18:00 to Wednesday 08:00."
+      },
+      "facts": [
+        "f_musa"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "duty book"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_register",
+      "type": "document",
+      "title": "Visitor register, Tuesday",
+      "render": "logBook",
+      "body": {
+        "text": "12:10 — \"Mutheu Mbuvi\" — ID no. written — signed — \"food parcel for B. Mbuvi\"."
+      },
+      "facts": [
+        "f_register"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": false,
+        "forger": "p_rhobi",
+        "kind": "visitor register entry"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a chained prison visitor register open on a counter, a handwritten line in blue biro"
+      }
+    },
+    {
+      "id": "ev_visits",
+      "type": "document",
+      "title": "Visitor registers, three months",
+      "render": "logBook",
+      "body": {
+        "text": "Rhobi Chacha, for Daniel Mwita, Block A: every Tuesday 11:30, including today."
+      },
+      "facts": [
+        "f_visits"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "visitor registers"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_courtlist",
+      "type": "document",
+      "title": "Court list and escort log",
+      "render": "logBook",
+      "body": {
+        "text": "B. Mbuvi: out to Milimani 07:00, back in Block C 16:50."
+      },
+      "facts": [
+        "f_court"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "court list"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_lucy",
+      "type": "witness",
+      "title": "Statement: Lucy Wanza",
+      "render": "statement",
+      "body": {
+        "speaker": "p_lucy"
+      },
+      "facts": [
+        "f_lucy",
+        "f_lucy_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_idcheck",
+      "type": "document",
+      "title": "ID database check",
+      "render": "form",
+      "body": {
+        "text": "The ID number in the 12:10 entry belongs to RHOBI CHACHA, not Mutheu Mbuvi."
+      },
+      "facts": [
+        "f_idcheck"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "ID check"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_mutheu",
+      "type": "witness",
+      "title": "Statement: Mutheu Mbuvi and her employer",
+      "render": "statement",
+      "body": {
+        "speaker": "p_mutheu"
+      },
+      "facts": [
+        "f_mutheu"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_note",
+      "type": "document",
+      "title": "The note under Fundi's mattress",
+      "render": "letter",
+      "body": {
+        "text": "\"You know what happens to men who talk. — D.M.\" (Passed by an inmate three weeks ago; logged by the censor.)"
+      },
+      "facts": [
+        "f_note"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "censor's log"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Rhobi's line and PesaPap",
+      "render": "manifest",
+      "body": {
+        "mast": "Mon 20:00, Kitengela, at an agrovet.",
+        "pay": "KSh 1,450 to the agrovet, \"pesticide, 250 ml\"."
+      },
+      "facts": [
+        "f_agrovet"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_idcheck",
+          "f_visits"
+        ]
+      },
+      "doc": {
+        "genuine": true,
+        "kind": "agrovet receipt"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_kitchen",
+      "type": "physical",
+      "title": "Rhobi's kitchen",
+      "render": "object",
+      "body": {
+        "bottle": "Behind the door: a pesticide bottle, a third used.",
+        "set": "A set of plastic tubs, one missing."
+      },
+      "facts": [
+        "f_bottle",
+        "f_tubs"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_agrovet",
+          "f_idcheck"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a small bottle of farm pesticide behind a kitchen door, a third used"
+      }
+    },
+    {
+      "id": "ev_rh_sig",
+      "type": "physical",
+      "title": "Signature specimens: Rhobi Chacha",
+      "render": "object",
+      "body": {
+        "label": "Her Block A register entries, and a specimen taken in detention."
+      },
+      "facts": [
+        "f_rh_sig"
+      ],
+      "gate": null,
+      "detention": "p_rhobi",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Government Pathologist)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tox",
+      "type": "forensic",
+      "title": "Lab: toxicology (stew and the bottle)",
+      "render": "labReport",
+      "body": {
+        "test": "toxicology"
+      },
+      "facts": [
+        "f_tox"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toxicology",
+        "hours": 18,
+        "needs": [
+          "ev_container",
+          "ev_kitchen"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_hand",
+      "type": "forensic",
+      "title": "Lab: handwriting (12:10 entry)",
+      "render": "labReport",
+      "body": {
+        "test": "handwriting"
+      },
+      "facts": [
+        "f_handlab"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "handwriting",
+        "hours": 10,
+        "needs": [
+          "ev_register",
+          "ev_rh_sig"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Douglas Njuguna died in Block C at 17:40 on Tuesday after eating from a food parcel booked in for Benedict Mbuvi; two cellmates are in hospital.",
+      "kind": "true",
+      "about": [
+        "p_douglas",
+        "p_fundi",
+        "loc_cell"
+      ],
+      "at": {
+        "from": "17:40",
+        "to": null,
+        "day": "Tue"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "Douglas collapsed after vomiting; two cellmates have the same symptoms.",
+      "kind": "true",
+      "about": [
+        "p_douglas",
+        "plc_cell4"
+      ]
+    },
+    {
+      "id": "f_tag",
+      "text": "The parcel tag: \"For: B. Mbuvi, Block C — From: Mrs. Mbuvi — 12:15\". Chicken stew and rice.",
+      "kind": "true",
+      "about": [
+        "p_fundi",
+        "p_mutheu"
+      ]
+    },
+    {
+      "id": "f_share",
+      "text": "Victor: when a man is out, the food captain shares his parcel. Douglas ate the most, at about 13:00. \"Nobody outside knows that. It's just how a cell is.\"",
+      "kind": "true",
+      "about": [
+        "p_victor",
+        "p_douglas"
+      ],
+      "at": {
+        "from": "13:00",
+        "to": null,
+        "day": "Tue"
+      }
+    },
+    {
+      "id": "f_musa",
+      "text": "Duty book: Musa was in the punishment block from Monday 18:00 to Wednesday 08:00.",
+      "kind": "true",
+      "about": [
+        "p_musa"
+      ],
+      "where": {
+        "person": "p_musa",
+        "place": "plc_punish",
+        "from": "18:00",
+        "to": "08:00"
+      }
+    },
+    {
+      "id": "f_register",
+      "text": "Visitor register, Tuesday 12:10: \"Mutheu Mbuvi\", an ID number, a signature, \"food parcel for B. Mbuvi\".",
+      "kind": "true",
+      "about": [
+        "p_mutheu",
+        "plc_desk"
+      ],
+      "at": {
+        "from": "12:10",
+        "to": null,
+        "day": "Tue"
+      }
+    },
+    {
+      "id": "f_visits",
+      "text": "Past registers: Rhobi Chacha visits Daniel Mwita in Block A every Tuesday at 11:30, today included.",
+      "kind": "true",
+      "about": [
+        "p_rhobi",
+        "p_mwita"
+      ],
+      "at": {
+        "from": "11:30",
+        "to": null,
+        "day": "Tue"
+      }
+    },
+    {
+      "id": "f_court",
+      "text": "Escort log: Benedict Mbuvi was out at Milimani from 07:00 and back in Block C at 16:50.",
+      "kind": "true",
+      "about": [
+        "p_fundi"
+      ],
+      "where": {
+        "person": "p_fundi",
+        "place": "plc_court",
+        "from": "07:00",
+        "to": "16:30"
+      }
+    },
+    {
+      "id": "f_lucy",
+      "text": "Lucy: \"Fundi came back and saw Douglas carried out. He sat on the floor. He asked me for paper, a pen and a lawyer, in that order.\"",
+      "kind": "true",
+      "about": [
+        "p_lucy",
+        "p_fundi"
+      ]
+    },
+    {
+      "id": "f_lucy_self",
+      "text": "Lucy was in the welfare office with a family all afternoon.",
+      "kind": "true",
+      "about": [
+        "p_lucy"
+      ],
+      "where": {
+        "person": "p_lucy",
+        "place": "plc_welfare",
+        "from": "12:00",
+        "to": "17:00"
+      }
+    },
+    {
+      "id": "f_idcheck",
+      "text": "ID database: the number written at 12:10 belongs to Rhobi Chacha, not Mutheu Mbuvi.",
+      "kind": "true",
+      "about": [
+        "p_rhobi"
+      ]
+    },
+    {
+      "id": "f_mutheu",
+      "text": "Mutheu's employer: she was at work in Machakos all Tuesday. Mutheu: \"Benedict hates chicken stew.\"",
+      "kind": "true",
+      "about": [
+        "p_mutheu"
+      ],
+      "where": {
+        "person": "p_mutheu",
+        "place": "plc_machakos",
+        "from": "06:00",
+        "to": "18:00"
+      }
+    },
+    {
+      "id": "f_note",
+      "text": "Under Fundi's mattress, logged by the censor three weeks ago: \"You know what happens to men who talk. — D.M.\"",
+      "kind": "true",
+      "about": [
+        "p_fundi",
+        "p_mwita"
+      ]
+    },
+    {
+      "id": "f_agrovet",
+      "text": "Records: Monday 20:00 Rhobi's phone at a Kitengela agrovet; PesaPap KSh 1,450, \"pesticide, 250 ml\".",
+      "kind": "true",
+      "about": [
+        "p_rhobi"
+      ],
+      "at": {
+        "from": "20:00",
+        "to": null,
+        "day": "Mon"
+      }
+    },
+    {
+      "id": "f_bottle",
+      "text": "Behind Rhobi's kitchen door: the pesticide bottle, a third used.",
+      "kind": "true",
+      "about": [
+        "p_rhobi",
+        "plc_rkitchen"
+      ]
+    },
+    {
+      "id": "f_tubs",
+      "text": "Rhobi's set of plastic tubs, the same make as the parcel, is one short.",
+      "kind": "true",
+      "about": [
+        "p_rhobi"
+      ]
+    },
+    {
+      "id": "f_rh_sig",
+      "text": "Signature specimens from Rhobi Chacha.",
+      "kind": "true",
+      "about": [
+        "p_rhobi"
+      ]
+    },
+    {
+      "id": "f_aut",
+      "text": "Post-mortem: organophosphate pesticide poisoning; no injuries.",
+      "kind": "true",
+      "about": [
+        "p_douglas"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: eaten at about 13:00; death at 17:40, witnessed.",
+      "kind": "true",
+      "about": [
+        "p_douglas"
+      ],
+      "at": {
+        "from": "13:00",
+        "to": "17:40",
+        "day": "Tue"
+      }
+    },
+    {
+      "id": "f_tox",
+      "text": "Toxicology: the same organophosphate in the stew and in Rhobi's bottle; no other drug.",
+      "kind": "true",
+      "about": [
+        "p_rhobi",
+        "p_douglas"
+      ]
+    },
+    {
+      "id": "f_handlab",
+      "text": "Handwriting: the \"Mutheu Mbuvi\" signature at 12:10 is in the same hand as Rhobi's Block A entries.",
+      "kind": "true",
+      "about": [
+        "p_rhobi"
+      ]
+    },
+    {
+      "id": "f_rh_only",
+      "text": "Rhobi: \"I visit only my brother, at half past eleven. I've never brought food for anyone else.\"",
+      "kind": "lie",
+      "about": [
+        "p_rhobi"
+      ]
+    },
+    {
+      "id": "f_rh_reveal",
+      "text": "Rhobi: \"My brother said that man would hang him with his mouth. I cooked it that morning. I didn't know about the cell sharing. I'm sorry for the boy.\"",
+      "kind": "true",
+      "about": [
+        "p_rhobi",
+        "p_mwita"
+      ],
+      "where": {
+        "person": "p_rhobi",
+        "place": "plc_rkitchen",
+        "from": "06:00",
+        "to": "10:00"
+      }
+    },
+    {
+      "id": "f_rh_garden",
+      "text": "Rhobi: \"The bottle is for my kitchen garden. It never went near any food.\"",
+      "kind": "lie",
+      "about": [
+        "p_rhobi"
+      ]
+    },
+    {
+      "id": "f_fu_nomwita",
+      "text": "Fundi: \"I don't know any Mwita.\"",
+      "kind": "lie",
+      "about": [
+        "p_fundi"
+      ]
+    },
+    {
+      "id": "f_fu_reveal",
+      "text": "Fundi: \"The man who paid me for the Bahati road came in a government car, a Lands House pass on his lanyard.\" Shown the 4th-floor photo, he points to Raphael Oduya.",
+      "kind": "true",
+      "about": [
+        "p_fundi"
+      ],
+      "spine": "t_fundi"
+    },
+    {
+      "id": "f_mu_checked",
+      "text": "Sgt. Mumo: \"I checked every visitor's ID against their face.\"",
+      "kind": "lie",
+      "about": [
+        "p_mumo"
+      ]
+    },
+    {
+      "id": "f_mu_reveal",
+      "text": "Sgt. Mumo: \"Forty in the queue, one officer. I looked at a card, not a face. Another officer carried it to Block C.\" She accepts the discipline.",
+      "kind": "true",
+      "about": [
+        "p_mumo"
+      ],
+      "where": {
+        "person": "p_mumo",
+        "place": "plc_desk",
+        "from": "07:00",
+        "to": "17:00"
+      }
+    },
+    {
+      "id": "f_mt_claim",
+      "text": "Mutheu: \"I wasn't there.\"",
+      "kind": "claim",
+      "about": [
+        "p_mutheu"
+      ]
+    },
+    {
+      "id": "f_ms_claim",
+      "text": "Musa: \"I steal food. I was in the punishment block.\"",
+      "kind": "claim",
+      "about": [
+        "p_musa"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_rhobi",
+      "stance": "cooperative",
+      "intro": "Rhobi sits with her handbag on her knees. \"I visit only my brother, at half past eleven. I've never brought food for anyone else.\"",
+      "claims": [
+        "f_rh_only"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_rh_garden",
+          "after": "f_rh_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_fundi",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_container"
+      ],
+      "intro": "Fundi sits on the floor of the interview room and won't take the chair. \"I don't know any Mwita.\"",
+      "claims": [
+        "f_fu_nomwita"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_mumo",
+      "stance": "cooperative",
+      "intro": "Sgt. Mumo stands. \"I checked every visitor's ID against their face.\"",
+      "claims": [
+        "f_mu_checked"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_mutheu",
+      "stance": "cooperative",
+      "intro": "Mutheu, on the phone from Machakos, is crying. \"I wasn't there.\"",
+      "claims": [
+        "f_mt_claim"
+      ],
+      "yields": [
+        "ev_mutheu"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_musa",
+      "stance": "cooperative",
+      "intro": "Musa grins. \"I steal food. I was in the punishment block.\"",
+      "claims": [
+        "f_ms_claim"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_lucy",
+      "stance": "cooperative",
+      "intro": "Lucy has already pulled the register. \"Run the ID number. I'll wait.\"",
+      "claims": [],
+      "yields": [
+        "ev_idcheck"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_mumo",
+      "claim": "f_mu_checked",
+      "brokenBy": [
+        "f_idcheck"
+      ],
+      "reveals": [
+        "f_mu_reveal"
+      ],
+      "reaction": "\"Forty people in the queue and one officer. I looked at a card, not a face. I'll accept the discipline.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_rhobi",
+      "claim": "f_rh_only",
+      "brokenBy": [
+        "f_idcheck",
+        "f_visits"
+      ],
+      "reveals": [
+        "f_rh_reveal"
+      ],
+      "reaction": "\"My brother said that man would hang him with his mouth. I'm his sister. I did what my brother asked. I didn't know about the cell sharing. I'm sorry for the boy.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_fundi",
+      "claim": "f_fu_nomwita",
+      "brokenBy": [
+        "f_note",
+        "f_visits"
+      ],
+      "reveals": [
+        "f_fu_reveal"
+      ],
+      "reaction": "Fundi looks at the note for a long time. \"He came in a government car,\" he says. \"A Lands House pass.\" Shown the photograph from the fourth floor, he points without hesitating.",
+      "mark": "explains"
+    },
+    {
+      "id": "c_garden",
+      "claim": "f_rh_garden",
+      "brokenBy": [
+        "f_tox"
+      ],
+      "reveals": [],
+      "reaction": "Rhobi closes her handbag and folds her hands on it.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_rhobi",
+      "text": "Rhobi Chacha",
+      "category": "person",
+      "ref": "p_rhobi",
+      "unlock": {
+        "anyOf": [
+          "f_idcheck"
+        ]
+      }
+    },
+    {
+      "id": "w_fundi",
+      "text": "Benedict Mbuvi",
+      "category": "person",
+      "ref": "p_fundi",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_mumo",
+      "text": "Jacinta Mumo",
+      "category": "person",
+      "ref": "p_mumo",
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "w_mutheu",
+      "text": "Mutheu Mbuvi",
+      "category": "person",
+      "ref": "p_mutheu",
+      "unlock": {
+        "anyOf": [
+          "f_tag"
+        ]
+      }
+    },
+    {
+      "id": "w_musa",
+      "text": "Musa Abdalla",
+      "category": "person",
+      "ref": "p_musa",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_lucy",
+      "text": "Lucy Wanza",
+      "category": "person",
+      "ref": "p_lucy",
+      "unlock": {
+        "anyOf": [
+          "f_lucy"
+        ]
+      }
+    },
+    {
+      "id": "t_fundi",
+      "text": "Benedict Mbuvi (Fundi)",
+      "category": "target",
+      "ref": "p_fundi",
+      "unlock": {
+        "anyOf": [
+          "f_tag"
+        ]
+      }
+    },
+    {
+      "id": "t_douglas",
+      "text": "Douglas Njuguna",
+      "category": "target",
+      "ref": "p_douglas",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "t_victor",
+      "text": "Victor Omondi, the cellmate",
+      "category": "target",
+      "ref": "p_victor",
+      "unlock": {
+        "anyOf": [
+          "f_share"
+        ]
+      }
+    },
+    {
+      "id": "t_mwita",
+      "text": "Daniel Mwita",
+      "category": "target",
+      "ref": "p_mwita",
+      "unlock": {
+        "anyOf": [
+          "f_visits"
+        ]
+      }
+    },
+    {
+      "id": "t_mumo",
+      "text": "Sgt. Mumo",
+      "category": "target",
+      "ref": "p_mumo",
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "t_mutheu",
+      "text": "Mutheu Mbuvi",
+      "category": "target",
+      "ref": "p_mutheu",
+      "unlock": {
+        "anyOf": [
+          "f_tag"
+        ]
+      }
+    },
+    {
+      "id": "pl_rkitchen",
+      "text": "Rhobi's kitchen in Kitengela",
+      "category": "place",
+      "ref": "plc_rkitchen",
+      "unlock": {
+        "anyOf": [
+          "f_agrovet"
+        ]
+      }
+    },
+    {
+      "id": "pl_desk",
+      "text": "the visitors' gate and parcel desk",
+      "category": "place",
+      "ref": "plc_desk",
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "pl_cell4",
+      "text": "cell 4, Block C",
+      "category": "place",
+      "ref": "plc_cell4",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_blocka",
+      "text": "Block A",
+      "category": "place",
+      "ref": "plc_blocka",
+      "unlock": {
+        "anyOf": [
+          "f_visits"
+        ]
+      }
+    },
+    {
+      "id": "pl_court",
+      "text": "Milimani Law Courts",
+      "category": "place",
+      "ref": "plc_court",
+      "unlock": {
+        "anyOf": [
+          "f_court"
+        ]
+      }
+    },
+    {
+      "id": "h_pesticide",
+      "text": "pesticide in a food parcel",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut"
+        ]
+      }
+    },
+    {
+      "id": "h_chicken",
+      "text": "food poisoning from bad chicken",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_tag"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_fight",
+      "text": "a fight in the cell",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_drugs",
+      "text": "drugs smuggled into the cell",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_silence",
+      "text": "to silence Fundi for her brother Mwita",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_visits"
+        ]
+      }
+    },
+    {
+      "id": "m_wife",
+      "text": "a wife's quarrel with her husband",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_tag"
+        ]
+      }
+    },
+    {
+      "id": "m_bully",
+      "text": "a bully's theft",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_grudge",
+      "text": "a grudge against Douglas",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_neglect",
+      "text": "an officer's negligence",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "d_register",
+      "text": "the visitor-register entry for \"Mutheu Mbuvi\"",
+      "category": "document",
+      "ref": "ev_register",
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "d_tag",
+      "text": "the parcel tag",
+      "category": "document",
+      "ref": "ev_container",
+      "unlock": {
+        "anyOf": [
+          "f_tag"
+        ]
+      }
+    },
+    {
+      "id": "d_court",
+      "text": "the court list",
+      "category": "document",
+      "ref": "ev_courtlist",
+      "unlock": {
+        "anyOf": [
+          "f_court"
+        ]
+      }
+    },
+    {
+      "id": "d_note",
+      "text": "the censor's log",
+      "category": "document",
+      "ref": "ev_note",
+      "unlock": {
+        "anyOf": [
+          "f_note"
+        ]
+      }
+    },
+    {
+      "id": "d_agrovet",
+      "text": "the agrovet receipt",
+      "category": "document",
+      "ref": "ev_records",
+      "unlock": {
+        "anyOf": [
+          "f_agrovet"
+        ]
+      }
+    },
+    {
+      "id": "t_id",
+      "text": "the ID number written belongs to someone else: Rhobi",
+      "category": "tell",
+      "by": [
+        "f_idcheck",
+        "f_register"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_idcheck"
+        ]
+      }
+    },
+    {
+      "id": "t_hand",
+      "text": "it is signed in the same hand as her own entries",
+      "category": "tell",
+      "by": [
+        "f_handlab",
+        "f_visits"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_handlab"
+        ]
+      }
+    },
+    {
+      "id": "t_retired",
+      "text": "a retired stamp",
+      "category": "tell",
+      "by": [
+        "f_register"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "t_batch",
+      "text": "a batch number that doesn't exist",
+      "category": "tell",
+      "by": [
+        "f_register"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "t_typed",
+      "text": "typing over a pre-signed blank",
+      "category": "tell",
+      "by": [
+        "f_register"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "t_coma",
+      "text": "a date when the signer was in a coma",
+      "category": "tell",
+      "by": [
+        "f_register"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_photo",
+      "text": "The 4th-floor launch photo of Lands House officials (case 86)",
+      "category": "pin",
+      "pin": "case-086:f_photo",
+      "unlock": {
+        "anyOf": [
+          "f_fu_reveal"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_fourth",
+      "text": "\"Tell the fourth floor\" in Abdia's log (case 80)",
+      "category": "pin",
+      "pin": "case-080:f_fourth",
+      "unlock": {
+        "anyOf": [
+          "f_fu_reveal"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_tom",
+      "text": "The courier Tom Ochieng (case 10)",
+      "category": "pin",
+      "pin": "case-010:f_slip_refused",
+      "unlock": {
+        "anyOf": [
+          "f_fu_reveal"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_calvin",
+      "text": "Calvin Wamalwa (case 40)",
+      "category": "pin",
+      "pin": "case-040:f_cal_fundi",
+      "unlock": {
+        "anyOf": [
+          "f_fu_reveal"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_mwita",
+      "text": "Major Mwita (case 90)",
+      "category": "pin",
+      "pin": "case-090:f_mw_reveal",
+      "unlock": {
+        "anyOf": [
+          "f_fu_reveal"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. The killer meant to kill {target}. {document} was forged, as shown by {tell}. The man in the government car who paid Fundi is in {pin}.",
+    "fixed": {
+      "victim": "Douglas Njuguna"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_3w",
+                  "label": "Three weeks ago",
+                  "from": null,
+                  "to": null,
+                  "day": "3 weeks ago"
+                },
+                {
+                  "id": "sl_mon",
+                  "label": "Monday 20:00",
+                  "from": "20:00",
+                  "to": "20:00",
+                  "day": "Mon"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Tuesday 06:00–10:00",
+                  "from": "06:00",
+                  "to": "10:00",
+                  "day": "Tue"
+                },
+                {
+                  "id": "sl_1130",
+                  "label": "Tuesday 11:30",
+                  "from": "11:30",
+                  "to": "11:30",
+                  "day": "Tue"
+                },
+                {
+                  "id": "sl_1210",
+                  "label": "Tuesday 12:10",
+                  "from": "12:10",
+                  "to": "12:10",
+                  "day": "Tue"
+                },
+                {
+                  "id": "sl_1300",
+                  "label": "Tuesday 13:00",
+                  "from": "13:00",
+                  "to": "13:00",
+                  "day": "Tue"
+                },
+                {
+                  "id": "sl_1650",
+                  "label": "Tuesday 16:50",
+                  "from": "16:50",
+                  "to": "16:50",
+                  "day": "Tue"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_note",
+                  "text": "Mwita's note reaches Fundi",
+                  "slot": "sl_3w",
+                  "by": [
+                    "f_note"
+                  ],
+                  "why": "Logged by the censor three weeks ago.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_note"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_buy",
+                  "text": "Rhobi buys the pesticide",
+                  "slot": "sl_mon",
+                  "by": [
+                    "f_agrovet"
+                  ],
+                  "why": "Monday evening at the agrovet.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_agrovet"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_poison",
+                  "text": "Rhobi poisons the stew",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_rh_reveal",
+                    "f_tox"
+                  ],
+                  "why": "She cooked it that morning.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rh_reveal"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_book",
+                  "text": "Rhobi books in the parcel as \"Mutheu\"",
+                  "slot": "sl_1210",
+                  "by": [
+                    "f_register",
+                    "f_idcheck"
+                  ],
+                  "why": "Ten past twelve.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_register"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_eat",
+                  "text": "Douglas eats it",
+                  "slot": "sl_1300",
+                  "by": [
+                    "f_share",
+                    "f_aut_tod"
+                  ],
+                  "why": "About one o'clock.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_share"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_1650",
+                  "by": [
+                    "f_court",
+                    "f_share"
+                  ],
+                  "why": "\"Fundi comes back and eats\"? He came back at 16:50 to find it eaten hours before."
+                },
+                {
+                  "slot": "sl_1130",
+                  "by": [
+                    "f_visits"
+                  ],
+                  "why": "At 11:30 she was signing in for her brother, under her own name."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A note three weeks ago, pesticide on Monday, the stew that morning, the parcel at ten past twelve, and Douglas at one.",
+          "fail": [
+            "Fundi was in court until half past four.",
+            "When did she cook it?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_rkitchen"
+          }
+        ],
+        "prosecutor": {
+          "pass": "In her own kitchen in Kitengela. The gate is only where she smuggled it; the cell is where a stranger ate it.",
+          "fail": [
+            "I asked where the poison went into the food.",
+            "The cell is where it was eaten."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_rhobi"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her ID number, her hand, her bottle, her missing tub.",
+          "fail": [
+            "Mutheu was at work in Machakos.",
+            "Sgt. Mumo failed to look, but never touched the food."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_pesticide"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Organophosphate, in chicken stew.",
+          "fail": [
+            "Not bad chicken: pesticide.",
+            "No injuries, no other drug."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_silence"
+          }
+        ],
+        "prosecutor": {
+          "pass": "\"That man would hang him with his mouth.\"",
+          "fail": [
+            "Nobody outside knew Douglas.",
+            "Negligence isn't a motive."
+          ]
+        }
+      },
+      {
+        "id": "g_target",
+        "kind": "realTarget",
+        "blanks": [
+          {
+            "id": "target",
+            "category": "target",
+            "answer": "t_fundi"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Booked in for Benedict Mbuvi by name. Douglas died because a cell shares.",
+          "fail": [
+            "Nobody outside knew Douglas shared parcels.",
+            "Mwita is the brother she was helping."
+          ]
+        }
+      },
+      {
+        "id": "g_forgery",
+        "kind": "forgery",
+        "blanks": [
+          {
+            "id": "document",
+            "category": "document",
+            "answer": "d_register"
+          },
+          {
+            "id": "tell",
+            "category": "tell",
+            "answer": "t_id",
+            "accept": [
+              "t_hand"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "She wrote her own ID number under another woman's name, in her own hand.",
+          "fail": [
+            "The tag was written by the desk from the register.",
+            "There's no stamp on a register line."
+          ]
+        }
+      },
+      {
+        "id": "g_spine",
+        "kind": "spine",
+        "blanks": [
+          {
+            "id": "pin",
+            "category": "pin",
+            "answer": "w_pin_photo",
+            "spine": true
+          }
+        ],
+        "prosecutor": {
+          "pass": "Raphael Oduya, on the fourth floor, twelve years ago, in a grey suit.",
+          "fail": [
+            "\"The fourth floor\" is a place. I asked for the man.",
+            "Mwita came later."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_rkitchen",
+      "from": "06:00",
+      "to": "10:00",
+      "alibisApply": false,
+      "reason": "A poisoning prepared in advance: the act is putting pesticide in the stew that morning, and alibis for 13:00 don't clear anyone.",
+      "note": "The act window is when the stew was poisoned; Douglas ate at 13:00 and died at 17:40."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_tag",
+          "f_court",
+          "f_share",
+          "f_body",
+          "f_aut",
+          "f_aut_tod"
+        ],
+        "concludes": "The poisoned parcel was for Fundi, who was in court; Douglas ate it as the cell's food captain.",
+        "answers": [
+          "target",
+          "how"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_register",
+          "f_idcheck",
+          "f_mutheu",
+          "f_mu_checked",
+          "f_mu_reveal"
+        ],
+        "concludes": "\"Mrs. Mbuvi\" wrote Rhobi Chacha's ID number.",
+        "answers": [
+          "document",
+          "tell"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_visits",
+          "f_note",
+          "f_fu_nomwita",
+          "f_fu_reveal",
+          "case-086:f_photo"
+        ],
+        "concludes": "Rhobi is Mwita's sister; Mwita had threatened Fundi; Fundi names the man in the car from the 4th-floor photo.",
+        "answers": [
+          "pin",
+          "why"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_agrovet",
+          "f_rh_only",
+          "f_rh_reveal"
+        ],
+        "concludes": "She bought the pesticide on Monday and cooked the stew on Tuesday morning.",
+        "answers": [
+          "when",
+          "where"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_bottle",
+          "f_tubs",
+          "f_handlab"
+        ],
+        "concludes": "The bottle, the tub set one short, and her hand on the register."
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_tox",
+          "f_rh_garden"
+        ],
+        "concludes": "Rhobi Chacha poisoned the stew meant for Fundi, to silence him for her brother.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_desk",
+        "blank": "where",
+        "by": [
+          "f_register",
+          "f_rh_reveal"
+        ],
+        "why": "Where she smuggled it, not where she poisoned it."
+      },
+      {
+        "word": "pl_cell4",
+        "blank": "where",
+        "by": [
+          "f_share"
+        ],
+        "why": "Where it was eaten."
+      },
+      {
+        "word": "pl_blocka",
+        "blank": "where",
+        "by": [
+          "f_visits"
+        ],
+        "why": "Where her brother is."
+      },
+      {
+        "word": "pl_court",
+        "blank": "where",
+        "by": [
+          "f_court"
+        ],
+        "why": "Where Fundi was."
+      },
+      {
+        "word": "w_fundi",
+        "blank": "who",
+        "by": [
+          "f_court",
+          "f_tag"
+        ],
+        "why": "In court all day, and the parcel was for him."
+      },
+      {
+        "word": "w_mumo",
+        "blank": "who",
+        "by": [
+          "f_mu_reveal",
+          "f_tox"
+        ],
+        "why": "She never touched the food; another officer carried it."
+      },
+      {
+        "word": "w_mutheu",
+        "blank": "who",
+        "by": [
+          "f_mutheu",
+          "f_idcheck"
+        ],
+        "why": "At work in Machakos; the ID was Rhobi's."
+      },
+      {
+        "word": "w_musa",
+        "blank": "who",
+        "by": [
+          "f_musa"
+        ],
+        "why": "In the punishment block."
+      },
+      {
+        "word": "w_lucy",
+        "blank": "who",
+        "by": [
+          "f_lucy_self",
+          "f_idcheck"
+        ],
+        "why": "With a family in the welfare office; she ran the check."
+      },
+      {
+        "word": "h_chicken",
+        "blank": "how",
+        "by": [
+          "f_tox"
+        ],
+        "why": "Pesticide."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "Poisoning."
+      },
+      {
+        "word": "h_fight",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "No injuries."
+      },
+      {
+        "word": "h_drugs",
+        "blank": "how",
+        "by": [
+          "f_tox"
+        ],
+        "why": "Only the pesticide."
+      },
+      {
+        "word": "m_wife",
+        "blank": "why",
+        "by": [
+          "f_mutheu",
+          "f_idcheck"
+        ],
+        "why": "Mutheu wasn't there."
+      },
+      {
+        "word": "m_bully",
+        "blank": "why",
+        "by": [
+          "f_musa"
+        ],
+        "why": "Musa was locked up."
+      },
+      {
+        "word": "m_grudge",
+        "blank": "why",
+        "by": [
+          "f_share",
+          "f_tag"
+        ],
+        "why": "Nobody outside knew Douglas shared parcels."
+      },
+      {
+        "word": "m_neglect",
+        "blank": "why",
+        "by": [
+          "f_mu_reveal",
+          "f_tox"
+        ],
+        "why": "Sgt. Mumo's failure is real, but she poisoned nothing."
+      },
+      {
+        "word": "t_douglas",
+        "blank": "target",
+        "by": [
+          "f_tag",
+          "f_share"
+        ],
+        "why": "Booked in for Benedict by name; Douglas only shared it."
+      },
+      {
+        "word": "t_victor",
+        "blank": "target",
+        "by": [
+          "f_share",
+          "f_tag"
+        ],
+        "why": "Victor ate two spoons of another man's parcel."
+      },
+      {
+        "word": "t_mwita",
+        "blank": "target",
+        "by": [
+          "f_visits",
+          "f_rh_reveal"
+        ],
+        "why": "The brother she was helping."
+      },
+      {
+        "word": "t_mumo",
+        "blank": "target",
+        "by": [
+          "f_tag"
+        ],
+        "why": "The parcel named Benedict."
+      },
+      {
+        "word": "t_mutheu",
+        "blank": "target",
+        "by": [
+          "f_tag",
+          "f_mutheu"
+        ],
+        "why": "Her name was used, not aimed at."
+      },
+      {
+        "word": "d_tag",
+        "blank": "document",
+        "by": [
+          "f_tag",
+          "f_mu_reveal"
+        ],
+        "why": "Written by the desk from the register, honestly."
+      },
+      {
+        "word": "d_court",
+        "blank": "document",
+        "by": [
+          "f_court"
+        ],
+        "why": "A genuine escort log."
+      },
+      {
+        "word": "d_note",
+        "blank": "document",
+        "by": [
+          "f_note"
+        ],
+        "why": "Logged by the censor."
+      },
+      {
+        "word": "d_agrovet",
+        "blank": "document",
+        "by": [
+          "f_agrovet"
+        ],
+        "why": "A genuine PesaPap payment."
+      },
+      {
+        "word": "t_retired",
+        "blank": "tell",
+        "by": [
+          "f_register"
+        ],
+        "why": "There's no stamp on a register line."
+      },
+      {
+        "word": "t_batch",
+        "blank": "tell",
+        "by": [
+          "f_register"
+        ],
+        "why": "No batch number."
+      },
+      {
+        "word": "t_typed",
+        "blank": "tell",
+        "by": [
+          "f_register"
+        ],
+        "why": "Handwritten in biro."
+      },
+      {
+        "word": "t_coma",
+        "blank": "tell",
+        "by": [
+          "f_mutheu"
+        ],
+        "why": "Mutheu was at work, not in a coma."
+      },
+      {
+        "word": "w_pin_fourth",
+        "blank": "pin",
+        "by": [
+          "case-080:f_fourth",
+          "f_fu_reveal"
+        ],
+        "why": "A floor, not a man."
+      },
+      {
+        "word": "w_pin_tom",
+        "blank": "pin",
+        "by": [
+          "case-010:f_slip_refused",
+          "f_fu_reveal"
+        ],
+        "why": "A courier, not a man in a government car."
+      },
+      {
+        "word": "w_pin_calvin",
+        "blank": "pin",
+        "by": [
+          "case-040:f_cal_fundi",
+          "f_fu_reveal"
+        ],
+        "why": "Calvin took Fundi's money; he didn't pay him."
+      },
+      {
+        "word": "w_pin_mwita",
+        "blank": "pin",
+        "by": [
+          "case-090:f_mw_reveal",
+          "f_fu_reveal"
+        ],
+        "why": "Mwita came years later."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Since case 90 Major Mwita has been on remand in Block A. He knows Fundi is the one man in the prison who could tie Mvua's money to a killing twelve years old. Three weeks ago he sends Fundi a note through an inmate.",
+        "image": null
+      },
+      {
+        "text": "On Monday evening his sister Rhobi buys a bottle of pesticide in Kitengela. On Tuesday morning she cooks chicken stew and rice and stirs it in.",
+        "image": "plc_rkitchen"
+      },
+      {
+        "text": "At 11:30 she signs in to see her brother. At 12:10 she signs again as \"Mutheu Mbuvi\", writing her own ID number, and books the parcel in for Benedict Mbuvi. Sgt. Mumo, with forty in the queue, glances at a card.",
+        "image": null
+      },
+      {
+        "text": "Fundi is at Milimani for a mention. At one o'clock Douglas, the cell's food captain, shares out the stew, as a cell always does when a man is out. He dies at 17:40.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "Fundi asks for Amani, Halima and a new lawyer: his old one was Sharon Kiprop. He has written six pages in pencil."
+    },
+    {
+      "beat": "\"Twelve years ago a man came in a government Land Cruiser. Grey suit, a Lands House pass. Two hundred thousand and a name: Joseph Mwenda, surveyor, Bahati. He said, 'The desk wants him to stop.' I did it, on the Bahati road, with a tyre lever. He told me to take the notebook too. The limp was my idea.\"",
+      "files": [
+        {
+          "thread": "t_fundi",
+          "text": "Closed with a statement: Fundi confesses to killing Joseph Mwenda for KSh 200,000 from a man in a government car, whom he names as Raphael Oduya: \"He said 'the desk' the way you say 'the weather'.\""
+        },
+        {
+          "thread": "t_joseph",
+          "text": "The killer named: Benedict Mbuvi, \"Fundi\". The man in the car: Raphael Oduya."
+        }
+      ]
+    },
+    {
+      "beat": "Amani's notebook: \"Fundi killed Dad. Oduya was in the car. 'The desk wants him to stop.'\" The desk is quiet for a long moment. Then a text from Mwalimu: \"I heard. Eat something. I'm coming to Nairobi on Friday.\""
+    }
+  ],
+  "clockPlan": {
+    "note": "Two stamps: records on Rhobi's line and a warrant on her kitchen. Detain Rhobi after the search; handwriting (10 h) and toxicology (18 h) inside 24 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_cell",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_container",
+        "hours": 0.5
+      },
+      {
+        "do": "read",
+        "target": "ev_victor",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_musa",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_musa"
+      },
+      {
+        "do": "travel",
+        "target": "loc_gate",
+        "hours": 0.25,
+        "from": "loc_cell"
+      },
+      {
+        "do": "visit",
+        "target": "loc_gate",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_courtlist",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_register",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_lucy",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_lucy"
+      },
+      {
+        "do": "read",
+        "target": "ev_idcheck",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_mutheu"
+      },
+      {
+        "do": "read",
+        "target": "ev_visits",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_mumo"
+      },
+      {
+        "do": "press",
+        "target": "c_mumo"
+      },
+      {
+        "do": "interview",
+        "target": "p_rhobi"
+      },
+      {
+        "do": "press",
+        "target": "c_rhobi"
+      },
+      {
+        "do": "interview",
+        "target": "p_fundi"
+      },
+      {
+        "do": "press",
+        "target": "c_fundi"
+      },
+      {
+        "do": "travel",
+        "target": "loc_cell",
+        "hours": 0.25,
+        "from": "loc_gate"
+      },
+      {
+        "do": "visit",
+        "target": "loc_cell",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_note",
+        "hours": 0
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "travel",
+        "target": "loc_rhobi",
+        "hours": 1,
+        "from": "loc_cell"
+      },
+      {
+        "do": "search",
+        "target": "loc_rhobi"
+      },
+      {
+        "do": "read",
+        "target": "ev_kitchen",
+        "hours": 0
+      },
+      {
+        "do": "detain",
+        "target": "p_rhobi"
+      },
+      {
+        "do": "sample",
+        "target": "ev_rh_sig"
+      },
+      {
+        "do": "submit",
+        "target": "ev_hand"
+      },
+      {
+        "do": "submit",
+        "target": "ev_tox"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 18
+      },
+      {
+        "do": "press",
+        "target": "c_garden"
+      }
+    ],
+    "totalHours": 49
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_records",
+        "line": "When did she buy it, and when could she have cooked it?"
+      },
+      "tier2": {
+        "facts": [
+          "f_agrovet",
+          "f_rh_reveal"
+        ],
+        "line": "Monday evening; Tuesday morning."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_kitchen",
+        "line": "Where did the poison go into the food?"
+      },
+      "tier2": {
+        "facts": [
+          "f_bottle",
+          "f_rh_reveal"
+        ],
+        "line": "Her kitchen."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_idcheck",
+        "line": "Run the ID number, Amani."
+      },
+      "tier2": {
+        "facts": [
+          "f_idcheck",
+          "f_visits"
+        ],
+        "line": "Rhobi Chacha, Mwita's sister."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "What does the pathologist find?"
+      },
+      "tier2": {
+        "facts": [
+          "f_aut"
+        ],
+        "line": "Organophosphate pesticide."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_note",
+        "line": "Read what Mwita sent Fundi."
+      },
+      "tier2": {
+        "facts": [
+          "f_note",
+          "f_rh_reveal"
+        ],
+        "line": "\"Men who talk.\""
+      }
+    },
+    "g_target": {
+      "tier1": {
+        "point": "ev_container",
+        "line": "Whose name is on the tag?"
+      },
+      "tier2": {
+        "facts": [
+          "f_tag",
+          "f_court"
+        ],
+        "line": "Benedict Mbuvi, who was in court."
+      }
+    },
+    "g_forgery": {
+      "tier1": {
+        "point": "ev_register",
+        "line": "Read the 12:10 line, then run the number."
+      },
+      "tier2": {
+        "facts": [
+          "f_register",
+          "f_idcheck"
+        ],
+        "line": "Mutheu's name, Rhobi's number."
+      }
+    },
+    "g_spine": {
+      "tier1": {
+        "point": "ev_note",
+        "line": "Ask Fundi who paid him for the Bahati road."
+      },
+      "tier2": {
+        "facts": [
+          "f_fu_reveal"
+        ],
+        "line": "He points at the 4th-floor photo."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "rumande",
+      "def": "Remand: held in prison awaiting trial."
+    },
+    {
+      "term": "chakula cha nyumbani",
+      "def": "Home-cooked food."
+    },
+    {
+      "term": "dawa ya wadudu",
+      "def": "Pesticide."
+    },
+    {
+      "term": "afisa wa magereza",
+      "def": "A prison officer."
+    },
+    {
+      "term": "kitambulisho",
+      "def": "A national ID card."
+    },
+    {
+      "term": "Fundi",
+      "def": "\"Craftsman\" or \"mechanic\"; Benedict Mbuvi's nickname."
+    },
+    {
+      "term": "PesaPap",
+      "def": "A mobile-money service (fictional)."
+    },
+    {
+      "term": "agrovet",
+      "def": "A shop selling farm chemicals, seed and animal medicine."
+    },
+    {
+      "term": "Mvua",
+      "def": "Mvua Holdings, the shell company behind the forged titles (\"mvua\" means rain)."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "statementTaps"
+    ],
+    "beatNotes": "No new mechanics. After the verdict, Fundi's statement plays as short beats the player taps through."
+  }
+}

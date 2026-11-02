@@ -1,0 +1,1879 @@
+{
+  "meta": {
+    "id": "case-057",
+    "number": 57,
+    "region": "maasai-mara",
+    "regionNumber": 6,
+    "title": "Forty Head",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 30,
+    "date": "Tuesday 3 March",
+    "folderTab": "NAROK MARKET"
+  },
+  "pattern": {
+    "crimePattern": "old cattle broker kills the trader who took his life savings for forty cattle that never existed, sold on forged movement permits",
+    "noRealCaseRetold": true,
+    "notes": "Fictional traders, broker and market staff. Livestock movement permits and county vet stamps are given in outline; the cultural reader is asked to check Narok market practice. The victim is the fraudster.",
+    "tags": [
+      "blunt-force",
+      "moved-body",
+      "fraud",
+      "money",
+      "two-liars",
+      "records",
+      "forensics",
+      "when-strip",
+      "where",
+      "spine-background"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 4,
+    "redHerrings": 1,
+    "liars": 2,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records"
+    ],
+    "twist": "the-victim-was-the-fraudster"
+  },
+  "ob": {
+    "number": "OB 30/03/03",
+    "date": "Tuesday 3 March",
+    "time": "18:55",
+    "reportedBy": "Nelson Kipkurui, weighing-shed clerk, Narok cattle market",
+    "text": "The weighing-shed clerk at Narok cattle market reports a livestock trader, Abdirizak Hassan (52), found dead at 18:40 in holding pen 6 after Tuesday's market.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_pens",
+    "nodes": [
+      "loc_pens",
+      "loc_teahotel",
+      "loc_vet",
+      "loc_lorrypark"
+    ],
+    "edges": [
+      {
+        "a": "loc_pens",
+        "b": "loc_teahotel",
+        "minutes": 1,
+        "by": "foot"
+      },
+      {
+        "a": "loc_pens",
+        "b": "loc_vet",
+        "minutes": 3,
+        "by": "foot"
+      },
+      {
+        "a": "loc_pens",
+        "b": "loc_lorrypark",
+        "minutes": 4,
+        "by": "foot"
+      },
+      {
+        "a": "loc_teahotel",
+        "b": "loc_vet",
+        "minutes": 3,
+        "by": "foot"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_abdirizak",
+      "role": "victim",
+      "name": "Abdirizak Hassan",
+      "age": 52,
+      "occupation": "Livestock trader",
+      "bio": "Well known at Narok market for twenty years. Always has papers for everything.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_backroom",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Somali man, early 50s, a white kofia, a checked shirt and a leather satchel across his chest, a trader's easy smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kipkorir",
+      "role": "suspect",
+      "name": "Kipkorir Sigei",
+      "age": 67,
+      "occupation": "Cattle broker",
+      "bio": "Forty years brokering cattle at Narok. Paid KSh 1.6 million for forty head from Kajiado.",
+      "community": "Kalenjin",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_ledger"
+      },
+      "at": "plc_backroom",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, late 60s, an old tweed jacket over a sweater, a felt hat, a walking stick, deep tiredness in his face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_nancy",
+      "role": "suspect",
+      "name": "Nancy Jelagat",
+      "age": 46,
+      "occupation": "Owner of Mama Nancy's tea hotel",
+      "bio": "Her back door opens onto the pens' lane. Rents the back room for deals, unlicensed.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_backroom"
+      },
+      "at": "plc_front",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin woman, mid 40s, an apron over a kitenge dress, a tea kettle in her hand, nervous, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_omar",
+      "role": "suspect",
+      "name": "Omar Dahir",
+      "age": 49,
+      "occupation": "Abdirizak's partner",
+      "redHerring": true,
+      "bio": "Quarrelled with Abdirizak about a lorry on Monday.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_ledger"
+      },
+      "at": "loc_lorrypark",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Somali man, late 40s, a long-sleeved shirt and a kofia, a manifest clipboard, wary, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_nelson",
+      "role": "witness",
+      "name": "Nelson Kipkurui",
+      "age": 33,
+      "occupation": "Weighing-shed clerk",
+      "bio": "Weighs every animal and sees everyone who passes the shed door.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_weigh",
+      "image": null
+    },
+    {
+      "id": "p_joan",
+      "role": "witness",
+      "name": "Dr. Joan Chelimo",
+      "age": 41,
+      "occupation": "County veterinary officer",
+      "bio": "Issues the livestock movement permits for the county.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_permits"
+      },
+      "at": "loc_vet",
+      "image": null
+    },
+    {
+      "id": "p_kasaine",
+      "role": "witness",
+      "name": "Mzee Kasaine Sankale",
+      "age": 70,
+      "occupation": "Tea-hotel regular",
+      "statementOnly": true,
+      "bio": "Drinks tea in Nancy's front room every market day from noon until dark.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_front",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_pen6",
+      "name": "Holding pen 6",
+      "within": "loc_pens"
+    },
+    {
+      "id": "plc_backroom",
+      "name": "The tea hotel's back room",
+      "within": "loc_teahotel"
+    },
+    {
+      "id": "plc_front",
+      "name": "The tea hotel's front room",
+      "within": "loc_teahotel"
+    },
+    {
+      "id": "plc_weigh",
+      "name": "The weighing shed"
+    },
+    {
+      "id": "plc_lorrypark",
+      "name": "The lorry park",
+      "within": "loc_lorrypark"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_pens",
+      "name": "Holding pens, Narok cattle market",
+      "kind": "scene",
+      "description": "Rows of wooden holding pens on trampled earth, emptying at dusk as the lorries load. Pen 6 is at the end of the lane that runs behind Mama Nancy's tea hotel.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Pen 6",
+          "pos": [
+            50,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Abdirizak lies on his back in pen 6, his satchel still across his chest."
+        },
+        {
+          "id": "hs_satchel",
+          "label": "His satchel",
+          "pos": [
+            44,
+            70
+          ],
+          "yields": "ev_ledger",
+          "text": "A ledger, folded in half, and a sheaf of permits."
+        },
+        {
+          "id": "hs_permits",
+          "label": "Permits",
+          "pos": [
+            56,
+            72
+          ],
+          "yields": "ev_permits",
+          "text": "Movement permits for forty head of cattle."
+        },
+        {
+          "id": "hs_fees",
+          "label": "Market office",
+          "pos": [
+            86,
+            30
+          ],
+          "yields": "ev_fees",
+          "text": "The market fee office's receipt book."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "wooden cattle holding pens at Narok livestock market at dusk, trampled earth, cattle being loaded onto lorries in the background, a narrow lane running behind a small tea hotel, no people in focus"
+      }
+    },
+    {
+      "id": "loc_teahotel",
+      "name": "Mama Nancy's tea hotel",
+      "kind": "location",
+      "description": "A front room of benches and tea kettles, and a back room with a table and two chairs whose back door opens onto the pens' lane.",
+      "unlock": {
+        "fact": "f_nelson"
+      },
+      "hotspots": [
+        {
+          "id": "hs_back",
+          "label": "The back room",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_backroom",
+          "text": "Two chai glasses on the table, one broken. A dark patch scrubbed on the earth floor."
+        },
+        {
+          "id": "hs_front",
+          "label": "Front room",
+          "pos": [
+            20,
+            40
+          ],
+          "yields": "ev_kasaine",
+          "text": "An old man in the corner who has been drinking tea here since noon."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the back room of a small tea hotel at Narok market, an earth floor with a scrubbed dark patch, a wooden table with two chai glasses, one broken, a back door open onto a lane of cattle pens"
+      }
+    },
+    {
+      "id": "loc_vet",
+      "name": "County veterinary office",
+      "kind": "location",
+      "description": "The county vet office by the market gate, where movement permits are issued and stamped.",
+      "unlock": {
+        "fact": "f_permits"
+      },
+      "hotspots": [
+        {
+          "id": "hs_stamp",
+          "label": "The genuine stamp",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_joan",
+          "text": "Dr. Chelimo brings out her office stamp and the permit register."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small county veterinary office at a livestock market, a desk with a rubber stamp and a permit register, posters about cattle disease on the wall"
+      }
+    },
+    {
+      "id": "loc_lorrypark",
+      "name": "Lorry park",
+      "kind": "location",
+      "description": "Lorries loading cattle at the edge of the market, each with a manifest signed by the loader.",
+      "unlock": {
+        "fact": "f_ledger"
+      },
+      "hotspots": [
+        {
+          "id": "hs_manifests",
+          "label": "Manifests",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_lorrypark",
+          "text": "Today's loading manifests on a clipboard."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "cattle lorries loading at the edge of Narok market at dusk, ramps and dust, a man with a clipboard of manifests"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Pen 6",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. On his back in pen 6. No trampling. His satchel still across his chest, KSh 46,000 inside."
+      },
+      "facts": [
+        "f_body",
+        "f_satchel_cash"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "an empty wooden cattle holding pen at dusk, trampled earth, a leather satchel lying in the dust, no body visible"
+      }
+    },
+    {
+      "id": "ev_ledger",
+      "type": "physical",
+      "title": "Abdirizak's ledger",
+      "render": "ledger",
+      "body": {
+        "folded": "It opens folded in half, hiding the column headings.",
+        "entry": "\"K. Sigei — 1,600,000\" in the column headed \"Received\".",
+        "header": "Partners: A. Hassan, O. Dahir."
+      },
+      "facts": [
+        "f_ledger"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a trader's ledger opened out on a table, a column headed RECEIVED in faded ink above an entry for 1,600,000"
+      }
+    },
+    {
+      "id": "ev_permits",
+      "type": "physical",
+      "title": "Movement permits",
+      "render": "form",
+      "body": {
+        "permit": "40 head, Kajiado → Narok.",
+        "stamp": "\"COUNTY VETERINAY OFFICER\" (misspelled)."
+      },
+      "facts": [
+        "f_permits"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_joan",
+      "type": "witness",
+      "title": "Statement: Dr. Joan Chelimo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_joan"
+      },
+      "facts": [
+        "f_joan",
+        "f_joan_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Abdirizak Hassan's line",
+      "render": "manifest",
+      "body": {
+        "pesapap": "KSh 900,000 received from KIPKORIR SIGEI; cash deposits of 700,000 the same week.",
+        "also": "KSh 4,000 paid to Till 880 214, MVUA HOLDINGS, memo \"stamp: county vet\"."
+      },
+      "facts": [
+        "f_rec_abd_pay",
+        "f_rec_mvua",
+        "f_rec_stamp"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_ledger",
+          "f_permits"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_nelson",
+      "type": "witness",
+      "title": "Statement: Nelson Kipkurui",
+      "render": "statement",
+      "body": {
+        "speaker": "p_nelson"
+      },
+      "facts": [
+        "f_nelson",
+        "f_nelson_self",
+        "f_market_close"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_backroom",
+      "type": "physical",
+      "title": "The back room",
+      "render": "sceneNote",
+      "body": {
+        "note": "Two chai glasses, one broken. A dark patch scrubbed on the earth floor. Drag marks to the back door and the pens' lane."
+      },
+      "facts": [
+        "f_backroom"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_iron",
+      "type": "physical",
+      "title": "Kipkorir's branding iron",
+      "render": "object",
+      "body": {
+        "label": "A cattle branding iron, the brand \"KS\", scorched old, wiped clean. Handed over by Kipkorir."
+      },
+      "facts": [
+        "f_iron"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "an old iron cattle branding iron with the letters KS on its shaped head, wiped clean, lying on a sack"
+      }
+    },
+    {
+      "id": "ev_lorrypark",
+      "type": "physical",
+      "title": "Lorry park manifests",
+      "render": "form",
+      "body": {
+        "omar": "O. Dahir loading two lorries 15:30–18:00, signing each manifest."
+      },
+      "facts": [
+        "f_lorrypark"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kasaine",
+      "type": "witness",
+      "title": "Statement: Mzee Kasaine Sankale",
+      "render": "statement",
+      "body": {
+        "speaker": "p_kasaine"
+      },
+      "facts": [
+        "f_nancy_front"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_fees",
+      "type": "physical",
+      "title": "Market fee receipts",
+      "render": "receipt",
+      "body": {
+        "entry": "A. Hassan: market fees paid in full, Tuesday."
+      },
+      "facts": [
+        "f_fees_paid"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_iron",
+        "f_aut_lividity",
+        "f_aut_tod",
+        "f_aut_heart"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_trace",
+      "type": "forensic",
+      "title": "Lab: trace (branding iron)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_trace"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_iron"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Abdirizak Hassan was found dead in holding pen 6 at Narok cattle market at 18:40, after Tuesday's market.",
+      "kind": "true",
+      "about": [
+        "p_abdirizak",
+        "loc_pens"
+      ],
+      "at": {
+        "from": "18:40"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "He lies on his back in pen 6. There are no trampling marks on him.",
+      "kind": "true",
+      "about": [
+        "p_abdirizak",
+        "plc_pen6"
+      ]
+    },
+    {
+      "id": "f_satchel_cash",
+      "text": "His satchel is still across his chest with KSh 46,000 inside.",
+      "kind": "true",
+      "about": [
+        "p_abdirizak"
+      ]
+    },
+    {
+      "id": "f_ledger",
+      "text": "Abdirizak's ledger, unfolded: \"K. Sigei — 1,600,000\" sits in the column headed \"Received\". The header names his partner, O. Dahir.",
+      "kind": "true",
+      "about": [
+        "p_abdirizak",
+        "p_kipkorir",
+        "p_omar"
+      ]
+    },
+    {
+      "id": "f_permits",
+      "text": "Movement permits in his satchel for \"40 head, Kajiado → Narok\", stamped \"COUNTY VETERINAY OFFICER\", misspelled.",
+      "kind": "true",
+      "about": [
+        "p_abdirizak"
+      ]
+    },
+    {
+      "id": "f_joan",
+      "text": "Dr. Chelimo: her office issued no permits for 40 head from Kajiado this month. Her genuine stamp is spelled correctly and has a different border.",
+      "kind": "true",
+      "about": [
+        "p_joan",
+        "p_abdirizak"
+      ]
+    },
+    {
+      "id": "f_joan_self",
+      "text": "Dr. Chelimo was at the vet office and then in meetings at the county offices next door from 14:00 to 19:00.",
+      "kind": "true",
+      "about": [
+        "p_joan"
+      ],
+      "where": {
+        "person": "p_joan",
+        "place": "loc_vet",
+        "from": "14:00",
+        "to": "19:00"
+      }
+    },
+    {
+      "id": "f_rec_abd_pay",
+      "text": "Records, Abdirizak's PesaPap: KSh 900,000 received from KIPKORIR SIGEI, and cash deposits of 700,000 the same week.",
+      "kind": "true",
+      "about": [
+        "p_abdirizak",
+        "p_kipkorir"
+      ]
+    },
+    {
+      "id": "f_rec_mvua",
+      "text": "Records, Abdirizak's PesaPap: KSh 4,000 paid to Till 880 214, MVUA HOLDINGS.",
+      "kind": "true",
+      "about": [
+        "p_abdirizak"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_rec_stamp",
+      "text": "The Mvua payment's memo reads: \"stamp: county vet\".",
+      "kind": "true",
+      "about": [
+        "p_abdirizak"
+      ],
+      "spine": "t_stamp"
+    },
+    {
+      "id": "f_nelson",
+      "text": "Nelson: at about 16:30 he saw Kipkorir and Abdirizak go into the tea hotel's back room. Kipkorir carried \"his iron, wrapped in a sack\".",
+      "kind": "true",
+      "about": [
+        "p_nelson",
+        "p_kipkorir",
+        "p_abdirizak"
+      ],
+      "where": {
+        "person": "p_kipkorir",
+        "place": "plc_backroom",
+        "from": "16:30",
+        "to": "16:35"
+      },
+      "at": {
+        "from": "16:30"
+      }
+    },
+    {
+      "id": "f_nelson_self",
+      "text": "Nelson was at the weighing shed all afternoon; its ticket book has his stamp every few minutes.",
+      "kind": "true",
+      "about": [
+        "p_nelson"
+      ],
+      "where": {
+        "person": "p_nelson",
+        "place": "plc_weigh",
+        "from": "12:00",
+        "to": "18:30"
+      }
+    },
+    {
+      "id": "f_market_close",
+      "text": "Nelson: the market closed at 18:00 and the pens emptied as the lorries loaded.",
+      "kind": "true",
+      "about": [
+        "p_nelson"
+      ],
+      "at": {
+        "from": "18:00"
+      }
+    },
+    {
+      "id": "f_backroom",
+      "text": "The tea hotel's back room: two chai glasses, one broken; a dark patch scrubbed on the earth floor; drag marks to the back door and the pens' lane.",
+      "kind": "true",
+      "about": [
+        "plc_backroom"
+      ]
+    },
+    {
+      "id": "f_iron",
+      "text": "Kipkorir's branding iron: the brand \"KS\", scorched old, wiped clean.",
+      "kind": "true",
+      "about": [
+        "p_kipkorir"
+      ]
+    },
+    {
+      "id": "f_lorrypark",
+      "text": "Lorry park manifests: Omar loading two lorries from 15:30 to 18:00, signing each one.",
+      "kind": "true",
+      "about": [
+        "p_omar"
+      ],
+      "where": {
+        "person": "p_omar",
+        "place": "plc_lorrypark",
+        "from": "15:30",
+        "to": "18:00"
+      }
+    },
+    {
+      "id": "f_nancy_front",
+      "text": "Mzee Kasaine: Nancy served tea in the front room all afternoon. \"She never left the kettle.\"",
+      "kind": "true",
+      "about": [
+        "p_kasaine",
+        "p_nancy"
+      ],
+      "where": {
+        "person": "p_nancy",
+        "place": "plc_front",
+        "from": "12:00",
+        "to": "19:00"
+      }
+    },
+    {
+      "id": "f_fees_paid",
+      "text": "Market fee receipts: Abdirizak's fees paid in full on Tuesday.",
+      "kind": "true",
+      "about": [
+        "p_abdirizak"
+      ]
+    },
+    {
+      "id": "f_aut_iron",
+      "text": "Autopsy: a heavy blow from an iron bar with a flat, shaped end. No trampling injuries.",
+      "kind": "true",
+      "about": [
+        "p_abdirizak"
+      ]
+    },
+    {
+      "id": "f_aut_lividity",
+      "text": "Autopsy: he lay on his back in a narrow place for a while, then was moved.",
+      "kind": "true",
+      "about": [
+        "p_abdirizak"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 16:30 and 17:30.",
+      "kind": "true",
+      "about": [
+        "p_abdirizak"
+      ],
+      "at": {
+        "from": "16:30",
+        "to": "17:30"
+      }
+    },
+    {
+      "id": "f_aut_heart",
+      "text": "Autopsy: a sound heart.",
+      "kind": "true",
+      "about": [
+        "p_abdirizak"
+      ]
+    },
+    {
+      "id": "f_trace",
+      "text": "Lab: Abdirizak's blood in the shaped head of the branding iron.",
+      "kind": "true",
+      "about": [
+        "p_abdirizak",
+        "p_kipkorir"
+      ]
+    },
+    {
+      "id": "f_kip_home",
+      "text": "Kipkorir: \"I left the market at two o'clock and went home.\"",
+      "kind": "lie",
+      "about": [
+        "p_kipkorir"
+      ]
+    },
+    {
+      "id": "f_kip_owed",
+      "text": "Kipkorir: \"Abdirizak owed me cattle.\"",
+      "kind": "claim",
+      "about": [
+        "p_kipkorir",
+        "p_abdirizak"
+      ]
+    },
+    {
+      "id": "f_kip_confess",
+      "text": "Kipkorir: \"Forty head. My whole life. He laughed. He told me to go to court. I'm sixty-seven, Detective. I haven't got time for court.\"",
+      "kind": "true",
+      "about": [
+        "p_kipkorir",
+        "p_abdirizak"
+      ]
+    },
+    {
+      "id": "f_nancy_locked",
+      "text": "Nancy: \"My back room was locked all afternoon.\"",
+      "kind": "lie",
+      "about": [
+        "p_nancy"
+      ]
+    },
+    {
+      "id": "f_nancy_rented",
+      "text": "Nancy: she rented the back room to them for KSh 500. She isn't licensed to rent rooms and was afraid.",
+      "kind": "true",
+      "about": [
+        "p_nancy"
+      ]
+    },
+    {
+      "id": "f_omar_claim",
+      "text": "Omar: \"I was loading lorries.\"",
+      "kind": "claim",
+      "about": [
+        "p_omar"
+      ]
+    },
+    {
+      "id": "f_omar_nocattle",
+      "text": "Omar: \"He told me he'd sold cattle from Kajiado. We have no cattle in Kajiado.\"",
+      "kind": "true",
+      "about": [
+        "p_omar",
+        "p_abdirizak"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_kipkorir",
+      "stance": "cooperative",
+      "intro": "Kipkorir sits on a bench by the market gate, both hands on his stick. \"I left the market at two o'clock and went home. Abdirizak owed me cattle.\"",
+      "claims": [
+        "f_kip_home",
+        "f_kip_owed"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_nelson",
+          "reply": "Nelson sees everything. ...Here. Take it. It's in the sack.",
+          "reveals": [
+            "ev_iron"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_nancy",
+      "stance": "cooperative",
+      "intro": "Nancy keeps pouring tea nobody asked for. \"My back room was locked all afternoon.\"",
+      "claims": [
+        "f_nancy_locked"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_kasaine",
+          "reply": "Ask Mzee Kasaine. He sits in that corner from noon. I never left the kettle.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_omar",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_ledger"
+      ],
+      "intro": "Omar doesn't look up from his clipboard. \"I was loading lorries.\"",
+      "claims": [
+        "f_omar_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_ledger",
+          "reply": "Forty head from Kajiado? He told me he'd sold cattle from Kajiado. We have no cattle in Kajiado. ...We fought about a lorry, yes. Lorries, not this. Read my manifests.",
+          "reveals": [
+            "f_omar_nocattle",
+            "ev_lorrypark"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_joan",
+      "stance": "cooperative",
+      "intro": "Dr. Chelimo puts her stamp beside the permit. \"Look at the spelling. Then look at the border.\"",
+      "claims": [],
+      "yields": [
+        "ev_joan"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_nelson",
+      "stance": "cooperative",
+      "intro": "Nelson leans in the weighing-shed door. \"Half past four. Old Kipkorir and the Somali trader, into Nancy's back room.\"",
+      "claims": [],
+      "yields": [
+        "ev_nelson"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_nancy",
+      "claim": "f_nancy_locked",
+      "brokenBy": [
+        "f_backroom",
+        "f_nelson"
+      ],
+      "reveals": [
+        "f_nancy_rented"
+      ],
+      "reaction": "\"I rented it to them for five hundred. I'm not licensed to rent rooms. I was afraid.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_kip",
+      "claim": "f_kip_home",
+      "brokenBy": [
+        "f_nelson"
+      ],
+      "reveals": [
+        "f_kip_confess"
+      ],
+      "reaction": "Kipkorir lets his stick fall against the bench. \"Forty head. My whole life. He laughed. He told me to go to court. I'm sixty-seven, Detective. I haven't got time for court.\"",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_kipkorir",
+      "text": "Kipkorir Sigei",
+      "category": "person",
+      "ref": "p_kipkorir",
+      "unlock": {
+        "anyOf": [
+          "f_ledger"
+        ]
+      }
+    },
+    {
+      "id": "w_nancy",
+      "text": "Nancy Jelagat",
+      "category": "person",
+      "ref": "p_nancy",
+      "unlock": {
+        "anyOf": [
+          "f_backroom"
+        ]
+      }
+    },
+    {
+      "id": "w_omar",
+      "text": "Omar Dahir",
+      "category": "person",
+      "ref": "p_omar",
+      "unlock": {
+        "anyOf": [
+          "f_ledger"
+        ]
+      }
+    },
+    {
+      "id": "w_nelson",
+      "text": "Nelson Kipkurui",
+      "category": "person",
+      "ref": "p_nelson",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_joan",
+      "text": "Joan Chelimo",
+      "category": "person",
+      "ref": "p_joan",
+      "unlock": {
+        "anyOf": [
+          "f_permits"
+        ]
+      }
+    },
+    {
+      "id": "pl_pen6",
+      "text": "holding pen 6",
+      "category": "place",
+      "ref": "plc_pen6",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_backroom",
+      "text": "the tea hotel's back room",
+      "category": "place",
+      "ref": "plc_backroom",
+      "unlock": {
+        "anyOf": [
+          "f_nelson"
+        ]
+      }
+    },
+    {
+      "id": "pl_weigh",
+      "text": "the weighing shed",
+      "category": "place",
+      "ref": "plc_weigh",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_vet",
+      "text": "the vet office",
+      "category": "place",
+      "ref": "loc_vet",
+      "unlock": {
+        "anyOf": [
+          "f_permits"
+        ]
+      }
+    },
+    {
+      "id": "pl_lorrypark",
+      "text": "the lorry park",
+      "category": "place",
+      "ref": "plc_lorrypark",
+      "unlock": {
+        "anyOf": [
+          "f_ledger"
+        ]
+      }
+    },
+    {
+      "id": "h_iron",
+      "text": "struck with a cattle branding iron",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_iron"
+        ]
+      }
+    },
+    {
+      "id": "h_trampled",
+      "text": "trampled by cattle in the pen",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_robbed",
+      "text": "robbed and struck for his cash",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_bull",
+      "text": "kicked by a bull",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_savings",
+      "text": "Abdirizak had taken his life savings for forty cattle that didn't exist",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_rec_abd_pay"
+        ]
+      }
+    },
+    {
+      "id": "m_debt",
+      "text": "Abdirizak was demanding a debt Kipkorir owed him",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ledger"
+        ]
+      }
+    },
+    {
+      "id": "m_lorry",
+      "text": "the partners' quarrel about a lorry",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ledger"
+        ]
+      }
+    },
+    {
+      "id": "m_rent",
+      "text": "the tea hotel's back-room rent",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_backroom"
+        ]
+      }
+    },
+    {
+      "id": "m_fees",
+      "text": "a dispute over market fees",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Abdirizak Hassan"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_1400",
+                  "label": "14:00",
+                  "from": "14:00",
+                  "to": "14:00"
+                },
+                {
+                  "id": "sl_1630",
+                  "label": "16:30",
+                  "from": "16:30",
+                  "to": "16:30"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "16:30–17:30",
+                  "from": "16:30",
+                  "to": "17:30"
+                },
+                {
+                  "id": "sl_1800",
+                  "label": "18:00",
+                  "from": "18:00",
+                  "to": "18:00"
+                },
+                {
+                  "id": "sl_1840",
+                  "label": "18:40",
+                  "from": "18:40",
+                  "to": "18:40"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_enter",
+                  "text": "They enter the back room",
+                  "slot": "sl_1630",
+                  "by": [
+                    "f_nelson"
+                  ],
+                  "why": "Nelson saw them go in at about 16:30.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_nelson"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Abdirizak is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod",
+                    "f_nelson",
+                    "f_backroom"
+                  ],
+                  "why": "After they went in at 16:30; the autopsy closes at 17:30.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_close",
+                  "text": "Market closes and the pens empty",
+                  "slot": "sl_1800",
+                  "by": [
+                    "f_market_close"
+                  ],
+                  "why": "Nelson: closed at 18:00.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_market_close"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_found",
+                  "text": "The clerk finds him",
+                  "slot": "sl_1840",
+                  "by": [
+                    "f_ob"
+                  ],
+                  "why": "Pen 6, 18:40.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_ob"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_1400",
+                  "by": [
+                    "f_nelson"
+                  ],
+                  "why": "14:00 is when Kipkorir says he went home. Nelson saw him at the tea hotel at 16:30."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "In the back room at half four, dead within the hour, the pens empty at six, found at twenty to seven. That's the afternoon.",
+          "fail": [
+            "Two o'clock is the old man's story, not the afternoon.",
+            "When did Nelson see them go in?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_backroom"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A scrubbed floor, a broken glass and drag marks to the pens. He died in the back room.",
+          "fail": [
+            "No trampling, and he lay somewhere narrow first. Pen 6 is where he was left.",
+            "Follow the drag marks back."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_kipkorir"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Into the back room with his iron at half four, and Abdirizak's blood in the brand. That will hold.",
+          "fail": [
+            "Nancy never left her kettle. She lied about her licence.",
+            "Omar signed manifests at the lorry park all afternoon."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_iron"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A flat, shaped iron end. A brand. Yes.",
+          "fail": [
+            "No trampling.",
+            "His satchel and its cash are still on him."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_savings"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Read the top of the column first, Amani. Always.",
+          "fail": [
+            "Unfold the ledger. Which way did the money go?",
+            "The lorry quarrel was Omar's, and he was at the lorry park."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_backroom",
+      "from": "16:30",
+      "to": "17:30",
+      "note": "They went in at 16:30; the autopsy closes at 17:30."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_ledger",
+          "f_permits",
+          "f_joan",
+          "f_rec_abd_pay"
+        ],
+        "concludes": "Abdirizak received KSh 1.6 million from Kipkorir for forty cattle that didn't exist, using forged permits. The victim was the fraudster."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_nelson",
+          "f_kip_home",
+          "f_kip_confess"
+        ],
+        "concludes": "Kipkorir didn't go home at two: at 16:30 he went into the tea hotel's back room with Abdirizak, carrying his branding iron."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_backroom",
+          "f_nancy_locked",
+          "f_nancy_rented",
+          "f_aut_lividity",
+          "f_aut_tod",
+          "f_body"
+        ],
+        "concludes": "The killing happened in the back room, rented for KSh 500; the body lay there, then was dragged to pen 6. He died between 16:30 and 17:30.",
+        "answers": [
+          "where",
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_iron",
+          "f_trace",
+          "f_aut_iron"
+        ],
+        "concludes": "The branding iron carries Abdirizak's blood. In the tea hotel's back room, Kipkorir Sigei struck Abdirizak with a cattle branding iron, because Abdirizak had taken his life savings for forty cattle that didn't exist.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_pen6",
+        "blank": "where",
+        "by": [
+          "f_aut_lividity",
+          "f_backroom",
+          "f_aut_iron"
+        ],
+        "why": "He lay somewhere narrow first, the drag marks lead from the back room, and there's no trampling."
+      },
+      {
+        "word": "pl_weigh",
+        "blank": "where",
+        "by": [
+          "f_nelson_self",
+          "f_nelson"
+        ],
+        "why": "Nelson was in the weighing shed all afternoon and saw them go into the tea hotel."
+      },
+      {
+        "word": "pl_vet",
+        "blank": "where",
+        "by": [
+          "f_joan_self",
+          "f_backroom"
+        ],
+        "why": "The vet office was full of staff; the scrubbed floor is in the back room."
+      },
+      {
+        "word": "pl_lorrypark",
+        "blank": "where",
+        "by": [
+          "f_lorrypark",
+          "f_backroom"
+        ],
+        "why": "Omar and the loaders were at the lorry park; the drag marks run from the back room."
+      },
+      {
+        "word": "w_nancy",
+        "blank": "who",
+        "by": [
+          "f_nancy_front"
+        ],
+        "why": "Nancy served tea in the front room all afternoon."
+      },
+      {
+        "word": "w_omar",
+        "blank": "who",
+        "by": [
+          "f_lorrypark"
+        ],
+        "why": "Omar was signing manifests at the lorry park from 15:30 to 18:00."
+      },
+      {
+        "word": "w_nelson",
+        "blank": "who",
+        "by": [
+          "f_nelson_self"
+        ],
+        "why": "Nelson was at the weighing shed, stamping tickets."
+      },
+      {
+        "word": "w_joan",
+        "blank": "who",
+        "by": [
+          "f_joan_self"
+        ],
+        "why": "Dr. Chelimo was at the vet office and the county offices all afternoon."
+      },
+      {
+        "word": "h_trampled",
+        "blank": "how",
+        "by": [
+          "f_aut_iron"
+        ],
+        "why": "No trampling injuries."
+      },
+      {
+        "word": "h_robbed",
+        "blank": "how",
+        "by": [
+          "f_satchel_cash"
+        ],
+        "why": "His satchel and KSh 46,000 were still on him."
+      },
+      {
+        "word": "h_bull",
+        "blank": "how",
+        "by": [
+          "f_aut_iron"
+        ],
+        "why": "A shaped iron end, not a hoof."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_heart",
+          "f_aut_iron"
+        ],
+        "why": "A sound heart; a blow killed him."
+      },
+      {
+        "word": "m_debt",
+        "blank": "why",
+        "by": [
+          "f_ledger",
+          "f_rec_abd_pay"
+        ],
+        "why": "The money went the other way: \"Received\"."
+      },
+      {
+        "word": "m_lorry",
+        "blank": "why",
+        "by": [
+          "f_lorrypark"
+        ],
+        "why": "That quarrel was Omar's, and he was at the lorry park."
+      },
+      {
+        "word": "m_rent",
+        "blank": "why",
+        "by": [
+          "f_nancy_rented"
+        ],
+        "why": "The rent is Nancy's fear, not a reason to kill."
+      },
+      {
+        "word": "m_fees",
+        "blank": "why",
+        "by": [
+          "f_fees_paid"
+        ],
+        "why": "His market fees were paid."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Abdirizak sells Kipkorir forty head of cattle \"from Kajiado, delivery Tuesday\" and takes KSh 1.6 million, most of the old broker's savings. The permits are forged with a fake county vet stamp, bought from Mvua's \"document services\".",
+        "image": null
+      },
+      {
+        "text": "Tuesday. No lorry comes. Kipkorir has brought his branding iron to brand his new herd.",
+        "image": null
+      },
+      {
+        "text": "16:30. They meet in the back room of Mama Nancy's tea hotel, rented for KSh 500. Abdirizak laughs and tells him to go to court.",
+        "image": null
+      },
+      {
+        "text": "Kipkorir strikes him with the branding iron. A chai glass breaks.",
+        "image": "plc_backroom"
+      },
+      {
+        "text": "At dusk he drags Abdirizak out of the back door into the emptying pens, scrubs the floor, and goes home. At 18:40 Nelson finds him in pen 6.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "One records request, on the victim's line. No detention: Kipkorir hands over the iron himself. The trace takes 12 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_pens",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_ledger",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_permits",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_fees",
+        "hours": 1
+      },
+      {
+        "do": "travel",
+        "target": "loc_vet",
+        "hours": 0.5,
+        "from": "loc_pens"
+      },
+      {
+        "do": "visit",
+        "target": "loc_vet",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_joan"
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "travel",
+        "target": "loc_pens",
+        "hours": 0.5,
+        "from": "loc_vet"
+      },
+      {
+        "do": "interview",
+        "target": "p_nelson"
+      },
+      {
+        "do": "travel",
+        "target": "loc_teahotel",
+        "hours": 0.5,
+        "from": "loc_pens"
+      },
+      {
+        "do": "visit",
+        "target": "loc_teahotel",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_backroom",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_nancy"
+      },
+      {
+        "do": "press",
+        "target": "c_nancy"
+      },
+      {
+        "do": "interview",
+        "target": "p_kipkorir"
+      },
+      {
+        "do": "press",
+        "target": "c_kip"
+      },
+      {
+        "do": "submit",
+        "target": "ev_trace"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 12
+      }
+    ],
+    "totalHours": 33.5
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_nelson",
+        "line": "The weighing clerk sees everyone who passes. When did he see them?"
+      },
+      "tier2": {
+        "facts": [
+          "f_nelson",
+          "f_aut_tod"
+        ],
+        "line": "Into the back room at 16:30. Dead by 17:30."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "He lay somewhere narrow before he was moved. Follow the drag marks back."
+      },
+      "tier2": {
+        "facts": [
+          "f_backroom",
+          "f_aut_lividity"
+        ],
+        "line": "A scrubbed floor and drag marks out of the tea hotel's back door."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_nelson",
+        "line": "Who was carrying something wrapped in a sack?"
+      },
+      "tier2": {
+        "facts": [
+          "f_nelson",
+          "f_trace"
+        ],
+        "line": "Kipkorir with his iron at 16:30, and the victim's blood in its brand."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "A flat, shaped iron end. What does a cattle broker bring to a new herd?"
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_iron",
+          "f_iron"
+        ],
+        "line": "A shaped iron end, and a branding iron wiped clean."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_ledger",
+        "line": "Unfold the ledger. Read the top of the column first."
+      },
+      "tier2": {
+        "facts": [
+          "f_ledger",
+          "f_joan"
+        ],
+        "line": "\"Received\", and permits the vet office never issued."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "ng'ombe",
+      "def": "Cattle."
+    },
+    {
+      "term": "dalali",
+      "def": "A broker or middleman."
+    },
+    {
+      "term": "kibali",
+      "def": "A permit."
+    },
+    {
+      "term": "chuma cha alama",
+      "def": "A branding iron."
+    },
+    {
+      "term": "chai",
+      "def": "Tea, usually boiled with milk and sugar."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address or name a woman."
+    },
+    {
+      "term": "mzee",
+      "def": "Respectful word for an older man."
+    },
+    {
+      "term": "kofia",
+      "def": "A brimless embroidered cap."
+    },
+    {
+      "term": "kitenge",
+      "def": "Brightly printed cotton cloth, often made into dresses."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "readWholeDocument"
+    ],
+    "beatNotes": "Read the whole document. The ledger opens folded so the column headings are hidden; the player has to unfold it to see \"Received\". A small, deliberate lesson for region 7's documents."
+  }
+}

@@ -1,0 +1,2938 @@
+{
+  "meta": {
+    "id": "case-096",
+    "number": 96,
+    "region": "final-files",
+    "regionNumber": 10,
+    "title": "The Night Watchman",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 52,
+    "date": "Tuesday 17 November",
+    "folderTab": "BAHATI"
+  },
+  "pattern": {
+    "crimePattern": "a retired government driver, driven by his son, strangles the old watchman who wrote down his car's number on the night Joseph Mwenda was killed",
+    "noRealCaseRetold": true,
+    "notes": "Fictional watchman, driver, families, church and newspaper; Bahati is a setting only. The GK plate is fictional and abbreviated. Pius's last words in the room (\"It's done. Tell her it's done.\") become a t_kivuli spine fact for case 100; his full statement comes after the verdict.",
+    "tags": [
+      "strangulation",
+      "witness-silenced",
+      "cover-up",
+      "accomplice",
+      "absence",
+      "spine",
+      "three-liars",
+      "records",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where"
+    ]
+  },
+  "difficulty": {
+    "suspects": 5,
+    "chainLength": 7,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "accomplice",
+      "how",
+      "why",
+      "absence",
+      "spine"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "records",
+      "warrant"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 14/17/11",
+    "date": "Tuesday 17 November",
+    "time": "06:45",
+    "reportedBy": "Amos Ngeno, grandson",
+    "text": "A grandson reports his grandfather, Mzee Elijah Ngeno (76), a retired night watchman and church usher, found dead in his house on the family farm at Bahati, Nakuru.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_house",
+    "nodes": [
+      "loc_house",
+      "loc_church",
+      "loc_pius"
+    ],
+    "edges": [
+      {
+        "a": "loc_house",
+        "b": "loc_church",
+        "minutes": 5,
+        "by": "foot"
+      },
+      {
+        "a": "loc_house",
+        "b": "loc_pius",
+        "minutes": 25,
+        "by": "car"
+      },
+      {
+        "a": "loc_church",
+        "b": "loc_pius",
+        "minutes": 25,
+        "by": "car"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_elijah",
+      "role": "victim",
+      "name": "Mzee Elijah Ngeno",
+      "age": 76,
+      "occupation": "Retired night watchman; church usher for forty years",
+      "bio": "Twelve years ago he watched a dairy gate facing the Bahati road.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_sitting",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, mid 70s, a church usher's sash over a jacket, a gentle, careful face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_pius",
+      "role": "suspect",
+      "name": "Pius Cheruiyot",
+      "age": 61,
+      "occupation": "Retired government driver; a church elder in Nakuru",
+      "bio": "Twelve years ago he drove the Director of Land Adjudication's car.",
+      "community": "Kalenjin",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_whatsapp"
+      },
+      "at": "plc_piushouse",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, early 60s, a church elder's collar and a grey suit, a pious, very tired face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_ivan",
+      "role": "suspect",
+      "name": "Ivan Cheruiyot",
+      "age": 30,
+      "occupation": "Pius's son",
+      "bio": "Drives a car on a fleet-tracking app for a delivery firm.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "accomplice": true,
+      "unlock": {
+        "fact": "f_rec_pius"
+      },
+      "at": "plc_car",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, about 30, a delivery firm polo shirt, a guarded, unhappy face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_amos",
+      "role": "suspect",
+      "name": "Amos Ngeno",
+      "age": 33,
+      "occupation": "Elijah's grandson",
+      "redHerring": true,
+      "bio": "Wants to sell an acre of the farm.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_bar",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, early 30s, a farm jacket and gumboots, a defensive, red-eyed face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_nyambura",
+      "role": "suspect",
+      "name": "Mama Nyambura Kago",
+      "age": 58,
+      "occupation": "Neighbour",
+      "redHerring": true,
+      "bio": "Ten years of goats in her maize.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_cecilia"
+      },
+      "at": "plc_prayer",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, late 50s, a headscarf and a women's group T-shirt, a blunt, honest face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_winnie",
+      "role": "suspect",
+      "name": "Winnie Akinyi",
+      "age": 31,
+      "occupation": "Reporter, Taifa Daily",
+      "bio": "Visited Elijah on Monday afternoon.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_joel"
+      },
+      "at": "plc_newsroom",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo woman, early 30s, a press card on a lanyard and a notebook, a horrified face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_joel",
+      "role": "witness",
+      "name": "Elder Joel Kirui",
+      "age": 66,
+      "occupation": "Church elder",
+      "bio": "Elijah confided in him on Friday.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_church",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, mid 60s, a church elder's collar and a walking stick, a grave, kind face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_cecilia",
+      "role": "witness",
+      "name": "Mama Cecilia Ngeno",
+      "age": 72,
+      "occupation": "Elijah's wife",
+      "bio": "At their daughter's in Molo since Saturday.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_molo",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin woman, early 70s, a church headscarf and a shawl, a stunned, dignified face, ID-photo framing",
+        "ref": null
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_sitting",
+      "name": "Elijah's sitting room",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_pen",
+      "name": "The goat pen",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_lane",
+      "name": "The lane end on the Bahati road"
+    },
+    {
+      "id": "plc_car",
+      "name": "Ivan's car, on the Bahati road"
+    },
+    {
+      "id": "plc_dairy",
+      "name": "The old dairy gate"
+    },
+    {
+      "id": "plc_piushouse",
+      "name": "Pius's house in Nakuru",
+      "within": "loc_pius"
+    },
+    {
+      "id": "plc_bar",
+      "name": "A bar in Bahati"
+    },
+    {
+      "id": "plc_prayer",
+      "name": "The women's group overnight prayer"
+    },
+    {
+      "id": "plc_newsroom",
+      "name": "The Nakuru newsroom"
+    },
+    {
+      "id": "plc_vigil",
+      "name": "The church youth vigil",
+      "within": "loc_church"
+    },
+    {
+      "id": "plc_molo",
+      "name": "Molo"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_house",
+      "name": "Elijah's farm, Bahati",
+      "kind": "scene",
+      "description": "Three acres on red soil behind a cypress hedge: a small house of timber and iron, a goat pen, a murram lane down to the Bahati road.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The sitting room",
+          "pos": [
+            45,
+            55
+          ],
+          "yields": "ev_body",
+          "text": "Where Elijah lies; the goat pen's tether rope is short."
+        },
+        {
+          "id": "hs_hymn",
+          "label": "The hymnbook",
+          "pos": [
+            60,
+            40
+          ],
+          "yields": "ev_hymnbook",
+          "text": "On the table."
+        },
+        {
+          "id": "hs_cups",
+          "label": "Two cups",
+          "pos": [
+            35,
+            40
+          ],
+          "yields": "ev_cups",
+          "text": "On the table."
+        },
+        {
+          "id": "hs_lane",
+          "label": "The lane",
+          "pos": [
+            85,
+            75
+          ],
+          "yields": "ev_tracks",
+          "text": "Down to the road."
+        },
+        {
+          "id": "hs_cecilia",
+          "label": "Mama Cecilia",
+          "pos": [
+            10,
+            30
+          ],
+          "yields": "ev_cecilia",
+          "text": "Brought back from Molo."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small timber-and-iron farmhouse at Bahati at night, two tea cups on a table, an old hymnbook open with its inside cover torn away, no people in focus"
+      },
+      "expected": [
+        {
+          "id": "x_cover",
+          "text": "The number Elder Joel saw written inside the hymnbook cover on Friday",
+          "because": "f_joel",
+          "present": false,
+          "fact": "f_abs_cover"
+        },
+        {
+          "id": "x_tea",
+          "text": "A visitor drinking the tea Elijah made him",
+          "because": "f_cups",
+          "present": false,
+          "fact": "f_abs_tea"
+        },
+        {
+          "id": "x_call",
+          "text": "A call for help from Elijah's phone",
+          "because": "f_body",
+          "present": false,
+          "fact": "f_abs_call"
+        },
+        {
+          "id": "x_rope",
+          "text": "The goat pen's full tether rope",
+          "because": "f_body",
+          "present": false,
+          "fact": "f_abs_rope"
+        },
+        {
+          "id": "x_choir",
+          "text": "Pius's phone buzzing with choir messages, as on every Monday night",
+          "because": "f_rec_pius",
+          "present": false,
+          "fact": "f_abs_phone"
+        }
+      ]
+    },
+    {
+      "id": "loc_church",
+      "name": "The church at Bahati",
+      "kind": "location",
+      "description": "A brick church five minutes' walk away; a bar opposite.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_joel",
+          "label": "Elder Joel",
+          "pos": [
+            40,
+            50
+          ],
+          "yields": "ev_joel",
+          "text": "In the vestry."
+        },
+        {
+          "id": "hs_bar",
+          "label": "The bar opposite",
+          "pos": [
+            80,
+            50
+          ],
+          "yields": "ev_amos",
+          "text": "The bar owner."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small brick church in a green farming area, a bar with a painted sign across the road"
+      }
+    },
+    {
+      "id": "loc_pius",
+      "name": "Pius's house, Nakuru",
+      "kind": "location",
+      "description": "A tidy bungalow with a church calendar by the door and a charcoal jiko on the back step.",
+      "unlock": {
+        "fact": "f_tracker"
+      },
+      "hotspots": [
+        {
+          "id": "hs_jiko",
+          "label": "The jiko and the shoe rack",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_pius_house",
+          "text": "Search under warrant."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a charcoal jiko on a back step with grey ash and a scrap of half-burned board, a pair of polished leather shoes beside it"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Elijah in the sitting room",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Strangled with a sisal rope; the goat pen's tether is missing one length. His phone in his pocket, unused. KSh 4,000 in his Bible."
+      },
+      "facts": [
+        "f_body",
+        "f_cash"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a small sitting room with a wooden chair pushed back, a Bible on a side table, no body visible"
+      }
+    },
+    {
+      "id": "ev_hymnbook",
+      "type": "physical",
+      "title": "The hymnbook",
+      "render": "object",
+      "body": {
+        "label": "The inside front cover is torn out; a ragged strip at the spine shows the pencilled end of a number: \"…94\"."
+      },
+      "facts": [
+        "f_hymnbook"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "an old hymnbook open on a table, its inside front cover torn out, a ragged strip at the spine with faint pencil"
+      }
+    },
+    {
+      "id": "ev_cups",
+      "type": "physical",
+      "title": "Two cups of tea",
+      "render": "object",
+      "body": {
+        "label": "Elijah's half drunk; the other full."
+      },
+      "facts": [
+        "f_cups"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tracks",
+      "type": "physical",
+      "title": "The lane to the road",
+      "render": "object",
+      "body": {
+        "label": "A car stopped at the lane end; one set of a man's smart leather soles to the house and back."
+      },
+      "facts": [
+        "f_tracks"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_cecilia",
+      "type": "witness",
+      "title": "Statement: Mama Cecilia Ngeno",
+      "render": "statement",
+      "body": {
+        "speaker": "p_cecilia"
+      },
+      "facts": [
+        "f_cecilia",
+        "f_cecilia_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_joel",
+      "type": "witness",
+      "title": "Statement: Elder Joel Kirui",
+      "render": "statement",
+      "body": {
+        "speaker": "p_joel"
+      },
+      "facts": [
+        "f_joel",
+        "f_joel_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_amos",
+      "type": "witness",
+      "title": "Statement: the bar owner",
+      "render": "statement",
+      "body": {
+        "speaker": "p_amos"
+      },
+      "facts": [
+        "f_amos_bar"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_whatsapp",
+      "type": "phone",
+      "title": "Winnie's phone and the church group",
+      "render": "manifest",
+      "body": {
+        "post": "Mon 16:10: \"Any other witnesses from Bahati 12 years ago? An old man here remembers things.\"",
+        "fwd": "Forwarded 17:30 into a Nakuru church elders' group that includes Pius Cheruiyot."
+      },
+      "facts": [
+        "f_whatsapp"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_winnie",
+      "type": "document",
+      "title": "Newsroom log and taxi receipt",
+      "render": "logBook",
+      "body": {
+        "text": "Winnie back in Nakuru by 18:30; filing until 23:00."
+      },
+      "facts": [
+        "f_winnie"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_nyambura",
+      "type": "witness",
+      "title": "Statement: the women's group",
+      "render": "statement",
+      "body": {
+        "speaker": "p_nyambura"
+      },
+      "facts": [
+        "f_nyambura"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rec_pius",
+      "type": "phone",
+      "title": "Records ①: Pius's line",
+      "render": "manifest",
+      "body": {
+        "text": "Off 21:40–23:30 Monday. Choir-group messages every other Monday night."
+      },
+      "facts": [
+        "f_rec_pius"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_whatsapp",
+          "f_hymnbook",
+          "f_tracks"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_rec_ivan",
+      "type": "phone",
+      "title": "Records ②: Ivan's car tracker",
+      "render": "manifest",
+      "body": {
+        "text": "Nakuru 21:55 → Bahati road, stopped at Elijah's lane 22:20–22:50 → Nakuru 23:15."
+      },
+      "facts": [
+        "f_tracker"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_rec_pius",
+          "f_iv_nowhere"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_pius_house",
+      "type": "physical",
+      "title": "Pius's jiko and shoes",
+      "render": "object",
+      "body": {
+        "board": "In the ash: half-burned hymnbook board, pencil legible: \"GK A…094\".",
+        "shoes": "Leather shoes, red Bahati murram in the welt.",
+        "shirt": "Shirt cuffs with pale fibres."
+      },
+      "facts": [
+        "f_board",
+        "f_shoes"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_tracker",
+          "f_rec_pius"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_pi_prints",
+      "type": "physical",
+      "title": "Fingerprints: Pius Cheruiyot",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention."
+      },
+      "facts": [
+        "f_pi_printset"
+      ],
+      "gate": null,
+      "detention": "p_pius",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Nakuru County)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_gk",
+      "type": "forensic",
+      "title": "Archive: government vehicle register",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_gk"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_pius_house"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_shoelab",
+      "type": "forensic",
+      "title": "Comparison: lane prints vs Pius's shoes",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_shoematch"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_tracks",
+          "ev_pius_house"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints (the full cup)",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_cupprints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_cups",
+          "ev_pi_prints"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_fibres",
+      "type": "forensic",
+      "title": "Lab: fibres (shirt cuffs vs goat-pen rope)",
+      "render": "labReport",
+      "body": {
+        "test": "fibres"
+      },
+      "facts": [
+        "f_fibres"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "fibres",
+        "hours": 12,
+        "needs": [
+          "ev_pius_house",
+          "ev_body"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Mzee Elijah Ngeno was found dead in his sitting room at Bahati on Tuesday morning.",
+      "kind": "true",
+      "about": [
+        "p_elijah",
+        "loc_house"
+      ],
+      "at": {
+        "from": "06:45",
+        "to": null,
+        "day": "Tue"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "Strangled with a sisal rope; the goat pen's tether is missing one length. His phone is in his pocket, unused.",
+      "kind": "true",
+      "about": [
+        "p_elijah",
+        "plc_sitting"
+      ]
+    },
+    {
+      "id": "f_cash",
+      "text": "KSh 4,000 in Elijah's Bible, untouched.",
+      "kind": "true",
+      "about": [
+        "p_elijah"
+      ]
+    },
+    {
+      "id": "f_hymnbook",
+      "text": "The hymnbook's inside front cover is torn out; a strip at the spine shows the pencilled end of a number: \"…94\".",
+      "kind": "true",
+      "about": [
+        "plc_sitting"
+      ]
+    },
+    {
+      "id": "f_cups",
+      "text": "Two cups of tea: Elijah's half drunk, the other full. A visitor he knew well enough to make tea for.",
+      "kind": "true",
+      "about": [
+        "plc_sitting"
+      ]
+    },
+    {
+      "id": "f_tracks",
+      "text": "A car stopped at the lane end; one set of a man's smart leather soles from the car to the house and back.",
+      "kind": "true",
+      "about": [
+        "plc_lane"
+      ]
+    },
+    {
+      "id": "f_cecilia",
+      "text": "Cecilia: Elijah had words with Mama Nyambura about the goats again; Amos wanted to sell an acre and Elijah said no.",
+      "kind": "true",
+      "about": [
+        "p_nyambura",
+        "p_amos"
+      ]
+    },
+    {
+      "id": "f_cecilia_self",
+      "text": "Cecilia was at their daughter's in Molo from Saturday.",
+      "kind": "true",
+      "about": [
+        "p_cecilia"
+      ],
+      "where": {
+        "person": "p_cecilia",
+        "place": "plc_molo",
+        "from": "08:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_joel",
+      "text": "Joel: on Friday Elijah showed him a car number inside the hymnbook cover, GK and more. \"I saw the car the night the surveyor died. I was too afraid. On Tuesday I'll go.\"",
+      "kind": "true",
+      "about": [
+        "p_joel",
+        "p_elijah"
+      ]
+    },
+    {
+      "id": "f_joel_self",
+      "text": "Joel was at the church youth vigil from 21:00 to midnight.",
+      "kind": "true",
+      "about": [
+        "p_joel"
+      ],
+      "where": {
+        "person": "p_joel",
+        "place": "plc_vigil",
+        "from": "21:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_amos_bar",
+      "text": "The bar owner: Amos drank there from 20:00 to 01:00.",
+      "kind": "true",
+      "about": [
+        "p_amos"
+      ],
+      "where": {
+        "person": "p_amos",
+        "place": "plc_bar",
+        "from": "20:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_whatsapp",
+      "text": "Winnie's post, Monday 16:10: \"An old man here remembers things.\" Forwarded at 17:30 into a Nakuru church elders' group that includes Pius Cheruiyot.",
+      "kind": "true",
+      "about": [
+        "p_winnie",
+        "p_pius"
+      ],
+      "at": {
+        "from": "17:30",
+        "to": null,
+        "day": "Mon"
+      }
+    },
+    {
+      "id": "f_winnie",
+      "text": "Newsroom log: Winnie was back in Nakuru by 18:30 and filing until 23:00.",
+      "kind": "true",
+      "about": [
+        "p_winnie"
+      ],
+      "where": {
+        "person": "p_winnie",
+        "place": "plc_newsroom",
+        "from": "18:30",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_nyambura",
+      "text": "The women's group: Nyambura was at an overnight prayer, 21:00 to 05:00.",
+      "kind": "true",
+      "about": [
+        "p_nyambura"
+      ],
+      "where": {
+        "person": "p_nyambura",
+        "place": "plc_prayer",
+        "from": "21:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_rec_pius",
+      "text": "Records ①: Pius's phone was off from 21:40 to 23:30 on Monday; it is never off on a Monday night, when his choir group messages.",
+      "kind": "true",
+      "about": [
+        "p_pius"
+      ],
+      "at": {
+        "from": "21:40",
+        "to": "23:30",
+        "day": "Mon"
+      }
+    },
+    {
+      "id": "f_tracker",
+      "text": "Records ②: Ivan's car left Nakuru at 21:55, stood at Elijah's lane end 22:20–22:50, and was back at 23:15.",
+      "kind": "true",
+      "about": [
+        "p_ivan"
+      ],
+      "at": {
+        "from": "21:55",
+        "to": "23:15",
+        "day": "Mon"
+      }
+    },
+    {
+      "id": "f_board",
+      "text": "In Pius's jiko ash: half-burned hymnbook board, the pencil still legible: \"GK A…094\".",
+      "kind": "true",
+      "about": [
+        "p_pius"
+      ]
+    },
+    {
+      "id": "f_shoes",
+      "text": "Pius's leather shoes have red Bahati murram in the welt.",
+      "kind": "true",
+      "about": [
+        "p_pius"
+      ]
+    },
+    {
+      "id": "f_pi_printset",
+      "text": "Fingerprints taken from Pius in detention.",
+      "kind": "true",
+      "about": [
+        "p_pius"
+      ]
+    },
+    {
+      "id": "f_aut",
+      "text": "Post-mortem: strangled with a rough fibre rope; no head injury.",
+      "kind": "true",
+      "about": [
+        "p_elijah"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Monday between 22:15 and 23:00.",
+      "kind": "true",
+      "about": [
+        "p_elijah"
+      ],
+      "at": {
+        "from": "22:15",
+        "to": "23:00",
+        "day": "Mon"
+      }
+    },
+    {
+      "id": "f_gk",
+      "text": "Vehicle register, twelve years ago: GK A…094 was allocated to the Director of Land Adjudication; assigned driver, Pius Cheruiyot.",
+      "kind": "true",
+      "about": [
+        "p_pius"
+      ],
+      "spine": "t_joseph"
+    },
+    {
+      "id": "f_shoematch",
+      "text": "Comparison: the lane prints match Pius's shoes, sole and size.",
+      "kind": "true",
+      "about": [
+        "p_pius"
+      ]
+    },
+    {
+      "id": "f_cupprints",
+      "text": "Lab: Pius's prints on the full cup.",
+      "kind": "true",
+      "about": [
+        "p_pius"
+      ]
+    },
+    {
+      "id": "f_fibres",
+      "text": "Lab: sisal fibres on Pius's shirt cuffs match the goat-pen rope.",
+      "kind": "true",
+      "about": [
+        "p_pius"
+      ]
+    },
+    {
+      "id": "f_abs_cover",
+      "text": "Missing: the inside cover of his hymnbook, where he'd written the car's number, is torn out.",
+      "kind": "true",
+      "about": [
+        "plc_sitting"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_tea",
+      "text": "Missing: the visitor's tea is untouched.",
+      "kind": "true",
+      "about": [
+        "plc_sitting"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_call",
+      "text": "Missing: his phone was never used to call for help.",
+      "kind": "true",
+      "about": [
+        "p_elijah"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_rope",
+      "text": "Missing: a length of rope is gone from the goat pen.",
+      "kind": "true",
+      "about": [
+        "plc_pen"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_phone",
+      "text": "Missing: Pius's phone was off for two hours.",
+      "kind": "true",
+      "about": [
+        "p_pius"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_pi_home",
+      "text": "Pius: \"I was at home on Monday night. I hardly knew Elijah.\"",
+      "kind": "lie",
+      "about": [
+        "p_pius"
+      ]
+    },
+    {
+      "id": "f_pi_reveal",
+      "text": "Pius: \"I went to pray with him. We knew each other from conventions. He made me tea. I asked to see his hymnbook. I tore out the cover and he tried to take it back.\"",
+      "kind": "true",
+      "about": [
+        "p_pius",
+        "p_elijah"
+      ],
+      "where": {
+        "person": "p_pius",
+        "place": "plc_sitting",
+        "from": "22:20",
+        "to": "22:50"
+      }
+    },
+    {
+      "id": "f_pi_rope",
+      "text": "Pius: \"I never touched any rope.\"",
+      "kind": "lie",
+      "about": [
+        "p_pius"
+      ]
+    },
+    {
+      "id": "f_pi_tellher",
+      "text": "Pius: \"That night on the Bahati road, Mr. Oduya made a call from the back seat: 'It's done. Tell her it's done.' I have heard it every night for twelve years.\"",
+      "kind": "true",
+      "about": [
+        "p_pius"
+      ],
+      "spine": "t_kivuli"
+    },
+    {
+      "id": "f_iv_nowhere",
+      "text": "Ivan: \"I didn't drive anywhere on Monday night.\"",
+      "kind": "lie",
+      "about": [
+        "p_ivan"
+      ]
+    },
+    {
+      "id": "f_iv_reveal",
+      "text": "Ivan: \"Dad said he had to pray with an old friend in Bahati. I waited in the car half an hour. He came back without a word and was sick by the road.\"",
+      "kind": "true",
+      "about": [
+        "p_ivan",
+        "p_pius"
+      ],
+      "where": {
+        "person": "p_ivan",
+        "place": "plc_car",
+        "from": "21:55",
+        "to": "23:15"
+      }
+    },
+    {
+      "id": "f_am_home",
+      "text": "Amos: \"I was home all night.\"",
+      "kind": "lie",
+      "about": [
+        "p_amos"
+      ]
+    },
+    {
+      "id": "f_am_reveal",
+      "text": "Amos: \"I was at the bar. I wanted to sell some land. Grandpa said no. I'd never touch him.\"",
+      "kind": "true",
+      "about": [
+        "p_amos"
+      ]
+    },
+    {
+      "id": "f_ny_claim",
+      "text": "Nyambura: \"His goats ate my maize for ten years. I was at prayers.\"",
+      "kind": "claim",
+      "about": [
+        "p_nyambura"
+      ]
+    },
+    {
+      "id": "f_wi_claim",
+      "text": "Winnie: \"I only wrote 'an old man remembers things'. I got him killed with a sentence.\"",
+      "kind": "claim",
+      "about": [
+        "p_winnie"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_pius",
+      "stance": "cooperative",
+      "intro": "Pius folds his hands on the table as if in church. \"I was at home on Monday night. I hardly knew Elijah.\"",
+      "claims": [
+        "f_pi_home"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_pi_rope",
+          "after": "f_pi_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_ivan",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_rec_pius"
+      ],
+      "intro": "Ivan won't look at his father through the glass. \"I didn't drive anywhere on Monday night.\"",
+      "claims": [
+        "f_iv_nowhere"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_amos",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_body"
+      ],
+      "intro": "Amos stands in his gumboots by the door. \"I was home all night.\"",
+      "claims": [
+        "f_am_home"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_nyambura",
+      "stance": "cooperative",
+      "intro": "Mama Nyambura folds her arms. \"His goats ate my maize for ten years. I was at prayers.\"",
+      "claims": [
+        "f_ny_claim"
+      ],
+      "yields": [
+        "ev_nyambura"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_winnie",
+      "stance": "cooperative",
+      "intro": "Winnie has been crying. \"I only wrote 'an old man remembers things'.\"",
+      "claims": [
+        "f_wi_claim"
+      ],
+      "yields": [
+        "ev_whatsapp",
+        "ev_winnie"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_joel",
+      "stance": "cooperative",
+      "intro": "Elder Joel sits in the vestry with his stick across his knees.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_cecilia",
+      "stance": "cooperative",
+      "intro": "Mama Cecilia holds the hymnbook in her lap.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_amos",
+      "claim": "f_am_home",
+      "brokenBy": [
+        "f_amos_bar"
+      ],
+      "reveals": [
+        "f_am_reveal"
+      ],
+      "reaction": "\"I was at the bar. I wanted to sell some land. Grandpa said no. I'd never touch him.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_ivan",
+      "claim": "f_iv_nowhere",
+      "brokenBy": [
+        "f_tracker"
+      ],
+      "reveals": [
+        "f_iv_reveal"
+      ],
+      "reaction": "\"Dad said he needed to pray with an old friend in Bahati, urgently. I waited in the car half an hour. He came back without a word and was sick by the road.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_pius",
+      "claim": "f_pi_home",
+      "brokenBy": [
+        "f_tracker",
+        "f_iv_reveal",
+        "f_board"
+      ],
+      "reveals": [
+        "f_pi_reveal"
+      ],
+      "reaction": "Pius looks at the scrap of board for a long time. \"I went to pray with him,\" he says.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_rope",
+      "claim": "f_pi_rope",
+      "brokenBy": [
+        "f_fibres"
+      ],
+      "reveals": [
+        "f_pi_tellher"
+      ],
+      "reaction": "\"That night on the Bahati road Mr. Oduya made a call from the back seat. He said: 'It's done. Tell her it's done.' I have heard those words every night for twelve years.\"",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_pius",
+      "text": "Pius Cheruiyot",
+      "category": "person",
+      "ref": "p_pius",
+      "unlock": {
+        "anyOf": [
+          "f_whatsapp"
+        ]
+      }
+    },
+    {
+      "id": "w_ivan",
+      "text": "Ivan Cheruiyot",
+      "category": "person",
+      "ref": "p_ivan",
+      "unlock": {
+        "anyOf": [
+          "f_rec_pius"
+        ]
+      }
+    },
+    {
+      "id": "w_amos",
+      "text": "Amos Ngeno",
+      "category": "person",
+      "ref": "p_amos",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_nyambura",
+      "text": "Nyambura Kago",
+      "category": "person",
+      "ref": "p_nyambura",
+      "unlock": {
+        "anyOf": [
+          "f_cecilia"
+        ]
+      }
+    },
+    {
+      "id": "w_joel",
+      "text": "Joel Kirui",
+      "category": "person",
+      "ref": "p_joel",
+      "unlock": {
+        "anyOf": [
+          "f_joel"
+        ]
+      }
+    },
+    {
+      "id": "w_winnie",
+      "text": "Winnie Akinyi",
+      "category": "person",
+      "ref": "p_winnie",
+      "unlock": {
+        "anyOf": [
+          "f_joel"
+        ]
+      }
+    },
+    {
+      "id": "w_nobody",
+      "text": "nobody",
+      "category": "person",
+      "nobody": true,
+      "unlock": {
+        "start": true
+      }
+    },
+    {
+      "id": "r_drove",
+      "text": "drove the killer there and back",
+      "category": "role",
+      "by": [
+        "f_tracker",
+        "f_iv_reveal"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_tracker"
+        ]
+      }
+    },
+    {
+      "id": "r_lure",
+      "text": "lured the victim",
+      "category": "role",
+      "by": [
+        "f_whatsapp"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_whatsapp"
+        ]
+      }
+    },
+    {
+      "id": "r_alibi",
+      "text": "gave a false alibi",
+      "category": "role",
+      "by": [
+        "f_iv_nowhere"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_tracker"
+        ]
+      }
+    },
+    {
+      "id": "r_plant",
+      "text": "planted evidence",
+      "category": "role",
+      "by": [
+        "f_ob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_tracker"
+        ]
+      }
+    },
+    {
+      "id": "r_footage",
+      "text": "deleted the footage",
+      "category": "role",
+      "by": [
+        "f_ob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_tracker"
+        ]
+      }
+    },
+    {
+      "id": "pl_sitting",
+      "text": "Elijah's sitting room",
+      "category": "place",
+      "ref": "plc_sitting",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "pl_pen",
+      "text": "the goat pen",
+      "category": "place",
+      "ref": "plc_pen",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "pl_lane",
+      "text": "the lane end on the Bahati road",
+      "category": "place",
+      "ref": "plc_lane",
+      "unlock": {
+        "anyOf": [
+          "f_tracks"
+        ]
+      }
+    },
+    {
+      "id": "pl_dairy",
+      "text": "the old dairy gate",
+      "category": "place",
+      "ref": "plc_dairy",
+      "unlock": {
+        "anyOf": [
+          "f_joel"
+        ]
+      }
+    },
+    {
+      "id": "pl_piushouse",
+      "text": "Pius's house in Nakuru",
+      "category": "place",
+      "ref": "plc_piushouse",
+      "unlock": {
+        "anyOf": [
+          "f_tracker"
+        ]
+      }
+    },
+    {
+      "id": "h_rope",
+      "text": "strangling him with a sisal rope from the goat pen",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_cable",
+      "text": "strangling him with a phone cable",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_rungu",
+      "text": "striking him with a rungu",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_pillow",
+      "text": "suffocating him with a pillow",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_number",
+      "text": "Elijah had written down the number of the government car Pius drove on the night Joseph Mwenda was killed, and was going to the police",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_joel"
+        ]
+      }
+    },
+    {
+      "id": "m_land",
+      "text": "a grandson's land sale",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_cecilia"
+        ]
+      }
+    },
+    {
+      "id": "m_goats",
+      "text": "a goat feud",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_cecilia"
+        ]
+      }
+    },
+    {
+      "id": "m_scoop",
+      "text": "a reporter's scoop",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_joel"
+        ]
+      }
+    },
+    {
+      "id": "m_robbery",
+      "text": "a robbery",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "a_cover",
+      "text": "the inside cover of his hymnbook, where he'd written the car's number, is torn out",
+      "category": "absence",
+      "ref": "f_abs_cover",
+      "unlock": {
+        "anyOf": [
+          "f_abs_cover"
+        ]
+      }
+    },
+    {
+      "id": "a_tea",
+      "text": "the visitor's tea is untouched",
+      "category": "absence",
+      "ref": "f_abs_tea",
+      "unlock": {
+        "anyOf": [
+          "f_abs_tea"
+        ]
+      }
+    },
+    {
+      "id": "a_call",
+      "text": "his phone was never used to call for help",
+      "category": "absence",
+      "ref": "f_abs_call",
+      "unlock": {
+        "anyOf": [
+          "f_abs_call"
+        ]
+      }
+    },
+    {
+      "id": "a_rope",
+      "text": "a length of rope is missing from the goat pen",
+      "category": "absence",
+      "ref": "f_abs_rope",
+      "unlock": {
+        "anyOf": [
+          "f_abs_rope"
+        ]
+      }
+    },
+    {
+      "id": "a_phone",
+      "text": "Pius's phone was off for two hours",
+      "category": "absence",
+      "ref": "f_abs_phone",
+      "unlock": {
+        "anyOf": [
+          "f_abs_phone"
+        ]
+      }
+    },
+    {
+      "id": "k_written",
+      "text": "the killer came for what Elijah had written down",
+      "category": "conclusion",
+      "by": [
+        "f_abs_cover",
+        "f_joel",
+        "f_hymnbook",
+        "f_cash"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_cover"
+        ]
+      }
+    },
+    {
+      "id": "k_robbery",
+      "text": "it was a robbery",
+      "category": "conclusion",
+      "by": [
+        "f_cash"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_cover"
+        ]
+      }
+    },
+    {
+      "id": "k_stranger",
+      "text": "the killer was a stranger",
+      "category": "conclusion",
+      "by": [
+        "f_cups"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_cover"
+        ]
+      }
+    },
+    {
+      "id": "k_himself",
+      "text": "Elijah tore it out himself",
+      "category": "conclusion",
+      "by": [
+        "f_board"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_cover"
+        ]
+      }
+    },
+    {
+      "id": "k_reporter",
+      "text": "the reporter took the page",
+      "category": "conclusion",
+      "by": [
+        "f_winnie"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_cover"
+        ]
+      }
+    },
+    {
+      "id": "k_novisit",
+      "text": "nobody visited that night",
+      "category": "conclusion",
+      "by": [
+        "f_cups",
+        "f_tracks"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_cover"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_fundi",
+      "text": "Fundi's account of the government car with a driver (case 94)",
+      "category": "pin",
+      "pin": "case-094:f_fu_reveal",
+      "unlock": {
+        "anyOf": [
+          "f_gk"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_ob",
+      "text": "The OB of Joseph Mwenda's death on the Bahati road (case 40)",
+      "category": "pin",
+      "pin": "case-040:f_ob_pair",
+      "unlock": {
+        "anyOf": [
+          "f_gk"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_photo",
+      "text": "The 4th-floor launch photo (case 86)",
+      "category": "pin",
+      "pin": "case-086:f_photo",
+      "unlock": {
+        "anyOf": [
+          "f_gk"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_container",
+      "text": "Gichuru's \"movements\" list: \"Nairobi by road\" (case 30)",
+      "category": "pin",
+      "pin": "case-030:f_file_container",
+      "unlock": {
+        "anyOf": [
+          "f_gk"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_tom",
+      "text": "The courier Tom Ochieng's collection (case 10)",
+      "category": "pin",
+      "pin": "case-010:f_slip_refused",
+      "unlock": {
+        "anyOf": [
+          "f_gk"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. The killer was helped by {accomplice}, who {role}. That {missing} shows that {conclusion}. The number in Elijah's hymnbook is the car in {pin}.",
+    "fixed": {
+      "victim": "Elijah Ngeno"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_12y",
+                  "label": "Twelve years ago, 21:40",
+                  "from": null,
+                  "to": null,
+                  "day": "12 years ago"
+                },
+                {
+                  "id": "sl_fri",
+                  "label": "Friday",
+                  "from": null,
+                  "to": null,
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_1610",
+                  "label": "Monday 16:10",
+                  "from": "16:10",
+                  "to": "16:10",
+                  "day": "Mon"
+                },
+                {
+                  "id": "sl_1730",
+                  "label": "Monday 17:30",
+                  "from": "17:30",
+                  "to": "17:30",
+                  "day": "Mon"
+                },
+                {
+                  "id": "sl_2155",
+                  "label": "Monday 21:55",
+                  "from": "21:55",
+                  "to": "21:55",
+                  "day": "Mon"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Monday 22:15–23:00",
+                  "from": "22:15",
+                  "to": "23:00",
+                  "day": "Mon"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_saw",
+                  "text": "Elijah sees the government car",
+                  "slot": "sl_12y",
+                  "by": [
+                    "f_joel"
+                  ],
+                  "why": "The night the surveyor died.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_joel"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_joel",
+                  "text": "Elijah shows Joel the hymnbook",
+                  "slot": "sl_fri",
+                  "by": [
+                    "f_joel"
+                  ],
+                  "why": "On Friday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_joel"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_fwd",
+                  "text": "Winnie's post reaches Pius's group",
+                  "slot": "sl_1730",
+                  "by": [
+                    "f_whatsapp"
+                  ],
+                  "why": "Forwarded at half past five.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_whatsapp"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_drive",
+                  "text": "Ivan drives Pius to Bahati",
+                  "slot": "sl_2155",
+                  "by": [
+                    "f_tracker"
+                  ],
+                  "why": "Five to ten.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_tracker"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_kill",
+                  "text": "Elijah is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod",
+                    "f_tracker"
+                  ],
+                  "why": "While the car stood at the lane end.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_1610",
+                  "by": [
+                    "f_whatsapp"
+                  ],
+                  "why": "Winnie posted at ten past four; it reached Pius at half past five."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "Twelve years ago he saw it; Friday he told Joel; half past five Pius read the post; five to ten they left; by eleven Elijah was dead.",
+          "fail": [
+            "Winnie's post reached Pius at half past five.",
+            "When did the car stop at the lane?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_sitting"
+          }
+        ],
+        "prosecutor": {
+          "pass": "In his own sitting room, over two cups of tea.",
+          "fail": [
+            "The rope came from the pen.",
+            "Ivan waited at the lane end."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_pius",
+            "pool": [
+              "w_pius",
+              "w_ivan",
+              "w_amos",
+              "w_nyambura",
+              "w_joel",
+              "w_winnie"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "His prints on the cup, his soles on the lane, the board in his jiko, the fibres on his cuffs.",
+          "fail": [
+            "Ivan never left the car.",
+            "Amos was in the bar."
+          ]
+        }
+      },
+      {
+        "id": "g_accomplice",
+        "kind": "accomplice",
+        "blanks": [
+          {
+            "id": "accomplice",
+            "category": "person",
+            "answer": "w_ivan",
+            "pool": [
+              "w_ivan",
+              "w_amos",
+              "w_winnie",
+              "w_joel",
+              "w_nyambura",
+              "w_nobody"
+            ]
+          },
+          {
+            "id": "role",
+            "category": "role",
+            "answer": "r_drove"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Ivan drove his father there and back, and waited half an hour at the lane.",
+          "fail": [
+            "Winnie exposed him without meaning to; she wasn't there.",
+            "Ivan lied for himself; what he did was drive."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_rope"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The goat pen's sisal, on his cuffs.",
+          "fail": [
+            "Rough fibre, not a plastic cable.",
+            "No head injury."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_number"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A number in pencil, kept for twelve years.",
+          "fail": [
+            "KSh 4,000 in his Bible, untouched.",
+            "The goats are ten years old; the hymnbook cover is twelve."
+          ]
+        }
+      },
+      {
+        "id": "g_absence",
+        "kind": "absence",
+        "blanks": [
+          {
+            "id": "missing",
+            "category": "absence",
+            "answer": "a_cover"
+          },
+          {
+            "id": "conclusion",
+            "category": "conclusion",
+            "answer": "k_written"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The money stayed. The page went.",
+          "fail": [
+            "The full cup tells you he knew the visitor.",
+            "The rope is the weapon, not the reason."
+          ]
+        }
+      },
+      {
+        "id": "g_spine",
+        "kind": "spine",
+        "blanks": [
+          {
+            "id": "pin",
+            "category": "pin",
+            "answer": "w_pin_fundi",
+            "spine": true
+          }
+        ],
+        "prosecutor": {
+          "pass": "The Director of Land Adjudication's car. Fundi said a government car with a driver. Here is the driver.",
+          "fail": [
+            "The OB tells you where Joseph died, not whose car.",
+            "The photo shows the man, not the car."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_sitting",
+      "from": "22:15",
+      "to": "23:00",
+      "note": "The post-mortem; Ivan's car at the lane end 22:20–22:50."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_joel",
+          "f_hymnbook",
+          "f_abs_cover",
+          "f_cash",
+          "f_body",
+          "f_aut",
+          "f_aut_tod"
+        ],
+        "concludes": "Elijah had written down a car number from the night Joseph died, and that page was torn out.",
+        "answers": [
+          "missing",
+          "conclusion",
+          "where"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_whatsapp",
+          "f_rec_pius"
+        ],
+        "concludes": "Pius's church group learned on Monday that \"an old man remembers things\"; his phone went dark that night.",
+        "answers": [
+          "why"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_tracker",
+          "f_iv_nowhere",
+          "f_iv_reveal"
+        ],
+        "concludes": "Ivan drove Pius to Elijah's lane, 22:20–22:50, and waited.",
+        "answers": [
+          "accomplice",
+          "role",
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_cups",
+          "f_tracks",
+          "f_board",
+          "f_shoes",
+          "f_pi_home",
+          "f_pi_reveal"
+        ],
+        "concludes": "Pius was the visitor Elijah made tea for; the torn cover burned in his jiko."
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_gk",
+          "case-094:f_fu_reveal"
+        ],
+        "concludes": "\"GK A…094\" was the Director of Land Adjudication's car, driven by Pius: the government car Fundi described.",
+        "answers": [
+          "pin"
+        ]
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_cupprints",
+          "f_shoematch"
+        ],
+        "concludes": "His prints on the cup, his soles on the lane."
+      },
+      {
+        "id": "s7",
+        "from": [
+          "s6",
+          "f_fibres",
+          "f_pi_rope"
+        ],
+        "concludes": "Pius Cheruiyot strangled Elijah with the goat-pen rope to destroy the number.",
+        "answers": [
+          "who",
+          "how"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_pen",
+        "blank": "where",
+        "by": [
+          "f_body"
+        ],
+        "why": "The rope came from there."
+      },
+      {
+        "word": "pl_lane",
+        "blank": "where",
+        "by": [
+          "f_tracker"
+        ],
+        "why": "Ivan waited there."
+      },
+      {
+        "word": "pl_dairy",
+        "blank": "where",
+        "by": [
+          "f_joel"
+        ],
+        "why": "Where Elijah watched twelve years ago."
+      },
+      {
+        "word": "pl_piushouse",
+        "blank": "where",
+        "by": [
+          "f_board"
+        ],
+        "why": "Where the cover was burned."
+      },
+      {
+        "word": "w_ivan",
+        "blank": "who",
+        "by": [
+          "f_iv_reveal",
+          "f_tracks",
+          "f_shoematch"
+        ],
+        "why": "In the car; one set of prints, his father's."
+      },
+      {
+        "word": "w_amos",
+        "blank": "who",
+        "by": [
+          "f_amos_bar"
+        ],
+        "why": "In the bar."
+      },
+      {
+        "word": "w_nyambura",
+        "blank": "who",
+        "by": [
+          "f_nyambura"
+        ],
+        "why": "At prayers."
+      },
+      {
+        "word": "w_joel",
+        "blank": "who",
+        "by": [
+          "f_joel_self"
+        ],
+        "why": "At the youth vigil."
+      },
+      {
+        "word": "w_winnie",
+        "blank": "who",
+        "by": [
+          "f_winnie"
+        ],
+        "why": "In the newsroom."
+      },
+      {
+        "word": "w_amos",
+        "blank": "accomplice",
+        "by": [
+          "f_amos_bar"
+        ],
+        "why": "In the bar."
+      },
+      {
+        "word": "w_winnie",
+        "blank": "accomplice",
+        "by": [
+          "f_winnie",
+          "f_whatsapp"
+        ],
+        "why": "She exposed him without meaning to, and wasn't there."
+      },
+      {
+        "word": "w_joel",
+        "blank": "accomplice",
+        "by": [
+          "f_joel_self"
+        ],
+        "why": "At the vigil."
+      },
+      {
+        "word": "w_nyambura",
+        "blank": "accomplice",
+        "by": [
+          "f_nyambura"
+        ],
+        "why": "At prayers."
+      },
+      {
+        "word": "w_nobody",
+        "blank": "accomplice",
+        "by": [
+          "f_tracker",
+          "f_iv_reveal"
+        ],
+        "why": "Someone drove Pius there."
+      },
+      {
+        "word": "r_lure",
+        "blank": "role",
+        "by": [
+          "f_cups",
+          "f_pi_reveal"
+        ],
+        "why": "Pius came to Elijah's door himself."
+      },
+      {
+        "word": "r_alibi",
+        "blank": "role",
+        "by": [
+          "f_iv_reveal"
+        ],
+        "why": "Ivan lied for himself first; his part was the driving."
+      },
+      {
+        "word": "r_plant",
+        "blank": "role",
+        "by": [
+          "f_board"
+        ],
+        "why": "Nothing was planted; a page was taken."
+      },
+      {
+        "word": "r_footage",
+        "blank": "role",
+        "by": [
+          "f_ob"
+        ],
+        "why": "There was no footage."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "Strangulation."
+      },
+      {
+        "word": "h_cable",
+        "blank": "how",
+        "by": [
+          "f_aut",
+          "f_fibres"
+        ],
+        "why": "Rough sisal fibre, not plastic."
+      },
+      {
+        "word": "h_rungu",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "No head injury."
+      },
+      {
+        "word": "h_pillow",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "A ligature."
+      },
+      {
+        "word": "m_land",
+        "blank": "why",
+        "by": [
+          "f_amos_bar"
+        ],
+        "why": "Amos was in the bar."
+      },
+      {
+        "word": "m_goats",
+        "blank": "why",
+        "by": [
+          "f_nyambura"
+        ],
+        "why": "Nyambura was at prayers."
+      },
+      {
+        "word": "m_scoop",
+        "blank": "why",
+        "by": [
+          "f_winnie"
+        ],
+        "why": "Winnie was filing in Nakuru."
+      },
+      {
+        "word": "m_robbery",
+        "blank": "why",
+        "by": [
+          "f_cash"
+        ],
+        "why": "The money stayed in the Bible."
+      },
+      {
+        "word": "a_tea",
+        "blank": "missing",
+        "by": [
+          "f_abs_tea"
+        ],
+        "why": "It shows he knew the visitor, not why he came."
+      },
+      {
+        "word": "a_call",
+        "blank": "missing",
+        "by": [
+          "f_abs_call"
+        ],
+        "why": "It shows how fast it happened."
+      },
+      {
+        "word": "a_rope",
+        "blank": "missing",
+        "by": [
+          "f_abs_rope"
+        ],
+        "why": "The weapon, not the reason."
+      },
+      {
+        "word": "a_phone",
+        "blank": "missing",
+        "by": [
+          "f_abs_phone"
+        ],
+        "why": "It shows Pius planned it, not what he came for."
+      },
+      {
+        "word": "k_robbery",
+        "blank": "conclusion",
+        "by": [
+          "f_cash"
+        ],
+        "why": "The money stayed."
+      },
+      {
+        "word": "k_stranger",
+        "blank": "conclusion",
+        "by": [
+          "f_cups"
+        ],
+        "why": "Elijah made him tea."
+      },
+      {
+        "word": "k_himself",
+        "blank": "conclusion",
+        "by": [
+          "f_board"
+        ],
+        "why": "The cover burned in Pius's jiko."
+      },
+      {
+        "word": "k_reporter",
+        "blank": "conclusion",
+        "by": [
+          "f_winnie"
+        ],
+        "why": "Winnie was in Nakuru."
+      },
+      {
+        "word": "k_novisit",
+        "blank": "conclusion",
+        "by": [
+          "f_cups",
+          "f_tracks"
+        ],
+        "why": "Two cups; prints on the lane."
+      },
+      {
+        "word": "w_pin_ob",
+        "blank": "pin",
+        "by": [
+          "case-040:f_ob_pair",
+          "f_gk"
+        ],
+        "why": "Where Joseph died, not whose car."
+      },
+      {
+        "word": "w_pin_photo",
+        "blank": "pin",
+        "by": [
+          "case-086:f_photo",
+          "f_gk"
+        ],
+        "why": "The man, not the car."
+      },
+      {
+        "word": "w_pin_container",
+        "blank": "pin",
+        "by": [
+          "case-030:f_file_container",
+          "f_gk"
+        ],
+        "why": "A shipping container, not a government car."
+      },
+      {
+        "word": "w_pin_tom",
+        "blank": "pin",
+        "by": [
+          "case-010:f_slip_refused",
+          "f_gk"
+        ],
+        "why": "A courier, twelve years later."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Twelve years ago, watching the dairy gate, Elijah sees a white government Land Cruiser stop behind a parked car on the Bahati road, a man get out of the back with a bar, and hears a cry. He writes the number inside his hymnbook and tells no one.",
+        "image": null
+      },
+      {
+        "text": "After case 94 the papers say the Mwenda file is open. On Friday Elijah shows Elder Joel the number. On Monday a reporter visits; her post, \"an old man remembers things\", reaches a Nakuru church elders' group at 17:30. Pius reads it. He drove that car.",
+        "image": null
+      },
+      {
+        "text": "At 21:40 Pius switches off his phone; at 21:55 Ivan drives him to Bahati. Elijah knows him from church conventions and makes tea. Pius asks to see the hymnbook \"to pray with you\", tears out the cover, and when Elijah reaches for it, strangles him with a length of the goat pen's rope.",
+        "image": "plc_sitting"
+      },
+      {
+        "text": "He walks back down the lane to the car. Ivan drives him home. The cover goes into the jiko; one corner doesn't burn.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "Pius asks for his pastor and for Amani. \"Twelve years ago I drove Mr. Raphael Oduya in GK A…094. One night he said, 'Bahati, and don't ask.' We picked up a mechanic in Nakuru, a man from Kisumu, with a bag.\""
+    },
+    {
+      "beat": "\"The mechanic got out behind a parked car. I heard a man shout once. He came back with a wallet and a cloth-covered notebook. Mr. Oduya put the notebook in his briefcase. Then he made a call: 'It's done. Tell her it's done.'\"",
+      "files": [
+        {
+          "thread": "t_joseph",
+          "text": "The killing reconstructed: Benedict Mbuvi killed Joseph Mwenda; Raphael Oduya was present and in command; Pius Cheruiyot drove GK A…094."
+        },
+        {
+          "thread": "t_kivuli",
+          "text": "Quote pinned: \"It's done. Tell her it's done.\" (Raphael Oduya, by phone, the night Joseph died.)"
+        }
+      ]
+    },
+    {
+      "beat": "Amani's notebook lists three names. Only one is a woman. The game doesn't say what to conclude."
+    },
+    {
+      "beat": "Mama Cecilia gives Amani the hymnbook: \"He would want the surveyor's child to have it.\" It sits on the desk."
+    }
+  ],
+  "clockPlan": {
+    "note": "Three stamps (the maximum): records on Pius's line and Ivan's tracker, and a warrant on Pius's house. Detain Pius after the search; prints (6 h) and fibres (12 h) inside 24 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_house",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_hymnbook",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_cups",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_tracks",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_cecilia",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_cecilia"
+      },
+      {
+        "do": "interview",
+        "target": "p_amos"
+      },
+      {
+        "do": "travel",
+        "target": "loc_church",
+        "hours": 0.25,
+        "from": "loc_house"
+      },
+      {
+        "do": "visit",
+        "target": "loc_church",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_joel",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_joel"
+      },
+      {
+        "do": "read",
+        "target": "ev_amos",
+        "hours": 0
+      },
+      {
+        "do": "press",
+        "target": "c_amos"
+      },
+      {
+        "do": "interview",
+        "target": "p_nyambura"
+      },
+      {
+        "do": "interview",
+        "target": "p_winnie"
+      },
+      {
+        "do": "read",
+        "target": "ev_whatsapp",
+        "hours": 1
+      },
+      {
+        "do": "records",
+        "target": "ev_rec_pius"
+      },
+      {
+        "do": "interview",
+        "target": "p_ivan"
+      },
+      {
+        "do": "records",
+        "target": "ev_rec_ivan"
+      },
+      {
+        "do": "press",
+        "target": "c_ivan"
+      },
+      {
+        "do": "travel",
+        "target": "loc_pius",
+        "hours": 0.5,
+        "from": "loc_church"
+      },
+      {
+        "do": "search",
+        "target": "loc_pius"
+      },
+      {
+        "do": "read",
+        "target": "ev_pius_house",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_pius"
+      },
+      {
+        "do": "press",
+        "target": "c_pius"
+      },
+      {
+        "do": "detain",
+        "target": "p_pius"
+      },
+      {
+        "do": "sample",
+        "target": "ev_pi_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_gk"
+      },
+      {
+        "do": "submit",
+        "target": "ev_shoelab"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_fibres"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 12
+      },
+      {
+        "do": "press",
+        "target": "c_rope"
+      }
+    ],
+    "totalHours": 46.75
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_rec_ivan",
+        "line": "When did the car stand at the lane end?"
+      },
+      "tier2": {
+        "facts": [
+          "f_tracker",
+          "f_whatsapp"
+        ],
+        "line": "22:20–22:50. The post reached Pius at 17:30."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_cups",
+        "line": "Where did Elijah make tea?"
+      },
+      "tier2": {
+        "facts": [
+          "f_cups"
+        ],
+        "line": "His sitting room."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_whatsapp",
+        "line": "Who read \"an old man remembers things\"?"
+      },
+      "tier2": {
+        "facts": [
+          "f_whatsapp",
+          "f_board"
+        ],
+        "line": "Pius, and the board in his jiko."
+      }
+    },
+    "g_accomplice": {
+      "tier1": {
+        "point": "ev_rec_ivan",
+        "line": "Whose car was at the lane end?"
+      },
+      "tier2": {
+        "facts": [
+          "f_tracker",
+          "f_iv_reveal"
+        ],
+        "line": "Ivan drove his father."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_body",
+        "line": "What's short in the goat pen?"
+      },
+      "tier2": {
+        "facts": [
+          "f_body",
+          "f_fibres"
+        ],
+        "line": "A length of sisal rope."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_joel",
+        "line": "What did Elijah show Joel on Friday?"
+      },
+      "tier2": {
+        "facts": [
+          "f_joel",
+          "f_gk"
+        ],
+        "line": "A government car's number."
+      }
+    },
+    "g_absence": {
+      "tier1": {
+        "point": "ev_hymnbook",
+        "line": "What's missing from the hymnbook?"
+      },
+      "tier2": {
+        "facts": [
+          "f_abs_cover",
+          "f_cash"
+        ],
+        "line": "The cover went; the money stayed."
+      }
+    },
+    "g_spine": {
+      "tier1": {
+        "point": "ev_gk",
+        "line": "Whose car was GK A…094?"
+      },
+      "tier2": {
+        "facts": [
+          "f_gk"
+        ],
+        "line": "The Director of Land Adjudication's, driven by Pius: Fundi's government car."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "kitabu cha nyimbo",
+      "def": "A hymnbook."
+    },
+    {
+      "term": "mlinzi wa usiku",
+      "def": "A night watchman."
+    },
+    {
+      "term": "GK",
+      "def": "Government of Kenya: the prefix on government vehicle plates."
+    },
+    {
+      "term": "kamba ya katani",
+      "def": "Sisal rope."
+    },
+    {
+      "term": "mzee wa kanisa",
+      "def": "A church elder."
+    },
+    {
+      "term": "mzee",
+      "def": "A respectful word for an older man."
+    },
+    {
+      "term": "mama",
+      "def": "A respectful way to address or refer to an older woman."
+    },
+    {
+      "term": "rungu",
+      "def": "A wooden club."
+    },
+    {
+      "term": "jiko",
+      "def": "A charcoal stove."
+    },
+    {
+      "term": "murram",
+      "def": "Red laterite earth, used for rural roads."
+    },
+    {
+      "term": "Taifa",
+      "def": "\"Nation\"; Taifa Daily is a fictional newspaper."
+    },
+    {
+      "term": "Fundi",
+      "def": "\"Craftsman\" or \"mechanic\"; Benedict Mbuvi's nickname."
+    }
+  ],
+  "ui": {
+    "beats": [],
+    "beatNotes": "No new mechanics."
+  }
+}

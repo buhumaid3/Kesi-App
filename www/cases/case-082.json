@@ -1,0 +1,2413 @@
+{
+  "meta": {
+    "id": "case-082",
+    "number": 82,
+    "region": "westlands-karen-runda",
+    "regionNumber": 9,
+    "title": "The Driver's Story",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 42,
+    "date": "Wednesday 26 August",
+    "folderTab": "KILELESHWA"
+  },
+  "pattern": {
+    "crimePattern": "a banker who finds his wife's secret phone uses it to lure her lover to his studio gym and kills him, while his driver waits in the lane and later swears he never left home",
+    "noRealCaseRetold": true,
+    "notes": "Fictional people, studio and compound. Twist: the lure came from the wife's second phone, but she never sent it. Accomplice: the driver, who knowingly drove and lied. Honest staff witness: the compound caretaker.",
+    "tags": [
+      "blunt-force",
+      "jealousy",
+      "affair",
+      "lure",
+      "accomplice",
+      "false-alibi",
+      "three-liars",
+      "records",
+      "records",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 6,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "accomplice",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "records"
+    ],
+    "twist": "the-lure-came-from-her-phone"
+  },
+  "ob": {
+    "number": "OB 15/26/08",
+    "date": "Wednesday 26 August",
+    "time": "07:45",
+    "reportedBy": "A cleaner, Kileleshwa",
+    "text": "A cleaner reports a personal trainer found dead on the floor of his private studio gym in a Kileleshwa apartment compound: Andrew Simiyu (38).",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_studio",
+    "nodes": [
+      "loc_studio",
+      "loc_onyango",
+      "loc_cafe",
+      "loc_office"
+    ],
+    "edges": [
+      {
+        "a": "loc_studio",
+        "b": "loc_onyango",
+        "minutes": 12,
+        "by": "road"
+      },
+      {
+        "a": "loc_studio",
+        "b": "loc_cafe",
+        "minutes": 15,
+        "by": "road"
+      },
+      {
+        "a": "loc_onyango",
+        "b": "loc_office",
+        "minutes": 15,
+        "by": "road"
+      },
+      {
+        "a": "loc_cafe",
+        "b": "loc_office",
+        "minutes": 5,
+        "by": "road"
+      },
+      {
+        "a": "loc_onyango",
+        "b": "loc_cafe",
+        "minutes": 15,
+        "by": "road"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_andrew",
+      "role": "victim",
+      "name": "Andrew Simiyu",
+      "age": 38,
+      "occupation": "Personal trainer with a private studio gym",
+      "bio": "Clients from Lavington to Runda book sessions by app.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_studio",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luhya man, late 30s, an athletic build, a fitted training top, a confident grin, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_felix",
+      "role": "suspect",
+      "name": "Felix Onyango",
+      "age": 46,
+      "occupation": "Investment banker; Andrew's client for a year",
+      "bio": "Measured, used to meetings. Lives in Lavington.",
+      "community": "Luo",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_app"
+      },
+      "at": "loc_onyango",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, mid 40s, a navy suit and an open collar, a measured, controlled face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_josphat",
+      "role": "suspect",
+      "name": "Josphat Kiprono",
+      "age": 35,
+      "occupation": "Felix's driver for eight years",
+      "bio": "Lives in the staff quarters at the Onyango house.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "accomplice": true,
+      "unlock": {
+        "fact": "f_fe_home"
+      },
+      "at": "loc_onyango",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, mid 30s, a driver's cap and a pressed shirt, a loyal, troubled face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_nyokabi",
+      "role": "suspect",
+      "name": "Nyokabi Onyango",
+      "age": 41,
+      "occupation": "Felix's wife; Andrew's client",
+      "redHerring": true,
+      "bio": "Goes to a book club in Westlands on Tuesday evenings.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_nnumber"
+      },
+      "at": "loc_cafe",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, early 40s, a camel coat and gold hoops, poised, then devastated, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_ian",
+      "role": "suspect",
+      "name": "Ian Waweru",
+      "age": 39,
+      "occupation": "Andrew's former business partner",
+      "redHerring": true,
+      "bio": "Owes Andrew KSh 900,000 from their old gym.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_ian_debt"
+      },
+      "at": "plc_mombasa",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, late 30s, a polo shirt and sunglasses on his head, a sheepish face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_grace",
+      "role": "witness",
+      "name": "Mama Grace Wekesa",
+      "age": 55,
+      "occupation": "Caretaker of the apartment compound",
+      "bio": "Lives in the gatehouse with her grandchildren and sees everything from the gate.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_gatehouse",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luhya woman, mid 50s, a caretaker's apron over a print dress, a sharp, observant face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_purity",
+      "role": "witness",
+      "name": "Purity Wangari",
+      "age": 31,
+      "occupation": "Felix's personal assistant",
+      "bio": "Keeps his calendar.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_fe_home"
+      },
+      "at": "loc_office",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, early 30s, a crisp blouse and a lanyard, a careful, nervous face, ID-photo framing",
+        "ref": null
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_lane",
+      "name": "The back lane behind the studio"
+    },
+    {
+      "id": "plc_gatehouse",
+      "name": "Grace's gatehouse",
+      "within": "loc_compound"
+    },
+    {
+      "id": "loc_compound",
+      "name": "The Kileleshwa apartment compound"
+    },
+    {
+      "id": "plc_mombasa",
+      "name": "Mombasa"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_studio",
+      "name": "Andrew's studio gym",
+      "kind": "scene",
+      "description": "A converted garage at the back of an apartment compound: mirrors, racks of kettlebells, a rowing machine, a chalk bucket, a side door to the lane.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The studio floor",
+          "pos": [
+            50,
+            65
+          ],
+          "yields": "ev_body",
+          "text": "Andrew on the floor by the kettlebell rack."
+        },
+        {
+          "id": "hs_phone",
+          "label": "Andrew's phone",
+          "pos": [
+            70,
+            50
+          ],
+          "yields": "ev_text",
+          "text": "His phone on the bench."
+        },
+        {
+          "id": "hs_app",
+          "label": "Booking app and accounts",
+          "pos": [
+            30,
+            40
+          ],
+          "yields": "ev_app",
+          "text": "The studio tablet with the booking app and accounts."
+        },
+        {
+          "id": "hs_grace",
+          "label": "Mama Grace at the gate",
+          "pos": [
+            10,
+            70
+          ],
+          "yields": "ev_grace",
+          "text": "Mama Grace comes over from the gatehouse."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a converted-garage studio gym at night, mirrors, a row of kettlebells on a rack with one wiped clean, a chalk bucket, a side door ajar, no people in focus"
+      }
+    },
+    {
+      "id": "loc_onyango",
+      "name": "The Onyango house, Lavington",
+      "kind": "location",
+      "description": "A white maisonette behind a gate, a garden, a garage with a dark Mercedes, staff quarters behind.",
+      "unlock": {
+        "fact": "f_fe_home"
+      },
+      "hotspots": [
+        {
+          "id": "hs_drawer",
+          "label": "Nyokabi's dressing table",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_drawer",
+          "text": "Nyokabi opens her drawer for you.",
+          "unlock": {
+            "fact": "f_ny_reveal"
+          }
+        },
+        {
+          "id": "hs_car",
+          "label": "Felix's car",
+          "pos": [
+            70,
+            60
+          ],
+          "yields": "ev_cap",
+          "text": "Felix lets you look in the car: \"Look all you like.\"",
+          "unlock": {
+            "fact": "f_grace"
+          }
+        },
+        {
+          "id": "hs_josphat",
+          "label": "Josphat's first statement",
+          "pos": [
+            85,
+            40
+          ],
+          "yields": "ev_jo_first",
+          "text": "Josphat, in the garage."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a white Lavington maisonette behind a gate, a dark Mercedes in an open garage, a small staff quarters behind"
+      }
+    },
+    {
+      "id": "loc_cafe",
+      "name": "The book-club café, Westlands",
+      "kind": "location",
+      "description": "A café that keeps a back room for book clubs on Tuesday evenings.",
+      "unlock": {
+        "fact": "f_ny_trainer"
+      },
+      "hotspots": [
+        {
+          "id": "hs_cafe",
+          "label": "Booking and the host",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_bookclub",
+          "text": "The café's booking and the club's host."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a warm Westlands café with a back room set for a book club, cups and paperbacks on a long table"
+      }
+    },
+    {
+      "id": "loc_office",
+      "name": "Felix's office, Westlands",
+      "kind": "location",
+      "description": "A glass tower floor; a PA's desk outside his door.",
+      "unlock": {
+        "fact": "f_fe_home"
+      },
+      "hotspots": [
+        {
+          "id": "hs_purity",
+          "label": "Purity Wangari",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_purity",
+          "text": "His PA with Tuesday's calendar."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a glass-walled banker's office in a Westlands tower at night, an empty PA desk outside"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Andrew on the studio floor",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. One crushing blow to the side of the head. A 16 kg kettlebell back on the rack, its handle wiped; every other handle carries chalk-dust handprints. KSh 30,000 of equipment and his phone untouched."
+      },
+      "facts": [
+        "f_body",
+        "f_wiped",
+        "f_untouched"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a studio gym floor by a kettlebell rack, one 16 kg kettlebell with a clean handle among chalk-dusted ones, no body visible"
+      }
+    },
+    {
+      "id": "ev_text",
+      "type": "phone",
+      "title": "Andrew's phone",
+      "render": "manifest",
+      "body": {
+        "text": "Tuesday 20:12, from \"N.\": \"Can you open the studio at 9? I need to see you. Side door.\" Andrew: \"On my way.\"",
+        "history": "Months of messages from \"N.\""
+      },
+      "facts": [
+        "f_text"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_app",
+      "type": "document",
+      "title": "Booking app and studio accounts",
+      "render": "logBook",
+      "body": {
+        "clients": "Client list: F. Onyango, N. Onyango, and thirty more. No complaints in a year of reviews.",
+        "accounts": "Loan to I. Waweru, KSh 900,000, unpaid."
+      },
+      "facts": [
+        "f_app",
+        "f_reviews",
+        "f_ian_debt"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_grace",
+      "type": "witness",
+      "title": "Statement: Mama Grace Wekesa",
+      "render": "statement",
+      "body": {
+        "speaker": "p_grace"
+      },
+      "facts": [
+        "f_grace",
+        "f_grace_self",
+        "f_studio_lock"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records_n",
+      "type": "phone",
+      "title": "Records ①: the \"N.\" line",
+      "render": "manifest",
+      "body": {
+        "subscriber": "\"N.\" is a second line registered to Nyokabi Onyango.",
+        "mast": "At 20:12 the \"N.\" phone was on the Lavington mast (the Onyango house), not in Westlands."
+      },
+      "facts": [
+        "f_nnumber",
+        "f_rec_n"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_text",
+          "f_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_affair",
+      "type": "document",
+      "title": "\"N.\" messages and a hotel booking",
+      "render": "form",
+      "body": {
+        "text": "Six months of messages. A Naivasha hotel booking in Andrew's email for \"Mr & Mrs Simiyu\", a weekend Felix was in London."
+      },
+      "facts": [
+        "f_affair"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_bookclub",
+      "type": "document",
+      "title": "Café booking and the host's statement",
+      "render": "logBook",
+      "body": {
+        "text": "Nyokabi at the book club 19:30–22:15 with eleven women. Her main phone on the Westlands mast all evening."
+      },
+      "facts": [
+        "f_bookclub"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tracker",
+      "type": "phone",
+      "title": "Records ②: fleet tracker, Felix's Mercedes",
+      "render": "manifest",
+      "body": {
+        "log": "Left the Lavington house 20:40. Stopped in the lane behind the studio 20:52–21:20. Home 21:33."
+      },
+      "facts": [
+        "f_tracker"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_grace",
+          "f_rec_n"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_jo_first",
+      "type": "witness",
+      "title": "Josphat's first statement",
+      "render": "statement",
+      "body": {
+        "speaker": "p_josphat"
+      },
+      "facts": [
+        "f_jo_first"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_drawer",
+      "type": "physical",
+      "title": "Nyokabi's dressing-table drawer",
+      "render": "object",
+      "body": {
+        "label": "The second phone, switched off. Last used: Tuesday 20:14."
+      },
+      "facts": [
+        "f_drawer"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a dressing-table drawer with a small switched-off phone among scarves"
+      }
+    },
+    {
+      "id": "ev_cap",
+      "type": "physical",
+      "title": "Felix's car",
+      "render": "object",
+      "body": {
+        "cap": "A dark cap on the back seat.",
+        "mat": "Chalk dust on the rear mat, and small dark spots under it."
+      },
+      "facts": [
+        "f_cap"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_purity",
+      "type": "witness",
+      "title": "Statement: Purity Wangari",
+      "render": "statement",
+      "body": {
+        "speaker": "p_purity"
+      },
+      "facts": [
+        "f_purity"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ian",
+      "type": "document",
+      "title": "Mombasa hotel and flight",
+      "render": "logBook",
+      "body": {
+        "text": "Ian Waweru flew to Mombasa on Monday; hotel check-in Monday 15:00, still there."
+      },
+      "facts": [
+        "f_ian"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_fe_prints",
+      "type": "physical",
+      "title": "Fingerprints: Felix Onyango",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention."
+      },
+      "facts": [
+        "f_fe_printset"
+      ],
+      "gate": null,
+      "detention": "p_felix",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints (the second phone)",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_prints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_drawer",
+          "ev_fe_prints"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_chalk",
+      "type": "forensic",
+      "title": "Lab: trace (chalk on the car mat)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_chalk"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_cap",
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_blood",
+      "type": "forensic",
+      "title": "Lab: trace (spots on the car mat)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_blood"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_cap"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Andrew Simiyu, a personal trainer, was found dead in his studio gym in Kileleshwa on Wednesday morning.",
+      "kind": "true",
+      "about": [
+        "p_andrew",
+        "loc_studio"
+      ],
+      "at": {
+        "from": "07:30",
+        "to": null,
+        "day": "Wed"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "One crushing blow to the side of Andrew's head.",
+      "kind": "true",
+      "about": [
+        "p_andrew",
+        "loc_studio"
+      ]
+    },
+    {
+      "id": "f_wiped",
+      "text": "A 16 kg kettlebell is back on the rack with its handle wiped; every other handle carries chalk handprints.",
+      "kind": "true",
+      "about": [
+        "loc_studio"
+      ]
+    },
+    {
+      "id": "f_untouched",
+      "text": "KSh 30,000 of equipment and Andrew's phone were left behind.",
+      "kind": "true",
+      "about": [
+        "loc_studio"
+      ]
+    },
+    {
+      "id": "f_text",
+      "text": "Andrew's phone, Tuesday 20:12, from \"N.\": \"Can you open the studio at 9? I need to see you. Side door.\" He replied, \"On my way.\"",
+      "kind": "true",
+      "about": [
+        "p_andrew"
+      ],
+      "at": {
+        "from": "20:12",
+        "to": null,
+        "day": "Tue"
+      }
+    },
+    {
+      "id": "f_app",
+      "text": "The booking app: Felix and Nyokabi Onyango are both Andrew's clients.",
+      "kind": "true",
+      "about": [
+        "p_felix",
+        "p_nyokabi"
+      ]
+    },
+    {
+      "id": "f_reviews",
+      "text": "A year of client reviews and not one complaint.",
+      "kind": "true",
+      "about": [
+        "p_andrew"
+      ]
+    },
+    {
+      "id": "f_ian_debt",
+      "text": "The studio accounts: a KSh 900,000 loan to Ian Waweru, Andrew's former partner, unpaid.",
+      "kind": "true",
+      "about": [
+        "p_ian"
+      ]
+    },
+    {
+      "id": "f_grace",
+      "text": "Mama Grace: a dark Mercedes stopped in the back lane at about ten to nine, lights off. A tall man in a cap went in the side door and came out fast about 25 minutes later. The driver never got out.",
+      "kind": "true",
+      "about": [
+        "p_felix",
+        "p_josphat"
+      ]
+    },
+    {
+      "id": "f_grace_self",
+      "text": "Mama Grace was in her gatehouse with her grandchildren all evening.",
+      "kind": "true",
+      "about": [
+        "p_grace"
+      ],
+      "where": {
+        "person": "p_grace",
+        "place": "plc_gatehouse",
+        "from": "18:00",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_studio_lock",
+      "text": "Mama Grace: Andrew opens the side door himself; only he has the key.",
+      "kind": "true",
+      "about": [
+        "p_andrew"
+      ]
+    },
+    {
+      "id": "f_nnumber",
+      "text": "Records ①: \"N.\" is a second line registered to Nyokabi Onyango.",
+      "kind": "true",
+      "about": [
+        "p_nyokabi"
+      ]
+    },
+    {
+      "id": "f_rec_n",
+      "text": "Records ①: at 20:12 the \"N.\" phone was on the Lavington mast, at the Onyango house, not in Westlands.",
+      "kind": "true",
+      "about": [
+        "p_nyokabi"
+      ],
+      "at": {
+        "from": "20:12",
+        "to": null,
+        "day": "Tue"
+      }
+    },
+    {
+      "id": "f_affair",
+      "text": "Six months of \"N.\" messages, and a Naivasha hotel booking for \"Mr & Mrs Simiyu\" on a weekend Felix was in London.",
+      "kind": "true",
+      "about": [
+        "p_nyokabi",
+        "p_andrew"
+      ]
+    },
+    {
+      "id": "f_bookclub",
+      "text": "The café host and booking: Nyokabi was at the book club 19:30–22:15 with eleven women; her main phone was on the Westlands mast all evening.",
+      "kind": "true",
+      "about": [
+        "p_nyokabi"
+      ],
+      "where": {
+        "person": "p_nyokabi",
+        "place": "loc_cafe",
+        "from": "19:30",
+        "to": "22:15"
+      }
+    },
+    {
+      "id": "f_tracker",
+      "text": "Records ②: Felix's Mercedes left the Lavington house at 20:40, stood in the lane behind the studio 20:52–21:20, and was home at 21:33.",
+      "kind": "true",
+      "about": [
+        "p_felix",
+        "plc_lane"
+      ],
+      "at": {
+        "from": "20:52",
+        "to": "21:20",
+        "day": "Tue"
+      }
+    },
+    {
+      "id": "f_jo_first",
+      "text": "Josphat's first statement: \"I drove Bwana home from the office at seven. He never left. I washed the car and slept in my quarters.\"",
+      "kind": "true",
+      "about": [
+        "p_josphat"
+      ]
+    },
+    {
+      "id": "f_drawer",
+      "text": "In Nyokabi's drawer: the second phone, switched off. Last used: Tuesday 20:14.",
+      "kind": "true",
+      "about": [
+        "p_nyokabi"
+      ],
+      "at": {
+        "from": "20:14",
+        "to": null,
+        "day": "Tue"
+      }
+    },
+    {
+      "id": "f_cap",
+      "text": "In Felix's car: a dark cap on the back seat, chalk dust on the rear mat, and small dark spots under it.",
+      "kind": "true",
+      "about": [
+        "p_felix"
+      ]
+    },
+    {
+      "id": "f_purity",
+      "text": "Purity: Felix left the office at 18:40 on Tuesday, not 19:00, and said he had \"a private matter\".",
+      "kind": "true",
+      "about": [
+        "p_felix"
+      ],
+      "at": {
+        "from": "18:40",
+        "to": null,
+        "day": "Tue"
+      }
+    },
+    {
+      "id": "f_ian",
+      "text": "Ian has been in Mombasa since Monday: flight and hotel.",
+      "kind": "true",
+      "about": [
+        "p_ian"
+      ],
+      "where": {
+        "person": "p_ian",
+        "place": "plc_mombasa",
+        "from": "00:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_jo_lane",
+      "text": "Josphat sat in the car in the lane, engine off, 20:52–21:20.",
+      "kind": "true",
+      "about": [
+        "p_josphat"
+      ],
+      "where": {
+        "person": "p_josphat",
+        "place": "plc_lane",
+        "from": "20:52",
+        "to": "21:20"
+      }
+    },
+    {
+      "id": "f_fe_printset",
+      "text": "Fingerprints taken from Felix in detention.",
+      "kind": "true",
+      "about": [
+        "p_felix"
+      ]
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Post-mortem: one blow from a heavy, rounded iron object, matching a kettlebell.",
+      "kind": "true",
+      "about": [
+        "p_andrew"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Tuesday between 20:50 and 21:30.",
+      "kind": "true",
+      "about": [
+        "p_andrew"
+      ],
+      "at": {
+        "from": "20:50",
+        "to": "21:30",
+        "day": "Tue"
+      }
+    },
+    {
+      "id": "f_prints",
+      "text": "Lab: Felix's thumb on the back of the second phone, over Nyokabi's older prints.",
+      "kind": "true",
+      "about": [
+        "p_felix"
+      ]
+    },
+    {
+      "id": "f_chalk",
+      "text": "Lab: the chalk on the car mat is the studio's gym chalk, with its added scent.",
+      "kind": "true",
+      "about": [
+        "p_felix",
+        "loc_studio"
+      ]
+    },
+    {
+      "id": "f_blood",
+      "text": "Lab: the spots under the chalk on the car mat are Andrew's blood.",
+      "kind": "true",
+      "about": [
+        "p_andrew",
+        "p_felix"
+      ]
+    },
+    {
+      "id": "f_fe_home",
+      "text": "Felix: \"I came home from the office at seven and didn't go out again.\"",
+      "kind": "lie",
+      "about": [
+        "p_felix"
+      ]
+    },
+    {
+      "id": "f_fe_reveal",
+      "text": "Felix: \"I found the phone on Sunday. I read six months of my marriage in an evening. I wanted to see his face when I told him I knew.\"",
+      "kind": "true",
+      "about": [
+        "p_felix",
+        "p_nyokabi"
+      ]
+    },
+    {
+      "id": "f_fe_phone",
+      "text": "Felix: \"I have never touched my wife's second phone. I didn't know it existed.\"",
+      "kind": "lie",
+      "about": [
+        "p_felix"
+      ]
+    },
+    {
+      "id": "f_jo_home",
+      "text": "Josphat: \"I drove Bwana home from the office at seven. He never left.\"",
+      "kind": "lie",
+      "about": [
+        "p_josphat"
+      ]
+    },
+    {
+      "id": "f_jo_reveal",
+      "text": "Josphat: Felix told him to wait in the lane, lights off. Felix went in the side door and came back with his hands in his pockets. Next morning: \"You drove me home at seven.\" He said it.",
+      "kind": "true",
+      "about": [
+        "p_josphat",
+        "p_felix"
+      ],
+      "where": {
+        "person": "p_felix",
+        "place": "loc_studio",
+        "from": "20:52",
+        "to": "21:20"
+      }
+    },
+    {
+      "id": "f_ny_trainer",
+      "text": "Nyokabi: \"Andrew was my trainer. Nothing more. I was at book club.\"",
+      "kind": "lie",
+      "about": [
+        "p_nyokabi"
+      ]
+    },
+    {
+      "id": "f_ny_reveal",
+      "text": "Nyokabi: \"Yes. Six months. But I didn't send that text. My second phone was in my drawer at home. I was at the café with eleven women.\"",
+      "kind": "true",
+      "about": [
+        "p_nyokabi"
+      ]
+    },
+    {
+      "id": "f_ian_claim",
+      "text": "Ian: \"I owed him money. I was in Mombasa.\"",
+      "kind": "claim",
+      "about": [
+        "p_ian"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_felix",
+      "stance": "cooperative",
+      "intro": "Felix meets you in his study, jacket off, as if for a meeting. \"I came home from the office at seven and didn't go out again.\"",
+      "claims": [
+        "f_fe_home"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_fe_phone",
+          "after": "f_fe_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_josphat",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_jo_first"
+      ],
+      "intro": "Josphat stands by the car with a chamois in his hand. \"I drove Bwana home from the office at seven. He never left.\"",
+      "claims": [
+        "f_jo_home"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_nyokabi",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_records_n"
+      ],
+      "intro": "Nyokabi won't sit. \"Andrew was my trainer. Nothing more. I was at book club.\"",
+      "claims": [
+        "f_ny_trainer"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_ian",
+      "stance": "cooperative",
+      "intro": "Ian calls from Mombasa. \"I owed him money. I was in Mombasa.\"",
+      "claims": [
+        "f_ian_claim"
+      ],
+      "yields": [
+        "ev_ian"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_grace",
+      "stance": "cooperative",
+      "intro": "Mama Grace answers with her arms folded, sure of every time.",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_text",
+          "reply": "\"Andrew always opened that side door himself. Nobody else has a key.\"",
+          "reveals": [
+            "f_studio_lock"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_purity",
+      "stance": "cooperative",
+      "intro": "Purity opens Tuesday's calendar on her screen.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_ny",
+      "claim": "f_ny_trainer",
+      "brokenBy": [
+        "f_affair",
+        "f_nnumber"
+      ],
+      "reveals": [
+        "f_ny_reveal",
+        "ev_affair"
+      ],
+      "reaction": "\"Yes. Six months. But I didn't send that text. My second phone was in my drawer at home. I was at the café with eleven women.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_jo",
+      "claim": "f_jo_home",
+      "brokenBy": [
+        "f_tracker"
+      ],
+      "reveals": [
+        "f_jo_reveal",
+        "f_jo_lane"
+      ],
+      "reaction": "\"He told me, 'Drive to Kileleshwa, wait in the lane, lights off.' He came back with his hands in his pockets. In the morning he said, 'You drove me home at seven.' Eight years I've driven him. I said it. I knew it was wrong when I saw the news.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_fe",
+      "claim": "f_fe_home",
+      "brokenBy": [
+        "f_tracker",
+        "f_grace",
+        "f_purity"
+      ],
+      "reveals": [
+        "f_fe_reveal"
+      ],
+      "reaction": "\"I found the phone on Sunday. I read six months of my marriage in an evening. I wanted to see his face when I told him I knew.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_fe_phone",
+      "claim": "f_fe_phone",
+      "brokenBy": [
+        "f_prints"
+      ],
+      "reveals": [],
+      "reaction": "Felix takes off his watch and lays it on the table, very carefully.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_felix",
+      "text": "Felix Onyango",
+      "category": "person",
+      "ref": "p_felix",
+      "unlock": {
+        "anyOf": [
+          "f_app"
+        ]
+      }
+    },
+    {
+      "id": "w_josphat",
+      "text": "Josphat Kiprono",
+      "category": "person",
+      "ref": "p_josphat",
+      "unlock": {
+        "anyOf": [
+          "f_jo_first"
+        ]
+      }
+    },
+    {
+      "id": "w_nyokabi",
+      "text": "Nyokabi Onyango",
+      "category": "person",
+      "ref": "p_nyokabi",
+      "unlock": {
+        "anyOf": [
+          "f_nnumber"
+        ]
+      }
+    },
+    {
+      "id": "w_ian",
+      "text": "Ian Waweru",
+      "category": "person",
+      "ref": "p_ian",
+      "unlock": {
+        "anyOf": [
+          "f_ian_debt"
+        ]
+      }
+    },
+    {
+      "id": "w_grace",
+      "text": "Grace Wekesa",
+      "category": "person",
+      "ref": "p_grace",
+      "unlock": {
+        "anyOf": [
+          "f_grace"
+        ]
+      }
+    },
+    {
+      "id": "w_purity",
+      "text": "Purity Wangari",
+      "category": "person",
+      "ref": "p_purity",
+      "unlock": {
+        "anyOf": [
+          "f_purity"
+        ]
+      }
+    },
+    {
+      "id": "w_nobody",
+      "text": "nobody",
+      "category": "person",
+      "nobody": true,
+      "unlock": {
+        "start": true
+      }
+    },
+    {
+      "id": "r_drove",
+      "text": "drove the killer and gave him a false alibi",
+      "category": "role",
+      "by": [
+        "f_tracker",
+        "f_jo_home",
+        "f_jo_reveal"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_tracker"
+        ]
+      }
+    },
+    {
+      "id": "r_lure",
+      "text": "lured the victim",
+      "category": "role",
+      "by": [
+        "f_text"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_text"
+        ]
+      }
+    },
+    {
+      "id": "r_wipe",
+      "text": "wiped the weapon",
+      "category": "role",
+      "by": [
+        "f_wiped"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_text"
+        ]
+      }
+    },
+    {
+      "id": "r_plant",
+      "text": "planted the phone",
+      "category": "role",
+      "by": [
+        "f_drawer"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_text"
+        ]
+      }
+    },
+    {
+      "id": "r_key",
+      "text": "lent the studio key",
+      "category": "role",
+      "by": [
+        "f_studio_lock"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_text"
+        ]
+      }
+    },
+    {
+      "id": "pl_studio",
+      "text": "Andrew's studio",
+      "category": "place",
+      "ref": "loc_studio",
+      "unlock": {
+        "anyOf": [
+          "f_text"
+        ]
+      }
+    },
+    {
+      "id": "pl_lane",
+      "text": "the back lane",
+      "category": "place",
+      "ref": "plc_lane",
+      "unlock": {
+        "anyOf": [
+          "f_grace"
+        ]
+      }
+    },
+    {
+      "id": "pl_house",
+      "text": "the Onyango house",
+      "category": "place",
+      "ref": "loc_onyango",
+      "unlock": {
+        "anyOf": [
+          "f_rec_n"
+        ]
+      }
+    },
+    {
+      "id": "pl_cafe",
+      "text": "the book-club café",
+      "category": "place",
+      "ref": "loc_cafe",
+      "unlock": {
+        "anyOf": [
+          "f_ny_trainer"
+        ]
+      }
+    },
+    {
+      "id": "pl_office",
+      "text": "Felix's office",
+      "category": "place",
+      "ref": "loc_office",
+      "unlock": {
+        "anyOf": [
+          "f_fe_home"
+        ]
+      }
+    },
+    {
+      "id": "h_kettle",
+      "text": "striking him with a kettlebell",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_plate",
+      "text": "striking him with a barbell plate",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_fall",
+      "text": "a fall against the rowing machine",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack during a workout",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_band",
+      "text": "strangling him with a resistance band",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_jealous",
+      "text": "jealousy: he'd found his wife's secret phone and her affair with Andrew",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_fe_reveal"
+        ]
+      }
+    },
+    {
+      "id": "m_lover",
+      "text": "a lovers' quarrel",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_affair"
+        ]
+      }
+    },
+    {
+      "id": "m_debt",
+      "text": "an unpaid business debt",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ian_debt"
+        ]
+      }
+    },
+    {
+      "id": "m_robbery",
+      "text": "a robbery",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_client",
+      "text": "a client's anger over results",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_app"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. The killer was helped by {accomplice}, who {role}.",
+    "fixed": {
+      "victim": "Andrew Simiyu"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_sun",
+                  "label": "Sunday",
+                  "from": null,
+                  "to": null,
+                  "day": "Sun"
+                },
+                {
+                  "id": "sl_1900",
+                  "label": "Tuesday 19:00",
+                  "from": "19:00",
+                  "to": "19:00",
+                  "day": "Tue"
+                },
+                {
+                  "id": "sl_2012",
+                  "label": "Tuesday 20:12",
+                  "from": "20:12",
+                  "to": "20:12",
+                  "day": "Tue"
+                },
+                {
+                  "id": "sl_2040",
+                  "label": "Tuesday 20:40",
+                  "from": "20:40",
+                  "to": "20:40",
+                  "day": "Tue"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Tuesday 20:52–21:20",
+                  "from": "20:52",
+                  "to": "21:20",
+                  "day": "Tue"
+                },
+                {
+                  "id": "sl_2133",
+                  "label": "Tuesday 21:33",
+                  "from": "21:33",
+                  "to": "21:33",
+                  "day": "Tue"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_find",
+                  "text": "Felix finds the second phone",
+                  "slot": "sl_sun",
+                  "by": [
+                    "f_fe_reveal"
+                  ],
+                  "why": "\"I found the phone on Sunday.\"",
+                  "unlock": {
+                    "anyOf": [
+                      "f_fe_reveal"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_lure",
+                  "text": "The lure text is sent from Lavington",
+                  "slot": "sl_2012",
+                  "by": [
+                    "f_text",
+                    "f_rec_n"
+                  ],
+                  "why": "20:12, on the Lavington mast.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rec_n"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_leave",
+                  "text": "Felix and Josphat leave the house",
+                  "slot": "sl_2040",
+                  "by": [
+                    "f_tracker"
+                  ],
+                  "why": "The tracker: 20:40.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_tracker"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_kill",
+                  "text": "Andrew is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_tracker",
+                    "f_jo_reveal",
+                    "f_aut_tod"
+                  ],
+                  "why": "While the car stood in the lane.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_tracker"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_home",
+                  "text": "Felix is home",
+                  "slot": "sl_2133",
+                  "by": [
+                    "f_tracker"
+                  ],
+                  "why": "The tracker: 21:33.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_tracker"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_1900",
+                  "by": [
+                    "f_purity",
+                    "f_tracker"
+                  ],
+                  "why": "\"Home from the office at seven\" is the story. He left the office at 18:40 and the car was out again at 20:40."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A phone found on Sunday, a text at 20:12 from his own house, out at 20:40, in the lane till 21:20, home at 21:33.",
+          "fail": [
+            "Seven o'clock is the driver's story.",
+            "Where was the \"N.\" phone when it sent the text?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_studio"
+          }
+        ],
+        "prosecutor": {
+          "pass": "In his own studio, among his own kettlebells.",
+          "fail": [
+            "The car waited in the lane. The killing was inside.",
+            "The text came from the house. He died in Kileleshwa."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_felix",
+            "pool": [
+              "w_felix",
+              "w_josphat",
+              "w_nyokabi",
+              "w_ian",
+              "w_grace"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "His car in the lane, his thumb on her phone, the studio's chalk and Andrew's blood on his mat.",
+          "fail": [
+            "Nyokabi was in front of eleven women in Westlands.",
+            "Josphat never got out of the car."
+          ]
+        }
+      },
+      {
+        "id": "g_accomplice",
+        "kind": "accomplice",
+        "blanks": [
+          {
+            "id": "accomplice",
+            "category": "person",
+            "answer": "w_josphat",
+            "pool": [
+              "w_josphat",
+              "w_nyokabi",
+              "w_ian",
+              "w_grace",
+              "w_purity",
+              "w_nobody"
+            ]
+          },
+          {
+            "id": "role",
+            "category": "role",
+            "answer": "r_drove"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Eight years of loyalty, a lane with the lights off, and a lie the next morning. He knew.",
+          "fail": [
+            "Her phone sent it. She didn't. Read the masts.",
+            "Andrew opened that door himself."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_kettle"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A rounded iron weight, and the only clean handle on the rack.",
+          "fail": [
+            "A plate has an edge. This wound is rounded.",
+            "Read the post-mortem: a blow, not his heart."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_jealous"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Six months of his marriage, read in one evening.",
+          "fail": [
+            "The lovers didn't quarrel. She was at book club.",
+            "Ian owed him money from Mombasa."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_studio",
+      "from": "20:52",
+      "to": "21:20",
+      "note": "While Felix's car stood in the back lane, 20:52–21:20; the post-mortem allows 20:50–21:30."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_text",
+          "f_nnumber",
+          "f_affair",
+          "f_ny_trainer",
+          "f_ny_reveal"
+        ],
+        "concludes": "The lure came from Nyokabi's second phone; she was having an affair with Andrew."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_bookclub",
+          "f_rec_n",
+          "f_drawer"
+        ],
+        "concludes": "The phone sent the text from the Lavington house while Nyokabi was in Westlands: she never sent it."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_prints",
+          "f_fe_phone"
+        ],
+        "concludes": "Felix handled the second phone."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_grace",
+          "f_tracker",
+          "f_jo_first",
+          "f_jo_home",
+          "f_jo_reveal",
+          "f_fe_home",
+          "f_purity"
+        ],
+        "concludes": "Felix's car sat in the lane 20:52–21:20; Josphat drove him and lied.",
+        "answers": [
+          "when",
+          "accomplice",
+          "role"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_body",
+          "f_wiped",
+          "f_aut_blow",
+          "f_aut_tod",
+          "f_cap",
+          "f_chalk",
+          "f_blood"
+        ],
+        "concludes": "Andrew was killed in the studio with a kettlebell; its chalk and his blood went home on Felix's car mat.",
+        "answers": [
+          "where",
+          "how"
+        ]
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_fe_reveal"
+        ],
+        "concludes": "Felix Onyango killed Andrew out of jealousy, helped by Josphat Kiprono, who drove him and gave him a false alibi.",
+        "answers": [
+          "who",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_lane",
+        "blank": "where",
+        "by": [
+          "f_grace",
+          "f_jo_lane"
+        ],
+        "why": "The car waited in the lane; the man went in through the side door."
+      },
+      {
+        "word": "pl_house",
+        "blank": "where",
+        "by": [
+          "f_rec_n",
+          "f_tracker"
+        ],
+        "why": "The text came from the house; the killing happened in the studio."
+      },
+      {
+        "word": "pl_cafe",
+        "blank": "where",
+        "by": [
+          "f_bookclub"
+        ],
+        "why": "The café is where Nyokabi was."
+      },
+      {
+        "word": "pl_office",
+        "blank": "where",
+        "by": [
+          "f_purity"
+        ],
+        "why": "Felix left the office at 18:40."
+      },
+      {
+        "word": "w_josphat",
+        "blank": "who",
+        "by": [
+          "f_jo_lane"
+        ],
+        "why": "Josphat stayed in the car; Grace: \"the driver never got out\"."
+      },
+      {
+        "word": "w_nyokabi",
+        "blank": "who",
+        "by": [
+          "f_bookclub"
+        ],
+        "why": "Nyokabi was at the book club."
+      },
+      {
+        "word": "w_ian",
+        "blank": "who",
+        "by": [
+          "f_ian"
+        ],
+        "why": "Ian was in Mombasa."
+      },
+      {
+        "word": "w_grace",
+        "blank": "who",
+        "by": [
+          "f_grace_self"
+        ],
+        "why": "Grace was in her gatehouse with her grandchildren."
+      },
+      {
+        "word": "w_nyokabi",
+        "blank": "accomplice",
+        "by": [
+          "f_bookclub",
+          "f_rec_n",
+          "f_prints"
+        ],
+        "why": "Her phone sent the lure, but she was in Westlands with her main phone; his thumb is on the second phone."
+      },
+      {
+        "word": "w_ian",
+        "blank": "accomplice",
+        "by": [
+          "f_ian"
+        ],
+        "why": "Ian was in Mombasa."
+      },
+      {
+        "word": "w_grace",
+        "blank": "accomplice",
+        "by": [
+          "f_grace",
+          "f_studio_lock"
+        ],
+        "why": "Grace reported the car; Andrew opened his own door."
+      },
+      {
+        "word": "w_purity",
+        "blank": "accomplice",
+        "by": [
+          "f_purity"
+        ],
+        "why": "Purity told the truth about 18:40."
+      },
+      {
+        "word": "w_nobody",
+        "blank": "accomplice",
+        "by": [
+          "f_tracker",
+          "f_jo_reveal"
+        ],
+        "why": "Someone drove the car and waited."
+      },
+      {
+        "word": "r_lure",
+        "blank": "role",
+        "by": [
+          "f_prints",
+          "f_rec_n"
+        ],
+        "why": "Felix sent the text himself, from the house; Josphat never touched the phone."
+      },
+      {
+        "word": "r_wipe",
+        "blank": "role",
+        "by": [
+          "f_grace"
+        ],
+        "why": "The driver never got out of the car."
+      },
+      {
+        "word": "r_plant",
+        "blank": "role",
+        "by": [
+          "f_ny_reveal",
+          "f_drawer"
+        ],
+        "why": "The phone was Nyokabi's and lived in that drawer; it was put back, not planted."
+      },
+      {
+        "word": "r_key",
+        "blank": "role",
+        "by": [
+          "f_studio_lock"
+        ],
+        "why": "Andrew opened the side door himself."
+      },
+      {
+        "word": "h_plate",
+        "blank": "how",
+        "by": [
+          "f_aut_blow",
+          "f_wiped"
+        ],
+        "why": "The wound is rounded, not edged; the kettlebell was wiped."
+      },
+      {
+        "word": "h_fall",
+        "blank": "how",
+        "by": [
+          "f_aut_blow",
+          "f_wiped"
+        ],
+        "why": "No matching surface; a wiped handle."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "A blow to the head."
+      },
+      {
+        "word": "h_band",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "A blow, not strangulation."
+      },
+      {
+        "word": "m_lover",
+        "blank": "why",
+        "by": [
+          "f_bookclub",
+          "f_ny_reveal"
+        ],
+        "why": "Nyokabi was at book club; she didn't send the text."
+      },
+      {
+        "word": "m_debt",
+        "blank": "why",
+        "by": [
+          "f_ian"
+        ],
+        "why": "Ian was in Mombasa."
+      },
+      {
+        "word": "m_robbery",
+        "blank": "why",
+        "by": [
+          "f_untouched"
+        ],
+        "why": "Equipment and phone left behind."
+      },
+      {
+        "word": "m_client",
+        "blank": "why",
+        "by": [
+          "f_reviews"
+        ],
+        "why": "Not one complaint in a year."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Nyokabi has been seeing Andrew for six months on a second phone she keeps in her dressing-table drawer. On Sunday Felix finds it and reads it all. He says nothing.",
+        "image": null
+      },
+      {
+        "text": "Tuesday. Nyokabi goes to her book club in Westlands with her main phone. At 20:12 Felix texts Andrew from the second phone: \"Can you open the studio at 9? Side door.\" Andrew: \"On my way.\"",
+        "image": null
+      },
+      {
+        "text": "At 20:40 Josphat drives Felix to the lane behind the studio and waits, lights off. Felix goes in the side door. He strikes Andrew with a 16 kg kettlebell, wipes the handle and puts it back.",
+        "image": "loc_studio"
+      },
+      {
+        "text": "At 21:20 the car leaves; at 21:33 Felix is home. He switches the second phone off and puts it back in the drawer. In the morning he tells Josphat: \"You drove me home at seven.\" Josphat says it.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Two stamps: records on the \"N.\" line, then the car's fleet tracker. No warrant: Nyokabi opens her drawer and Felix lets you look in the car. Detain Felix after the tracker; prints (6 h) come back well inside 24 h; the chalk and blood traces (12 h) go as soon as the car mat is bagged.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_studio",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_text",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_app",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_grace",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_grace"
+      },
+      {
+        "do": "records",
+        "target": "ev_records_n"
+      },
+      {
+        "do": "travel",
+        "target": "loc_cafe",
+        "hours": 0.25,
+        "from": "loc_studio"
+      },
+      {
+        "do": "visit",
+        "target": "loc_cafe",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_nyokabi"
+      },
+      {
+        "do": "press",
+        "target": "c_ny"
+      },
+      {
+        "do": "read",
+        "target": "ev_affair",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_bookclub",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_onyango",
+        "hours": 0.25,
+        "from": "loc_cafe"
+      },
+      {
+        "do": "visit",
+        "target": "loc_onyango",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_drawer",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_felix"
+      },
+      {
+        "do": "read",
+        "target": "ev_cap",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_jo_first",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_josphat"
+      },
+      {
+        "do": "submit",
+        "target": "ev_chalk"
+      },
+      {
+        "do": "submit",
+        "target": "ev_blood"
+      },
+      {
+        "do": "travel",
+        "target": "loc_office",
+        "hours": 0.25,
+        "from": "loc_onyango"
+      },
+      {
+        "do": "visit",
+        "target": "loc_office",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_purity",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_purity"
+      },
+      {
+        "do": "interview",
+        "target": "p_ian"
+      },
+      {
+        "do": "records",
+        "target": "ev_tracker"
+      },
+      {
+        "do": "press",
+        "target": "c_fe"
+      },
+      {
+        "do": "travel",
+        "target": "loc_onyango",
+        "hours": 0.25,
+        "from": "loc_office"
+      },
+      {
+        "do": "visit",
+        "target": "loc_onyango",
+        "hours": 1
+      },
+      {
+        "do": "press",
+        "target": "c_jo"
+      },
+      {
+        "do": "detain",
+        "target": "p_felix"
+      },
+      {
+        "do": "sample",
+        "target": "ev_fe_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 6
+      },
+      {
+        "do": "press",
+        "target": "c_fe_phone"
+      }
+    ],
+    "totalHours": 39
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_tracker",
+        "line": "Rich men's cars keep diaries, Amani."
+      },
+      "tier2": {
+        "facts": [
+          "f_tracker",
+          "f_rec_n"
+        ],
+        "line": "Text at 20:12 from Lavington. In the lane 20:52 to 21:20."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_body",
+        "line": "Count the clean handles on the rack."
+      },
+      "tier2": {
+        "facts": [
+          "f_wiped",
+          "f_aut_blow"
+        ],
+        "line": "One wiped kettlebell, in his own studio."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_drawer",
+        "line": "A phone has a holder as well as an owner."
+      },
+      "tier2": {
+        "facts": [
+          "f_prints",
+          "f_tracker"
+        ],
+        "line": "His thumb on her phone. His car in the lane."
+      }
+    },
+    "g_accomplice": {
+      "tier1": {
+        "point": "ev_grace",
+        "line": "Who sat in the car with the lights off?"
+      },
+      "tier2": {
+        "facts": [
+          "f_grace",
+          "f_jo_reveal"
+        ],
+        "line": "The driver never got out. Then he lied."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Rounded, heavy, iron. Look at the rack."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_blow",
+          "f_wiped"
+        ],
+        "line": "A 16 kg kettlebell, wiped."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_affair",
+        "line": "Who else read those messages?"
+      },
+      "tier2": {
+        "facts": [
+          "f_affair",
+          "f_fe_reveal"
+        ],
+        "line": "Her husband, on Sunday."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "dereva",
+      "def": "A driver."
+    },
+    {
+      "term": "bwana",
+      "def": "Sir; the boss."
+    },
+    {
+      "term": "simu ya pili",
+      "def": "A second phone."
+    },
+    {
+      "term": "mpenzi",
+      "def": "A lover."
+    },
+    {
+      "term": "uzito",
+      "def": "Weights."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "deviceAndHolder"
+    ],
+    "beatNotes": "Two phones, one person. A phone card on the board can be split into device and holder: the player drags a \"who held it\" pin (from fingerprints, masts and alibis) onto the device. Nyokabi's second phone gets Felix's pin at 20:12."
+  }
+}

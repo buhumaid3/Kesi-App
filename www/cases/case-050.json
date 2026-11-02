@@ -1,0 +1,2562 @@
+{
+  "meta": {
+    "id": "case-050",
+    "number": 50,
+    "region": "kisumu-lake",
+    "regionNumber": 5,
+    "title": "The Limp",
+    "boss": true,
+    "schemaVersion": 1,
+    "estMinutes": 35,
+    "date": "Tuesday 27 January",
+    "folderTab": "USOMA"
+  },
+  "pattern": {
+    "crimePattern": "the enforcer \"Fundi\" kills the fisherman who saw him dump a witness's body, wearing a fake limp so witnesses remember the limp and not the man",
+    "noRealCaseRetold": true,
+    "notes": "Fictional garage, newspaper and phone line. The fake limp is a costume built to be remembered; the one genuinely disabled character, Abiud, is suspected by the village and explicitly cleared by the evidence, and is the witness who looked at the face. Tom Ochieng is the case-10 courier.",
+    "tags": [
+      "grapnel",
+      "drowning",
+      "witness-killing",
+      "disguise",
+      "two-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "spine",
+      "boss"
+    ]
+  },
+  "difficulty": {
+    "suspects": 5,
+    "chainLength": 5,
+    "redHerrings": 2,
+    "liars": 2,
+    "groups": [
+      "when",
+      "who",
+      "how",
+      "why",
+      "spine"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic",
+      "cctv"
+    ],
+    "gatedActions": [
+      "records",
+      "records",
+      "warrant"
+    ],
+    "twist": "the-limp-was-an-act"
+  },
+  "ob": {
+    "number": "OB 27/27/01",
+    "date": "Tuesday 27 January",
+    "time": "07:15",
+    "reportedBy": "Livingstone Odawa, chairman, Usoma BMU",
+    "text": "The chairman of Usoma Beach Management Unit reports a fisherman, Walter Ogada (63), found dead in the water hyacinth beside his boat at Usoma beach at 06:50.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_walter",
+      "role": "victim",
+      "name": "Walter Ogada",
+      "age": 63,
+      "occupation": "Fisherman for 45 years",
+      "bio": "Checks his gillnets by the hyacinth mat at night. Gave a statement about something he saw in January.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_usoma",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, early 60s, a faded fisherman's jacket and a woollen hat, grey stubble, deep lines round kind eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_benedict",
+      "role": "suspect",
+      "name": "Benedict Mbuvi",
+      "age": 52,
+      "occupation": "Owner, Kibos Motors garage, Kisumu",
+      "bio": "A mechanic who \"repairs boats too\". Walks into every room perfectly upright.",
+      "community": "Kamba",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_tom_note"
+      },
+      "at": "plc_kibos",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba man, early 50s, clean blue mechanic's overalls, standing upright with no limp, broad shoulders, a calm, closed face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kioko",
+      "role": "suspect",
+      "name": "Kioko Nzau",
+      "age": 24,
+      "occupation": "Benedict's apprentice",
+      "bio": "Told to say the boss was at the garage all night. Frightened of everyone.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_tom_note"
+      },
+      "at": "plc_mother",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba young man, mid 20s, oil-stained overalls too big for him, a cap pulled low, frightened eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_alloys",
+      "role": "suspect",
+      "name": "Alloys Ondeng'",
+      "age": 46,
+      "occupation": "Fisherman",
+      "redHerring": true,
+      "bio": "Accused Walter of stealing his nets at a BMU meeting this month.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_mary"
+      },
+      "at": "plc_bar",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, mid 40s, a fisherman's vest, a loud laugh gone quiet, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_abiud",
+      "role": "suspect",
+      "name": "Abiud Okech",
+      "age": 58,
+      "occupation": "Usoma night guard",
+      "redHerring": true,
+      "bio": "Has walked with a crutch since childhood polio. The village whispers about \"the limping man\".",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_hut",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, late 50s, a security company jacket, a wooden crutch under one arm, standing straight and dignified, a steady gaze, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_livingstone",
+      "role": "suspect",
+      "name": "Livingstone Odawa",
+      "age": 55,
+      "occupation": "Chairman, Usoma BMU",
+      "bio": "Took Walter's statement on 15 January. Later told a caller where Walter keeps his boat.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_lhome",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, mid 50s, a BMU cap and a cardigan, an ashamed, exhausted face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_lorna",
+      "role": "witness",
+      "name": "Lorna Anyim",
+      "age": 31,
+      "occupation": "Journalist, Taifa Daily",
+      "bio": "Wrote the 24 January item that named Walter.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_article"
+      },
+      "at": "plc_town",
+      "image": null
+    },
+    {
+      "id": "p_mary",
+      "role": "witness",
+      "name": "Mary Ogada",
+      "age": 60,
+      "occupation": "Walter's widow",
+      "bio": "Married to Walter for forty years. Watched him go down to the boats on Monday night.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_mhome",
+      "image": null
+    },
+    {
+      "id": "p_consolata",
+      "role": "witness",
+      "name": "Consolata Ochieng",
+      "age": 58,
+      "occupation": "Tom Ochieng's mother",
+      "bio": "Identified her son's body on 15 January. Kept his notebook.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_tom_report"
+      },
+      "at": "plc_chome",
+      "image": null
+    },
+    {
+      "id": "p_mamakioko",
+      "role": "witness",
+      "name": "Mwende Nzau",
+      "age": 49,
+      "occupation": "Kioko's mother",
+      "statementOnly": true,
+      "bio": "Her son sleeps at her house in Kibos.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_mother",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_boats",
+      "name": "Walter's boat and the hyacinth fringe",
+      "within": "loc_usoma"
+    },
+    {
+      "id": "plc_hut",
+      "name": "The night guard's hut",
+      "within": "loc_usoma"
+    },
+    {
+      "id": "plc_kibos",
+      "name": "Kibos Motors, Kibos"
+    },
+    {
+      "id": "plc_mother",
+      "name": "Kioko's mother's house, Kibos"
+    },
+    {
+      "id": "plc_bar",
+      "name": "A bar in Kisumu town"
+    },
+    {
+      "id": "plc_lhome",
+      "name": "Livingstone's house, Usoma village"
+    },
+    {
+      "id": "plc_mhome",
+      "name": "Walter and Mary's house, Usoma village"
+    },
+    {
+      "id": "plc_chome",
+      "name": "Consolata's house, Nyalenda"
+    },
+    {
+      "id": "plc_town",
+      "name": "Kisumu town"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_usoma",
+      "name": "Usoma beach",
+      "kind": "scene",
+      "description": "A beach near Kisumu airport: boats pulled up on dark sand, a thick fringe of water hyacinth, a guard's hut with a radio. On Monday night the moon was half full, bright until it set after midnight; the omena boats wait for moonset, so nobody else was at the boats.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The hyacinth",
+          "pos": [
+            56,
+            64
+          ],
+          "yields": "ev_body",
+          "text": "Walter was found face down in the hyacinth beside his boat at 06:50."
+        },
+        {
+          "id": "hs_boat",
+          "label": "Walter's boat",
+          "pos": [
+            40,
+            50
+          ],
+          "yields": "ev_walter_phone",
+          "text": "His phone and a small roll of cash under the bow seat."
+        },
+        {
+          "id": "hs_sand",
+          "label": "Wet sand by the boat",
+          "pos": [
+            46,
+            74
+          ],
+          "yields": "ev_prints",
+          "text": "Boot prints in the wet sand between a parking spot and the boat."
+        },
+        {
+          "id": "hs_hut",
+          "label": "Guard hut",
+          "pos": [
+            86,
+            36
+          ],
+          "yields": "ev_abiud_log",
+          "text": "The guard's radio and his check-in book on a nail."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "Usoma beach near Kisumu airport at night under a half moon, wooden boats pulled up on dark sand, a thick fringe of green water hyacinth at the water's edge, a small guard hut with a radio aerial, airport lights in the distance, no people in focus"
+      }
+    },
+    {
+      "id": "loc_bmu",
+      "name": "Usoma BMU office",
+      "kind": "location",
+      "description": "A small office on the beach road: a desk, a statement book, the BMU's minute book, a photo of last year's committee.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_statement",
+          "label": "Statement book",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_walter_statement",
+          "text": "Walter's statement, in Livingstone's handwriting, 15 January."
+        },
+        {
+          "id": "hs_minutes",
+          "label": "Minute book",
+          "pos": [
+            70,
+            46
+          ],
+          "yields": "ev_nets",
+          "text": "This month's BMU minutes."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small beach-management-unit office near Kisumu, a wooden desk with a statement book and a minute book, a framed committee photograph on the wall"
+      }
+    },
+    {
+      "id": "loc_archive",
+      "name": "Dr. Chebii's archive",
+      "kind": "location",
+      "description": "A filing room at the regional lab in Kisumu, where Dr. Chebii keeps this season's reports.",
+      "unlock": {
+        "fact": "f_walter_statement"
+      },
+      "hotspots": [
+        {
+          "id": "hs_report",
+          "label": "Report of 16 January",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_tom_report",
+          "text": "A body recovered near the hyacinth mat on 15 January. The name on the report stops Amani's hand."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a filing room at a regional forensic lab, grey metal cabinets, a report folder open on a desk under a lamp"
+      }
+    },
+    {
+      "id": "loc_consolata",
+      "name": "Consolata's house, Nyalenda",
+      "kind": "location",
+      "description": "A small house with a framed photograph of a young man in a courier's jacket on the wall.",
+      "unlock": {
+        "fact": "f_tom_report"
+      },
+      "hotspots": [
+        {
+          "id": "hs_notebook",
+          "label": "Tom's notebook",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_consolata",
+          "text": "Consolata hands over a small notebook, its last page folded down."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a modest living room in Nyalenda, Kisumu, a framed photograph of a young man on the wall, a small notebook on a crocheted tablecloth"
+      }
+    },
+    {
+      "id": "loc_fuel",
+      "name": "Fuel station, Airport Road",
+      "kind": "location",
+      "description": "A fuel station on the airport road with a camera over every pump and the till.",
+      "unlock": {
+        "fact": "f_rec_caller_masts"
+      },
+      "hotspots": [
+        {
+          "id": "hs_cctv",
+          "label": "Station manager's monitor",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_cctv",
+          "text": "The manager scrolls Monday night's footage to 22:08."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a fuel station forecourt on a Kisumu airport road at night, pumps under bright lights, CCTV cameras, a manager's office with a monitor"
+      }
+    },
+    {
+      "id": "loc_kibos",
+      "name": "Kibos Motors (front office)",
+      "kind": "location",
+      "description": "A roadside garage at Kibos: car bodies, an engine on a stand, a boat trailer under a tarpaulin behind the fence. The front office is open; the yard is locked.",
+      "unlock": {
+        "fact": "f_tom_note"
+      },
+      "hotspots": [
+        {
+          "id": "hs_alarm",
+          "label": "Security company sticker",
+          "pos": [
+            30,
+            30
+          ],
+          "yields": "ev_alarm",
+          "text": "A security company sticker on the door. The company prints the panel's log on request."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a roadside motor garage at Kibos near Kisumu, car bodies and an engine on a stand, a boat trailer under a tarpaulin behind a chain-link fence, a small front office"
+      }
+    },
+    {
+      "id": "loc_garage",
+      "name": "Kibos Motors yard and car (search)",
+      "kind": "search",
+      "description": "The locked yard, and Benedict's grey station wagon parked inside.",
+      "unlock": {
+        "fact": "f_rec_ben"
+      },
+      "hotspots": [
+        {
+          "id": "hs_yard",
+          "label": "Yard, trailer and car boot",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_garage",
+          "text": "Under the tarpaulin, a white motorboat with a blue stripe. In the car boot, a single boot and an anchor."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a locked garage yard at night, a white motorboat with a blue stripe on a trailer half under a tarpaulin, a reel of blue nylon rope, an open car boot with a single left boot and a three-pronged grapnel anchor inside"
+      }
+    },
+    {
+      "id": "loc_lineup",
+      "name": "Photo line-up (prison visits)",
+      "kind": "location",
+      "description": "Interview rooms at three prisons and a remand wing. Benedict's custody photograph among seven others.",
+      "unlock": {
+        "fact": "f_boot"
+      },
+      "hotspots": [
+        {
+          "id": "hs_lineup",
+          "label": "The line-up sheet",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_lineup",
+          "text": "Eight faces. Four people who met Fundi look at them one by one."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a plain prison interview room, a table with a sheet of eight numbered photographs of men, two chairs"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "In the hyacinth",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Found face down in the hyacinth beside his boat at 06:50. Three small wounds on his shoulder."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a thick mat of green water hyacinth at the edge of a lake beach at dawn beside a wooden fishing boat, no body visible"
+      }
+    },
+    {
+      "id": "ev_walter_statement",
+      "type": "physical",
+      "title": "Walter's statement, 15 January",
+      "render": "statement",
+      "body": {
+        "taker": "L. Odawa",
+        "text": "Night of 4–5 January, about 02:00, near the hyacinth mat: \"a white motorboat with a blue stripe\" stopped in the dark. A man dropped a bundle tied with stones. \"He limped badly when he moved in the boat.\""
+      },
+      "facts": [
+        "f_walter_statement"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a handwritten statement in a hard-backed book, dated 15 January, with a small sketch of a motorboat with a stripe in the margin"
+      }
+    },
+    {
+      "id": "ev_tom_report",
+      "type": "forensic",
+      "title": "Dr. Chebii's report, 16 January",
+      "render": "labReport",
+      "body": {
+        "subject": "Tom Ochieng, 29, courier. Identified by his mother.",
+        "findings": "Dead before entering the water. Struck. Body weighted with stones on blue nylon rope."
+      },
+      "facts": [
+        "f_tom_report"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_consolata",
+      "type": "witness",
+      "title": "Statement and Tom's notebook",
+      "render": "statement",
+      "body": {
+        "speaker": "p_consolata",
+        "page": "\"If anything happens to me: Fundi — Kibos Motors.\""
+      },
+      "facts": [
+        "f_tom_note",
+        "f_two_men",
+        "f_tom_bail"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_article",
+      "type": "physical",
+      "title": "Taifa Daily, 24 January",
+      "render": "note",
+      "body": {
+        "item": "Usoma fisherman Walter Ogada says he saw a body dumped."
+      },
+      "facts": [
+        "f_article"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_livingstone",
+      "type": "witness",
+      "title": "Statement: Livingstone Odawa",
+      "render": "statement",
+      "body": {
+        "speaker": "p_livingstone"
+      },
+      "facts": [
+        "f_livingstone",
+        "f_liv_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mary",
+      "type": "witness",
+      "title": "Statement: Mary Ogada",
+      "render": "statement",
+      "body": {
+        "speaker": "p_mary"
+      },
+      "facts": [
+        "f_mary"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_walter_phone",
+      "type": "phone",
+      "title": "Walter's phone and cash",
+      "render": "manifest",
+      "body": {
+        "call": "26 January, 22:20 — from 07xx xxx 773, saved as \"Mnunuzi\" (buyer)",
+        "message": "\"Meet at your boat 22:45, cash.\"",
+        "cash": "KSh 3,800 under the bow seat."
+      },
+      "facts": [
+        "f_walter_phone",
+        "f_walter_cash"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records_caller",
+      "type": "phone",
+      "title": "Records: 07xx xxx 773",
+      "render": "manifest",
+      "body": {
+        "registration": "National ID of a man who died nine years ago.",
+        "masts": "Kibos 21:00–22:00; Airport Road 22:05–22:15; Usoma 22:35–23:20. Also called Livingstone Odawa on 25 January."
+      },
+      "facts": [
+        "f_rec_caller_id",
+        "f_rec_caller_masts"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_walter_phone"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_cctv",
+      "type": "cctv",
+      "title": "Fuel station video, 22:08–22:12",
+      "render": "photo",
+      "body": {
+        "frames": "A grey station wagon, plate KDE 41·R, registered to Kibos Motors. Benedict Mbuvi gets out, walks normally to the till, pays, walks back."
+      },
+      "facts": [
+        "f_cctv"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a grainy night-time CCTV still of a fuel station forecourt, a broad-shouldered man in overalls walking upright towards the till, a grey station wagon at the pump"
+      }
+    },
+    {
+      "id": "ev_abiud",
+      "type": "witness",
+      "title": "Statement: Abiud Okech",
+      "render": "statement",
+      "body": {
+        "speaker": "p_abiud"
+      },
+      "facts": [
+        "f_abiud"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_abiud_log",
+      "type": "physical",
+      "title": "Guard's radio check-in log",
+      "render": "logBook",
+      "body": {
+        "entries": [
+          "22:45 — Usoma hut — all clear",
+          "23:15 — Usoma hut — splashing reported at boats 23:00"
+        ]
+      },
+      "facts": [
+        "f_checkins"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "physical",
+      "title": "Boot prints in the sand",
+      "render": "sketch",
+      "body": {
+        "right": "An ordinary boot sole.",
+        "left": "Deeper at the heel, with a square-edged heel mark.",
+        "also": "No crutch marks anywhere in the wet sand."
+      },
+      "facts": [
+        "f_bootprints",
+        "f_no_crutch"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records_benedict",
+      "type": "phone",
+      "title": "Records: Benedict Mbuvi's line",
+      "render": "manifest",
+      "body": {
+        "masts": "Kibos 21:00–22:00; Airport Road 22:05–22:15; Usoma 22:35–23:20. The same masts as 07xx xxx 773, minute for minute."
+      },
+      "facts": [
+        "f_rec_ben"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_cctv",
+          "f_tom_note"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_alarm",
+      "type": "physical",
+      "title": "Kibos Motors alarm log",
+      "render": "logBook",
+      "body": {
+        "log": "Armed 21:30. Disarmed 06:50. No entry in between."
+      },
+      "facts": [
+        "f_alarm"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_garage",
+      "type": "physical",
+      "title": "Kibos Motors yard and car",
+      "render": "object",
+      "body": {
+        "boat": "A white motorboat with a blue stripe on a trailer.",
+        "rope": "A reel of blue nylon rope.",
+        "boot": "In the car boot: a left boot with a 3 cm wooden block glued inside the heel.",
+        "anchor": "A grapnel anchor, hyacinth fibres in its prongs.",
+        "book": "Garage book: no job for W. Ogada ever. A cash book: \"M.H. — collection\", monthly."
+      },
+      "facts": [
+        "f_garage_boat",
+        "f_rope",
+        "f_boot",
+        "f_grapnel",
+        "f_not_customer",
+        "f_garage_mvua"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_ben",
+          "f_cctv"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a single black left work boot cut open to show a wooden block glued inside the heel, beside a three-pronged grapnel anchor with green plant fibres caught in the prongs"
+      }
+    },
+    {
+      "id": "ev_lineup",
+      "type": "witness",
+      "title": "Photo line-up",
+      "render": "statement",
+      "body": {
+        "viewers": "Daniel Gichuru (case 30), Calvin Wamalwa (case 40), Millicent Akoth (case 20), Abiud Okech"
+      },
+      "facts": [
+        "f_lineup",
+        "f_abiud_face"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_bar",
+      "type": "physical",
+      "title": "Bar tab",
+      "render": "receipt",
+      "body": {
+        "tab": "A. Ondeng' and four friends — opened 20:30 — closed 00:40"
+      },
+      "facts": [
+        "f_bar"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_nets",
+      "type": "physical",
+      "title": "BMU minutes, January",
+      "render": "form",
+      "body": {
+        "item": "Net dispute, Ondeng' v. Ogada: settled by the committee on 20 January.",
+        "other": "No levy dispute recorded with W. Ogada in eleven years."
+      },
+      "facts": [
+        "f_nets",
+        "f_no_levy"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mwende",
+      "type": "witness",
+      "title": "Statement: Mwende Nzau",
+      "render": "statement",
+      "body": {
+        "speaker": "p_mamakioko"
+      },
+      "facts": [
+        "f_kioko_mother"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_wounds",
+        "f_aut_tod",
+        "f_aut_notbite"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_bootmatch",
+      "type": "forensic",
+      "title": "Comparison: prints vs the blocked boot",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_boot_match"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_prints",
+          "ev_garage"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_trace",
+      "type": "forensic",
+      "title": "Lab: trace (grapnel prongs)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_trace"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_garage"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_rope",
+      "type": "forensic",
+      "title": "Lab: rope (garage reel vs Tom's binding)",
+      "render": "labReport",
+      "body": {
+        "test": "fibres"
+      },
+      "facts": [
+        "f_rope_match"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "fibres",
+        "hours": 8,
+        "needs": [
+          "ev_garage",
+          "ev_tom_report"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Walter Ogada was found dead in the water hyacinth beside his boat at Usoma beach at 06:50.",
+      "kind": "true",
+      "about": [
+        "p_walter",
+        "loc_usoma"
+      ],
+      "at": {
+        "from": "06:50"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "Walter lay face down in the hyacinth beside his boat. Three small wounds on his shoulder.",
+      "kind": "true",
+      "about": [
+        "p_walter",
+        "loc_usoma"
+      ]
+    },
+    {
+      "id": "f_walter_statement",
+      "text": "Walter's statement, 15 January: on 4–5 January at about 02:00, near the hyacinth mat, a white motorboat with a blue stripe; a man dropped a bundle tied with stones. \"He limped badly.\"",
+      "kind": "true",
+      "about": [
+        "p_walter",
+        "p_livingstone"
+      ],
+      "at": {
+        "from": "02:00",
+        "to": null,
+        "day": "5 Jan"
+      }
+    },
+    {
+      "id": "f_tom_report",
+      "text": "Dr. Chebii, 16 January: the body that surfaced on 15 January is Tom Ochieng, 29, courier. Dead before entering the water; struck; weighted with stones on blue nylon rope.",
+      "kind": "true",
+      "about": [
+        "p_consolata"
+      ],
+      "at": {
+        "from": "00:00",
+        "to": null,
+        "day": "15 Jan"
+      }
+    },
+    {
+      "id": "f_tom_note",
+      "text": "Tom's notebook, last page: \"If anything happens to me: Fundi — Kibos Motors.\"",
+      "kind": "true",
+      "about": [
+        "p_consolata",
+        "p_benedict"
+      ]
+    },
+    {
+      "id": "f_two_men",
+      "text": "Consolata: \"Tom said Fundi was two men: one who collects and one who works.\"",
+      "kind": "true",
+      "about": [
+        "p_consolata"
+      ]
+    },
+    {
+      "id": "f_tom_bail",
+      "text": "Consolata: Tom was out on bail from November and had started telling his lawyer about \"Fundi\".",
+      "kind": "true",
+      "about": [
+        "p_consolata"
+      ]
+    },
+    {
+      "id": "f_article",
+      "text": "Taifa Daily, 24 January: \"Usoma fisherman Walter Ogada says he saw a body dumped.\"",
+      "kind": "true",
+      "about": [
+        "p_walter",
+        "p_lorna"
+      ],
+      "at": {
+        "from": "00:00",
+        "to": null,
+        "day": "24 Jan"
+      }
+    },
+    {
+      "id": "f_livingstone",
+      "text": "Livingstone: on 25 January a man phoned \"from a fish company\" and asked where Walter keeps his boat. \"I told him. I thought he wanted to buy fish.\"",
+      "kind": "true",
+      "about": [
+        "p_livingstone",
+        "p_walter"
+      ]
+    },
+    {
+      "id": "f_liv_self",
+      "text": "Livingstone was at home in Usoma village with his family from 21:00.",
+      "kind": "true",
+      "about": [
+        "p_livingstone"
+      ],
+      "where": {
+        "person": "p_livingstone",
+        "place": "plc_lhome",
+        "from": "21:00",
+        "to": "06:30"
+      }
+    },
+    {
+      "id": "f_mary",
+      "text": "Mary: at 22:25 Walter said a buyer was bringing cash to the boat at 22:45 and went down. He never came back. She adds that Alloys Ondeng' once accused him of stealing nets.",
+      "kind": "true",
+      "about": [
+        "p_mary",
+        "p_walter",
+        "p_alloys"
+      ],
+      "at": {
+        "from": "22:25"
+      }
+    },
+    {
+      "id": "f_walter_phone",
+      "text": "Walter's phone: a call on 26 January at 22:20 from 07xx xxx 773, saved as \"Mnunuzi\" (buyer). WhatsApp: \"Meet at your boat 22:45, cash.\"",
+      "kind": "true",
+      "about": [
+        "p_walter"
+      ],
+      "at": {
+        "from": "22:20"
+      }
+    },
+    {
+      "id": "f_walter_cash",
+      "text": "Walter's phone and KSh 3,800 were still under the bow seat of his boat.",
+      "kind": "true",
+      "about": [
+        "p_walter"
+      ]
+    },
+    {
+      "id": "f_rec_caller_id",
+      "text": "Records: 07xx xxx 773 is registered to the national ID of a man who died nine years ago.",
+      "kind": "true",
+      "about": [
+        "loc_usoma"
+      ],
+      "spine": "t_registry"
+    },
+    {
+      "id": "f_rec_caller_masts",
+      "text": "Records, 07xx xxx 773: Kibos 21:00–22:00; Airport Road 22:05–22:15; Usoma 22:35–23:20. It also called Livingstone on 25 January.",
+      "kind": "true",
+      "about": [
+        "p_livingstone"
+      ],
+      "at": {
+        "from": "21:00",
+        "to": "23:20"
+      }
+    },
+    {
+      "id": "f_cctv",
+      "text": "Fuel station video, Airport Road, 22:08–22:12: Benedict Mbuvi gets out of a grey Kibos Motors station wagon and walks normally to the till and back.",
+      "kind": "true",
+      "about": [
+        "p_benedict"
+      ],
+      "at": {
+        "from": "22:08",
+        "to": "22:12"
+      }
+    },
+    {
+      "id": "f_abiud",
+      "text": "Abiud: at about 22:40 a man limping heavily walked from a car to the boats. At about 23:00 he heard splashing.",
+      "kind": "true",
+      "about": [
+        "p_abiud"
+      ],
+      "at": {
+        "from": "22:40",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_checkins",
+      "text": "Abiud's radio check-ins to the security company are logged from the guard hut at 22:45 and 23:15.",
+      "kind": "true",
+      "about": [
+        "p_abiud"
+      ],
+      "where": {
+        "person": "p_abiud",
+        "place": "plc_hut",
+        "from": "22:45",
+        "to": "23:15"
+      }
+    },
+    {
+      "id": "f_bootprints",
+      "text": "Boot prints in the wet sand by Walter's boat: the right ordinary, the left deeper with a square-edged heel mark.",
+      "kind": "true",
+      "about": [
+        "loc_usoma"
+      ]
+    },
+    {
+      "id": "f_no_crutch",
+      "text": "There are no crutch marks anywhere in the wet sand.",
+      "kind": "true",
+      "about": [
+        "loc_usoma"
+      ]
+    },
+    {
+      "id": "f_rec_ben",
+      "text": "Records, Benedict's own line: exactly the same masts as 07xx xxx 773, minute for minute, 21:00–23:20. The two phones travelled together.",
+      "kind": "true",
+      "about": [
+        "p_benedict"
+      ]
+    },
+    {
+      "id": "f_alarm",
+      "text": "Kibos Motors alarm: armed at 21:30, disarmed at 06:50. Nobody was inside the garage all night.",
+      "kind": "true",
+      "about": [
+        "p_benedict",
+        "p_kioko"
+      ]
+    },
+    {
+      "id": "f_garage_boat",
+      "text": "In the Kibos Motors yard: a white motorboat with a blue stripe, on a trailer.",
+      "kind": "true",
+      "about": [
+        "p_benedict"
+      ]
+    },
+    {
+      "id": "f_rope",
+      "text": "In the yard: a reel of blue nylon rope.",
+      "kind": "true",
+      "about": [
+        "p_benedict"
+      ]
+    },
+    {
+      "id": "f_boot",
+      "text": "In Benedict's car boot: a left boot with a 3 cm wooden block glued inside the heel.",
+      "kind": "true",
+      "about": [
+        "p_benedict"
+      ]
+    },
+    {
+      "id": "f_grapnel",
+      "text": "In the car boot: a three-pronged grapnel anchor with hyacinth fibres in its prongs.",
+      "kind": "true",
+      "about": [
+        "p_benedict"
+      ]
+    },
+    {
+      "id": "f_not_customer",
+      "text": "Kibos Motors job book: Walter Ogada was never a customer.",
+      "kind": "true",
+      "about": [
+        "p_walter"
+      ]
+    },
+    {
+      "id": "f_garage_mvua",
+      "text": "Kibos Motors cash book: \"M.H. — collection\", every month.",
+      "kind": "true",
+      "about": [
+        "p_benedict"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_lineup",
+      "text": "Photo line-up: Daniel Gichuru, Calvin Wamalwa and Millicent Akoth each point to Benedict. \"That's Fundi.\" Gichuru adds: \"But he limped. Badly.\"",
+      "kind": "true",
+      "about": [
+        "p_benedict"
+      ],
+      "spine": "t_fundi"
+    },
+    {
+      "id": "f_abiud_face",
+      "text": "Abiud at the line-up: \"Everyone looks at my leg. I look at faces.\" That face, under the beach light, walking to the boats at 22:40.",
+      "kind": "true",
+      "about": [
+        "p_abiud",
+        "p_benedict"
+      ],
+      "where": {
+        "person": "p_benedict",
+        "place": "plc_boats",
+        "from": "22:40",
+        "to": "23:05"
+      }
+    },
+    {
+      "id": "f_bar",
+      "text": "Bar tab: Alloys and four friends, opened 20:30, closed 00:40.",
+      "kind": "true",
+      "about": [
+        "p_alloys"
+      ],
+      "where": {
+        "person": "p_alloys",
+        "place": "plc_bar",
+        "from": "20:30",
+        "to": "00:40"
+      }
+    },
+    {
+      "id": "f_nets",
+      "text": "BMU minutes: the net dispute between Alloys and Walter was settled by the committee on 20 January.",
+      "kind": "true",
+      "about": [
+        "p_alloys",
+        "p_walter"
+      ]
+    },
+    {
+      "id": "f_no_levy",
+      "text": "BMU minutes: no levy dispute with Walter in eleven years.",
+      "kind": "true",
+      "about": [
+        "p_walter"
+      ]
+    },
+    {
+      "id": "f_kioko_mother",
+      "text": "Mwende: Kioko slept at her house in Kibos on Monday night, from 19:00.",
+      "kind": "true",
+      "about": [
+        "p_mamakioko",
+        "p_kioko"
+      ],
+      "where": {
+        "person": "p_kioko",
+        "place": "plc_mother",
+        "from": "19:00",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_aut_wounds",
+      "text": "Autopsy: three puncture wounds in a triangular pattern, as from a three-pronged grapnel, then drowning: he was held under.",
+      "kind": "true",
+      "about": [
+        "p_walter"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 22:45 and 23:30.",
+      "kind": "true",
+      "about": [
+        "p_walter"
+      ],
+      "at": {
+        "from": "22:45",
+        "to": "23:30"
+      }
+    },
+    {
+      "id": "f_aut_notbite",
+      "text": "Autopsy: no bite, no propeller cuts, a sound heart.",
+      "kind": "true",
+      "about": [
+        "p_walter"
+      ]
+    },
+    {
+      "id": "f_boot_match",
+      "text": "Comparison: the left prints by Walter's boat were made by the blocked boot, square heel edge and all.",
+      "kind": "true",
+      "about": [
+        "p_benedict"
+      ]
+    },
+    {
+      "id": "f_trace",
+      "text": "Lab: hyacinth fibres and Walter's blood on the grapnel's prongs.",
+      "kind": "true",
+      "about": [
+        "p_walter",
+        "p_benedict"
+      ]
+    },
+    {
+      "id": "f_rope_match",
+      "text": "Lab: the rope on the garage reel and the rope that bound Tom's body are the same: colour, weave and fibre count.",
+      "kind": "true",
+      "about": [
+        "p_benedict"
+      ]
+    },
+    {
+      "id": "f_ben_garage",
+      "text": "Benedict: \"I was at my garage until midnight, then home. I've never been to Usoma.\"",
+      "kind": "lie",
+      "about": [
+        "p_benedict"
+      ]
+    },
+    {
+      "id": "f_ben_noboat",
+      "text": "Benedict: \"I don't own a boat.\"",
+      "kind": "lie",
+      "about": [
+        "p_benedict"
+      ]
+    },
+    {
+      "id": "f_kivuli_desk",
+      "text": "Benedict, shown the line-up: \"You keep looking for a man. Kivuli is a desk.\" Then he asks for a lawyer.",
+      "kind": "true",
+      "about": [
+        "p_benedict"
+      ],
+      "spine": "t_kivuli"
+    },
+    {
+      "id": "f_kioko_garage",
+      "text": "Kioko: \"Fundi was in the garage all night. I was there.\"",
+      "kind": "lie",
+      "about": [
+        "p_kioko",
+        "p_benedict"
+      ]
+    },
+    {
+      "id": "f_kioko_reveal",
+      "text": "Kioko: he wasn't at the garage; he sleeps at his mother's. \"He told me to say it. If anyone asks, he was at the garage.\"",
+      "kind": "true",
+      "about": [
+        "p_kioko",
+        "p_benedict"
+      ]
+    },
+    {
+      "id": "f_alloys_claim",
+      "text": "Alloys: \"I was drinking in town.\"",
+      "kind": "claim",
+      "about": [
+        "p_alloys"
+      ]
+    },
+    {
+      "id": "f_alloys_round",
+      "text": "Alloys: \"We settled it. Walter even bought the first round.\"",
+      "kind": "true",
+      "about": [
+        "p_alloys",
+        "p_walter"
+      ]
+    },
+    {
+      "id": "f_abiud_claim",
+      "text": "Abiud: \"Everyone's saying 'the limping man'. Look at me. You think I could hold a man under water?\"",
+      "kind": "claim",
+      "about": [
+        "p_abiud"
+      ]
+    },
+    {
+      "id": "f_liv_claim",
+      "text": "Livingstone: \"I told a caller where his boat was.\"",
+      "kind": "claim",
+      "about": [
+        "p_livingstone"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_benedict",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_cctv"
+      ],
+      "intro": "Benedict walks into the interview room without a limp, sits down and folds his hands. He says nothing until you show him something.",
+      "claims": [
+        "f_ben_garage",
+        "f_ben_noboat"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_garage",
+          "reply": "I repair boats. Lots of people's boats are in my yard.",
+          "reveals": []
+        },
+        {
+          "about": "ev_lineup",
+          "reply": "You keep looking for a man. Kivuli is a desk. ...I'll have a lawyer now.",
+          "reveals": [
+            "f_kivuli_desk"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_kioko",
+      "stance": "cooperative",
+      "intro": "Kioko stands by an engine on its stand, wiping a clean spanner. \"Fundi was in the garage all night. I was there.\"",
+      "claims": [
+        "f_kioko_garage"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_alloys",
+      "stance": "cooperative",
+      "intro": "Alloys sits on the edge of a boat, turning his cap in his hands. \"I was drinking in town. Ask the barman.\"",
+      "claims": [
+        "f_alloys_claim"
+      ],
+      "yields": [
+        "ev_bar"
+      ],
+      "topics": [
+        {
+          "about": "ev_nets",
+          "reply": "We settled it. Walter even bought the first round.",
+          "reveals": [
+            "f_alloys_round"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_abiud",
+      "stance": "cooperative",
+      "intro": "Abiud stands straight on his crutch at the hut door. \"Everyone's saying 'the limping man'. Look at me.\"",
+      "claims": [
+        "f_abiud_claim"
+      ],
+      "yields": [
+        "ev_abiud"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_livingstone",
+      "stance": "cooperative",
+      "intro": "Livingstone hasn't slept. \"I took his statement. Then I told a stranger where his boat was. Write that down.\"",
+      "claims": [
+        "f_liv_claim"
+      ],
+      "yields": [
+        "ev_livingstone"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_lorna",
+      "stance": "cooperative",
+      "intro": "Lorna meets you at the newspaper's Kisumu office with the clipping. \"Two paragraphs. I named him. I thought it would protect him.\"",
+      "claims": [],
+      "yields": [
+        "ev_article"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_mary",
+      "stance": "cooperative",
+      "intro": "Mary sits by the door with Walter's float in her lap, a folded newspaper beside her. \"He said a buyer was coming with cash. At night. To the boat.\"",
+      "claims": [],
+      "yields": [
+        "ev_mary",
+        "ev_article"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_ben_garage",
+      "claim": "f_ben_garage",
+      "brokenBy": [
+        "f_alarm",
+        "f_rec_ben"
+      ],
+      "reveals": [],
+      "reaction": "He looks at the alarm log, then at you. \"I repair boats. Lots of people's boats are in my yard.\" Then nothing.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_ben_noboat",
+      "claim": "f_ben_noboat",
+      "brokenBy": [
+        "f_garage_boat"
+      ],
+      "reveals": [],
+      "reaction": "Benedict looks at the photograph of the white boat with the blue stripe and says nothing at all.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_kioko",
+      "claim": "f_kioko_garage",
+      "brokenBy": [
+        "f_alarm"
+      ],
+      "reveals": [
+        "f_kioko_reveal",
+        "ev_mwende"
+      ],
+      "reaction": "\"I wasn't there. He told me to say it. I sleep at my mother's. He told me if anyone asks, he was at the garage.\"",
+      "mark": "explains"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_benedict",
+      "text": "Benedict Mbuvi",
+      "category": "person",
+      "ref": "p_benedict",
+      "unlock": {
+        "anyOf": [
+          "f_tom_note"
+        ]
+      }
+    },
+    {
+      "id": "w_kioko",
+      "text": "Kioko Nzau",
+      "category": "person",
+      "ref": "p_kioko",
+      "unlock": {
+        "anyOf": [
+          "f_tom_note"
+        ]
+      }
+    },
+    {
+      "id": "w_alloys",
+      "text": "Alloys Ondeng'",
+      "category": "person",
+      "ref": "p_alloys",
+      "unlock": {
+        "anyOf": [
+          "f_mary"
+        ]
+      }
+    },
+    {
+      "id": "w_abiud",
+      "text": "Abiud Okech",
+      "category": "person",
+      "ref": "p_abiud",
+      "unlock": {
+        "anyOf": [
+          "f_abiud"
+        ]
+      }
+    },
+    {
+      "id": "w_livingstone",
+      "text": "Livingstone Odawa",
+      "category": "person",
+      "ref": "p_livingstone",
+      "unlock": {
+        "anyOf": [
+          "f_livingstone"
+        ]
+      }
+    },
+    {
+      "id": "h_grapnel",
+      "text": "struck with a grapnel anchor and held under the hyacinth",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_wounds"
+        ]
+      }
+    },
+    {
+      "id": "h_fell",
+      "text": "fell from his boat and drowned",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_hippo",
+      "text": "attacked by a hippo",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_prop",
+      "text": "struck by a passing boat's propeller",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack in the water",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_witness",
+      "text": "Walter had seen him dump Tom Ochieng's body and had gone public",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_walter_statement"
+        ]
+      }
+    },
+    {
+      "id": "m_nets",
+      "text": "the stolen-nets quarrel",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_mary"
+        ]
+      }
+    },
+    {
+      "id": "m_levy",
+      "text": "a BMU levy dispute",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_livingstone"
+        ]
+      }
+    },
+    {
+      "id": "m_repair",
+      "text": "an unpaid boat-repair bill",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_tom_note"
+        ]
+      }
+    },
+    {
+      "id": "m_robbery",
+      "text": "robbery",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_walter_phone"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_tom",
+      "text": "Tom Ochieng — the courier from River Road (case 10)",
+      "category": "pin",
+      "pin": "case-010:f_slip_refused",
+      "unlock": {
+        "anyOf": [
+          "f_tom_report"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_gichuru",
+      "text": "Daniel Gichuru (case 30; in custody)",
+      "category": "pin",
+      "pin": "case-030:f_gich_fundi",
+      "unlock": {
+        "anyOf": [
+          "f_tom_report"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_calvin",
+      "text": "Calvin Wamalwa (case 40; in custody)",
+      "category": "pin",
+      "pin": "case-040:f_cal_fundi",
+      "unlock": {
+        "anyOf": [
+          "f_tom_report"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_hezekiah",
+      "text": "Hezekiah Onsongo (case 33)",
+      "category": "pin",
+      "pin": "case-033:f_brief_seal",
+      "unlock": {
+        "anyOf": [
+          "f_tom_report"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_kivuli",
+      "text": "The note \"Kivuli wants it Friday\" (case 10)",
+      "category": "pin",
+      "pin": "case-010:f_note_kivuli",
+      "unlock": {
+        "anyOf": [
+          "f_tom_report"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} by {how}, because {why}. The body Walter saw dumped in January was {pin}.",
+    "fixed": {
+      "victim": "Walter Ogada"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_nov",
+                  "label": "November (Tom's bail)",
+                  "from": null,
+                  "to": null,
+                  "day": "November"
+                },
+                {
+                  "id": "sl_jan5",
+                  "label": "5 January, about 02:00",
+                  "from": "02:00",
+                  "to": "02:00",
+                  "day": "5 Jan"
+                },
+                {
+                  "id": "sl_jan15",
+                  "label": "15 January",
+                  "from": null,
+                  "to": null,
+                  "day": "15 Jan"
+                },
+                {
+                  "id": "sl_jan24",
+                  "label": "24 January",
+                  "from": null,
+                  "to": null,
+                  "day": "24 Jan"
+                },
+                {
+                  "id": "sl_jan26a",
+                  "label": "26 January, 22:10",
+                  "from": "22:10",
+                  "to": "22:10",
+                  "day": "26 Jan"
+                },
+                {
+                  "id": "sl_jan26b",
+                  "label": "26 January, 22:45–23:30",
+                  "from": "22:45",
+                  "to": "23:30",
+                  "day": "26 Jan"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_dump",
+                  "text": "Tom Ochieng's body is dumped",
+                  "slot": "sl_jan5",
+                  "by": [
+                    "f_walter_statement",
+                    "f_tom_report"
+                  ],
+                  "why": "Walter saw the bundle go over at about 02:00 on 5 January; Dr. Chebii's report says Tom was dead before he entered the water.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_walter_statement"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_statement",
+                  "text": "Walter gives his statement",
+                  "slot": "sl_jan15",
+                  "by": [
+                    "f_walter_statement"
+                  ],
+                  "why": "Livingstone dated it 15 January, the day the body surfaced.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_walter_statement"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_article",
+                  "text": "The newspaper names Walter",
+                  "slot": "sl_jan24",
+                  "by": [
+                    "f_article"
+                  ],
+                  "why": "Taifa Daily, 24 January.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_article"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_fuel",
+                  "text": "Benedict walks normally at the fuel station",
+                  "slot": "sl_jan26a",
+                  "by": [
+                    "f_cctv"
+                  ],
+                  "why": "The station camera: 22:08 to 22:12 on 26 January.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_cctv"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Walter is killed",
+                  "slot": "sl_jan26b",
+                  "by": [
+                    "f_aut_tod",
+                    "f_walter_phone",
+                    "f_abiud",
+                    "f_mary"
+                  ],
+                  "why": "He went down to meet the \"buyer\" at 22:45; splashing at 23:00; the autopsy says 22:45 to 23:30.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_nov",
+                  "by": [
+                    "f_tom_bail"
+                  ],
+                  "why": "November is when Tom Ochieng got bail, weeks before anyone was killed."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A body on the fifth, a statement on the fifteenth, a newspaper on the twenty-fourth, and two days later a man who walked straight at a fuel pump limped to the boats. That's the order.",
+          "fail": [
+            "November is Tom's bail. Nothing happened to Walter then.",
+            "The fuel station comes before the boats. Read the clock on the video."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_benedict"
+          }
+        ],
+        "prosecutor": {
+          "pass": "His phone travelled with the caller's, his boot made the prints, his grapnel carries Walter's blood, and three people who met Fundi point to him. And the guard who looked at his face.",
+          "fail": [
+            "The guard limps for real. Look at the sand: no crutch marks, and a block in a boot.",
+            "The apprentice lied for his boss. He was asleep at his mother's."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_grapnel"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Three prongs, then the hyacinth. Yes.",
+          "fail": [
+            "Three punctures in a triangle. That's no hippo.",
+            "Wounds first, water second. He didn't fall."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_witness"
+          }
+        ],
+        "prosecutor": {
+          "pass": "He saw a body go into the lake and said so. That's the reason.",
+          "fail": [
+            "The nets quarrel was settled. Walter bought the first round.",
+            "His cash and phone were still in the boat."
+          ]
+        }
+      },
+      {
+        "id": "g_spine",
+        "kind": "spine",
+        "blanks": [
+          {
+            "id": "pin",
+            "category": "pin",
+            "answer": "w_pin_tom",
+            "spine": true
+          }
+        ],
+        "prosecutor": {
+          "pass": "Fundi. Finally a face. Amani, sit down. I'm buying the tea.",
+          "fail": [
+            "Read the name on Dr. Chebii's January report. You arrested him once.",
+            "That one is alive and in custody; he picked Fundi out of the line-up."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_usoma",
+      "from": "22:45",
+      "to": "23:30",
+      "within": [
+        "plc_boats",
+        "plc_hut"
+      ],
+      "note": "The meeting set for 22:45; splashing at 23:00; the autopsy range closes at 23:30."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_walter_statement",
+          "f_tom_report",
+          "f_tom_note",
+          "f_tom_bail"
+        ],
+        "concludes": "Walter saw a body dumped from a white motorboat with a blue stripe on 5 January. It was Tom Ochieng, out on bail and talking, who had written: \"If anything happens to me: Fundi — Kibos Motors.\""
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_article",
+          "f_livingstone",
+          "f_walter_phone",
+          "f_mary",
+          "f_rec_caller_id",
+          "f_rec_caller_masts"
+        ],
+        "concludes": "After the newspaper named him, a caller on a dead man's ID found out where Walter kept his boat and lured him there at 22:45. That phone moved Kibos, Airport Road, Usoma."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_cctv",
+          "f_rec_ben",
+          "f_ben_garage"
+        ],
+        "concludes": "Benedict's own phone moved with the caller's minute for minute, and at 22:10 the fuel-station camera shows him walking normally."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_abiud",
+          "f_bootprints",
+          "f_boot",
+          "f_boot_match",
+          "f_no_crutch",
+          "f_checkins",
+          "f_aut_tod",
+          "f_aut_wounds"
+        ],
+        "concludes": "The man at the boats limped, but the prints have a square block in the left heel, and that boot is in Benedict's car. The limp is a costume. Abiud, checking in from his hut, leaves no crutch marks. Walter died between 22:45 and 23:30.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_alarm",
+          "f_kioko_garage",
+          "f_kioko_reveal",
+          "f_ben_noboat",
+          "f_garage_boat",
+          "f_grapnel",
+          "f_trace",
+          "f_rope",
+          "f_rope_match",
+          "f_lineup",
+          "f_abiud_face"
+        ],
+        "concludes": "Benedict wasn't at his garage; his apprentice lied for him. His grapnel carries Walter's blood, his rope bound Tom, and four witnesses know his face. Benedict Mbuvi struck Walter with a grapnel and held him under the hyacinth because Walter had seen him dump Tom Ochieng's body and gone public.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      },
+      {
+        "id": "s6",
+        "from": [
+          "f_tom_report",
+          "case-010:f_slip_refused"
+        ],
+        "concludes": "The body Walter saw dumped was Tom Ochieng, the Haraka courier who collected the Mvua order on River Road in case 10.",
+        "answers": [
+          "pin"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_kioko",
+        "blank": "who",
+        "by": [
+          "f_kioko_mother"
+        ],
+        "why": "Kioko slept at his mother's in Kibos. His crime is the lie he was told to tell."
+      },
+      {
+        "word": "w_alloys",
+        "blank": "who",
+        "by": [
+          "f_bar"
+        ],
+        "why": "Alloys was on a bar tab in town from 20:30 to 00:40."
+      },
+      {
+        "word": "w_abiud",
+        "blank": "who",
+        "by": [
+          "f_boot_match",
+          "f_no_crutch",
+          "f_checkins"
+        ],
+        "why": "Abiud was at the beach, in his hut, checking in at 22:45 and 23:15. The prints by the boat were made by a blocked boot, and there are no crutch marks anywhere in the sand. The man the village suspected is the one who looked at the killer's face.",
+        "present": true
+      },
+      {
+        "word": "w_livingstone",
+        "blank": "who",
+        "by": [
+          "f_liv_self"
+        ],
+        "why": "Livingstone was at home with his family from 21:00. He was deceived, not involved."
+      },
+      {
+        "word": "h_fell",
+        "blank": "how",
+        "by": [
+          "f_aut_wounds"
+        ],
+        "why": "Three puncture wounds came first."
+      },
+      {
+        "word": "h_hippo",
+        "blank": "how",
+        "by": [
+          "f_aut_wounds",
+          "f_aut_notbite"
+        ],
+        "why": "A triangle of punctures, not a bite."
+      },
+      {
+        "word": "h_prop",
+        "blank": "how",
+        "by": [
+          "f_aut_notbite"
+        ],
+        "why": "No propeller cuts."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_notbite",
+          "f_aut_wounds"
+        ],
+        "why": "A sound heart; he was wounded and held under."
+      },
+      {
+        "word": "m_nets",
+        "blank": "why",
+        "by": [
+          "f_nets",
+          "f_bar"
+        ],
+        "why": "The net quarrel was settled on 20 January, and Alloys was in town."
+      },
+      {
+        "word": "m_levy",
+        "blank": "why",
+        "by": [
+          "f_no_levy"
+        ],
+        "why": "No levy dispute in eleven years."
+      },
+      {
+        "word": "m_repair",
+        "blank": "why",
+        "by": [
+          "f_not_customer"
+        ],
+        "why": "Walter was never a Kibos Motors customer."
+      },
+      {
+        "word": "m_robbery",
+        "blank": "why",
+        "by": [
+          "f_walter_cash"
+        ],
+        "why": "His cash and phone were still in the boat."
+      },
+      {
+        "word": "w_pin_gichuru",
+        "blank": "pin",
+        "by": [
+          "f_lineup"
+        ],
+        "why": "Gichuru is alive and in custody; he picked Fundi out of the line-up."
+      },
+      {
+        "word": "w_pin_calvin",
+        "blank": "pin",
+        "by": [
+          "f_lineup"
+        ],
+        "why": "Calvin is alive and in custody; he picked Fundi out of the line-up."
+      },
+      {
+        "word": "w_pin_hezekiah",
+        "blank": "pin",
+        "by": [
+          "case-033:f_brief_seal",
+          "f_tom_report"
+        ],
+        "why": "Hezekiah's body was found and named in October. The January report names Tom Ochieng."
+      },
+      {
+        "word": "w_pin_kivuli",
+        "blank": "pin",
+        "by": [
+          "case-010:f_note_kivuli"
+        ],
+        "why": "That pin is a note, not a body."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Benedict Mbuvi is Fundi: Mvua's collector. When he collects or threatens, he wears a left boot with a wooden block in the heel and limps, so every witness remembers the limp and nobody remembers a mechanic who walks perfectly well.",
+        "image": null
+      },
+      {
+        "text": "Tom Ochieng, out on bail, starts telling his lawyer about Fundi. On the night of 4–5 January Benedict kills him and drops him by the hyacinth mat from his white-and-blue motorboat. Walter, checking his nets, sees a limping man heave a bundle over the side.",
+        "image": null
+      },
+      {
+        "text": "15 January: the body surfaces and Walter makes his statement. 24 January: the newspaper names him. 25 January: a \"fish buyer\" asks Livingstone where Walter keeps his boat.",
+        "image": null
+      },
+      {
+        "text": "26 January, 22:10. Benedict stops for fuel and walks to the till like any man, forgetting the cameras. At Usoma he puts on the boot. At the boats he strikes Walter with a grapnel and holds him under the hyacinth.",
+        "image": "loc_usoma"
+      },
+      {
+        "text": "His apprentice says the boss was at the garage all night. Abiud, on his crutch at the hut door, had watched the limping man walk past the beach light, and had looked at his face.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "Benedict's one sentence, shown the line-up, is pinned to t_kivuli: \"You keep looking for a man. Kivuli is a desk.\""
+    },
+    {
+      "beat": "Pattern File: Fundi's thread gets a face, Benedict's custody photograph, and closes as IDENTIFIED. A new pin on t_registry: the caller's phone was registered to the ID of a man nine years dead, the same trick as the ghost members in case 37."
+    },
+    {
+      "beat": "Mwalimu's voice-note, the first in weeks: \"A desk. Write that down. Then burn the note.\""
+    },
+    {
+      "beat": "Amani's notebook, in the margin beside the boot photograph: \"Everyone remembered the limp. Nobody remembered the man.\""
+    },
+    {
+      "beat": "Collectible: Walter's carved wooden fishing float, given to Amani by Mary Ogada: \"He said you'd come. He said someone always comes in the end.\""
+    }
+  ],
+  "clockPlan": {
+    "note": "Three stamps, the region maximum: records on the caller, records on Benedict, the warrant on the garage. Detain Benedict after the search; the trace (12 h) and rope (8 h) results and the line-up come back inside his 24 hours. No rush.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_usoma",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_prints",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_walter_phone",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_abiud_log",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_mary"
+      },
+      {
+        "do": "visit",
+        "target": "loc_bmu",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_walter_statement",
+        "hours": 1
+      },
+      {
+        "do": "visit",
+        "target": "loc_archive",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_tom_report",
+        "hours": 1
+      },
+      {
+        "do": "visit",
+        "target": "loc_consolata",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_consolata",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_livingstone"
+      },
+      {
+        "do": "records",
+        "target": "ev_records_caller"
+      },
+      {
+        "do": "visit",
+        "target": "loc_fuel",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_cctv",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_abiud"
+      },
+      {
+        "do": "records",
+        "target": "ev_records_benedict"
+      },
+      {
+        "do": "visit",
+        "target": "loc_kibos",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_alarm",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_kioko"
+      },
+      {
+        "do": "press",
+        "target": "c_kioko"
+      },
+      {
+        "do": "interview",
+        "target": "p_benedict"
+      },
+      {
+        "do": "press",
+        "target": "c_ben_garage"
+      },
+      {
+        "do": "search",
+        "target": "loc_garage"
+      },
+      {
+        "do": "detain",
+        "target": "p_benedict"
+      },
+      {
+        "do": "submit",
+        "target": "ev_trace"
+      },
+      {
+        "do": "submit",
+        "target": "ev_rope"
+      },
+      {
+        "do": "press",
+        "target": "c_ben_noboat"
+      },
+      {
+        "do": "visit",
+        "target": "loc_lineup",
+        "hours": 3
+      },
+      {
+        "do": "read",
+        "target": "ev_lineup",
+        "hours": 1
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 8
+      },
+      {
+        "do": "interview",
+        "target": "p_benedict"
+      }
+    ],
+    "totalHours": 50
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_walter_statement",
+        "line": "This strip spans weeks. Start with what Walter saw, and when."
+      },
+      "tier2": {
+        "facts": [
+          "f_article",
+          "f_cctv"
+        ],
+        "line": "Named in the paper on the 24th. On the 26th a man walks straight at a fuel pump at 22:10."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_consolata",
+        "line": "Tom wrote down a name and a garage before he died."
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_ben",
+          "f_boot_match"
+        ],
+        "line": "Two phones moving as one, and a boot with a block in the heel."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Three small wounds in a triangle. What has three prongs at a beach?"
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_wounds",
+          "f_trace"
+        ],
+        "line": "Punctures, then drowning, and Walter's blood on a grapnel."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_article",
+        "line": "Two paragraphs in a newspaper put a man in danger."
+      },
+      "tier2": {
+        "facts": [
+          "f_walter_statement",
+          "f_article"
+        ],
+        "line": "He saw a body go over the side, and the paper printed his name."
+      }
+    },
+    "g_spine": {
+      "tier1": {
+        "point": "ev_tom_report",
+        "line": "Read the name on Dr. Chebii's January report, Detective. You've met him."
+      },
+      "tier2": {
+        "facts": [
+          "f_tom_report",
+          "case-010:f_slip_refused"
+        ],
+        "line": "Tom Ochieng. The courier who collected the Mvua order on River Road."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "kuelea",
+      "def": "To float; here, a fisherman's net float."
+    },
+    {
+      "term": "nanga",
+      "def": "Anchor."
+    },
+    {
+      "term": "magugu maji",
+      "def": "Water hyacinth (literally \"water weeds\")."
+    },
+    {
+      "term": "mnunuzi",
+      "def": "Buyer."
+    },
+    {
+      "term": "fundi",
+      "def": "Mechanic, craftsman. Here, his nickname, finally explained."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    },
+    {
+      "term": "kivuli",
+      "def": "Shadow. The name on the note in case 10."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "stripSpansWeeks",
+      "identificationLineup"
+    ],
+    "beatNotes": "A WHEN strip that spans weeks, with a scale switch on the rail from hours to days to weeks. And the identification line-up as evidence: characters from earlier cases, visited in custody, look at eight faces."
+  }
+}

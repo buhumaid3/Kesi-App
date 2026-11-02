@@ -1,0 +1,1977 @@
+{
+  "schemaVersion": 1,
+  "title": "Kesi: Kenya Case Files",
+  "protagonist": {
+    "id": "amani",
+    "name": "Amani",
+    "rule": "Never shown, never gendered, never voiced. Seen only through hands, the desk, the notebook and the phone."
+  },
+  "unit": {
+    "name": "Special Crimes Unit (SCU)",
+    "station": "Tausi Lane Police Station",
+    "note": "Fictional unit and fictional station in Nairobi."
+  },
+  "obFormat": "OB {entry}/{day}/{month}",
+  "regions": [
+    {
+      "number": 1,
+      "key": "nairobi-cbd",
+      "name": "Nairobi CBD",
+      "cases": [
+        1,
+        10
+      ],
+      "months": "March–May (year 1)",
+      "allows": {
+        "evidenceTypes": [
+          "physical",
+          "witness"
+        ],
+        "gates": [],
+        "contradictions": false,
+        "lies": false,
+        "groups": [
+          "who"
+        ],
+        "stances": [
+          "cooperative"
+        ]
+      },
+      "labTransportHours": 0
+    },
+    {
+      "number": 2,
+      "key": "eastlands",
+      "name": "Eastlands",
+      "cases": [
+        11,
+        20
+      ],
+      "months": "May–July (year 1)",
+      "allows": {
+        "evidenceTypes": [
+          "physical",
+          "witness"
+        ],
+        "gates": [
+          "warrant"
+        ],
+        "contradictions": true,
+        "lies": true,
+        "groups": [
+          "who",
+          "spine"
+        ],
+        "stances": [
+          "cooperative",
+          "guarded"
+        ],
+        "liarsPerCase": [
+          1,
+          1
+        ]
+      },
+      "labTransportHours": 0
+    },
+    {
+      "number": 3,
+      "key": "mombasa-old-town",
+      "name": "Mombasa Old Town",
+      "cases": [
+        21,
+        30
+      ],
+      "months": "July–September (year 1)",
+      "allows": {
+        "evidenceTypes": [
+          "physical",
+          "witness",
+          "document",
+          "phone"
+        ],
+        "gates": [
+          "warrant",
+          "records"
+        ],
+        "contradictions": true,
+        "lies": true,
+        "groups": [
+          "who",
+          "why",
+          "spine"
+        ],
+        "stances": [
+          "cooperative",
+          "guarded"
+        ],
+        "liarsPerCase": [
+          1,
+          1
+        ]
+      },
+      "labTransportHours": 0
+    },
+    {
+      "number": 4,
+      "key": "rift-valley",
+      "name": "Rift Valley / Nakuru",
+      "cases": [
+        31,
+        40
+      ],
+      "months": "September–November (year 1)",
+      "allows": {
+        "evidenceTypes": [
+          "physical",
+          "witness",
+          "document",
+          "phone",
+          "forensic"
+        ],
+        "gates": [
+          "warrant",
+          "records",
+          "forensicRush"
+        ],
+        "contradictions": true,
+        "lies": true,
+        "groups": [
+          "who",
+          "why",
+          "how",
+          "spine"
+        ],
+        "stances": [
+          "cooperative",
+          "guarded"
+        ],
+        "liarsPerCase": [
+          1,
+          2
+        ]
+      },
+      "labTransportHours": 0
+    },
+    {
+      "number": 5,
+      "key": "kisumu-lake",
+      "name": "Kisumu & Lake Victoria",
+      "cases": [
+        41,
+        50
+      ],
+      "months": "December–January",
+      "allows": {
+        "evidenceTypes": [
+          "physical",
+          "witness",
+          "document",
+          "phone",
+          "forensic",
+          "cctv"
+        ],
+        "gates": [
+          "warrant",
+          "records",
+          "forensicRush"
+        ],
+        "contradictions": true,
+        "lies": true,
+        "groups": [
+          "who",
+          "why",
+          "how",
+          "when",
+          "spine"
+        ],
+        "stances": [
+          "cooperative",
+          "guarded"
+        ],
+        "liarsPerCase": [
+          1,
+          2
+        ]
+      },
+      "labTransportHours": 0,
+      "whenRule": "WHEN arrives in case 41. Cases 41–42: a single time window chosen from at least 5. From case 43: a timeline strip of 3–5 events dragged into time slots, graded as one group (master list F1).",
+      "moonNote": "Real moon phases for the game calendar: full moon 3 Jan 2026, new moon 18 Jan, first quarter 26 Jan, full moon 1 Feb. Omena boats stay in on bright-moon nights and wait for moonset on half-moon nights."
+    },
+    {
+      "number": 6,
+      "key": "maasai-mara",
+      "name": "Maasai Mara",
+      "cases": [
+        51,
+        60
+      ],
+      "months": "February–March (year 2)",
+      "allows": {
+        "evidenceTypes": [
+          "physical",
+          "witness",
+          "document",
+          "phone",
+          "forensic",
+          "cctv"
+        ],
+        "gates": [
+          "warrant",
+          "records",
+          "forensicRush"
+        ],
+        "contradictions": true,
+        "lies": true,
+        "groups": [
+          "who",
+          "why",
+          "how",
+          "when",
+          "where",
+          "spine"
+        ],
+        "stances": [
+          "cooperative",
+          "guarded"
+        ],
+        "liarsPerCase": [
+          2,
+          2
+        ]
+      },
+      "labTransportHours": 0,
+      "whereRule": "WHERE arrives in case 51: where the killing actually happened, often not where the body was found. At least 5 place options. Case 59 asks where the culprit really was; case 60 has two blanks (master list G1).",
+      "gateNote": "Reserve gates close from 18:30 to 06:00; every gate keeps a logbook of vehicles in and out."
+    },
+    {
+      "number": 7,
+      "key": "mt-kenya",
+      "name": "Mt Kenya / Nyeri",
+      "cases": [
+        61,
+        70
+      ],
+      "months": "April–May (year 2)",
+      "allows": {
+        "evidenceTypes": [
+          "physical",
+          "witness",
+          "document",
+          "phone",
+          "forensic",
+          "cctv"
+        ],
+        "gates": [
+          "warrant",
+          "records",
+          "forensicRush"
+        ],
+        "contradictions": true,
+        "lies": true,
+        "groups": [
+          "who",
+          "why",
+          "how",
+          "when",
+          "where",
+          "forgery",
+          "spine"
+        ],
+        "stances": [
+          "cooperative",
+          "guarded",
+          "lawyered"
+        ],
+        "liarsPerCase": [
+          2,
+          3
+        ]
+      },
+      "labTransportHours": 0,
+      "forgeryRule": "From case 61 documents are evidence that may be genuine or forged. The FORGERY group is two blanks, \"{document} was forged, as shown by {tell}\", with at least 5 documents and 6 tells (30 combinations). Each forgery has one decisive tell; cases 62 and 70 accept a second proven tell (rule 18).",
+      "lawyerRule": "A lawyered suspect answers \"On my advocate's advice, no comment\" until the player presents a reopening fact; a wrong attempt costs a stamp, like a wrong press. Advocate Benjamin Muchiri appears in cases 62, 66 and 70.",
+      "calendarNote": "Real 2026 calendar: Easter Sunday is 5 April; Labour Day 1 May; Madaraka Day 1 June. Region 7 runs 1 April to 28 May."
+    },
+    {
+      "number": 8,
+      "key": "northern-frontier",
+      "name": "Northern frontier",
+      "cases": [
+        71,
+        80
+      ],
+      "months": "June–early August (year 2)",
+      "allows": {
+        "evidenceTypes": [
+          "physical",
+          "witness",
+          "document",
+          "phone",
+          "forensic",
+          "cctv"
+        ],
+        "gates": [
+          "warrant",
+          "records",
+          "forensicRush"
+        ],
+        "contradictions": true,
+        "lies": true,
+        "groups": [
+          "who",
+          "why",
+          "how",
+          "when",
+          "where",
+          "forgery",
+          "absence",
+          "spine"
+        ],
+        "stances": [
+          "cooperative",
+          "guarded",
+          "lawyered"
+        ],
+        "liarsPerCase": [
+          2,
+          3
+        ]
+      },
+      "labTransportHours": 4,
+      "travelHours": [
+        0,
+        7
+      ],
+      "absenceRule": "From case 71 each location carries an Expected list grounded in a statement or a stated routine. An unmet expectation can be noted as missing, which creates an ABSENCE fact (a dotted card). The ABSENCE group is two blanks, \"{what's missing} shows that {conclusion}\", at least 5 × 6 = 30 combinations; accepted alternatives must be proven (rule 18).",
+      "travelNote": "Distances are measured in hours of Land Cruiser: a single trip may cost up to 7 case-clock hours (Loiyangalani to Marsabit is 6).",
+      "labNote": "Samples go by road to Isiolo and on the morning flight to Nairobi: +4 hours on every lab test.",
+      "calendarNote": "Real 2026 calendar, June to early August. Madaraka Day 1 June."
+    },
+    {
+      "number": 9,
+      "key": "westlands-karen-runda",
+      "name": "Westlands / Karen / Runda",
+      "cases": [
+        81,
+        90
+      ],
+      "months": "August–September (year 2)",
+      "allows": {
+        "evidenceTypes": [
+          "physical",
+          "witness",
+          "document",
+          "phone",
+          "forensic",
+          "cctv"
+        ],
+        "gates": [
+          "warrant",
+          "records",
+          "forensicRush"
+        ],
+        "contradictions": true,
+        "lies": true,
+        "groups": [
+          "who",
+          "why",
+          "how",
+          "when",
+          "where",
+          "forgery",
+          "absence",
+          "accomplice",
+          "planted",
+          "realTarget",
+          "spine"
+        ],
+        "stances": [
+          "cooperative",
+          "guarded",
+          "lawyered"
+        ],
+        "liarsPerCase": [
+          3,
+          3
+        ]
+      },
+      "labTransportHours": 0,
+      "accompliceRule": "From case 81 a crime can have a principal and an accomplice who knowingly helped. The ACCOMPLICE group: \"helped by {accomplice}, who {role}.\" The name blank always offers \"nobody\"; at least 6 names × 5 roles = 30 combinations. A person who helped without knowing (unknowingHelper) is not an accomplice, and their refutation rests on the evidence of what they knew. Joint principals (case 85): the WHO group has two unordered blanks.",
+      "plantedRule": "From case 83 evidence can be planted to frame an innocent person (evidence.planted {by, frames}). The PLANTED group: \"{item} was planted, as shown by {tell}.\" Exactly one planted option; at least 5 items × 6 tells = 30 combinations; accepted tells must be proven (rule 18).",
+      "targetRule": "From case 84 the person who died may not be the one the killer meant to kill. The REAL TARGET group: \"The killer meant to kill {target}.\" One blank, at least 5 options; WHY describes the motive against the intended target.",
+      "castingRule": "At most 3 wrongdoers (culprits or accomplices) who are domestic or security workers; wealthy culprits from at least 5 communities; at most 2 wrongdoers from one community; at least 1 culprit in their 70s; at least 4 women culprits; at most 2 Luo and 2 Kikuyu victims. Every case has a domestic or security worker who is a key honest witness.",
+      "calendarNote": "Real 2026 calendar, mid-August to late September. The cool grey Nairobi \"winter\" giving way to sunshine."
+    },
+    {
+      "number": 10,
+      "key": "final-files",
+      "name": "The Final Files",
+      "cases": [
+        91,
+        100
+      ],
+      "months": "October–December (year 2)",
+      "allows": {
+        "evidenceTypes": [
+          "physical",
+          "witness",
+          "document",
+          "phone",
+          "forensic",
+          "cctv"
+        ],
+        "gates": [
+          "warrant",
+          "records",
+          "forensicRush"
+        ],
+        "contradictions": true,
+        "lies": true,
+        "groups": [
+          "who",
+          "why",
+          "how",
+          "when",
+          "where",
+          "forgery",
+          "absence",
+          "accomplice",
+          "planted",
+          "realTarget",
+          "spine"
+        ],
+        "stances": [
+          "cooperative",
+          "guarded",
+          "lawyered"
+        ],
+        "liarsPerCase": [
+          3,
+          4
+        ]
+      },
+      "labTransportHours": 0,
+      "finalRule": "No new mechanics. Every case carries a SPINE group (pins from earlier cases, rule 15) and at least three of the groups taught since region 5. Each case closes one thread; case 100 has one SPINE line per thread and is the only charge sheet allowed more than eight groups.",
+      "castingRule": "At most 2 wrongdoers from one community; at least 5 women culprits; at least 1 culprit in their 70s; at most 1 Luo and 1 Kikuyu victim; at most 2 domestic or security workers among wrongdoers; at least one sympathetic Kenyan-Asian character in a substantial role (Anjali Mehta, from case 91); every case keeps an ordinary honest key witness.",
+      "calendarNote": "Real 2026 calendar, October to December: the short rains, then the dry bright weeks before Christmas. Mashujaa Day 20 October; Jamhuri Day 12 December.",
+      "kivuliNote": "Kivuli = Margaret Kabiru (provisional name, pending the cultural reader). Every clue points to \"Records, 4th floor\" and to her foundation, never to her community."
+    }
+  ],
+  "threads": [
+    {
+      "id": "t_mvua",
+      "label": "Mvua Holdings and Till 880 214",
+      "firstSeen": 6,
+      "closes": 91,
+      "closedIn": 91,
+      "closedAs": "Traced: three-headed (Msingi Trust nominee directors; Till 880 214 settlement account). Paymaster named in 99: the Ukarimu Foundation."
+    },
+    {
+      "id": "t_stamp",
+      "label": "The forged REGISTRAR OF TITLES seal",
+      "firstSeen": 10,
+      "closes": 92,
+      "closedIn": 92,
+      "closedAs": "Traced to source: the first forged REGISTRAR OF TITLES seal, cut twelve years ago \"for 4th Floor, Lands House — Records\"."
+    },
+    {
+      "id": "t_kivuli",
+      "label": "The name \"Kivuli\"",
+      "firstSeen": 10,
+      "closes": 100,
+      "note": "From case 80: \"the fourth floor\" (Abdia's notebook, Joseph's field book, Mwalimu). From case 90: narrowed to three names, all on the fourth floor of Lands House twelve years ago. Names provisional pending the cultural reader. Region 10: \"Records, 4th floor\" (92, 95), the Ukarimu Foundation (95, 97, 99), \"Tell her it's done\" (96), \"M.\" (97, 98, 99), office 4.12 (98), the desk (100).",
+      "narrowedIn": 90,
+      "candidates": [
+        "Raphael Oduya (provisional)",
+        "Margaret Kabiru (provisional)",
+        "Stanley Rotich (provisional)"
+      ],
+      "identifiedIn": 100,
+      "identifiedAs": "Margaret Kabiru (provisional name, pending the cultural reader), Deputy Chief Land Registrar (Records), office 4.12",
+      "closedIn": 100,
+      "eliminated": [
+        {
+          "name": "Stanley Rotich",
+          "in": 97,
+          "why": "murdered; his letter: \"The desk was Records.\""
+        },
+        {
+          "name": "Raphael Oduya",
+          "in": 98,
+          "why": "the messenger: his secretary's log shows him receiving every envelope"
+        }
+      ]
+    },
+    {
+      "id": "t_registry",
+      "label": "Files that go missing from the registry",
+      "firstSeen": 40,
+      "closes": 93,
+      "identifiedIn": 80,
+      "identifiedAs": "Julius Emojong (officer code J.E./SRO/0331); statement pending",
+      "closedIn": 93,
+      "closedAs": "Statement: Julius Emojong, every instruction \"through Adjudication\", through Raphael Oduya's office."
+    },
+    {
+      "id": "t_fundi",
+      "label": "The enforcer called Fundi",
+      "firstSeen": 20,
+      "closes": 94,
+      "identifiedIn": 50,
+      "identifiedAs": "Benedict Mbuvi (provisional name)",
+      "note": "From case 90: the same dead man's ID behind the case-50 phone and the case-90 lure SIM.",
+      "closedIn": 94,
+      "closedAs": "Statement: Benedict Mbuvi confesses to killing Joseph Mwenda; names Raphael Oduya as the man in the car."
+    },
+    {
+      "id": "t_joseph",
+      "label": "Mwenda, J.",
+      "firstSeen": 0,
+      "closes": 100,
+      "note": "From case 80: Joseph's working field book, recovered from drawer 14.",
+      "closedIn": 100,
+      "closedAs": "Killed by Benedict Mbuvi, with Raphael Oduya present and Pius Cheruiyot driving, on the orders of Margaret Kabiru. Not a robbery."
+    }
+  ],
+  "recurringCast": [
+    {
+      "id": "rc_mwalimu",
+      "name": "Ch. Insp. Esther Wairimu",
+      "callsign": "Mwalimu",
+      "role": "Mentor; voice of every hint call",
+      "voice": "Dry, exact, warm underneath. Short sentences. Calls Amani 'Detective' until case 60, then 'Amani'. From case 61 her hint calls arrive a beat late and she says \"Amani\". From case 71 they are quieter: shorter, no jokes, sometimes just the hint and \"Amani.\"",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman in her late 50s, close-cropped grey hair, reading glasses pushed up on her forehead, navy police-issue cardigan over a white blouse, steady amused eyes, ID-photo framing",
+        "ref": "reference",
+        "generateIn": 60,
+        "note": "First shown in case 60, small, pinned beside the \"Leverage — E.W.\" folder; reused to the end."
+      },
+      "patternFileNote": "From case 70: \"E.W.\" label and \"Witness. Promised to testify.\""
+    },
+    {
+      "id": "rc_halima",
+      "name": "Prosecutor Halima Abdi",
+      "role": "Reviews every charge sheet; her lines are the batch-confirmation feedback",
+      "voice": "Sceptical, fair, precise. A stranger in region 1: formal, brief. Warms over the campaign.",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Somali woman in her early 40s, dark headscarf, rimless glasses, black prosecutor's jacket, a file held against her chest, neutral expression",
+        "ref": "reference"
+      },
+      "patternFileNote": "Case 90: framed and cleared. Suspended for the case; Rukia Hassan reviews in her place."
+    },
+    {
+      "id": "rc_joseph",
+      "name": "Joseph Mwenda",
+      "role": "Amani's father; appears only in documents and one photograph",
+      "image": {
+        "kind": "evidence",
+        "brief": "faded 12-year-old colour photo: a Kenyan man in his 40s in a khaki surveyor's jacket standing beside a red-painted survey beacon in green farmland, a small child on his shoulders whose face is turned away from the camera",
+        "ref": "reference",
+        "generateIn": 40,
+        "reuse": [
+          70,
+          100
+        ]
+      }
+    },
+    {
+      "id": "rc_chebii",
+      "name": "Dr. Ruth Chebii",
+      "role": "County pathologist, Nakuru; delivers every autopsy from region 4 on",
+      "voice": "Precise and dry. Clinical report language only. Short voice-notes. Never shows a body: diagrams use a neutral outline figure.",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin woman in her early 50s, short natural grey-flecked hair, rimless glasses, a white lab coat over a dark sweater, a pen clipped to the pocket, calm and exact, ID-photo framing",
+        "ref": "reference"
+      }
+    },
+    {
+      "id": "rc_eric",
+      "name": "Eric Ndung'u",
+      "role": "Analyst, Rift Valley Regional Forensic Lab (fictional); every lab result",
+      "voice": "Friendly, fast, always eating when he answers the phone. Says exactly what a result does and does not show.",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man in his early 30s, round glasses, lab coat with rolled sleeves, a half-eaten mandazi in one hand and a test tube rack behind him, cheerful, ID-photo framing",
+        "ref": "reference"
+      }
+    },
+    {
+      "id": "rc_ayugi",
+      "name": "Wilfrida Ayugi",
+      "role": "Examiner, Questioned Documents Lab (fictional), Nairobi; every document and handwriting result from case 61",
+      "voice": "Short, careful sentences. Says what the paper shows and no more. \"The ink says one thing. The paper says another.\"",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo woman in her late 40s, short natural hair, half-moon reading glasses on a chain, a grey cardigan, a jeweller's loupe in her hand, careful and unhurried, ID-photo framing",
+        "ref": "reference",
+        "generateIn": 61
+      }
+    },
+    {
+      "id": "rc_muchiri",
+      "name": "Advocate Benjamin Muchiri",
+      "role": "Defence counsel, Nyeri; represents the lawyered suspects in cases 62, 66 and 70",
+      "voice": "Sharp and fair. Few words. Occasionally gives Amani a short, honest warning about her evidence. Withdraws in case 70.",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man in his early 60s, grey beard trimmed close, a dark three-piece suit, an advocate's white bands folded in his breast pocket, a battered leather briefcase, a dry, watchful expression, ID-photo framing",
+        "ref": "reference",
+        "generateIn": 62
+      }
+    },
+    {
+      "id": "rc_halake",
+      "name": "Insp. Halake Dida",
+      "role": "Isiolo county CID; Amani's partner in region 8. He drives.",
+      "voice": "Unhurried and precise. A Borana from Merti who knows every borehole between Isiolo and Moyale. Proverbs, sparingly.",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Borana man, late 40s, a khaki CID field jacket, a white kofia cap, a neatly trimmed grey beard, calm, watchful eyes, ID-photo framing",
+        "ref": "reference",
+        "generateIn": 71
+      }
+    },
+    {
+      "id": "rc_ewoi",
+      "name": "Cpl Ewoi Lomuke",
+      "role": "Turkana tracker, National Police Reserve; the tracker's reading (whose, which way, how old)",
+      "voice": "Few words. Crouches before he speaks. \"Sharp edges. After the wind.\"",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Turkana man, late 30s, an NPR uniform shirt and a beaded wristband, a rifle sling over one shoulder, a lean, observant face, ID-photo framing",
+        "ref": "reference",
+        "generateIn": 72
+      }
+    },
+    {
+      "id": "rc_kiprop",
+      "name": "Advocate Sharon Kiprop",
+      "role": "Nairobi defence advocate (Emojong, case 80); represents suspects in cases 83 and 86, and faces Halima on the Emojong file",
+      "voice": "Courteous, exact, never raises her voice. \"My client has nothing to add.\"",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin woman, mid 40s, a dark tailored suit and an advocate's white collar bands, short natural hair, composed and unreadable, ID-photo framing",
+        "ref": "reference",
+        "generateIn": 83
+      }
+    },
+    {
+      "id": "rc_gachoki",
+      "name": "Advocate Lucas Gachoki",
+      "role": "Nairobi defence advocate; represents the employer in case 88",
+      "voice": "Brisk and impatient; treats every question as a waste of his client's time.",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, early 50s, a charcoal three-piece suit, rimless glasses, a slight impatient frown, ID-photo framing",
+        "ref": "reference",
+        "generateIn": 88
+      }
+    },
+    {
+      "id": "rc_rukia",
+      "name": "Senior Prosecutor Rukia Hassan",
+      "role": "Acting reviewer of Amani's charge sheets while Halima is suspended (case 90)",
+      "voice": "Cold, exact, fair. \"Charges accepted.\"",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Swahili woman, early 50s, a grey hijab and reading glasses, a severe, fair face, ID-photo framing",
+        "ref": "reference",
+        "generateIn": 90
+      }
+    },
+    {
+      "id": "rc_mehta",
+      "name": "Anjali Mehta",
+      "role": "Head of compliance, Jumuiya Bank; from case 91 an ally who gives the police what the bank holds on the Msingi Trust",
+      "voice": "Precise, warm under the formality, hard on herself.",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Asian woman, about 50, short grey-streaked hair, a cream blazer and reading glasses on a chain, a precise, warm face, ID-photo framing",
+        "ref": "reference",
+        "generateIn": 91
+      }
+    },
+    {
+      "id": "rc_kabiru",
+      "name": "Margaret Kabiru",
+      "role": "Former Deputy Chief Land Registrar (Records), office 4.12; chair of the Ukarimu Foundation. Kivuli (case 100). Name provisional.",
+      "voice": "Gracious, precise, distant. Never raises her voice.",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, early 60s, pearls and a cream jacket, a gracious, composed face, ID-photo framing",
+        "ref": "reference",
+        "generateIn": 86
+      }
+    },
+    {
+      "id": "rc_oduya",
+      "name": "Raphael Oduya",
+      "role": "Former Director of Land Adjudication, office 4.03; the messenger (cases 86–100). Name provisional.",
+      "voice": "Heavy, careful, frightened under it.",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, early 60s, a grey suit, a heavy, guarded face, ID-photo framing",
+        "ref": "reference",
+        "generateIn": 86
+      }
+    },
+    {
+      "id": "rc_rotich",
+      "name": "Stanley Rotich",
+      "role": "Former Chief Valuer, Lands House; murdered in case 97. Name provisional.",
+      "voice": "Tired, guarded; decided to stop.",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, mid 60s, silver hair, a tired, guarded face, ID-photo framing",
+        "ref": "reference",
+        "generateIn": 86
+      }
+    }
+  ],
+  "lexicon": [
+    "makanga",
+    "sacco",
+    "chama",
+    "smokie",
+    "pasua",
+    "kachumbari",
+    "askari",
+    "kesha",
+    "mzee",
+    "manamba",
+    "chai",
+    "stima",
+    "kibanda",
+    "mikopo",
+    "haraka",
+    "mvua",
+    "githeri",
+    "soko",
+    "harusi",
+    "stesheni",
+    "tiketi",
+    "mitumba",
+    "shamba",
+    "ziwa",
+    "mama",
+    "kivuli",
+    "muhuri",
+    "fundi",
+    "bwana",
+    "sawa",
+    "asante",
+    "karibu",
+    "habari",
+    "poa",
+    "maze",
+    "msee",
+    "buda",
+    "doo",
+    "chapaa",
+    "kanjo",
+    "mathree",
+    "wueh",
+    "ebu",
+    "aki",
+    "hapana",
+    "ndio",
+    "mbaya",
+    "mresh",
+    "rada",
+    "kwani",
+    "jameni",
+    "mkubwa",
+    "daktari",
+    "jiko",
+    "nduthi",
+    "boda",
+    "mandazi",
+    "uji",
+    "ugali",
+    "sukuma",
+    "nyama",
+    "mitungi",
+    "kanisa",
+    "afande",
+    "harambee",
+    "wazee",
+    "kangas",
+    "kanga",
+    "mwalimu",
+    "huduma",
+    "pesa",
+    "bei",
+    "duka",
+    "jua kali",
+    "kazi",
+    "mtoto",
+    "watoto",
+    "shida",
+    "shosh",
+    "ati",
+    "huyu",
+    "yule",
+    "wewe",
+    "mimi",
+    "sisi",
+    "nini",
+    "nani",
+    "wapi",
+    "lini",
+    "kwa nini",
+    "simu",
+    "mpesa",
+    "pesapap",
+    "matatu",
+    "githurai",
+    "kesho",
+    "usiku",
+    "asubuhi",
+    "baraza",
+    "mahindi choma",
+    "bob",
+    "madalali",
+    "shaah",
+    "mkokoteni",
+    "maghrib",
+    "kanzu",
+    "kamari",
+    "mechi",
+    "karo",
+    "mali",
+    "maji",
+    "bibi",
+    "matanga",
+    "mtaa",
+    "ploti",
+    "hati",
+    "gengetone",
+    "mbogi",
+    "manzi",
+    "tenda",
+    "kitenge",
+    "mweka hazina",
+    "mwenyekiti",
+    "kikoi",
+    "jumaa",
+    "lipa namba hii",
+    "wakala",
+    "buibui",
+    "samaki",
+    "kivuko",
+    "barafu",
+    "saa tisa",
+    "narudi sasa hivi",
+    "dupatta",
+    "kinu",
+    "nahodha",
+    "jahazi",
+    "kuvua",
+    "upepo mwema",
+    "baba",
+    "namba",
+    "kurudisha pesa",
+    "nyanya",
+    "bajaji",
+    "madafu",
+    "mihogo",
+    "ushahidi",
+    "ardhi",
+    "ufukweni",
+    "dada",
+    "taarab",
+    "udi",
+    "risha",
+    "babu",
+    "bi",
+    "dera",
+    "nyumba bovu",
+    "tukutane",
+    "watu wazima",
+    "bandari",
+    "makontena",
+    "karatasi",
+    "saini",
+    "fidia",
+    "miche",
+    "dawa",
+    "mafuriko",
+    "tangi",
+    "maji ya kunywa",
+    "ole",
+    "boma",
+    "wafugaji",
+    "shuka",
+    "viazi",
+    "gunia",
+    "walimu",
+    "mkopo",
+    "maziwa",
+    "asali",
+    "msitu",
+    "mbao",
+    "sumu",
+    "ramani",
+    "ruracio",
+    "mpima ardhi",
+    "injini",
+    "ndoano",
+    "kiboko",
+    "mke mwenza",
+    "mpunga",
+    "taa",
+    "mwezi mpevu",
+    "boti",
+    "mtumbwi",
+    "mchi",
+    "wazee wa ukoo",
+    "dhahabu",
+    "mizani",
+    "shimo",
+    "sumaku",
+    "ngege",
+    "samaki wa barafu",
+    "kuelea",
+    "nanga",
+    "magugu maji",
+    "mnunuzi",
+    "redio",
+    "krismasi",
+    "kisukari",
+    "sindano",
+    "puto",
+    "gesi",
+    "mamba",
+    "mto",
+    "mvule",
+    "deni",
+    "rungu",
+    "shanga",
+    "enkiteng",
+    "mtungi",
+    "mnunuzi wa kati",
+    "askari wa wanyamapori",
+    "pembe za ndovu",
+    "simba",
+    "fisi",
+    "hongo",
+    "ndege",
+    "rubani",
+    "uwanja wa ndege",
+    "daftari",
+    "enkang",
+    "adumu",
+    "kofia",
+    "ng'ombe",
+    "dalali",
+    "kibali",
+    "chuma cha alama",
+    "hema",
+    "ngoma",
+    "chakula cha porini",
+    "lugga",
+    "duma",
+    "gurudumu",
+    "dereva",
+    "kodi ya ardhi",
+    "wakili",
+    "msajili",
+    "namba ya chasisi",
+    "wosia",
+    "nyongeza ya wosia",
+    "chama ya ushirika",
+    "malipo",
+    "mlinzi",
+    "cheti cha ndoa",
+    "mke wa pili",
+    "ndoa ya kimila",
+    "chupa ya chai",
+    "namba ya mtihani",
+    "cheti",
+    "panga",
+    "sajili ya ardhi",
+    "kirinyaga",
+    "mwongozo",
+    "cheti cha kifo",
+    "bima",
+    "mchanga",
+    "fimbo",
+    "jembe",
+    "dawa bandia",
+    "ankara",
+    "mtekelezaji",
+    "kamishna wa viapo",
+    "mahakama kuu",
+    "mlango",
+    "utingo",
+    "breki",
+    "kibanda cha chai",
+    "majambazi",
+    "kona",
+    "laga",
+    "mdhamini",
+    "fagio",
+    "bowser",
+    "kisima",
+    "zahanati",
+    "jangwa",
+    "mito",
+    "mwiko",
+    "taa ya mafuta",
+    "uhamisho",
+    "barua",
+    "sampuli",
+    "friji",
+    "kizima moto",
+    "mpaka",
+    "faili",
+    "droo",
+    "kitabu cha kutoka",
+    "shimo la murram",
+    "lori",
+    "ufunguo",
+    "sindano ya insulini",
+    "mkwe",
+    "simu ya pili",
+    "mpenzi",
+    "uzito",
+    "sonara",
+    "kabati",
+    "kitabu cha wageni",
+    "kusingiziwa",
+    "juisi ya pasheni",
+    "ua",
+    "ulaghai",
+    "bwawa la kuogelea",
+    "sherehe",
+    "mlinzi wa lango",
+    "maabara",
+    "sanduku la vitu vilivyopotea",
+    "farasi",
+    "tandiko",
+    "mkanda wa tandiko",
+    "uwanja wa polo",
+    "yaya",
+    "ngazi",
+    "tuzo",
+    "saa ya mkono",
+    "paa",
+    "mpiga picha",
+    "mlango wa dharura",
+    "kadi ya kumbukumbu",
+    "mwendesha mashtaka",
+    "kalamu ya wino",
+    "lifti ya huduma",
+    "bahasha",
+    "benki",
+    "akaunti",
+    "ngazi za dharura",
+    "tangazo",
+    "mchoraji wa chuma",
+    "taa ya chemli",
+    "kitabu cheusi",
+    "sanduku la chuma",
+    "wakala wa forodha",
+    "kioo",
+    "parokia",
+    "rumande",
+    "chakula cha nyumbani",
+    "dawa ya wadudu",
+    "afisa wa magereza",
+    "kitambulisho",
+    "shajara",
+    "rafu ya vitabu",
+    "barua ya utambulisho",
+    "kinara cha shaba",
+    "mjane",
+    "Ukarimu",
+    "kitabu cha nyimbo",
+    "mlinzi wa usiku",
+    "kamba ya katani",
+    "mzee wa kanisa",
+    "chumba cha mvuke",
+    "joto",
+    "dawa za moyo",
+    "barua iliyosajiliwa",
+    "mfadhili",
+    "kitabu cha kumbukumbu",
+    "sanamu ya jiwe",
+    "mpwa",
+    "katibu",
+    "wakfu",
+    "ruzuku",
+    "muhuri wa sahihi",
+    "kamba ya ufunguo",
+    "dawati",
+    "imefungwa",
+    "alama ya mpaka",
+    "mwisho"
+  ],
+  "lexiconNotes": "Terms that are also normal Kenyan English (matatu, boda, mandazi, ugali, sukuma, chai, jiko, mama, mzee, PesaPap) are still glossed in any case that uses them, so the notebook glossary is complete for overseas players.",
+  "prologue": {
+    "id": "prologue",
+    "maxSeconds": 180,
+    "beats": [
+      {
+        "id": "pr1",
+        "visual": "Black screen. A single desk lamp switches on with a click. The pool of light shows a wooden desk, a green blotter, a rotary-style desk phone, a wire in-tray.",
+        "sound": "Lamp click. Distant Nairobi morning traffic.",
+        "text": null
+      },
+      {
+        "id": "pr2",
+        "visual": "Typewriter text across a blank OB page, one line at a time.",
+        "text": "Tausi Lane Police Station. Special Crimes Unit. First day."
+      },
+      {
+        "id": "pr3",
+        "visual": "A manila folder drops onto the desk from above frame and slides to a stop against the blotter. A hand (the player's) is never shown in full: only a sleeve cuff at the edge of frame.",
+        "text": null,
+        "voice": {
+          "speaker": "rc_mwalimu",
+          "line": "You're Amani. Good. I'm Chief Inspector Wairimu. Everyone here calls me Mwalimu, and you'll find out why."
+        }
+      },
+      {
+        "id": "pr4",
+        "visual": "Close on the folder tab: OB number, the word NGARA.",
+        "voice": {
+          "speaker": "rc_mwalimu",
+          "line": "A driver at Ngara stage. Read the OB, go to the scene, look at everything twice. I'll be on the phone if you need me."
+        }
+      },
+      {
+        "id": "pr5",
+        "visual": "The player's first tap opens the desk drawer instead of the folder (any tap on the drawer, or the game guides there). Inside, under a new pad of charge sheets: an old, thin folder. Tab: 'Mwenda, J.' A red stamp: CLOSED.",
+        "text": null,
+        "interactive": {
+          "tap": "drawer",
+          "optional": true
+        }
+      },
+      {
+        "id": "pr6",
+        "visual": "If opened: three pages. An OB entry from twelve years ago (a man found on the Bahati road, wallet missing). A one-line investigation note. 'NFA.' The folder is thin enough to feel. The player closes it.",
+        "text": "OB 23/14/05. Man found on the verge of the Bahati road, Nakuru. Wallet missing. Robbery. Closed after nine days.",
+        "spine": "t_joseph"
+      },
+      {
+        "id": "pr7",
+        "visual": "The drawer slides shut by itself, gently. The Ngara folder is on the blotter, waiting.",
+        "text": null,
+        "voice": {
+          "speaker": "rc_mwalimu",
+          "line": "Detective. Ngara."
+        }
+      }
+    ]
+  },
+  "betweenCases": {
+    "1": {
+      "mwalimu": "One blow, two jackets, one spanner. You read the stage like a marshal reads plates. Keep doing that.",
+      "halima": null,
+      "desk": "A paper cup of chai appears beside the phone. It stays there for the region, refilled between cases."
+    },
+    "2": {
+      "mwalimu": "Paint dries. Registers don't lie about who came in after seven. Most people forget that.",
+      "halima": "Prosecutor H. Abdi: Charge sheet received and accepted. — H.A.",
+      "desk": null
+    },
+    "3": {
+      "mwalimu": "Seat fourteen. A man who buys a ticket he never uses is telling you something. Listen to paper.",
+      "halima": null,
+      "desk": "A Tana Express timetable is pinned to the wall behind the desk."
+    },
+    "4": {
+      "mwalimu": "Wax doesn't climb stairs on its own. Good work in the dark, Detective.",
+      "halima": "H. Abdi: Accepted. Your reconstruction notes were clear. Keep them that way.",
+      "desk": null
+    },
+    "5": {
+      "mwalimu": "Dry ground under a body in a downpour. You'll remember that one for years. I did.",
+      "halima": null,
+      "desk": "A black umbrella hangs from the coat hook."
+    },
+    "6": {
+      "mwalimu": "Small writing on a torn tag. And a calendar on the wall that you probably didn't look at. Everyone looks at the body first.",
+      "halima": null,
+      "desk": null
+    },
+    "7": {
+      "mwalimu": "Scratched hands, and the man was innocent. You'll meet a lot of scratched hands. Be fair to them.",
+      "halima": "H. Abdi: Accepted. I liked that you cleared the rose seller in writing. Defence lawyers read those notes too.",
+      "desk": "A single carnation in a soda bottle."
+    },
+    "8": {
+      "mwalimu": "A ticket with no hole in it. Sometimes the clue is what isn't there. Write that on your wall.",
+      "halima": null,
+      "desk": null
+    },
+    "9": {
+      "mwalimu": "Everyone wanted it to be the brother. You didn't. That's the job.",
+      "halima": "H. Abdi: Accepted. Had you charged the brother I'd have sent it back with a note. You didn't. Noted.",
+      "desk": "The instant photo from Uhuru Park, pinned to the lamp."
+    },
+    "10": {
+      "mwalimu": "You've seen that till number before. Write it down somewhere I can't see it.",
+      "halima": "H. Abdi: Ochieng is charged. Mvua Holdings is not a person. Find out what it is. — Halima.",
+      "desk": "Rashid Omar's brass shop stamp sits on the desk. From now on it stamps every charge sheet. The Pattern File (a second corkboard) unlocks on the wall."
+    },
+    "11": {
+      "mwalimu": "She lied about the time and told the truth about the money. Which one did you need?",
+      "halima": "H. Abdi: Accepted. The charge book was neat. Clean file.",
+      "desk": "The five credibility stamps on the folder are inked now: five red rings."
+    },
+    "12": {
+      "mwalimu": "You spent a stamp on that warrant. It was worth it. Remember that it cost something.",
+      "halima": "H. Abdi: Accepted. The receipt numbers did the work. Clean file. Again.",
+      "desk": "A blank carbon rent receipt, used as a bookmark in the notebook."
+    },
+    "13": {
+      "mwalimu": "Document services. Interesting thing to sell next to loans.",
+      "halima": "H. Abdi: Accepted. The bank hours on the glass. I would not have looked.",
+      "desk": "A new pin on the Pattern File: the Mvua business card."
+    },
+    "14": {
+      "mwalimu": "You let the liar go. Most people can't. Why could you?",
+      "halima": "H. Abdi: Accepted. Had you charged the gambler, I'd have sent it back. You didn't.",
+      "desk": "The regular's note, FROZE 68'–74', pinned to the corkboard: count everything."
+    },
+    "15": {
+      "mwalimu": "Numbers don't lie, Detective. The people who write them down sometimes do. Which was this?",
+      "halima": "H. Abdi: Accepted. Seal, book, pouch. Clean.",
+      "desk": "An opened bale seal on the desk, its number turned to the wall."
+    },
+    "16": {
+      "mwalimu": "The boy lied for love. The law doesn't have a box for that. You'll meet it again.",
+      "halima": "H. Abdi: Accepted. I will ask the court to hear about Monday first.",
+      "desk": "A yellow jerrican by the desk, filled at the station tap. Nobody remembers who put it there."
+    },
+    "17": {
+      "mwalimu": "One friend fell asleep and another one lied. Write down which kind you'd trust next time.",
+      "halima": "H. Abdi: Accepted. Badge fourteen is in the exhibits room.",
+      "desk": "A new pin on the Pattern File: the stamped sale agreement."
+    },
+    "18": {
+      "mwalimu": "Your first case where a face was the evidence. Never stop looking at faces.",
+      "halima": "H. Abdi: Accepted. An earring. You're starting to worry the defence bar.",
+      "desk": "A cheap pair of earphones on the desk: Amani has started listening to gengetone on the drive home."
+    },
+    "19": {
+      "mwalimu": "Every fundi signs his work. So does every detective. What did you sign today?",
+      "halima": "H. Abdi: Accepted. Warrant, toolbox, chip. Textbook.",
+      "desk": "A dented offcut of sheet metal as a paperweight. From Simeon Wachira: \"For the one who reads dents.\""
+    },
+    "20": {
+      "mwalimu": "Two keys and a cut lock. And a till number you keep seeing. Sleep, Detective. Then read the Pattern File again.",
+      "halima": "H. Abdi: Drink something. That one was heavy.",
+      "desk": "The Upendo ledger page, framed, beside Rashid's stamp. Three new pins on the Pattern File, and a place name on one of them: Nakuru."
+    },
+    "21": {
+      "mwalimu": "A mast tells you the neighbourhood. You found the door anyway.",
+      "halima": "H. Abdi: Accepted. Who and why, both. That's the job from now on.",
+      "desk": "The filing drawer swaps its Nairobi folders for coast-office ones, with a different station stamp."
+    },
+    "22": {
+      "mwalimu": "You crossed the water in your head before anyone crossed it on the ferry. Good.",
+      "halima": "H. Abdi: Accepted. Two M.M.s and one ferry. Neat.",
+      "desk": "A brass Likoni ferry token in the pen pot."
+    },
+    "23": {
+      "mwalimu": "Transfer documents. Mvua is selling the paperwork now, not just the plots.",
+      "halima": "H. Abdi: Accepted. Saa tisa na nusu. I had to look it up.",
+      "desk": "A twist of turmeric in newspaper from Hussein across the street. It stains everything it touches."
+    },
+    "24": {
+      "mwalimu": "You read the man before you read the phone. Good.",
+      "halima": "H. Abdi: Accepted. They wanted it closed as a drowning. Thank you for not letting them.",
+      "desk": "A photo of Upepo Mwema under sail, sent by Abdalla Khamis from Lamu."
+    },
+    "25": {
+      "mwalimu": "Three minutes. Remember how fast people decide what kind of person they are.",
+      "halima": "H. Abdi: Accepted. Check your own numbers twice before you send.",
+      "desk": "A sticky note on the phone: \"309 ≠ 390\"."
+    },
+    "26": {
+      "mwalimu": "Old files don't close themselves.",
+      "halima": "H. Abdi: Two files closed tonight. I'm not sure which one I'm prouder of.",
+      "desk": "The archive card for OB 03/01/01, clipped inside the notebook."
+    },
+    "27": {
+      "mwalimu": "Pensions, ghost workers, beachfront plots. Count how often that till turns up near people with no power.",
+      "halima": "H. Abdi: Accepted. The staff have asked for their pension statements. All 140 of them.",
+      "desk": "A new pin on the Pattern File: the beachfront plots flyer."
+    },
+    "28": {
+      "mwalimu": "Some cases you solve and wish you hadn't. Solve them anyway.",
+      "halima": "H. Abdi: Accepted. I will ask the court to remember the fifty years.",
+      "desk": "A taarab cassette on the desk, a gift from Bi Zainab. Amani hasn't played it yet."
+    },
+    "29": {
+      "mwalimu": "A fake has a seam if you look closely enough. So do people.",
+      "halima": "H. Abdi: Accepted. The association has taken his badge.",
+      "desk": "The 1503 coin, bagged, on the exhibit shelf, seam up."
+    },
+    "30": {
+      "mwalimu": "Bahati. ... Go to Nakuru, Detective. I will sign the posting tonight.",
+      "halima": "H. Abdi: It's a factory, Amani. Be careful who you tell.",
+      "desk": "The brass dhow compass from Lamu, beside Rashid's stamp and the Upendo page."
+    },
+    "31": {
+      "mwalimu": "Dr. Chebii says you read her report twice before you asked her a question. Good. Pathologists notice that.",
+      "halima": "H. Abdi: Nakuru court. First case with an autopsy and a lab result in it. Clean.",
+      "desk": "A sweater fibre in a lab envelope, Eric's handwriting on the label: \"matched, 12 h, sorry it took so long\"."
+    },
+    "32": {
+      "mwalimu": "The frightened one lied and the calm one killed. Remember which was which.",
+      "halima": "H. Abdi: The flask did the work. Accepted.",
+      "desk": "The Greenhouse 7 notice board photograph, \"Twenty years\" circled in red pen."
+    },
+    "33": {
+      "mwalimu": "Every flooded plot in this country seems to have the same seal on it.",
+      "halima": "H. Abdi: The seal again. Ziwani deeds are with the land registry fraud desk now. Don't hold your breath.",
+      "desk": "A Ziwani Gardens brochure, water stained up to the second line."
+    },
+    "34": {
+      "mwalimu": "The radio said herders by eight in the morning. You said no by the evening. Hold on to that.",
+      "halima": "H. Abdi: The herders' names are off the radio. The station read a correction at one o'clock.",
+      "desk": "A tyre-tread photograph from the fence cut, pinned under the lamp."
+    },
+    "35": {
+      "mwalimu": "A boy. Twenty years old. Sometimes it is.",
+      "halima": "H. Abdi: Charge the boy. The college has my letter about that switch.",
+      "desk": "A cut green-and-yellow earth wire in an evidence sleeve."
+    },
+    "36": {
+      "mwalimu": "Three degrees. Go and stand in the sun for a minute, Detective.",
+      "halima": "H. Abdi: Accepted. The county has written to the co-op about the cold-store door.",
+      "desk": "A 50 kg potato sack label from the Molo co-op."
+    },
+    "37": {
+      "mwalimu": "People see the coat. Detectives see who's inside it.",
+      "halima": "H. Abdi: The sacco regulator wants your file. I said they can have a copy.",
+      "desk": "A camel-coloured coat button in a small plastic bag."
+    },
+    "38": {
+      "mwalimu": "Good milk. Poured away.",
+      "halima": "H. Abdi: Accepted. The collection centre has a new grader and a new lock.",
+      "desk": "A lactometer in its tube, reading honest."
+    },
+    "39": {
+      "mwalimu": "Slow poison. Slow case. Fine.",
+      "halima": "H. Abdi: Accepted. The forest service has the invoices.",
+      "desk": "A small jar of honey from the Marigat stall. Tested clean. Unopened."
+    },
+    "40": {
+      "mwalimu": null,
+      "halima": "H. Abdi: I'll take Wamalwa myself. Don't come to court for this one, Amani.",
+      "desk": "Joseph Mwenda's surveying compass, next to the dhow compass from Lamu, pointing a slightly different north."
+    },
+    "41": {
+      "mwalimu": "Every fact has a time. You lined them up. Do it again tomorrow.",
+      "halima": "H. Abdi: Accepted. The Usenge owner gets his engine back. Elisha gets nothing, which is wrong, but it's the law.",
+      "desk": "A BMU levy-book page, photocopied, the blank line under 06:52 circled."
+    },
+    "42": {
+      "mwalimu": "Narrow it from both sides. Good.",
+      "halima": "H. Abdi: Charged. Diana has sealed the back room. Public health wants the sacks.",
+      "desk": "An inner sugar bag printed \"Best before\", two years past, in an evidence sleeve."
+    },
+    "43": {
+      "mwalimu": "An alibi for the wrong hour is still an alibi. Until it isn't.",
+      "halima": "H. Abdi: He built an alibi for a murder that happened on the radio. The station wants to interview you. I said no.",
+      "desk": "Radio Nam Lolwe's weekly schedule, Thursday 21:00 circled."
+    },
+    "44": {
+      "mwalimu": "(23:40, unprompted.) Is it raining in Kisumu? ...Good night, Detective.",
+      "halima": "H. Abdi: Accepted. The scheme has agreed to review how it transfers tenancies to widows. Clement asked for that, not me.",
+      "desk": "Mzee Oyugi's pencil sketch of a hippo footprint, pinned to the board."
+    },
+    "45": {
+      "mwalimu": "Christmas. Go and eat something with people.",
+      "halima": "H. Abdi: Charged. Rahul too, for the nine million. Nobody in that house will have a good new year.",
+      "desk": "A paper Christmas cracker crown, folded flat, from the Pandya lunch table. Sabina gave it to you."
+    },
+    "46": {
+      "mwalimu": "The moon is a witness that never lies. Write that down.",
+      "halima": "H. Abdi: Accepted. The sacco has given Valary's second boat to her mother.",
+      "desk": "A page from the fisheries diary: the first week of January shaded \"no omena\"."
+    },
+    "47": {
+      "mwalimu": "A matanga is for the family. Let them bury him.",
+      "halima": "H. Abdi: Charged. Arnold separately, for the maize. The elders will deal with the rest.",
+      "desk": "Three red and white glass beads in a small evidence bag."
+    },
+    "48": {
+      "mwalimu": "(00:15, unprompted.) Is it raining there? ...No. Never mind. Sleep.",
+      "halima": "H. Abdi: She'll go to court. So will that scale. The county mining office is inspecting shaft 12 on Monday.",
+      "desk": "The magnet from Rosebella's scale, in a matchbox."
+    },
+    "49": {
+      "mwalimu": "Machines keep diaries. People forget they do.",
+      "halima": "H. Abdi: Accepted. Thirty restaurants have a new supplier. Norah sent you a fish. I said you'd eat it.",
+      "desk": "A strip of red tape from Roselyne's kitchen, stuck to the edge of the desk."
+    },
+    "50": {
+      "mwalimu": null,
+      "halima": "H. Abdi: Fundi has a lawyer from Nairobi. I've never seen him before. Neither has the bar.",
+      "desk": "Walter Ogada's carved wooden float, next to the two compasses."
+    },
+    "51": {
+      "mwalimu": "Ground remembers where you stood. Even when the sky doesn't.",
+      "halima": "H. Abdi: Charged. The balloon company now counts its cylinders with two signatures. Naserian's count sheet is framed in their office.",
+      "desk": "A pinch of red Mara soil in an evidence sleeve, labelled \"launch site\"."
+    },
+    "52": {
+      "mwalimu": "The river takes things. It also puts them down again.",
+      "halima": "H. Abdi: Charged. The camp's staff stay on until the court decides who owns it.",
+      "desk": "A splinter of the old deck railing post, in an evidence sleeve."
+    },
+    "53": {
+      "mwalimu": "Beads talk. You listened. Good.",
+      "halima": "H. Abdi: Charged. The co-op has taken the Mvua flyer off its notice board. I asked for a copy for you.",
+      "desk": "A single Enkiteng blue bead from the co-op floor, in an evidence bag."
+    },
+    "54": {
+      "mwalimu": "A collar records everything. So does a ranger, if you ask him properly.",
+      "halima": "H. Abdi: Charged. Daudi too, as an accessory. The ranger service sent a corporal to sit in court every day.",
+      "desk": "A printout of the lion collar's GPS track, one loop circled in red."
+    },
+    "55": {
+      "mwalimu": "An engine counts its hours. So should you.",
+      "halima": "H. Abdi: Charged. The aviation authority has grounded 5Y-MSK and opened an audit. Linda's report was filed in her name.",
+      "desk": "A page from the aircraft's tech log, the hour-meter column highlighted."
+    },
+    "56": {
+      "mwalimu": "He did it for the boy. That's why it's hard. It's still murder.",
+      "halima": "H. Abdi: Charged. He asked the court to let him plead in Maa. The court said yes.",
+      "desk": "A visitor's receipt: \"KSh 3,000 — for the village\". The village got 500."
+    },
+    "57": {
+      "mwalimu": "Read the headings, not only the numbers.",
+      "halima": "H. Abdi: Charged. There were never any cattle. The county vet has reported the stamp, and the permits are on your Pattern File.",
+      "desk": "A forged livestock movement permit, the vet stamp circled."
+    },
+    "58": {
+      "mwalimu": "A photograph is a witness that doesn't get tired.",
+      "halima": "H. Abdi: Charged. The camp has changed its night-escort rules. The drummers were paid in full.",
+      "desk": "A camp photograph, 21:41, a figure at the loo tent circled in marker."
+    },
+    "59": {
+      "mwalimu": "Radios lie less than people. The hills see to that.",
+      "halima": "H. Abdi: Charged. Nickson as an accessory; he says he'll give evidence. The ethics committee's ban went through on Monday.",
+      "desk": "A photocopy of the repeater coverage map, the east half shaded."
+    },
+    "60": {
+      "mwalimu": null,
+      "halima": "H. Abdi: Charged. The registry has frozen all 60 transfers. Amani, the folder in that safe is not in my file. I didn't see it. Be careful who you show it to.",
+      "desk": "Corporal Lemayian Kantai's ranger whistle, on its green lanyard, beside the photocopied NFA page turned face down."
+    },
+    "61": {
+      "mwalimu": "Paper lies. Metal doesn't. ...Amani.",
+      "halima": "H. Abdi: Charged. Phyllis has her pickup back. The bank has frozen Njeri's loan until the court decides.",
+      "desk": "A rubbing of a chassis number on tracing paper, four characters circled in red."
+    },
+    "62": {
+      "mwalimu": "The loud one is usually only loud.",
+      "halima": "H. Abdi: Charged. Thuo is a witness now. Muchiri sent me a two-line note: \"Your detective was fair. Tell her.\"",
+      "desk": "A cold charcoal jiko with one leg wired, tagged as an exhibit."
+    },
+    "63": {
+      "mwalimu": "Drag the magnifier over every stamp. Every one.",
+      "halima": "H. Abdi: Charged. The co-op is paying the three farmers this week. Mvua again, in a coffee factory.",
+      "desk": "A sheet of printed co-op stamps, one cut out, in an evidence sleeve."
+    },
+    "64": {
+      "mwalimu": "Sometimes the paper is the victim's lie.",
+      "halima": "H. Abdi: Charged. The registry has written to the other couple. Agatha asked the court to let Doris keep the matatu money.",
+      "desk": "A dented steel thermos flask, its lid taped to it, in an evidence bag."
+    },
+    "65": {
+      "mwalimu": "Same number, different life. You heard her voice. Remember it.",
+      "halima": "H. Abdi: Charged. Kalekye has asked the exam council to flag her number. Melvin has resigned. Nobody pressed charges on him.",
+      "desk": "A printed photo of a KCSE certificate, a teacher's name on it, beside a forged one."
+    },
+    "66": {
+      "mwalimu": "A seal marked MV. Write that down. ...Then put it somewhere safe.",
+      "halima": "H. Abdi: Charged. The DCI has opened four more parcel files. Muchiri is still representing him, and says he will plead.",
+      "desk": "A photocopy of the Timau road index map, 2208 and 2210 circled."
+    },
+    "67": {
+      "mwalimu": "The mountain keeps what it's given. Sleep, Amani.",
+      "halima": "H. Abdi: Charged. KWS is making every guide sign out in person, in front of a ranger. Nkatha's clients sent flowers to the gate.",
+      "desk": "A broken carbide pole tip in a small evidence tube."
+    },
+    "68": {
+      "mwalimu": "A dead man's file is still a file. Close it properly.",
+      "halima": "H. Abdi: Charged. Jane too, for the insurance. Her father asked the court to let him plead in the morning, before his daughter.",
+      "desk": "A death certificate with \"CLOSED\" struck through in red."
+    },
+    "69": {
+      "mwalimu": "Check the control before you trust the \"not found\".",
+      "halima": "H. Abdi: Charged. The PPB has raided the bus park. Grace asked for Kanini's desk. They gave it to her.",
+      "desk": "An empty soda bottle, tagged, beside a medicine pack with a batch number circled."
+    },
+    "70": {
+      "mwalimu": null,
+      "halima": "H. Abdi: Charged. The 2019 will is admitted. Amani, take the weekend. I mean it. The north will still be there on Monday.",
+      "desk": "Joseph Mwenda's original file, reopened, on the desk beside the surveying compass."
+    },
+    "71": {
+      "mwalimu": "What didn't happen is evidence too. ...Amani.",
+      "halima": "H. Abdi: Charged. Jillo too, for the stock theft. Mama Safiya is feeding the dogs. Insp. Halake says the north will teach you to listen for silence.",
+      "desk": "A licked-clean dog bowl, tagged as an exhibit."
+    },
+    "72": {
+      "mwalimu": "Dry nets don't lie.",
+      "halima": "H. Abdi: Charged. The co-op has voted to keep the new buyer. Cpl. Ewoi asks if you'll come out on the lake properly next time.",
+      "desk": "A coil of dry fishing net with a co-op tag on it."
+    },
+    "73": {
+      "mwalimu": "Cold ash. Unmilked goats. Write down what's missing.",
+      "halima": "H. Abdi: Charged. The beadwork group's account now needs two signatures. The women elected Nashipai's deputy on Saturday.",
+      "desk": "Three cold hearthstones photographed from above, the ash undisturbed."
+    },
+    "74": {
+      "mwalimu": "\"Withdrawn.\" ...I know that word.",
+      "halima": "H. Abdi: Charged. Waso Range has suspended the lease. Kennedy Mulwa is a witness now. The Garba Tula registration file is still \"withdrawn\".",
+      "desk": "A minute book open at a ragged stub where page 11 was."
+    },
+    "75": {
+      "mwalimu": "Two files on one desk. Close both, Amani.",
+      "halima": "H. Abdi: Charged. The Lokho file is reopened and closed properly, with the right name in it. Murithi has been charged too, for the insurance story.",
+      "desk": "A thin closed police file from nine years ago, tied to a live one with string."
+    },
+    "76": {
+      "mwalimu": "A broom is a good witness. Better than most.",
+      "halima": "H. Abdi: Charged. Kevin is charged for the false alibi. The stage has bought the riders a guarantor fund. Napeyo still sweeps the yard every evening.",
+      "desk": "A long grass broom leaning on a wall, tagged as a witness exhibit."
+    },
+    "77": {
+      "mwalimu": "Abdia Golicha. Remember the name. ...I'm sorry. You already did.",
+      "halima": "H. Abdi: Charged. Peter Langat has resigned and will testify. The county has reopened every child death record in Kalacha. Arero has asked to make a statement about Diba.",
+      "desk": "Two full 5-litre water bottles, sealed, tagged as exhibits."
+    },
+    "78": {
+      "mwalimu": "The furious ones are usually only furious.",
+      "halima": "H. Abdi: Charged. Sarah went home to Bungoma with his body. She asked me to tell you she's sorry she lied.",
+      "desk": "A burned porridge paddle, its handle charred, in an evidence sleeve."
+    },
+    "79": {
+      "mwalimu": "Lay the book over the rack. Always.",
+      "halima": "H. Abdi: Charged. Yusuf too, for Mzee Bonsa: Cpl. Galgallo's report and the bar tab were enough. Adano is a witness. The hospital has put a second lock on the lab fridge.",
+      "desk": "A sample rack with one empty slot, B4, circled in red."
+    },
+    "80": {
+      "mwalimu": null,
+      "halima": "H. Abdi: Charged. Advocate Kiprop has applied for bail; refused. Amani, the Nairobi desk is asking who authorised the drawer warrant. I said I did. Come home.",
+      "desk": "A small brass key on a ring with a cardboard tag: \"Ask him.\""
+    },
+    "81": {
+      "mwalimu": "Most people who kill don't do it alone. Have you eaten, Amani?",
+      "halima": "H. Abdi: Charged, and the boy as an accessory. The trust has asked the court to let the sale go ahead in Mzee's name. Rehema is staying on in the cottage.",
+      "desk": "A bright brass mortice key in an evidence tray."
+    },
+    "82": {
+      "mwalimu": "A phone is a thing. Ask who held it.",
+      "halima": "H. Abdi: Charged. Josphat too, as an accessory; he's pleading. Nyokabi has moved to her sister's.",
+      "desk": "A 16 kg kettlebell with a clean handle, tagged."
+    },
+    "83": {
+      "mwalimu": "Check before you accuse. They're counting on you not to.",
+      "halima": "H. Abdi: Charged. Kevin has his name back. Amani, Kiprop is taking a lot of interest in your cases. So am I.",
+      "desk": "A canvas apron with a wiped stain, red-edged on the board."
+    },
+    "84": {
+      "mwalimu": "The one who died isn't always the one who was meant to.",
+      "halima": "H. Abdi: Charged. Marcus is charged with blackmail. Desmond asked to attend Beatrice's funeral. The court said no.",
+      "desk": "A drinking glass with no ice ring, in an evidence box."
+    },
+    "85": {
+      "mwalimu": "Two hands on the shoulders, two on the wrists. Count the hands.",
+      "halima": "H. Abdi: Both charged. The DJ sent an apology to Wilson for lying. PataScore's board has suspended the lending ledger.",
+      "desk": "A pink acrylic nail tip in a small evidence tube."
+    },
+    "86": {
+      "mwalimu": "Fourth floor. Lands House. Look at the faces, Amani. Don't stare.",
+      "halima": "H. Abdi: Charged. Imara has referred the 61 claims. Kiprop told me in the corridor that I should \"enjoy my winning streak\". I wrote it down.",
+      "desk": "A car key fob tagged \"E. Karanja\", red-edged on the board."
+    },
+    "87": {
+      "mwalimu": "Cut or torn. It's always one or the other.",
+      "halima": "H. Abdi: Charged. Gerald is charged with fraud over the horse. Zakaria asked to see the girth. I said no.",
+      "desk": "A girth strap, two-thirds cut, in an evidence sleeve."
+    },
+    "88": {
+      "mwalimu": "Listen to the recording twice. The second time, listen for who isn't speaking.",
+      "halima": "H. Abdi: Charged. Nekesa has a new job with a family in Kileleshwa. She asked me to thank the detective who looked at the dust.",
+      "desk": "A baby monitor with its green light on, tagged as a witness exhibit."
+    },
+    "89": {
+      "mwalimu": "A deletion has an author. Find the account.",
+      "halima": "H. Abdi: Charged. Ezekiel too. The inquiry into the March crush has reopened. I have a meeting with Advocate Kiprop on Thursday about something she won't put in writing.",
+      "desk": "A camera memory card in an evidence bag, its last frame printed beside it."
+    },
+    "90": {
+      "mwalimu": null,
+      "halima": "H. Abdi: I'm back. Mandazi are on your desk. Read the envelope again tonight, and then don't read it again until you're rested.",
+      "desk": "Halima's engraved fountain pen, beside the phone."
+    },
+    "91": {
+      "mwalimu": "Three names on a trust. Count the heads, Amani, not the hats.",
+      "halima": "H. Abdi: Charged. Anjali Mehta has sent me everything Jumuiya Bank holds on Msingi. She apologised for the bank. She didn't need to.",
+      "desk": "A printed \"lift out of service\" notice in an evidence sleeve, its tape still on the corners."
+    },
+    "92": {
+      "mwalimu": "Records, fourth floor. Now the brass says it too.",
+      "halima": "H. Abdi: Daudi pleaded. Hamisi sat at the back. He asked for his father's proof when we're done; I said yes.",
+      "desk": "A cast-iron hand embosser, hung upside down on a peg in the evidence room."
+    },
+    "93": {
+      "mwalimu": "Envelopes. Never phones. That's how you know someone above them was careful.",
+      "halima": "H. Abdi: Edwin charged, Fred as an accessory. Julius Emojong gave his statement over two days. \"Through Adjudication.\" Read it before you sleep, not after.",
+      "desk": "A locked steel box, opened, eleven years of notebooks stacked beside it."
+    },
+    "94": {
+      "mwalimu": "I heard. Eat something. I'm coming to Nairobi on Friday.",
+      "halima": "H. Abdi: Rhobi charged. Mwita too, for conspiracy. Douglas Njuguna's mother came to collect his things. I went with her.",
+      "desk": "A plastic food tub with a parcel tag: \"For: B. Mbuvi, Block C\"."
+    },
+    "95": {
+      "mwalimu": "\"She objected.\" Yes. And then I signed. Both of those are true, Amani.",
+      "halima": "H. Abdi: Kadzo charged. Esther's statement is sworn and filed. The diary is in my safe. A foundation called Ukarimu, again.",
+      "desk": "A brass candlestick with a square base, in an evidence box beside its twin."
+    },
+    "96": {
+      "mwalimu": "Two old men who saw it, and twelve years of being afraid. Be gentle with the next one.",
+      "halima": "H. Abdi: Pius charged, Ivan as an accessory. \"Tell her it's done.\" I've asked the airlines to flag three names.",
+      "desk": "An old hymnbook with its inside cover torn away, on the corner of Amani's desk."
+    },
+    "97": {
+      "mwalimu": "He decided to stop. Remember that about him too.",
+      "halima": "H. Abdi: Sagal charged. His letter came on Monday. \"The desk was Records.\" Two names now.",
+      "desk": "A rubber door wedge, steam-warped, in an evidence bag."
+    },
+    "98": {
+      "mwalimu": "Office 4.12. The corner office by the window. I told you I knew the corridor.",
+      "halima": "H. Abdi: Oduya charged, and as an accessory to your father's murder. Okoth as an accessory. Mutua brought me his mother's note himself.",
+      "desk": "A soapstone bird, washed by the lake, in an evidence tray."
+    },
+    "99": {
+      "mwalimu": "Office 4.12. Go and get her before nine. And Amani: take your father's file with you.",
+      "halima": "H. Abdi: Maina charged. At 23:40 the airline called: Nairobi to London, 09:15. I've pre-filed the records request. Go.",
+      "desk": "A key-fob lanyard in an evidence bag, its clip still holding a hair."
+    },
+    "100": {
+      "mwalimu": "Close the drawer, Amani. Go home and sleep. He'd have been proud of how you did it. By the book.",
+      "halima": "H. Abdi: Accepted. All of it.",
+      "desk": "Joseph's file, stamped CLOSED in red, thick now. Beside it, a new folder: \"OB 02/05/12\"."
+    }
+  },
+  "patternFile": {
+    "unlocksAfter": 10,
+    "autoFile": "Every fact with a spine thread is pinned when its case is solved, whether or not the player found it (design doc §4.7).",
+    "openingPins": [
+      "case-010:f_order_mvua",
+      "case-006:f_calendar_till",
+      "case-010:f_note_kivuli"
+    ]
+  },
+  "collectibles": [
+    {
+      "case": 10,
+      "id": "col_omar_stamp",
+      "name": "Rashid Omar's brass shop stamp",
+      "desc": "Omar Printers — River Road. Given to Amani by Juma Mwakio. Stamps every charge sheet from case 11 onwards."
+    },
+    {
+      "case": 20,
+      "id": "col_upendo_ledger",
+      "name": "A page of the Upendo ledger",
+      "desc": "Photocopied, the 24 members' names in Anne Mumbua's handwriting. Sent to Amani by the members after the payout is restored. Framed on the desk."
+    },
+    {
+      "case": 30,
+      "id": "col_dhow_compass",
+      "name": "A brass dhow compass",
+      "desc": "Sent from Lamu by Abdalla Khamis, with a note: \"Baba refused them too. Thank you for reading him right.\""
+    },
+    {
+      "case": 40,
+      "id": "col_joseph_compass",
+      "name": "Joseph Mwenda's surveying compass",
+      "desc": "From Joseph's evidence box, released after twelve years in the Nakuru evidence store. Its old leather case still smells of red soil. It sits next to the dhow compass from Lamu, pointing a slightly different north.",
+      "image": {
+        "kind": "evidence",
+        "brief": "an old brass surveyor's prismatic compass in a worn leather case, red volcanic dust in the stitching, on a wooden desk",
+        "ref": "reference"
+      }
+    },
+    {
+      "case": 50,
+      "id": "col_walter_float",
+      "name": "Walter Ogada's carved fishing float",
+      "desc": "Carved from light wood, worn smooth by forty-five years of water. Given to Amani by Mary Ogada: \"He said you'd come. He said someone always comes in the end.\"",
+      "image": {
+        "kind": "evidence",
+        "brief": "a hand-carved wooden fishing float, worn smooth and pale, a short length of old net cord tied through it, on a wooden desk",
+        "ref": "reference"
+      }
+    },
+    {
+      "case": 60,
+      "id": "col_lemayian_whistle",
+      "name": "Corporal Lemayian Kantai's ranger whistle",
+      "desc": "A steel ranger's whistle on a faded green lanyard, from case 54. Presented to Amani by Sergeant Naisula Koitamet on behalf of the Enkare rangers, on the day of the landowners' meeting: \"He blew it for lions. Blow it for us if you need us.\"",
+      "image": {
+        "kind": "evidence",
+        "brief": "a steel ranger's whistle on a faded green woven lanyard, coiled on a wooden desk",
+        "ref": "reference"
+      }
+    },
+    {
+      "case": 70,
+      "id": "col_joseph_file",
+      "name": "Joseph Mwenda's original file, reopened",
+      "desc": "A thick buff folder with Mwalimu's handwritten notes from the nine days, and a new OB number written on the cover in Amani's hand. Given to Amani by Mwalimu at her kitchen table.",
+      "image": {
+        "kind": "evidence",
+        "brief": "a thick buff police file folder tied with string, an old case number crossed out and a new OB number handwritten on the cover, on a kitchen table",
+        "ref": "reference"
+      }
+    },
+    {
+      "case": 80,
+      "id": "col_drawer_key",
+      "name": "The key to drawer 14",
+      "desc": "A small brass key on a ring with a cardboard tag in Abdia Golicha's handwriting: \"Ask him.\" She tagged it in the scanner tray before she opened the drawer.",
+      "image": {
+        "kind": "evidence",
+        "brief": "a small brass cabinet key on a steel ring with a handwritten cardboard tag reading \"Ask him.\" on a registry desk",
+        "ref": "reference"
+      }
+    },
+    {
+      "case": 90,
+      "id": "col_halima_pen",
+      "name": "Halima's fountain pen",
+      "desc": "A black fountain pen engraved \"H. Abdi — from Baba\". Planted under Advocate Kiprop's desk to frame her; given to Amani to sign Kivuli's charge sheet with. In case 100 the charge sheet is signed with it.",
+      "image": {
+        "kind": "evidence",
+        "brief": "a black fountain pen engraved H. Abdi from Baba lying on a detective's desk beside a notebook",
+        "ref": "reference"
+      }
+    },
+    {
+      "case": 100,
+      "id": "col_joseph_closed",
+      "name": "Joseph Mwenda's file, closed with the truth",
+      "desc": "The prologue's thin folder, thick now, with Amani's last OB entry typed at the bottom of the last page and a red CLOSED stamp: \"Not a robbery.\"",
+      "image": {
+        "kind": "evidence",
+        "brief": "a thick buff police file folder stamped CLOSED in red ink, tied with string, on a detective's desk beside a fountain pen",
+        "ref": "reference"
+      }
+    }
+  ],
+  "phoneNumbers": "Every phone number in game text is written 07xx xxx NNN: the middle digits are always masked, so no complete number ever appears and none can belong to a real subscriber. Till numbers are fictional (Till 880 214).",
+  "masts": [
+    {
+      "id": "mast_oldtown",
+      "name": "Old Town",
+      "region": 3
+    },
+    {
+      "id": "mast_biashara",
+      "name": "Biashara",
+      "region": 3
+    },
+    {
+      "id": "mast_mwembe",
+      "name": "Mwembe Tayari",
+      "region": 3
+    },
+    {
+      "id": "mast_likoni",
+      "name": "Likoni Ferry",
+      "region": 3
+    },
+    {
+      "id": "mast_island",
+      "name": "Mombasa Island (Old Port)",
+      "region": 3
+    },
+    {
+      "id": "mast_kisauni",
+      "name": "Kisauni",
+      "region": 3
+    },
+    {
+      "id": "mast_kongowea",
+      "name": "Kongowea",
+      "region": 3
+    },
+    {
+      "id": "mast_nyali",
+      "name": "Nyali",
+      "region": 3
+    },
+    {
+      "id": "mast_ganjoni",
+      "name": "Ganjoni",
+      "region": 3
+    },
+    {
+      "id": "mast_bamburi",
+      "name": "Bamburi",
+      "region": 3
+    },
+    {
+      "id": "mast_mtwapa",
+      "name": "Mtwapa",
+      "region": 3
+    },
+    {
+      "id": "mast_shimanzi",
+      "name": "Shimanzi",
+      "region": 3
+    },
+    {
+      "id": "mast_leven",
+      "name": "Leven / Old Town East",
+      "region": 3
+    }
+  ],
+  "mastNote": "Masts are fictional coverage zones about 1–2 km across. A phone on a mast means \"somewhere in that zone\" (master list D1).",
+  "clock": {
+    "interview": [
+      2,
+      2
+    ],
+    "visit": [
+      1,
+      3
+    ],
+    "read": [
+      0,
+      1
+    ],
+    "search": [
+      3,
+      3
+    ],
+    "records": [
+      4,
+      4
+    ],
+    "submit": [
+      1,
+      1
+    ],
+    "detain": [
+      0,
+      0
+    ],
+    "sample": [
+      1,
+      1
+    ],
+    "press": [
+      0,
+      0
+    ],
+    "wait": [
+      1,
+      24
+    ],
+    "release": [
+      0,
+      0
+    ],
+    "rush": [
+      0,
+      0
+    ],
+    "travel": [
+      0,
+      3
+    ],
+    "reopen": [
+      0,
+      1
+    ]
+  },
+  "clockNote": "The arrest clock is 24 in-game hours from detention (Article 49 of the Constitution of Kenya: a detained person must be brought before a court within 24 hours). Actions advance it; nothing runs in real time.",
+  "labHours": {
+    "prints": 6,
+    "soil": 8,
+    "toolMarks": 8,
+    "paint": 8,
+    "water": 10,
+    "fibres": 12,
+    "trace": 12,
+    "toxicology": 18,
+    "autopsy": 0,
+    "document": 10,
+    "handwriting": 10
+  },
+  "labNote": "Document and handwriting examinations go to the Questioned Documents Lab (fictional), Nairobi: 10 lab hours (region 7).",
+  "imageContinuity": [
+    {
+      "key": "juma mwakio",
+      "anchor": 10,
+      "note": "Rashid's apprentice in case 10, grown up in case 92 (21): the same face, years older"
+    },
+    {
+      "key": "benedict mbuvi",
+      "anchor": 50,
+      "note": "Fundi: garage owner (50); remand prisoner (94, 100), thinner and greyer, the limp gone"
+    },
+    {
+      "key": "kennedy mulwa",
+      "anchor": 74
+    },
+    {
+      "key": "julius emojong",
+      "anchor": 80,
+      "note": "Records officer (80); in custody (100)"
+    },
+    {
+      "key": "daniel mwita",
+      "anchor": 90,
+      "note": "Security boss (90); on remand (94)"
+    },
+    {
+      "key": "pius cheruiyot",
+      "anchor": 96
+    },
+    {
+      "key": "margaret kabiru",
+      "anchor": 86,
+      "recurring": "rc_kabiru"
+    },
+    {
+      "key": "raphael oduya",
+      "anchor": 86,
+      "recurring": "rc_oduya"
+    },
+    {
+      "key": "stanley rotich",
+      "anchor": 86,
+      "recurring": "rc_rotich"
+    },
+    {
+      "key": "esther wairimu",
+      "anchor": 60,
+      "recurring": "rc_mwalimu"
+    },
+    {
+      "key": "joseph mwenda",
+      "anchor": 40,
+      "recurring": "rc_joseph"
+    }
+  ]
+}

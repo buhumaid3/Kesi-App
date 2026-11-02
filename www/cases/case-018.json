@@ -1,0 +1,962 @@
+{
+  "meta": {
+    "id": "case-018",
+    "number": 18,
+    "region": "eastlands",
+    "regionNumber": 2,
+    "title": "Studio ya Mtaa",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 14,
+    "date": "Sunday 13 July",
+    "folderTab": "DANDORA"
+  },
+  "pattern": {
+    "crimePattern": "songwriter kills the producer who released her song under another name",
+    "noRealCaseRetold": true,
+    "notes": "Fictional studio, artists and song. The concert venue is named only as \"the Kasarani show\"; no real event or performer is depicted.",
+    "tags": [
+      "blunt-force",
+      "credit-dispute",
+      "portrait-evidence"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 3,
+    "redHerrings": 0,
+    "liars": 1,
+    "groups": [
+      "who"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness"
+    ],
+    "gatedActions": [],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 30/13/07",
+    "date": "Sunday 13 July",
+    "time": "00:22",
+    "reportedBy": "Clinton Mbaabu, musician, Dandora Phase 4",
+    "text": "Clinton Mbaabu, a musician, reports that music producer Shadrack \"Shaddy B\" Wekulo (25) was found dead in his studio, Mtaa Records, Dandora Phase 4, at 00:05, when Clinton arrived for a midnight recording session.",
+    "facts": [
+      "f_ob_found"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_shaddy",
+      "role": "victim",
+      "name": "Shadrack \"Shaddy B\" Wekulo",
+      "age": 25,
+      "occupation": "Producer, Mtaa Records",
+      "bio": "Built a studio in his mother's old ground-floor flat. Half of Dandora has recorded there; most of them say he owes them something.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_studio",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan young man, mid 20s, bucket hat, oversized studio headphones around his neck, a thin gold chain, a cocky half-smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mercy",
+      "role": "suspect",
+      "name": "Mercyline Jepkosgei",
+      "age": 24,
+      "occupation": "Singer and songwriter",
+      "bio": "Shaddy's girlfriend and co-writer. Last week he released her song, Moto wa Jioni, credited to another artist, with her listed as \"backing vocals\".",
+      "community": "Kalenjin",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_booking"
+      },
+      "at": "loc_studio",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan young woman, mid 20s, a cropped silver stage jacket, long braids, stage make-up a little smudged, ONE gold hoop earring in her RIGHT ear only, LEFT ear clearly bare, defiant and frightened, ID-photo framing, face turned slightly so both ears are visible",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_clinton",
+      "role": "suspect",
+      "name": "Clinton Mbaabu",
+      "age": 27,
+      "occupation": "MC; books midnight sessions",
+      "bio": "Rival MC. Shaddy owed him three paid sessions he never gave him. Found the body.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_kariobangi",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan young man, late 20s, durag under a cap, a hoodie with a hand-painted crew name, a notebook of lyrics in his hand, shaken, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_rosemary",
+      "role": "suspect",
+      "name": "Rosemary Nyambura",
+      "age": 38,
+      "occupation": "Mercyline's manager",
+      "bio": "Manages four young artists. Shaddy owed her a performance fee from April.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_mercy_show"
+      },
+      "at": "plc_kasarani",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 30s, a lanyard with an ALL ACCESS pass, a clipboard and two phones, sharp blazer over a T-shirt, exhausted, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_sophie",
+      "role": "witness",
+      "name": "Sophie Adongo",
+      "age": 41,
+      "occupation": "Neighbour, first floor",
+      "bio": "Lives above the studio. Has complained about the bass every weekend for two years.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_sophie",
+      "image": null
+    },
+    {
+      "id": "p_erastus",
+      "role": "witness",
+      "name": "Erastus Mugo",
+      "age": 33,
+      "occupation": "Boda rider, Clinton's regular",
+      "statementOnly": true,
+      "bio": "Rides nights from the Kariobangi base.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_clinton_claim"
+      },
+      "at": "plc_kariobangi",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_sophie",
+      "name": "Sophie's flat, upstairs"
+    },
+    {
+      "id": "plc_kariobangi",
+      "name": "Boda base, Kariobangi"
+    },
+    {
+      "id": "plc_kasarani",
+      "name": "The Kasarani show, across town"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_studio",
+      "name": "Mtaa Records, Dandora Phase 4",
+      "kind": "scene",
+      "description": "A one-room studio in a converted ground-floor flat. Egg trays glued over every wall for soundproofing. A mixing desk, two speakers, a wardrobe turned into a vocal booth. A booking clipboard by the door. A concert poster on the outside of the door.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "By the mixing desk",
+          "pos": [
+            46,
+            62
+          ],
+          "yields": "ev_body",
+          "text": "Shaddy lies by the mixing desk. A heavy microphone stand is on the floor beside him."
+        },
+        {
+          "id": "hs_desk",
+          "label": "Under the mixing desk",
+          "pos": [
+            52,
+            78
+          ],
+          "yields": "ev_earring",
+          "text": "Something small and gold glints under the desk, against the wall."
+        },
+        {
+          "id": "hs_clipboard",
+          "label": "Booking clipboard",
+          "pos": [
+            12,
+            40
+          ],
+          "yields": "ev_booking",
+          "text": "Tonight's sessions, written in by the artists themselves."
+        },
+        {
+          "id": "hs_poster",
+          "label": "Poster on the door",
+          "pos": [
+            8,
+            22
+          ],
+          "yields": "ev_poster",
+          "text": "A poster for tonight's big show at Kasarani: a line-up with times, and a photo of each act."
+        },
+        {
+          "id": "hs_drawer",
+          "label": "Desk drawer",
+          "pos": [
+            60,
+            56
+          ],
+          "yields": "ev_lyrics",
+          "text": "A drawer of loose papers: contracts, receipts, handwritten lyrics."
+        },
+        {
+          "id": "hs_upstairs",
+          "label": "Stairs up",
+          "pos": [
+            90,
+            30
+          ],
+          "yields": "ev_sophie",
+          "text": "Sophie Adongo is sitting on the stairs in her dressing gown. \"I told him the bass would kill somebody one day. I didn't mean this.\""
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a tiny home recording studio in a converted ground-floor flat in Dandora, Nairobi at night, walls covered in grey egg trays, a mixing desk with glowing faders, two speakers, a wardrobe with its doors open made into a vocal booth, a microphone stand lying on the floor, a booking clipboard by the door, no people in focus"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body by the desk",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Struck with a heavy microphone stand."
+      },
+      "facts": [
+        "f_body_stand"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the floor of a small recording studio, a heavy microphone stand lying across a tangle of cables, a knocked-over swivel chair, egg-tray walls, no body visible"
+      }
+    },
+    {
+      "id": "ev_earring",
+      "type": "physical",
+      "title": "Gold hoop under the desk",
+      "render": "object",
+      "body": {
+        "label": "A single gold hoop earring, the clasp bent open."
+      },
+      "facts": [
+        "f_earring"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a single gold hoop earring with its clasp bent open, lying on a dusty floor against the wall under a mixing desk, cables around it"
+      }
+    },
+    {
+      "id": "ev_booking",
+      "type": "physical",
+      "title": "Booking clipboard",
+      "render": "timetable",
+      "body": {
+        "rows": [
+          {
+            "time": "23:00",
+            "name": "MERCY",
+            "session": "vocal retake",
+            "initials": "MJ ♡"
+          },
+          {
+            "time": "00:00",
+            "name": "CLINTON",
+            "session": "midnight session"
+          }
+        ]
+      },
+      "facts": [
+        "f_booking",
+        "f_booking_clinton"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_poster",
+      "type": "physical",
+      "title": "Kasarani show poster",
+      "render": "board",
+      "body": {
+        "lineup": [
+          {
+            "time": "21:00–21:20",
+            "act": "MERCYLINE"
+          }
+        ],
+        "photo": "Mercyline on stage in a silver jacket"
+      },
+      "facts": [
+        "f_lineup",
+        "f_poster_jacket"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lyrics",
+      "type": "physical",
+      "title": "Draft lyrics: Moto wa Jioni",
+      "render": "note",
+      "body": {
+        "text": "Moto wa Jioni — verse 1, chorus, verse 2. Handwritten, with small hearts in the margin.",
+        "signed": "MJ ♡"
+      },
+      "facts": [
+        "f_lyrics"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_sophie",
+      "type": "witness",
+      "title": "Statement: Sophie Adongo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_sophie"
+      },
+      "facts": [
+        "f_sophie_shout",
+        "f_sophie_run",
+        "f_sophie_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mercy_seen",
+      "type": "physical",
+      "title": "Amani's note: Mercyline at the studio door",
+      "render": "sceneNote",
+      "body": {
+        "note": "Mercyline Jepkosgei arrives at 01:10 when called. One gold hoop, right ear. Left ear bare."
+      },
+      "facts": [
+        "f_mercy_one_earring"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_payments",
+      "type": "physical",
+      "title": "Performer-payment sheet",
+      "render": "visitorRegister",
+      "body": {
+        "rows": [
+          {
+            "time": "22:40",
+            "signed": "R. Nyambura"
+          },
+          {
+            "time": "23:25",
+            "signed": "R. Nyambura"
+          },
+          {
+            "time": "00:10",
+            "signed": "R. Nyambura"
+          }
+        ]
+      },
+      "facts": [
+        "f_payments"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_erastus",
+      "type": "witness",
+      "title": "Phone statement: Erastus Mugo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_erastus",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_erastus"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Clinton Mbaabu found producer Shadrack \"Shaddy B\" Wekulo dead in Mtaa Records at 00:05.",
+      "kind": "true",
+      "about": [
+        "p_shaddy",
+        "p_clinton",
+        "loc_studio"
+      ]
+    },
+    {
+      "id": "f_body_stand",
+      "text": "Shaddy was struck with a heavy microphone stand.",
+      "kind": "true",
+      "about": [
+        "p_shaddy",
+        "loc_studio"
+      ]
+    },
+    {
+      "id": "f_earring",
+      "text": "A single gold hoop earring, clasp bent open, was lying under the mixing desk.",
+      "kind": "true",
+      "about": [
+        "loc_studio",
+        "ev_earring"
+      ]
+    },
+    {
+      "id": "f_booking",
+      "text": "Booking clipboard: '23:00 — MERCY — vocal retake', initialled 'MJ' with a small heart.",
+      "kind": "true",
+      "about": [
+        "p_mercy",
+        "loc_studio"
+      ],
+      "where": {
+        "person": "p_mercy",
+        "place": "loc_studio",
+        "from": "23:00",
+        "to": "23:05"
+      }
+    },
+    {
+      "id": "f_booking_clinton",
+      "text": "Booking clipboard: '00:00 — CLINTON — midnight session'.",
+      "kind": "true",
+      "about": [
+        "p_clinton"
+      ]
+    },
+    {
+      "id": "f_lineup",
+      "text": "Kasarani show poster: Mercyline's slot was 21:00–21:20.",
+      "kind": "true",
+      "about": [
+        "p_mercy",
+        "ev_poster"
+      ]
+    },
+    {
+      "id": "f_poster_jacket",
+      "text": "The poster photo shows Mercyline on stage in a silver jacket.",
+      "kind": "true",
+      "about": [
+        "p_mercy",
+        "ev_poster"
+      ]
+    },
+    {
+      "id": "f_lyrics",
+      "text": "Draft lyrics of Moto wa Jioni in Mercyline's handwriting, with the same small hearts.",
+      "kind": "true",
+      "about": [
+        "p_mercy",
+        "p_shaddy"
+      ]
+    },
+    {
+      "id": "f_sophie_shout",
+      "text": "Sophie: shouting from the studio from about 23:15, a man and a woman. A crash at about 23:30.",
+      "kind": "true",
+      "about": [
+        "p_sophie",
+        "loc_studio"
+      ]
+    },
+    {
+      "id": "f_sophie_run",
+      "text": "Sophie: from her window, right after the crash, she saw a woman in a silver jacket run to a boda at the corner.",
+      "kind": "true",
+      "about": [
+        "p_sophie"
+      ]
+    },
+    {
+      "id": "f_sophie_self",
+      "text": "Sophie stayed upstairs and only came down when the police arrived.",
+      "kind": "true",
+      "about": [
+        "p_sophie"
+      ],
+      "where": {
+        "person": "p_sophie",
+        "place": "plc_sophie",
+        "from": "22:00",
+        "to": "00:30"
+      }
+    },
+    {
+      "id": "f_mercy_one_earring",
+      "text": "Mercyline is wearing one gold hoop, in her right ear. Her left ear is bare.",
+      "kind": "true",
+      "about": [
+        "p_mercy"
+      ]
+    },
+    {
+      "id": "f_mercy_show",
+      "text": "Mercyline: \"I was at the Kasarani show until midnight. Ask my manager, Rosemary.\"",
+      "kind": "lie",
+      "about": [
+        "p_mercy",
+        "p_rosemary"
+      ]
+    },
+    {
+      "id": "f_mercy_song",
+      "text": "Mercyline: \"Shaddy stole my song. I wanted my name on it, not his blood.\"",
+      "kind": "claim",
+      "about": [
+        "p_mercy",
+        "p_shaddy"
+      ]
+    },
+    {
+      "id": "f_mercy_admits",
+      "text": "Mercyline admits she went to the studio after her set and signed in for 23:00. They fought about the song. She says she left before half past eleven and he was alive.",
+      "kind": "true",
+      "about": [
+        "p_mercy",
+        "loc_studio"
+      ],
+      "where": {
+        "person": "p_mercy",
+        "place": "loc_studio",
+        "from": "23:00",
+        "to": "23:28"
+      }
+    },
+    {
+      "id": "f_clinton_claim",
+      "text": "Clinton: \"I came for my midnight session and found him. Ask my rider.\"",
+      "kind": "claim",
+      "about": [
+        "p_clinton"
+      ]
+    },
+    {
+      "id": "f_erastus",
+      "text": "Erastus: Clinton was at the Kariobangi boda base playing pool from about 22:30. Erastus rode him to the studio at 23:50 and dropped him at 00:05.",
+      "kind": "true",
+      "about": [
+        "p_erastus",
+        "p_clinton"
+      ],
+      "where": {
+        "person": "p_clinton",
+        "place": "plc_kariobangi",
+        "from": "22:30",
+        "to": "23:50"
+      }
+    },
+    {
+      "id": "f_rosemary_claim",
+      "text": "Rosemary: \"I was paying performers at Kasarani until after midnight.\"",
+      "kind": "claim",
+      "about": [
+        "p_rosemary"
+      ]
+    },
+    {
+      "id": "f_rosemary_crying",
+      "text": "Rosemary: Mercyline left the show straight after her set, crying.",
+      "kind": "true",
+      "about": [
+        "p_rosemary",
+        "p_mercy"
+      ]
+    },
+    {
+      "id": "f_payments",
+      "text": "Kasarani organiser's payment sheet: Rosemary signed for performer payouts at 22:40, 23:25 and 00:10.",
+      "kind": "true",
+      "about": [
+        "p_rosemary"
+      ],
+      "where": {
+        "person": "p_rosemary",
+        "place": "plc_kasarani",
+        "from": "22:40",
+        "to": "00:10"
+      }
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_mercy",
+      "stance": "cooperative",
+      "intro": "Mercyline arrives at 01:10 with her silver jacket over her arm. She keeps touching her ear. \"Shaddy? Who did this to him?\"",
+      "claims": [
+        "f_mercy_show",
+        "f_mercy_song"
+      ],
+      "yields": [
+        "ev_mercy_seen"
+      ],
+      "topics": [
+        {
+          "about": "ev_lyrics",
+          "reply": "That is my song. My words, my melody. He put another man's name on it and called me backing vocals.",
+          "reveals": []
+        },
+        {
+          "about": "ev_earring",
+          "reply": "Gold hoops? Every manzi in Nairobi has gold hoops.",
+          "reveals": []
+        },
+        {
+          "about": "f_sophie_run",
+          "reply": "Silver is in this year. Go to any show.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_clinton",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_booking"
+      ],
+      "intro": "Clinton sits on the kerb outside the studio with his lyric book on his knees. \"I came to record. That's all. I came to record.\"",
+      "claims": [
+        "f_clinton_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_shaddy",
+          "reply": "He took everyone's money. Not everyone's songs. Mine he just never recorded.",
+          "reveals": []
+        },
+        {
+          "about": "p_erastus",
+          "reply": "Erastus brought me. Call him. We left Kariobangi ten to twelve.",
+          "reveals": [
+            "ev_erastus"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_rosemary",
+      "stance": "cooperative",
+      "intro": "Rosemary answers on the third ring, a crowd still roaring behind her. \"Mtaa Records? What happened?\"",
+      "claims": [
+        "f_rosemary_claim"
+      ],
+      "yields": [
+        "ev_payments"
+      ],
+      "topics": [
+        {
+          "about": "p_mercy",
+          "reply": "Mercy? She left straight after her set. She was crying. I thought it was nerves.",
+          "reveals": [
+            "f_rosemary_crying"
+          ]
+        },
+        {
+          "about": "p_shaddy",
+          "reply": "He owed me forty thousand from April. You don't kill a man you're waiting to get paid by.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_sophie",
+      "stance": "cooperative",
+      "intro": "Sophie pulls her dressing gown tighter. \"Two years of bass through my floor. Tonight it was shouting instead.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_mercy",
+          "reply": "His girlfriend. The singer. She is here more than he is.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_mercy_show",
+      "claim": "f_mercy_show",
+      "brokenBy": [
+        "f_booking",
+        "f_lineup"
+      ],
+      "reveals": [
+        "f_mercy_admits"
+      ],
+      "reaction": "I went to the studio after my set. Fine. I signed in for a retake so he would have to see me. We fought about the song. I left before half eleven. He was alive. He was laughing at me.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_mercy",
+      "text": "Mercyline Jepkosgei",
+      "category": "person",
+      "ref": "p_mercy",
+      "unlock": {
+        "anyOf": [
+          "f_booking",
+          "f_lyrics"
+        ]
+      }
+    },
+    {
+      "id": "w_clinton",
+      "text": "Clinton Mbaabu",
+      "category": "person",
+      "ref": "p_clinton",
+      "unlock": {
+        "anyOf": [
+          "f_ob_found"
+        ]
+      }
+    },
+    {
+      "id": "w_rosemary",
+      "text": "Rosemary Nyambura",
+      "category": "person",
+      "ref": "p_rosemary",
+      "unlock": {
+        "anyOf": [
+          "f_mercy_show"
+        ]
+      }
+    },
+    {
+      "id": "w_sophie",
+      "text": "Sophie Adongo",
+      "category": "person",
+      "ref": "p_sophie",
+      "unlock": {
+        "anyOf": [
+          "f_sophie_shout"
+        ]
+      }
+    },
+    {
+      "id": "w_erastus",
+      "text": "Erastus Mugo",
+      "category": "person",
+      "ref": "p_erastus",
+      "unlock": {
+        "anyOf": [
+          "f_erastus"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} at Mtaa Records.",
+    "fixed": {
+      "victim": "Shadrack Wekulo"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_mercy"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her name on the clipboard, her jacket at the corner, and her other earring under his desk. That will hold.",
+          "fail": [
+            "Doesn't hold up. The man who found him arrived after the crash. Who was there when it happened?",
+            "No. Look at the earring. Then look at everyone's ears."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_studio",
+      "from": "23:15",
+      "to": "23:35"
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_mercy_show",
+          "f_booking",
+          "f_lineup",
+          "f_mercy_admits"
+        ],
+        "concludes": "Mercyline's set ended at 21:20 and she signed in at the studio for 23:00. She was not at Kasarani until midnight; pressed, she admits being at the studio."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_sophie_shout",
+          "f_sophie_run",
+          "f_poster_jacket"
+        ],
+        "concludes": "A man and a woman were shouting from 23:15. After the crash at 23:30 a woman in a silver jacket ran to a boda. Mercyline performed in a silver jacket tonight."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_earring",
+          "f_mercy_one_earring",
+          "f_lyrics"
+        ],
+        "concludes": "One gold hoop is under the desk, and Mercyline arrived wearing only one, in her right ear. He had stolen her song. Mercyline Jepkosgei killed Shaddy.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_clinton",
+        "blank": "who",
+        "by": [
+          "f_erastus"
+        ],
+        "why": "Clinton was playing pool at the Kariobangi boda base until 23:50 and reached the studio at 00:05, after the crash."
+      },
+      {
+        "word": "w_rosemary",
+        "blank": "who",
+        "by": [
+          "f_payments"
+        ],
+        "why": "Rosemary was signing for performer payouts at Kasarani at 22:40, 23:25 and 00:10."
+      },
+      {
+        "word": "w_sophie",
+        "blank": "who",
+        "by": [
+          "f_sophie_self"
+        ],
+        "why": "Sophie stayed in her flat upstairs until the police came."
+      },
+      {
+        "word": "w_erastus",
+        "blank": "who",
+        "by": [
+          "f_erastus"
+        ],
+        "why": "Erastus was at the Kariobangi base with Clinton until they rode out at 23:50."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Last week. Moto wa Jioni goes out under another artist's name. Mercyline, who wrote every word, is \"backing vocals\".",
+        "image": null
+      },
+      {
+        "text": "21:20. Her set at Kasarani ends. She leaves in her silver stage jacket, crying, and takes a boda across town.",
+        "image": null
+      },
+      {
+        "text": "23:00. She signs the studio clipboard for a \"vocal retake\", with the little heart she always draws, so he will have to see her.",
+        "image": "loc_studio"
+      },
+      {
+        "text": "She asks for her name on the song. He tells her she is lucky to be on it at all. At 23:30 she swings the mic stand. In the struggle her left earring falls and rolls under the desk.",
+        "image": null
+      },
+      {
+        "text": "She runs to a boda at the corner. Upstairs, Sophie sees a silver jacket go past under the streetlight.",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_booking",
+        "line": "Artists sign the clipboard themselves. Read who came at eleven, and how she signs her name."
+      },
+      "tier2": {
+        "facts": [
+          "f_earring",
+          "f_mercy_one_earring"
+        ],
+        "line": "One earring under the desk. Now look closely at everyone who walks through that door."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "gengetone",
+      "def": "A Kenyan street-music genre, born in the estates of Nairobi."
+    },
+    {
+      "term": "mbogi",
+      "def": "Crew; a group of friends (Sheng)."
+    },
+    {
+      "term": "manzi",
+      "def": "Young woman (Sheng)."
+    },
+    {
+      "term": "mtaa",
+      "def": "Neighbourhood; the estate. \"Studio ya mtaa\": the neighbourhood studio."
+    },
+    {
+      "term": "boda",
+      "def": "Short for boda-boda: a motorbike taxi."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "portraitAsEvidence"
+    ],
+    "beatNotes": "Portraits are evidence: first case where a detail in a person's image (one earring) is a fact. The portrait zoom view becomes a hotspot. Image requirement: Mercyline's portrait must show one gold hoop in the RIGHT ear and a bare LEFT ear; this image is checked by hand before shipping, because the deduction depends on it."
+  }
+}

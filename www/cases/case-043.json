@@ -1,0 +1,1932 @@
+{
+  "meta": {
+    "id": "case-043",
+    "number": 43,
+    "region": "kisumu-lake",
+    "regionNumber": 5,
+    "title": "Radio Nam Lolwe",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 25,
+    "date": "Friday 19 December",
+    "folderTab": "MFANGANO"
+  },
+  "pattern": {
+    "crimePattern": "rival shopkeeper kills the island agent who took his mobile-money and ferry agencies, and is alibied for the wrong time by a radio play",
+    "noRealCaseRetold": true,
+    "notes": "Fictional radio station, radio play and episode. The Dholuo line is for the cultural reader to confirm. Mfangano is home to both Suba and Luo families; the cultural reader should advise on names.",
+    "tags": [
+      "blunt-force",
+      "business-rivalry",
+      "false-alibi",
+      "radio",
+      "records",
+      "when-strip"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 4,
+    "redHerrings": 1,
+    "liars": 1,
+    "groups": [
+      "when",
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records"
+    ],
+    "twist": "the-shouting-was-a-radio-play"
+  },
+  "ob": {
+    "number": "OB 04/19/12",
+    "date": "Friday 19 December",
+    "time": "07:30",
+    "reportedBy": "Rispa Nyamogo, neighbour",
+    "text": "A neighbour reports the island's shopkeeper, Emmanuel Ochola (52), found dead in the back room of his shop at Sena, Mfangano Island. Neighbours heard \"a terrible quarrel and a crash\" at about 21:00 on Thursday night.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_emmanuel",
+      "role": "victim",
+      "name": "Emmanuel Ochola",
+      "age": 52,
+      "occupation": "Shopkeeper, mobile-money agent and ferry-ticket agent, Sena",
+      "bio": "Runs the shop with the island's only mobile-money agency and the ferry-ticket book. His radio is never off.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_shop",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, early 50s, a brown cardigan over a shirt, a mobile-money agent's green waistcoat, a pencil and a float book in his hands, a patient shopkeeper's smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_jacktone",
+      "role": "suspect",
+      "name": "Jacktone Ojuka",
+      "age": 61,
+      "occupation": "Rival shopkeeper, Sena",
+      "bio": "Held the agencies for twelve years until this year. Calls it theft.",
+      "community": "Luo",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_agency"
+      },
+      "at": "plc_jetty",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, early 60s, a pressed safari suit, a walking torch clipped to his belt, a confident, aggrieved face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_celestine",
+      "role": "suspect",
+      "name": "Celestine Wandera",
+      "age": 33,
+      "occupation": "Fish trader",
+      "redHerring": true,
+      "bio": "Owes Emmanuel KSh 30,000. He shouted at her in front of the shop on Tuesday.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_sel_celestine"
+      },
+      "at": "plc_church",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 30s, a church choir uniform blouse, a headscarf, a fish trader's strong forearms, nervous, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_steve",
+      "role": "suspect",
+      "name": "Steve Ochola",
+      "age": 29,
+      "occupation": "Emmanuel's nephew",
+      "bio": "Helps in the shop. Would run it now. On the mainland this week.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_mbita",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo young man, late 20s, a T-shirt and jeans, a phone pressed to his ear, grief and disbelief, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_rispa",
+      "role": "witness",
+      "name": "Rispa Nyamogo",
+      "age": 47,
+      "occupation": "Next-door neighbour",
+      "bio": "Has shared a wall with the shop for twenty years. Heard everything through it.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_rispa",
+      "image": null
+    },
+    {
+      "id": "p_owen",
+      "role": "witness",
+      "name": "Owen Mbori",
+      "age": 34,
+      "occupation": "Ferry-jetty clerk, Sena",
+      "bio": "Keeps the jetty logbook. Knows every boat and every face on the island.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_jetty",
+      "image": null
+    },
+    {
+      "id": "p_selpher",
+      "role": "witness",
+      "name": "Selpher Ochola",
+      "age": 49,
+      "occupation": "Emmanuel's wife",
+      "bio": "Spent Thursday night at her sister's across the hill.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_sister",
+      "image": null
+    },
+    {
+      "id": "p_paul",
+      "role": "witness",
+      "name": "Paul Odera",
+      "age": 55,
+      "occupation": "Fisherman",
+      "statementOnly": true,
+      "bio": "Mends his nets by the jetty path every evening.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_jetty",
+      "image": null
+    },
+    {
+      "id": "p_choirleader",
+      "role": "witness",
+      "name": "Mama Grace Akello",
+      "age": 62,
+      "occupation": "Choir leader, Sena church",
+      "statementOnly": true,
+      "bio": "Has run Thursday choir practice for thirty years and takes a register.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_church",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_backroom",
+      "name": "The shop's back room",
+      "within": "loc_shop"
+    },
+    {
+      "id": "plc_backgate",
+      "name": "The shop's back gate",
+      "within": "loc_shop"
+    },
+    {
+      "id": "plc_rispa",
+      "name": "Rispa's house, next door"
+    },
+    {
+      "id": "plc_jetty",
+      "name": "Sena ferry jetty"
+    },
+    {
+      "id": "plc_church",
+      "name": "Sena church"
+    },
+    {
+      "id": "plc_mbita",
+      "name": "Mbita, on the mainland"
+    },
+    {
+      "id": "plc_sister",
+      "name": "Selpher's sister's house, across the hill"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_shop",
+      "name": "Emmanuel's shop, Sena",
+      "kind": "scene",
+      "description": "A shop of whitewashed stone at the top of the trading centre: sacks of maize flour, soap, paraffin, a mobile-money counter with a float book, a ferry-ticket book on a nail. Through a curtain, the back room: a bed, a shelf of solar batteries, a radio. Emmanuel lies on the back-room floor.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The back room",
+          "pos": [
+            50,
+            62
+          ],
+          "yields": "ev_body",
+          "text": "Emmanuel lies on the floor below the battery shelf."
+        },
+        {
+          "id": "hs_battery",
+          "label": "The floor beside him",
+          "pos": [
+            36,
+            70
+          ],
+          "yields": "ev_battery",
+          "text": "A heavy solar battery on the floor beside him, out of its place on the shelf."
+        },
+        {
+          "id": "hs_radio",
+          "label": "The radio",
+          "pos": [
+            64,
+            30
+          ],
+          "yields": "ev_radio",
+          "text": "On the shelf, a small radio is still talking quietly."
+        },
+        {
+          "id": "hs_schedule",
+          "label": "Pinned schedule",
+          "pos": [
+            80,
+            24
+          ],
+          "yields": "ev_schedule",
+          "text": "The station's printed weekly schedule, pinned by the counter."
+        },
+        {
+          "id": "hs_float",
+          "label": "Agency float book",
+          "pos": [
+            20,
+            40
+          ],
+          "yields": "ev_float",
+          "text": "The mobile-money float book lies open on the counter."
+        },
+        {
+          "id": "hs_drawer",
+          "label": "Counter drawer",
+          "pos": [
+            26,
+            52
+          ],
+          "yields": "ev_agency_letters",
+          "text": "In the drawer: official letters, and a folded note."
+        },
+        {
+          "id": "hs_debt",
+          "label": "Credit book",
+          "pos": [
+            12,
+            56
+          ],
+          "yields": "ev_debt_book",
+          "text": "The shop's credit book, an old school exercise book."
+        },
+        {
+          "id": "hs_path",
+          "label": "Back gate",
+          "pos": [
+            92,
+            60
+          ],
+          "yields": "ev_path",
+          "text": "The back gate opens onto a steep path that winds down the hill to the jetty."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the inside of a small whitewashed island shop at Sena on Mfangano Island at dusk, shelves of maize flour, soap and paraffin, a mobile-money counter, a curtain to a back room with a shelf of solar batteries and a small radio, a steep green hill and the lake beyond the door, no people in focus"
+      }
+    },
+    {
+      "id": "loc_church",
+      "name": "Sena church",
+      "kind": "location",
+      "description": "A small church of iron sheets under a fig tree. On the noticeboard by the door, the radio station's weekly episode summary is pinned beside the hymn numbers.",
+      "unlock": {
+        "fact": "f_schedule"
+      },
+      "hotspots": [
+        {
+          "id": "hs_notice",
+          "label": "Noticeboard",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_script",
+          "text": "This week's episode summary for the Thursday radio play, typed and pinned."
+        },
+        {
+          "id": "hs_register",
+          "label": "Choir register",
+          "pos": [
+            70,
+            50
+          ],
+          "yields": "ev_choir",
+          "text": "The choir leader's register, Thursday's page ticked."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small iron-sheet church under a fig tree on a green island hillside above Lake Victoria, a noticeboard by the door with typed sheets pinned to it, no people in focus"
+      }
+    },
+    {
+      "id": "loc_jetty",
+      "name": "Sena ferry jetty",
+      "kind": "location",
+      "description": "A concrete jetty at the bottom of the hill, the ferry tied up, boxes stacked for collection, a clerk's hut with a logbook. Fishermen mend nets along the path.",
+      "unlock": {
+        "fact": "f_jack_jetty"
+      },
+      "hotspots": [
+        {
+          "id": "hs_log",
+          "label": "Jetty logbook",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_owen",
+          "text": "Owen opens the logbook at Thursday night."
+        },
+        {
+          "id": "hs_fisher",
+          "label": "Net-menders on the path",
+          "pos": [
+            76,
+            60
+          ],
+          "yields": "ev_seen",
+          "text": "An old fisherman mending a net looks up as you pass.",
+          "unlock": {
+            "fact": "f_owen"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a concrete ferry jetty at the foot of a green hill on Mfangano Island, a small ferry tied up, cardboard boxes stacked on the jetty, a clerk's hut, fishermen mending nets on the path, Lake Victoria at dusk"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The back room",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. One head wound. He lies below the battery shelf. Nothing is broken; no pots on the floor."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a small back room of an island shop, a shelf of solar batteries with one gap, a radio on the shelf, a neatly made bed, nothing broken, no body visible"
+      }
+    },
+    {
+      "id": "ev_battery",
+      "type": "physical",
+      "title": "The solar battery",
+      "render": "object",
+      "body": {
+        "label": "A 12-volt solar battery with a carrying handle. One corner marked."
+      },
+      "facts": [
+        "f_battery"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_radio",
+      "type": "physical",
+      "title": "The radio",
+      "render": "object",
+      "body": {
+        "label": "Still on in the morning, tuned to Radio Nam Lolwe. Its batteries nearly flat."
+      },
+      "facts": [
+        "f_radio"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a small battery radio on a wooden shelf, its dial tuned to a lake radio station, a power cable trailing to a solar battery"
+      }
+    },
+    {
+      "id": "ev_schedule",
+      "type": "physical",
+      "title": "Radio Nam Lolwe schedule",
+      "render": "timetable",
+      "body": {
+        "thursday": "21:00 — radio play, episode 12"
+      },
+      "facts": [
+        "f_schedule"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_script",
+      "type": "physical",
+      "title": "Episode 12 summary",
+      "render": "note",
+      "body": {
+        "scene2": "About 21:08–21:12: two brothers quarrel over a boat. \"Ka iwacho kamano, to ber idhi!\" Sound of pots crashing."
+      },
+      "facts": [
+        "f_script"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rispa",
+      "type": "witness",
+      "title": "Statement: Rispa Nyamogo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_rispa"
+      },
+      "facts": [
+        "f_rispa",
+        "f_rispa_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_selpher",
+      "type": "witness",
+      "title": "Statement: Selpher Ochola",
+      "render": "statement",
+      "body": {
+        "speaker": "p_selpher"
+      },
+      "facts": [
+        "f_selpher",
+        "f_selpher_self",
+        "f_sel_celestine"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_float",
+      "type": "physical",
+      "title": "Agency float book",
+      "render": "ledger",
+      "body": {
+        "last": "19:20 — withdrawal — in Emmanuel's hand",
+        "hours": "Agency hours: 07:00–21:00"
+      },
+      "facts": [
+        "f_float"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records_victim",
+      "type": "phone",
+      "title": "Records: Emmanuel's agency line",
+      "render": "manifest",
+      "body": {
+        "pesapap": "Last agency transaction 19:21. Nothing after."
+      },
+      "facts": [
+        "f_rec_victim"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_float"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_owen",
+      "type": "witness",
+      "title": "Statement and logbook: Owen Mbori",
+      "render": "statement",
+      "body": {
+        "speaker": "p_owen",
+        "log": "J. Ojuka — waiting for goods — from about 20:40"
+      },
+      "facts": [
+        "f_owen",
+        "f_owen_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_seen",
+      "type": "witness",
+      "title": "Statement: Paul Odera",
+      "render": "statement",
+      "body": {
+        "speaker": "p_paul"
+      },
+      "facts": [
+        "f_seen"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_path",
+      "type": "physical",
+      "title": "The back path",
+      "render": "sceneNote",
+      "body": {
+        "note": "Amani walks it with a torch: 48 minutes from the shop's back gate to the jetty."
+      },
+      "facts": [
+        "f_path"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_agency_letters",
+      "type": "physical",
+      "title": "Agency letters and a note",
+      "render": "note",
+      "body": {
+        "letters": "Appointment letters: mobile-money agent and ferry-ticket agent, Sena — E. Ochola — March and May this year.",
+        "note": "\"You stole my bread.\" — J.O., September"
+      },
+      "facts": [
+        "f_agency",
+        "f_stolebread"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_choir",
+      "type": "witness",
+      "title": "Statement: Mama Grace Akello",
+      "render": "statement",
+      "body": {
+        "speaker": "p_choirleader"
+      },
+      "facts": [
+        "f_choir"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_steve_ticket",
+      "type": "physical",
+      "title": "Steve's ferry ticket (photo)",
+      "render": "ticket",
+      "body": {
+        "route": "Sena–Mbita",
+        "date": "Wednesday 17 December, 08:00"
+      },
+      "facts": [
+        "f_steve"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_debt_book",
+      "type": "physical",
+      "title": "Shop credit book",
+      "render": "ledger",
+      "body": {
+        "entry": "C. Wandera — KSh 30,000 — repayment plan, 3,000 a week — signed by both, Wednesday 17 December"
+      },
+      "facts": [
+        "f_debt"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_jack_prints",
+      "type": "physical",
+      "title": "Jacktone's prints (given voluntarily)",
+      "render": "form",
+      "body": {
+        "name": "J. Ojuka"
+      },
+      "facts": [
+        "f_jack_prints"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_tod",
+        "f_aut_clean"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints on the battery",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_bat_prints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_battery",
+          "ev_jack_prints"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Emmanuel Ochola, shopkeeper and agent, was found dead in his back room at Sena. Neighbours heard \"a terrible quarrel and a crash\" at about 21:00.",
+      "kind": "true",
+      "about": [
+        "p_emmanuel",
+        "loc_shop"
+      ]
+    },
+    {
+      "id": "f_body",
+      "text": "Back room: one head wound. He lies below the battery shelf. Nothing is broken, and there are no pots on the floor.",
+      "kind": "true",
+      "about": [
+        "p_emmanuel",
+        "loc_shop"
+      ]
+    },
+    {
+      "id": "f_battery",
+      "text": "A heavy 12-volt solar battery lies on the floor beside him, out of its place on the shelf. One corner is marked.",
+      "kind": "true",
+      "about": [
+        "loc_shop"
+      ]
+    },
+    {
+      "id": "f_radio",
+      "text": "The radio on the shelf was still on in the morning, tuned to Radio Nam Lolwe, its batteries nearly flat.",
+      "kind": "true",
+      "about": [
+        "loc_shop"
+      ]
+    },
+    {
+      "id": "f_schedule",
+      "text": "Radio Nam Lolwe schedule: \"Thursday 21:00 — radio play, episode 12\".",
+      "kind": "true",
+      "about": [
+        "loc_shop"
+      ],
+      "at": {
+        "from": "21:00"
+      }
+    },
+    {
+      "id": "f_script",
+      "text": "Episode 12 summary: scene 2, about 21:08–21:12, two brothers quarrel over a boat. \"Ka iwacho kamano, to ber idhi!\" Then the sound of pots crashing.",
+      "kind": "true",
+      "about": [
+        "loc_church"
+      ],
+      "at": {
+        "from": "21:08",
+        "to": "21:12"
+      }
+    },
+    {
+      "id": "f_rispa",
+      "text": "Rispa: at about 21:10 she heard two men shouting through the wall, one said \"Ka iwacho kamano, to ber idhi!\", then a huge crash. She didn't go round until morning.",
+      "kind": "true",
+      "about": [
+        "p_rispa"
+      ],
+      "at": {
+        "from": "21:10"
+      }
+    },
+    {
+      "id": "f_rispa_self",
+      "text": "Rispa was at home next door all evening, listening to the radio play on her own radio.",
+      "kind": "true",
+      "about": [
+        "p_rispa"
+      ],
+      "where": {
+        "person": "p_rispa",
+        "place": "plc_rispa",
+        "from": "18:00",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_selpher",
+      "text": "Selpher: she served Emmanuel supper at 18:30 and ate the same food. She left for her sister's at 19:00; he was well.",
+      "kind": "true",
+      "about": [
+        "p_selpher",
+        "p_emmanuel"
+      ],
+      "at": {
+        "from": "18:30",
+        "to": "19:00"
+      }
+    },
+    {
+      "id": "f_selpher_self",
+      "text": "Selpher was at her sister's across the hill from 19:20 for the night.",
+      "kind": "true",
+      "about": [
+        "p_selpher"
+      ],
+      "where": {
+        "person": "p_selpher",
+        "place": "plc_sister",
+        "from": "19:20",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_sel_celestine",
+      "text": "Selpher: Celestine Wandera owes the shop KSh 30,000. Emmanuel shouted at her outside the shop on Tuesday.",
+      "kind": "true",
+      "about": [
+        "p_selpher",
+        "p_celestine"
+      ]
+    },
+    {
+      "id": "f_no_family",
+      "text": "Selpher: there is no family link between Jacktone and Emmanuel. \"None. Not by blood, not by marriage.\"",
+      "kind": "true",
+      "about": [
+        "p_selpher",
+        "p_jacktone"
+      ]
+    },
+    {
+      "id": "f_float",
+      "text": "Agency float book: last entry 19:20, a withdrawal, in Emmanuel's hand. Agency hours are 07:00 to 21:00.",
+      "kind": "true",
+      "about": [
+        "p_emmanuel"
+      ],
+      "at": {
+        "from": "19:20"
+      }
+    },
+    {
+      "id": "f_rec_victim",
+      "text": "Records, the agency line: last transaction at 19:21. Nothing after, though the agency normally works until 21:00.",
+      "kind": "true",
+      "about": [
+        "p_emmanuel"
+      ],
+      "at": {
+        "from": "19:21"
+      }
+    },
+    {
+      "id": "f_owen",
+      "text": "Owen and the jetty logbook: Jacktone arrived at about 20:40 and waited for his goods until after 21:30. Half the island saw him there at 21:00.",
+      "kind": "true",
+      "about": [
+        "p_owen",
+        "p_jacktone"
+      ],
+      "where": {
+        "person": "p_jacktone",
+        "place": "plc_jetty",
+        "from": "20:40",
+        "to": "21:35"
+      },
+      "at": {
+        "from": "20:40",
+        "to": "21:35"
+      }
+    },
+    {
+      "id": "f_owen_self",
+      "text": "Owen was in the jetty hut all evening with the logbook.",
+      "kind": "true",
+      "about": [
+        "p_owen"
+      ],
+      "where": {
+        "person": "p_owen",
+        "place": "plc_jetty",
+        "from": "17:00",
+        "to": "22:00"
+      }
+    },
+    {
+      "id": "f_seen",
+      "text": "Paul Odera: at about 19:45 he saw Jacktone come out of the back gate of Emmanuel's shop and hurry down the path with a torch.",
+      "kind": "true",
+      "about": [
+        "p_paul",
+        "p_jacktone"
+      ],
+      "where": {
+        "person": "p_jacktone",
+        "place": "plc_backgate",
+        "from": "19:44",
+        "to": "19:46"
+      },
+      "at": {
+        "from": "19:45"
+      }
+    },
+    {
+      "id": "f_path",
+      "text": "The back path from the shop's gate to the jetty takes about 50 minutes in the dark.",
+      "kind": "true",
+      "about": [
+        "loc_shop",
+        "loc_jetty"
+      ]
+    },
+    {
+      "id": "f_agency",
+      "text": "Appointment letters: Emmanuel became the island's mobile-money agent in March and its ferry-ticket agent in May. Jacktone held both for twelve years before.",
+      "kind": "true",
+      "about": [
+        "p_emmanuel",
+        "p_jacktone"
+      ]
+    },
+    {
+      "id": "f_stolebread",
+      "text": "A note in the drawer, from Jacktone, September: \"You stole my bread.\"",
+      "kind": "true",
+      "about": [
+        "p_jacktone",
+        "p_emmanuel"
+      ]
+    },
+    {
+      "id": "f_choir",
+      "text": "Mama Grace: Celestine was at choir practice from 18:30 to 21:30. The register is ticked and twenty voices saw her.",
+      "kind": "true",
+      "about": [
+        "p_choirleader",
+        "p_celestine"
+      ],
+      "where": {
+        "person": "p_celestine",
+        "place": "plc_church",
+        "from": "18:30",
+        "to": "21:30"
+      }
+    },
+    {
+      "id": "f_steve",
+      "text": "Steve's ferry ticket: Sena to Mbita, Wednesday 17 December, 08:00. He has been in Mbita since.",
+      "kind": "true",
+      "about": [
+        "p_steve"
+      ],
+      "where": {
+        "person": "p_steve",
+        "place": "plc_mbita",
+        "from": "00:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_debt",
+      "text": "Credit book: Celestine's KSh 30,000 debt, with a repayment plan of 3,000 a week signed by both on Wednesday.",
+      "kind": "true",
+      "about": [
+        "p_celestine",
+        "p_emmanuel"
+      ]
+    },
+    {
+      "id": "f_jack_prints",
+      "text": "Jacktone gives his fingerprints voluntarily. \"Take them. I was at the jetty.\"",
+      "kind": "true",
+      "about": [
+        "p_jacktone"
+      ]
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Autopsy: struck once, from above, with a heavy flat-edged object, consistent with the solar battery. Not a fall.",
+      "kind": "true",
+      "about": [
+        "p_emmanuel"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 19:00 and 20:15. His stomach holds a meal eaten about an hour before death.",
+      "kind": "true",
+      "about": [
+        "p_emmanuel"
+      ],
+      "at": {
+        "from": "19:00",
+        "to": "20:15"
+      }
+    },
+    {
+      "id": "f_aut_clean",
+      "text": "Autopsy: no burns or electrical marks. No signs of poisoning.",
+      "kind": "true",
+      "about": [
+        "p_emmanuel"
+      ]
+    },
+    {
+      "id": "f_bat_prints",
+      "text": "Lab: Jacktone's fingerprints are on the battery's carrying handle.",
+      "kind": "true",
+      "about": [
+        "p_jacktone"
+      ]
+    },
+    {
+      "id": "f_jack_jetty",
+      "text": "Jacktone: \"I was at the jetty from seven o'clock, waiting for my goods.\"",
+      "kind": "lie",
+      "about": [
+        "p_jacktone"
+      ]
+    },
+    {
+      "id": "f_jack_nine",
+      "text": "Jacktone: \"When they quarrelled at nine I was at the jetty. Everyone saw me.\"",
+      "kind": "claim",
+      "about": [
+        "p_jacktone"
+      ]
+    },
+    {
+      "id": "f_jack_noshop",
+      "text": "Jacktone: \"I went to the jetty a bit later, yes. I was walking around. I didn't go to his shop.\"",
+      "kind": "lie",
+      "about": [
+        "p_jacktone"
+      ]
+    },
+    {
+      "id": "f_cel_claim",
+      "text": "Celestine: \"I was at choir.\"",
+      "kind": "claim",
+      "about": [
+        "p_celestine"
+      ]
+    },
+    {
+      "id": "f_steve_claim",
+      "text": "Steve: \"I've been in Mbita since Wednesday.\"",
+      "kind": "claim",
+      "about": [
+        "p_steve"
+      ]
+    },
+    {
+      "id": "f_steve_radio",
+      "text": "Steve: \"Uncle never turned that radio off. Not even to sleep.\"",
+      "kind": "true",
+      "about": [
+        "p_steve",
+        "p_emmanuel"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_jacktone",
+      "stance": "cooperative",
+      "intro": "Jacktone receives you on his shop veranda with a flask of tea. \"Terrible. Terrible. When they quarrelled at nine I was at the jetty. Ask anyone.\"",
+      "claims": [
+        "f_jack_jetty",
+        "f_jack_nine"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_jack_noshop",
+          "after": "f_owen"
+        }
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_agency_letters",
+          "reply": "Twelve years I served this island. Then a letter from Nairobi, and he has my agencies. Yes, I wrote that note. Bread is bread.",
+          "reveals": []
+        },
+        {
+          "about": "f_aut_blow",
+          "reply": "A battery? I have bought batteries there a hundred times. Take my fingerprints. Take them. I was at the jetty.",
+          "reveals": [
+            "ev_jack_prints"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_celestine",
+      "stance": "cooperative",
+      "intro": "Celestine is still in her choir blouse from the morning service rehearsal. \"I owe him. Everyone knows I owe him. I was singing.\"",
+      "claims": [
+        "f_cel_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_emmanuel",
+          "reply": "He shouted at me on Tuesday, yes. On Wednesday he came to my stall and we signed a plan. Three thousand a week. It's in his book.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_steve",
+      "stance": "cooperative",
+      "intro": "Steve calls back from the Mbita ferry office, his voice breaking. \"I'm coming on the first boat. I've been here since Wednesday.\"",
+      "claims": [
+        "f_steve_claim"
+      ],
+      "yields": [
+        "ev_steve_ticket"
+      ],
+      "topics": [
+        {
+          "about": "ev_radio",
+          "reply": "Uncle never turned that radio off. Not even to sleep. Every Thursday, the play. He laughed at the same jokes every week.",
+          "reveals": [
+            "f_steve_radio"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_rispa",
+      "stance": "cooperative",
+      "intro": "Rispa holds her shawl tight at her door. \"I heard them. God forgive me, I heard them and I didn't go.\"",
+      "claims": [],
+      "yields": [
+        "ev_rispa"
+      ],
+      "topics": [
+        {
+          "about": "ev_radio",
+          "reply": "His radio? It's always on. Mine too. On Thursday everyone listens to the play. I had mine on that night.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_selpher",
+      "stance": "cooperative",
+      "intro": "Selpher sits on the shop step with her sister's arm around her. \"He ate everything on his plate. He was laughing.\"",
+      "claims": [],
+      "yields": [
+        "ev_selpher"
+      ],
+      "topics": [
+        {
+          "about": "p_jacktone",
+          "reply": "Jacktone? No family of ours. None. Not by blood, not by marriage. Only business.",
+          "reveals": [
+            "f_no_family"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_owen",
+      "stance": "cooperative",
+      "intro": "Owen runs a finger down the logbook. \"Ojuka came for his goods. Late. The boat was late too.\"",
+      "claims": [],
+      "yields": [
+        "ev_owen"
+      ],
+      "topics": [
+        {
+          "about": "p_jacktone",
+          "reply": "About twenty to nine he came. Out of breath, sweating. I thought he'd run from the trading centre.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_jack_jetty",
+      "claim": "f_jack_jetty",
+      "brokenBy": [
+        "f_owen"
+      ],
+      "reveals": [],
+      "reaction": "He sets his cup down carefully. \"...I went to the jetty a bit later, yes. I was walking around. I didn't go to his shop.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_jack_noshop",
+      "claim": "f_jack_noshop",
+      "brokenBy": [
+        "f_seen",
+        "f_bat_prints"
+      ],
+      "reveals": [],
+      "reaction": "For the first time he has nothing ready. \"Paul Odera is an old man with old eyes.\" He looks at the lake and doesn't say anything else.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_jacktone",
+      "text": "Jacktone Ojuka",
+      "category": "person",
+      "ref": "p_jacktone",
+      "unlock": {
+        "anyOf": [
+          "f_agency"
+        ]
+      }
+    },
+    {
+      "id": "w_celestine",
+      "text": "Celestine Wandera",
+      "category": "person",
+      "ref": "p_celestine",
+      "unlock": {
+        "anyOf": [
+          "f_sel_celestine"
+        ]
+      }
+    },
+    {
+      "id": "w_steve",
+      "text": "Steve Ochola",
+      "category": "person",
+      "ref": "p_steve",
+      "unlock": {
+        "anyOf": [
+          "f_steve_claim"
+        ]
+      }
+    },
+    {
+      "id": "w_rispa",
+      "text": "Rispa Nyamogo",
+      "category": "person",
+      "ref": "p_rispa",
+      "unlock": {
+        "anyOf": [
+          "f_rispa"
+        ]
+      }
+    },
+    {
+      "id": "w_owen",
+      "text": "Owen Mbori",
+      "category": "person",
+      "ref": "p_owen",
+      "unlock": {
+        "anyOf": [
+          "f_owen"
+        ]
+      }
+    },
+    {
+      "id": "h_battery",
+      "text": "struck with a heavy solar battery",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_battery"
+        ]
+      }
+    },
+    {
+      "id": "h_fight9",
+      "text": "killed in a fight at nine, when the neighbours heard shouting",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_rispa"
+        ]
+      }
+    },
+    {
+      "id": "h_fall",
+      "text": "fell and struck his head on the shelf",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_elec",
+      "text": "electrocuted by the solar wiring",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_battery"
+        ]
+      }
+    },
+    {
+      "id": "h_poison",
+      "text": "poisoned at supper",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_selpher"
+        ]
+      }
+    },
+    {
+      "id": "m_agency",
+      "text": "Emmanuel had taken the island's mobile-money and ferry agencies from him",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_agency"
+        ]
+      }
+    },
+    {
+      "id": "m_debt",
+      "text": "a debt for fish",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_sel_celestine"
+        ]
+      }
+    },
+    {
+      "id": "m_inherit",
+      "text": "to inherit the shop",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_steve_claim"
+        ]
+      }
+    },
+    {
+      "id": "m_feud",
+      "text": "an old family feud",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_stolebread"
+        ]
+      }
+    },
+    {
+      "id": "m_boat",
+      "text": "a quarrel over a boat",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_rispa"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Emmanuel Ochola"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_1830",
+                  "label": "18:30–19:00",
+                  "from": "18:30",
+                  "to": "19:00"
+                },
+                {
+                  "id": "sl_1900",
+                  "label": "19:00–20:15",
+                  "from": "19:00",
+                  "to": "20:15"
+                },
+                {
+                  "id": "sl_2040",
+                  "label": "20:40–21:30",
+                  "from": "20:40",
+                  "to": "21:30"
+                },
+                {
+                  "id": "sl_2108",
+                  "label": "21:08–21:12",
+                  "from": "21:08",
+                  "to": "21:12"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_killed",
+                  "text": "Emmanuel is killed",
+                  "slot": "sl_1900",
+                  "by": [
+                    "f_aut_tod",
+                    "f_selpher",
+                    "f_rec_victim"
+                  ],
+                  "why": "Supper at 18:30 and death about an hour later; his agency went silent after 19:21. The autopsy range is 19:00–20:15.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_quarrel",
+                  "text": "The \"quarrel\" Rispa hears",
+                  "slot": "sl_2108",
+                  "by": [
+                    "f_rispa",
+                    "f_script"
+                  ],
+                  "why": "Her words are scene 2 of the radio play, word for word, broadcast 21:08–21:12.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rispa"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_jetty",
+                  "text": "Jacktone waits at the jetty",
+                  "slot": "sl_2040",
+                  "by": [
+                    "f_owen"
+                  ],
+                  "why": "The jetty logbook and Owen: he arrived at about 20:40 and stayed past 21:30.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_jack_nine",
+                      "f_owen"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_1830",
+                  "by": [
+                    "f_selpher",
+                    "f_aut_tod"
+                  ],
+                  "why": "He was eating supper and well when Selpher left at 19:00; he died about an hour after the meal."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "He built an alibi for a murder that happened on the radio.",
+          "fail": [
+            "Nine o'clock is when the play was on. When did his agency go quiet?",
+            "He ate at half past six. Dr. Chebii says he died about an hour later."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_jacktone"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Out of the back gate at a quarter to eight, at the jetty forty-eight minutes' walk later, and his hands on the battery. That will hold.",
+          "fail": [
+            "She was singing with twenty people. Look again.",
+            "The nephew has been in Mbita since Wednesday."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_battery"
+          }
+        ],
+        "prosecutor": {
+          "pass": "One blow from above with the heaviest thing on the shelf. Yes.",
+          "fail": [
+            "There was no fight at nine. Nothing in that room is broken.",
+            "A single blow from above. He didn't fall."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_agency"
+          }
+        ],
+        "prosecutor": {
+          "pass": "\"You stole my bread.\" Twelve years of agencies, gone in a letter. That's the reason.",
+          "fail": [
+            "A quarrel over a boat is the radio play's plot, Detective.",
+            "That debt had a signed repayment plan."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_shop",
+      "from": "19:00",
+      "to": "20:15",
+      "within": [
+        "plc_backroom",
+        "plc_backgate"
+      ],
+      "note": "From the autopsy and the supper at 18:30; the agency's last transaction is at 19:21."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_rispa",
+          "f_radio",
+          "f_schedule",
+          "f_script",
+          "f_body"
+        ],
+        "concludes": "The \"quarrel and crash\" at about 21:10 was scene 2 of the Thursday radio play, word for word, on a radio that never goes off. Nothing in the back room is broken. It tells you nothing about when Emmanuel died."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_aut_tod",
+          "f_selpher",
+          "f_rec_victim",
+          "f_float"
+        ],
+        "concludes": "He ate supper at 18:30 and died about an hour later, between 19:00 and 20:15; his agency, open until 21:00, went silent after 19:21.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_jack_jetty",
+          "f_owen",
+          "f_jack_noshop",
+          "f_seen",
+          "f_path"
+        ],
+        "concludes": "Jacktone's alibi covers 21:00, not 19:30. He reached the jetty at about 20:40, and at 19:45 he was seen leaving Emmanuel's back gate, a fifty-minute walk above the jetty."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_agency",
+          "f_stolebread",
+          "f_battery",
+          "f_aut_blow",
+          "f_bat_prints"
+        ],
+        "concludes": "Jacktone had lost both agencies to Emmanuel, and his prints are on the battery that matches the blow. Jacktone Ojuka struck Emmanuel with a heavy solar battery because Emmanuel had taken the island's agencies from him.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_celestine",
+        "blank": "who",
+        "by": [
+          "f_choir"
+        ],
+        "why": "Celestine was at choir practice from 18:30 to 21:30."
+      },
+      {
+        "word": "w_steve",
+        "blank": "who",
+        "by": [
+          "f_steve"
+        ],
+        "why": "Steve has been in Mbita since Wednesday morning."
+      },
+      {
+        "word": "w_rispa",
+        "blank": "who",
+        "by": [
+          "f_rispa_self"
+        ],
+        "why": "Rispa was at home next door, listening to the play on her own radio."
+      },
+      {
+        "word": "w_owen",
+        "blank": "who",
+        "by": [
+          "f_owen_self"
+        ],
+        "why": "Owen was in the jetty hut with the logbook all evening."
+      },
+      {
+        "word": "h_fight9",
+        "blank": "how",
+        "by": [
+          "f_script",
+          "f_aut_tod"
+        ],
+        "why": "The nine o'clock \"fight\" was the radio play; he died between 19:00 and 20:15."
+      },
+      {
+        "word": "h_fall",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "A single heavy blow from above, not a fall."
+      },
+      {
+        "word": "h_elec",
+        "blank": "how",
+        "by": [
+          "f_aut_clean"
+        ],
+        "why": "No burns or electrical marks."
+      },
+      {
+        "word": "h_poison",
+        "blank": "how",
+        "by": [
+          "f_aut_clean",
+          "f_selpher"
+        ],
+        "why": "No signs of poisoning, and his wife ate the same supper."
+      },
+      {
+        "word": "m_debt",
+        "blank": "why",
+        "by": [
+          "f_debt",
+          "f_choir"
+        ],
+        "why": "That debt is Celestine's, with a signed repayment plan, and she was at choir."
+      },
+      {
+        "word": "m_inherit",
+        "blank": "why",
+        "by": [
+          "f_steve"
+        ],
+        "why": "That would be Steve's, and Steve was in Mbita."
+      },
+      {
+        "word": "m_feud",
+        "blank": "why",
+        "by": [
+          "f_no_family"
+        ],
+        "why": "There is no family link between them."
+      },
+      {
+        "word": "m_boat",
+        "blank": "why",
+        "by": [
+          "f_script"
+        ],
+        "why": "A quarrel over a boat is the radio play's plot."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "This year a letter from Nairobi moves the island's mobile-money agency, and then the ferry-ticket book, from Jacktone's shop to Emmanuel's. In September Jacktone writes: \"You stole my bread.\"",
+        "image": null
+      },
+      {
+        "text": "Thursday, 18:30. Emmanuel eats supper with Selpher. At 19:00 she leaves for her sister's. At 19:21 he serves his last agency customer.",
+        "image": null
+      },
+      {
+        "text": "About 19:30. Jacktone comes to the back room with one last offer. Emmanuel refuses. Jacktone lifts a solar battery from the shelf and strikes him once.",
+        "image": "loc_shop"
+      },
+      {
+        "text": "19:45. He leaves by the back gate with his torch, fast, down the path. At 20:40 he reaches the jetty, out of breath, and waits where half the island can see him.",
+        "image": null
+      },
+      {
+        "text": "21:00. The radio play begins. At 21:10, through the wall, two brothers quarrel over a boat and the pots come crashing down. Rispa holds her breath and doesn't go next door.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "No detention needed. One records request. The prints test (6 h) breaks his second story.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_shop",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_radio",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_schedule",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_battery",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_rispa"
+      },
+      {
+        "do": "interview",
+        "target": "p_selpher"
+      },
+      {
+        "do": "read",
+        "target": "ev_float",
+        "hours": 1
+      },
+      {
+        "do": "records",
+        "target": "ev_records_victim"
+      },
+      {
+        "do": "visit",
+        "target": "loc_church",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_script",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_agency_letters",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_jacktone"
+      },
+      {
+        "do": "visit",
+        "target": "loc_jetty",
+        "hours": 2
+      },
+      {
+        "do": "interview",
+        "target": "p_owen"
+      },
+      {
+        "do": "press",
+        "target": "c_jack_jetty"
+      },
+      {
+        "do": "read",
+        "target": "ev_seen",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_path",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_jacktone"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 6
+      },
+      {
+        "do": "press",
+        "target": "c_jack_noshop"
+      }
+    ],
+    "totalHours": 31
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_schedule",
+        "line": "What was on the radio at nine o'clock on a Thursday?"
+      },
+      "tier2": {
+        "facts": [
+          "f_script",
+          "f_aut_tod"
+        ],
+        "line": "The quarrel is in the script. The autopsy says he died hours before it."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_owen",
+        "line": "Everyone saw him at the jetty at nine. When did he get there?"
+      },
+      "tier2": {
+        "facts": [
+          "f_owen",
+          "f_seen"
+        ],
+        "line": "At the jetty from 20:40. At the back gate at 19:45. Fifty minutes apart."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "One blow from above. What on that shelf is heavy enough?"
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_blow",
+          "f_battery"
+        ],
+        "line": "A flat-edged blow, and a battery on the floor out of its place."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_agency_letters",
+        "line": "Read the letters in the drawer, and the note folded with them."
+      },
+      "tier2": {
+        "facts": [
+          "f_agency",
+          "f_stolebread"
+        ],
+        "line": "Two agencies, twelve years, one letter. \"You stole my bread.\""
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "Nam Lolwe",
+      "def": "Lake Victoria, in Dholuo."
+    },
+    {
+      "term": "redio",
+      "def": "Radio."
+    },
+    {
+      "term": "wakala",
+      "def": "Agent; here, a mobile-money agent."
+    },
+    {
+      "term": "Ka iwacho kamano, to ber idhi",
+      "def": "Dholuo: \"If you say that, you'd better go.\""
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address or name a woman."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "timelineStrip",
+      "textComparison"
+    ],
+    "beatNotes": "The timeline strip. Three event cards drag onto a clock strip under the charge sheet, mirroring the corkboard rail. Also dialogue as evidence: the Dholuo line in Rispa's statement can be laid over the episode summary in the comparison view, word for word."
+  }
+}

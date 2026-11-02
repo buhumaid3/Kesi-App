@@ -1,0 +1,3099 @@
+{
+  "meta": {
+    "id": "case-099",
+    "number": 99,
+    "region": "final-files",
+    "regionNumber": 10,
+    "title": "The Foundation",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 54,
+    "date": "Friday 4 December",
+    "folderTab": "RUNDA"
+  },
+  "pattern": {
+    "crimePattern": "a foundation's programmes officer strangles the finance director who has found nine years of grants to a shell company's till, then has the server backups wiped",
+    "noRealCaseRetold": true,
+    "notes": "Fictional foundation, staff and family; Runda is a setting only. Maina Kabiru is the \"M.\" of cases 95, 97 and 98. The Chair, Margaret Kabiru, is in Mombasa and is not the killer here. Advocate Wanjiru Nderitu is conflicted as a Msingi Trust director (case 91) and is replaced after the first interview.",
+    "tags": [
+      "strangulation",
+      "cover-up",
+      "embezzlement",
+      "forgery",
+      "absence",
+      "spine",
+      "lawyered",
+      "four-liars",
+      "records",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where"
+    ]
+  },
+  "difficulty": {
+    "suspects": 6,
+    "chainLength": 7,
+    "redHerrings": 3,
+    "liars": 4,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "forgery",
+      "absence",
+      "spine"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "records",
+      "warrant"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 02/04/12",
+    "date": "Friday 4 December",
+    "time": "07:05",
+    "reportedBy": "Mama Jemimah Wairegi, cleaner",
+    "text": "A cleaner reports the finance director of the Ukarimu Foundation, Zipporah Naliaka (49), found dead in the foundation's archive room in Runda.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_foundation",
+    "nodes": [
+      "loc_foundation",
+      "loc_flat"
+    ],
+    "edges": [
+      {
+        "a": "loc_foundation",
+        "b": "loc_flat",
+        "minutes": 25,
+        "by": "car"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_zipporah",
+      "role": "victim",
+      "name": "Zipporah Naliaka",
+      "age": 49,
+      "occupation": "Finance director, Ukarimu Foundation",
+      "bio": "Audited the programme grants herself for the first time this year.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_archive",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luhya woman, late 40s, a key-fob lanyard and a neat blazer, a determined, careful face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_maina",
+      "role": "suspect",
+      "name": "Maina Kabiru",
+      "age": 29,
+      "occupation": "Programmes officer; Margaret Kabiru's grandson",
+      "bio": "Has run the foundation's \"programmes\" since he was nineteen.",
+      "community": "Kikuyu",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_foblog"
+      },
+      "at": "plc_archive",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, late 20s, a cashmere sweater and a lanyard of his own, a polished, brittle face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_tony",
+      "role": "suspect",
+      "name": "Tony Mburu",
+      "age": 33,
+      "occupation": "IT contractor",
+      "bio": "Does tickets.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_backups"
+      },
+      "at": "plc_thika",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, early 30s, a laptop bag and a contractor's badge, a defensive face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_nderitu",
+      "role": "suspect",
+      "name": "Advocate Wanjiru Nderitu",
+      "age": 45,
+      "occupation": "The foundation's legal officer; a Msingi Trust director (case 91)",
+      "bio": "Controlled, careful, expensive.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_gigiri",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, mid 40s, an advocate's dark suit and a slim briefcase, a controlled face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_philip",
+      "role": "suspect",
+      "name": "Philip Otieno",
+      "age": 41,
+      "occupation": "Deputy finance director",
+      "redHerring": true,
+      "bio": "Wanted Zipporah's job.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_mainhouse",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, early 40s, a shirt and tie, loosened, a guarded, ambitious face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_geoffrey",
+      "role": "suspect",
+      "name": "Geoffrey Simiyu",
+      "age": 52,
+      "occupation": "Zipporah's husband",
+      "redHerring": true,
+      "bio": "A hard year in their marriage.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_kahawa",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luhya man, early 50s, a choir sweater, a grieving face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kabiru",
+      "role": "suspect",
+      "name": "Margaret Kabiru",
+      "age": 61,
+      "occupation": "Chair of the Ukarimu Foundation; a fourth-floor name",
+      "redHerring": true,
+      "bio": "At a charity gala in Mombasa.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_mombasa",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, early 60s, pearls and an evening jacket on a gala stage, a gracious, distant face, ID-photo framing",
+        "ref": "reference"
+      }
+    },
+    {
+      "id": "p_jemimah",
+      "role": "witness",
+      "name": "Mama Jemimah Wairegi",
+      "age": 56,
+      "occupation": "Cleaner; arrives at 06:30",
+      "bio": "Notices who comes early.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_jhome",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, mid 50s, a cleaner's tabard and headscarf, a shrewd, honest face, ID-photo framing",
+        "ref": null
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_archive",
+      "name": "The archive room",
+      "within": "loc_foundation"
+    },
+    {
+      "id": "plc_mainhouse",
+      "name": "The main house offices",
+      "within": "loc_foundation"
+    },
+    {
+      "id": "plc_board",
+      "name": "The boardroom",
+      "within": "loc_foundation"
+    },
+    {
+      "id": "plc_gate",
+      "name": "The gatehouse",
+      "within": "loc_foundation"
+    },
+    {
+      "id": "plc_flat",
+      "name": "Maina's flat in Westlands",
+      "within": "loc_flat"
+    },
+    {
+      "id": "plc_thika",
+      "name": "A client's office in Thika"
+    },
+    {
+      "id": "plc_gigiri",
+      "name": "A restaurant in Gigiri"
+    },
+    {
+      "id": "plc_kahawa",
+      "name": "Choir practice, Kahawa"
+    },
+    {
+      "id": "plc_mombasa",
+      "name": "A charity gala, Mombasa"
+    },
+    {
+      "id": "plc_jhome",
+      "name": "Jemimah's home"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_foundation",
+      "name": "The Ukarimu Foundation, Runda",
+      "kind": "scene",
+      "description": "A converted family house behind a wall: a brass plaque, roses, a boardroom of scholarship portraits, and an archive in the old garage with steel shelves of box files and the server cabinet.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Among the shelves",
+          "pos": [
+            40,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Where Zipporah lies."
+        },
+        {
+          "id": "hs_table",
+          "label": "The archive table",
+          "pos": [
+            60,
+            45
+          ],
+          "yields": "ev_files",
+          "text": "Box files pulled out; a charger plugged in."
+        },
+        {
+          "id": "hs_charger",
+          "label": "The charger",
+          "pos": [
+            65,
+            40
+          ],
+          "yields": "ev_laptop",
+          "text": "No laptop on the end of it."
+        },
+        {
+          "id": "hs_fob",
+          "label": "The key-fob system",
+          "pos": [
+            15,
+            30
+          ],
+          "yields": "ev_foblog",
+          "text": "The entry log."
+        },
+        {
+          "id": "hs_server",
+          "label": "The server company",
+          "pos": [
+            80,
+            30
+          ],
+          "yields": "ev_backups",
+          "text": "Remote logs."
+        },
+        {
+          "id": "hs_jemimah",
+          "label": "Mama Jemimah",
+          "pos": [
+            10,
+            70
+          ],
+          "yields": "ev_jemimah",
+          "text": "In the kitchen."
+        },
+        {
+          "id": "hs_stamp",
+          "label": "Under the magnifier",
+          "pos": [
+            62,
+            50
+          ],
+          "yields": "ev_stamp",
+          "text": "Two approvals side by side.",
+          "unlock": {
+            "fact": "f_files"
+          }
+        },
+        {
+          "id": "hs_philip",
+          "label": "Philip's desk",
+          "pos": [
+            25,
+            20
+          ],
+          "yields": "ev_philip",
+          "text": "His screen, left on."
+        },
+        {
+          "id": "hs_guard",
+          "label": "The gate guard's book",
+          "pos": [
+            90,
+            80
+          ],
+          "yields": "ev_guard",
+          "text": "Visitors in and out."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a converted-garage archive in Runda at night, steel shelves of box files, a server cabinet blinking, a laptop charger plugged in with no laptop, no people in focus"
+      },
+      "expected": [
+        {
+          "id": "x_backups",
+          "text": "Ninety days of server backups: it has never been cleared before",
+          "because": "f_backups",
+          "present": false,
+          "fact": "f_abs_backups"
+        },
+        {
+          "id": "x_laptop",
+          "text": "Her audit laptop at the end of its charger",
+          "because": "f_files",
+          "present": false,
+          "fact": "f_abs_laptop"
+        },
+        {
+          "id": "x_lanyard",
+          "text": "Her key-fob lanyard round her neck: she always wore it",
+          "because": "f_jemimah",
+          "present": false,
+          "fact": "f_abs_lanyard"
+        },
+        {
+          "id": "x_hand",
+          "text": "The Chair's signature in her own hand",
+          "because": "f_stamp",
+          "present": false,
+          "fact": "f_abs_hand"
+        },
+        {
+          "id": "x_guard",
+          "text": "A visitor in the gate book after the staff left",
+          "because": "f_guard",
+          "present": false,
+          "fact": "f_abs_guard"
+        }
+      ]
+    },
+    {
+      "id": "loc_flat",
+      "name": "Maina's flat, Westlands",
+      "kind": "location",
+      "description": "A high-floor flat: a jacket over a chair, a laptop bag by the door.",
+      "unlock": {
+        "fact": "f_shosh"
+      },
+      "hotspots": [
+        {
+          "id": "hs_flat",
+          "label": "The flat",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_flat",
+          "text": "Search under warrant."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a modern high-floor flat in Westlands at night, a jacket over a chair, a laptop on a glass table"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Zipporah among the shelves",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Strangled with a narrow cord. Her key-fob lanyard, which she always wore, is gone from her neck."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a concrete floor between steel archive shelves, a fallen box file, no body visible"
+      }
+    },
+    {
+      "id": "ev_files",
+      "type": "document",
+      "title": "The grant approvals",
+      "render": "logBook",
+      "body": {
+        "text": "Nine years of monthly \"community grants\" to PesaPap Till 880 214; also a \"history grant\" (Kadzo Mwamuye), a \"wellness sponsorship\" (the Aberdare club spa) and \"security consultancy\" (Mlinzi Bora). Each approved by M. Kabiru \"per Chair\", with the Chair's signature."
+      },
+      "facts": [
+        "f_files"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": false,
+        "forger": "p_maina",
+        "kind": "grant approvals"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "box files of grant approval forms open on a table, each with an identical blue signature"
+      }
+    },
+    {
+      "id": "ev_laptop",
+      "type": "physical",
+      "title": "The empty charger",
+      "render": "object",
+      "body": {
+        "label": "Her audit laptop is missing; its charger is still plugged in at the archive table."
+      },
+      "facts": [
+        "f_laptopgone"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_foblog",
+      "type": "document",
+      "title": "Key-fob log, Thursday",
+      "render": "logBook",
+      "body": {
+        "text": "Zipporah into the archive 20:40. Maina into the archive 20:52, out 21:15. Philip out of the main house 21:30."
+      },
+      "facts": [
+        "f_foblog",
+        "f_philip_fob"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "fob log"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_backups",
+      "type": "document",
+      "title": "Server company logs",
+      "render": "logBook",
+      "body": {
+        "text": "Fri 07:58 ticket by \"mkabiru\": \"Backups full, please clear\". 08:12 all backups deleted by \"tmburu\". The server keeps 90 days; never cleared before."
+      },
+      "facts": [
+        "f_backups"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "server ticket"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_jemimah",
+      "type": "witness",
+      "title": "Statement: Mama Jemimah Wairegi",
+      "render": "statement",
+      "body": {
+        "speaker": "p_jemimah"
+      },
+      "facts": [
+        "f_jemimah",
+        "f_jemimah_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_guard",
+      "type": "document",
+      "title": "The gate guard's book",
+      "render": "logBook",
+      "body": {
+        "text": "No visitor after 18:00 Thursday. Staff fobs only."
+      },
+      "facts": [
+        "f_guard"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_stamp",
+      "type": "document",
+      "title": "The signatures under the magnifier",
+      "render": "form",
+      "body": {
+        "text": "The Chair's \"signature\" is identical on every page: the same ink halo, the same nick in the M."
+      },
+      "facts": [
+        "f_stamp"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_philip",
+      "type": "document",
+      "title": "Philip's email",
+      "render": "letter",
+      "body": {
+        "text": "A Thursday-afternoon job interview; a resignation draft saved at 20:10."
+      },
+      "facts": [
+        "f_philip_email"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "resignation draft"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_geoffrey",
+      "type": "witness",
+      "title": "Statement: the Kahawa choir",
+      "render": "statement",
+      "body": {
+        "speaker": "p_geoffrey"
+      },
+      "facts": [
+        "f_geoffrey",
+        "f_geo_pension"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gala",
+      "type": "document",
+      "title": "Gala broadcast and hotel record",
+      "render": "logBook",
+      "body": {
+        "text": "Margaret Kabiru on stage in Mombasa at 21:00; hotel 19:00–23:30."
+      },
+      "facts": [
+        "f_gala"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tony",
+      "type": "document",
+      "title": "The Thika client's visitors' book",
+      "render": "logBook",
+      "body": {
+        "text": "T. Mburu, 18:00–22:30 Thursday."
+      },
+      "facts": [
+        "f_tony_thika"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_nderitu",
+      "type": "document",
+      "title": "A Gigiri restaurant receipt",
+      "render": "logBook",
+      "body": {
+        "text": "W. Nderitu, table for four, 19:30–22:15."
+      },
+      "facts": [
+        "f_nderitu_dinner"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rec_maina",
+      "type": "phone",
+      "title": "Records ①: Maina's line and PesaPap",
+      "render": "manifest",
+      "body": {
+        "call": "Thu 21:20, to \"Shosh\", 3 min.",
+        "pay": "Payments to Kadzo Mwamuye and Sagal Ahmed; an Ukarimu \"petty cash\" line that tops up Till 880 214."
+      },
+      "facts": [
+        "f_shosh",
+        "f_maina_pay"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_foblog",
+          "f_backups"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_grant_trail",
+      "type": "phone",
+      "title": "Records ②: the foundation's bank",
+      "render": "manifest",
+      "body": {
+        "text": "Nine years of transfers to Till 880 214's settlement account, the Msingi Trust: KSh 214 million."
+      },
+      "facts": [
+        "f_grant_trail"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_files",
+          "f_stamp"
+        ]
+      },
+      "doc": {
+        "genuine": true,
+        "kind": "bank transfers"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_flat",
+      "type": "physical",
+      "title": "Maina's flat",
+      "render": "object",
+      "body": {
+        "laptop": "Zipporah's audit laptop, on the glass table.",
+        "lanyard": "Her key-fob lanyard, in a jacket pocket."
+      },
+      "facts": [
+        "f_laptopfound",
+        "f_lanyard"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_shosh",
+          "f_foblog",
+          "f_jemimah"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a lanyard with a key fob pulled from a jacket pocket beside a closed laptop"
+      }
+    },
+    {
+      "id": "ev_ma_prints",
+      "type": "physical",
+      "title": "Fingerprints: Maina Kabiru",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention."
+      },
+      "facts": [
+        "f_ma_printset"
+      ],
+      "gate": null,
+      "detention": "p_maina",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Government Pathologist)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_fibres",
+      "type": "forensic",
+      "title": "Lab: fibres (the lanyard)",
+      "render": "labReport",
+      "body": {
+        "test": "fibres"
+      },
+      "facts": [
+        "f_fibres"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "fibres",
+        "hours": 12,
+        "needs": [
+          "ev_flat",
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints (the laptop lid)",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_lidprints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_flat",
+          "ev_ma_prints"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Zipporah Naliaka was found dead in the Ukarimu Foundation's archive room in Runda on Friday morning.",
+      "kind": "true",
+      "about": [
+        "p_zipporah",
+        "loc_foundation"
+      ],
+      "at": {
+        "from": "07:05",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "Strangled with a narrow cord. Her key-fob lanyard is gone from her neck.",
+      "kind": "true",
+      "about": [
+        "p_zipporah",
+        "plc_archive"
+      ]
+    },
+    {
+      "id": "f_files",
+      "text": "Approvals: nine years of monthly \"community grants\" to Till 880 214, plus Kadzo's \"history\", the spa sponsorship and Mlinzi Bora, all by M. Kabiru \"per Chair\", signed.",
+      "kind": "true",
+      "about": [
+        "p_maina"
+      ]
+    },
+    {
+      "id": "f_laptopgone",
+      "text": "Her audit laptop is missing; its charger is still plugged in at the archive table.",
+      "kind": "true",
+      "about": [
+        "plc_archive"
+      ]
+    },
+    {
+      "id": "f_foblog",
+      "text": "Fob log, Thursday: Zipporah into the archive at 20:40; Maina into the archive at 20:52 and out at 21:15.",
+      "kind": "true",
+      "about": [
+        "p_zipporah",
+        "p_maina"
+      ],
+      "where": {
+        "person": "p_maina",
+        "place": "plc_archive",
+        "from": "20:52",
+        "to": "21:15"
+      }
+    },
+    {
+      "id": "f_philip_fob",
+      "text": "Fob log: Philip used only the main-house doors on Thursday evening, and left at 21:30.",
+      "kind": "true",
+      "about": [
+        "p_philip"
+      ],
+      "where": {
+        "person": "p_philip",
+        "place": "plc_mainhouse",
+        "from": "19:00",
+        "to": "21:30"
+      }
+    },
+    {
+      "id": "f_backups",
+      "text": "Server logs: at 07:58 on Friday \"mkabiru\" opened a ticket, \"Backups full, please clear\"; at 08:12 \"tmburu\" deleted them all. The server keeps 90 days and was never cleared before.",
+      "kind": "true",
+      "about": [
+        "p_maina",
+        "p_tony"
+      ],
+      "at": {
+        "from": "08:12",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_jemimah",
+      "text": "Jemimah: \"Mr. Maina was here before me on Friday, at quarter past six, in the archive with the door shut. He never comes before nine. Madam always wore her fob round her neck.\"",
+      "kind": "true",
+      "about": [
+        "p_jemimah",
+        "p_maina"
+      ],
+      "at": {
+        "from": "06:15",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_jemimah_self",
+      "text": "Jemimah was at home until she came in at 06:30 on Friday.",
+      "kind": "true",
+      "about": [
+        "p_jemimah"
+      ],
+      "where": {
+        "person": "p_jemimah",
+        "place": "plc_jhome",
+        "from": "18:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_guard",
+      "text": "The gate guard's book: no visitor after 18:00 on Thursday; staff fobs only.",
+      "kind": "true",
+      "about": [
+        "plc_gate"
+      ]
+    },
+    {
+      "id": "f_stamp",
+      "text": "Under a magnifier, the Chair's \"signature\" is identical on every approval: the same ink halo, the same nick in the M. A facsimile stamp.",
+      "kind": "true",
+      "about": [
+        "p_kabiru",
+        "p_maina"
+      ]
+    },
+    {
+      "id": "f_philip_email",
+      "text": "Philip's email: a job interview on Thursday afternoon, and a resignation draft saved at 20:10.",
+      "kind": "true",
+      "about": [
+        "p_philip"
+      ]
+    },
+    {
+      "id": "f_geoffrey",
+      "text": "The choir: Geoffrey was at practice in Kahawa, 19:00–21:30, in their video.",
+      "kind": "true",
+      "about": [
+        "p_geoffrey"
+      ],
+      "where": {
+        "person": "p_geoffrey",
+        "place": "plc_kahawa",
+        "from": "19:00",
+        "to": "21:30"
+      }
+    },
+    {
+      "id": "f_geo_pension",
+      "text": "Geoffrey: last week she said, \"If I'm right about these grants, I'll have to leave and we'll need my pension.\"",
+      "kind": "true",
+      "about": [
+        "p_geoffrey",
+        "p_zipporah"
+      ]
+    },
+    {
+      "id": "f_gala",
+      "text": "Gala broadcast and hotel: Margaret Kabiru was in Mombasa, on stage at 21:00.",
+      "kind": "true",
+      "about": [
+        "p_kabiru"
+      ],
+      "where": {
+        "person": "p_kabiru",
+        "place": "plc_mombasa",
+        "from": "19:00",
+        "to": "23:30"
+      }
+    },
+    {
+      "id": "f_tony_thika",
+      "text": "The Thika client's book: Tony was there 18:00–22:30 on Thursday.",
+      "kind": "true",
+      "about": [
+        "p_tony"
+      ],
+      "where": {
+        "person": "p_tony",
+        "place": "plc_thika",
+        "from": "18:00",
+        "to": "22:30"
+      }
+    },
+    {
+      "id": "f_nderitu_dinner",
+      "text": "A Gigiri receipt: Advocate Nderitu at dinner, 19:30–22:15.",
+      "kind": "true",
+      "about": [
+        "p_nderitu"
+      ],
+      "where": {
+        "person": "p_nderitu",
+        "place": "plc_gigiri",
+        "from": "19:30",
+        "to": "22:15"
+      }
+    },
+    {
+      "id": "f_shosh",
+      "text": "Records ①: Thursday 21:20, five minutes after leaving the archive, Maina called a number saved as \"Shosh\" for 3 minutes.",
+      "kind": "true",
+      "about": [
+        "p_maina"
+      ],
+      "at": {
+        "from": "21:20",
+        "to": null,
+        "day": "Thu"
+      },
+      "spine": "t_kivuli"
+    },
+    {
+      "id": "f_maina_pay",
+      "text": "Records ①: Maina's PesaPap paid Kadzo Mwamuye and Sagal Ahmed; an Ukarimu \"petty cash\" line tops up Till 880 214.",
+      "kind": "true",
+      "about": [
+        "p_maina"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_grant_trail",
+      "text": "Records ②: nine years of foundation transfers to Till 880 214's settlement account, the Msingi Trust: KSh 214 million.",
+      "kind": "true",
+      "about": [
+        "p_nderitu"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_laptopfound",
+      "text": "In Maina's flat: Zipporah's audit laptop.",
+      "kind": "true",
+      "about": [
+        "p_maina"
+      ]
+    },
+    {
+      "id": "f_lanyard",
+      "text": "In a jacket pocket in Maina's flat: Zipporah's key-fob lanyard.",
+      "kind": "true",
+      "about": [
+        "p_maina"
+      ]
+    },
+    {
+      "id": "f_ma_printset",
+      "text": "Fingerprints taken from Maina in detention.",
+      "kind": "true",
+      "about": [
+        "p_maina"
+      ]
+    },
+    {
+      "id": "f_aut",
+      "text": "Post-mortem: strangled with a narrow flat cord about 1.5 cm wide, like a lanyard; no head injury, nothing in the blood.",
+      "kind": "true",
+      "about": [
+        "p_zipporah"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Thursday between 20:50 and 21:20.",
+      "kind": "true",
+      "about": [
+        "p_zipporah"
+      ],
+      "at": {
+        "from": "20:50",
+        "to": "21:20",
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_fibres",
+      "text": "Lab: the ligature mark matches the lanyard's weave; Zipporah's hair is caught in its clip.",
+      "kind": "true",
+      "about": [
+        "p_zipporah",
+        "p_maina"
+      ]
+    },
+    {
+      "id": "f_lidprints",
+      "text": "Lab: Zipporah's and Maina's prints on the laptop lid.",
+      "kind": "true",
+      "about": [
+        "p_maina"
+      ]
+    },
+    {
+      "id": "f_abs_backups",
+      "text": "Missing: three months of server backups were deleted the morning after.",
+      "kind": "true",
+      "about": [
+        "plc_archive"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_laptop",
+      "text": "Missing: her audit laptop is gone.",
+      "kind": "true",
+      "about": [
+        "plc_archive"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_lanyard",
+      "text": "Missing: her lanyard is gone from her neck.",
+      "kind": "true",
+      "about": [
+        "p_zipporah"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_hand",
+      "text": "Missing: the Chair never signed anything by hand.",
+      "kind": "true",
+      "about": [
+        "p_kabiru"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_guard",
+      "text": "Missing: the gate guard logged no visitor.",
+      "kind": "true",
+      "about": [
+        "plc_gate"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_ma_home",
+      "text": "Maina: \"I went home at six on Thursday.\"",
+      "kind": "lie",
+      "about": [
+        "p_maina"
+      ]
+    },
+    {
+      "id": "f_ma_chair",
+      "text": "Maina: \"Every grant was approved by the Chair.\"",
+      "kind": "lie",
+      "about": [
+        "p_maina"
+      ]
+    },
+    {
+      "id": "f_ma_reveal",
+      "text": "Maina: \"Shosh said, 'Fix it, Maina.' I've been fixing things for her since I was nineteen. Envelopes, grants, people. I didn't know how to fix Zipporah.\" His advocate stops him.",
+      "kind": "true",
+      "about": [
+        "p_maina",
+        "p_kabiru"
+      ],
+      "spine": "t_kivuli"
+    },
+    {
+      "id": "f_ma_lanyard",
+      "text": "Maina: \"I never touched her lanyard.\"",
+      "kind": "lie",
+      "about": [
+        "p_maina"
+      ]
+    },
+    {
+      "id": "f_to_failed",
+      "text": "Tony: \"The backups failed on their own.\"",
+      "kind": "lie",
+      "about": [
+        "p_tony"
+      ]
+    },
+    {
+      "id": "f_to_reveal",
+      "text": "Tony: \"Maina opened a ticket at eight saying they were full. I cleared them. I'm a contractor; I do tickets.\"",
+      "kind": "true",
+      "about": [
+        "p_tony",
+        "p_maina"
+      ]
+    },
+    {
+      "id": "f_wn_never",
+      "text": "Nderitu: \"The foundation has never paid any PesaPap till.\"",
+      "kind": "lie",
+      "about": [
+        "p_nderitu"
+      ]
+    },
+    {
+      "id": "f_wn_reveal",
+      "text": "Nderitu: \"I'm going to need my own lawyer, Detective.\" She stands down as Maina's advocate.",
+      "kind": "true",
+      "about": [
+        "p_nderitu"
+      ]
+    },
+    {
+      "id": "f_ph_notthere",
+      "text": "Philip: \"I wasn't at the office on Thursday evening.\"",
+      "kind": "lie",
+      "about": [
+        "p_philip"
+      ]
+    },
+    {
+      "id": "f_ph_reveal",
+      "text": "Philip: \"I came back to clear my desk quietly before resigning. I never went near the archive.\"",
+      "kind": "true",
+      "about": [
+        "p_philip"
+      ]
+    },
+    {
+      "id": "f_ge_claim",
+      "text": "Geoffrey: \"We were having a hard year. I was at choir.\"",
+      "kind": "claim",
+      "about": [
+        "p_geoffrey"
+      ]
+    },
+    {
+      "id": "f_kb_claim",
+      "text": "Kabiru: \"I was in Mombasa. Maina is unwell; he has been for years. The foundation's finances are a matter for its officers.\"",
+      "kind": "claim",
+      "about": [
+        "p_kabiru"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_maina",
+      "stance": "lawyered",
+      "lawyered": {
+        "advocate": "Advocate Wanjiru Nderitu",
+        "reopenedBy": [
+          "f_foblog"
+        ],
+        "line": "Mr. Kabiru is a grieving colleague. No comment."
+      },
+      "intro": "Maina sits beside Advocate Nderitu, his sweater sleeves pulled over his hands. Once reopened: \"I went home at six on Thursday. Every grant was approved by the Chair.\"",
+      "claims": [
+        "f_ma_home",
+        "f_ma_chair"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_ma_lanyard",
+          "after": "f_ma_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_tony",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_backups"
+      ],
+      "intro": "Tony puts his laptop bag on his knees like a shield. \"The backups failed on their own.\"",
+      "claims": [
+        "f_to_failed"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_nderitu",
+      "stance": "cooperative",
+      "intro": "Advocate Nderitu answers before Amani has finished asking. \"The foundation has never paid any PesaPap till.\"",
+      "claims": [
+        "f_wn_never"
+      ],
+      "yields": [
+        "ev_nderitu"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_philip",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_body"
+      ],
+      "intro": "Philip keeps loosening his tie. \"I wasn't at the office on Thursday evening.\"",
+      "claims": [
+        "f_ph_notthere"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_geoffrey",
+      "stance": "cooperative",
+      "intro": "Geoffrey holds his choir folder. \"We were having a hard year. I was at choir.\"",
+      "claims": [
+        "f_ge_claim"
+      ],
+      "yields": [
+        "ev_geoffrey"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_kabiru",
+      "stance": "cooperative",
+      "intro": "Margaret Kabiru, by phone from Mombasa, gracious and precise. \"I have given forty years to this country, Detective. I hope you'll remember that when you write your report.\"",
+      "claims": [
+        "f_kb_claim"
+      ],
+      "yields": [
+        "ev_gala"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_jemimah",
+      "stance": "cooperative",
+      "intro": "Mama Jemimah folds her arms and tells it plainly.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_tony",
+      "claim": "f_to_failed",
+      "brokenBy": [
+        "f_backups"
+      ],
+      "reveals": [
+        "f_to_reveal",
+        "ev_tony"
+      ],
+      "reaction": "\"Maina opened a ticket at eight saying they were full. I cleared them. I'm a contractor; I do tickets.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_philip",
+      "claim": "f_ph_notthere",
+      "brokenBy": [
+        "f_philip_fob",
+        "f_philip_email"
+      ],
+      "reveals": [
+        "f_ph_reveal"
+      ],
+      "reaction": "\"I came back to clear my desk quietly before resigning. I never went near the archive.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_nderitu",
+      "claim": "f_wn_never",
+      "brokenBy": [
+        "f_grant_trail"
+      ],
+      "reveals": [
+        "f_wn_reveal"
+      ],
+      "reaction": "Advocate Nderitu closes her briefcase. \"I'm going to need my own lawyer, Detective.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_ma_home",
+      "claim": "f_ma_home",
+      "brokenBy": [
+        "f_foblog",
+        "f_jemimah"
+      ],
+      "reveals": [],
+      "reaction": "Maina looks at the fob log, then at his advocate, and says nothing.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_ma_chair",
+      "claim": "f_ma_chair",
+      "brokenBy": [
+        "f_stamp",
+        "f_maina_pay"
+      ],
+      "reveals": [
+        "f_ma_reveal"
+      ],
+      "reaction": "\"Shosh said, 'Fix it, Maina.' I've been fixing things for her since I was nineteen. Envelopes, grants, people. I didn't know how to fix Zipporah.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_ma_lanyard",
+      "claim": "f_ma_lanyard",
+      "brokenBy": [
+        "f_fibres"
+      ],
+      "reveals": [],
+      "reaction": "Maina pulls his sleeves further over his hands.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_maina",
+      "text": "Maina Kabiru",
+      "category": "person",
+      "ref": "p_maina",
+      "unlock": {
+        "anyOf": [
+          "f_foblog"
+        ]
+      }
+    },
+    {
+      "id": "w_tony",
+      "text": "Tony Mburu",
+      "category": "person",
+      "ref": "p_tony",
+      "unlock": {
+        "anyOf": [
+          "f_backups"
+        ]
+      }
+    },
+    {
+      "id": "w_nderitu",
+      "text": "Wanjiru Nderitu",
+      "category": "person",
+      "ref": "p_nderitu",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_philip",
+      "text": "Philip Otieno",
+      "category": "person",
+      "ref": "p_philip",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_geoffrey",
+      "text": "Geoffrey Simiyu",
+      "category": "person",
+      "ref": "p_geoffrey",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_kabiru",
+      "text": "Margaret Kabiru",
+      "category": "person",
+      "ref": "p_kabiru",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_jemimah",
+      "text": "Jemimah Wairegi",
+      "category": "person",
+      "ref": "p_jemimah",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_archive",
+      "text": "the archive room",
+      "category": "place",
+      "ref": "plc_archive",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "pl_main",
+      "text": "the main house offices",
+      "category": "place",
+      "ref": "plc_mainhouse",
+      "unlock": {
+        "anyOf": [
+          "f_philip_fob"
+        ]
+      }
+    },
+    {
+      "id": "pl_board",
+      "text": "the boardroom",
+      "category": "place",
+      "ref": "plc_board",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_gate",
+      "text": "the gatehouse",
+      "category": "place",
+      "ref": "plc_gate",
+      "unlock": {
+        "anyOf": [
+          "f_guard"
+        ]
+      }
+    },
+    {
+      "id": "pl_flat",
+      "text": "Maina's flat",
+      "category": "place",
+      "ref": "plc_flat",
+      "unlock": {
+        "anyOf": [
+          "f_shosh"
+        ]
+      }
+    },
+    {
+      "id": "h_lanyard",
+      "text": "strangling her with her own key-fob lanyard",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut"
+        ]
+      }
+    },
+    {
+      "id": "h_collapse",
+      "text": "a collapse among the shelves",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_cable",
+      "text": "strangling her with a computer cable",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_boxfile",
+      "text": "a blow with a box file",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_poison",
+      "text": "poisoning",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_report",
+      "text": "to stop her reporting nine years of foundation grants to the Mvua till, which he had arranged for his grandmother",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_files"
+        ]
+      }
+    },
+    {
+      "id": "m_job",
+      "text": "a deputy who wanted her job",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_philip_email"
+        ]
+      }
+    },
+    {
+      "id": "m_marriage",
+      "text": "a strained marriage",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_geo_pension"
+        ]
+      }
+    },
+    {
+      "id": "m_mistake",
+      "text": "a contractor hiding a mistake",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_backups"
+        ]
+      }
+    },
+    {
+      "id": "m_robbery",
+      "text": "a robbery for her laptop",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_laptopgone"
+        ]
+      }
+    },
+    {
+      "id": "a_backups",
+      "text": "three months of server backups were deleted the morning after",
+      "category": "absence",
+      "ref": "f_abs_backups",
+      "unlock": {
+        "anyOf": [
+          "f_abs_backups"
+        ]
+      }
+    },
+    {
+      "id": "a_laptop",
+      "text": "her audit laptop is missing",
+      "category": "absence",
+      "ref": "f_abs_laptop",
+      "unlock": {
+        "anyOf": [
+          "f_abs_laptop"
+        ]
+      }
+    },
+    {
+      "id": "a_lanyard",
+      "text": "her lanyard is missing from her neck",
+      "category": "absence",
+      "ref": "f_abs_lanyard",
+      "unlock": {
+        "anyOf": [
+          "f_abs_lanyard"
+        ]
+      }
+    },
+    {
+      "id": "a_hand",
+      "text": "the Chair never signed anything by hand",
+      "category": "absence",
+      "ref": "f_abs_hand",
+      "unlock": {
+        "anyOf": [
+          "f_abs_hand"
+        ]
+      }
+    },
+    {
+      "id": "a_guard",
+      "text": "the gate guard logged no visitor",
+      "category": "absence",
+      "ref": "f_abs_guard",
+      "unlock": {
+        "anyOf": [
+          "f_abs_guard"
+        ]
+      }
+    },
+    {
+      "id": "k_inside",
+      "text": "someone inside the foundation was destroying the record of the grants",
+      "category": "conclusion",
+      "by": [
+        "f_abs_backups",
+        "f_backups",
+        "f_laptopgone"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_backups"
+        ]
+      }
+    },
+    {
+      "id": "k_server",
+      "text": "the server failed",
+      "category": "conclusion",
+      "by": [
+        "f_backups"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_backups"
+        ]
+      }
+    },
+    {
+      "id": "k_outsider",
+      "text": "she was robbed by an outsider",
+      "category": "conclusion",
+      "by": [
+        "f_guard"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_backups"
+        ]
+      }
+    },
+    {
+      "id": "k_home",
+      "text": "she took the laptop home",
+      "category": "conclusion",
+      "by": [
+        "f_laptopgone"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_backups"
+        ]
+      }
+    },
+    {
+      "id": "k_chair",
+      "text": "the Chair signed every grant",
+      "category": "conclusion",
+      "by": [
+        "f_stamp"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_backups"
+        ]
+      }
+    },
+    {
+      "id": "k_nobody",
+      "text": "nobody entered the archive after her",
+      "category": "conclusion",
+      "by": [
+        "f_foblog"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_backups"
+        ]
+      }
+    },
+    {
+      "id": "d_approvals",
+      "text": "the grant approvals \"per Chair\"",
+      "category": "document",
+      "ref": "ev_files",
+      "unlock": {
+        "anyOf": [
+          "f_files"
+        ]
+      }
+    },
+    {
+      "id": "d_ticket",
+      "text": "the server ticket",
+      "category": "document",
+      "ref": "ev_backups",
+      "unlock": {
+        "anyOf": [
+          "f_backups"
+        ]
+      }
+    },
+    {
+      "id": "d_fob",
+      "text": "the fob log",
+      "category": "document",
+      "ref": "ev_foblog",
+      "unlock": {
+        "anyOf": [
+          "f_foblog"
+        ]
+      }
+    },
+    {
+      "id": "d_bank",
+      "text": "the bank transfers",
+      "category": "document",
+      "ref": "ev_grant_trail",
+      "unlock": {
+        "anyOf": [
+          "f_grant_trail"
+        ]
+      }
+    },
+    {
+      "id": "d_resign",
+      "text": "Philip's resignation draft",
+      "category": "document",
+      "ref": "ev_philip",
+      "unlock": {
+        "anyOf": [
+          "f_philip_email"
+        ]
+      }
+    },
+    {
+      "id": "t_facsimile",
+      "text": "the Chair's \"signature\" is a facsimile stamp, identical on every page",
+      "category": "tell",
+      "by": [
+        "f_stamp",
+        "f_abs_hand"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_stamp"
+        ]
+      }
+    },
+    {
+      "id": "t_pixel",
+      "text": "a pixel-for-pixel copy of another signature",
+      "category": "tell",
+      "by": [
+        "f_files"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_files"
+        ]
+      }
+    },
+    {
+      "id": "t_letterhead",
+      "text": "a letterhead replaced years ago",
+      "category": "tell",
+      "by": [
+        "f_files"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_files"
+        ]
+      }
+    },
+    {
+      "id": "t_typed",
+      "text": "typing over a pre-signed blank",
+      "category": "tell",
+      "by": [
+        "f_files"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_files"
+        ]
+      }
+    },
+    {
+      "id": "t_id",
+      "text": "the ID number belongs to someone else",
+      "category": "tell",
+      "by": [
+        "f_files"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_files"
+        ]
+      }
+    },
+    {
+      "id": "t_retired",
+      "text": "a retired stamp",
+      "category": "tell",
+      "by": [
+        "f_files"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_files"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_till",
+      "text": "PesaPap Till 880 214 in Rashid's order book (case 10)",
+      "category": "pin",
+      "pin": "case-010:f_order_mvua",
+      "unlock": {
+        "anyOf": [
+          "f_grant_trail"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_msingi",
+      "text": "The Msingi settlement account's payouts (case 91)",
+      "category": "pin",
+      "pin": "case-091:f_payouts",
+      "unlock": {
+        "anyOf": [
+          "f_grant_trail"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_kadzo",
+      "text": "Kadzo Mwamuye's grant (case 95)",
+      "category": "pin",
+      "pin": "case-095:f_ukarimu",
+      "unlock": {
+        "anyOf": [
+          "f_grant_trail"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_spa",
+      "text": "The club spa's sponsorship (case 97)",
+      "category": "pin",
+      "pin": "case-097:f_sponsor",
+      "unlock": {
+        "anyOf": [
+          "f_grant_trail"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_mv",
+      "text": "Desai's oval \"MV\" seal (case 66)",
+      "category": "pin",
+      "pin": "case-066:f_mv_seal",
+      "unlock": {
+        "anyOf": [
+          "f_grant_trail"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_container",
+      "text": "The container of security paper (case 30)",
+      "category": "pin",
+      "pin": "case-030:f_container_oval",
+      "unlock": {
+        "anyOf": [
+          "f_grant_trail"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. {document} was forged, as shown by {tell}. That {missing} shows that {conclusion}. For nine years the foundation's monthly \"community grants\" went to {pin}.",
+    "fixed": {
+      "victim": "Zipporah Naliaka"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_wed",
+                  "label": "Wednesday",
+                  "from": null,
+                  "to": null,
+                  "day": "Wed"
+                },
+                {
+                  "id": "sl_2040",
+                  "label": "Thursday 20:40",
+                  "from": "20:40",
+                  "to": "20:40",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Thursday 20:52–21:15",
+                  "from": "20:52",
+                  "to": "21:15",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_2120",
+                  "label": "Thursday 21:20",
+                  "from": "21:20",
+                  "to": "21:20",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_0615",
+                  "label": "Friday 06:15",
+                  "from": "06:15",
+                  "to": "06:15",
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_0812",
+                  "label": "Friday 08:12",
+                  "from": "08:12",
+                  "to": "08:12",
+                  "day": "Fri"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_confront",
+                  "text": "Zipporah tells Maina she'll report it",
+                  "slot": "sl_wed",
+                  "by": [
+                    "f_geo_pension",
+                    "f_files"
+                  ],
+                  "why": "On Wednesday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_files"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_enter",
+                  "text": "Zipporah enters the archive",
+                  "slot": "sl_2040",
+                  "by": [
+                    "f_foblog"
+                  ],
+                  "why": "20:40.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_foblog"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_kill",
+                  "text": "Zipporah is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_foblog",
+                    "f_aut_tod"
+                  ],
+                  "why": "While Maina's fob was in the archive.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_shosh",
+                  "text": "Maina calls \"Shosh\"",
+                  "slot": "sl_2120",
+                  "by": [
+                    "f_shosh"
+                  ],
+                  "why": "Five minutes after he left.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_shosh"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_wipe",
+                  "text": "The backups are deleted",
+                  "slot": "sl_0812",
+                  "by": [
+                    "f_backups"
+                  ],
+                  "why": "Friday 08:12.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_backups"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_0615",
+                  "by": [
+                    "f_jemimah",
+                    "f_aut_tod"
+                  ],
+                  "why": "At quarter past six Maina was back in the archive, but she had been dead since nine the night before."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "Wednesday the warning; 20:40 she goes in; 20:52 he follows; 21:20 he calls his grandmother; 08:12 the backups go.",
+          "fail": [
+            "She was dead long before dawn.",
+            "When did his fob go in?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_archive"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Among the shelves of approvals she'd pulled out.",
+          "fail": [
+            "Philip never left the main house.",
+            "The flat is where the laptop went."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_maina"
+          }
+        ],
+        "prosecutor": {
+          "pass": "His fob in and out, his ticket, her laptop and her lanyard in his flat.",
+          "fail": [
+            "Tony was in Thika; he only did a ticket.",
+            "The Chair was on stage in Mombasa."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_lanyard"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A flat cord a centimetre and a half wide. Her own lanyard.",
+          "fail": [
+            "A cable leaves a round mark.",
+            "No head injury."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_report"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Two hundred and fourteen million to the Mvua till, and she was taking it to the board.",
+          "fail": [
+            "Philip was writing his own resignation.",
+            "The laptop wasn't stolen for itself; it was hidden."
+          ]
+        }
+      },
+      {
+        "id": "g_forgery",
+        "kind": "forgery",
+        "blanks": [
+          {
+            "id": "document",
+            "category": "document",
+            "answer": "d_approvals"
+          },
+          {
+            "id": "tell",
+            "category": "tell",
+            "answer": "t_facsimile"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The same ink halo, the same nick in the M, on every page for nine years.",
+          "fail": [
+            "The ticket is genuine; it's what he asked for.",
+            "It's a stamp, not a copied signature."
+          ]
+        }
+      },
+      {
+        "id": "g_absence",
+        "kind": "absence",
+        "blanks": [
+          {
+            "id": "missing",
+            "category": "absence",
+            "answer": "a_backups"
+          },
+          {
+            "id": "conclusion",
+            "category": "conclusion",
+            "answer": "k_inside"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Ninety days of backups, never cleared in nine years, gone the morning after.",
+          "fail": [
+            "The lanyard is the weapon.",
+            "No visitor at the gate means a fob, not a reason."
+          ]
+        }
+      },
+      {
+        "id": "g_spine",
+        "kind": "spine",
+        "blanks": [
+          {
+            "id": "pin",
+            "category": "pin",
+            "answer": "w_pin_till",
+            "accept": [
+              "w_pin_msingi"
+            ],
+            "spine": true
+          }
+        ],
+        "prosecutor": {
+          "pass": "Till 880 214. The till in Rashid's order book in case 10, paid every month by a foundation for scholarships.",
+          "fail": [
+            "Kadzo and the spa were one-off payments, not monthly grants.",
+            "The seal and the paper were bought, not granted."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_archive",
+      "from": "20:52",
+      "to": "21:15",
+      "note": "Maina's fob in the archive 20:52–21:15, inside the post-mortem window 20:50–21:20."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_files",
+          "f_stamp",
+          "f_abs_hand",
+          "f_grant_trail",
+          "case-010:f_order_mvua",
+          "case-091:f_payouts"
+        ],
+        "concludes": "Nine years of foundation money to the Mvua till, approved with a facsimile stamp: KSh 214 million.",
+        "answers": [
+          "document",
+          "tell",
+          "pin"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_body",
+          "f_aut",
+          "f_aut_tod",
+          "f_foblog",
+          "f_guard",
+          "f_ma_home"
+        ],
+        "concludes": "Maina was in the archive with Zipporah from 20:52 to 21:15.",
+        "answers": [
+          "where",
+          "when"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_backups",
+          "f_abs_backups",
+          "f_laptopgone",
+          "f_jemimah",
+          "f_to_failed",
+          "f_to_reveal"
+        ],
+        "concludes": "He came back at dawn and had the backups deleted.",
+        "answers": [
+          "missing",
+          "conclusion"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_shosh",
+          "f_maina_pay",
+          "f_ma_chair",
+          "f_ma_reveal",
+          "f_wn_never",
+          "f_grant_trail"
+        ],
+        "concludes": "He called \"Shosh\" five minutes after leaving the archive; he paid Kadzo and Sagal.",
+        "answers": [
+          "why"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_philip_fob",
+          "f_philip_email",
+          "f_ph_notthere",
+          "f_ph_reveal"
+        ],
+        "concludes": "Philip never left the main house."
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_laptopfound",
+          "f_lanyard",
+          "f_lidprints"
+        ],
+        "concludes": "Her laptop and lanyard were in his flat."
+      },
+      {
+        "id": "s7",
+        "from": [
+          "s6",
+          "f_fibres",
+          "f_ma_lanyard"
+        ],
+        "concludes": "Maina Kabiru strangled Zipporah with her own lanyard to stop her reporting the grants.",
+        "answers": [
+          "who",
+          "how"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_main",
+        "blank": "where",
+        "by": [
+          "f_philip_fob",
+          "f_body"
+        ],
+        "why": "Philip's side of the garden; she died in the archive."
+      },
+      {
+        "word": "pl_board",
+        "blank": "where",
+        "by": [
+          "f_body"
+        ],
+        "why": "She died in the archive."
+      },
+      {
+        "word": "pl_gate",
+        "blank": "where",
+        "by": [
+          "f_guard"
+        ],
+        "why": "No visitor came through."
+      },
+      {
+        "word": "pl_flat",
+        "blank": "where",
+        "by": [
+          "f_laptopfound"
+        ],
+        "why": "Where the laptop went."
+      },
+      {
+        "word": "w_tony",
+        "blank": "who",
+        "by": [
+          "f_tony_thika"
+        ],
+        "why": "In Thika."
+      },
+      {
+        "word": "w_nderitu",
+        "blank": "who",
+        "by": [
+          "f_nderitu_dinner"
+        ],
+        "why": "At dinner in Gigiri."
+      },
+      {
+        "word": "w_philip",
+        "blank": "who",
+        "by": [
+          "f_philip_fob"
+        ],
+        "why": "In the main house only."
+      },
+      {
+        "word": "w_geoffrey",
+        "blank": "who",
+        "by": [
+          "f_geoffrey"
+        ],
+        "why": "At choir."
+      },
+      {
+        "word": "w_kabiru",
+        "blank": "who",
+        "by": [
+          "f_gala"
+        ],
+        "why": "On stage in Mombasa."
+      },
+      {
+        "word": "w_jemimah",
+        "blank": "who",
+        "by": [
+          "f_jemimah_self"
+        ],
+        "why": "At home until 06:30."
+      },
+      {
+        "word": "h_collapse",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "Ligature marks."
+      },
+      {
+        "word": "h_cable",
+        "blank": "how",
+        "by": [
+          "f_aut",
+          "f_fibres"
+        ],
+        "why": "Flat, 1.5 cm: a lanyard."
+      },
+      {
+        "word": "h_boxfile",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "No head injury."
+      },
+      {
+        "word": "h_poison",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "Nothing in the blood."
+      },
+      {
+        "word": "m_job",
+        "blank": "why",
+        "by": [
+          "f_philip_email",
+          "f_philip_fob"
+        ],
+        "why": "Philip was writing his own resignation, in the main house."
+      },
+      {
+        "word": "m_marriage",
+        "blank": "why",
+        "by": [
+          "f_geoffrey"
+        ],
+        "why": "Geoffrey was at choir."
+      },
+      {
+        "word": "m_mistake",
+        "blank": "why",
+        "by": [
+          "f_to_reveal",
+          "f_tony_thika"
+        ],
+        "why": "Tony did a ticket Maina opened."
+      },
+      {
+        "word": "m_robbery",
+        "blank": "why",
+        "by": [
+          "f_laptopfound"
+        ],
+        "why": "Taken, but hidden at Maina's."
+      },
+      {
+        "word": "a_laptop",
+        "blank": "missing",
+        "by": [
+          "f_abs_laptop",
+          "f_laptopfound"
+        ],
+        "why": "It shows what he took, not what he was destroying."
+      },
+      {
+        "word": "a_lanyard",
+        "blank": "missing",
+        "by": [
+          "f_abs_lanyard",
+          "f_aut"
+        ],
+        "why": "The weapon."
+      },
+      {
+        "word": "a_hand",
+        "blank": "missing",
+        "by": [
+          "f_abs_hand",
+          "f_stamp"
+        ],
+        "why": "That's the forgery, not the cover-up."
+      },
+      {
+        "word": "a_guard",
+        "blank": "missing",
+        "by": [
+          "f_abs_guard",
+          "f_foblog"
+        ],
+        "why": "Staff fobs, not visitors."
+      },
+      {
+        "word": "k_server",
+        "blank": "conclusion",
+        "by": [
+          "f_backups"
+        ],
+        "why": "A ticket, by \"mkabiru\"."
+      },
+      {
+        "word": "k_outsider",
+        "blank": "conclusion",
+        "by": [
+          "f_guard"
+        ],
+        "why": "No visitor."
+      },
+      {
+        "word": "k_home",
+        "blank": "conclusion",
+        "by": [
+          "f_laptopfound"
+        ],
+        "why": "It was in Maina's flat."
+      },
+      {
+        "word": "k_chair",
+        "blank": "conclusion",
+        "by": [
+          "f_stamp"
+        ],
+        "why": "A stamp, not a hand."
+      },
+      {
+        "word": "k_nobody",
+        "blank": "conclusion",
+        "by": [
+          "f_foblog"
+        ],
+        "why": "Maina's fob went in at 20:52."
+      },
+      {
+        "word": "d_ticket",
+        "blank": "document",
+        "by": [
+          "f_backups"
+        ],
+        "why": "Genuine: it's what he asked for."
+      },
+      {
+        "word": "d_fob",
+        "blank": "document",
+        "by": [
+          "f_foblog"
+        ],
+        "why": "Genuine."
+      },
+      {
+        "word": "d_bank",
+        "blank": "document",
+        "by": [
+          "f_grant_trail"
+        ],
+        "why": "Genuine money."
+      },
+      {
+        "word": "d_resign",
+        "blank": "document",
+        "by": [
+          "f_philip_email"
+        ],
+        "why": "Philip's own draft."
+      },
+      {
+        "word": "t_pixel",
+        "blank": "tell",
+        "by": [
+          "f_stamp"
+        ],
+        "why": "Stamped, not copied from one source document."
+      },
+      {
+        "word": "t_letterhead",
+        "blank": "tell",
+        "by": [
+          "f_files"
+        ],
+        "why": "Foundation forms, current."
+      },
+      {
+        "word": "t_typed",
+        "blank": "tell",
+        "by": [
+          "f_stamp"
+        ],
+        "why": "The signature is a stamp, not pre-signed."
+      },
+      {
+        "word": "t_id",
+        "blank": "tell",
+        "by": [
+          "f_files"
+        ],
+        "why": "No ID numbers."
+      },
+      {
+        "word": "t_retired",
+        "blank": "tell",
+        "by": [
+          "f_stamp"
+        ],
+        "why": "The stamp is in use, not retired."
+      },
+      {
+        "word": "w_pin_kadzo",
+        "blank": "pin",
+        "by": [
+          "case-095:f_ukarimu",
+          "f_files"
+        ],
+        "why": "A one-off grant, not monthly."
+      },
+      {
+        "word": "w_pin_spa",
+        "blank": "pin",
+        "by": [
+          "case-097:f_sponsor",
+          "f_files"
+        ],
+        "why": "A one-off sponsorship."
+      },
+      {
+        "word": "w_pin_mv",
+        "blank": "pin",
+        "by": [
+          "case-066:f_mv_seal",
+          "f_grant_trail"
+        ],
+        "why": "A seal, not a grant."
+      },
+      {
+        "word": "w_pin_container",
+        "blank": "pin",
+        "by": [
+          "case-030:f_container_oval",
+          "f_grant_trail"
+        ],
+        "why": "Paper, not a grant."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "At year-end Zipporah audits the programme grants herself: nine years of monthly \"community grants\" to Till 880 214, approved by Maina \"per Chair\" with a facsimile stamp. On Wednesday she tells him she'll report it on Friday.",
+        "image": null
+      },
+      {
+        "text": "On Thursday at 20:40 she pulls the original files in the archive. At 20:52 Maina comes in with his fob \"to explain\". She won't listen. He strangles her with her own lanyard.",
+        "image": "plc_archive"
+      },
+      {
+        "text": "He takes her laptop and the lanyard and leaves at 21:15. At 21:20 he calls \"Shosh\".",
+        "image": null
+      },
+      {
+        "text": "At 06:15 on Friday he is back in the archive before anyone. At 07:58 he opens a ticket: \"Backups full, please clear.\" At 08:12 Tony clears them.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "Maina is charged with Zipporah's murder. His statement names his grandmother only as \"Shosh said fix it.\" Halima: \"A grandson's word against a woman with forty years of portraits on her walls. It isn't enough for Joseph. Not yet.\"",
+      "files": [
+        {
+          "thread": "t_mvua",
+          "text": "The paymaster: nine years of Ukarimu Foundation \"community grants\" to Till 880 214, KSh 214 million, through the Msingi Trust."
+        },
+        {
+          "thread": "t_kivuli",
+          "text": "\"Shosh said, 'Fix it, Maina.'\" Margaret Kabiru's grandson; the \"M.\" of cases 95, 97 and 98."
+        }
+      ]
+    },
+    {
+      "beat": "At 23:40 the airline Halima flagged after case 98 reports a booking: Margaret Kabiru, Nairobi to London, 09:15 tomorrow, booked an hour after Maina's arrest."
+    },
+    {
+      "beat": "Mwalimu calls. She doesn't say hello. \"Office 4.12. Go and get her before nine. And Amani: take your father's file with you.\""
+    }
+  ],
+  "clockPlan": {
+    "note": "Three stamps (the maximum): Maina's line, the foundation's bank, and a warrant on his flat. Maina is reopened by the fob log. Detain him after the search; prints (6 h) and fibres (12 h) inside 24 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_foundation",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_jemimah",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_jemimah"
+      },
+      {
+        "do": "read",
+        "target": "ev_files",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_laptop",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_stamp",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_backups",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_foblog",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_guard",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_philip",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_philip"
+      },
+      {
+        "do": "press",
+        "target": "c_philip"
+      },
+      {
+        "do": "interview",
+        "target": "p_geoffrey"
+      },
+      {
+        "do": "interview",
+        "target": "p_kabiru"
+      },
+      {
+        "do": "interview",
+        "target": "p_tony"
+      },
+      {
+        "do": "press",
+        "target": "c_tony"
+      },
+      {
+        "do": "interview",
+        "target": "p_maina"
+      },
+      {
+        "do": "press",
+        "target": "c_ma_home"
+      },
+      {
+        "do": "records",
+        "target": "ev_rec_maina"
+      },
+      {
+        "do": "records",
+        "target": "ev_grant_trail"
+      },
+      {
+        "do": "interview",
+        "target": "p_nderitu"
+      },
+      {
+        "do": "press",
+        "target": "c_nderitu"
+      },
+      {
+        "do": "press",
+        "target": "c_ma_chair"
+      },
+      {
+        "do": "travel",
+        "target": "loc_flat",
+        "hours": 0.5,
+        "from": "loc_foundation"
+      },
+      {
+        "do": "search",
+        "target": "loc_flat"
+      },
+      {
+        "do": "read",
+        "target": "ev_flat",
+        "hours": 0
+      },
+      {
+        "do": "detain",
+        "target": "p_maina"
+      },
+      {
+        "do": "sample",
+        "target": "ev_ma_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_fibres"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 12
+      },
+      {
+        "do": "press",
+        "target": "c_ma_lanyard"
+      }
+    ],
+    "totalHours": 46.5
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_foblog",
+        "line": "When did each fob go in and out?"
+      },
+      "tier2": {
+        "facts": [
+          "f_foblog",
+          "f_shosh"
+        ],
+        "line": "20:52 in, 21:15 out; a call at 21:20."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_body",
+        "line": "Where was she working late?"
+      },
+      "tier2": {
+        "facts": [
+          "f_body"
+        ],
+        "line": "The archive."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_foblog",
+        "line": "Whose fob followed hers into the archive?"
+      },
+      "tier2": {
+        "facts": [
+          "f_foblog",
+          "f_lanyard"
+        ],
+        "line": "Maina's; and her lanyard in his flat."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "How wide is the mark?"
+      },
+      "tier2": {
+        "facts": [
+          "f_aut"
+        ],
+        "line": "A centimetre and a half, flat: a lanyard."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_files",
+        "line": "What was she auditing?"
+      },
+      "tier2": {
+        "facts": [
+          "f_files",
+          "f_grant_trail"
+        ],
+        "line": "Nine years of grants to the Mvua till."
+      }
+    },
+    "g_forgery": {
+      "tier1": {
+        "point": "ev_stamp",
+        "line": "Look at the Chair's signature on two pages."
+      },
+      "tier2": {
+        "facts": [
+          "f_stamp"
+        ],
+        "line": "Identical: a stamp."
+      }
+    },
+    "g_absence": {
+      "tier1": {
+        "point": "ev_backups",
+        "line": "What disappeared from the server?"
+      },
+      "tier2": {
+        "facts": [
+          "f_abs_backups",
+          "f_backups"
+        ],
+        "line": "Ninety days of backups, on Maina's ticket."
+      }
+    },
+    "g_spine": {
+      "tier1": {
+        "point": "ev_grant_trail",
+        "line": "Where did the monthly grants go?"
+      },
+      "tier2": {
+        "facts": [
+          "f_grant_trail"
+        ],
+        "line": "Till 880 214: the till in Rashid's order book."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "wakfu",
+      "def": "A foundation or endowment."
+    },
+    {
+      "term": "ruzuku",
+      "def": "A grant."
+    },
+    {
+      "term": "muhuri wa sahihi",
+      "def": "A signature stamp."
+    },
+    {
+      "term": "shosh",
+      "def": "Grandmother (slang, from Kikuyu \"cũcũ\")."
+    },
+    {
+      "term": "kamba ya ufunguo",
+      "def": "A lanyard."
+    },
+    {
+      "term": "Ukarimu",
+      "def": "\"Generosity\"; the name of the foundation."
+    },
+    {
+      "term": "PesaPap",
+      "def": "A mobile-money service (fictional)."
+    },
+    {
+      "term": "Mvua",
+      "def": "Mvua Holdings, the shell company behind the forged titles (\"mvua\" means rain)."
+    },
+    {
+      "term": "mlinzi",
+      "def": "A guard."
+    },
+    {
+      "term": "Mlinzi Bora",
+      "def": "\"Good Guard\": a security company paid by Mvua (case 90)."
+    },
+    {
+      "term": "mama",
+      "def": "A respectful way to address or refer to an older woman."
+    },
+    {
+      "term": "Madam",
+      "def": "How Kenyan staff often address a female manager."
+    }
+  ],
+  "ui": {
+    "beats": [],
+    "beatNotes": "No new mechanics."
+  }
+}

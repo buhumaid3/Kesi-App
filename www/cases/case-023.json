@@ -1,0 +1,1361 @@
+{
+  "meta": {
+    "id": "case-023",
+    "number": 23,
+    "region": "mombasa-old-town",
+    "regionNumber": 3,
+    "title": "Turmeric",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 15,
+    "date": "Wednesday 20 August",
+    "folderTab": "NDIA KUU"
+  },
+  "pattern": {
+    "crimePattern": "co-heir kills the relative who refused to sell a family building",
+    "noRealCaseRetold": true,
+    "notes": "Fictional family, shop and developer in a real Old Town street. Heritage-building pressure is a real theme; no real building or family is depicted.",
+    "tags": [
+      "blunt-force",
+      "inheritance",
+      "records-request",
+      "innocent-liar",
+      "spine-background"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 3,
+    "redHerrings": 1,
+    "liars": 1,
+    "groups": [
+      "who",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone"
+    ],
+    "gatedActions": [
+      "records"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 22/20/08",
+    "date": "Wednesday 20 August",
+    "time": "16:31",
+    "reportedBy": "Rahma Abeid, shop assistant, Karimjee & Sons Spices, Ndia Kuu",
+    "text": "Rahma Abeid, a shop assistant, reports that her employer Farida Karimjee (64), owner of Karimjee & Sons Spices on Ndia Kuu, Old Town, was found dead in the shop at 16:25. A sack of turmeric is split across the floor.",
+    "facts": [
+      "f_ob_found"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_farida",
+      "role": "victim",
+      "name": "Farida Karimjee",
+      "age": 64,
+      "occupation": "Owner, Karimjee & Sons Spices",
+      "bio": "Widow. Runs the spice shop her husband's grandfather opened, in a coral-stone building she will not sell.",
+      "community": "Kenyan-Asian",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_shop",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Asian woman, mid 60s, grey hair in a low bun, a cotton salwar kameez with a cardigan, reading glasses, a scoop of cardamom in her hand, stubborn and kind, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_yasmin",
+      "role": "suspect",
+      "name": "Yasmin Karimjee",
+      "age": 55,
+      "occupation": "Farida's sister-in-law; co-owner of the building",
+      "bio": "Her late brother's share of the building came to her through the family trust. Short of money. Wants to sell.",
+      "community": "Kenyan-Asian",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_farida_sms"
+      },
+      "at": "loc_yasmin",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Asian woman, mid 50s, a pale salwar suit with a long white dupatta that has a very faint yellow stain near one end, gold bangles, a tight controlled expression, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_ken",
+      "role": "suspect",
+      "name": "Ken Mutisya",
+      "age": 45,
+      "occupation": "Developer's representative",
+      "redHerring": true,
+      "bio": "Told Farida last week, in front of customers, \"You'll sell, one way or another.\"",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_offer"
+      },
+      "at": "plc_planning",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, a slim grey suit, a lanyard from a county meeting, a tablet under his arm, smooth and impatient, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_rahma",
+      "role": "suspect",
+      "name": "Rahma Abeid",
+      "age": 22,
+      "occupation": "Shop assistant",
+      "bio": "Has worked in the shop for two years. Says she was there all afternoon.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_hotel",
+      "image": {
+        "kind": "portrait",
+        "brief": "Swahili Kenyan young woman, early 20s, a navy hijab, a smart blouse a little too formal for a spice shop, a folded letter in her hand, frightened, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_imran",
+      "role": "witness",
+      "name": "Imran Karimjee",
+      "age": 38,
+      "occupation": "Farida's son, in Nairobi on business",
+      "bio": "Unlocked his mother's phone for the police by video call.",
+      "community": "Kenyan-Asian",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_ob_found"
+      },
+      "at": "plc_nairobi",
+      "image": null
+    },
+    {
+      "id": "p_hussein",
+      "role": "witness",
+      "name": "Hussein Abdulkadir",
+      "age": 58,
+      "occupation": "Carved-door maker across the street",
+      "bio": "Carves doors on the pavement opposite. Sees everything on Ndia Kuu.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_hussein",
+      "image": null
+    },
+    {
+      "id": "p_kitsao",
+      "role": "witness",
+      "name": "Ali Kitsao",
+      "age": 31,
+      "occupation": "Tuk-tuk driver",
+      "statementOnly": true,
+      "bio": "Drives between Ganjoni and Old Town.",
+      "community": "Mijikenda",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_rec_tuktuk"
+      },
+      "at": "plc_tuktuk",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_hotel",
+      "name": "Hotel in Nyali (job interview)"
+    },
+    {
+      "id": "plc_planning",
+      "name": "County planning office"
+    },
+    {
+      "id": "plc_nairobi",
+      "name": "Nairobi"
+    },
+    {
+      "id": "plc_hussein",
+      "name": "Hussein's pavement workshop, opposite"
+    },
+    {
+      "id": "plc_tuktuk",
+      "name": "Ganjoni–Old Town tuk-tuk run"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_shop",
+      "name": "Karimjee & Sons Spices, Ndia Kuu",
+      "kind": "scene",
+      "description": "A narrow shop in a coral-stone building with a carved wooden door. Open sacks of cumin, cardamom, cloves and chillies at the front. Behind the counter, a brass mortar and pestle. A sack of turmeric has split across the floor and the air is yellow with it.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Behind the counter",
+          "pos": [
+            52,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Farida lies behind the counter in a drift of turmeric. The brass pestle is beside her."
+        },
+        {
+          "id": "hs_turmeric",
+          "label": "The turmeric",
+          "pos": [
+            64,
+            76
+          ],
+          "yields": "ev_turmeric",
+          "text": "Bright yellow powder everywhere. In it, the smudged print of a flat sandal, pointing to the door."
+        },
+        {
+          "id": "hs_phone",
+          "label": "Phone on the counter",
+          "pos": [
+            40,
+            44
+          ],
+          "yields": "ev_farida_phone",
+          "text": "Her phone, face down by the weighing scale. Imran unlocks it by video call from Nairobi."
+        },
+        {
+          "id": "hs_drawer",
+          "label": "Counter drawer",
+          "pos": [
+            36,
+            52
+          ],
+          "yields": "ev_offer",
+          "text": "A drawer of letters. On top, a developer's letterhead."
+        },
+        {
+          "id": "hs_trust",
+          "label": "Under the letters",
+          "pos": [
+            32,
+            58
+          ],
+          "yields": "ev_trust",
+          "text": "A family trust deed in a plastic sleeve."
+        },
+        {
+          "id": "hs_ledger",
+          "label": "Old ledger",
+          "pos": [
+            28,
+            40
+          ],
+          "yields": "ev_ledger",
+          "text": "A cloth-bound family ledger, decades old."
+        },
+        {
+          "id": "hs_bin",
+          "label": "Bin",
+          "pos": [
+            72,
+            46
+          ],
+          "yields": "ev_torn",
+          "text": "Torn paper in the bin, typed."
+        },
+        {
+          "id": "hs_cash",
+          "label": "Cash box",
+          "pos": [
+            44,
+            50
+          ],
+          "yields": "ev_cashbox",
+          "text": "The cash box under the counter."
+        },
+        {
+          "id": "hs_sales",
+          "label": "Sales book",
+          "pos": [
+            46,
+            40
+          ],
+          "yields": "ev_rahma_sales",
+          "text": "Today's sales book, in Rahma's handwriting."
+        },
+        {
+          "id": "hs_hussein",
+          "label": "Across the street",
+          "pos": [
+            94,
+            30
+          ],
+          "yields": "ev_hussein",
+          "text": "Hussein Abdulkadir has put down his chisel and is standing in the street with his hands on his head."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "Ndia Kuu street in Mombasa Old Town in late afternoon light, coral-stone buildings with ornately carved wooden doors and balconies, a narrow spice shop with open sacks of cumin, cardamom and chillies at the front and a spill of bright yellow turmeric across the floor inside, no people in focus"
+      }
+    },
+    {
+      "id": "loc_yasmin",
+      "name": "Yasmin Karimjee's flat, Ganjoni",
+      "kind": "location",
+      "description": "A second-floor flat in Ganjoni. A balcony with a drying rack. Sandals by the door.",
+      "unlock": {
+        "fact": "f_farida_sms"
+      },
+      "hotspots": [
+        {
+          "id": "hs_rack",
+          "label": "Drying rack",
+          "pos": [
+            60,
+            40
+          ],
+          "yields": "ev_dupatta",
+          "text": "A long white dupatta hangs on the rack, washed today. Not quite white."
+        },
+        {
+          "id": "hs_sandals",
+          "label": "Sandals by the door",
+          "pos": [
+            20,
+            80
+          ],
+          "text": "Flat leather sandals, scrubbed. The scrubbing brush is still wet."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a modest second-floor flat balcony in Mombasa with a clothes rack, a long white scarf hanging to dry, potted plants, late afternoon light"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body behind the counter",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Struck with the shop's brass pestle. A sack of turmeric split around her."
+      },
+      "facts": [
+        "f_body_pestle"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the floor behind a spice shop counter covered in spilled bright yellow turmeric powder, a heavy brass pestle lying in it beside an overturned brass mortar, a split jute sack, no body visible"
+      }
+    },
+    {
+      "id": "ev_turmeric",
+      "type": "physical",
+      "title": "Turmeric and a sandal print",
+      "render": "object",
+      "body": {
+        "label": "Turmeric stains cotton bright yellow and won't wash out. A smudged flat-sandal print in the powder, heading for the door."
+      },
+      "facts": [
+        "f_turmeric"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a smudged print of a woman's flat sandal in spilled bright yellow turmeric powder on a stone floor, pointing toward a carved wooden doorway"
+      }
+    },
+    {
+      "id": "ev_farida_phone",
+      "type": "phone",
+      "title": "Farida's phone (unlocked by Imran)",
+      "render": "smsThread",
+      "body": {
+        "messages": [
+          {
+            "time": "14:58",
+            "from": "Yasmin",
+            "text": "Nakuja saa tisa na nusu na karatasi."
+          }
+        ]
+      },
+      "facts": [
+        "f_farida_sms"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_offer",
+      "type": "physical",
+      "title": "Developer's offer",
+      "render": "note",
+      "body": {
+        "text": "Offer for the building, Ndia Kuu: KSh 40,000,000.",
+        "handwritten": "NEVER."
+      },
+      "facts": [
+        "f_offer"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_trust",
+      "type": "physical",
+      "title": "Family trust deed",
+      "render": "form",
+      "body": {
+        "text": "The building is held jointly by Farida Karimjee and Yasmin Karimjee. A sale needs both signatures. The spice business is Farida's alone."
+      },
+      "facts": [
+        "f_trust"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_torn",
+      "type": "physical",
+      "title": "Torn papers in the bin",
+      "render": "form",
+      "body": {
+        "text": "Pieces of a typed \"Consent to transfer\" form for the building. Unsigned."
+      },
+      "facts": [
+        "f_torn"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ledger",
+      "type": "physical",
+      "title": "Old family ledger",
+      "render": "ledger",
+      "body": {
+        "line": "Loan, Farida to Yasmin — SETTLED (ten years ago)."
+      },
+      "facts": [
+        "f_ledger"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_cashbox",
+      "type": "physical",
+      "title": "Cash box",
+      "render": "object",
+      "body": {
+        "label": "Full. Today's takings counted and banded."
+      },
+      "facts": [
+        "f_cashbox"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rahma_sales",
+      "type": "physical",
+      "title": "Sales book",
+      "render": "tallyBook",
+      "body": {
+        "rows": [
+          {
+            "time": "15:28",
+            "entry": "Cloves 250 g"
+          },
+          {
+            "time": "16:26",
+            "entry": "(nothing until Rahma returns)"
+          }
+        ],
+        "note": "No sales between 15:30 and 16:25."
+      },
+      "facts": [
+        "f_sales_gap"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_hussein",
+      "type": "witness",
+      "title": "Statement: Hussein Abdulkadir",
+      "render": "statement",
+      "body": {
+        "speaker": "p_hussein"
+      },
+      "facts": [
+        "f_hussein_sign",
+        "f_hussein_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Yasmin Karimjee's line",
+      "render": "mastRecord",
+      "body": {
+        "masts": "Ganjoni until 15:30; Old Town 15:42–16:14; Ganjoni from 16:28.",
+        "pesapap": "Tuk-tuk fares to ALI KITSAO at 15:38 and 16:12. Three days ago: KSh 15,000 to Till 880 214, MVUA HOLDINGS, \"title & transfer documents\"."
+      },
+      "facts": [
+        "f_rec_mast",
+        "f_rec_tuktuk",
+        "f_rec_mvua"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_farida_sms"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_kitsao",
+      "type": "witness",
+      "title": "Phone statement: Ali Kitsao",
+      "render": "statement",
+      "body": {
+        "speaker": "p_kitsao",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_driver"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_dupatta",
+      "type": "physical",
+      "title": "Yasmin's white dupatta",
+      "render": "object",
+      "body": {
+        "label": "Washed today. Faint yellow stains along one end that haven't come out."
+      },
+      "facts": [
+        "f_dupatta"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a long white cotton scarf hanging on a drying rack, faint yellow stains along one end that have not washed out"
+      }
+    },
+    {
+      "id": "ev_interview",
+      "type": "document",
+      "title": "Interview letter and hotel visitor book",
+      "render": "visitorRegister",
+      "body": {
+        "letter": "Interview, front office, hotel in Nyali, 16:00.",
+        "rows": [
+          {
+            "name": "R. Abeid (interview)",
+            "in": "15:50",
+            "out": "16:12"
+          }
+        ]
+      },
+      "facts": [
+        "f_hotel_book"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mutisya",
+      "type": "document",
+      "title": "Planning meeting minutes",
+      "render": "logBook",
+      "body": {
+        "meeting": "County planning office",
+        "time": "15:00–17:00",
+        "presenter": "K. Mutisya"
+      },
+      "facts": [
+        "f_mutisya"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_imran",
+      "type": "witness",
+      "title": "Video call: Imran Karimjee",
+      "render": "statement",
+      "body": {
+        "speaker": "p_imran",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_imran_offers",
+        "f_imran_nairobi"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Rahma Abeid found her employer Farida Karimjee dead in the spice shop at 16:25. Farida's son Imran is in Nairobi.",
+      "kind": "true",
+      "about": [
+        "p_farida",
+        "p_rahma",
+        "p_imran"
+      ]
+    },
+    {
+      "id": "f_body_pestle",
+      "text": "Farida was struck with the shop's brass pestle.",
+      "kind": "true",
+      "about": [
+        "p_farida",
+        "loc_shop"
+      ]
+    },
+    {
+      "id": "f_turmeric",
+      "text": "Turmeric stains cotton bright yellow and doesn't wash out. In the powder: a smudged print of a woman's flat sandal, heading to the door.",
+      "kind": "true",
+      "about": [
+        "loc_shop"
+      ]
+    },
+    {
+      "id": "f_farida_sms",
+      "text": "SMS to Farida from 'Yasmin' at 14:58: 'Nakuja saa tisa na nusu na karatasi' (I'm coming at half past three with the papers).",
+      "kind": "true",
+      "about": [
+        "p_yasmin",
+        "p_farida"
+      ]
+    },
+    {
+      "id": "f_offer",
+      "text": "A developer's offer for the building: KSh 40 million. Across it, in Farida's hand: 'NEVER.'",
+      "kind": "true",
+      "about": [
+        "p_farida",
+        "p_ken"
+      ]
+    },
+    {
+      "id": "f_trust",
+      "text": "Family trust deed: the building is held jointly by Farida and Yasmin, and a sale needs both signatures. The spice business is Farida's alone.",
+      "kind": "true",
+      "about": [
+        "p_farida",
+        "p_yasmin"
+      ]
+    },
+    {
+      "id": "f_torn",
+      "text": "Torn in the bin: a typed 'consent to transfer' form for the building, unsigned.",
+      "kind": "true",
+      "about": [
+        "loc_shop"
+      ]
+    },
+    {
+      "id": "f_ledger",
+      "text": "Family ledger: an old loan from Farida to Yasmin, marked settled ten years ago.",
+      "kind": "true",
+      "about": [
+        "p_yasmin"
+      ]
+    },
+    {
+      "id": "f_cashbox",
+      "text": "The cash box is full: the day's takings counted and banded.",
+      "kind": "true",
+      "about": [
+        "loc_shop"
+      ]
+    },
+    {
+      "id": "f_sales_gap",
+      "text": "Sales book: no sales between 15:30 and 16:25 on a weekday afternoon.",
+      "kind": "true",
+      "about": [
+        "loc_shop"
+      ]
+    },
+    {
+      "id": "f_hussein_sign",
+      "text": "Hussein: from about 15:35 the shop door was half closed with a sign, 'Narudi sasa hivi' (back shortly). Rahma came back at about 16:25 and screamed.",
+      "kind": "true",
+      "about": [
+        "p_hussein",
+        "p_rahma"
+      ]
+    },
+    {
+      "id": "f_hussein_self",
+      "text": "Hussein carved at his pavement workshop opposite the shop all afternoon.",
+      "kind": "true",
+      "about": [
+        "p_hussein"
+      ],
+      "where": {
+        "person": "p_hussein",
+        "place": "plc_hussein",
+        "from": "14:00",
+        "to": "17:00"
+      }
+    },
+    {
+      "id": "f_rec_mast",
+      "text": "Jamii Mobile, Yasmin's line: Ganjoni mast until 15:30, Old Town 15:42–16:14, Ganjoni again from 16:28.",
+      "kind": "true",
+      "about": [
+        "p_yasmin"
+      ]
+    },
+    {
+      "id": "f_rec_tuktuk",
+      "text": "PesaPap, Yasmin's line: tuk-tuk fares to ALI KITSAO at 15:38 and 16:12.",
+      "kind": "true",
+      "about": [
+        "p_yasmin",
+        "p_kitsao"
+      ]
+    },
+    {
+      "id": "f_rec_mvua",
+      "text": "PesaPap, Yasmin's line, three days ago: KSh 15,000 to Till 880 214, MVUA HOLDINGS, 'title & transfer documents'.",
+      "kind": "true",
+      "about": [
+        "p_yasmin"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_driver",
+      "text": "Ali Kitsao: he dropped a woman in a white dupatta at the spice shop door on Ndia Kuu at about 15:47, and picked her up at the same door at 16:12. She sat on her feet.",
+      "kind": "true",
+      "about": [
+        "p_kitsao",
+        "p_yasmin"
+      ],
+      "where": {
+        "person": "p_yasmin",
+        "place": "loc_shop",
+        "from": "15:47",
+        "to": "16:12"
+      }
+    },
+    {
+      "id": "f_dupatta",
+      "text": "Yasmin's white dupatta, washed today, still has faint yellow stains along one end.",
+      "kind": "true",
+      "about": [
+        "p_yasmin"
+      ]
+    },
+    {
+      "id": "f_hotel_book",
+      "text": "Hotel visitor book, Nyali: R. Abeid, interview, in 15:50, out 16:12. The letter invited her for 16:00.",
+      "kind": "true",
+      "about": [
+        "p_rahma"
+      ],
+      "where": {
+        "person": "p_rahma",
+        "place": "plc_hotel",
+        "from": "15:50",
+        "to": "16:12"
+      }
+    },
+    {
+      "id": "f_mutisya",
+      "text": "Planning-office minutes: meeting 15:00–17:00, K. Mutisya presenting.",
+      "kind": "true",
+      "about": [
+        "p_ken"
+      ],
+      "where": {
+        "person": "p_ken",
+        "place": "plc_planning",
+        "from": "15:00",
+        "to": "17:00"
+      }
+    },
+    {
+      "id": "f_imran_offers",
+      "text": "Imran: his mother refused every offer for the building. \"Auntie Yasmin needs money. Everyone knows.\" Yasmin never had a share of the shop itself.",
+      "kind": "true",
+      "about": [
+        "p_imran",
+        "p_yasmin"
+      ]
+    },
+    {
+      "id": "f_imran_nairobi",
+      "text": "Imran is in a Nairobi hotel on business; he took the video call from its lobby.",
+      "kind": "true",
+      "about": [
+        "p_imran"
+      ],
+      "where": {
+        "person": "p_imran",
+        "place": "plc_nairobi",
+        "from": "08:00",
+        "to": "20:00"
+      }
+    },
+    {
+      "id": "f_rahma_shop",
+      "text": "Rahma: \"I was in the shop all afternoon. Nobody came.\"",
+      "kind": "lie",
+      "about": [
+        "p_rahma"
+      ]
+    },
+    {
+      "id": "f_rahma_admits",
+      "text": "Rahma admits she slipped out at 15:35 for a job interview in Nyali and left the \"back shortly\" sign. Farida didn't know.",
+      "kind": "true",
+      "about": [
+        "p_rahma"
+      ]
+    },
+    {
+      "id": "f_yasmin_half",
+      "text": "Yasmin: \"That building is half mine. She was sentimental.\"",
+      "kind": "claim",
+      "about": [
+        "p_yasmin",
+        "p_farida"
+      ]
+    },
+    {
+      "id": "f_ken_claim",
+      "text": "Ken: \"I was presenting at the county planning office.\"",
+      "kind": "claim",
+      "about": [
+        "p_ken"
+      ]
+    },
+    {
+      "id": "f_ken_threat",
+      "text": "Ken admits he told Farida \"you'll sell, one way or another\". \"I meant the courts. Developers sue. They don't kill.\"",
+      "kind": "true",
+      "about": [
+        "p_ken",
+        "p_farida"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_rahma",
+      "stance": "cooperative",
+      "intro": "Rahma sits on a sack of chillies, her good blouse dusted yellow. \"I was here. I was here all afternoon.\"",
+      "claims": [
+        "f_rahma_shop"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_yasmin",
+          "reply": "Auntie Yasmin? She comes sometimes. They argue about the building. In Gujarati, so I don't understand.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_yasmin",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_farida_phone"
+      ],
+      "intro": "Yasmin opens her door a hand's width. \"I have heard. I am in mourning. What do you want?\"",
+      "claims": [
+        "f_yasmin_half"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_trust",
+          "reply": "Half mine. Forty million, and she wanted to sit on it selling cloves.",
+          "reveals": []
+        },
+        {
+          "about": "ev_dupatta",
+          "reply": "Silence. She looks at the rack for a long time and says nothing at all.",
+          "reveals": []
+        },
+        {
+          "about": "ev_torn",
+          "reply": "Papers are papers.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_ken",
+      "stance": "cooperative",
+      "intro": "Ken Mutisya steps out of a meeting to take the call. \"Mrs Karimjee? I'm very sorry. What does this have to do with me?\"",
+      "claims": [
+        "f_ken_claim"
+      ],
+      "yields": [
+        "ev_mutisya"
+      ],
+      "topics": [
+        {
+          "about": "ev_offer",
+          "reply": "One way or another, I said. I meant the courts. Developers sue. We don't kill people.",
+          "reveals": [
+            "f_ken_threat"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_imran",
+      "stance": "cooperative",
+      "intro": "Imran, on a video call from a Nairobi hotel lobby, keeps his hand over his mouth. \"Mummy. Mummy.\"",
+      "claims": [],
+      "yields": [
+        "ev_imran"
+      ],
+      "topics": [
+        {
+          "about": "p_yasmin",
+          "reply": "Mummy refused every offer. Auntie Yasmin needs money, everyone knows. But she never had any share of the shop. Only the building.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_kitsao",
+      "stance": "cooperative",
+      "intro": "Ali Kitsao answers from his tuk-tuk at a Ganjoni stage. \"Two fares from that number? Yes. The lady in white.\"",
+      "claims": [],
+      "yields": [
+        "ev_kitsao"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_hussein",
+      "stance": "cooperative",
+      "intro": "Hussein wipes sawdust from his hands. \"Thirty years I carve doors on this pavement. I see every door on Ndia Kuu.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_rahma",
+          "reply": "The girl put a sign up and went off at twenty-five to four, in her best clothes. I thought: a boy.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_rahma_shop",
+      "claim": "f_rahma_shop",
+      "brokenBy": [
+        "f_hussein_sign",
+        "f_sales_gap"
+      ],
+      "reveals": [
+        "f_rahma_admits",
+        "ev_interview"
+      ],
+      "reaction": "I went for an interview. A hotel in Nyali. Mama didn't know. I left the sign. I only wanted a job with a pension. I'm so sorry. I'm so sorry.",
+      "mark": "explains"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_yasmin",
+      "text": "Yasmin Karimjee",
+      "category": "person",
+      "ref": "p_yasmin",
+      "unlock": {
+        "anyOf": [
+          "f_farida_sms",
+          "f_trust"
+        ]
+      }
+    },
+    {
+      "id": "w_ken",
+      "text": "Ken Mutisya",
+      "category": "person",
+      "ref": "p_ken",
+      "unlock": {
+        "anyOf": [
+          "f_offer"
+        ]
+      }
+    },
+    {
+      "id": "w_rahma",
+      "text": "Rahma Abeid",
+      "category": "person",
+      "ref": "p_rahma",
+      "unlock": {
+        "anyOf": [
+          "f_ob_found"
+        ]
+      }
+    },
+    {
+      "id": "w_imran",
+      "text": "Imran Karimjee",
+      "category": "person",
+      "ref": "p_imran",
+      "unlock": {
+        "anyOf": [
+          "f_ob_found"
+        ]
+      }
+    },
+    {
+      "id": "w_hussein",
+      "text": "Hussein Abdulkadir",
+      "category": "person",
+      "ref": "p_hussein",
+      "unlock": {
+        "anyOf": [
+          "f_hussein_sign"
+        ]
+      }
+    },
+    {
+      "id": "m_refused",
+      "text": "Farida refused to sell the family building",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_offer",
+          "f_trust"
+        ]
+      }
+    },
+    {
+      "id": "m_debt",
+      "text": "an old family debt",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ledger"
+        ]
+      }
+    },
+    {
+      "id": "m_cutout",
+      "text": "she'd been cut out of the spice business",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_trust"
+        ]
+      }
+    },
+    {
+      "id": "m_till",
+      "text": "she caught her stealing from the till",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_cashbox"
+        ]
+      }
+    },
+    {
+      "id": "m_developer",
+      "text": "the developer's threat",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ken_threat",
+          "f_offer"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} because {why}.",
+    "fixed": {
+      "victim": "Farida Karimjee"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_yasmin"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Saa tisa na nusu, a tuk-tuk to the door, and turmeric that doesn't wash out. That will hold.",
+          "fail": [
+            "Doesn't hold up. The girl lied to hide a job interview. Who walked through that unattended door?",
+            "No. A developer who threatens in public sues in private. Who was in the shop?"
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_refused"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Forty million and one word written across it. The why is in her handwriting.",
+          "fail": [
+            "She did it, but not for that. Read the trust deed: what needed two signatures?",
+            "That's someone else's grievance, or none at all."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_shop",
+      "from": "15:50",
+      "to": "16:12"
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_rahma_shop",
+          "f_hussein_sign",
+          "f_sales_gap",
+          "f_hotel_book"
+        ],
+        "concludes": "Rahma said she never left, but the sign was up from 15:35 and nothing was sold until 16:25; she was in a hotel in Nyali from 15:50 to 16:12. The shop was unattended. Her lie hid a job hunt, not a crime."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_farida_sms",
+          "f_rec_mast",
+          "f_rec_tuktuk",
+          "f_driver"
+        ],
+        "concludes": "Yasmin texted that she was coming at half past three with papers. Her phone was in Old Town from 15:42 to 16:14, and the tuk-tuk she paid dropped her at the shop door at 15:47 and collected her at 16:12."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_turmeric",
+          "f_dupatta",
+          "f_torn",
+          "f_offer",
+          "f_trust"
+        ],
+        "concludes": "Turmeric from the split sack is on Yasmin's dupatta, and the transfer form she brought is torn in the bin. The sale needed Farida's signature, and Farida wrote NEVER. Yasmin Karimjee killed her.",
+        "answers": [
+          "who",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_ken",
+        "blank": "who",
+        "by": [
+          "f_mutisya"
+        ],
+        "why": "Ken was presenting at the county planning office from 15:00 to 17:00."
+      },
+      {
+        "word": "w_rahma",
+        "blank": "who",
+        "by": [
+          "f_hotel_book"
+        ],
+        "why": "Rahma was at a hotel in Nyali from 15:50 to 16:12."
+      },
+      {
+        "word": "w_imran",
+        "blank": "who",
+        "by": [
+          "f_imran_nairobi"
+        ],
+        "why": "Imran is in Nairobi."
+      },
+      {
+        "word": "w_hussein",
+        "blank": "who",
+        "by": [
+          "f_hussein_self"
+        ],
+        "why": "Hussein carved at his pavement workshop across the street all afternoon."
+      },
+      {
+        "word": "m_debt",
+        "blank": "why",
+        "by": [
+          "f_ledger"
+        ],
+        "why": "The old family loan was settled ten years ago."
+      },
+      {
+        "word": "m_cutout",
+        "blank": "why",
+        "by": [
+          "f_trust",
+          "f_imran_offers"
+        ],
+        "why": "The trust covers only the building. Yasmin never had a share of the shop to be cut out of."
+      },
+      {
+        "word": "m_till",
+        "blank": "why",
+        "by": [
+          "f_cashbox"
+        ],
+        "why": "The cash box is full."
+      },
+      {
+        "word": "m_developer",
+        "blank": "why",
+        "by": [
+          "f_ken_threat",
+          "f_mutisya"
+        ],
+        "why": "That is Ken's pressure, not Yasmin's reason, and Ken was in a meeting."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "A developer offers forty million for the building. Farida writes NEVER across the letter. A sale needs both signatures.",
+        "image": null
+      },
+      {
+        "text": "Three days earlier, Yasmin pays Mvua Holdings for \"transfer documents\". At 14:58 she texts: coming at half past three, with papers.",
+        "image": null
+      },
+      {
+        "text": "15:35. Rahma slips out for a job interview and hangs \"back shortly\" on the door. At 15:47 a tuk-tuk drops Yasmin there.",
+        "image": "loc_shop"
+      },
+      {
+        "text": "Farida tears up the papers. The pestle. In the struggle the turmeric sack splits, over the floor, over a white dupatta, over flat sandals.",
+        "image": null
+      },
+      {
+        "text": "16:12. The same tuk-tuk takes her home to Ganjoni. That evening she washes the dupatta. Turmeric doesn't wash out.",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_farida_phone",
+        "line": "Someone said they were coming at saa tisa na nusu. In Swahili time, hours start at six in the morning. Do the sum."
+      },
+      "tier2": {
+        "facts": [
+          "f_turmeric",
+          "f_dupatta"
+        ],
+        "line": "Turmeric stains cotton and won't wash out. Whose white cloth is drying today?"
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_trust",
+        "line": "What needed two signatures, and who wouldn't give hers?"
+      },
+      "tier2": {
+        "facts": [
+          "f_offer",
+          "f_trust"
+        ],
+        "line": "Forty million on the table, and one word written across it."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "saa tisa",
+      "def": "Nine o'clock in Swahili time, which counts the hours from 6 am: 3 pm. \"Saa tisa na nusu\": half past three."
+    },
+    {
+      "term": "narudi sasa hivi",
+      "def": "Back shortly."
+    },
+    {
+      "term": "dupatta",
+      "def": "A long scarf worn with a salwar suit."
+    },
+    {
+      "term": "kinu",
+      "def": "Mortar (for pounding spices)."
+    },
+    {
+      "term": "karatasi",
+      "def": "Paper; papers."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address or name a woman."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "languageAsEvidence"
+    ],
+    "beatNotes": "Language as evidence: an SMS in Swahili with a tap-to-translate toggle. \"Saa tisa na nusu\" is 15:30 in Swahili time-telling (hours count from 06:00); the glossary explains it and the toggle shows \"3:30 pm\"."
+  }
+}

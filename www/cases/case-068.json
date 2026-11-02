@@ -1,0 +1,2534 @@
+{
+  "meta": {
+    "id": "case-068",
+    "number": 68,
+    "region": "mt-kenya",
+    "regionNumber": 7,
+    "title": "Twice Dead",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 42,
+    "date": "Monday 18 May",
+    "folderTab": "SAGANA RIVER"
+  },
+  "pattern": {
+    "crimePattern": "a man who faked his own death for the insurance threatens to \"come back to life\" and expose his wife; her father kills him at the river",
+    "noRealCaseRetold": true,
+    "notes": "Fictional family, insurer and hospital. \"Pseudocide\" fraud is a familiar newspaper story in Kenya; no real case is retold. The grandfather is written with dignity. The forgery's flaw (a doctor retired years before he \"signed\") is shown, never how it was made.",
+    "tags": [
+      "blunt-force",
+      "drowning",
+      "cover-up",
+      "insurance-fraud",
+      "document-fraud",
+      "three-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where",
+      "forgery"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 6,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "forgery"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "warrant",
+      "records"
+    ],
+    "twist": "the-victim-was-already-dead"
+  },
+  "ob": {
+    "number": "OB 25/18/05",
+    "date": "Monday 18 May",
+    "time": "09:30",
+    "reportedBy": "Sand harvesters, Sagana river below Kerugoya",
+    "text": "Sand harvesters report a man's body caught on a barge rope in the Sagana river below Kerugoya. No identification. Fingerprints taken at the mortuary match a man registered dead two years ago.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_river",
+    "nodes": [
+      "loc_river",
+      "loc_registry",
+      "loc_mukoya",
+      "loc_hellen"
+    ],
+    "edges": [
+      {
+        "a": "loc_river",
+        "b": "loc_mukoya",
+        "minutes": 10,
+        "by": "road"
+      },
+      {
+        "a": "loc_river",
+        "b": "loc_registry",
+        "minutes": 15,
+        "by": "road"
+      },
+      {
+        "a": "loc_registry",
+        "b": "loc_mukoya",
+        "minutes": 10,
+        "by": "road"
+      },
+      {
+        "a": "loc_mukoya",
+        "b": "loc_hellen",
+        "minutes": 30,
+        "by": "road"
+      },
+      {
+        "a": "loc_river",
+        "b": "loc_hellen",
+        "minutes": 30,
+        "by": "road"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_elphas",
+      "role": "victim",
+      "name": "Elphas Shikanda",
+      "age": 47,
+      "occupation": "Businessman, Kerugoya; registered dead two years ago",
+      "bio": "Drowning in debt two years ago. Then, on paper, simply drowned. Lived since as \"Elias\".",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_bank",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luhya man, late 40s, a work shirt and a cap, a beard grown to hide a face, ID-photo framing from an old national ID",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_laban",
+      "role": "suspect",
+      "name": "Mzee Laban Mukoya",
+      "age": 71,
+      "occupation": "Jane's father; retired tea-factory supervisor",
+      "bio": "Forty years at the tea factory. Walks the river path every evening with his heavy stick.",
+      "community": "Luhya",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_lewis"
+      },
+      "at": "loc_mukoya",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luhya man, early 70s, a tweed coat and a cap, a heavy knobbed walking stick, a calm, grave face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_jane",
+      "role": "suspect",
+      "name": "Jane Mukoya",
+      "age": 45,
+      "occupation": "Elphas's \"widow\"",
+      "bio": "Collected KSh 5 million in life insurance two years ago, after a memorial service with no body.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_lewis"
+      },
+      "at": "loc_mukoya",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luhya woman, mid 40s, a widow's dark headscarf, a rehearsed, watchful face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_hellen",
+      "role": "suspect",
+      "name": "Hellen Kanyua",
+      "age": 34,
+      "occupation": "Hairdresser, Sagana",
+      "redHerring": true,
+      "bio": "Has been seeing a man called Elias for a year.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_payslip"
+      },
+      "at": "loc_hellen",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, mid 30s, a salon tunic, hair in long braids, a shocked, open face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_gichuki",
+      "role": "suspect",
+      "name": "Gichuki Mwai",
+      "age": 39,
+      "occupation": "Sand harvester; found the body",
+      "redHerring": true,
+      "bio": "Digs the banks by hand. \"Elias\" owed him for a lorry of sand.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_camp",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, late 30s, wet trousers rolled to the knee, a shovel over his shoulder, a strong, worried face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_lewis",
+      "role": "witness",
+      "name": "Lewis Wasike",
+      "age": 52,
+      "occupation": "Insurance claims agent, Nairobi",
+      "bio": "Paid the claim two years ago.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_nairobi",
+      "image": null
+    },
+    {
+      "id": "p_njambi",
+      "role": "witness",
+      "name": "Mama Njambi",
+      "age": 66,
+      "occupation": "Neighbour on the river path",
+      "statementOnly": true,
+      "bio": "Her house is the last one before the bank.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_river",
+      "image": null
+    },
+    {
+      "id": "p_mamamukoya",
+      "role": "witness",
+      "name": "Mama Rose Mukoya",
+      "age": 68,
+      "occupation": "Laban's wife; Jane's mother",
+      "statementOnly": true,
+      "bio": "Cooks for everyone in the compound.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_mukoya",
+      "image": null
+    },
+    {
+      "id": "p_tororo",
+      "role": "witness",
+      "name": "Records officer, Tororo District Hospital",
+      "age": 40,
+      "occupation": "Records officer, Uganda",
+      "statementOnly": true,
+      "bio": "Answers the phone at the hospital records office.",
+      "community": "Ugandan",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_tororo",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_bank",
+      "name": "The Sagana river bank below Kerugoya",
+      "within": "loc_river"
+    },
+    {
+      "id": "plc_barge",
+      "name": "The sand barge"
+    },
+    {
+      "id": "plc_camp",
+      "name": "The sand crew's camp"
+    },
+    {
+      "id": "plc_backhouse",
+      "name": "The Mukoya back house",
+      "within": "loc_mukoya"
+    },
+    {
+      "id": "plc_mainhouse",
+      "name": "The Mukoya main house",
+      "within": "loc_mukoya"
+    },
+    {
+      "id": "plc_busia",
+      "name": "Busia"
+    },
+    {
+      "id": "plc_salon",
+      "name": "A salon in Sagana"
+    },
+    {
+      "id": "plc_nairobi",
+      "name": "Nairobi"
+    },
+    {
+      "id": "plc_tororo",
+      "name": "Tororo, Uganda"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_river",
+      "name": "Sagana river bank",
+      "kind": "scene",
+      "description": "Sand harvesters dig the banks by hand and load lorries. Barges on ropes. A footpath from the Mukoya compound comes down through the reeds to a muddy landing.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The barge rope",
+          "pos": [
+            60,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Where the body was caught."
+        },
+        {
+          "id": "hs_landing",
+          "label": "The landing",
+          "pos": [
+            30,
+            50
+          ],
+          "yields": "ev_bank",
+          "text": "Scuffed mud and sand at the landing where the path meets the river."
+        },
+        {
+          "id": "hs_mortuary",
+          "label": "Mortuary report",
+          "pos": [
+            80,
+            30
+          ],
+          "yields": "ev_prints",
+          "text": "The mortuary's fingerprint report has come back."
+        },
+        {
+          "id": "hs_njambi",
+          "label": "Last house on the path",
+          "pos": [
+            14,
+            30
+          ],
+          "yields": "ev_neighbour",
+          "text": "Mama Njambi at her gate."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the Sagana river bank at dusk, men digging sand by hand, a loaded lorry and a wooden barge on a rope, a footpath through reeds to a muddy landing, no people in focus"
+      }
+    },
+    {
+      "id": "loc_registry",
+      "name": "Civil registry, Kerugoya",
+      "kind": "location",
+      "description": "Births and deaths. A death abroad needs an embassy-endorsed report.",
+      "unlock": {
+        "fact": "f_prints"
+      },
+      "hotspots": [
+        {
+          "id": "hs_dc",
+          "label": "Death certificate file",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_death_cert",
+          "text": "Elphas Shikanda's death certificate and its supporting papers."
+        },
+        {
+          "id": "hs_mc",
+          "label": "Medical certificate",
+          "pos": [
+            44,
+            50
+          ],
+          "yields": "ev_medcert",
+          "text": "The Ugandan \"medical certificate of cause of death\"."
+        },
+        {
+          "id": "hs_gen",
+          "label": "Specimen",
+          "pos": [
+            64,
+            46
+          ],
+          "yields": "ev_genuine_cert",
+          "text": "A genuine certificate for a death abroad."
+        },
+        {
+          "id": "hs_phone",
+          "label": "Registry phone",
+          "pos": [
+            80,
+            40
+          ],
+          "yields": "ev_tororo",
+          "text": "A number for Tororo District Hospital records."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a civil registry office in Kerugoya, bound registers, a file of death certificates on a counter"
+      }
+    },
+    {
+      "id": "loc_mukoya",
+      "name": "Mukoya compound, Kerugoya",
+      "kind": "location",
+      "description": "A main house, a kitchen, and a back house behind banana trees. A heavy walking stick leans by the main door.",
+      "unlock": {
+        "fact": "f_lewis"
+      },
+      "hotspots": [
+        {
+          "id": "hs_stick",
+          "label": "By the door",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_stick",
+          "text": "Mzee Laban's walking stick."
+        },
+        {
+          "id": "hs_back",
+          "label": "Back house",
+          "pos": [
+            70,
+            60
+          ],
+          "yields": "ev_back_house",
+          "text": "The back house behind the banana trees. Locked."
+        },
+        {
+          "id": "hs_kitchen",
+          "label": "Kitchen",
+          "pos": [
+            20,
+            60
+          ],
+          "yields": "ev_mama",
+          "text": "Mama Rose in the kitchen."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a family compound near Kerugoya, a main house, a small back house behind banana trees, a heavy knobbed walking stick leaning by a door"
+      }
+    },
+    {
+      "id": "loc_hellen",
+      "name": "Hellen's flat, Sagana",
+      "kind": "location",
+      "description": "A one-room flat above a salon, a man's jacket on a hook.",
+      "unlock": {
+        "fact": "f_payslip"
+      },
+      "hotspots": [],
+      "image": {
+        "kind": "location",
+        "brief": "a small flat above a hair salon in Sagana town, a man's jacket on a hook"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body at the barge rope",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Two days in the water. A deep blow to the side of the head. KSh 3,100 in his pocket."
+      },
+      "facts": [
+        "f_body",
+        "f_pocket"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a frayed barge rope trailing in brown river water beside a sand bank, no body visible"
+      }
+    },
+    {
+      "id": "ev_bank",
+      "type": "physical",
+      "title": "The landing",
+      "render": "object",
+      "body": {
+        "label": "Scuffed mud where two people stood; a sample of the bank's sand bagged."
+      },
+      "facts": [
+        "f_landing"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "document",
+      "title": "Mortuary fingerprint result",
+      "render": "form",
+      "body": {
+        "text": "National ID database: ELPHAS SHIKANDA, registered DECEASED two years ago."
+      },
+      "facts": [
+        "f_prints"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "national ID record"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_death_cert",
+      "type": "document",
+      "title": "Death certificate, Elphas Shikanda",
+      "render": "form",
+      "body": {
+        "text": "\"Died in a road accident, Busia, Uganda.\" Issued on a Ugandan \"medical certificate\" from Tororo District Hospital."
+      },
+      "facts": [
+        "f_death_cert"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_medcert",
+      "type": "document",
+      "title": "Ugandan medical certificate of death",
+      "render": "form",
+      "body": {
+        "text": "Tororo District Hospital. Signed \"Dr. S. Opio\". A rubber stamp."
+      },
+      "facts": [
+        "f_medcert"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": false,
+        "forger": "p_elphas",
+        "kind": "foreign medical certificate of death"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a medical certificate of cause of death with a hospital rubber stamp and a doctor's signature"
+      }
+    },
+    {
+      "id": "ev_genuine_cert",
+      "type": "document",
+      "title": "A genuine death-abroad certificate",
+      "render": "form",
+      "body": {
+        "text": "Issued on an embassy-endorsed report from the foreign hospital."
+      },
+      "facts": [
+        "f_genuine"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "death certificate"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tororo",
+      "type": "witness",
+      "title": "Phone call: Tororo District Hospital records",
+      "render": "statement",
+      "body": {
+        "speaker": "p_tororo"
+      },
+      "facts": [
+        "f_tororo"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lewis",
+      "type": "witness",
+      "title": "Statement: Lewis Wasike",
+      "render": "statement",
+      "body": {
+        "speaker": "p_lewis"
+      },
+      "facts": [
+        "f_lewis",
+        "f_lewis_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_claim",
+      "type": "document",
+      "title": "Insurance claim form",
+      "render": "form",
+      "body": {
+        "text": "Claim by Jane Mukoya, signed and stamped received by the insurer; payout KSh 5,000,000 to her account only."
+      },
+      "facts": [
+        "f_claim"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "insurance claim form"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_back_house",
+      "type": "physical",
+      "title": "The back house",
+      "render": "object",
+      "body": {
+        "clothes": "Men's clothes; a razor.",
+        "payslip": "A Kerugoya hardware store payslip for \"Elias Shikanda\".",
+        "list": "A shopping list pinned to the wall in Jane's handwriting."
+      },
+      "facts": [
+        "f_clothes",
+        "f_payslip",
+        "f_list"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_prints",
+          "f_lewis"
+        ]
+      },
+      "doc": {
+        "genuine": true,
+        "kind": "payslip"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a small back room with men's clothes on a nail, a razor on a shelf, a payslip and a handwritten shopping list pinned to the wall"
+      }
+    },
+    {
+      "id": "ev_stick",
+      "type": "physical",
+      "title": "Mzee Laban's walking stick",
+      "render": "object",
+      "body": {
+        "label": "Heavy and knobbed, freshly scrubbed. A chip of river sand pressed into a crack in the knob."
+      },
+      "facts": [
+        "f_stick"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "the knob of a heavy wooden walking stick, freshly scrubbed, a few grains of sand in a crack"
+      }
+    },
+    {
+      "id": "ev_mama",
+      "type": "witness",
+      "title": "Statement: Mama Rose Mukoya",
+      "render": "statement",
+      "body": {
+        "speaker": "p_mamamukoya"
+      },
+      "facts": [
+        "f_jane_home"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_neighbour",
+      "type": "witness",
+      "title": "Statement: Mama Njambi",
+      "render": "statement",
+      "body": {
+        "speaker": "p_njambi"
+      },
+      "facts": [
+        "f_neighbour"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Jane Mukoya's line",
+      "render": "manifest",
+      "body": {
+        "jane": "Jane's phone in the compound zone all Saturday evening.",
+        "elphas": "Elphas's own phone, found in the back house: last active 20:20, compound zone."
+      },
+      "facts": [
+        "f_rec_jane",
+        "f_rec_elphas"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_payslip",
+          "f_lewis"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_hellen_texts",
+      "type": "phone",
+      "title": "Hellen's texts from \"Elias\"",
+      "render": "manifest",
+      "body": {
+        "text": "Friday: \"I'm leaving them. I'll have money by Monday. Pack.\""
+      },
+      "facts": [
+        "f_texts"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "texts"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_hellen_alibi",
+      "type": "document",
+      "title": "Salon book and lodging",
+      "render": "receipt",
+      "body": {
+        "text": "H. Kanyua working at the salon until 21:00 on Saturday; then at a friend's lodging in Sagana all night."
+      },
+      "facts": [
+        "f_hellen"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gichuki",
+      "type": "witness",
+      "title": "Statement: the sand crew",
+      "render": "statement",
+      "body": {
+        "speaker": "p_gichuki"
+      },
+      "facts": [
+        "f_gichuki"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_tod",
+        "f_aut_noother"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_compare",
+      "type": "forensic",
+      "title": "Comparison view: medical certificate vs genuine",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_cmp_doctor",
+        "f_cmp_ink",
+        "f_cmp_fields",
+        "f_cmp_sig"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_medcert",
+          "ev_genuine_cert",
+          "ev_tororo"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_soil",
+      "type": "forensic",
+      "title": "Lab: soil (stick vs landing)",
+      "render": "labReport",
+      "body": {
+        "test": "soil"
+      },
+      "facts": [
+        "f_soil"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "soil",
+        "hours": 8,
+        "needs": [
+          "ev_stick",
+          "ev_bank"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_docexam",
+      "type": "forensic",
+      "title": "Questioned Documents Lab: medical certificate",
+      "render": "labReport",
+      "body": {
+        "test": "document"
+      },
+      "facts": [
+        "f_docexam"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "document",
+        "hours": 10,
+        "needs": [
+          "ev_medcert",
+          "ev_genuine_cert"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "A man's body was found caught on a barge rope in the Sagana river on Monday morning; his fingerprints match a man registered dead two years ago.",
+      "kind": "true",
+      "about": [
+        "p_elphas",
+        "loc_river"
+      ],
+      "at": {
+        "from": "09:30"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "Two days in the water, with a deep blow to the side of the head.",
+      "kind": "true",
+      "about": [
+        "p_elphas",
+        "plc_bank"
+      ]
+    },
+    {
+      "id": "f_pocket",
+      "text": "KSh 3,100 was still in his pocket.",
+      "kind": "true",
+      "about": [
+        "p_elphas"
+      ]
+    },
+    {
+      "id": "f_landing",
+      "text": "At the landing where the Mukoya path meets the river: scuffed mud where two people stood.",
+      "kind": "true",
+      "about": [
+        "plc_bank"
+      ]
+    },
+    {
+      "id": "f_prints",
+      "text": "Fingerprints: Elphas Shikanda, whose national ID was registered deceased two years ago.",
+      "kind": "true",
+      "about": [
+        "p_elphas"
+      ]
+    },
+    {
+      "id": "f_death_cert",
+      "text": "Death certificate: \"died in a road accident, Busia, Uganda\", issued on a medical certificate from Tororo District Hospital.",
+      "kind": "true",
+      "about": [
+        "p_elphas"
+      ]
+    },
+    {
+      "id": "f_medcert",
+      "text": "Ugandan medical certificate of death: Tororo District Hospital, signed \"Dr. S. Opio\", with a rubber stamp.",
+      "kind": "true",
+      "about": [
+        "p_elphas"
+      ]
+    },
+    {
+      "id": "f_genuine",
+      "text": "A genuine certificate for a death abroad is issued on an embassy-endorsed report from the foreign hospital.",
+      "kind": "true",
+      "about": [
+        "loc_registry"
+      ]
+    },
+    {
+      "id": "f_tororo",
+      "text": "Tororo hospital records: no such patient, ever. Dr. S. Opio retired eight years before the date he \"signed\".",
+      "kind": "true",
+      "about": [
+        "p_tororo"
+      ]
+    },
+    {
+      "id": "f_lewis",
+      "text": "Lewis: he paid KSh 5 million to Mrs. Jane Mukoya. \"She cried in my office. A memorial, no body; cremated in Kampala, she said.\"",
+      "kind": "true",
+      "about": [
+        "p_lewis",
+        "p_jane"
+      ]
+    },
+    {
+      "id": "f_lewis_self",
+      "text": "Lewis was at a family wedding in Nairobi all Saturday.",
+      "kind": "true",
+      "about": [
+        "p_lewis"
+      ],
+      "where": {
+        "person": "p_lewis",
+        "place": "plc_nairobi",
+        "from": "00:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_claim",
+      "text": "Insurance claim form: Jane Mukoya, stamped received by the insurer; KSh 5,000,000 paid to her account only.",
+      "kind": "true",
+      "about": [
+        "p_jane"
+      ]
+    },
+    {
+      "id": "f_clothes",
+      "text": "In the Mukoya back house: men's clothes and a razor.",
+      "kind": "true",
+      "about": [
+        "p_elphas"
+      ]
+    },
+    {
+      "id": "f_payslip",
+      "text": "In the back house: a Kerugoya hardware store payslip for \"Elias Shikanda\".",
+      "kind": "true",
+      "about": [
+        "p_elphas"
+      ]
+    },
+    {
+      "id": "f_list",
+      "text": "Pinned to the back-house wall: a shopping list in Jane's handwriting.",
+      "kind": "true",
+      "about": [
+        "p_jane",
+        "p_elphas"
+      ]
+    },
+    {
+      "id": "f_stick",
+      "text": "Mzee Laban's heavy knobbed walking stick, freshly scrubbed; a chip of river sand pressed into a crack in the knob.",
+      "kind": "true",
+      "about": [
+        "p_laban"
+      ]
+    },
+    {
+      "id": "f_jane_home",
+      "text": "Mama Rose: Jane was in the kitchen with her all Saturday evening.",
+      "kind": "true",
+      "about": [
+        "p_mamamukoya",
+        "p_jane"
+      ],
+      "where": {
+        "person": "p_jane",
+        "place": "plc_mainhouse",
+        "from": "18:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_neighbour",
+      "text": "Mama Njambi: at about 20:30 Mzee Laban walked past with his stick and a younger man, towards the river. He came back alone at about 21:15, walking fast.",
+      "kind": "true",
+      "about": [
+        "p_njambi",
+        "p_laban",
+        "p_elphas"
+      ],
+      "at": {
+        "from": "20:30",
+        "to": "21:15"
+      }
+    },
+    {
+      "id": "f_rec_jane",
+      "text": "Records: Jane's phone in the compound zone all Saturday evening.",
+      "kind": "true",
+      "about": [
+        "p_jane"
+      ]
+    },
+    {
+      "id": "f_rec_elphas",
+      "text": "Records: Elphas's own phone, in the back house, last active at 20:20 in the compound zone.",
+      "kind": "true",
+      "about": [
+        "p_elphas"
+      ],
+      "at": {
+        "from": "20:20"
+      }
+    },
+    {
+      "id": "f_texts",
+      "text": "\"Elias\" to Hellen, Friday: \"I'm leaving them. I'll have money by Monday. Pack.\"",
+      "kind": "true",
+      "about": [
+        "p_elphas",
+        "p_hellen"
+      ]
+    },
+    {
+      "id": "f_hellen",
+      "text": "Salon book and lodging: Hellen worked until 21:00 on Saturday, then stayed with a friend in Sagana.",
+      "kind": "true",
+      "about": [
+        "p_hellen"
+      ],
+      "where": {
+        "person": "p_hellen",
+        "place": "plc_salon",
+        "from": "09:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_gichuki",
+      "text": "The sand crew: Gichuki was at the crew's camp all Saturday night; a card game until 01:00.",
+      "kind": "true",
+      "about": [
+        "p_gichuki"
+      ],
+      "where": {
+        "person": "p_gichuki",
+        "place": "plc_camp",
+        "from": "18:00",
+        "to": "01:00"
+      }
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Autopsy: one blow from a heavy rounded object before he entered the water; water in the lungs, so he was alive but unconscious when he went in.",
+      "kind": "true",
+      "about": [
+        "p_elphas"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death on Saturday between 20:30 and 22:00.",
+      "kind": "true",
+      "about": [
+        "p_elphas"
+      ],
+      "at": {
+        "from": "20:30",
+        "to": "22:00",
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_aut_noother",
+      "text": "Autopsy: blood alcohol low; no strangulation; the wound is rounded, not a hull's edge.",
+      "kind": "true",
+      "about": [
+        "p_elphas"
+      ]
+    },
+    {
+      "id": "f_cmp_doctor",
+      "text": "Comparison view: the doctor who \"signed\" retired eight years earlier, and the hospital has no such patient.",
+      "kind": "true",
+      "about": [
+        "p_elphas"
+      ]
+    },
+    {
+      "id": "f_cmp_ink",
+      "text": "Under the magnifier: the \"Tororo\" stamp is pressed rubber-stamp ink, not printer dots.",
+      "kind": "true",
+      "about": [
+        "loc_registry"
+      ]
+    },
+    {
+      "id": "f_cmp_fields",
+      "text": "A medical certificate has no parcel, no exam index number, no chassis number.",
+      "kind": "true",
+      "about": [
+        "loc_registry"
+      ]
+    },
+    {
+      "id": "f_cmp_sig",
+      "text": "There is no register entry to compare the doctor's signature with; that tell belongs to another document.",
+      "kind": "true",
+      "about": [
+        "loc_registry"
+      ]
+    },
+    {
+      "id": "f_soil",
+      "text": "Lab: the sand in the stick's knob matches the landing where Mama Njambi saw them going.",
+      "kind": "true",
+      "about": [
+        "p_laban"
+      ]
+    },
+    {
+      "id": "f_docexam",
+      "text": "Wilfrida Ayugi: the medical certificate is forged. The \"Tororo\" rubber stamp was made in Kenya: the font gives it away.",
+      "kind": "true",
+      "about": [
+        "p_elphas"
+      ]
+    },
+    {
+      "id": "f_jane_dead",
+      "text": "Jane: \"My husband died two years ago in Uganda. I haven't seen him since.\"",
+      "kind": "lie",
+      "about": [
+        "p_jane"
+      ]
+    },
+    {
+      "id": "f_jane_reveal",
+      "text": "Jane: they faked it together; he lived at the back. On Friday he demanded half the money, or he'd tell the insurer it was her idea. \"My father heard him.\"",
+      "kind": "true",
+      "about": [
+        "p_jane",
+        "p_elphas",
+        "p_laban"
+      ]
+    },
+    {
+      "id": "f_hel_noknow",
+      "text": "Hellen: \"I don't know any Elphas Shikanda.\"",
+      "kind": "lie",
+      "about": [
+        "p_hellen"
+      ]
+    },
+    {
+      "id": "f_hel_reveal",
+      "text": "Hellen: she knew him as Elias. He said he'd have money by Monday.",
+      "kind": "true",
+      "about": [
+        "p_hellen",
+        "p_elphas"
+      ]
+    },
+    {
+      "id": "f_lab_house",
+      "text": "Mzee Laban: \"I am an old man. I was in my house all evening.\"",
+      "kind": "lie",
+      "about": [
+        "p_laban"
+      ]
+    },
+    {
+      "id": "f_lab_reveal",
+      "text": "Mzee Laban: he took Elphas to the river \"to talk like men\". Elphas laughed. \"I am not sorry for the stick. I am sorry the river did the rest.\"",
+      "kind": "true",
+      "about": [
+        "p_laban",
+        "p_elphas"
+      ],
+      "where": {
+        "person": "p_laban",
+        "place": "plc_bank",
+        "from": "20:30",
+        "to": "21:15"
+      }
+    },
+    {
+      "id": "f_gich_claim",
+      "text": "Gichuki: \"He owed me 8,000 for sand. I found him. I didn't know it was him.\"",
+      "kind": "claim",
+      "about": [
+        "p_gichuki"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_jane",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_prints"
+      ],
+      "intro": "Jane sits in the main house in a widow's headscarf she has worn for two years. \"My husband died two years ago in Uganda. I haven't seen him since.\"",
+      "claims": [
+        "f_jane_dead"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_laban",
+      "stance": "cooperative",
+      "intro": "Mzee Laban sits very calmly on the veranda, both hands on his knee. \"I am an old man. I was in my house all evening.\"",
+      "claims": [
+        "f_lab_house"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_hellen",
+      "stance": "cooperative",
+      "intro": "Hellen stands at the salon door with a comb in her hand. \"I don't know any Elphas Shikanda.\"",
+      "claims": [
+        "f_hel_noknow"
+      ],
+      "yields": [
+        "ev_hellen_alibi"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_gichuki",
+      "stance": "cooperative",
+      "intro": "Gichuki wrings out his trouser legs. \"He owed me 8,000 for sand. I found him. I didn't know it was him.\"",
+      "claims": [
+        "f_gich_claim"
+      ],
+      "yields": [
+        "ev_gichuki"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_lewis",
+      "stance": "cooperative",
+      "intro": "Lewis answers from Nairobi and goes quiet when you say the name.",
+      "claims": [],
+      "yields": [
+        "ev_lewis",
+        "ev_claim"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_jane",
+      "claim": "f_jane_dead",
+      "brokenBy": [
+        "f_prints",
+        "f_clothes",
+        "f_list"
+      ],
+      "reveals": [
+        "f_jane_reveal"
+      ],
+      "reaction": "\"We did it together. The debts were going to bury us. He lived at the back. On Friday he said half the money or he'd tell them it was me. My father heard him.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_hel",
+      "claim": "f_hel_noknow",
+      "brokenBy": [
+        "f_payslip"
+      ],
+      "reveals": [
+        "f_hel_reveal",
+        "ev_hellen_texts"
+      ],
+      "reaction": "She looks at the photograph and drops the comb. \"Elias. I knew him as Elias. He said he'd have money by Monday.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_lab",
+      "claim": "f_lab_house",
+      "brokenBy": [
+        "f_neighbour",
+        "f_stick"
+      ],
+      "reveals": [
+        "f_lab_reveal"
+      ],
+      "reaction": "\"I gave him my roof for two years. I hid him from the world for my daughter's sake. And he would send her to prison for money to spend on another woman. I took him to the river to talk. He laughed. I am not sorry for the stick. I am sorry the river did the rest.\"",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_laban",
+      "text": "Laban Mukoya",
+      "category": "person",
+      "ref": "p_laban",
+      "unlock": {
+        "anyOf": [
+          "f_lewis"
+        ]
+      }
+    },
+    {
+      "id": "w_jane",
+      "text": "Jane Mukoya",
+      "category": "person",
+      "ref": "p_jane",
+      "unlock": {
+        "anyOf": [
+          "f_lewis"
+        ]
+      }
+    },
+    {
+      "id": "w_hellen",
+      "text": "Hellen Kanyua",
+      "category": "person",
+      "ref": "p_hellen",
+      "unlock": {
+        "anyOf": [
+          "f_payslip"
+        ]
+      }
+    },
+    {
+      "id": "w_gichuki",
+      "text": "Gichuki Mwai",
+      "category": "person",
+      "ref": "p_gichuki",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_lewis",
+      "text": "Lewis Wasike",
+      "category": "person",
+      "ref": "p_lewis",
+      "unlock": {
+        "anyOf": [
+          "f_lewis"
+        ]
+      }
+    },
+    {
+      "id": "pl_bank",
+      "text": "the Sagana river bank below Kerugoya",
+      "category": "place",
+      "ref": "plc_bank",
+      "unlock": {
+        "anyOf": [
+          "f_landing"
+        ]
+      }
+    },
+    {
+      "id": "pl_back",
+      "text": "the Mukoya back house",
+      "category": "place",
+      "ref": "plc_backhouse",
+      "unlock": {
+        "anyOf": [
+          "f_clothes"
+        ]
+      }
+    },
+    {
+      "id": "pl_hflat",
+      "text": "Hellen's flat",
+      "category": "place",
+      "ref": "loc_hellen",
+      "unlock": {
+        "anyOf": [
+          "f_payslip"
+        ]
+      }
+    },
+    {
+      "id": "pl_barge",
+      "text": "the sand barge",
+      "category": "place",
+      "ref": "plc_barge",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_busia",
+      "text": "Busia",
+      "category": "place",
+      "ref": "plc_busia",
+      "unlock": {
+        "anyOf": [
+          "f_death_cert"
+        ]
+      }
+    },
+    {
+      "id": "h_stick",
+      "text": "striking him with a walking stick and pushing him into the river",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_drunk",
+      "text": "drowning by accident while drunk",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_barge",
+      "text": "being struck by a sand barge",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_jembe",
+      "text": "striking him with a jembe",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_strangle",
+      "text": "strangling him",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_fraud",
+      "text": "to stop him exposing the insurance fraud and sending Jane to prison",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_jane_reveal"
+        ]
+      }
+    },
+    {
+      "id": "m_girlfriend",
+      "text": "a girlfriend's quarrel",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_payslip"
+        ]
+      }
+    },
+    {
+      "id": "m_sand",
+      "text": "a sand debt",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_money",
+      "text": "the insurance money for himself",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_lewis"
+        ]
+      }
+    },
+    {
+      "id": "m_robbery",
+      "text": "a robbery",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "d_medcert",
+      "text": "The Uganda medical certificate of death",
+      "category": "document",
+      "ref": "ev_medcert",
+      "unlock": {
+        "anyOf": [
+          "f_medcert"
+        ]
+      }
+    },
+    {
+      "id": "d_claim",
+      "text": "The insurance claim form",
+      "category": "document",
+      "ref": "ev_claim",
+      "unlock": {
+        "anyOf": [
+          "f_claim"
+        ]
+      }
+    },
+    {
+      "id": "d_payslip",
+      "text": "The \"Elias\" payslip",
+      "category": "document",
+      "ref": "ev_back_house",
+      "unlock": {
+        "anyOf": [
+          "f_payslip"
+        ]
+      }
+    },
+    {
+      "id": "d_texts",
+      "text": "Hellen's texts",
+      "category": "document",
+      "ref": "ev_hellen_texts",
+      "unlock": {
+        "anyOf": [
+          "f_texts"
+        ]
+      }
+    },
+    {
+      "id": "d_idrecord",
+      "text": "The national ID record",
+      "category": "document",
+      "ref": "ev_prints",
+      "unlock": {
+        "anyOf": [
+          "f_prints"
+        ]
+      }
+    },
+    {
+      "id": "t_doctor",
+      "text": "the doctor who signed it had retired eight years earlier, and the hospital has no such patient",
+      "category": "tell",
+      "by": [
+        "f_tororo",
+        "f_cmp_doctor"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_tororo"
+        ]
+      }
+    },
+    {
+      "id": "t_parcel",
+      "text": "a parcel missing from the map",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_medcert"
+        ]
+      }
+    },
+    {
+      "id": "t_index",
+      "text": "an index number belonging to another candidate",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_medcert"
+        ]
+      }
+    },
+    {
+      "id": "t_dots",
+      "text": "printer dots instead of ink",
+      "category": "tell",
+      "by": [
+        "f_cmp_ink"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_medcert"
+        ]
+      }
+    },
+    {
+      "id": "t_sig",
+      "text": "a signature unlike the entry signature",
+      "category": "tell",
+      "by": [
+        "f_cmp_sig"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_medcert"
+        ]
+      }
+    },
+    {
+      "id": "t_chassis",
+      "text": "a chassis number that doesn't match",
+      "category": "tell",
+      "by": [
+        "f_cmp_fields"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_medcert"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. {document} was forged, as shown by {tell}.",
+    "fixed": {
+      "victim": "Elphas Shikanda"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_2yrs",
+                  "label": "Two years ago",
+                  "from": null,
+                  "to": null,
+                  "day": "2 years ago"
+                },
+                {
+                  "id": "sl_fri",
+                  "label": "Friday",
+                  "from": null,
+                  "to": null,
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_2030",
+                  "label": "Saturday 20:30",
+                  "from": "20:30",
+                  "to": "20:30",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Saturday 20:30–21:15",
+                  "from": "20:30",
+                  "to": "21:15",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_2115",
+                  "label": "Saturday 21:15",
+                  "from": "21:15",
+                  "to": "21:15",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_mon",
+                  "label": "Monday 09:30",
+                  "from": "09:30",
+                  "to": "09:30",
+                  "day": "Mon"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_dead",
+                  "text": "Elphas is declared dead and Jane is paid",
+                  "slot": "sl_2yrs",
+                  "by": [
+                    "f_death_cert",
+                    "f_lewis"
+                  ],
+                  "why": "The death certificate and the KSh 5 million, two years ago.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_lewis"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_demand",
+                  "text": "Elphas demands half the money",
+                  "slot": "sl_fri",
+                  "by": [
+                    "f_jane_reveal",
+                    "f_texts"
+                  ],
+                  "why": "Jane, and his text to Hellen: Friday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_jane_reveal"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_walk",
+                  "text": "Laban and Elphas walk to the river",
+                  "slot": "sl_2030",
+                  "by": [
+                    "f_neighbour",
+                    "f_rec_elphas"
+                  ],
+                  "why": "Mama Njambi: about 20:30; his phone last active at 20:20.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_neighbour"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Elphas is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_neighbour",
+                    "f_aut_tod",
+                    "f_lab_reveal"
+                  ],
+                  "why": "Between the walk down and Laban's return, inside the autopsy's window.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_return",
+                  "text": "Laban comes back alone",
+                  "slot": "sl_2115",
+                  "by": [
+                    "f_neighbour"
+                  ],
+                  "why": "Mama Njambi: about 21:15, walking fast.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_neighbour"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_mon",
+                  "by": [
+                    "f_aut_tod",
+                    "f_body"
+                  ],
+                  "why": "Monday 09:30 is when the harvesters found him, after two days in the water."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "Dead on paper two years ago. A demand on Friday. A walk to the river on Saturday, and an old man walking back alone.",
+          "fail": [
+            "Monday is when he was found, not when he died.",
+            "When did Laban come back up the path, and with whom?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_bank"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The landing below the compound, where the path meets the river.",
+          "fail": [
+            "He lived in the back house. He died at the river.",
+            "Busia is where he \"died\" the first time."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_laban"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Seen walking him down, seen walking back alone, river sand in his stick. That will hold, and I wish it didn't.",
+          "fail": [
+            "Jane was in the kitchen with her mother.",
+            "Hellen was working at the salon until nine."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_stick"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A rounded blow before the water. The stick, then the river.",
+          "fail": [
+            "His blood alcohol was low.",
+            "A barge hull leaves an edge, not a round wound."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_fraud"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Half the money, or prison for his daughter. A father's reason.",
+          "fail": [
+            "The money was paid to Jane alone. Laban gets nothing.",
+            "Gichuki was playing cards at the camp."
+          ]
+        }
+      },
+      {
+        "id": "g_forgery",
+        "kind": "forgery",
+        "blanks": [
+          {
+            "id": "document",
+            "category": "document",
+            "answer": "d_medcert"
+          },
+          {
+            "id": "tell",
+            "category": "tell",
+            "answer": "t_doctor"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A retired doctor and a patient who never was. He died on paper in a hospital that never saw him.",
+          "fail": [
+            "The national ID record is how we know who he is.",
+            "The stamp is real ink. Call Tororo."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_bank",
+      "from": "20:30",
+      "to": "21:15",
+      "note": "Mama Njambi saw them going down at about 20:30 and Laban back alone at about 21:15; the autopsy allows 20:30–22:00."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_body",
+          "f_prints"
+        ],
+        "concludes": "The dead man was already registered dead."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_death_cert",
+          "f_medcert",
+          "f_tororo",
+          "f_cmp_doctor",
+          "f_docexam",
+          "f_lewis"
+        ],
+        "concludes": "His death certificate rests on a forged Ugandan medical certificate; KSh 5 million was paid to Jane.",
+        "answers": [
+          "document",
+          "tell"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_clothes",
+          "f_payslip",
+          "f_list",
+          "f_jane_dead",
+          "f_jane_reveal",
+          "f_hel_noknow",
+          "f_hel_reveal",
+          "f_texts"
+        ],
+        "concludes": "He lived in the Mukoya back house as \"Elias\", and on Friday threatened to expose Jane unless she gave him half."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_neighbour",
+          "f_rec_elphas",
+          "f_lab_house",
+          "f_lab_reveal"
+        ],
+        "concludes": "Laban walked him to the river at 20:30 and came back alone at 21:15.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_landing",
+          "f_aut_blow",
+          "f_aut_tod"
+        ],
+        "concludes": "He was struck at the landing with a heavy rounded object, then went into the water alive."
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_stick",
+          "f_soil"
+        ],
+        "concludes": "River sand from the landing is in the knob of Laban's scrubbed stick. Laban Mukoya struck Elphas with his walking stick on the Sagana river bank below Kerugoya and pushed him into the river, to stop him exposing the insurance fraud and sending Jane to prison.",
+        "answers": [
+          "who",
+          "how",
+          "why",
+          "where"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_back",
+        "blank": "where",
+        "by": [
+          "f_neighbour",
+          "f_landing"
+        ],
+        "why": "They walked down to the river; the struggle was at the landing."
+      },
+      {
+        "word": "pl_hflat",
+        "blank": "where",
+        "by": [
+          "f_neighbour"
+        ],
+        "why": "He walked to the river with Laban, not to Sagana."
+      },
+      {
+        "word": "pl_barge",
+        "blank": "where",
+        "by": [
+          "f_aut_noother",
+          "f_landing"
+        ],
+        "why": "The body caught on the barge rope later; the wound isn't a hull's edge."
+      },
+      {
+        "word": "pl_busia",
+        "blank": "where",
+        "by": [
+          "f_tororo",
+          "f_prints"
+        ],
+        "why": "Busia is where he \"died\" on paper. He died here."
+      },
+      {
+        "word": "w_jane",
+        "blank": "who",
+        "by": [
+          "f_jane_home",
+          "f_rec_jane"
+        ],
+        "why": "Jane was in the kitchen with her mother; her phone stayed in the compound."
+      },
+      {
+        "word": "w_hellen",
+        "blank": "who",
+        "by": [
+          "f_hellen"
+        ],
+        "why": "Hellen worked at the salon until 21:00, then stayed with a friend."
+      },
+      {
+        "word": "w_gichuki",
+        "blank": "who",
+        "by": [
+          "f_gichuki"
+        ],
+        "why": "Gichuki was at the crew's camp, playing cards until 01:00."
+      },
+      {
+        "word": "w_lewis",
+        "blank": "who",
+        "by": [
+          "f_lewis_self"
+        ],
+        "why": "Lewis was at a wedding in Nairobi."
+      },
+      {
+        "word": "h_drunk",
+        "blank": "how",
+        "by": [
+          "f_aut_noother",
+          "f_aut_blow"
+        ],
+        "why": "Blood alcohol low; a blow before the water."
+      },
+      {
+        "word": "h_barge",
+        "blank": "how",
+        "by": [
+          "f_aut_noother"
+        ],
+        "why": "A rounded wound, not a hull's edge."
+      },
+      {
+        "word": "h_jembe",
+        "blank": "how",
+        "by": [
+          "f_stick",
+          "f_soil"
+        ],
+        "why": "The stick matches, with river sand in its knob."
+      },
+      {
+        "word": "h_strangle",
+        "blank": "how",
+        "by": [
+          "f_aut_noother"
+        ],
+        "why": "No strangulation."
+      },
+      {
+        "word": "m_girlfriend",
+        "blank": "why",
+        "by": [
+          "f_hellen",
+          "f_texts"
+        ],
+        "why": "Hellen was waiting for him to come to her, and was at work."
+      },
+      {
+        "word": "m_sand",
+        "blank": "why",
+        "by": [
+          "f_gichuki"
+        ],
+        "why": "That debt was Gichuki's, and he was at the camp."
+      },
+      {
+        "word": "m_money",
+        "blank": "why",
+        "by": [
+          "f_claim",
+          "f_lab_reveal"
+        ],
+        "why": "The money went to Jane alone; Laban was shielding her, not enriching himself."
+      },
+      {
+        "word": "m_robbery",
+        "blank": "why",
+        "by": [
+          "f_pocket"
+        ],
+        "why": "KSh 3,100 still in his pocket."
+      },
+      {
+        "word": "d_claim",
+        "blank": "document",
+        "by": [
+          "f_claim"
+        ],
+        "why": "A real form, stamped by the insurer. Jane lied on it; she didn't forge it."
+      },
+      {
+        "word": "d_payslip",
+        "blank": "document",
+        "by": [
+          "f_payslip"
+        ],
+        "why": "A real payslip for a false name."
+      },
+      {
+        "word": "d_texts",
+        "blank": "document",
+        "by": [
+          "f_hel_reveal"
+        ],
+        "why": "His real texts."
+      },
+      {
+        "word": "d_idrecord",
+        "blank": "document",
+        "by": [
+          "f_prints"
+        ],
+        "why": "The national database, and his own fingerprints."
+      },
+      {
+        "word": "t_parcel",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "No parcels on a medical certificate."
+      },
+      {
+        "word": "t_index",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "No exam index number."
+      },
+      {
+        "word": "t_dots",
+        "blank": "tell",
+        "by": [
+          "f_cmp_ink"
+        ],
+        "why": "The stamp is rubber-stamp ink."
+      },
+      {
+        "word": "t_sig",
+        "blank": "tell",
+        "by": [
+          "f_cmp_sig"
+        ],
+        "why": "There's no entry signature to compare."
+      },
+      {
+        "word": "t_chassis",
+        "blank": "tell",
+        "by": [
+          "f_cmp_fields"
+        ],
+        "why": "No chassis number."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Two years ago Elphas, drowning in debt, and his wife Jane fake his death: a road accident in Uganda, a forged Tororo medical certificate, a memorial with no body. The insurer pays Jane KSh 5 million.",
+        "image": null
+      },
+      {
+        "text": "Elphas lives in the back house of her father's compound as \"Elias\", works at a hardware store, and takes up with Hellen in Sagana.",
+        "image": null
+      },
+      {
+        "text": "Friday. He tells Jane he is leaving her for Hellen, and that unless she gives him half the money he will \"come back to life\" and tell the insurer it was all her idea. Mzee Laban hears it.",
+        "image": null
+      },
+      {
+        "text": "Saturday, about 20:30. Laban walks with Elphas down the river path \"to talk like men\". At the landing Elphas laughs at him. Laban strikes him with his heavy stick and pushes him into the river.",
+        "image": "plc_bank"
+      },
+      {
+        "text": "21:15. Laban walks back up the path alone, fast, and scrubs his stick. On Monday the sand harvesters find the body on a barge rope.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Two stamps: a warrant on the back house and records on Jane. Detain Laban after his confession; the soil (8 h) and the medical-certificate examination (10 h) come back inside his 24 hours.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_river",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_bank",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_prints",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_neighbour",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_gichuki"
+      },
+      {
+        "do": "travel",
+        "target": "loc_registry",
+        "hours": 0.25,
+        "from": "loc_river"
+      },
+      {
+        "do": "visit",
+        "target": "loc_registry",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_death_cert",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_medcert",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_genuine_cert",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_tororo",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_lewis"
+      },
+      {
+        "do": "submit",
+        "target": "ev_docexam"
+      },
+      {
+        "do": "travel",
+        "target": "loc_mukoya",
+        "hours": 0.25,
+        "from": "loc_registry"
+      },
+      {
+        "do": "visit",
+        "target": "loc_mukoya",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_stick",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_mama",
+        "hours": 1
+      },
+      {
+        "do": "search",
+        "target": "loc_mukoya"
+      },
+      {
+        "do": "interview",
+        "target": "p_jane"
+      },
+      {
+        "do": "press",
+        "target": "c_jane"
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "interview",
+        "target": "p_laban"
+      },
+      {
+        "do": "press",
+        "target": "c_lab"
+      },
+      {
+        "do": "detain",
+        "target": "p_laban"
+      },
+      {
+        "do": "submit",
+        "target": "ev_soil"
+      },
+      {
+        "do": "travel",
+        "target": "loc_hellen",
+        "hours": 0.5,
+        "from": "loc_mukoya"
+      },
+      {
+        "do": "visit",
+        "target": "loc_hellen",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_hellen"
+      },
+      {
+        "do": "press",
+        "target": "c_hel"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 4
+      }
+    ],
+    "totalHours": 32
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_neighbour",
+        "line": "The last house on the river path, Amani. Who walked past, and who came back?"
+      },
+      "tier2": {
+        "facts": [
+          "f_neighbour"
+        ],
+        "line": "Two went down at 20:30. One came back at 21:15."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_bank",
+        "line": "Where does the compound's path meet the river?"
+      },
+      "tier2": {
+        "facts": [
+          "f_landing",
+          "f_soil"
+        ],
+        "line": "The landing, and its sand in the stick."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_stick",
+        "line": "Who scrubs a walking stick?"
+      },
+      "tier2": {
+        "facts": [
+          "f_neighbour",
+          "f_stick"
+        ],
+        "line": "An old man with his stick and a younger man, going down."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Water in his lungs, and a blow before it."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_blow"
+        ],
+        "line": "Struck, then put in the river."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_back_house",
+        "line": "Who has been living at the back of the compound?"
+      },
+      "tier2": {
+        "facts": [
+          "f_jane_reveal"
+        ],
+        "line": "Half the money, or he tells the insurer it was Jane."
+      }
+    },
+    "g_forgery": {
+      "tier1": {
+        "point": "ev_tororo",
+        "line": "Call the hospital in Tororo. Ask for the patient, and the doctor."
+      },
+      "tier2": {
+        "facts": [
+          "f_tororo"
+        ],
+        "line": "No patient. A doctor retired eight years."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "cheti cha kifo",
+      "def": "A death certificate."
+    },
+    {
+      "term": "bima",
+      "def": "Insurance."
+    },
+    {
+      "term": "mchanga",
+      "def": "Sand."
+    },
+    {
+      "term": "fimbo",
+      "def": "A walking stick."
+    },
+    {
+      "term": "mzee",
+      "def": "An elder; a respectful title for an older man."
+    },
+    {
+      "term": "jembe",
+      "def": "A hoe."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address an older woman."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "deadMansFile"
+    ],
+    "beatNotes": "A dead man's file. When the prints come back, a second case folder slides out of the cabinet: Elphas's two-year-old death record, stamped CLOSED. The player opens a closed file inside a live one, and the CLOSED stamp is struck through at the verdict."
+  }
+}

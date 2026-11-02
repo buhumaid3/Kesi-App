@@ -1,0 +1,1681 @@
+{
+  "meta": {
+    "id": "case-035",
+    "number": 35,
+    "region": "rift-valley",
+    "regionNumber": 4,
+    "title": "Earth Wire",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 20,
+    "date": "Tuesday 28 October",
+    "folderTab": "NJORO"
+  },
+  "pattern": {
+    "crimePattern": "student selling leaked exams kills the lecturer about to report him by making a lab oven live",
+    "noRealCaseRetold": true,
+    "notes": "Fictional college. The electrical method is described only at the level of \"an earth wire was cut and a live wire touched the case\"; no instructions, tools list or wiring detail beyond what the deduction needs.",
+    "tags": [
+      "electrocution",
+      "staged-accident",
+      "exam-leak",
+      "two-liars",
+      "forensics",
+      "warrant"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 3,
+    "redHerrings": 1,
+    "liars": 2,
+    "groups": [
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "warrant"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 05/28/10",
+    "date": "Tuesday 28 October",
+    "time": "19:05",
+    "reportedBy": "Security office, Njoro Agricultural College",
+    "text": "Njoro Agricultural College reports that a lecturer, Dr. Damaris Wanjohi (44), was found dead in the soil-science laboratory at about 16:30, beside a soil-drying oven she had just opened. Recorded as a suspected electrical accident.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_damaris",
+      "role": "victim",
+      "name": "Dr. Damaris Wanjohi",
+      "age": 44,
+      "occupation": "Soil-science lecturer and exams officer",
+      "bio": "Opens the same soil-drying oven at half past four every day. As exams officer, she sees every leak complaint.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_lab",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 40s, short relaxed hair, a white lab coat over a jumper, safety glasses pushed up on her head, a tray of soil samples in her hands, serious and warm, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_ronald",
+      "role": "suspect",
+      "name": "Ronald Omwenga",
+      "age": 23,
+      "occupation": "Final-year student; robotics club member",
+      "bio": "Clever with circuits. Runs the robotics club's tool cupboard on Thursdays.",
+      "community": "Kisii",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_draft"
+      },
+      "at": "plc_library",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan young man, early 20s, a college hoodie, a backpack with a robotics club patch, careful neutral face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_elkanah",
+      "role": "suspect",
+      "name": "Elkanah Kiprop",
+      "age": 39,
+      "occupation": "Lab technician",
+      "bio": "Runs the soil lab: ovens, samples, the weekly safety checklist.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_checklist"
+      },
+      "at": "plc_canteen",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 30s, grey lab coat, a pen behind each ear, a clipboard, frightened eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kenneth",
+      "role": "suspect",
+      "name": "Dr. Kenneth Mugambi",
+      "age": 50,
+      "occupation": "Lecturer, colleague",
+      "redHerring": true,
+      "bio": "Quarrelled with Damaris last week over the moderation of exam marks.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_quarrel"
+      },
+      "at": "plc_senate",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 50, tweed jacket, glasses on a cord, a folder of exam scripts, stiff and offended, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_nelly",
+      "role": "witness",
+      "name": "Nelly Chepkurui",
+      "age": 46,
+      "occupation": "Librarian",
+      "bio": "Runs the library desk and its card-swipe turnstiles.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_library",
+      "image": null
+    },
+    {
+      "id": "p_brenda",
+      "role": "witness",
+      "name": "Brenda Cherono",
+      "age": 19,
+      "occupation": "First-year student",
+      "bio": "Was waiting outside the soil lab for a practical that afternoon.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_corridor",
+      "image": null
+    },
+    {
+      "id": "p_joshua",
+      "role": "witness",
+      "name": "Joshua Ndolo",
+      "age": 52,
+      "occupation": "College electrician; robotics club patron",
+      "bio": "Thirty years keeping the college's old buildings lit. Inspected the oven.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_lab",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_library",
+      "name": "College library"
+    },
+    {
+      "id": "plc_canteen",
+      "name": "Staff canteen"
+    },
+    {
+      "id": "plc_senate",
+      "name": "Senate meeting room"
+    },
+    {
+      "id": "plc_corridor",
+      "name": "Corridor outside the soil lab"
+    },
+    {
+      "id": "plc_practical",
+      "name": "First-year practical class"
+    },
+    {
+      "id": "plc_hostel",
+      "name": "Student hostel"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_lab",
+      "name": "Soil-science laboratory",
+      "kind": "scene",
+      "description": "An old stone lab: benches of soil samples, a row of grey metal drying ovens along one wall, a fuse board by the door. One oven door stands open, a sample tray half pulled out. A safety checklist is pinned beside the fuse board.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_oven",
+          "label": "The open oven",
+          "pos": [
+            40,
+            50
+          ],
+          "yields": "ev_oven",
+          "text": "The oven door is open, a tray of her samples half out. The back panel is slightly askew."
+        },
+        {
+          "id": "hs_joshua",
+          "label": "Electrician",
+          "pos": [
+            56,
+            40
+          ],
+          "yields": "ev_joshua",
+          "text": "Joshua Ndolo has the back panel off and a torch in his teeth. He takes it out to talk."
+        },
+        {
+          "id": "hs_wire",
+          "label": "Inside the panel",
+          "pos": [
+            60,
+            52
+          ],
+          "yields": "ev_wire",
+          "text": "Two bright copper ends where a green-and-yellow wire has been cut. Amani bags them."
+        },
+        {
+          "id": "hs_checklist",
+          "label": "Safety checklist",
+          "pos": [
+            84,
+            30
+          ],
+          "yields": "ev_checklist",
+          "text": "The weekly safety checklist: every box ticked."
+        },
+        {
+          "id": "hs_phone",
+          "label": "Her office, next door",
+          "pos": [
+            12,
+            60
+          ],
+          "yields": "ev_phone",
+          "text": "Her phone on the desk. Her husband unlocks it with Amani watching."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "an old stone university soil-science laboratory, benches of soil samples in trays, a row of grey metal drying ovens along one wall with one door open, a fuse board by the door, late afternoon light, no people in focus"
+      }
+    },
+    {
+      "id": "loc_campus",
+      "name": "Njoro Agricultural College campus",
+      "kind": "location",
+      "description": "Old stone buildings, a library with card turnstiles, a robotics club room with a numbered tool cupboard, the canteen.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_turnstile",
+          "label": "Library turnstile log",
+          "pos": [
+            20,
+            40
+          ],
+          "yields": "ev_turnstile",
+          "text": "Every swipe in and out, by student number."
+        },
+        {
+          "id": "hs_club",
+          "label": "Robotics club tool register",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_toolregister",
+          "text": "The club's numbered toolkits and who has each one this term."
+        },
+        {
+          "id": "hs_canteen",
+          "label": "Canteen",
+          "pos": [
+            70,
+            60
+          ],
+          "yields": "ev_canteen",
+          "text": "The canteen till and the canteen lady, who remembers everyone's tea."
+        },
+        {
+          "id": "hs_brenda",
+          "label": "Corridor",
+          "pos": [
+            40,
+            70
+          ],
+          "yields": "ev_brenda",
+          "text": "Brenda Cherono is sitting in the corridor outside the lab with her practical notes."
+        },
+        {
+          "id": "hs_exams",
+          "label": "Exams office",
+          "pos": [
+            86,
+            30
+          ],
+          "yields": "ev_transcript",
+          "text": "The exams office keeps every student's grades."
+        },
+        {
+          "id": "hs_notice",
+          "label": "Staff noticeboard",
+          "pos": [
+            90,
+            50
+          ],
+          "yields": "ev_quarrel",
+          "text": "A notice about last week's moderation meeting, with a scribbled comment."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "an old agricultural college campus in the Kenyan highlands, stone buildings with tin roofs, a library entrance with turnstiles, students on paths, jacaranda trees"
+      }
+    },
+    {
+      "id": "loc_senate",
+      "name": "Senate office",
+      "kind": "location",
+      "description": "The senate secretary keeps the minutes and the attendance sheet.",
+      "unlock": {
+        "fact": "f_ken_claim"
+      },
+      "hotspots": [
+        {
+          "id": "hs_minutes",
+          "label": "Senate minutes",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_senate",
+          "text": "Today's attendance, with times."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a college senate room with a long table, name cards, minutes on a clipboard"
+      }
+    },
+    {
+      "id": "loc_room",
+      "name": "Ronald's hostel room (search)",
+      "kind": "search",
+      "description": "A shared room: two beds, a desk covered in circuit boards, a robotics club toolkit box numbered 7.",
+      "unlock": {
+        "fact": "f_brenda"
+      },
+      "hotspots": [
+        {
+          "id": "hs_kit",
+          "label": "Toolkit #7",
+          "pos": [
+            50,
+            60
+          ],
+          "yields": "ev_cutters",
+          "text": "Toolkit #7. The side-cutters are inside."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a student hostel room with two narrow beds, a desk crowded with small circuit boards and wires, a numbered plastic toolkit box"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_oven",
+      "type": "physical",
+      "title": "The open oven",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Oven door open, sample tray half out. Back-panel screws loosened."
+      },
+      "facts": [
+        "f_oven"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "an old grey metal laboratory drying oven with its door open and a tray of soil samples half pulled out, its back panel slightly askew, no body visible"
+      }
+    },
+    {
+      "id": "ev_joshua",
+      "type": "witness",
+      "title": "Statement: Joshua Ndolo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_joshua"
+      },
+      "facts": [
+        "f_joshua_cut",
+        "f_joshua_live",
+        "f_joshua_rcd"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_wire",
+      "type": "physical",
+      "title": "Cut earth wire",
+      "render": "object",
+      "body": {
+        "label": "Two ends of the green-and-yellow earth wire, freshly cut, bright copper."
+      },
+      "facts": [
+        "f_wire"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_checklist",
+      "type": "physical",
+      "title": "Weekly safety checklist",
+      "render": "form",
+      "body": {
+        "rows": "Every Friday: \"earth OK, RCD OK\", through to today.",
+        "note": "Same pen, same pressure on every line."
+      },
+      "facts": [
+        "f_checklist"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_phone",
+      "type": "phone",
+      "title": "Damaris's phone",
+      "render": "note",
+      "body": {
+        "screenshot": "Group \"Njoro Leaks\": CAT papers KSh 500, send to 07xx xxx 562.",
+        "draft": "To the disciplinary committee, saved Monday: naming Ronald Omwenga. Meeting Thursday."
+      },
+      "facts": [
+        "f_screenshot",
+        "f_draft"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_turnstile",
+      "type": "physical",
+      "title": "Library turnstile log",
+      "render": "visitorRegister",
+      "body": {
+        "rows": [
+          {
+            "name": "R. Omwenga",
+            "in": "14:02",
+            "out": "15:40",
+            "in2": "17:10"
+          }
+        ]
+      },
+      "facts": [
+        "f_turnstile"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_toolregister",
+      "type": "physical",
+      "title": "Robotics club register",
+      "render": "logBook",
+      "body": {
+        "rows": [
+          {
+            "kit": "#7 (incl. side-cutters)",
+            "issued": "R. Omwenga, this term",
+            "phone": "07xx xxx 562"
+          }
+        ],
+        "patron": "J. Ndolo"
+      },
+      "facts": [
+        "f_toolreg",
+        "f_clubnumber",
+        "f_club_patron"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_canteen",
+      "type": "physical",
+      "title": "Canteen receipt (Elkanah)",
+      "render": "receipt",
+      "body": {
+        "time": "15:45",
+        "item": "Tea",
+        "name": "E. Kiprop"
+      },
+      "facts": [
+        "f_canteen"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_brenda",
+      "type": "witness",
+      "title": "Statement: Brenda Cherono",
+      "render": "statement",
+      "body": {
+        "speaker": "p_brenda"
+      },
+      "facts": [
+        "f_brenda",
+        "f_brenda_class"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_cutters",
+      "type": "physical",
+      "title": "Side-cutters, toolkit #7",
+      "render": "object",
+      "body": {
+        "label": "Small side-cutters from robotics toolkit #7. A small notch in one jaw."
+      },
+      "facts": [
+        "f_cutters"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_brenda"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a small pair of electronics side-cutters with red handles lying in a numbered plastic toolkit tray, a tiny notch visible in one cutting jaw under magnification"
+      }
+    },
+    {
+      "id": "ev_senate",
+      "type": "physical",
+      "title": "Senate attendance",
+      "render": "visitorRegister",
+      "body": {
+        "rows": [
+          {
+            "name": "Dr. K. Mugambi",
+            "present": "15:00–17:30"
+          }
+        ]
+      },
+      "facts": [
+        "f_senate"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_transcript",
+      "type": "physical",
+      "title": "Ronald's transcript",
+      "render": "ledger",
+      "body": {
+        "line": "B+ average. Nothing failed."
+      },
+      "facts": [
+        "f_transcript"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_quarrel",
+      "type": "physical",
+      "title": "Moderation notice",
+      "render": "board",
+      "body": {
+        "text": "Moderation meeting minutes posted.",
+        "scribble": "Dr. M. walked out."
+      },
+      "facts": [
+        "f_quarrel"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_elec",
+        "f_aut_tod",
+        "f_aut_noblow"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_oven"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_toolmarks",
+      "type": "forensic",
+      "title": "Lab: tool marks (wire vs side-cutters)",
+      "render": "labReport",
+      "body": {
+        "test": "toolMarks"
+      },
+      "facts": [
+        "f_toolmarks"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toolMarks",
+        "hours": 8,
+        "needs": [
+          "ev_wire",
+          "ev_cutters"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tox",
+      "type": "forensic",
+      "title": "Lab: toxicology",
+      "render": "labReport",
+      "body": {
+        "test": "toxicology"
+      },
+      "facts": [
+        "f_tox"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toxicology",
+        "hours": 18,
+        "needs": [
+          "ev_oven"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Dr. Damaris Wanjohi was found dead in the soil lab at about 16:30, beside a drying oven she had just opened. Recorded as an electrical accident.",
+      "kind": "true",
+      "about": [
+        "p_damaris",
+        "loc_lab"
+      ]
+    },
+    {
+      "id": "f_oven",
+      "text": "The oven's back-panel screws have been loosened.",
+      "kind": "true",
+      "about": [
+        "loc_lab"
+      ]
+    },
+    {
+      "id": "f_joshua_cut",
+      "text": "Joshua: the oven's earth wire has been freshly cut: bright copper ends, no corrosion. \"Old wiring doesn't cut itself.\"",
+      "kind": "true",
+      "about": [
+        "p_joshua",
+        "loc_lab"
+      ]
+    },
+    {
+      "id": "f_joshua_live",
+      "text": "Joshua: the live wire's insulation was stripped with a tool and bent to touch the metal case. \"Someone made this oven live.\"",
+      "kind": "true",
+      "about": [
+        "p_joshua",
+        "loc_lab"
+      ]
+    },
+    {
+      "id": "f_joshua_rcd",
+      "text": "Joshua: the lab's safety cut-out switch (RCD) has been removed from the board, \"months ago, by the dust\".",
+      "kind": "true",
+      "about": [
+        "p_joshua",
+        "loc_lab"
+      ]
+    },
+    {
+      "id": "f_wire",
+      "text": "The two cut ends of the oven's earth wire, bagged for comparison.",
+      "kind": "true",
+      "about": [
+        "loc_lab"
+      ]
+    },
+    {
+      "id": "f_checklist",
+      "text": "Safety checklist: every Friday ticked \"earth OK, RCD OK\" through to today, all in the same pen and pressure, as if filled in at one sitting.",
+      "kind": "true",
+      "about": [
+        "p_elkanah"
+      ]
+    },
+    {
+      "id": "f_screenshot",
+      "text": "On her phone, a student's screenshot: group \"Njoro Leaks\": \"CAT papers KSh 500, send to 07xx xxx 562\".",
+      "kind": "true",
+      "about": [
+        "p_damaris"
+      ]
+    },
+    {
+      "id": "f_draft",
+      "text": "Her draft email to the disciplinary committee, saved Monday, names Ronald Omwenga. The meeting was set for Thursday.",
+      "kind": "true",
+      "about": [
+        "p_damaris",
+        "p_ronald"
+      ]
+    },
+    {
+      "id": "f_turnstile",
+      "text": "Library turnstile: 'R. Omwenga — in 14:02, out 15:40, in 17:10.'",
+      "kind": "true",
+      "about": [
+        "p_ronald",
+        "plc_library"
+      ]
+    },
+    {
+      "id": "f_toolreg",
+      "text": "Robotics club register: toolkit #7, including side-cutters, issued to R. Omwenga this term.",
+      "kind": "true",
+      "about": [
+        "p_ronald"
+      ]
+    },
+    {
+      "id": "f_clubnumber",
+      "text": "Club contact list: R. Omwenga, 07xx xxx 562.",
+      "kind": "true",
+      "about": [
+        "p_ronald"
+      ]
+    },
+    {
+      "id": "f_club_patron",
+      "text": "Club patron: J. Ndolo, the electrician. Dr. Wanjohi has no role in the robotics club.",
+      "kind": "true",
+      "about": [
+        "p_joshua",
+        "p_damaris"
+      ]
+    },
+    {
+      "id": "f_canteen",
+      "text": "Canteen receipt: E. Kiprop, tea, 15:45. The canteen lady says he stayed until about 16:20.",
+      "kind": "true",
+      "about": [
+        "p_elkanah"
+      ],
+      "where": {
+        "person": "p_elkanah",
+        "place": "plc_canteen",
+        "from": "15:45",
+        "to": "16:20"
+      }
+    },
+    {
+      "id": "f_brenda",
+      "text": "Brenda: at about 15:50 Ronald went into the soil lab \"with his robotics bag\", and came out about ten minutes later.",
+      "kind": "true",
+      "about": [
+        "p_brenda",
+        "p_ronald"
+      ],
+      "where": {
+        "person": "p_ronald",
+        "place": "loc_lab",
+        "from": "15:50",
+        "to": "16:00"
+      }
+    },
+    {
+      "id": "f_brenda_class",
+      "text": "Brenda went into her practical class at 16:00 and stayed until 18:00; it is on the class register.",
+      "kind": "true",
+      "about": [
+        "p_brenda"
+      ],
+      "where": {
+        "person": "p_brenda",
+        "place": "plc_practical",
+        "from": "16:00",
+        "to": "18:00"
+      }
+    },
+    {
+      "id": "f_cutters",
+      "text": "Side-cutters from toolkit #7, in Ronald's room: a small notch in one jaw.",
+      "kind": "true",
+      "about": [
+        "p_ronald"
+      ]
+    },
+    {
+      "id": "f_senate",
+      "text": "Senate attendance: Dr. K. Mugambi present 15:00–17:30.",
+      "kind": "true",
+      "about": [
+        "p_kenneth"
+      ],
+      "where": {
+        "person": "p_kenneth",
+        "place": "plc_senate",
+        "from": "15:00",
+        "to": "17:30"
+      }
+    },
+    {
+      "id": "f_transcript",
+      "text": "Ronald's transcript: a B+ average. He has failed nothing.",
+      "kind": "true",
+      "about": [
+        "p_ronald"
+      ]
+    },
+    {
+      "id": "f_quarrel",
+      "text": "Noticeboard: last week's moderation meeting. Someone has scribbled: \"Dr. M. walked out.\"",
+      "kind": "true",
+      "about": [
+        "p_kenneth",
+        "p_damaris"
+      ]
+    },
+    {
+      "id": "f_nelly",
+      "text": "Nelly: she was at the library desk all afternoon. The turnstiles never lie, \"but students try.\"",
+      "kind": "true",
+      "about": [
+        "p_nelly"
+      ],
+      "where": {
+        "person": "p_nelly",
+        "place": "plc_library",
+        "from": "08:00",
+        "to": "18:00"
+      }
+    },
+    {
+      "id": "f_aut_elec",
+      "text": "Autopsy: electrocution. Entry burn on the right palm, exit on the left foot.",
+      "kind": "true",
+      "about": [
+        "p_damaris"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death at about 16:30.",
+      "kind": "true",
+      "about": [
+        "p_damaris"
+      ]
+    },
+    {
+      "id": "f_aut_noblow",
+      "text": "Autopsy: no other injury. No blow, no sign of a heart attack.",
+      "kind": "true",
+      "about": [
+        "p_damaris"
+      ]
+    },
+    {
+      "id": "f_toolmarks",
+      "text": "Lab: the cut wire ends carry the impression of a notched jaw. They match the side-cutters from toolkit #7.",
+      "kind": "true",
+      "about": [
+        "p_ronald"
+      ]
+    },
+    {
+      "id": "f_tox",
+      "text": "Toxicology: clean. No chemicals, no drugs.",
+      "kind": "true",
+      "about": [
+        "p_damaris"
+      ]
+    },
+    {
+      "id": "f_ron_library",
+      "text": "Ronald: \"I was in the library from two until six.\"",
+      "kind": "lie",
+      "about": [
+        "p_ronald"
+      ]
+    },
+    {
+      "id": "f_ron_ovens",
+      "text": "Ronald: \"I've never touched those ovens.\"",
+      "kind": "lie",
+      "about": [
+        "p_ronald"
+      ]
+    },
+    {
+      "id": "f_ron_admits",
+      "text": "Ronald admits he went to the soil lab at about 15:50 \"to ask her for a chance\". He says she wasn't there and he left.",
+      "kind": "true",
+      "about": [
+        "p_ronald",
+        "loc_lab"
+      ],
+      "where": {
+        "person": "p_ronald",
+        "place": "loc_lab",
+        "from": "15:50",
+        "to": "16:00"
+      }
+    },
+    {
+      "id": "f_elk_checked",
+      "text": "Elkanah: \"I checked that oven this morning. It was earthed. The RCD was working.\"",
+      "kind": "lie",
+      "about": [
+        "p_elkanah"
+      ]
+    },
+    {
+      "id": "f_elk_rcd",
+      "text": "Elkanah admits he took the RCD out in June because it kept tripping, and ticked the checklist every Friday without checking. Anyone who used the lab often knew.",
+      "kind": "true",
+      "about": [
+        "p_elkanah"
+      ]
+    },
+    {
+      "id": "f_ken_claim",
+      "text": "Dr. Mugambi: \"I was in senate all afternoon.\"",
+      "kind": "claim",
+      "about": [
+        "p_kenneth"
+      ]
+    },
+    {
+      "id": "f_ken_moderation",
+      "text": "Dr. Mugambi: the moderation quarrel was professional. \"She was usually right. I walked out because she was right.\"",
+      "kind": "true",
+      "about": [
+        "p_kenneth",
+        "p_damaris"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_ronald",
+      "stance": "cooperative",
+      "intro": "Ronald sits with his backpack on his knees. \"Dr. Wanjohi? That's terrible. I was in the library.\"",
+      "claims": [
+        "f_ron_library",
+        "f_ron_ovens"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "f_screenshot",
+          "reply": "Anyone can make a WhatsApp group. Anyone can type a number.",
+          "reveals": []
+        },
+        {
+          "about": "ev_toolregister",
+          "reply": "Kit seven is mine this term. Lots of people borrow things from it.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_elkanah",
+      "stance": "cooperative",
+      "intro": "Elkanah keeps clicking his pen. \"I check the ovens every Friday. Every Friday.\"",
+      "claims": [
+        "f_elk_checked"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_oven",
+          "reply": "That oven is old. They're all old. I asked for new ones three years running.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_kenneth",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_checklist"
+      ],
+      "intro": "Dr. Mugambi doesn't sit down. \"I hope you are not here because I disagreed with a colleague about marks.\"",
+      "claims": [
+        "f_ken_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_damaris",
+          "reply": "It was professional. She was usually right. I walked out because she was right.",
+          "reveals": [
+            "f_ken_moderation"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_nelly",
+      "stance": "cooperative",
+      "intro": "Nelly turns her screen so Amani can see the swipes. \"The turnstiles never lie. Students try.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_ronald",
+          "reply": "Omwenga? He swiped out at twenty to four. I remember because he usually stays until we close.",
+          "reveals": [
+            "f_nelly"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_brenda",
+      "stance": "cooperative",
+      "intro": "Brenda is still holding her practical notes. \"I was waiting for my practical. I saw him go in.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_ronald",
+          "reply": "The robotics boy. He had his robotics bag. He went into the soil lab and came out maybe ten minutes later. He didn't look at me.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_joshua",
+      "stance": "cooperative",
+      "intro": "Joshua takes the torch out of his teeth. \"Thirty years I keep these buildings lit. This was done. It didn't happen.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_checklist",
+          "reply": "That RCD would have saved her. It was taken out months ago. Look at the dust.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_ron_library",
+      "claim": "f_ron_library",
+      "brokenBy": [
+        "f_turnstile",
+        "f_brenda"
+      ],
+      "reveals": [
+        "f_ron_admits"
+      ],
+      "reaction": "I went to the lab. To ask her to give me a chance. She wasn't there. I left. That's all.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_ron_ovens",
+      "claim": "f_ron_ovens",
+      "brokenBy": [
+        "f_toolmarks"
+      ],
+      "reveals": [],
+      "reaction": "He looks at the photograph of the notched jaw for a long time. \"I want my father here.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_elk",
+      "claim": "f_elk_checked",
+      "brokenBy": [
+        "f_joshua_rcd",
+        "f_checklist"
+      ],
+      "reveals": [
+        "f_elk_rcd"
+      ],
+      "reaction": "The RCD kept tripping. I took it out in June so the ovens would run. I filled the checklist every Friday without checking. I have been afraid every day since June.",
+      "mark": "explains"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_ronald",
+      "text": "Ronald Omwenga",
+      "category": "person",
+      "ref": "p_ronald",
+      "unlock": {
+        "anyOf": [
+          "f_draft",
+          "f_brenda"
+        ]
+      }
+    },
+    {
+      "id": "w_elkanah",
+      "text": "Elkanah Kiprop",
+      "category": "person",
+      "ref": "p_elkanah",
+      "unlock": {
+        "anyOf": [
+          "f_checklist"
+        ]
+      }
+    },
+    {
+      "id": "w_kenneth",
+      "text": "Kenneth Mugambi",
+      "category": "person",
+      "ref": "p_kenneth",
+      "unlock": {
+        "anyOf": [
+          "f_quarrel"
+        ]
+      }
+    },
+    {
+      "id": "w_nelly",
+      "text": "Nelly Chepkurui",
+      "category": "person",
+      "ref": "p_nelly",
+      "unlock": {
+        "anyOf": [
+          "f_turnstile"
+        ]
+      }
+    },
+    {
+      "id": "w_brenda",
+      "text": "Brenda Cherono",
+      "category": "person",
+      "ref": "p_brenda",
+      "unlock": {
+        "anyOf": [
+          "f_brenda"
+        ]
+      }
+    },
+    {
+      "id": "h_live",
+      "text": "electrocuted by an oven he deliberately made live",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_joshua_live"
+        ]
+      }
+    },
+    {
+      "id": "h_wiring",
+      "text": "an accident caused by old, faulty wiring",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_chem",
+      "text": "poisoned by lab chemicals",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_oven"
+        ]
+      }
+    },
+    {
+      "id": "h_blow",
+      "text": "a blow to the head",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_noblow"
+        ]
+      }
+    },
+    {
+      "id": "m_leak",
+      "text": "she was about to report him for selling leaked exam papers",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_draft"
+        ]
+      }
+    },
+    {
+      "id": "m_failed",
+      "text": "she had failed him",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_transcript"
+        ]
+      }
+    },
+    {
+      "id": "m_checks",
+      "text": "the technician's faked safety checks",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_elk_rcd"
+        ]
+      }
+    },
+    {
+      "id": "m_moderation",
+      "text": "a dispute over exam moderation",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_quarrel"
+        ]
+      }
+    },
+    {
+      "id": "m_robotics",
+      "text": "a robotics competition result",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_toolreg"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Damaris Wanjohi"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_ronald"
+          }
+        ],
+        "prosecutor": {
+          "pass": "He left the library, was seen going in with his bag, and his side-cutters cut that wire. Charge the boy.",
+          "fail": [
+            "Doesn't hold up. The technician lied about a switch, not a wire. Who was in that lab at ten to four?",
+            "No. Sort your liars: one hid negligence, one hid a killing."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_live"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A cut earth, a live wire bent to the case, and no switch to save her. Deliberate. Yes.",
+          "fail": [
+            "Old wiring doesn't cut itself. Ask the electrician.",
+            "The pathologist found electrical burns. Read them."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_leak"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Expulsion and a criminal report on Thursday. That's the reason. And send the college a letter about that switch.",
+          "fail": [
+            "He has a B+ average. That isn't it.",
+            "That quarrel belongs to a man who was in senate. Read her phone."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_lab",
+      "from": "15:50",
+      "to": "16:00",
+      "note": "The act window: the oven was made live while the technician was at tea. She touched it at 16:30."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_joshua_cut",
+          "f_joshua_live",
+          "f_elk_checked",
+          "f_joshua_rcd",
+          "f_checklist",
+          "f_elk_rcd"
+        ],
+        "concludes": "This was no accident of old wiring: the earth wire was freshly cut and the live wire deliberately bent to the case. Nothing tripped because the technician had removed the safety switch in June and faked the checklist."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_ron_library",
+          "f_turnstile",
+          "f_brenda",
+          "f_ron_admits",
+          "f_canteen"
+        ],
+        "concludes": "Ronald said he was in the library until six, but he swiped out at 15:40, and Brenda saw him go into the lab with his robotics bag at 15:50, while the technician was at tea. He admits going in."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_toolreg",
+          "f_cutters",
+          "f_toolmarks",
+          "f_screenshot",
+          "f_clubnumber",
+          "f_draft",
+          "f_aut_elec"
+        ],
+        "concludes": "His club side-cutters cut the wire. The leaks group's number is his, and Damaris was reporting him on Thursday. Ronald Omwenga killed her by making the oven live, because she was about to report him for selling leaked exams.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_elkanah",
+        "blank": "who",
+        "by": [
+          "f_canteen"
+        ],
+        "why": "Elkanah was at tea in the canteen from 15:45 to 16:20. His lie hid negligence, not murder."
+      },
+      {
+        "word": "w_kenneth",
+        "blank": "who",
+        "by": [
+          "f_senate"
+        ],
+        "why": "Dr. Mugambi was in senate from 15:00 to 17:30."
+      },
+      {
+        "word": "w_nelly",
+        "blank": "who",
+        "by": [
+          "f_nelly"
+        ],
+        "why": "Nelly was at the library desk all afternoon."
+      },
+      {
+        "word": "w_brenda",
+        "blank": "who",
+        "by": [
+          "f_brenda_class"
+        ],
+        "why": "Brenda was outside the lab, then in her practical class from 16:00."
+      },
+      {
+        "word": "h_wiring",
+        "blank": "how",
+        "by": [
+          "f_joshua_cut",
+          "f_toolmarks"
+        ],
+        "why": "The earth wire was freshly cut by a tool, not worn through."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_elec"
+        ],
+        "why": "Electrical burns, hand to foot."
+      },
+      {
+        "word": "h_chem",
+        "blank": "how",
+        "by": [
+          "f_tox"
+        ],
+        "why": "Toxicology is clean."
+      },
+      {
+        "word": "h_blow",
+        "blank": "how",
+        "by": [
+          "f_aut_noblow"
+        ],
+        "why": "No blow; no other injury."
+      },
+      {
+        "word": "m_failed",
+        "blank": "why",
+        "by": [
+          "f_transcript"
+        ],
+        "why": "He has a B+ average and has failed nothing."
+      },
+      {
+        "word": "m_checks",
+        "blank": "why",
+        "by": [
+          "f_elk_rcd"
+        ],
+        "why": "The faked checks are Elkanah's failing, not a reason to kill."
+      },
+      {
+        "word": "m_moderation",
+        "blank": "why",
+        "by": [
+          "f_senate",
+          "f_ken_moderation"
+        ],
+        "why": "That quarrel was Dr. Mugambi's, and he was in senate."
+      },
+      {
+        "word": "m_robotics",
+        "blank": "why",
+        "by": [
+          "f_club_patron"
+        ],
+        "why": "Dr. Wanjohi had no role in the robotics club."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "A student sends Damaris a screenshot: a WhatsApp group selling leaked papers, KSh 500 each, to one number. On Monday she tells Ronald the committee meets on Thursday.",
+        "image": null
+      },
+      {
+        "text": "He knows two things from the robotics club: how the lab's old ovens are wired, and that the technician took out the safety switch months ago.",
+        "image": null
+      },
+      {
+        "text": "15:40. He swipes out of the library. 15:50. With the technician at tea, he goes into the soil lab with his robotics bag. Brenda sees him.",
+        "image": "loc_lab"
+      },
+      {
+        "text": "He opens the back panel of her oven, cuts the earth wire with his club side-cutters, and bends the live wire to the case. Ten minutes.",
+        "image": null
+      },
+      {
+        "text": "16:30. Dr. Wanjohi opens her oven, as she does every day.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "No detention needed. The warrant on the hostel room needs Brenda's sighting; tool marks take 8 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_lab",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_joshua",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_checklist",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_elkanah"
+      },
+      {
+        "do": "press",
+        "target": "c_elk"
+      },
+      {
+        "do": "visit",
+        "target": "loc_campus",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_brenda"
+      },
+      {
+        "do": "read",
+        "target": "ev_toolregister",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_ronald"
+      },
+      {
+        "do": "press",
+        "target": "c_ron_library"
+      },
+      {
+        "do": "search",
+        "target": "loc_room"
+      },
+      {
+        "do": "submit",
+        "target": "ev_toolmarks"
+      },
+      {
+        "do": "visit",
+        "target": "loc_senate",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_kenneth"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 5
+      },
+      {
+        "do": "interview",
+        "target": "p_ronald"
+      },
+      {
+        "do": "press",
+        "target": "c_ron_ovens"
+      }
+    ],
+    "totalHours": 25
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_turnstile",
+        "line": "The library turnstiles keep times. Then ask who was waiting outside the soil lab."
+      },
+      "tier2": {
+        "facts": [
+          "f_turnstile",
+          "f_brenda"
+        ],
+        "line": "Out at 15:40, into the lab at 15:50 with a robotics bag. Whose kit has side-cutters?"
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_joshua",
+        "line": "The electrician has the back panel off. Let him tell you what was done."
+      },
+      "tier2": {
+        "facts": [
+          "f_joshua_cut",
+          "f_joshua_live"
+        ],
+        "line": "A fresh cut and a wire bent to the case. Old wiring doesn't do that by itself."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_phone",
+        "line": "She was the exams officer. Read what was on her phone."
+      },
+      "tier2": {
+        "facts": [
+          "f_screenshot",
+          "f_clubnumber"
+        ],
+        "line": "A leaks group's number, and the same number on a club contact list."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "stima",
+      "def": "Electricity; power."
+    },
+    {
+      "term": "fundi",
+      "def": "Craftsman, mechanic, skilled tradesman. \"Fundi wa stima\": electrician."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "sortTheLiars"
+    ],
+    "beatNotes": "Two liars where only one is the killer. The notebook's red and grey marks (from case 14) now do real work: the player sorts which broken claim implicates and which only embarrasses."
+  }
+}

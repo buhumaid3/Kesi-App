@@ -1,0 +1,1227 @@
+{
+  "meta": {
+    "id": "case-029",
+    "number": 29,
+    "region": "mombasa-old-town",
+    "regionNumber": 3,
+    "title": "The 1503 Coin",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 17,
+    "date": "Friday 26 September",
+    "folderTab": "FORT JESUS"
+  },
+  "pattern": {
+    "crimePattern": "tour guide selling fake antiquities kills the colleague who reported him",
+    "noRealCaseRetold": true,
+    "notes": "Fictional guides' association, fictional ruined house. Fort Jesus and the Leven Steps are settings only; no real guide or incident is depicted.",
+    "tags": [
+      "blunt-force",
+      "fraud-exposure",
+      "records-request",
+      "fake-object"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 3,
+    "redHerrings": 1,
+    "liars": 1,
+    "groups": [
+      "who",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "document",
+      "phone"
+    ],
+    "gatedActions": [
+      "records"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 14/26/09",
+    "date": "Friday 26 September",
+    "time": "17:31",
+    "reportedBy": "Swabri Hemed, ticket clerk, Fort Jesus, on behalf of a passer-by",
+    "text": "A licensed tour guide, Nuru Kombo (33), was found dead at 17:20 in the courtyard of a ruined coral-stone house used as a shortcut between Fort Jesus and the Leven Steps.",
+    "facts": [
+      "f_ob_found"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_nuru",
+      "role": "victim",
+      "name": "Nuru Kombo",
+      "age": 33,
+      "occupation": "Licensed tour guide; secretary of the Old Town guides' association",
+      "bio": "Knows every stone of Fort Jesus. Reported a colleague to the association last month.",
+      "community": "Digo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_ruin",
+      "image": {
+        "kind": "portrait",
+        "brief": "Digo Kenyan woman, early 30s, a guide's badge on a lanyard, a wide-brimmed sun hat, a laminated map of the Fort in her hand, clever and quick, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_bramwel",
+      "role": "suspect",
+      "name": "Bramwel Shikuku",
+      "age": 36,
+      "occupation": "Licensed tour guide",
+      "bio": "Sells \"Portuguese coins\" and \"antique trade beads\" to tourists on the side.",
+      "community": "Luhya",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_register"
+      },
+      "at": "plc_ruin",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 30s, a guide's badge, a khaki safari shirt, a heavy shoulder bag, a charming tourist-facing smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_athumani",
+      "role": "suspect",
+      "name": "Athumani Rashid",
+      "age": 48,
+      "occupation": "Licensed tour guide",
+      "redHerring": true,
+      "bio": "Lost a cruise-ship tour contract to Nuru's group this year.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_swabri_athumani"
+      },
+      "at": "plc_port",
+      "image": {
+        "kind": "portrait",
+        "brief": "Swahili Kenyan man, late 40s, a guide's badge, a white kofia, a cruise-line passenger list on a clipboard, proud, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_pius",
+      "role": "suspect",
+      "name": "Pius Wanyama",
+      "age": 61,
+      "occupation": "Curio dealer",
+      "bio": "Supplies Bramwel's \"antiques\" from a curio shop near the Fort.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_rec_commission"
+      },
+      "at": "plc_curio",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 60s, reading glasses on a cord, a cardigan, a tray of brass coins and beads in front of him, cautious, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_leah",
+      "role": "witness",
+      "name": "Leah Wawira",
+      "age": 40,
+      "occupation": "Teacher leading a school trip from Nakuru",
+      "bio": "Brought 38 pupils to Fort Jesus. Took photos all afternoon.",
+      "community": "Embu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_register"
+      },
+      "at": "plc_bus",
+      "image": null
+    },
+    {
+      "id": "p_swabri",
+      "role": "witness",
+      "name": "Swabri Hemed",
+      "age": 55,
+      "occupation": "Fort ticket-office clerk",
+      "bio": "Registers every guided group at the ticket office window.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_ticket",
+      "image": null
+    },
+    {
+      "id": "p_driver",
+      "role": "witness",
+      "name": "Njeru Mbogo",
+      "age": 44,
+      "occupation": "School bus driver",
+      "statementOnly": true,
+      "bio": "Drove the Nakuru school trip.",
+      "community": "Embu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_leah_left"
+      },
+      "at": "plc_bus",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_ruin",
+      "name": "Courtyard of the ruined house",
+      "within": "loc_ruin"
+    },
+    {
+      "id": "plc_port",
+      "name": "Cruise terminal and Haller Park"
+    },
+    {
+      "id": "plc_curio",
+      "name": "Pius's curio shop"
+    },
+    {
+      "id": "plc_bus",
+      "name": "School bus park and the walk back to it"
+    },
+    {
+      "id": "plc_ticket",
+      "name": "Fort Jesus ticket office"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_ruin",
+      "name": "Ruined house between Fort Jesus and the Leven Steps",
+      "kind": "scene",
+      "description": "A roofless coral-stone house, its rooms open to the sky, used by guides as a shortcut down to the Leven Steps and the water. Loose stones everywhere. The walls of Fort Jesus rise just beyond.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The courtyard",
+          "pos": [
+            50,
+            62
+          ],
+          "yields": "ev_body",
+          "text": "Nuru lies in the courtyard. A loose block of coral stone is beside her. Her guide's badge is still around her neck."
+        },
+        {
+          "id": "hs_coin",
+          "label": "In the dust",
+          "pos": [
+            62,
+            74
+          ],
+          "yields": "ev_coin",
+          "text": "A small coin glints in the dust. An old date is stamped on it: 1503."
+        },
+        {
+          "id": "hs_bag",
+          "label": "Her bag",
+          "pos": [
+            42,
+            56
+          ],
+          "yields": "ev_nuru_phone",
+          "text": "Her bag, and her phone in it. Her mother is on her way with the code."
+        },
+        {
+          "id": "hs_letter",
+          "label": "In her bag",
+          "pos": [
+            38,
+            60
+          ],
+          "yields": "ev_letter",
+          "text": "A typed letter on the guides' association letterhead."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the roofless courtyard of a ruined coral-stone house in Mombasa Old Town in late afternoon, crumbling walls open to the sky, loose blocks of coral stone, the massive ochre walls of Fort Jesus visible beyond, no people in focus"
+      }
+    },
+    {
+      "id": "loc_fort",
+      "name": "Fort Jesus ticket office",
+      "kind": "location",
+      "description": "Licensed guides meet their groups here. Every group is written into the register at the window.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_register",
+          "label": "Group register",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_register",
+          "text": "Swabri turns the register round so Amani can read it."
+        },
+        {
+          "id": "hs_swabri",
+          "label": "Ticket window",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_tips",
+          "text": "Swabri Hemed, behind his glass."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the ticket office window outside Fort Jesus in Mombasa, a queue of school children in uniform, tour guides with badges, a register book on the counter"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body in the courtyard",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Struck with a loose block of coral stone."
+      },
+      "facts": [
+        "f_body_stone"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a block of coral stone lying in the dust of a ruined courtyard, a dropped wide-brimmed sun hat and a laminated map nearby, no body visible"
+      }
+    },
+    {
+      "id": "ev_coin",
+      "type": "physical",
+      "title": "A \"1503\" coin",
+      "render": "object",
+      "body": {
+        "label": "A \"Portuguese coin\" dated 1503. Under magnification: a thin mould seam around the edge. A genuine struck coin has none."
+      },
+      "facts": [
+        "f_coin"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a dull metal coin stamped with the date 1503 under a magnifying glass, a thin raised mould seam visible all round its edge"
+      }
+    },
+    {
+      "id": "ev_register",
+      "type": "document",
+      "title": "Fort group register",
+      "render": "visitorRegister",
+      "body": {
+        "rows": [
+          {
+            "group": "#14 — Nakuru school, 38 pupils",
+            "time": "15:00",
+            "guide": "B. Shikuku"
+          },
+          {
+            "note": "15:55, another hand: \"Guide changed: N. Kombo\""
+          }
+        ]
+      },
+      "facts": [
+        "f_register"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_leah",
+      "type": "witness",
+      "title": "Statement and photos: Leah Wawira",
+      "render": "statement",
+      "body": {
+        "speaker": "p_leah"
+      },
+      "facts": [
+        "f_leah_left",
+        "f_leah_photo"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_nuru_phone",
+      "type": "phone",
+      "title": "Nuru's phone (unlocked by her mother)",
+      "render": "smsThread",
+      "body": {
+        "messages": [
+          {
+            "time": "16:36",
+            "to": "Bramwel",
+            "text": "Tukutane kwa nyumba bovu, tuongee kama watu wazima."
+          },
+          {
+            "time": "16:37",
+            "from": "Bramwel",
+            "text": "Sawa."
+          }
+        ]
+      },
+      "facts": [
+        "f_nuru_sms"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_letter",
+      "type": "document",
+      "title": "Notice of disciplinary hearing",
+      "render": "form",
+      "body": {
+        "text": "Guides' association. Notice of disciplinary hearing: B. Shikuku. Sale of counterfeit antiquities to tourists. Saturday 4 October."
+      },
+      "facts": [
+        "f_letter"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Bramwel Shikuku's line",
+      "render": "pesapapStatement",
+      "body": {
+        "masts": "Leven / Old Town East 16:05–16:58.",
+        "pesapap": "16:50 — KSh 18,000 received from a tourist, ref \"coins x3\". Earlier this year: commission payments to and from Pius Wanyama, both ways, settled."
+      },
+      "facts": [
+        "f_rec_mast",
+        "f_rec_sale",
+        "f_rec_commission"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_nuru_sms"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_bag",
+      "type": "physical",
+      "title": "Bramwel's shoulder bag",
+      "render": "object",
+      "body": {
+        "label": "Six more \"1503\" coins, each with the same mould seam."
+      },
+      "facts": [
+        "f_bag"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_cruise",
+      "type": "document",
+      "title": "Cruise tour manifest",
+      "render": "manifest",
+      "body": {
+        "guide": "A. Rashid",
+        "group": "40 cruise passengers",
+        "time": "14:30–18:00",
+        "route": "Cruise terminal, Haller Park"
+      },
+      "facts": [
+        "f_cruise"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_pius",
+      "type": "physical",
+      "title": "Pius's sales book",
+      "render": "tallyBook",
+      "body": {
+        "rows": [
+          {
+            "time": "16:10"
+          },
+          {
+            "time": "16:32"
+          },
+          {
+            "time": "16:55"
+          }
+        ]
+      },
+      "facts": [
+        "f_pius"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tips",
+      "type": "witness",
+      "title": "Statement: Swabri Hemed",
+      "render": "statement",
+      "body": {
+        "speaker": "p_swabri"
+      },
+      "facts": [
+        "f_tips",
+        "f_swabri_athumani",
+        "f_swabri_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_busdriver",
+      "type": "witness",
+      "title": "Phone statement: Njeru Mbogo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_driver",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_leah_bus"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Licensed guide Nuru Kombo was found dead at 17:20 in the courtyard of the ruined house between Fort Jesus and the Leven Steps.",
+      "kind": "true",
+      "about": [
+        "p_nuru",
+        "plc_ruin"
+      ]
+    },
+    {
+      "id": "f_body_stone",
+      "text": "Nuru was struck with a loose block of coral stone.",
+      "kind": "true",
+      "about": [
+        "p_nuru",
+        "plc_ruin"
+      ]
+    },
+    {
+      "id": "f_coin",
+      "text": "A \"1503 Portuguese coin\" in the dust. Under magnification it has a mould seam round its edge: it was cast, not struck. A fake.",
+      "kind": "true",
+      "about": [
+        "plc_ruin",
+        "ev_coin"
+      ]
+    },
+    {
+      "id": "f_register",
+      "text": "Fort register: group #14, Nakuru school, 38 pupils, 15:00, guide 'B. Shikuku'. At 15:55, in another hand: 'Guide changed: N. Kombo'.",
+      "kind": "true",
+      "about": [
+        "p_bramwel",
+        "p_nuru"
+      ]
+    },
+    {
+      "id": "f_leah_left",
+      "text": "Leah: Bramwel left the group at the bastions at about 15:55, saying a colleague would finish. Nuru took them to 16:35, then said she had to \"meet someone to sort something out\".",
+      "kind": "true",
+      "about": [
+        "p_leah",
+        "p_bramwel",
+        "p_nuru"
+      ]
+    },
+    {
+      "id": "f_leah_photo",
+      "text": "Leah's phone photo at 16:20: Nuru with the group on the ramparts. No Bramwel.",
+      "kind": "true",
+      "about": [
+        "p_leah",
+        "p_nuru"
+      ]
+    },
+    {
+      "id": "f_leah_bus",
+      "text": "Njeru Mbogo: Leah and the 38 pupils walked back to the bus from 16:35 and boarded at 17:15. She counted them twice.",
+      "kind": "true",
+      "about": [
+        "p_driver",
+        "p_leah"
+      ],
+      "where": {
+        "person": "p_leah",
+        "place": "plc_bus",
+        "from": "16:35",
+        "to": "17:15"
+      }
+    },
+    {
+      "id": "f_nuru_sms",
+      "text": "Nuru's phone, 16:36, to 'Bramwel': 'Tukutane kwa nyumba bovu, tuongee kama watu wazima.' (Let's meet at the ruined house and talk like adults.) Reply at 16:37: 'Sawa.'",
+      "kind": "true",
+      "about": [
+        "p_nuru",
+        "p_bramwel"
+      ]
+    },
+    {
+      "id": "f_letter",
+      "text": "Guides' association: notice of disciplinary hearing, B. Shikuku, 'sale of counterfeit antiquities to tourists', Saturday 4 October. Reported by N. Kombo.",
+      "kind": "true",
+      "about": [
+        "p_bramwel",
+        "p_nuru"
+      ]
+    },
+    {
+      "id": "f_rec_mast",
+      "text": "Records, Bramwel's line: on the Leven / Old Town East mast 16:05–16:58.",
+      "kind": "true",
+      "about": [
+        "p_bramwel"
+      ]
+    },
+    {
+      "id": "f_rec_sale",
+      "text": "PesaPap, Bramwel's line: 16:50, KSh 18,000 received from a tourist, reference 'coins x3'.",
+      "kind": "true",
+      "about": [
+        "p_bramwel"
+      ]
+    },
+    {
+      "id": "f_rec_commission",
+      "text": "PesaPap, Bramwel's line: commission payments to and from Pius Wanyama earlier this year, both ways, all settled.",
+      "kind": "true",
+      "about": [
+        "p_bramwel",
+        "p_pius"
+      ]
+    },
+    {
+      "id": "f_bag",
+      "text": "Bramwel's shoulder bag: six more '1503' coins, each with the same mould seam.",
+      "kind": "true",
+      "about": [
+        "p_bramwel"
+      ]
+    },
+    {
+      "id": "f_cruise",
+      "text": "Cruise manifest: Athumani Rashid guided 40 passengers from 14:30 to 18:00 at the cruise terminal and Haller Park.",
+      "kind": "true",
+      "about": [
+        "p_athumani"
+      ],
+      "where": {
+        "person": "p_athumani",
+        "place": "plc_port",
+        "from": "14:30",
+        "to": "18:00"
+      }
+    },
+    {
+      "id": "f_pius",
+      "text": "Pius's sales book: sales in his curio shop at 16:10, 16:32 and 16:55.",
+      "kind": "true",
+      "about": [
+        "p_pius"
+      ],
+      "where": {
+        "person": "p_pius",
+        "place": "plc_curio",
+        "from": "16:10",
+        "to": "16:55"
+      }
+    },
+    {
+      "id": "f_tips",
+      "text": "Swabri: guides split tips through the association, written up weekly. \"Nobody fights over tips here. It's all written.\"",
+      "kind": "true",
+      "about": [
+        "p_swabri"
+      ]
+    },
+    {
+      "id": "f_swabri_athumani",
+      "text": "Swabri: Athumani Rashid lost this year's cruise-ship contract to Nuru's group. \"He took it hard.\"",
+      "kind": "true",
+      "about": [
+        "p_swabri",
+        "p_athumani"
+      ]
+    },
+    {
+      "id": "f_swabri_self",
+      "text": "Swabri was at the ticket-office window all afternoon, registering groups.",
+      "kind": "true",
+      "about": [
+        "p_swabri"
+      ],
+      "where": {
+        "person": "p_swabri",
+        "place": "plc_ticket",
+        "from": "14:00",
+        "to": "18:00"
+      }
+    },
+    {
+      "id": "f_bram_group",
+      "text": "Bramwel: \"I guided the Nakuru group from three until five. I never left them.\"",
+      "kind": "lie",
+      "about": [
+        "p_bramwel"
+      ]
+    },
+    {
+      "id": "f_bram_copies",
+      "text": "Bramwel: \"Those coins are souvenirs. I tell people they're copies.\"",
+      "kind": "claim",
+      "about": [
+        "p_bramwel"
+      ]
+    },
+    {
+      "id": "f_bram_admits",
+      "text": "Bramwel admits he left the group, and met Nuru at the ruined house at about quarter to five. He says she wouldn't take money to drop the complaint, and he left her standing there.",
+      "kind": "true",
+      "about": [
+        "p_bramwel",
+        "plc_ruin"
+      ],
+      "where": {
+        "person": "p_bramwel",
+        "place": "plc_ruin",
+        "from": "16:45",
+        "to": "16:48"
+      }
+    },
+    {
+      "id": "f_athumani_claim",
+      "text": "Athumani: \"I was at the port with a cruise group.\"",
+      "kind": "claim",
+      "about": [
+        "p_athumani"
+      ]
+    },
+    {
+      "id": "f_athumani_contract",
+      "text": "Athumani: \"I lost the contract fairly. She was better.\"",
+      "kind": "true",
+      "about": [
+        "p_athumani",
+        "p_nuru"
+      ]
+    },
+    {
+      "id": "f_pius_claim",
+      "text": "Pius: \"I sell to guides. What they say to tourists is their business.\"",
+      "kind": "claim",
+      "about": [
+        "p_pius"
+      ]
+    },
+    {
+      "id": "f_pius_replicas",
+      "text": "Pius admits he sells the coins to Bramwel \"as replicas\". \"He says he owes me nothing, and he doesn't.\"",
+      "kind": "true",
+      "about": [
+        "p_pius",
+        "p_bramwel"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_bramwel",
+      "stance": "cooperative",
+      "intro": "Bramwel meets Amani outside the Fort with a group of tourists waiting behind him. \"Nuru? No. No, I was with her group this afternoon.\"",
+      "claims": [
+        "f_bram_group",
+        "f_bram_copies"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_letter",
+          "reply": "Jealousy. She wanted my clients. The association listens to her because she's the secretary.",
+          "reveals": []
+        },
+        {
+          "about": "ev_coin",
+          "reply": "He empties his shoulder bag on a bench without being asked. \"Souvenirs. Copies. Everybody knows.\"",
+          "reveals": [
+            "ev_bag"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_athumani",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_letter"
+      ],
+      "intro": "Athumani takes the call at the cruise terminal, forty passengers queuing behind him. \"Nuru? Allah. What happened?\"",
+      "claims": [
+        "f_athumani_claim"
+      ],
+      "yields": [
+        "ev_cruise"
+      ],
+      "topics": [
+        {
+          "about": "f_swabri_athumani",
+          "reply": "I lost the contract fairly. She was better. I told her so at the meeting.",
+          "reveals": [
+            "f_athumani_contract"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_pius",
+      "stance": "cooperative",
+      "intro": "Pius polishes a brass coin on his cardigan sleeve. \"I sell to guides. What they tell the tourists is their business.\"",
+      "claims": [
+        "f_pius_claim"
+      ],
+      "yields": [
+        "ev_pius"
+      ],
+      "topics": [
+        {
+          "about": "ev_coin",
+          "reply": "I sell them as replicas. Replicas. He pays me, I pay him, we're square. He owes me nothing.",
+          "reveals": [
+            "f_pius_replicas"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_leah",
+      "stance": "cooperative",
+      "intro": "Leah answers from the school bus, thirty-eight children singing behind her. \"The guide lady? Oh no. Oh no.\"",
+      "claims": [],
+      "yields": [
+        "ev_leah"
+      ],
+      "topics": [
+        {
+          "about": "p_bramwel",
+          "reply": "He left us at the bastions, about five to four, and said a colleague would finish. Then she came. She was wonderful with the children.",
+          "reveals": []
+        },
+        {
+          "about": "p_driver",
+          "reply": "Ask Mr Mbogo, our driver. We walked straight back to him.",
+          "reveals": [
+            "ev_busdriver"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_swabri",
+      "stance": "cooperative",
+      "intro": "Swabri taps the register. \"Every group, every guide, every change. I write it down.\"",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_bram_group",
+      "claim": "f_bram_group",
+      "brokenBy": [
+        "f_register",
+        "f_leah_photo",
+        "f_leah_left"
+      ],
+      "reveals": [
+        "f_bram_admits"
+      ],
+      "reaction": "I had to meet a buyer. Nuru took over. Then she texted me, and I went. Quarter to five. I offered her money to drop the complaint. She laughed. I left her standing there.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_bramwel",
+      "text": "Bramwel Shikuku",
+      "category": "person",
+      "ref": "p_bramwel",
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "w_athumani",
+      "text": "Athumani Rashid",
+      "category": "person",
+      "ref": "p_athumani",
+      "unlock": {
+        "anyOf": [
+          "f_swabri_athumani"
+        ]
+      }
+    },
+    {
+      "id": "w_pius",
+      "text": "Pius Wanyama",
+      "category": "person",
+      "ref": "p_pius",
+      "unlock": {
+        "anyOf": [
+          "f_rec_commission",
+          "f_pius_claim"
+        ]
+      }
+    },
+    {
+      "id": "w_leah",
+      "text": "Leah Wawira",
+      "category": "person",
+      "ref": "p_leah",
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "w_swabri",
+      "text": "Swabri Hemed",
+      "category": "person",
+      "ref": "p_swabri",
+      "unlock": {
+        "anyOf": [
+          "f_ob_found"
+        ]
+      }
+    },
+    {
+      "id": "m_fakes",
+      "text": "she'd reported him for selling fake antiques to tourists",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_letter"
+        ]
+      }
+    },
+    {
+      "id": "m_cruise",
+      "text": "competition for the cruise-ship contract",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_swabri_athumani"
+        ]
+      }
+    },
+    {
+      "id": "m_tips",
+      "text": "a dispute over shared tips",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_tips"
+        ]
+      }
+    },
+    {
+      "id": "m_takeover",
+      "text": "she'd taken over his tour group",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_register"
+        ]
+      }
+    },
+    {
+      "id": "m_commission",
+      "text": "an unpaid commission",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_pius_replicas"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} because {why}.",
+    "fixed": {
+      "victim": "Nuru Kombo"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_bramwel"
+          }
+        ],
+        "prosecutor": {
+          "pass": "He left his group, said \"sawa\" to her message, and dropped one of his own fakes beside her. That will hold.",
+          "fail": [
+            "Doesn't hold up. The man who lost the cruise contract had forty passengers watching him. Who answered her message?",
+            "No. Read the register: who handed the group over at five to four?"
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_fakes"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A coin with a mould seam, a hearing next Saturday, and the secretary who reported him. Clean.",
+          "fail": [
+            "He did it. But he asked her to take the group. That isn't why.",
+            "Commissions settled, tips written up. Read the letter in her bag."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_ruin",
+      "from": "16:40",
+      "to": "16:50",
+      "within": [
+        "plc_ruin"
+      ]
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_bram_group",
+          "f_register",
+          "f_leah_left",
+          "f_leah_photo"
+        ],
+        "concludes": "Bramwel didn't guide the group until five: he handed it to Nuru at 15:55. She finished at 16:35 and left to meet someone."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_nuru_sms",
+          "f_rec_mast",
+          "f_bram_admits"
+        ],
+        "concludes": "At 16:36 Nuru asked Bramwel to meet at the ruined house; he said \"sawa\", and his phone was in that zone from 16:05 to 16:58. Pressed, he admits meeting her there at quarter to five."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_coin",
+          "f_bag",
+          "f_letter"
+        ],
+        "concludes": "The mould-cast \"1503\" coin beside her matches the six in his bag, and Nuru had reported him for selling exactly those coins. Bramwel Shikuku killed her.",
+        "answers": [
+          "who",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_athumani",
+        "blank": "who",
+        "by": [
+          "f_cruise"
+        ],
+        "why": "Athumani was guiding forty cruise passengers at the port and Haller Park from 14:30 to 18:00."
+      },
+      {
+        "word": "w_pius",
+        "blank": "who",
+        "by": [
+          "f_pius"
+        ],
+        "why": "Pius was selling in his curio shop at 16:10, 16:32 and 16:55."
+      },
+      {
+        "word": "w_leah",
+        "blank": "who",
+        "by": [
+          "f_leah_bus"
+        ],
+        "why": "Leah was walking 38 pupils back to their bus from 16:35, boarding at 17:15."
+      },
+      {
+        "word": "w_swabri",
+        "blank": "who",
+        "by": [
+          "f_swabri_self"
+        ],
+        "why": "Swabri was at the ticket-office window all afternoon."
+      },
+      {
+        "word": "m_cruise",
+        "blank": "why",
+        "by": [
+          "f_swabri_athumani",
+          "f_cruise"
+        ],
+        "why": "The cruise contract was Athumani's loss, and Athumani was at the port."
+      },
+      {
+        "word": "m_tips",
+        "blank": "why",
+        "by": [
+          "f_tips"
+        ],
+        "why": "Tips are split through the association and written up weekly."
+      },
+      {
+        "word": "m_takeover",
+        "blank": "why",
+        "by": [
+          "f_leah_left"
+        ],
+        "why": "He asked her to take the group."
+      },
+      {
+        "word": "m_commission",
+        "blank": "why",
+        "by": [
+          "f_rec_commission"
+        ],
+        "why": "The commissions between him and Pius were paid both ways and settled."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Tourists complain of \"1503 Portuguese coins\" that turn out to be cast in a mould. Nuru, the association's secretary, reports Bramwel. The hearing is set for Saturday week.",
+        "image": null
+      },
+      {
+        "text": "15:00. Bramwel takes the Nakuru school group. At 15:55 he asks Nuru to finish it for him: something urgent.",
+        "image": "loc_ruin"
+      },
+      {
+        "text": "16:36. Nuru texts him: meet at the ruined house, talk like adults. \"Sawa.\"",
+        "image": null
+      },
+      {
+        "text": "About 16:45 in the courtyard he offers her money to withdraw the complaint. She laughs. A loose coral stone. One of his coins falls from his pocket.",
+        "image": null
+      },
+      {
+        "text": "16:50, a few lanes away, he sells three coins to a tourist for KSh 18,000.",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_register",
+        "line": "Every group is written down at the ticket window. Who handed group fourteen to whom, and when?"
+      },
+      "tier2": {
+        "facts": [
+          "f_nuru_sms",
+          "f_coin"
+        ],
+        "line": "She asked him to meet at the ruined house. He said sawa. What did he leave behind?"
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_letter",
+        "line": "Read the letter in her bag."
+      },
+      "tier2": {
+        "facts": [
+          "f_letter",
+          "f_bag"
+        ],
+        "line": "A hearing about fake antiquities, and a bag of fakes."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "nyumba bovu",
+      "def": "Ruined house."
+    },
+    {
+      "term": "tukutane",
+      "def": "Let's meet."
+    },
+    {
+      "term": "watu wazima",
+      "def": "Adults; literally \"whole people\"."
+    },
+    {
+      "term": "sawa",
+      "def": "Okay."
+    },
+    {
+      "term": "kofia",
+      "def": "Embroidered cap, often worn by Muslim men."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "fakeAsEvidence"
+    ],
+    "beatNotes": "A fake as evidence: the comparison view shows a mould seam on the coin, the first time the falseness of an object is the clue. Foreshadows region 7's forged documents."
+  }
+}

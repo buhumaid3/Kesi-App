@@ -1,0 +1,1127 @@
+{
+  "meta": {
+    "id": "case-019",
+    "number": 19,
+    "region": "eastlands",
+    "regionNumber": 2,
+    "title": "Jua Kali",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 15,
+    "date": "Monday 21 July",
+    "folderTab": "KAMUKUNJI"
+  },
+  "pattern": {
+    "crimePattern": "losing bidder kills the artisan who won a county tender",
+    "noRealCaseRetold": true,
+    "notes": "Fictional businesses in the real Kamukunji jua kali sheds. County tender process shown in outline only.",
+    "tags": [
+      "blunt-force",
+      "business-rivalry",
+      "tool-marks",
+      "warrant"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 3,
+    "redHerrings": 0,
+    "liars": 1,
+    "groups": [
+      "who"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness"
+    ],
+    "gatedActions": [
+      "warrant"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 22/21/07",
+    "date": "Monday 21 July",
+    "time": "15:24",
+    "reportedBy": "Fidel Okumu, metalworker, Moto Safi Jikos, Kamukunji",
+    "text": "Fidel Okumu, a metalworker, reports that his employer, Wanjiku Ngugi (41), maker of energy-saving cookstoves, was found dead in her shed at the Kamukunji jua kali sheds at 15:12, when he returned from a delivery.",
+    "facts": [
+      "f_ob_found"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_wanjiku",
+      "role": "victim",
+      "name": "Wanjiku Ngugi",
+      "age": 41,
+      "occupation": "Owner, Moto Safi Jikos",
+      "bio": "Makes energy-saving charcoal jikos. Last month she won a county tender to supply 500 stoves to schools.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_shed",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 40s, welding goggles pushed up on a headscarf, soot on her cheek, a leather apron over overalls, proud and capable, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_benson",
+      "role": "suspect",
+      "name": "Benson Okiror",
+      "age": 53,
+      "occupation": "Rival jiko maker, two sheds down",
+      "bio": "Thirty years at Kamukunji. Lost the county tender to Wanjiku and lodged an appeal at City Hall.",
+      "community": "Teso",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_tender_board"
+      },
+      "at": "loc_benson",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 50s, thick forearms, a sleeveless vest over a work shirt, a hammer hanging from a loop on his belt, hard set jaw, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_gitau",
+      "role": "suspect",
+      "name": "Gitau Mwaura",
+      "age": 46,
+      "occupation": "Wanjiku's husband",
+      "bio": "Borrowed against her tender advance without asking her.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_advance"
+      },
+      "at": "plc_clinic",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, office shirt and tie loosened, a small girl's pink school bag over one shoulder, ashamed, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_fidel",
+      "role": "suspect",
+      "name": "Fidel Okumu",
+      "age": 26,
+      "occupation": "Her employee",
+      "bio": "Has worked for Wanjiku for three years. She docked his pay last week for a spoiled batch.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_delivery",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan young man, mid 20s, sweat-stained T-shirt, metal filings on his forearms, a delivery note book in his back pocket, shocked, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_simeon",
+      "role": "witness",
+      "name": "Simeon Wachira",
+      "age": 62,
+      "occupation": "Old fundi in the next shed",
+      "bio": "Forty years at the anvil. Can tell whose hammer made a dent by looking at it.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_simeon",
+      "image": null
+    },
+    {
+      "id": "p_edwin",
+      "role": "witness",
+      "name": "Edwin Koech",
+      "age": 35,
+      "occupation": "Clerk, county procurement office",
+      "statementOnly": true,
+      "bio": "Handles tender appeals at City Hall.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_appeal"
+      },
+      "at": "plc_cityhall",
+      "image": null
+    },
+    {
+      "id": "p_samwel",
+      "role": "witness",
+      "name": "Samwel Marwa",
+      "age": 44,
+      "occupation": "School bursar's driver",
+      "statementOnly": true,
+      "bio": "Drives for a school in Kariobangi. Collected a sample stove from Wanjiku at 14:00.",
+      "community": "Kuria",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_jobcard"
+      },
+      "at": "loc_shed",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_simeon",
+      "name": "Simeon's shed, next door"
+    },
+    {
+      "id": "plc_cityhall",
+      "name": "County procurement office, City Hall"
+    },
+    {
+      "id": "plc_clinic",
+      "name": "Umoja Health Centre"
+    },
+    {
+      "id": "plc_delivery",
+      "name": "Delivery run to a school in Kariobangi"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_shed",
+      "name": "Moto Safi Jikos, Kamukunji jua kali sheds",
+      "kind": "scene",
+      "description": "Rows of open tin-roofed sheds and the noise of a hundred hammers. Wanjiku's shed: an anvil with a half-finished stove on it, sheet-metal offcuts, a wall of tools on hooks, a tender board nailed to a post.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "By the anvil",
+          "pos": [
+            40,
+            66
+          ],
+          "yields": "ev_body",
+          "text": "Wanjiku lies beside her anvil. There is no hammer near her. Her own hammer hangs on its hook on the wall, clean."
+        },
+        {
+          "id": "hs_stove",
+          "label": "Stove on the anvil",
+          "pos": [
+            48,
+            48
+          ],
+          "yields": "ev_stove",
+          "text": "A half-finished jiko. Its sides are covered in fresh dents. Look closely at the middle of each one."
+        },
+        {
+          "id": "hs_board",
+          "label": "Tender board",
+          "pos": [
+            76,
+            26
+          ],
+          "yields": "ev_tender",
+          "text": "A county notice nailed to the post, and a note pinned under it."
+        },
+        {
+          "id": "hs_ledger",
+          "label": "Exercise book on the bench",
+          "pos": [
+            24,
+            40
+          ],
+          "yields": "ev_advance",
+          "text": "Her accounts book. The last page is underlined twice."
+        },
+        {
+          "id": "hs_jobcard",
+          "label": "Job card on a nail",
+          "pos": [
+            16,
+            30
+          ],
+          "yields": "ev_jobcard",
+          "text": "Today's job card: what went out, to whom, and when."
+        },
+        {
+          "id": "hs_simeon",
+          "label": "Next shed",
+          "pos": [
+            92,
+            54
+          ],
+          "yields": "ev_simeon",
+          "text": "Simeon Wachira has stopped hammering for the first time anyone can remember."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the Kamukunji jua kali metalwork sheds in Nairobi at midday, rows of open tin-roofed workshops, sparks and sheet-metal offcuts, an anvil with a half-finished round charcoal cookstove covered in dents, tools on hooks, no people in focus"
+      }
+    },
+    {
+      "id": "loc_benson",
+      "name": "Okiror's shed (search)",
+      "kind": "search",
+      "description": "Two sheds down. Stacks of finished jikos, a forge still warm, and a steel toolbox with a heavy padlock.",
+      "unlock": {
+        "fact": "f_simeon_saw"
+      },
+      "hotspots": [
+        {
+          "id": "hs_toolbox",
+          "label": "Locked toolbox",
+          "pos": [
+            50,
+            64
+          ],
+          "yields": "ev_toolbox",
+          "text": "A steel toolbox, padlocked. Benson keeps the key on his belt."
+        },
+        {
+          "id": "hs_jikos",
+          "label": "Finished jikos",
+          "pos": [
+            20,
+            40
+          ],
+          "text": "Good, solid stoves. Better than good. He has been doing this for thirty years."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a metalworker's open shed with a warm forge, stacks of finished round charcoal cookstoves, a heavy padlocked steel toolbox on the floor"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body by the anvil",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Struck with a hammer. No hammer at the scene. Her own hammer on its hook, clean."
+      },
+      "facts": [
+        "f_body",
+        "f_ownhammer"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the floor of a metalwork shed beside an anvil, sheet-metal offcuts scattered, a row of tools on wall hooks with one clean hammer hanging in place, no body visible"
+      }
+    },
+    {
+      "id": "ev_stove",
+      "type": "physical",
+      "title": "The dented stove",
+      "render": "object",
+      "body": {
+        "label": "Fresh dents on every side. In the middle of each dent, a small X-shaped mark."
+      },
+      "facts": [
+        "f_stove_x"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "close-up of the side of a half-finished round sheet-metal charcoal cookstove covered in fresh hammer dents, each dent with a tiny X-shaped mark at its centre, under a magnifying glass"
+      }
+    },
+    {
+      "id": "ev_tender",
+      "type": "physical",
+      "title": "Tender board",
+      "render": "board",
+      "body": {
+        "notice": "County tender: 500 energy-saving jikos for schools — AWARDED: Moto Safi Jikos (W. Ngugi).",
+        "note": "Pinned under it: \"APPEAL LODGED — B. Okiror. Hearing Monday, City Hall.\""
+      },
+      "facts": [
+        "f_tender_board"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_advance",
+      "type": "physical",
+      "title": "Wanjiku's accounts book",
+      "render": "ledger",
+      "body": {
+        "line": "Tender advance KSh 200,000 — WITHDRAWN by G. Mwaura without my signature!!"
+      },
+      "facts": [
+        "f_advance"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_jobcard",
+      "type": "physical",
+      "title": "Job card",
+      "render": "jobBook",
+      "body": {
+        "rows": [
+          {
+            "time": "13:50",
+            "entry": "20 stoves to Kariobangi school — Fidel, handcart"
+          },
+          {
+            "time": "14:00",
+            "entry": "Sample stove collected by school driver S. Marwa"
+          }
+        ]
+      },
+      "facts": [
+        "f_jobcard"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_simeon",
+      "type": "witness",
+      "title": "Statement: Simeon Wachira",
+      "render": "statement",
+      "body": {
+        "speaker": "p_simeon"
+      },
+      "facts": [
+        "f_simeon_marks",
+        "f_simeon_saw",
+        "f_simeon_fidel",
+        "f_simeon_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_customer",
+      "type": "witness",
+      "title": "Phone statement: Samwel Marwa",
+      "render": "statement",
+      "body": {
+        "speaker": "p_samwel",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_customer"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_appeal",
+      "type": "physical",
+      "title": "Appeal dismissal letter",
+      "render": "form",
+      "body": {
+        "from": "County procurement office",
+        "date": "today",
+        "text": "Appeal by B. Okiror against the award of the school jiko tender: DISMISSED.",
+        "contact": "Clerk: E. Koech"
+      },
+      "facts": [
+        "f_appeal"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_cityhall",
+      "type": "physical",
+      "title": "City Hall visitor register",
+      "render": "visitorRegister",
+      "body": {
+        "rows": [
+          {
+            "name": "B. Okiror",
+            "in": "12:10",
+            "out": "13:40"
+          }
+        ]
+      },
+      "facts": [
+        "f_cityhall",
+        "f_edwin_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_toolbox",
+      "type": "physical",
+      "title": "Okiror's hammer",
+      "render": "object",
+      "body": {
+        "label": "Benson's hammer: a chip in the face shaped like an X. Wiped, but fresh metal shavings packed into the chip."
+      },
+      "facts": [
+        "f_toolbox"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_simeon_saw"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "the striking face of a heavy blacksmith hammer seen end-on under a magnifier, an X-shaped chip in the steel face packed with bright fresh metal shavings"
+      }
+    },
+    {
+      "id": "ev_clinic",
+      "type": "physical",
+      "title": "Daughter's clinic card",
+      "render": "form",
+      "body": {
+        "clinic": "Umoja Health Centre",
+        "in": "13:30",
+        "out": "15:30",
+        "with": "father, G. Mwaura"
+      },
+      "facts": [
+        "f_clinic"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_delivery",
+      "type": "physical",
+      "title": "Fidel's delivery note",
+      "render": "receipt",
+      "body": {
+        "goods": "20 jikos",
+        "to": "School, Kariobangi",
+        "signed": "Bursar, 14:35"
+      },
+      "facts": [
+        "f_delivery"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Fidel Okumu found his employer Wanjiku Ngugi dead in her shed at 15:12, when he came back from a delivery.",
+      "kind": "true",
+      "about": [
+        "p_wanjiku",
+        "p_fidel",
+        "loc_shed"
+      ]
+    },
+    {
+      "id": "f_body",
+      "text": "Wanjiku was struck with a hammer. There is no hammer at the scene.",
+      "kind": "true",
+      "about": [
+        "p_wanjiku",
+        "loc_shed"
+      ]
+    },
+    {
+      "id": "f_ownhammer",
+      "text": "Her own hammer hangs on its hook on the wall, clean.",
+      "kind": "true",
+      "about": [
+        "loc_shed"
+      ]
+    },
+    {
+      "id": "f_stove_x",
+      "text": "The half-finished stove on her anvil has fresh dents, each with a small X-shaped mark in the middle.",
+      "kind": "true",
+      "about": [
+        "ev_stove"
+      ]
+    },
+    {
+      "id": "f_tender_board",
+      "text": "Tender board: 500 jikos for schools awarded to Moto Safi Jikos. Pinned under it: 'APPEAL LODGED — B. Okiror. Hearing Monday, City Hall.'",
+      "kind": "true",
+      "about": [
+        "p_benson",
+        "p_wanjiku"
+      ]
+    },
+    {
+      "id": "f_advance",
+      "text": "Her accounts book: 'Tender advance KSh 200,000 — WITHDRAWN by G. Mwaura without my signature!!'",
+      "kind": "true",
+      "about": [
+        "p_gitau",
+        "p_wanjiku"
+      ]
+    },
+    {
+      "id": "f_jobcard",
+      "text": "Job card: '13:50 — 20 stoves to Kariobangi school — Fidel, handcart.' '14:00 — sample stove collected by school driver S. Marwa.'",
+      "kind": "true",
+      "about": [
+        "p_fidel",
+        "p_samwel"
+      ]
+    },
+    {
+      "id": "f_simeon_marks",
+      "text": "Simeon: \"Every hammer wears its own face. An X like that is a chipped face. Okiror chipped his on a rivet last year and never ground it down.\"",
+      "kind": "true",
+      "about": [
+        "p_simeon",
+        "p_benson",
+        "ev_stove"
+      ]
+    },
+    {
+      "id": "f_simeon_saw",
+      "text": "Simeon: at about 14:20 he saw Benson walk into Wanjiku's shed with his hammer in his hand, \"like a man going to fix something\". Then shouting.",
+      "kind": "true",
+      "about": [
+        "p_simeon",
+        "p_benson"
+      ],
+      "where": {
+        "person": "p_benson",
+        "place": "loc_shed",
+        "from": "14:20",
+        "to": "14:22"
+      }
+    },
+    {
+      "id": "f_simeon_fidel",
+      "text": "Simeon: Fidel left with the handcart of stoves at 13:50 and came back at 15:10.",
+      "kind": "true",
+      "about": [
+        "p_simeon",
+        "p_fidel"
+      ],
+      "where": {
+        "person": "p_fidel",
+        "place": "plc_delivery",
+        "from": "13:50",
+        "to": "15:10"
+      }
+    },
+    {
+      "id": "f_simeon_self",
+      "text": "Simeon was at his own anvil all afternoon with his two apprentices.",
+      "kind": "true",
+      "about": [
+        "p_simeon"
+      ],
+      "where": {
+        "person": "p_simeon",
+        "place": "plc_simeon",
+        "from": "12:00",
+        "to": "16:00"
+      }
+    },
+    {
+      "id": "f_customer",
+      "text": "Samwel Marwa: he collected a sample stove from Wanjiku at 14:00. She was fine, joking about the 500.",
+      "kind": "true",
+      "about": [
+        "p_samwel",
+        "p_wanjiku"
+      ]
+    },
+    {
+      "id": "f_appeal",
+      "text": "Letter from the county procurement office, dated today: Benson Okiror's appeal against the tender award is dismissed. Clerk: E. Koech.",
+      "kind": "true",
+      "about": [
+        "p_benson",
+        "p_edwin"
+      ]
+    },
+    {
+      "id": "f_cityhall",
+      "text": "City Hall visitor register: 'B. Okiror — in 12:10 — out 13:40.'",
+      "kind": "true",
+      "about": [
+        "p_benson"
+      ],
+      "where": {
+        "person": "p_benson",
+        "place": "plc_cityhall",
+        "from": "12:10",
+        "to": "13:40"
+      }
+    },
+    {
+      "id": "f_edwin_self",
+      "text": "Edwin Koech was at his desk at City Hall all afternoon; he signed the register himself.",
+      "kind": "true",
+      "about": [
+        "p_edwin"
+      ],
+      "where": {
+        "person": "p_edwin",
+        "place": "plc_cityhall",
+        "from": "08:00",
+        "to": "17:00"
+      }
+    },
+    {
+      "id": "f_toolbox",
+      "text": "Benson's hammer, locked in his toolbox: an X-shaped chip in the face, wiped, with fresh metal shavings packed in the chip.",
+      "kind": "true",
+      "about": [
+        "p_benson"
+      ]
+    },
+    {
+      "id": "f_clinic",
+      "text": "Clinic card for their daughter, Umoja Health Centre: in 13:30, out 15:30, with her father, G. Mwaura.",
+      "kind": "true",
+      "about": [
+        "p_gitau"
+      ],
+      "where": {
+        "person": "p_gitau",
+        "place": "plc_clinic",
+        "from": "13:30",
+        "to": "15:30"
+      }
+    },
+    {
+      "id": "f_delivery",
+      "text": "Fidel's delivery note: 20 stoves to a school in Kariobangi, signed by the bursar at 14:35.",
+      "kind": "true",
+      "about": [
+        "p_fidel"
+      ],
+      "where": {
+        "person": "p_fidel",
+        "place": "plc_delivery",
+        "from": "14:30",
+        "to": "14:40"
+      }
+    },
+    {
+      "id": "f_benson_cityhall",
+      "text": "Benson: \"I was at City Hall all afternoon about my appeal. I didn't come back to Kamukunji until four.\"",
+      "kind": "lie",
+      "about": [
+        "p_benson"
+      ]
+    },
+    {
+      "id": "f_benson_bribes",
+      "text": "Benson: \"She won with bribes. Everyone knows.\"",
+      "kind": "claim",
+      "about": [
+        "p_benson",
+        "p_wanjiku"
+      ]
+    },
+    {
+      "id": "f_benson_admits",
+      "text": "Benson admits he left City Hall at 13:40 and came back to the sheds. He says he went into her shed to show her where her stoves were badly made, and she was alive when he left.",
+      "kind": "true",
+      "about": [
+        "p_benson",
+        "loc_shed"
+      ],
+      "where": {
+        "person": "p_benson",
+        "place": "loc_shed",
+        "from": "14:20",
+        "to": "14:30"
+      }
+    },
+    {
+      "id": "f_gitau_claim",
+      "text": "Gitau: \"I was at the clinic with our daughter all afternoon.\"",
+      "kind": "claim",
+      "about": [
+        "p_gitau"
+      ]
+    },
+    {
+      "id": "f_gitau_loan",
+      "text": "Gitau admits he took KSh 200,000 of her tender advance to pay a debt, without asking her. \"I was going to put it back.\"",
+      "kind": "true",
+      "about": [
+        "p_gitau",
+        "p_wanjiku"
+      ]
+    },
+    {
+      "id": "f_fidel_claim",
+      "text": "Fidel: \"I was delivering stoves to the school.\"",
+      "kind": "claim",
+      "about": [
+        "p_fidel"
+      ]
+    },
+    {
+      "id": "f_fidel_dents",
+      "text": "Fidel: \"Mama never left dents like that. She would have beaten them out before lunch.\"",
+      "kind": "true",
+      "about": [
+        "p_fidel",
+        "ev_stove"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_benson",
+      "stance": "cooperative",
+      "intro": "Benson wipes his hands on a rag that doesn't need it. \"Wanjiku? God rest her. We competed. That is business.\"",
+      "claims": [
+        "f_benson_cityhall",
+        "f_benson_bribes"
+      ],
+      "yields": [
+        "ev_appeal"
+      ],
+      "topics": [
+        {
+          "about": "ev_stove",
+          "reply": "Bad work. Soft metal, too thin. I have been saying it to the county for a month.",
+          "reveals": []
+        },
+        {
+          "about": "p_edwin",
+          "reply": "Call the clerk at City Hall, Koech. He will tell you I was there.",
+          "reveals": [
+            "ev_cityhall"
+          ]
+        },
+        {
+          "about": "ev_appeal",
+          "reply": "Dismissed. They didn't even read it.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_gitau",
+      "stance": "cooperative",
+      "intro": "Gitau holds his daughter's pink school bag in both hands. \"I was at the clinic with our girl. They called me there.\"",
+      "claims": [
+        "f_gitau_claim"
+      ],
+      "yields": [
+        "ev_clinic"
+      ],
+      "topics": [
+        {
+          "about": "ev_advance",
+          "reply": "I took it. Two hundred thousand. A debt from before, men were coming to the house. I was going to put it back before she noticed.",
+          "reveals": [
+            "f_gitau_loan"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_fidel",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_stove"
+      ],
+      "intro": "Fidel stands outside the shed and won't look in. \"I took the stoves. I came back. That is all I know.\"",
+      "claims": [
+        "f_fidel_claim"
+      ],
+      "yields": [
+        "ev_delivery"
+      ],
+      "topics": [
+        {
+          "about": "ev_stove",
+          "reply": "Mama never left dents like that. Never. She would have beaten them out before lunch.",
+          "reveals": [
+            "f_fidel_dents"
+          ]
+        },
+        {
+          "about": "p_wanjiku",
+          "reply": "She docked me for a spoiled batch. I was angry one day. Then she bought me lunch.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_simeon",
+      "stance": "cooperative",
+      "intro": "Simeon runs his thumb over the dents on the stove, one by one. \"This is not her hammer. I know her hammer.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_stove",
+          "reply": "Every hammer wears its own face. An X like that is a chip. Okiror's has an X. He chipped it on a rivet last year and was too proud to grind it.",
+          "reveals": []
+        },
+        {
+          "about": "p_samwel",
+          "reply": "The school driver took a sample at two. Call him; the number is on her job card.",
+          "reveals": [
+            "ev_customer"
+          ]
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_benson_cityhall",
+      "claim": "f_benson_cityhall",
+      "brokenBy": [
+        "f_cityhall"
+      ],
+      "reveals": [
+        "f_benson_admits"
+      ],
+      "reaction": "I left early, yes. Twenty to two. They threw out my appeal in ten minutes. I came back and went to tell her what I thought of her stoves. Yes, I went in. She was alive when I walked out.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_benson",
+      "text": "Benson Okiror",
+      "category": "person",
+      "ref": "p_benson",
+      "unlock": {
+        "anyOf": [
+          "f_tender_board"
+        ]
+      }
+    },
+    {
+      "id": "w_gitau",
+      "text": "Gitau Mwaura",
+      "category": "person",
+      "ref": "p_gitau",
+      "unlock": {
+        "anyOf": [
+          "f_advance"
+        ]
+      }
+    },
+    {
+      "id": "w_fidel",
+      "text": "Fidel Okumu",
+      "category": "person",
+      "ref": "p_fidel",
+      "unlock": {
+        "anyOf": [
+          "f_ob_found"
+        ]
+      }
+    },
+    {
+      "id": "w_simeon",
+      "text": "Simeon Wachira",
+      "category": "person",
+      "ref": "p_simeon",
+      "unlock": {
+        "anyOf": [
+          "f_simeon_self"
+        ]
+      }
+    },
+    {
+      "id": "w_edwin",
+      "text": "Edwin Koech",
+      "category": "person",
+      "ref": "p_edwin",
+      "unlock": {
+        "anyOf": [
+          "f_appeal"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} at the Kamukunji sheds.",
+    "fixed": {
+      "victim": "Wanjiku Ngugi"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_benson"
+          }
+        ],
+        "prosecutor": {
+          "pass": "He lied about City Hall, he walked in with a hammer, and his hammer signed every dent. That will hold.",
+          "fail": [
+            "Doesn't hold up. A husband who stole from her is a thief. Was he in that shed?",
+            "No. Read the dents. Every hammer in that market signs its work."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_shed",
+      "from": "14:20",
+      "to": "15:10"
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_benson_cityhall",
+          "f_cityhall",
+          "f_benson_admits"
+        ],
+        "concludes": "Benson said he was at City Hall until four, but the register signs him out at 13:40. Pressed, he admits he came back and went into her shed."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_customer",
+          "f_simeon_saw"
+        ],
+        "concludes": "Wanjiku was alive at 14:00. At 14:20 Benson walked into her shed with his hammer in his hand."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_stove_x",
+          "f_simeon_marks",
+          "f_toolbox",
+          "f_ownhammer"
+        ],
+        "concludes": "The dents on her stove carry the X of a chipped hammer face, and Benson's hammer has exactly that chip, with fresh shavings in it. Benson Okiror killed Wanjiku.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_gitau",
+        "blank": "who",
+        "by": [
+          "f_clinic"
+        ],
+        "why": "Gitau was at Umoja Health Centre with their daughter from 13:30 to 15:30."
+      },
+      {
+        "word": "w_fidel",
+        "blank": "who",
+        "by": [
+          "f_simeon_fidel",
+          "f_delivery"
+        ],
+        "why": "Fidel left with the handcart at 13:50, had the delivery signed in Kariobangi at 14:35, and came back at 15:10."
+      },
+      {
+        "word": "w_simeon",
+        "blank": "who",
+        "by": [
+          "f_simeon_self"
+        ],
+        "why": "Simeon was at his own anvil all afternoon with his two apprentices."
+      },
+      {
+        "word": "w_edwin",
+        "blank": "who",
+        "by": [
+          "f_edwin_self"
+        ],
+        "why": "Edwin was at his desk at City Hall all afternoon."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Last month. The county awards 500 school jikos to Wanjiku. Benson, thirty years at Kamukunji, lodges an appeal.",
+        "image": null
+      },
+      {
+        "text": "Monday, 13:30. City Hall throws the appeal out in ten minutes. He signs out at 13:40 and goes back to the sheds.",
+        "image": null
+      },
+      {
+        "text": "14:20. He walks into her shed with his hammer, \"to show her where her stoves are badly made\". Simeon, at the next anvil, sees him go in.",
+        "image": "loc_shed"
+      },
+      {
+        "text": "They shout. He strikes her. Then he hammers dents all over her half-finished stove, to make it look like a fight over work.",
+        "image": null
+      },
+      {
+        "text": "He locks his hammer in his toolbox. Every dent he made carries the X of the chip he never ground out.",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_stove",
+        "line": "Look at the middle of every dent. Then ask the oldest man in the sheds what he sees."
+      },
+      "tier2": {
+        "facts": [
+          "f_stove_x",
+          "f_simeon_marks"
+        ],
+        "line": "An X in every dent, and an old fundi who knows whose hammer has an X. You have grounds for the toolbox."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "jua kali",
+      "def": "The informal artisan sector; literally \"fierce sun\", because the work is done in the open."
+    },
+    {
+      "term": "fundi",
+      "def": "Craftsman, mechanic, skilled tradesman."
+    },
+    {
+      "term": "jiko",
+      "def": "Charcoal stove."
+    },
+    {
+      "term": "tenda",
+      "def": "A tender: a public contract put out to bid."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address or name a woman."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "comparisonView"
+    ],
+    "beatNotes": "The comparison view: two pieces of evidence (the dented stove and the hammer face) are laid side by side under a magnifier and turned to line up. A match snaps with a click. Used for tool marks, handwriting, stamps and footprints from here on."
+  }
+}

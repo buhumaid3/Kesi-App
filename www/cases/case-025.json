@@ -1,0 +1,1280 @@
+{
+  "meta": {
+    "id": "case-025",
+    "number": 25,
+    "region": "mombasa-old-town",
+    "regionNumber": 3,
+    "title": "Wrong Number",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 15,
+    "date": "Tuesday 2 September",
+    "folderTab": "KONGOWEA"
+  },
+  "pattern": {
+    "crimePattern": "recipient of money sent to the wrong number kills the sender who tracked her down",
+    "noRealCaseRetold": true,
+    "notes": "Mistaken mobile-money transfers and failed reversals are an everyday hazard in Kenya; fictional service, numbers masked, no real case.",
+    "tags": [
+      "blunt-force",
+      "money",
+      "records-request",
+      "mobile-money"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 3,
+    "redHerrings": 1,
+    "liars": 1,
+    "groups": [
+      "who",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "document",
+      "phone"
+    ],
+    "gatedActions": [
+      "records"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 33/02/09",
+    "date": "Tuesday 2 September",
+    "time": "11:14",
+    "reportedBy": "Porters at Kongowea market",
+    "text": "A porter reports that tomato wholesaler Everlyne Nasimiyu (36) was found dead behind the produce sheds at Kongowea market at 11:05.",
+    "facts": [
+      "f_ob_found"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_everlyne",
+      "role": "victim",
+      "name": "Everlyne Nasimiyu",
+      "age": 36,
+      "occupation": "Tomato wholesaler",
+      "bio": "Buys lorry-loads of tomatoes from Taveta and sells them by the crate to hotels and retailers.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_sheds",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 30s, a denim jacket over a printed dress, a money pouch at her waist, a phone in her hand, brisk and capable, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mwanaidi",
+      "role": "suspect",
+      "name": "Mwanaidi Mwatsahu",
+      "age": 23,
+      "occupation": "Sells second-hand phones, Mwembe Tayari",
+      "bio": "Her number is one digit away from a Taveta lorry driver's.",
+      "community": "Duruma",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_ep_sent"
+      },
+      "at": "loc_stall",
+      "image": {
+        "kind": "portrait",
+        "brief": "Duruma Kenyan young woman, early 20s, braids under a cap, a bright pink phone pouch on a strap across her body, defensive and frightened, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_benard",
+      "role": "suspect",
+      "name": "Benard Mwakitele",
+      "age": 52,
+      "occupation": "Lorry driver, Taveta",
+      "redHerring": true,
+      "bio": "Everlyne owed him KSh 85,000 for the load. He told her: no money, no more tomatoes.",
+      "community": "Taita",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_lorry_number"
+      },
+      "at": "plc_road",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 50s, a trucker's cap, a thick moustache, a reflective vest over a checked shirt, lorry keys on a lanyard, irritated, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_linet",
+      "role": "suspect",
+      "name": "Linet Chepchumba",
+      "age": 41,
+      "occupation": "Everlyne's business partner",
+      "bio": "They were splitting the business \"politely\".",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_sale"
+      },
+      "at": "plc_bank",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 40s, a neat blazer, a bank queue ticket in her hand, a leather handbag held close, composed, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_saidi",
+      "role": "witness",
+      "name": "Saidi Mwero",
+      "age": 34,
+      "occupation": "Porter",
+      "bio": "Carries crates between the lorries and the sheds.",
+      "community": "Duruma",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_lorrybay",
+      "image": null
+    },
+    {
+      "id": "p_godfrey",
+      "role": "witness",
+      "name": "Godfrey Mwangemi",
+      "age": 39,
+      "occupation": "Hotel buyer",
+      "bio": "Buys tomatoes for a Nyali hotel kitchen.",
+      "community": "Taita",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_sale"
+      },
+      "at": "plc_van",
+      "image": null
+    },
+    {
+      "id": "p_beatrice",
+      "role": "witness",
+      "name": "Beatrice Nasimiyu",
+      "age": 30,
+      "occupation": "Everlyne's sister",
+      "statementOnly": true,
+      "bio": "Unlocked her sister's phone for the police.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_market",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_sheds",
+      "name": "Behind the produce sheds",
+      "within": "loc_market"
+    },
+    {
+      "id": "plc_lorrybay",
+      "name": "Lorry unloading bay",
+      "within": "loc_market"
+    },
+    {
+      "id": "plc_road",
+      "name": "Mariakani weighbridge and the Taveta road"
+    },
+    {
+      "id": "plc_bank",
+      "name": "Bank branch in town"
+    },
+    {
+      "id": "plc_van",
+      "name": "Hotel van, Kongowea to Nyali"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_market",
+      "name": "Kongowea market",
+      "kind": "scene",
+      "description": "Tuesday morning at one of the biggest markets on the coast. Lorries of tomatoes from Taveta, onions from upcountry, mangoes by the pile. Porters, handcarts, weighing scales with cast-iron weights. Behind the produce sheds, a narrow alley of empty crates.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Behind the sheds",
+          "pos": [
+            70,
+            66
+          ],
+          "yields": "ev_body",
+          "text": "Everlyne lies among empty crates. A 5 kg cast-iron scale weight is on the ground. Her phone is still in her apron."
+        },
+        {
+          "id": "hs_phone",
+          "label": "Her apron",
+          "pos": [
+            64,
+            58
+          ],
+          "yields": "ev_everlyne_phone",
+          "text": "Her phone. Her sister Beatrice has arrived with the code and is crying too hard to type it."
+        },
+        {
+          "id": "hs_scrap",
+          "label": "Apron pocket",
+          "pos": [
+            62,
+            62
+          ],
+          "yields": "ev_lorry_number",
+          "text": "A scrap of paper with a phone number written in biro."
+        },
+        {
+          "id": "hs_receipts",
+          "label": "Her receipt book",
+          "pos": [
+            40,
+            44
+          ],
+          "yields": "ev_receipt_sale",
+          "text": "Her carbon receipt book on a crate by her stand."
+        },
+        {
+          "id": "hs_saidi",
+          "label": "Porter",
+          "pos": [
+            20,
+            56
+          ],
+          "yields": "ev_saidi",
+          "text": "Saidi Mwero leans on his handcart, out of breath."
+        },
+        {
+          "id": "hs_scales",
+          "label": "Weighing scales",
+          "pos": [
+            34,
+            30
+          ],
+          "text": "A row of balance scales. One set of cast-iron weights is missing its 5 kg."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "Kongowea market in Mombasa at mid-morning, mountains of tomatoes and onions, lorries unloading, porters with handcarts, old balance scales with cast-iron weights, a narrow alley of stacked empty crates behind the produce sheds, no people in focus"
+      }
+    },
+    {
+      "id": "loc_stall",
+      "name": "Mwanaidi's phone stall, Mwembe Tayari",
+      "kind": "location",
+      "description": "A narrow table of second-hand phones and chargers under an umbrella. A pink pouch hangs from a nail.",
+      "unlock": {
+        "fact": "f_mw_never"
+      },
+      "hotspots": [
+        {
+          "id": "hs_pouch",
+          "label": "Pink pouch on a nail",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_pouch",
+          "text": "Her trade pouch: phones, cash, a strap."
+        },
+        {
+          "id": "hs_phones",
+          "label": "Table of phones",
+          "pos": [
+            40,
+            70
+          ],
+          "yields": "ev_stall",
+          "text": "Second-hand phones, each with a price on masking tape. No tomatoes, no crates, nothing from Kongowea."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small street stall at Mwembe Tayari, Mombasa, a table of second-hand mobile phones and chargers under a faded umbrella, a bright pink phone pouch hanging from a nail"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body behind the sheds",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Struck with a 5 kg cast-iron scale weight. Her phone still in her apron."
+      },
+      "facts": [
+        "f_body_weight",
+        "f_body_phone"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a narrow market alley of stacked empty wooden tomato crates, a 5 kg cast-iron scale weight on the dusty ground, crushed tomatoes, no body visible"
+      }
+    },
+    {
+      "id": "ev_everlyne_phone",
+      "type": "phone",
+      "title": "Everlyne's phone (unlocked by her sister)",
+      "render": "smsThread",
+      "body": {
+        "messages": [
+          {
+            "time": "Mon 16:02",
+            "text": "KSh 85,000 sent to MWANAIDI MWATSAHU 07xx xxx 309."
+          },
+          {
+            "time": "Mon 16:10",
+            "text": "Reversal request received."
+          },
+          {
+            "time": "Mon 16:40",
+            "text": "Reversal failed: recipient has insufficient balance."
+          }
+        ],
+        "calls": "11 unanswered calls to 07xx xxx 309. Tuesday 10:05: incoming call from 07xx xxx 309, 2 min."
+      },
+      "facts": [
+        "f_ep_sent",
+        "f_ep_reversal",
+        "f_ep_call"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lorry_number",
+      "type": "physical",
+      "title": "Scrap of paper",
+      "render": "note",
+      "body": {
+        "text": "Benard lorry — 07xx xxx 390"
+      },
+      "facts": [
+        "f_lorry_number"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: 07xx xxx 309 (Mwanaidi Mwatsahu)",
+      "render": "pesapapStatement",
+      "body": {
+        "pesapap": "Mon 16:02 received KSh 85,000. 16:05 agent withdrawal KSh 85,000. Tue 10:52 tuk-tuk fare from Kongowea.",
+        "masts": "Tue: call to Everlyne 10:05; Kongowea mast 10:20–10:55."
+      },
+      "facts": [
+        "f_rec_withdraw",
+        "f_rec_mast"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_ep_call"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_saidi",
+      "type": "witness",
+      "title": "Statement: Saidi Mwero",
+      "render": "statement",
+      "body": {
+        "speaker": "p_saidi"
+      },
+      "facts": [
+        "f_saidi",
+        "f_saidi_called"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_pouch",
+      "type": "physical",
+      "title": "Mwanaidi's pink pouch",
+      "render": "object",
+      "body": {
+        "label": "Pink phone pouch. The strap clip is broken. A tomato-juice stain on the flap."
+      },
+      "facts": [
+        "f_pouch"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a bright pink fabric phone pouch with a broken plastic strap clip and a dried red tomato stain on the flap, lying on a market table"
+      }
+    },
+    {
+      "id": "ev_stall",
+      "type": "physical",
+      "title": "Mwanaidi's stall",
+      "render": "object",
+      "body": {
+        "label": "Second-hand phones and chargers. Market licence: Mwembe Tayari only."
+      },
+      "facts": [
+        "f_stall_phones"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_receipt_sale",
+      "type": "physical",
+      "title": "Everlyne's receipt book",
+      "render": "receipt",
+      "body": {
+        "time": "10:35",
+        "buyer": "G. Mwangemi (hotel, Nyali)",
+        "goods": "12 crates"
+      },
+      "facts": [
+        "f_sale"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_weighbridge",
+      "type": "physical",
+      "title": "Benard's weighbridge ticket",
+      "render": "ticket",
+      "body": {
+        "place": "Mariakani weighbridge",
+        "in": "10:30",
+        "out": "10:44",
+        "next": "Taveta road checkpoint stamp 11:20"
+      },
+      "facts": [
+        "f_weighbridge"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_bankqueue",
+      "type": "physical",
+      "title": "Linet's bank queue ticket",
+      "render": "ticket",
+      "body": {
+        "branch": "Town branch",
+        "issued": "10:10",
+        "served": "11:02"
+      },
+      "facts": [
+        "f_bank"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_beatrice",
+      "type": "witness",
+      "title": "Statement: Beatrice Nasimiyu",
+      "render": "statement",
+      "body": {
+        "speaker": "p_beatrice"
+      },
+      "facts": [
+        "f_sister",
+        "f_obcheck"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_van",
+      "type": "document",
+      "title": "Hotel delivery note",
+      "render": "receipt",
+      "body": {
+        "left": "Kongowea 10:37 (van driver's note)",
+        "unloaded": "Nyali hotel kitchen 10:55",
+        "receiver": "G. Mwangemi"
+      },
+      "facts": [
+        "f_van"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Tomato wholesaler Everlyne Nasimiyu was found dead behind the produce sheds at Kongowea market at 11:05.",
+      "kind": "true",
+      "about": [
+        "p_everlyne",
+        "plc_sheds"
+      ]
+    },
+    {
+      "id": "f_body_weight",
+      "text": "Everlyne was struck with a 5 kg cast-iron weight from a scale.",
+      "kind": "true",
+      "about": [
+        "p_everlyne",
+        "plc_sheds"
+      ]
+    },
+    {
+      "id": "f_body_phone",
+      "text": "Her phone is still in her apron.",
+      "kind": "true",
+      "about": [
+        "p_everlyne"
+      ]
+    },
+    {
+      "id": "f_ep_sent",
+      "text": "Everlyne's phone, Monday 16:02: 'KSh 85,000 sent to MWANAIDI MWATSAHU 07xx xxx 309.'",
+      "kind": "true",
+      "about": [
+        "p_everlyne",
+        "p_mwanaidi"
+      ]
+    },
+    {
+      "id": "f_ep_reversal",
+      "text": "Monday 16:10: 'Reversal request received.' 16:40: 'Reversal failed: recipient has insufficient balance.' Then 11 unanswered calls to that number.",
+      "kind": "true",
+      "about": [
+        "p_everlyne",
+        "p_mwanaidi"
+      ]
+    },
+    {
+      "id": "f_ep_call",
+      "text": "Tuesday 10:05: an incoming call from 07xx xxx 309, two minutes.",
+      "kind": "true",
+      "about": [
+        "p_everlyne",
+        "p_mwanaidi"
+      ]
+    },
+    {
+      "id": "f_lorry_number",
+      "text": "A scrap in her apron: 'Benard lorry — 07xx xxx 390'. The lorry driver's number ends 390; the money went to one ending 309.",
+      "kind": "true",
+      "about": [
+        "p_benard"
+      ]
+    },
+    {
+      "id": "f_rec_withdraw",
+      "text": "PesaPap, 07xx xxx 309: Monday 16:02 received KSh 85,000. 16:05, agent withdrawal of KSh 85,000.",
+      "kind": "true",
+      "about": [
+        "p_mwanaidi"
+      ]
+    },
+    {
+      "id": "f_rec_mast",
+      "text": "Records, 07xx xxx 309, Tuesday: call to Everlyne at 10:05; Kongowea mast 10:20–10:55; 10:52 tuk-tuk fare from Kongowea.",
+      "kind": "true",
+      "about": [
+        "p_mwanaidi"
+      ]
+    },
+    {
+      "id": "f_saidi",
+      "text": "Saidi: at about 10:40 he saw Everlyne arguing behind the sheds with a young woman carrying a pink phone pouch on a strap. Everlyne grabbed at the pouch.",
+      "kind": "true",
+      "about": [
+        "p_saidi",
+        "p_everlyne"
+      ]
+    },
+    {
+      "id": "f_saidi_called",
+      "text": "Saidi was called to unload a lorry at 10:42 (the other porter confirms). Another porter found her at 11:05.",
+      "kind": "true",
+      "about": [
+        "p_saidi"
+      ],
+      "where": {
+        "person": "p_saidi",
+        "place": "plc_lorrybay",
+        "from": "10:42",
+        "to": "11:05"
+      }
+    },
+    {
+      "id": "f_pouch",
+      "text": "Mwanaidi's pink trade pouch: the strap clip is broken, and there is a tomato-juice stain on the flap.",
+      "kind": "true",
+      "about": [
+        "p_mwanaidi"
+      ]
+    },
+    {
+      "id": "f_sale",
+      "text": "Everlyne's receipt book: 12 crates sold at 10:35 to a hotel buyer, G. Mwangemi.",
+      "kind": "true",
+      "about": [
+        "p_godfrey",
+        "p_everlyne"
+      ]
+    },
+    {
+      "id": "f_weighbridge",
+      "text": "Benard's weighbridge ticket: Mariakani, in 10:30, out 10:44, outbound to Taveta; checkpoint stamp on the Taveta road at 11:20. Mariakani is about an hour from Kongowea.",
+      "kind": "true",
+      "about": [
+        "p_benard"
+      ],
+      "where": {
+        "person": "p_benard",
+        "place": "plc_road",
+        "from": "10:30",
+        "to": "11:20"
+      }
+    },
+    {
+      "id": "f_bank",
+      "text": "Linet's bank queue ticket, town branch: issued 10:10, served 11:02.",
+      "kind": "true",
+      "about": [
+        "p_linet"
+      ],
+      "where": {
+        "person": "p_linet",
+        "place": "plc_bank",
+        "from": "10:10",
+        "to": "11:02"
+      }
+    },
+    {
+      "id": "f_obcheck",
+      "text": "Beatrice: Everlyne never went to the police. She meant to go after paying the lorry, and never had the time.",
+      "kind": "true",
+      "about": [
+        "p_beatrice",
+        "p_everlyne"
+      ]
+    },
+    {
+      "id": "f_sister",
+      "text": "Beatrice: on Monday night Everlyne said she would \"report that number to the police\" if the money didn't come back.",
+      "kind": "true",
+      "about": [
+        "p_beatrice",
+        "p_everlyne"
+      ]
+    },
+    {
+      "id": "f_van",
+      "text": "Hotel delivery note: Godfrey left Kongowea in the hotel van at 10:37 and was unloading at the Nyali kitchen at 10:55.",
+      "kind": "true",
+      "about": [
+        "p_godfrey"
+      ],
+      "where": {
+        "person": "p_godfrey",
+        "place": "plc_van",
+        "from": "10:37",
+        "to": "11:00"
+      }
+    },
+    {
+      "id": "f_stall_phones",
+      "text": "Mwanaidi sells second-hand phones at Mwembe Tayari. She has no stall at Kongowea and doesn't trade tomatoes.",
+      "kind": "true",
+      "about": [
+        "p_mwanaidi"
+      ]
+    },
+    {
+      "id": "f_mw_returned",
+      "text": "Mwanaidi: \"That money came by mistake and I sent it straight back.\"",
+      "kind": "lie",
+      "about": [
+        "p_mwanaidi"
+      ]
+    },
+    {
+      "id": "f_mw_never",
+      "text": "Mwanaidi: \"I don't go to Kongowea. I sell phones at Mwembe Tayari. I've never met her.\"",
+      "kind": "lie",
+      "about": [
+        "p_mwanaidi"
+      ]
+    },
+    {
+      "id": "f_mw_needed",
+      "text": "Mwanaidi: \"I needed it. My mother is in hospital.\"",
+      "kind": "claim",
+      "about": [
+        "p_mwanaidi"
+      ]
+    },
+    {
+      "id": "f_mw_admits",
+      "text": "Mwanaidi admits she went to Kongowea to tell Everlyne she would pay it back slowly. Everlyne shouted and grabbed her pouch; she says she pulled away and left.",
+      "kind": "true",
+      "about": [
+        "p_mwanaidi",
+        "plc_sheds"
+      ],
+      "where": {
+        "person": "p_mwanaidi",
+        "place": "plc_sheds",
+        "from": "10:35",
+        "to": "10:50"
+      }
+    },
+    {
+      "id": "f_benard_claim",
+      "text": "Benard: \"I was on the road back to Taveta.\"",
+      "kind": "claim",
+      "about": [
+        "p_benard"
+      ]
+    },
+    {
+      "id": "f_benard_threat",
+      "text": "Benard admits he told Everlyne, \"No money, no more tomatoes.\" \"She told me she'd sent it to the wrong number. I didn't believe her.\"",
+      "kind": "true",
+      "about": [
+        "p_benard",
+        "p_everlyne"
+      ]
+    },
+    {
+      "id": "f_linet_claim",
+      "text": "Linet: \"I was at the bank.\"",
+      "kind": "claim",
+      "about": [
+        "p_linet"
+      ]
+    },
+    {
+      "id": "f_linet_split",
+      "text": "Linet: she and Everlyne were splitting the business \"politely\". \"Accountants, not shouting.\"",
+      "kind": "true",
+      "about": [
+        "p_linet",
+        "p_everlyne"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_mwanaidi",
+      "stance": "cooperative",
+      "intro": "Mwanaidi keeps her hand flat on a phone she is pretending to repair. \"Wrong number? It happens. I sent it back.\"",
+      "claims": [
+        "f_mw_returned",
+        "f_mw_never"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_pouch",
+          "reply": "It broke. Things break.",
+          "reveals": []
+        },
+        {
+          "about": "f_ep_sent",
+          "reply": "People mistype every day. It's not my fault what people type.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_benard",
+      "stance": "cooperative",
+      "intro": "Benard talks from his cab over the noise of the engine. \"Everlyne? Dead? I shouted at her yesterday.\"",
+      "claims": [
+        "f_benard_claim"
+      ],
+      "yields": [
+        "ev_weighbridge"
+      ],
+      "topics": [
+        {
+          "about": "p_everlyne",
+          "reply": "No money, no more tomatoes, I told her. She swore she'd sent it to the wrong number. I thought she was lying. God forgive me.",
+          "reveals": [
+            "f_benard_threat"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_linet",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_receipt_sale"
+      ],
+      "intro": "Linet answers from a bank queue. \"I am number forty-one and they are serving thirty-six. What is it?\"",
+      "claims": [
+        "f_linet_claim"
+      ],
+      "yields": [
+        "ev_bankqueue"
+      ],
+      "topics": [
+        {
+          "about": "p_everlyne",
+          "reply": "We were splitting up the business. Politely. Accountants, not shouting.",
+          "reveals": [
+            "f_linet_split"
+          ]
+        },
+        {
+          "about": "p_benard",
+          "reply": "Benard threatened her yesterday. No money, no more tomatoes. Everyone heard.",
+          "reveals": [
+            "f_benard_threat"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_saidi",
+      "stance": "cooperative",
+      "intro": "Saidi wipes his face with his vest. \"I saw them fighting. I didn't think it was serious. People fight here every hour.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_mwanaidi",
+          "reply": "Young. A cap. That pink pouch. Mama Everlyne grabbed it like she wanted to tear it off her.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_godfrey",
+      "stance": "cooperative",
+      "intro": "Godfrey takes the call in a hotel kitchen, pans clattering. \"Twelve crates at half past ten. She was fine. She was laughing.\"",
+      "claims": [],
+      "yields": [
+        "ev_van"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_beatrice",
+      "stance": "cooperative",
+      "intro": "Beatrice holds her sister's phone in both hands. \"She told me about the money last night. She was so angry.\"",
+      "claims": [],
+      "yields": [
+        "ev_beatrice"
+      ],
+      "topics": [
+        {
+          "about": "p_mwanaidi",
+          "reply": "That name was on the message. Everlyne said it over and over last night. Mwanaidi Mwatsahu.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_mw_returned",
+      "claim": "f_mw_returned",
+      "brokenBy": [
+        "f_rec_withdraw",
+        "f_ep_reversal"
+      ],
+      "reveals": [
+        "f_mw_needed"
+      ],
+      "reaction": "I needed it. My mother is in hospital, they want forty thousand before they operate. Eighty-five thousand just arrived. Like God sent it. I took it out before I could think.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_mw_never",
+      "claim": "f_mw_never",
+      "brokenBy": [
+        "f_rec_mast"
+      ],
+      "reveals": [
+        "f_mw_admits"
+      ],
+      "reaction": "I went to tell her I'd pay it back. Slowly. She shouted. She grabbed my pouch. I pulled away and I left. That's all. That's all.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_mwanaidi",
+      "text": "Mwanaidi Mwatsahu",
+      "category": "person",
+      "ref": "p_mwanaidi",
+      "unlock": {
+        "anyOf": [
+          "f_ep_sent"
+        ]
+      }
+    },
+    {
+      "id": "w_benard",
+      "text": "Benard Mwakitele",
+      "category": "person",
+      "ref": "p_benard",
+      "unlock": {
+        "anyOf": [
+          "f_lorry_number"
+        ]
+      }
+    },
+    {
+      "id": "w_linet",
+      "text": "Linet Chepchumba",
+      "category": "person",
+      "ref": "p_linet",
+      "unlock": {
+        "anyOf": [
+          "f_linet_claim",
+          "f_sale"
+        ]
+      }
+    },
+    {
+      "id": "w_saidi",
+      "text": "Saidi Mwero",
+      "category": "person",
+      "ref": "p_saidi",
+      "unlock": {
+        "anyOf": [
+          "f_saidi"
+        ]
+      }
+    },
+    {
+      "id": "w_godfrey",
+      "text": "Godfrey Mwangemi",
+      "category": "person",
+      "ref": "p_godfrey",
+      "unlock": {
+        "anyOf": [
+          "f_sale"
+        ]
+      }
+    },
+    {
+      "id": "m_mistake",
+      "text": "she wouldn't return money sent to her by mistake",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ep_sent"
+        ]
+      }
+    },
+    {
+      "id": "m_phone",
+      "text": "a fight over a stolen phone",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_saidi"
+        ]
+      }
+    },
+    {
+      "id": "m_tomato",
+      "text": "a tomato debt",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_benard_threat"
+        ]
+      }
+    },
+    {
+      "id": "m_stall",
+      "text": "a quarrel over stall space",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_stall_phones"
+        ]
+      }
+    },
+    {
+      "id": "m_police",
+      "text": "Everlyne had reported her to the police",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_sister"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} because {why}.",
+    "fixed": {
+      "victim": "Everlyne Nasimiyu"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_mwanaidi"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Out in three minutes, a call on Tuesday, the Kongowea mast, and a pouch with a broken clip. That will hold.",
+          "fail": [
+            "Doesn't hold up. The lorry driver threatened her, but he was an hour up the Taveta road. Who was behind those sheds?",
+            "No. Read the number on the scrap of paper against the number the money went to."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_mistake"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A reversal fails when the money's already out. Whoever withdrew it in three minutes knew exactly what they had.",
+          "fail": [
+            "She did it, but that isn't why. Read the reversal message.",
+            "There's no police report, and her phone is in her apron. Try again."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_market",
+      "from": "10:40",
+      "to": "10:55",
+      "within": [
+        "plc_sheds"
+      ]
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_ep_sent",
+          "f_lorry_number",
+          "f_ep_reversal"
+        ],
+        "concludes": "Everlyne meant to pay Benard (…390) and sent KSh 85,000 to …309 instead: Mwanaidi Mwatsahu. The reversal failed."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_mw_returned",
+          "f_rec_withdraw",
+          "f_rec_mast",
+          "f_mw_admits"
+        ],
+        "concludes": "Mwanaidi withdrew all of it three minutes after it arrived. On Tuesday she called Everlyne and her phone was at Kongowea from 10:20 to 10:55. Pressed, she admits meeting her."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_saidi",
+          "f_pouch"
+        ],
+        "concludes": "At 10:40 Everlyne grabbed at a young woman's pink pouch behind the sheds. Mwanaidi's pink pouch has a broken clip and a tomato stain. Mwanaidi killed her over money she wouldn't give back.",
+        "answers": [
+          "who",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_benard",
+        "blank": "who",
+        "by": [
+          "f_weighbridge"
+        ],
+        "why": "Benard was at the Mariakani weighbridge at 10:30 and on the Taveta road by 11:20, about an hour away."
+      },
+      {
+        "word": "w_linet",
+        "blank": "who",
+        "by": [
+          "f_bank"
+        ],
+        "why": "Linet was in a bank queue in town from 10:10 to 11:02."
+      },
+      {
+        "word": "w_saidi",
+        "blank": "who",
+        "by": [
+          "f_saidi_called"
+        ],
+        "why": "Saidi was unloading a lorry from 10:42 until the body was found."
+      },
+      {
+        "word": "w_godfrey",
+        "blank": "who",
+        "by": [
+          "f_van"
+        ],
+        "why": "Godfrey left in the hotel van at 10:37 and was unloading in Nyali at 10:55."
+      },
+      {
+        "word": "m_phone",
+        "blank": "why",
+        "by": [
+          "f_body_phone"
+        ],
+        "why": "Everlyne's phone is still in her apron, and nothing of Mwanaidi's was taken."
+      },
+      {
+        "word": "m_tomato",
+        "blank": "why",
+        "by": [
+          "f_stall_phones",
+          "f_benard_threat"
+        ],
+        "why": "The tomato debt is Benard's grievance. Mwanaidi doesn't trade tomatoes."
+      },
+      {
+        "word": "m_stall",
+        "blank": "why",
+        "by": [
+          "f_stall_phones"
+        ],
+        "why": "Mwanaidi has no stall at Kongowea."
+      },
+      {
+        "word": "m_police",
+        "blank": "why",
+        "by": [
+          "f_obcheck"
+        ],
+        "why": "Everlyne never went to the police."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Monday, 16:02. Everlyne sends KSh 85,000 for the lorry. One digit is wrong: 309, not 390.",
+        "image": null
+      },
+      {
+        "text": "16:05. Mwanaidi sees the message and withdraws all of it at an agent. Everlyne's reversal fails at 16:40. Eleven calls go unanswered.",
+        "image": null
+      },
+      {
+        "text": "Tuesday, 10:05. Mwanaidi calls back at last. At 10:20 she is at Kongowea.",
+        "image": "loc_market"
+      },
+      {
+        "text": "10:40, behind the sheds. Everlyne grabs her pouch so she can't walk away. A 5 kg weight from the nearest scale.",
+        "image": null
+      },
+      {
+        "text": "10:52. A tuk-tuk from Kongowea, paid by phone, with a broken pouch strap.",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_lorry_number",
+        "line": "Put the number on the scrap of paper next to the number on the confirmation."
+      },
+      "tier2": {
+        "facts": [
+          "f_saidi",
+          "f_pouch"
+        ],
+        "line": "The porter saw a pink pouch. Whose pouch has a broken clip?"
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_everlyne_phone",
+        "line": "Read the three messages from Monday afternoon in order."
+      },
+      "tier2": {
+        "facts": [
+          "f_ep_reversal",
+          "f_rec_withdraw"
+        ],
+        "line": "The reversal failed because the money was gone in three minutes."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "namba",
+      "def": "Number."
+    },
+    {
+      "term": "kurudisha pesa",
+      "def": "To return money."
+    },
+    {
+      "term": "wakala",
+      "def": "Mobile-money agent, where cash is deposited or withdrawn."
+    },
+    {
+      "term": "nyanya",
+      "def": "Tomatoes."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address or name a woman."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    }
+  ],
+  "tutorial": [
+    {
+      "trigger": "firstPesapapStatement",
+      "line": "Halima, by text: \"A reversal fails when the money's already out. Whoever withdrew it in three minutes knew exactly what they had.\""
+    }
+  ],
+  "ui": {
+    "beats": [
+      "readingStatement"
+    ],
+    "beatNotes": "Reading a mobile-money statement: agent withdrawals, reversal requests and failure messages, explained once in-world by Halima."
+  }
+}

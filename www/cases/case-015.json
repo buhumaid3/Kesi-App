@@ -1,0 +1,1075 @@
+{
+  "meta": {
+    "id": "case-015",
+    "number": 15,
+    "region": "eastlands",
+    "regionNumber": 2,
+    "title": "Seal A-2291",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 13,
+    "date": "Thursday 19 June",
+    "folderTab": "GIKOMBA"
+  },
+  "pattern": {
+    "crimePattern": "cheated trader kills a bale wholesaler who refused a refund and takes his cash",
+    "noRealCaseRetold": true,
+    "notes": "Fictional godown and traders in a real market. Bale grading and seals shown as common practice; to be checked by the cultural reader.",
+    "tags": [
+      "blunt-force",
+      "fraud",
+      "robbery",
+      "warrant"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 3,
+    "redHerrings": 0,
+    "liars": 1,
+    "groups": [
+      "who"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness"
+    ],
+    "gatedActions": [
+      "warrant"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 41/19/06",
+    "date": "Thursday 19 June",
+    "time": "06:19",
+    "reportedBy": "Lucas Mbithi, business partner, Nyaberi & Mbithi Mitumba, Gikomba",
+    "text": "Lucas Mbithi reports that his business partner, Hezron Nyaberi (61), mitumba bale wholesaler, was found dead in their godown on the Gikomba riverside lane at 06:10. The leather cash pouch he always wears on his belt is missing.",
+    "facts": [
+      "f_ob_found",
+      "f_ob_pouch"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_hezron",
+      "role": "victim",
+      "name": "Hezron Nyaberi",
+      "age": 61,
+      "occupation": "Mitumba bale wholesaler",
+      "bio": "Thirty years in Gikomba. Sells pressed bales of second-hand clothes by grade. Wears a leather cash pouch on his belt day and night.",
+      "community": "Kisii",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_godown",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 60s, flat cap, worn tweed jacket over a sweater, a brown leather pouch on his belt stamped H.N., hard and amused face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_felistus",
+      "role": "suspect",
+      "name": "Felistus Wakesho",
+      "age": 44,
+      "occupation": "Children's-clothes trader, stall C-17",
+      "bio": "Last week she paid KSh 38,000, borrowed from her chama, for a \"first grade\" bale that turned out to be rags. Hezron refused a refund.",
+      "community": "Taita",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_dispatch_sale"
+      },
+      "at": "loc_stall",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 40s, kanga tied over her dress as an apron, hair under a knitted cap against the dawn cold, a bale-opening knife on a string at her waist, exhausted and angry, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_lucas",
+      "role": "suspect",
+      "name": "Lucas Mbithi",
+      "age": 37,
+      "occupation": "Hezron's business partner",
+      "bio": "Buys bales off the ships in Mombasa. He and Hezron have been fighting over the split of the profits.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_bus",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 30s, travel-creased shirt, a small backpack, an overnight bus ticket in his hand, shocked, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_winnie",
+      "role": "suspect",
+      "name": "Winnie Akello",
+      "age": 29,
+      "occupation": "Rival trader, women's clothes",
+      "bio": "Hezron cut her off from his bales after she complained about a bad one in public.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_dispatch_winnie"
+      },
+      "at": "plc_stalls",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 20s, fashionable second-hand denim jacket, braids piled on her head, a stack of folded blouses in her arms, defiant, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_hamisi",
+      "role": "witness",
+      "name": "Hamisi Baya",
+      "age": 50,
+      "occupation": "Handcart pusher",
+      "bio": "Pushes bales up from the riverside godowns to the stalls every morning before light.",
+      "community": "Mijikenda",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_lane",
+      "image": null
+    },
+    {
+      "id": "p_daudi",
+      "role": "witness",
+      "name": "Daudi Gichohi",
+      "age": 46,
+      "occupation": "Trader, upper market",
+      "statementOnly": true,
+      "bio": "Bought two bales from Hezron this morning; Hamisi pushed them up for him.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_hamisi_load"
+      },
+      "at": "plc_daudi",
+      "image": null
+    },
+    {
+      "id": "p_esther",
+      "role": "witness",
+      "name": "Esther Amoit",
+      "age": 55,
+      "occupation": "Stallholder next to Winnie",
+      "statementOnly": true,
+      "bio": "Sells school uniforms from the stall beside Winnie's.",
+      "community": "Teso",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_winnie_claim"
+      },
+      "at": "plc_stalls",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_lane",
+      "name": "Riverside lane up the slope"
+    },
+    {
+      "id": "plc_stalls",
+      "name": "Upper market stalls"
+    },
+    {
+      "id": "plc_daudi",
+      "name": "Daudi Gichohi's stall, upper market"
+    },
+    {
+      "id": "plc_bus",
+      "name": "Overnight bus, Mombasa to Nairobi"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_godown",
+      "name": "Nyaberi & Mbithi Mitumba godown, Gikomba riverside",
+      "kind": "scene",
+      "description": "Before dawn. A tin-roofed godown stacked to the beams with pressed bales, each strapped and closed with a numbered plastic seal. One bulb. Outside, handcarts rattle up the slope in the dark.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Between the bales",
+          "pos": [
+            48,
+            66
+          ],
+          "yields": "ev_body",
+          "text": "Hezron lies between two bales. An iron lever bar, the kind used to prise bales open, is on the ground. His belt clip is empty."
+        },
+        {
+          "id": "hs_seal",
+          "label": "On the floor",
+          "pos": [
+            34,
+            80
+          ],
+          "yields": "ev_seal",
+          "text": "A plastic bale seal lies on the concrete, cut open. It doesn't belong to any bale in here."
+        },
+        {
+          "id": "hs_dispatch",
+          "label": "Dispatch book on the crate",
+          "pos": [
+            70,
+            48
+          ],
+          "yields": "ev_dispatch",
+          "text": "Hezron's dispatch book: every bale, its seal number, grade and buyer. Today's page has writing on it."
+        },
+        {
+          "id": "hs_lane",
+          "label": "Handcart in the lane",
+          "pos": [
+            92,
+            40
+          ],
+          "yields": "ev_hamisi",
+          "text": "Hamisi Baya has stopped his empty mkokoteni outside and won't come in."
+        },
+        {
+          "id": "hs_grades",
+          "label": "Grade board",
+          "pos": [
+            12,
+            24
+          ],
+          "text": "A chalk board: \"1st grade — 2nd grade — 3rd grade — rags\". Different prices for each. Most buyers can't see inside a pressed bale before they pay."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "interior of a tin-roofed mitumba godown at Gikomba market before dawn, pressed bales of second-hand clothes strapped and sealed with numbered plastic tags stacked to the roof, a single bare bulb, an iron lever bar on the concrete floor, a chalk grade board on the wall, no people in focus"
+      }
+    },
+    {
+      "id": "loc_stall",
+      "name": "Stall C-17 (Felistus Wakesho)",
+      "kind": "location",
+      "description": "A wooden stall of children's clothes on hangers. A bale opened yesterday sits at the back, spilling grey rags. A steel stall box with a padlock is chained to the leg of the table.",
+      "unlock": {
+        "fact": "f_felistus_stall"
+      },
+      "hotspots": [
+        {
+          "id": "hs_rags",
+          "label": "Opened bale at the back",
+          "pos": [
+            70,
+            58
+          ],
+          "yields": "ev_rags",
+          "text": "The bale she paid for. On top, a few children's shirts. Underneath, rags."
+        },
+        {
+          "id": "hs_box",
+          "label": "Locked stall box",
+          "pos": [
+            40,
+            76
+          ],
+          "yields": "ev_stallbox",
+          "text": "A steel box, padlocked and chained to the table leg. Her key is on a string round her neck."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small wooden market stall of children's clothes on hangers at Gikomba at dawn, an opened bale at the back spilling grey rags, a padlocked steel box chained to the table leg"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body in the godown",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Struck with an iron lever bar. Belt clip empty where the cash pouch was."
+      },
+      "facts": [
+        "f_body_bar",
+        "f_ob_pouch"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the floor of a mitumba godown between two pressed bales, an iron lever bar lying on concrete, a cut plastic bale seal nearby, dawn light at the door, no body visible"
+      }
+    },
+    {
+      "id": "ev_seal",
+      "type": "physical",
+      "title": "Bale seal A-2291",
+      "render": "tag",
+      "body": {
+        "number": "A-2291",
+        "state": "cut open"
+      },
+      "facts": [
+        "f_seal"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a cut-open numbered plastic bale seal tag lying on a concrete floor, the number A-2291 clearly printed on it"
+      }
+    },
+    {
+      "id": "ev_dispatch",
+      "type": "physical",
+      "title": "Dispatch book",
+      "render": "logBook",
+      "body": {
+        "rows": [
+          {
+            "date": "last Wed",
+            "entry": "A-2291 — 1st grade kids — F. Wakesho, C-17 — KSh 38,000 cash"
+          },
+          {
+            "date": "last month",
+            "entry": "W. Akello — NO MORE BALES. Complained in public."
+          },
+          {
+            "date": "today 04:40",
+            "entry": "Wakesho came about A-2291. Rags she says. No refund."
+          },
+          {
+            "date": "today 04:45",
+            "entry": "2 bales 2nd grade — D. Gichohi — Hamisi to carry"
+          }
+        ]
+      },
+      "facts": [
+        "f_dispatch_sale",
+        "f_dispatch_today",
+        "f_dispatch_winnie"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_hamisi",
+      "type": "witness",
+      "title": "Statement: Hamisi Baya",
+      "render": "statement",
+      "body": {
+        "speaker": "p_hamisi"
+      },
+      "facts": [
+        "f_hamisi_load",
+        "f_hamisi_alive",
+        "f_hamisi_pouch"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rags",
+      "type": "physical",
+      "title": "The opened bale at C-17",
+      "render": "object",
+      "body": {
+        "label": "Seal cut. A thin layer of children's shirts over a bale of rags."
+      },
+      "facts": [
+        "f_rags"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_stallbox",
+      "type": "physical",
+      "title": "Stall box C-17",
+      "render": "object",
+      "body": {
+        "contents": [
+          "brown leather pouch stamped H.N., KSh 41,000 inside",
+          "chama loan card: F. Wakesho, KSh 38,000"
+        ]
+      },
+      "facts": [
+        "f_stallbox",
+        "f_chama_card"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_hamisi_pouch"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "an open steel stall box on a market table, inside it a brown leather belt pouch with the initials H.N. stamped on the flap and a thick fold of Kenyan shilling notes, a small printed chama loan card beside it"
+      }
+    },
+    {
+      "id": "ev_bus",
+      "type": "physical",
+      "title": "Lucas's bus ticket",
+      "render": "ticket",
+      "body": {
+        "route": "Mombasa → Nairobi (overnight)",
+        "departs": "22:00",
+        "arrives": "05:45"
+      },
+      "facts": [
+        "f_bus"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_daudi",
+      "type": "witness",
+      "title": "Phone statement: Daudi Gichohi",
+      "render": "statement",
+      "body": {
+        "speaker": "p_daudi",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_daudi"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_esther",
+      "type": "witness",
+      "title": "Statement: Esther Amoit",
+      "render": "statement",
+      "body": {
+        "speaker": "p_esther"
+      },
+      "facts": [
+        "f_esther"
+      ],
+      "gate": null,
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Lucas Mbithi found his partner Hezron Nyaberi dead in their godown at 06:10.",
+      "kind": "true",
+      "about": [
+        "p_hezron",
+        "p_lucas",
+        "loc_godown"
+      ]
+    },
+    {
+      "id": "f_ob_pouch",
+      "text": "The leather cash pouch Hezron always wears on his belt is gone.",
+      "kind": "true",
+      "about": [
+        "p_hezron"
+      ]
+    },
+    {
+      "id": "f_body_bar",
+      "text": "Hezron was struck with an iron lever bar used for prising bales open.",
+      "kind": "true",
+      "about": [
+        "p_hezron",
+        "loc_godown"
+      ]
+    },
+    {
+      "id": "f_seal",
+      "text": "An opened bale seal, A-2291, lies on the godown floor. No bale in the godown carries that number.",
+      "kind": "true",
+      "about": [
+        "loc_godown",
+        "ev_seal"
+      ]
+    },
+    {
+      "id": "f_dispatch_sale",
+      "text": "Dispatch book, last Wednesday: 'A-2291 — 1st grade kids — F. Wakesho, C-17 — KSh 38,000 cash.'",
+      "kind": "true",
+      "about": [
+        "p_felistus",
+        "ev_seal"
+      ]
+    },
+    {
+      "id": "f_dispatch_today",
+      "text": "Dispatch book, today at 04:40, in Hezron's hand: 'Wakesho came about A-2291. Rags she says. No refund.'",
+      "kind": "true",
+      "about": [
+        "p_felistus",
+        "p_hezron"
+      ],
+      "where": {
+        "person": "p_felistus",
+        "place": "loc_godown",
+        "from": "04:38",
+        "to": "04:42"
+      }
+    },
+    {
+      "id": "f_dispatch_winnie",
+      "text": "Dispatch book, last month: 'W. Akello — NO MORE BALES. Complained in public.'",
+      "kind": "true",
+      "about": [
+        "p_winnie",
+        "p_hezron"
+      ]
+    },
+    {
+      "id": "f_hamisi_load",
+      "text": "Hamisi loaded two bales for Daudi Gichohi at the godown from 04:45 to 04:50.",
+      "kind": "true",
+      "about": [
+        "p_hamisi",
+        "p_daudi"
+      ],
+      "where": {
+        "person": "p_hamisi",
+        "place": "loc_godown",
+        "from": "04:45",
+        "to": "04:50"
+      }
+    },
+    {
+      "id": "f_hamisi_alive",
+      "text": "Hamisi: at 04:50 Hezron was alive, laughing at a woman who was shouting about rags.",
+      "kind": "true",
+      "about": [
+        "p_hamisi",
+        "p_hezron"
+      ]
+    },
+    {
+      "id": "f_hamisi_pouch",
+      "text": "Hamisi: about 04:55, pushing up the lane, the same woman hurried past him carrying a brown leather pouch like the one Hezron wears.",
+      "kind": "true",
+      "about": [
+        "p_hamisi"
+      ],
+      "where": {
+        "person": "p_hamisi",
+        "place": "plc_lane",
+        "from": "04:51",
+        "to": "05:00"
+      }
+    },
+    {
+      "id": "f_rags",
+      "text": "At stall C-17, the bale Felistus opened last week: a thin layer of children's shirts over rags.",
+      "kind": "true",
+      "about": [
+        "p_felistus"
+      ]
+    },
+    {
+      "id": "f_stallbox",
+      "text": "Felistus's locked stall box holds Hezron's leather pouch, stamped H.N., with KSh 41,000 inside.",
+      "kind": "true",
+      "about": [
+        "p_felistus",
+        "p_hezron"
+      ]
+    },
+    {
+      "id": "f_chama_card",
+      "text": "Also in the box: a chama loan card, 'F. Wakesho — KSh 38,000'.",
+      "kind": "true",
+      "about": [
+        "p_felistus"
+      ]
+    },
+    {
+      "id": "f_felistus_cheat",
+      "text": "Felistus: \"He cheated me. I won't pretend he didn't.\"",
+      "kind": "claim",
+      "about": [
+        "p_felistus",
+        "p_hezron"
+      ]
+    },
+    {
+      "id": "f_felistus_stall",
+      "text": "Felistus: \"This morning I opened at my own stall at five. I never went down to his godown.\"",
+      "kind": "lie",
+      "about": [
+        "p_felistus"
+      ]
+    },
+    {
+      "id": "f_felistus_admits",
+      "text": "Felistus admits she went to the godown at about 04:40 with the seal to beg for a refund. She says he laughed and she left before five.",
+      "kind": "true",
+      "about": [
+        "p_felistus",
+        "p_hezron"
+      ],
+      "where": {
+        "person": "p_felistus",
+        "place": "loc_godown",
+        "from": "04:40",
+        "to": "04:55"
+      }
+    },
+    {
+      "id": "f_lucas_bus",
+      "text": "Lucas: \"I was on the overnight bus from Mombasa. I came straight here.\"",
+      "kind": "claim",
+      "about": [
+        "p_lucas"
+      ]
+    },
+    {
+      "id": "f_lucas_pouch",
+      "text": "Lucas: Hezron never took that pouch off, not even to sleep.",
+      "kind": "true",
+      "about": [
+        "p_lucas",
+        "p_hezron"
+      ]
+    },
+    {
+      "id": "f_lucas_split",
+      "text": "Lucas: he and Hezron argued about the split. \"Sixty-forty. He wanted seventy-thirty. We would have fixed it.\"",
+      "kind": "true",
+      "about": [
+        "p_lucas",
+        "p_hezron"
+      ]
+    },
+    {
+      "id": "f_bus",
+      "text": "Lucas's ticket: overnight bus Mombasa to Nairobi, departed 22:00, arrived 05:45. He reached the godown at 06:10.",
+      "kind": "true",
+      "about": [
+        "p_lucas"
+      ],
+      "where": {
+        "person": "p_lucas",
+        "place": "plc_bus",
+        "from": "22:00",
+        "to": "05:45"
+      }
+    },
+    {
+      "id": "f_winnie_claim",
+      "text": "Winnie: \"I don't go near his godown since he cut me off. I opened my stall at quarter to five.\"",
+      "kind": "claim",
+      "about": [
+        "p_winnie"
+      ]
+    },
+    {
+      "id": "f_winnie_felistus",
+      "text": "Winnie: Felistus lost everything on that bale. \"The whole market knew.\"",
+      "kind": "true",
+      "about": [
+        "p_winnie",
+        "p_felistus"
+      ]
+    },
+    {
+      "id": "f_esther",
+      "text": "Esther: Winnie opened her stall at 04:45 with a crowd of early buyers and never left it.",
+      "kind": "true",
+      "about": [
+        "p_esther",
+        "p_winnie"
+      ],
+      "where": {
+        "person": "p_winnie",
+        "place": "plc_stalls",
+        "from": "04:45",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_daudi",
+      "text": "Daudi: Hamisi delivered his two bales to his stall in the upper market at 05:00. Daudi was waiting there from 04:30.",
+      "kind": "true",
+      "about": [
+        "p_daudi",
+        "p_hamisi"
+      ],
+      "where": {
+        "person": "p_daudi",
+        "place": "plc_daudi",
+        "from": "04:30",
+        "to": "05:30"
+      }
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_felistus",
+      "stance": "cooperative",
+      "intro": "Felistus keeps folding the same small shirt. \"Hezron? Dead? God forgive me, I said things about him yesterday.\"",
+      "claims": [
+        "f_felistus_cheat",
+        "f_felistus_stall"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_seal",
+          "reply": "Many bales have seals. Many numbers.",
+          "reveals": []
+        },
+        {
+          "about": "f_dispatch_sale",
+          "reply": "Thirty-eight thousand. A chama loan. \"First grade.\" I opened it and it was rags. He said sell rags as rags.",
+          "reveals": []
+        },
+        {
+          "about": "p_hamisi",
+          "reply": "Hamisi pushes everyone's bales. He sees everyone. What does he say?",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_lucas",
+      "stance": "cooperative",
+      "intro": "Lucas is still holding his backpack. \"I got off the bus and came straight here. Straight here.\"",
+      "claims": [
+        "f_lucas_bus"
+      ],
+      "yields": [
+        "ev_bus"
+      ],
+      "topics": [
+        {
+          "about": "f_ob_pouch",
+          "reply": "He never took it off. He slept with it. Whoever did this knew it was there.",
+          "reveals": [
+            "f_lucas_pouch"
+          ]
+        },
+        {
+          "about": "p_hezron",
+          "reply": "We argued about the split. Sixty-forty, seventy-thirty. Business. I was in Mombasa buying his bales.",
+          "reveals": [
+            "f_lucas_split"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_winnie",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_dispatch"
+      ],
+      "intro": "Winnie doesn't stop hanging blouses. \"I don't talk about that man.\"",
+      "claims": [
+        "f_winnie_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_felistus",
+          "reply": "Felistus lost everything on that bale. The whole market knew. She cried at my stall for an hour.",
+          "reveals": [
+            "f_winnie_felistus"
+          ]
+        },
+        {
+          "about": "p_esther",
+          "reply": "Ask Mama Esther next door. She watched me sell all morning.",
+          "reveals": [
+            "ev_esther"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_hamisi",
+      "stance": "cooperative",
+      "intro": "Hamisi leans on his cart. \"I push bales. Every morning, the same. This morning was not the same.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_felistus",
+          "reply": "That is the woman. She was shouting about rags. Then she passed me in the lane, fast, holding a pouch against her chest. I thought, she got her money back.",
+          "reveals": []
+        },
+        {
+          "about": "p_daudi",
+          "reply": "Two bales for Mzee Daudi, upper market. Call him. I delivered at five.",
+          "reveals": [
+            "ev_daudi"
+          ]
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_felistus_stall",
+      "claim": "f_felistus_stall",
+      "brokenBy": [
+        "f_dispatch_today",
+        "f_seal"
+      ],
+      "reveals": [
+        "f_felistus_admits"
+      ],
+      "reaction": "I went to show him the seal. That is all. I begged him. Thirty-eight thousand, my chama's money. He laughed at me. Then I left. Before five, I swear.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_felistus",
+      "text": "Felistus Wakesho",
+      "category": "person",
+      "ref": "p_felistus",
+      "unlock": {
+        "anyOf": [
+          "f_dispatch_sale"
+        ]
+      }
+    },
+    {
+      "id": "w_lucas",
+      "text": "Lucas Mbithi",
+      "category": "person",
+      "ref": "p_lucas",
+      "unlock": {
+        "anyOf": [
+          "f_ob_found"
+        ]
+      }
+    },
+    {
+      "id": "w_winnie",
+      "text": "Winnie Akello",
+      "category": "person",
+      "ref": "p_winnie",
+      "unlock": {
+        "anyOf": [
+          "f_dispatch_winnie"
+        ]
+      }
+    },
+    {
+      "id": "w_hamisi",
+      "text": "Hamisi Baya",
+      "category": "person",
+      "ref": "p_hamisi",
+      "unlock": {
+        "anyOf": [
+          "f_hamisi_load"
+        ]
+      }
+    },
+    {
+      "id": "w_daudi",
+      "text": "Daudi Gichohi",
+      "category": "person",
+      "ref": "p_daudi",
+      "unlock": {
+        "anyOf": [
+          "f_hamisi_load"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} at his Gikomba godown.",
+    "fixed": {
+      "victim": "Hezron Nyaberi"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_felistus"
+          }
+        ],
+        "prosecutor": {
+          "pass": "His note puts her there, the porter puts the pouch in her hands, and the warrant puts it in her box. That will hold.",
+          "fail": [
+            "Doesn't hold up. A partner on a bus isn't a partner in the godown. Who was there at ten to five?",
+            "No. Follow the seal number, then follow the pouch."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_godown",
+      "from": "04:50",
+      "to": "04:55"
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_felistus_stall",
+          "f_dispatch_today",
+          "f_seal",
+          "f_dispatch_sale",
+          "f_felistus_admits"
+        ],
+        "concludes": "Felistus said she never went to the godown, but at 04:40 Hezron wrote that she came about A-2291, and her opened seal is on his floor. Pressed, she admits being there."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_hamisi_alive",
+          "f_hamisi_pouch"
+        ],
+        "concludes": "At 04:50 Hezron was alive and she was still there, shouting. At 04:55 she hurried up the lane holding a pouch like his."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_stallbox",
+          "f_ob_pouch"
+        ],
+        "concludes": "Hezron's own pouch, stamped H.N., is locked in her stall box. Felistus Wakesho killed Hezron.",
+        "answers": [
+          "who"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_lucas",
+        "blank": "who",
+        "by": [
+          "f_bus"
+        ],
+        "why": "Lucas was on the overnight bus until 05:45 and reached the godown at 06:10."
+      },
+      {
+        "word": "w_winnie",
+        "blank": "who",
+        "by": [
+          "f_esther"
+        ],
+        "why": "Winnie was serving early buyers at her stall from 04:45, with Esther beside her."
+      },
+      {
+        "word": "w_hamisi",
+        "blank": "who",
+        "by": [
+          "f_hamisi_load",
+          "f_daudi"
+        ],
+        "why": "Hamisi left the godown with Daudi's bales at 04:50 and delivered them to the upper market at 05:00."
+      },
+      {
+        "word": "w_daudi",
+        "blank": "who",
+        "by": [
+          "f_daudi"
+        ],
+        "why": "Daudi was waiting at his own stall in the upper market from 04:30."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Last Wednesday. Felistus pays KSh 38,000, a loan from her chama, for bale A-2291, \"first grade children's\". She opens it at her stall. Rags.",
+        "image": null
+      },
+      {
+        "text": "04:40. She comes to the godown with the cut seal in her hand. Hezron writes it in his book and laughs. \"Sell rags as rags.\"",
+        "image": "loc_godown"
+      },
+      {
+        "text": "04:50. Hamisi wheels out two bales for another trader. She is still there, shouting.",
+        "image": null
+      },
+      {
+        "text": "As soon as the cart is gone, she picks up the lever bar. Then she takes his pouch: \"my refund\". The seal falls from her hand.",
+        "image": null
+      },
+      {
+        "text": "04:55. She passes Hamisi in the lane with the pouch against her chest. By five she is at stall C-17, opening a bale as if she had never left.",
+        "image": null
+      }
+    ]
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_dispatch",
+        "line": "Every seal has a number, and Hezron wrote every number down. Match the one on the floor."
+      },
+      "tier2": {
+        "facts": [
+          "f_dispatch_today",
+          "f_hamisi_pouch"
+        ],
+        "line": "He wrote her name at 04:40. The porter saw her with a pouch at 04:55. Now you have grounds."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "mitumba",
+      "def": "Second-hand clothes, imported in pressed bales."
+    },
+    {
+      "term": "mkokoteni",
+      "def": "Wooden handcart pushed by porters."
+    },
+    {
+      "term": "mali",
+      "def": "Goods; stock."
+    },
+    {
+      "term": "chama",
+      "def": "Savings group whose members pool money and lend to each other."
+    },
+    {
+      "term": "kanga",
+      "def": "Printed cotton cloth, often with a proverb along the edge."
+    },
+    {
+      "term": "mzee",
+      "def": "Respectful word for an older man."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address or name a woman."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "serialNumbers"
+    ],
+    "beatNotes": "Serial numbers: seals, invoices and receipts with numbers can be dragged onto each other in the notebook; matching numbers snap together with a click. Used constantly from here on."
+  }
+}

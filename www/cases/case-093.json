@@ -1,0 +1,2940 @@
+{
+  "meta": {
+    "id": "case-093",
+    "number": 93,
+    "region": "final-files",
+    "regionNumber": 10,
+    "title": "The Brother's Box",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 50,
+    "date": "Thursday 22 October",
+    "folderTab": "BUSIA"
+  },
+  "pattern": {
+    "crimePattern": "a clearing agent paid by an anonymous number breaks into a house to recover a box of a jailed clerk's notebooks, kills the brother who disturbs him, and stages a robbery",
+    "noRealCaseRetold": true,
+    "notes": "Fictional family, school, parish and clearing agent; Busia is a setting only. The deposit comes from the same dead man's ID as the lure SIM in case 90 (third use). afterVerdict closes t_registry with Julius Emojong's statement: every instruction came \"through Adjudication\", through Raphael Oduya's office.",
+    "tags": [
+      "blunt-force",
+      "staged-robbery",
+      "commissioned",
+      "accomplice",
+      "planted",
+      "spine",
+      "three-liars",
+      "records",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where"
+    ]
+  },
+  "difficulty": {
+    "suspects": 5,
+    "chainLength": 7,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "accomplice",
+      "how",
+      "why",
+      "planted",
+      "spine"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "records",
+      "warrant"
+    ],
+    "twist": "the-robbery-was-a-search-for-something-that-was-not-there"
+  },
+  "ob": {
+    "number": "OB 05/22/10",
+    "date": "Thursday 22 October",
+    "time": "07:30",
+    "reportedBy": "Busia police, flagged to the SCU",
+    "text": "A burglary-murder at the home of a school deputy principal outside Busia town: Charles Emojong (46), younger brother of Julius Emojong (case 80). His TV and two phones are missing.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_house",
+    "nodes": [
+      "loc_house",
+      "loc_ditch",
+      "loc_parish",
+      "loc_yard"
+    ],
+    "edges": [
+      {
+        "a": "loc_house",
+        "b": "loc_ditch",
+        "minutes": 5,
+        "by": "foot"
+      },
+      {
+        "a": "loc_house",
+        "b": "loc_parish",
+        "minutes": 10,
+        "by": "car"
+      },
+      {
+        "a": "loc_house",
+        "b": "loc_yard",
+        "minutes": 15,
+        "by": "car"
+      },
+      {
+        "a": "loc_ditch",
+        "b": "loc_yard",
+        "minutes": 12,
+        "by": "car"
+      },
+      {
+        "a": "loc_parish",
+        "b": "loc_yard",
+        "minutes": 15,
+        "by": "car"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_charles",
+      "role": "victim",
+      "name": "Charles Emojong",
+      "age": 46,
+      "occupation": "Deputy principal of a secondary school",
+      "bio": "Julius Emojong's younger brother.",
+      "community": "Teso",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_kitchen",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Teso man, mid 40s, a teacher's cardigan and tie, a careful, kindly face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_edwin",
+      "role": "suspect",
+      "name": "Edwin Makokha",
+      "age": 34,
+      "occupation": "Clearing agent at the Busia border post",
+      "bio": "Owes the bank more than he earns in a year.",
+      "community": "Luhya",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_receipt"
+      },
+      "at": "plc_yard",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luhya man, mid 30s, a reflective vest over a shirt, a lanyard of clearing passes, a tight, worried face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_fred",
+      "role": "suspect",
+      "name": "Fred Emuria",
+      "age": 28,
+      "occupation": "Boda rider; Edwin's cousin",
+      "bio": "Works the Busia stage on a hailing app.",
+      "community": "Teso",
+      "isCulprit": false,
+      "accomplice": true,
+      "unlock": {
+        "fact": "f_rec_mast"
+      },
+      "at": "plc_road",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Teso man, late 20s, a boda rider's helmet under one arm and a reflective jacket, a frightened face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_akol",
+      "role": "suspect",
+      "name": "Mama Akol Emojong",
+      "age": 44,
+      "occupation": "Charles's wife; a nurse",
+      "redHerring": true,
+      "bio": "Terrified; she doesn't know who to trust.",
+      "community": "Teso",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_bedroom",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Teso woman, mid 40s, a nurse's cardigan, a wrapped headscarf, a terrified, guarded face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_okiror",
+      "role": "suspect",
+      "name": "Mzee Simon Okiror",
+      "age": 63,
+      "occupation": "Neighbour",
+      "redHerring": true,
+      "bio": "Ten years in a boundary dispute with Charles over a row of mango trees.",
+      "community": "Teso",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_boundary"
+      },
+      "at": "plc_wedding",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Teso man, early 60s, a flat cap and a walking stick, a gruff, stubborn face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_moses",
+      "role": "suspect",
+      "name": "Moses Etyang",
+      "age": 30,
+      "occupation": "Charles's nephew",
+      "bio": "Owed his uncle KSh 60,000.",
+      "community": "Teso",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_ak_moses"
+      },
+      "at": "plc_nairobi",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Teso man, about 30, a cheap suit and a lanyard from a Nairobi call centre, an embarrassed face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_achom",
+      "role": "witness",
+      "name": "Achom Emojong",
+      "age": 23,
+      "occupation": "Charles's daughter; a university student",
+      "bio": "Home for the holidays.",
+      "community": "Teso",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_backroom",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Teso woman, early 20s, a university hoodie, a brave, shaken face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_thomas",
+      "role": "witness",
+      "name": "Fr. Thomas Ekirapa",
+      "age": 58,
+      "occupation": "Parish priest of St. Brigid's",
+      "bio": "Keeps the parish safe.",
+      "community": "Teso",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_achom"
+      },
+      "at": "loc_parish",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Teso Catholic priest, late 50s, a white collar and a grey jumper, a grave, steady face, ID-photo framing",
+        "ref": null
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_kitchen",
+      "name": "The kitchen",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_store",
+      "name": "The store room",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_bedroom",
+      "name": "The main bedroom",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_backroom",
+      "name": "The back bedroom",
+      "within": "loc_house"
+    },
+    {
+      "id": "plc_road",
+      "name": "The road outside the house"
+    },
+    {
+      "id": "plc_safe",
+      "name": "The parish safe",
+      "within": "loc_parish"
+    },
+    {
+      "id": "plc_yard",
+      "name": "The border truck yard",
+      "within": "loc_yard"
+    },
+    {
+      "id": "plc_wedding",
+      "name": "A neighbour's wedding"
+    },
+    {
+      "id": "plc_nairobi",
+      "name": "Moses's lodging, Nairobi"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_house",
+      "name": "Charles's house, outside Busia",
+      "kind": "scene",
+      "description": "A brick bungalow on a half-acre a few kilometres from town: a kitchen with a window over the sink, a store room left on the latch, a mango tree, two bedrooms ransacked.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The kitchen floor",
+          "pos": [
+            45,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Where Charles fell."
+        },
+        {
+          "id": "hs_window",
+          "label": "The kitchen window",
+          "pos": [
+            55,
+            30
+          ],
+          "yields": "ev_window",
+          "text": "The broken pane over the sink."
+        },
+        {
+          "id": "hs_store",
+          "label": "The store room",
+          "pos": [
+            80,
+            55
+          ],
+          "yields": "ev_storeroom",
+          "text": "The door on the latch."
+        },
+        {
+          "id": "hs_rooms",
+          "label": "The bedrooms",
+          "pos": [
+            20,
+            40
+          ],
+          "yields": "ev_search",
+          "text": "Mattresses lifted, ceilings pushed up."
+        },
+        {
+          "id": "hs_achom",
+          "label": "Achom",
+          "pos": [
+            10,
+            70
+          ],
+          "yields": "ev_achom",
+          "text": "Charles's daughter, in the back bedroom."
+        },
+        {
+          "id": "hs_family",
+          "label": "The family and neighbours",
+          "pos": [
+            90,
+            20
+          ],
+          "yields": "ev_family",
+          "text": "Neighbours at the gate."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a brick bungalow near Busia at night, a broken kitchen window with glass on the ground outside under it, a mango tree, no people in focus"
+      }
+    },
+    {
+      "id": "loc_ditch",
+      "name": "The roadside ditch, 500 m",
+      "kind": "location",
+      "description": "A murram road between cane fields; a ditch half full of water.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_ditch",
+          "label": "The ditch",
+          "pos": [
+            50,
+            60
+          ],
+          "yields": "ev_ditch",
+          "text": "The TV and the phones, dumped together."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a red murram road between sugarcane fields at dawn, a flat-screen TV lying in a shallow ditch"
+      }
+    },
+    {
+      "id": "loc_parish",
+      "name": "St. Brigid's parish",
+      "kind": "location",
+      "description": "A small brick church, a priest's house and an old green safe in the office.",
+      "unlock": {
+        "fact": "f_achom"
+      },
+      "hotspots": [
+        {
+          "id": "hs_thomas",
+          "label": "Fr. Thomas",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_box",
+          "text": "The parish safe."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small rural Catholic church in western Kenya, a priest's office with an old green safe"
+      }
+    },
+    {
+      "id": "loc_yard",
+      "name": "The border truck yard",
+      "kind": "location",
+      "description": "Lorries queued for days, clearing agents' kiosks, Edwin's truck parked by the fence.",
+      "unlock": {
+        "fact": "f_rec_mast"
+      },
+      "hotspots": [
+        {
+          "id": "hs_truck",
+          "label": "Edwin's truck",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_truck",
+          "text": "The toolbox, under warrant."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a dusty truck yard at a border crossing, lorries queued along a fence, one truck with its toolbox open"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Charles in the kitchen",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. One heavy blow from a narrow steel bar."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a kitchen floor by a sink at night, a chair knocked over, no body visible"
+      }
+    },
+    {
+      "id": "ev_window",
+      "type": "physical",
+      "title": "The broken kitchen window",
+      "render": "object",
+      "body": {
+        "label": "The glass lies outside on the ground under the window; almost none in the sink."
+      },
+      "facts": [
+        "f_window"
+      ],
+      "gate": null,
+      "planted": {
+        "by": "p_edwin"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "shards of window glass on red earth outside a kitchen wall, the pane above broken"
+      }
+    },
+    {
+      "id": "ev_storeroom",
+      "type": "physical",
+      "title": "The store-room door",
+      "render": "object",
+      "body": {
+        "label": "On the latch, undamaged; size-10 muddy boot prints on the floor."
+      },
+      "facts": [
+        "f_storeroom",
+        "f_latch"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_search",
+      "type": "physical",
+      "title": "The ransacked rooms",
+      "render": "sceneNote",
+      "body": {
+        "note": "Mattresses lifted, ceiling boards up in two rooms, the store-room floor dug in a corner. KSh 18,000 in Charles's jacket and Akol's gold chain untouched."
+      },
+      "facts": [
+        "f_search",
+        "f_cash"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_achom",
+      "type": "witness",
+      "title": "Statement: Achom Emojong",
+      "render": "statement",
+      "body": {
+        "speaker": "p_achom"
+      },
+      "facts": [
+        "f_achom",
+        "f_achom_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_family",
+      "type": "witness",
+      "title": "Statement: the neighbours",
+      "render": "statement",
+      "body": {
+        "speaker": "p_akol"
+      },
+      "facts": [
+        "f_scream",
+        "f_boundary",
+        "f_ak_moses"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ditch",
+      "type": "physical",
+      "title": "The TV and phones in the ditch",
+      "render": "object",
+      "body": {
+        "label": "Dumped together. Caught in the TV cable: a fuel receipt, border station, Wednesday 23:58, paid from Edwin Makokha's PesaPap."
+      },
+      "facts": [
+        "f_ditch",
+        "f_receipt"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_box",
+      "type": "physical",
+      "title": "The steel box in the parish safe",
+      "render": "object",
+      "body": {
+        "label": "Locked steel box, left by Achom on Sunday."
+      },
+      "facts": [
+        "f_box",
+        "f_thomas_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rec_edwin",
+      "type": "phone",
+      "title": "Records ①: Edwin's line and PesaPap",
+      "render": "manifest",
+      "body": {
+        "calls": "Tue 14:20, unknown number, 4 min.",
+        "pay": "Thu 03:10, KSh 100,000 \"deposit\".",
+        "mast": "Busia rural sector 00:45–01:40."
+      },
+      "facts": [
+        "f_rec_call",
+        "f_rec_mast",
+        "f_rec_deposit"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_receipt",
+          "f_storeroom",
+          "f_search"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_rec_fred",
+      "type": "phone",
+      "title": "Records ②: Fred's hailing app",
+      "render": "manifest",
+      "body": {
+        "app": "Bike offline 00:30–01:50."
+      },
+      "facts": [
+        "f_fred_app"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_rec_mast"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_truck",
+      "type": "physical",
+      "title": "Edwin's truck toolbox",
+      "render": "object",
+      "body": {
+        "lever": "A tyre lever, washed.",
+        "boots": "Size-10 boots, red murram in the treads."
+      },
+      "facts": [
+        "f_lever",
+        "f_boots"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_mast",
+          "f_fred_app"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "an open truck toolbox holding a long steel tyre lever and a pair of muddy work boots"
+      }
+    },
+    {
+      "id": "ev_okiror",
+      "type": "witness",
+      "title": "Wedding photos and the host's statement",
+      "render": "statement",
+      "body": {
+        "speaker": "p_okiror"
+      },
+      "facts": [
+        "f_okiror"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_moses",
+      "type": "document",
+      "title": "Moses's lodging receipt, Nairobi",
+      "render": "logBook",
+      "body": {
+        "text": "Checked in Monday; at work Wednesday night shift."
+      },
+      "facts": [
+        "f_moses"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_akol",
+      "type": "witness",
+      "title": "Statement: Mama Akol (after her lie)",
+      "render": "statement",
+      "body": {
+        "speaker": "p_akol"
+      },
+      "facts": [
+        "f_ak_reveal"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Busia County)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_glass",
+      "type": "forensic",
+      "title": "Lab: glass fracture (kitchen window)",
+      "render": "labReport",
+      "body": {
+        "test": "toolMarks"
+      },
+      "facts": [
+        "f_glass"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toolMarks",
+        "hours": 8,
+        "needs": [
+          "ev_window"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_bootlab",
+      "type": "forensic",
+      "title": "Lab: boot prints vs Edwin's boots",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_bootmatch"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_storeroom",
+          "ev_truck"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_blood",
+      "type": "forensic",
+      "title": "Lab: trace (tyre-lever crimp)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_blood"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_truck"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Charles Emojong was found dead in his kitchen outside Busia on Thursday morning; his TV and two phones were missing.",
+      "kind": "true",
+      "about": [
+        "p_charles",
+        "loc_house"
+      ],
+      "at": {
+        "from": "07:30",
+        "to": null,
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "One heavy blow from a narrow steel bar; blood only in the kitchen.",
+      "kind": "true",
+      "about": [
+        "p_charles",
+        "plc_kitchen"
+      ]
+    },
+    {
+      "id": "f_window",
+      "text": "The kitchen window's glass lies outside on the ground under it; almost none fell into the sink.",
+      "kind": "true",
+      "about": [
+        "plc_kitchen"
+      ]
+    },
+    {
+      "id": "f_storeroom",
+      "text": "The store-room door is undamaged; muddy size-10 boot prints cross the store-room floor to the kitchen.",
+      "kind": "true",
+      "about": [
+        "plc_store"
+      ]
+    },
+    {
+      "id": "f_latch",
+      "text": "Achom: the store room is always left on the latch at night for the generator fuel.",
+      "kind": "true",
+      "about": [
+        "plc_store"
+      ]
+    },
+    {
+      "id": "f_search",
+      "text": "Every room was searched: mattresses lifted, ceiling boards pushed up, the store-room floor dug in one corner.",
+      "kind": "true",
+      "about": [
+        "loc_house"
+      ]
+    },
+    {
+      "id": "f_cash",
+      "text": "KSh 18,000 in Charles's jacket and Akol's gold chain on the dresser were not touched.",
+      "kind": "true",
+      "about": [
+        "loc_house"
+      ]
+    },
+    {
+      "id": "f_achom",
+      "text": "Achom: \"On Sunday Dad asked me to take Uncle Julius's box to Father Thomas. He said, 'If anyone asks, there is no box.'\"",
+      "kind": "true",
+      "about": [
+        "p_achom",
+        "p_charles"
+      ]
+    },
+    {
+      "id": "f_achom_self",
+      "text": "Achom slept in the back bedroom with her young cousin, who woke her at the scream.",
+      "kind": "true",
+      "about": [
+        "p_achom"
+      ],
+      "where": {
+        "person": "p_achom",
+        "place": "plc_backroom",
+        "from": "22:00",
+        "to": "02:00"
+      }
+    },
+    {
+      "id": "f_scream",
+      "text": "Neighbours: Akol screamed from the bedroom window at about 01:15 and kept the door locked until they came at 01:40.",
+      "kind": "true",
+      "about": [
+        "p_akol"
+      ],
+      "where": {
+        "person": "p_akol",
+        "place": "plc_bedroom",
+        "from": "22:00",
+        "to": "01:40"
+      }
+    },
+    {
+      "id": "f_boundary",
+      "text": "Neighbours: Mzee Okiror and Charles have fought over a boundary for ten years.",
+      "kind": "true",
+      "about": [
+        "p_okiror"
+      ]
+    },
+    {
+      "id": "f_ak_moses",
+      "text": "The neighbours: Charles's nephew Moses owed him money.",
+      "kind": "true",
+      "about": [
+        "p_moses"
+      ]
+    },
+    {
+      "id": "f_ditch",
+      "text": "The TV and both phones were dumped together in a ditch 500 m away, unopened.",
+      "kind": "true",
+      "about": [
+        "loc_ditch"
+      ]
+    },
+    {
+      "id": "f_receipt",
+      "text": "Caught in the TV cable: a fuel receipt, border station, Wednesday 23:58, paid by PesaPap from Edwin Makokha's number.",
+      "kind": "true",
+      "about": [
+        "p_edwin"
+      ],
+      "at": {
+        "from": "23:58",
+        "to": null,
+        "day": "Wed"
+      }
+    },
+    {
+      "id": "f_box",
+      "text": "In the parish safe: Julius Emojong's locked steel box, left by Achom on Sunday.",
+      "kind": "true",
+      "about": [
+        "loc_parish"
+      ]
+    },
+    {
+      "id": "f_thomas_self",
+      "text": "Fr. Thomas: Achom brought the box after Mass on Sunday; he has the only key to the safe.",
+      "kind": "true",
+      "about": [
+        "p_thomas",
+        "p_achom"
+      ]
+    },
+    {
+      "id": "f_rec_call",
+      "text": "Records ①: Tuesday 14:20, a call to Edwin from an unknown number, 4 minutes.",
+      "kind": "true",
+      "about": [
+        "p_edwin"
+      ],
+      "at": {
+        "from": "14:20",
+        "to": null,
+        "day": "Tue"
+      }
+    },
+    {
+      "id": "f_rec_mast",
+      "text": "Records ①: Edwin's phone on the Busia rural mast 00:45–01:40, beside a phone registered to Fred Emuria, a boda rider.",
+      "kind": "true",
+      "about": [
+        "p_edwin",
+        "p_fred"
+      ],
+      "at": {
+        "from": "00:45",
+        "to": "01:40",
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_rec_deposit",
+      "text": "Records ①: Thursday 03:10, KSh 100,000 \"deposit\" to Edwin from a PesaPap number registered to a man dead ten years: the lure SIM's ID.",
+      "kind": "true",
+      "about": [
+        "p_edwin"
+      ],
+      "at": {
+        "from": "03:10",
+        "to": null,
+        "day": "Thu"
+      },
+      "spine": "t_fundi"
+    },
+    {
+      "id": "f_fred_app",
+      "text": "Records ②: Fred's bike was offline on the app 00:30–01:50 while his phone sat on Edwin's mast.",
+      "kind": "true",
+      "about": [
+        "p_fred"
+      ]
+    },
+    {
+      "id": "f_lever",
+      "text": "Edwin's toolbox: a tyre lever, recently washed.",
+      "kind": "true",
+      "about": [
+        "p_edwin"
+      ]
+    },
+    {
+      "id": "f_boots",
+      "text": "Edwin's toolbox: size-10 boots, red murram in the treads.",
+      "kind": "true",
+      "about": [
+        "p_edwin"
+      ]
+    },
+    {
+      "id": "f_okiror",
+      "text": "The host and the photos: Mzee Okiror was at the wedding until 02:00.",
+      "kind": "true",
+      "about": [
+        "p_okiror"
+      ],
+      "where": {
+        "person": "p_okiror",
+        "place": "plc_wedding",
+        "from": "20:00",
+        "to": "02:00"
+      }
+    },
+    {
+      "id": "f_moses",
+      "text": "Moses was on a Nairobi night shift on Wednesday; he checked into his lodging on Monday.",
+      "kind": "true",
+      "about": [
+        "p_moses"
+      ],
+      "where": {
+        "person": "p_moses",
+        "place": "plc_nairobi",
+        "from": "18:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_aut",
+      "text": "Post-mortem: one blow from a narrow steel bar, no cuts.",
+      "kind": "true",
+      "about": [
+        "p_charles"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Thursday between 01:00 and 01:40.",
+      "kind": "true",
+      "about": [
+        "p_charles"
+      ],
+      "at": {
+        "from": "01:00",
+        "to": "01:40",
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_glass",
+      "text": "Lab: the window was broken from inside the kitchen.",
+      "kind": "true",
+      "about": [
+        "plc_kitchen"
+      ]
+    },
+    {
+      "id": "f_bootmatch",
+      "text": "Lab: the store-room prints match Edwin's size-10 boots, and nobody else's in the house.",
+      "kind": "true",
+      "about": [
+        "p_edwin"
+      ]
+    },
+    {
+      "id": "f_blood",
+      "text": "Lab: Charles's blood in the crimp of Edwin's tyre lever.",
+      "kind": "true",
+      "about": [
+        "p_charles",
+        "p_edwin"
+      ]
+    },
+    {
+      "id": "f_ed_yard",
+      "text": "Edwin: \"I was at the border yard all night with my truck.\"",
+      "kind": "lie",
+      "about": [
+        "p_edwin"
+      ]
+    },
+    {
+      "id": "f_ed_reveal",
+      "text": "Edwin: \"A voice offered me five hundred thousand for a box. I went in through the store and broke the window from inside. There was no box. There was only him.\"",
+      "kind": "true",
+      "about": [
+        "p_edwin",
+        "p_charles"
+      ],
+      "where": {
+        "person": "p_edwin",
+        "place": "plc_kitchen",
+        "from": "00:55",
+        "to": "01:40"
+      }
+    },
+    {
+      "id": "f_ed_lever",
+      "text": "Edwin: \"That lever hasn't been out of the toolbox in months.\"",
+      "kind": "lie",
+      "about": [
+        "p_edwin"
+      ]
+    },
+    {
+      "id": "f_fr_home",
+      "text": "Fred: \"I was home sleeping. My bike didn't move.\"",
+      "kind": "lie",
+      "about": [
+        "p_fred"
+      ]
+    },
+    {
+      "id": "f_fr_reveal",
+      "text": "Fred: \"Edwin said a small job, take a box. I drove him and waited at the road to watch. He came out running with a TV and no box. We threw it all in the ditch.\"",
+      "kind": "true",
+      "about": [
+        "p_fred",
+        "p_edwin"
+      ],
+      "where": {
+        "person": "p_fred",
+        "place": "plc_road",
+        "from": "00:50",
+        "to": "01:45"
+      }
+    },
+    {
+      "id": "f_fred_boots",
+      "text": "Fred wears size-8 boots.",
+      "kind": "true",
+      "about": [
+        "p_fred"
+      ]
+    },
+    {
+      "id": "f_ak_nobox",
+      "text": "Akol: \"There's no box. I don't know what you're talking about.\"",
+      "kind": "lie",
+      "about": [
+        "p_akol"
+      ]
+    },
+    {
+      "id": "f_ak_reveal",
+      "text": "Akol: \"Yes, I knew about Julius's box. Charles made me swear. I lied because I thought you were the people who wanted it.\"",
+      "kind": "true",
+      "about": [
+        "p_akol"
+      ]
+    },
+    {
+      "id": "f_ok_claim",
+      "text": "Okiror: \"We fought about a boundary for ten years. I was at a wedding.\"",
+      "kind": "claim",
+      "about": [
+        "p_okiror"
+      ]
+    },
+    {
+      "id": "f_mo_claim",
+      "text": "Moses: \"I owed him money. I was in Nairobi.\"",
+      "kind": "claim",
+      "about": [
+        "p_moses"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_edwin",
+      "stance": "cooperative",
+      "opensWith": [
+        "ev_ditch"
+      ],
+      "intro": "Edwin keeps his clearing passes round his neck and his hands flat on the table. \"I was at the border yard all night with my truck.\"",
+      "claims": [
+        "f_ed_yard"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_ed_lever",
+          "after": "f_ed_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_fred",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_rec_edwin"
+      ],
+      "intro": "Fred holds his helmet in his lap. \"I was home sleeping. My bike didn't move.\"",
+      "claims": [
+        "f_fr_home"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_akol",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_body"
+      ],
+      "intro": "Mama Akol won't sit. \"There's no box. I don't know what you're talking about.\"",
+      "claims": [
+        "f_ak_nobox"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_okiror",
+      "stance": "cooperative",
+      "intro": "Mzee Okiror leans on his stick. \"We fought about a boundary for ten years. I was at a wedding.\"",
+      "claims": [
+        "f_ok_claim"
+      ],
+      "yields": [
+        "ev_okiror"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_moses",
+      "stance": "cooperative",
+      "intro": "Moses, on a video call from Nairobi: \"I owed him money. I was in Nairobi.\"",
+      "claims": [
+        "f_mo_claim"
+      ],
+      "yields": [
+        "ev_moses"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_achom",
+      "stance": "cooperative",
+      "intro": "Achom sits very straight. \"Ask me anything.\"",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_thomas",
+      "stance": "cooperative",
+      "intro": "Fr. Thomas unlocks the safe without being asked.",
+      "claims": [],
+      "yields": [],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_akol",
+      "claim": "f_ak_nobox",
+      "brokenBy": [
+        "f_achom",
+        "f_box"
+      ],
+      "reveals": [
+        "f_ak_reveal",
+        "ev_akol"
+      ],
+      "reaction": "\"Yes, I knew about Julius's box. Charles made me swear. I lied because I thought you were the people who wanted it.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_edwin",
+      "claim": "f_ed_yard",
+      "brokenBy": [
+        "f_rec_mast",
+        "f_receipt"
+      ],
+      "reveals": [
+        "f_ed_reveal"
+      ],
+      "reaction": "\"A voice offered me five hundred thousand for a box. A box! I owe the bank more than that. There was no box. There was only him.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_fred",
+      "claim": "f_fr_home",
+      "brokenBy": [
+        "f_fred_app",
+        "f_rec_mast"
+      ],
+      "reveals": [
+        "f_fr_reveal",
+        "f_fred_boots"
+      ],
+      "reaction": "\"Edwin said it was a small job, take a box from a house. I waited at the road. When he came out running with a TV and no box, I knew something bad happened.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_lever",
+      "claim": "f_ed_lever",
+      "brokenBy": [
+        "f_blood"
+      ],
+      "reveals": [],
+      "reaction": "Edwin takes the lanyard off his neck and puts it on the table.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_edwin",
+      "text": "Edwin Makokha",
+      "category": "person",
+      "ref": "p_edwin",
+      "unlock": {
+        "anyOf": [
+          "f_receipt"
+        ]
+      }
+    },
+    {
+      "id": "w_fred",
+      "text": "Fred Emuria",
+      "category": "person",
+      "ref": "p_fred",
+      "unlock": {
+        "anyOf": [
+          "f_rec_mast"
+        ]
+      }
+    },
+    {
+      "id": "w_akol",
+      "text": "Akol Emojong",
+      "category": "person",
+      "ref": "p_akol",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_okiror",
+      "text": "Simon Okiror",
+      "category": "person",
+      "ref": "p_okiror",
+      "unlock": {
+        "anyOf": [
+          "f_boundary"
+        ]
+      }
+    },
+    {
+      "id": "w_moses",
+      "text": "Moses Etyang",
+      "category": "person",
+      "ref": "p_moses",
+      "unlock": {
+        "anyOf": [
+          "f_ak_moses"
+        ]
+      }
+    },
+    {
+      "id": "w_achom",
+      "text": "Achom Emojong",
+      "category": "person",
+      "ref": "p_achom",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_nobody",
+      "text": "nobody",
+      "category": "person",
+      "nobody": true,
+      "unlock": {
+        "start": true
+      }
+    },
+    {
+      "id": "r_drove",
+      "text": "drove the killer and kept watch",
+      "category": "role",
+      "by": [
+        "f_fr_reveal",
+        "f_fred_app",
+        "f_rec_mast"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_rec_mast"
+        ]
+      }
+    },
+    {
+      "id": "r_alibi",
+      "text": "gave a false alibi",
+      "category": "role",
+      "by": [
+        "f_ak_reveal"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "r_lure",
+      "text": "lured the victim",
+      "category": "role",
+      "by": [
+        "f_ob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "r_plant",
+      "text": "planted evidence",
+      "category": "role",
+      "by": [
+        "f_window"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_window"
+        ]
+      }
+    },
+    {
+      "id": "r_footage",
+      "text": "deleted the footage",
+      "category": "role",
+      "by": [
+        "f_ob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_kitchen",
+      "text": "the kitchen of Charles's house",
+      "category": "place",
+      "ref": "plc_kitchen",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "pl_store",
+      "text": "the store room",
+      "category": "place",
+      "ref": "plc_store",
+      "unlock": {
+        "anyOf": [
+          "f_storeroom"
+        ]
+      }
+    },
+    {
+      "id": "pl_safe",
+      "text": "the parish safe",
+      "category": "place",
+      "ref": "plc_safe",
+      "unlock": {
+        "anyOf": [
+          "f_achom"
+        ]
+      }
+    },
+    {
+      "id": "pl_ditch",
+      "text": "the roadside ditch",
+      "category": "place",
+      "ref": "loc_ditch",
+      "unlock": {
+        "anyOf": [
+          "f_ditch"
+        ]
+      }
+    },
+    {
+      "id": "pl_yard",
+      "text": "the border truck yard",
+      "category": "place",
+      "ref": "plc_yard",
+      "unlock": {
+        "anyOf": [
+          "f_receipt"
+        ]
+      }
+    },
+    {
+      "id": "h_lever",
+      "text": "striking him with a tyre lever",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut"
+        ]
+      }
+    },
+    {
+      "id": "h_panga",
+      "text": "an attack by burglars with a panga",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_fall",
+      "text": "a fall in the dark kitchen",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack on finding burglars",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_jembe",
+      "text": "a blow with a jembe from the store",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_storeroom"
+        ]
+      }
+    },
+    {
+      "id": "m_box",
+      "text": "he'd been paid to recover Julius Emojong's box and Charles surprised him",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_achom"
+        ]
+      }
+    },
+    {
+      "id": "m_boundary",
+      "text": "a boundary feud",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_boundary"
+        ]
+      }
+    },
+    {
+      "id": "m_loan",
+      "text": "an unpaid family loan",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ak_moses"
+        ]
+      }
+    },
+    {
+      "id": "m_robbery",
+      "text": "an ordinary robbery",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_wife",
+      "text": "a wife's anger",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "i_window",
+      "text": "the broken kitchen window",
+      "category": "item",
+      "ref": "ev_window",
+      "unlock": {
+        "anyOf": [
+          "f_window"
+        ]
+      }
+    },
+    {
+      "id": "i_ditch",
+      "text": "the TV and phones in the ditch",
+      "category": "item",
+      "ref": "ev_ditch",
+      "unlock": {
+        "anyOf": [
+          "f_ditch"
+        ]
+      }
+    },
+    {
+      "id": "i_floor",
+      "text": "the dug store-room floor",
+      "category": "item",
+      "ref": "ev_search",
+      "unlock": {
+        "anyOf": [
+          "f_search"
+        ]
+      }
+    },
+    {
+      "id": "i_door",
+      "text": "the unlocked store-room door",
+      "category": "item",
+      "ref": "ev_storeroom",
+      "unlock": {
+        "anyOf": [
+          "f_storeroom"
+        ]
+      }
+    },
+    {
+      "id": "i_mattress",
+      "text": "the lifted mattresses",
+      "category": "item",
+      "ref": "ev_search",
+      "unlock": {
+        "anyOf": [
+          "f_search"
+        ]
+      }
+    },
+    {
+      "id": "p_outward",
+      "text": "the glass fell outward: it was broken from inside",
+      "category": "plantTell",
+      "by": [
+        "f_window",
+        "f_glass"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_window"
+        ]
+      }
+    },
+    {
+      "id": "p_dump",
+      "text": "robbers don't dump the loot unopened 500 m away",
+      "category": "plantTell",
+      "by": [
+        "f_ditch"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_ditch"
+        ]
+      }
+    },
+    {
+      "id": "p_smear",
+      "text": "a wiped smear, not spatter",
+      "category": "plantTell",
+      "by": [
+        "f_ob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_window"
+        ]
+      }
+    },
+    {
+      "id": "p_dust",
+      "text": "dust under it, not on it",
+      "category": "plantTell",
+      "by": [
+        "f_ob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_window"
+        ]
+      }
+    },
+    {
+      "id": "p_print",
+      "text": "prints under the printed text",
+      "category": "plantTell",
+      "by": [
+        "f_ob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_window"
+        ]
+      }
+    },
+    {
+      "id": "p_early",
+      "text": "it was reported missing before the murder",
+      "category": "plantTell",
+      "by": [
+        "f_ob"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_window"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_sim",
+      "text": "The SIM that lured Halima to Sharon Kiprop's chambers (case 90)",
+      "category": "pin",
+      "pin": "case-090:f_lure_sim",
+      "unlock": {
+        "anyOf": [
+          "f_rec_deposit"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_ogada",
+      "text": "The phone that called Walter Ogada (case 50)",
+      "category": "pin",
+      "pin": "case-050:f_rec_caller_id",
+      "unlock": {
+        "anyOf": [
+          "f_rec_deposit"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_till",
+      "text": "The Mvua till in Rashid's order book (case 10)",
+      "category": "pin",
+      "pin": "case-010:f_order_mvua",
+      "unlock": {
+        "anyOf": [
+          "f_rec_deposit"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_msingi",
+      "text": "The Msingi Trust's nominee directors (case 91)",
+      "category": "pin",
+      "pin": "case-091:f_directors",
+      "unlock": {
+        "anyOf": [
+          "f_rec_deposit"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_doreen",
+      "text": "Doreen Kathambi's commissioner stamp (case 60)",
+      "category": "pin",
+      "pin": "case-060:f_comm_stamp",
+      "unlock": {
+        "anyOf": [
+          "f_rec_deposit"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. The killer was helped by {accomplice}, who {role}. {item} was planted, as shown by {ptell}. The man who paid Edwin used the same dead man's ID as {pin}.",
+    "fixed": {
+      "victim": "Charles Emojong"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_11y",
+                  "label": "Eleven years ago",
+                  "from": null,
+                  "to": null,
+                  "day": "11 years ago"
+                },
+                {
+                  "id": "sl_sun",
+                  "label": "Sunday",
+                  "from": null,
+                  "to": null,
+                  "day": "Sun"
+                },
+                {
+                  "id": "sl_tue",
+                  "label": "Tuesday 14:20",
+                  "from": "14:20",
+                  "to": "14:20",
+                  "day": "Tue"
+                },
+                {
+                  "id": "sl_0055",
+                  "label": "Thursday 00:55",
+                  "from": "00:55",
+                  "to": "00:55",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Thursday 01:00–01:40",
+                  "from": "01:00",
+                  "to": "01:40",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_0200",
+                  "label": "Thursday 02:00",
+                  "from": "02:00",
+                  "to": "02:00",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_0310",
+                  "label": "Thursday 03:10",
+                  "from": "03:10",
+                  "to": "03:10",
+                  "day": "Thu"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_box",
+                  "text": "Achom takes the box to the parish",
+                  "slot": "sl_sun",
+                  "by": [
+                    "f_achom",
+                    "f_thomas_self"
+                  ],
+                  "why": "After Mass on Sunday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_achom"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_offer",
+                  "text": "Edwin is offered the job",
+                  "slot": "sl_tue",
+                  "by": [
+                    "f_rec_call"
+                  ],
+                  "why": "The unknown number, 14:20.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rec_call"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_enter",
+                  "text": "Edwin enters through the store room",
+                  "slot": "sl_0055",
+                  "by": [
+                    "f_ed_reveal",
+                    "f_rec_mast"
+                  ],
+                  "why": "Just before one.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_ed_reveal"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_kill",
+                  "text": "Charles is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod",
+                    "f_scream"
+                  ],
+                  "why": "Between one and twenty to two.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_pay",
+                  "text": "The deposit arrives",
+                  "slot": "sl_0310",
+                  "by": [
+                    "f_rec_deposit"
+                  ],
+                  "why": "Ten past three.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rec_deposit"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_0200",
+                  "by": [
+                    "f_glass",
+                    "f_aut_tod"
+                  ],
+                  "why": "\"Thieves break the window at two\"? It was broken from inside, and Charles was dead by twenty to two."
+                },
+                {
+                  "slot": "sl_11y",
+                  "by": [
+                    "f_achom"
+                  ],
+                  "why": "Eleven years ago Julius handed the box over; nothing on this strip happened then."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "Sunday the box leaves; Tuesday the call; just before one he's in; by twenty to two Charles is dead; at ten past three, the money.",
+          "fail": [
+            "The window was broken from inside, not at two by thieves.",
+            "When did the box leave the house?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_kitchen"
+          }
+        ],
+        "prosecutor": {
+          "pass": "In his own kitchen, under the window Edwin had just broken.",
+          "fail": [
+            "The store room is where he came in.",
+            "The ditch is where the loot went."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_edwin",
+            "pool": [
+              "w_edwin",
+              "w_fred",
+              "w_akol",
+              "w_okiror",
+              "w_moses",
+              "w_achom"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "His receipt in the loot, his phone on the mast, his boots on the floor, Charles's blood on his lever.",
+          "fail": [
+            "Fred waited at the road in size-8 boots.",
+            "Akol was locked in the bedroom, screaming."
+          ]
+        }
+      },
+      {
+        "id": "g_accomplice",
+        "kind": "accomplice",
+        "blanks": [
+          {
+            "id": "accomplice",
+            "category": "person",
+            "answer": "w_fred",
+            "pool": [
+              "w_fred",
+              "w_akol",
+              "w_moses",
+              "w_okiror",
+              "w_achom",
+              "w_nobody"
+            ]
+          },
+          {
+            "id": "role",
+            "category": "role",
+            "answer": "r_drove"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Fred switched his bike off the app, drove his cousin there and kept watch.",
+          "fail": [
+            "Akol lied about the box, not about anyone's whereabouts.",
+            "Achom moved the box before any crime, on her father's word."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_lever"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A narrow steel bar: the tyre lever from his own truck.",
+          "fail": [
+            "No cuts. Not a panga.",
+            "The store-room jembes are clean and rusty."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_box"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Five hundred thousand for a box that had left on Sunday.",
+          "fail": [
+            "Robbers take cash and gold.",
+            "The boundary man was dancing at a wedding."
+          ]
+        }
+      },
+      {
+        "id": "g_planted",
+        "kind": "planted",
+        "blanks": [
+          {
+            "id": "item",
+            "category": "item",
+            "answer": "i_window"
+          },
+          {
+            "id": "ptell",
+            "category": "plantTell",
+            "answer": "p_outward"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Glass falls away from the blow. This glass fell into the garden.",
+          "fail": [
+            "The ditch shows they panicked, not what they staged.",
+            "The door was on the latch every night."
+          ]
+        }
+      },
+      {
+        "id": "g_spine",
+        "kind": "spine",
+        "blanks": [
+          {
+            "id": "pin",
+            "category": "pin",
+            "answer": "w_pin_sim",
+            "accept": [
+              "w_pin_ogada"
+            ],
+            "spine": true
+          }
+        ],
+        "prosecutor": {
+          "pass": "A dead man's ID, used a third time. Somebody keeps a drawer of them.",
+          "fail": [
+            "Mvua's till is the money, not the ID.",
+            "The Msingi directors are alive."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_kitchen",
+      "from": "01:00",
+      "to": "01:40",
+      "note": "The post-mortem and Akol's scream at about 01:15."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_window",
+          "f_glass",
+          "f_storeroom",
+          "f_latch"
+        ],
+        "concludes": "The break-in was staged from inside; the killer came through the unlocked store room.",
+        "answers": [
+          "item",
+          "ptell"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_search",
+          "f_cash",
+          "f_ditch",
+          "f_body",
+          "f_aut",
+          "f_aut_tod"
+        ],
+        "concludes": "The \"robbers\" left cash and gold, dug floors, then dumped the loot: they were searching.",
+        "answers": [
+          "where"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_achom",
+          "f_box",
+          "f_thomas_self",
+          "f_ak_nobox",
+          "f_ak_reveal"
+        ],
+        "concludes": "The box they wanted left the house on Sunday.",
+        "answers": [
+          "why"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_receipt",
+          "f_rec_call",
+          "f_rec_mast",
+          "f_ed_yard",
+          "f_ed_reveal"
+        ],
+        "concludes": "Edwin was called on Tuesday and was in the kitchen when Charles died.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_rec_deposit",
+          "case-090:f_lure_sim",
+          "case-050:f_rec_caller_id"
+        ],
+        "concludes": "He was paid from the same dead man's ID as the lure SIM in case 90 and the phone in case 50.",
+        "answers": [
+          "pin"
+        ]
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_fred_app",
+          "f_fr_home",
+          "f_fr_reveal"
+        ],
+        "concludes": "Fred switched off his bike, drove Edwin and kept watch.",
+        "answers": [
+          "accomplice",
+          "role"
+        ]
+      },
+      {
+        "id": "s7",
+        "from": [
+          "s6",
+          "f_lever",
+          "f_boots",
+          "f_blood",
+          "f_bootmatch",
+          "f_ed_lever"
+        ],
+        "concludes": "Edwin Makokha struck Charles with his tyre lever while searching for Julius's box.",
+        "answers": [
+          "who",
+          "how"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_store",
+        "blank": "where",
+        "by": [
+          "f_body",
+          "f_storeroom"
+        ],
+        "why": "The way in; the blood is all in the kitchen."
+      },
+      {
+        "word": "pl_safe",
+        "blank": "where",
+        "by": [
+          "f_box"
+        ],
+        "why": "Where the box was."
+      },
+      {
+        "word": "pl_ditch",
+        "blank": "where",
+        "by": [
+          "f_ditch"
+        ],
+        "why": "Where the loot went."
+      },
+      {
+        "word": "pl_yard",
+        "blank": "where",
+        "by": [
+          "f_rec_mast"
+        ],
+        "why": "Edwin's alibi, broken by the mast."
+      },
+      {
+        "word": "w_fred",
+        "blank": "who",
+        "by": [
+          "f_fr_reveal",
+          "f_fred_boots",
+          "f_bootmatch"
+        ],
+        "why": "Fred waited at the road; the prints are size 10, his boots size 8."
+      },
+      {
+        "word": "w_akol",
+        "blank": "who",
+        "by": [
+          "f_scream",
+          "f_bootmatch",
+          "f_blood"
+        ],
+        "why": "Akol was locked in the bedroom, screaming; the prints and the blood are Edwin's.",
+        "present": true
+      },
+      {
+        "word": "w_okiror",
+        "blank": "who",
+        "by": [
+          "f_okiror"
+        ],
+        "why": "At a wedding until two."
+      },
+      {
+        "word": "w_moses",
+        "blank": "who",
+        "by": [
+          "f_moses"
+        ],
+        "why": "In Nairobi."
+      },
+      {
+        "word": "w_achom",
+        "blank": "who",
+        "by": [
+          "f_achom_self",
+          "f_bootmatch",
+          "f_blood"
+        ],
+        "why": "Asleep with her cousin; the prints and blood are Edwin's.",
+        "present": true
+      },
+      {
+        "word": "w_akol",
+        "blank": "accomplice",
+        "by": [
+          "f_ak_reveal",
+          "f_scream"
+        ],
+        "why": "She lied about the box out of fear, and screamed for help."
+      },
+      {
+        "word": "w_moses",
+        "blank": "accomplice",
+        "by": [
+          "f_moses"
+        ],
+        "why": "In Nairobi."
+      },
+      {
+        "word": "w_okiror",
+        "blank": "accomplice",
+        "by": [
+          "f_okiror"
+        ],
+        "why": "At the wedding."
+      },
+      {
+        "word": "w_achom",
+        "blank": "accomplice",
+        "by": [
+          "f_achom",
+          "f_thomas_self"
+        ],
+        "why": "She moved the box before any crime, on her father's instruction."
+      },
+      {
+        "word": "w_nobody",
+        "blank": "accomplice",
+        "by": [
+          "f_fred_app",
+          "f_fr_reveal"
+        ],
+        "why": "Someone drove him there and waited."
+      },
+      {
+        "word": "r_alibi",
+        "blank": "role",
+        "by": [
+          "f_fr_reveal"
+        ],
+        "why": "Fred gave no alibi for Edwin; he lied for himself."
+      },
+      {
+        "word": "r_lure",
+        "blank": "role",
+        "by": [
+          "f_achom"
+        ],
+        "why": "Charles was asleep in his own house; nobody lured him."
+      },
+      {
+        "word": "r_plant",
+        "blank": "role",
+        "by": [
+          "f_ed_reveal"
+        ],
+        "why": "Edwin broke the window himself."
+      },
+      {
+        "word": "r_footage",
+        "blank": "role",
+        "by": [
+          "f_ob"
+        ],
+        "why": "There was no footage."
+      },
+      {
+        "word": "h_panga",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "A narrow bar, no cuts."
+      },
+      {
+        "word": "h_fall",
+        "blank": "how",
+        "by": [
+          "f_aut",
+          "f_blood"
+        ],
+        "why": "One blow; blood on the lever."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut"
+        ],
+        "why": "A blow."
+      },
+      {
+        "word": "h_jembe",
+        "blank": "how",
+        "by": [
+          "f_blood"
+        ],
+        "why": "The blood is on the lever."
+      },
+      {
+        "word": "m_boundary",
+        "blank": "why",
+        "by": [
+          "f_okiror"
+        ],
+        "why": "Okiror was at the wedding."
+      },
+      {
+        "word": "m_loan",
+        "blank": "why",
+        "by": [
+          "f_moses"
+        ],
+        "why": "Moses was in Nairobi."
+      },
+      {
+        "word": "m_robbery",
+        "blank": "why",
+        "by": [
+          "f_cash",
+          "f_ditch"
+        ],
+        "why": "Cash and gold untouched; loot dumped."
+      },
+      {
+        "word": "m_wife",
+        "blank": "why",
+        "by": [
+          "f_ak_reveal",
+          "f_scream"
+        ],
+        "why": "Akol's lie was fear."
+      },
+      {
+        "word": "i_ditch",
+        "blank": "item",
+        "by": [
+          "f_fr_reveal"
+        ],
+        "why": "Dumped in panic on the road, not staged."
+      },
+      {
+        "word": "i_floor",
+        "blank": "item",
+        "by": [
+          "f_search"
+        ],
+        "why": "Dug while searching."
+      },
+      {
+        "word": "i_door",
+        "blank": "item",
+        "by": [
+          "f_latch"
+        ],
+        "why": "Left on the latch every night by the family."
+      },
+      {
+        "word": "i_mattress",
+        "blank": "item",
+        "by": [
+          "f_search"
+        ],
+        "why": "Lifted while searching."
+      },
+      {
+        "word": "p_dump",
+        "blank": "ptell",
+        "by": [
+          "f_fr_reveal"
+        ],
+        "why": "That tells you they panicked, not what they staged."
+      },
+      {
+        "word": "p_smear",
+        "blank": "ptell",
+        "by": [
+          "f_glass"
+        ],
+        "why": "The window was broken, not wiped."
+      },
+      {
+        "word": "p_dust",
+        "blank": "ptell",
+        "by": [
+          "f_glass"
+        ],
+        "why": "Glass on the ground, not dust."
+      },
+      {
+        "word": "p_print",
+        "blank": "ptell",
+        "by": [
+          "f_glass"
+        ],
+        "why": "A window has no printed text."
+      },
+      {
+        "word": "p_early",
+        "blank": "ptell",
+        "by": [
+          "f_ob"
+        ],
+        "why": "Nothing was reported early."
+      },
+      {
+        "word": "w_pin_till",
+        "blank": "pin",
+        "by": [
+          "case-010:f_order_mvua",
+          "f_rec_deposit"
+        ],
+        "why": "The till is Mvua's money, not the dead man's ID."
+      },
+      {
+        "word": "w_pin_msingi",
+        "blank": "pin",
+        "by": [
+          "case-091:f_directors",
+          "f_rec_deposit"
+        ],
+        "why": "The Msingi directors are living nominees."
+      },
+      {
+        "word": "w_pin_doreen",
+        "blank": "pin",
+        "by": [
+          "case-060:f_comm_stamp",
+          "f_rec_deposit"
+        ],
+        "why": "A stamp, not an ID."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Eleven years ago Julius Emojong gives his brother a locked steel box: \"If I'm arrested, keep it hidden. If I'm killed, give it to a newspaper.\" After case 90 Charles grows afraid, and on Sunday Achom takes it to Fr. Thomas.",
+        "image": null
+      },
+      {
+        "text": "On Tuesday an unknown number offers Edwin KSh 500,000 to \"collect a metal box from a house near Busia, and make it look like thieves\". Just before one on Thursday morning Fred drops him at the house and waits at the road, his bike off the app.",
+        "image": null
+      },
+      {
+        "text": "Edwin comes in through the store room, breaks the kitchen window from inside and begins to search. Charles wakes and comes to the kitchen; Edwin strikes him with the tyre lever from his truck.",
+        "image": "plc_kitchen"
+      },
+      {
+        "text": "Akol screams from the bedroom. Edwin tears through every room, finds no box, grabs the TV and phones and runs. On the road Fred panics at the weight, and they throw it all in a ditch. At 03:10 the deposit arrives.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "The box is opened at the ODPP in front of Halima and Julius Emojong's advocate: eleven years of Julius's notebooks, every file he withdrew, and on every page \"via Adjudication\"."
+    },
+    {
+      "beat": "Told his brother died for the box, Julius Emojong asks for Amani. Over two days he says: \"Every instruction came in an envelope through Adjudication, through Mr. Raphael Oduya's office. I never knew who was above him.\"",
+      "files": [
+        {
+          "thread": "t_registry",
+          "text": "Closed with a statement: Julius Emojong says every instruction came in an envelope \"through Adjudication\", through Raphael Oduya's office."
+        }
+      ]
+    },
+    {
+      "beat": "Amani's notebook: \"Adjudication. Oduya. The man from Lands who visited Dad? Or the man who carries the envelopes?\""
+    }
+  ],
+  "clockPlan": {
+    "note": "Three stamps (the maximum): two records requests and a warrant on Edwin's truck. Detain Edwin after the search; boots compare at once, glass (8 h) and blood (12 h) inside 24 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_house",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_window",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_storeroom",
+        "hours": 0.5
+      },
+      {
+        "do": "read",
+        "target": "ev_search",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_achom",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_achom"
+      },
+      {
+        "do": "read",
+        "target": "ev_family",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_akol"
+      },
+      {
+        "do": "submit",
+        "target": "ev_glass"
+      },
+      {
+        "do": "travel",
+        "target": "loc_ditch",
+        "hours": 0.25,
+        "from": "loc_house"
+      },
+      {
+        "do": "visit",
+        "target": "loc_ditch",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_ditch",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_house",
+        "hours": 0.25,
+        "from": "loc_ditch"
+      },
+      {
+        "do": "travel",
+        "target": "loc_parish",
+        "hours": 0.25,
+        "from": "loc_house"
+      },
+      {
+        "do": "visit",
+        "target": "loc_parish",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_box",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_thomas"
+      },
+      {
+        "do": "press",
+        "target": "c_akol"
+      },
+      {
+        "do": "read",
+        "target": "ev_akol",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_okiror"
+      },
+      {
+        "do": "interview",
+        "target": "p_moses"
+      },
+      {
+        "do": "records",
+        "target": "ev_rec_edwin"
+      },
+      {
+        "do": "interview",
+        "target": "p_edwin"
+      },
+      {
+        "do": "press",
+        "target": "c_edwin"
+      },
+      {
+        "do": "records",
+        "target": "ev_rec_fred"
+      },
+      {
+        "do": "interview",
+        "target": "p_fred"
+      },
+      {
+        "do": "press",
+        "target": "c_fred"
+      },
+      {
+        "do": "travel",
+        "target": "loc_yard",
+        "hours": 0.25,
+        "from": "loc_parish"
+      },
+      {
+        "do": "search",
+        "target": "loc_yard"
+      },
+      {
+        "do": "read",
+        "target": "ev_truck",
+        "hours": 0
+      },
+      {
+        "do": "detain",
+        "target": "p_edwin"
+      },
+      {
+        "do": "submit",
+        "target": "ev_bootlab"
+      },
+      {
+        "do": "submit",
+        "target": "ev_blood"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 12
+      },
+      {
+        "do": "press",
+        "target": "c_lever"
+      }
+    ],
+    "totalHours": 45.5
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_achom",
+        "line": "When did the box leave the house, Amani?"
+      },
+      "tier2": {
+        "facts": [
+          "f_achom",
+          "f_aut_tod"
+        ],
+        "line": "Sunday. And he died between one and twenty to two."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_body",
+        "line": "Where is the blood?"
+      },
+      "tier2": {
+        "facts": [
+          "f_body"
+        ],
+        "line": "Only in the kitchen."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_ditch",
+        "line": "What was caught in the TV cable?"
+      },
+      "tier2": {
+        "facts": [
+          "f_receipt",
+          "f_blood"
+        ],
+        "line": "Edwin's fuel receipt. Then his lever."
+      }
+    },
+    "g_accomplice": {
+      "tier1": {
+        "point": "ev_rec_fred",
+        "line": "Whose bike went off the app?"
+      },
+      "tier2": {
+        "facts": [
+          "f_fred_app",
+          "f_fr_reveal"
+        ],
+        "line": "Fred drove him and kept watch."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "A narrow steel bar. What lives in a truck's toolbox?"
+      },
+      "tier2": {
+        "facts": [
+          "f_aut",
+          "f_blood"
+        ],
+        "line": "The tyre lever."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_search",
+        "line": "What did the \"robbers\" leave behind?"
+      },
+      "tier2": {
+        "facts": [
+          "f_cash",
+          "f_achom"
+        ],
+        "line": "Cash and gold. They wanted the box."
+      }
+    },
+    "g_planted": {
+      "tier1": {
+        "point": "ev_window",
+        "line": "Which side of the window is the glass on?"
+      },
+      "tier2": {
+        "facts": [
+          "f_window",
+          "f_glass"
+        ],
+        "line": "Outside. Broken from inside."
+      }
+    },
+    "g_spine": {
+      "tier1": {
+        "point": "ev_rec_edwin",
+        "line": "Whose ID pays the deposit?"
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_deposit"
+        ],
+        "line": "A dead man's: the lure SIM's."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "sanduku la chuma",
+      "def": "A steel box."
+    },
+    {
+      "term": "mpaka",
+      "def": "The border."
+    },
+    {
+      "term": "wakala wa forodha",
+      "def": "A clearing agent."
+    },
+    {
+      "term": "kioo",
+      "def": "Glass."
+    },
+    {
+      "term": "parokia",
+      "def": "A parish."
+    },
+    {
+      "term": "boda",
+      "def": "A motorbike taxi."
+    },
+    {
+      "term": "panga",
+      "def": "A machete."
+    },
+    {
+      "term": "jembe",
+      "def": "A hoe."
+    },
+    {
+      "term": "Mvua",
+      "def": "Mvua Holdings, the shell company behind the forged titles (\"mvua\" means rain)."
+    },
+    {
+      "term": "PesaPap",
+      "def": "A mobile-money service (fictional)."
+    },
+    {
+      "term": "murram",
+      "def": "Red laterite earth, used for rural roads."
+    }
+  ],
+  "ui": {
+    "beats": [],
+    "beatNotes": "No new mechanics."
+  }
+}

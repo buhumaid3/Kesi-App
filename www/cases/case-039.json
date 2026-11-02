@@ -1,0 +1,1693 @@
+{
+  "meta": {
+    "id": "case-039",
+    "number": 39,
+    "region": "rift-valley",
+    "regionNumber": 4,
+    "title": "Asali",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 22,
+    "date": "Sunday 23 November",
+    "folderTab": "ELDAMA RAVINE"
+  },
+  "pattern": {
+    "crimePattern": "business partner poisons the sawmill owner with a gift of honey after he threatens to report her illegal timber",
+    "noRealCaseRetold": true,
+    "notes": "Fictional sawmill, supplier and brand (\"Rat Kill Max\"). The poison is named only by class (long-acting anticoagulant rodenticide); no quantity, method of mixing or dose is given. No image of the patient.",
+    "tags": [
+      "poisoning",
+      "slow-death",
+      "illegal-logging",
+      "forensics",
+      "records"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 4,
+    "redHerrings": 1,
+    "liars": 1,
+    "groups": [
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 30/23/11",
+    "date": "Sunday 23 November",
+    "time": "09:10",
+    "reportedBy": "Rift General Hospital, Nakuru",
+    "text": "Rift General Hospital, Nakuru, reports the death at 06:40 of Jacob Mukhwana (58), sawmill owner from Eldama Ravine, after four days of unexplained bleeding. Doctors suspect poisoning.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_jacob",
+      "role": "victim",
+      "name": "Jacob Mukhwana",
+      "age": 58,
+      "occupation": "Owner, Mukhwana Timber Works, Eldama Ravine",
+      "bio": "Thirty years running a sawmill on the forest edge. Takes a spoonful of honey in his tea every morning for his chest.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_jhouse",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 50s, a sawdust-flecked work jacket over a sweater, a carpenter's pencil behind his ear, a broad tired face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_cecilia",
+      "role": "suspect",
+      "name": "Cecilia Njiru",
+      "age": 54,
+      "occupation": "Business partner (40% of the sawmill)",
+      "bio": "Partner for twenty years on a handshake. Runs the mill's buying and its books.",
+      "community": "Embu",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_pamela_gift"
+      },
+      "at": "plc_chouse",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 50s, a neat suit jacket, gold earrings, reading glasses on her head, a sympathetic expression held carefully, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_barnabas",
+      "role": "suspect",
+      "name": "Barnabas Kimeli",
+      "age": 37,
+      "occupation": "Workers' representative",
+      "redHerring": true,
+      "bio": "Led a strike at the mill last month and threatened Jacob in front of the workers.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_strike"
+      },
+      "at": "loc_mill",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 30s, sawmill overalls, a union badge, a hard hat under his arm, defiant, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_allan",
+      "role": "suspect",
+      "name": "Allan Mukhwana",
+      "age": 27,
+      "occupation": "Jacob's son",
+      "bio": "Works in Nairobi. Deep in debt. Came home on Saturday evening when his father fell ill.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_bus",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan young man, late 20s, a city jacket, a travel bag, red eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_pamela",
+      "role": "witness",
+      "name": "Pamela Mukhwana",
+      "age": 52,
+      "occupation": "Jacob's wife",
+      "bio": "Has kept house up the hill from the mill for thirty years. Diabetic.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_jhouse",
+      "image": null
+    },
+    {
+      "id": "p_gedi",
+      "role": "witness",
+      "name": "Dr. Ibrahim Gedi",
+      "age": 45,
+      "occupation": "Physician, Rift General Hospital",
+      "bio": "Treated Jacob from his admission on Thursday.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_hospital",
+      "image": null
+    },
+    {
+      "id": "p_rebecca",
+      "role": "witness",
+      "name": "Rebecca Lokwang",
+      "age": 40,
+      "occupation": "Honey seller, Marigat market",
+      "statementOnly": true,
+      "bio": "Sells Baringo honey in recycled jars at Marigat market.",
+      "community": "Turkana",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_cjar"
+      },
+      "at": "plc_marigat",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_jhouse",
+      "name": "The Mukhwana house, Eldama Ravine"
+    },
+    {
+      "id": "plc_chouse",
+      "name": "Cecilia's house, Eldama Ravine"
+    },
+    {
+      "id": "plc_bus",
+      "name": "Nairobi–Eldama Ravine bus"
+    },
+    {
+      "id": "plc_marigat",
+      "name": "Marigat market"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_hospital",
+      "name": "Rift General Hospital, Nakuru",
+      "kind": "scene",
+      "description": "A medical ward. Dr. Gedi meets Amani in the corridor with Jacob's notes. There is no image of the patient.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_notes",
+          "label": "Admission notes",
+          "pos": [
+            40,
+            50
+          ],
+          "yields": "ev_hospital",
+          "text": "Dr. Gedi opens the admission notes at Thursday."
+        },
+        {
+          "id": "hs_blood",
+          "label": "Blood sample",
+          "pos": [
+            60,
+            50
+          ],
+          "yields": "ev_blood",
+          "text": "A sample of Jacob's blood, kept for the lab."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a quiet hospital corridor in a Kenyan provincial hospital, a doctor's clipboard on a trolley, a window onto a courtyard, no patients visible"
+      }
+    },
+    {
+      "id": "loc_house",
+      "name": "The Mukhwana house",
+      "kind": "location",
+      "description": "A stone house up the hill from the mill. A kitchen shelf with tea, sugar, and a half-eaten jar of honey with a card propped against it.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_honey",
+          "label": "Jar on the shelf",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_honey",
+          "text": "A jar of honey, half eaten, a handwritten label, and a small card."
+        },
+        {
+          "id": "hs_pamela",
+          "label": "Pamela",
+          "pos": [
+            20,
+            60
+          ],
+          "yields": "ev_pamela",
+          "text": "Pamela sits at the kitchen table with her hands flat on it."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a simple Kenyan kitchen in a stone house, a shelf with tea leaves, sugar, and a half-eaten jar of golden honey with a small card propped against it, morning light"
+      }
+    },
+    {
+      "id": "loc_mill",
+      "name": "Mukhwana Timber Works",
+      "kind": "location",
+      "description": "A yard of logs, a saw shed, a canteen, an office with filing cabinets.",
+      "unlock": {
+        "fact": "f_pamela_gift"
+      },
+      "hotspots": [
+        {
+          "id": "hs_blacklist",
+          "label": "Office wall",
+          "pos": [
+            30,
+            30
+          ],
+          "yields": "ev_blacklist",
+          "text": "A printed list pinned to the wall, one name circled in red."
+        },
+        {
+          "id": "hs_invoices",
+          "label": "Filing cabinet",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_invoices",
+          "text": "The supplier invoices for the year."
+        },
+        {
+          "id": "hs_letter",
+          "label": "Jacob's desk",
+          "pos": [
+            70,
+            30
+          ],
+          "yields": "ev_jacob_letter",
+          "text": "A draft letter on the desk, dated Friday."
+        },
+        {
+          "id": "hs_accounts",
+          "label": "Partnership accounts",
+          "pos": [
+            80,
+            50
+          ],
+          "yields": "ev_accounts",
+          "text": "The partnership accounts, quarter by quarter."
+        },
+        {
+          "id": "hs_title",
+          "label": "Title copy",
+          "pos": [
+            86,
+            60
+          ],
+          "yields": "ev_title",
+          "text": "A copy of the mill's land title."
+        },
+        {
+          "id": "hs_canteen",
+          "label": "Canteen fridge",
+          "pos": [
+            20,
+            70
+          ],
+          "yields": "ev_canteen",
+          "text": "The canteen keeps a sample of every day's food for a week, a hygiene rule."
+        },
+        {
+          "id": "hs_strike",
+          "label": "Strike minutes",
+          "pos": [
+            40,
+            70
+          ],
+          "yields": "ev_strike",
+          "text": "The minutes of last month's strike meeting."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a sawmill yard at the edge of a forest in the Kenyan highlands, stacked logs, a tin-roofed saw shed, a small office building, a forested ridge behind"
+      }
+    },
+    {
+      "id": "loc_cecilia",
+      "name": "Cecilia's house",
+      "kind": "location",
+      "description": "A tidy house in town. Cecilia offers tea, and a jar of honey on the table.",
+      "unlock": {
+        "fact": "f_pamela_gift"
+      },
+      "hotspots": [
+        {
+          "id": "hs_cjar",
+          "label": "Her own jar",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_cecilia_jar",
+          "text": "She pushes her own jar across the table. \"From the same batch. Take it.\""
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a tidy sitting room in a Kenyan town house, a coffee table with a tea tray and a jar of honey"
+      }
+    },
+    {
+      "id": "loc_marigat",
+      "name": "Marigat market",
+      "kind": "location",
+      "description": "Stalls of Baringo honey in every kind of recycled jar.",
+      "unlock": {
+        "fact": "f_cjar"
+      },
+      "hotspots": [
+        {
+          "id": "hs_rebecca",
+          "label": "Honey stall",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_rebecca",
+          "text": "Rebecca Lokwang remembers every customer who buys two jars."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a market stall in Marigat, Baringo, rows of honey in recycled glass jars glowing amber in the sun"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_hospital",
+      "type": "physical",
+      "title": "Hospital admission notes",
+      "render": "form",
+      "body": {
+        "notes": "Admitted Thursday: bleeding gums, bruising, blood that would not clot.",
+        "doctor": "Dr. I. Gedi"
+      },
+      "facts": [
+        "f_hospital",
+        "f_gedi_first"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_blood",
+      "type": "physical",
+      "title": "Jacob's blood sample",
+      "render": "object",
+      "body": {
+        "label": "Kept for toxicology."
+      },
+      "facts": [
+        "f_blood"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_honey",
+      "type": "physical",
+      "title": "Jar of honey and card",
+      "render": "object",
+      "body": {
+        "label": "\"Asali ya Baringo\", half eaten.",
+        "card": "For J. — get well — C."
+      },
+      "facts": [
+        "f_honey"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a half-eaten jar of golden honey with a handwritten paper label reading ASALI YA BARINGO and a small card propped against it reading FOR J. GET WELL C."
+      }
+    },
+    {
+      "id": "ev_pamela",
+      "type": "witness",
+      "title": "Statement: Pamela Mukhwana",
+      "render": "statement",
+      "body": {
+        "speaker": "p_pamela"
+      },
+      "facts": [
+        "f_pamela_gift",
+        "f_pamela_only",
+        "f_pamela_barnabas"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_blacklist",
+      "type": "physical",
+      "title": "Forest-service blacklist",
+      "render": "board",
+      "body": {
+        "text": "Published list of blacklisted timber suppliers (illegal felling, protected forest blocks).",
+        "circled": "Mau Hardwoods"
+      },
+      "facts": [
+        "f_blacklist"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_invoices",
+      "type": "physical",
+      "title": "Supplier invoices",
+      "render": "ledger",
+      "body": {
+        "line": "Eleven invoices from Mau Hardwoods. Every one approved: C. Njiru."
+      },
+      "facts": [
+        "f_invoices"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_jacob_letter",
+      "type": "physical",
+      "title": "Jacob's draft letter",
+      "render": "note",
+      "body": {
+        "date": "Friday",
+        "text": "Dissolution of partnership. Report to the forest service attached."
+      },
+      "facts": [
+        "f_jacob_letter"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_accounts",
+      "type": "physical",
+      "title": "Partnership accounts",
+      "render": "ledger",
+      "body": {
+        "line": "Profit shares paid to both partners in full every quarter."
+      },
+      "facts": [
+        "f_accounts"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_title",
+      "type": "physical",
+      "title": "Mill land title (copy)",
+      "render": "form",
+      "body": {
+        "line": "Registered owner: Jacob Mukhwana, sole. No caution, no dispute."
+      },
+      "facts": [
+        "f_title"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_canteen",
+      "type": "physical",
+      "title": "Canteen food samples",
+      "render": "object",
+      "body": {
+        "label": "A week of samples, labelled by day."
+      },
+      "facts": [
+        "f_canteen"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_strike",
+      "type": "physical",
+      "title": "Strike meeting minutes",
+      "render": "logBook",
+      "body": {
+        "rows": [
+          {
+            "entry": "B. Kimeli: \"If you don't pay fairly, we will take you to the labour office.\""
+          }
+        ]
+      },
+      "facts": [
+        "f_strike"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_cecilia_jar",
+      "type": "physical",
+      "title": "Cecilia's own jar",
+      "render": "object",
+      "body": {
+        "label": "Baringo honey, two-thirds full. \"From the same batch.\""
+      },
+      "facts": [
+        "f_cjar"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rebecca",
+      "type": "witness",
+      "title": "Statement: Rebecca Lokwang",
+      "render": "statement",
+      "body": {
+        "speaker": "p_rebecca"
+      },
+      "facts": [
+        "f_rebecca"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Cecilia Njiru's line",
+      "render": "manifest",
+      "body": {
+        "pesapap": "Friday 16:40: KSh 960 to an agrovet till, Eldama Ravine, reference \"Rat Kill Max x4\""
+      },
+      "facts": [
+        "f_rec_ratkill"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_pamela_gift"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_bus",
+      "type": "physical",
+      "title": "Allan's bus ticket",
+      "render": "ticket",
+      "body": {
+        "route": "Nairobi → Eldama Ravine",
+        "departs": "Saturday 06:00",
+        "arrives": "Saturday 18:00"
+      },
+      "facts": [
+        "f_bus"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_bloods",
+      "type": "forensic",
+      "title": "Hospital bloods",
+      "render": "labReport",
+      "body": {
+        "test": "clotting"
+      },
+      "facts": [
+        "f_bloods"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "clotting",
+        "hours": 0,
+        "needs": [
+          "ev_blood"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tox_victim",
+      "type": "forensic",
+      "title": "Lab: toxicology (Jacob's blood)",
+      "render": "labReport",
+      "body": {
+        "test": "toxicology"
+      },
+      "facts": [
+        "f_tox_victim"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toxicology",
+        "hours": 18,
+        "needs": [
+          "ev_blood"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tox_honey",
+      "type": "forensic",
+      "title": "Lab: toxicology (the honey)",
+      "render": "labReport",
+      "body": {
+        "test": "toxicology"
+      },
+      "facts": [
+        "f_tox_honey"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toxicology",
+        "hours": 18,
+        "needs": [
+          "ev_honey"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tox_cjar",
+      "type": "forensic",
+      "title": "Lab: toxicology (Cecilia's jar)",
+      "render": "labReport",
+      "body": {
+        "test": "toxicology"
+      },
+      "facts": [
+        "f_tox_cjar"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toxicology",
+        "hours": 18,
+        "needs": [
+          "ev_cecilia_jar"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tox_canteen",
+      "type": "forensic",
+      "title": "Lab: toxicology (canteen samples)",
+      "render": "labReport",
+      "body": {
+        "test": "toxicology"
+      },
+      "facts": [
+        "f_tox_canteen"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toxicology",
+        "hours": 18,
+        "needs": [
+          "ev_canteen"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Jacob Mukhwana died at Rift General Hospital at 06:40 on Sunday after four days of unexplained bleeding. Doctors suspect poisoning.",
+      "kind": "true",
+      "about": [
+        "p_jacob",
+        "loc_hospital"
+      ]
+    },
+    {
+      "id": "f_hospital",
+      "text": "Dr. Gedi: bleeding gums, bruising, blood that wouldn't clot. \"This is what we see with long-acting rat poison. Exposure started three to six days before the symptoms on Wednesday.\"",
+      "kind": "true",
+      "about": [
+        "p_gedi",
+        "p_jacob"
+      ]
+    },
+    {
+      "id": "f_gedi_first",
+      "text": "Dr. Gedi first saw Jacob on Thursday, at admission. The symptoms had started on Wednesday at home.",
+      "kind": "true",
+      "about": [
+        "p_gedi"
+      ]
+    },
+    {
+      "id": "f_blood",
+      "text": "A sample of Jacob's blood is kept for toxicology.",
+      "kind": "true",
+      "about": [
+        "p_jacob"
+      ]
+    },
+    {
+      "id": "f_bloods",
+      "text": "Hospital bloods: clotting severely impaired. No injury to explain the bleeding.",
+      "kind": "true",
+      "about": [
+        "p_jacob"
+      ]
+    },
+    {
+      "id": "f_honey",
+      "text": "A half-eaten jar labelled 'Asali ya Baringo', with a card: 'For J. — get well — C.'",
+      "kind": "true",
+      "about": [
+        "p_jacob",
+        "p_cecilia"
+      ]
+    },
+    {
+      "id": "f_pamela_gift",
+      "text": "Pamela: Cecilia brought the honey on Saturday at about 15:00, \"for your chest, for the cold\". From Sunday Jacob took a spoonful in his tea every morning.",
+      "kind": "true",
+      "about": [
+        "p_pamela",
+        "p_cecilia",
+        "p_jacob"
+      ],
+      "where": {
+        "person": "p_cecilia",
+        "place": "plc_jhouse",
+        "from": "15:00",
+        "to": "15:30"
+      }
+    },
+    {
+      "id": "f_pamela_only",
+      "text": "Pamela: nobody else in the house eats honey. She is diabetic and the children were away.",
+      "kind": "true",
+      "about": [
+        "p_pamela"
+      ]
+    },
+    {
+      "id": "f_pamela_barnabas",
+      "text": "Pamela: Barnabas Kimeli has never been to the house. Allan only came home on Saturday evening.",
+      "kind": "true",
+      "about": [
+        "p_pamela",
+        "p_barnabas",
+        "p_allan"
+      ]
+    },
+    {
+      "id": "f_blacklist",
+      "text": "The forest service's published blacklist of illegal timber suppliers, with one name circled: 'Mau Hardwoods'.",
+      "kind": "true",
+      "about": [
+        "loc_mill"
+      ]
+    },
+    {
+      "id": "f_invoices",
+      "text": "Eleven invoices from Mau Hardwoods this year, every one approved by C. Njiru.",
+      "kind": "true",
+      "about": [
+        "p_cecilia"
+      ]
+    },
+    {
+      "id": "f_jacob_letter",
+      "text": "Jacob's draft letter, dated Friday: 'Dissolution of partnership. Report to the forest service attached.'",
+      "kind": "true",
+      "about": [
+        "p_jacob",
+        "p_cecilia"
+      ]
+    },
+    {
+      "id": "f_accounts",
+      "text": "Partnership accounts: profit shares paid to both partners in full every quarter.",
+      "kind": "true",
+      "about": [
+        "p_cecilia",
+        "p_jacob"
+      ]
+    },
+    {
+      "id": "f_title",
+      "text": "The mill's land title is in Jacob's sole name, with no caution or dispute.",
+      "kind": "true",
+      "about": [
+        "p_jacob"
+      ]
+    },
+    {
+      "id": "f_canteen",
+      "text": "The canteen kept a sample of every day's food for the past week.",
+      "kind": "true",
+      "about": [
+        "loc_mill"
+      ]
+    },
+    {
+      "id": "f_strike",
+      "text": "Strike minutes: Barnabas Kimeli's \"threat\" was \"we will take you to the labour office\".",
+      "kind": "true",
+      "about": [
+        "p_barnabas",
+        "p_jacob"
+      ]
+    },
+    {
+      "id": "f_cjar",
+      "text": "Cecilia offers her own jar of Baringo honey, two-thirds full, \"from the same batch\".",
+      "kind": "true",
+      "about": [
+        "p_cecilia"
+      ]
+    },
+    {
+      "id": "f_rebecca",
+      "text": "Rebecca: Cecilia bought two jars of ordinary honey from her last Thursday.",
+      "kind": "true",
+      "about": [
+        "p_rebecca",
+        "p_cecilia"
+      ]
+    },
+    {
+      "id": "f_rec_ratkill",
+      "text": "Records, Cecilia's line: Friday 16:40, KSh 960 to an agrovet till in Eldama Ravine, reference 'Rat Kill Max x4'. The gift came the next day.",
+      "kind": "true",
+      "about": [
+        "p_cecilia"
+      ]
+    },
+    {
+      "id": "f_bus",
+      "text": "Allan's ticket: Nairobi to Eldama Ravine, Saturday 06:00, arrived 18:00, after the honey was given.",
+      "kind": "true",
+      "about": [
+        "p_allan"
+      ],
+      "where": {
+        "person": "p_allan",
+        "place": "plc_bus",
+        "from": "06:00",
+        "to": "18:00"
+      }
+    },
+    {
+      "id": "f_allan_debt",
+      "text": "Allan asked his father for money last month. \"He said yes. He always said yes.\"",
+      "kind": "true",
+      "about": [
+        "p_allan",
+        "p_jacob"
+      ]
+    },
+    {
+      "id": "f_tox_victim",
+      "text": "Toxicology: a long-acting anticoagulant rat poison in Jacob's blood.",
+      "kind": "true",
+      "about": [
+        "p_jacob"
+      ]
+    },
+    {
+      "id": "f_tox_honey",
+      "text": "Toxicology: the same poison in the honey at a high concentration. Under the magnifier, tiny blue-green granules: the dye used in rat-poison pellets.",
+      "kind": "true",
+      "about": [
+        "ev_honey"
+      ]
+    },
+    {
+      "id": "f_tox_cjar",
+      "text": "Toxicology: Cecilia's own jar is clean.",
+      "kind": "true",
+      "about": [
+        "p_cecilia"
+      ]
+    },
+    {
+      "id": "f_tox_canteen",
+      "text": "Toxicology: the canteen samples are clean.",
+      "kind": "true",
+      "about": [
+        "loc_mill"
+      ]
+    },
+    {
+      "id": "f_cec_never",
+      "text": "Cecilia: \"I've never bought rat poison in my life. We use traps at the mill.\"",
+      "kind": "lie",
+      "about": [
+        "p_cecilia"
+      ]
+    },
+    {
+      "id": "f_cec_same",
+      "text": "Cecilia: \"I ate from the same honey myself. Here, take my jar.\"",
+      "kind": "claim",
+      "about": [
+        "p_cecilia"
+      ]
+    },
+    {
+      "id": "f_cec_rats",
+      "text": "Cecilia: \"The mill has rats. I bought pellets for the store. That proves nothing.\"",
+      "kind": "claim",
+      "about": [
+        "p_cecilia"
+      ]
+    },
+    {
+      "id": "f_barn_claim",
+      "text": "Barnabas: \"I never went to his house.\"",
+      "kind": "claim",
+      "about": [
+        "p_barnabas"
+      ]
+    },
+    {
+      "id": "f_allan_claim",
+      "text": "Allan: \"I came home on Saturday evening.\"",
+      "kind": "claim",
+      "about": [
+        "p_allan"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_cecilia",
+      "stance": "cooperative",
+      "intro": "Cecilia pours tea and pushes a plate of mandazi towards Amani. \"Twenty years, Jacob and I. On a handshake.\"",
+      "claims": [
+        "f_cec_never",
+        "f_cec_same"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_honey",
+          "reply": "I brought him honey for his chest. Is that a crime? I ate from the same honey myself.",
+          "reveals": []
+        },
+        {
+          "about": "ev_invoices",
+          "reply": "Suppliers come and go. I buy what the mill needs at the best price.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_barnabas",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_strike"
+      ],
+      "intro": "Barnabas crosses his arms in the saw shed. \"I led a strike. I didn't lead a murder.\"",
+      "claims": [
+        "f_barn_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_jacob",
+          "reply": "We wanted fair pay. A dead boss doesn't pay anybody.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_allan",
+      "stance": "cooperative",
+      "intro": "Allan hasn't taken off his travel jacket. \"I came the moment Mum called.\"",
+      "claims": [
+        "f_allan_claim"
+      ],
+      "yields": [
+        "ev_bus"
+      ],
+      "topics": [
+        {
+          "about": "p_jacob",
+          "reply": "I asked him for money last month. He said yes. He always said yes.",
+          "reveals": [
+            "f_allan_debt"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_pamela",
+      "stance": "cooperative",
+      "intro": "Pamela keeps her hands flat on the table. \"She brought it on Saturday. A gift. For his chest.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_honey",
+          "reply": "Every morning from Sunday, one spoon in his tea. I don't touch honey. I'm diabetic.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_gedi",
+      "stance": "cooperative",
+      "intro": "Dr. Gedi speaks quietly in the corridor. \"We did everything we could. By Thursday it was already in him for days.\"",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_jacob",
+          "reply": "The bleeding started on Wednesday, at home. This poison works slowly. The dose that killed him was given days before.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_cec_never",
+      "claim": "f_cec_never",
+      "brokenBy": [
+        "f_rec_ratkill"
+      ],
+      "reveals": [
+        "f_cec_rats"
+      ],
+      "reaction": "The mill has rats. I bought pellets for the store, on Friday. That proves nothing at all.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_cecilia",
+      "text": "Cecilia Njiru",
+      "category": "person",
+      "ref": "p_cecilia",
+      "unlock": {
+        "anyOf": [
+          "f_pamela_gift",
+          "f_honey"
+        ]
+      }
+    },
+    {
+      "id": "w_barnabas",
+      "text": "Barnabas Kimeli",
+      "category": "person",
+      "ref": "p_barnabas",
+      "unlock": {
+        "anyOf": [
+          "f_strike"
+        ]
+      }
+    },
+    {
+      "id": "w_allan",
+      "text": "Allan Mukhwana",
+      "category": "person",
+      "ref": "p_allan",
+      "unlock": {
+        "anyOf": [
+          "f_allan_claim",
+          "f_pamela_barnabas"
+        ]
+      }
+    },
+    {
+      "id": "w_pamela",
+      "text": "Pamela Mukhwana",
+      "category": "person",
+      "ref": "p_pamela",
+      "unlock": {
+        "anyOf": [
+          "f_pamela_gift"
+        ]
+      }
+    },
+    {
+      "id": "w_rebecca",
+      "text": "Rebecca Lokwang",
+      "category": "person",
+      "ref": "p_rebecca",
+      "unlock": {
+        "anyOf": [
+          "f_rebecca"
+        ]
+      }
+    },
+    {
+      "id": "h_honey",
+      "text": "long-acting rat poison mixed into a gift of honey",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_hospital"
+        ]
+      }
+    },
+    {
+      "id": "h_hospital",
+      "text": "poisoned in hospital",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_natural",
+      "text": "a natural bleeding disorder",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_bloods"
+        ]
+      }
+    },
+    {
+      "id": "h_canteen",
+      "text": "food poisoning from the sawmill canteen",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_canteen"
+        ]
+      }
+    },
+    {
+      "id": "h_fall",
+      "text": "a fall causing internal bleeding",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_bloods"
+        ]
+      }
+    },
+    {
+      "id": "m_timber",
+      "text": "he was about to report her for buying timber felled illegally from a protected forest",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_jacob_letter"
+        ]
+      }
+    },
+    {
+      "id": "m_profit",
+      "text": "a dispute over profit shares",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_accounts"
+        ]
+      }
+    },
+    {
+      "id": "m_strike",
+      "text": "the workers' strike",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_strike"
+        ]
+      }
+    },
+    {
+      "id": "m_debt",
+      "text": "the son's debts",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_allan_debt"
+        ]
+      }
+    },
+    {
+      "id": "m_land",
+      "text": "a dispute over the mill's land",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_title"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Jacob Mukhwana"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_cecilia"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Rat poison bought on Friday, honey given on Saturday, her own jar clean, and her card on the poisoned one. That will hold.",
+          "fail": [
+            "Doesn't hold up. A strike leader who never entered the house can't put anything in a jar on its shelf.",
+            "No. Work backwards from Wednesday. Who gave him something on Saturday?"
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_honey"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The same poison in his blood and in the honey, and pellet dye in the jar. Yes.",
+          "fail": [
+            "The bleeding began at home on Wednesday, before the hospital ever saw him.",
+            "The canteen samples are clean. Try again."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_timber"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Eleven invoices from a blacklisted supplier, and a report ready to send. That's the reason.",
+          "fail": [
+            "The profit shares were paid in full. That isn't it.",
+            "The title is his alone and undisputed."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_jhouse",
+      "from": "15:00",
+      "to": "15:30",
+      "alibisApply": false,
+      "reason": "A slow poison given days before the death. Alibis on any single day mean nothing; what matters is who gave the honey, and whose honey was poisoned.",
+      "note": "The act window is the handing over of the honey on Saturday 15 November. Symptoms began Wednesday; death Sunday 23 November."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_hospital",
+          "f_bloods",
+          "f_tox_victim",
+          "f_gedi_first"
+        ],
+        "concludes": "Jacob was poisoned with a long-acting rat poison taken days before the bleeding began at home on Wednesday. Where anyone was on the day he died doesn't matter."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_pamela_gift",
+          "f_pamela_only",
+          "f_honey",
+          "f_tox_honey"
+        ],
+        "concludes": "The poison is in the honey Cecilia gave him on Saturday, which only he ate. The blue-green granules are pellet dye."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_cec_never",
+          "f_rebecca",
+          "f_cjar",
+          "f_tox_cjar",
+          "f_rec_ratkill",
+          "f_cec_rats"
+        ],
+        "concludes": "She bought two ordinary jars on Thursday; hers is clean. On Friday, the day before the gift, she bought four packs of rat poison, though she said she never had."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_blacklist",
+          "f_invoices",
+          "f_jacob_letter"
+        ],
+        "concludes": "Jacob was about to dissolve the partnership and report her purchases from a blacklisted supplier. Cecilia Njiru killed him with long-acting rat poison mixed into a gift of honey.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_barnabas",
+        "blank": "who",
+        "by": [
+          "f_pamela_barnabas",
+          "f_tox_canteen"
+        ],
+        "why": "Barnabas has never been to the house, and the mill canteen food is clean."
+      },
+      {
+        "word": "w_allan",
+        "blank": "who",
+        "by": [
+          "f_bus",
+          "f_pamela_only"
+        ],
+        "why": "Allan arrived on Saturday evening, after the honey was given, and he doesn't eat honey."
+      },
+      {
+        "word": "w_pamela",
+        "blank": "who",
+        "by": [
+          "f_pamela_only"
+        ],
+        "why": "Pamela doesn't eat honey; she is the one who handed over the jar and pointed at the card."
+      },
+      {
+        "word": "w_rebecca",
+        "blank": "who",
+        "by": [
+          "f_tox_cjar",
+          "f_rebecca"
+        ],
+        "why": "Rebecca sold ordinary honey; Cecilia's other jar from her stall is clean."
+      },
+      {
+        "word": "h_hospital",
+        "blank": "how",
+        "by": [
+          "f_gedi_first"
+        ],
+        "why": "The bleeding began at home on Wednesday, before he was admitted."
+      },
+      {
+        "word": "h_natural",
+        "blank": "how",
+        "by": [
+          "f_tox_victim"
+        ],
+        "why": "Toxicology found rat poison in his blood."
+      },
+      {
+        "word": "h_canteen",
+        "blank": "how",
+        "by": [
+          "f_tox_canteen"
+        ],
+        "why": "The canteen samples are clean."
+      },
+      {
+        "word": "h_fall",
+        "blank": "how",
+        "by": [
+          "f_bloods"
+        ],
+        "why": "No injury explains the bleeding; his blood had stopped clotting."
+      },
+      {
+        "word": "m_profit",
+        "blank": "why",
+        "by": [
+          "f_accounts"
+        ],
+        "why": "Profit shares were paid in full every quarter."
+      },
+      {
+        "word": "m_strike",
+        "blank": "why",
+        "by": [
+          "f_strike",
+          "f_pamela_barnabas"
+        ],
+        "why": "That cause is Barnabas's, and he never went to the house."
+      },
+      {
+        "word": "m_debt",
+        "blank": "why",
+        "by": [
+          "f_allan_debt"
+        ],
+        "why": "That is Allan's matter, and his father had already agreed to help."
+      },
+      {
+        "word": "m_land",
+        "blank": "why",
+        "by": [
+          "f_title"
+        ],
+        "why": "The title is in Jacob's sole name, undisputed."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Jacob finds eleven invoices from Mau Hardwoods, a supplier on the forest service's blacklist for timber felled in a protected forest. All approved by Cecilia.",
+        "image": null
+      },
+      {
+        "text": "Friday. He drafts a letter: dissolution of the partnership, and a report to the forest service. That afternoon Cecilia buys four packs of rat poison at an agrovet.",
+        "image": null
+      },
+      {
+        "text": "Saturday, about 15:00. She brings a jar of Baringo honey up the hill, with a card: \"For J. — get well — C.\" Her other jar stays at home, clean.",
+        "image": "plc_jhouse"
+      },
+      {
+        "text": "From Sunday, one spoonful in his tea every morning. Nobody else in the house eats honey.",
+        "image": null
+      },
+      {
+        "text": "Wednesday, his gums begin to bleed.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "No detention. Four toxicology tests at 18 h each; the player keeps working while they cook.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_hospital",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_gedi"
+      },
+      {
+        "do": "read",
+        "target": "ev_blood",
+        "hours": 0
+      },
+      {
+        "do": "submit",
+        "target": "ev_tox_victim"
+      },
+      {
+        "do": "visit",
+        "target": "loc_house",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_pamela"
+      },
+      {
+        "do": "read",
+        "target": "ev_honey",
+        "hours": 1
+      },
+      {
+        "do": "submit",
+        "target": "ev_tox_honey"
+      },
+      {
+        "do": "visit",
+        "target": "loc_cecilia",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_cecilia"
+      },
+      {
+        "do": "read",
+        "target": "ev_cecilia_jar",
+        "hours": 1
+      },
+      {
+        "do": "submit",
+        "target": "ev_tox_cjar"
+      },
+      {
+        "do": "visit",
+        "target": "loc_marigat",
+        "hours": 2
+      },
+      {
+        "do": "read",
+        "target": "ev_rebecca",
+        "hours": 1
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "press",
+        "target": "c_cec_never"
+      },
+      {
+        "do": "visit",
+        "target": "loc_mill",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_invoices",
+        "hours": 1
+      },
+      {
+        "do": "submit",
+        "target": "ev_tox_canteen"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 8
+      }
+    ],
+    "totalHours": 32
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_pamela",
+        "line": "This poison works slowly. Ask his wife what he was given in the week before."
+      },
+      "tier2": {
+        "facts": [
+          "f_pamela_gift",
+          "f_rec_ratkill"
+        ],
+        "line": "Rat poison bought on Friday; a jar of honey given on Saturday. Same woman."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_honey",
+        "line": "Send the jar on the kitchen shelf to the lab, and the card beside it to your notebook."
+      },
+      "tier2": {
+        "facts": [
+          "f_hospital",
+          "f_tox_honey"
+        ],
+        "line": "Blood that won't clot, and the same poison in the honey. One spoon a day."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_jacob_letter",
+        "line": "Read the letter on Jacob's desk, then the list on the office wall."
+      },
+      "tier2": {
+        "facts": [
+          "f_blacklist",
+          "f_invoices"
+        ],
+        "line": "A circled name on a blacklist, and eleven invoices from it, all approved by one partner."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "asali",
+      "def": "Honey."
+    },
+    {
+      "term": "msitu",
+      "def": "Forest."
+    },
+    {
+      "term": "mbao",
+      "def": "Timber; planks."
+    },
+    {
+      "term": "sumu",
+      "def": "Poison."
+    },
+    {
+      "term": "mandazi",
+      "def": "Fried dough, a little sweet. Sold everywhere with tea."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "timelineBeforeTimeline"
+    ],
+    "beatNotes": "The timeline before the timeline: the notebook's time view stretches from hours to days for the first time, and the player drags the poisoning back from Sunday's death to Saturday's gift. It prepares the WHEN group in region 5."
+  }
+}

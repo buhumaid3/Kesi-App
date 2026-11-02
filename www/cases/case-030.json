@@ -1,0 +1,1638 @@
+{
+  "meta": {
+    "id": "case-030",
+    "number": 30,
+    "region": "mombasa-old-town",
+    "regionNumber": 3,
+    "title": "Printing Paper",
+    "boss": true,
+    "schemaVersion": 1,
+    "estMinutes": 22,
+    "date": "Monday 29 September",
+    "folderTab": "SHIMANZI"
+  },
+  "pattern": {
+    "crimePattern": "operations manager paid by a shell company kills the documentation clerk who refused to pass blank title-deed paper as printing paper; staged as a fall",
+    "noRealCaseRetold": true,
+    "notes": "Fictional freight station, clearing agency, container number and shell company. No real port operator, customs officer or registry is shown doing wrong. Spine boss case.",
+    "tags": [
+      "blunt-force",
+      "staged-accident",
+      "two-records-requests",
+      "spine",
+      "boss"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 4,
+    "redHerrings": 2,
+    "liars": 1,
+    "groups": [
+      "who",
+      "why",
+      "spine"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "document",
+      "phone"
+    ],
+    "gatedActions": [
+      "records",
+      "records"
+    ],
+    "twist": "staged-fall-and-the-paper-is-for-titles"
+  },
+  "ob": {
+    "number": "OB 02/30/09",
+    "date": "Tuesday 30 September",
+    "time": "08:05",
+    "reportedBy": "Security office, Bandari Freight Station, Shimanzi",
+    "text": "The security office of Bandari Freight Station, Shimanzi, reports that documentation clerk Naomi Chepkemoi (38), of Pwani Clearing & Forwarding, was found at the foot of an external staircase. Recorded by the company as an accidental fall at about 06:00. Her phone is missing.",
+    "facts": [
+      "f_ob_found",
+      "f_ob_phone"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_naomi",
+      "role": "victim",
+      "name": "Naomi Chepkemoi",
+      "age": 38,
+      "occupation": "Documentation clerk, Pwani Clearing & Forwarding",
+      "bio": "From Eldoret. Eight years at the coast. Signs the customs entries. Doesn't sign what isn't true.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_stairs",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 30s, a company polo shirt and lanyard, short natural hair, reading glasses, a clipboard of customs forms, quietly stubborn, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_gichuru",
+      "role": "suspect",
+      "name": "Daniel Gichuru",
+      "age": 51,
+      "occupation": "Operations manager, Pwani Clearing & Forwarding",
+      "bio": "Runs the agency's operations from an office on the upper floor. Lives in Nyali.",
+      "community": "Kikuyu",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_gatelog_gichuru"
+      },
+      "at": "plc_office",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 50s, a pressed white shirt with an executive lanyard, a heavy gold watch, car keys in his hand, calm and polished, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_odera",
+      "role": "suspect",
+      "name": "Samson Odera",
+      "age": 33,
+      "occupation": "Night reach-stacker operator",
+      "redHerring": true,
+      "bio": "Argued with Naomi last week over his overtime sign-offs.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_ramadhan_odera"
+      },
+      "at": "plc_faryard",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 30s, a hi-vis vest and a hard hat, grease on his hands, tired from a night shift, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_fatma",
+      "role": "suspect",
+      "name": "Fatma Ruwa",
+      "age": 44,
+      "occupation": "Documentation clerk (rival)",
+      "bio": "Wanted the senior post Naomi was given last year.",
+      "community": "Mijikenda",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_ramadhan_fatma"
+      },
+      "at": "plc_ship",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 40s, a headscarf under a hard hat, a tally board on a clipboard, a port pass, brisk, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mazrui",
+      "role": "suspect",
+      "name": "Yusuf Mazrui",
+      "age": 58,
+      "occupation": "Owner, Bandari Freight Station",
+      "redHerring": true,
+      "bio": "Ruled it \"a fall\" within an hour and didn't want the police on site.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_security_report"
+      },
+      "at": "plc_mazrui",
+      "image": {
+        "kind": "portrait",
+        "brief": "Swahili Kenyan man, late 50s, a crisp kanzu with a dark jacket over it, prayer beads in one hand, a businessman's guarded face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_ramadhan",
+      "role": "witness",
+      "name": "Ramadhan Kalume",
+      "age": 49,
+      "occupation": "Night gate guard",
+      "bio": "Logs every vehicle and every person at the yard gate, every fifteen minutes.",
+      "community": "Mijikenda",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_gate",
+      "image": null
+    },
+    {
+      "id": "p_gladys",
+      "role": "witness",
+      "name": "Gladys Chepkemoi",
+      "age": 34,
+      "occupation": "Naomi's sister, in Eldoret",
+      "bio": "Received Naomi's last message.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_ob_found"
+      },
+      "at": "plc_eldoret",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_stairs",
+      "name": "External staircase of the office block",
+      "within": "loc_bandari"
+    },
+    {
+      "id": "plc_office",
+      "name": "Upper-floor offices, Pwani Clearing",
+      "within": "loc_bandari"
+    },
+    {
+      "id": "plc_faryard",
+      "name": "Far end of the container yard",
+      "within": "loc_bandari"
+    },
+    {
+      "id": "plc_gate",
+      "name": "Vehicle and staff gate",
+      "within": "loc_bandari"
+    },
+    {
+      "id": "plc_ship",
+      "name": "Vessel at berth"
+    },
+    {
+      "id": "plc_mazrui",
+      "name": "Yusuf Mazrui's house, Nyali"
+    },
+    {
+      "id": "plc_eldoret",
+      "name": "Eldoret"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_bandari",
+      "name": "Bandari Freight Station, Shimanzi",
+      "kind": "scene",
+      "description": "A private container yard near the port. Stacks of containers, reach-stackers, sodium lights. An office block with an outside steel staircase up to Pwani Clearing's rooms. A gate hut with a log on a chain.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Foot of the staircase",
+          "pos": [
+            40,
+            76
+          ],
+          "yields": "ev_body",
+          "text": "Naomi lies at the foot of the steel stairs. Her lanyard and gate card are still on her. Her phone is not."
+        },
+        {
+          "id": "hs_report",
+          "label": "Security office",
+          "pos": [
+            20,
+            40
+          ],
+          "yields": "ev_security_report",
+          "text": "The company's own incident report, already typed and signed."
+        },
+        {
+          "id": "hs_gate",
+          "label": "Gate log",
+          "pos": [
+            90,
+            70
+          ],
+          "yields": "ev_gatelog",
+          "text": "Every vehicle and every member of staff, in and out, in the guard's hand."
+        },
+        {
+          "id": "hs_ramadhan",
+          "label": "Gate hut",
+          "pos": [
+            94,
+            60
+          ],
+          "yields": "ev_ramadhan",
+          "text": "Ramadhan Kalume, who has not gone home."
+        },
+        {
+          "id": "hs_manifest",
+          "label": "Pwani Clearing files",
+          "pos": [
+            50,
+            24
+          ],
+          "yields": "ev_manifest",
+          "text": "Naomi's desk upstairs. One customs entry lies on top, unsigned."
+        },
+        {
+          "id": "hs_drawer",
+          "label": "Gichuru's office",
+          "pos": [
+            60,
+            18
+          ],
+          "yields": "ev_gichuru_file",
+          "text": "The operations manager's office. A drawer has been left open."
+        },
+        {
+          "id": "hs_container",
+          "label": "Container PCFU 418220-3",
+          "pos": [
+            74,
+            50
+          ],
+          "yields": "ev_container",
+          "text": "A forty-foot container. Its seal has been cut and replaced. One carton has been opened and taped shut again."
+        },
+        {
+          "id": "hs_tally",
+          "label": "Yard tally board",
+          "pos": [
+            82,
+            34
+          ],
+          "yields": "ev_tally_odera",
+          "text": "The night's reach-stacker moves, by time and position."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a container freight station in Shimanzi, Mombasa at night, stacks of shipping containers under orange sodium lights, a reach-stacker, a two-storey office block with an external steel staircase, a guard hut at the gate, no people in focus"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body at the foot of the stairs",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Head injuries. Her ID lanyard and gate card on her. Her phone missing."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the foot of an external steel staircase at a container yard at night, a lanyard with an ID card lying on the concrete, a dropped clipboard of customs forms, no body visible"
+      }
+    },
+    {
+      "id": "ev_security_report",
+      "type": "document",
+      "title": "Company security report",
+      "render": "form",
+      "body": {
+        "text": "Clerk N. Chepkemoi fell from the external staircase on arrival for the 06:00 shift. Accident.",
+        "signed": "Shift supervisor; approved D. Gichuru"
+      },
+      "facts": [
+        "f_security_report"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gatelog",
+      "type": "document",
+      "title": "Gate log",
+      "render": "visitorRegister",
+      "body": {
+        "rows": [
+          {
+            "name": "N. Chepkemoi (night cut-off shift)",
+            "in": "22:40",
+            "out": "—"
+          },
+          {
+            "name": "D. Gichuru, car KDB xxx",
+            "in": "23:05",
+            "out": "23:50"
+          }
+        ],
+        "note": "No other movements 22:45–00:30 except night operators already inside."
+      },
+      "facts": [
+        "f_gatelog_naomi",
+        "f_gatelog_gichuru"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ramadhan",
+      "type": "witness",
+      "title": "Statement: Ramadhan Kalume",
+      "render": "statement",
+      "body": {
+        "speaker": "p_ramadhan"
+      },
+      "facts": [
+        "f_ramadhan",
+        "f_ramadhan_odera",
+        "f_ramadhan_fatma",
+        "f_ramadhan_rumour",
+        "f_ramadhan_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gladys_phone",
+      "type": "phone",
+      "title": "Gladys's phone: Naomi's last message",
+      "render": "smsThread",
+      "body": {
+        "messages": [
+          {
+            "time": "23:12",
+            "from": "Naomi",
+            "text": "Gichuru amekuja. Anataka nisaini PCFU kama printing paper. Si printing paper. Ona.",
+            "attachment": "Photo: a watermarked sheet with an empty oval box, \"Registrar's seal here\"."
+          }
+        ]
+      },
+      "facts": [
+        "f_gladys_msg"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gladys_self",
+      "type": "witness",
+      "title": "Statement: Gladys Chepkemoi",
+      "render": "statement",
+      "body": {
+        "speaker": "p_gladys",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_gladys_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_manifest",
+      "type": "document",
+      "title": "Manifest and customs entry, PCFU 418220-3",
+      "render": "manifest",
+      "body": {
+        "container": "PCFU 418220-3",
+        "declared": "Printing paper, A3, 40 cartons",
+        "consignee": "Mvua Holdings Ltd, Nairobi",
+        "entry": "Unsigned by the documentation clerk"
+      },
+      "facts": [
+        "f_manifest"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_container",
+      "type": "physical",
+      "title": "Inside PCFU 418220-3",
+      "render": "object",
+      "body": {
+        "label": "Forty cartons of watermarked security paper with fibres. On every sheet, an empty printed oval: \"Registrar's seal here\". One carton opened and resealed with fresh tape."
+      },
+      "facts": [
+        "f_container",
+        "f_container_oval"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "an opened carton inside a shipping container, stacks of cream watermarked security paper with fine coloured fibres, the top sheet showing an empty printed oval box labelled Registrar's seal here"
+      }
+    },
+    {
+      "id": "ev_records_naomi",
+      "type": "phone",
+      "title": "Records: Naomi Chepkemoi's line",
+      "render": "mastRecord",
+      "body": {
+        "masts": "Shimanzi until 23:52; Nyali 00:05–00:20; then off."
+      },
+      "facts": [
+        "f_rec_naomi"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_gladys_msg"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_records_gichuru",
+      "type": "phone",
+      "title": "Records: Daniel Gichuru's line",
+      "render": "pesapapStatement",
+      "body": {
+        "pesapap": "Monthly B2C payments from MVUA HOLDINGS LTD, KSh 120,000 each, 14 months. No transactions with N. Chepkemoi.",
+        "masts": "Shimanzi 23:00–23:52; Nyali (his home zone) from 00:05."
+      },
+      "facts": [
+        "f_rec_gich_mvua",
+        "f_rec_gich_mast",
+        "f_rec_gich_nodebt"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_gatelog_gichuru"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tally_odera",
+      "type": "document",
+      "title": "Yard tally sheet",
+      "render": "tallyBook",
+      "body": {
+        "rows": [
+          {
+            "time": "23:10"
+          },
+          {
+            "time": "23:20"
+          },
+          {
+            "time": "23:34"
+          },
+          {
+            "time": "23:41"
+          },
+          {
+            "time": "23:58"
+          }
+        ],
+        "note": "S. Odera, reach-stacker 2, far end of the yard."
+      },
+      "facts": [
+        "f_tally"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ship_tally",
+      "type": "document",
+      "title": "Vessel tally sheet",
+      "render": "tallyBook",
+      "body": {
+        "note": "F. Ruwa tallying on board at berth 23:00–03:00, signing every half hour."
+      },
+      "facts": [
+        "f_ship"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_mazrui",
+      "type": "witness",
+      "title": "Owner's house guard and the tax notice",
+      "render": "statement",
+      "body": {
+        "speaker": "p_mazrui",
+        "note": "House guard: Mr Mazrui home all night. On his desk: a revenue-authority audit notice about tax rates on storage fees."
+      },
+      "facts": [
+        "f_mazrui_home",
+        "f_mazrui_tax"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_overtime",
+      "type": "document",
+      "title": "Odera's overtime sheets",
+      "render": "form",
+      "body": {
+        "text": "All signed by N. Chepkemoi on Friday."
+      },
+      "facts": [
+        "f_overtime"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_gichuru_file",
+      "type": "physical",
+      "title": "Open drawer: 'Mvua — movements'",
+      "render": "note",
+      "body": {
+        "lines": [
+          "PCFU 418220-3 — Nairobi by road",
+          "Lamu by dhow — Upepo Mwema — captain refused",
+          "Bahati — old matter — closed 12 yrs"
+        ]
+      },
+      "facts": [
+        "f_file_container",
+        "f_file_lamu",
+        "f_file_bahati"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a lined sheet in an open office drawer headed MVUA — MOVEMENTS, three handwritten lines, the last one reading Bahati — old matter — closed 12 yrs"
+      }
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob_found",
+      "text": "Documentation clerk Naomi Chepkemoi was found at the foot of the external staircase at Bandari Freight Station. The company recorded an accidental fall at about 06:00.",
+      "kind": "true",
+      "about": [
+        "p_naomi",
+        "plc_stairs"
+      ]
+    },
+    {
+      "id": "f_ob_phone",
+      "text": "Her phone is missing.",
+      "kind": "true",
+      "about": [
+        "p_naomi"
+      ]
+    },
+    {
+      "id": "f_body",
+      "text": "Head injuries at the foot of the stairs. Her ID lanyard and gate card are on her.",
+      "kind": "true",
+      "about": [
+        "p_naomi",
+        "plc_stairs"
+      ]
+    },
+    {
+      "id": "f_security_report",
+      "text": "Company security report: 'Fell from the external staircase on arrival for the 06:00 shift. Accident.' Approved by D. Gichuru. The owner, Yusuf Mazrui, accepted it within the hour.",
+      "kind": "true",
+      "about": [
+        "p_gichuru",
+        "p_mazrui"
+      ]
+    },
+    {
+      "id": "f_gatelog_naomi",
+      "text": "Gate log: 'N. Chepkemoi — in 22:40 (night cut-off shift) — no exit.' She never left, and never arrived at 06:00.",
+      "kind": "true",
+      "about": [
+        "p_naomi"
+      ]
+    },
+    {
+      "id": "f_gatelog_gichuru",
+      "text": "Gate log: 'D. Gichuru, car KDB xxx — in 23:05 — out 23:50.' No other movements 22:45–00:30 except the night operators already inside.",
+      "kind": "true",
+      "about": [
+        "p_gichuru"
+      ],
+      "where": {
+        "person": "p_gichuru",
+        "place": "loc_bandari",
+        "from": "23:05",
+        "to": "23:50"
+      }
+    },
+    {
+      "id": "f_ramadhan",
+      "text": "Ramadhan: at about 23:35 he heard a woman cry out from the office block. Gichuru drove out at 23:50, \"fast, without greeting me\".",
+      "kind": "true",
+      "about": [
+        "p_ramadhan",
+        "p_gichuru"
+      ]
+    },
+    {
+      "id": "f_ramadhan_odera",
+      "text": "Ramadhan: last week the stacker operator, Samson Odera, shouted at Naomi about his overtime sign-offs.",
+      "kind": "true",
+      "about": [
+        "p_ramadhan",
+        "p_odera"
+      ]
+    },
+    {
+      "id": "f_ramadhan_fatma",
+      "text": "Ramadhan: Fatma Ruwa, the other clerk, wanted Naomi's senior post. \"Everybody knew.\"",
+      "kind": "true",
+      "about": [
+        "p_ramadhan",
+        "p_fatma"
+      ]
+    },
+    {
+      "id": "f_ramadhan_rumour",
+      "text": "Ramadhan: \"People say Naomi lent the boss money. I don't know.\"",
+      "kind": "true",
+      "about": [
+        "p_ramadhan",
+        "p_gichuru"
+      ]
+    },
+    {
+      "id": "f_ramadhan_self",
+      "text": "Ramadhan was at the gate all night; the log has an entry in his hand every fifteen minutes.",
+      "kind": "true",
+      "about": [
+        "p_ramadhan"
+      ],
+      "where": {
+        "person": "p_ramadhan",
+        "place": "plc_gate",
+        "from": "18:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_gladys_msg",
+      "text": "Naomi to her sister, 23:12: 'Gichuru amekuja. Anataka nisaini PCFU kama printing paper. Si printing paper. Ona.' (Gichuru's here, wants me to sign PCFU as printing paper. It isn't. Look.) Photo.",
+      "kind": "true",
+      "about": [
+        "p_naomi",
+        "p_gichuru",
+        "p_gladys"
+      ]
+    },
+    {
+      "id": "f_manifest",
+      "text": "Container PCFU 418220-3: 'printing paper, A3, 40 cartons'. Consignee: Mvua Holdings Ltd, Nairobi. The customs entry is unsigned by the documentation clerk.",
+      "kind": "true",
+      "about": [
+        "plc_office"
+      ]
+    },
+    {
+      "id": "f_container",
+      "text": "Inside PCFU 418220-3: watermarked security paper with fibres, not printing paper. One carton opened and resealed with fresh tape.",
+      "kind": "true",
+      "about": [
+        "ev_container"
+      ]
+    },
+    {
+      "id": "f_container_oval",
+      "text": "On every sheet, an empty printed oval: 'Registrar's seal here'. Blank title-deed paper.",
+      "kind": "true",
+      "about": [
+        "ev_container"
+      ],
+      "spine": "t_stamp"
+    },
+    {
+      "id": "f_rec_naomi",
+      "text": "Records, Naomi's line: Shimanzi mast until 23:52, then Nyali 00:05–00:20, then off.",
+      "kind": "true",
+      "about": [
+        "p_naomi"
+      ]
+    },
+    {
+      "id": "f_rec_gich_mast",
+      "text": "Records, Gichuru's line: Shimanzi 23:00–23:52, Nyali (his home zone) from 00:05.",
+      "kind": "true",
+      "about": [
+        "p_gichuru"
+      ]
+    },
+    {
+      "id": "f_rec_gich_mvua",
+      "text": "PesaPap, Gichuru's line: monthly B2C payments from MVUA HOLDINGS LTD, KSh 120,000 each, for 14 months.",
+      "kind": "true",
+      "about": [
+        "p_gichuru"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_rec_gich_nodebt",
+      "text": "PesaPap, Gichuru's line: no transactions of any kind with Naomi.",
+      "kind": "true",
+      "about": [
+        "p_gichuru",
+        "p_naomi"
+      ]
+    },
+    {
+      "id": "f_tally",
+      "text": "Yard tally: Samson Odera's reach-stacker moves at 23:10, 23:20, 23:34, 23:41 and 23:58, all at the far end of the yard.",
+      "kind": "true",
+      "about": [
+        "p_odera"
+      ],
+      "where": {
+        "person": "p_odera",
+        "place": "plc_faryard",
+        "from": "23:10",
+        "to": "23:58"
+      }
+    },
+    {
+      "id": "f_ship",
+      "text": "Vessel tally: Fatma Ruwa tallying on board at berth from 23:00 to 03:00, signing every half hour.",
+      "kind": "true",
+      "about": [
+        "p_fatma"
+      ],
+      "where": {
+        "person": "p_fatma",
+        "place": "plc_ship",
+        "from": "23:00",
+        "to": "03:00"
+      }
+    },
+    {
+      "id": "f_mazrui_home",
+      "text": "Mazrui's house guard: he was home in Nyali all night.",
+      "kind": "true",
+      "about": [
+        "p_mazrui"
+      ],
+      "where": {
+        "person": "p_mazrui",
+        "place": "plc_mazrui",
+        "from": "19:00",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_mazrui_tax",
+      "text": "On Mazrui's desk: a revenue-authority audit notice about tax rates on storage fees. Nothing to do with Naomi or Gichuru. It explains why he wanted no police at the yard.",
+      "kind": "true",
+      "about": [
+        "p_mazrui"
+      ]
+    },
+    {
+      "id": "f_overtime",
+      "text": "Odera's overtime sheets: all signed by Naomi on Friday. The dispute was settled.",
+      "kind": "true",
+      "about": [
+        "p_odera",
+        "p_naomi"
+      ]
+    },
+    {
+      "id": "f_file_container",
+      "text": "Gichuru's drawer, 'Mvua — movements': 'PCFU 418220-3 — Nairobi by road.'",
+      "kind": "true",
+      "about": [
+        "p_gichuru"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_file_lamu",
+      "text": "Same list, older line: 'Lamu by dhow — Upepo Mwema — captain refused.'",
+      "kind": "true",
+      "about": [
+        "p_gichuru"
+      ],
+      "spine": "t_mvua"
+    },
+    {
+      "id": "f_file_bahati",
+      "text": "Same list, last line: 'Bahati — old matter — closed 12 yrs.'",
+      "kind": "true",
+      "about": [
+        "p_gichuru"
+      ],
+      "spine": "t_joseph"
+    },
+    {
+      "id": "f_gich_home",
+      "text": "Gichuru: \"I was home in Nyali all night. I heard about Naomi this morning like everyone else.\"",
+      "kind": "lie",
+      "about": [
+        "p_gichuru"
+      ]
+    },
+    {
+      "id": "f_gich_paper",
+      "text": "Gichuru: \"That container is printing paper. I've seen the invoice.\"",
+      "kind": "lie",
+      "about": [
+        "p_gichuru"
+      ]
+    },
+    {
+      "id": "f_gich_admits",
+      "text": "Gichuru admits he drove in at 23:05 \"to collect a file\" from his office upstairs. He says he didn't see Naomi.",
+      "kind": "true",
+      "about": [
+        "p_gichuru",
+        "plc_office"
+      ],
+      "where": {
+        "person": "p_gichuru",
+        "place": "plc_office",
+        "from": "23:05",
+        "to": "23:50"
+      }
+    },
+    {
+      "id": "f_gich_sign",
+      "text": "Gichuru: \"I don't open cartons. I sign what I'm given.\"",
+      "kind": "claim",
+      "about": [
+        "p_gichuru"
+      ]
+    },
+    {
+      "id": "f_gich_fundi",
+      "text": "Gichuru: he was recruited by \"a man with a bad leg they call Fundi\", who brings the cash and never uses a phone. He has never heard the name Kivuli.",
+      "kind": "true",
+      "about": [
+        "p_gichuru"
+      ],
+      "spine": "t_fundi"
+    },
+    {
+      "id": "f_odera_claim",
+      "text": "Odera: \"I was on the stacker all night.\"",
+      "kind": "claim",
+      "about": [
+        "p_odera"
+      ]
+    },
+    {
+      "id": "f_fatma_claim",
+      "text": "Fatma: \"I was on the ship until three.\"",
+      "kind": "claim",
+      "about": [
+        "p_fatma"
+      ]
+    },
+    {
+      "id": "f_fatma_job",
+      "text": "Fatma: \"I wanted her job. I didn't want her dead.\" The senior clerk's post is a clerk's post, not the manager's.",
+      "kind": "true",
+      "about": [
+        "p_fatma",
+        "p_naomi"
+      ]
+    },
+    {
+      "id": "f_mazrui_claim",
+      "text": "Mazrui: \"My security said she fell. I believed them.\"",
+      "kind": "claim",
+      "about": [
+        "p_mazrui"
+      ]
+    },
+    {
+      "id": "f_gladys_self",
+      "text": "Gladys is in Eldoret; she got the message there and called Naomi's phone all night.",
+      "kind": "true",
+      "about": [
+        "p_gladys"
+      ],
+      "where": {
+        "person": "p_gladys",
+        "place": "plc_eldoret",
+        "from": "20:00",
+        "to": "07:00"
+      }
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_gichuru",
+      "stance": "cooperative",
+      "intro": "Gichuru receives Amani in his office with tea already poured. \"A tragedy. Eight years with us. Those stairs are steep in the dark.\"",
+      "claims": [
+        "f_gich_home",
+        "f_gich_paper"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_security_report",
+          "reply": "Our security people are very thorough. A fall. I approved it this morning.",
+          "reveals": []
+        },
+        {
+          "about": "f_rec_gich_mvua",
+          "reply": "A long silence. Then: \"A man with a bad leg. They call him Fundi. He brings cash. He never uses a phone. I don't know any other name. I want a lawyer.\"",
+          "reveals": [
+            "f_gich_fundi"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_odera",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_overtime"
+      ],
+      "intro": "Odera climbs down from his stacker cab and keeps his hard hat on. \"I didn't go near the office block.\"",
+      "claims": [
+        "f_odera_claim"
+      ],
+      "yields": [
+        "ev_tally_odera"
+      ],
+      "topics": [
+        {
+          "about": "p_naomi",
+          "reply": "She signed my overtime on Friday. All of it. She was fair. I shouted at her last week and she was still fair.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_fatma",
+      "stance": "cooperative",
+      "intro": "Fatma answers from a ship's deck, gulls and a crane horn behind her. \"Naomi? Naomi?\"",
+      "claims": [
+        "f_fatma_claim"
+      ],
+      "yields": [
+        "ev_ship_tally"
+      ],
+      "topics": [
+        {
+          "about": "f_ramadhan_fatma",
+          "reply": "I wanted her job. I didn't want her dead. And it was her job I wanted, not his.",
+          "reveals": [
+            "f_fatma_job"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_mazrui",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_security_report"
+      ],
+      "intro": "Mazrui meets Amani at the gate and doesn't invite him in. \"My security said she fell. I believed them.\"",
+      "claims": [
+        "f_mazrui_claim"
+      ],
+      "yields": [
+        "ev_mazrui"
+      ],
+      "topics": [
+        {
+          "about": "f_mazrui_tax",
+          "reply": "Yes. I didn't want police in my yard. For my own reasons. Not hers. Look at the notice; it is about storage fees.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_gladys",
+      "stance": "cooperative",
+      "intro": "Gladys, from Eldoret, has the message open before Amani asks. \"She sent me this. Look at it. Look at what she sent me.\"",
+      "claims": [],
+      "yields": [
+        "ev_gladys_phone",
+        "ev_gladys_self"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_ramadhan",
+      "stance": "cooperative",
+      "intro": "Ramadhan holds the gate log open with both thumbs. \"I write everybody. Every quarter of an hour. Everybody.\"",
+      "claims": [],
+      "yields": [
+        "ev_overtime"
+      ],
+      "topics": [
+        {
+          "about": "p_odera",
+          "reply": "Odera? He was on his stacker at the far end all night. I could hear it.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_gich_home",
+      "claim": "f_gich_home",
+      "brokenBy": [
+        "f_gatelog_gichuru",
+        "f_rec_gich_mast"
+      ],
+      "reveals": [
+        "f_gich_admits"
+      ],
+      "reaction": "I came to collect a file. From my office. Twenty minutes. I didn't see her. I didn't even know she was on shift.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_gich_paper",
+      "claim": "f_gich_paper",
+      "brokenBy": [
+        "f_container",
+        "f_gladys_msg"
+      ],
+      "reveals": [
+        "f_gich_sign"
+      ],
+      "reaction": "I don't open cartons. I sign what I'm given. The invoice says paper. Paper is paper.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_gichuru",
+      "text": "Daniel Gichuru",
+      "category": "person",
+      "ref": "p_gichuru",
+      "unlock": {
+        "anyOf": [
+          "f_gatelog_gichuru"
+        ]
+      }
+    },
+    {
+      "id": "w_odera",
+      "text": "Samson Odera",
+      "category": "person",
+      "ref": "p_odera",
+      "unlock": {
+        "anyOf": [
+          "f_ramadhan_odera"
+        ]
+      }
+    },
+    {
+      "id": "w_fatma",
+      "text": "Fatma Ruwa",
+      "category": "person",
+      "ref": "p_fatma",
+      "unlock": {
+        "anyOf": [
+          "f_ramadhan_fatma"
+        ]
+      }
+    },
+    {
+      "id": "w_mazrui",
+      "text": "Yusuf Mazrui",
+      "category": "person",
+      "ref": "p_mazrui",
+      "unlock": {
+        "anyOf": [
+          "f_security_report"
+        ]
+      }
+    },
+    {
+      "id": "w_ramadhan",
+      "text": "Ramadhan Kalume",
+      "category": "person",
+      "ref": "p_ramadhan",
+      "unlock": {
+        "anyOf": [
+          "f_ramadhan"
+        ]
+      }
+    },
+    {
+      "id": "m_paper",
+      "text": "she refused to pass Mvua's title-deed paper as printing paper",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_gladys_msg",
+          "f_container"
+        ]
+      }
+    },
+    {
+      "id": "m_overtime",
+      "text": "an overtime dispute",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ramadhan_odera"
+        ]
+      }
+    },
+    {
+      "id": "m_job",
+      "text": "she wanted his job",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ramadhan_fatma"
+        ]
+      }
+    },
+    {
+      "id": "m_tax",
+      "text": "she'd found the owner's tax problem",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_mazrui_tax"
+        ]
+      }
+    },
+    {
+      "id": "m_debt",
+      "text": "a debt between them",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ramadhan_rumour"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_seal",
+      "text": "the REGISTRAR OF TITLES seal order, Omar Printers (case 10)",
+      "category": "pin",
+      "pin": "case-010:f_order_mvua",
+      "unlock": {
+        "anyOf": [
+          "f_container_oval"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_calendar",
+      "text": "the Mvua calendar, Signal Point (case 6)",
+      "category": "pin",
+      "pin": "case-006:f_calendar_till",
+      "unlock": {
+        "anyOf": [
+          "f_container_oval"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_card",
+      "text": "the Mvua business card, Barwaqo Mall (case 13)",
+      "category": "pin",
+      "pin": "case-013:f_card_mvua",
+      "unlock": {
+        "anyOf": [
+          "f_container_oval"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_upendo",
+      "text": "the Upendo receipts (case 20)",
+      "category": "pin",
+      "pin": "case-020:f_mh_receipts",
+      "unlock": {
+        "anyOf": [
+          "f_container_oval"
+        ]
+      }
+    },
+    {
+      "id": "w_pin_flyer",
+      "text": "the beachfront plots flyer, Coral Tide (case 27)",
+      "category": "pin",
+      "pin": "case-027:f_flyer",
+      "unlock": {
+        "anyOf": [
+          "f_container_oval"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} because {why}. The empty seal box on this paper was made for {pin}.",
+    "fixed": {
+      "victim": "Naomi Chepkemoi"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_gichuru"
+          }
+        ],
+        "prosecutor": {
+          "pass": "In at 23:05, a cry at 23:35, out at 23:50, and her phone followed his to Nyali. That will hold.",
+          "fail": [
+            "Doesn't hold up. The owner wanted the police gone for his own reasons. Who drove in after she sent that message?",
+            "No. Read the stacker moves: Odera never left the far end of the yard."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_paper"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Fourteen months of Mvua money, and one clerk who wouldn't sign. Clean.",
+          "fail": [
+            "He did it. But not over overtime or a debt. Look in the container.",
+            "That's somebody else's grievance. Read her last message."
+          ]
+        }
+      },
+      {
+        "id": "g_spine",
+        "kind": "spine",
+        "blanks": [
+          {
+            "id": "pin",
+            "category": "pin",
+            "answer": "w_pin_seal",
+            "spine": true
+          }
+        ],
+        "prosecutor": {
+          "pass": "Paper from the sea, a seal from River Road, buyers in Komarock and Kitengela. This isn't a gang, Amani. It's a factory.",
+          "fail": [
+            "Every one of those pins shows the till. Which one is a seal?",
+            "Lay the pins over the empty oval. Only one fits."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_stairs",
+      "from": "23:12",
+      "to": "23:50",
+      "within": [
+        "plc_office"
+      ]
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_gatelog_naomi",
+          "f_security_report"
+        ],
+        "concludes": "Naomi came in at 22:40 for the night cut-off and never left. The report's \"06:00, on arrival\" is false. The accident story is wrong from the start."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_gladys_msg",
+          "f_manifest",
+          "f_container"
+        ],
+        "concludes": "At 23:12 Naomi refused to sign PCFU 418220-3 as printing paper. It is title-deed security paper, consigned to Mvua Holdings, and Gichuru was pressing her."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_gich_home",
+          "f_gatelog_gichuru",
+          "f_ramadhan",
+          "f_gich_admits"
+        ],
+        "concludes": "Gichuru wasn't home. He drove in at 23:05 and out at 23:50, fifteen minutes after the cry. Pressed, he admits being upstairs."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_rec_naomi",
+          "f_rec_gich_mast",
+          "f_rec_gich_mvua"
+        ],
+        "concludes": "Naomi's phone left Shimanzi at 23:52 and went to Nyali, exactly as Gichuru's did. Mvua Holdings has paid him every month for fourteen months. Daniel Gichuru killed her because she wouldn't pass Mvua's paper.",
+        "answers": [
+          "who",
+          "why"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "f_container_oval",
+          "case-010:f_order_mvua"
+        ],
+        "concludes": "The empty oval on the paper is waiting for a REGISTRAR OF TITLES seal. The only seal on the Pattern File is the one Mvua ordered from Rashid Omar in case 10.",
+        "answers": [
+          "pin"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_odera",
+        "blank": "who",
+        "by": [
+          "f_tally"
+        ],
+        "why": "Odera's stacker logged moves at the far end of the yard at 23:10, 23:20, 23:34, 23:41 and 23:58."
+      },
+      {
+        "word": "w_fatma",
+        "blank": "who",
+        "by": [
+          "f_ship"
+        ],
+        "why": "Fatma was tallying on board a ship at berth from 23:00, signing every half hour."
+      },
+      {
+        "word": "w_mazrui",
+        "blank": "who",
+        "by": [
+          "f_mazrui_home"
+        ],
+        "why": "Mazrui was at home in Nyali all night."
+      },
+      {
+        "word": "w_ramadhan",
+        "blank": "who",
+        "by": [
+          "f_ramadhan_self"
+        ],
+        "why": "Ramadhan was at the gate, logging every fifteen minutes in his own hand."
+      },
+      {
+        "word": "m_overtime",
+        "blank": "why",
+        "by": [
+          "f_overtime"
+        ],
+        "why": "The overtime dispute was Odera's, and it was settled on Friday."
+      },
+      {
+        "word": "m_job",
+        "blank": "why",
+        "by": [
+          "f_fatma_job"
+        ],
+        "why": "That was Fatma's ambition, and it was Naomi's post she wanted, not Gichuru's."
+      },
+      {
+        "word": "m_tax",
+        "blank": "why",
+        "by": [
+          "f_mazrui_tax"
+        ],
+        "why": "The audit is about storage-fee tax rates, nothing to do with Naomi or Gichuru."
+      },
+      {
+        "word": "m_debt",
+        "blank": "why",
+        "by": [
+          "f_rec_gich_nodebt"
+        ],
+        "why": "There are no transactions between them at all."
+      },
+      {
+        "word": "w_pin_calendar",
+        "blank": "pin",
+        "by": [
+          "case-006:f_calendar_till"
+        ],
+        "why": "The calendar shows the till number. It isn't a seal."
+      },
+      {
+        "word": "w_pin_card",
+        "blank": "pin",
+        "by": [
+          "case-013:f_card_mvua"
+        ],
+        "why": "The business card advertises the till. It isn't a seal."
+      },
+      {
+        "word": "w_pin_upendo",
+        "blank": "pin",
+        "by": [
+          "case-020:f_mh_receipts"
+        ],
+        "why": "The receipts show money paid to the till. They aren't a seal."
+      },
+      {
+        "word": "w_pin_flyer",
+        "blank": "pin",
+        "by": [
+          "case-027:f_flyer"
+        ],
+        "why": "The flyer sells plots. It isn't a seal."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Container PCFU 418220-3 arrives declared as printing paper, consigned to Mvua Holdings. Naomi opens a carton for the sample check. Watermarks, fibres, and an empty oval: \"Registrar's seal here\".",
+        "image": null
+      },
+      {
+        "text": "She photographs a sheet, keeps one, and won't sign the entry. She is working the night cut-off for a vessel.",
+        "image": null
+      },
+      {
+        "text": "23:05. Gichuru drives in. Sign it, he says, and names a sum. 23:12: she messages her sister, \"It's not printing paper. Look.\"",
+        "image": "loc_bandari"
+      },
+      {
+        "text": "About 23:35, on the outside staircase, he grabs for the sample sheet and her phone. She falls. He goes down after her.",
+        "image": null
+      },
+      {
+        "text": "23:50. He drives out with her phone and the sheet. In the morning his security man types up a fall at 06:00.",
+        "image": null
+      }
+    ]
+  },
+  "afterVerdict": [
+    {
+      "beat": "Interview room. Gichuru was recruited by \"a man with a bad leg they call Fundi\", who brings the cash and never uses a phone. He has never heard the name Kivuli. He asks for a lawyer."
+    },
+    {
+      "beat": "The drawer list goes to the Pattern File: the container's route (t_mvua); \"Lamu by dhow — Upepo Mwema — captain refused\", which quietly explains one more thing Khamis said no to in case 24 (Ireri had nothing to do with Mvua); and \"Bahati — old matter — closed 12 yrs\"."
+    },
+    {
+      "beat": "Joseph Mwenda died outside Nakuru twelve years ago. When the Bahati pin lands, the desk lamp dims for a beat. Nothing is said."
+    },
+    {
+      "beat": "The container is seized. Its paper goes to the evidence store in Nairobi."
+    },
+    {
+      "beat": "Collectible: a brass dhow compass from Lamu, with a note from Abdalla Khamis: \"Baba refused them too. Thank you for reading him right.\""
+    }
+  ],
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_gatelog",
+        "line": "The company says she arrived at six. Read the gate log: when did she arrive, and who else drove in?"
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_naomi",
+          "f_rec_gich_mast"
+        ],
+        "line": "Lay the two phones side by side. Where did hers go at 23:52?"
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_container",
+        "line": "Open the container she wouldn't sign for."
+      },
+      "tier2": {
+        "facts": [
+          "f_gladys_msg",
+          "f_container"
+        ],
+        "line": "Si printing paper. Ona. Look at what she sent her sister."
+      }
+    },
+    "g_spine": {
+      "tier1": {
+        "point": "ev_container",
+        "line": "The oval is waiting for a seal. Take the Pattern File off the wall."
+      },
+      "tier2": {
+        "facts": [
+          "f_container_oval",
+          "case-010:f_order_mvua"
+        ],
+        "line": "Only one pin on the wall is a seal. Lay it over the oval."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "bandari",
+      "def": "Port."
+    },
+    {
+      "term": "makontena",
+      "def": "Containers."
+    },
+    {
+      "term": "karatasi",
+      "def": "Paper."
+    },
+    {
+      "term": "saini",
+      "def": "To sign; a signature."
+    },
+    {
+      "term": "muhuri",
+      "def": "Rubber stamp or seal."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    },
+    {
+      "term": "fundi",
+      "def": "Craftsman, mechanic, skilled tradesman. Here, a nickname."
+    },
+    {
+      "term": "kivuli",
+      "def": "Shadow."
+    },
+    {
+      "term": "baba",
+      "def": "Father."
+    },
+    {
+      "term": "upepo mwema",
+      "def": "\"Good wind\", the name of Khamis Bwanaheri's dhow in case 24."
+    },
+    {
+      "term": "kanzu",
+      "def": "Long white robe worn by men."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "crossCaseComparison"
+    ],
+    "beatNotes": "Fitting one case's evidence into another's: the comparison view takes a Pattern File pin (case 10's seal order) and lays it over this case's paper. The click when the oval fits is the region's payoff moment."
+  }
+}

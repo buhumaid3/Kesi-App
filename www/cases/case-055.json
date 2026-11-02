@@ -1,0 +1,1900 @@
+{
+  "meta": {
+    "id": "case-055",
+    "number": 55,
+    "region": "maasai-mara",
+    "regionNumber": 6,
+    "title": "Preflight",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 30,
+    "date": "Tuesday 24 February",
+    "folderTab": "ENKARE STRIP"
+  },
+  "pattern": {
+    "crimePattern": "bush-airline owner smothers the senior pilot who grounded an aircraft over a forged inspection, and sits her in the cockpit",
+    "noRealCaseRetold": true,
+    "notes": "Fictional airline, aircraft registration and inspector. Aviation procedure (logbooks, 100-hour inspections, hour meters, flight plans) is given in outline; the cultural reader and an aviation reader are asked to check it.",
+    "tags": [
+      "smothering",
+      "moved-body",
+      "cover-up",
+      "aviation",
+      "two-liars",
+      "warrant",
+      "forensics",
+      "when-strip",
+      "where"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 4,
+    "redHerrings": 1,
+    "liars": 2,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "forensic"
+    ],
+    "gatedActions": [
+      "warrant"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 05/24/02",
+    "date": "Tuesday 24 February",
+    "time": "07:55",
+    "reportedBy": "Mara Skylink",
+    "text": "A bush airline reports one of its pilots, Captain Linda Jepchirchir (36), found slumped dead in the cockpit of her aircraft at Enkare airstrip at 07:40, before the 08:30 shuttle. Suspected medical collapse.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_strip",
+    "nodes": [
+      "loc_strip",
+      "loc_cottage",
+      "loc_lodge"
+    ],
+    "edges": [
+      {
+        "a": "loc_strip",
+        "b": "loc_cottage",
+        "minutes": 10,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_strip",
+        "b": "loc_lodge",
+        "minutes": 40,
+        "by": "road"
+      },
+      {
+        "a": "loc_cottage",
+        "b": "loc_lodge",
+        "minutes": 45,
+        "by": "road"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_linda",
+      "role": "victim",
+      "name": "Captain Linda Jepchirchir",
+      "age": 36,
+      "occupation": "Senior pilot, Mara Skylink",
+      "bio": "Eight years flying the Mara shuttles. Starts every preflight at 06:00 with a pencil tick on line 1.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_cottage",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin woman, mid 30s, a white pilot's shirt with captain's epaulettes, aviator sunglasses pushed up on her head, a calm, direct gaze, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_fiona",
+      "role": "suspect",
+      "name": "Fiona Gallagher",
+      "age": 52,
+      "occupation": "Owner of Mara Skylink, also a pilot",
+      "bio": "Built the airline from one aircraft. Its biggest contract renews next month.",
+      "community": "Kenyan-European",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_ob"
+      },
+      "at": "loc_cottage",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan-European woman, early 50s, cropped grey-blonde hair, a navy pilot's jumper, a brisk, controlled face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_saruni",
+      "role": "suspect",
+      "name": "Saruni Meitamei",
+      "age": 29,
+      "occupation": "Fuel attendant and night watchman, Enkare airstrip",
+      "bio": "Guards the aircraft and the fuel store at night from a thatched shelter.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_shelter",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Maasai young man, late 20s, a reflective vest over a red shuka, a torch, an anxious, sleepless face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_rodgers",
+      "role": "suspect",
+      "name": "Captain Rodgers Nyaga",
+      "age": 41,
+      "occupation": "Second pilot, Mara Skylink",
+      "redHerring": true,
+      "bio": "Wanted Linda's seniority, and said so.",
+      "community": "Embu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_silvanus"
+      },
+      "at": "plc_nairobi",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Embu man, early 40s, a pilot's shirt with first-officer stripes, a sharp haircut, an ambitious, guarded face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_silvanus",
+      "role": "witness",
+      "name": "Silvanus Kirui",
+      "age": 45,
+      "occupation": "Aircraft engineer, Mara Skylink",
+      "bio": "Keeps the company's aircraft flying. Linda trusted him.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_lodge",
+      "image": null
+    },
+    {
+      "id": "p_ndegwa",
+      "role": "witness",
+      "name": "Cornelius Ndegwa",
+      "age": 58,
+      "occupation": "Licensed aircraft inspector",
+      "statementOnly": true,
+      "bio": "His name and licence number are on the logbook's January inspection.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_logbook"
+      },
+      "at": "plc_nairobi",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_cockpit",
+      "name": "The cockpit of 5Y-MSK",
+      "within": "loc_strip"
+    },
+    {
+      "id": "plc_shelter",
+      "name": "The airstrip shelter",
+      "within": "loc_strip"
+    },
+    {
+      "id": "plc_fuelstore",
+      "name": "The fuel store",
+      "within": "loc_strip"
+    },
+    {
+      "id": "plc_sitting",
+      "name": "The cottage sitting room",
+      "within": "loc_cottage"
+    },
+    {
+      "id": "plc_ownerroom",
+      "name": "The owner's room at the cottage",
+      "within": "loc_cottage"
+    },
+    {
+      "id": "plc_nairobi",
+      "name": "Nairobi"
+    },
+    {
+      "id": "plc_wilson",
+      "name": "Wilson Airport, Nairobi"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_strip",
+      "name": "Enkare airstrip",
+      "kind": "scene",
+      "description": "A murram strip through the grass, a windsock, a thatched shelter and a padlocked fuel store. Two single-engine turboprops stand at the end of the strip: 5Y-MSK, where Linda sits slumped in the left seat, and the owner's aircraft, its engine still ticking as it cools.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_cockpit",
+          "label": "Cockpit of 5Y-MSK",
+          "pos": [
+            40,
+            46
+          ],
+          "yields": "ev_cockpit",
+          "text": "Linda in the left seat. The harness lies open; the headset hangs on its hook."
+        },
+        {
+          "id": "hs_log",
+          "label": "Aircraft logbook",
+          "pos": [
+            30,
+            60
+          ],
+          "yields": "ev_logbook",
+          "text": "The logbook of 5Y-MSK, in its pocket behind the seat."
+        },
+        {
+          "id": "hs_meter",
+          "label": "Owner's aircraft",
+          "pos": [
+            76,
+            46
+          ],
+          "yields": "ev_hourmeter",
+          "text": "The engine hour meter on the panel of Fiona's aircraft."
+        },
+        {
+          "id": "hs_plans",
+          "label": "Flight-plan file",
+          "pos": [
+            86,
+            30
+          ],
+          "yields": "ev_flightplan",
+          "text": "The company's flight-plan file in the shelter, and the tower's confirmations."
+        },
+        {
+          "id": "hs_tracker",
+          "label": "Fleet tracker",
+          "pos": [
+            60,
+            30
+          ],
+          "yields": "ev_tracker",
+          "text": "The fleet tracker for the company Land Cruiser, on the shelter laptop."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a murram bush airstrip in the Maasai Mara at dawn, two single-engine turboprop aircraft parked at the end of the strip, a thatched shelter, a windsock, a padlocked fuel store, grassland and acacias beyond, no people in focus"
+      }
+    },
+    {
+      "id": "loc_cottage",
+      "name": "Crew cottage",
+      "kind": "location",
+      "description": "A stone cottage 3 km from the strip where the crew sleep between shuttles: two bedrooms, an owner's room, a sitting room with a sofa, Linda's laptop on the table.",
+      "unlock": {
+        "fact": "f_tracker"
+      },
+      "hotspots": [
+        {
+          "id": "hs_laptop",
+          "label": "Linda's laptop",
+          "pos": [
+            40,
+            44
+          ],
+          "yields": "ev_report",
+          "text": "Her laptop, still open, a document saved last night."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small stone crew cottage in the Mara at night, a sitting room with a sofa, a laptop open on a wooden table, a lamp on"
+      }
+    },
+    {
+      "id": "loc_csearch",
+      "name": "Crew cottage and Land Cruiser (warrant)",
+      "kind": "search",
+      "description": "The sitting room in daylight, and the company Land Cruiser parked outside.",
+      "unlock": {
+        "fact": "f_report"
+      },
+      "hotspots": [
+        {
+          "id": "hs_room",
+          "label": "Sitting room and vehicle",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_cottage",
+          "text": "The sofa has a gap where a cushion should be. The rug is gone. The floor is freshly mopped."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a stone cottage sitting room in daylight, a sofa missing one cushion, a bare freshly mopped floor where a rug used to be, an open Land Cruiser boot outside the window"
+      }
+    },
+    {
+      "id": "loc_lodge",
+      "name": "A lodge workshop, 40 minutes away",
+      "kind": "location",
+      "description": "A lodge's hangar where Silvanus spent the night servicing another aircraft.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_lodgebook",
+          "label": "Lodge night log",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_lodgelog",
+          "text": "The lodge's night log."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small lodge hangar at night with a single-engine aircraft on stands, work lights and tools"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_cockpit",
+      "type": "physical",
+      "title": "The cockpit of 5Y-MSK",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Harness not fastened. Headset on its hook, not on her head. Preflight checklist not begun: no tick on line 1."
+      },
+      "facts": [
+        "f_cockpit"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the cockpit of a single-engine turboprop at dawn, an unfastened harness, a headset hanging on its hook, a blank preflight checklist on a kneeboard, no body visible"
+      }
+    },
+    {
+      "id": "ev_logbook",
+      "type": "physical",
+      "title": "Logbook, 5Y-MSK",
+      "render": "ledger",
+      "body": {
+        "january": "100-hour inspection signed \"C. Ndegwa\".",
+        "note": "Linda's red pen across it: \"FALSE — aircraft grounded by PIC.\""
+      },
+      "facts": [
+        "f_logbook"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "an aircraft logbook page with a typed inspection entry and the word FALSE written across it in red ink"
+      }
+    },
+    {
+      "id": "ev_ndegwa",
+      "type": "witness",
+      "title": "Statement: Cornelius Ndegwa",
+      "render": "statement",
+      "body": {
+        "speaker": "p_ndegwa"
+      },
+      "facts": [
+        "f_ndegwa"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_silvanus",
+      "type": "witness",
+      "title": "Statement: Silvanus Kirui",
+      "render": "statement",
+      "body": {
+        "speaker": "p_silvanus"
+      },
+      "facts": [
+        "f_silvanus",
+        "f_no_offer"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lodgelog",
+      "type": "physical",
+      "title": "Lodge night log",
+      "render": "logBook",
+      "body": {
+        "entry": "S. Kirui, Mara Skylink engineer: in the hangar 19:00–06:30."
+      },
+      "facts": [
+        "f_silvanus_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_report",
+      "type": "physical",
+      "title": "Linda's laptop",
+      "render": "note",
+      "body": {
+        "file": "Draft report to the aviation authority, with photographs of the logbook. Saved 22:47."
+      },
+      "facts": [
+        "f_report"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_flightplan",
+      "type": "physical",
+      "title": "Flight-plan record",
+      "render": "form",
+      "body": {
+        "evening": "F. Gallagher, Wilson → Enkare, departed 17:25, landed 18:10, Monday.",
+        "morning": "Enkare → Enkare, local flight, 06:50–07:28, Tuesday."
+      },
+      "facts": [
+        "f_flightplan"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_hourmeter",
+      "type": "physical",
+      "title": "Hour meter, owner's aircraft",
+      "render": "object",
+      "body": {
+        "reading": "+0.8 hours since Monday evening's log entry.",
+        "note": "A Nairobi round trip would add about +1.6."
+      },
+      "facts": [
+        "f_hourmeter"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tracker",
+      "type": "physical",
+      "title": "Land Cruiser tracker",
+      "render": "logBook",
+      "body": {
+        "trip": "Cottage → airstrip 05:20–05:35; back to the cottage 05:50."
+      },
+      "facts": [
+        "f_tracker"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rodgers",
+      "type": "physical",
+      "title": "Nairobi hotel bill",
+      "render": "receipt",
+      "body": {
+        "stay": "R. Nyaga: checked in 19:00 Monday, checked out 07:00 Tuesday."
+      },
+      "facts": [
+        "f_rodgers"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_payroll",
+      "type": "physical",
+      "title": "Crew payroll",
+      "render": "form",
+      "body": {
+        "line": "L. Jepchirchir: all flying hours paid to 31 January."
+      },
+      "facts": [
+        "f_payroll"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_cottage",
+      "type": "physical",
+      "title": "Cottage and Land Cruiser",
+      "render": "object",
+      "body": {
+        "sofa": "One cushion missing.",
+        "rug": "The sitting-room rug gone; the floor freshly mopped.",
+        "boot": "The missing cushion, in the Land Cruiser's boot."
+      },
+      "facts": [
+        "f_cottage",
+        "f_cushion"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_report",
+          "f_tracker"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_smother",
+        "f_aut_lividity",
+        "f_aut_tod",
+        "f_aut_noinjury"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_cockpit"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_fibre",
+      "type": "forensic",
+      "title": "Lab: fibres (airway vs the cushion)",
+      "render": "labReport",
+      "body": {
+        "test": "fibres"
+      },
+      "facts": [
+        "f_fibre"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "fibres",
+        "hours": 12,
+        "needs": [
+          "ev_autopsy",
+          "ev_cottage"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tox",
+      "type": "forensic",
+      "title": "Lab: toxicology",
+      "render": "labReport",
+      "body": {
+        "test": "toxicology"
+      },
+      "facts": [
+        "f_tox"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toxicology",
+        "hours": 18,
+        "needs": [
+          "ev_autopsy"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Captain Linda Jepchirchir was found slumped dead in the cockpit of 5Y-MSK at Enkare airstrip at 07:40. Suspected medical collapse.",
+      "kind": "true",
+      "about": [
+        "p_linda",
+        "loc_strip"
+      ],
+      "at": {
+        "from": "07:40"
+      }
+    },
+    {
+      "id": "f_cockpit",
+      "text": "Cockpit of 5Y-MSK: harness not fastened, headset on its hook, preflight checklist not begun. She always starts at 06:00 with a tick on line 1.",
+      "kind": "true",
+      "about": [
+        "p_linda",
+        "plc_cockpit"
+      ]
+    },
+    {
+      "id": "f_logbook",
+      "text": "5Y-MSK logbook: a 100-hour inspection in January signed \"C. Ndegwa\". Linda's red pen across it: \"FALSE — aircraft grounded by PIC.\"",
+      "kind": "true",
+      "about": [
+        "p_linda",
+        "p_ndegwa"
+      ]
+    },
+    {
+      "id": "f_ndegwa",
+      "text": "Cornelius Ndegwa: he was in South Africa for all of January (passport stamps) and has never inspected 5Y-MSK.",
+      "kind": "true",
+      "about": [
+        "p_ndegwa"
+      ],
+      "where": {
+        "person": "p_ndegwa",
+        "place": "plc_nairobi",
+        "from": "18:00",
+        "to": "08:00"
+      }
+    },
+    {
+      "id": "f_silvanus",
+      "text": "Silvanus: on Thursday Linda told him, \"I won't fly MSK. Fiona can sack me.\" Rodgers wanted her seniority, he says, \"but not like this\".",
+      "kind": "true",
+      "about": [
+        "p_silvanus",
+        "p_linda",
+        "p_fiona",
+        "p_rodgers"
+      ]
+    },
+    {
+      "id": "f_no_offer",
+      "text": "Silvanus: Linda had no offer from another airline. \"She was Skylink. She built half of it.\"",
+      "kind": "true",
+      "about": [
+        "p_silvanus",
+        "p_linda"
+      ]
+    },
+    {
+      "id": "f_silvanus_self",
+      "text": "Lodge night log: Silvanus was in the lodge hangar from 19:00 to 06:30, 40 minutes away.",
+      "kind": "true",
+      "about": [
+        "p_silvanus"
+      ],
+      "where": {
+        "person": "p_silvanus",
+        "place": "loc_lodge",
+        "from": "19:00",
+        "to": "06:30"
+      }
+    },
+    {
+      "id": "f_report",
+      "text": "Linda's laptop: a draft report to the aviation authority with photographs of the logbook, saved at 22:47.",
+      "kind": "true",
+      "about": [
+        "p_linda",
+        "loc_cottage"
+      ],
+      "at": {
+        "from": "22:47"
+      }
+    },
+    {
+      "id": "f_flightplan",
+      "text": "Flight plans: Fiona flew Wilson → Enkare on Monday, departing 17:25, landing 18:10. On Tuesday: \"Enkare → Enkare, local flight, 06:50–07:28\".",
+      "kind": "true",
+      "about": [
+        "p_fiona"
+      ],
+      "at": {
+        "from": "18:10"
+      }
+    },
+    {
+      "id": "f_hourmeter",
+      "text": "Fiona's aircraft hour meter: +0.8 hours since Monday evening's entry. A Nairobi round trip would add about +1.6.",
+      "kind": "true",
+      "about": [
+        "p_fiona"
+      ]
+    },
+    {
+      "id": "f_tracker",
+      "text": "Land Cruiser tracker: cottage to airstrip 05:20–05:35, back at the cottage at 05:50.",
+      "kind": "true",
+      "about": [
+        "loc_cottage"
+      ],
+      "at": {
+        "from": "05:20",
+        "to": "05:35"
+      }
+    },
+    {
+      "id": "f_rodgers",
+      "text": "Nairobi hotel bill: Rodgers checked in at 19:00 on Monday and out at 07:00 on Tuesday.",
+      "kind": "true",
+      "about": [
+        "p_rodgers"
+      ],
+      "where": {
+        "person": "p_rodgers",
+        "place": "plc_nairobi",
+        "from": "19:00",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_payroll",
+      "text": "Crew payroll: all of Linda's flying hours paid to 31 January.",
+      "kind": "true",
+      "about": [
+        "p_linda"
+      ]
+    },
+    {
+      "id": "f_cottage",
+      "text": "Crew cottage: the sofa is missing one cushion; the sitting-room rug is gone; the floor has been freshly mopped.",
+      "kind": "true",
+      "about": [
+        "loc_cottage"
+      ]
+    },
+    {
+      "id": "f_cushion",
+      "text": "The missing sofa cushion is in the boot of the company Land Cruiser.",
+      "kind": "true",
+      "about": [
+        "p_fiona"
+      ]
+    },
+    {
+      "id": "f_aut_smother",
+      "text": "Autopsy: smothering. Small burst blood vessels in the eyes; fibres in the nose and mouth.",
+      "kind": "true",
+      "about": [
+        "p_linda"
+      ]
+    },
+    {
+      "id": "f_aut_lividity",
+      "text": "Autopsy: lividity on her back. She lay flat for hours before being sat upright.",
+      "kind": "true",
+      "about": [
+        "p_linda"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 22:45 and 01:00.",
+      "kind": "true",
+      "about": [
+        "p_linda"
+      ],
+      "at": {
+        "from": "22:45",
+        "to": "01:00"
+      }
+    },
+    {
+      "id": "f_aut_noinjury",
+      "text": "Autopsy: no blows or other injuries; no sign of a heart attack; carbon monoxide normal.",
+      "kind": "true",
+      "about": [
+        "p_linda"
+      ]
+    },
+    {
+      "id": "f_fibre",
+      "text": "Lab: the fibres in her nose and mouth match the cushion from the Land Cruiser's boot.",
+      "kind": "true",
+      "about": [
+        "p_linda",
+        "p_fiona"
+      ]
+    },
+    {
+      "id": "f_tox",
+      "text": "Toxicology: clean.",
+      "kind": "true",
+      "about": [
+        "p_linda"
+      ]
+    },
+    {
+      "id": "f_fiona_nairobi",
+      "text": "Fiona: \"I flew in from Nairobi this morning at half past seven.\"",
+      "kind": "lie",
+      "about": [
+        "p_fiona"
+      ]
+    },
+    {
+      "id": "f_fiona_heart",
+      "text": "Fiona: \"Linda was overworked. Her heart, probably.\"",
+      "kind": "claim",
+      "about": [
+        "p_fiona",
+        "p_linda"
+      ]
+    },
+    {
+      "id": "f_fiona_cottage",
+      "text": "Fiona admits she came in on Monday evening and slept in the owner's room at the cottage, \"checking on the staff\".",
+      "kind": "true",
+      "about": [
+        "p_fiona"
+      ],
+      "where": {
+        "person": "p_fiona",
+        "place": "plc_ownerroom",
+        "from": "19:00",
+        "to": "05:15"
+      }
+    },
+    {
+      "id": "f_fiona_notsee",
+      "text": "Fiona: \"I didn't see Linda all night.\"",
+      "kind": "lie",
+      "about": [
+        "p_fiona"
+      ]
+    },
+    {
+      "id": "f_saruni_none",
+      "text": "Saruni: \"Nobody came to the aircraft all night.\"",
+      "kind": "lie",
+      "about": [
+        "p_saruni"
+      ]
+    },
+    {
+      "id": "f_saruni_reveal",
+      "text": "Saruni: he slept in the shelter. He heard a car at about half past five. The boss's plane had been there since Monday evening; she told him not to tell the pilots.",
+      "kind": "true",
+      "about": [
+        "p_saruni",
+        "p_fiona"
+      ],
+      "where": {
+        "person": "p_saruni",
+        "place": "plc_shelter",
+        "from": "20:00",
+        "to": "06:30"
+      }
+    },
+    {
+      "id": "f_rodgers_claim",
+      "text": "Rodgers: \"I was in Nairobi.\"",
+      "kind": "claim",
+      "about": [
+        "p_rodgers"
+      ]
+    },
+    {
+      "id": "f_rodgers_job",
+      "text": "Rodgers: \"I wanted her job. I'd have got it in two years. I didn't need it today.\"",
+      "kind": "true",
+      "about": [
+        "p_rodgers",
+        "p_linda"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_fiona",
+      "stance": "cooperative",
+      "intro": "Fiona stands by her own aircraft in a flying jacket, brisk. \"I flew in from Nairobi this morning at half past seven. Linda was overworked. Her heart, probably.\"",
+      "claims": [
+        "f_fiona_nairobi",
+        "f_fiona_heart"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_fiona_notsee",
+          "after": "f_fiona_cottage"
+        }
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_logbook",
+          "reply": "Paperwork errors happen. We would have sorted it out with the authority.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_saruni",
+      "stance": "cooperative",
+      "intro": "Saruni twists his torch in his hands. \"Nobody came to the aircraft all night. They were locked.\"",
+      "claims": [
+        "f_saruni_none"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_rodgers",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_logbook"
+      ],
+      "intro": "Rodgers takes the call from Wilson between flights. \"I was in Nairobi.\"",
+      "claims": [
+        "f_rodgers_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_logbook",
+          "reply": "She grounded MSK? Good for her. I wanted her job. I'd have got it in two years. I didn't need it today. My hotel will confirm I was there.",
+          "reveals": [
+            "f_rodgers_job",
+            "ev_rodgers"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_silvanus",
+      "stance": "cooperative",
+      "intro": "Silvanus has driven straight from the lodge, still in his overalls. \"She wouldn't fly MSK. She told me on Thursday.\"",
+      "claims": [],
+      "yields": [
+        "ev_silvanus",
+        "ev_payroll"
+      ],
+      "topics": [
+        {
+          "about": "ev_payroll",
+          "reply": "Paid? Every hour, every month. Fiona is many things; she pays.",
+          "reveals": []
+        },
+        {
+          "about": "ev_logbook",
+          "reply": "C. Ndegwa? I rang him myself on Friday. He was in South Africa all January. He'll tell you.",
+          "reveals": [
+            "ev_ndegwa"
+          ]
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_saruni",
+      "claim": "f_saruni_none",
+      "brokenBy": [
+        "f_tracker"
+      ],
+      "reveals": [
+        "f_saruni_reveal"
+      ],
+      "reaction": "\"I slept in the shelter. I heard a car about half past five. And the boss's plane was here since Monday evening. She told me not to tell the pilots. I was afraid to say I was asleep.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_fiona",
+      "claim": "f_fiona_nairobi",
+      "brokenBy": [
+        "f_flightplan",
+        "f_hourmeter",
+        "f_saruni_reveal"
+      ],
+      "reveals": [
+        "f_fiona_cottage"
+      ],
+      "reaction": "Fiona does the arithmetic before you do. \"...I came in last night. I slept in the owner's room. I didn't want the staff to know I was checking on them. I didn't see Linda.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_fiona_saw",
+      "claim": "f_fiona_notsee",
+      "brokenBy": [
+        "f_fibre",
+        "f_cushion"
+      ],
+      "reveals": [],
+      "reaction": "Fiona looks at the cushion in its evidence bag. \"Thirty-one years,\" she says. \"One signature.\" She stops talking.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_fiona",
+      "text": "Fiona Gallagher",
+      "category": "person",
+      "ref": "p_fiona",
+      "unlock": {
+        "anyOf": [
+          "f_flightplan"
+        ]
+      }
+    },
+    {
+      "id": "w_saruni",
+      "text": "Saruni Meitamei",
+      "category": "person",
+      "ref": "p_saruni",
+      "unlock": {
+        "anyOf": [
+          "f_cockpit"
+        ]
+      }
+    },
+    {
+      "id": "w_rodgers",
+      "text": "Rodgers Nyaga",
+      "category": "person",
+      "ref": "p_rodgers",
+      "unlock": {
+        "anyOf": [
+          "f_silvanus"
+        ]
+      }
+    },
+    {
+      "id": "w_silvanus",
+      "text": "Silvanus Kirui",
+      "category": "person",
+      "ref": "p_silvanus",
+      "unlock": {
+        "anyOf": [
+          "f_silvanus"
+        ]
+      }
+    },
+    {
+      "id": "w_ndegwa",
+      "text": "Cornelius Ndegwa",
+      "category": "person",
+      "ref": "p_ndegwa",
+      "unlock": {
+        "anyOf": [
+          "f_logbook"
+        ]
+      }
+    },
+    {
+      "id": "pl_cockpit",
+      "text": "the cockpit",
+      "category": "place",
+      "ref": "plc_cockpit",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_cottage",
+      "text": "the crew cottage",
+      "category": "place",
+      "ref": "loc_cottage",
+      "unlock": {
+        "anyOf": [
+          "f_tracker"
+        ]
+      }
+    },
+    {
+      "id": "pl_fuel",
+      "text": "the fuel store",
+      "category": "place",
+      "ref": "plc_fuelstore",
+      "unlock": {
+        "anyOf": [
+          "f_cockpit"
+        ]
+      }
+    },
+    {
+      "id": "pl_shelter",
+      "text": "the airstrip shelter",
+      "category": "place",
+      "ref": "plc_shelter",
+      "unlock": {
+        "anyOf": [
+          "f_cockpit"
+        ]
+      }
+    },
+    {
+      "id": "pl_wilson",
+      "text": "Wilson Airport",
+      "category": "place",
+      "ref": "plc_wilson",
+      "unlock": {
+        "anyOf": [
+          "f_fiona_nairobi"
+        ]
+      }
+    },
+    {
+      "id": "h_cushion",
+      "text": "smothered with a cushion, then sat in the cockpit",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_smother"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack during preflight",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_co",
+      "text": "carbon monoxide in the cockpit",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_cockpit"
+        ]
+      }
+    },
+    {
+      "id": "h_poison",
+      "text": "poisoned",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_struck",
+      "text": "struck",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_grounded",
+      "text": "she'd grounded the plane and was reporting the faked maintenance records",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_logbook"
+        ]
+      }
+    },
+    {
+      "id": "m_rival",
+      "text": "a rival pilot's ambition",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_silvanus"
+        ]
+      }
+    },
+    {
+      "id": "m_hours",
+      "text": "unpaid flying hours",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_offer",
+      "text": "she'd taken a job with another airline",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_silvanus"
+        ]
+      }
+    },
+    {
+      "id": "m_sleeping",
+      "text": "a quarrel over the fuel attendant sleeping on duty",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_cockpit"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Captain Linda Jepchirchir"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_1810",
+                  "label": "18:10",
+                  "from": "18:10",
+                  "to": "18:10"
+                },
+                {
+                  "id": "sl_2247",
+                  "label": "22:47",
+                  "from": "22:47",
+                  "to": "22:47"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "22:47–01:00",
+                  "from": "22:47",
+                  "to": "01:00"
+                },
+                {
+                  "id": "sl_0520",
+                  "label": "05:20–05:35",
+                  "from": "05:20",
+                  "to": "05:35"
+                },
+                {
+                  "id": "sl_0600",
+                  "label": "06:00",
+                  "from": "06:00",
+                  "to": "06:00"
+                },
+                {
+                  "id": "sl_0728",
+                  "label": "07:28",
+                  "from": "07:28",
+                  "to": "07:28"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_land",
+                  "text": "Fiona lands at Enkare",
+                  "slot": "sl_1810",
+                  "by": [
+                    "f_flightplan"
+                  ],
+                  "why": "Her flight plan: landed 18:10 on Monday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_flightplan"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_report",
+                  "text": "Linda saves her report",
+                  "slot": "sl_2247",
+                  "by": [
+                    "f_report"
+                  ],
+                  "why": "The laptop: saved at 22:47.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_report"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Linda is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_report",
+                    "f_aut_tod",
+                    "f_aut_lividity"
+                  ],
+                  "why": "Alive and writing at 22:47; the autopsy: before 01:00. She lay flat for hours afterwards.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_drive",
+                  "text": "The Land Cruiser drives to the airstrip",
+                  "slot": "sl_0520",
+                  "by": [
+                    "f_tracker"
+                  ],
+                  "why": "The tracker: cottage to strip, 05:20–05:35.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_tracker"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_arrival",
+                  "text": "Fiona's \"arrival\"",
+                  "slot": "sl_0728",
+                  "by": [
+                    "f_flightplan",
+                    "f_hourmeter"
+                  ],
+                  "why": "A local circuit from Enkare to Enkare, landing at 07:28.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_hourmeter"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_0600",
+                  "by": [
+                    "f_cockpit",
+                    "f_aut_tod"
+                  ],
+                  "why": "06:00 is when Linda always started her preflight. She never began it; she'd been dead for hours."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "Fiona in at ten past six the evening before, Linda writing at 22:47, dead before one, carried out at twenty past five, and a forty-minute \"flight from Nairobi\". The meters don't lie.",
+          "fail": [
+            "06:00 is when Linda would have started her checklist. She never did.",
+            "Her \"arrival\" is the last thing that happened, not the first."
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_cottage"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Writing at the cottage at 22:47, lying flat for hours, a cushion gone from its sofa. She died at the cottage and was driven to the strip.",
+          "fail": [
+            "Harness open, headset on the hook, checklist blank. She never sat down in that cockpit alive.",
+            "Where was she working at 22:47?"
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_fiona"
+          }
+        ],
+        "prosecutor": {
+          "pass": "At Enkare since the evening, in the cottage that night, and the cushion with Linda's fibres in the company car. That will hold.",
+          "fail": [
+            "The fuel attendant slept at his post. He has no vehicle and no key.",
+            "Rodgers was in a Nairobi hotel until seven."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_cushion"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Smothered, laid flat, then sat upright for the staff to find. Yes.",
+          "fail": [
+            "Burst vessels in the eyes and fibres in her airway. That's no heart attack.",
+            "The engine never started. There was no carbon monoxide."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_grounded"
+          }
+        ],
+        "prosecutor": {
+          "pass": "\"FALSE — aircraft grounded by PIC.\" And a report to the authority saved at 22:47. That's the reason.",
+          "fail": [
+            "Her hours were paid. Read the logbook again.",
+            "Rodgers wanted her job, but he was in Nairobi."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_cottage",
+      "from": "22:47",
+      "to": "01:00",
+      "within": [
+        "plc_sitting",
+        "plc_ownerroom"
+      ],
+      "note": "Alive and writing at 22:47; the autopsy allows 22:45–01:00."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_cockpit",
+          "f_aut_smother",
+          "f_aut_lividity",
+          "f_aut_tod"
+        ],
+        "concludes": "Linda never began her preflight: she was smothered hours before, lay flat for hours, and was then sat in the seat."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_logbook",
+          "f_ndegwa",
+          "f_silvanus",
+          "f_report"
+        ],
+        "concludes": "She had grounded 5Y-MSK over a forged inspection and was reporting it to the authority; she was alive at the cottage, saving that report, at 22:47.",
+        "answers": [
+          "where"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_fiona_nairobi",
+          "f_flightplan",
+          "f_hourmeter",
+          "f_saruni_none",
+          "f_saruni_reveal",
+          "f_fiona_cottage"
+        ],
+        "concludes": "Fiona was at Enkare from 18:10 the evening before and slept at the cottage; her \"arrival\" was a 38-minute circuit, +0.8 on the meter, not +1.6.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_tracker",
+          "f_cottage",
+          "f_cushion",
+          "f_fibre",
+          "f_fiona_notsee"
+        ],
+        "concludes": "The company car carried something from the cottage to the strip at 05:20, and the cushion in its boot carries the fibres from Linda's airway. At the crew cottage, Fiona Gallagher smothered Linda with a cushion and sat her in the cockpit, because she'd grounded the plane and was reporting the faked maintenance records.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_cockpit",
+        "blank": "where",
+        "by": [
+          "f_cockpit",
+          "f_aut_lividity"
+        ],
+        "why": "Harness open, headset on its hook, checklist blank, and she lay flat for hours before she was sat there."
+      },
+      {
+        "word": "pl_fuel",
+        "blank": "where",
+        "by": [
+          "f_report",
+          "f_aut_lividity"
+        ],
+        "why": "She was writing at the cottage at 22:47 and died lying flat, not at the strip."
+      },
+      {
+        "word": "pl_shelter",
+        "blank": "where",
+        "by": [
+          "f_saruni_reveal",
+          "f_report"
+        ],
+        "why": "Saruni slept in the shelter all night; Linda was at the cottage."
+      },
+      {
+        "word": "pl_wilson",
+        "blank": "where",
+        "by": [
+          "f_report",
+          "f_flightplan"
+        ],
+        "why": "Linda was at the cottage at 22:47; nobody flew to Wilson that night."
+      },
+      {
+        "word": "w_saruni",
+        "blank": "who",
+        "by": [
+          "f_saruni_reveal"
+        ],
+        "why": "Saruni slept at the airstrip shelter, with no vehicle and no key to the cottage."
+      },
+      {
+        "word": "w_rodgers",
+        "blank": "who",
+        "by": [
+          "f_rodgers"
+        ],
+        "why": "Rodgers was in a Nairobi hotel from 19:00 to 07:00."
+      },
+      {
+        "word": "w_silvanus",
+        "blank": "who",
+        "by": [
+          "f_silvanus_self"
+        ],
+        "why": "Silvanus was in a lodge hangar 40 minutes away all night."
+      },
+      {
+        "word": "w_ndegwa",
+        "blank": "who",
+        "by": [
+          "f_ndegwa"
+        ],
+        "why": "Ndegwa was in Nairobi; he was abroad in January and never inspected MSK."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_smother",
+          "f_aut_noinjury"
+        ],
+        "why": "Smothering, hours before any preflight; no heart attack."
+      },
+      {
+        "word": "h_co",
+        "blank": "how",
+        "by": [
+          "f_aut_noinjury",
+          "f_cockpit"
+        ],
+        "why": "Carbon monoxide normal; the engine never started."
+      },
+      {
+        "word": "h_poison",
+        "blank": "how",
+        "by": [
+          "f_tox"
+        ],
+        "why": "Toxicology clean."
+      },
+      {
+        "word": "h_struck",
+        "blank": "how",
+        "by": [
+          "f_aut_noinjury"
+        ],
+        "why": "No blows or other injuries."
+      },
+      {
+        "word": "m_rival",
+        "blank": "why",
+        "by": [
+          "f_rodgers_job",
+          "f_rodgers"
+        ],
+        "why": "That ambition is Rodgers's, and he was in Nairobi."
+      },
+      {
+        "word": "m_hours",
+        "blank": "why",
+        "by": [
+          "f_payroll"
+        ],
+        "why": "Every flying hour was paid."
+      },
+      {
+        "word": "m_offer",
+        "blank": "why",
+        "by": [
+          "f_no_offer"
+        ],
+        "why": "She had no offer from another airline."
+      },
+      {
+        "word": "m_sleeping",
+        "blank": "why",
+        "by": [
+          "f_saruni_reveal"
+        ],
+        "why": "Saruni sleeping at his post is his failing, not Fiona's motive."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Linda finds that 5Y-MSK's logbook shows a January inspection \"completed\" by an inspector who was abroad all month. She writes FALSE across it, grounds the aircraft and starts a report to the aviation authority.",
+        "image": null
+      },
+      {
+        "text": "Monday, 17:25. Facing the loss of her certificate and her biggest contract, Fiona flies in from Wilson and lands at Enkare at 18:10. She tells Saruni not to tell the pilots she's there.",
+        "image": null
+      },
+      {
+        "text": "22:47. Linda saves her report. At about 23:00 Fiona comes to the sitting room to persuade her to delete it. Linda refuses. Fiona smothers her with a sofa cushion.",
+        "image": "loc_cottage"
+      },
+      {
+        "text": "05:20. Fiona drives the company Land Cruiser to the strip and sits Linda in the left seat of MSK, as if she'd collapsed during preflight. The cushion goes in the boot; the rug goes; the floor is mopped.",
+        "image": null
+      },
+      {
+        "text": "06:50. Fiona takes off from Enkare, circles for 38 minutes and lands at 07:28, \"from Nairobi\". At 07:40 she and Saruni find Linda in the cockpit.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "One warrant on the cottage (company property; Fiona refuses entry). The fibre result takes 12 h. No detention needed.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_strip",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_cockpit",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_logbook",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_flightplan",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_hourmeter",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_tracker",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_silvanus"
+      },
+      {
+        "do": "interview",
+        "target": "p_saruni"
+      },
+      {
+        "do": "press",
+        "target": "c_saruni"
+      },
+      {
+        "do": "interview",
+        "target": "p_fiona"
+      },
+      {
+        "do": "press",
+        "target": "c_fiona"
+      },
+      {
+        "do": "travel",
+        "target": "loc_cottage",
+        "hours": 0.5,
+        "from": "loc_strip"
+      },
+      {
+        "do": "visit",
+        "target": "loc_cottage",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_report",
+        "hours": 1
+      },
+      {
+        "do": "search",
+        "target": "loc_csearch"
+      },
+      {
+        "do": "submit",
+        "target": "ev_fibre"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 12
+      },
+      {
+        "do": "interview",
+        "target": "p_fiona"
+      },
+      {
+        "do": "press",
+        "target": "c_fiona_saw"
+      }
+    ],
+    "totalHours": 32.5
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_hourmeter",
+        "line": "Machines count. How many hours would a Nairobi round trip add to that meter?"
+      },
+      "tier2": {
+        "facts": [
+          "f_flightplan",
+          "f_hourmeter"
+        ],
+        "line": "Landed at Enkare at 18:10 the night before. +0.8, not +1.6."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_cockpit",
+        "line": "Look at what she didn't do in that cockpit."
+      },
+      "tier2": {
+        "facts": [
+          "f_report",
+          "f_aut_lividity"
+        ],
+        "line": "Saving a report at the cottage at 22:47, then lying flat for hours."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_flightplan",
+        "line": "Who says they flew in this morning? Read the flight plans for last night."
+      },
+      "tier2": {
+        "facts": [
+          "f_fiona_cottage",
+          "f_fibre"
+        ],
+        "line": "She slept at the cottage, and the cushion in the company car carries Linda's fibres."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Dr. Chebii found something in her eyes and her airway."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_smother",
+          "f_cottage"
+        ],
+        "line": "Smothered, and a sofa missing a cushion."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_logbook",
+        "line": "Read what Linda wrote across the January inspection, in red."
+      },
+      "tier2": {
+        "facts": [
+          "f_logbook",
+          "f_ndegwa"
+        ],
+        "line": "\"FALSE\": the inspector was in South Africa all January."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "ndege",
+      "def": "Aircraft (also: bird)."
+    },
+    {
+      "term": "rubani",
+      "def": "Pilot."
+    },
+    {
+      "term": "uwanja wa ndege",
+      "def": "Airstrip or airport."
+    },
+    {
+      "term": "daftari",
+      "def": "A logbook or notebook."
+    },
+    {
+      "term": "shuka",
+      "def": "A Maasai cloth worn wrapped round the body, often red."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "machinesThatCount"
+    ],
+    "beatNotes": "Machines that count. The engine hour meter and the flight plan become a small arithmetic puzzle: how many hours would a Nairobi round trip add? The notebook does the sum when the player drags the two together."
+  }
+}

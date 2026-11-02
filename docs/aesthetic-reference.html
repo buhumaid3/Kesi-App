@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kesi Aesthetic Reference</title>
+<link rel="stylesheet" href="../www/styles/tokens.css">
+<link rel="stylesheet" href="../www/styles/sign.css">
+<style>
+@font-face { font-family: 'Bungee'; src: url('cmp/bungee-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Anton'; src: url('cmp/anton-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Special Elite'; src: url('cmp/special-elite-latin-400-normal.woff2') format('woff2'); }
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--desk);
+  background-image:
+    radial-gradient(ellipse 70% 45% at 78% 6%, rgba(246,198,107,.30), var(--lamp-falloff) 70%),
+    repeating-linear-gradient(92deg, rgba(255,255,255,.018) 0 2px, transparent 2px 9px),
+    repeating-linear-gradient(88deg, rgba(0,0,0,.10) 0 1px, transparent 1px 23px);
+  color: var(--signwhite); font-family: var(--font-doc); padding: 40px 48px 80px;
+}
+.paperTex { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .28 0 0 0 0 .18 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"); }
+h1 { font: 800 64px/0.9 var(--font-display); letter-spacing: var(--track-display); text-transform: uppercase; margin: 0; color: var(--signwhite); }
+h1 .k { color: var(--sodium); }
+.sub { font: 400 17px/1.5 var(--font-doc); color: #E9DFC9; max-width: 820px; margin: 14px 0 36px; }
+h2 { font: 700 30px/1 var(--font-display); text-transform: uppercase; letter-spacing: .04em; color: var(--lamp); margin: 56px 0 18px; display: flex; gap: 14px; align-items: baseline; }
+h2 small { font: 400 14px var(--font-data); color: #CDBFA4; letter-spacing: 0; text-transform: none; }
+.grid { display: grid; gap: 16px; }
+.sheet { background-color: var(--paper); color: var(--ink); border-radius: var(--radius-paper); box-shadow: var(--shadow-paper); padding: 20px 22px; }
+.swatches { grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); }
+.sw { background: var(--paper); color: var(--ink); border-radius: 2px; box-shadow: var(--shadow-paper); overflow: hidden; }
+.sw i { display: block; height: 74px; }
+.sw div { padding: 8px 10px 10px; font: 13px/1.35 var(--font-data); }
+.sw b { display: block; font: 700 15px var(--font-data); }
+.sw em { font-style: normal; color: var(--ink-soft); }
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; align-items: flex-end; }
+.tab { padding: 10px 14px 18px; border-radius: 6px 6px 0 0; background: var(--region); color: var(--region-ink); font: 700 20px/1 var(--font-display); letter-spacing: var(--track-tab); text-transform: uppercase; border-bottom: 5px solid var(--region-accent); min-width: 116px; }
+.tab small { display: block; font: 500 11px var(--font-data); letter-spacing: 0; margin-top: 6px; text-transform: none; opacity: .92; }
+.typeRow { display: grid; grid-template-columns: 210px 1fr; gap: 18px; padding: 16px 0; border-top: 1px dashed var(--manila-lo); align-items: center; }
+.typeRow:first-child { border-top: 0; }
+.typeRow .meta { font: 13px/1.4 var(--font-data); color: var(--ink-soft); }
+.typeRow .meta b { color: var(--ink); font-size: 14px; display: block; }
+.disp { font: 800 46px/0.95 var(--font-display); text-transform: uppercase; }
+.badge { display: inline-block; font: 700 11px var(--font-data); padding: 2px 6px; border: 1.5px solid currentColor; border-radius: 2px; margin-left: 6px; vertical-align: middle; }
+.rec { color: var(--ob-green); } .alt { color: var(--ink-soft); }
+.cols { grid-template-columns: 430px 1fr; align-items: start; gap: 40px; }
+/* ─── The phone and the reference screen ─── */
+.phone { width: 390px; height: 844px; border-radius: 54px; background: #0b0b0d; padding: 12px; box-shadow: 0 30px 60px -20px rgba(0,0,0,.8), inset 0 0 0 2px #2b2b30; position: relative; }
+.screen { width: 366px; height: 820px; border-radius: 44px; overflow: hidden; position: relative;
+  background: var(--desk);
+  background-image: radial-gradient(ellipse 85% 42% at 82% 4%, rgba(246,198,107,.42), var(--lamp-falloff) 72%),
+    repeating-linear-gradient(91deg, rgba(255,255,255,.02) 0 2px, transparent 2px 8px); }
+.island { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); width: 120px; height: 34px; border-radius: 20px; background: #000; z-index: 9; }
+.status { position: absolute; top: 18px; left: 30px; right: 30px; display: flex; justify-content: space-between; font: 600 15px -apple-system, system-ui, sans-serif; color: #f6efe2; z-index: 8; }
+.folder { position: absolute; top: 76px; left: 10px; right: 10px; bottom: 112px; background: var(--manila); border-radius: 3px 10px 3px 3px; box-shadow: var(--shadow-lift); }
+.folder .ftab { position: absolute; top: -26px; right: 22px; height: 30px; padding: 7px 14px 0; background: var(--region); color: var(--region-ink); border-radius: 6px 6px 0 0; font: 700 15px var(--font-display); letter-spacing: var(--track-tab); border-top: 3px solid var(--region-accent); }
+.folder .head { padding: 16px 18px 0; display: flex; justify-content: space-between; align-items: flex-start; }
+.folder .no { font: 500 13px var(--font-data); color: var(--ink-soft); }
+.folder .no b { display: block; font: 700 15px var(--font-data); color: var(--ink); letter-spacing: .02em; }
+.folder h3 { margin: 4px 18px 2px; font: 800 44px/0.92 var(--font-display); text-transform: uppercase; color: var(--ink); letter-spacing: .01em; }
+.folder .dateline { margin: 0 18px; font: 15px var(--font-doc); color: var(--ink-soft); }
+.stampRound { position: absolute; top: 44px; right: 14px; width: 66px; height: 66px; border: 3px solid var(--stamp); border-radius: 50%; color: var(--stamp); font: 700 11px/1.1 var(--font-data); display: grid; place-items: center; text-align: center; transform: rotate(-14deg); opacity: .85; mix-blend-mode: multiply; }
+.ledger { margin: 14px 12px 0; background-color: var(--ledger); border-radius: 2px; box-shadow: var(--shadow-paper); position: relative; padding: 10px 12px 12px 54px;
+  background-image: repeating-linear-gradient(to bottom, transparent 0 23.5px, var(--ledger-rule) 23.5px 24.5px); background-position: 0 6px; }
+.ledger::before { content: ''; position: absolute; top: 0; bottom: 0; left: 44px; width: 1.5px; background: var(--ledger-margin); opacity: .7; }
+.ledger .t { position: absolute; left: 6px; top: 12px; font: 700 13px var(--font-data); color: var(--ink); width: 36px; text-align: right; }
+.ledger p { margin: 0; font: 15px/24px var(--font-doc); color: var(--ink); }
+.ledger p .hl { background: linear-gradient(transparent 12%, var(--highlighter) 12% 88%, transparent 88%); }
+.ledger .caret { display: inline-block; width: 8px; height: 15px; background: var(--ink); vertical-align: -2px; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+.photo { position: absolute; left: 18px; top: 432px; width: 168px; background: var(--photo-border-color); padding: var(--photo-border) var(--photo-border) 30px; box-shadow: var(--shadow-paper); transform: rotate(-2deg); }
+.photo .img { height: 92px; position: relative; overflow: hidden; filter: var(--photo-filter);
+  background: radial-gradient(ellipse 40% 55% at 30% 18%, rgba(242,163,58,.9), rgba(242,163,58,0) 70%), radial-gradient(ellipse 30% 40% at 82% 22%, rgba(242,163,58,.6), transparent 70%), linear-gradient(#1d1712 0 58%, #2b2520 58% 100%); }
+.photo .img::before { content: ''; position: absolute; left: 18%; right: 26%; bottom: 26%; height: 38%; background: linear-gradient(90deg, #6b2a4a, #2c6a7e 55%, #9fca3a); border-radius: 10px 18px 4px 4px; opacity: .78; }
+.photo .img::after { content: ''; position: absolute; inset: 0; opacity: var(--photo-grain-opacity); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23g)'/%3E%3C/svg%3E"); mix-blend-mode: overlay; }
+.photo .lbl { position: absolute; left: 10px; right: 10px; bottom: 5px; font: 19px/1 var(--font-hand); color: var(--pencil); }
+.photo .clip { position: absolute; top: -14px; left: 26px; width: 18px; height: 46px; border: 3px solid #9aa0a6; border-radius: 9px; border-bottom-color: transparent; transform: rotate(4deg); }
+.standin { position: absolute; right: 6px; top: 6px; font: 700 9px var(--font-data); color: #fff; background: rgba(0,0,0,.45); padding: 2px 4px; }
+.tag { position: absolute; right: 20px; top: 446px; width: 112px; transform: rotate(3deg); background: var(--kraft); color: var(--ink); padding: 8px 10px; font: 12px/1.3 var(--font-data); box-shadow: var(--shadow-paper); border-radius: 2px; }
+.tag b { display: block; font: 700 13px var(--font-display); letter-spacing: .06em; }
+.tag::before { content: ''; position: absolute; top: 8px; left: 88%; width: 9px; height: 9px; margin-left: -4px; border-radius: 50%; background: var(--desk); box-shadow: inset 0 0 0 2px var(--manila-lo); }
+.visit { position: absolute; left: 18px; right: 18px; bottom: 12px; height: 48px; background: var(--paper); border-radius: 2px; box-shadow: var(--shadow-paper); display: flex; align-items: center; justify-content: space-between; padding: 0 16px; font: 700 15px var(--font-doc); color: var(--ink); transform: rotate(-.4deg); }
+.visit span:last-child { font: 700 22px var(--font-display); color: var(--stamp); }
+.dock { position: absolute; left: 0; right: 0; bottom: 18px; height: 86px; display: flex; justify-content: space-around; align-items: flex-end; padding: 0 14px; }
+.obj { width: 70px; text-align: center; font: 600 12px/1.1 var(--font-data); color: #EFE6D2; }
+.obj .ic { height: 50px; margin: 0 auto 6px; position: relative; }
+.ic.note { width: 40px; background: #26415f; border-radius: 2px 5px 5px 2px; box-shadow: inset 5px 0 0 #1c3048; }
+.ic.note::after { content: ''; position: absolute; left: 3px; top: 4px; bottom: 4px; width: 0; border-left: 2px dotted #c9c9c9; }
+.ic.cork { width: 52px; background: var(--cork); border: 4px solid #6b4a2c; border-radius: 2px; background-image: radial-gradient(circle at 30% 35%, var(--stamp) 0 3px, transparent 3.5px), radial-gradient(circle at 70% 64%, var(--stamp) 0 3px, transparent 3.5px), linear-gradient(28deg, transparent 47%, var(--string) 47% 53%, transparent 53%); }
+.ic.phonei { width: 28px; background: #121214; border-radius: 6px; box-shadow: inset 0 0 0 2px #3a3a3e; }
+.ic.phonei::after { content: '2'; position: absolute; top: -6px; right: -8px; width: 18px; height: 18px; border-radius: 50%; background: var(--stamp); color: #fff; font: 700 11px/18px var(--font-data); }
+.ic.charge { width: 40px; background: var(--paper); border-radius: 1px; box-shadow: 3px 3px 0 #c9cfe6; background-image: repeating-linear-gradient(transparent 0 6px, rgba(47,68,151,.35) 6px 7px); }
+.anno { font: 15px/1.5 var(--font-doc); color: #EDE3CF; }
+.anno ol { margin: 0; padding-left: 22px; } .anno li { margin: 0 0 9px; }
+.anno b { color: var(--lamp); font-weight: 700; }
+.stamps { display: flex; gap: 22px; flex-wrap: wrap; align-items: center; }
+.st { font: 800 30px/1 var(--font-display); letter-spacing: .08em; padding: 8px 14px; border: 4px solid; text-transform: uppercase; mix-blend-mode: multiply; }
+.st.closed { color: var(--stamp); transform: rotate(-6deg); }
+.st.acc { color: var(--ob-green); border-style: double; border-width: 6px; transform: rotate(3deg); }
+.st.ret { color: var(--stamp); border-radius: 50%; width: 128px; height: 128px; display: grid; place-items: center; font-size: 20px; transform: rotate(-12deg); }
+.st.conf { color: var(--stamp); font-family: var(--font-stencil); border-width: 2px; }
+.templates { grid-template-columns: repeat(3, 1fr); }
+.tpl h4 { margin: 0 0 8px; font: 700 18px var(--font-display); letter-spacing: .06em; text-transform: uppercase; }
+.tpl table { width: 100%; border-collapse: collapse; font: 13px/1.35 var(--font-data); }
+.tpl td, .tpl th { border-bottom: 1px solid #cbbd9f; padding: 4px 3px; text-align: left; }
+.tpl th { font-weight: 700; font-size: 11px; color: var(--ink-soft); text-transform: uppercase; }
+.sms { background: #111214; color: #f2f2f2; border-radius: 22px; padding: 14px; font: 13px/1.35 -apple-system, system-ui, sans-serif; }
+.sms .b { background: #2a2b2e; border-radius: 14px; padding: 9px 11px; margin-top: 8px; }
+.sms .from { font: 600 12px var(--font-data); color: #9fd2a8; }
+.hand { font: var(--t-hand)/1.3 var(--font-hand); color: var(--pencil); }
+.foot { margin-top: 60px; font: 13px/1.5 var(--font-data); color: #CDBFA4; max-width: 900px; }
+</style>
+</head>
+<body data-region="1">
+
+<h1>Kesi <span class="k">·</span> Aesthetic Reference</h1>
+<p class="sub">Deliverable 7. The game is Amani's desk at the SCU at night: the institution's paper under a desk lamp, and Kenya's street signage breaking in at the edges. Paper carries every word you read; the street carries names, places and the moments you earn. Everything on this sheet is drawn in code from <code>www/styles/tokens.css</code> except the photo, which is a stand-in for a generated image.</p>
+
+<h2>The institution <small>paper, ink, stamps · carries all reading</small></h2>
+<div class="grid swatches">
+  <div class="sw"><i style="background:var(--paper)"></i><div><b>--paper #F3EBDA</b>typed report paper<br><em>ink on it 13.3:1</em></div></div>
+  <div class="sw"><i style="background:var(--ledger);background-image:repeating-linear-gradient(transparent 0 11px,var(--ledger-rule) 11px 12px)"></i><div><b>--ledger #EEF0E2</b>OB ledger page<br><em>ink 13.6:1</em></div></div>
+  <div class="sw"><i style="background:var(--manila)"></i><div><b>--manila #E2C48C</b>folder face<br><em>ink 9.4:1</em></div></div>
+  <div class="sw"><i style="background:var(--kraft)"></i><div><b>--kraft #B98D5E</b>evidence bags<br><em>ink 5.3:1</em></div></div>
+  <div class="sw"><i style="background:var(--cork)"></i><div><b>--cork #B88A5A</b>corkboard</div></div>
+  <div class="sw"><i style="background:var(--desk)"></i><div><b>--desk #2A1D15</b>the room<br><em>paper on it 13.8:1</em></div></div>
+  <div class="sw"><i style="background:var(--ink)"></i><div><b>--ink #23222B</b>typewriter ribbon</div></div>
+  <div class="sw"><i style="background:var(--carbon)"></i><div><b>--carbon #2F4497</b>carbon copies<br><em>on paper 7.4:1</em></div></div>
+  <div class="sw"><i style="background:var(--pencil)"></i><div><b>--pencil #3F3F44</b>Amani's notes<br><em>on paper 8.8:1</em></div></div>
+  <div class="sw"><i style="background:var(--stamp)"></i><div><b>--stamp #B3261E</b>rubber stamp red<br><em>on paper 5.5:1</em></div></div>
+  <div class="sw"><i style="background:var(--ob-green)"></i><div><b>--ob-green #2F5D46</b>OB cloth, "accepted"<br><em>on paper 6.4:1</em></div></div>
+  <div class="sw"><i style="background:var(--highlighter)"></i><div><b>--highlighter #F4DD62</b>Amani's marks<br><em>ink on it 11.5:1</em></div></div>
+</div>
+
+<h2>The street <small>display type, region identity, earned moments · never body text</small></h2>
+<div class="grid swatches">
+  <div class="sw"><i style="background:var(--lamp)"></i><div><b>--lamp #F6C66B</b>tungsten desk lamp</div></div>
+  <div class="sw"><i style="background:var(--sodium)"></i><div><b>--sodium #F2A33A</b>streetlight, case clock<br><em>on desk 7.8:1</em></div></div>
+  <div class="sw"><i style="background:var(--murram)"></i><div><b>--murram #A44A2A</b>red roads, map routes</div></div>
+  <div class="sw"><i style="background:var(--matatu-pink)"></i><div><b>--matatu-pink #E8358A</b>graffiti accent<br><em>on desk 4.1:1</em></div></div>
+  <div class="sw"><i style="background:var(--matatu-lime)"></i><div><b>--matatu-lime #A6D930</b>graffiti accent</div></div>
+  <div class="sw"><i style="background:var(--matatu-cyan)"></i><div><b>--matatu-cyan #19B5D6</b>focus ring<br><em>on desk 6.7:1</em></div></div>
+</div>
+
+<h2>Region folder tabs <small>material colour + the ink that reads on it (all ≥ 4.5:1)</small></h2>
+<div class="tabs">
+  <div class="tab" data-region="1">River Road<small>1 · concrete / sodium</small></div>
+  <div class="tab" data-region="2">Eastlands<small>2 · mabati / matatu pink</small></div>
+  <div class="tab" data-region="3">Old Town<small>3 · coral stone / ocean</small></div>
+  <div class="tab" data-region="4">Nakuru<small>4 · murram / maize</small></div>
+  <div class="tab" data-region="5">Kisumu<small>5 · lake / tilapia</small></div>
+  <div class="tab" data-region="6">The Mara<small>6 · shuka / savanna</small></div>
+  <div class="tab" data-region="7">Nyeri<small>7 · tea / coffee cherry</small></div>
+  <div class="tab" data-region="8">Turkana<small>8 · basalt / jade</small></div>
+  <div class="tab" data-region="9">Karen<small>9 · jacaranda / glass</small></div>
+  <div class="tab" data-region="10">Final Files<small>10 · OB green / stamp</small></div>
+</div>
+
+<h2>Region title cards <small>Big Shoulders, sign-painted: the street's voice, used only here, on the verdict title and on CASE CLOSED</small></h2>
+<div class="grid" style="grid-template-columns:repeat(4,1fr)">
+  <div class="sign-card" data-region="2"><div class="sign">Eastlands</div><small>Region 2 · cases 11–20</small></div>
+  <div class="sign-card" data-region="4"><div class="sign">Nyahururu</div><small>Region 4 · case 38</small></div>
+  <div class="sign-card" data-region="6"><div class="sign">The Mara</div><small>Region 6 · cases 51–60</small></div>
+  <div class="sign-card" data-region="10"><div class="sign">Final Files</div><small>Region 10 · cases 91–100</small></div>
+</div>
+
+<h2>Typefaces <small>three faces + Amani's hand · all OFL, bundled offline (424 KB)</small></h2>
+<div class="sheet paperTex">
+  <div class="typeRow"><div class="meta"><b>Display · Big Shoulders Display <span class="badge rec">CHOSEN</span></b>condensed, variable 100–900; sign-painter weight without the cliché; long names fit a phone</div><div class="disp">The Last Fare · Nyahururu · Kirinyaga Road</div></div>
+  <div class="typeRow"><div class="meta"><b>Display alt · Bungee <span class="badge alt">NOT CHOSEN</span></b>truest to painted signage, but wide: "NYAHURURU" at 22 pt is 162 pt across, against 98 in Big Shoulders and 110 in Anton</div><div class="disp" style="font-family:Bungee;font-weight:400;font-size:38px">The Last Fare · Nyahururu</div></div>
+  <div class="typeRow"><div class="meta"><b>Display alt · Anton <span class="badge alt">NOT CHOSEN</span></b>condensed and strong, one weight, generic; no stencil sibling</div><div class="disp" style="font-family:Anton;font-weight:400">The Last Fare · Nyahururu · Kirinyaga Road</div></div>
+  <div class="typeRow"><div class="meta"><b>Stencil · Big Shoulders Stencil</b>same family: crates, drawers, CONFIDENTIAL</div><div class="disp" style="font-family:var(--font-stencil)">Region 08 · Exhibit store</div></div>
+  <div class="typeRow"><div class="meta"><b>Documents · Courier Prime <span class="badge rec">CHOSEN</span></b>a typewriter face built for long reading; 4 styles; 17px body</div><div style="font: var(--t-doc)/1.5 var(--font-doc)">Stage marshal Kassim Juma reports that matatu driver Moses Wafula (41), route 9N, was found unresponsive behind his parked vehicle KDK 418T at Ngara stage at 22:40. <b>Pronounced dead at the scene.</b> <i>Fare pouch on the body.</i></div></div>
+  <div class="typeRow"><div class="meta"><b>Documents alt · Special Elite <span class="badge alt">REJECTED</span></b>more "typewriter", but distressed and one weight: tiring over 100 cases, breaks at large Dynamic Type</div><div style="font: 17px/1.5 'Special Elite'">Stage marshal Kassim Juma reports that matatu driver Moses Wafula (41), route 9N, was found unresponsive behind his parked vehicle.</div></div>
+  <div class="typeRow"><div class="meta"><b>Data · IBM Plex Mono</b>logs, registers, PesaPap, masts, lab values; tabular figures</div><div style="font: 15px/1.4 var(--font-data)">21:58 &nbsp;KDK 418T &nbsp;M. Wafula &nbsp;IN<br>22:31 &nbsp;KCZ 902M &nbsp;P. Kamau &nbsp;&nbsp;OUT &nbsp;·&nbsp; Till 880 214 &nbsp;KSh 2,000,000.00</div></div>
+  <div class="typeRow"><div class="meta"><b>Amani's hand · Patrick Hand</b>notebook, photo labels, sticky notes: the player's voice, never the institution's</div><div class="hand">Kassim saw him at 22:10. Who wears a maroon jacket? — check the tools.</div></div>
+  <div class="typeRow"><div class="meta"><b>Plain text mode · system font</b>Settings → Reading: every typed and handwritten face becomes SF</div><div style="font: 17px/1.5 var(--font-plain)">Stage marshal Kassim Juma reports that matatu driver Moses Wafula (41), route 9N, was found unresponsive.</div></div>
+</div>
+
+<h2>Reference screen <small>case 1, the moment the folder opens · iPhone 390 × 844 pt</small></h2>
+<div class="grid cols">
+  <div class="phone" data-region="1"><div class="screen">
+    <div class="island"></div>
+    <div class="status"><span>22:52</span><span>●●● ▮</span></div>
+    <div class="folder paperTex">
+      <div class="ftab">NGARA</div>
+      <div class="stampRound">NAIROBI<br>SCU<br>14 MAR</div>
+      <div class="head"><div class="no"><b>OB 41/14/03</b>Case 001 · Fri 14 March</div></div>
+      <h3>The Last Fare</h3>
+            <div class="ledger"><span class="t">22:52</span><p>Stage marshal Kassim Juma reports that matatu driver Moses Wafula (41), route 9N, was found unresponsive behind his parked vehicle KDK 418T at Ngara stage at 22:40. Pronounced dead at the scene. Fare pouch on the body. The marshal states the deceased <span class="hl">argued with his conductor</span> earlier in the day.<span class="caret"></span></p></div>
+      <div class="photo"><div class="clip"></div><div class="img"><span class="standin">STAND-IN</span></div><div class="lbl">Ngara stage, 22:40</div></div>
+      <div class="tag"><b>EXHIBIT 1</b>Fare pouch,<br>on the body,<br>not taken</div>
+      <div class="visit"><span>VISIT: NGARA STAGE</span><span>→</span></div>
+    </div>
+    <div class="dock">
+      <div class="obj"><div class="ic note"></div>Notebook</div>
+      <div class="obj"><div class="ic cork"></div>Board</div>
+      <div class="obj"><div class="ic phonei"></div>Phone</div>
+      <div class="obj"><div class="ic charge"></div>Charge sheet</div>
+    </div>
+  </div></div>
+  <div class="anno">
+    <ol>
+      <li><b>The room is the frame.</b> No navigation bar, no app chrome. The desk fills the screen; the lamp's pool sits top right and drifts towards whatever you're holding. The status bar reads over the dark desk, so it never needs a band.</li>
+      <li><b>The folder is the screen.</b> A manila folder lifts off the stack and opens with a hinge (Reduce Motion: cross-fade). Its region tab (NGARA, case 1's <code>folderTab</code>) is concrete grey with a sodium-amber edge: region 1's colours. The round received-stamp is decorative, never information.</li>
+      <li><b>The title is street, the record is institution.</b> "THE LAST FARE" is Big Shoulders at 44 pt, the only display type on the page. Everything you read to solve the case is Courier Prime on paper, at least 15 pt, scaling with Dynamic Type.</li>
+      <li><b>The OB entry types itself in.</b> The ledger strip is the OB book's own ruling (green rules, red margin, the time in the margin column). The text arrives at typewriter speed with a synthesized key sound; a tap completes it at once. Amani's highlighter marks the first fact the notebook logs (<code>f_ob_argument</code>), so the player sees, on screen one, that reading carefully is what the game is about.</li>
+      <li><b>The photo is evidence, not decoration.</b> The scene photo arrives clipped to the folder, tilted by a seeded angle (always the same for this card), with a print border, grain, slight desaturation and a handwritten label in Amani's hand. The same treatment wraps every generated image in the game, which is what hides drift between generators.</li>
+      <li><b>One action, written as an action.</b> The only call to action is a typed index card, "VISIT: NGARA STAGE", the first unlocked location. At least 44 pt tall, full width, with the stamp-red arrow as the only colour.</li>
+      <li><b>Navigation is objects with words.</b> Notebook, corkboard, phone (with an unread count) and the carbon-copy charge sheet sit on the desk edge, each labelled in text, each a 70 × 86 pt target. VoiceOver reads them as buttons with their labels; the phone badge is read as "2 new messages".</li>
+      <li><b>Colour never carries meaning alone.</b> Stamp red appears three times here (received stamp, arrow, phone badge) and each has a word or a shape. Accepted and returned charge sheets differ by stamp shape and word as well as green and red.</li>
+    </ol>
+  </div>
+</div>
+
+<h2>Stamps <small>meaning by word and shape, colour third</small></h2>
+<div class="sheet paperTex"><div class="stamps">
+  <div class="st closed">Closed</div>
+  <div class="st acc">Accepted</div>
+  <div class="st ret">Returned</div>
+  <div class="st conf">Confidential</div>
+</div></div>
+
+<h2>Document templates <small>3 of the 31 render kinds, drawn in code</small></h2>
+<div class="grid templates">
+  <div class="sheet paperTex tpl"><h4>Tally book · Ngara</h4>
+    <table><tr><th>Plate</th><th>Driver</th><th>In</th><th>Out</th></tr>
+    <tr><td>KDK 418T</td><td>M. Wafula</td><td>21:58</td><td>—</td></tr>
+    <tr><td>KCZ 902M</td><td>P. Kamau</td><td>22:00</td><td>22:31</td></tr>
+    <tr><td>KBT 551Q</td><td>J. Mbugua</td><td>—</td><td>21:40 (to Kencom)</td></tr></table>
+    <p class="hand" style="font-size:18px;margin:10px 0 0">22:00–22:30: two vehicles parked. — K.J.</p></div>
+  <div class="sheet tpl" style="background:var(--desk-hi)"><div class="sms"><div class="from">PesaPap · 07:12</div><div class="b">RK7Q2 Confirmed. KSh 2,000,000.00 received from TILL 880 214 MVUA HOLDINGS on 28/9 at 18:04. New balance KSh 2,014,331.50.</div><div class="b">Reply STOP to opt out.</div></div><p style="font:12px var(--font-data);color:#CDBFA4;margin:10px 4px 0">Phone screens use the system face, like a real phone. The fictional brand never borrows a real one's colours.</p></div>
+  <div class="sheet paperTex tpl"><h4>Lab report · forensic lab</h4>
+    <table><tr><th>Exhibit</th><th>Test</th><th>Result</th></tr>
+    <tr><td>EX-7 hammer</td><td>Trace</td><td>Victim's blood</td></tr>
+    <tr><td>EX-7 hammer</td><td>Prints</td><td>Partial, see sch. B</td></tr></table>
+    <p style="font:13px var(--font-doc);margin:10px 0 0;color:var(--ink-soft)">Submitted 23:40 · Reported 11:40 (+12 h)</p>
+    <div class="st closed" style="font-size:16px;border-width:2px;display:inline-block;margin-top:8px;color:var(--carbon);transform:rotate(-2deg)">Copy</div></div>
+</div>
+
+<p class="foot">The desk-wide palette, the region tabs and every contrast figure on this sheet come from <code>www/styles/tokens.css</code> and are checked by <code>tools/contrast.mjs</code> (66 pairs, 0 failing, results in <code>docs/contrast.txt</code>). The stand-in photo is drawn in CSS only to show the case-photo treatment; real images come from <code>prompts/</code>.</p>
+</body>
+</html>

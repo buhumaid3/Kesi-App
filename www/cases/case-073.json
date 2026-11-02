@@ -1,0 +1,2442 @@
+{
+  "meta": {
+    "id": "case-073",
+    "number": 73,
+    "region": "northern-frontier",
+    "regionNumber": 8,
+    "title": "No Smoke",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 38,
+    "date": "Sunday 21 June",
+    "folderTab": "ARCHER'S POST"
+  },
+  "pattern": {
+    "crimePattern": "a former partner who skimmed a women's beadwork group's lodge payments kills its chairwoman after she moves the money into the group's own account",
+    "noRealCaseRetold": true,
+    "notes": "Fictional group, lodge and people. The homestead routine is the evidence: the case never shows the death. The herd boy who found her is a witness only, and is not questioned on screen.",
+    "tags": [
+      "blunt-force",
+      "relationship",
+      "two-liars",
+      "records",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where",
+      "absence"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 5,
+    "redHerrings": 2,
+    "liars": 2,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "absence"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 20/21/06",
+    "date": "Sunday 21 June",
+    "time": "08:05",
+    "reportedBy": "Herd boys, near Archer's Post",
+    "text": "Herd boys report a woman found dead in a dry riverbed (lugga) near Archer's Post at 07:30: Nashipai Lenanyokie (33), chairwoman of the Nkaron Women's Beadwork Group.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_lugga",
+    "nodes": [
+      "loc_lugga",
+      "loc_home",
+      "loc_town",
+      "loc_bar",
+      "loc_lodge"
+    ],
+    "edges": [
+      {
+        "a": "loc_lugga",
+        "b": "loc_home",
+        "minutes": 10,
+        "by": "foot"
+      },
+      {
+        "a": "loc_home",
+        "b": "loc_town",
+        "minutes": 10,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_lugga",
+        "b": "loc_town",
+        "minutes": 10,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_town",
+        "b": "loc_bar",
+        "minutes": 30,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_bar",
+        "b": "loc_lodge",
+        "minutes": 20,
+        "by": "4x4"
+      },
+      {
+        "a": "loc_town",
+        "b": "loc_lodge",
+        "minutes": 40,
+        "by": "4x4"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_nashipai",
+      "role": "victim",
+      "name": "Nashipai Lenanyokie",
+      "age": 33,
+      "occupation": "Chairwoman, Nkaron Women's Beadwork Group",
+      "bio": "Her group's collars sell in every lodge on the river. Fetches water every afternoon, milks at dusk, lights her fire at dark.",
+      "community": "Samburu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_lugga",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Samburu woman, early 30s, a wide beaded collar in red, white and blue, a shaved head with a beaded headband, a proud, direct gaze, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_lekishon",
+      "role": "suspect",
+      "name": "Lekishon Lemerketo",
+      "age": 44,
+      "occupation": "Her former partner; drove the group's beadwork to the lodges",
+      "bio": "For six years he collected the lodge payments and kept \"a manager's share\". She ended it in May.",
+      "community": "Samburu",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_contract"
+      },
+      "at": "loc_town",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Samburu man, mid 40s, a red shuka over a jacket, a rungu at his belt, a wounded, proud face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_moses",
+      "role": "suspect",
+      "name": "Moses Lekuuk",
+      "age": 30,
+      "occupation": "Barman, a lodge staff bar",
+      "bio": "Pours for the lodge staff and the drivers.",
+      "community": "Samburu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_lek_cooking"
+      },
+      "at": "loc_bar",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Samburu man, about 30, a barman's waistcoat over a T-shirt, a nervous, sideways look, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_mueni",
+      "role": "suspect",
+      "name": "Mueni Ndolo",
+      "age": 41,
+      "occupation": "Bead trader, Archer's Post",
+      "redHerring": true,
+      "bio": "Lost a lodge order to the Nkaron group in April.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_rival_order"
+      },
+      "at": "loc_town",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba woman, early 40s, a shop apron over a dress, strings of beads on her arm, a frank, tired face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_victor",
+      "role": "suspect",
+      "name": "Victor Kiprotich",
+      "age": 37,
+      "occupation": "Lodge purchasing manager",
+      "redHerring": true,
+      "bio": "Nashipai complained to his head office that he demanded kickbacks.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_kickback"
+      },
+      "at": "loc_lodge",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin man, late 30s, a lodge polo shirt and name badge, a defensive, worried face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_nolari",
+      "role": "witness",
+      "name": "Nolari Lekalesoi",
+      "age": 52,
+      "occupation": "The group's treasurer; Nashipai's neighbour",
+      "bio": "Has shared a fence with Nashipai for ten years. Knows her day to the minute.",
+      "community": "Samburu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_home",
+      "image": null
+    },
+    {
+      "id": "p_saitoti",
+      "role": "witness",
+      "name": "Saitoti Lenkume",
+      "age": 11,
+      "occupation": "Herd boy who found her",
+      "statementOnly": true,
+      "bio": "Takes the goats past the lugga every morning.",
+      "community": "Samburu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_lugga",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_pen",
+      "name": "The goat pen",
+      "within": "loc_home"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_lugga",
+      "name": "The lugga crossing",
+      "kind": "scene",
+      "description": "A wide, flat, sandy riverbed between doum palms, dry until the rains. A yellow jerrycan lies on the sand. Tyre marks curve in from the track and out again.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The sand",
+          "pos": [
+            50,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Nashipai lies on the sand, her jerrycans beside her."
+        },
+        {
+          "id": "hs_tracks",
+          "label": "The crossing",
+          "pos": [
+            70,
+            40
+          ],
+          "yields": "ev_tracks",
+          "text": "Tyre marks. Cpl Ewoi crouches beside them."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a wide sandy dry riverbed near Archer's Post at dusk, doum palms on the banks, a yellow jerrycan on the sand, tyre marks curving in and out, no people in focus"
+      },
+      "expected": [
+        {
+          "id": "x_jerry",
+          "text": "Two jerrycans, both filled, carried home",
+          "because": "f_water_routine",
+          "present": false,
+          "fact": "f_abs_jerry"
+        },
+        {
+          "id": "x_meal",
+          "text": "The evening meal eaten at about seven",
+          "because": "f_meal_routine",
+          "present": false,
+          "fact": "f_abs_meal"
+        },
+        {
+          "id": "x_feet",
+          "text": "Every walker's feet show in the soft sand",
+          "because": "f_lugga_sand",
+          "present": false,
+          "fact": "f_abs_feet"
+        },
+        {
+          "id": "x_robbed",
+          "text": "A robber takes the phone and the cash",
+          "because": "f_phone_cash",
+          "present": false,
+          "fact": "f_abs_robbed"
+        }
+      ]
+    },
+    {
+      "id": "loc_home",
+      "name": "Nashipai's homestead",
+      "kind": "location",
+      "description": "Low houses inside a thorn fence. Her house, a goat pen, a hearth of three stones. The goats cry in the pen.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_hearth",
+          "label": "Her hearth",
+          "pos": [
+            40,
+            50
+          ],
+          "yields": "ev_hearth",
+          "text": "Three hearthstones and a bundle of firewood."
+        },
+        {
+          "id": "hs_goats",
+          "label": "The goat pen",
+          "pos": [
+            70,
+            60
+          ],
+          "yields": "ev_goats",
+          "text": "The goats and the milk gourds."
+        },
+        {
+          "id": "hs_tin",
+          "label": "Nolari's tin box",
+          "pos": [
+            20,
+            40
+          ],
+          "yields": "ev_contract",
+          "text": "Nolari brings out the group's papers."
+        },
+        {
+          "id": "hs_phone",
+          "label": "Nashipai's phone",
+          "pos": [
+            56,
+            40
+          ],
+          "yields": "ev_threat",
+          "text": "Her phone, recovered from her pocket."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a Samburu homestead of low houses inside a thorn fence near Archer's Post, a cold hearth of three stones, an untied bundle of firewood, goats crying in a pen"
+      },
+      "expected": [
+        {
+          "id": "x_fire",
+          "text": "Her fire lit at dusk",
+          "because": "f_nolari_routine",
+          "present": false,
+          "fact": "f_abs_fire"
+        },
+        {
+          "id": "x_milk",
+          "text": "The goats milked at half past six",
+          "because": "f_nolari_routine",
+          "present": false,
+          "fact": "f_abs_fire"
+        }
+      ]
+    },
+    {
+      "id": "loc_town",
+      "name": "Archer's Post town",
+      "kind": "location",
+      "description": "Shops, a petrol pump, the lodges' supply trucks. Lekishon's pickup is parked outside his house.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_pickup",
+          "label": "Lekishon's pickup",
+          "pos": [
+            40,
+            50
+          ],
+          "yields": "ev_pickup",
+          "text": "He waves at it: \"Search it. I have nothing to hide.\""
+        },
+        {
+          "id": "hs_cab",
+          "label": "The cab",
+          "pos": [
+            50,
+            46
+          ],
+          "yields": "ev_rungu",
+          "text": "Behind the seat."
+        },
+        {
+          "id": "hs_shop",
+          "label": "Mueni's shop",
+          "pos": [
+            80,
+            40
+          ],
+          "yields": "ev_mueni",
+          "text": "Mueni's bead shop."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small town on the Ewaso Ng'iro river, a row of shops, a dusty pickup parked outside a house"
+      }
+    },
+    {
+      "id": "loc_bar",
+      "name": "Lodge staff bar",
+      "kind": "location",
+      "description": "A tin-roofed bar 12 km out, for lodge staff and drivers. A till that prints receipts.",
+      "unlock": {
+        "fact": "f_lek_cooking"
+      },
+      "hotspots": [
+        {
+          "id": "hs_till",
+          "label": "The till",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_bar",
+          "text": "The till roll for Saturday."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a tin-roofed staff bar in the bush near a safari lodge, a counter with a receipt-printing till"
+      }
+    },
+    {
+      "id": "loc_lodge",
+      "name": "The lodge",
+      "kind": "location",
+      "description": "A safari lodge 15 km into the reserve.",
+      "unlock": {
+        "fact": "f_kickback"
+      },
+      "hotspots": [
+        {
+          "id": "hs_roster",
+          "label": "Duty roster",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_victor",
+          "text": "The duty roster and guest-service log."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a safari lodge reception in the Samburu reserve, a duty roster board"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The lugga",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. One blow to the head. Her two water jerrycans beside her: one filled, one empty. Her phone and KSh 1,800 on her."
+      },
+      "facts": [
+        "f_body",
+        "f_jerry",
+        "f_phone_cash",
+        "f_lugga_flat"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "two yellow water jerrycans on the sand of a dry riverbed, one upright and full, one on its side, no body visible"
+      }
+    },
+    {
+      "id": "ev_tracks",
+      "type": "physical",
+      "title": "Tracker's reading (Cpl Ewoi Lomuke)",
+      "render": "object",
+      "body": {
+        "whose": "One vehicle: a pickup with a worn front-left tyre. Her bare footprints in. No other walker.",
+        "way": "Turned at the crossing and left.",
+        "age": "Edges softened by the night wind: made before the wind rose at about 20:00."
+      },
+      "facts": [
+        "f_tracks",
+        "f_lugga_sand"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "tyre tracks curving across a sandy riverbed, one tread smooth on the inner edge, edges softened by wind"
+      }
+    },
+    {
+      "id": "ev_hearth",
+      "type": "physical",
+      "title": "Her hearth",
+      "render": "object",
+      "body": {
+        "label": "Cold. The evening firewood bundle, tied that morning, untied and untouched."
+      },
+      "facts": [
+        "f_hearth"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_goats",
+      "type": "physical",
+      "title": "The goat pen",
+      "render": "object",
+      "body": {
+        "label": "Milk gourds empty and clean; the kids left with their mothers all night."
+      },
+      "facts": [
+        "f_goats"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_nolari",
+      "type": "witness",
+      "title": "Statement: Nolari Lekalesoi",
+      "render": "statement",
+      "body": {
+        "speaker": "p_nolari"
+      },
+      "facts": [
+        "f_nolari_routine",
+        "f_water_routine",
+        "f_meal_routine",
+        "f_left_1715",
+        "f_nolari_self",
+        "f_rival_order",
+        "f_kickback",
+        "f_no_land"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_contract",
+      "type": "document",
+      "title": "The lodge contract, amended",
+      "render": "form",
+      "body": {
+        "text": "Amended Friday: lodge payments now go to the group's own bank account. Signatories: N. Lenanyokie, N. Lekalesoi."
+      },
+      "facts": [
+        "f_contract"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_threat",
+      "type": "phone",
+      "title": "Nashipai's phone",
+      "render": "manifest",
+      "body": {
+        "text": "Friday 21:14, from Lekishon: \"You will regret what you did to me in front of everybody.\""
+      },
+      "facts": [
+        "f_threat"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_pickup",
+      "type": "physical",
+      "title": "Lekishon's pickup",
+      "render": "object",
+      "body": {
+        "label": "Front-left tyre worn bald on the inner edge. Ewoi: \"River sand in the treads, not road dust.\""
+      },
+      "facts": [
+        "f_pickup"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rungu",
+      "type": "physical",
+      "title": "His rungu",
+      "render": "object",
+      "body": {
+        "label": "Behind the seat. Washed. Something dark in a crack in the knob."
+      },
+      "facts": [
+        "f_rungu"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a carved wooden rungu with a round knob, washed clean, a dark line in a crack"
+      }
+    },
+    {
+      "id": "ev_bar",
+      "type": "document",
+      "title": "Staff-bar till roll, Saturday",
+      "render": "receipt",
+      "body": {
+        "text": "Lekishon's first drink rung up at 19:34."
+      },
+      "facts": [
+        "f_bar"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Lekishon Lemerketo's line",
+      "render": "manifest",
+      "body": {
+        "mast": "The Archer's Post mast covers the town and the river: location useless.",
+        "pesapap": "Saturday 20:10: KSh 2,000 to MOSES LEKUUK."
+      },
+      "facts": [
+        "f_rec_lek"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_threat",
+          "f_tracks"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_mueni",
+      "type": "witness",
+      "title": "Statement: Mueni's customers and church group",
+      "render": "statement",
+      "body": {
+        "speaker": "p_mueni"
+      },
+      "facts": [
+        "f_mueni"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_victor",
+      "type": "document",
+      "title": "Lodge duty roster and guest-service log",
+      "render": "logBook",
+      "body": {
+        "text": "V. Kiprotich on duty 14:00–22:00 on Saturday; his signature on guest requests every hour. Suspended pending inquiry from Friday."
+      },
+      "facts": [
+        "f_victor"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_moses_roster",
+      "type": "document",
+      "title": "Staff-bar roster",
+      "render": "logBook",
+      "body": {
+        "text": "M. Lekuuk behind the bar from 16:00 on Saturday."
+      },
+      "facts": [
+        "f_moses_roster"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Dr. Chebii, Isiolo)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_tod",
+        "f_aut_stomach",
+        "f_aut_noother"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_blood",
+      "type": "forensic",
+      "title": "Lab: trace (rungu)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_blood"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_rungu"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Nashipai Lenanyokie was found dead in the lugga near Archer's Post at 07:30 on Sunday.",
+      "kind": "true",
+      "about": [
+        "p_nashipai",
+        "loc_lugga"
+      ],
+      "at": {
+        "from": "07:30",
+        "to": null,
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "She lay on the sand of the lugga with one blow to the head.",
+      "kind": "true",
+      "about": [
+        "p_nashipai",
+        "loc_lugga"
+      ]
+    },
+    {
+      "id": "f_jerry",
+      "text": "Her two water jerrycans lay beside her: one filled, one empty.",
+      "kind": "true",
+      "about": [
+        "loc_lugga"
+      ]
+    },
+    {
+      "id": "f_phone_cash",
+      "text": "Her phone and KSh 1,800 were still on her.",
+      "kind": "true",
+      "about": [
+        "p_nashipai"
+      ]
+    },
+    {
+      "id": "f_lugga_flat",
+      "text": "The lugga is flat, soft sand: no rocks, no bank to fall against.",
+      "kind": "true",
+      "about": [
+        "loc_lugga"
+      ]
+    },
+    {
+      "id": "f_tracks",
+      "text": "Ewoi: one pickup with a worn front-left tyre turned at the crossing and left; the edges are softened by the night wind, so it came before the wind rose at about 20:00.",
+      "kind": "true",
+      "about": [
+        "loc_lugga"
+      ]
+    },
+    {
+      "id": "f_lugga_sand",
+      "text": "Ewoi: soft sand keeps every foot. Hers walked in; nobody else walked to the lugga.",
+      "kind": "true",
+      "about": [
+        "loc_lugga"
+      ]
+    },
+    {
+      "id": "f_hearth",
+      "text": "Her hearth is cold. The firewood bundle she tied that morning is untied and untouched.",
+      "kind": "true",
+      "about": [
+        "loc_home"
+      ]
+    },
+    {
+      "id": "f_goats",
+      "text": "Her milk gourds are empty and clean; the kids were left with their mothers all night.",
+      "kind": "true",
+      "about": [
+        "plc_pen"
+      ]
+    },
+    {
+      "id": "f_nolari_routine",
+      "text": "Nolari: Nashipai milked at half past six when the goats came home and lit her fire at dusk. Every day.",
+      "kind": "true",
+      "about": [
+        "p_nolari",
+        "p_nashipai"
+      ]
+    },
+    {
+      "id": "f_water_routine",
+      "text": "Nolari: she fetched water from the lugga every afternoon, two jerrycans, and carried both home full.",
+      "kind": "true",
+      "about": [
+        "p_nolari"
+      ]
+    },
+    {
+      "id": "f_meal_routine",
+      "text": "Nolari: the household ate the evening meal at about seven.",
+      "kind": "true",
+      "about": [
+        "p_nolari"
+      ]
+    },
+    {
+      "id": "f_left_1715",
+      "text": "Nolari: she watched Nashipai leave for the lugga with her jerrycans at about 17:15.",
+      "kind": "true",
+      "about": [
+        "p_nolari",
+        "p_nashipai"
+      ],
+      "at": {
+        "from": "17:15"
+      }
+    },
+    {
+      "id": "f_nolari_self",
+      "text": "Nolari was at her own homestead all afternoon, and milked her goats at 18:30 in full view of the women. At 19:00 she heard Nashipai's goats crying and thought she was at a meeting.",
+      "kind": "true",
+      "about": [
+        "p_nolari"
+      ],
+      "where": {
+        "person": "p_nolari",
+        "place": "loc_home",
+        "from": "15:00",
+        "to": "20:00"
+      }
+    },
+    {
+      "id": "f_rival_order",
+      "text": "Nolari: in April the group won a lodge order that had been Mueni Ndolo's.",
+      "kind": "true",
+      "about": [
+        "p_nolari",
+        "p_mueni"
+      ]
+    },
+    {
+      "id": "f_kickback",
+      "text": "Nolari: Nashipai complained to the lodge's head office that its purchasing manager, Victor Kiprotich, demanded kickbacks.",
+      "kind": "true",
+      "about": [
+        "p_nolari",
+        "p_victor"
+      ]
+    },
+    {
+      "id": "f_no_land",
+      "text": "Nolari: there is no land quarrel between the homesteads. \"We share one fence and one well.\"",
+      "kind": "true",
+      "about": [
+        "p_nolari"
+      ]
+    },
+    {
+      "id": "f_contract",
+      "text": "The lodge contract was amended on Friday: payments now go to the group's own account, signed by Nashipai and Nolari.",
+      "kind": "true",
+      "about": [
+        "p_nashipai",
+        "p_lekishon"
+      ]
+    },
+    {
+      "id": "f_threat",
+      "text": "Lekishon to Nashipai, Friday 21:14: \"You will regret what you did to me in front of everybody.\"",
+      "kind": "true",
+      "about": [
+        "p_lekishon",
+        "p_nashipai"
+      ],
+      "at": {
+        "from": "21:14",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_pickup",
+      "text": "Lekishon's pickup: the front-left tyre is worn bald on the inner edge, with river sand in the treads.",
+      "kind": "true",
+      "about": [
+        "p_lekishon"
+      ]
+    },
+    {
+      "id": "f_rungu",
+      "text": "In the cab, behind the seat: Lekishon's rungu, washed, with something dark in a crack in the knob.",
+      "kind": "true",
+      "about": [
+        "p_lekishon"
+      ]
+    },
+    {
+      "id": "f_bar",
+      "text": "Staff-bar till roll: Lekishon's first drink was rung up at 19:34 on Saturday.",
+      "kind": "true",
+      "about": [
+        "p_lekishon"
+      ],
+      "at": {
+        "from": "19:34"
+      }
+    },
+    {
+      "id": "f_rec_lek",
+      "text": "Records, Lekishon's line: the mast covers the town and the river; at 20:10 he sent KSh 2,000 to Moses Lekuuk.",
+      "kind": "true",
+      "about": [
+        "p_lekishon",
+        "p_moses"
+      ],
+      "at": {
+        "from": "20:10"
+      }
+    },
+    {
+      "id": "f_mueni",
+      "text": "Mueni's customers and her church group: in her shop until 19:00, then at a church meeting.",
+      "kind": "true",
+      "about": [
+        "p_mueni"
+      ],
+      "where": {
+        "person": "p_mueni",
+        "place": "loc_town",
+        "from": "14:00",
+        "to": "21:00"
+      }
+    },
+    {
+      "id": "f_victor",
+      "text": "Lodge roster: Victor on duty 14:00–22:00, signing guest requests every hour; suspended pending inquiry from Friday.",
+      "kind": "true",
+      "about": [
+        "p_victor"
+      ],
+      "where": {
+        "person": "p_victor",
+        "place": "loc_lodge",
+        "from": "14:00",
+        "to": "22:00"
+      }
+    },
+    {
+      "id": "f_moses_roster",
+      "text": "Bar roster: Moses behind the bar from 16:00 on Saturday.",
+      "kind": "true",
+      "about": [
+        "p_moses"
+      ],
+      "where": {
+        "person": "p_moses",
+        "place": "loc_bar",
+        "from": "16:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Post-mortem: one blow from a heavy, rounded wooden object.",
+      "kind": "true",
+      "about": [
+        "p_nashipai"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Saturday, broadly between 16:00 and 21:00.",
+      "kind": "true",
+      "about": [
+        "p_nashipai"
+      ],
+      "at": {
+        "from": "16:00",
+        "to": "21:00",
+        "day": "Sat"
+      }
+    },
+    {
+      "id": "f_aut_stomach",
+      "text": "Post-mortem: an empty stomach. She had not eaten the evening meal.",
+      "kind": "true",
+      "about": [
+        "p_nashipai"
+      ]
+    },
+    {
+      "id": "f_aut_noother",
+      "text": "Post-mortem: no animal injuries, no strangulation.",
+      "kind": "true",
+      "about": [
+        "p_nashipai"
+      ]
+    },
+    {
+      "id": "f_blood",
+      "text": "Lab: Nashipai's blood in the crack of Lekishon's rungu.",
+      "kind": "true",
+      "about": [
+        "p_nashipai",
+        "p_lekishon"
+      ]
+    },
+    {
+      "id": "f_abs_fire",
+      "text": "Missing: her fire was never lit and her goats were never milked.",
+      "kind": "true",
+      "about": [
+        "loc_home"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_meal",
+      "text": "Missing: her stomach was empty. She never ate the evening meal.",
+      "kind": "true",
+      "about": [
+        "p_nashipai"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_jerry",
+      "text": "Missing: one jerrycan was never filled.",
+      "kind": "true",
+      "about": [
+        "loc_lugga"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_feet",
+      "text": "Missing: nobody walked to the lugga but her.",
+      "kind": "true",
+      "about": [
+        "loc_lugga"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_robbed",
+      "text": "Missing: nothing was taken from her.",
+      "kind": "true",
+      "about": [
+        "p_nashipai"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_lek_cooking",
+      "text": "Lekishon: \"I went to her homestead at half past six to talk. She was cooking. Then I drove to the lodge bar.\"",
+      "kind": "lie",
+      "about": [
+        "p_lekishon"
+      ]
+    },
+    {
+      "id": "f_lek_reveal",
+      "text": "Lekishon: he went to the lugga. \"I wanted her to say it to my face, without the women. She said it. I have nothing more.\"",
+      "kind": "true",
+      "about": [
+        "p_lekishon",
+        "p_nashipai"
+      ],
+      "where": {
+        "person": "p_lekishon",
+        "place": "loc_lugga",
+        "from": "17:20",
+        "to": "18:00"
+      }
+    },
+    {
+      "id": "f_lek_rungu",
+      "text": "Lekishon: \"I never raised my rungu to her.\"",
+      "kind": "lie",
+      "about": [
+        "p_lekishon"
+      ]
+    },
+    {
+      "id": "f_mo_six",
+      "text": "Moses: \"Lekishon came in at six and drank all evening.\"",
+      "kind": "lie",
+      "about": [
+        "p_moses"
+      ]
+    },
+    {
+      "id": "f_mo_reveal",
+      "text": "Moses: Lekishon came at half past seven, sent him two thousand and said, \"If they ask, it was six.\"",
+      "kind": "true",
+      "about": [
+        "p_moses",
+        "p_lekishon"
+      ]
+    },
+    {
+      "id": "f_mueni_claim",
+      "text": "Mueni: \"She took my lodge order fairly. I was at church.\"",
+      "kind": "claim",
+      "about": [
+        "p_mueni"
+      ]
+    },
+    {
+      "id": "f_victor_claim",
+      "text": "Victor: \"I was on duty.\"",
+      "kind": "claim",
+      "about": [
+        "p_victor"
+      ]
+    },
+    {
+      "id": "f_victor_reveal",
+      "text": "Victor: \"She complained about me to head office. She was right. I was suspended on Friday. I didn't leave the lodge.\"",
+      "kind": "true",
+      "about": [
+        "p_victor",
+        "p_nashipai"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_lekishon",
+      "stance": "cooperative",
+      "intro": "Lekishon sits on the tailgate of his pickup. \"I went to her homestead at half past six to talk. She was cooking. Then I drove to the lodge bar.\"",
+      "claims": [
+        "f_lek_cooking"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_lek_rungu",
+          "after": "f_lek_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_moses",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_bar"
+      ],
+      "intro": "Moses polishes a glass that is already clean. \"Lekishon came in at six and drank all evening.\"",
+      "claims": [
+        "f_mo_six"
+      ],
+      "yields": [
+        "ev_moses_roster"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_mueni",
+      "stance": "cooperative",
+      "intro": "Mueni threads beads while she talks. \"She took my lodge order fairly. I was at church.\"",
+      "claims": [
+        "f_mueni_claim"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_victor",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_contract"
+      ],
+      "intro": "Victor meets you at the lodge's staff gate. \"I was on duty.\"",
+      "claims": [
+        "f_victor_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_contract",
+          "reply": "\"She complained about me to head office. She was right. I was suspended on Friday. I didn't leave the lodge.\"",
+          "reveals": [
+            "f_victor_reveal"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_nolari",
+      "stance": "cooperative",
+      "intro": "Nolari sits by her own fire with the group's tin box on her knees. \"I can tell you her day. I can tell you it to the minute.\"",
+      "claims": [],
+      "yields": [
+        "ev_nolari"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_lek",
+      "claim": "f_lek_cooking",
+      "brokenBy": [
+        "f_abs_fire",
+        "f_bar"
+      ],
+      "reveals": [
+        "f_lek_reveal"
+      ],
+      "reaction": "He looks at the cold hearth in the photograph. \"I went to the lugga. I wanted her to say it to my face, without the women. She said it. I have nothing more.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_mo",
+      "claim": "f_mo_six",
+      "brokenBy": [
+        "f_bar",
+        "f_rec_lek"
+      ],
+      "reveals": [
+        "f_mo_reveal"
+      ],
+      "reaction": "\"He came at half past seven. He sent me two thousand and said, 'If they ask, it was six.' I didn't know what for.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_lek_rungu",
+      "claim": "f_lek_rungu",
+      "brokenBy": [
+        "f_blood"
+      ],
+      "reveals": [],
+      "reaction": "Lekishon looks at the lab sheet and then at his hands. \"In front of everybody,\" he says. \"She did it in front of everybody.\"",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_lekishon",
+      "text": "Lekishon Lemerketo",
+      "category": "person",
+      "ref": "p_lekishon",
+      "unlock": {
+        "anyOf": [
+          "f_contract"
+        ]
+      }
+    },
+    {
+      "id": "w_moses",
+      "text": "Moses Lekuuk",
+      "category": "person",
+      "ref": "p_moses",
+      "unlock": {
+        "anyOf": [
+          "f_lek_cooking"
+        ]
+      }
+    },
+    {
+      "id": "w_mueni",
+      "text": "Mueni Ndolo",
+      "category": "person",
+      "ref": "p_mueni",
+      "unlock": {
+        "anyOf": [
+          "f_rival_order"
+        ]
+      }
+    },
+    {
+      "id": "w_victor",
+      "text": "Victor Kiprotich",
+      "category": "person",
+      "ref": "p_victor",
+      "unlock": {
+        "anyOf": [
+          "f_kickback"
+        ]
+      }
+    },
+    {
+      "id": "w_nolari",
+      "text": "Nolari Lekalesoi",
+      "category": "person",
+      "ref": "p_nolari",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_lugga",
+      "text": "the lugga",
+      "category": "place",
+      "ref": "loc_lugga",
+      "unlock": {
+        "anyOf": [
+          "f_tracks"
+        ]
+      }
+    },
+    {
+      "id": "pl_home",
+      "text": "her homestead",
+      "category": "place",
+      "ref": "loc_home",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_bar",
+      "text": "the lodge staff bar",
+      "category": "place",
+      "ref": "loc_bar",
+      "unlock": {
+        "anyOf": [
+          "f_lek_cooking"
+        ]
+      }
+    },
+    {
+      "id": "pl_town",
+      "text": "Archer's Post town",
+      "category": "place",
+      "ref": "loc_town",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_pen",
+      "text": "the goat pen",
+      "category": "place",
+      "ref": "plc_pen",
+      "unlock": {
+        "anyOf": [
+          "f_goats"
+        ]
+      }
+    },
+    {
+      "id": "h_rungu",
+      "text": "striking her with his rungu",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_stone",
+      "text": "striking her with a stone from the riverbed",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_fall",
+      "text": "a fall against the bank",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_animal",
+      "text": "an attack by an animal",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_necklace",
+      "text": "strangling her with her necklace",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_contract",
+      "text": "she ended their relationship and took the group's lodge contract out of his hands",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_contract"
+        ]
+      }
+    },
+    {
+      "id": "m_order",
+      "text": "a rival trader's lost order",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_rival_order"
+        ]
+      }
+    },
+    {
+      "id": "m_kickback",
+      "text": "a suspended manager's revenge",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_kickback"
+        ]
+      }
+    },
+    {
+      "id": "m_robbery",
+      "text": "a robbery",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_land",
+      "text": "a land quarrel between neighbours",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "a_fire",
+      "text": "her fire was never lit and the goats were never milked",
+      "category": "absence",
+      "ref": "f_abs_fire",
+      "unlock": {
+        "anyOf": [
+          "f_abs_fire"
+        ]
+      }
+    },
+    {
+      "id": "a_meal",
+      "text": "her stomach was empty",
+      "category": "absence",
+      "ref": "f_abs_meal",
+      "unlock": {
+        "anyOf": [
+          "f_abs_meal"
+        ]
+      }
+    },
+    {
+      "id": "a_jerry",
+      "text": "one jerrycan was empty",
+      "category": "absence",
+      "ref": "f_abs_jerry",
+      "unlock": {
+        "anyOf": [
+          "f_abs_jerry"
+        ]
+      }
+    },
+    {
+      "id": "a_feet",
+      "text": "there were no footprints but hers at the lugga",
+      "category": "absence",
+      "ref": "f_abs_feet",
+      "unlock": {
+        "anyOf": [
+          "f_abs_feet"
+        ]
+      }
+    },
+    {
+      "id": "a_robbed",
+      "text": "nothing was taken from her",
+      "category": "absence",
+      "ref": "f_abs_robbed",
+      "unlock": {
+        "anyOf": [
+          "f_abs_robbed"
+        ]
+      }
+    },
+    {
+      "id": "k_before",
+      "text": "she died before half past six and never came home",
+      "category": "conclusion",
+      "by": [
+        "f_abs_fire",
+        "f_nolari_routine",
+        "f_abs_meal"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_fire"
+        ]
+      }
+    },
+    {
+      "id": "k_after",
+      "text": "she died after the evening meal",
+      "category": "conclusion",
+      "by": [
+        "f_abs_meal"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_fire"
+        ]
+      }
+    },
+    {
+      "id": "k_robbed",
+      "text": "she was robbed",
+      "category": "conclusion",
+      "by": [
+        "f_abs_robbed"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_fire"
+        ]
+      }
+    },
+    {
+      "id": "k_carried",
+      "text": "she was killed at home and carried to the lugga",
+      "category": "conclusion",
+      "by": [
+        "f_abs_fire",
+        "f_jerry"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_fire"
+        ]
+      }
+    },
+    {
+      "id": "k_foot",
+      "text": "the killer came on foot",
+      "category": "conclusion",
+      "by": [
+        "f_tracks"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_fire"
+        ]
+      }
+    },
+    {
+      "id": "k_wind",
+      "text": "she died after the wind rose",
+      "category": "conclusion",
+      "by": [
+        "f_tracks"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_fire"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. That {missing} shows that {conclusion}.",
+    "fixed": {
+      "victim": "Nashipai Lenanyokie"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_fri",
+                  "label": "Friday",
+                  "from": null,
+                  "to": null,
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_2114",
+                  "label": "Friday 21:14",
+                  "from": "21:14",
+                  "to": "21:14",
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_1715",
+                  "label": "Saturday 17:15",
+                  "from": "17:15",
+                  "to": "17:15",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Saturday 17:15–18:30",
+                  "from": "17:15",
+                  "to": "18:30",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_1830",
+                  "label": "Saturday 18:30",
+                  "from": "18:30",
+                  "to": "18:30",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_1934",
+                  "label": "Saturday 19:34",
+                  "from": "19:34",
+                  "to": "19:34",
+                  "day": "Sat"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_contract",
+                  "text": "Nashipai moves the contract",
+                  "slot": "sl_fri",
+                  "by": [
+                    "f_contract"
+                  ],
+                  "why": "The amended contract: Friday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_contract"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_threat",
+                  "text": "Lekishon's threat",
+                  "slot": "sl_2114",
+                  "by": [
+                    "f_threat"
+                  ],
+                  "why": "Her phone: Friday 21:14.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_threat"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_water",
+                  "text": "She goes to the lugga for water",
+                  "slot": "sl_1715",
+                  "by": [
+                    "f_left_1715"
+                  ],
+                  "why": "Nolari watched her go at about 17:15.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_left_1715"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Nashipai is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_left_1715",
+                    "f_abs_fire",
+                    "f_aut_tod"
+                  ],
+                  "why": "She left at 17:15 and never milked at 18:30.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_abs_fire"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_bar",
+                  "text": "Lekishon reaches the bar",
+                  "slot": "sl_1934",
+                  "by": [
+                    "f_bar"
+                  ],
+                  "why": "The till roll: 19:34.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_bar"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_1830",
+                  "by": [
+                    "f_abs_fire",
+                    "f_nolari_routine"
+                  ],
+                  "why": "18:30 is when Lekishon says \"she was cooking\". She never lit her fire or milked her goats."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A contract on Friday, a threat that night, water at a quarter past five, and never home. He bought his six o'clock at ten past eight.",
+          "fail": [
+            "She wasn't cooking at half past six. Look at the hearth.",
+            "When did his first drink ring through the till?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_lugga"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The lugga, where she drew water every afternoon. Yes.",
+          "fail": [
+            "She never came home. The homestead isn't the scene.",
+            "The bar is where he bought his alibi."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_lekishon"
+          }
+        ],
+        "prosecutor": {
+          "pass": "His threat, his tyre at the crossing, her blood in his rungu. That will hold.",
+          "fail": [
+            "Moses was behind the bar from four.",
+            "Nolari milked in full view of the women."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_rungu"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A rounded wooden blow, and a washed rungu. Yes.",
+          "fail": [
+            "The lugga is flat sand. She didn't fall against anything.",
+            "No animal injuries."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_contract"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Six years of a \"manager's share\", ended in front of the whole village. That's why.",
+          "fail": [
+            "Her phone and her money are on her.",
+            "Victor never left the lodge."
+          ]
+        }
+      },
+      {
+        "id": "g_absence",
+        "kind": "absence",
+        "blanks": [
+          {
+            "id": "missing",
+            "category": "absence",
+            "answer": "a_fire",
+            "accept": [
+              "a_meal"
+            ]
+          },
+          {
+            "id": "conclusion",
+            "category": "conclusion",
+            "answer": "k_before"
+          }
+        ],
+        "prosecutor": {
+          "pass": "No fire, no milking, no meal. She never came home from the water.",
+          "fail": [
+            "One empty jerrycan says she was interrupted, not when.",
+            "Nothing taken says not a robbery. It doesn't tell me the time."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_lugga",
+      "from": "17:15",
+      "to": "18:30",
+      "note": "She left for the lugga at about 17:15 and never milked at 18:30; the post-mortem allows 16:00–21:00."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_contract",
+          "f_threat"
+        ],
+        "concludes": "Lekishon lost his cut of the lodge money, and threatened her."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_nolari_routine",
+          "f_hearth",
+          "f_goats",
+          "f_abs_fire",
+          "f_meal_routine",
+          "f_aut_stomach",
+          "f_abs_meal",
+          "f_left_1715"
+        ],
+        "concludes": "Her fire was never lit, her goats never milked, her meal never eaten: she died before half past six and never came home.",
+        "answers": [
+          "missing",
+          "conclusion",
+          "when"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_lek_cooking",
+          "f_bar",
+          "f_rec_lek",
+          "f_mo_six",
+          "f_mo_reveal"
+        ],
+        "concludes": "Lekishon's \"she was cooking\" is false; his alibi starts at 19:34, and he bought the six o'clock."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_tracks",
+          "f_pickup",
+          "f_lek_reveal"
+        ],
+        "concludes": "His pickup turned at the lugga before the wind rose, and he admits he went there."
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_body",
+          "f_aut_blow",
+          "f_rungu",
+          "f_blood",
+          "f_lek_rungu"
+        ],
+        "concludes": "Her blood is in his washed rungu. Lekishon Lemerketo struck Nashipai with his rungu in the lugga, because she ended their relationship and took the lodge contract out of his hands.",
+        "answers": [
+          "who",
+          "how",
+          "why",
+          "where"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_home",
+        "blank": "where",
+        "by": [
+          "f_abs_fire",
+          "f_body"
+        ],
+        "why": "She never came home."
+      },
+      {
+        "word": "pl_bar",
+        "blank": "where",
+        "by": [
+          "f_body"
+        ],
+        "why": "She died in the lugga."
+      },
+      {
+        "word": "pl_town",
+        "blank": "where",
+        "by": [
+          "f_body"
+        ],
+        "why": "She died in the lugga."
+      },
+      {
+        "word": "pl_pen",
+        "blank": "where",
+        "by": [
+          "f_goats",
+          "f_body"
+        ],
+        "why": "Her goats were never milked; she never reached the pen."
+      },
+      {
+        "word": "w_moses",
+        "blank": "who",
+        "by": [
+          "f_moses_roster"
+        ],
+        "why": "Moses was behind the bar from 16:00."
+      },
+      {
+        "word": "w_mueni",
+        "blank": "who",
+        "by": [
+          "f_mueni"
+        ],
+        "why": "Mueni was in her shop until 19:00, then at church."
+      },
+      {
+        "word": "w_victor",
+        "blank": "who",
+        "by": [
+          "f_victor"
+        ],
+        "why": "Victor was on duty at the lodge, 14:00–22:00."
+      },
+      {
+        "word": "w_nolari",
+        "blank": "who",
+        "by": [
+          "f_nolari_self"
+        ],
+        "why": "Nolari was at her homestead, milking in full view at 18:30."
+      },
+      {
+        "word": "h_stone",
+        "blank": "how",
+        "by": [
+          "f_aut_blow",
+          "f_blood"
+        ],
+        "why": "A wooden object, and her blood on the rungu."
+      },
+      {
+        "word": "h_fall",
+        "blank": "how",
+        "by": [
+          "f_lugga_flat"
+        ],
+        "why": "The lugga is flat sand."
+      },
+      {
+        "word": "h_animal",
+        "blank": "how",
+        "by": [
+          "f_aut_noother"
+        ],
+        "why": "No animal injuries."
+      },
+      {
+        "word": "h_necklace",
+        "blank": "how",
+        "by": [
+          "f_aut_noother"
+        ],
+        "why": "No strangulation."
+      },
+      {
+        "word": "m_order",
+        "blank": "why",
+        "by": [
+          "f_mueni",
+          "f_mueni_claim"
+        ],
+        "why": "That was Mueni's loss, and she was at church."
+      },
+      {
+        "word": "m_kickback",
+        "blank": "why",
+        "by": [
+          "f_victor",
+          "f_victor_reveal"
+        ],
+        "why": "That was Victor's, and he never left the lodge."
+      },
+      {
+        "word": "m_robbery",
+        "blank": "why",
+        "by": [
+          "f_phone_cash"
+        ],
+        "why": "Her phone and KSh 1,800 were on her."
+      },
+      {
+        "word": "m_land",
+        "blank": "why",
+        "by": [
+          "f_no_land"
+        ],
+        "why": "One fence, one well, no quarrel."
+      },
+      {
+        "word": "a_jerry",
+        "blank": "missing",
+        "by": [
+          "f_abs_jerry",
+          "f_jerry"
+        ],
+        "why": "It shows she was interrupted at the water, not that she never came home."
+      },
+      {
+        "word": "a_feet",
+        "blank": "missing",
+        "by": [
+          "f_abs_feet",
+          "f_tracks"
+        ],
+        "why": "Nobody walked in because the killer drove."
+      },
+      {
+        "word": "a_robbed",
+        "blank": "missing",
+        "by": [
+          "f_abs_robbed"
+        ],
+        "why": "It rules out robbery, not the time."
+      },
+      {
+        "word": "k_after",
+        "blank": "conclusion",
+        "by": [
+          "f_abs_meal"
+        ],
+        "why": "Her stomach was empty: she died before the meal."
+      },
+      {
+        "word": "k_robbed",
+        "blank": "conclusion",
+        "by": [
+          "f_abs_robbed"
+        ],
+        "why": "Nothing was taken."
+      },
+      {
+        "word": "k_carried",
+        "blank": "conclusion",
+        "by": [
+          "f_abs_fire",
+          "f_jerry",
+          "f_lugga_sand"
+        ],
+        "why": "She never came home; her jerrycans and her footprints are at the lugga."
+      },
+      {
+        "word": "k_foot",
+        "blank": "conclusion",
+        "by": [
+          "f_tracks",
+          "f_lugga_sand"
+        ],
+        "why": "One pickup came; nobody else walked."
+      },
+      {
+        "word": "k_wind",
+        "blank": "conclusion",
+        "by": [
+          "f_tracks"
+        ],
+        "why": "The tracks were made before the wind rose."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "For six years Lekishon drives the group's beadwork to the lodges and keeps \"a manager's share\" nobody agreed to. In May Nashipai ends their relationship; on Friday she moves the lodge contract into the group's own account. At 21:14 he texts her a threat.",
+        "image": null
+      },
+      {
+        "text": "Saturday, about 17:15. Nashipai leaves for the lugga with two jerrycans, as she does every afternoon.",
+        "image": null
+      },
+      {
+        "text": "Lekishon drives to the crossing. They argue; she says the women are done with him. He strikes her with his rungu and drives away.",
+        "image": "loc_lugga"
+      },
+      {
+        "text": "At 18:30 her goats come home and cry to be milked. Her fire is never lit.",
+        "image": null
+      },
+      {
+        "text": "19:34. He walks into the lodge staff bar. At 20:10 he sends the barman KSh 2,000: \"If they ask, it was six.\"",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "One stamp: records on Lekishon. Detain him after his story breaks; the rungu trace takes 12 h plus 4 h transport. The post-mortem is at Isiolo, an hour and a half away, and runs in parallel.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_lugga",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_tracks",
+        "hours": 1
+      },
+      {
+        "do": "travel",
+        "target": "loc_home",
+        "hours": 0.25,
+        "from": "loc_lugga"
+      },
+      {
+        "do": "visit",
+        "target": "loc_home",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_hearth",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_goats",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_nolari"
+      },
+      {
+        "do": "read",
+        "target": "ev_contract",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_threat",
+        "hours": 0
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "travel",
+        "target": "loc_town",
+        "hours": 0.25,
+        "from": "loc_home"
+      },
+      {
+        "do": "visit",
+        "target": "loc_town",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_lekishon"
+      },
+      {
+        "do": "read",
+        "target": "ev_pickup",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_rungu",
+        "hours": 0
+      },
+      {
+        "do": "travel",
+        "target": "loc_bar",
+        "hours": 0.5,
+        "from": "loc_town"
+      },
+      {
+        "do": "visit",
+        "target": "loc_bar",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_bar",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_moses"
+      },
+      {
+        "do": "press",
+        "target": "c_mo"
+      },
+      {
+        "do": "press",
+        "target": "c_lek"
+      },
+      {
+        "do": "detain",
+        "target": "p_lekishon"
+      },
+      {
+        "do": "submit",
+        "target": "ev_blood"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 16
+      },
+      {
+        "do": "press",
+        "target": "c_lek_rungu"
+      }
+    ],
+    "totalHours": 33
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_nolari",
+        "line": "Her day ran to the minute, Amani. Ask Nolari what should have happened at dusk."
+      },
+      "tier2": {
+        "facts": [
+          "f_left_1715",
+          "f_abs_fire"
+        ],
+        "line": "She left at a quarter past five. Nothing after that happened."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_body",
+        "line": "Where are her jerrycans?"
+      },
+      "tier2": {
+        "facts": [
+          "f_jerry",
+          "f_lugga_sand"
+        ],
+        "line": "At the lugga, one filled. Her footprints in."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_tracks",
+        "line": "A pickup with a worn tyre came to the crossing."
+      },
+      "tier2": {
+        "facts": [
+          "f_pickup",
+          "f_blood"
+        ],
+        "line": "His tyre, his rungu."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "A rounded wooden blow. What do men carry here?"
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_blow",
+          "f_rungu"
+        ],
+        "line": "A rungu, washed."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_contract",
+        "line": "What did Nashipai change on Friday?"
+      },
+      "tier2": {
+        "facts": [
+          "f_contract",
+          "f_threat"
+        ],
+        "line": "The money into the group's own account. Then his threat."
+      }
+    },
+    "g_absence": {
+      "tier1": {
+        "point": "ev_hearth",
+        "line": "Look at what she did every evening. Then at what she didn't do."
+      },
+      "tier2": {
+        "facts": [
+          "f_abs_fire",
+          "f_abs_meal"
+        ],
+        "line": "No fire, no milking, no meal."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "lugga",
+      "def": "A dry, sandy riverbed."
+    },
+    {
+      "term": "manyatta",
+      "def": "A homestead of low houses inside a thorn fence."
+    },
+    {
+      "term": "shanga",
+      "def": "Beads."
+    },
+    {
+      "term": "rungu",
+      "def": "A wooden club with a round head."
+    },
+    {
+      "term": "maziwa",
+      "def": "Milk."
+    },
+    {
+      "term": "shuka",
+      "def": "A cloth worn as a wrap."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "routinesAsEvidence"
+    ],
+    "beatNotes": "Routines as evidence. Nolari's statement becomes a day-strip of Nashipai's routine (water, goats, fire, meal). The player drags absence cards onto it; the strip greys out everything after 17:15, and the time-of-death window on the board narrows from 16:00–21:00 to 17:15–18:30 with a soft click."
+  }
+}

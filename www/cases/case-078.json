@@ -1,0 +1,2540 @@
+{
+  "meta": {
+    "id": "case-078",
+    "number": 78,
+    "region": "northern-frontier",
+    "regionNumber": 8,
+    "title": "Clean Lungs",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 42,
+    "date": "Friday 24 July",
+    "folderTab": "HOUSE 4"
+  },
+  "pattern": {
+    "crimePattern": "a school cook kills the teacher who is ending their secret relationship and burning her letters, then sets the house alight in a power cut",
+    "noRealCaseRetold": true,
+    "notes": "Fictional people and school. The furious wife who lied about leaving is innocent; the cook is the killer. The ABSENCE group carries a deliberate near-miss: \"the lamp's wick never burned\" shows the fuel was poured, not that he was dead (interface beat: refuted absences).",
+    "tags": [
+      "blunt-force",
+      "arson",
+      "staged-accident",
+      "relationship",
+      "three-liars",
+      "records",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where",
+      "absence"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 6,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "absence"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": "the-wife-isnt-the-one"
+  },
+  "ob": {
+    "number": "OB 25/24/07",
+    "date": "Friday 24 July",
+    "time": "05:30",
+    "reportedBy": "Lokaale Ebei, school night watchman",
+    "text": "The night watchman at Lokichar Mixed Secondary School reports a fire in staff House 4. The deputy head teacher, Ronald Wanyonyi (41), is found dead inside. His wife, visiting from Bungoma, arrives at the school soon after.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_house",
+    "nodes": [
+      "loc_house",
+      "loc_kitchen",
+      "loc_office",
+      "loc_lodge",
+      "loc_bar",
+      "loc_nakiru"
+    ],
+    "edges": [
+      {
+        "a": "loc_house",
+        "b": "loc_kitchen",
+        "minutes": 3,
+        "by": "foot"
+      },
+      {
+        "a": "loc_house",
+        "b": "loc_office",
+        "minutes": 4,
+        "by": "foot"
+      },
+      {
+        "a": "loc_kitchen",
+        "b": "loc_office",
+        "minutes": 3,
+        "by": "foot"
+      },
+      {
+        "a": "loc_kitchen",
+        "b": "loc_nakiru",
+        "minutes": 1,
+        "by": "foot"
+      },
+      {
+        "a": "loc_office",
+        "b": "loc_lodge",
+        "minutes": 10,
+        "by": "road"
+      },
+      {
+        "a": "loc_lodge",
+        "b": "loc_bar",
+        "minutes": 4,
+        "by": "foot"
+      },
+      {
+        "a": "loc_office",
+        "b": "loc_bar",
+        "minutes": 10,
+        "by": "road"
+      },
+      {
+        "a": "loc_house",
+        "b": "loc_lodge",
+        "minutes": 12,
+        "by": "road"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_ronald",
+      "role": "victim",
+      "name": "Ronald Wanyonyi",
+      "age": 41,
+      "occupation": "Deputy head teacher, Lokichar Mixed Secondary",
+      "bio": "From Bungoma; at Lokichar four years on a government posting.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_sitting",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luhya man, early 40s, a teacher's shirt and tie, reading glasses in his pocket, a self-assured face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_nakiru",
+      "role": "suspect",
+      "name": "Nakiru Ekai",
+      "age": 44,
+      "occupation": "School cook",
+      "bio": "Runs the school kitchen; makes the morning porridge before dawn.",
+      "community": "Turkana",
+      "isCulprit": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_kitchen",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Turkana woman, mid 40s, a cook's apron and headscarf, beaded collar, a grave, closed face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_sarah",
+      "role": "suspect",
+      "name": "Sarah Wanyonyi",
+      "age": 39,
+      "occupation": "Ronald's wife, visiting from Bungoma",
+      "redHerring": true,
+      "bio": "Quarrelled with Ronald in the staffroom on Wednesday about \"a woman here\".",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_house",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luhya woman, late 30s, a smart dress and a travel bag, red-eyed, proud and furious, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_collins",
+      "role": "suspect",
+      "name": "Collins Owino",
+      "age": 37,
+      "occupation": "Teacher; lost the deputy headship to Ronald",
+      "redHerring": true,
+      "bio": "Applied for the deputy post four years ago.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_transfer"
+      },
+      "at": "loc_office",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, late 30s, a teacher's sweater, a resentful but frank face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_lokaale",
+      "role": "suspect",
+      "name": "Lokaale Ebei",
+      "age": 50,
+      "occupation": "School night watchman",
+      "bio": "Reported the fire.",
+      "community": "Turkana",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_house",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Turkana man, about 50, a watchman's greatcoat and a rungu, a sheepish face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_pauline",
+      "role": "witness",
+      "name": "Pauline Chelangat",
+      "age": 55,
+      "occupation": "Head teacher",
+      "bio": "Keeps the staff files in her office.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_office",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kalenjin woman, mid 50s, a head teacher's suit, a careful, authoritative face, ID-photo framing",
+        "ref": null
+      }
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_sitting",
+      "name": "The sitting room of House 4",
+      "within": "loc_house"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_house",
+      "name": "Staff House 4",
+      "kind": "scene",
+      "description": "A block-and-iron-sheet staff house. The sitting room is burned out; the bedroom behind it didn't burn.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_sitting",
+          "label": "The sitting room",
+          "pos": [
+            45,
+            55
+          ],
+          "yields": "ev_house",
+          "text": "The burned sitting room. Ronald on the floor by the sofa."
+        },
+        {
+          "id": "hs_lamp",
+          "label": "The paraffin lamp",
+          "pos": [
+            55,
+            70
+          ],
+          "yields": "ev_lamp",
+          "text": "A lamp on its side by the sofa."
+        },
+        {
+          "id": "hs_bedroom",
+          "label": "Under the bed",
+          "pos": [
+            80,
+            40
+          ],
+          "yields": "ev_tin",
+          "text": "A biscuit tin under the bed. Sarah is standing in the doorway."
+        },
+        {
+          "id": "hs_wallet",
+          "label": "Bedroom table",
+          "pos": [
+            85,
+            60
+          ],
+          "yields": "ev_bedroom",
+          "text": "His wallet and laptop on the table."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a burned-out sitting room in a small block staff house at dawn, blackened walls and a sofa frame, a paraffin lamp on its side, no people in focus"
+      },
+      "expected": [
+        {
+          "id": "x_soot",
+          "text": "A man alive in a burning room breathes smoke: soot in the airways, carbon monoxide in the blood",
+          "because": "f_aut_lungs",
+          "present": false,
+          "fact": "f_abs_soot"
+        },
+        {
+          "id": "x_wick",
+          "text": "A lamp that fell and started a fire has a burned wick",
+          "because": "f_lamp",
+          "present": false,
+          "fact": "f_abs_wick"
+        },
+        {
+          "id": "x_tin",
+          "text": "The letters in the biscuit tin under the bed",
+          "because": "f_sarah_tin",
+          "present": false,
+          "fact": "f_abs_tin"
+        },
+        {
+          "id": "x_watch",
+          "text": "The watchman at his post all night",
+          "because": "f_lok_patrol",
+          "present": false,
+          "fact": "f_abs_watch"
+        },
+        {
+          "id": "x_wallet",
+          "text": "His wallet and laptop in the bedroom",
+          "because": "f_ob",
+          "present": true
+        }
+      ]
+    },
+    {
+      "id": "loc_kitchen",
+      "name": "The school kitchen",
+      "kind": "location",
+      "description": "A long shed 150 m from the staff houses: two big porridge drums on a wood stove, paddles on hooks, a store of maize flour.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_hooks",
+          "label": "The paddle hooks",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_paddle_gone",
+          "text": "Two hooks for the long porridge paddles."
+        },
+        {
+          "id": "hs_cook2",
+          "label": "The second cook",
+          "pos": [
+            70,
+            50
+          ],
+          "yields": "ev_cook2",
+          "text": "Mama Achieng, the second cook, starting the morning drums."
+        },
+        {
+          "id": "hs_ash",
+          "label": "The wood-stove ash",
+          "pos": [
+            55,
+            70
+          ],
+          "yields": "ev_paddle",
+          "text": "Raking through yesterday's ash.",
+          "unlock": {
+            "fact": "f_abs_paddle"
+          }
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a long school kitchen shed with two big porridge drums on a wood stove, long wooden paddles hanging on hooks, one hook empty"
+      },
+      "expected": [
+        {
+          "id": "x_paddle",
+          "text": "Both porridge paddles on their hooks: both are used every morning",
+          "because": "f_cook2",
+          "present": false,
+          "fact": "f_abs_paddle"
+        }
+      ]
+    },
+    {
+      "id": "loc_office",
+      "name": "Head teacher's office",
+      "kind": "location",
+      "description": "The office block by the gate: staff files, a transfer tray.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_transfer",
+          "label": "Staff file",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_transfer",
+          "text": "Ronald's staff file."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small head teacher's office with staff files and a wall timetable, a school gate visible through the window"
+      }
+    },
+    {
+      "id": "loc_lodge",
+      "name": "The Lokichar lodge",
+      "kind": "location",
+      "description": "A two-storey lodge on the main road, oil-camp trucks parked outside.",
+      "unlock": {
+        "fact": "f_sarah_left"
+      },
+      "hotspots": [
+        {
+          "id": "hs_lodge",
+          "label": "Lodge register and night porter",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_lodge",
+          "text": "The register and the night porter."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a two-storey lodge on a dusty main road in Lokichar, oil-camp trucks parked outside"
+      }
+    },
+    {
+      "id": "loc_bar",
+      "name": "A bar in Lokichar town",
+      "kind": "location",
+      "description": "A bar with a television on a bracket and plastic chairs.",
+      "unlock": {
+        "fact": "f_col_claim"
+      },
+      "hotspots": [
+        {
+          "id": "hs_bar",
+          "label": "The bar owner",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_bar",
+          "text": "The owner, counting last night's bottles."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small bar in a frontier town, plastic chairs facing a television on a wall bracket"
+      }
+    },
+    {
+      "id": "loc_nakiru",
+      "name": "Nakiru's quarters",
+      "kind": "location",
+      "description": "A room behind the kitchen: a bed, a wash bucket, a box.",
+      "unlock": {
+        "fact": "f_rec_text"
+      },
+      "hotspots": [
+        {
+          "id": "hs_nakiru",
+          "label": "Her room",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_nakiru_house",
+          "text": "Search under warrant."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small cook's room behind a school kitchen, a narrow bed, a wash bucket, a wooden box"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_house",
+      "type": "physical",
+      "title": "The burned sitting room",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Ronald on the floor by the sofa. Sitting room burned out. Fire officer from Lodwar: the fire started about three hours before it was found, around 02:00."
+      },
+      "facts": [
+        "f_house",
+        "f_fire"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a burned-out sitting room with a charred sofa frame, a lamp on its side on the floor, morning light through a broken window, no body visible"
+      }
+    },
+    {
+      "id": "ev_lamp",
+      "type": "physical",
+      "title": "The paraffin lamp",
+      "render": "object",
+      "body": {
+        "label": "Tank empty, cap off, wick unburned. The fuel was poured, not spilled by a falling lamp."
+      },
+      "facts": [
+        "f_lamp"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_tin",
+      "type": "physical",
+      "title": "Biscuit tin under the bed",
+      "render": "object",
+      "body": {
+        "tin": "Open and empty.",
+        "sarah": "Sarah: \"That's where he kept her letters. I saw them there in April at home; he brought them back here.\""
+      },
+      "facts": [
+        "f_tin",
+        "f_sarah_tin"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_bedroom",
+      "type": "physical",
+      "title": "The bedroom table",
+      "render": "object",
+      "body": {
+        "label": "His wallet, KSh 8,400, and his laptop, untouched."
+      },
+      "facts": [
+        "f_wallet"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_paddle_gone",
+      "type": "physical",
+      "title": "The paddle hooks",
+      "render": "object",
+      "body": {
+        "label": "Two hooks for the long porridge paddles. One is empty."
+      },
+      "facts": [
+        "f_hook"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_cook2",
+      "type": "witness",
+      "title": "Statement: the second cook",
+      "render": "statement",
+      "body": {
+        "speaker": "p_nakiru"
+      },
+      "facts": [
+        "f_cook2",
+        "f_kitchen_late"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_paddle",
+      "type": "physical",
+      "title": "A paddle in the stove ash",
+      "render": "object",
+      "body": {
+        "label": "The paddle's blade burned; the thick handle only charred. A dark stain in the crack at the grip."
+      },
+      "facts": [
+        "f_paddle"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a long wooden porridge paddle in wood-stove ash, the blade burned away, a thick charred handle with a crack at the grip"
+      }
+    },
+    {
+      "id": "ev_transfer",
+      "type": "document",
+      "title": "Ronald's transfer letter",
+      "render": "form",
+      "body": {
+        "text": "Transfer to a Bungoma school from next term, accepted by Ronald Wanyonyi, dated Monday."
+      },
+      "facts": [
+        "f_transfer"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lodge",
+      "type": "document",
+      "title": "Lokichar lodge register and night porter",
+      "render": "logBook",
+      "body": {
+        "register": "Sarah Wanyonyi, in Wednesday 17:00, out Friday 08:00.",
+        "porter": "She came in at 21:50 on Thursday and ordered tea at 22:05; she did not go out again."
+      },
+      "facts": [
+        "f_lodge",
+        "f_porter"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_bar",
+      "type": "witness",
+      "title": "Statement: the bar owner",
+      "render": "statement",
+      "body": {
+        "speaker": "p_collins"
+      },
+      "facts": [
+        "f_bar"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Ronald's line (the phone melted)",
+      "render": "manifest",
+      "body": {
+        "thu": "Thursday 21:58, SMS from Nakiru Ekai: \"I'm coming. Don't burn them.\"",
+        "tue": "Tuesday: a 41-minute call between them."
+      },
+      "facts": [
+        "f_rec_text",
+        "f_rec_tue"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_abs_soot",
+          "f_abs_tin"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_nakiru_house",
+      "type": "physical",
+      "title": "Nakiru's quarters",
+      "render": "object",
+      "body": {
+        "letters": "The letters, 41 of them, tied with a ribbon.",
+        "cloth": "A cloth in the wash bucket smelling of paraffin.",
+        "apron": "Her apron, washed."
+      },
+      "facts": [
+        "f_letters",
+        "f_cloth"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_text",
+          "f_paddle"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a bundle of handwritten letters tied with a faded ribbon on a narrow bed, a wash bucket with a cloth in it"
+      }
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Post-mortem (Dr. Chebii, Lodwar)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_lungs",
+        "f_aut_tod"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_house"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_blood",
+      "type": "forensic",
+      "title": "Lab: trace (paddle grip)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_blood"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_paddle"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_accel",
+      "type": "forensic",
+      "title": "Lab: trace (accelerant, cloth vs lamp)",
+      "render": "labReport",
+      "body": {
+        "test": "trace"
+      },
+      "facts": [
+        "f_accel"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "trace",
+        "hours": 12,
+        "needs": [
+          "ev_nakiru_house",
+          "ev_lamp"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Ronald Wanyonyi was found dead in staff House 4 after a fire on Friday morning; his wife Sarah arrived at the school soon after.",
+      "kind": "true",
+      "about": [
+        "p_ronald",
+        "p_sarah",
+        "loc_house"
+      ],
+      "at": {
+        "from": "05:00",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_house",
+      "text": "Ronald lay on the floor by the sofa in the burned sitting room.",
+      "kind": "true",
+      "about": [
+        "p_ronald",
+        "plc_sitting"
+      ]
+    },
+    {
+      "id": "f_fire",
+      "text": "Fire officer: the fire started about three hours before it was found, around 02:00 on Friday.",
+      "kind": "true",
+      "about": [
+        "plc_sitting"
+      ],
+      "at": {
+        "from": "02:00",
+        "to": null,
+        "day": "Fri"
+      }
+    },
+    {
+      "id": "f_lamp",
+      "text": "The lamp's tank is empty, its cap off, its wick unburned: the paraffin was poured, not spilled by a falling lamp.",
+      "kind": "true",
+      "about": [
+        "plc_sitting"
+      ]
+    },
+    {
+      "id": "f_tin",
+      "text": "The biscuit tin under the bed is open and empty.",
+      "kind": "true",
+      "about": [
+        "p_ronald"
+      ]
+    },
+    {
+      "id": "f_sarah_tin",
+      "text": "Sarah: \"That's where he kept her letters. I saw them in April at home; he brought them back here.\"",
+      "kind": "true",
+      "about": [
+        "p_sarah",
+        "p_ronald"
+      ]
+    },
+    {
+      "id": "f_wallet",
+      "text": "His wallet (KSh 8,400) and laptop are untouched in the bedroom.",
+      "kind": "true",
+      "about": [
+        "p_ronald"
+      ]
+    },
+    {
+      "id": "f_hook",
+      "text": "In the kitchen one of the two paddle hooks is empty.",
+      "kind": "true",
+      "about": [
+        "loc_kitchen"
+      ]
+    },
+    {
+      "id": "f_cook2",
+      "text": "The second cook: both long paddles are used every morning; both were on their hooks on Thursday afternoon.",
+      "kind": "true",
+      "about": [
+        "loc_kitchen"
+      ]
+    },
+    {
+      "id": "f_kitchen_late",
+      "text": "The second cook: Nakiru stayed late on Thursday to prepare the morning porridge; \"she's the only one with the kitchen key.\"",
+      "kind": "true",
+      "about": [
+        "p_nakiru"
+      ]
+    },
+    {
+      "id": "f_paddle",
+      "text": "In the wood-stove ash: a porridge paddle, blade burned, the thick handle charred, a stain in the crack at the grip.",
+      "kind": "true",
+      "about": [
+        "loc_kitchen"
+      ]
+    },
+    {
+      "id": "f_transfer",
+      "text": "Ronald accepted a transfer to a Bungoma school on Monday.",
+      "kind": "true",
+      "about": [
+        "p_ronald"
+      ]
+    },
+    {
+      "id": "f_lodge",
+      "text": "Lodge register: Sarah checked in on Wednesday at 17:00 and out on Friday at 08:00.",
+      "kind": "true",
+      "about": [
+        "p_sarah"
+      ],
+      "at": {
+        "from": "17:00",
+        "to": null,
+        "day": "Wed"
+      }
+    },
+    {
+      "id": "f_porter",
+      "text": "Night porter: Sarah came in at 21:50 on Thursday, ordered tea at 22:05, and didn't go out again.",
+      "kind": "true",
+      "about": [
+        "p_sarah"
+      ],
+      "where": {
+        "person": "p_sarah",
+        "place": "loc_lodge",
+        "from": "21:50",
+        "to": "08:00"
+      }
+    },
+    {
+      "id": "f_bar",
+      "text": "Bar owner: Collins Owino and Lokaale Ebei watched the football here from 21:15 to 00:40.",
+      "kind": "true",
+      "about": [
+        "p_collins",
+        "p_lokaale"
+      ],
+      "where": {
+        "person": "p_collins",
+        "place": "loc_bar",
+        "from": "21:15",
+        "to": "00:40"
+      }
+    },
+    {
+      "id": "f_lok_bar",
+      "text": "Lokaale was in the bar from 21:15 to 00:40.",
+      "kind": "true",
+      "about": [
+        "p_lokaale"
+      ],
+      "where": {
+        "person": "p_lokaale",
+        "place": "loc_bar",
+        "from": "21:15",
+        "to": "00:40"
+      }
+    },
+    {
+      "id": "f_pauline",
+      "text": "Pauline Chelangat was at home with her husband all night; the power cut kept her in.",
+      "kind": "true",
+      "about": [
+        "p_pauline"
+      ],
+      "where": {
+        "person": "p_pauline",
+        "place": "loc_office",
+        "from": "18:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_rec_text",
+      "text": "Records: Thursday 21:58, an SMS from Nakiru Ekai to Ronald: \"I'm coming. Don't burn them.\"",
+      "kind": "true",
+      "about": [
+        "p_nakiru",
+        "p_ronald"
+      ],
+      "at": {
+        "from": "21:58",
+        "to": null,
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_rec_tue",
+      "text": "Records: on Tuesday Ronald and Nakiru spoke for 41 minutes.",
+      "kind": "true",
+      "about": [
+        "p_nakiru",
+        "p_ronald"
+      ]
+    },
+    {
+      "id": "f_letters",
+      "text": "In Nakiru's room: 41 letters tied with a ribbon.",
+      "kind": "true",
+      "about": [
+        "p_nakiru"
+      ]
+    },
+    {
+      "id": "f_cloth",
+      "text": "In her wash bucket: a cloth smelling of paraffin. Her apron, washed.",
+      "kind": "true",
+      "about": [
+        "p_nakiru"
+      ]
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Post-mortem: one heavy blow to the head with a broad, flat wooden object.",
+      "kind": "true",
+      "about": [
+        "p_ronald"
+      ]
+    },
+    {
+      "id": "f_aut_lungs",
+      "text": "Post-mortem: the airways are clean and there is no carbon monoxide in the blood.",
+      "kind": "true",
+      "about": [
+        "p_ronald"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Post-mortem: death on Thursday between 21:30 and 23:30; the fire burned later.",
+      "kind": "true",
+      "about": [
+        "p_ronald"
+      ],
+      "at": {
+        "from": "21:30",
+        "to": "23:30",
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_blood",
+      "text": "Lab: Ronald's blood in the crack of the paddle's grip.",
+      "kind": "true",
+      "about": [
+        "p_ronald"
+      ]
+    },
+    {
+      "id": "f_accel",
+      "text": "Lab: the paraffin on Nakiru's cloth matches the residue in the lamp.",
+      "kind": "true",
+      "about": [
+        "p_nakiru"
+      ]
+    },
+    {
+      "id": "f_abs_soot",
+      "text": "Missing: there's no soot in his airways.",
+      "kind": "true",
+      "about": [
+        "p_ronald"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_wick",
+      "text": "Missing: the lamp's wick never burned.",
+      "kind": "true",
+      "about": [
+        "plc_sitting"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_tin",
+      "text": "Missing: the letter tin is empty.",
+      "kind": "true",
+      "about": [
+        "p_ronald"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_watch",
+      "text": "Missing: the watchman wasn't at his post.",
+      "kind": "true",
+      "about": [
+        "p_lokaale"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_abs_paddle",
+      "text": "Missing: one porridge paddle is missing.",
+      "kind": "true",
+      "about": [
+        "loc_kitchen"
+      ],
+      "absence": true
+    },
+    {
+      "id": "f_nak_bed",
+      "text": "Nakiru: \"I finished in the kitchen at nine and went to bed. I was only Mr. Wanyonyi's cook.\"",
+      "kind": "lie",
+      "about": [
+        "p_nakiru"
+      ]
+    },
+    {
+      "id": "f_nak_reveal",
+      "text": "Nakiru: \"Three years. He was going to burn them in front of me like rubbish. I wanted my letters. That's all I'll say about that night.\"",
+      "kind": "true",
+      "about": [
+        "p_nakiru",
+        "p_ronald"
+      ],
+      "where": {
+        "person": "p_nakiru",
+        "place": "plc_sitting",
+        "from": "21:58",
+        "to": "23:30"
+      }
+    },
+    {
+      "id": "f_nak_paddle",
+      "text": "Nakiru: \"The paddle broke weeks ago. I burned it for firewood.\"",
+      "kind": "lie",
+      "about": [
+        "p_nakiru"
+      ]
+    },
+    {
+      "id": "f_sarah_left",
+      "text": "Sarah: \"I left Lokichar on Wednesday afternoon. I came back this morning when the head teacher called me.\"",
+      "kind": "lie",
+      "about": [
+        "p_sarah"
+      ]
+    },
+    {
+      "id": "f_sarah_saw",
+      "text": "Sarah: \"I stayed to see her. I walked past at nine. The kitchen was lit and a woman was in there working. Ronald's window was dark. I went back to the lodge and cried.\"",
+      "kind": "true",
+      "about": [
+        "p_sarah",
+        "p_nakiru"
+      ],
+      "at": {
+        "from": "21:00",
+        "to": "21:40",
+        "day": "Thu"
+      }
+    },
+    {
+      "id": "f_col_claim",
+      "text": "Collins: \"I was disappointed about the post. I was at the bar watching the match.\"",
+      "kind": "claim",
+      "about": [
+        "p_collins"
+      ]
+    },
+    {
+      "id": "f_col_lok",
+      "text": "Collins: \"Lokaale was with me. Don't tell the head teacher.\"",
+      "kind": "true",
+      "about": [
+        "p_collins",
+        "p_lokaale"
+      ]
+    },
+    {
+      "id": "f_lok_patrol",
+      "text": "Lokaale: \"I patrolled the compound all night.\"",
+      "kind": "lie",
+      "about": [
+        "p_lokaale"
+      ]
+    },
+    {
+      "id": "f_lok_reveal",
+      "text": "Lokaale: \"I went to watch the match. I came back at half past four and smelled smoke at five.\"",
+      "kind": "true",
+      "about": [
+        "p_lokaale"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_nakiru",
+      "stance": "cooperative",
+      "intro": "Nakiru wipes her hands on her apron and answers gravely. \"I finished in the kitchen at nine and went to bed. I was only Mr. Wanyonyi's cook.\"",
+      "claims": [
+        "f_nak_bed"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_nak_paddle",
+          "after": "f_nak_reveal"
+        }
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_sarah",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_tin"
+      ],
+      "intro": "Sarah stands in the bedroom doorway, proud and furious. \"I left Lokichar on Wednesday afternoon. I came back this morning when the head teacher called me.\"",
+      "claims": [
+        "f_sarah_left"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_collins",
+      "stance": "cooperative",
+      "intro": "Collins meets you in the staffroom. \"I was disappointed about the post. I was at the bar watching the match.\"",
+      "claims": [
+        "f_col_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_bar",
+          "reply": "\"Lokaale was with me. Don't tell the head teacher.\"",
+          "reveals": [
+            "f_col_lok"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_lokaale",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_house"
+      ],
+      "intro": "Lokaale grips his rungu. \"I patrolled the compound all night.\"",
+      "claims": [
+        "f_lok_patrol"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_pauline",
+      "stance": "cooperative",
+      "intro": "Pauline Chelangat opens Ronald's staff file for you.",
+      "claims": [],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_house",
+          "reply": "\"I was at home with my husband. With the power out I didn't go anywhere.\"",
+          "reveals": [
+            "f_pauline"
+          ]
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_sarah",
+      "claim": "f_sarah_left",
+      "brokenBy": [
+        "f_lodge"
+      ],
+      "reveals": [
+        "f_sarah_saw"
+      ],
+      "reaction": "\"I stayed to see her. I walked past at nine. The kitchen was lit and a woman was in there working. Ronald's window was dark. I went back to the lodge and cried.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_lok",
+      "claim": "f_lok_patrol",
+      "brokenBy": [
+        "f_bar"
+      ],
+      "reveals": [
+        "f_lok_reveal",
+        "f_lok_bar"
+      ],
+      "reaction": "\"I went to watch the match. I came back at half past four and smelled smoke at five.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_nak",
+      "claim": "f_nak_bed",
+      "brokenBy": [
+        "f_rec_text",
+        "f_letters"
+      ],
+      "reveals": [
+        "f_nak_reveal"
+      ],
+      "reaction": "\"Three years. He was going to burn them in front of me like rubbish. I wanted my letters. That's all I'll say about that night.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_nak_paddle",
+      "claim": "f_nak_paddle",
+      "brokenBy": [
+        "f_blood",
+        "f_cook2"
+      ],
+      "reveals": [],
+      "reaction": "Nakiru looks at the lab sheet for a long time, then turns her face to the wall.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_nakiru",
+      "text": "Nakiru Ekai",
+      "category": "person",
+      "ref": "p_nakiru",
+      "unlock": {
+        "anyOf": [
+          "f_kitchen_late"
+        ]
+      }
+    },
+    {
+      "id": "w_sarah",
+      "text": "Sarah Wanyonyi",
+      "category": "person",
+      "ref": "p_sarah",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_collins",
+      "text": "Collins Owino",
+      "category": "person",
+      "ref": "p_collins",
+      "unlock": {
+        "anyOf": [
+          "f_transfer"
+        ]
+      }
+    },
+    {
+      "id": "w_lokaale",
+      "text": "Lokaale Ebei",
+      "category": "person",
+      "ref": "p_lokaale",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "w_pauline",
+      "text": "Pauline Chelangat",
+      "category": "person",
+      "ref": "p_pauline",
+      "unlock": {
+        "anyOf": [
+          "f_transfer"
+        ]
+      }
+    },
+    {
+      "id": "pl_sitting",
+      "text": "the sitting room of House 4",
+      "category": "place",
+      "ref": "plc_sitting",
+      "unlock": {
+        "anyOf": [
+          "f_house"
+        ]
+      }
+    },
+    {
+      "id": "pl_kitchen",
+      "text": "the school kitchen",
+      "category": "place",
+      "ref": "loc_kitchen",
+      "unlock": {
+        "anyOf": [
+          "f_hook"
+        ]
+      }
+    },
+    {
+      "id": "pl_lodge",
+      "text": "the Lokichar lodge",
+      "category": "place",
+      "ref": "loc_lodge",
+      "unlock": {
+        "anyOf": [
+          "f_lodge"
+        ]
+      }
+    },
+    {
+      "id": "pl_bar",
+      "text": "the bar in town",
+      "category": "place",
+      "ref": "loc_bar",
+      "unlock": {
+        "anyOf": [
+          "f_col_claim"
+        ]
+      }
+    },
+    {
+      "id": "pl_quarters",
+      "text": "Nakiru's quarters",
+      "category": "place",
+      "ref": "loc_nakiru",
+      "unlock": {
+        "anyOf": [
+          "f_rec_text"
+        ]
+      }
+    },
+    {
+      "id": "h_paddle",
+      "text": "striking him with the school kitchen's wooden porridge paddle, then setting the house alight",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_lamp",
+      "text": "a lamp accident in the power cut",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_smoke",
+      "text": "smoke inhalation",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_jembe",
+      "text": "striking him with a jembe",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack, then the fire",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_letters",
+      "text": "he was ending their three-year relationship to go home to his wife and was going to burn her letters",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_rec_text"
+        ]
+      }
+    },
+    {
+      "id": "m_jealous",
+      "text": "a wife's jealousy",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_sarah_tin"
+        ]
+      }
+    },
+    {
+      "id": "m_post",
+      "text": "a rival for the deputy post",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_transfer"
+        ]
+      }
+    },
+    {
+      "id": "m_theft",
+      "text": "a watchman's theft discovered",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_lok_patrol"
+        ]
+      }
+    },
+    {
+      "id": "m_robbery",
+      "text": "a robbery",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "a_soot",
+      "text": "there's no soot in his airways",
+      "category": "absence",
+      "ref": "f_abs_soot",
+      "unlock": {
+        "anyOf": [
+          "f_abs_soot"
+        ]
+      }
+    },
+    {
+      "id": "a_tin",
+      "text": "the letter tin is empty",
+      "category": "absence",
+      "ref": "f_abs_tin",
+      "unlock": {
+        "anyOf": [
+          "f_abs_tin"
+        ]
+      }
+    },
+    {
+      "id": "a_paddle",
+      "text": "one porridge paddle is missing",
+      "category": "absence",
+      "ref": "f_abs_paddle",
+      "unlock": {
+        "anyOf": [
+          "f_abs_paddle"
+        ]
+      }
+    },
+    {
+      "id": "a_wick",
+      "text": "the lamp's wick never burned",
+      "category": "absence",
+      "ref": "f_abs_wick",
+      "unlock": {
+        "anyOf": [
+          "f_abs_wick"
+        ]
+      }
+    },
+    {
+      "id": "a_watch",
+      "text": "the watchman wasn't at his post",
+      "category": "absence",
+      "ref": "f_abs_watch",
+      "unlock": {
+        "anyOf": [
+          "f_abs_watch"
+        ]
+      }
+    },
+    {
+      "id": "k_before",
+      "text": "he was dead before the fire started",
+      "category": "conclusion",
+      "by": [
+        "f_abs_soot",
+        "f_aut_lungs",
+        "f_fire"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_soot"
+        ]
+      }
+    },
+    {
+      "id": "k_lamp",
+      "text": "he died in a lamp accident in the power cut",
+      "category": "conclusion",
+      "by": [
+        "f_lamp"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_soot"
+        ]
+      }
+    },
+    {
+      "id": "k_burned",
+      "text": "he burned the letters himself before the fire",
+      "category": "conclusion",
+      "by": [
+        "f_letters"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_soot"
+        ]
+      }
+    },
+    {
+      "id": "k_watch",
+      "text": "the watchman started the fire",
+      "category": "conclusion",
+      "by": [
+        "f_lok_bar"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_soot"
+        ]
+      }
+    },
+    {
+      "id": "k_wife",
+      "text": "the wife took the letters back to Bungoma",
+      "category": "conclusion",
+      "by": [
+        "f_letters"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_soot"
+        ]
+      }
+    },
+    {
+      "id": "k_midnight",
+      "text": "he died after midnight",
+      "category": "conclusion",
+      "by": [
+        "f_aut_tod"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_abs_soot"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. That {missing} shows that {conclusion}.",
+    "fixed": {
+      "victim": "Ronald Wanyonyi"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_mon",
+                  "label": "Monday",
+                  "from": null,
+                  "to": null,
+                  "day": "Mon"
+                },
+                {
+                  "id": "sl_tue",
+                  "label": "Tuesday",
+                  "from": null,
+                  "to": null,
+                  "day": "Tue"
+                },
+                {
+                  "id": "sl_2158",
+                  "label": "Thursday 21:58",
+                  "from": "21:58",
+                  "to": "21:58",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "Thursday 21:58–23:30",
+                  "from": "21:58",
+                  "to": "23:30",
+                  "day": "Thu"
+                },
+                {
+                  "id": "sl_0200",
+                  "label": "Friday 02:00",
+                  "from": "02:00",
+                  "to": "02:00",
+                  "day": "Fri"
+                },
+                {
+                  "id": "sl_0500",
+                  "label": "Friday 05:00",
+                  "from": "05:00",
+                  "to": "05:00",
+                  "day": "Fri"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_transfer",
+                  "text": "Ronald accepts the transfer",
+                  "slot": "sl_mon",
+                  "by": [
+                    "f_transfer"
+                  ],
+                  "why": "The letter is dated Monday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_transfer"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_ends",
+                  "text": "Ronald ends it with Nakiru",
+                  "slot": "sl_tue",
+                  "by": [
+                    "f_rec_tue",
+                    "f_nak_reveal"
+                  ],
+                  "why": "The 41-minute call on Tuesday.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rec_tue"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_text",
+                  "text": "Nakiru texts \"I'm coming\"",
+                  "slot": "sl_2158",
+                  "by": [
+                    "f_rec_text"
+                  ],
+                  "why": "Records: 21:58.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_rec_text"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Ronald is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_aut_tod",
+                    "f_rec_text",
+                    "f_nak_reveal"
+                  ],
+                  "why": "After her text and inside the post-mortem window.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_fire",
+                  "text": "The fire is set",
+                  "slot": "sl_0200",
+                  "by": [
+                    "f_fire"
+                  ],
+                  "why": "The fire officer: around 02:00.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_fire"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_0500",
+                  "by": [
+                    "f_fire",
+                    "f_aut_lungs"
+                  ],
+                  "why": "\"The lamp fell in the night\"? The fire started around two, and he was dead before it."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "A transfer on Monday, a long call on Tuesday, a wife in a lodge on Wednesday. \"I'm coming\" at two minutes to ten, and the fire four hours later.",
+          "fail": [
+            "He breathed no smoke. He was dead long before five.",
+            "When did she text him?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_sitting"
+          }
+        ],
+        "prosecutor": {
+          "pass": "In his own sitting room, by the sofa she later set alight.",
+          "fail": [
+            "She took the paddle back to the kitchen. He died in House 4.",
+            "Sarah was in the lodge by ten to ten."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_nakiru"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her text, her paddle, her letters in her room, his blood on the grip.",
+          "fail": [
+            "Sarah lied about leaving, and then she was in the lodge drinking tea.",
+            "The watchman was at the football."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_paddle"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A broad flat wooden blade, and a cloth soaked in his own lamp's paraffin.",
+          "fail": [
+            "No soot. He breathed no smoke.",
+            "A jembe leaves a narrow edge. This was broad and flat."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_letters"
+          }
+        ],
+        "prosecutor": {
+          "pass": "\"Don't burn them.\" Three years, a transfer, and a fire for the letters.",
+          "fail": [
+            "The wallet and laptop are untouched.",
+            "Collins lost the post four years ago, and he was at the bar."
+          ]
+        }
+      },
+      {
+        "id": "g_absence",
+        "kind": "absence",
+        "blanks": [
+          {
+            "id": "missing",
+            "category": "absence",
+            "answer": "a_soot"
+          },
+          {
+            "id": "conclusion",
+            "category": "conclusion",
+            "answer": "k_before"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Clean lungs. A man breathes in a fire if he can. He couldn't.",
+          "fail": [
+            "An unburned wick tells me the fuel was poured. It doesn't tell me he was dead. Find me the lungs.",
+            "An empty tin tells me why, not when."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_sitting",
+      "from": "21:58",
+      "to": "23:30",
+      "note": "From Nakiru's text at 21:58 to the end of the post-mortem window, 23:30. The fire was set around 02:00."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_house",
+          "f_aut_lungs",
+          "f_abs_soot",
+          "f_aut_blow",
+          "f_aut_tod",
+          "f_lamp",
+          "f_fire"
+        ],
+        "concludes": "He was killed by a blow before the fire, which was set with poured paraffin.",
+        "answers": [
+          "missing",
+          "conclusion"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_tin",
+          "f_sarah_tin",
+          "f_abs_tin",
+          "f_transfer"
+        ],
+        "concludes": "He was ending an affair and going home; the letters were taken by someone who knew where they were."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_sarah_left",
+          "f_lodge",
+          "f_porter",
+          "f_sarah_saw"
+        ],
+        "concludes": "Sarah lied about leaving, but she was in the lodge from 21:50; she saw a woman working in the kitchen."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_rec_tue",
+          "f_rec_text",
+          "f_hook",
+          "f_cook2",
+          "f_abs_paddle",
+          "f_kitchen_late",
+          "f_paddle",
+          "f_blood"
+        ],
+        "concludes": "Nakiru texted \"I'm coming\" at 21:58; the kitchen paddle killed him.",
+        "answers": [
+          "when",
+          "how"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_nak_bed",
+          "f_letters",
+          "f_cloth",
+          "f_accel",
+          "f_nak_reveal",
+          "f_nak_paddle"
+        ],
+        "concludes": "Nakiru Ekai struck Ronald with the porridge paddle in the sitting room of House 4 and later set it alight, because he was ending their relationship and burning her letters.",
+        "answers": [
+          "who",
+          "why",
+          "where"
+        ]
+      },
+      {
+        "id": "s6",
+        "from": [
+          "s5",
+          "f_lok_patrol",
+          "f_bar",
+          "f_lok_bar",
+          "f_lok_reveal",
+          "f_col_lok"
+        ],
+        "concludes": "The watchman's lie was about the football; he and Collins were in the bar."
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_kitchen",
+        "blank": "where",
+        "by": [
+          "f_house",
+          "f_aut_blow"
+        ],
+        "why": "He died in House 4; she took the paddle back to the kitchen."
+      },
+      {
+        "word": "pl_lodge",
+        "blank": "where",
+        "by": [
+          "f_house"
+        ],
+        "why": "He was found where he fell."
+      },
+      {
+        "word": "pl_bar",
+        "blank": "where",
+        "by": [
+          "f_house"
+        ],
+        "why": "He never left the house."
+      },
+      {
+        "word": "pl_quarters",
+        "blank": "where",
+        "by": [
+          "f_house"
+        ],
+        "why": "Her room held the letters, not him."
+      },
+      {
+        "word": "w_sarah",
+        "blank": "who",
+        "by": [
+          "f_porter"
+        ],
+        "why": "Sarah was in the lodge from 21:50 and ordered tea at 22:05."
+      },
+      {
+        "word": "w_collins",
+        "blank": "who",
+        "by": [
+          "f_bar"
+        ],
+        "why": "Collins was in the bar 21:15–00:40."
+      },
+      {
+        "word": "w_lokaale",
+        "blank": "who",
+        "by": [
+          "f_lok_bar"
+        ],
+        "why": "Lokaale was in the bar 21:15–00:40."
+      },
+      {
+        "word": "w_pauline",
+        "blank": "who",
+        "by": [
+          "f_pauline"
+        ],
+        "why": "Pauline was at home with her husband."
+      },
+      {
+        "word": "h_lamp",
+        "blank": "how",
+        "by": [
+          "f_aut_lungs",
+          "f_lamp"
+        ],
+        "why": "No smoke in the lungs; the lamp was emptied by hand."
+      },
+      {
+        "word": "h_smoke",
+        "blank": "how",
+        "by": [
+          "f_aut_lungs"
+        ],
+        "why": "No soot."
+      },
+      {
+        "word": "h_jembe",
+        "blank": "how",
+        "by": [
+          "f_aut_blow",
+          "f_blood"
+        ],
+        "why": "The wound is broad and flat; the paddle matches."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "A blow to the head."
+      },
+      {
+        "word": "m_jealous",
+        "blank": "why",
+        "by": [
+          "f_porter"
+        ],
+        "why": "Sarah was in the lodge."
+      },
+      {
+        "word": "m_post",
+        "blank": "why",
+        "by": [
+          "f_bar"
+        ],
+        "why": "Collins was in the bar."
+      },
+      {
+        "word": "m_theft",
+        "blank": "why",
+        "by": [
+          "f_lok_reveal",
+          "f_wallet"
+        ],
+        "why": "Nothing was stolen; Lokaale's lie was about the football."
+      },
+      {
+        "word": "m_robbery",
+        "blank": "why",
+        "by": [
+          "f_wallet"
+        ],
+        "why": "Wallet and laptop untouched."
+      },
+      {
+        "word": "a_wick",
+        "blank": "missing",
+        "by": [
+          "f_abs_wick",
+          "f_lamp"
+        ],
+        "why": "An unburned wick tells me the fuel was poured. It doesn't tell me he was dead. Find me the lungs."
+      },
+      {
+        "word": "a_tin",
+        "blank": "missing",
+        "by": [
+          "f_abs_tin",
+          "f_letters"
+        ],
+        "why": "It shows why, not when."
+      },
+      {
+        "word": "a_paddle",
+        "blank": "missing",
+        "by": [
+          "f_abs_paddle",
+          "f_paddle"
+        ],
+        "why": "It shows the weapon, not when he died."
+      },
+      {
+        "word": "a_watch",
+        "blank": "missing",
+        "by": [
+          "f_abs_watch",
+          "f_lok_reveal"
+        ],
+        "why": "It explains why nobody saw the fire start."
+      },
+      {
+        "word": "k_lamp",
+        "blank": "conclusion",
+        "by": [
+          "f_aut_lungs",
+          "f_lamp"
+        ],
+        "why": "No smoke, and the fuel was poured."
+      },
+      {
+        "word": "k_burned",
+        "blank": "conclusion",
+        "by": [
+          "f_letters"
+        ],
+        "why": "The letters are in Nakiru's room."
+      },
+      {
+        "word": "k_watch",
+        "blank": "conclusion",
+        "by": [
+          "f_lok_bar"
+        ],
+        "why": "He was at the football."
+      },
+      {
+        "word": "k_wife",
+        "blank": "conclusion",
+        "by": [
+          "f_letters"
+        ],
+        "why": "The letters are in Nakiru's room."
+      },
+      {
+        "word": "k_midnight",
+        "blank": "conclusion",
+        "by": [
+          "f_aut_tod"
+        ],
+        "why": "He died by 23:30."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "For three years Ronald and Nakiru are together in secret; he says he will marry her when his posting ends. On Monday he accepts a transfer home to Bungoma. On Tuesday he tells her it's over.",
+        "image": null
+      },
+      {
+        "text": "On Wednesday Sarah, who found Nakiru's letters at home in April, arrives unannounced, quarrels with him in the staffroom, says she is leaving, and takes a room at the lodge.",
+        "image": null
+      },
+      {
+        "text": "Thursday night, a power cut. Nakiru is in the kitchen preparing the porridge. At 21:58 she texts: \"I'm coming. Don't burn them.\" She walks the kitchen path to House 4 with the long paddle.",
+        "image": null
+      },
+      {
+        "text": "He holds up the letters and says they're going in the fire. She strikes him with the paddle. She takes the letters from the tin under his bed and goes back to the kitchen.",
+        "image": "plc_sitting"
+      },
+      {
+        "text": "Around 02:00, with the compound asleep and the watchman at the football, she returns, pours his lamp's paraffin over the sofa beside him, and sets it alight. The paddle goes into the stove.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Two stamps: records on Ronald's line and a warrant on Nakiru's quarters. The paddle's blood trace (12 h + 4) can go before detention; the accelerant (12 h + 4) goes after the search. Both come back inside 24 h.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_house",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_house",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_lamp",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_tin",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_bedroom",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_sarah"
+      },
+      {
+        "do": "interview",
+        "target": "p_lokaale"
+      },
+      {
+        "do": "travel",
+        "target": "loc_office",
+        "hours": 0.1,
+        "from": "loc_house"
+      },
+      {
+        "do": "visit",
+        "target": "loc_office",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_transfer",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_pauline"
+      },
+      {
+        "do": "interview",
+        "target": "p_collins"
+      },
+      {
+        "do": "travel",
+        "target": "loc_kitchen",
+        "hours": 0.1,
+        "from": "loc_office"
+      },
+      {
+        "do": "visit",
+        "target": "loc_kitchen",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_paddle_gone",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_cook2",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_nakiru"
+      },
+      {
+        "do": "read",
+        "target": "ev_paddle",
+        "hours": 0
+      },
+      {
+        "do": "submit",
+        "target": "ev_blood"
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "travel",
+        "target": "loc_office",
+        "hours": 0.1,
+        "from": "loc_kitchen"
+      },
+      {
+        "do": "travel",
+        "target": "loc_lodge",
+        "hours": 0.25,
+        "from": "loc_office"
+      },
+      {
+        "do": "visit",
+        "target": "loc_lodge",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_lodge",
+        "hours": 0
+      },
+      {
+        "do": "press",
+        "target": "c_sarah"
+      },
+      {
+        "do": "travel",
+        "target": "loc_bar",
+        "hours": 0.1,
+        "from": "loc_lodge"
+      },
+      {
+        "do": "visit",
+        "target": "loc_bar",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_bar",
+        "hours": 0
+      },
+      {
+        "do": "press",
+        "target": "c_lok"
+      },
+      {
+        "do": "travel",
+        "target": "loc_office",
+        "hours": 0.25,
+        "from": "loc_bar"
+      },
+      {
+        "do": "travel",
+        "target": "loc_kitchen",
+        "hours": 0.1,
+        "from": "loc_office"
+      },
+      {
+        "do": "visit",
+        "target": "loc_kitchen",
+        "hours": 1
+      },
+      {
+        "do": "search",
+        "target": "loc_nakiru"
+      },
+      {
+        "do": "press",
+        "target": "c_nak"
+      },
+      {
+        "do": "detain",
+        "target": "p_nakiru"
+      },
+      {
+        "do": "submit",
+        "target": "ev_accel"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 16
+      },
+      {
+        "do": "press",
+        "target": "c_nak_paddle"
+      }
+    ],
+    "totalHours": 42
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_records",
+        "line": "His phone melted, Amani. The network didn't."
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_text",
+          "f_fire"
+        ],
+        "line": "\"I'm coming\" at 21:58. The fire around two."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_house",
+        "line": "Where was he lying?"
+      },
+      "tier2": {
+        "facts": [
+          "f_house"
+        ],
+        "line": "By the sofa in his own sitting room."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_paddle_gone",
+        "line": "Count the paddles in the kitchen."
+      },
+      "tier2": {
+        "facts": [
+          "f_kitchen_late",
+          "f_blood",
+          "f_letters"
+        ],
+        "line": "The only kitchen key, his blood on the grip, her letters in her room."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Dr. Chebii says broad and flat, and wooden."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_blow",
+          "f_paddle"
+        ],
+        "line": "A porridge paddle in the stove ash."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_tin",
+        "line": "What did he keep under the bed?"
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_text",
+          "f_transfer"
+        ],
+        "line": "\"Don't burn them.\" And a transfer home."
+      }
+    },
+    "g_absence": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "What should a living man's lungs show after a fire?"
+      },
+      "tier2": {
+        "facts": [
+          "f_abs_soot",
+          "f_aut_lungs"
+        ],
+        "line": "No soot. No carbon monoxide. He wasn't breathing."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "mwiko",
+      "def": "A wooden cooking paddle."
+    },
+    {
+      "term": "uji",
+      "def": "Porridge."
+    },
+    {
+      "term": "taa ya mafuta",
+      "def": "A paraffin lamp."
+    },
+    {
+      "term": "uhamisho",
+      "def": "A transfer (of posting)."
+    },
+    {
+      "term": "barua",
+      "def": "Letters."
+    },
+    {
+      "term": "jembe",
+      "def": "A hoe."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address an older woman."
+    },
+    {
+      "term": "rungu",
+      "def": "A wooden club carried by watchmen and herders."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "refutedAbsence"
+    ],
+    "beatNotes": "Refuted absences. The ABSENCE group's wrong pairing \"the lamp's wick never burned → he was dead before the fire\" gets a specific refusal from Halima: \"An unburned wick tells me the fuel was poured. It doesn't tell me he was dead. Find me the lungs.\" The game starts distinguishing what an absence proves from what it only suggests."
+  }
+}

@@ -1,0 +1,2620 @@
+{
+  "meta": {
+    "id": "case-062",
+    "number": 62,
+    "region": "mt-kenya",
+    "regionNumber": 7,
+    "title": "The Codicil",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 36,
+    "date": "Monday 13 April",
+    "folderTab": "OTHAYA"
+  },
+  "pattern": {
+    "crimePattern": "a former court clerk forges a codicil in her husband's favour and kills the elderly testator with a lit charcoal stove in a sealed bedroom, to look like an accident",
+    "noRealCaseRetold": true,
+    "notes": "Fictional family, advocates and registry. Jiko deaths in closed rooms are a known highland tragedy; the case never shows the death, only the room. Forgery flaws only, never method.",
+    "tags": [
+      "carbon-monoxide",
+      "staged-accident",
+      "inheritance",
+      "document-fraud",
+      "three-liars",
+      "lawyered",
+      "records",
+      "warrant",
+      "forensics",
+      "when-strip",
+      "where",
+      "forgery"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 5,
+    "redHerrings": 2,
+    "liars": 3,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "forgery"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records",
+      "warrant"
+    ],
+    "twist": "the-forged-will-is-genuine"
+  },
+  "ob": {
+    "number": "OB 14/13/04",
+    "date": "Monday 13 April",
+    "time": "07:35",
+    "reportedBy": "Farm worker, Othaya",
+    "text": "A farm worker, back from his day off, reports an elderly widow, Wambui Githinji (74), found dead in her bedroom on her tea farm near Othaya. A burned-out charcoal stove was in the room, the door and window shut. Suspected carbon-monoxide accident.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_farm",
+    "nodes": [
+      "loc_farm",
+      "loc_gakii",
+      "loc_registry",
+      "loc_ndinda"
+    ],
+    "edges": [
+      {
+        "a": "loc_farm",
+        "b": "loc_registry",
+        "minutes": 20,
+        "by": "road"
+      },
+      {
+        "a": "loc_farm",
+        "b": "loc_gakii",
+        "minutes": 60,
+        "by": "road"
+      },
+      {
+        "a": "loc_registry",
+        "b": "loc_gakii",
+        "minutes": 50,
+        "by": "road"
+      },
+      {
+        "a": "loc_farm",
+        "b": "loc_ndinda",
+        "minutes": 50,
+        "by": "road"
+      },
+      {
+        "a": "loc_gakii",
+        "b": "loc_ndinda",
+        "minutes": 40,
+        "by": "road"
+      },
+      {
+        "a": "loc_registry",
+        "b": "loc_ndinda",
+        "minutes": 60,
+        "by": "road"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_wambui",
+      "role": "victim",
+      "name": "Wambui Githinji",
+      "age": 74,
+      "occupation": "Widow; six acres of tea near Othaya",
+      "bio": "Picked tea on these terraces for fifty years. Cooked in the kitchen hut, always, and slept with her window open a crack.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_bedroom",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, mid 70s, a headscarf and a thick cardigan, a lined face with bright, sharp eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_ndinda",
+      "role": "suspect",
+      "name": "Ndinda Musembi",
+      "age": 52,
+      "occupation": "Wife of Wambui's nephew Thuo; former court clerk",
+      "bio": "Twenty years a clerk at the Nyeri law courts. Brings Wambui porridge on Saturdays.",
+      "community": "Kamba",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_porridge"
+      },
+      "at": "loc_ndinda",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kamba woman, early 50s, a neat church dress and a cardigan, reading glasses on a cord, a gentle, attentive face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_thuo",
+      "role": "suspect",
+      "name": "Thuo Githinji",
+      "age": 55,
+      "occupation": "Wambui's nephew",
+      "bio": "Lodged a \"codicil\" with the family's advocate on Monday afternoon, through his own advocate.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_codicil"
+      },
+      "at": "loc_ndinda",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, mid 50s, a brown suit too warm for the day, a nervous, heavy face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_waweru",
+      "role": "suspect",
+      "name": "Waweru Githinji",
+      "age": 50,
+      "occupation": "Wambui's eldest son",
+      "redHerring": true,
+      "bio": "Tells anyone who will listen that his mother's will is forged.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_will"
+      },
+      "at": "plc_wawhome",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, about 50, a leather jacket, a loud red face, a finger raised mid-argument, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_muthoni",
+      "role": "suspect",
+      "name": "Muthoni Githinji",
+      "age": 46,
+      "occupation": "Wambui's daughter; a nurse",
+      "redHerring": true,
+      "bio": "Nursed her mother through last year's illness. The main beneficiary of the will.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_will"
+      },
+      "at": "plc_hospital",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, mid 40s, a nurse's blue uniform under a coat, tired, grieving eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kiragu",
+      "role": "witness",
+      "name": "Kiragu Mutahi",
+      "age": 60,
+      "occupation": "Farm worker for thirty years",
+      "bio": "Sleeps in the workers' house 200 m down the slope. Took his Sunday off at his village.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_workers",
+      "image": null
+    },
+    {
+      "id": "p_gakii",
+      "role": "witness",
+      "name": "Advocate Philomena Gakii",
+      "age": 49,
+      "occupation": "Wambui's advocate, Nyeri",
+      "bio": "Wrote Wambui's will in February.",
+      "community": "Meru",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_gakii",
+      "image": null
+    },
+    {
+      "id": "p_wanjiku",
+      "role": "witness",
+      "name": "Mama Wanjiku",
+      "age": 68,
+      "occupation": "Neighbour across the tea rows",
+      "statementOnly": true,
+      "bio": "Her kitchen window looks at Wambui's gate.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_farm",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_bedroom",
+      "name": "Wambui's bedroom",
+      "within": "loc_farm"
+    },
+    {
+      "id": "plc_kitchen",
+      "name": "The kitchen hut",
+      "within": "loc_farm"
+    },
+    {
+      "id": "plc_terraces",
+      "name": "The tea terraces"
+    },
+    {
+      "id": "plc_workers",
+      "name": "The workers' house"
+    },
+    {
+      "id": "plc_road",
+      "name": "The Othaya road"
+    },
+    {
+      "id": "plc_wawhome",
+      "name": "Waweru's house, Othaya town"
+    },
+    {
+      "id": "plc_hospital",
+      "name": "Nyeri hospital"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_farm",
+      "name": "Wambui's farm",
+      "kind": "scene",
+      "description": "A stone farmhouse among steep green rows of tea on red terraces. A kitchen hut across the yard, its door propped open. Mist sits on the ridge.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The bedroom",
+          "pos": [
+            44,
+            48
+          ],
+          "yields": "ev_body",
+          "text": "Wambui lies in her bed. A burned-out jiko stands by the bed."
+        },
+        {
+          "id": "hs_jiko",
+          "label": "The jiko",
+          "pos": [
+            52,
+            62
+          ],
+          "yields": "ev_jiko",
+          "text": "A charcoal jiko, cold. One leg is held on with twisted wire."
+        },
+        {
+          "id": "hs_window",
+          "label": "Window",
+          "pos": [
+            30,
+            34
+          ],
+          "yields": "ev_window",
+          "text": "The window, latched, a cloth stuffed in its gap."
+        },
+        {
+          "id": "hs_bible",
+          "label": "Bedside table",
+          "pos": [
+            60,
+            44
+          ],
+          "yields": "ev_bible",
+          "text": "Her Bible, a ribbon bookmark."
+        },
+        {
+          "id": "hs_tin",
+          "label": "Tin box",
+          "pos": [
+            70,
+            54
+          ],
+          "yields": "ev_tin",
+          "text": "A tin box of papers under the bed."
+        },
+        {
+          "id": "hs_kitchen",
+          "label": "Kitchen hut",
+          "pos": [
+            86,
+            60
+          ],
+          "yields": "ev_hut",
+          "text": "The kitchen hut: two jikos, a pot of porridge, cold."
+        },
+        {
+          "id": "hs_neighbour",
+          "label": "Neighbour at the fence",
+          "pos": [
+            14,
+            70
+          ],
+          "yields": "ev_neighbour",
+          "text": "Mama Wanjiku has come to the fence, her hands in her apron."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a stone farmhouse among steep tea terraces near Othaya in morning mist, a kitchen hut across a red-earth yard, a window shut tight, no people in focus"
+      }
+    },
+    {
+      "id": "loc_gakii",
+      "name": "Advocate Gakii's office, Nyeri",
+      "kind": "location",
+      "description": "A first-floor office above a bank in Nyeri, files tied with pink tape.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_will",
+          "label": "The will",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_will",
+          "text": "Wambui's will, from the strongroom."
+        },
+        {
+          "id": "hs_codicil",
+          "label": "The codicil",
+          "pos": [
+            60,
+            46
+          ],
+          "yields": "ev_codicil",
+          "text": "\"Advocate Muchiri's clerk brought this at two, for the file.\""
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "an advocate's office in Nyeri town, files tied with pink tape on shelves, a desk with a will laid open"
+      }
+    },
+    {
+      "id": "loc_registry",
+      "name": "Othaya sub-county registry",
+      "kind": "location",
+      "description": "The civil registration office in Othaya: births and deaths, bound by year.",
+      "unlock": {
+        "fact": "f_codicil"
+      },
+      "hotspots": [
+        {
+          "id": "hs_deaths",
+          "label": "Death register",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_death_reg",
+          "text": "The 2024 death register."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a small Kenyan civil registry office, bound ledgers of births and deaths on shelves, a wooden counter"
+      }
+    },
+    {
+      "id": "loc_ndinda",
+      "name": "Thuo and Ndinda's house, Karatina",
+      "kind": "location",
+      "description": "A tidy house with a kitchen of three matching charcoal jikos. Or two.",
+      "unlock": {
+        "fact": "f_rec_nd"
+      },
+      "hotspots": [
+        {
+          "id": "hs_ndkitchen",
+          "label": "Kitchen",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_ndinda_home",
+          "text": "The kitchen shelf where the jikos stand."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a tidy Kenyan kitchen with charcoal stoves on a shelf, a gap where one is missing, papers on a table"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The bedroom",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Wambui lay in bed, covered. No injuries. A burned-out jiko by the bed; door and window shut."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a small stone bedroom with a neatly made iron bed, a burned-out charcoal stove beside it, a closed window with a cloth in its gap, no body visible"
+      }
+    },
+    {
+      "id": "ev_jiko",
+      "type": "physical",
+      "title": "The jiko in the bedroom",
+      "render": "object",
+      "body": {
+        "label": "Burned out. One leg repaired with twisted wire."
+      },
+      "facts": [
+        "f_jiko"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_window",
+      "type": "physical",
+      "title": "The bedroom window",
+      "render": "object",
+      "body": {
+        "label": "Latched from inside; a cloth stuffed into the gap."
+      },
+      "facts": [
+        "f_window"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_bible",
+      "type": "document",
+      "title": "Wambui's Bible",
+      "render": "object",
+      "body": {
+        "label": "A ribbon bookmark at the Psalms. No fold marks in any page."
+      },
+      "facts": [
+        "f_bible"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "bookmark"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tin",
+      "type": "document",
+      "title": "Tin box of papers",
+      "render": "form",
+      "body": {
+        "shares": "Tea-factory share certificate in Wambui's name, numbered and signed by the factory.",
+        "title": "Title for the six acres: Wambui Githinji, registered 1987."
+      },
+      "facts": [
+        "f_shares",
+        "f_title"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "share certificate"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_hut",
+      "type": "physical",
+      "title": "The kitchen hut",
+      "render": "sceneNote",
+      "body": {
+        "note": "Her two jikos both stand in the hut, neither with a wired leg. A pot of porridge, half eaten."
+      },
+      "facts": [
+        "f_hut"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_neighbour",
+      "type": "witness",
+      "title": "Statement: Mama Wanjiku",
+      "render": "statement",
+      "body": {
+        "speaker": "p_wanjiku"
+      },
+      "facts": [
+        "f_car_leaves",
+        "f_waw_sunday"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kiragu",
+      "type": "witness",
+      "title": "Statement: Kiragu Mutahi",
+      "render": "statement",
+      "body": {
+        "speaker": "p_kiragu"
+      },
+      "facts": [
+        "f_kiragu_never",
+        "f_kiragu_self",
+        "f_wages"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_will",
+      "type": "document",
+      "title": "Wambui's will, February",
+      "render": "form",
+      "body": {
+        "text": "Land in four equal shares. The house and the tea-factory shares to Muthoni, \"who nursed me\". Signed before Advocate Gakii; two office witnesses."
+      },
+      "facts": [
+        "f_will"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "will"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_gakii",
+      "type": "witness",
+      "title": "Statement: Advocate Gakii",
+      "render": "statement",
+      "body": {
+        "speaker": "p_gakii"
+      },
+      "facts": [
+        "f_gakii",
+        "f_clerk"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_codicil",
+      "type": "document",
+      "title": "The \"codicil\"",
+      "render": "form",
+      "body": {
+        "text": "\"Codicil\", dated 3 March: the tea-factory shares to Thuo Githinji. Typed. Witnesses: \"Samuel Kiruthi\" and \"Lucy Wangeci\"."
+      },
+      "facts": [
+        "f_codicil"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": false,
+        "forger": "p_ndinda",
+        "kind": "codicil"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a typed one-page codicil with a signature at the foot and two witness names, folded in four"
+      }
+    },
+    {
+      "id": "ev_death_reg",
+      "type": "document",
+      "title": "Death register, 2024",
+      "render": "logBook",
+      "body": {
+        "entry": "Samuel Kiruthi, died 9 February 2024, Othaya."
+      },
+      "facts": [
+        "f_death_reg"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "death register"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_muthoni",
+      "type": "document",
+      "title": "Hospital duty roster",
+      "render": "form",
+      "body": {
+        "text": "M. Githinji, night shift, Saturday 19:00 to Sunday 07:00, signed in and out.",
+        "saw": "Ndinda's car at the gate as she left at 18:30."
+      },
+      "facts": [
+        "f_muthoni",
+        "f_porridge"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_waw_wife",
+      "type": "witness",
+      "title": "Statement: Waweru's wife",
+      "render": "statement",
+      "body": {
+        "speaker": "p_waweru"
+      },
+      "facts": [
+        "f_waw_home"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_thuo_alibi",
+      "type": "witness",
+      "title": "Statement: Thuo's neighbour",
+      "render": "statement",
+      "body": {
+        "speaker": "p_thuo"
+      },
+      "facts": [
+        "f_thuo_alibi"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Ndinda Musembi's line",
+      "render": "manifest",
+      "body": {
+        "masts": "Othaya farms zone, Saturday 18:20–23:05."
+      },
+      "facts": [
+        "f_rec_nd"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_porridge",
+          "f_car_leaves"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_ndinda_home",
+      "type": "physical",
+      "title": "Ndinda's kitchen",
+      "render": "object",
+      "body": {
+        "jikos": "Two jikos of a set of three; both legs repaired with the same twisted wire.",
+        "sheet": "In a drawer: a sheet with Wambui's signature written over and over in pencil."
+      },
+      "facts": [
+        "f_jiko_match",
+        "f_practice"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_rec_nd",
+          "f_jiko"
+        ]
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "two charcoal stoves on a kitchen shelf, their legs bound with twisted wire, beside an empty space"
+      }
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_co",
+        "f_aut_tod",
+        "f_aut_noinj",
+        "f_aut_tox"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_compare",
+      "type": "forensic",
+      "title": "Comparison view: codicil vs will",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_tracing",
+        "f_cmp_nostamp"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_codicil",
+          "ev_will"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_docexam",
+      "type": "forensic",
+      "title": "Questioned Documents Lab: the codicil",
+      "render": "labReport",
+      "body": {
+        "test": "document"
+      },
+      "facts": [
+        "f_docexam"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "document",
+        "hours": 10,
+        "needs": [
+          "ev_codicil",
+          "ev_will"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_hand",
+      "type": "forensic",
+      "title": "Questioned Documents Lab: handwriting",
+      "render": "labReport",
+      "body": {
+        "test": "handwriting"
+      },
+      "facts": [
+        "f_handwriting"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "handwriting",
+        "hours": 10,
+        "needs": [
+          "ev_codicil",
+          "ev_ndinda_home"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Wambui Githinji was found dead in her bedroom on Monday morning, a burned-out charcoal stove in the room, door and window shut.",
+      "kind": "true",
+      "about": [
+        "p_wambui",
+        "loc_farm"
+      ],
+      "at": {
+        "from": "07:20"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "She lay in bed, covered, with no injuries; a burned-out jiko by the bed.",
+      "kind": "true",
+      "about": [
+        "p_wambui",
+        "plc_bedroom"
+      ]
+    },
+    {
+      "id": "f_jiko",
+      "text": "The jiko in the bedroom has one leg repaired with twisted wire.",
+      "kind": "true",
+      "about": [
+        "plc_bedroom"
+      ]
+    },
+    {
+      "id": "f_window",
+      "text": "The bedroom window is latched from inside, its gap stuffed with a cloth.",
+      "kind": "true",
+      "about": [
+        "plc_bedroom"
+      ]
+    },
+    {
+      "id": "f_bible",
+      "text": "Wambui's Bible: a ribbon bookmark at the Psalms, and no fold marks anywhere. The codicil is folded in four.",
+      "kind": "true",
+      "about": [
+        "p_wambui"
+      ]
+    },
+    {
+      "id": "f_shares",
+      "text": "Tea-factory share certificate: Wambui Githinji, numbered and signed by the factory.",
+      "kind": "true",
+      "about": [
+        "p_wambui"
+      ]
+    },
+    {
+      "id": "f_title",
+      "text": "Title for the six acres: Wambui Githinji, registered in 1987.",
+      "kind": "true",
+      "about": [
+        "p_wambui"
+      ]
+    },
+    {
+      "id": "f_hut",
+      "text": "Kitchen hut: her two jikos both stand there, neither with a wired leg. A pot of porridge, half eaten.",
+      "kind": "true",
+      "about": [
+        "plc_kitchen"
+      ]
+    },
+    {
+      "id": "f_car_leaves",
+      "text": "Mama Wanjiku: Ndinda's car stood at Wambui's gate on Saturday evening; she heard it leave at about 23:00.",
+      "kind": "true",
+      "about": [
+        "p_wanjiku",
+        "p_ndinda"
+      ],
+      "at": {
+        "from": "23:00"
+      }
+    },
+    {
+      "id": "f_waw_sunday",
+      "text": "Mama Wanjiku: Waweru came on Sunday afternoon, about three, shouted at the closed door about the will, and drove off.",
+      "kind": "true",
+      "about": [
+        "p_wanjiku",
+        "p_waweru"
+      ],
+      "at": {
+        "from": "15:00",
+        "to": null,
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_kiragu_never",
+      "text": "Kiragu: \"Mama never let a jiko into the house. Never. Her sister died that way in 1990. She cooked in the hut and carried hot water in.\"",
+      "kind": "true",
+      "about": [
+        "p_kiragu",
+        "p_wambui"
+      ]
+    },
+    {
+      "id": "f_kiragu_self",
+      "text": "Kiragu was in the workers' house playing draughts with two other workers until midnight on Saturday.",
+      "kind": "true",
+      "about": [
+        "p_kiragu"
+      ],
+      "where": {
+        "person": "p_kiragu",
+        "place": "plc_workers",
+        "from": "19:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_wages",
+      "text": "Kiragu: Mama paid the workers every Friday. She paid on Friday; he has the note.",
+      "kind": "true",
+      "about": [
+        "p_kiragu"
+      ]
+    },
+    {
+      "id": "f_will",
+      "text": "Wambui's will, February: land in four equal shares; the house and tea-factory shares to Muthoni \"who nursed me\".",
+      "kind": "true",
+      "about": [
+        "p_wambui",
+        "p_muthoni",
+        "p_waweru"
+      ]
+    },
+    {
+      "id": "f_gakii",
+      "text": "Advocate Gakii: \"She signed in front of me. Waweru can shout as much as he likes; that will is hers.\"",
+      "kind": "true",
+      "about": [
+        "p_gakii",
+        "p_waweru"
+      ]
+    },
+    {
+      "id": "f_clerk",
+      "text": "Advocate Gakii: Ndinda worked twenty years as a clerk at the Nyeri law courts. \"She knows what papers look like.\"",
+      "kind": "true",
+      "about": [
+        "p_gakii",
+        "p_ndinda"
+      ]
+    },
+    {
+      "id": "f_codicil",
+      "text": "\"Codicil\", dated 3 March, typed: the tea-factory shares to Thuo Githinji. Witnesses \"Samuel Kiruthi\" and \"Lucy Wangeci\". Lodged by Thuo's advocate on Monday afternoon.",
+      "kind": "true",
+      "about": [
+        "p_thuo"
+      ]
+    },
+    {
+      "id": "f_death_reg",
+      "text": "Othaya death register: Samuel Kiruthi died on 9 February 2024, two years before the codicil's date.",
+      "kind": "true",
+      "about": [
+        "loc_registry"
+      ]
+    },
+    {
+      "id": "f_muthoni",
+      "text": "Hospital roster: Muthoni on night shift from Saturday 19:00 to Sunday 07:00, signed in and out.",
+      "kind": "true",
+      "about": [
+        "p_muthoni"
+      ],
+      "where": {
+        "person": "p_muthoni",
+        "place": "plc_hospital",
+        "from": "19:00",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_porridge",
+      "text": "Muthoni: Ndinda's car was at the gate when she left for her shift at 18:30; Ndinda had brought porridge, and the two of them were laughing over it.",
+      "kind": "true",
+      "about": [
+        "p_muthoni",
+        "p_ndinda"
+      ],
+      "at": {
+        "from": "18:30"
+      }
+    },
+    {
+      "id": "f_waw_home",
+      "text": "Waweru's wife: he was home in Othaya town from 19:00 on Saturday and didn't go out.",
+      "kind": "true",
+      "about": [
+        "p_waweru"
+      ],
+      "where": {
+        "person": "p_waweru",
+        "place": "plc_wawhome",
+        "from": "19:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_thuo_alibi",
+      "text": "Thuo's neighbour: he watched the football at Thuo's house in Karatina from 20:30 to 23:30 on Saturday; Ndinda was out.",
+      "kind": "true",
+      "about": [
+        "p_thuo"
+      ],
+      "where": {
+        "person": "p_thuo",
+        "place": "loc_ndinda",
+        "from": "20:30",
+        "to": "23:30"
+      }
+    },
+    {
+      "id": "f_rec_nd",
+      "text": "Records, Ndinda's line: Othaya farms zone, Saturday 18:20–23:05.",
+      "kind": "true",
+      "about": [
+        "p_ndinda"
+      ],
+      "at": {
+        "from": "18:20",
+        "to": "23:05"
+      }
+    },
+    {
+      "id": "f_jiko_match",
+      "text": "Ndinda's kitchen: two jikos of a set of three, their legs repaired with the same twisted wire as the jiko in Wambui's bedroom.",
+      "kind": "true",
+      "about": [
+        "p_ndinda"
+      ]
+    },
+    {
+      "id": "f_practice",
+      "text": "In Ndinda's drawer: a sheet with Wambui's signature written over and over in pencil.",
+      "kind": "true",
+      "about": [
+        "p_ndinda"
+      ]
+    },
+    {
+      "id": "f_aut_co",
+      "text": "Autopsy: carbon-monoxide poisoning.",
+      "kind": "true",
+      "about": [
+        "p_wambui"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 01:00 and 04:00 on Sunday.",
+      "kind": "true",
+      "about": [
+        "p_wambui"
+      ],
+      "at": {
+        "from": "01:00",
+        "to": "04:00",
+        "day": "Sun"
+      }
+    },
+    {
+      "id": "f_aut_noinj",
+      "text": "Autopsy: no injuries, no signs of smothering, a sound heart.",
+      "kind": "true",
+      "about": [
+        "p_wambui"
+      ]
+    },
+    {
+      "id": "f_aut_tox",
+      "text": "Autopsy: no poison or drug in her blood or stomach.",
+      "kind": "true",
+      "about": [
+        "p_wambui"
+      ]
+    },
+    {
+      "id": "f_tracing",
+      "text": "Under the raking light: the codicil's signature has a faint pencil line beneath the ink, traced over. It is ink, not a photocopy.",
+      "kind": "true",
+      "about": [
+        "p_ndinda"
+      ]
+    },
+    {
+      "id": "f_cmp_nostamp",
+      "text": "The codicil carries no stamp of any kind: no advocate's stamp, no printed seal.",
+      "kind": "true",
+      "about": [
+        "p_thuo"
+      ]
+    },
+    {
+      "id": "f_docexam",
+      "text": "Wilfrida Ayugi: forged. The signature is traced from the February will; the codicil is typed on a printer, while Wambui wrote her own papers by hand.",
+      "kind": "true",
+      "about": [
+        "p_ndinda"
+      ]
+    },
+    {
+      "id": "f_handwriting",
+      "text": "Wilfrida Ayugi: the pencil practice sheet and the codicil signature. \"The same hand practised it.\"",
+      "kind": "true",
+      "about": [
+        "p_ndinda"
+      ]
+    },
+    {
+      "id": "f_nd_left8",
+      "text": "Ndinda: \"I left Mama's house at eight on Saturday and drove home.\"",
+      "kind": "lie",
+      "about": [
+        "p_ndinda"
+      ]
+    },
+    {
+      "id": "f_nd_bible",
+      "text": "Ndinda: \"Thuo found the codicil in her Bible.\"",
+      "kind": "lie",
+      "about": [
+        "p_ndinda"
+      ]
+    },
+    {
+      "id": "f_nd_reveal",
+      "text": "Ndinda: she stayed to help Wambui to bed, at about half past ten, and left when she slept.",
+      "kind": "true",
+      "about": [
+        "p_ndinda",
+        "p_wambui"
+      ],
+      "where": {
+        "person": "p_ndinda",
+        "place": "plc_bedroom",
+        "from": "22:15",
+        "to": "22:45"
+      }
+    },
+    {
+      "id": "f_nd_lit",
+      "text": "Ndinda: \"I lit nothing. I carried nothing into that room.\"",
+      "kind": "lie",
+      "about": [
+        "p_ndinda"
+      ]
+    },
+    {
+      "id": "f_nd_wrote",
+      "text": "Ndinda: \"I have never written that woman's name in my life.\"",
+      "kind": "lie",
+      "about": [
+        "p_ndinda"
+      ]
+    },
+    {
+      "id": "f_thuo_found",
+      "text": "Thuo: \"I found the codicil in Mama's Bible on Monday.\"",
+      "kind": "lie",
+      "about": [
+        "p_thuo"
+      ]
+    },
+    {
+      "id": "f_thuo_reveal",
+      "text": "Thuo: Ndinda \"found\" it and gave it to him, and told him to say he found it. He didn't ask.",
+      "kind": "true",
+      "about": [
+        "p_thuo",
+        "p_ndinda"
+      ]
+    },
+    {
+      "id": "f_waw_forged",
+      "text": "Waweru: \"That will is forged.\"",
+      "kind": "claim",
+      "about": [
+        "p_waweru"
+      ]
+    },
+    {
+      "id": "f_waw_easter",
+      "text": "Waweru: \"I haven't been to Mother's house since Easter.\"",
+      "kind": "lie",
+      "about": [
+        "p_waweru"
+      ]
+    },
+    {
+      "id": "f_waw_reveal",
+      "text": "Waweru: he went on Sunday afternoon to shout at her about the will and shouted at a closed door. \"She'd been dead since the morning. I didn't know.\"",
+      "kind": "true",
+      "about": [
+        "p_waweru"
+      ]
+    },
+    {
+      "id": "f_muthoni_claim",
+      "text": "Muthoni: \"I was on night shift.\"",
+      "kind": "claim",
+      "about": [
+        "p_muthoni"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_ndinda",
+      "stance": "cooperative",
+      "intro": "Ndinda pours tea before you ask. \"I left Mama's house at eight on Saturday and drove home. And Thuo found the codicil in her Bible, God rest her.\"",
+      "claims": [
+        "f_nd_left8",
+        "f_nd_bible"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_nd_lit",
+          "after": "f_nd_reveal"
+        },
+        {
+          "claim": "f_nd_wrote",
+          "after": "f_practice"
+        }
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_will",
+          "reply": "\"Muthoni nursed her. Nobody denies that. But Thuo was like a son.\"",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_thuo",
+      "stance": "lawyered",
+      "lawyered": {
+        "advocate": "Advocate Benjamin Muchiri",
+        "reopenedBy": [
+          "f_death_reg"
+        ],
+        "line": "On my advocate's advice, no comment."
+      },
+      "intro": "Thuo sits beside Advocate Muchiri with his hands flat on his knees. \"On my advocate's advice, no comment.\"",
+      "claims": [
+        "f_thuo_found"
+      ],
+      "yields": [
+        "ev_thuo_alibi"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_waweru",
+      "stance": "cooperative",
+      "intro": "Waweru stands in the yard with his arms folded. \"That will is forged. And I haven't been to Mother's house since Easter.\"",
+      "claims": [
+        "f_waw_forged",
+        "f_waw_easter"
+      ],
+      "yields": [
+        "ev_waw_wife"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_muthoni",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_will"
+      ],
+      "intro": "Muthoni sits on the step of the kitchen hut in her coat. \"I was on night shift.\"",
+      "claims": [
+        "f_muthoni_claim"
+      ],
+      "yields": [
+        "ev_muthoni"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_kiragu",
+      "stance": "cooperative",
+      "intro": "Kiragu holds his hat in both hands. \"Mama never let a jiko into the house. Never.\"",
+      "claims": [],
+      "yields": [
+        "ev_kiragu"
+      ],
+      "topics": []
+    },
+    {
+      "person": "p_gakii",
+      "stance": "cooperative",
+      "intro": "Advocate Gakii unties the pink tape on Wambui's file.",
+      "claims": [],
+      "yields": [
+        "ev_gakii"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_nd_left",
+      "claim": "f_nd_left8",
+      "brokenBy": [
+        "f_car_leaves",
+        "f_rec_nd"
+      ],
+      "reveals": [
+        "f_nd_reveal"
+      ],
+      "reaction": "She sets the teapot down carefully. \"I stayed to help her to bed. I lit nothing. I left when she slept.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_nd_bible",
+      "claim": "f_nd_bible",
+      "brokenBy": [
+        "f_bible",
+        "f_death_reg"
+      ],
+      "reveals": [],
+      "reaction": "Ndinda looks at the death register entry and says nothing for the first time.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_thuo",
+      "claim": "f_thuo_found",
+      "brokenBy": [
+        "f_bible",
+        "f_nd_reveal"
+      ],
+      "reveals": [
+        "f_thuo_reveal"
+      ],
+      "reaction": "\"Ndinda found it. She gave it to me and told me to say I found it. I didn't ask.\" Advocate Muchiri, to Amani: \"He's telling you the truth now. Don't waste it.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_waw",
+      "claim": "f_waw_easter",
+      "brokenBy": [
+        "f_waw_sunday"
+      ],
+      "reveals": [
+        "f_waw_reveal"
+      ],
+      "reaction": "The shouting goes out of him. \"I went on Sunday to shout at her about the will. She'd been dead since the morning. I didn't know. I shouted at a closed door and left.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_nd_lit",
+      "claim": "f_nd_lit",
+      "brokenBy": [
+        "f_jiko_match",
+        "f_kiragu_never"
+      ],
+      "reveals": [],
+      "reaction": "Ndinda looks at the two wired jikos from her own kitchen, photographed side by side with the third.",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_nd_wrote",
+      "claim": "f_nd_wrote",
+      "brokenBy": [
+        "f_handwriting",
+        "f_practice"
+      ],
+      "reveals": [],
+      "reaction": "\"I was a clerk for twenty years,\" she says. \"I know how a signature should look.\" Then she asks for a lawyer.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_ndinda",
+      "text": "Ndinda Musembi",
+      "category": "person",
+      "ref": "p_ndinda",
+      "unlock": {
+        "anyOf": [
+          "f_porridge"
+        ]
+      }
+    },
+    {
+      "id": "w_thuo",
+      "text": "Thuo Githinji",
+      "category": "person",
+      "ref": "p_thuo",
+      "unlock": {
+        "anyOf": [
+          "f_codicil"
+        ]
+      }
+    },
+    {
+      "id": "w_waweru",
+      "text": "Waweru Githinji",
+      "category": "person",
+      "ref": "p_waweru",
+      "unlock": {
+        "anyOf": [
+          "f_will"
+        ]
+      }
+    },
+    {
+      "id": "w_muthoni",
+      "text": "Muthoni Githinji",
+      "category": "person",
+      "ref": "p_muthoni",
+      "unlock": {
+        "anyOf": [
+          "f_will"
+        ]
+      }
+    },
+    {
+      "id": "w_kiragu",
+      "text": "Kiragu Mutahi",
+      "category": "person",
+      "ref": "p_kiragu",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_bedroom",
+      "text": "Wambui's bedroom",
+      "category": "place",
+      "ref": "plc_bedroom",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "pl_kitchen",
+      "text": "the kitchen hut",
+      "category": "place",
+      "ref": "plc_kitchen",
+      "unlock": {
+        "anyOf": [
+          "f_hut"
+        ]
+      }
+    },
+    {
+      "id": "pl_terraces",
+      "text": "the tea terraces",
+      "category": "place",
+      "ref": "plc_terraces",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_ndhouse",
+      "text": "Ndinda's house",
+      "category": "place",
+      "ref": "loc_ndinda",
+      "unlock": {
+        "anyOf": [
+          "f_porridge"
+        ]
+      }
+    },
+    {
+      "id": "pl_road",
+      "text": "the Othaya road",
+      "category": "place",
+      "ref": "plc_road",
+      "unlock": {
+        "anyOf": [
+          "f_car_leaves"
+        ]
+      }
+    },
+    {
+      "id": "h_jiko",
+      "text": "placing a lit charcoal jiko in her closed bedroom while she slept",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_co"
+        ]
+      }
+    },
+    {
+      "id": "h_own",
+      "text": "an accident with her own jiko",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack in her sleep",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_smother",
+      "text": "smothering her",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_porridge",
+      "text": "poisoned porridge",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_hut"
+        ]
+      }
+    },
+    {
+      "id": "m_codicil",
+      "text": "to make a forged codicil leaving the tea-factory shares to her husband take effect",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_codicil"
+        ]
+      }
+    },
+    {
+      "id": "m_son",
+      "text": "the eldest son's anger at the will",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_will"
+        ]
+      }
+    },
+    {
+      "id": "m_daughter",
+      "text": "the daughter's inheritance",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_will"
+        ]
+      }
+    },
+    {
+      "id": "m_wage",
+      "text": "an unpaid tea-picking wage",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_porridge",
+      "text": "a quarrel over the porridge",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_hut"
+        ]
+      }
+    },
+    {
+      "id": "d_codicil",
+      "text": "The codicil",
+      "category": "document",
+      "ref": "ev_codicil",
+      "unlock": {
+        "anyOf": [
+          "f_codicil"
+        ]
+      }
+    },
+    {
+      "id": "d_will",
+      "text": "The February will",
+      "category": "document",
+      "ref": "ev_will",
+      "unlock": {
+        "anyOf": [
+          "f_will"
+        ]
+      }
+    },
+    {
+      "id": "d_register",
+      "text": "The death register",
+      "category": "document",
+      "ref": "ev_death_reg",
+      "unlock": {
+        "anyOf": [
+          "f_death_reg"
+        ]
+      }
+    },
+    {
+      "id": "d_bible",
+      "text": "The Bible bookmark",
+      "category": "document",
+      "ref": "ev_bible",
+      "unlock": {
+        "anyOf": [
+          "f_bible"
+        ]
+      }
+    },
+    {
+      "id": "d_shares",
+      "text": "The tea-factory share certificate",
+      "category": "document",
+      "ref": "ev_tin",
+      "unlock": {
+        "anyOf": [
+          "f_shares"
+        ]
+      }
+    },
+    {
+      "id": "t_dead",
+      "text": "one of its witnesses died two years before it was signed",
+      "category": "tell",
+      "by": [
+        "f_death_reg",
+        "f_codicil"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_death_reg"
+        ]
+      }
+    },
+    {
+      "id": "t_traced",
+      "text": "a traced signature",
+      "category": "tell",
+      "by": [
+        "f_tracing",
+        "f_docexam"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_codicil"
+        ]
+      }
+    },
+    {
+      "id": "t_dots",
+      "text": "printer dots on a stamp",
+      "category": "tell",
+      "by": [
+        "f_cmp_nostamp"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_codicil"
+        ]
+      }
+    },
+    {
+      "id": "t_landdate",
+      "text": "a date before the testator owned the land",
+      "category": "tell",
+      "by": [
+        "f_title"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_codicil"
+        ]
+      }
+    },
+    {
+      "id": "t_advstamp",
+      "text": "the wrong advocate's stamp",
+      "category": "tell",
+      "by": [
+        "f_cmp_nostamp"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_codicil"
+        ]
+      }
+    },
+    {
+      "id": "t_photocopy",
+      "text": "a photocopied signature",
+      "category": "tell",
+      "by": [
+        "f_tracing"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_codicil"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. {document} was forged, as shown by {tell}.",
+    "fixed": {
+      "victim": "Wambui Githinji"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_1830",
+                  "label": "Saturday 18:30",
+                  "from": "18:30",
+                  "to": "18:30",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_2000",
+                  "label": "Saturday 20:00",
+                  "from": "20:00",
+                  "to": "20:00",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_act",
+                  "label": "Saturday 22:30–23:00",
+                  "from": "22:30",
+                  "to": "23:00",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_2300",
+                  "label": "Saturday 23:00",
+                  "from": "23:00",
+                  "to": "23:00",
+                  "day": "Sat"
+                },
+                {
+                  "id": "sl_death",
+                  "label": "Sunday 01:00–04:00",
+                  "from": "01:00",
+                  "to": "04:00",
+                  "day": "Sun"
+                },
+                {
+                  "id": "sl_sun",
+                  "label": "Sunday about 15:00",
+                  "from": "15:00",
+                  "to": "15:00",
+                  "day": "Sun"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_arrive",
+                  "text": "Ndinda arrives with porridge",
+                  "slot": "sl_1830",
+                  "by": [
+                    "f_porridge"
+                  ],
+                  "why": "Muthoni saw her car at the gate as she left at 18:30.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_porridge"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_jiko",
+                  "text": "A lit jiko is carried into the bedroom",
+                  "slot": "sl_act",
+                  "by": [
+                    "f_nd_reveal",
+                    "f_car_leaves",
+                    "f_jiko_match"
+                  ],
+                  "why": "After Wambui fell asleep at about 22:30 and before the car left at 23:00.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_nd_reveal"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_leave",
+                  "text": "Ndinda's car leaves",
+                  "slot": "sl_2300",
+                  "by": [
+                    "f_car_leaves",
+                    "f_rec_nd"
+                  ],
+                  "why": "Mama Wanjiku heard it at about 23:00; her phone left the zone at 23:05.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_car_leaves"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_dies",
+                  "text": "Wambui dies",
+                  "slot": "sl_death",
+                  "by": [
+                    "f_aut_tod"
+                  ],
+                  "why": "The autopsy: Sunday, 01:00 to 04:00.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_waweru",
+                  "text": "Waweru shouts at the closed door",
+                  "slot": "sl_sun",
+                  "by": [
+                    "f_waw_sunday",
+                    "f_waw_reveal"
+                  ],
+                  "why": "Mama Wanjiku: Sunday afternoon, about three.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_waw_sunday"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_2000",
+                  "by": [
+                    "f_car_leaves",
+                    "f_rec_nd"
+                  ],
+                  "why": "20:00 is Ndinda's \"left at eight\". Her car was at the gate until 23:00."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "In at half six with porridge, a stove in a sealed room before eleven, gone by eleven. The son came the next afternoon to shout at the dead.",
+          "fail": [
+            "Eight o'clock is her story. The neighbour heard the car at eleven.",
+            "When did Wambui die, and when did the stove go in? They are not the same time."
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_bedroom"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her bedroom, window sealed with a cloth. Yes.",
+          "fail": [
+            "Her own jikos never left the kitchen hut.",
+            "She died in her bed, not on the road."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_ndinda"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her car until eleven, her wired jiko, her pencil practice of a dead woman's name. That will hold.",
+          "fail": [
+            "Thuo was watching football in Karatina with his neighbour.",
+            "The son shouted at a door on Sunday. Wambui was already dead."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_jiko"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A stove from another woman's kitchen, a sealed window. Not an accident.",
+          "fail": [
+            "Mama never let a jiko into the house. Ask Kiragu why.",
+            "The porridge was clean."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_codicil"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A codicil only works once the testator can't deny it. That's why she needed her dead.",
+          "fail": [
+            "Muthoni already inherits under the genuine will.",
+            "The son was at home in Othaya on Saturday night."
+          ]
+        }
+      },
+      {
+        "id": "g_forgery",
+        "kind": "forgery",
+        "blanks": [
+          {
+            "id": "document",
+            "category": "document",
+            "answer": "d_codicil"
+          },
+          {
+            "id": "tell",
+            "category": "tell",
+            "answer": "t_dead",
+            "accept": [
+              "t_traced"
+            ]
+          }
+        ],
+        "prosecutor": {
+          "pass": "The will everyone shouted about is real. The paper that arrived after the funeral is the lie. Good.",
+          "fail": [
+            "Advocate Gakii watched her sign the February will.",
+            "There's no stamp on the codicil at all. Look at its witnesses."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_bedroom",
+      "from": "22:30",
+      "to": "23:00",
+      "note": "The act window: the lit jiko went in after Wambui fell asleep at about 22:30 and before Ndinda's car left at 23:00. She died of it between 01:00 and 04:00."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_will",
+          "f_gakii",
+          "f_waw_forged"
+        ],
+        "concludes": "The will Waweru calls forged is genuine: Wambui signed it before her advocate."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_codicil",
+          "f_death_reg",
+          "f_tracing",
+          "f_docexam"
+        ],
+        "concludes": "The codicil is the forgery: a witness died two years before its date, and its signature is traced from the will.",
+        "answers": [
+          "document",
+          "tell"
+        ]
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_body",
+          "f_jiko",
+          "f_kiragu_never",
+          "f_hut",
+          "f_window",
+          "f_aut_co"
+        ],
+        "concludes": "Not an accident: Wambui never brought a jiko inside, her own two are in the hut, and the window was sealed."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_porridge",
+          "f_car_leaves",
+          "f_rec_nd",
+          "f_nd_left8",
+          "f_nd_reveal",
+          "f_bible",
+          "f_thuo_found",
+          "f_thuo_reveal",
+          "f_nd_bible"
+        ],
+        "concludes": "Ndinda stayed until 23:00, helped her to bed, and was the one who \"found\" the codicil.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s5",
+        "from": [
+          "s4",
+          "f_jiko_match",
+          "f_practice",
+          "f_handwriting",
+          "f_nd_lit",
+          "f_nd_wrote"
+        ],
+        "concludes": "Her kitchen is missing the wire-legged jiko, and she practised Wambui's signature. Ndinda Musembi put a lit charcoal jiko in Wambui's closed bedroom while she slept, to make the forged codicil take effect.",
+        "answers": [
+          "who",
+          "how",
+          "why",
+          "where"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_kitchen",
+        "blank": "where",
+        "by": [
+          "f_hut",
+          "f_body"
+        ],
+        "why": "Her own jikos stayed in the hut; she died in her bed."
+      },
+      {
+        "word": "pl_terraces",
+        "blank": "where",
+        "by": [
+          "f_body"
+        ],
+        "why": "She died in her bedroom."
+      },
+      {
+        "word": "pl_ndhouse",
+        "blank": "where",
+        "by": [
+          "f_body",
+          "f_jiko_match"
+        ],
+        "why": "The jiko came from there; the death happened in Wambui's bedroom."
+      },
+      {
+        "word": "pl_road",
+        "blank": "where",
+        "by": [
+          "f_body"
+        ],
+        "why": "She never left her bed."
+      },
+      {
+        "word": "w_thuo",
+        "blank": "who",
+        "by": [
+          "f_thuo_alibi"
+        ],
+        "why": "Thuo watched the football at home in Karatina with his neighbour, 20:30–23:30."
+      },
+      {
+        "word": "w_waweru",
+        "blank": "who",
+        "by": [
+          "f_waw_home",
+          "f_waw_reveal"
+        ],
+        "why": "Waweru was home in Othaya town on Saturday night; he came on Sunday afternoon, after she died."
+      },
+      {
+        "word": "w_muthoni",
+        "blank": "who",
+        "by": [
+          "f_muthoni"
+        ],
+        "why": "Muthoni was on night shift at the hospital, 19:00–07:00."
+      },
+      {
+        "word": "w_kiragu",
+        "blank": "who",
+        "by": [
+          "f_kiragu_self"
+        ],
+        "why": "Kiragu was playing draughts in the workers' house until midnight."
+      },
+      {
+        "word": "h_own",
+        "blank": "how",
+        "by": [
+          "f_kiragu_never",
+          "f_hut",
+          "f_jiko"
+        ],
+        "why": "She never brought a jiko inside; hers are both in the hut; the wired one isn't hers."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_co",
+          "f_aut_noinj"
+        ],
+        "why": "Carbon monoxide, and a sound heart."
+      },
+      {
+        "word": "h_smother",
+        "blank": "how",
+        "by": [
+          "f_aut_noinj"
+        ],
+        "why": "No signs of smothering."
+      },
+      {
+        "word": "h_porridge",
+        "blank": "how",
+        "by": [
+          "f_aut_tox"
+        ],
+        "why": "No poison in her blood or stomach."
+      },
+      {
+        "word": "m_son",
+        "blank": "why",
+        "by": [
+          "f_waw_home",
+          "f_waw_reveal"
+        ],
+        "why": "That anger was Waweru's, and he was at home."
+      },
+      {
+        "word": "m_daughter",
+        "blank": "why",
+        "by": [
+          "f_will",
+          "f_muthoni"
+        ],
+        "why": "Muthoni already inherits under the genuine will, and was on shift."
+      },
+      {
+        "word": "m_wage",
+        "blank": "why",
+        "by": [
+          "f_wages"
+        ],
+        "why": "The workers were paid on Friday."
+      },
+      {
+        "word": "m_porridge",
+        "blank": "why",
+        "by": [
+          "f_porridge"
+        ],
+        "why": "They were laughing over the porridge."
+      },
+      {
+        "word": "d_will",
+        "blank": "document",
+        "by": [
+          "f_gakii"
+        ],
+        "why": "Signed before her advocate."
+      },
+      {
+        "word": "d_register",
+        "blank": "document",
+        "by": [
+          "f_death_reg"
+        ],
+        "why": "The registry's own bound register."
+      },
+      {
+        "word": "d_bible",
+        "blank": "document",
+        "by": [
+          "f_bible"
+        ],
+        "why": "A ribbon bookmark is just a bookmark. It shows where the codicil was never kept."
+      },
+      {
+        "word": "d_shares",
+        "blank": "document",
+        "by": [
+          "f_shares"
+        ],
+        "why": "Numbered and signed by the factory."
+      },
+      {
+        "word": "t_dots",
+        "blank": "tell",
+        "by": [
+          "f_cmp_nostamp"
+        ],
+        "why": "The codicil has no stamp at all."
+      },
+      {
+        "word": "t_landdate",
+        "blank": "tell",
+        "by": [
+          "f_title"
+        ],
+        "why": "She owned the land from 1987."
+      },
+      {
+        "word": "t_advstamp",
+        "blank": "tell",
+        "by": [
+          "f_cmp_nostamp"
+        ],
+        "why": "No advocate's stamp on it at all."
+      },
+      {
+        "word": "t_photocopy",
+        "blank": "tell",
+        "by": [
+          "f_tracing"
+        ],
+        "why": "The signature is ink over pencil, not a photocopy."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "February. Wambui makes her will with Advocate Gakii: land in four shares, the house and tea-factory shares to Muthoni, who nursed her. Waweru tells everyone it's forged. It isn't.",
+        "image": null
+      },
+      {
+        "text": "Ndinda, twenty years a court clerk, types a \"codicil\" leaving the shares to her husband, traces Wambui's signature from a copy of the will, and invents two witnesses. One of the names she chooses belongs to a man who died in 2024.",
+        "image": null
+      },
+      {
+        "text": "Saturday, 18:30. Ndinda brings porridge. They laugh over it. Muthoni leaves for her night shift.",
+        "image": null
+      },
+      {
+        "text": "About 22:30 Wambui falls asleep. Ndinda carries a lit jiko from her own kitchen set into the bedroom, closes the door, latches the window and stuffs its gap with a cloth.",
+        "image": "plc_bedroom"
+      },
+      {
+        "text": "23:00. Her car leaves. On Sunday afternoon Waweru shouts at a closed door. On Monday Thuo's advocate lodges a codicil \"found in her Bible\".",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Two stamps: records on Ndinda and a warrant on her kitchen. Thuo stays silent until the death register is put in front of him. The codicil goes to the Questioned Documents Lab from the advocate's office; the handwriting comparison follows the warrant.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_farm",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_jiko",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_window",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_hut",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_bible",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_kiragu"
+      },
+      {
+        "do": "read",
+        "target": "ev_neighbour",
+        "hours": 1
+      },
+      {
+        "do": "travel",
+        "target": "loc_gakii",
+        "hours": 1,
+        "from": "loc_farm"
+      },
+      {
+        "do": "visit",
+        "target": "loc_gakii",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_will",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_codicil",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_gakii"
+      },
+      {
+        "do": "submit",
+        "target": "ev_docexam"
+      },
+      {
+        "do": "interview",
+        "target": "p_muthoni"
+      },
+      {
+        "do": "travel",
+        "target": "loc_registry",
+        "hours": 1,
+        "from": "loc_gakii"
+      },
+      {
+        "do": "visit",
+        "target": "loc_registry",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_death_reg",
+        "hours": 1
+      },
+      {
+        "do": "reopen",
+        "target": "p_thuo",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_thuo"
+      },
+      {
+        "do": "interview",
+        "target": "p_ndinda"
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "press",
+        "target": "c_nd_left"
+      },
+      {
+        "do": "press",
+        "target": "c_thuo"
+      },
+      {
+        "do": "press",
+        "target": "c_nd_bible"
+      },
+      {
+        "do": "travel",
+        "target": "loc_ndinda",
+        "hours": 1,
+        "from": "loc_registry"
+      },
+      {
+        "do": "visit",
+        "target": "loc_ndinda",
+        "hours": 1
+      },
+      {
+        "do": "search",
+        "target": "loc_ndinda"
+      },
+      {
+        "do": "detain",
+        "target": "p_ndinda"
+      },
+      {
+        "do": "press",
+        "target": "c_nd_lit"
+      },
+      {
+        "do": "submit",
+        "target": "ev_hand"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 10
+      },
+      {
+        "do": "press",
+        "target": "c_nd_wrote"
+      }
+    ],
+    "totalHours": 40
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_neighbour",
+        "line": "The neighbour's window looks at the gate, Amani."
+      },
+      "tier2": {
+        "facts": [
+          "f_porridge",
+          "f_car_leaves"
+        ],
+        "line": "Her car came at half six and left at eleven. The death came later."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_window",
+        "line": "Who stuffs a cloth into a window she always leaves open?"
+      },
+      "tier2": {
+        "facts": [
+          "f_window",
+          "f_body"
+        ],
+        "line": "Her bedroom, sealed."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_jiko",
+        "line": "Look at the jiko's leg. Then find its sisters."
+      },
+      "tier2": {
+        "facts": [
+          "f_jiko_match",
+          "f_practice"
+        ],
+        "line": "The same wire in Ndinda's kitchen, and a pencil sheet of Wambui's name."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_kiragu",
+        "line": "Ask the man who has worked here thirty years about jikos in the house."
+      },
+      "tier2": {
+        "facts": [
+          "f_kiragu_never",
+          "f_aut_co"
+        ],
+        "line": "Never inside. And carbon monoxide."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_codicil",
+        "line": "Who gains from the paper that appeared on Monday?"
+      },
+      "tier2": {
+        "facts": [
+          "f_codicil"
+        ],
+        "line": "The tea-factory shares, to Thuo."
+      }
+    },
+    "g_forgery": {
+      "tier1": {
+        "point": "ev_codicil",
+        "line": "Everyone says the will is forged. Read the other paper's witnesses."
+      },
+      "tier2": {
+        "facts": [
+          "f_death_reg",
+          "f_tracing"
+        ],
+        "line": "A witness two years dead. And a pencil line under the ink."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "jiko",
+      "def": "A charcoal stove."
+    },
+    {
+      "term": "wosia",
+      "def": "A will."
+    },
+    {
+      "term": "nyongeza ya wosia",
+      "def": "A codicil: an addition to a will."
+    },
+    {
+      "term": "chai",
+      "def": "Tea; here also the crop."
+    },
+    {
+      "term": "shamba",
+      "def": "A farm or plot."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address an older woman."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "lawyeredSuspect",
+      "twoValidTells"
+    ],
+    "beatNotes": "Lawyered-up suspects. Thuo's statement sheet is stamped \"NO COMMENT — ADV. B. MUCHIRI\" until the player drags the death-register entry onto it; Muchiri leans in and says \"Thuo, answer.\" The FORGERY group accepts either proven tell (the dead witness, or the traced signature)."
+  }
+}

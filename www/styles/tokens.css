@@ -1,0 +1,135 @@
+/* Kesi: Kenya Case Files — design tokens (deliverable 7).
+   Palette = the desk's real materials. Two worlds:
+   · the INSTITUTION (paper, ink, stamps, ledgers): warm, desaturated, carries all reading;
+   · the STREET (sign-painter and matatu colours): saturated, used only for display type,
+     region identity and earned moments, never for body text on paper.
+   Every token below is checked by tools/contrast.mjs (results in docs/contrast.txt). */
+
+@font-face { font-family: 'Courier Prime'; font-weight: 400; font-style: normal; font-display: swap;
+  src: url('../fonts/courier-prime-latin-400-normal.woff2') format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Courier Prime'; font-weight: 400; font-style: normal; font-display: swap;
+  src: url('../fonts/courier-prime-latin-ext-400-normal.woff2') format('woff2'); unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Courier Prime'; font-weight: 400; font-style: italic; font-display: swap; src: url('../fonts/courier-prime-latin-400-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Courier Prime'; font-weight: 700; font-style: normal; font-display: swap; src: url('../fonts/courier-prime-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Courier Prime'; font-weight: 700; font-style: italic; font-display: swap; src: url('../fonts/courier-prime-latin-700-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Big Shoulders Display'; font-weight: 100 900; font-style: normal; font-display: swap; src: url('../fonts/big-shoulders-display-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Big Shoulders Stencil'; font-weight: 800; font-style: normal; font-display: swap; src: url('../fonts/big-shoulders-stencil-display-latin-800-normal.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Mono'; font-weight: 400; font-style: normal; font-display: swap; src: url('../fonts/ibm-plex-mono-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Mono'; font-weight: 500; font-style: normal; font-display: swap; src: url('../fonts/ibm-plex-mono-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'IBM Plex Mono'; font-weight: 700; font-style: normal; font-display: swap; src: url('../fonts/ibm-plex-mono-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Patrick Hand'; font-weight: 400; font-style: normal; font-display: swap; src: url('../fonts/patrick-hand-latin-400-normal.woff2') format('woff2'); }
+
+:root {
+  /* ── The room ─────────────────────────────────────────────── */
+  --desk:        #2A1D15;  /* government-issue hardwood desk, dark varnish */
+  --desk-hi:     #3D2B1F;  /* wood grain highlight */
+  --desk-lo:     #1A110C;  /* under the lamp's reach */
+  --lamp:        #F6C66B;  /* tungsten desk-lamp pool (radial gradient centre) */
+  --lamp-falloff: rgba(246, 198, 107, 0);
+
+  /* ── Paper (the institution) ──────────────────────────────── */
+  --paper:       #F3EBDA;  /* typed report paper, slightly aged */
+  --paper-lo:    #E6DAC2;  /* paper shadow / second sheet */
+  --ledger:      #EEF0E2;  /* OB ledger page */
+  --ledger-rule: #9DB8A6;  /* ledger ruling (decorative only) */
+  --ledger-margin: #C9655B;/* red margin line (decorative only) */
+  --manila:      #E2C48C;  /* folder face */
+  --manila-lo:   #C9A66B;  /* folder edge, tab shadow */
+  --kraft:       #B98D5E;  /* evidence envelopes and bags */
+  --cork:        #B88A5A;  /* corkboard */
+  --cork-lo:     #8F6640;
+
+  /* ── Ink ──────────────────────────────────────────────────── */
+  --ink:         #23222B;  /* typewriter ribbon: all body text on paper */
+  --ink-soft:    #4E4B57;  /* secondary text on paper (meta lines, labels) */
+  --carbon:      #2F4497;  /* carbon-copy blue: duplicated forms, the "copy" layer */
+  --pencil:      #3F3F44;  /* Amani's notes (graphite) */
+  --ob-green:    #2F5D46;  /* OB ledger cloth cover; "accepted" ink */
+  --stamp:       #B3261E;  /* rubber-stamp red: CLOSED, RETURNED, CONFIDENTIAL */
+  --string:      #C7362B;  /* corkboard string (always with a pin shape, never colour alone) */
+  --highlighter: #F4DD62;  /* Amani's highlighter over typed text */
+
+  /* ── The street (display and earned moments only) ─────────── */
+  --murram:      #A44A2A;  /* red murram roads: map routes, region 4 */
+  --sodium:      #F2A33A;  /* sodium streetlight: night scenes, the case clock */
+  --matatu-pink: #E8358A;  /* matatu graffiti accents */
+  --matatu-lime: #A6D930;
+  --matatu-cyan: #19B5D6;
+  --signwhite:   #FFF8EC;  /* sign-painter white with a warm cast */
+
+  /* ── Meaning (each always paired with a word or a shape) ──── */
+  --accepted:    var(--ob-green);  /* rectangular stamp + "ACCEPTED" */
+  --returned:    var(--stamp);     /* round stamp + "RETURNED" */
+  --lie:         var(--stamp);     /* struck-through claim + "CONTRADICTED" tag */
+  --focus:       var(--matatu-cyan); /* keyboard / VoiceOver focus ring (3px, on desk or paper) */
+
+  /* ── Type ─────────────────────────────────────────────────── */
+  --font-display: 'Big Shoulders Display', 'Arial Narrow', sans-serif;   /* titles, tabs, region cards */
+  --font-stencil: 'Big Shoulders Stencil', 'Big Shoulders Display', sans-serif; /* crate and drawer stencils */
+  --font-doc:     'Courier Prime', 'Courier New', monospace;             /* every typed document */
+  --font-data:    'IBM Plex Mono', ui-monospace, monospace;              /* logs, statements, phone screens, numbers */
+  --font-hand:    'Patrick Hand', 'Marker Felt', cursive;                /* Amani's notebook and photo labels */
+  --font-plain:   -apple-system, system-ui, sans-serif;                  /* "Plain text" accessibility mode */
+
+  /* Type scale (px at 100% Dynamic Type; the engine multiplies by the user's text-size setting) */
+  --t-display-xl: 44px;  /* case title on the folder */
+  --t-display-l:  32px;  /* screen titles, region cards */
+  --t-display-m:  22px;  /* folder tabs, section heads */
+  --t-doc:        17px;  /* document body (never below 15px) */
+  --t-doc-s:      15px;  /* meta lines, form labels */
+  --t-data:       15px;  /* log rows */
+  --t-hand:       20px;  /* handwriting needs to run larger than type to read the same */
+  --lh-doc:       1.5;
+  --lh-data:      1.35;
+  --track-display: 0.02em;
+  --track-tab:     0.08em;
+
+  /* ── Shape and depth ──────────────────────────────────────── */
+  --radius-paper: 2px;   /* paper has corners, not rounded cards */
+  --radius-photo: 1px;
+  --shadow-paper: 0 1px 0 rgba(0,0,0,.08), 0 6px 14px -6px rgba(0,0,0,.45);
+  --shadow-lift:  0 2px 0 rgba(0,0,0,.08), 0 18px 30px -10px rgba(0,0,0,.55); /* picked-up card */
+  --tilt-max: 2.5deg;    /* seeded per card id, so a card always lies the same way */
+  --gutter: 16px;
+  --tap-min: 44px;       /* Apple HIG minimum target */
+
+  /* ── Motion (durations; springs live in the engine) ───────── */
+  --dur-fast: 120ms;  --dur: 220ms;  --dur-slow: 420ms;
+  --ease-settle: cubic-bezier(.2, .9, .25, 1.15); /* paper landing, slight overshoot */
+
+  /* ── Case-photo treatment (applied to every generated image) ─ */
+  --photo-filter: saturate(.82) contrast(1.04) sepia(.08);
+  --photo-border: 10px;          /* white print border; 26px bottom on Polaroid-style evidence */
+  --photo-border-color: #F7F3EA;
+  --photo-grain-opacity: .16;
+}
+
+/* Region identity: folder tab + region title card + filing-drawer label.
+   Each pair is (material colour, ink that reads on it). Body text never uses these. */
+[data-region="1"]  { --region: #8C8A84; --region-ink: #1B1B1F; --region-accent: var(--sodium); }      /* Nairobi CBD: concrete, sodium light */
+[data-region="2"]  { --region: #4F6D7A; --region-ink: #FFF8EC; --region-accent: var(--matatu-pink); } /* Eastlands: mabati, matatu pink */
+[data-region="3"]  { --region: #D8C3A0; --region-ink: #23222B; --region-accent: #2C5F7A; }            /* Mombasa Old Town: coral stone, Indian Ocean */
+[data-region="4"]  { --region: #A44A2A; --region-ink: #FFF8EC; --region-accent: #D9A93A; }            /* Rift Valley: murram, maize gold */
+[data-region="5"]  { --region: #3E6E73; --region-ink: #FFF8EC; --region-accent: #C9D3D1; }            /* Lake Victoria: lake water, tilapia silver */
+[data-region="6"]  { --region: #C1272D; --region-ink: #FFF8EC; --region-accent: #C49A4A; }            /* Maasai Mara: shuka red, savanna ochre */
+[data-region="7"]  { --region: #3F6B2F; --region-ink: #FFF8EC; --region-accent: #8E1F2B; }            /* Mt Kenya: tea green, coffee cherry */
+[data-region="8"]  { --region: #3A3633; --region-ink: #FFF8EC; --region-accent: #4FA39A; }            /* Northern frontier: basalt, Turkana jade */
+[data-region="9"]  { --region: #6E55A8; --region-ink: #FFF8EC; --region-accent: #4A5562; }            /* Westlands/Karen: jacaranda, glass */
+[data-region="10"] { --region: #2F5D46; --region-ink: #FFF8EC; --region-accent: var(--stamp); }       /* The Final Files: OB green, stamp red */
+
+/* Night shift (system dark mode): the room darkens, paper dims but stays paper. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --desk: #17110C; --desk-hi: #24190F; --desk-lo: #0D0906;
+    --paper: #DCD1BC; --paper-lo: #CBBFA7; --ledger: #D6D9C9; --manila: #C8AC78; --manila-lo: #A98B57;
+    --lamp: #F2B85A; --stamp: #9E1F18; --string: #B52E24;
+  }
+}
+
+/* Plain text mode (Settings → Reading): every typed or handwritten face becomes the system face. */
+:root[data-plain="1"] { --font-doc: var(--font-plain); --font-hand: var(--font-plain); --font-data: var(--font-plain); }
+
+/* Reduce Motion: no tilt animation, no settle overshoot. */
+@media (prefers-reduced-motion: reduce) {
+  :root { --ease-settle: ease-out; --dur: 1ms; --dur-slow: 1ms; }
+}

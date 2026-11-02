@@ -1,0 +1,1789 @@
+{
+  "meta": {
+    "id": "case-042",
+    "number": 42,
+    "region": "kisumu-lake",
+    "regionNumber": 5,
+    "title": "Brown Sugar",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 22,
+    "date": "Sunday 14 December",
+    "folderTab": "KIBUYE"
+  },
+  "pattern": {
+    "crimePattern": "ruined trader pulls a stack of sacks down on the wholesaler who sold her expired re-bagged sugar",
+    "noRealCaseRetold": true,
+    "notes": "Fictional wholesaler and trader. Expired and re-bagged sugar has been a recurring public-health story in Kenya; no real case, company or official is depicted. The illness of Sarah's customers is described only as \"fell ill\".",
+    "tags": [
+      "crush",
+      "staged-accident",
+      "revenge",
+      "detention",
+      "forensics",
+      "when-window"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 3,
+    "redHerrings": 1,
+    "liars": 1,
+    "groups": [
+      "when",
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "forensic"
+    ],
+    "gatedActions": [],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 31/14/12",
+    "date": "Sunday 14 December",
+    "time": "12:20",
+    "reportedBy": "Ben Omolo, market helper",
+    "text": "A market helper reports his employer, sugar wholesaler Joshua Obura (58), found under a collapsed stack of 50 kg sugar sacks in his lock-up store at Kibuye market at 12:05. The helper had been out delivering.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_joshua",
+      "role": "victim",
+      "name": "Joshua Obura",
+      "age": 58,
+      "occupation": "Sugar wholesaler, Obura Sugar Stores",
+      "bio": "Twenty-five years selling sugar by the sack at Kibuye. Known for a loud laugh and a hard bargain.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_store",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, late 50s, a checked short-sleeved shirt over a round belly, a pencil behind his ear, a big confident laugh, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_sarah",
+      "role": "suspect",
+      "name": "Sarah Opolot",
+      "age": 33,
+      "occupation": "Shopkeeper from Busia (shop closed)",
+      "bio": "Bought 40 sacks from Joshua in October for her shop in Busia. The shop is shut now.",
+      "community": "Teso",
+      "isCulprit": true,
+      "unlock": {
+        "anyOf": [
+          "f_sack_tag",
+          "f_diana"
+        ]
+      },
+      "at": "plc_busia",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Teso woman, early 30s, a plain kitenge dress, a cloth shopping bag over her shoulder, red-rimmed eyes and a set jaw, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_ben",
+      "role": "suspect",
+      "name": "Ben Omolo",
+      "age": 22,
+      "occupation": "Joshua's helper",
+      "bio": "Pushes the handcart, loads the lorries, sleeps in the store on market nights. Underpaid and says so.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_manyatta",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo young man, early 20s, a sweat-stained vest, sugar dust on his forearms, a handcart rope over one shoulder, shaken, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_yusuf",
+      "role": "suspect",
+      "name": "Yusuf Ramadhan",
+      "age": 60,
+      "occupation": "Rival sugar wholesaler across the aisle",
+      "redHerring": true,
+      "bio": "Thirty years across the aisle from Joshua. They haven't spoken a friendly word in five.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_yusuf",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Swahili man, about 60, a white kofia and a neatly ironed kanzu, reading glasses on a cord, measured and wary, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_diana",
+      "role": "witness",
+      "name": "Diana Apiyo",
+      "age": 38,
+      "occupation": "County public-health officer",
+      "bio": "Seized Sarah's sugar in October after her customers fell ill. Has been trying to trace it ever since.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_resacked"
+      },
+      "at": "plc_church",
+      "image": null
+    },
+    {
+      "id": "p_hassan",
+      "role": "witness",
+      "name": "Hassan Bwire",
+      "age": 47,
+      "occupation": "County market master, Kibuye",
+      "bio": "Collects the daily stall fees with a receipt book and a timed stamp.",
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_shoes",
+      "image": null
+    },
+    {
+      "id": "p_rebecca",
+      "role": "witness",
+      "name": "Rebecca Oloo",
+      "age": 55,
+      "occupation": "Regular customer",
+      "statementOnly": true,
+      "bio": "Buys a sack for her hotel kitchen every Sunday.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_nextstall",
+      "image": null
+    },
+    {
+      "id": "p_lilian",
+      "role": "witness",
+      "name": "Lilian Adhiambo",
+      "age": 41,
+      "occupation": "Yusuf's customer",
+      "statementOnly": true,
+      "bio": "Was at Yusuf's counter with her sister on Sunday morning.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_yusuf",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_counter",
+      "name": "Joshua's counter",
+      "within": "loc_store"
+    },
+    {
+      "id": "plc_backroom",
+      "name": "Joshua's back room",
+      "within": "loc_store"
+    },
+    {
+      "id": "plc_nextstall",
+      "name": "The next stall along the aisle"
+    },
+    {
+      "id": "plc_yusuf",
+      "name": "Yusuf's counter across the aisle"
+    },
+    {
+      "id": "plc_shoes",
+      "name": "Shoe section, Kibuye market"
+    },
+    {
+      "id": "plc_manyatta",
+      "name": "Manyatta estate (deliveries)"
+    },
+    {
+      "id": "plc_busstage",
+      "name": "Kisumu bus stage"
+    },
+    {
+      "id": "plc_busia",
+      "name": "Busia"
+    },
+    {
+      "id": "plc_church",
+      "name": "Church in Milimani (Sunday service)"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_store",
+      "name": "Obura Sugar Stores, Kibuye",
+      "kind": "scene",
+      "description": "A lock-up store off the main aisle, stacked to the iron roof with 50 kg sacks of sugar. A counter, a sales book, a padlocked door to a back room. One stack has come down across the floor.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The fallen stack",
+          "pos": [
+            50,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Twelve sacks lie across the floor. Joshua is under them."
+        },
+        {
+          "id": "hs_top",
+          "label": "The top sacks",
+          "pos": [
+            44,
+            30
+          ],
+          "yields": "ev_stack",
+          "text": "Three of the sacks that fell from the top have fresh tears in the weave."
+        },
+        {
+          "id": "hs_evsack",
+          "label": "A sack by the counter",
+          "pos": [
+            22,
+            52
+          ],
+          "yields": "ev_evsack",
+          "text": "One sack sits apart by the counter, its stitching cut open, a cardboard tag tied to the neck."
+        },
+        {
+          "id": "hs_back",
+          "label": "The back room",
+          "pos": [
+            82,
+            40
+          ],
+          "yields": "ev_backroom",
+          "text": "The back-room door is unlocked. Inside, bales of something folded and a machine under a cloth."
+        },
+        {
+          "id": "hs_next",
+          "label": "The next stall",
+          "pos": [
+            8,
+            70
+          ],
+          "yields": "ev_rebecca",
+          "text": "Rebecca Oloo, buying from the next stall, saw the shutter."
+        },
+        {
+          "id": "hs_yusuf",
+          "label": "Yusuf's counter",
+          "pos": [
+            94,
+            70
+          ],
+          "yields": "ev_yusuf_cust",
+          "text": "Two women with shopping bags stand at Yusuf's counter across the aisle."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the inside of a lock-up sugar store in a huge open-air Kisumu market on a Sunday, 50 kg white sugar sacks stacked to the iron roof, one stack collapsed across the concrete floor, a wooden counter with a sales book, a crowded market aisle outside, no people in focus"
+      }
+    },
+    {
+      "id": "loc_busoffice",
+      "name": "Bus company office, Kisumu stage",
+      "kind": "location",
+      "description": "A booking window at the Kisumu bus stage, a radio phone to the Busia office, a clerk with a carbon passenger list.",
+      "unlock": {
+        "fact": "f_sarah_bus"
+      },
+      "hotspots": [
+        {
+          "id": "hs_manifest",
+          "label": "Passenger list",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_manifest",
+          "text": "The clerk reads the Busia office's morning list down the phone, then finds the carbon."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a bus company booking window at the Kisumu bus stage, a clerk behind glass, carbon passenger lists on a spike, buses in the background"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "Under the stack",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Twelve 50 kg sacks collapsed across him, face down, by the counter."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a collapsed stack of white 50 kg sugar sacks across a concrete store floor, sugar spilled from one split sack, no body visible"
+      }
+    },
+    {
+      "id": "ev_stack",
+      "type": "physical",
+      "title": "The top three sacks",
+      "render": "object",
+      "body": {
+        "label": "Fresh tears in the weave of the top three sacks, as if hooked and pulled from above."
+      },
+      "facts": [
+        "f_stack"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_evsack",
+      "type": "physical",
+      "title": "Sack with a Busia tag",
+      "render": "tag",
+      "body": {
+        "tag": "OPOLOT GENERAL SHOP — BUSIA — RETURNED",
+        "inside": "Under the outer sack printed \"Kenyan Sugar\", an inner bag printed \"Best before\" with a date two years past."
+      },
+      "facts": [
+        "f_sack_tag",
+        "f_resacked"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a cut-open white sugar sack showing an older inner bag inside it with a printed best-before date, a handwritten cardboard tag tied to the neck"
+      }
+    },
+    {
+      "id": "ev_backroom",
+      "type": "physical",
+      "title": "Joshua's back room",
+      "render": "sceneNote",
+      "body": {
+        "note": "Bales of new, empty sacks printed \"Kenyan Sugar\". A sack-sewing machine under a cloth. Torn-open imported bags in a pile."
+      },
+      "facts": [
+        "f_backroom"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rebecca",
+      "type": "witness",
+      "title": "Statement: Rebecca Oloo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_rebecca"
+      },
+      "facts": [
+        "f_rebecca"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_yusuf_cust",
+      "type": "witness",
+      "title": "Statement: Lilian Adhiambo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_lilian"
+      },
+      "facts": [
+        "f_yusuf_cust"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_feereceipt",
+      "type": "physical",
+      "title": "Market master's receipt book",
+      "render": "receipt",
+      "body": {
+        "stamp": "Obura Sugar Stores — daily fee — 11:10",
+        "later": "Shoe section: 11:18, 11:26, 11:35"
+      },
+      "facts": [
+        "f_feereceipt",
+        "f_hassan_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ben",
+      "type": "physical",
+      "title": "Ben's delivery notes",
+      "render": "jobBook",
+      "body": {
+        "drops": [
+          "Manyatta — 11:08 — signed",
+          "Manyatta — 11:20 — signed",
+          "Manyatta — 11:50 — signed"
+        ],
+        "back": "12:05"
+      },
+      "facts": [
+        "f_ben"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_diana",
+      "type": "witness",
+      "title": "Statement: Diana Apiyo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_diana"
+      },
+      "facts": [
+        "f_diana",
+        "f_diana_self"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_manifest",
+      "type": "physical",
+      "title": "Busia–Kisumu passenger list",
+      "render": "manifest",
+      "body": {
+        "line": "S. OPOLOT — Busia–Kisumu — dep. 08:30 — arr. 11:00"
+      },
+      "facts": [
+        "f_manifest"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_sarah_paid",
+      "type": "physical",
+      "title": "Sarah's receipt",
+      "render": "receipt",
+      "body": {
+        "text": "Obura Sugar Stores — 40 bags — paid cash in full — 9 October"
+      },
+      "facts": [
+        "f_sarah_paid"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_stall_register",
+      "type": "physical",
+      "title": "Market stall register",
+      "render": "ledger",
+      "body": {
+        "search": "Opolot — no stall, no fees, no record at Kibuye"
+      },
+      "facts": [
+        "f_no_stall"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_hook",
+      "type": "physical",
+      "title": "Sack hook (from her bag)",
+      "render": "object",
+      "body": {
+        "label": "A steel sack hook, sugar crystals stuck in the grease of its handle. Taken from her bag on detention."
+      },
+      "facts": [
+        "f_hook"
+      ],
+      "gate": null,
+      "detention": "p_sarah",
+      "image": {
+        "kind": "evidence",
+        "brief": "a steel sack hook with a worn wooden handle, sugar crystals stuck in grease on the grip, on an evidence tray"
+      }
+    },
+    {
+      "id": "ev_sarah_prints",
+      "type": "physical",
+      "title": "Fingerprints: Sarah Opolot",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention; she refused to give them voluntarily."
+      },
+      "facts": [
+        "f_sarah_prints"
+      ],
+      "gate": null,
+      "detention": "p_sarah",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_crush",
+        "f_aut_wrists",
+        "f_aut_tod",
+        "f_aut_nohead"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints on the hook",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_hook_prints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_hook",
+          "ev_sarah_prints"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_fibre",
+      "type": "forensic",
+      "title": "Lab: fibres (hook tip vs torn sacks)",
+      "render": "labReport",
+      "body": {
+        "test": "fibres"
+      },
+      "facts": [
+        "f_hook_fibre"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "fibres",
+        "hours": 12,
+        "needs": [
+          "ev_hook",
+          "ev_stack"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Joshua Obura, sugar wholesaler, was found under a collapsed stack of 50 kg sacks in his store at Kibuye market at 12:05.",
+      "kind": "true",
+      "about": [
+        "p_joshua",
+        "loc_store"
+      ],
+      "at": {
+        "from": "12:05"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "Twelve 50 kg sacks collapsed across Joshua by his counter.",
+      "kind": "true",
+      "about": [
+        "p_joshua",
+        "loc_store"
+      ]
+    },
+    {
+      "id": "f_stack",
+      "text": "The top three sacks of the fallen stack have fresh tears in the weave, as if hooked and pulled from above.",
+      "kind": "true",
+      "about": [
+        "loc_store"
+      ]
+    },
+    {
+      "id": "f_sack_tag",
+      "text": "A sack by the counter carries a tag: \"OPOLOT GENERAL SHOP — BUSIA — RETURNED\".",
+      "kind": "true",
+      "about": [
+        "p_sarah"
+      ]
+    },
+    {
+      "id": "f_resacked",
+      "text": "Inside the outer \"Kenyan Sugar\" sack is an inner imported bag printed \"Best before\", with a date two years past.",
+      "kind": "true",
+      "about": [
+        "p_joshua"
+      ]
+    },
+    {
+      "id": "f_backroom",
+      "text": "Joshua's back room: bales of new empty sacks printed \"Kenyan Sugar\", a sack-sewing machine, and a pile of torn-open imported bags.",
+      "kind": "true",
+      "about": [
+        "p_joshua"
+      ]
+    },
+    {
+      "id": "f_rebecca",
+      "text": "Rebecca: at 11:40 the store's shutter was half down, which Joshua never does on a Sunday. She called; nobody answered. She bought next door.",
+      "kind": "true",
+      "about": [
+        "p_rebecca",
+        "p_joshua"
+      ],
+      "at": {
+        "from": "11:40"
+      }
+    },
+    {
+      "id": "f_yusuf_cust",
+      "text": "Lilian: Yusuf served her and her sister at his counter from 11:00 to 12:00. \"He weighed everything twice. He always does.\"",
+      "kind": "true",
+      "about": [
+        "p_lilian",
+        "p_yusuf"
+      ],
+      "where": {
+        "person": "p_yusuf",
+        "place": "plc_yusuf",
+        "from": "11:00",
+        "to": "12:00"
+      }
+    },
+    {
+      "id": "f_feereceipt",
+      "text": "Market master's receipt: Joshua's daily fee collected at 11:10. Hassan stayed to chat; Joshua was \"laughing as usual\".",
+      "kind": "true",
+      "about": [
+        "p_hassan",
+        "p_joshua"
+      ],
+      "at": {
+        "from": "11:10"
+      }
+    },
+    {
+      "id": "f_hassan_self",
+      "text": "Hassan's next receipts are in the shoe section: 11:18, 11:26, 11:35.",
+      "kind": "true",
+      "about": [
+        "p_hassan"
+      ],
+      "where": {
+        "person": "p_hassan",
+        "place": "plc_shoes",
+        "from": "11:15",
+        "to": "11:45"
+      }
+    },
+    {
+      "id": "f_ben",
+      "text": "Ben's delivery notes: drops in Manyatta signed by customers at 11:08, 11:20 and 11:50. He was back at 12:05 and found him.",
+      "kind": "true",
+      "about": [
+        "p_ben"
+      ],
+      "where": {
+        "person": "p_ben",
+        "place": "plc_manyatta",
+        "from": "11:08",
+        "to": "11:50"
+      },
+      "at": {
+        "from": "11:08",
+        "to": "12:05"
+      }
+    },
+    {
+      "id": "f_diana",
+      "text": "Diana: in October she seized Sarah Opolot's sugar in Busia after customers fell ill. She traced it to \"a Kisumu wholesaler\" but couldn't name him yet.",
+      "kind": "true",
+      "about": [
+        "p_diana",
+        "p_sarah"
+      ]
+    },
+    {
+      "id": "f_sarah_lost",
+      "text": "Diana: Sarah was held for two nights, released without charge, and lost her shop.",
+      "kind": "true",
+      "about": [
+        "p_diana",
+        "p_sarah"
+      ]
+    },
+    {
+      "id": "f_diana_self",
+      "text": "Diana was at the Sunday service at her church in Milimani from 10:00 to 12:30.",
+      "kind": "true",
+      "about": [
+        "p_diana"
+      ],
+      "where": {
+        "person": "p_diana",
+        "place": "plc_church",
+        "from": "10:00",
+        "to": "12:30"
+      }
+    },
+    {
+      "id": "f_manifest",
+      "text": "Bus passenger list: \"S. OPOLOT — Busia–Kisumu — departed 08:30 — arrived 11:00\".",
+      "kind": "true",
+      "about": [
+        "p_sarah"
+      ],
+      "at": {
+        "from": "11:00"
+      }
+    },
+    {
+      "id": "f_sarah_paid",
+      "text": "Sarah's receipt: 40 bags from Obura Sugar Stores, paid in full in cash on 9 October.",
+      "kind": "true",
+      "about": [
+        "p_sarah",
+        "p_joshua"
+      ]
+    },
+    {
+      "id": "f_no_stall",
+      "text": "Stall register: Sarah Opolot has no stall at Kibuye and has never paid a fee there.",
+      "kind": "true",
+      "about": [
+        "p_sarah"
+      ]
+    },
+    {
+      "id": "f_hook",
+      "text": "From Sarah's bag: a steel sack hook, sugar crystals stuck in the grease of its handle.",
+      "kind": "true",
+      "about": [
+        "p_sarah"
+      ]
+    },
+    {
+      "id": "f_sarah_prints",
+      "text": "Fingerprints taken from Sarah Opolot in detention.",
+      "kind": "true",
+      "about": [
+        "p_sarah"
+      ]
+    },
+    {
+      "id": "f_aut_crush",
+      "text": "Autopsy: crush asphyxia under heavy weight. He couldn't breathe under the sacks.",
+      "kind": "true",
+      "about": [
+        "p_joshua"
+      ]
+    },
+    {
+      "id": "f_aut_wrists",
+      "text": "Autopsy: bruises on both wrists from a hard grip, made minutes before the crush.",
+      "kind": "true",
+      "about": [
+        "p_joshua"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 11:00 and 12:30.",
+      "kind": "true",
+      "about": [
+        "p_joshua"
+      ],
+      "at": {
+        "from": "11:00",
+        "to": "12:30"
+      }
+    },
+    {
+      "id": "f_aut_nohead",
+      "text": "Autopsy: no head injury, and a heart in good condition for his age. Nothing in his stomach but tea.",
+      "kind": "true",
+      "about": [
+        "p_joshua"
+      ]
+    },
+    {
+      "id": "f_hook_prints",
+      "text": "Lab: Sarah Opolot's fingerprints are on the hook's handle, in the grease and sugar.",
+      "kind": "true",
+      "about": [
+        "p_sarah"
+      ]
+    },
+    {
+      "id": "f_hook_fibre",
+      "text": "Lab: sack fibres on the hook's tip match the torn weave of the top three sacks.",
+      "kind": "true",
+      "about": [
+        "p_sarah"
+      ]
+    },
+    {
+      "id": "f_sarah_bus",
+      "text": "Sarah: \"I came on the afternoon bus. I only got to Kisumu at two.\"",
+      "kind": "lie",
+      "about": [
+        "p_sarah"
+      ]
+    },
+    {
+      "id": "f_sarah_poison",
+      "text": "Sarah: \"That man poisoned my customers.\"",
+      "kind": "claim",
+      "about": [
+        "p_sarah",
+        "p_joshua"
+      ]
+    },
+    {
+      "id": "f_sarah_store",
+      "text": "Sarah admits she went to Joshua's store at about 11:15 with a sack of his sugar \"so he could see it\".",
+      "kind": "true",
+      "about": [
+        "p_sarah",
+        "p_joshua"
+      ],
+      "where": {
+        "person": "p_sarah",
+        "place": "loc_store",
+        "from": "11:15",
+        "to": "11:25"
+      }
+    },
+    {
+      "id": "f_ben_claim",
+      "text": "Ben: \"I was delivering in Manyatta.\"",
+      "kind": "claim",
+      "about": [
+        "p_ben"
+      ]
+    },
+    {
+      "id": "f_ben_pay",
+      "text": "Ben: \"He paid me badly. Everyone knows it. I wouldn't kill him for that.\"",
+      "kind": "true",
+      "about": [
+        "p_ben",
+        "p_joshua"
+      ]
+    },
+    {
+      "id": "f_ben_backroom",
+      "text": "Ben: Joshua sewed new sacks in the back room on Saturday nights. \"Mzee said not to ask.\"",
+      "kind": "true",
+      "about": [
+        "p_ben",
+        "p_joshua"
+      ]
+    },
+    {
+      "id": "f_yusuf_claim",
+      "text": "Yusuf: \"I was at my counter all morning.\"",
+      "kind": "claim",
+      "about": [
+        "p_yusuf"
+      ]
+    },
+    {
+      "id": "f_yusuf_warned",
+      "text": "Yusuf: \"I told him five years ago: one day that re-sacking will kill somebody.\"",
+      "kind": "true",
+      "about": [
+        "p_yusuf",
+        "p_joshua"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_sarah",
+      "stance": "cooperative",
+      "intro": "Sarah sits very straight on the bench outside the market master's office, her cloth bag on her knees. \"I heard. I won't pretend to cry.\"",
+      "claims": [
+        "f_sarah_bus",
+        "f_sarah_poison"
+      ],
+      "yields": [
+        "ev_sarah_paid"
+      ],
+      "topics": [
+        {
+          "about": "ev_evsack",
+          "reply": "Yes, that is my tag. I sent it back to him weeks ago. He never answered.",
+          "reveals": []
+        },
+        {
+          "about": "f_diana",
+          "reply": "Two nights in a cell with my customers' children crying outside. My shop is gone. He sold me poison and called it sugar.",
+          "reveals": [
+            "f_sarah_lost"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_ben",
+      "stance": "cooperative",
+      "intro": "Ben sits on the edge of the handcart, sugar dust on his arms, not looking at the store. \"I found him. I pulled two sacks off before I understood.\"",
+      "claims": [
+        "f_ben_claim"
+      ],
+      "yields": [
+        "ev_ben"
+      ],
+      "topics": [
+        {
+          "about": "p_joshua",
+          "reply": "He paid me badly. Everyone knows it. I wouldn't kill him for that.",
+          "reveals": [
+            "f_ben_pay"
+          ]
+        },
+        {
+          "about": "ev_backroom",
+          "reply": "Saturday nights he sewed new sacks in there. Mzee said not to ask. So I didn't ask.",
+          "reveals": [
+            "f_ben_backroom"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_yusuf",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_evsack",
+        "ev_backroom"
+      ],
+      "intro": "Yusuf keeps weighing sugar into kilo bags as you talk. \"His business is his business. I sell sugar.\"",
+      "claims": [
+        "f_yusuf_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_evsack",
+          "reply": "I told him five years ago: one day that re-sacking will kill somebody. He laughed. He always laughed.",
+          "reveals": [
+            "f_yusuf_warned"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_hassan",
+      "stance": "cooperative",
+      "intro": "Hassan flips his receipt book open to the morning. \"I took his fee at ten past eleven. He was laughing.\"",
+      "claims": [],
+      "yields": [
+        "ev_feereceipt"
+      ],
+      "topics": [
+        {
+          "about": "p_sarah",
+          "reply": "Opolot? No stall here, never. Let me check the register. ...No. Nothing.",
+          "reveals": [
+            "ev_stall_register"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_diana",
+      "stance": "cooperative",
+      "intro": "Diana comes straight from church, Bible still in her hand. She looks at the inner bag for a long time. \"That's the sugar. That's the one.\"",
+      "claims": [],
+      "yields": [
+        "ev_diana"
+      ],
+      "topics": [
+        {
+          "about": "ev_backroom",
+          "reply": "A sewing machine and new sacks. I'll need that room sealed, Detective.",
+          "reveals": []
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_sarah",
+      "claim": "f_sarah_bus",
+      "brokenBy": [
+        "f_manifest"
+      ],
+      "reveals": [
+        "f_sarah_store"
+      ],
+      "reaction": "She closes her eyes. \"...I came in the morning. I brought him his rotten sugar so he could see it. He laughed. I left.\"",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "t_early",
+      "text": "Sunday, before 10:30",
+      "category": "time",
+      "window": {
+        "from": "06:00",
+        "to": "10:30"
+      },
+      "unlock": {
+        "anyOf": [
+          "f_aut_tod"
+        ]
+      }
+    },
+    {
+      "id": "t_1030",
+      "text": "Sunday, between 10:30 and 11:10",
+      "category": "time",
+      "window": {
+        "from": "10:30",
+        "to": "11:10"
+      },
+      "unlock": {
+        "anyOf": [
+          "f_aut_tod"
+        ]
+      }
+    },
+    {
+      "id": "t_1110",
+      "text": "Sunday, between 11:10 and 11:40",
+      "category": "time",
+      "window": {
+        "from": "11:10",
+        "to": "11:40"
+      },
+      "unlock": {
+        "anyOf": [
+          "f_aut_tod"
+        ]
+      }
+    },
+    {
+      "id": "t_1140",
+      "text": "Sunday, between 11:40 and 12:05",
+      "category": "time",
+      "window": {
+        "from": "11:40",
+        "to": "12:05"
+      },
+      "unlock": {
+        "anyOf": [
+          "f_aut_tod"
+        ]
+      }
+    },
+    {
+      "id": "t_1205",
+      "text": "Sunday, between 12:05 and 12:30",
+      "category": "time",
+      "window": {
+        "from": "12:05",
+        "to": "12:30"
+      },
+      "unlock": {
+        "anyOf": [
+          "f_aut_tod"
+        ]
+      }
+    },
+    {
+      "id": "w_sarah",
+      "text": "Sarah Opolot",
+      "category": "person",
+      "ref": "p_sarah",
+      "unlock": {
+        "anyOf": [
+          "f_sack_tag",
+          "f_diana"
+        ]
+      }
+    },
+    {
+      "id": "w_ben",
+      "text": "Ben Omolo",
+      "category": "person",
+      "ref": "p_ben",
+      "unlock": {
+        "anyOf": [
+          "f_ben_claim"
+        ]
+      }
+    },
+    {
+      "id": "w_yusuf",
+      "text": "Yusuf Ramadhan",
+      "category": "person",
+      "ref": "p_yusuf",
+      "unlock": {
+        "anyOf": [
+          "f_yusuf_cust",
+          "f_yusuf_claim"
+        ]
+      }
+    },
+    {
+      "id": "w_hassan",
+      "text": "Hassan Bwire",
+      "category": "person",
+      "ref": "p_hassan",
+      "unlock": {
+        "anyOf": [
+          "f_feereceipt"
+        ]
+      }
+    },
+    {
+      "id": "w_diana",
+      "text": "Diana Apiyo",
+      "category": "person",
+      "ref": "p_diana",
+      "unlock": {
+        "anyOf": [
+          "f_diana"
+        ]
+      }
+    },
+    {
+      "id": "h_hook",
+      "text": "pulled a stack of sugar sacks down on him with a sack hook",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_stack"
+        ]
+      }
+    },
+    {
+      "id": "h_accident",
+      "text": "the stack collapsed by accident",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_blow",
+      "text": "a blow to the head",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack while lifting",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_poison",
+      "text": "poisoned by the sugar",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_resacked"
+        ]
+      }
+    },
+    {
+      "id": "m_sugar",
+      "text": "the expired sugar he'd sold her made her customers ill and cost her everything",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_diana"
+        ]
+      }
+    },
+    {
+      "id": "m_rival",
+      "text": "rivalry over customers",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_yusuf_claim"
+        ]
+      }
+    },
+    {
+      "id": "m_wages",
+      "text": "low wages",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ben_pay"
+        ]
+      }
+    },
+    {
+      "id": "m_debt",
+      "text": "an unpaid debt for the sugar",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_sarah_paid"
+        ]
+      }
+    },
+    {
+      "id": "m_stall",
+      "text": "a quarrel over a stall",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_feereceipt"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "On {when}, {who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Joshua Obura"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "time",
+            "answer": "t_1110"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Laughing with the market master at ten past eleven, shutter down at twenty to twelve. That's the window.",
+          "fail": [
+            "He paid his fee at 11:10. He was alive then.",
+            "The shutter was down at 11:40 and nobody answered. Narrow it from that side too."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_sarah"
+          }
+        ],
+        "prosecutor": {
+          "pass": "In Kisumu from eleven, in his store at quarter past, and her prints in the grease of that hook. Charge her.",
+          "fail": [
+            "The helper was getting signatures in Manyatta. Look again.",
+            "Yusuf was weighing sugar for customers all morning. Who came from Busia?"
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_hook"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Torn sacks at the top, grip marks on his wrists, and a hook in her bag. It didn't fall. Yes.",
+          "fail": [
+            "Sacks don't tear themselves at the top. Read the stack again.",
+            "Crush asphyxia. Nothing hit his head."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_sugar"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Charge her. And Amani: make sure Diana gets the back room. Somebody has to answer for that sugar too.",
+          "fail": [
+            "She paid him in full. Read her receipt.",
+            "She has no stall here. What did she lose?"
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_store",
+      "from": "11:10",
+      "to": "11:40",
+      "within": [
+        "plc_counter",
+        "plc_backroom"
+      ],
+      "note": "The act window: alive paying his fee at 11:10, shutter down and silent at 11:40. The autopsy allows 11:00–12:30."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_feereceipt",
+          "f_rebecca",
+          "f_ben",
+          "f_aut_tod"
+        ],
+        "concludes": "Joshua paid his fee and laughed with the market master at 11:10. At 11:40 his shutter was half down and he didn't answer. He died between 11:10 and 11:40.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_resacked",
+          "f_backroom",
+          "f_diana",
+          "f_sack_tag"
+        ],
+        "concludes": "Joshua was re-bagging expired imported sugar as \"Kenyan Sugar\". That is the sugar Diana seized from Sarah's shop in Busia after her customers fell ill."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_sarah_bus",
+          "f_manifest",
+          "f_sarah_store",
+          "f_stack",
+          "f_aut_crush",
+          "f_aut_wrists",
+          "f_hook",
+          "f_hook_prints"
+        ],
+        "concludes": "Sarah wasn't on the afternoon bus: she arrived at 11:00 and was in the store at about 11:15. The stack was hooked and pulled from the top, he was gripped first, and the hook in her bag carries her prints. Sarah Opolot killed Joshua by pulling a stack of sacks down on him, because his expired sugar had cost her everything.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "t_early",
+        "blank": "when",
+        "by": [
+          "f_feereceipt"
+        ],
+        "why": "He was alive and laughing at 11:10."
+      },
+      {
+        "word": "t_1030",
+        "blank": "when",
+        "by": [
+          "f_feereceipt"
+        ],
+        "why": "He paid his fee at 11:10."
+      },
+      {
+        "word": "t_1140",
+        "blank": "when",
+        "by": [
+          "f_rebecca"
+        ],
+        "why": "At 11:40 his shutter was already down and he didn't answer."
+      },
+      {
+        "word": "t_1205",
+        "blank": "when",
+        "by": [
+          "f_rebecca",
+          "f_ben"
+        ],
+        "why": "Ben found him at 12:05; he was silent at 11:40."
+      },
+      {
+        "word": "w_ben",
+        "blank": "who",
+        "by": [
+          "f_ben"
+        ],
+        "why": "Ben was getting delivery notes signed in Manyatta from 11:08 to 11:50."
+      },
+      {
+        "word": "w_yusuf",
+        "blank": "who",
+        "by": [
+          "f_yusuf_cust"
+        ],
+        "why": "Yusuf was serving customers at his own counter from 11:00 to 12:00."
+      },
+      {
+        "word": "w_hassan",
+        "blank": "who",
+        "by": [
+          "f_hassan_self"
+        ],
+        "why": "Hassan was stamping receipts in the shoe section at 11:18, 11:26 and 11:35."
+      },
+      {
+        "word": "w_diana",
+        "blank": "who",
+        "by": [
+          "f_diana_self"
+        ],
+        "why": "Diana was at the Sunday service in Milimani."
+      },
+      {
+        "word": "h_accident",
+        "blank": "how",
+        "by": [
+          "f_stack",
+          "f_aut_wrists"
+        ],
+        "why": "The top sacks were hooked and pulled, and he was gripped minutes before."
+      },
+      {
+        "word": "h_blow",
+        "blank": "how",
+        "by": [
+          "f_aut_crush",
+          "f_aut_nohead"
+        ],
+        "why": "Crush asphyxia; no head injury."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_nohead",
+          "f_aut_crush"
+        ],
+        "why": "His heart was sound; he died of the weight."
+      },
+      {
+        "word": "h_poison",
+        "blank": "how",
+        "by": [
+          "f_aut_crush",
+          "f_aut_nohead"
+        ],
+        "why": "He died of crush asphyxia, with only tea in his stomach."
+      },
+      {
+        "word": "m_rival",
+        "blank": "why",
+        "by": [
+          "f_yusuf_cust"
+        ],
+        "why": "That rivalry is Yusuf's, and Yusuf was at his counter."
+      },
+      {
+        "word": "m_wages",
+        "blank": "why",
+        "by": [
+          "f_ben",
+          "f_ben_pay"
+        ],
+        "why": "That grievance is Ben's, and Ben was in Manyatta."
+      },
+      {
+        "word": "m_debt",
+        "blank": "why",
+        "by": [
+          "f_sarah_paid"
+        ],
+        "why": "Sarah paid for every bag in full, in cash."
+      },
+      {
+        "word": "m_stall",
+        "blank": "why",
+        "by": [
+          "f_no_stall"
+        ],
+        "why": "Sarah has no stall at Kibuye."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "In October Joshua sells Sarah 40 sacks of \"Kenyan\" sugar for her shop in Busia: expired imported sugar, re-bagged in his back room.",
+        "image": null
+      },
+      {
+        "text": "Her customers fall ill. The county seizes her stock; she spends two nights in a cell and loses the shop.",
+        "image": null
+      },
+      {
+        "text": "Sunday. She takes the 08:30 bus and arrives at 11:00 with one of his sacks. At 11:10 Joshua pays his market fee, laughing.",
+        "image": null
+      },
+      {
+        "text": "About 11:15. She shows him the inner bag. He laughs and tells her to sell it to pigs. She grabs his wrists. When he turns to serve the counter she hooks the top of the stack and pulls.",
+        "image": "loc_store"
+      },
+      {
+        "text": "She pulls the shutter half down and walks into the Sunday crowd with the hook in her bag. At 11:40 Rebecca calls through the shutter. Nobody answers.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "Detain Sarah once the bus list breaks her story; the hook comes from her bag and her prints are taken in detention. Prints take 6 h. The fibre test is optional.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_store",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_stack",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_evsack",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_hassan"
+      },
+      {
+        "do": "read",
+        "target": "ev_rebecca",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_ben"
+      },
+      {
+        "do": "read",
+        "target": "ev_backroom",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_diana"
+      },
+      {
+        "do": "interview",
+        "target": "p_sarah"
+      },
+      {
+        "do": "visit",
+        "target": "loc_busoffice",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_manifest",
+        "hours": 1
+      },
+      {
+        "do": "press",
+        "target": "c_sarah"
+      },
+      {
+        "do": "detain",
+        "target": "p_sarah"
+      },
+      {
+        "do": "sample",
+        "target": "ev_hook"
+      },
+      {
+        "do": "sample",
+        "target": "ev_sarah_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 6
+      }
+    ],
+    "totalHours": 24
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_feereceipt",
+        "line": "One fact sets the earliest time. Another sets the latest. Find both."
+      },
+      "tier2": {
+        "facts": [
+          "f_feereceipt",
+          "f_rebecca"
+        ],
+        "line": "A fee stamped at 11:10. A shutter down at 11:40."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_evsack",
+        "line": "Read the tag on the sack by the counter. Who sent it back?"
+      },
+      "tier2": {
+        "facts": [
+          "f_manifest",
+          "f_sarah_store"
+        ],
+        "line": "The bus list says she arrived at eleven. She says she came at two."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_stack",
+        "line": "Look at the top of the stack, not the bottom."
+      },
+      "tier2": {
+        "facts": [
+          "f_stack",
+          "f_aut_wrists"
+        ],
+        "line": "Tears in the top sacks, and grip bruises on his wrists."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_evsack",
+        "line": "Cut the sack open. What's inside the sack?"
+      },
+      "tier2": {
+        "facts": [
+          "f_resacked",
+          "f_diana"
+        ],
+        "line": "Expired sugar in a new bag, and a shop in Busia that lost everything."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "sukari",
+      "def": "Sugar."
+    },
+    {
+      "term": "gunia",
+      "def": "A sack."
+    },
+    {
+      "term": "soko",
+      "def": "Market."
+    },
+    {
+      "term": "ndoano",
+      "def": "Hook; here, a sack hook for gripping heavy bags."
+    },
+    {
+      "term": "mzee",
+      "def": "Respectful word for an older man; also \"the boss\"."
+    },
+    {
+      "term": "kitenge",
+      "def": "Brightly printed cotton cloth, often made into dresses."
+    },
+    {
+      "term": "kofia",
+      "def": "A brimless embroidered cap."
+    },
+    {
+      "term": "kanzu",
+      "def": "A long white robe worn by men."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "whenFromBothSides"
+    ],
+    "beatNotes": "Narrow from both sides. The single WHEN blank teaches the habit the timeline strip will build on: one fact sets the earliest time (the fee receipt), one sets the latest (the shutter). On the rail the two pins shade the window between them."
+  }
+}

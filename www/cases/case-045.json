@@ -1,0 +1,1867 @@
+{
+  "meta": {
+    "id": "case-045",
+    "number": 45,
+    "region": "kisumu-lake",
+    "regionNumber": 5,
+    "title": "Christmas Eve",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 26,
+    "date": "Thursday 25 December",
+    "folderTab": "MILIMANI"
+  },
+  "pattern": {
+    "crimePattern": "daughter-in-law gives the family patriarch an insulin overdose to stop him reporting her husband's theft",
+    "noRealCaseRetold": true,
+    "notes": "Fictional family, firm, club and \"smart\" pen. No dosing method is described beyond \"dialled up to 60 units\", which the pen's own memory reports; no instructions. The family is written as a sad, ordinary family, not as a stereotype.",
+    "tags": [
+      "insulin",
+      "medical-device",
+      "protecting",
+      "two-liars",
+      "warrant",
+      "detention",
+      "forensics",
+      "when-strip"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 4,
+    "redHerrings": 1,
+    "liars": 2,
+    "groups": [
+      "when",
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "forensic"
+    ],
+    "gatedActions": [
+      "warrant"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 26/25/12",
+    "date": "Thursday 25 December",
+    "time": "07:45",
+    "reportedBy": "Rahul Pandya, son",
+    "text": "The family of Kisumu businessman Harshad Pandya (68) reports him found dead in bed at 07:30 on Christmas morning at the family home in Milimani. The family doctor, called first, suspects a diabetic emergency.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_harshad",
+      "role": "victim",
+      "name": "Harshad Pandya",
+      "age": 68,
+      "occupation": "Chairman, Pandya Cotton Ginners",
+      "bio": "Third generation in Kisumu. Type 2 diabetic on insulin, and proud of the gadget pen that remembers every dose.",
+      "community": "Kenyan-Asian (Gujarati)",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_hroom",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan-Asian man, late 60s, silver hair combed back, gold-rimmed glasses, a cream kurta under a dark waistcoat, dignified and stern, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_priya",
+      "role": "suspect",
+      "name": "Priya Pandya",
+      "age": 34,
+      "occupation": "Harshad's daughter-in-law",
+      "bio": "Married into the family nine years ago. Brings her father-in-law his glass of water every night.",
+      "community": "Kenyan-Asian (Gujarati)",
+      "isCulprit": true,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_prbed",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan-Asian woman, mid 30s, a simple dark kurti, a thin gold chain, hair tied back, very composed, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_rahul",
+      "role": "suspect",
+      "name": "Rahul Pandya",
+      "age": 37,
+      "occupation": "Son; finance director of the firm",
+      "bio": "Runs the firm's money. Hasn't slept.",
+      "community": "Kenyan-Asian (Gujarati)",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_prbed",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan-Asian man, late 30s, an unbuttoned white shirt from the night before, stubble, red eyes, frightened, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_anil",
+      "role": "suspect",
+      "name": "Anil Mehta",
+      "age": 55,
+      "occupation": "Rival cotton ginner",
+      "redHerring": true,
+      "bio": "Argued with Harshad at the club about buying the business.",
+      "community": "Kenyan-Asian (Punjabi)",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_club_argument"
+      },
+      "at": "plc_riat",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan-Asian man, mid 50s, a navy blazer and an open collar, a heavy watch, impatient and a little amused, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_ernest",
+      "role": "suspect",
+      "name": "Ernest Ogola",
+      "age": 44,
+      "occupation": "Family driver",
+      "bio": "Has driven the Pandyas for eleven years. Lives in the staff quarters by the yard.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_quarters",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Luo man, mid 40s, a driver's pressed white shirt and dark trousers, a cap in his hands, troubled, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_sabina",
+      "role": "witness",
+      "name": "Sabina Akeyo",
+      "age": 50,
+      "occupation": "Housekeeper for 20 years",
+      "bio": "Calls the old man Bapuji, like the family does. Sleeps in the room off the kitchen.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_sabina",
+      "image": null
+    },
+    {
+      "id": "p_tom",
+      "role": "witness",
+      "name": "Tom Were",
+      "age": 41,
+      "occupation": "Steward, Lakeside Gymkhana Club",
+      "bio": "Ran the Christmas Eve dinner and keeps the bills.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_club",
+      "image": null
+    },
+    {
+      "id": "p_wycliffe",
+      "role": "witness",
+      "name": "Wycliffe Onyango",
+      "age": 39,
+      "occupation": "Anil Mehta's driver",
+      "statementOnly": true,
+      "bio": "Drove his employer home from the club.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_riat",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_hbed",
+      "name": "Harshad's bed",
+      "within": "loc_hroom"
+    },
+    {
+      "id": "plc_prbed",
+      "name": "Rahul and Priya's bedroom, upstairs"
+    },
+    {
+      "id": "plc_sabina",
+      "name": "Sabina's room off the kitchen"
+    },
+    {
+      "id": "plc_quarters",
+      "name": "Staff quarters by the yard"
+    },
+    {
+      "id": "plc_club",
+      "name": "Lakeside Gymkhana Club"
+    },
+    {
+      "id": "plc_riat",
+      "name": "Anil Mehta's house, Riat Hills"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_hroom",
+      "name": "Harshad's bedroom",
+      "kind": "scene",
+      "description": "A high-ceilinged room in an old Milimani house, a ceiling fan turning slowly, Christmas lights from the veranda blinking through the curtains. A neat bedside table: a glass of water, a diary, a grey insulin pen in its charger.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The bed",
+          "pos": [
+            50,
+            56
+          ],
+          "yields": "ev_body",
+          "text": "Harshad lies on his back in bed, the sheet still smooth."
+        },
+        {
+          "id": "hs_pen",
+          "label": "Insulin pen",
+          "pos": [
+            76,
+            46
+          ],
+          "yields": "ev_pen",
+          "text": "A smart insulin pen in its charging cradle. Its small screen wakes when you lift it."
+        },
+        {
+          "id": "hs_diary",
+          "label": "Diabetes diary",
+          "pos": [
+            70,
+            60
+          ],
+          "yields": "ev_diary",
+          "text": "A handwritten diabetes diary, a pen clipped to the page."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a high-ceilinged bedroom in an old colonial-era house in Milimani, Kisumu, a slowly turning ceiling fan, Christmas fairy lights blinking through the curtains from the veranda, a neat bedside table with a glass of water, a notebook and a grey insulin pen in a charger, no people in focus"
+      }
+    },
+    {
+      "id": "loc_study",
+      "name": "Harshad's study",
+      "kind": "location",
+      "description": "Teak shelves of ledgers and cotton-price reports. On the desk, the firm's accounts open under a reading lamp, red pen beside them.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_accounts",
+          "label": "Accounts on the desk",
+          "pos": [
+            40,
+            50
+          ],
+          "yields": "ev_accounts",
+          "text": "Ledger pages with red-pen circles, and a yellow sticky note."
+        },
+        {
+          "id": "hs_will",
+          "label": "Desk drawer",
+          "pos": [
+            70,
+            56
+          ],
+          "yields": "ev_will",
+          "text": "A will in an envelope, and a share-transfer form."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "an old teak-panelled study in a Kisumu family home, ledgers on shelves, a desk with an open accounts book under a reading lamp, a red pen and a yellow sticky note"
+      }
+    },
+    {
+      "id": "loc_club",
+      "name": "Lakeside Gymkhana Club",
+      "kind": "location",
+      "description": "A colonial clubhouse on the lake shore, the Christmas tree still lit, the dining room being cleared from the night before.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_bill",
+          "label": "The steward's desk",
+          "pos": [
+            40,
+            50
+          ],
+          "yields": "ev_club",
+          "text": "Tom Were has the Christmas Eve bills on a spike."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the dining room of an old colonial lakeside club in Kisumu the morning after Christmas Eve, a lit Christmas tree, tables being cleared, Lake Victoria through tall windows"
+      }
+    },
+    {
+      "id": "loc_phone",
+      "name": "Priya's phone (warrant)",
+      "kind": "search",
+      "description": "The phone on the kitchen table, handed over under the warrant, unlocked by the court order.",
+      "unlock": {
+        "fact": "f_priya_refuses"
+      },
+      "hotspots": [
+        {
+          "id": "hs_app",
+          "label": "Fitness app",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_priya_phone",
+          "text": "A step-counting app logs every minute of the night."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a smartphone on a kitchen table showing a fitness-tracker app with a small spike in a night-time step graph"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "In bed",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. In bed on his back. No sign of a struggle. A glass of water on the table, half drunk."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a neatly made bed with a smooth sheet in an old high-ceilinged room, a bedside table with a glass of water and an insulin pen in its charger, no body visible"
+      }
+    },
+    {
+      "id": "ev_pen",
+      "type": "physical",
+      "title": "Smart insulin pen",
+      "render": "logBook",
+      "body": {
+        "memory": [
+          "24 Dec 22:45 — 14 units",
+          "24 Dec 23:41 — 60 units"
+        ]
+      },
+      "facts": [
+        "f_pen_memory"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a grey smart insulin pen in a charging cradle, its small screen showing a dose log with two entries"
+      }
+    },
+    {
+      "id": "ev_diary",
+      "type": "physical",
+      "title": "Diabetes diary",
+      "render": "ledger",
+      "body": {
+        "last": "24 Dec, 22:45, 14 u, abdomen.",
+        "pattern": "Every entry for three years: abdomen."
+      },
+      "facts": [
+        "f_diary"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_sabina",
+      "type": "witness",
+      "title": "Statement: Sabina Akeyo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_sabina"
+      },
+      "facts": [
+        "f_sabina_pen",
+        "f_sabina_water",
+        "f_sabina_stair",
+        "f_sabina_self",
+        "f_ernest_quarters"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ernest",
+      "type": "witness",
+      "title": "Statement: Ernest Ogola",
+      "render": "statement",
+      "body": {
+        "speaker": "p_ernest"
+      },
+      "facts": [
+        "f_ernest_car"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_accounts",
+      "type": "physical",
+      "title": "Firm accounts",
+      "render": "ledger",
+      "body": {
+        "circles": "Transfers to an account controlled by R. Pandya — KSh 9.2 million in total over two years.",
+        "note": "Auditors 27th."
+      },
+      "facts": [
+        "f_accounts"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_will",
+      "type": "physical",
+      "title": "Will and share transfer",
+      "render": "form",
+      "body": {
+        "will": "Estate to be divided among family.",
+        "transfer": "Last year: 60% of Pandya Cotton Ginners transferred to Rahul Pandya."
+      },
+      "facts": [
+        "f_will"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_club",
+      "type": "physical",
+      "title": "Club bills and steward",
+      "render": "receipt",
+      "body": {
+        "pandya": "Table 4 — Pandya family — closed 22:30",
+        "mehta": "Table 9 — A. Mehta — left 22:40 with own driver",
+        "note": "Raised voices between table 4 and table 9 at about 21:30 (steward)."
+      },
+      "facts": [
+        "f_club",
+        "f_anil_left",
+        "f_club_argument"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_anil",
+      "type": "witness",
+      "title": "Statement: Wycliffe Onyango",
+      "render": "statement",
+      "body": {
+        "speaker": "p_wycliffe"
+      },
+      "facts": [
+        "f_anil_home"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_priya_phone",
+      "type": "phone",
+      "title": "Priya's phone: fitness app",
+      "render": "manifest",
+      "body": {
+        "steps": "23:37–23:46: steps logged, heart rate raised. Otherwise still from 23:05 to 06:50."
+      },
+      "facts": [
+        "f_steps"
+      ],
+      "gate": {
+        "action": "warrant",
+        "cost": 1,
+        "grounds": [
+          "f_priya_refuses",
+          "f_sabina_water"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_household_prints",
+      "type": "physical",
+      "title": "Household prints (given voluntarily)",
+      "render": "form",
+      "body": {
+        "names": "S. Akeyo · R. Pandya · E. Ogola"
+      },
+      "facts": [
+        "f_household_prints"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_priya_prints",
+      "type": "physical",
+      "title": "Fingerprints: Priya Pandya",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention; she refused to give them voluntarily."
+      },
+      "facts": [
+        "f_priya_prints"
+      ],
+      "gate": null,
+      "detention": "p_priya",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_hypo",
+        "f_aut_sites",
+        "f_aut_tod",
+        "f_aut_noother"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_tox",
+      "type": "forensic",
+      "title": "Lab: toxicology (blood)",
+      "render": "labReport",
+      "body": {
+        "test": "toxicology"
+      },
+      "facts": [
+        "f_tox"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "toxicology",
+        "hours": 18,
+        "needs": [
+          "ev_autopsy"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints on the pen",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_pen_prints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_pen",
+          "ev_priya_prints",
+          "ev_household_prints"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Harshad Pandya was found dead in bed at 07:30 on Christmas morning. The family doctor suspects a diabetic emergency.",
+      "kind": "true",
+      "about": [
+        "p_harshad",
+        "loc_hroom"
+      ],
+      "at": {
+        "from": "07:30"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "He lies on his back in bed. No sign of a struggle. A half-drunk glass of water on the bedside table.",
+      "kind": "true",
+      "about": [
+        "p_harshad",
+        "loc_hroom"
+      ]
+    },
+    {
+      "id": "f_pen_memory",
+      "text": "The pen's dose memory: 24 December, 22:45 — 14 units. 24 December, 23:41 — 60 units.",
+      "kind": "true",
+      "about": [
+        "p_harshad"
+      ],
+      "at": {
+        "from": "23:41"
+      }
+    },
+    {
+      "id": "f_diary",
+      "text": "Harshad's diary, in his hand: \"24 Dec, 22:45, 14 u, abdomen.\" Every entry for three years says abdomen. Nothing after 22:45.",
+      "kind": "true",
+      "about": [
+        "p_harshad"
+      ],
+      "at": {
+        "from": "22:45"
+      }
+    },
+    {
+      "id": "f_sabina_pen",
+      "text": "Sabina: \"Bapuji never let anyone touch his pen. Not his wife when she was alive, not me, not the doctor. He was proud of it.\"",
+      "kind": "true",
+      "about": [
+        "p_sabina",
+        "p_harshad"
+      ]
+    },
+    {
+      "id": "f_sabina_water",
+      "text": "Sabina: Priya took Bapuji a glass of water every night at about half past eleven.",
+      "kind": "true",
+      "about": [
+        "p_sabina",
+        "p_priya"
+      ]
+    },
+    {
+      "id": "f_sabina_stair",
+      "text": "Sabina: at 23:36 she heard the stair creak and a water glass clink past her door, going up to Bapuji's room. \"Priya, with his water.\"",
+      "kind": "true",
+      "about": [
+        "p_sabina",
+        "p_priya"
+      ],
+      "at": {
+        "from": "23:36"
+      }
+    },
+    {
+      "id": "f_sabina_self",
+      "text": "Sabina was in her room off the kitchen from 23:00; she sleeps downstairs.",
+      "kind": "true",
+      "about": [
+        "p_sabina"
+      ],
+      "where": {
+        "person": "p_sabina",
+        "place": "plc_sabina",
+        "from": "23:00",
+        "to": "06:30"
+      }
+    },
+    {
+      "id": "f_ernest_quarters",
+      "text": "Sabina: Ernest went to the staff quarters at 22:50. The yard gate's chain was still on in the morning.",
+      "kind": "true",
+      "about": [
+        "p_sabina",
+        "p_ernest"
+      ],
+      "where": {
+        "person": "p_ernest",
+        "place": "plc_quarters",
+        "from": "22:50",
+        "to": "06:30"
+      }
+    },
+    {
+      "id": "f_ernest_car",
+      "text": "Ernest: on the drive to the club, \"Mzee shouted at Rahul about money. He said, 'the twenty-seventh, police'. Madam Priya was sitting in the middle row.\"",
+      "kind": "true",
+      "about": [
+        "p_ernest",
+        "p_rahul",
+        "p_priya"
+      ]
+    },
+    {
+      "id": "f_accounts",
+      "text": "Harshad's red-pen circles: KSh 9.2 million transferred over two years to an account controlled by Rahul. A sticky note: \"Auditors 27th.\"",
+      "kind": "true",
+      "about": [
+        "p_rahul",
+        "p_harshad"
+      ]
+    },
+    {
+      "id": "f_will",
+      "text": "Harshad's will divides the estate among the family, and a share transfer last year already gave Rahul 60% of the firm.",
+      "kind": "true",
+      "about": [
+        "p_rahul"
+      ]
+    },
+    {
+      "id": "f_club",
+      "text": "Club bill: the Pandya family's table closed and they left at 22:30.",
+      "kind": "true",
+      "about": [
+        "p_harshad"
+      ],
+      "at": {
+        "from": "22:30"
+      }
+    },
+    {
+      "id": "f_anil_left",
+      "text": "Club steward: Anil Mehta left at 22:40 with his own driver, for Riat Hills.",
+      "kind": "true",
+      "about": [
+        "p_anil"
+      ],
+      "at": {
+        "from": "22:40"
+      }
+    },
+    {
+      "id": "f_club_argument",
+      "text": "Club steward: raised voices between the Pandya table and Anil Mehta's at about 21:30.",
+      "kind": "true",
+      "about": [
+        "p_tom",
+        "p_anil",
+        "p_harshad"
+      ]
+    },
+    {
+      "id": "f_anil_home",
+      "text": "Wycliffe: Anil was home in Riat Hills by 23:05, and had eight guests until 01:00.",
+      "kind": "true",
+      "about": [
+        "p_wycliffe",
+        "p_anil"
+      ],
+      "where": {
+        "person": "p_anil",
+        "place": "plc_riat",
+        "from": "23:05",
+        "to": "01:00"
+      }
+    },
+    {
+      "id": "f_steps",
+      "text": "Priya's fitness app: steps logged from 23:37 to 23:46 with a raised heart rate. Otherwise still from 23:05 to 06:50.",
+      "kind": "true",
+      "about": [
+        "p_priya"
+      ],
+      "at": {
+        "from": "23:37",
+        "to": "23:46"
+      }
+    },
+    {
+      "id": "f_household_prints",
+      "text": "Sabina, Rahul and Ernest give their fingerprints voluntarily.",
+      "kind": "true",
+      "about": [
+        "p_sabina",
+        "p_rahul",
+        "p_ernest"
+      ]
+    },
+    {
+      "id": "f_priya_prints",
+      "text": "Fingerprints taken from Priya Pandya in detention.",
+      "kind": "true",
+      "about": [
+        "p_priya"
+      ]
+    },
+    {
+      "id": "f_aut_hypo",
+      "text": "Autopsy: severe hypoglycaemia, with very low glucose in the eye fluid.",
+      "kind": "true",
+      "about": [
+        "p_harshad"
+      ]
+    },
+    {
+      "id": "f_aut_sites",
+      "text": "Autopsy: two recent injection sites, one in the abdomen and one in the right thigh.",
+      "kind": "true",
+      "about": [
+        "p_harshad"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 01:30 and 04:00.",
+      "kind": "true",
+      "about": [
+        "p_harshad"
+      ],
+      "at": {
+        "from": "01:30",
+        "to": "04:00"
+      }
+    },
+    {
+      "id": "f_aut_noother",
+      "text": "Autopsy: no heart attack, no signs of smothering or of any struggle.",
+      "kind": "true",
+      "about": [
+        "p_harshad"
+      ]
+    },
+    {
+      "id": "f_tox",
+      "text": "Toxicology: insulin far above any treatment dose. Nothing else in his blood but a glass of wine.",
+      "kind": "true",
+      "about": [
+        "p_harshad"
+      ]
+    },
+    {
+      "id": "f_pen_prints",
+      "text": "Lab: Harshad's prints on the pen's barrel. Priya's prints on the dose dial. Nobody else's.",
+      "kind": "true",
+      "about": [
+        "p_priya",
+        "p_harshad"
+      ]
+    },
+    {
+      "id": "f_priya_bed",
+      "text": "Priya: \"I went to bed at eleven and didn't leave our room until morning.\"",
+      "kind": "lie",
+      "about": [
+        "p_priya"
+      ]
+    },
+    {
+      "id": "f_priya_refuses",
+      "text": "Priya refuses to hand over her phone. \"My phone is private.\"",
+      "kind": "true",
+      "about": [
+        "p_priya"
+      ]
+    },
+    {
+      "id": "f_priya_water",
+      "text": "Priya admits she took Harshad his water that night, \"as I always do\".",
+      "kind": "true",
+      "about": [
+        "p_priya"
+      ],
+      "where": {
+        "person": "p_priya",
+        "place": "plc_hbed",
+        "from": "23:38",
+        "to": "23:44"
+      }
+    },
+    {
+      "id": "f_priya_notouch",
+      "text": "Priya: \"He was asleep. I put the glass down and came back. I never touched his pen.\"",
+      "kind": "lie",
+      "about": [
+        "p_priya"
+      ]
+    },
+    {
+      "id": "f_rahul_beside",
+      "text": "Rahul: \"Priya was beside me all night.\"",
+      "kind": "lie",
+      "about": [
+        "p_rahul",
+        "p_priya"
+      ]
+    },
+    {
+      "id": "f_rahul_admits",
+      "text": "Rahul: he stayed in bed. Priya got up; he doesn't know for how long. He admits taking the money from the firm.",
+      "kind": "true",
+      "about": [
+        "p_rahul",
+        "p_priya"
+      ],
+      "where": {
+        "person": "p_rahul",
+        "place": "plc_prbed",
+        "from": "23:00",
+        "to": "07:00"
+      }
+    },
+    {
+      "id": "f_anil_claim",
+      "text": "Anil: \"I left at twenty to eleven and had guests at home.\"",
+      "kind": "claim",
+      "about": [
+        "p_anil"
+      ]
+    },
+    {
+      "id": "f_anil_offer",
+      "text": "Anil: \"I offered to buy. He refused. Old men refuse.\"",
+      "kind": "true",
+      "about": [
+        "p_anil",
+        "p_harshad"
+      ]
+    },
+    {
+      "id": "f_ernest_claim",
+      "text": "Ernest: \"I went to my quarters at ten to eleven.\"",
+      "kind": "claim",
+      "about": [
+        "p_ernest"
+      ]
+    },
+    {
+      "id": "f_wages_paid",
+      "text": "Ernest: his wages and his Christmas bonus were paid on the 20th. \"Mzee never paid late.\"",
+      "kind": "true",
+      "about": [
+        "p_ernest"
+      ]
+    },
+    {
+      "id": "f_no_school",
+      "text": "Sabina: there has been no quarrel about the grandchildren's school. \"They agreed on that school two years ago.\"",
+      "kind": "true",
+      "about": [
+        "p_sabina"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_priya",
+      "stance": "cooperative",
+      "intro": "Priya sits at the dining table with her hands around a cup she isn't drinking. \"I went to bed at eleven. I didn't leave our room until morning.\"",
+      "claims": [
+        "f_priya_bed"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_priya_notouch",
+          "after": "f_priya_water"
+        }
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_pen",
+          "reply": "He never let anyone touch it. Everyone knows that. ...No, you can't have my phone. My phone is private.",
+          "reveals": [
+            "f_priya_refuses"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_rahul",
+      "stance": "cooperative",
+      "intro": "Rahul paces the veranda under the Christmas lights. \"Priya was beside me all night. Please, my father is dead, why are you asking about my wife?\"",
+      "claims": [
+        "f_rahul_beside"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_accounts",
+          "reply": "That is a business matter. I would rather discuss it with a lawyer.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_anil",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_club"
+      ],
+      "intro": "Anil receives you in his garden with a cup of coffee. \"Tragic. We were rivals for thirty years. That is not the same as enemies.\"",
+      "claims": [
+        "f_anil_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "f_club_argument",
+          "reply": "I offered to buy. He refused. Old men refuse. My driver took me home; ask him. Eight people were in this garden until one.",
+          "reveals": [
+            "f_anil_offer",
+            "ev_anil"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_ernest",
+      "stance": "cooperative",
+      "intro": "Ernest stands by the car with his cap in his hands. \"I drove them home at half past ten. I went to my quarters at ten to eleven.\"",
+      "claims": [
+        "f_ernest_claim"
+      ],
+      "yields": [
+        "ev_ernest"
+      ],
+      "topics": [
+        {
+          "about": "p_harshad",
+          "reply": "Mzee never paid late. My wages and the Christmas money came on the twentieth. Take my fingerprints if you want; take everyone's.",
+          "reveals": [
+            "f_wages_paid",
+            "ev_household_prints"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_sabina",
+      "stance": "cooperative",
+      "intro": "Sabina has set the Christmas lunch table anyway, one chair pushed in. \"Bapuji never let anyone touch his pen.\"",
+      "claims": [],
+      "yields": [
+        "ev_sabina"
+      ],
+      "topics": [
+        {
+          "about": "ev_accounts",
+          "reply": "I don't know about money. I know there has been no fighting about the children's school, if that's what they tell you. That was settled two years ago.",
+          "reveals": [
+            "f_no_school"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_tom",
+      "stance": "cooperative",
+      "intro": "Tom Were spikes another bill. \"Table 4 left at half ten. Mr Mehta's table, ten minutes after. There were voices earlier.\"",
+      "claims": [],
+      "yields": [
+        "ev_club"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_rahul",
+      "claim": "f_rahul_beside",
+      "brokenBy": [
+        "f_steps"
+      ],
+      "reveals": [
+        "f_rahul_admits"
+      ],
+      "reaction": "Rahul sits down on the veranda step. \"...She got up. I don't know for how long. I didn't ask. Please. It was my fault, the money, all of it.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_priya",
+      "claim": "f_priya_bed",
+      "brokenBy": [
+        "f_steps",
+        "f_sabina_stair"
+      ],
+      "reveals": [
+        "f_priya_water"
+      ],
+      "reaction": "\"...I took him his water, as I always do. He was asleep. I came back.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_priya_pen",
+      "claim": "f_priya_notouch",
+      "brokenBy": [
+        "f_pen_prints",
+        "f_sabina_pen"
+      ],
+      "reveals": [],
+      "reaction": "Priya looks at the print photograph of the dose dial for a long time. \"He was going to put my husband in prison on the twenty-seventh. My children's father.\" Then nothing.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_priya",
+      "text": "Priya Pandya",
+      "category": "person",
+      "ref": "p_priya",
+      "unlock": {
+        "anyOf": [
+          "f_priya_bed"
+        ]
+      }
+    },
+    {
+      "id": "w_rahul",
+      "text": "Rahul Pandya",
+      "category": "person",
+      "ref": "p_rahul",
+      "unlock": {
+        "anyOf": [
+          "f_rahul_beside"
+        ]
+      }
+    },
+    {
+      "id": "w_anil",
+      "text": "Anil Mehta",
+      "category": "person",
+      "ref": "p_anil",
+      "unlock": {
+        "anyOf": [
+          "f_club_argument"
+        ]
+      }
+    },
+    {
+      "id": "w_ernest",
+      "text": "Ernest Ogola",
+      "category": "person",
+      "ref": "p_ernest",
+      "unlock": {
+        "anyOf": [
+          "f_ernest_claim"
+        ]
+      }
+    },
+    {
+      "id": "w_sabina",
+      "text": "Sabina Akeyo",
+      "category": "person",
+      "ref": "p_sabina",
+      "unlock": {
+        "anyOf": [
+          "f_sabina_pen"
+        ]
+      }
+    },
+    {
+      "id": "h_insulin",
+      "text": "a deliberate overdose of his own insulin",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_pen_memory"
+        ]
+      }
+    },
+    {
+      "id": "h_natural",
+      "text": "a natural diabetic emergency",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_club",
+      "text": "poisoned at the club dinner",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_club"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack in his sleep",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_smother",
+      "text": "smothered in his sleep",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "m_theft",
+      "text": "he was about to report her husband's theft from the family firm",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_accounts"
+        ]
+      }
+    },
+    {
+      "id": "m_inherit",
+      "text": "she wanted her husband to inherit the firm sooner",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_will"
+        ]
+      }
+    },
+    {
+      "id": "m_rival",
+      "text": "he had refused the rival's offer to buy the business",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_club_argument"
+        ]
+      }
+    },
+    {
+      "id": "m_school",
+      "text": "they had quarrelled about the grandchildren's school",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_sabina_water"
+        ]
+      }
+    },
+    {
+      "id": "m_wages",
+      "text": "the staff were owed wages",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ernest_claim"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Harshad Pandya"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_2230",
+                  "label": "22:30",
+                  "from": "22:30",
+                  "to": "22:30"
+                },
+                {
+                  "id": "sl_2245",
+                  "label": "22:45",
+                  "from": "22:45",
+                  "to": "22:45"
+                },
+                {
+                  "id": "sl_2341",
+                  "label": "23:41",
+                  "from": "23:41",
+                  "to": "23:41"
+                },
+                {
+                  "id": "sl_0130",
+                  "label": "01:30–04:00",
+                  "from": "01:30",
+                  "to": "04:00"
+                },
+                {
+                  "id": "sl_0730",
+                  "label": "07:30",
+                  "from": "07:30",
+                  "to": "07:30"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_club",
+                  "text": "The family leaves the club",
+                  "slot": "sl_2230",
+                  "by": [
+                    "f_club"
+                  ],
+                  "why": "The club bill closes table 4 at 22:30.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_club"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_dose",
+                  "text": "Harshad's own evening dose",
+                  "slot": "sl_2245",
+                  "by": [
+                    "f_pen_memory",
+                    "f_diary"
+                  ],
+                  "why": "14 units at 22:45, in the pen's memory and in his own diary: abdomen, as always.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_diary"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_60",
+                  "text": "The 60-unit dose",
+                  "slot": "sl_2341",
+                  "by": [
+                    "f_pen_memory",
+                    "f_steps",
+                    "f_aut_sites"
+                  ],
+                  "why": "The pen remembers 60 units at 23:41, inside the nine minutes Priya's phone was walking; the thigh site is one he never used.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_pen_memory"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_dies",
+                  "text": "Harshad dies",
+                  "slot": "sl_0130",
+                  "by": [
+                    "f_aut_tod",
+                    "f_aut_hypo"
+                  ],
+                  "why": "Severe low blood sugar, hours after the dose: between 01:30 and 04:00.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_0730",
+                  "by": [
+                    "f_ob"
+                  ],
+                  "why": "07:30 is when he was found on Christmas morning."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "Home at half ten, his own dose at quarter to eleven, sixty units at 23:41, dead before dawn. The pen kept better time than the family.",
+          "fail": [
+            "Half past seven is when they found him.",
+            "There are two doses in that pen's memory. Which one was his?"
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_priya"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Up and walking from 23:37 to 23:46, the only one who ever went to his room at that hour, and her prints on the dial. That will hold.",
+          "fail": [
+            "Rahul lied for her; he never left the bed. Whose prints are on the dial?",
+            "Mr Mehta had eight guests in his garden. Look inside the house."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_insulin"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Sixty units, in a thigh he never used, from his own pen. Yes.",
+          "fail": [
+            "It looks natural. Read the pen's memory.",
+            "Nothing in his blood but insulin and a glass of wine."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_theft"
+          }
+        ],
+        "prosecutor": {
+          "pass": "\"The twenty-seventh, police.\" She was in the middle row. That's the reason. And Rahul answers for the nine million.",
+          "fail": [
+            "Rahul already holds sixty per cent. Nothing changes for her.",
+            "Mr Mehta's offer was refused at the club. That's his matter."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_hroom",
+      "from": "23:36",
+      "to": "23:46",
+      "within": [
+        "plc_hbed"
+      ],
+      "note": "The act window: the 60-unit dose at 23:41, between the stair creak at 23:36 and the end of Priya's steps at 23:46. He died of it between 01:30 and 04:00."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_pen_memory",
+          "f_diary",
+          "f_aut_sites",
+          "f_aut_hypo",
+          "f_aut_tod"
+        ],
+        "concludes": "After his normal 14 units at 22:45, in the abdomen as always, someone gave him 60 units at 23:41, in the thigh, a site he never used. He died of severe low blood sugar hours later."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_sabina_pen",
+          "f_sabina_water",
+          "f_sabina_stair"
+        ],
+        "concludes": "Harshad never let anyone touch his pen. The only person who came to his room at that hour, every night, was Priya with his water; Sabina heard her on the stairs at 23:36."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_priya_bed",
+          "f_rahul_beside",
+          "f_steps",
+          "f_rahul_admits",
+          "f_priya_water",
+          "f_club"
+        ],
+        "concludes": "Priya didn't stay in bed and Rahul didn't know where she was: her phone walked from 23:37 to 23:46, and she admits taking the water up. Home at 22:30, his dose at 22:45, 60 units at 23:41, dead by 04:00.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_priya_notouch",
+          "f_pen_prints",
+          "f_ernest_car",
+          "f_accounts"
+        ],
+        "concludes": "Her prints are on the dose dial. On the way to dinner she heard Harshad tell Rahul \"the twenty-seventh, police\" over the money he'd taken. Priya Pandya killed Harshad with a deliberate overdose of his own insulin, to stop him reporting her husband's theft.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_rahul",
+        "blank": "who",
+        "by": [
+          "f_rahul_admits",
+          "f_pen_prints"
+        ],
+        "why": "Rahul stayed in bed while Priya got up, and his prints are not on the pen. His crimes are the theft and the lie."
+      },
+      {
+        "word": "w_anil",
+        "blank": "who",
+        "by": [
+          "f_anil_home"
+        ],
+        "why": "Anil was home in Riat Hills by 23:05 with eight guests until 01:00."
+      },
+      {
+        "word": "w_ernest",
+        "blank": "who",
+        "by": [
+          "f_ernest_quarters"
+        ],
+        "why": "Ernest went to the staff quarters at 22:50, and the yard gate stayed chained until morning."
+      },
+      {
+        "word": "w_sabina",
+        "blank": "who",
+        "by": [
+          "f_sabina_self",
+          "f_pen_prints"
+        ],
+        "why": "Sabina was in her room off the kitchen; she heard Priya pass at 23:36. Her prints are not on the pen."
+      },
+      {
+        "word": "h_natural",
+        "blank": "how",
+        "by": [
+          "f_pen_memory",
+          "f_aut_sites",
+          "f_tox"
+        ],
+        "why": "A 60-unit dose at 23:41, in the thigh, and insulin far above any treatment dose."
+      },
+      {
+        "word": "h_club",
+        "blank": "how",
+        "by": [
+          "f_tox"
+        ],
+        "why": "Nothing in his blood but insulin and a glass of wine."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_noother",
+          "f_aut_hypo"
+        ],
+        "why": "No heart attack; he died of low blood sugar."
+      },
+      {
+        "word": "h_smother",
+        "blank": "how",
+        "by": [
+          "f_aut_noother"
+        ],
+        "why": "No signs of smothering or of any struggle."
+      },
+      {
+        "word": "m_inherit",
+        "blank": "why",
+        "by": [
+          "f_will"
+        ],
+        "why": "Rahul already holds 60% of the firm; nothing changes for Priya."
+      },
+      {
+        "word": "m_rival",
+        "blank": "why",
+        "by": [
+          "f_anil_offer",
+          "f_anil_home"
+        ],
+        "why": "That offer is Anil's, refused at the club, and Anil was at home with guests."
+      },
+      {
+        "word": "m_school",
+        "blank": "why",
+        "by": [
+          "f_no_school"
+        ],
+        "why": "There was no such quarrel; the school was agreed two years ago."
+      },
+      {
+        "word": "m_wages",
+        "blank": "why",
+        "by": [
+          "f_wages_paid"
+        ],
+        "why": "Ernest's wages and bonus were paid on the 20th, and that was never Priya's matter."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Over two years Rahul moves KSh 9.2 million out of the family firm to cover a failed investment. On Christmas Eve afternoon Harshad finds it in the accounts.",
+        "image": null
+      },
+      {
+        "text": "In the car to the club he tells his son: \"On the twenty-seventh, the auditors and the police.\" Priya, in the middle row, hears it.",
+        "image": null
+      },
+      {
+        "text": "22:30, home. 22:45, his usual 14 units, written in his diary: abdomen. He goes to sleep.",
+        "image": null
+      },
+      {
+        "text": "23:36. Priya climbs the stairs with his glass of water, as every night. At 23:41 she dials his pen to 60 units and injects him in the thigh.",
+        "image": "loc_hroom"
+      },
+      {
+        "text": "She goes back to bed. Rahul feels her come back and asks nothing. Harshad dies in the early hours. At Christmas lunch, Sabina leaves his chair pushed in.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "One warrant on Priya's phone. Detain her once she admits taking the water up; her prints are taken in detention and the dial result (6 h) breaks her second story inside the 24 hours.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_hroom",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_pen",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_diary",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_sabina"
+      },
+      {
+        "do": "interview",
+        "target": "p_ernest"
+      },
+      {
+        "do": "visit",
+        "target": "loc_study",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_accounts",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_will",
+        "hours": 1
+      },
+      {
+        "do": "visit",
+        "target": "loc_club",
+        "hours": 2
+      },
+      {
+        "do": "interview",
+        "target": "p_tom"
+      },
+      {
+        "do": "interview",
+        "target": "p_priya"
+      },
+      {
+        "do": "search",
+        "target": "loc_phone"
+      },
+      {
+        "do": "interview",
+        "target": "p_rahul"
+      },
+      {
+        "do": "press",
+        "target": "c_rahul"
+      },
+      {
+        "do": "press",
+        "target": "c_priya"
+      },
+      {
+        "do": "detain",
+        "target": "p_priya"
+      },
+      {
+        "do": "sample",
+        "target": "ev_priya_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 6
+      },
+      {
+        "do": "interview",
+        "target": "p_priya"
+      },
+      {
+        "do": "press",
+        "target": "c_priya_pen"
+      }
+    ],
+    "totalHours": 31
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_pen",
+        "line": "Devices remember. Read what the pen remembers, and what his diary says."
+      },
+      "tier2": {
+        "facts": [
+          "f_pen_memory",
+          "f_diary"
+        ],
+        "line": "Two doses in the pen. Only one in his own handwriting."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_sabina",
+        "line": "Who went up the stairs to his room every night?"
+      },
+      "tier2": {
+        "facts": [
+          "f_sabina_stair",
+          "f_steps"
+        ],
+        "line": "A stair creak at 23:36, and a phone that walked from 23:37 to 23:46."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "Count the injection sites, and remember where he always injected."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_sites",
+          "f_diary"
+        ],
+        "line": "Abdomen for three years. Tonight, the thigh as well."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_ernest",
+        "line": "The driver heard something in the car on the way to dinner."
+      },
+      "tier2": {
+        "facts": [
+          "f_ernest_car",
+          "f_accounts"
+        ],
+        "line": "\"The twenty-seventh, police,\" and nine million shillings circled in red."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "Bapuji",
+      "def": "Respectful Gujarati word for a father or grandfather."
+    },
+    {
+      "term": "Krismasi",
+      "def": "Christmas."
+    },
+    {
+      "term": "kisukari",
+      "def": "Diabetes."
+    },
+    {
+      "term": "sindano",
+      "def": "An injection; a needle."
+    },
+    {
+      "term": "mzee",
+      "def": "Respectful word for an older man."
+    },
+    {
+      "term": "kurta",
+      "def": "A long loose shirt; a kurti is a shorter one, usually worn by women."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "devicesRemember"
+    ],
+    "beatNotes": "Devices that remember. The pen's dose memory and the phone's step log are read as timelines and dropped straight onto the rail. Both are clocks nobody thought of as witnesses."
+  }
+}

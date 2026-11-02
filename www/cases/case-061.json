@@ -1,0 +1,2415 @@
+{
+  "meta": {
+    "id": "case-061",
+    "number": 61,
+    "region": "mt-kenya",
+    "regionNumber": 7,
+    "title": "The Logbook",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 32,
+    "date": "Thursday 2 April",
+    "folderTab": "MATHENGE MOTORS"
+  },
+  "pattern": {
+    "crimePattern": "a young boda-fleet owner kills the car dealer who sold her a stolen pickup with a forged logbook and refused to refund her",
+    "noRealCaseRetold": true,
+    "notes": "Fictional yard, bank and people. The forgery is shown only by its flaw (a chassis number that does not match the frame), never by how it was made.",
+    "tags": [
+      "blunt-force",
+      "document-fraud",
+      "two-liars",
+      "records",
+      "detention",
+      "forensics",
+      "when-strip",
+      "where",
+      "forgery"
+    ]
+  },
+  "difficulty": {
+    "suspects": 4,
+    "chainLength": 4,
+    "redHerrings": 2,
+    "liars": 2,
+    "groups": [
+      "when",
+      "where",
+      "who",
+      "how",
+      "why",
+      "forgery"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "document",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records"
+    ],
+    "twist": null
+  },
+  "ob": {
+    "number": "OB 09/02/04",
+    "date": "Thursday 2 April",
+    "time": "07:20",
+    "reportedBy": "Cleaner, Mathenge Motors, Karatina",
+    "text": "A cleaner reports the owner of Mathenge Motors, a second-hand car yard beside Karatina market, found dead in the yard office at 07:05. Ndirangu Mathenge (54). The gate was open when she arrived.",
+    "facts": [
+      "f_ob"
+    ]
+  },
+  "map": {
+    "start": "loc_yard",
+    "nodes": [
+      "loc_yard",
+      "loc_market",
+      "loc_impound",
+      "loc_base"
+    ],
+    "edges": [
+      {
+        "a": "loc_yard",
+        "b": "loc_market",
+        "minutes": 5,
+        "by": "foot"
+      },
+      {
+        "a": "loc_yard",
+        "b": "loc_impound",
+        "minutes": 10,
+        "by": "road"
+      },
+      {
+        "a": "loc_market",
+        "b": "loc_impound",
+        "minutes": 10,
+        "by": "road"
+      },
+      {
+        "a": "loc_impound",
+        "b": "loc_base",
+        "minutes": 10,
+        "by": "road"
+      },
+      {
+        "a": "loc_yard",
+        "b": "loc_base",
+        "minutes": 10,
+        "by": "road"
+      }
+    ]
+  },
+  "people": [
+    {
+      "id": "p_ndirangu",
+      "role": "victim",
+      "name": "Ndirangu Mathenge",
+      "age": 54,
+      "occupation": "Owner, Mathenge Motors, Karatina",
+      "bio": "Twenty years selling second-hand pickups beside the market. \"Sold as seen\" is painted over his office door.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_office",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, mid 50s, a checked shirt with a pen in the pocket, a gold watch, a salesman's wide smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_njeri",
+      "role": "suspect",
+      "name": "Njeri Macharia",
+      "age": 27,
+      "occupation": "Owner, Njeri Express (six boda-bodas)",
+      "bio": "Built a boda fleet from one motorbike. Bought a pickup in January to start deliveries. The police took it in March.",
+      "community": "Kikuyu",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_sale_njeri"
+      },
+      "at": "loc_base",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, late 20s, an orange reflective jacket with NJERI EXPRESS on it, hair in short twists, a hard, tired face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kiarie",
+      "role": "suspect",
+      "name": "Kiarie Ng'ang'a",
+      "age": 38,
+      "occupation": "Mechanic, Mathenge Motors",
+      "bio": "Keeps the yard keys. Keeps a tab at a bar in town.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_bay",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, late 30s, grease-stained blue overalls, a rag in his back pocket, an uneasy sideways look, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_wahome",
+      "role": "suspect",
+      "name": "Mzee Wahome Gachanja",
+      "age": 63,
+      "occupation": "Ndirangu's partner in the yard",
+      "redHerring": true,
+      "bio": "Put money into the yard ten years ago. Wanted to sell his half this year.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_licence"
+      },
+      "at": "plc_church",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu man, early 60s, a grey suit and a flat cap, a church badge on his lapel, a stern, careful face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_phyllis",
+      "role": "suspect",
+      "name": "Phyllis Nduta",
+      "age": 44,
+      "occupation": "Owner of a pickup stolen in Nairobi last year",
+      "redHerring": true,
+      "bio": "Came up from Nairobi to identify her pickup in the police yard.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_impound"
+      },
+      "at": "plc_hotel",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Kikuyu woman, mid 40s, a navy blazer, a folder of police papers under her arm, a weary, determined face, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_gathua",
+      "role": "witness",
+      "name": "Gathua Wanjohi",
+      "age": 49,
+      "occupation": "Night guard, Karatina market",
+      "statementOnly": true,
+      "bio": "Sits at the market's side gate from six in the evening, facing the yard.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_marketgate",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_office",
+      "name": "The yard office",
+      "within": "loc_yard"
+    },
+    {
+      "id": "plc_bay",
+      "name": "The mechanic's bay",
+      "within": "loc_yard"
+    },
+    {
+      "id": "plc_marketgate",
+      "name": "The market's side gate",
+      "within": "loc_market"
+    },
+    {
+      "id": "plc_bar",
+      "name": "A bar in Karatina town"
+    },
+    {
+      "id": "plc_church",
+      "name": "A church hall in Karatina"
+    },
+    {
+      "id": "plc_hotel",
+      "name": "A Karatina hotel"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_yard",
+      "name": "Mathenge Motors",
+      "kind": "scene",
+      "description": "A fenced yard of second-hand pickups and saloons, price cards on the windscreens. A small office with a desk and a filing cabinet; a mechanic's bay with a pit. The gate's padlock hangs open.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "The office",
+          "pos": [
+            40,
+            52
+          ],
+          "yields": "ev_body",
+          "text": "Ndirangu lies beside his desk."
+        },
+        {
+          "id": "hs_cash",
+          "label": "Under the desk",
+          "pos": [
+            46,
+            64
+          ],
+          "yields": "ev_cashbox",
+          "text": "A grey cash box, still locked."
+        },
+        {
+          "id": "hs_file",
+          "label": "Sales file",
+          "pos": [
+            58,
+            40
+          ],
+          "yields": "ev_salesfile",
+          "text": "The filing cabinet's top drawer: sales, by month."
+        },
+        {
+          "id": "hs_genuine",
+          "label": "Honest sales",
+          "pos": [
+            64,
+            46
+          ],
+          "yields": "ev_genuine_lb",
+          "text": "A folder marked \"VERIFIED\", logbooks of cars bought from their first owners."
+        },
+        {
+          "id": "hs_licence",
+          "label": "Wall",
+          "pos": [
+            30,
+            30
+          ],
+          "yields": "ev_licence",
+          "text": "A framed county trade licence."
+        },
+        {
+          "id": "hs_wages",
+          "label": "Wage book",
+          "pos": [
+            70,
+            54
+          ],
+          "yields": "ev_wages",
+          "text": "The yard's wage book."
+        },
+        {
+          "id": "hs_bay",
+          "label": "Mechanic's bay",
+          "pos": [
+            82,
+            60
+          ],
+          "yields": "ev_jack",
+          "text": "The bay. A car jack hangs on its hook."
+        },
+        {
+          "id": "hs_gate",
+          "label": "Gate",
+          "pos": [
+            12,
+            70
+          ],
+          "yields": "ev_padlock",
+          "text": "The gate's padlock, hanging open."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a second-hand car yard at dusk beside the tin roofs of Karatina market, rows of white pickups with price cards on the windscreens, a small lit office, a padlock hanging open on the gate, no people in focus"
+      }
+    },
+    {
+      "id": "loc_market",
+      "name": "Karatina market, side gate",
+      "kind": "location",
+      "description": "One of the biggest open-air markets in East Africa, quiet at night. The side gate faces the car yard across the lane.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_guard",
+          "label": "The night guard",
+          "pos": [
+            50,
+            50
+          ],
+          "yields": "ev_guard",
+          "text": "Gathua Wanjohi has been on this gate every night for nine years."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the side gate of a huge open-air market at night, stacked crates and tin roofs, a guard's stool and a torch, a car yard across a dusty lane"
+      }
+    },
+    {
+      "id": "loc_impound",
+      "name": "Karatina police station, impound yard",
+      "kind": "location",
+      "description": "A police yard of seized vehicles. A white pickup with a chalk number on the windscreen.",
+      "unlock": {
+        "fact": "f_sale_njeri"
+      },
+      "hotspots": [
+        {
+          "id": "hs_register",
+          "label": "Impound register",
+          "pos": [
+            50,
+            40
+          ],
+          "yields": "ev_impound",
+          "text": "The impound register, with photographs."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a Kenyan police impound yard, seized vehicles under dust, a white pickup with a chalk number on its windscreen, a register on a table"
+      }
+    },
+    {
+      "id": "loc_base",
+      "name": "Njeri Express boda base",
+      "kind": "location",
+      "description": "Six motorbikes under a tin shelter in Karatina town, orange jackets on hooks.",
+      "unlock": {
+        "fact": "f_sale_njeri"
+      },
+      "hotspots": [
+        {
+          "id": "hs_jackets",
+          "label": "Jackets",
+          "pos": [
+            40,
+            40
+          ],
+          "yields": "ev_jacket",
+          "text": "Orange reflective jackets on hooks."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "a boda-boda base in a Kenyan town, six motorbikes under a tin shelter, orange reflective jackets on hooks, a hand-painted sign NJERI EXPRESS"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The office",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. He lay beside the desk. A steel steering-lock bar on the floor, wiped."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a steel steering-lock bar lying on the concrete floor of a small office beside a desk leg, no body visible"
+      }
+    },
+    {
+      "id": "ev_cashbox",
+      "type": "physical",
+      "title": "Cash box",
+      "render": "object",
+      "body": {
+        "label": "Locked. Inside: KSh 31,000."
+      },
+      "facts": [
+        "f_cashbox"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_salesfile",
+      "type": "document",
+      "title": "Sales file: the white pickup",
+      "render": "form",
+      "body": {
+        "sale": "White pickup, sold 12 January to Njeri Macharia, KSh 1.2 million, \"sold as seen\".",
+        "copy": "A copy of the logbook he gave her."
+      },
+      "facts": [
+        "f_sale_njeri",
+        "f_logbook"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": false,
+        "forger": "p_ndirangu",
+        "kind": "vehicle logbook"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a photocopy of a Kenyan vehicle logbook clipped inside a sales file"
+      }
+    },
+    {
+      "id": "ev_genuine_lb",
+      "type": "document",
+      "title": "A genuine logbook",
+      "render": "form",
+      "body": {
+        "text": "A logbook from the \"VERIFIED\" folder: same form, same layout, chassis number matching the car."
+      },
+      "facts": [
+        "f_genuine_lb"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "vehicle logbook"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_licence",
+      "type": "document",
+      "title": "County trade licence",
+      "render": "form",
+      "body": {
+        "text": "Mathenge Motors, partners N. Mathenge and W. Gachanja. Current."
+      },
+      "facts": [
+        "f_licence",
+        "f_licence_real"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "trade licence"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_wages",
+      "type": "document",
+      "title": "Wage book",
+      "render": "logBook",
+      "body": {
+        "text": "Kiarie Ng'ang'a: paid in full to the end of March, signed."
+      },
+      "facts": [
+        "f_wages"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_jack",
+      "type": "physical",
+      "title": "The bay's car jack",
+      "render": "object",
+      "body": {
+        "label": "On its hook, clean, dusty handle."
+      },
+      "facts": [
+        "f_jack"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_padlock",
+      "type": "physical",
+      "title": "The gate padlock",
+      "render": "object",
+      "body": {
+        "label": "Hanging open, not locked. No forcing marks."
+      },
+      "facts": [
+        "f_padlock"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_guard",
+      "type": "witness",
+      "title": "Statement: Gathua Wanjohi",
+      "render": "statement",
+      "body": {
+        "speaker": "p_gathua"
+      },
+      "facts": [
+        "f_guard",
+        "f_guard_self",
+        "f_no_quarrel"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_impound",
+      "type": "document",
+      "title": "Impound register",
+      "render": "logBook",
+      "body": {
+        "entry": "White pickup, impounded 14 March at the Sagana roadblock.",
+        "frame": "Chassis number stamped on the frame (photographed) differs from the logbook's by four characters; frame traced to a pickup stolen from Phyllis Nduta, Nairobi."
+      },
+      "facts": [
+        "f_impound",
+        "f_impound_real"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "police register"
+      },
+      "image": {
+        "kind": "evidence",
+        "brief": "a close photograph of a chassis number stamped into a vehicle frame, chalk circle around four characters"
+      }
+    },
+    {
+      "id": "ev_jacket",
+      "type": "physical",
+      "title": "Njeri Express jackets",
+      "render": "object",
+      "body": {
+        "label": "Orange reflective jackets, \"NJERI EXPRESS\" on the back. Njeri wears the only one with a name tag."
+      },
+      "facts": [
+        "f_jacket"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_loan",
+      "type": "document",
+      "title": "Njeri's loan agreement",
+      "render": "form",
+      "body": {
+        "text": "KSh 1.2 million, \"for a delivery pickup\". First missed repayment notice, March. The bank confirms the loan number."
+      },
+      "facts": [
+        "f_loan",
+        "f_loan_real"
+      ],
+      "gate": null,
+      "doc": {
+        "genuine": true,
+        "kind": "loan agreement"
+      },
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Njeri Macharia's line",
+      "render": "manifest",
+      "body": {
+        "masts": "Karatina market zone 19:05–19:35 on Wednesday."
+      },
+      "facts": [
+        "f_rec_njeri"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_guard",
+          "f_jacket"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_bar",
+      "type": "physical",
+      "title": "Kiarie's bar tab",
+      "render": "receipt",
+      "body": {
+        "tab": "K. Ng'ang'a, Wednesday, 17:40–22:00."
+      },
+      "facts": [
+        "f_bar"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_wahome",
+      "type": "witness",
+      "title": "Statement: fundraiser hosts",
+      "render": "statement",
+      "body": {
+        "speaker": "p_wahome"
+      },
+      "facts": [
+        "f_wahome"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_phyllis",
+      "type": "document",
+      "title": "Hotel register, Karatina",
+      "render": "receipt",
+      "body": {
+        "text": "P. Nduta: checked in 16:00; dinner in the restaurant 19:00–20:30."
+      },
+      "facts": [
+        "f_phyllis"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_nj_prints",
+      "type": "physical",
+      "title": "Fingerprints: Njeri Macharia",
+      "render": "object",
+      "body": {
+        "label": "Taken in detention; she refused."
+      },
+      "facts": [
+        "f_nj_printset"
+      ],
+      "gate": null,
+      "detention": "p_njeri",
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_tod",
+        "f_aut_noother"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_compare",
+      "type": "forensic",
+      "title": "Comparison view: logbook vs genuine",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_cmp_chassis",
+        "f_cmp_stamp",
+        "f_cmp_sig",
+        "f_cmp_date",
+        "f_cmp_seal"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_salesfile",
+          "ev_genuine_lb",
+          "ev_impound"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints on the lock bar",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_prints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_body",
+          "ev_nj_prints"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_docexam",
+      "type": "forensic",
+      "title": "Questioned Documents Lab: the logbook",
+      "render": "labReport",
+      "body": {
+        "test": "document"
+      },
+      "facts": [
+        "f_docexam"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "document",
+        "hours": 10,
+        "needs": [
+          "ev_salesfile",
+          "ev_genuine_lb"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Ndirangu Mathenge, owner of Mathenge Motors, was found dead in the yard office at 07:05; the gate was open.",
+      "kind": "true",
+      "about": [
+        "p_ndirangu",
+        "loc_yard"
+      ],
+      "at": {
+        "from": "07:05"
+      }
+    },
+    {
+      "id": "f_body",
+      "text": "He lay beside his desk; a steel steering-lock bar on the floor had been wiped.",
+      "kind": "true",
+      "about": [
+        "p_ndirangu",
+        "plc_office"
+      ]
+    },
+    {
+      "id": "f_cashbox",
+      "text": "The cash box under the desk is locked and untouched: KSh 31,000 inside.",
+      "kind": "true",
+      "about": [
+        "plc_office"
+      ]
+    },
+    {
+      "id": "f_sale_njeri",
+      "text": "Sales file: a white pickup sold on 12 January to Njeri Macharia for KSh 1.2 million, \"sold as seen\".",
+      "kind": "true",
+      "about": [
+        "p_ndirangu",
+        "p_njeri"
+      ]
+    },
+    {
+      "id": "f_logbook",
+      "text": "The sales file holds a copy of the logbook he gave Njeri for the white pickup.",
+      "kind": "true",
+      "about": [
+        "p_ndirangu",
+        "p_njeri"
+      ]
+    },
+    {
+      "id": "f_genuine_lb",
+      "text": "A genuine logbook from the \"VERIFIED\" folder: same form and layout, its chassis number matching its car.",
+      "kind": "true",
+      "about": [
+        "loc_yard"
+      ]
+    },
+    {
+      "id": "f_licence",
+      "text": "County trade licence: Mathenge Motors, partners N. Mathenge and W. Gachanja.",
+      "kind": "true",
+      "about": [
+        "p_ndirangu",
+        "p_wahome"
+      ]
+    },
+    {
+      "id": "f_licence_real",
+      "text": "The trade licence is current and its number checks out with the county.",
+      "kind": "true",
+      "about": [
+        "loc_yard"
+      ]
+    },
+    {
+      "id": "f_wages",
+      "text": "Wage book: Kiarie was paid in full to the end of March and signed for it.",
+      "kind": "true",
+      "about": [
+        "p_kiarie"
+      ]
+    },
+    {
+      "id": "f_jack",
+      "text": "The bay's car jack is on its hook, clean, with a dusty handle.",
+      "kind": "true",
+      "about": [
+        "plc_bay"
+      ]
+    },
+    {
+      "id": "f_padlock",
+      "text": "The gate's padlock is hanging open, not locked, with no forcing marks.",
+      "kind": "true",
+      "about": [
+        "loc_yard"
+      ]
+    },
+    {
+      "id": "f_guard",
+      "text": "Gathua: a young woman in an orange reflective boda-fleet jacket went in through the yard gate at about 19:10 and came out fast at about 19:30.",
+      "kind": "true",
+      "about": [
+        "p_gathua"
+      ],
+      "at": {
+        "from": "19:10",
+        "to": "19:30"
+      }
+    },
+    {
+      "id": "f_guard_self",
+      "text": "Gathua sat at the market's side gate from 18:00 all night.",
+      "kind": "true",
+      "about": [
+        "p_gathua"
+      ],
+      "where": {
+        "person": "p_gathua",
+        "place": "plc_marketgate",
+        "from": "18:00",
+        "to": "23:59"
+      }
+    },
+    {
+      "id": "f_no_quarrel",
+      "text": "Gathua: nobody ever quarrels with the yard over parking; the lane is the market's, and the yard keeps to its fence.",
+      "kind": "true",
+      "about": [
+        "p_gathua"
+      ]
+    },
+    {
+      "id": "f_impound",
+      "text": "Impound register: the white pickup was impounded on 14 March; the frame's chassis number differs from the logbook's by four characters, and belongs to a pickup stolen from Phyllis Nduta in Nairobi.",
+      "kind": "true",
+      "about": [
+        "p_njeri",
+        "p_phyllis"
+      ]
+    },
+    {
+      "id": "f_impound_real",
+      "text": "The impound register is the station's own, signed by the duty officer for every entry.",
+      "kind": "true",
+      "about": [
+        "loc_impound"
+      ]
+    },
+    {
+      "id": "f_jacket",
+      "text": "Njeri Express jackets: orange and reflective, \"NJERI EXPRESS\" on the back.",
+      "kind": "true",
+      "about": [
+        "p_njeri"
+      ]
+    },
+    {
+      "id": "f_loan",
+      "text": "Njeri's loan: KSh 1.2 million \"for a delivery pickup\"; her first repayment was missed in March.",
+      "kind": "true",
+      "about": [
+        "p_njeri"
+      ]
+    },
+    {
+      "id": "f_loan_real",
+      "text": "The bank confirms the loan number and its own stamp on the agreement.",
+      "kind": "true",
+      "about": [
+        "p_njeri"
+      ]
+    },
+    {
+      "id": "f_rec_njeri",
+      "text": "Records, Njeri's line: Karatina market zone 19:05–19:35 on Wednesday.",
+      "kind": "true",
+      "about": [
+        "p_njeri"
+      ],
+      "at": {
+        "from": "19:05",
+        "to": "19:35"
+      }
+    },
+    {
+      "id": "f_bar",
+      "text": "Bar tab: Kiarie Ng'ang'a, Wednesday, 17:40–22:00.",
+      "kind": "true",
+      "about": [
+        "p_kiarie"
+      ],
+      "where": {
+        "person": "p_kiarie",
+        "place": "plc_bar",
+        "from": "17:40",
+        "to": "22:00"
+      }
+    },
+    {
+      "id": "f_wahome",
+      "text": "The fundraiser hosts: Mzee Wahome gave a speech and stayed for the auction, 17:00–21:30.",
+      "kind": "true",
+      "about": [
+        "p_wahome"
+      ],
+      "where": {
+        "person": "p_wahome",
+        "place": "plc_church",
+        "from": "17:00",
+        "to": "21:30"
+      }
+    },
+    {
+      "id": "f_phyllis",
+      "text": "Hotel register: Phyllis checked in at 16:00 and dined in the hotel restaurant 19:00–20:30.",
+      "kind": "true",
+      "about": [
+        "p_phyllis"
+      ],
+      "where": {
+        "person": "p_phyllis",
+        "place": "plc_hotel",
+        "from": "19:00",
+        "to": "20:30"
+      }
+    },
+    {
+      "id": "f_nj_printset",
+      "text": "Fingerprints taken from Njeri in detention.",
+      "kind": "true",
+      "about": [
+        "p_njeri"
+      ]
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Autopsy: one heavy blow from a straight steel bar.",
+      "kind": "true",
+      "about": [
+        "p_ndirangu"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 19:00 and 20:00.",
+      "kind": "true",
+      "about": [
+        "p_ndirangu"
+      ],
+      "at": {
+        "from": "19:00",
+        "to": "20:00"
+      }
+    },
+    {
+      "id": "f_aut_noother",
+      "text": "Autopsy: no vehicle injuries, no other wounds, a sound heart.",
+      "kind": "true",
+      "about": [
+        "p_ndirangu"
+      ]
+    },
+    {
+      "id": "f_cmp_chassis",
+      "text": "Comparison view: the logbook's chassis number, dragged onto the frame photograph, differs in four characters.",
+      "kind": "true",
+      "about": [
+        "p_njeri"
+      ]
+    },
+    {
+      "id": "f_cmp_stamp",
+      "text": "Under the magnifier: the logbook's stamp is pressed ink with a halo, its lettering correctly spelled. A good copy.",
+      "kind": "true",
+      "about": [
+        "loc_yard"
+      ]
+    },
+    {
+      "id": "f_cmp_sig",
+      "text": "Under the raking light: the signature has no pencil line beneath it. Not traced.",
+      "kind": "true",
+      "about": [
+        "loc_yard"
+      ]
+    },
+    {
+      "id": "f_cmp_date",
+      "text": "The logbook's registration date, 2019, is three years after the pickup's model year.",
+      "kind": "true",
+      "about": [
+        "loc_yard"
+      ]
+    },
+    {
+      "id": "f_cmp_seal",
+      "text": "The seal is embossed in the paper, not photocopied.",
+      "kind": "true",
+      "about": [
+        "loc_yard"
+      ]
+    },
+    {
+      "id": "f_prints",
+      "text": "Lab: a partial print under the lock bar's hook matches Njeri Macharia.",
+      "kind": "true",
+      "about": [
+        "p_njeri"
+      ]
+    },
+    {
+      "id": "f_docexam",
+      "text": "Wilfrida Ayugi: forged. The chassis number on the logbook was altered; the paper is a good copy.",
+      "kind": "true",
+      "about": [
+        "p_ndirangu"
+      ]
+    },
+    {
+      "id": "f_nj_notseen",
+      "text": "Njeri: \"I haven't seen him since the police took my pickup.\"",
+      "kind": "lie",
+      "about": [
+        "p_njeri"
+      ]
+    },
+    {
+      "id": "f_nj_stolen",
+      "text": "Njeri: \"He sold me a stolen car and laughed at me.\"",
+      "kind": "claim",
+      "about": [
+        "p_njeri"
+      ]
+    },
+    {
+      "id": "f_nj_reveal",
+      "text": "Njeri: she went to the yard office on Wednesday evening to ask for her money \"one last time\". He laughed again.",
+      "kind": "true",
+      "about": [
+        "p_njeri",
+        "p_ndirangu"
+      ],
+      "where": {
+        "person": "p_njeri",
+        "place": "plc_office",
+        "from": "19:10",
+        "to": "19:30"
+      }
+    },
+    {
+      "id": "f_nj_bar",
+      "text": "Njeri: \"I never touched that bar. I left him laughing.\"",
+      "kind": "lie",
+      "about": [
+        "p_njeri"
+      ]
+    },
+    {
+      "id": "f_ki_locked",
+      "text": "Kiarie: \"I locked the yard at six and went home. Nobody came after.\"",
+      "kind": "lie",
+      "about": [
+        "p_kiarie"
+      ]
+    },
+    {
+      "id": "f_ki_reveal",
+      "text": "Kiarie: he went to the bar at about 17:40 and didn't lock the gate. \"Anyone could walk in.\"",
+      "kind": "true",
+      "about": [
+        "p_kiarie"
+      ]
+    },
+    {
+      "id": "f_wahome_claim",
+      "text": "Wahome: \"I was at the church fundraiser.\"",
+      "kind": "claim",
+      "about": [
+        "p_wahome"
+      ]
+    },
+    {
+      "id": "f_wahome_suspect",
+      "text": "Wahome: he wanted to sell his half because he suspected Ndirangu dealt in stolen cars. \"I wanted out.\"",
+      "kind": "true",
+      "about": [
+        "p_wahome",
+        "p_ndirangu"
+      ]
+    },
+    {
+      "id": "f_phyllis_claim",
+      "text": "Phyllis: \"I came to see my pickup. I was in the hotel.\"",
+      "kind": "claim",
+      "about": [
+        "p_phyllis"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_njeri",
+      "stance": "cooperative",
+      "intro": "Njeri sits astride one of her bikes, helmet on the tank. \"I haven't seen him since the police took my pickup. He sold me a stolen car and laughed at me.\"",
+      "claims": [
+        "f_nj_notseen",
+        "f_nj_stolen"
+      ],
+      "laterClaims": [
+        {
+          "claim": "f_nj_bar",
+          "after": "f_nj_reveal"
+        }
+      ],
+      "yields": [
+        "ev_loan"
+      ],
+      "topics": [
+        {
+          "about": "ev_impound",
+          "reply": "\"Four letters on a piece of metal. One point two million. And I still pay the bank every month for a car I can't drive.\"",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_kiarie",
+      "stance": "cooperative",
+      "intro": "Kiarie wipes his hands on a rag that is dirtier than they are. \"I locked the yard at six and went home. Nobody came after.\"",
+      "claims": [
+        "f_ki_locked"
+      ],
+      "yields": [],
+      "topics": []
+    },
+    {
+      "person": "p_wahome",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_salesfile"
+      ],
+      "intro": "Mzee Wahome folds his hands over his walking stick. \"I was at the church fundraiser.\"",
+      "claims": [
+        "f_wahome_claim"
+      ],
+      "yields": [
+        "ev_wahome"
+      ],
+      "topics": [
+        {
+          "about": "ev_salesfile",
+          "reply": "\"I wanted to sell my half because I suspected he dealt in stolen cars. I wanted out. I didn't want him dead.\"",
+          "reveals": [
+            "f_wahome_suspect"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_phyllis",
+      "stance": "cooperative",
+      "intro": "Phyllis opens her folder on the hotel table: a police letter, a photograph of a white pickup. \"I came to see my pickup. I was in the hotel.\"",
+      "claims": [
+        "f_phyllis_claim"
+      ],
+      "yields": [
+        "ev_phyllis"
+      ],
+      "topics": []
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_ki",
+      "claim": "f_ki_locked",
+      "brokenBy": [
+        "f_padlock"
+      ],
+      "reveals": [
+        "f_ki_reveal",
+        "ev_bar"
+      ],
+      "reaction": "\"I went to the bar. I didn't lock it. Anyone could walk in. Don't tell the Mzee.\"",
+      "mark": "explains"
+    },
+    {
+      "id": "c_nj",
+      "claim": "f_nj_notseen",
+      "brokenBy": [
+        "f_rec_njeri",
+        "f_guard"
+      ],
+      "reveals": [
+        "f_nj_reveal"
+      ],
+      "reaction": "She pulls the helmet strap tight, then loose. \"I went to ask for my money. One last time. He laughed again. I left.\"",
+      "mark": "implicates"
+    },
+    {
+      "id": "c_nj_bar",
+      "claim": "f_nj_bar",
+      "brokenBy": [
+        "f_prints"
+      ],
+      "reveals": [],
+      "reaction": "Njeri looks at the print card for a long time. \"He laughed,\" she says. \"That's all he ever did.\"",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_njeri",
+      "text": "Njeri Macharia",
+      "category": "person",
+      "ref": "p_njeri",
+      "unlock": {
+        "anyOf": [
+          "f_sale_njeri"
+        ]
+      }
+    },
+    {
+      "id": "w_kiarie",
+      "text": "Kiarie Ng'ang'a",
+      "category": "person",
+      "ref": "p_kiarie",
+      "unlock": {
+        "anyOf": [
+          "f_padlock"
+        ]
+      }
+    },
+    {
+      "id": "w_wahome",
+      "text": "Wahome Gachanja",
+      "category": "person",
+      "ref": "p_wahome",
+      "unlock": {
+        "anyOf": [
+          "f_licence"
+        ]
+      }
+    },
+    {
+      "id": "w_phyllis",
+      "text": "Phyllis Nduta",
+      "category": "person",
+      "ref": "p_phyllis",
+      "unlock": {
+        "anyOf": [
+          "f_impound"
+        ]
+      }
+    },
+    {
+      "id": "w_gathua",
+      "text": "Gathua Wanjohi",
+      "category": "person",
+      "ref": "p_gathua",
+      "unlock": {
+        "anyOf": [
+          "f_guard"
+        ]
+      }
+    },
+    {
+      "id": "pl_office",
+      "text": "the yard office",
+      "category": "place",
+      "ref": "plc_office",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "pl_bay",
+      "text": "the mechanic's bay",
+      "category": "place",
+      "ref": "plc_bay",
+      "unlock": {
+        "anyOf": [
+          "f_jack"
+        ]
+      }
+    },
+    {
+      "id": "pl_market",
+      "text": "Karatina market",
+      "category": "place",
+      "ref": "loc_market",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "pl_base",
+      "text": "Njeri's boda base",
+      "category": "place",
+      "ref": "loc_base",
+      "unlock": {
+        "anyOf": [
+          "f_sale_njeri"
+        ]
+      }
+    },
+    {
+      "id": "pl_impound",
+      "text": "the police impound yard",
+      "category": "place",
+      "ref": "loc_impound",
+      "unlock": {
+        "anyOf": [
+          "f_impound"
+        ]
+      }
+    },
+    {
+      "id": "h_bar",
+      "text": "striking him with a steel steering-lock bar",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_blow"
+        ]
+      }
+    },
+    {
+      "id": "h_jack",
+      "text": "striking him with a car jack",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_jack"
+        ]
+      }
+    },
+    {
+      "id": "h_car",
+      "text": "hitting him with a reversing car",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_robbed",
+      "text": "robbing and beating him",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "m_refund",
+      "text": "he had sold her a stolen pickup with a forged logbook and refused to refund her",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_impound"
+        ]
+      }
+    },
+    {
+      "id": "m_partner",
+      "text": "his partner wanted to sell the yard",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_licence"
+        ]
+      }
+    },
+    {
+      "id": "m_owner",
+      "text": "the stolen pickup's real owner wanted revenge",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_impound"
+        ]
+      }
+    },
+    {
+      "id": "m_wage",
+      "text": "an unpaid mechanic's wage",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_padlock"
+        ]
+      }
+    },
+    {
+      "id": "m_parking",
+      "text": "a quarrel over a parking space",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "d_logbook",
+      "text": "The pickup's logbook",
+      "category": "document",
+      "ref": "ev_salesfile",
+      "unlock": {
+        "anyOf": [
+          "f_logbook"
+        ]
+      }
+    },
+    {
+      "id": "d_loan",
+      "text": "Njeri's loan agreement",
+      "category": "document",
+      "ref": "ev_loan",
+      "unlock": {
+        "anyOf": [
+          "f_loan"
+        ]
+      }
+    },
+    {
+      "id": "d_licence",
+      "text": "The yard's trade licence",
+      "category": "document",
+      "ref": "ev_licence",
+      "unlock": {
+        "anyOf": [
+          "f_licence"
+        ]
+      }
+    },
+    {
+      "id": "d_impound",
+      "text": "The impound register",
+      "category": "document",
+      "ref": "ev_impound",
+      "unlock": {
+        "anyOf": [
+          "f_impound"
+        ]
+      }
+    },
+    {
+      "id": "d_genuine",
+      "text": "The verified logbook",
+      "category": "document",
+      "ref": "ev_genuine_lb",
+      "unlock": {
+        "anyOf": [
+          "f_genuine_lb"
+        ]
+      }
+    },
+    {
+      "id": "t_chassis",
+      "text": "the chassis number on it doesn't match the one stamped on the frame",
+      "category": "tell",
+      "by": [
+        "f_cmp_chassis",
+        "f_impound"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_impound"
+        ]
+      }
+    },
+    {
+      "id": "t_spelling",
+      "text": "a misspelled stamp",
+      "category": "tell",
+      "by": [
+        "f_cmp_stamp"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_logbook"
+        ]
+      }
+    },
+    {
+      "id": "t_traced",
+      "text": "a traced signature",
+      "category": "tell",
+      "by": [
+        "f_cmp_sig"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_logbook"
+        ]
+      }
+    },
+    {
+      "id": "t_date",
+      "text": "a date before the vehicle was made",
+      "category": "tell",
+      "by": [
+        "f_cmp_date"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_logbook"
+        ]
+      }
+    },
+    {
+      "id": "t_dots",
+      "text": "printer dots instead of ink",
+      "category": "tell",
+      "by": [
+        "f_cmp_stamp"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_logbook"
+        ]
+      }
+    },
+    {
+      "id": "t_seal",
+      "text": "a photocopied seal",
+      "category": "tell",
+      "by": [
+        "f_cmp_seal"
+      ],
+      "unlock": {
+        "anyOf": [
+          "f_logbook"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "At {where}, {who} killed {victim} by {how}, because {why}. {document} was forged, as shown by {tell}.",
+    "fixed": {
+      "victim": "Ndirangu Mathenge"
+    },
+    "groups": [
+      {
+        "id": "g_when",
+        "kind": "when",
+        "blanks": [
+          {
+            "id": "when",
+            "category": "strip",
+            "strip": {
+              "slots": [
+                {
+                  "id": "sl_1740",
+                  "label": "17:40",
+                  "from": "17:40",
+                  "to": "17:40"
+                },
+                {
+                  "id": "sl_1800",
+                  "label": "18:00",
+                  "from": "18:00",
+                  "to": "18:00"
+                },
+                {
+                  "id": "sl_1910",
+                  "label": "19:10",
+                  "from": "19:10",
+                  "to": "19:10"
+                },
+                {
+                  "id": "sl_kill",
+                  "label": "19:10–19:30",
+                  "from": "19:10",
+                  "to": "19:30"
+                },
+                {
+                  "id": "sl_1930",
+                  "label": "19:30",
+                  "from": "19:30",
+                  "to": "19:30"
+                }
+              ],
+              "events": [
+                {
+                  "id": "e_kiarie",
+                  "text": "Kiarie leaves without locking the gate",
+                  "slot": "sl_1740",
+                  "by": [
+                    "f_bar",
+                    "f_ki_reveal"
+                  ],
+                  "why": "His bar tab opens at 17:40, and the padlock was never locked.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_ki_reveal"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_enter",
+                  "text": "Njeri goes in through the yard gate",
+                  "slot": "sl_1910",
+                  "by": [
+                    "f_guard"
+                  ],
+                  "why": "Gathua: about 19:10.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_guard"
+                    ]
+                  }
+                },
+                {
+                  "id": "e_killed",
+                  "text": "Ndirangu is killed",
+                  "slot": "sl_kill",
+                  "by": [
+                    "f_guard",
+                    "f_aut_tod",
+                    "f_nj_reveal"
+                  ],
+                  "why": "She was in the office from 19:10 to 19:30, inside the autopsy's hour.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_aut_tod"
+                    ]
+                  },
+                  "act": true
+                },
+                {
+                  "id": "e_leave",
+                  "text": "Njeri comes out fast",
+                  "slot": "sl_1930",
+                  "by": [
+                    "f_guard"
+                  ],
+                  "why": "Gathua: about 19:30.",
+                  "unlock": {
+                    "anyOf": [
+                      "f_guard"
+                    ]
+                  }
+                }
+              ],
+              "decoys": [
+                {
+                  "slot": "sl_1800",
+                  "by": [
+                    "f_bar",
+                    "f_padlock"
+                  ],
+                  "why": "18:00 is Kiarie's \"locked up at six\". He was at the bar from 17:40 and the padlock was open."
+                }
+              ]
+            }
+          }
+        ],
+        "prosecutor": {
+          "pass": "Unlocked at twenty to six, in at ten past seven, out at half past. The guard kept better time than the mechanic.",
+          "fail": [
+            "Six o'clock is the mechanic's story. His bar tab disagrees.",
+            "When did the woman in the orange jacket go in?"
+          ]
+        }
+      },
+      {
+        "id": "g_where",
+        "kind": "where",
+        "blanks": [
+          {
+            "id": "where",
+            "category": "place",
+            "answer": "pl_office"
+          }
+        ],
+        "prosecutor": {
+          "pass": "The office, beside his own desk. Yes.",
+          "fail": [
+            "The jack in the bay hasn't moved off its hook.",
+            "Her pickup is in the impound yard. He wasn't."
+          ]
+        }
+      },
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_njeri"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Her jacket at the gate, her phone at the market, her print under the hook. That will hold.",
+          "fail": [
+            "The mechanic was at the bar until ten.",
+            "The guard never left his gate."
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_bar"
+          }
+        ],
+        "prosecutor": {
+          "pass": "A straight steel bar, wiped and left on the floor. Yes.",
+          "fail": [
+            "The jack is clean and on its hook.",
+            "Thirty-one thousand shillings in a locked box. Not a robbery."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_refund"
+          }
+        ],
+        "prosecutor": {
+          "pass": "One point two million, a bank loan, and a laugh. That's why.",
+          "fail": [
+            "The partner was at the fundraiser all evening.",
+            "Phyllis was at dinner in her hotel."
+          ]
+        }
+      },
+      {
+        "id": "g_forgery",
+        "kind": "forgery",
+        "blanks": [
+          {
+            "id": "document",
+            "category": "document",
+            "answer": "d_logbook"
+          },
+          {
+            "id": "tell",
+            "category": "tell",
+            "answer": "t_chassis"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Four characters on a piece of metal. The frame doesn't lie, Amani. Paper does.",
+          "fail": [
+            "The stamp and the signature are good copies. Look at the numbers.",
+            "The impound register is the police's own book."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "plc_office",
+      "from": "19:10",
+      "to": "19:30",
+      "note": "Gathua saw her go in at 19:10 and out at 19:30; the autopsy allows 19:00–20:00."
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_impound",
+          "f_logbook",
+          "f_sale_njeri",
+          "f_loan",
+          "f_cmp_chassis",
+          "f_docexam"
+        ],
+        "concludes": "The pickup Ndirangu sold Njeri was stolen, with a forged logbook: its chassis number doesn't match the frame. She lost KSh 1.2 million and still owes the bank.",
+        "answers": [
+          "tell",
+          "document"
+        ]
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_ki_locked",
+          "f_padlock",
+          "f_ki_reveal",
+          "f_bar"
+        ],
+        "concludes": "The yard was open from 17:40: Kiarie went to the bar without locking up."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_guard",
+          "f_jacket",
+          "f_rec_njeri",
+          "f_nj_notseen",
+          "f_nj_reveal",
+          "f_aut_tod"
+        ],
+        "concludes": "A woman in a Njeri Express jacket went in at 19:10 and out at 19:30; Njeri's phone was at the market; she admits she was in the office.",
+        "answers": [
+          "when"
+        ]
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_body",
+          "f_aut_blow",
+          "f_prints",
+          "f_nj_bar"
+        ],
+        "concludes": "Her print is under the lock bar's hook. Njeri Macharia struck Ndirangu with the steering-lock bar in the yard office, because he had sold her a stolen pickup with a forged logbook and refused to refund her.",
+        "answers": [
+          "who",
+          "how",
+          "why",
+          "where"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "pl_bay",
+        "blank": "where",
+        "by": [
+          "f_jack",
+          "f_body"
+        ],
+        "why": "He lay in the office; the bay's jack never left its hook."
+      },
+      {
+        "word": "pl_market",
+        "blank": "where",
+        "by": [
+          "f_body",
+          "f_guard"
+        ],
+        "why": "The guard watched her go into the yard, not the market."
+      },
+      {
+        "word": "pl_base",
+        "blank": "where",
+        "by": [
+          "f_body",
+          "f_nj_reveal"
+        ],
+        "why": "She went to him, in the office."
+      },
+      {
+        "word": "pl_impound",
+        "blank": "where",
+        "by": [
+          "f_body"
+        ],
+        "why": "He died in his own office."
+      },
+      {
+        "word": "w_kiarie",
+        "blank": "who",
+        "by": [
+          "f_bar"
+        ],
+        "why": "Kiarie was at the bar from 17:40 to 22:00."
+      },
+      {
+        "word": "w_wahome",
+        "blank": "who",
+        "by": [
+          "f_wahome"
+        ],
+        "why": "Mzee Wahome was at the church fundraiser, 17:00–21:30."
+      },
+      {
+        "word": "w_phyllis",
+        "blank": "who",
+        "by": [
+          "f_phyllis"
+        ],
+        "why": "Phyllis was at dinner in her hotel, 19:00–20:30."
+      },
+      {
+        "word": "w_gathua",
+        "blank": "who",
+        "by": [
+          "f_guard_self"
+        ],
+        "why": "Gathua sat at the market's side gate all night."
+      },
+      {
+        "word": "h_jack",
+        "blank": "how",
+        "by": [
+          "f_jack",
+          "f_aut_blow"
+        ],
+        "why": "The jack is clean on its hook; the wound is a straight bar."
+      },
+      {
+        "word": "h_car",
+        "blank": "how",
+        "by": [
+          "f_aut_noother"
+        ],
+        "why": "No vehicle injuries."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_noother",
+          "f_aut_blow"
+        ],
+        "why": "A sound heart; one blow killed him."
+      },
+      {
+        "word": "h_robbed",
+        "blank": "how",
+        "by": [
+          "f_cashbox"
+        ],
+        "why": "The cash box is untouched: KSh 31,000."
+      },
+      {
+        "word": "m_partner",
+        "blank": "why",
+        "by": [
+          "f_wahome",
+          "f_wahome_suspect"
+        ],
+        "why": "That was Wahome's wish, and he was at the fundraiser."
+      },
+      {
+        "word": "m_owner",
+        "blank": "why",
+        "by": [
+          "f_phyllis"
+        ],
+        "why": "Phyllis was at dinner in her hotel."
+      },
+      {
+        "word": "m_wage",
+        "blank": "why",
+        "by": [
+          "f_wages"
+        ],
+        "why": "Kiarie was paid in full to the end of March."
+      },
+      {
+        "word": "m_parking",
+        "blank": "why",
+        "by": [
+          "f_no_quarrel"
+        ],
+        "why": "Nobody quarrels with the yard over parking."
+      },
+      {
+        "word": "d_loan",
+        "blank": "document",
+        "by": [
+          "f_loan_real"
+        ],
+        "why": "The bank confirms its loan."
+      },
+      {
+        "word": "d_licence",
+        "blank": "document",
+        "by": [
+          "f_licence_real"
+        ],
+        "why": "The licence checks out with the county."
+      },
+      {
+        "word": "d_impound",
+        "blank": "document",
+        "by": [
+          "f_impound_real"
+        ],
+        "why": "The police register, signed by the duty officer."
+      },
+      {
+        "word": "d_genuine",
+        "blank": "document",
+        "by": [
+          "f_genuine_lb"
+        ],
+        "why": "Its chassis number matches its car."
+      },
+      {
+        "word": "t_spelling",
+        "blank": "tell",
+        "by": [
+          "f_cmp_stamp"
+        ],
+        "why": "The stamp's lettering is spelled correctly."
+      },
+      {
+        "word": "t_traced",
+        "blank": "tell",
+        "by": [
+          "f_cmp_sig"
+        ],
+        "why": "No pencil line under the signature."
+      },
+      {
+        "word": "t_date",
+        "blank": "tell",
+        "by": [
+          "f_cmp_date"
+        ],
+        "why": "Registered three years after the model year: plausible."
+      },
+      {
+        "word": "t_dots",
+        "blank": "tell",
+        "by": [
+          "f_cmp_stamp"
+        ],
+        "why": "The stamp is pressed ink with a halo, not dots."
+      },
+      {
+        "word": "t_seal",
+        "blank": "tell",
+        "by": [
+          "f_cmp_seal"
+        ],
+        "why": "The seal is embossed, not photocopied."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "In January Njeri buys a white pickup from Ndirangu with a business loan, to take her boda fleet into deliveries. \"Sold as seen.\"",
+        "image": null
+      },
+      {
+        "text": "In March a roadblock at Sagana stops it. The frame's chassis number belongs to a pickup stolen from Phyllis Nduta in Nairobi; the logbook's has been altered. The pickup is impounded. Ndirangu won't refund her: \"You bought it, you checked it.\"",
+        "image": null
+      },
+      {
+        "text": "Wednesday, 17:40. Kiarie leaves for the bar without locking the gate.",
+        "image": null
+      },
+      {
+        "text": "About 19:10, in her orange Njeri Express jacket, Njeri walks through the open gate to demand her money. He laughs. She picks up the steel steering-lock bar from his desk.",
+        "image": "plc_office"
+      },
+      {
+        "text": "About 19:30 she comes out fast. Gathua, at the market's side gate, notices the jacket and thinks nothing of it.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "One stamp: records on Njeri. Detain her at her base; the prints (6 h) and the logbook examination (10 h) both come back inside the 24 hours.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_yard",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_body",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_salesfile",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_genuine_lb",
+        "hours": 0
+      },
+      {
+        "do": "read",
+        "target": "ev_padlock",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_kiarie"
+      },
+      {
+        "do": "press",
+        "target": "c_ki"
+      },
+      {
+        "do": "travel",
+        "target": "loc_market",
+        "hours": 0.25,
+        "from": "loc_yard"
+      },
+      {
+        "do": "visit",
+        "target": "loc_market",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_guard",
+        "hours": 1
+      },
+      {
+        "do": "travel",
+        "target": "loc_impound",
+        "hours": 0.25,
+        "from": "loc_market"
+      },
+      {
+        "do": "visit",
+        "target": "loc_impound",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_impound",
+        "hours": 1
+      },
+      {
+        "do": "travel",
+        "target": "loc_base",
+        "hours": 0.25,
+        "from": "loc_impound"
+      },
+      {
+        "do": "visit",
+        "target": "loc_base",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_jacket",
+        "hours": 0
+      },
+      {
+        "do": "interview",
+        "target": "p_njeri"
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "press",
+        "target": "c_nj"
+      },
+      {
+        "do": "detain",
+        "target": "p_njeri"
+      },
+      {
+        "do": "sample",
+        "target": "ev_nj_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "submit",
+        "target": "ev_docexam"
+      },
+      {
+        "do": "wait",
+        "target": null,
+        "hours": 10
+      },
+      {
+        "do": "press",
+        "target": "c_nj_bar"
+      }
+    ],
+    "totalHours": 28.75
+  },
+  "hints": {
+    "g_when": {
+      "tier1": {
+        "point": "ev_guard",
+        "line": "A guard who sits facing the yard, Amani. Ask him what he saw."
+      },
+      "tier2": {
+        "facts": [
+          "f_guard",
+          "f_bar"
+        ],
+        "line": "In at 19:10, out at 19:30. And the gate was open from 17:40."
+      }
+    },
+    "g_where": {
+      "tier1": {
+        "point": "ev_body",
+        "line": "Where was he lying, and what was beside him?"
+      },
+      "tier2": {
+        "facts": [
+          "f_body",
+          "f_jack"
+        ],
+        "line": "Beside his desk, the bar on the floor. The jack never left the bay."
+      }
+    },
+    "g_who": {
+      "tier1": {
+        "point": "ev_jacket",
+        "line": "An orange reflective jacket. Whose fleet wears orange?"
+      },
+      "tier2": {
+        "facts": [
+          "f_rec_njeri",
+          "f_prints"
+        ],
+        "line": "Her phone at the market at seven, her print under the hook."
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_autopsy",
+        "line": "A straight steel bar. Look at the floor."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_blow",
+          "f_body"
+        ],
+        "line": "The steering-lock bar, wiped."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_impound",
+        "line": "Why is her pickup in a police yard?"
+      },
+      "tier2": {
+        "facts": [
+          "f_impound",
+          "f_loan"
+        ],
+        "line": "Stolen in Nairobi, a forged logbook, and a loan she still pays."
+      }
+    },
+    "g_forgery": {
+      "tier1": {
+        "point": "ev_compare",
+        "line": "Lay the logbook over the genuine one. Then drag its numbers onto the frame."
+      },
+      "tier2": {
+        "facts": [
+          "f_cmp_chassis"
+        ],
+        "line": "Four characters light red."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "logbook",
+      "def": "A vehicle's registration certificate, with its chassis and engine numbers."
+    },
+    {
+      "term": "namba ya chasisi",
+      "def": "Chassis number, also stamped into the vehicle's frame."
+    },
+    {
+      "term": "boda",
+      "def": "Boda-boda: a motorbike taxi."
+    },
+    {
+      "term": "mkopo",
+      "def": "A loan."
+    },
+    {
+      "term": "mzee",
+      "def": "An elder; a respectful title for an older man."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "documentTools",
+      "forgeryGroup"
+    ],
+    "beatNotes": "The document comparison tools (raking light, magnifier, reference documents) and the FORGERY group. The player lays the suspect logbook over the genuine one, then drags its chassis number onto the photo of the frame stamp; four characters light red."
+  }
+}

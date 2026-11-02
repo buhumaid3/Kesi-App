@@ -1,0 +1,1699 @@
+{
+  "meta": {
+    "id": "case-037",
+    "number": 37,
+    "region": "rift-valley",
+    "regionNumber": 4,
+    "title": "The Camel Coat",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 22,
+    "date": "Tuesday 11 November",
+    "folderTab": "NAKURU TOWN"
+  },
+  "pattern": {
+    "crimePattern": "sacco treasurer kills the CEO who found ghost-member loans, then walks out in the victim's coat to fake a later sighting",
+    "noRealCaseRetold": true,
+    "notes": "Fictional sacco on a real street. Ghost members and irregular loans in savings co-operatives are a recurring, widely reported problem; no real sacco, officer or regulator decision is depicted.",
+    "tags": [
+      "blunt-force",
+      "cover-up",
+      "false-sighting",
+      "honest-mistake",
+      "forensics",
+      "records"
+    ]
+  },
+  "difficulty": {
+    "suspects": 3,
+    "chainLength": 4,
+    "redHerrings": 1,
+    "liars": 1,
+    "groups": [
+      "who",
+      "how",
+      "why"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness",
+      "phone",
+      "forensic"
+    ],
+    "gatedActions": [
+      "records"
+    ],
+    "twist": "the-last-sighting-was-false"
+  },
+  "ob": {
+    "number": "OB 21/11/11",
+    "date": "Tuesday 11 November",
+    "time": "07:42",
+    "reportedBy": "Cleaner, Rift Walimu Sacco, Kenyatta Avenue, Nakuru",
+    "text": "A cleaner reports the chief executive of Rift Walimu Sacco, Ezra Kamande (45), found dead in the sacco's strong room on Kenyatta Avenue, Nakuru, at 07:30. The night askari states that the CEO left the building at 21:00 the previous night.",
+    "facts": [
+      "f_ob",
+      "f_ob_askari"
+    ]
+  },
+  "people": [
+    {
+      "id": "p_ezra",
+      "role": "victim",
+      "name": "Ezra Kamande",
+      "age": 45,
+      "occupation": "Chief executive, Rift Walimu Sacco",
+      "bio": "Runs a teachers' savings and loans co-operative. Known all over town for his long camel coat and grey felt hat.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_strongroom",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, a long camel-coloured overcoat and a grey felt hat, a slim leather folio under his arm, upright and serious, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kirimi",
+      "role": "suspect",
+      "name": "Kirimi Muthuri",
+      "age": 64,
+      "occupation": "Board treasurer and loan signatory",
+      "bio": "Fifteen years on the board. Signs every loan above a certain size. Nobody questions the treasurer.",
+      "community": "Meru",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_eunice_call"
+      },
+      "at": "loc_sacco",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 60s, a grey suit and a sacco lapel pin, reading glasses, a slight stoop, a gentle grandfatherly smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_wilfred",
+      "role": "suspect",
+      "name": "Wilfred Cheruiyot",
+      "age": 41,
+      "occupation": "Deputy CEO",
+      "redHerring": true,
+      "bio": "Wanted the top job when Ezra got it. Still wants it.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_ezra_note"
+      },
+      "at": "plc_club",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 40s, a sharp navy suit, a club tie, a confident smile slipping, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_jemimah",
+      "role": "suspect",
+      "name": "Jemimah Mumbi",
+      "age": 50,
+      "occupation": "Sacco member; shopkeeper",
+      "bio": "Defaulted on a loan. Threatened Ezra at the banking-hall counter last week.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_threat"
+      },
+      "at": "plc_jshop",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 50, a shopkeeper's apron over a dress, a headscarf, arms folded, tired and defiant, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_lemaron",
+      "role": "witness",
+      "name": "Lemaron Leteipa",
+      "age": 35,
+      "occupation": "Night askari",
+      "bio": "Guards the front door from 18:00. Honest. Has seen Ezra leave in that coat a thousand times.",
+      "community": "Maasai",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_frontdoor",
+      "image": null
+    },
+    {
+      "id": "p_eunice",
+      "role": "witness",
+      "name": "Eunice Kamande",
+      "age": 43,
+      "occupation": "Ezra's wife",
+      "bio": "Waited for supper with the children. He never came.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_home",
+      "image": null
+    },
+    {
+      "id": "p_rose",
+      "role": "witness",
+      "name": "Rose Atieno",
+      "age": 47,
+      "occupation": "Cleaner, Rift Walimu Sacco",
+      "statementOnly": true,
+      "bio": "Locks the back door every evening at 18:30 and opens up every morning.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_sacco",
+      "image": null
+    },
+    {
+      "id": "p_hellen",
+      "role": "witness",
+      "name": "Hellen Wanjiru",
+      "age": 52,
+      "occupation": "Shopkeeper next to Jemimah's shop",
+      "statementOnly": true,
+      "bio": "Their shops share a wall and a bench outside.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_jem_claim"
+      },
+      "at": "plc_jshop",
+      "image": null
+    }
+  ],
+  "places": [
+    {
+      "id": "plc_strongroom",
+      "name": "Strong room",
+      "within": "loc_sacco"
+    },
+    {
+      "id": "plc_frontdoor",
+      "name": "Front door and lobby",
+      "within": "loc_sacco"
+    },
+    {
+      "id": "plc_cbd",
+      "name": "Nakuru CBD mast zone"
+    },
+    {
+      "id": "plc_club",
+      "name": "Nakuru club dining room"
+    },
+    {
+      "id": "plc_jshop",
+      "name": "Jemimah's shop, Nakuru"
+    },
+    {
+      "id": "plc_home",
+      "name": "The Kamande house"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc_sacco",
+      "name": "Rift Walimu Sacco, Kenyatta Avenue, Nakuru",
+      "kind": "scene",
+      "description": "A banking hall, offices off a corridor, a steel-doored strong room for loan files and cash. A front door watched by the askari, and a back door that only board members have keys to. Coats hang on hooks behind each office door.",
+      "unlock": {
+        "start": true
+      },
+      "hotspots": [
+        {
+          "id": "hs_body",
+          "label": "Strong room",
+          "pos": [
+            40,
+            60
+          ],
+          "yields": "ev_body",
+          "text": "Ezra lies between the loan-file shelves. The sacco's heavy brass commemorative paperweight is on the floor."
+        },
+        {
+          "id": "hs_weight",
+          "label": "Brass paperweight",
+          "pos": [
+            46,
+            70
+          ],
+          "yields": "ev_paperweight",
+          "text": "\"Rift Walimu Sacco — 25 Years\". Heavy brass, rounded edges."
+        },
+        {
+          "id": "hs_coat",
+          "label": "Behind his office door",
+          "pos": [
+            70,
+            30
+          ],
+          "yields": "ev_coat",
+          "text": "His camel coat and grey hat hang on the hook. Something is in the coat pocket."
+        },
+        {
+          "id": "hs_files",
+          "label": "Loan-file shelves",
+          "pos": [
+            30,
+            40
+          ],
+          "yields": "ev_loanfiles",
+          "text": "A row of loan files pulled out and stacked on the strong-room table."
+        },
+        {
+          "id": "hs_register",
+          "label": "Members' register",
+          "pos": [
+            20,
+            50
+          ],
+          "yields": "ev_deceased",
+          "text": "The sacco's own register, including the deceased-members list."
+        },
+        {
+          "id": "hs_desk",
+          "label": "His desk",
+          "pos": [
+            80,
+            50
+          ],
+          "yields": "ev_ezra_note",
+          "text": "A draft letter under his desk lamp."
+        },
+        {
+          "id": "hs_back",
+          "label": "Back door",
+          "pos": [
+            94,
+            70
+          ],
+          "yields": "ev_backdoor",
+          "text": "The back door to the lane. Five keys exist, all held by board members."
+        },
+        {
+          "id": "hs_rose",
+          "label": "The cleaner",
+          "pos": [
+            88,
+            80
+          ],
+          "yields": "ev_rose",
+          "text": "Rose Atieno sits on the back step with her mop bucket, shaking."
+        },
+        {
+          "id": "hs_askari",
+          "label": "Front door",
+          "pos": [
+            10,
+            70
+          ],
+          "yields": "ev_frontlog",
+          "text": "Lemaron Leteipa's log book sits on his stool by the front door."
+        },
+        {
+          "id": "hs_minutes",
+          "label": "Board room",
+          "pos": [
+            60,
+            20
+          ],
+          "yields": "ev_minutes",
+          "text": "The board minutes for the year."
+        },
+        {
+          "id": "hs_counter",
+          "label": "Banking hall counter",
+          "pos": [
+            16,
+            30
+          ],
+          "yields": "ev_counter",
+          "text": "A note in the counter incident book from last week."
+        }
+      ],
+      "image": {
+        "kind": "location",
+        "brief": "the inside of a small savings co-operative office in Nakuru at night, a banking hall with a counter, a corridor, a steel strong-room door standing open, a long camel coat and grey felt hat hanging on a hook behind an office door, no people in focus"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The strong room",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only. Struck on the head. Found between the loan-file shelves at 07:30."
+      },
+      "facts": [
+        "f_body"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "the inside of a strong room lined with metal shelves of loan files, a stack of files on a small table, a heavy brass commemorative paperweight lying on the floor, no body visible"
+      }
+    },
+    {
+      "id": "ev_paperweight",
+      "type": "physical",
+      "title": "Brass paperweight",
+      "render": "object",
+      "body": {
+        "label": "\"Rift Walimu Sacco — 25 Years\". Heavy brass, rounded edges."
+      },
+      "facts": [
+        "f_paperweight"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_coat",
+      "type": "physical",
+      "title": "Camel coat and grey hat",
+      "render": "object",
+      "body": {
+        "label": "On the hook behind Ezra's door. In the coat pocket: a chemist's receipt.",
+        "receipt": "21:05, blood-pressure tablets, sacco member discount, Member 0114 — K. Muthuri"
+      },
+      "facts": [
+        "f_coat",
+        "f_coat_receipt"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a long camel-coloured overcoat and a grey felt hat on a hook behind an office door, a small chemist's receipt sticking out of the coat pocket"
+      }
+    },
+    {
+      "id": "ev_frontlog",
+      "type": "physical",
+      "title": "Askari's log",
+      "render": "logBook",
+      "body": {
+        "rows": [
+          {
+            "time": "18:00",
+            "entry": "On duty"
+          },
+          {
+            "time": "21:00",
+            "entry": "Mr Kamande out (coat & hat)"
+          },
+          {
+            "time": "06:00",
+            "entry": "Off duty"
+          }
+        ]
+      },
+      "facts": [
+        "f_lem_log"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_eunice",
+      "type": "witness",
+      "title": "Statement: Eunice Kamande",
+      "render": "statement",
+      "body": {
+        "speaker": "p_eunice"
+      },
+      "facts": [
+        "f_eunice_supper",
+        "f_eunice_call",
+        "f_eunice_home"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_loanfiles",
+      "type": "physical",
+      "title": "The 41 loan files",
+      "render": "ledger",
+      "body": {
+        "line": "41 loans, KSh 18 million in all. Approval signatures: K. Muthuri."
+      },
+      "facts": [
+        "f_loans"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_deceased",
+      "type": "physical",
+      "title": "Members' register",
+      "render": "ledger",
+      "body": {
+        "line": "17 of the 41 borrowers are on the deceased-members list. The other 24 have ID numbers that belong to nobody on the register."
+      },
+      "facts": [
+        "f_deceased"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ezra_note",
+      "type": "physical",
+      "title": "Draft letter (Ezra)",
+      "render": "note",
+      "body": {
+        "text": "To the board and the co-operatives regulator: 41 irregular loans approved by the treasurer. To be sent Tuesday morning."
+      },
+      "facts": [
+        "f_ezra_note"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_backdoor",
+      "type": "physical",
+      "title": "Back door",
+      "render": "object",
+      "body": {
+        "label": "Board members' keys only (five). The bolt the cleaner shoots at 18:30 was drawn back in the morning."
+      },
+      "facts": [
+        "f_backdoor"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_rose",
+      "type": "witness",
+      "title": "Statement: Rose Atieno",
+      "render": "statement",
+      "body": {
+        "speaker": "p_rose"
+      },
+      "facts": [
+        "f_cleaner"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_records",
+      "type": "phone",
+      "title": "Records: Kirimi Muthuri's line",
+      "render": "manifest",
+      "body": {
+        "masts": "Nakuru CBD 17:40–21:30, then Milimani (home)",
+        "pesapap": "21:05 chemist, Kenyatta Avenue"
+      },
+      "facts": [
+        "f_rec_mast",
+        "f_rec_chemist"
+      ],
+      "gate": {
+        "action": "records",
+        "cost": 1,
+        "grounds": [
+          "f_coat_receipt"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_club",
+      "type": "physical",
+      "title": "Club register and dinner bill",
+      "render": "receipt",
+      "body": {
+        "name": "W. Cheruiyot",
+        "signedIn": "17:15",
+        "dinner": "18:00–22:30",
+        "signed": "22:28",
+        "diners": 30
+      },
+      "facts": [
+        "f_club"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_counter",
+      "type": "physical",
+      "title": "Counter incident book",
+      "render": "logBook",
+      "body": {
+        "rows": [
+          {
+            "date": "last week",
+            "entry": "Member J. Mumbi (defaulted loan) shouted threats at the CEO at the counter."
+          }
+        ]
+      },
+      "facts": [
+        "f_threat"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_hellen",
+      "type": "witness",
+      "title": "Statement: Hellen Wanjiru",
+      "render": "statement",
+      "body": {
+        "speaker": "p_hellen"
+      },
+      "facts": [
+        "f_jem_shop"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_minutes",
+      "type": "physical",
+      "title": "Board minutes",
+      "render": "logBook",
+      "body": {
+        "rows": [
+          {
+            "entry": "Land purchase approved unanimously last year."
+          },
+          {
+            "entry": "Staff and CEO salaries reviewed and agreed; no disputes recorded."
+          }
+        ]
+      },
+      "facts": [
+        "f_landpurchase",
+        "f_salary"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kir_prints",
+      "type": "physical",
+      "title": "Kirimi's prints (given voluntarily)",
+      "render": "form",
+      "body": {
+        "name": "K. Muthuri",
+        "note": "Offered confidently."
+      },
+      "facts": [
+        "f_kir_prints"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_autopsy",
+      "type": "forensic",
+      "title": "Autopsy report (Dr. Chebii)",
+      "render": "labReport",
+      "body": {
+        "test": "autopsy"
+      },
+      "facts": [
+        "f_aut_blow",
+        "f_aut_tod",
+        "f_aut_nosuff"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "autopsy",
+        "hours": 0,
+        "needs": [
+          "ev_body"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_compare",
+      "type": "forensic",
+      "title": "On-site comparison: wound vs paperweight",
+      "render": "labReport",
+      "body": {
+        "test": "comparison"
+      },
+      "facts": [
+        "f_compare"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "comparison",
+        "hours": 0,
+        "needs": [
+          "ev_autopsy",
+          "ev_paperweight"
+        ]
+      },
+      "image": null
+    },
+    {
+      "id": "ev_prints",
+      "type": "forensic",
+      "title": "Lab: fingerprints on the paperweight",
+      "render": "labReport",
+      "body": {
+        "test": "prints"
+      },
+      "facts": [
+        "f_prints"
+      ],
+      "gate": null,
+      "lab": {
+        "test": "prints",
+        "hours": 6,
+        "needs": [
+          "ev_paperweight",
+          "ev_kir_prints"
+        ]
+      },
+      "image": null
+    }
+  ],
+  "facts": [
+    {
+      "id": "f_ob",
+      "text": "Ezra Kamande, CEO of Rift Walimu Sacco, was found dead in the sacco's strong room at 07:30.",
+      "kind": "true",
+      "about": [
+        "p_ezra",
+        "plc_strongroom"
+      ]
+    },
+    {
+      "id": "f_ob_askari",
+      "text": "The night askari says the CEO left the building at 21:00 the previous night.",
+      "kind": "true",
+      "about": [
+        "p_lemaron",
+        "p_ezra"
+      ]
+    },
+    {
+      "id": "f_body",
+      "text": "Ezra lay between the loan-file shelves in the strong room, struck on the head.",
+      "kind": "true",
+      "about": [
+        "p_ezra",
+        "plc_strongroom"
+      ]
+    },
+    {
+      "id": "f_paperweight",
+      "text": "The sacco's heavy brass commemorative paperweight lay on the strong-room floor. It has rounded edges.",
+      "kind": "true",
+      "about": [
+        "plc_strongroom"
+      ]
+    },
+    {
+      "id": "f_coat",
+      "text": "Ezra's camel coat and grey hat hang on the hook behind his office door.",
+      "kind": "true",
+      "about": [
+        "p_ezra"
+      ]
+    },
+    {
+      "id": "f_coat_receipt",
+      "text": "In the coat pocket: a chemist's receipt, 21:05, blood-pressure tablets, sacco member discount, 'Member 0114 — K. Muthuri'.",
+      "kind": "true",
+      "about": [
+        "p_kirimi"
+      ]
+    },
+    {
+      "id": "f_lem_log",
+      "text": "Askari's log: '21:00 — Mr Kamande out (coat & hat).'",
+      "kind": "true",
+      "about": [
+        "p_lemaron",
+        "p_ezra"
+      ]
+    },
+    {
+      "id": "f_lem_self",
+      "text": "Lemaron was at the front door from 18:00 to 06:00; his log has an entry every hour.",
+      "kind": "true",
+      "about": [
+        "p_lemaron"
+      ],
+      "where": {
+        "person": "p_lemaron",
+        "place": "plc_frontdoor",
+        "from": "18:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_eunice_supper",
+      "text": "Eunice: in eighteen years Ezra ate supper at home at eight every night. Last night he never came.",
+      "kind": "true",
+      "about": [
+        "p_eunice",
+        "p_ezra"
+      ]
+    },
+    {
+      "id": "f_eunice_call",
+      "text": "Eunice: he called at 17:50: \"I'll be late. I have to deal with Kirimi.\"",
+      "kind": "true",
+      "about": [
+        "p_eunice",
+        "p_ezra",
+        "p_kirimi"
+      ]
+    },
+    {
+      "id": "f_eunice_home",
+      "text": "Eunice was at home with the children all evening, waiting for him.",
+      "kind": "true",
+      "about": [
+        "p_eunice"
+      ],
+      "where": {
+        "person": "p_eunice",
+        "place": "plc_home",
+        "from": "17:00",
+        "to": "23:00"
+      }
+    },
+    {
+      "id": "f_loans",
+      "text": "Strong room: 41 loan files, KSh 18 million in all. Every approval is signed K. Muthuri.",
+      "kind": "true",
+      "about": [
+        "p_kirimi"
+      ]
+    },
+    {
+      "id": "f_deceased",
+      "text": "Members' register: 17 of the 41 borrowers are on the deceased-members list. The other 24 have ID numbers that belong to nobody.",
+      "kind": "true",
+      "about": [
+        "p_kirimi"
+      ]
+    },
+    {
+      "id": "f_ezra_note",
+      "text": "Ezra's draft letter to the board and the co-operatives regulator: '41 irregular loans approved by the treasurer.' To go on Tuesday morning.",
+      "kind": "true",
+      "about": [
+        "p_ezra",
+        "p_kirimi"
+      ]
+    },
+    {
+      "id": "f_backdoor",
+      "text": "The back door opens only with a board member's key (five exist). The bolt the cleaner shot at 18:30 was found drawn back in the morning.",
+      "kind": "true",
+      "about": [
+        "loc_sacco"
+      ]
+    },
+    {
+      "id": "f_cleaner",
+      "text": "Rose: she shoots the back-door bolt at 18:30 every night. Only someone with a board key could open it from outside after that.",
+      "kind": "true",
+      "about": [
+        "p_rose"
+      ]
+    },
+    {
+      "id": "f_rec_mast",
+      "text": "Records, Kirimi's line: Nakuru CBD mast 17:40–21:30, then Milimani, where he lives.",
+      "kind": "true",
+      "about": [
+        "p_kirimi"
+      ]
+    },
+    {
+      "id": "f_rec_chemist",
+      "text": "Records: PesaPap, 21:05, the chemist on Kenyatta Avenue.",
+      "kind": "true",
+      "about": [
+        "p_kirimi"
+      ]
+    },
+    {
+      "id": "f_club",
+      "text": "Club register and bill: W. Cheruiyot signed in at 17:15 for drinks, then dinner 18:00–22:30, bill signed at 22:28. Thirty diners.",
+      "kind": "true",
+      "about": [
+        "p_wilfred"
+      ],
+      "where": {
+        "person": "p_wilfred",
+        "place": "plc_club",
+        "from": "17:15",
+        "to": "22:30"
+      }
+    },
+    {
+      "id": "f_threat",
+      "text": "Counter incident book: last week member J. Mumbi, with a defaulted loan, shouted threats at the CEO.",
+      "kind": "true",
+      "about": [
+        "p_jemimah",
+        "p_ezra"
+      ]
+    },
+    {
+      "id": "f_jem_shop",
+      "text": "Hellen: Jemimah served customers in her shop next door until she closed at 20:00; they sat on the bench together at 19:00.",
+      "kind": "true",
+      "about": [
+        "p_hellen",
+        "p_jemimah"
+      ],
+      "where": {
+        "person": "p_jemimah",
+        "place": "plc_jshop",
+        "from": "17:00",
+        "to": "20:00"
+      }
+    },
+    {
+      "id": "f_landpurchase",
+      "text": "Board minutes: the sacco's land purchase was approved unanimously last year.",
+      "kind": "true",
+      "about": [
+        "loc_sacco"
+      ]
+    },
+    {
+      "id": "f_salary",
+      "text": "Board minutes: salaries reviewed and agreed; no disputes recorded.",
+      "kind": "true",
+      "about": [
+        "loc_sacco"
+      ]
+    },
+    {
+      "id": "f_kir_prints",
+      "text": "Kirimi gives his fingerprints voluntarily, confidently.",
+      "kind": "true",
+      "about": [
+        "p_kirimi"
+      ]
+    },
+    {
+      "id": "f_aut_blow",
+      "text": "Autopsy: a single blow to the head with a heavy object with a rounded edge.",
+      "kind": "true",
+      "about": [
+        "p_ezra"
+      ]
+    },
+    {
+      "id": "f_aut_tod",
+      "text": "Autopsy: death between 17:30 and 19:30. Lunch partly digested, and no supper.",
+      "kind": "true",
+      "about": [
+        "p_ezra"
+      ]
+    },
+    {
+      "id": "f_aut_nosuff",
+      "text": "Autopsy: no signs of suffocation, poisoning or heart failure.",
+      "kind": "true",
+      "about": [
+        "p_ezra"
+      ]
+    },
+    {
+      "id": "f_compare",
+      "text": "Dr. Chebii, on site: the wound is consistent with the brass paperweight.",
+      "kind": "true",
+      "about": [
+        "p_ezra",
+        "ev_paperweight"
+      ]
+    },
+    {
+      "id": "f_prints",
+      "text": "Lab: Kirimi's prints are on the paperweight. He is on the board and handles it often: not decisive on its own.",
+      "kind": "true",
+      "about": [
+        "p_kirimi"
+      ]
+    },
+    {
+      "id": "f_lem_ezra",
+      "text": "Lemaron: \"Mr Kamande came out at nine in his coat and hat, and waved.\"",
+      "kind": "claim",
+      "about": [
+        "p_lemaron",
+        "p_ezra"
+      ]
+    },
+    {
+      "id": "f_lem_face",
+      "text": "Lemaron, asked again: he didn't see the face under the hat brim. \"He walked a bit bent. Mr Kamande walks very straight. But it was late.\"",
+      "kind": "true",
+      "about": [
+        "p_lemaron"
+      ]
+    },
+    {
+      "id": "f_kir_home",
+      "text": "Kirimi: \"I left the office at five and was home in Milimani by half past.\"",
+      "kind": "lie",
+      "about": [
+        "p_kirimi"
+      ]
+    },
+    {
+      "id": "f_kir_assume",
+      "text": "Kirimi: \"Ezra left at nine. The askari saw him.\"",
+      "kind": "claim",
+      "about": [
+        "p_kirimi",
+        "p_ezra"
+      ]
+    },
+    {
+      "id": "f_kir_admits",
+      "text": "Kirimi admits he stayed late \"on some files\", went to the chemist and went home. He says he didn't see Ezra after five.",
+      "kind": "true",
+      "about": [
+        "p_kirimi",
+        "loc_sacco"
+      ],
+      "where": {
+        "person": "p_kirimi",
+        "place": "loc_sacco",
+        "from": "17:00",
+        "to": "21:00"
+      }
+    },
+    {
+      "id": "f_wil_claim",
+      "text": "Wilfred: \"I was at the club dinner.\"",
+      "kind": "claim",
+      "about": [
+        "p_wilfred"
+      ]
+    },
+    {
+      "id": "f_wil_kirimi",
+      "text": "Wilfred: \"Nobody questions the treasurer. He was here before any of us.\"",
+      "kind": "true",
+      "about": [
+        "p_wilfred",
+        "p_kirimi"
+      ]
+    },
+    {
+      "id": "f_jem_claim",
+      "text": "Jemimah: \"I was at my shop, then home.\"",
+      "kind": "claim",
+      "about": [
+        "p_jemimah"
+      ]
+    }
+  ],
+  "interrogations": [
+    {
+      "person": "p_kirimi",
+      "stance": "cooperative",
+      "intro": "Kirimi folds his hands on the board-room table. \"Terrible. Terrible. I left at five. The askari saw Ezra go at nine.\"",
+      "claims": [
+        "f_kir_home",
+        "f_kir_assume"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_loanfiles",
+          "reply": "Every loan goes through committee. I sign what the committee recommends.",
+          "reveals": []
+        },
+        {
+          "about": "ev_paperweight",
+          "reply": "Take my prints. I have nothing to hide. I hold that paperweight at every board meeting.",
+          "reveals": [
+            "ev_kir_prints"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_lemaron",
+      "stance": "cooperative",
+      "intro": "Lemaron stands at attention by his stool. \"I saw him go. Nine o'clock. The coat, the hat. He waved.\"",
+      "claims": [
+        "f_lem_ezra"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "ev_frontlog",
+          "reply": "Every hour I write. I wrote him out at nine.",
+          "reveals": [
+            "f_lem_self"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_eunice",
+      "stance": "cooperative",
+      "intro": "Eunice sits with her hands around a cup she hasn't drunk. \"He ate at eight. Every night of our marriage.\"",
+      "claims": [],
+      "yields": [
+        "ev_eunice"
+      ],
+      "topics": [
+        {
+          "about": "p_kirimi",
+          "reply": "At ten to six he called. \"I'll be late, I have to deal with Kirimi.\" Those were the words.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_wilfred",
+      "stance": "guarded",
+      "opensWith": [
+        "ev_ezra_note"
+      ],
+      "intro": "Wilfred has come from the club in yesterday's suit. \"I know how this looks. The deputy. Ask me.\"",
+      "claims": [
+        "f_wil_claim"
+      ],
+      "yields": [
+        "ev_club"
+      ],
+      "topics": [
+        {
+          "about": "p_kirimi",
+          "reply": "Nobody questions the treasurer. He was here before any of us. Before the building.",
+          "reveals": [
+            "f_wil_kirimi"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_jemimah",
+      "stance": "cooperative",
+      "intro": "Jemimah keeps her apron on. \"I shouted. I owe them money. I don't kill people.\"",
+      "claims": [
+        "f_jem_claim"
+      ],
+      "yields": [],
+      "topics": [
+        {
+          "about": "p_hellen",
+          "reply": "Ask Hellen next door. We sat on the bench together.",
+          "reveals": [
+            "ev_hellen"
+          ]
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c_lem",
+      "claim": "f_lem_ezra",
+      "brokenBy": [
+        "f_aut_tod",
+        "f_eunice_supper"
+      ],
+      "reveals": [
+        "f_lem_face"
+      ],
+      "reaction": "Lemaron frowns for a long time. \"...I didn't see his face. The hat. He walked a bit bent. Mr Kamande walks very straight. But it was late. It was his coat.\"",
+      "mark": "mistaken"
+    },
+    {
+      "id": "c_kir_home",
+      "claim": "f_kir_home",
+      "brokenBy": [
+        "f_rec_mast",
+        "f_coat_receipt"
+      ],
+      "reveals": [
+        "f_kir_admits"
+      ],
+      "reaction": "I stayed late on some files. I went to the chemist and I went home. I didn't see Ezra after five.",
+      "mark": "implicates"
+    }
+  ],
+  "words": [
+    {
+      "id": "w_kirimi",
+      "text": "Kirimi Muthuri",
+      "category": "person",
+      "ref": "p_kirimi",
+      "unlock": {
+        "anyOf": [
+          "f_eunice_call",
+          "f_coat_receipt"
+        ]
+      }
+    },
+    {
+      "id": "w_wilfred",
+      "text": "Wilfred Cheruiyot",
+      "category": "person",
+      "ref": "p_wilfred",
+      "unlock": {
+        "anyOf": [
+          "f_ezra_note"
+        ]
+      }
+    },
+    {
+      "id": "w_jemimah",
+      "text": "Jemimah Mumbi",
+      "category": "person",
+      "ref": "p_jemimah",
+      "unlock": {
+        "anyOf": [
+          "f_threat"
+        ]
+      }
+    },
+    {
+      "id": "w_lemaron",
+      "text": "Lemaron Leteipa",
+      "category": "person",
+      "ref": "p_lemaron",
+      "unlock": {
+        "anyOf": [
+          "f_ob_askari"
+        ]
+      }
+    },
+    {
+      "id": "w_eunice",
+      "text": "Eunice Kamande",
+      "category": "person",
+      "ref": "p_eunice",
+      "unlock": {
+        "anyOf": [
+          "f_eunice_supper"
+        ]
+      }
+    },
+    {
+      "id": "h_paperweight",
+      "text": "struck with the brass paperweight in the strong room",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_compare"
+        ]
+      }
+    },
+    {
+      "id": "h_late",
+      "text": "attacked after he came back to the office late at night",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob_askari"
+        ]
+      }
+    },
+    {
+      "id": "h_suffocate",
+      "text": "locked in the strong room until he suffocated",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_body"
+        ]
+      }
+    },
+    {
+      "id": "h_heart",
+      "text": "a heart attack",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_ob"
+        ]
+      }
+    },
+    {
+      "id": "h_poison",
+      "text": "poisoned",
+      "category": "method",
+      "unlock": {
+        "anyOf": [
+          "f_aut_nosuff"
+        ]
+      }
+    },
+    {
+      "id": "m_ghost",
+      "text": "Ezra had found the ghost-member loans he'd approved",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_ezra_note"
+        ]
+      }
+    },
+    {
+      "id": "m_ceo",
+      "text": "the CEO post",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_wil_claim"
+        ]
+      }
+    },
+    {
+      "id": "m_default",
+      "text": "a defaulted loan",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_threat"
+        ]
+      }
+    },
+    {
+      "id": "m_land",
+      "text": "the sacco's land purchase",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_landpurchase"
+        ]
+      }
+    },
+    {
+      "id": "m_salary",
+      "text": "a salary dispute",
+      "category": "motive",
+      "unlock": {
+        "anyOf": [
+          "f_salary"
+        ]
+      }
+    }
+  ],
+  "chargeSheet": {
+    "template": "{who} killed {victim} by {how}, because {why}.",
+    "fixed": {
+      "victim": "Ezra Kamande"
+    },
+    "groups": [
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_kirimi"
+          }
+        ],
+        "prosecutor": {
+          "pass": "His member number in the dead man's coat, his phone in town until half nine, his signature on 41 ghost loans. That will hold.",
+          "fail": [
+            "Doesn't hold up. The deputy was signing a dinner bill in front of thirty people. Who was wearing that coat?",
+            "No. The askari didn't lie, but he didn't see a face. Whose tablets are in the pocket?"
+          ]
+        }
+      },
+      {
+        "id": "g_how",
+        "kind": "how",
+        "blanks": [
+          {
+            "id": "how",
+            "category": "method",
+            "answer": "h_paperweight"
+          }
+        ],
+        "prosecutor": {
+          "pass": "One blow, a rounded brass edge, before half past seven. Yes.",
+          "fail": [
+            "He was dead before supper. He never came back to the office late.",
+            "Dr. Chebii found a blow, not suffocation."
+          ]
+        }
+      },
+      {
+        "id": "g_why",
+        "kind": "why",
+        "blanks": [
+          {
+            "id": "why",
+            "category": "motive",
+            "answer": "m_ghost"
+          }
+        ],
+        "prosecutor": {
+          "pass": "Seventeen dead members and twenty-four who never lived, all signed by the treasurer. That's the reason.",
+          "fail": [
+            "The land purchase was unanimous. That isn't it.",
+            "That ambition belongs to a man at a club dinner."
+          ]
+        }
+      }
+    ]
+  },
+  "solution": {
+    "timeOfDeath": {
+      "place": "loc_sacco",
+      "from": "17:30",
+      "to": "19:30",
+      "within": [
+        "plc_strongroom"
+      ]
+    },
+    "proof": [
+      {
+        "id": "s1",
+        "from": [
+          "f_aut_tod",
+          "f_eunice_supper",
+          "f_lem_ezra",
+          "f_lem_face"
+        ],
+        "concludes": "Ezra died between 17:30 and 19:30, before his unbroken eight o'clock supper. He couldn't have walked out at 21:00. The askari saw a coat and a hat, not a face: someone else was wearing them."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_coat",
+          "f_coat_receipt"
+        ],
+        "concludes": "Whoever wore the coat at 21:00 bought blood-pressure tablets at 21:05 on Kirimi Muthuri's member number, then hung the coat back on Ezra's hook."
+      },
+      {
+        "id": "s3",
+        "from": [
+          "s2",
+          "f_kir_home",
+          "f_rec_mast",
+          "f_rec_chemist",
+          "f_kir_admits",
+          "f_backdoor",
+          "f_cleaner"
+        ],
+        "concludes": "Kirimi said he was home by 17:30; his phone stayed in town until 21:30 and paid the chemist at 21:05. He admits staying late. The back door, which only a board key opens, was used after the 18:30 bolt."
+      },
+      {
+        "id": "s4",
+        "from": [
+          "s3",
+          "f_loans",
+          "f_deceased",
+          "f_ezra_note",
+          "f_eunice_call",
+          "f_compare",
+          "f_aut_blow"
+        ],
+        "concludes": "Ezra had found 41 ghost loans approved by Kirimi and was reporting them in the morning; at 17:50 he said he had \"to deal with Kirimi\". Kirimi Muthuri struck him with the brass paperweight in the strong room, because Ezra had found the ghost-member loans.",
+        "answers": [
+          "who",
+          "how",
+          "why"
+        ]
+      }
+    ],
+    "eliminations": [
+      {
+        "word": "w_wilfred",
+        "blank": "who",
+        "by": [
+          "f_club"
+        ],
+        "why": "Wilfred signed in at the club at 17:15 and was at dinner until 22:30, in front of thirty diners."
+      },
+      {
+        "word": "w_jemimah",
+        "blank": "who",
+        "by": [
+          "f_jem_shop"
+        ],
+        "why": "Jemimah was serving in her shop until 20:00, with her neighbour beside her; and she has no back-door key."
+      },
+      {
+        "word": "w_lemaron",
+        "blank": "who",
+        "by": [
+          "f_lem_self"
+        ],
+        "why": "Lemaron was at the front door all night; honest, and mistaken."
+      },
+      {
+        "word": "w_eunice",
+        "blank": "who",
+        "by": [
+          "f_eunice_home"
+        ],
+        "why": "Eunice was at home with the children, waiting for him."
+      },
+      {
+        "word": "h_late",
+        "blank": "how",
+        "by": [
+          "f_aut_tod"
+        ],
+        "why": "He was dead before 19:30; he never came back late."
+      },
+      {
+        "word": "h_suffocate",
+        "blank": "how",
+        "by": [
+          "f_aut_blow",
+          "f_aut_nosuff"
+        ],
+        "why": "A blow to the head, not suffocation."
+      },
+      {
+        "word": "h_heart",
+        "blank": "how",
+        "by": [
+          "f_aut_blow"
+        ],
+        "why": "A single blow killed him."
+      },
+      {
+        "word": "h_poison",
+        "blank": "how",
+        "by": [
+          "f_aut_nosuff"
+        ],
+        "why": "No sign of poisoning."
+      },
+      {
+        "word": "m_ceo",
+        "blank": "why",
+        "by": [
+          "f_club"
+        ],
+        "why": "That ambition is Wilfred's, and he was at the club dinner."
+      },
+      {
+        "word": "m_default",
+        "blank": "why",
+        "by": [
+          "f_jem_shop"
+        ],
+        "why": "That debt is Jemimah's, and she was in her shop."
+      },
+      {
+        "word": "m_land",
+        "blank": "why",
+        "by": [
+          "f_landpurchase"
+        ],
+        "why": "The land purchase was unanimous."
+      },
+      {
+        "word": "m_salary",
+        "blank": "why",
+        "by": [
+          "f_salary"
+        ],
+        "why": "No salary dispute was ever recorded."
+      }
+    ],
+    "reconstruction": [
+      {
+        "text": "Ezra goes through the loan book and finds 41 loans, KSh 18 million, to members who are dead or never existed. Every approval: K. Muthuri.",
+        "image": null
+      },
+      {
+        "text": "17:50. He calls home: \"I'll be late, I have to deal with Kirimi.\" In the strong room he shows Kirimi the files. In the morning the letter goes to the board and the regulator.",
+        "image": "loc_sacco"
+      },
+      {
+        "text": "The brass paperweight. Kirimi locks the strong room and waits in his office for the building to empty.",
+        "image": null
+      },
+      {
+        "text": "21:00. In the dim lobby a man in the famous camel coat and grey hat walks past the askari, a little bent, and waves. At 21:05 he buys his blood-pressure tablets on his own member number.",
+        "image": null
+      },
+      {
+        "text": "He comes back through the back door with his board key, hangs the coat and hat on Ezra's hook and leaves again. The receipt stays in the pocket.",
+        "image": null
+      }
+    ]
+  },
+  "clockPlan": {
+    "note": "No detention needed. The prints result (6 h) teaches that prints can be innocent; it isn't needed to charge.",
+    "steps": [
+      {
+        "do": "visit",
+        "target": "loc_sacco",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_coat",
+        "hours": 1
+      },
+      {
+        "do": "interview",
+        "target": "p_eunice"
+      },
+      {
+        "do": "interview",
+        "target": "p_lemaron"
+      },
+      {
+        "do": "press",
+        "target": "c_lem"
+      },
+      {
+        "do": "records",
+        "target": "ev_records"
+      },
+      {
+        "do": "interview",
+        "target": "p_kirimi"
+      },
+      {
+        "do": "press",
+        "target": "c_kir_home"
+      },
+      {
+        "do": "submit",
+        "target": "ev_prints"
+      },
+      {
+        "do": "read",
+        "target": "ev_loanfiles",
+        "hours": 1
+      },
+      {
+        "do": "read",
+        "target": "ev_deceased",
+        "hours": 1
+      }
+    ],
+    "totalHours": 15
+  },
+  "hints": {
+    "g_who": {
+      "tier1": {
+        "point": "ev_coat",
+        "line": "His coat is on its hook. Coats have pockets."
+      },
+      "tier2": {
+        "facts": [
+          "f_coat_receipt",
+          "f_aut_tod"
+        ],
+        "line": "He was dead before supper, yet someone in his coat bought tablets at 21:05. Whose member number?"
+      }
+    },
+    "g_how": {
+      "tier1": {
+        "point": "ev_paperweight",
+        "line": "The heavy thing on the strong-room floor. Ask Dr. Chebii to look at it beside the wound."
+      },
+      "tier2": {
+        "facts": [
+          "f_aut_blow",
+          "f_compare"
+        ],
+        "line": "One blow, a rounded edge, and a paperweight that fits."
+      }
+    },
+    "g_why": {
+      "tier1": {
+        "point": "ev_ezra_note",
+        "line": "Read what Ezra was about to send in the morning."
+      },
+      "tier2": {
+        "facts": [
+          "f_loans",
+          "f_deceased"
+        ],
+        "line": "Forty-one loans, seventeen dead borrowers, twenty-four who never existed. One signature."
+      }
+    }
+  },
+  "glossary": [
+    {
+      "term": "walimu",
+      "def": "Teachers."
+    },
+    {
+      "term": "sacco",
+      "def": "Savings and credit co-operative."
+    },
+    {
+      "term": "mkopo",
+      "def": "A loan."
+    },
+    {
+      "term": "askari",
+      "def": "Security guard."
+    },
+    {
+      "term": "kofia",
+      "def": "Cap or hat."
+    },
+    {
+      "term": "pesapap",
+      "def": "Fictional mobile-money service used in the game."
+    }
+  ],
+  "ui": {
+    "beats": [
+      "honestMistake"
+    ],
+    "beatNotes": "A witness who isn't lying but is wrong. Lemaron's statement gets a third mark, neither red nor grey: an amber \"mistaken\" mark once the time of death is set against it. The notebook now distinguishes lies, innocent lies and honest mistakes. Mwalimu, after: \"People see the coat. Detectives see who's inside it.\""
+  }
+}
