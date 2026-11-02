@@ -307,8 +307,8 @@
           "id": "hs_bin",
           "label": "Office bin",
           "pos": [
-            30,
-            70
+            11,
+            67
           ],
           "yields": "ev_bin",
           "text": "Nancy empties this bin every morning. Today it holds a pair of women's court shoes wrapped in a carrier bag."
@@ -317,8 +317,8 @@
           "id": "hs_shelf",
           "label": "Ledger shelf",
           "pos": [
-            70,
-            40
+            83,
+            51
           ],
           "yields": "ev_shelf",
           "text": "A row of cash ledgers, numbered by year. This year's is missing."
@@ -327,7 +327,8 @@
       "image": {
         "kind": "location",
         "brief": "a small cramped freight-agency office on the 4th floor of an old Nairobi office block at dawn, two worn desks with old computers and stacks of delivery books, a grey steel shelf of thick cash ledgers on the right with a gap in the row, a metal office bin beside the nearest desk, a window onto city rooftops, fluorescent tube light, no people"
-      }
+      },
+      "hotspotsAuto": true
     }
   ],
   "evidence": [
