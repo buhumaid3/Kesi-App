@@ -148,7 +148,11 @@
         "start": true
       },
       "at": "plc_generator",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 30, headphones round his neck, a bright shirt under a black jacket, red-eyed from an all-night funeral disco, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_turfosa",
@@ -163,7 +167,11 @@
         "start": true
       },
       "at": "plc_kitchen",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 50s, a headscarf, a big apron streaked with soot, smoke-tired eyes, commanding, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_maureen",
@@ -179,7 +187,11 @@
         "start": true
       },
       "at": "plc_kitchen",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 20s, braids under a scarf, a kitenge dress, soot on her cheek, exhausted, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -403,7 +415,10 @@
         "f_pestle"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a long wooden pounding pestle lying in tall grass behind a mud-walled store at dawn, close-up"
+      }
     },
     {
       "id": "ev_maize",
@@ -417,7 +432,10 @@
         "f_maize"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "the inside of a mud-walled maize store with an iron roof, a gap where four sacks stood, drag marks in the dust from the door, and outside a wooden handcart dusted with maize flour"
+      }
     },
     {
       "id": "ev_playlist",
@@ -561,7 +579,10 @@
           "f_beads"
         ]
       },
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a small dish on a bedside shelf holding a broken red-and-white beaded bracelet, a black dress on a hanger behind it with grass seeds caught in the hem, close-up"
+      }
     },
     {
       "id": "ev_autopsy",

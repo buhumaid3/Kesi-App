@@ -143,7 +143,11 @@
         "fact": "f_ob_found"
       },
       "at": "plc_nairobi",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Asian man, late 30s, a crisp business shirt, a phone in his hand, a neat beard, red-eyed and controlled, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_hussein",
@@ -158,7 +162,11 @@
         "start": true
       },
       "at": "plc_hussein",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 50s, a white kofia, wood shavings on his shirt, a carving chisel tucked in his breast pocket, sharp-eyed, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_kitsao",
@@ -174,7 +182,11 @@
         "fact": "f_rec_tuktuk"
       },
       "at": "plc_tuktuk",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 30s, a short-sleeved shirt over a vest, a tuk-tuk key on a string round his wrist, easygoing, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -474,7 +486,10 @@
         "f_cashbox"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "an open metal cash box on a spice-shop counter, full of banknotes counted and banded with rubber bands, sacks of turmeric and chillies behind, close-up"
+      }
     },
     {
       "id": "ev_rahma_sales",

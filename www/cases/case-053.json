@@ -181,7 +181,11 @@
         "start": true
       },
       "at": "loc_coop",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 50, a beaded collar and a red shuka over a blouse, a ledger in her hands, formidable, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_moseka",
@@ -196,7 +200,11 @@
         "start": true
       },
       "at": "plc_stage",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 30, a padded boda jacket, a red checked shuka round his neck against the cold, a helmet, wide awake, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_nkoile",
@@ -212,7 +220,11 @@
         "start": true
       },
       "at": "plc_seenoi",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 60, a shaved head, layered beaded necklaces, a dark shuka, a grave stillness, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -436,7 +448,10 @@
         "f_bridge"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "pale sand of a dry river bed under a concrete bridge at dawn, smooth and undisturbed except for pickup tyre tracks running down the bank and back up"
+      }
     },
     {
       "id": "ev_bag",
@@ -454,7 +469,10 @@
         "f_catalogue"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a woman's woven bag lying open on pale sand, a fold of banknotes, a signed document and a printed catalogue page inside, the writing out of focus, close-up"
+      }
     },
     {
       "id": "ev_store",
@@ -468,7 +486,10 @@
         "f_store"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "rows of glass jars of coloured beads on a co-op store shelf, one gap in the turquoise row, a few beads in the floor cracks, a shard of thick glass under a table"
+      }
     },
     {
       "id": "ev_minutes",
@@ -600,7 +621,10 @@
           "f_git_admits"
         ]
       },
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "the ridged load bed of a pickup, deep turquoise glass beads caught in the ridges, close-up"
+      }
     },
     {
       "id": "ev_autopsy",

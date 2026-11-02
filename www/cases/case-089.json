@@ -262,7 +262,11 @@
         "start": true
       },
       "at": "plc_dance",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 20s, a black T-shirt, a lens bag strap across his chest (no camera in shot), nervous, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -570,7 +574,10 @@
         "f_terrace"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "a rooftop service terrace at night behind a staff door, beer kegs and gas cylinders against a wall, a low waist-high railing, city lights below"
+      }
     },
     {
       "id": "ev_ez_first",
@@ -645,7 +652,8 @@
         "f_wesley"
       ],
       "gate": null,
-      "image": null
+      "image": null,
+      "noPhoto": "A camera recording: shown as its viewing log so the times are exact."
     },
     {
       "id": "ev_cam_gap",
@@ -661,7 +669,8 @@
         "f_delete_log"
       ],
       "gate": null,
-      "image": null
+      "image": null,
+      "noPhoto": "A security computer's file list and log: shown as text so it stays exact."
     },
     {
       "id": "ev_capacity",
@@ -736,7 +745,8 @@
         "f_lastframe"
       ],
       "gate": null,
-      "image": null
+      "image": null,
+      "noPhoto": "The frames on the memory card show a suspect: shown as the frame log."
     },
     {
       "id": "ev_morris",
@@ -765,7 +775,10 @@
       ],
       "gate": null,
       "detention": "p_mukami",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card on a desk, ten inked fingerprints in rows, an ink roller beside it, the name box out of focus"
+      }
     },
     {
       "id": "ev_autopsy",

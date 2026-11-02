@@ -136,7 +136,11 @@
         "start": true
       },
       "at": "plc_sophie",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 40s, short relaxed hair, a dressing-gown over a T-shirt, reading glasses, irritable and tired, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_erastus",
@@ -152,7 +156,11 @@
         "fact": "f_clinton_claim"
       },
       "at": "plc_kariobangi",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 30s, a padded boda rider's jacket with reflective strips, a helmet under his arm, a cheerful gap-toothed face gone serious, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -372,7 +380,8 @@
         "f_mercy_one_earring"
       ],
       "gate": null,
-      "image": null
+      "image": null,
+      "noPhoto": "Amani's own written observation of a person: it stays the note."
     },
     {
       "id": "ev_payments",

@@ -311,7 +311,11 @@
         "start": true
       },
       "at": "loc_home",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 50s, a dark headscarf, a printed dirac dress, a photograph of her daughter held face-down, frightened, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -1026,7 +1030,10 @@
       ],
       "gate": null,
       "detention": "p_emojong",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card on a desk, ten inked fingerprints in rows, an ink pad beside it, the name box out of focus"
+      }
     },
     {
       "id": "ev_typed",

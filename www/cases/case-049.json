@@ -148,7 +148,11 @@
         "fact": "f_whatsapp"
       },
       "at": "plc_nhome",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 30s, a plain fisheries officer's khaki shirt with no badge, a cool box strap, a notebook, businesslike, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_hamisi",
@@ -163,7 +167,11 @@
         "start": true
       },
       "at": "plc_kondele",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 20s, a bright vest, a small blank menu board under his arm, a quick grin gone uneasy, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_everlyne",
@@ -179,7 +187,11 @@
         "start": true
       },
       "at": "plc_nyalenda",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 30s, a hairnet, a stained cook's apron, a tired face from a hot kitchen, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -382,7 +394,10 @@
         "f_hook"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "a wall of kitchen tools hanging on hooks above charcoal stoves, every handle wrapped with red tape, one hook empty in the row"
+      }
     },
     {
       "id": "ev_till",

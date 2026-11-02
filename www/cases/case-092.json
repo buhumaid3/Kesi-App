@@ -494,7 +494,10 @@
         "f_lamp"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a cold paraffin lamp under a shop counter, glass chimney clean, the wick dry and unlit, close-up"
+      }
     },
     {
       "id": "ev_daybook",
@@ -679,7 +682,10 @@
       ],
       "gate": null,
       "detention": "p_daudi",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card on a desk, ten inked fingerprints in rows, an ink roller beside it, the name box out of focus"
+      }
     },
     {
       "id": "ev_autopsy",

@@ -187,7 +187,11 @@
         "start": true
       },
       "at": "plc_weigh",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 30s, a dust coat over a sweater, a clipboard, a pen on a string, alert, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_joan",
@@ -202,7 +206,11 @@
         "fact": "f_permits"
       },
       "at": "loc_vet",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 40, a vet's green overall coat with no badge, a stethoscope, short natural hair, brisk, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_kasaine",
@@ -218,7 +226,11 @@
         "start": true
       },
       "at": "plc_front",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 70, a red checked shuka over a jacket, a felt hat, a walking stick held upright, weathered and shrewd, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -509,7 +521,10 @@
         "f_backroom"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "the back room of a small tea hotel, two chai glasses on a bench, one broken, a damp scrubbed patch on the earth floor, faint drag marks to a back door"
+      }
     },
     {
       "id": "ev_iron",

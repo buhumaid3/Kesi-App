@@ -143,7 +143,11 @@
         "start": true
       },
       "at": "plc_lorrybay",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 30s, a torn vest, a coiled head-pad cloth on one shoulder, tomato stains on his trousers, strong and quiet, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_godfrey",
@@ -158,7 +162,11 @@
         "fact": "f_sale"
       },
       "at": "plc_van",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 30s, a chef's checked trousers and a plain white kitchen jacket under a fleece, a clipboard, brisk, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_beatrice",
@@ -174,7 +182,11 @@
         "start": true
       },
       "at": "loc_market",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 30, braids under a headwrap, a plain office blouse, eyes swollen from crying, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -441,7 +453,10 @@
         "f_stall_phones"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a small market stall table covered with second-hand mobile phones and tangled chargers in a plastic tray, a folded licence card propped against them, close-up"
+      }
     },
     {
       "id": "ev_receipt_sale",

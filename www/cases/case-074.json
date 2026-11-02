@@ -241,7 +241,11 @@
         "start": true
       },
       "at": "loc_boru",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 60, a dark patterned headscarf, a shawl, tired eyes after a night of nursing, grieving, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_hawo",
@@ -257,7 +261,11 @@
         "start": true
       },
       "at": "loc_office",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 40s, a bright headscarf, a printed dress, a tally book held in both hands, formidable, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -661,7 +669,10 @@
         "f_door"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a steel office door with an old padlock on its hasp, hasp and frame undamaged, dust on the hinges, close-up"
+      }
     },
     {
       "id": "ev_filed_minutes",

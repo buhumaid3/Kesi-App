@@ -1,0 +1,134 @@
+{
+  "_about": "Region 6 (cases 51–60, the Maasai Mara). New image descriptions for every person, place and object exhibit that had none. Apply with  npm run images:briefs -- prompts/briefs/region-06.json .",
+  "51": {
+    "people": {
+      "p_nkirote": "Kenyan woman, mid 30s, short natural hair, a fleece with no logo, a radio headset round her neck, calm and exact, ID-photo framing",
+      "p_kerubo": "Kenyan woman, late 20s, a white kitchen jacket with no badge, a hairnet, an early-morning focus, ID-photo framing"
+    },
+    "evidence": {
+      "ev_landsoil": "a clear evidence bag of dry red soil with short grass stems, held over a red plain in morning light, close-up",
+      "ev_launchsoil": "a clear evidence bag of damp black clay with long grass seeds, held over dark wet ground, close-up",
+      "ev_cover": "a folded nylon balloon envelope cover stuffed in an open fan trailer, still wet, black clay and long grass seeds caught in its folds, close-up"
+    },
+    "noPhoto": {
+      "ev_photos": "Guests' photos of the landing: shown as the frame times so they stay exact."
+    }
+  },
+  "52": {
+    "people": {
+      "p_mumbi": "Kenyan woman, early 40s, a safari-camp manager's khaki shirt with no logo, short relaxed hair, a radio, composed and tired, ID-photo framing",
+      "p_olekina": "Kenyan man, mid 30s, a guide's olive shirt with no badge, a red shuka over one shoulder, binoculars round his neck, shaken, ID-photo framing",
+      "p_josephine": "Kenyan woman, mid 30s, a white baker's apron dusted with flour, a headscarf, night-shift eyes, ID-photo framing"
+    },
+    "evidence": {
+      "ev_crossingsand": "a clear evidence bag of coarse yellow sand and gravel held over a river crossing bank, close-up",
+      "ev_deck": {
+        "kind": "scene",
+        "brief": "a wooden viewing deck over a hippo pool, a railing of dark mvule timber with one post freshly replaced in raw pale new wood, sweep marks across the boards"
+      },
+      "ev_poolsilt": "a clear evidence bag of fine grey silt held over still brown pool water, close-up"
+    }
+  },
+  "53": {
+    "people": {
+      "p_nasieku": "Kenyan woman, about 50, a beaded collar and a red shuka over a blouse, a ledger in her hands, formidable, ID-photo framing",
+      "p_moseka": "Kenyan man, about 30, a padded boda jacket, a red checked shuka round his neck against the cold, a helmet, wide awake, ID-photo framing",
+      "p_nkoile": "Kenyan woman, about 60, a shaved head, layered beaded necklaces, a dark shuka, a grave stillness, ID-photo framing"
+    },
+    "evidence": {
+      "ev_bridge": {
+        "kind": "scene",
+        "brief": "pale sand of a dry river bed under a concrete bridge at dawn, smooth and undisturbed except for pickup tyre tracks running down the bank and back up"
+      },
+      "ev_bag": "a woman's woven bag lying open on pale sand, a fold of banknotes, a signed document and a printed catalogue page inside, the writing out of focus, close-up",
+      "ev_store": {
+        "kind": "evidence",
+        "brief": "rows of glass jars of coloured beads on a co-op store shelf, one gap in the turquoise row, a few beads in the floor cracks, a shard of thick glass under a table"
+      },
+      "ev_pickup": "the ridged load bed of a pickup, deep turquoise glass beads caught in the ridges, close-up"
+    }
+  },
+  "54": {
+    "people": {
+      "p_nalangu": "Kenyan woman, late 30s, a field researcher's khaki shirt, beaded earrings, a GPS unit in her hand, focused, ID-photo framing",
+      "p_sergeant": "Kenyan man, late 40s, a plain olive ranger's jacket and beret with no insignia, a radio on his chest, a firm square face, ID-photo framing"
+    },
+    "evidence": {
+      "ev_device_found": "a rugged handheld GPS device, switched off, lying in dry grass on an open plain, close-up",
+      "ev_hut": {
+        "kind": "evidence",
+        "brief": "the cement-dusted concrete floor of a small checkpoint hut, a torn scrap of cement sack lying on it with a small pale flake caught in the weave"
+      },
+      "ev_lorry": "the back of a lorry with dual rear tyres, cement sacks in the load with fine pale dust in the seams, a washed jack handle on the cab floor visible through the open door",
+      "ev_nd_prints": "a police ten-print fingerprint card on a desk, ten inked fingerprints in their boxes, an ink roller beside it, the name box out of focus"
+    }
+  },
+  "55": {
+    "people": {
+      "p_silvanus": "Kenyan man, mid 40s, an aircraft engineer's overalls with no badges, a torch in his breast pocket, oil on his fingers, upset and careful, ID-photo framing",
+      "p_ndegwa": "Kenyan man, late 50s, a pilot-style white shirt with plain epaulettes, reading glasses, a logbook, formal, ID-photo framing"
+    },
+    "evidence": {
+      "ev_hourmeter": "a small analogue hour meter on an aircraft instrument panel, its rolling digits sharp, the rest of the panel soft, close-up",
+      "ev_cottage": "a staff cottage sitting room with a sofa missing one cushion and a bare freshly mopped floor where a rug was, and the missing cushion in the open boot of a dusty Land Cruiser outside the window"
+    }
+  },
+  "56": {
+    "people": {
+      "p_naipanoi": "Kenyan woman, about 50, layered beaded necklaces, a blue shuka, a receipt book in her hands, dignified and wary, ID-photo framing"
+    },
+    "evidence": {
+      "ev_clothes": "a man's khaki jacket and trousers laid out on a white evidence sheet, cattle hair and dung caught in the creases, small acacia thorns snagged in the jacket, close-up",
+      "ev_boma": {
+        "kind": "evidence",
+        "brief": "the gate of a cattle boma of woven acacia-thorn branches, a patch of trampled dung near the gate swept over"
+      }
+    }
+  },
+  "57": {
+    "people": {
+      "p_nelson": "Kenyan man, early 30s, a dust coat over a sweater, a clipboard, a pen on a string, alert, ID-photo framing",
+      "p_joan": "Kenyan woman, about 40, a vet's green overall coat with no badge, a stethoscope, short natural hair, brisk, ID-photo framing",
+      "p_kasaine": "Kenyan man, about 70, a red checked shuka over a jacket, a felt hat, a walking stick held upright, weathered and shrewd, ID-photo framing"
+    },
+    "evidence": {
+      "ev_backroom": {
+        "kind": "evidence",
+        "brief": "the back room of a small tea hotel, two chai glasses on a bench, one broken, a damp scrubbed patch on the earth floor, faint drag marks to a back door"
+      }
+    }
+  },
+  "58": {
+    "people": {
+      "p_kakuta": "Kenyan man, mid 30s, a guide's olive shirt with no badge, a beaded wristband, a quiet observant face, ID-photo framing",
+      "p_lemanken": "Kenyan man, mid 20s, a red shuka over a dark jacket, a torch in his hand, tall and young, nervous, ID-photo framing",
+      "p_salma": "Kenyan woman, about 40, a patterned silk headscarf, a travel jacket, a phone in her hand, red-eyed and determined, ID-photo framing"
+    },
+    "noPhoto": {
+      "ev_photos": "Guests' dinner photos: shown as the frame times so they stay exact."
+    }
+  },
+  "59": {
+    "people": {
+      "p_nashilu": "Kenyan woman, mid 30s, beaded earrings, a radio headset round her neck, a fleece with no logo, exact and unhurried, ID-photo framing",
+      "p_ntoyai": "Kenyan man, late 20s, a neat shirt and tie, a folder under his arm, earnest, ID-photo framing"
+    },
+    "evidence": {
+      "ev_tyre": "a flat front tyre of a safari vehicle on sand, the valve stem with its cap off and no core inside, close-up",
+      "ev_jack": {
+        "kind": "scene",
+        "brief": "a vehicle jack tipped over on soft sand beside the flat front wheel of a tilted safari vehicle, its base sunk at an angle, no slip marks"
+      },
+      "ev_rob_prints": "a police ten-print fingerprint card on a desk, ten inked fingerprints in rows, an ink pad beside it, the name box out of focus"
+    }
+  },
+  "60": {
+    "people": {
+      "p_jedidah": "Kenyan woman, early 30s, braids tied back, a plain office cardigan, dark rings under her eyes, a thick register under her arm, ID-photo framing"
+    },
+    "evidence": {
+      "ev_scarf": "a red-and-gold fringed scarf hanging on a wooden coat stand, one corner of the fringe torn away, close-up",
+      "ev_dor_prints": "a police ten-print fingerprint card beside an ink roller on a desk, ten inked prints in their boxes, the name box out of focus"
+    }
+  }
+}

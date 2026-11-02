@@ -1,0 +1,75 @@
+{
+  "_about": "Region 10 (cases 91–100, the finale). New image descriptions for every person, place and object exhibit that had none. Apply with  npm run images:briefs -- prompts/briefs/region-10.json .",
+  "91": {
+    "evidence": {
+      "ev_desk": "an office desk with a laptop left open, a desk calendar and a café receipt for two lying beside it, the writing out of focus",
+      "ev_mw_prints": "a police ten-print fingerprint card on a desk, ten inked fingerprints in their boxes, an ink pad beside it, the name box out of focus"
+    }
+  },
+  "92": {
+    "evidence": {
+      "ev_no_light": "a cold paraffin lamp under a shop counter, glass chimney clean, the wick dry and unlit, close-up",
+      "ev_da_prints": "a police ten-print fingerprint card on a desk, ten inked fingerprints in rows, an ink roller beside it, the name box out of focus"
+    }
+  },
+  "93": {
+    "evidence": {
+      "ev_storeroom": "a store-room door on its latch, undamaged, and muddy boot prints crossing the concrete floor towards a kitchen doorway, close-up",
+      "ev_search": {
+        "kind": "scene",
+        "brief": "a ransacked bedroom in a brick bungalow at night, mattresses lifted off the bed, ceiling boards pushed up, but a jacket on a chair and a gold chain on the dresser untouched"
+      },
+      "ev_ditch": "a television and two mobile phones dumped together in a roadside ditch in long grass, a small paper receipt caught in the TV cable",
+      "ev_box": "a locked grey steel box inside an open parish safe, close-up"
+    }
+  },
+  "94": {
+    "noPhoto": {
+      "ev_rh_sig": "Signature specimens are paper: drawn so they stay exact."
+    }
+  },
+  "95": {
+    "evidence": {
+      "ev_shelf": "a bookshelf row of identical hardback diaries with labelled spines, one gap in the row, close-up"
+    }
+  },
+  "96": {
+    "evidence": {
+      "ev_cups": "two cups of tea on a farmhouse table, one half drunk, one full and cold, an old hymnbook beside them, close-up",
+      "ev_tracks": "a red murram farm lane at dawn, tyre marks where a car stopped at the end, one line of a man's smart-shoe prints going to the house and back",
+      "ev_pius_house": "grey ash in a charcoal jiko with a half-burned scrap of book board in it, and beside it a pair of leather shoes with red murram caked in the welt, close-up",
+      "ev_pi_prints": "a police ten-print fingerprint card on a desk, ten inked fingerprints in their boxes, an ink pad beside it, the name box out of focus"
+    }
+  },
+  "97": {
+    "evidence": {
+      "ev_locker": "an open club locker: folded trousers, a wallet, a phone and a plastic weekly pill organiser with one compartment already empty, close-up",
+      "ev_wedge": "a damp black rubber door wedge in an office waste bin among tissues, marks pressed into its edge, close-up",
+      "ev_door": "the bottom edge of a steam-room door on wet tiles, fresh scuff marks on the tile where something was jammed under it, close-up",
+      "ev_sg_prints": "a police ten-print fingerprint card on a desk, ten inked fingerprints in rows, an ink roller beside it, the name box out of focus"
+    }
+  },
+  "98": {
+    "evidence": {
+      "ev_study": "a home study at night, an open laptop on a desk glowing, the screen out of focus, files and a soapstone carving on the shelf behind",
+      "ev_car": "the open boot of a saloon car with grey ash and soot on the mat, a folded towel on the passenger seat visible through the window",
+      "ev_od_prints": "a police ten-print fingerprint card on a desk, ten inked fingerprints in their boxes, an ink pad beside it, the name box out of focus"
+    }
+  },
+  "99": {
+    "evidence": {
+      "ev_laptop": "an archive table with a laptop charger still plugged in, its cable lying where a laptop should be, box files on steel shelves behind, close-up",
+      "ev_ma_prints": "a police ten-print fingerprint card on a desk, ten inked fingerprints in rows, an ink pad beside it, the name box out of focus"
+    }
+  },
+  "100": {
+    "evidence": {
+      "ev_gate": "an airport boarding gate in morning light, rows of empty seats, a desk with no one at it, the gate sign out of focus",
+      "ev_corridor": "a long government office corridor on a fourth floor, doors along one side, a corner office at the far end by a window, scuffed lino",
+      "ev_verge": {
+        "kind": "scene",
+        "brief": "a rural road verge at dawn with a small bus shelter on red soil, cypress hedges behind, empty"
+      }
+    }
+  }
+}

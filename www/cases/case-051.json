@@ -210,7 +210,11 @@
         "start": true
       },
       "at": "loc_camp",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 30s, short natural hair, a fleece with no logo, a radio headset round her neck, calm and exact, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_kerubo",
@@ -226,7 +230,11 @@
         "start": true
       },
       "at": "loc_talek",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 20s, a white kitchen jacket with no badge, a hairnet, an early-morning focus, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -460,7 +468,8 @@
         "f_photos"
       ],
       "gate": null,
-      "image": null
+      "image": null,
+      "noPhoto": "Guests' photos of the landing: shown as the frame times so they stay exact."
     },
     {
       "id": "ev_landsoil",
@@ -474,7 +483,10 @@
         "f_landing_ground"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a clear evidence bag of dry red soil with short grass stems, held over a red plain in morning light, close-up"
+      }
     },
     {
       "id": "ev_launchsoil",
@@ -488,7 +500,10 @@
         "f_launch_ground"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a clear evidence bag of damp black clay with long grass seeds, held over dark wet ground, close-up"
+      }
     },
     {
       "id": "ev_tracker",
@@ -588,7 +603,10 @@
         "f_cover"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a folded nylon balloon envelope cover stuffed in an open fan trailer, still wet, black clay and long grass seeds caught in its folds, close-up"
+      }
     },
     {
       "id": "ev_files",

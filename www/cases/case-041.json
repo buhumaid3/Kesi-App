@@ -146,7 +146,11 @@
         "start": true
       },
       "at": "plc_landing",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 50s, a faded headscarf, a cardigan over a kitenge, a thermos under her arm, knowing and warm, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_seline",
@@ -161,7 +165,11 @@
         "start": true
       },
       "at": "plc_market",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 30s, braids under a headwrap, a fish trader's apron, gumboots, grieving and angry, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_fanuel",
@@ -177,7 +185,11 @@
         "fact": "f_rec_geof_pay"
       },
       "at": "plc_stage",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 20s, a reflective boda vest with no writing over a hoodie, a helmet on his arm, relaxed, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_maurice",
@@ -193,7 +205,11 @@
         "start": true
       },
       "at": "plc_landing",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, a weathered fisherman's jacket, a woollen hat, rough hands, proud of his catch, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -486,7 +502,10 @@
         "f_net"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "a woven basket brimming with small wet silver fish standing beside an empty drying net laid out on the sand at a lake landing in early morning, nothing spread on the net"
+      }
     },
     {
       "id": "ev_benta",
@@ -545,7 +564,10 @@
         "f_engine"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "an outboard boat engine on a wooden stand, freshly sprayed grey with a patch of the old colour showing at an edge, a small metal serial plate, close-up"
+      }
     },
     {
       "id": "ev_bmu_files",

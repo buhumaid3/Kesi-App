@@ -518,7 +518,10 @@
         "f_cups"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "two cups of tea on a farmhouse table, one half drunk, one full and cold, an old hymnbook beside them, close-up"
+      }
     },
     {
       "id": "ev_tracks",
@@ -532,7 +535,10 @@
         "f_tracks"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a red murram farm lane at dawn, tyre marks where a car stopped at the end, one line of a man's smart-shoe prints going to the house and back"
+      }
     },
     {
       "id": "ev_cecilia",
@@ -686,7 +692,10 @@
           "f_rec_pius"
         ]
       },
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "grey ash in a charcoal jiko with a half-burned scrap of book board in it, and beside it a pair of leather shoes with red murram caked in the welt, close-up"
+      }
     },
     {
       "id": "ev_pi_prints",
@@ -701,7 +710,10 @@
       ],
       "gate": null,
       "detention": "p_pius",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card on a desk, ten inked fingerprints in their boxes, an ink pad beside it, the name box out of focus"
+      }
     },
     {
       "id": "ev_autopsy",

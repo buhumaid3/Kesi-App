@@ -493,7 +493,10 @@
         "f_dust_rule"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a heavy glass award lying on the floor under a bed, a clean layer of dust undisturbed around and under its base, its top surface clean, close-up"
+      }
     },
     {
       "id": "ev_texts",
@@ -535,7 +538,8 @@
           "f_dust"
         ]
       },
-      "image": null
+      "image": null,
+      "noPhoto": "A baby-monitor recording: shown as its log so the times and words are exact."
     },
     {
       "id": "ev_nekesa",
@@ -628,7 +632,10 @@
       ],
       "gate": null,
       "detention": "p_nduku",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card on a desk, ten inked fingerprints in their boxes, an ink pad beside it, the name box out of focus"
+      }
     },
     {
       "id": "ev_autopsy",

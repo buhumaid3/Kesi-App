@@ -221,7 +221,11 @@
         "start": true
       },
       "at": "loc_market",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 50s, a white kofia and a checked shirt under a jacket, a tally book and a pen, a trimmed grey beard, exact, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_safiya",
@@ -236,7 +240,11 @@
         "start": true
       },
       "at": "loc_compound",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 60s, a dark headscarf wrapped loosely, a printed dirac dress, a sharp listening face, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_wario",
@@ -252,7 +260,11 @@
         "start": true
       },
       "at": "loc_wabera",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 20s, a padded boda jacket, a scarf wrapped round his neck, a helmet, easygoing, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -527,7 +539,10 @@
         "f_stick_handled"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a heavy hardwood herding stick with a split in the grip, lying on swept sand in a compound, close-up"
+      }
     },
     {
       "id": "ev_gate",
@@ -544,7 +559,10 @@
         "f_sand_gate"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a corrugated iron compound gate bolted from inside, and beyond a back door to a lane with a spring latch, soft sand at the threshold"
+      }
     },
     {
       "id": "ev_wall",
@@ -558,7 +576,10 @@
         "f_wall_glass"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "the top of a compound wall set with broken glass, the dust along it undisturbed, morning light, close-up"
+      }
     },
     {
       "id": "ev_bowls",
@@ -572,7 +593,10 @@
         "f_bowls"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "two metal dog bowls of ugali and meat scraps, barely touched, in a corner of a sandy compound, a dog chain lying slack beside them, close-up"
+      }
     },
     {
       "id": "ev_house",
@@ -586,7 +610,10 @@
         "f_cash_kept"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "an open sitting-room drawer holding a thick bundle of banknotes, untouched, close-up"
+      }
     },
     {
       "id": "ev_tank",
@@ -600,7 +627,10 @@
         "f_tank"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "the clean concrete base of a black plastic water tank in a sandy compound, no marks on it, close-up"
+      }
     },
     {
       "id": "ev_safiya",
@@ -717,7 +747,10 @@
         "f_shawl"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a purple shawl hanging freshly washed on a washing line in bright morning light, close-up"
+      }
     },
     {
       "id": "ev_records",

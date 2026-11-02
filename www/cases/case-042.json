@@ -147,7 +147,11 @@
         "fact": "f_resacked"
       },
       "at": "plc_church",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 30s, a white public-health officer's coat with no badge, a clipboard, short natural hair, determined, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_hassan",
@@ -162,7 +166,11 @@
         "start": true
       },
       "at": "plc_shoes",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 40s, a plain dust coat, a receipt book and a rubber stamp in his hands, a kofia, officious, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_rebecca",
@@ -178,7 +186,11 @@
         "start": true
       },
       "at": "plc_nextstall",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 50s, a headscarf, a cook's apron over a dress, a shopping basket, plain-spoken, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_lilian",
@@ -194,7 +206,11 @@
         "start": true
       },
       "at": "plc_yusuf",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 40, braids, a denim jacket, a handbag, attentive, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -369,7 +385,10 @@
         "f_stack"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "the top of a stack of white 50 kg sugar sacks in a market store, fresh tears pulled in the woven plastic of the top three sacks, sugar trickling out, close-up"
+      }
     },
     {
       "id": "ev_evsack",
@@ -402,7 +421,10 @@
         "f_backroom"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a cramped back room of a market shop, bales of new empty printed sugar sacks, a sack-sewing machine half covered by a cloth, a pile of torn-open foreign sugar bags on the floor, a bare bulb"
+      }
     },
     {
       "id": "ev_rebecca",
@@ -555,7 +577,10 @@
       ],
       "gate": null,
       "detention": "p_sarah",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card on a station desk, ten inked fingerprints in their boxes, an ink roller beside it, the name box out of focus"
+      }
     },
     {
       "id": "ev_autopsy",

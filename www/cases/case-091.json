@@ -600,7 +600,10 @@
         "f_kelvin"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "an office desk with a laptop left open, a desk calendar and a café receipt for two lying beside it, the writing out of focus"
+      }
     },
     {
       "id": "ev_facilities",
@@ -796,7 +799,10 @@
       ],
       "gate": null,
       "detention": "p_mwanaisha",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card on a desk, ten inked fingerprints in their boxes, an ink pad beside it, the name box out of focus"
+      }
     },
     {
       "id": "ev_autopsy",

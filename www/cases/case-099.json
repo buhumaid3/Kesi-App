@@ -515,7 +515,10 @@
         "f_laptopgone"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "an archive table with a laptop charger still plugged in, its cable lying where a laptop should be, box files on steel shelves behind, close-up"
+      }
     },
     {
       "id": "ev_foblog",
@@ -760,7 +763,10 @@
       ],
       "gate": null,
       "detention": "p_maina",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card on a desk, ten inked fingerprints in rows, an ink pad beside it, the name box out of focus"
+      }
     },
     {
       "id": "ev_autopsy",

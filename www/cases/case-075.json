@@ -218,7 +218,11 @@
         "start": true
       },
       "at": "loc_logologo",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 40s, a plain police-style jumper and cap with no insignia, a checkpoint logbook, a weathered careful face, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_wife",
@@ -234,7 +238,11 @@
         "start": true
       },
       "at": "loc_town",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 50, a headscarf, a warm shawl, a phone held tight, waiting and afraid, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -489,7 +497,10 @@
         "f_brakes"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "the open cab of a red lorry, the handbrake lever down and the gear lever in neutral, a mechanic's torch lighting the brake fluid reservoir under the dash, close-up"
+      }
     },
     {
       "id": "ev_road",
@@ -503,7 +514,10 @@
         "f_halake_skid"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "a sharp bend on a mountain road at dawn, clean tarmac running to the edge with no skid marks and no ploughed gravel, a 40-metre drop beyond"
+      }
     },
     {
       "id": "ev_call",

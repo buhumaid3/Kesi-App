@@ -196,7 +196,11 @@
         "fact": "f_article"
       },
       "at": "plc_town",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 30s, short natural hair, a denim jacket, a reporter's notebook and a phone, determined, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_mary",
@@ -211,7 +215,11 @@
         "start": true
       },
       "at": "plc_mhome",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 60, a headscarf, a black shawl over a dress, newly widowed, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_consolata",
@@ -226,7 +234,11 @@
         "fact": "f_tom_report"
       },
       "at": "plc_chome",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 50s, a headscarf, a cardigan, a small notebook held in both hands, grieving and resolute, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_mamakioko",
@@ -242,7 +254,11 @@
         "start": true
       },
       "at": "plc_mother",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 50, a printed headscarf, a sweater, arms folded, protective of her son, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [

@@ -143,7 +143,11 @@
         "start": true
       },
       "at": "plc_qgate",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 40s, a plain beige security uniform with no badges, a whistle on a cord, a thin moustache, guarded, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_neema",
@@ -158,7 +162,11 @@
         "fact": "f_rz_whatsapp"
       },
       "at": "plc_kilifi",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 20s, a colourful headwrap, a denim shirt, a phone clutched in both hands, grieving and angry, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -411,7 +419,10 @@
         "f_folder"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "an empty buff cardboard file folder lying open on the shelf of a steel staff locker, a typed label on its tab, close-up"
+      }
     },
     {
       "id": "ev_gatebook",

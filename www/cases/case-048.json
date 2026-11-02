@@ -151,7 +151,11 @@
         "start": true
       },
       "at": "plc_shaft8",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 30, a headscarf, a torn overall smeared with red earth, a headlamp round her neck, tough and wary, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_nyakerario",
@@ -166,7 +170,11 @@
         "start": true
       },
       "at": "plc_ponds",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 50s, a headscarf, a cardigan, a school exercise book used as a log, sharp-eyed, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_chacha",
@@ -182,7 +190,11 @@
         "start": true
       },
       "at": "plc_shaft12",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 30s, a hard hat, red earth on his overalls, a coil of rope on his shoulder, tough, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_magige",
@@ -198,7 +210,11 @@
         "start": true
       },
       "at": "plc_migori",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 40s, a smart jacket over a polo shirt, a small set of scales in a box, a dealer's smile, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -432,7 +448,10 @@
         "f_refweight"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a tiny certified 1-gram reference weight in a small clear plastic case with a school label, on a wooden table, close-up"
+      }
     },
     {
       "id": "ev_ledger",
@@ -506,7 +525,10 @@
         "f_prop"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "the mouth of a hand-dug mine shaft in red earth, rotten grey timber props, one solid prop lying across the opening with fresh stone-strike marks at its base"
+      }
     },
     {
       "id": "ev_rimclay",
@@ -520,7 +542,10 @@
         "f_rimclay"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a clear evidence bag of dark red clay held against the rim of a mine shaft cut in red earth, close-up"
+      }
     },
     {
       "id": "ev_shaftreg",

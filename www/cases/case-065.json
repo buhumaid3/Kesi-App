@@ -205,7 +205,11 @@
         "start": true
       },
       "at": "plc_kitui",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 20s, braids tied back, a teacher's plain cardigan over a blouse, a stack of exercise books, bewildered, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_kawira",
@@ -221,7 +225,11 @@
         "start": true
       },
       "at": "loc_irene",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 50s, a headscarf, a shawl, a cup of tea in her hand, curious and certain, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -456,7 +464,10 @@
         "f_wall"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "the top row of a stone garden wall at night lit by a torch, one block missing from the row leaving a gap, close-up"
+      }
     },
     {
       "id": "ev_verification",

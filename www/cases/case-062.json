@@ -224,7 +224,11 @@
         "start": true
       },
       "at": "plc_workers",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 60, a frayed tweed jacket over a sweater, a woollen hat, tea-picker's calloused hands, loyal and anxious, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_gakii",
@@ -239,7 +243,11 @@
         "start": true
       },
       "at": "loc_gakii",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 40s, a dark suit jacket over a white blouse, small pearl earrings, reading glasses, measured, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_wanjiku",
@@ -255,7 +263,11 @@
         "start": true
       },
       "at": "loc_farm",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 60s, a headscarf, a heavy shawl over a sweater, a wrinkled watchful face, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -492,7 +504,10 @@
         "f_jiko"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a burned-out metal charcoal jiko on a bedroom floor, one leg repaired with twisted wire, grey ash inside, close-up"
+      }
     },
     {
       "id": "ev_window",
@@ -506,7 +521,10 @@
         "f_window"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a small bedroom window latched shut from inside, a rag stuffed into the gap along its frame, morning mist outside, close-up"
+      }
     },
     {
       "id": "ev_bible",
@@ -524,7 +542,10 @@
         "genuine": true,
         "kind": "bookmark"
       },
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "an old leather Bible lying open on a bedside table at the Psalms, a faded ribbon bookmark, flat clean pages, close-up"
+      }
     },
     {
       "id": "ev_tin",
@@ -558,7 +579,10 @@
         "f_hut"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "inside a smoky farm kitchen hut, two metal charcoal jikos standing side by side on four sound legs, a pot of porridge half eaten on a low table"
+      }
     },
     {
       "id": "ev_neighbour",

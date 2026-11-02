@@ -148,7 +148,11 @@
         "start": true
       },
       "at": "plc_jhome",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 20s, a torn football shirt with no badge, a cap backwards, salt-cracked hands, uneasy, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_rose",
@@ -163,7 +167,11 @@
         "start": true
       },
       "at": "loc_beach",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 50s, a headscarf, a plain cardigan, a ruled register under her arm, orderly, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_dorcas",
@@ -179,7 +187,11 @@
         "start": true
       },
       "at": "plc_kamato",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 30, braids tied up, a kitenge blouse, a baby sling strap on one shoulder, defensive, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -510,7 +522,10 @@
         "f_vbeach"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a clear evidence bag of plain grey volcanic grit held over a grey lake beach, close-up"
+      }
     },
     {
       "id": "ev_fuellog",
@@ -566,7 +581,8 @@
         "f_party"
       ],
       "gate": null,
-      "image": null
+      "image": null,
+      "noPhoto": "Other people's party photos: shown as the frame times so they stay exact."
     },
     {
       "id": "ev_compound",
@@ -591,7 +607,10 @@
           "f_fuellog"
         ]
       },
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "behind a small house: a wooden canoe paddle with a fresh crack along the blade, scrubbed pale, leaning against a wall above a grit path with a distinct red volcanic layer"
+      }
     },
     {
       "id": "ev_autopsy",

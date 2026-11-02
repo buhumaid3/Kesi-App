@@ -265,7 +265,11 @@
         "start": true
       },
       "at": "loc_casualty",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 40s, a white nurse's tunic, a headscarf, a stack of observation charts held to her chest, tired, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -622,7 +626,10 @@
         "f_floor"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "clean water pooled on a laboratory annex floor, an empty yellow jerrycan lying beside it with its cap off, close-up"
+      }
     },
     {
       "id": "ev_extinguisher",
@@ -655,7 +662,10 @@
         "f_side_door"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "the side door of a laboratory annex standing ajar, its lock undamaged, a key-hole lit by the corridor light, close-up"
+      }
     },
     {
       "id": "ev_galgallo",
@@ -717,7 +727,10 @@
         "f_bottles"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a family pickup crumpled against a roadside pole at night, the cab door open, brown beer bottles visible on the floor of the cab"
+      }
     },
     {
       "id": "ev_yusuf_bar",
@@ -822,7 +835,10 @@
       ],
       "gate": null,
       "detention": "p_mahat",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card on a desk, ten inked fingerprints in their boxes, an ink roller beside it, the name box out of focus"
+      }
     },
     {
       "id": "ev_autopsy",

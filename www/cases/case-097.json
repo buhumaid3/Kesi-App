@@ -593,7 +593,10 @@
         "f_locker"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "an open club locker: folded trousers, a wallet, a phone and a plastic weekly pill organiser with one compartment already empty, close-up"
+      }
     },
     {
       "id": "ev_checksheet",
@@ -635,7 +638,10 @@
         "f_wedge"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a damp black rubber door wedge in an office waste bin among tissues, marks pressed into its edge, close-up"
+      }
     },
     {
       "id": "ev_door",
@@ -649,7 +655,10 @@
         "f_door"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "the bottom edge of a steam-room door on wet tiles, fresh scuff marks on the tile where something was jammed under it, close-up"
+      }
     },
     {
       "id": "ev_gatelog",
@@ -834,7 +843,10 @@
       ],
       "gate": null,
       "detention": "p_sagal",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card on a desk, ten inked fingerprints in rows, an ink roller beside it, the name box out of focus"
+      }
     },
     {
       "id": "ev_autopsy",

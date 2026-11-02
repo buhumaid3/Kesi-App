@@ -149,7 +149,11 @@
         "start": true
       },
       "at": "plc_bund",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 70, a battered felt hat, an old army-green coat, a sling for scaring birds over his shoulder, a deeply lined patient face, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_clement",
@@ -164,7 +168,11 @@
         "start": true
       },
       "at": "loc_office",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 30s, a short-sleeved office shirt, a ballpoint in the pocket, a careful look that says less than he knows, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_pamela",
@@ -180,12 +188,16 @@
         "fact": "f_tenancy"
       },
       "at": "plc_tap",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 50s, a headscarf, a kanga over her dress, a water jerrycan handle in her hand, early-morning tired, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_kevin",
       "role": "witness",
-      "name": "Kevin Otieno",
+      "name": "Kevin Odhiambo",
       "age": 36,
       "occupation": "Rice trader, Ahero market",
       "statementOnly": true,
@@ -196,7 +208,11 @@
         "start": true
       },
       "at": "plc_market",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 30s, a leather jacket, a small notebook of prices, a trader's quick eyes, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -456,7 +472,10 @@
         "f_inlet"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "a square-edged wooden inlet gate on a rice paddy bund, lifted about halfway, brown water running through, a short-handled jembe lying intact on the bund beside it, dawn light"
+      }
     },
     {
       "id": "ev_trail",
@@ -470,7 +489,10 @@
         "f_trail"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "a wide strip of flattened rice plants running from a paddy edge down into a muddy canal, no footprints in the mud, untouched rice on both sides"
+      }
     },
     {
       "id": "ev_log",
@@ -484,7 +506,10 @@
         "f_log"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a heavy wet log lying at the edge of a rice paddy, its underside caked thick with fresh black clay, close-up"
+      }
     },
     {
       "id": "ev_handle",
@@ -515,7 +540,10 @@
         "f_canalmud"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a clear evidence bag of sticky black cotton-soil clay held over a canal bank, close-up"
+      }
     },
     {
       "id": "ev_tenancy",
@@ -596,7 +624,7 @@
     {
       "id": "ev_market",
       "type": "witness",
-      "title": "Statement: Kevin Otieno",
+      "title": "Statement: Kevin Odhiambo",
       "render": "statement",
       "body": {
         "speaker": "p_kevin"
@@ -641,7 +669,10 @@
           "f_clement"
         ]
       },
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a wrap skirt hanging damp on a line with a dark mud line in the hem stitching, and a jembe blade without a handle wrapped in a cloth on a granary floor, splintered wood in its socket"
+      }
     },
     {
       "id": "ev_autopsy",

@@ -251,7 +251,11 @@
         "start": true
       },
       "at": "loc_stage",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, a padded boda jacket over a shirt and tie, a fat file under his arm, a chairman's self-importance, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -679,7 +683,10 @@
         "f_chair_straps"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "the empty steel luggage rack of a parked boda motorbike, no rubber strap on it, close-up"
+      }
     },
     {
       "id": "ev_copy",
@@ -791,7 +798,10 @@
       ],
       "gate": null,
       "detention": "p_dennis",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card on a desk, ten inked fingerprints in rows, an ink pad beside it, the name box out of focus"
+      }
     },
     {
       "id": "ev_autopsy",

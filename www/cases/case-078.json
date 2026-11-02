@@ -533,7 +533,10 @@
         "f_lamp"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a paraffin lamp lying on its side on a scorched floor, the tank cap off and the tank empty, the wick unburned, close-up"
+      }
     },
     {
       "id": "ev_tin",
@@ -549,7 +552,10 @@
         "f_sarah_tin"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "an old biscuit tin with its lid off lying empty under a bed, close-up"
+      }
     },
     {
       "id": "ev_bedroom",
@@ -563,7 +569,10 @@
         "f_wallet"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a bedroom table with a man's wallet and a closed laptop on it, untouched, close-up"
+      }
     },
     {
       "id": "ev_paddle_gone",
@@ -577,7 +586,10 @@
         "f_hook"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a kitchen wall with two hooks for long wooden porridge paddles, one paddle hanging, one hook empty, close-up"
+      }
     },
     {
       "id": "ev_cook2",

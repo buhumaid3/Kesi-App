@@ -167,7 +167,11 @@
         "start": true
       },
       "at": "plc_sabina",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 50, a housekeeper's plain dress and apron, a headscarf, a bunch of household keys, loyal and frightened, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_tom",
@@ -182,7 +186,11 @@
         "start": true
       },
       "at": "plc_club",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 40s, a white steward's jacket with no badge, a bow tie, a bill folder in his hand, discreet, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_wycliffe",
@@ -198,7 +206,11 @@
         "start": true
       },
       "at": "plc_riat",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 30s, a driver's dark suit and tie, car keys in his hand, neutral and careful, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -555,7 +567,10 @@
       ],
       "gate": null,
       "detention": "p_priya",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card on a desk, ten inked fingerprints in rows, an ink pad and roller beside it, the name box out of focus"
+      }
     },
     {
       "id": "ev_autopsy",

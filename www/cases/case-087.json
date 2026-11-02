@@ -245,7 +245,11 @@
         "start": true
       },
       "at": "loc_ifrah",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan young man, about 20, a hoodie, a neat haircut, seated so only head and shoulders show, angry and grieving, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -583,7 +587,10 @@
         "f_peg"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a riding-club tack room by day, a saddle peg by the door, a tin of saddle soap on the bench below it, short snippets of waxed thread on the wooden floor under the peg"
+      }
     },
     {
       "id": "ev_vetreport",

@@ -187,7 +187,11 @@
         "start": true
       },
       "at": "loc_ainsworth",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 40s, a safari-camp manager's khaki shirt with no logo, short relaxed hair, a radio, composed and tired, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_olekina",
@@ -202,7 +206,11 @@
         "start": true
       },
       "at": "loc_crossing",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 30s, a guide's olive shirt with no badge, a red shuka over one shoulder, binoculars round his neck, shaken, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_josephine",
@@ -218,7 +226,11 @@
         "start": true
       },
       "at": "plc_gate",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 30s, a white baker's apron dusted with flour, a headscarf, night-shift eyes, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -463,7 +475,10 @@
         "f_crossing_sand"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a clear evidence bag of coarse yellow sand and gravel held over a river crossing bank, close-up"
+      }
     },
     {
       "id": "ev_mumbi",
@@ -523,7 +538,10 @@
         "f_deck"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "a wooden viewing deck over a hippo pool, a railing of dark mvule timber with one post freshly replaced in raw pale new wood, sweep marks across the boards"
+      }
     },
     {
       "id": "ev_poolsilt",
@@ -537,7 +555,10 @@
         "f_pool_silt"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a clear evidence bag of fine grey silt held over still brown pool water, close-up"
+      }
     },
     {
       "id": "ev_gatebook",

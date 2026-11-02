@@ -516,7 +516,10 @@
         "f_latch"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a store-room door on its latch, undamaged, and muddy boot prints crossing the concrete floor towards a kitchen doorway, close-up"
+      }
     },
     {
       "id": "ev_search",
@@ -531,7 +534,10 @@
         "f_cash"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "a ransacked bedroom in a brick bungalow at night, mattresses lifted off the bed, ceiling boards pushed up, but a jacket on a chair and a gold chain on the dresser untouched"
+      }
     },
     {
       "id": "ev_achom",
@@ -577,7 +583,10 @@
         "f_receipt"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a television and two mobile phones dumped together in a roadside ditch in long grass, a small paper receipt caught in the TV cable"
+      }
     },
     {
       "id": "ev_box",
@@ -592,7 +601,10 @@
         "f_thomas_self"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a locked grey steel box inside an open parish safe, close-up"
+      }
     },
     {
       "id": "ev_rec_edwin",

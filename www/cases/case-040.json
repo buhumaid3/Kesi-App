@@ -171,7 +171,11 @@
         "start": true
       },
       "at": "plc_home",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 50s, a headscarf, a warm cardigan over a long skirt, a wedding ring, grief held in, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_hannah",
@@ -186,7 +190,11 @@
         "fact": "f_fb4471"
       },
       "at": "loc_records",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 30s, short natural hair, a plain office blouse, reading glasses, a rolled map under her arm, precise, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_wesley",
@@ -201,7 +209,11 @@
         "start": true
       },
       "at": "loc_road",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 40, a heavy driver's jacket, a woollen hat, a milk-collection clipboard, shaken, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -502,7 +514,10 @@
         "f_beacon_hole"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "a fresh hole in red highland soil on a grassy road verge at dawn where a concrete survey beacon has been pulled out, crumbs of red-painted concrete round it, a small black camera lens cap lying in the grass"
+      }
     },
     {
       "id": "ev_block9soil",
@@ -516,7 +531,10 @@
         "f_block9soil"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a clear evidence bag of red volcanic soil flecked with bright red paint, held over a red farm track, close-up"
+      }
     },
     {
       "id": "ev_titus_car",
@@ -633,7 +651,10 @@
           "f_rec_calvin_mast"
         ]
       },
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "the ribbed liner of a pickup bed, washed but with red grit left in the grooves, a few red-painted concrete crumbs in one corner, close-up"
+      }
     },
     {
       "id": "ev_ruracio",
@@ -709,7 +730,10 @@
       ],
       "gate": null,
       "detention": "p_calvin",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card on a desk under a lamp, ten inked prints in their boxes, the name box out of focus"
+      }
     },
     {
       "id": "ev_autopsy",

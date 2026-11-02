@@ -167,7 +167,11 @@
         "start": true
       },
       "at": "plc_gate",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 40s, a dark security uniform with plain shoulder boards, a torch and a clipboard, a short grey beard, exact, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_gladys",
@@ -182,7 +186,11 @@
         "fact": "f_ob_found"
       },
       "at": "plc_eldoret",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 30s, short relaxed hair, a warm knitted cardigan, red-eyed, holding a phone, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [

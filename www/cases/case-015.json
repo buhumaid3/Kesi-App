@@ -140,7 +140,11 @@
         "start": true
       },
       "at": "plc_lane",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 50, a torn rugby jersey under a reflective vest with no writing, a cloth tied round one wrist, heavy shoulders, tired, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_daudi",
@@ -156,7 +160,11 @@
         "fact": "f_hamisi_load"
       },
       "at": "plc_daudi",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, a leather jacket over a checked shirt, a money pouch across his chest, businesslike, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_esther",
@@ -172,7 +180,11 @@
         "fact": "f_winnie_claim"
       },
       "at": "plc_stalls",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 50s, a headscarf tied at the back, a cardigan over a school-uniform-blue blouse, a tape measure round her neck, motherly and wary, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -392,7 +404,10 @@
         "f_rags"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a cut-open bale of second-hand clothes on a market stall at dawn, a thin top layer of folded children's shirts over a mass of grey rags, the cut plastic seal lying beside it, close-up"
+      }
     },
     {
       "id": "ev_stallbox",

@@ -221,7 +221,11 @@
         "start": true
       },
       "at": "loc_home",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 50s, layered beaded necklaces, a cloth wrapped over her shoulders, a notebook, quietly certain, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_saitoti",
@@ -237,7 +241,11 @@
         "start": true
       },
       "at": "loc_lugga",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan boy, about 11, a herd boy's red checked shuka over a T-shirt, a thin stick in his hand, serious and shy, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -533,7 +541,10 @@
         "f_hearth"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a cold hearth of three stones outside a small house at dusk, a bundle of firewood untied beside it and not used, close-up"
+      }
     },
     {
       "id": "ev_goats",
@@ -547,7 +558,10 @@
         "f_goats"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a goat pen of thorn branches at dawn, mother goats with their kids beside them, empty clean milk gourds hanging on a post"
+      }
     },
     {
       "id": "ev_nolari",
@@ -610,7 +624,10 @@
         "f_pickup"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "the front-left tyre of a pickup worn bald on its inner edge, pale river sand packed in the tread, close-up"
+      }
     },
     {
       "id": "ev_rungu",

@@ -229,7 +229,11 @@
         "start": true
       },
       "at": "plc_lobby",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 50s, a smart blazer, a lanyard of master keys and access cards, hair in a neat bun, guarded, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -563,7 +567,10 @@
         "f_smear"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a jeweller's leather bench apron under a lit magnifier lamp, a broad even wiped smear across the leather, no splashes, close-up"
+      }
     },
     {
       "id": "ev_signin",
@@ -592,7 +599,8 @@
         "f_stairs"
       ],
       "gate": null,
-      "image": null
+      "image": null,
+      "noPhoto": "A camera recording: shown as its viewing log so the times are exact."
     },
     {
       "id": "ev_dues",
@@ -636,7 +644,8 @@
         "f_pr_lobby"
       ],
       "gate": null,
-      "image": null
+      "image": null,
+      "noPhoto": "A camera recording: shown as its viewing log so the times are exact."
     },
     {
       "id": "ev_zawadi",
@@ -693,7 +702,10 @@
         "f_safe"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a small heavy jeweller's safe in a workshop, door locked, a gold scale beside it, close-up"
+      }
     },
     {
       "id": "ev_barrier",
@@ -785,7 +797,10 @@
       ],
       "gate": null,
       "detention": "p_priya",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a business card lying face down on a table beside an open handbag, handwriting in ink on its back too small to read, close-up"
+      }
     },
     {
       "id": "ev_autopsy",

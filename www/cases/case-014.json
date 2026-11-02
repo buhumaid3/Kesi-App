@@ -138,7 +138,11 @@
         "start": true
       },
       "at": "plc_bar",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 30, hair in a neat bun, a black bar-staff T-shirt with no logo, a tray tucked under her arm, shaken, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_cynthia",
@@ -153,7 +157,11 @@
         "location": "loc_kamari"
       },
       "at": "plc_kamari",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 20s, long braids, a plain green cashier's polo shirt, small hoop earrings, sharp and observant, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_mugambi",
@@ -169,7 +177,11 @@
         "fact": "f_purity_claim"
       },
       "at": "plc_church",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 60, a grey suit a size too big, a church usher's rosette with no writing, a careful greying moustache, formal, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [

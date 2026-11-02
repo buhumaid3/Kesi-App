@@ -145,7 +145,11 @@
         "start": true
       },
       "at": "plc_jhouse",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 50s, a headscarf, a warm woollen shawl over a church dress, a hospital visitor's sticker with no writing, worn out with worry, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_gedi",
@@ -160,7 +164,11 @@
         "start": true
       },
       "at": "loc_hospital",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, a white doctor's coat over a shirt and tie, a stethoscope round his neck, a neat beard, careful and kind, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_rebecca",
@@ -176,7 +184,11 @@
         "fact": "f_cjar"
       },
       "at": "plc_marigat",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 40, a bright headscarf, a market apron, a recycled jar of dark honey held up in one hand, proud of her honey, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -433,7 +445,10 @@
         "f_blood"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a sealed hospital sample tube with a handwritten label standing in a rack inside a laboratory fridge, close-up"
+      }
     },
     {
       "id": "ev_honey",
@@ -553,7 +568,10 @@
         "f_canteen"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a row of small labelled plastic food sample tubs in a canteen fridge, one for each day of the week, close-up"
+      }
     },
     {
       "id": "ev_strike",
@@ -585,7 +603,10 @@
         "f_cjar"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a recycled glass jar of dark amber honey, two-thirds full, standing on a kitchen table, a handwritten paper label on it, close-up"
+      }
     },
     {
       "id": "ev_rebecca",

@@ -162,7 +162,11 @@
         "start": true
       },
       "at": "plc_gladys",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 60, short grey hair, a church cardigan over a floral dress, spectacles on a chain, upset but precise, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_jillo",
@@ -177,7 +181,11 @@
         "start": true
       },
       "at": "plc_shop",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, a white kofia and a checked shirt, a short beard, a pencil behind his ear, friendly and attentive, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -369,7 +377,10 @@
         "f_annekey"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a small brass padlock key on a thin gold chain, laid out on a white evidence sheet on a table, close-up"
+      }
     },
     {
       "id": "ev_gladys",

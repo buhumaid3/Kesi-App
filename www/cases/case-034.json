@@ -167,7 +167,11 @@
         "start": true
       },
       "at": "plc_maingate",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, a red checked shuka over a khaki security jacket, a radio on his belt, a stern weathered face, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_nelson",
@@ -182,7 +186,11 @@
         "start": true
       },
       "at": "plc_stables",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan young man, mid 20s, a stable groom's overalls, a hoof pick hanging from his pocket, straw in his hair, anxious, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_bernard",
@@ -198,7 +206,11 @@
         "fact": "f_andrew_hotel"
       },
       "at": "plc_hotel",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 50s, a hotel night porter's waistcoat over a white shirt with no name badge, a bow tie, tired and precise, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -479,7 +491,10 @@
         "f_cut"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a ranch fence of high-tensile wire with two strands cut clean and straight, the shining ends curling back from a wooden post, dry grass and acacias behind, close-up"
+      }
     },
     {
       "id": "ev_tracks",
@@ -507,7 +522,10 @@
         "f_tracksoil"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a clear evidence bag of white powdery soda-dusted soil held over the pale track it came from, close-up"
+      }
     },
     {
       "id": "ev_sankau",
@@ -554,7 +572,10 @@
         "f_cutters"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a pair of heavy long-handled bolt cutters lying on a workshop bench, fresh bright scratches on the steel jaws, close-up"
+      }
     },
     {
       "id": "ev_nelson",

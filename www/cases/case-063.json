@@ -203,7 +203,11 @@
         "start": true
       },
       "at": "plc_office",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 20s, a neat bun, a cardigan over an office blouse, a photocopy-smudged thumb, worried she did wrong, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_wangui",
@@ -219,7 +223,11 @@
         "start": true
       },
       "at": "loc_coop",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 50s, a headscarf, a farm jacket over a dress, a coffee-picker's hands, angry and dignified, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -428,7 +436,10 @@
         "f_mud"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "footprints pressed into spilled white coffee mucilage at the edge of a concrete fermentation tank: ridged gumboot prints and the sharp print of a smart leather shoe, close-up"
+      }
     },
     {
       "id": "ev_gap",
@@ -442,7 +453,10 @@
         "f_gap"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a dusty office shelf of box files with one clean rectangular outline in the dust where a file is missing, close-up"
+      }
     },
     {
       "id": "ev_safe",
@@ -456,7 +470,10 @@
         "f_safe"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a small locked steel safe in the corner of a factory office, a cash book lying closed on top, close-up"
+      }
     },
     {
       "id": "ev_payout",

@@ -147,7 +147,11 @@
         "start": true
       },
       "at": "plc_frontdoor",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 30s, a red-and-blue shuka over a plain security greatcoat, a beaded bracelet, a torch, honest and steady, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_eunice",
@@ -162,7 +166,11 @@
         "start": true
       },
       "at": "plc_home",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 40s, short relaxed hair, a cardigan over a blouse, a wedding ring, exhausted from waiting, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_rose",
@@ -178,7 +186,11 @@
         "start": true
       },
       "at": "loc_sacco",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 40s, a cleaner's blue dust coat, a headscarf, a bunch of keys on a ring, matter-of-fact, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_hellen",
@@ -194,7 +206,11 @@
         "fact": "f_jem_claim"
       },
       "at": "plc_jshop",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 50s, a printed headscarf and a fleece, a shopkeeper's pencil behind her ear, wary, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -382,7 +398,10 @@
         "f_paperweight"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a heavy brass commemorative paperweight with rounded edges lying on a concrete strong-room floor, an engraved inscription too small to read, close-up"
+      }
     },
     {
       "id": "ev_coat",
@@ -500,7 +519,10 @@
         "f_backdoor"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "the back door of a small office building from inside, a heavy steel bolt drawn back, a key lock above it, close-up"
+      }
     },
     {
       "id": "ev_rose",

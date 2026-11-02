@@ -139,7 +139,11 @@
         "start": true
       },
       "at": "plc_simeon",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 60s, a scorched leather apron over a vest, forearms like rope, a grey beard, eyes narrowed from forty years of sparks, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_edwin",
@@ -155,7 +159,11 @@
         "fact": "f_appeal"
       },
       "at": "plc_cityhall",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 30s, a pressed shirt and tie, a staff lanyard with the card turned round, cautious and polite, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_samwel",
@@ -171,7 +179,11 @@
         "fact": "f_jobcard"
       },
       "at": "loc_shed",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, a driver's cap and a plain grey jacket, car keys in his hand, matter-of-fact, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [

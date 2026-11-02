@@ -216,7 +216,11 @@
         "start": true
       },
       "at": "loc_research",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 30s, a field researcher's khaki shirt, beaded earrings, a GPS unit in her hand, focused, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_sergeant",
@@ -232,7 +236,11 @@
         "start": true
       },
       "at": "loc_post",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 40s, a plain olive ranger's jacket and beret with no insignia, a radio on his chest, a firm square face, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -505,7 +513,10 @@
         "f_device_found"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a rugged handheld GPS device, switched off, lying in dry grass on an open plain, close-up"
+      }
     },
     {
       "id": "ev_collar",
@@ -576,7 +587,10 @@
         "f_hut"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "the cement-dusted concrete floor of a small checkpoint hut, a torn scrap of cement sack lying on it with a small pale flake caught in the weave"
+      }
     },
     {
       "id": "ev_records",
@@ -635,7 +649,10 @@
           "f_logbook"
         ]
       },
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "the back of a lorry with dual rear tyres, cement sacks in the load with fine pale dust in the seams, a washed jack handle on the cab floor visible through the open door"
+      }
     },
     {
       "id": "ev_crew_prints",
@@ -664,7 +681,10 @@
       ],
       "gate": null,
       "detention": "p_ndwiga",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card on a desk, ten inked fingerprints in their boxes, an ink roller beside it, the name box out of focus"
+      }
     },
     {
       "id": "ev_faith",

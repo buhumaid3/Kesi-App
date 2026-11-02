@@ -704,7 +704,10 @@
           "f_sigmatch"
         ]
       },
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a home study at night, an open laptop on a desk glowing, the screen out of focus, files and a soapstone carving on the shelf behind"
+      }
     },
     {
       "id": "ev_car",
@@ -726,7 +729,10 @@
           "f_carving"
         ]
       },
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "the open boot of a saloon car with grey ash and soot on the mat, a folded towel on the passenger seat visible through the window"
+      }
     },
     {
       "id": "ev_od_prints",
@@ -741,7 +747,10 @@
       ],
       "gate": null,
       "detention": "p_oduya",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card on a desk, ten inked fingerprints in their boxes, an ink pad beside it, the name box out of focus"
+      }
     },
     {
       "id": "ev_autopsy",

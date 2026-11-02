@@ -219,7 +219,11 @@
         "start": true
       },
       "at": "plc_nairobi",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 50s, a grey suit, a laptop bag on his shoulder, a businessman's polite unease, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_njambi",
@@ -235,7 +239,11 @@
         "start": true
       },
       "at": "loc_river",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 60s, a headscarf, a heavy sweater, a hoe over her shoulder, watchful, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_mamamukoya",
@@ -251,7 +259,11 @@
         "start": true
       },
       "at": "loc_mukoya",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 60s, a headscarf, an apron over a print dress, flour on her hands, tired and loving, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_tororo",
@@ -267,7 +279,11 @@
         "start": true
       },
       "at": "plc_tororo",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "East African man, about 40, a short-sleeved white office shirt, a pen behind his ear, a phone handset at his ear, bureaucratic, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -513,7 +529,10 @@
         "f_landing"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "scuffed churned mud at a river landing where two people stood, a clear evidence bag of the bank's sand held above it, reeds behind, close-up"
+      }
     },
     {
       "id": "ev_prints",

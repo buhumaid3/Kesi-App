@@ -137,7 +137,11 @@
         "start": true
       },
       "at": "loc_mall",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 50, a printed cotton dira dress and a matching scarf, two tall flasks held by their handles, warm but shaken, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_lameck",
@@ -152,7 +156,11 @@
         "fact": "f_lameck"
       },
       "at": "plc_lane",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 30s, wiry, a sleeveless T-shirt under an open shirt, a rope coiled over one shoulder, sweat on his brow, watchful, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_sheikh",
@@ -168,7 +176,11 @@
         "fact": "f_abdi_claim"
       },
       "at": "plc_mosque",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 60s, a white kanzu and an embroidered white kofia, a neat grey beard, calm and grave, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -437,7 +449,8 @@
         "f_josephine_scarf"
       ],
       "gate": null,
-      "image": null
+      "image": null,
+      "noPhoto": "Amani's own written observation of a person: it stays the note."
     },
     {
       "id": "ev_handbag",

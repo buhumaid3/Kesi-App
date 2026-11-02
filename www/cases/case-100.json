@@ -875,7 +875,10 @@
         "f_gate"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "an airport boarding gate in morning light, rows of empty seats, a desk with no one at it, the gate sign out of focus"
+      }
     },
     {
       "id": "ev_corridor",
@@ -889,7 +892,10 @@
         "f_corridor"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a long government office corridor on a fourth floor, doors along one side, a corner office at the far end by a window, scuffed lino"
+      }
     },
     {
       "id": "ev_directory",
@@ -1019,7 +1025,10 @@
         "f_verge"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "a rural road verge at dawn with a small bus shelter on red soil, cypress hedges behind, empty"
+      }
     },
     {
       "id": "ev_chebii",

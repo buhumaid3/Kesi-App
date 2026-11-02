@@ -142,7 +142,11 @@
         "start": true
       },
       "at": "plc_mosque",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 60s, a white kanzu and an embroidered kofia, a neatly trimmed white beard, reading glasses on his nose, grave and gentle, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_pili",
@@ -157,7 +161,11 @@
         "fact": "f_sign"
       },
       "at": "plc_marikiti",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 40s, a bright printed kanga worn as a headscarf, a black buibui open over a dress, a shopping bag on her arm, lively, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_salim",
@@ -173,7 +181,11 @@
         "fact": "f_faiz_claim"
       },
       "at": "plc_mosque",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 60, a white kanzu with a dark waistcoat over it, a white kofia, a grey goatee, a hardback ledger under his arm, dignified, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_kassim",
@@ -189,7 +201,11 @@
         "fact": "f_rec_mast"
       },
       "at": "plc_mwembe",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 40s, a short-sleeved shirt open over a vest, a rolled kanga bundle on his shoulder, sweat on his brow, hurried, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -352,7 +368,10 @@
         "f_tea"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "two small glasses of spiced tea on a wooden shop counter, one drained with a tea leaf at the bottom, one still almost full, folded kangas in the background, close-up"
+      }
     },
     {
       "id": "ev_envelope",
@@ -366,7 +385,10 @@
         "f_envelope"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "an empty printed business envelope lying open in a wooden shop drawer among receipts and rubber bands, close-up"
+      }
     },
     {
       "id": "ev_will",

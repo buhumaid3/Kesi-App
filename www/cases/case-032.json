@@ -141,7 +141,11 @@
         "start": true
       },
       "at": "plc_packhouse",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 50s, a headscarf, a green work overall coat with no logo, a tea towel over one shoulder, motherly and sharp, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_daudi",
@@ -156,7 +160,11 @@
         "fact": "f_patrol"
       },
       "at": "plc_gate",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 40, a plain khaki guard's uniform, a belt with a torch and a notebook, a beret, watchful, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_kevin",
@@ -172,7 +180,11 @@
         "fact": "f_spray_hesbon"
       },
       "at": "plc_gh12",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan young man, early 20s, a dusty blue boiler suit, a face mask pulled down under his chin, nervous, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -403,7 +415,10 @@
         "f_thermos"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a green steel thermos flask, cap off, standing on a first-aid room shelf beside a roll of bandage, half full of milky tea, close-up"
+      }
     },
     {
       "id": "ev_doorrule",
@@ -645,7 +660,10 @@
       ],
       "gate": null,
       "detention": "p_wambui",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card on a desk, dark ink fingerprints in their boxes, an ink roller and pad beside it, the name box out of focus"
+      }
     },
     {
       "id": "ev_autopsy",

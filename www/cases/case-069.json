@@ -219,7 +219,11 @@
         "start": true
       },
       "at": "loc_ppb",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 30, braids tied back, a plain office blazer, a lanyard with the card turned round, grieving and sharp, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_distrib",
@@ -235,7 +239,11 @@
         "start": true
       },
       "at": "plc_karatina",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, a company polo shirt with no logo, a phone in his hand, reading glasses, careful, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -526,7 +534,10 @@
         "f_shelf"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a pharmacy shelf of medicine boxes with six empty gaps in a row, and behind it in a stockroom doorway stacked cartons of the same boxes, labels out of focus"
+      }
     },
     {
       "id": "ev_invoices",
@@ -566,7 +577,10 @@
         "genuine": true,
         "kind": "crate label"
       },
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a red plastic soda crate on a car floor with one empty slot among full glass bottles, a handwritten tally card tucked in the side, close-up"
+      }
     },
     {
       "id": "ev_cabinet",
@@ -739,7 +753,10 @@
       ],
       "gate": null,
       "detention": "p_brenda",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card on a desk, ten inked fingerprints in rows, an ink roller beside it, the name box out of focus"
+      }
     },
     {
       "id": "ev_autopsy",

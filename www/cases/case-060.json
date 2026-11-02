@@ -258,7 +258,11 @@
         "fact": "f_search"
       },
       "at": "loc_registry",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 30s, braids tied back, a plain office cardigan, dark rings under her eyes, a thick register under her arm, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -763,7 +767,10 @@
         "f_scarf"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a red-and-gold fringed scarf hanging on a wooden coat stand, one corner of the fringe torn away, close-up"
+      }
     },
     {
       "id": "ev_safe",
@@ -838,7 +845,10 @@
       ],
       "gate": null,
       "detention": "p_doreen",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card beside an ink roller on a desk, ten inked prints in their boxes, the name box out of focus"
+      }
     },
     {
       "id": "ev_autopsy",

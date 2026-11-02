@@ -147,7 +147,11 @@
         "start": true
       },
       "at": "plc_rispa",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 40s, a headscarf, a cardigan over a print dress, a sharp listening face, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_owen",
@@ -162,7 +166,11 @@
         "start": true
       },
       "at": "plc_jetty",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 30s, a short-sleeved shirt and a cap, a thick logbook under his arm, a pen behind his ear, sociable, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_selpher",
@@ -177,7 +185,11 @@
         "start": true
       },
       "at": "plc_sister",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 50, a headscarf tied tight, a black shawl over a dress, newly widowed and composed, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_paul",
@@ -193,7 +205,11 @@
         "start": true
       },
       "at": "plc_jetty",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 50s, a frayed sweater, a net needle in his fingers, a weathered calm face, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_choirleader",
@@ -209,7 +225,11 @@
         "start": true
       },
       "at": "plc_church",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 60s, a church choir robe in purple over a blouse, a hymn book held to her chest, stern and kind, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -444,7 +464,10 @@
         "f_battery"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a heavy 12-volt solar battery with a carrying handle lying on its side on a shop's concrete floor, one corner of the casing scuffed and marked, close-up"
+      }
     },
     {
       "id": "ev_radio",
@@ -599,7 +622,10 @@
         "f_path"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a narrow rocky footpath at night lit by a torch beam, winding down between bushes on an island hillside towards a faint jetty light on the water"
+      }
     },
     {
       "id": "ev_agency_letters",

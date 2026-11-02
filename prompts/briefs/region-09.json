@@ -1,0 +1,99 @@
+{
+  "_about": "Region 9 (cases 81–90, Nairobi's affluent suburbs). New image descriptions for every person, place and object exhibit that had none. Apply with  npm run images:briefs -- prompts/briefs/region-09.json .",
+  "81": {
+    "people": {
+      "p_cutter": "Kenyan man, mid 40s, a key-cutter's grey dust coat, a ring of blank keys on a hook in his hand, reading glasses on his head, chatty, ID-photo framing"
+    },
+    "evidence": {
+      "ev_lil_prints": "a police ten-print fingerprint card on a desk, ten inked fingerprints in their boxes, an ink pad beside it, the name box out of focus"
+    }
+  },
+  "82": {
+    "evidence": {
+      "ev_cap": "the back seat of a saloon car, a dark cap lying on it, white chalk dust on the rear floor mat and small dark spots under its edge, close-up",
+      "ev_fe_prints": "a police ten-print fingerprint card on a desk, ten inked fingerprints in rows, an ink roller beside it, the name box out of focus"
+    }
+  },
+  "83": {
+    "people": {
+      "p_manager": "Kenyan woman, early 50s, a smart blazer, a lanyard of master keys and access cards, hair in a neat bun, guarded, ID-photo framing"
+    },
+    "evidence": {
+      "ev_smear": "a jeweller's leather bench apron under a lit magnifier lamp, a broad even wiped smear across the leather, no splashes, close-up",
+      "ev_safe": "a small heavy jeweller's safe in a workshop, door locked, a gold scale beside it, close-up",
+      "ev_card": "a business card lying face down on a table beside an open handbag, handwriting in ink on its back too small to read, close-up"
+    },
+    "noPhoto": {
+      "ev_lift": "A camera recording: shown as its viewing log so the times are exact.",
+      "ev_lobbycam": "A camera recording: shown as its viewing log so the times are exact."
+    }
+  },
+  "84": {
+    "people": {
+      "p_doctor": "Kenyan man, late 50s, a tweed jacket over a shirt and tie, a doctor's bag, grey at the temples, cautious, ID-photo framing"
+    },
+    "evidence": {
+      "ev_veranda": "a long veranda table set for seven at a stone farmhouse, the far chair beside steps down to a lawn, glasses and plates left after lunch",
+      "ev_de_prints": "a police ten-print fingerprint card on a desk, ten inked fingerprints in their boxes, an ink pad beside it, the name box out of focus"
+    }
+  },
+  "85": {
+    "noPhoto": {
+      "ev_cam_gap": "A camera recording: shown as its viewing log so the times are exact.",
+      "ev_dj": "Camera recordings: shown as the viewing log so the times are exact.",
+      "ev_mi_nails": "This exhibit is a detained person's hand: it stays the examination note."
+    }
+  },
+  "86": {
+    "evidence": {
+      "ev_stand": "a steel drip stand standing in a clinic corridor, its heavy round base wiped clean and shiny, close-up",
+      "ev_mw_prints": "a police ten-print fingerprint card on a desk, ten inked fingerprints in rows, an ink pad beside it, the name box out of focus"
+    },
+    "noPhoto": {
+      "ev_placard": "A camera recording: shown as its viewing log so the times are exact."
+    }
+  },
+  "87": {
+    "people": {
+      "p_zakaria": "Kenyan young man, about 20, a hoodie, a neat haircut, seated so only head and shoulders show, angry and grieving, ID-photo framing"
+    },
+    "evidence": {
+      "ev_peg": "a riding-club tack room by day, a saddle peg by the door, a tin of saddle soap on the bench below it, short snippets of waxed thread on the wooden floor under the peg"
+    }
+  },
+  "88": {
+    "evidence": {
+      "ev_dust": "a heavy glass award lying on the floor under a bed, a clean layer of dust undisturbed around and under its base, its top surface clean, close-up",
+      "ev_nd_prints": "a police ten-print fingerprint card on a desk, ten inked fingerprints in their boxes, an ink pad beside it, the name box out of focus"
+    },
+    "noPhoto": {
+      "ev_monitor": "A baby-monitor recording: shown as its log so the times and words are exact."
+    }
+  },
+  "89": {
+    "people": {
+      "p_assistant": "Kenyan man, early 20s, a black T-shirt, a lens bag strap across his chest (no camera in shot), nervous, ID-photo framing"
+    },
+    "evidence": {
+      "ev_terrace": {
+        "kind": "scene",
+        "brief": "a rooftop service terrace at night behind a staff door, beer kegs and gas cylinders against a wall, a low waist-high railing, city lights below"
+      },
+      "ev_mu_prints": "a police ten-print fingerprint card on a desk, ten inked fingerprints in rows, an ink roller beside it, the name box out of focus"
+    },
+    "noPhoto": {
+      "ev_barcam": "A camera recording: shown as its viewing log so the times are exact.",
+      "ev_cam_gap": "A security computer's file list and log: shown as text so it stays exact.",
+      "ev_card_contents": "The frames on the memory card show a suspect: shown as the frame log."
+    }
+  },
+  "90": {
+    "evidence": {
+      "ev_cy_home": "a phone case with a small card pocket holding a SIM card, lying on a printed diary page on a table, the print out of focus, close-up",
+      "ev_mw_prints": "a police ten-print fingerprint card on a desk, ten inked fingerprints in their boxes, an ink pad beside it, the name box out of focus"
+    },
+    "noPhoto": {
+      "ev_lobbycam": "A camera recording: shown as its viewing log so the times are exact."
+    }
+  }
+}

@@ -251,7 +251,11 @@
         "fact": "f_filed_will"
       },
       "at": "loc_hospital",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 30s, a neat short afro, a hospital records officer's cardigan with no badge, a folder held close, uneasy, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_japhet",
@@ -266,7 +270,11 @@
         "fact": "f_ob"
       },
       "at": "loc_court",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 40s, a dark suit and tie, a court stamp pad in one hand, formal and tired, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_halima",
@@ -281,7 +289,11 @@
         "fact": "f_envelope"
       },
       "at": "plc_halima",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 40s, a dark trouser suit over a white blouse, a phone in her hand, composed and unsmiling, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_wairagu",
@@ -296,7 +308,11 @@
         "start": true
       },
       "at": "loc_advocate",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 60, short grey hair, a black advocate's jacket over a blouse, reading glasses, gracious and guarded, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_gitau",
@@ -312,7 +328,11 @@
         "start": true
       },
       "at": "loc_house",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 50s, a heavy greatcoat with plain buttons, a woollen cap, a torch, eyes that avoid yours, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -620,7 +640,10 @@
         "f_drag"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "two faint parallel scuff lines in the polished floor of an old farmhouse hall, running from a study door towards a staircase, low raking light, close-up"
+      }
     },
     {
       "id": "ev_study",
@@ -638,7 +661,10 @@
         "f_envelope"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "an old farmhouse study at dusk, a rug turned back at one corner revealing a small dark mark on the floorboards, a clean polish-free circle on the floor by the door where a heavy doorstop stood, a hospital envelope on the desk"
+      }
     },
     {
       "id": "ev_doorstop",
@@ -683,7 +709,10 @@
         "f_cash"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a locked steel cash box on an estate office desk beside a closed ledger, close-up"
+      }
     },
     {
       "id": "ev_genuine_will",
@@ -966,7 +995,10 @@
       ],
       "gate": null,
       "detention": "p_rahab",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card on a desk, ten inked fingerprints in their boxes, an ink pad beside it, the name box out of focus"
+      }
     },
     {
       "id": "ev_autopsy",

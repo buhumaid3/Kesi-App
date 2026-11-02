@@ -566,7 +566,10 @@
         "f_dig"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "the rear wheel of a white 4x4 sunk to its axle in soft white desert sand, no digging and no branches under it, sand ladders still strapped to the roof rack above"
+      }
     },
     {
       "id": "ev_tracks",
@@ -650,7 +653,10 @@
         "f_room"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a small guest-house room, a bed made up tight with two bare pillows with no cases, a suitcase pushed under the bed, close-up"
+      }
     },
     {
       "id": "ev_register",

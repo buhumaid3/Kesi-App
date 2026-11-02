@@ -178,7 +178,11 @@
         "start": true
       },
       "at": "loc_lodge",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, an aircraft engineer's overalls with no badges, a torch in his breast pocket, oil on his fingers, upset and careful, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_ndegwa",
@@ -194,7 +198,11 @@
         "fact": "f_logbook"
       },
       "at": "plc_nairobi",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 50s, a pilot-style white shirt with plain epaulettes, reading glasses, a logbook, formal, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -495,7 +503,10 @@
         "f_hourmeter"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a small analogue hour meter on an aircraft instrument panel, its rolling digits sharp, the rest of the panel soft, close-up"
+      }
     },
     {
       "id": "ev_tracker",
@@ -561,7 +572,10 @@
           "f_tracker"
         ]
       },
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a staff cottage sitting room with a sofa missing one cushion and a bare freshly mopped floor where a rug was, and the missing cushion in the open boot of a dusty Land Cruiser outside the window"
+      }
     },
     {
       "id": "ev_autopsy",

@@ -143,7 +143,11 @@
         "fact": "f_register"
       },
       "at": "plc_bus",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 40, a school-trip T-shirt with no writing under a cardigan, a lanyard with a whistle, a phone in her hand, organised and anxious, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_swabri",
@@ -158,7 +162,11 @@
         "start": true
       },
       "at": "plc_ticket",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 50s, a short-sleeved white shirt, a kofia, a pen behind his ear, bored and precise, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_driver",
@@ -174,7 +182,11 @@
         "fact": "f_leah_left"
       },
       "at": "plc_bus",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, a navy driver's jacket, a cap, a heavy moustache, patient, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -439,7 +451,10 @@
         "f_bag"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "an open canvas shoulder bag on a stone ledge, six identical small bronze-coloured coins spilled beside it, a thin mould seam along each coin's rim, close-up"
+      }
     },
     {
       "id": "ev_cruise",

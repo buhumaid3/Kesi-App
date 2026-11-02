@@ -166,7 +166,11 @@
         "start": true
       },
       "at": "plc_vehicle",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 30s, a guide's olive shirt with no badge, a beaded wristband, a quiet observant face, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_lemanken",
@@ -181,7 +185,11 @@
         "start": true
       },
       "at": "loc_camp",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 20s, a red shuka over a dark jacket, a torch in his hand, tall and young, nervous, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_salma",
@@ -197,7 +205,11 @@
         "start": true
       },
       "at": "loc_camp",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 40, a patterned silk headscarf, a travel jacket, a phone in her hand, red-eyed and determined, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -458,7 +470,8 @@
         "f_pa_table"
       ],
       "gate": null,
-      "image": null
+      "image": null,
+      "noPhoto": "Guests' dinner photos: shown as the frame times so they stay exact."
     },
     {
       "id": "ev_laila_phone",

@@ -246,7 +246,11 @@
         "start": true
       },
       "at": "loc_beatrice",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 50s, a tweed jacket over a shirt and tie, a doctor's bag, grey at the temples, cautious, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -528,7 +532,10 @@
         "f_veranda"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a long veranda table set for seven at a stone farmhouse, the far chair beside steps down to a lawn, glasses and plates left after lunch"
+      }
     },
     {
       "id": "ev_records",
@@ -634,7 +641,10 @@
       ],
       "gate": null,
       "detention": "p_desmond",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card on a desk, ten inked fingerprints in their boxes, an ink pad beside it, the name box out of focus"
+      }
     },
     {
       "id": "ev_autopsy",

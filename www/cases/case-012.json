@@ -140,7 +140,11 @@
         "start": true
       },
       "at": "plc_gate",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 50s, a heavy brown watchman's coat, a woollen cap, a thick exercise book held against his chest, patient and stubborn, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_janeth",
@@ -156,7 +160,11 @@
         "fact": "f_lydia_salon"
       },
       "at": "plc_salon",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 30s, long knotless braids, a black salon smock, a comb tucked behind one ear, quick and confident, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_rehema",
@@ -172,7 +180,11 @@
         "start": true
       },
       "at": "plc_gate",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 50, a kitenge wrap and a matching headscarf, a cardigan with the sleeves pushed up, shrewd and cheerful, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -341,7 +353,10 @@
         "f_cash"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a thick brown envelope of banknotes in an open desk drawer, untouched, handwriting on the envelope, close-up"
+      }
     },
     {
       "id": "ev_gatebook",

@@ -198,7 +198,11 @@
         "start": true
       },
       "at": "loc_manyatta",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 50, layered beaded necklaces, a blue shuka, a receipt book in her hands, dignified and wary, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -391,7 +395,10 @@
         "f_clothes"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a man's khaki jacket and trousers laid out on a white evidence sheet, cattle hair and dung caught in the creases, small acacia thorns snagged in the jacket, close-up"
+      }
     },
     {
       "id": "ev_tracker",
@@ -419,7 +426,10 @@
         "f_boma"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "the gate of a cattle boma of woven acacia-thorn branches, a patch of trampled dung near the gate swept over"
+      }
     },
     {
       "id": "ev_village_book",

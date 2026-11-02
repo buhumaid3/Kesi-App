@@ -243,7 +243,11 @@
         "start": true
       },
       "at": "loc_office",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 50s, a faded cap, a sweater over a vest against the wind, a thick register under his arm, stern, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_bar",
@@ -259,7 +263,11 @@
         "start": true
       },
       "at": "plc_bar",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 50, a bright headscarf, a beaded necklace, a bar towel over one shoulder, worldly, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -546,7 +554,10 @@
         "f_oars"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "inside a wooden fishing boat on a beach, nets folded dry under the thwart with no weed or scales, two oars lying unmarked along the bottom"
+      }
     },
     {
       "id": "ev_crust",
@@ -560,7 +571,8 @@
         "f_crust"
       ],
       "gate": null,
-      "image": null
+      "image": null,
+      "noPhoto": "This exhibit is about the dead man's skin and clothes: no photo of a body."
     },
     {
       "id": "ev_sand",
@@ -574,7 +586,10 @@
         "f_sand"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "a lake beach at dawn after a windy night, sand drifted against every boat and post, except the windward side of one capsized boat, which is bare"
+      }
     },
     {
       "id": "ev_tracks",
@@ -609,7 +624,10 @@
         "f_clubs"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "the inside of a fish store, a rack of wooden fish clubs on the wall with one gap, a swept earth floor with a fresh layer of sand scattered over one damp dark patch"
+      }
     },
     {
       "id": "ev_register",
@@ -652,7 +670,10 @@
         "f_cashbox"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a locked metal cash box on a table beside a closed account book in a small co-op office, close-up"
+      }
     },
     {
       "id": "ev_akuwom",

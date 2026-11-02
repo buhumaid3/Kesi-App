@@ -146,7 +146,11 @@
         "start": true
       },
       "at": "plc_library",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 40s, a neat short afro, a cardigan with a staff card clipped to it face down, reading glasses on a cord, exact, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_brenda",
@@ -161,7 +165,11 @@
         "start": true
       },
       "at": "plc_corridor",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan young woman, about 19, braids tied back, a student hoodie with no writing, a lab coat folded over her arm, frightened, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_joshua",
@@ -176,7 +184,11 @@
         "start": true
       },
       "at": "loc_lab",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 50s, a navy electrician's overall coat, a screwdriver and a voltage tester in the pocket, a grey moustache, earnest, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -443,7 +455,10 @@
         "f_wire"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "two freshly cut ends of a green-and-yellow earth wire, bright copper showing, in a clear evidence bag on a laboratory bench, close-up"
+      }
     },
     {
       "id": "ev_checklist",

@@ -146,7 +146,11 @@
         "start": true
       },
       "at": "loc_lake",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, a weathered fisherman's jacket, a woollen hat, a coil of net cord in one hand, quiet and troubled, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_lawrence",
@@ -162,7 +166,11 @@
         "fact": "f_jobcard"
       },
       "at": "plc_gilgil",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 50, a farmer's checked shirt under a fleece, a cap, a set of car keys, impatient, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_pastor",
@@ -178,7 +186,11 @@
         "fact": "f_nico_claim"
       },
       "at": "plc_church",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 50s, a purple clerical shirt with a white collar, a headscarf, a Bible held at her chest, kind and certain, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_sister",
@@ -194,7 +206,11 @@
         "fact": "f_rael_claim"
       },
       "at": "plc_sister",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 50, short grey-flecked hair, a cardigan over a printed dress, red-eyed, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -444,7 +460,10 @@
         "f_lakewater"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a clear plastic sample bottle of thick green lake water with a handwritten label, standing on a fence post beside flooded water, close-up"
+      }
     },
     {
       "id": "ev_barack",
@@ -545,7 +564,10 @@
         "f_brief_mvua"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "an open leather briefcase on a car seat, a stack of official-looking title deeds with oval seals and watermarked paper, printed agreements clipped on top, the wording out of focus, close-up"
+      }
     },
     {
       "id": "ev_jobcard",

@@ -2,7 +2,7 @@
   "name": "kesi-app",
   "private": true,
   "version": "0.1.0",
-  "description": "Kesi: Kenya Case Files \u2014 case data, validator and asset tools",
+  "description": "Kesi: Kenya Case Files — case data, validator and asset tools",
   "type": "module",
   "scripts": {
     "validate": "node tools/validate.mjs www/cases",
@@ -26,17 +26,18 @@
     "node": ">=22"
   },
   "dependencies": {
-    "@google/genai": "2.32.0",
-    "sharp": "0.35.5",
     "@capacitor/core": "8.6.0",
+    "@capacitor/haptics": "8.0.2",
     "@capacitor/ios": "8.6.0",
     "@capacitor/preferences": "8.0.1",
-    "@capacitor/status-bar": "8.0.4",
     "@capacitor/splash-screen": "8.0.2",
-    "@capacitor/haptics": "8.0.2"
+    "@capacitor/status-bar": "8.0.4",
+    "@google/genai": "2.32.0",
+    "sharp": "0.35.5"
   },
   "devDependencies": {
+    "@capacitor/assets": "4.0.0",
     "@capacitor/cli": "8.6.0",
-    "@capacitor/assets": "4.0.0"
+    "playwright": "^1.64.1"
   }
 }

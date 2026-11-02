@@ -266,7 +266,11 @@
         "start": true
       },
       "at": "loc_kiosk",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, a key-cutter's grey dust coat, a ring of blank keys on a hook in his hand, reading glasses on his head, chatty, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -732,7 +736,10 @@
       ],
       "gate": null,
       "detention": "p_lilian",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card on a desk, ten inked fingerprints in their boxes, an ink pad beside it, the name box out of focus"
+      }
     },
     {
       "id": "ev_autopsy",

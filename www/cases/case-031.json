@@ -141,7 +141,11 @@
         "start": true
       },
       "at": "plc_gate",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 20s, a green ranger-style fleece with no badge, a two-way radio on his chest, a woollen hat, earnest, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_ivy",
@@ -156,7 +160,11 @@
         "start": true
       },
       "at": "loc_rim",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 30, a puffer jacket and a scarf against the wind, sunglasses pushed up on her head, still shaken, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_chepkoech",
@@ -172,7 +180,11 @@
         "fact": "f_phil_claim"
       },
       "at": "loc_farm",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 30s, a wool hat, a heavy sweater over a dress, gumboots' mud on her hem, plain-spoken, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -368,7 +380,10 @@
         "f_canteen"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "looking over a low stone viewpoint wall down into a crater, a narrow rock ledge far below, a rescue rope tied off on a wall post and running over the edge, a dropped clipboard on the path, late light, no body visible"
+      }
     },
     {
       "id": "ev_scene",
@@ -524,7 +539,8 @@
         "f_kimaiyo_green"
       ],
       "gate": null,
-      "image": null
+      "image": null,
+      "noPhoto": "Amani's own written observation of a person: it stays the note."
     },
     {
       "id": "ev_sweater",

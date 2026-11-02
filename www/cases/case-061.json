@@ -215,7 +215,11 @@
         "start": true
       },
       "at": "plc_marketgate",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 50, a heavy army-green greatcoat with plain buttons, a woollen cap, a flask in his hand, steady, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -449,7 +453,10 @@
         "f_cashbox"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a locked grey metal cash box on the floor under an office desk, untouched, close-up"
+      }
     },
     {
       "id": "ev_salesfile",
@@ -538,7 +545,10 @@
         "f_jack"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a car jack hanging on its wall hook in a small garage bay, clean, its handle dusty, close-up"
+      }
     },
     {
       "id": "ev_padlock",
@@ -552,7 +562,10 @@
         "f_padlock"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a padlock hanging open on the chain of a steel yard gate, no marks on it, close-up"
+      }
     },
     {
       "id": "ev_guard",
@@ -605,7 +618,10 @@
         "f_jacket"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "two orange reflective work jackets hanging on pegs, block lettering on the back too blurred to read, one with a small name tag, close-up"
+      }
     },
     {
       "id": "ev_loan",
@@ -702,7 +718,10 @@
       ],
       "gate": null,
       "detention": "p_njeri",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card on a desk, ten inked fingerprints in their boxes, an ink pad beside it, the name box out of focus"
+      }
     },
     {
       "id": "ev_autopsy",

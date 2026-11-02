@@ -148,7 +148,11 @@
         "start": true
       },
       "at": "plc_office",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 20s, a woollen hat and a thick fleece, a clipboard against her chest, cold and alarmed, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_jared",
@@ -163,7 +167,11 @@
         "fact": "f_agnetta_impound"
       },
       "at": "plc_county",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 40s, a plain county enforcement jacket with no badge, a cap, a receipt book in hand, stern, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_fred",
@@ -179,7 +187,11 @@
         "fact": "f_ben_admits"
       },
       "at": "plc_bar",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 40s, a leather jacket over a football shirt with no badge, a toothpick, a businessman's grin gone careful, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_lucy",
@@ -195,7 +207,11 @@
         "fact": "f_hosea_claim"
       },
       "at": "plc_wake",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 50s, a black headscarf and a black dress for mourning, a shawl, grieving and dignified, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -441,7 +457,10 @@
         "f_brass"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a brass padlock hanging open on a nail on a co-op office wall, a small numbered tag on its key ring, close-up"
+      }
     },
     {
       "id": "ev_susan_phone",
@@ -590,7 +609,10 @@
           "f_rec_mast"
         ]
       },
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "the cab of an old lorry with the door open, a key ring with a steel padlock key on the dashboard, a toolbox on the floor with an empty padlock hasp, a folded document on the seat, close-up"
+      }
     },
     {
       "id": "ev_wake",
@@ -620,7 +642,10 @@
       ],
       "gate": null,
       "detention": "p_vivian",
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a police ten-print fingerprint card lying beside an ink pad and roller on a station desk, ten inked prints in their boxes, the name box out of focus"
+      }
     },
     {
       "id": "ev_autopsy",

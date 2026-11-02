@@ -145,7 +145,11 @@
         "start": true
       },
       "at": "plc_far",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 70, a faded kikoi round his waist and an old sweater, a white stubble beard, skin creased by sea and sun, wise and wary, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_hamza",
@@ -160,7 +164,11 @@
         "fact": "f_ob_logged"
       },
       "at": "plc_hamza",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 40s, a short-sleeved white office shirt, a pen in the pocket, a thin moustache, defensive, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_lali",
@@ -176,7 +184,11 @@
         "fact": "f_abdalla_claim"
       },
       "at": "plc_lamu",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 50s, a white kanzu and a navy jacket, a kofia, a heavy logbook under his arm, careful, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [

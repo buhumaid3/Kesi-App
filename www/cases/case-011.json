@@ -137,7 +137,11 @@
         "start": true
       },
       "at": "plc_brazier",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 50s, a faded orange headscarf, a man's old suit jacket over a print dress, ash smudged on her fingers, steady and blunt, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_peninah",
@@ -153,7 +157,11 @@
         "fact": "f_fuel"
       },
       "at": "plc_fedha",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 20s, hair pulled into a short ponytail, a plain red petrol-station overall jacket with no logo, tired night-shift eyes, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -483,7 +491,10 @@
         "f_poker"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "an iron jiko poker about 60 cm long lying on a kiosk's wooden counter, wiped shiny but with a smear of grey clay on the handle, close-up"
+      }
     },
     {
       "id": "ev_baraza",
