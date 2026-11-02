@@ -296,13 +296,6 @@
    "fixed": true,
    "description": "A Kenyan man, about 52, Owner, Kibos Motors garage, Kisumu. A natural Kenyan English accent. Sounds like an ordinary person, never a performer."
   },
-  "rc-halima": {
-   "gender": "f",
-   "band": "adult",
-   "heritage": null,
-   "fixed": true,
-   "description": "A Kenyan woman, about 42, Prosecutor (by phone). A natural Kenyan English accent. Sounds like an ordinary person, never a performer."
-  },
   "rc-kennedy-mulwa": {
    "gender": "m",
    "band": "adult",
@@ -702,7 +695,7 @@
   "c070-p_njogu": "pool-m-middle-3",
   "c070-p_beth": "pool-f-adult-5",
   "c070-p_japhet": "pool-m-middle-4",
-  "c070-p_halima": "rc-halima",
+  "c070-p_halima": "halima",
   "c070-p_wairagu": "pool-f-elder-1",
   "c071-p_kaltuma": "pool-f-young-2",
   "c071-p_jillo": "pool-m-young-1",
@@ -814,7 +807,7 @@
   "c090-p_mwita": "pool-m-middle-2",
   "c090-p_cynthia": "pool-f-adult-4",
   "c090-p_patrick": "pool-m-adult-4",
-  "c090-p_halima": "rc-halima",
+  "c090-p_halima": "halima",
   "c090-p_kenneth": "pool-m-middle-3",
   "c090-p_lydia": "pool-f-middle-3",
   "c090-p_faith": "pool-f-young-4",
@@ -4800,7 +4793,7 @@
    "occupation": "Prosecutor (by phone)",
    "gender": "f",
    "heritage": null,
-   "slot": "rc-halima",
+   "slot": "halima",
    "stance": "cooperative"
   },
   "c070-p_wairagu": {
@@ -6032,7 +6025,7 @@
    "occupation": "Prosecutor on the Emojong case",
    "gender": "f",
    "heritage": null,
-   "slot": "rc-halima",
+   "slot": "halima",
    "stance": "cooperative"
   },
   "c090-p_kenneth": {

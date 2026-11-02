@@ -15,6 +15,7 @@
 //                                                          Tier 1 for the 3.8 TTS models); run it again the next day to resume.
 //   node tools/generate-voices.mjs generate --batch [--region 1] [--limit N]   send them as one Batch API job instead:
 //                                                          half price, not counted against the 100-a-day limit
+//        add --redo-speaker c070-p_halima to record one character's lines again (after a voice change)
 //   node tools/generate-voices.mjs status                  state of submitted voice batch jobs
 //   node tools/generate-voices.mjs fetch                   download finished batch jobs and save the recordings
 //   node tools/generate-voices.mjs review                  review/voices.html: listen to every line, tick rejects
@@ -100,8 +101,10 @@ function compileLines(region) {
   const castMap = readJSON(P('www/audio/voice/cast.json'), {});
   const slotsUsed = new Set();
   if (!flag('--leads')) for (const c of loadCases(ROOT).filter(c => c.meta.number >= a && c.meta.number <= b)) {
-    for (const l of characterLines(c)) { add(l.speaker, l.text, l.where); if (castMap[l.speaker]) slotsUsed.add(castMap[l.speaker]); }
+    for (const l of characterLines(c)) add(l.speaker, l.text, l.where);
   }
+  // Every voice cast in these cases, including people with nothing scripted (they can still be asked things).
+  if (!flag('--leads')) for (const [k, slot] of Object.entries(castMap)) { const n = +k.slice(1, 4); if (n >= a && n <= b) slotsUsed.add(slot); }
   // "I don't know" answers are said by the voice, not the character, so each company voice records them once.
   for (const slot of slotsUsed) for (const g of GENERIC_REPLIES) add(slot, g, `${slot} generic`);
   for (let n = a; n <= b; n++) {
@@ -332,7 +335,7 @@ switch (cmd) {
       const cf = castFile(); if (!cf) { console.error('Run  node tools/generate-voices.mjs cast  first.'); process.exit(1); }
       const region = flag('--region');
       const wanted = new Set(Object.entries(cf.assign).filter(([k]) => !region || Math.ceil(+k.slice(1, 4) / 10) === +region).map(([, s]) => s));
-      const todo = [...wanted].filter(s => !cast.speakers[s]?.voice).sort();
+      const todo = [...wanted].filter(s => !cast.speakers[s]?.voice && cf.slots[s]).sort();
       console.log(`Designing ${todo.length} voices${region ? ` for region ${region}` : ''}.`);
       fs.mkdirSync(P('review/voices'), { recursive: true });
       for (const slot of todo) {
@@ -410,9 +413,9 @@ switch (cmd) {
   }
   case 'generate': {
     const region = +(flag('--region') || 1), who = flag('--speaker');
-    const redoSlot = flag('--redo-slot'); const cf = castFile();
+    const redoSlot = flag('--redo-slot'), redoSpeaker = flag('--redo-speaker'); const cf = castFile();
     const slotOf = sp => cf?.assign?.[sp] || sp;
-    const lines = compileLines(region).filter(l => (!who || l.speaker === who || slotOf(l.speaker) === who) && (!manifest[l.key] || (redoSlot && slotOf(l.speaker) === redoSlot)) && state.lines[l.key]?.status !== 'submitted');
+    const lines = compileLines(region).filter(l => (!who || l.speaker === who || slotOf(l.speaker) === who) && (!manifest[l.key] || (redoSlot && slotOf(l.speaker) === redoSlot) || (redoSpeaker && l.speaker === redoSpeaker)) && state.lines[l.key]?.status !== 'submitted');
     // Lines whose voice hasn't been chosen yet are skipped with one message, not one error per line.
     const missing = new Map();
     const ready = lines.filter(l => { const v = voiceOf(l.speaker); if (v.voice) return true; missing.set(v.slot, (missing.get(v.slot) || 0) + 1); return false; });

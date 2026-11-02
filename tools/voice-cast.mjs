@@ -41,7 +41,10 @@ export function buildCast(root) {
   const camp = JSON.parse(fs.readFileSync(path.join(root, 'www/cases/_campaign.json'), 'utf8'));
   // People who must keep one voice across cases: the recurring cast and every face in imageContinuity.
   const fixed = new Map();
-  for (const rc of camp.recurringCast) fixed.set(norm(rc.name), `rc-${rc.id.replace(/^rc_/, '')}`);
+  // Mwalimu and Halima already have the voices chosen for their calls and texts (pick mwalimu / pick halima):
+  // when either is interviewed in a case, it is the same voice.
+  const LEADS = { rc_mwalimu: 'mwalimu', rc_halima: 'halima' };
+  for (const rc of camp.recurringCast) fixed.set(norm(rc.name), LEADS[rc.id] || `rc-${rc.id.replace(/^rc_/, '')}`);
   for (const ic of camp.imageContinuity || []) if (!fixed.has(ic.key)) fixed.set(ic.key, `rc-${ic.key.replace(/\s+/g, '-')}`);
 
   // Size each bucket by the most same-bucket speakers in any one case, plus two for variety.
@@ -84,7 +87,7 @@ export function buildCast(root) {
       let slot;
       if (fx) {
         slot = fx;
-        if (!slots[slot]) slots[slot] = { gender: g, band: bandOf(p.age), heritage: her, fixed: true,
+        if (!slots[slot] && !Object.values(LEADS).includes(slot)) slots[slot] = { gender: g, band: bandOf(p.age), heritage: her, fixed: true,
           description: `${her === 'asian' ? 'A Kenyan Asian' : her === 'european' ? 'A Kenyan-born European' : 'A Kenyan'} ${g === 'f' ? 'woman' : 'man'}, about ${p.age || 45}, ${p.occupation}. ${her === 'european' ? 'English softened by a lifetime in Kenya.' : 'A natural Kenyan English accent.'} Sounds like an ordinary person, never a performer.` };
       } else {
         const k = `${her ? her + '-' : ''}${g}-${her ? 'any' : bandOf(p.age)}`;

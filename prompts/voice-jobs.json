@@ -23638,5 +23638,41 @@
   "submitted": "2026-11-02T16:47:26.550Z",
   "state": "JOB_STATE_SUCCEEDED",
   "fetched": true
+ },
+ {
+  "name": "batches/ezj96zu1382lmww766wju1hdorm83ixlgxip",
+  "label": "r7",
+  "inFile": "prompts/batches/voice-r7-2026-11-02T17-11-59-183Z.in.jsonl",
+  "keys": [
+   "halima/38062853",
+   "halima/702a2f2d",
+   "halima/0bff80c5",
+   "halima/da50b31e"
+  ],
+  "lines": {
+   "halima/38062853": {
+    "speaker": "halima",
+    "text": "I can't tell you anything about that.",
+    "where": "halima generic"
+   },
+   "halima/702a2f2d": {
+    "speaker": "halima",
+    "text": "I don't know. Ask someone else.",
+    "where": "halima generic"
+   },
+   "halima/0bff80c5": {
+    "speaker": "halima",
+    "text": "That's all I know.",
+    "where": "halima generic"
+   },
+   "halima/da50b31e": {
+    "speaker": "halima",
+    "text": "Nothing. I didn't see anything about that.",
+    "where": "halima generic"
+   }
+  },
+  "submitted": "2026-11-02T17:12:12.463Z",
+  "state": "JOB_STATE_RUNNING",
+  "fetched": false
  }
 ]
