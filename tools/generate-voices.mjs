@@ -10,7 +10,13 @@
 //   node tools/generate-voices.mjs pick mwalimu 2          choose candidate 2 (or a library voice id, or a prebuilt name)
 //   node tools/generate-voices.mjs say mwalimu "text"      one test line with the chosen voice → review/voices/say-….wav
 //   node tools/generate-voices.mjs lines [--region 1]      compile every line to voice and print the count and cost
-//   node tools/generate-voices.mjs generate [--speaker mwalimu] [--region 1]   record every line not yet recorded
+//   node tools/generate-voices.mjs generate [--speaker mwalimu] [--region 1] [--limit N]   record lines not yet recorded,
+//                                                          one request each. Stops cleanly at the daily limit (100 a day on
+//                                                          Tier 1 for the 3.8 TTS models); run it again the next day to resume.
+//   node tools/generate-voices.mjs generate --batch [--region 1] [--limit N]   send them as one Batch API job instead:
+//                                                          half price, not counted against the 100-a-day limit
+//   node tools/generate-voices.mjs status                  state of submitted voice batch jobs
+//   node tools/generate-voices.mjs fetch                   download finished batch jobs and save the recordings
 //   node tools/generate-voices.mjs review                  review/voices.html: listen to every line, tick rejects
 //   node tools/generate-voices.mjs redo --rejects          re-record the lines in prompts/voice-rejects.txt
 //   node tools/generate-voices.mjs report                  counts and spend
@@ -27,13 +33,13 @@ import { GENERIC_REPLIES } from '../www/engine/state.js';
 const MODEL = process.env.KESI_TTS_MODEL || 'gemini-3.8-flash-tts';
 // Google's pricing page, read 2 November 2026: $0.50 / 1M text tokens and $9.00 / 1M audio tokens through 2026,
 // doubling on 1 January 2027; audio is 25 tokens a second. Voice design was not priced on that page.
-const PRICE = { textPerM: 0.5, audioPerM: 9.0, audioPerM2027: 18.0, audioTokPerSec: 25 };
+const PRICE = { textPerM: 0.5, audioPerM: 9.0, audioPerM2027: 18.0, audioTokPerSec: 25, batchFactor: 0.5 };  // batch: half (pricing page, 2 Nov 2026)
 const CHARS_PER_SEC = 13.75;                       // about 150 words a minute
 const ROOT = process.cwd();
 const P = (...a) => path.join(ROOT, ...a);
 const readJSON = (f, d) => (fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : d);
 const writeJSON = (f, v) => { fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, JSON.stringify(v, null, 1)); };
-const CAST_F = P('prompts/voices.json'), STATE_F = P('prompts/voice-state.json'), MAN_F = P('www/audio/voice/manifest.json');
+const CAST_F = P('prompts/voices.json'), STATE_F = P('prompts/voice-state.json'), MAN_F = P('www/audio/voice/manifest.json'), JOBS_F = P('prompts/voice-jobs.json');
 
 // Who speaks, how they sound, and the delivery note sent with every line. The design descriptions are
 // for a Kenyan listener (and the cultural reader) to judge; nothing here names a community.
@@ -63,7 +69,8 @@ const flag = (name) => { const i = rest.indexOf(name); return i >= 0 ? rest[i + 
 const cast = readJSON(CAST_F, { model: MODEL, speakers: {} });
 const state = readJSON(STATE_F, { spent: 0, lines: {} });
 const manifest = readJSON(MAN_F, {});
-const save = () => { writeJSON(CAST_F, cast); writeJSON(STATE_F, state); writeJSON(MAN_F, manifest); };
+const jobs = readJSON(JOBS_F, []);
+const save = () => { writeJSON(CAST_F, cast); writeJSON(STATE_F, state); writeJSON(MAN_F, manifest); writeJSON(JOBS_F, jobs); };
 
 let ai;
 async function client() {
@@ -120,6 +127,9 @@ const estimate = (lines) => {
 
 // ── Synthesis ──────────────────────────────────────────────────────────────────────────────────────────
 function audioFrom(resp) {
+  // generateContent / batch output: candidates[0].content.parts[].inlineData
+  const part = resp?.candidates?.[0]?.content?.parts?.find(p => (p.inlineData || p.inline_data)?.data);
+  if (part) { const d = part.inlineData || part.inline_data; return { data: d.data, mime: d.mimeType || d.mime_type || 'audio/L16;rate=24000' }; }
   const cands = [resp?.output_audio, ...(resp?.outputs || []), ...(resp?.output || [])];
   for (const c of cands) {
     if (!c) continue;
@@ -171,39 +181,130 @@ async function synth(speaker, text, note) {
   return toWav(Buffer.from(a.data, 'base64'), a.mime);
 }
 
+// Save one recording: AAC m4a when ffmpeg is there, WAV otherwise; then the manifest and the line's state.
+function storeLine(l, wav, ff, factor = 1) {
+  const base = P('www/audio/voice', l.key);
+  fs.mkdirSync(path.dirname(base), { recursive: true });
+  let file = `${l.key}.wav`;
+  if (ff) {
+    const tmp = base + '.tmp.wav'; fs.writeFileSync(tmp, wav);
+    const r = spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', tmp, '-ac', '1', '-c:a', 'aac', '-b:a', '56k', base + '.m4a']);
+    fs.unlinkSync(tmp);
+    if (r.status === 0) { file = `${l.key}.m4a`; if (fs.existsSync(base + '.wav')) fs.unlinkSync(base + '.wav'); }
+    else fs.writeFileSync(base + '.wav', wav);
+  } else fs.writeFileSync(base + '.wav', wav);
+  const secs = wavSeconds(wav);
+  const usd = factor * (secs * PRICE.audioTokPerSec * PRICE.audioPerM + (l.text.length / 4 + 40) * PRICE.textPerM) / 1e6;
+  manifest[l.key] = file;
+  state.lines[l.key] = { status: 'done', speaker: l.speaker, text: l.text, where: l.where, secs: +secs.toFixed(1), file, at: new Date().toISOString() };
+  state.spent = +(state.spent + usd).toFixed(4);
+  return secs;
+}
+const isDaily = msg => /per day|PerDay|daily/i.test(msg);
+const isRate = msg => /RESOURCE_EXHAUSTED|429|rate limit/i.test(msg);
+
 async function record(lines, notes = {}) {
   const ff = hasFfmpeg();
   if (!ff) console.log('ffmpeg not found: saving WAV (large). Install it for small AAC files:  sudo apt-get update && sudo apt-get install -y ffmpeg');
-  let ok = 0, failed = 0;
+  let ok = 0, failed = 0, stopped = null;
   for (const l of lines) {
-    try {
-      const wav = await synth(l.speaker, l.text, notes[l.key]);
-      const base = P('www/audio/voice', l.key);
-      fs.mkdirSync(path.dirname(base), { recursive: true });
-      let file = `${l.key}.wav`;
-      if (ff) {
-        const tmp = base + '.tmp.wav'; fs.writeFileSync(tmp, wav);
-        const r = spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', tmp, '-ac', '1', '-c:a', 'aac', '-b:a', '56k', base + '.m4a']);
-        fs.unlinkSync(tmp);
-        if (r.status === 0) { file = `${l.key}.m4a`; if (fs.existsSync(base + '.wav')) fs.unlinkSync(base + '.wav'); }
-        else fs.writeFileSync(base + '.wav', wav);
-      } else fs.writeFileSync(base + '.wav', wav);
-      const secs = wavSeconds(wav);
-      const usd = (secs * PRICE.audioTokPerSec * PRICE.audioPerM + (l.text.length / 4 + 40) * PRICE.textPerM) / 1e6;
-      manifest[l.key] = file;
-      state.lines[l.key] = { status: 'done', speaker: l.speaker, text: l.text, where: l.where, secs: +secs.toFixed(1), file, at: new Date().toISOString() };
-      state.spent = +(state.spent + usd).toFixed(4);
-      ok++;
-      console.log(`  ✓ ${l.key}  ${secs.toFixed(1)} s  ${l.where}`);
-    } catch (e) {
-      failed++;
-      state.lines[l.key] = { ...(state.lines[l.key] || {}), status: 'failed', speaker: l.speaker, text: l.text, where: l.where, error: String(e.message || e).slice(0, 200) };
-      console.log(`  ✗ ${l.key}  ${e.message || e}`);
-      if (/RESOURCE_EXHAUSTED|429/.test(String(e.message))) await new Promise(r => setTimeout(r, 8000));
+    for (let attempt = 1; attempt <= 3; attempt++) {
+      try {
+        const wav = await synth(l.speaker, l.text, notes[l.key]);
+        const secs = storeLine(l, wav, ff);
+        ok++; console.log(`  ✓ ${l.key}  ${secs.toFixed(1)} s  ${l.where}`);
+        break;
+      } catch (e) {
+        const msg = String(e.message || e);
+        // The daily quota: every further request would fail too, so stop here. Nothing is lost; the next run resumes.
+        if (isRate(msg) && isDaily(msg)) { stopped = (msg.match(/retry in ([\dhms]+)/i) || [])[1] || 'about a day'; break; }
+        if (isRate(msg) && attempt < 3) { console.log(`  … rate limited, waiting a minute`); await new Promise(r => setTimeout(r, 61000)); continue; }
+        failed++;
+        state.lines[l.key] = { ...(state.lines[l.key] || {}), status: 'failed', speaker: l.speaker, text: l.text, where: l.where, error: msg.slice(0, 200) };
+        console.log(`  ✗ ${l.key}  ${msg.slice(0, 200)}`);
+        break;
+      }
     }
     save();
+    if (stopped) break;
   }
   console.log(`${ok} recorded, ${failed} failed. Spent so far ≈ $${state.spent.toFixed(2)}.`);
+  if (stopped) {
+    const left = lines.length - ok - failed;
+    console.log(`Stopped at Google's daily limit for ${cast.model || MODEL} (100 requests a day on Tier 1). ${left} lines are still to record.`);
+    console.log(`Either run the same command again in ${stopped}, or send the rest as one batch job (half price, outside the daily limit):`);
+    console.log(`  node tools/generate-voices.mjs generate --batch${flag('--region') ? ` --region ${flag('--region')}` : ''}`);
+  }
+}
+
+// ── Batch: one JSONL job for many lines (Batch API) ──────────────────────────────────────────────────
+function batchRequest(l) {
+  const { voice, person } = voiceOf(l.speaker);
+  return { key: l.key, request: {
+    contents: [{ role: 'user', parts: [{ text: l.text, speech_metadata: { style: styleOf(l.speaker, person) } }] }],
+    generation_config: { response_modalities: ['AUDIO'], speech_config: { voice_config: { voice } } },
+  } };
+}
+async function submitBatch(lines, label) {
+  if (!lines.length) { console.log('Nothing to submit.'); return; }
+  const g = await client();
+  fs.mkdirSync(P('prompts/batches'), { recursive: true });
+  const stamp = new Date().toISOString().replace(/[:.]/g, '-');
+  const inFile = P('prompts/batches', `voice-${label}-${stamp}.in.jsonl`);
+  fs.writeFileSync(inFile, lines.map(l => JSON.stringify(batchRequest(l))).join('\n') + '\n');
+  const up = await g.files.upload({ file: inFile, config: { mimeType: 'jsonl', displayName: path.basename(inFile) } });
+  let job;
+  try { job = await g.batches.create({ model: cast.model || MODEL, src: up.name, config: { displayName: `kesi-voice-${label}` } }); }
+  catch (e) {
+    const msg = String(e.message || e);
+    console.log(`Google refused the batch job: ${msg.slice(0, 300)}`);
+    if (/not supported|NOT_FOUND|404/i.test(msg)) console.log('The Batch API does not take this text-to-speech model yet. Record a day at a time instead:  node tools/generate-voices.mjs generate --region N');
+    return;
+  }
+  jobs.push({ name: job.name, label, inFile: path.relative(ROOT, inFile), keys: lines.map(l => l.key), lines: Object.fromEntries(lines.map(l => [l.key, { speaker: l.speaker, text: l.text, where: l.where }])), submitted: new Date().toISOString(), state: job.state || 'JOB_STATE_PENDING', fetched: false });
+  for (const l of lines) state.lines[l.key] = { ...(state.lines[l.key] || {}), status: 'submitted', job: job.name, speaker: l.speaker, text: l.text, where: l.where };
+  save();
+  const e = estimate(lines);
+  console.log(`Submitted ${lines.length} lines as ${job.name}: about ${e.minutes.toFixed(1)} minutes of speech, ≈ $${(e.usd * PRICE.batchFactor).toFixed(2)} at batch price.`);
+  console.log('Google aims to finish within 24 hours (usually much sooner). Check with  node tools/generate-voices.mjs status , then  fetch .');
+}
+async function batchStatus() {
+  if (!jobs.length) return console.log('No voice batch jobs yet.');
+  const g = await client();
+  for (const j of jobs.filter(j => !j.fetched)) {
+    const b = await g.batches.get({ name: j.name }); j.state = b.state;
+    console.log(`${j.name}  ${String(j.keys.length).padStart(4)} lines  ${b.state}  (submitted ${j.submitted.slice(0, 16).replace('T', ' ')})`);
+  }
+  for (const j of jobs.filter(j => j.fetched)) console.log(`${j.name}  fetched`);
+  save();
+}
+async function fetchJobs() {
+  const g = await client(); const ff = hasFfmpeg();
+  if (!jobs.some(j => !j.fetched)) return console.log('No batch jobs waiting.');
+  for (const j of jobs.filter(j => !j.fetched)) {
+    const b = await g.batches.get({ name: j.name }); j.state = b.state;
+    if (['JOB_STATE_FAILED', 'JOB_STATE_CANCELLED', 'JOB_STATE_EXPIRED'].includes(b.state)) {
+      for (const k of j.keys) if (state.lines[k]?.status === 'submitted') state.lines[k].status = 'failed';
+      j.fetched = true; save();
+      console.log(`${j.name} ${b.state}${b.error ? `: ${b.error.message || JSON.stringify(b.error)}` : ''}. Its ${j.keys.length} lines can be sent again.`); continue;
+    }
+    if (b.state !== 'JOB_STATE_SUCCEEDED') { console.log(`${j.name} still ${b.state}`); continue; }
+    const outFile = P('prompts/batches', path.basename(j.inFile).replace('.in.jsonl', '.out.jsonl'));
+    await g.files.download({ file: b.dest.fileName, downloadPath: outFile });
+    const rows = fs.readFileSync(outFile, 'utf8').split('\n').filter(Boolean);
+    let ok = 0, bad = 0;
+    for (const [i, row] of rows.entries()) {
+      const o = JSON.parse(row); const key = o.key || j.keys[i]; const l = { key, ...j.lines[key] };
+      try {
+        if (o.error) throw new Error(o.error.message || JSON.stringify(o.error));
+        const a = audioFrom(o.response || o); if (!a) throw new Error('no audio in the response');
+        storeLine(l, toWav(Buffer.from(a.data, 'base64'), a.mime), ff, PRICE.batchFactor); ok++;
+      } catch (e) { state.lines[key] = { ...(state.lines[key] || {}), ...l, status: 'failed', error: String(e.message || e).slice(0, 200) }; bad++; }
+    }
+    if (rows.length !== j.keys.length) console.log(`  note: ${rows.length} results for ${j.keys.length} requests`);
+    j.fetched = true; save();
+    console.log(`${j.name}: ${ok} saved, ${bad} failed. Spent so far ≈ $${state.spent.toFixed(2)}.${bad ? ' See  report ; failed lines go again with the next  generate .' : ''}`);
+  }
 }
 
 // ── Commands ───────────────────────────────────────────────────────────────────────────────────────────
@@ -311,16 +412,21 @@ switch (cmd) {
     const region = +(flag('--region') || 1), who = flag('--speaker');
     const redoSlot = flag('--redo-slot'); const cf = castFile();
     const slotOf = sp => cf?.assign?.[sp] || sp;
-    const lines = compileLines(region).filter(l => (!who || l.speaker === who || slotOf(l.speaker) === who) && (!manifest[l.key] || (redoSlot && slotOf(l.speaker) === redoSlot)));
+    const lines = compileLines(region).filter(l => (!who || l.speaker === who || slotOf(l.speaker) === who) && (!manifest[l.key] || (redoSlot && slotOf(l.speaker) === redoSlot)) && state.lines[l.key]?.status !== 'submitted');
     // Lines whose voice hasn't been chosen yet are skipped with one message, not one error per line.
     const missing = new Map();
     const ready = lines.filter(l => { const v = voiceOf(l.speaker); if (v.voice) return true; missing.set(v.slot, (missing.get(v.slot) || 0) + 1); return false; });
     for (const [slot, n] of missing) console.log(`Skipping ${n} lines for ${slot}: no voice yet (${SPEAKERS[slot] ? `pick ${slot} N` : 'design --cast'}).`);
-    const e = estimate(ready);
-    console.log(`Recording ${ready.length} lines, about ${e.minutes.toFixed(1)} minutes of speech, ≈ $${e.usd.toFixed(2)}.`);
-    await record(ready);
+    const limit = +flag('--limit') || ready.length;
+    const todo = ready.slice(0, limit);
+    if (rest.includes('--batch')) { await submitBatch(todo, `r${region}${who ? '-' + who : ''}`); break; }
+    const e = estimate(todo);
+    console.log(`Recording ${todo.length} lines, about ${e.minutes.toFixed(1)} minutes of speech, ≈ $${e.usd.toFixed(2)}.`);
+    await record(todo);
     break;
   }
+  case 'status': await batchStatus(); break;
+  case 'fetch': await fetchJobs(); break;
   case 'redo': {
     const notes = {}; let keys = rest.filter(x => !x.startsWith('--'));
     if (rest.includes('--rejects')) {
@@ -349,9 +455,9 @@ ${rows.map(([k, l]) => `<div class="row" data-key="${k}"><b>${esc(l.speaker)}</b
   case 'report': {
     const ls = Object.values(state.lines);
     const by = s => ls.filter(l => l.status === s).length;
-    console.log(`${ls.length} lines: ${by('done')} recorded, ${by('failed')} failed. ${ls.filter(l => l.status === 'done').reduce((s, l) => s + (l.secs || 0), 0).toFixed(0)} s of speech. Spent ≈ $${(state.spent || 0).toFixed(2)}.`);
+    console.log(`${ls.length} lines: ${by('done')} recorded, ${by('submitted')} waiting in batch jobs, ${by('failed')} failed. ${ls.filter(l => l.status === 'done').reduce((s, l) => s + (l.secs || 0), 0).toFixed(0)} s of speech. Spent ≈ $${(state.spent || 0).toFixed(2)}.`);
     for (const [k, l] of Object.entries(state.lines).filter(([, l]) => l.status === 'failed')) console.log(`  failed ${k}: ${l.error}`);
     break;
   }
-  default: console.log(fs.readFileSync(new URL(import.meta.url), 'utf8').split('\n').slice(0, 18).join('\n'));
+  default: console.log(fs.readFileSync(new URL(import.meta.url), 'utf8').split('\n').slice(0, 24).join('\n'));
 }
