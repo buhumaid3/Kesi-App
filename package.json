@@ -16,7 +16,11 @@
     "ios:sync": "node tools/build.mjs && npx cap sync ios",
     "ios:assets": "npx @capacitor/assets generate --ios --iconBackgroundColor '#1A110C' --splashBackgroundColor '#1A110C' --splashBackgroundColorDark '#120C08'",
     "icon": "node tools/make-icon.mjs",
-    "place:auto": "node tools/auto-place.mjs"
+    "place:auto": "node tools/auto-place.mjs",
+    "images:audit": "node tools/images-audit.mjs",
+    "images:check": "node tools/images-audit.mjs --region 1 --gaps",
+    "images:briefs": "node tools/apply-briefs.mjs",
+    "test:images": "node tests/ui-images.mjs http://127.0.0.1:5173"
   },
   "engines": {
     "node": ">=22"

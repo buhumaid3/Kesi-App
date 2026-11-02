@@ -135,7 +135,11 @@
         "fact": "f_jobbook_317"
       },
       "at": "plc_office",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 30s, long braids, a denim jacket, a woven market tote on her shoulder, puzzled and impatient, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_aisha",
@@ -150,7 +154,11 @@
         "start": true
       },
       "at": "plc_aisha_shop",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 40s, a dark blue hijab neatly pinned, a long grey cardigan, reading glasses in one hand, alert and observant, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_mamaw",
@@ -166,7 +174,11 @@
       },
       "at": "plc_kibanda",
       "statementOnly": true,
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 50s, a kitchen apron over a printed dress, a patterned headscarf, a round cheerful face gone serious, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -277,7 +289,10 @@
         "f_body_blow"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "the concrete floor beside a cluttered electronics workbench, a heavy bench transformer lying on its side, chalk marks on the floor, scattered screws and a dropped soldering iron stand, police tape across the doorway behind, no body visible"
+      }
     },
     {
       "id": "ev_tagstub",
@@ -344,7 +359,10 @@
         "f_tray"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a tiny metal smartphone SIM tray lying among solder drips, wire offcuts and dust on a concrete floor under a workbench, close-up"
+      }
     },
     {
       "id": "ev_calendar",

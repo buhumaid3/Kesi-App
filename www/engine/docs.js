@@ -20,7 +20,7 @@ const TITLE = {
 
 // ── The case-photo treatment (§5.6): border, grain, tilt, clip or tape, a label in Amani's hand ────────
 export function photo({ src, label, kind = 'object', id, onZoom, small = false }) {
-  const fig = h('figure', { class: `photo photo--${kind} ${small ? 'photo--small' : ''}`, style: { '--tilt': `${tilt(id || src)}deg` } });
+  const fig = h('figure', { class: `photo photo--${kind} ${small ? 'photo--small' : ''}`, 'data-src': src, style: { '--tilt': `${tilt(id || src)}deg` } });
   const frame = h('div', { class: 'photo-img' });
   const img = h('img', { src, alt: label || '', loading: 'lazy', decoding: 'async', draggable: 'false', 'data-depth': kind === 'location' || kind === 'scene' ? '1' : null });
   img.addEventListener('error', () => { frame.classList.add('is-pending'); img.remove(); frame.append(h('span', { class: 'pending' }, 'Photo pending')); });

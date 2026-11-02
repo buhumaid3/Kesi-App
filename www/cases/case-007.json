@@ -136,7 +136,11 @@
         "start": true
       },
       "at": "plc_butchery",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 40s, a white butcher's coat over a striped apron, a white cap, trimmed grey beard, watchful, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_grace",
@@ -151,7 +155,11 @@
         "start": true
       },
       "at": "plc_stall39",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 20s, short natural hair, an office blouse and a work lanyard, a bunch of red roses wrapped in brown paper in her arms, shocked, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_apprentice",
@@ -167,7 +175,11 @@
         "start": true
       },
       "at": "plc_stall37",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan young man, about 20, thin, a canvas apron with damp patches, a cap worn backwards, nervous and eager to please, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_verger",
@@ -183,7 +195,11 @@
         "fact": "f_thorns"
       },
       "at": "plc_cathedral",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 60, a plain black verger's gown over a white shirt, neat grey hair, dignified and solemn, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -311,7 +327,10 @@
         "f_body_blow"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "the floor of a flower stall in a covered market aisle, a toppled metal flower-bucket stand, spilled water and scattered carnations on the concrete, buckets of roses and lilies behind, police tape across the aisle, no body visible"
+      }
     },
     {
       "id": "ev_pollen",
@@ -343,7 +362,10 @@
         "f_beatrice_lilies_sealed"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a cardboard flower box on a market stall counter, clear packing tape still sealed across the lid, through a torn corner tight green lily buds with no open flowers, close-up"
+      }
     },
     {
       "id": "ev_stalls",
@@ -423,7 +445,8 @@
         "f_scratches"
       ],
       "gate": null,
-      "image": null
+      "image": null,
+      "noPhoto": "Scratches on a person's hands are an injury, and photos never show injuries (design doc §5): this exhibit stays the examination note."
     },
     {
       "id": "ev_thorns",
@@ -483,7 +506,10 @@
         "f_lucy_apron"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a canvas market apron hanging from a nail on a wooden stall post, fresh orange pollen smears rubbed down the front, damp patches where someone tried to wipe it clean"
+      }
     }
   ],
   "facts": [

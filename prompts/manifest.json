@@ -201,6 +201,26 @@
  },
  {
   "case": 1,
+  "id": "p_mercy",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/001/p_mercy.webp",
+  "reference": null
+ },
+ {
+  "case": 1,
+  "id": "p_wanjiru",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/001/p_wanjiru.webp",
+  "reference": null
+ },
+ {
+  "case": 1,
   "id": "loc_stage",
   "kind": "location",
   "ratio": "3:2",
@@ -287,12 +307,62 @@
  },
  {
   "case": 2,
+  "id": "p_nancy",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/002/p_nancy.webp",
+  "reference": null
+ },
+ {
+  "case": 2,
+  "id": "p_ali",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/002/p_ali.webp",
+  "reference": null
+ },
+ {
+  "case": 2,
+  "id": "p_joyce",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/002/p_joyce.webp",
+  "reference": null
+ },
+ {
+  "case": 2,
+  "id": "p_kioko",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/002/p_kioko.webp",
+  "reference": null
+ },
+ {
+  "case": 2,
   "id": "loc_kilele",
   "kind": "location",
   "ratio": "3:2",
   "size": "2K",
   "openaiSize": "1536x1024",
   "file": "img/cases/002/loc_kilele.webp",
+  "reference": null
+ },
+ {
+  "case": 2,
+  "id": "loc_bidii",
+  "kind": "location",
+  "ratio": "3:2",
+  "size": "2K",
+  "openaiSize": "1536x1024",
+  "file": "img/cases/002/loc_bidii.webp",
   "reference": null
  },
  {
@@ -304,6 +374,16 @@
   "openaiSize": "1536x1024",
   "file": "img/cases/002/ev_body.webp",
   "reference": "img/cases/002/loc_kilele.webp"
+ },
+ {
+  "case": 2,
+  "id": "ev_tin",
+  "kind": "evidence",
+  "ratio": "1:1",
+  "size": "1K",
+  "openaiSize": "1024x1024",
+  "file": "img/cases/002/ev_tin.webp",
+  "reference": null
  },
  {
   "case": 2,
@@ -323,6 +403,16 @@
   "size": "1K",
   "openaiSize": "1024x1024",
   "file": "img/cases/002/ev_bin.webp",
+  "reference": null
+ },
+ {
+  "case": 2,
+  "id": "ev_shelf",
+  "kind": "evidence",
+  "ratio": "1:1",
+  "size": "1K",
+  "openaiSize": "1024x1024",
+  "file": "img/cases/002/ev_shelf.webp",
   "reference": null
  },
  {
@@ -367,6 +457,26 @@
  },
  {
   "case": 3,
+  "id": "p_mwikali",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/003/p_mwikali.webp",
+  "reference": null
+ },
+ {
+  "case": 3,
+  "id": "p_gideon",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/003/p_gideon.webp",
+  "reference": null
+ },
+ {
+  "case": 3,
   "id": "loc_booking",
   "kind": "location",
   "ratio": "3:2",
@@ -384,6 +494,16 @@
   "openaiSize": "1536x1024",
   "file": "img/cases/003/loc_yard.webp",
   "reference": null
+ },
+ {
+  "case": 3,
+  "id": "ev_body",
+  "kind": "scene",
+  "ratio": "4:3",
+  "size": "2K",
+  "openaiSize": "1536x1024",
+  "file": "img/cases/003/ev_body.webp",
+  "reference": "img/cases/003/loc_booking.webp"
  },
  {
   "case": 3,
@@ -453,6 +573,36 @@
  },
  {
   "case": 4,
+  "id": "p_amos",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/004/p_amos.webp",
+  "reference": null
+ },
+ {
+  "case": 4,
+  "id": "p_selina",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/004/p_selina.webp",
+  "reference": null
+ },
+ {
+  "case": 4,
+  "id": "p_kioskowner",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/004/p_kioskowner.webp",
+  "reference": null
+ },
+ {
+  "case": 4,
   "id": "loc_hotel",
   "kind": "location",
   "ratio": "3:2",
@@ -460,6 +610,16 @@
   "openaiSize": "1536x1024",
   "file": "img/cases/004/loc_hotel.webp",
   "reference": null
+ },
+ {
+  "case": 4,
+  "id": "ev_body",
+  "kind": "scene",
+  "ratio": "4:3",
+  "size": "2K",
+  "openaiSize": "1536x1024",
+  "file": "img/cases/004/ev_body.webp",
+  "reference": "img/cases/004/loc_hotel.webp"
  },
  {
   "case": 4,
@@ -519,6 +679,36 @@
   "size": "1K",
   "openaiSize": "1024x1536",
   "file": "img/cases/005/p_fredrick.webp",
+  "reference": null
+ },
+ {
+  "case": 5,
+  "id": "p_esther",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/005/p_esther.webp",
+  "reference": null
+ },
+ {
+  "case": 5,
+  "id": "p_bakari",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/005/p_bakari.webp",
+  "reference": null
+ },
+ {
+  "case": 5,
+  "id": "p_dispatcher",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/005/p_dispatcher.webp",
   "reference": null
  },
  {
@@ -596,6 +786,36 @@
  },
  {
   "case": 6,
+  "id": "p_esther",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/006/p_esther.webp",
+  "reference": null
+ },
+ {
+  "case": 6,
+  "id": "p_aisha",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/006/p_aisha.webp",
+  "reference": null
+ },
+ {
+  "case": 6,
+  "id": "p_mamaw",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/006/p_mamaw.webp",
+  "reference": null
+ },
+ {
+  "case": 6,
   "id": "loc_signal",
   "kind": "location",
   "ratio": "3:2",
@@ -603,6 +823,16 @@
   "openaiSize": "1536x1024",
   "file": "img/cases/006/loc_signal.webp",
   "reference": null
+ },
+ {
+  "case": 6,
+  "id": "ev_body",
+  "kind": "scene",
+  "ratio": "4:3",
+  "size": "2K",
+  "openaiSize": "1536x1024",
+  "file": "img/cases/006/ev_body.webp",
+  "reference": "img/cases/006/loc_signal.webp"
  },
  {
   "case": 6,
@@ -616,6 +846,16 @@
   "transcribe": [
    "318"
   ]
+ },
+ {
+  "case": 6,
+  "id": "ev_tray",
+  "kind": "evidence",
+  "ratio": "1:1",
+  "size": "1K",
+  "openaiSize": "1024x1024",
+  "file": "img/cases/006/ev_tray.webp",
+  "reference": null
  },
  {
   "case": 6,
@@ -673,6 +913,46 @@
  },
  {
   "case": 7,
+  "id": "p_ahmed",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/007/p_ahmed.webp",
+  "reference": null
+ },
+ {
+  "case": 7,
+  "id": "p_grace",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/007/p_grace.webp",
+  "reference": null
+ },
+ {
+  "case": 7,
+  "id": "p_apprentice",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/007/p_apprentice.webp",
+  "reference": null
+ },
+ {
+  "case": 7,
+  "id": "p_verger",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/007/p_verger.webp",
+  "reference": null
+ },
+ {
+  "case": 7,
   "id": "loc_market",
   "kind": "location",
   "ratio": "3:2",
@@ -683,12 +963,42 @@
  },
  {
   "case": 7,
+  "id": "ev_body",
+  "kind": "scene",
+  "ratio": "4:3",
+  "size": "2K",
+  "openaiSize": "1536x1024",
+  "file": "img/cases/007/ev_body.webp",
+  "reference": "img/cases/007/loc_market.webp"
+ },
+ {
+  "case": 7,
   "id": "ev_pollen",
   "kind": "evidence",
   "ratio": "1:1",
   "size": "1K",
   "openaiSize": "1024x1024",
   "file": "img/cases/007/ev_pollen.webp",
+  "reference": null
+ },
+ {
+  "case": 7,
+  "id": "ev_stock",
+  "kind": "evidence",
+  "ratio": "1:1",
+  "size": "1K",
+  "openaiSize": "1024x1024",
+  "file": "img/cases/007/ev_stock.webp",
+  "reference": null
+ },
+ {
+  "case": 7,
+  "id": "ev_lucy_apron",
+  "kind": "evidence",
+  "ratio": "1:1",
+  "size": "1K",
+  "openaiSize": "1024x1024",
+  "file": "img/cases/007/ev_lucy_apron.webp",
   "reference": null
  },
  {
@@ -733,6 +1043,46 @@
  },
  {
   "case": 8,
+  "id": "p_janet",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/008/p_janet.webp",
+  "reference": null
+ },
+ {
+  "case": 8,
+  "id": "p_musa",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/008/p_musa.webp",
+  "reference": null
+ },
+ {
+  "case": 8,
+  "id": "p_simon_w",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/008/p_simon_w.webp",
+  "reference": null
+ },
+ {
+  "case": 8,
+  "id": "p_foreman",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/008/p_foreman.webp",
+  "reference": null
+ },
+ {
+  "case": 8,
   "id": "loc_station",
   "kind": "location",
   "ratio": "3:2",
@@ -740,6 +1090,16 @@
   "openaiSize": "1536x1024",
   "file": "img/cases/008/loc_station.webp",
   "reference": null
+ },
+ {
+  "case": 8,
+  "id": "ev_body",
+  "kind": "scene",
+  "ratio": "4:3",
+  "size": "2K",
+  "openaiSize": "1536x1024",
+  "file": "img/cases/008/ev_body.webp",
+  "reference": "img/cases/008/loc_station.webp"
  },
  {
   "case": 8,
@@ -796,6 +1156,36 @@
  },
  {
   "case": 9,
+  "id": "p_pendo",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/009/p_pendo.webp",
+  "reference": null
+ },
+ {
+  "case": 9,
+  "id": "p_victor",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/009/p_victor.webp",
+  "reference": null
+ },
+ {
+  "case": 9,
+  "id": "p_gikomba",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/009/p_gikomba.webp",
+  "reference": null
+ },
+ {
+  "case": 9,
   "id": "loc_shed",
   "kind": "location",
   "ratio": "3:2",
@@ -803,6 +1193,16 @@
   "openaiSize": "1536x1024",
   "file": "img/cases/009/loc_shed.webp",
   "reference": null
+ },
+ {
+  "case": 9,
+  "id": "ev_body",
+  "kind": "scene",
+  "ratio": "4:3",
+  "size": "2K",
+  "openaiSize": "1536x1024",
+  "file": "img/cases/009/ev_body.webp",
+  "reference": "img/cases/009/loc_shed.webp"
  },
  {
   "case": 9,
@@ -822,6 +1222,16 @@
   "size": "1K",
   "openaiSize": "1024x1024",
   "file": "img/cases/009/ev_photo.webp",
+  "reference": null
+ },
+ {
+  "case": 9,
+  "id": "ev_tin",
+  "kind": "evidence",
+  "ratio": "1:1",
+  "size": "1K",
+  "openaiSize": "1024x1024",
+  "file": "img/cases/009/ev_tin.webp",
   "reference": null
  },
  {
@@ -872,6 +1282,26 @@
   "size": "1K",
   "openaiSize": "1024x1536",
   "file": "img/cases/010/p_juma.webp",
+  "reference": null
+ },
+ {
+  "case": 10,
+  "id": "p_abdullahi",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/010/p_abdullahi.webp",
+  "reference": null
+ },
+ {
+  "case": 10,
+  "id": "p_zuhura",
+  "kind": "portrait",
+  "ratio": "3:4",
+  "size": "1K",
+  "openaiSize": "1024x1536",
+  "file": "img/cases/010/p_zuhura.webp",
   "reference": null
  },
  {

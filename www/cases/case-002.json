@@ -138,7 +138,11 @@
         "start": true
       },
       "at": "loc_kilele",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 40s, a blue cleaner's overall coat, hair tied back under a blue scarf, yellow rubber gloves tucked into the pocket, shaken and pale, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_ali",
@@ -153,7 +157,11 @@
         "fact": "f_nancy_ali"
       },
       "at": "plc_nextdoor",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 60, grey stubble, a heavy navy security greatcoat with plain buttons, a knitted black cap, a torch held at his chest, tired heavy-lidded eyes, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_joyce",
@@ -169,7 +177,11 @@
       },
       "at": "plc_kayole",
       "statementOnly": true,
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 20s, long braids tied up, a lilac knitted sweater, small gold stud earrings, worried and a little defensive, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_kioko",
@@ -185,7 +197,11 @@
       },
       "at": "plc_choir",
       "statementOnly": true,
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 50s, greying hair and moustache, a dark suit jacket over a pale blue shirt, reading glasses hanging on a cord, patient and courteous, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -308,7 +324,10 @@
           "text": "A row of cash ledgers, numbered by year. This year's is missing."
         }
       ],
-      "image": null
+      "image": {
+        "kind": "location",
+        "brief": "a small cramped freight-agency office on the 4th floor of an old Nairobi office block at dawn, two worn desks with old computers and stacks of delivery books, a grey steel shelf of thick cash ledgers on the right with a gap in the row, a metal office bin beside the nearest desk, a window onto city rooftops, fluorescent tube light, no people"
+      }
     }
   ],
   "evidence": [
@@ -386,7 +405,10 @@
         "f_tin_note"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "an open tin of cream-coloured emulsion paint standing on a paint-spattered drop cloth in a corridor, a wet brush laid across the lid, a folded handwritten note taped to the side of the tin"
+      }
     },
     {
       "id": "ev_print",
@@ -435,7 +457,10 @@
         "f_shelf_audit"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "a grey steel office shelf holding a row of thick cloth-bound cash ledgers lined up by year, one gap at the end of the row where the newest ledger should stand, a small whiteboard on the wall beside it with marker writing"
+      }
     },
     {
       "id": "ev_ali",

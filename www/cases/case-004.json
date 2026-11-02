@@ -137,7 +137,11 @@
         "start": true
       },
       "at": "loc_hotel",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 50s, heavy-set, a grey sweater vest over a collared shirt, a coat thrown on in a hurry, worried and irritated, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_selina",
@@ -152,7 +156,11 @@
         "fact": "f_lift_sheet"
       },
       "at": "loc_hotel",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 30s, short natural hair, grey technician's overalls with a plain patch, a head torch hanging around her neck, focused and tired, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_kioskowner",
@@ -168,7 +176,11 @@
       },
       "at": "plc_kiosk",
       "statementOnly": true,
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 50, a knitted brown cap, short grey beard, a checked shirt under a sleeveless padded jacket, cautious and polite, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -296,7 +308,10 @@
         "f_candle_unlit"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "a small hotel reception desk at night during a power cut, lit only by a torch beam, a desk drawer pulled half open with an unlit white candle and a box of matches inside, papers swept onto the floor, an office chair overturned behind the desk, no body visible"
+      }
     },
     {
       "id": "ev_clock",

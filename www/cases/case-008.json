@@ -135,7 +135,11 @@
         "start": true
       },
       "at": "plc_window3",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 20s, hair in a neat bun, a plain navy railway clerk's blazer, a pen on a cord around her neck, composed and precise, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_musa",
@@ -150,7 +154,11 @@
         "fact": "f_timetable_punch"
       },
       "at": "plc_train",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 60s, grey moustache, a plain navy inspector's jacket and peaked cap with no badge, a ticket punch on a chain, proud and stubborn, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_simon_w",
@@ -166,7 +174,11 @@
         "start": true
       },
       "at": "loc_station",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, a faded denim jacket, a shoe brush in one hand, polish on his fingertips, an easy smile gone cautious, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_foreman",
@@ -182,7 +194,11 @@
         "fact": "f_gate_kamal"
       },
       "at": "plc_bakery",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan Asian man, late 40s, a white bakery work coat dusted with flour, rimless glasses, short grey-black hair, businesslike, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -299,7 +315,10 @@
         "f_body_crate"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "the far end of a railway platform at dusk under station lights, a broken wooden crate of empty soda bottles on the platform edge, glass glinting on the concrete, police tape tied to an iron pillar, no body visible"
+      }
     },
     {
       "id": "ev_ticket",

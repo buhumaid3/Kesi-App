@@ -1,0 +1,123 @@
+{
+  "_about": "New image descriptions for region 1 (cases 1–10), written for every person, place and object exhibit that had none. Applied to the case files by  node tools/apply-briefs.mjs prompts/briefs/region-01.json . Style rules: design doc §5 (Kenyan, specific, everyday; no readable text, logos, real people, injuries or bodies). Amani is never shown.",
+  "1": {
+    "people": {
+      "p_mercy": "Kenyan woman, about 30, hair in neat cornrows under a red headscarf, a white vendor's apron over a navy fleece, metal tongs clipped to the apron pocket, calm watchful face, ID-photo framing",
+      "p_wanjiru": "Kenyan woman, late 40s, short relaxed hair, orange marshal's reflective vest over a grey cardigan, a two-way radio clipped at her shoulder, brisk no-nonsense expression, ID-photo framing"
+    }
+  },
+  "2": {
+    "people": {
+      "p_nancy": "Kenyan woman, mid 40s, a blue cleaner's overall coat, hair tied back under a blue scarf, yellow rubber gloves tucked into the pocket, shaken and pale, ID-photo framing",
+      "p_ali": "Kenyan man, about 60, grey stubble, a heavy navy security greatcoat with plain buttons, a knitted black cap, a torch held at his chest, tired heavy-lidded eyes, ID-photo framing",
+      "p_joyce": "Kenyan woman, mid 20s, long braids tied up, a lilac knitted sweater, small gold stud earrings, worried and a little defensive, ID-photo framing",
+      "p_kioko": "Kenyan man, late 50s, greying hair and moustache, a dark suit jacket over a pale blue shirt, reading glasses hanging on a cord, patient and courteous, ID-photo framing"
+    },
+    "locations": {
+      "loc_bidii": "a small cramped freight-agency office on the 4th floor of an old Nairobi office block at dawn, two worn desks with old computers and stacks of delivery books, a grey steel shelf of thick cash ledgers on the right with a gap in the row, a metal office bin beside the nearest desk, a window onto city rooftops, fluorescent tube light, no people"
+    },
+    "evidence": {
+      "ev_tin": "an open tin of cream-coloured emulsion paint standing on a paint-spattered drop cloth in a corridor, a wet brush laid across the lid, a folded handwritten note taped to the side of the tin",
+      "ev_shelf": "a grey steel office shelf holding a row of thick cloth-bound cash ledgers lined up by year, one gap at the end of the row where the newest ledger should stand, a small whiteboard on the wall beside it with marker writing"
+    }
+  },
+  "3": {
+    "people": {
+      "p_mwikali": "Kenyan woman, early 50s, a printed kanga tied as a headscarf, a thick brown cardigan against the early cold, warm but cautious face, ID-photo framing",
+      "p_gideon": "Kenyan man, about 40, navy mechanic's overalls with grease on the cuffs, a red rag over one shoulder, short beard, steady wary look, ID-photo framing"
+    },
+    "evidence": {
+      "ev_body": {
+        "kind": "scene",
+        "brief": "the bus booking-office counter seen from the public side just after dawn, a heavy steel ticket punch lying on the floor tiles below the counter, ticket stubs scattered across the floor, a stool knocked over, police tape across the doorway, no body visible"
+      }
+    }
+  },
+  "4": {
+    "people": {
+      "p_amos": "Kenyan man, late 50s, heavy-set, a grey sweater vest over a collared shirt, a coat thrown on in a hurry, worried and irritated, ID-photo framing",
+      "p_selina": "Kenyan woman, mid 30s, short natural hair, grey technician's overalls with a plain patch, a head torch hanging around her neck, focused and tired, ID-photo framing",
+      "p_kioskowner": "Kenyan man, about 50, a knitted brown cap, short grey beard, a checked shirt under a sleeveless padded jacket, cautious and polite, ID-photo framing"
+    },
+    "evidence": {
+      "ev_body": {
+        "kind": "scene",
+        "brief": "a small hotel reception desk at night during a power cut, lit only by a torch beam, a desk drawer pulled half open with an unlit white candle and a box of matches inside, papers swept onto the floor, an office chair overturned behind the desk, no body visible"
+      }
+    }
+  },
+  "5": {
+    "people": {
+      "p_esther": "Kenyan woman, early 60s, short grey hair, a navy church blazer over a floral blouse, a folded umbrella hooked on her arm, kind but sharp-eyed, ID-photo framing",
+      "p_bakari": "Kenyan man, mid 40s, green county gardener's overalls with a plain patch, a wide-brimmed canvas hat pushed back, soil on his hands, shaken, ID-photo framing",
+      "p_dispatcher": "Kenyan man, mid 40s, a grey dust coat over a sweater, a pen behind his ear, harried and short of time, ID-photo framing"
+    }
+  },
+  "6": {
+    "people": {
+      "p_esther": "Kenyan woman, early 30s, long braids, a denim jacket, a woven market tote on her shoulder, puzzled and impatient, ID-photo framing",
+      "p_aisha": "Kenyan woman, early 40s, a dark blue hijab neatly pinned, a long grey cardigan, reading glasses in one hand, alert and observant, ID-photo framing",
+      "p_mamaw": "Kenyan woman, mid 50s, a kitchen apron over a printed dress, a patterned headscarf, a round cheerful face gone serious, ID-photo framing"
+    },
+    "evidence": {
+      "ev_body": {
+        "kind": "scene",
+        "brief": "the concrete floor beside a cluttered electronics workbench, a heavy bench transformer lying on its side, chalk marks on the floor, scattered screws and a dropped soldering iron stand, police tape across the doorway behind, no body visible"
+      },
+      "ev_tray": "a tiny metal smartphone SIM tray lying among solder drips, wire offcuts and dust on a concrete floor under a workbench, close-up"
+    }
+  },
+  "7": {
+    "people": {
+      "p_ahmed": "Kenyan man, late 40s, a white butcher's coat over a striped apron, a white cap, trimmed grey beard, watchful, ID-photo framing",
+      "p_grace": "Kenyan woman, late 20s, short natural hair, an office blouse and a work lanyard, a bunch of red roses wrapped in brown paper in her arms, shocked, ID-photo framing",
+      "p_apprentice": "Kenyan young man, about 20, thin, a canvas apron with damp patches, a cap worn backwards, nervous and eager to please, ID-photo framing",
+      "p_verger": "Kenyan man, about 60, a plain black verger's gown over a white shirt, neat grey hair, dignified and solemn, ID-photo framing"
+    },
+    "evidence": {
+      "ev_body": {
+        "kind": "scene",
+        "brief": "the floor of a flower stall in a covered market aisle, a toppled metal flower-bucket stand, spilled water and scattered carnations on the concrete, buckets of roses and lilies behind, police tape across the aisle, no body visible"
+      },
+      "ev_stock": "a cardboard flower box on a market stall counter, clear packing tape still sealed across the lid, through a torn corner tight green lily buds with no open flowers, close-up",
+      "ev_lucy_apron": "a canvas market apron hanging from a nail on a wooden stall post, fresh orange pollen smears rubbed down the front, damp patches where someone tried to wipe it clean"
+    },
+    "noPhoto": {
+      "ev_scratches": "Scratches on a person's hands are an injury, and photos never show injuries (design doc §5): this exhibit stays the examination note."
+    }
+  },
+  "8": {
+    "people": {
+      "p_janet": "Kenyan woman, late 20s, hair in a neat bun, a plain navy railway clerk's blazer, a pen on a cord around her neck, composed and precise, ID-photo framing",
+      "p_musa": "Kenyan man, early 60s, grey moustache, a plain navy inspector's jacket and peaked cap with no badge, a ticket punch on a chain, proud and stubborn, ID-photo framing",
+      "p_simon_w": "Kenyan man, mid 40s, a faded denim jacket, a shoe brush in one hand, polish on his fingertips, an easy smile gone cautious, ID-photo framing",
+      "p_foreman": "Kenyan Asian man, late 40s, a white bakery work coat dusted with flour, rimless glasses, short grey-black hair, businesslike, ID-photo framing"
+    },
+    "evidence": {
+      "ev_body": {
+        "kind": "scene",
+        "brief": "the far end of a railway platform at dusk under station lights, a broken wooden crate of empty soda bottles on the platform edge, glass glinting on the concrete, police tape tied to an iron pillar, no body visible"
+      }
+    }
+  },
+  "9": {
+    "people": {
+      "p_pendo": "Kenyan woman, mid 50s, a bright yellow sun hat, a striped apron, the strap of a cool box over her shoulder, wise amused eyes, ID-photo framing",
+      "p_victor": "Kenyan man, early 30s, a sleeveless vest with many pockets over a T-shirt, a handful of small instant photo prints fanned in one hand, a pen behind his ear, eager to help, ID-photo framing",
+      "p_gikomba": "Kenyan woman, about 50, a second-hand puffer jacket, a money pouch belted at her waist, a headscarf, shrewd and direct, ID-photo framing"
+    },
+    "evidence": {
+      "ev_body": {
+        "kind": "scene",
+        "brief": "inside a wooden boat-hire shed by a park lake, a gap in the rack of oars on the wall, one oar lying on the plank floor, a cupboard standing open with an empty shelf, orange life jackets piled in the corner, police tape across the door, no body visible"
+      },
+      "ev_tin": "an empty grey metal cash tin with its lid open on a cupboard shelf, behind a stack of orange life jackets, a stencilled word on the lid"
+    }
+  },
+  "10": {
+    "people": {
+      "p_abdullahi": "Kenyan man, mid 60s, white stubble, a heavy army-green greatcoat with plain buttons, a knitted cap, a torch held at his chest, alert old eyes, ID-photo framing",
+      "p_zuhura": "Kenyan woman, mid 40s, a black buibui with a patterned headscarf, a cream wedding-invitation card held in her hand, anxious, ID-photo framing"
+    }
+  }
+}

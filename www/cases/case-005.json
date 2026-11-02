@@ -135,7 +135,11 @@
         "fact": "f_ledger_esther"
       },
       "at": "plc_kiosk",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 60s, short grey hair, a navy church blazer over a floral blouse, a folded umbrella hooked on her arm, kind but sharp-eyed, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_bakari",
@@ -150,7 +154,11 @@
         "start": true
       },
       "at": "loc_jeevanjee",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, green county gardener's overalls with a plain patch, a wide-brimmed canvas hat pushed back, soil on his hands, shaken, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_dispatcher",
@@ -166,7 +174,11 @@
       },
       "at": "plc_depot",
       "statementOnly": true,
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, a grey dust coat over a sweater, a pen behind his ear, harried and short of time, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [

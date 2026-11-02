@@ -33,6 +33,8 @@ workflows:
         script: |
           npm run validate
           npm test
+      - name: Every region 1 picture is there
+        script: npm run images:check
       - name: Build the web bundle (voices re-encoded small with afconvert)
         script: npm run build
       - name: Copy it into the iOS project

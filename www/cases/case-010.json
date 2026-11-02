@@ -158,7 +158,11 @@
         "start": true
       },
       "at": "plc_street",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 60s, white stubble, a heavy army-green greatcoat with plain buttons, a knitted cap, a torch held at his chest, alert old eyes, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_zuhura",
@@ -174,7 +178,11 @@
         "fact": "f_delivery"
       },
       "at": "plc_ngara",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 40s, a black buibui with a patterned headscarf, a cream wedding-invitation card held in her hand, anxious, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [

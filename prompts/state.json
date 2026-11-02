@@ -212,9 +212,12 @@
   "at": "2026-11-02T10:58:41.240Z"
  },
  "002/ev_body": {
-  "status": "pending",
-  "attempts": 0,
-  "spent": 0
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0252,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "2400x1792",
+  "at": "2026-11-02T19:48:43.790Z"
  },
  "002/ev_print": {
   "status": "done",
@@ -393,9 +396,12 @@
   "at": "2026-11-02T10:58:50.436Z"
  },
  "005/ev_body": {
-  "status": "pending",
-  "attempts": 0,
-  "spent": 0
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0252,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "2400x1792",
+  "at": "2026-11-02T19:48:50.318Z"
  },
  "005/ev_umbrella": {
   "status": "done",
@@ -662,9 +668,12 @@
   "at": "2026-11-02T10:59:04.023Z"
  },
  "010/ev_body": {
-  "status": "pending",
-  "attempts": 0,
-  "spent": 0
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0252,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "2400x1792",
+  "at": "2026-11-02T19:49:01.273Z"
  },
  "010/ev_drawer": {
   "status": "done",
@@ -5874,5 +5883,349 @@
   "status": "pending",
   "attempts": 0,
   "spent": 0
+ },
+ "001/p_mercy": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:40.356Z"
+ },
+ "001/p_wanjiru": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:40.586Z"
+ },
+ "002/p_nancy": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:40.823Z"
+ },
+ "002/p_ali": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:41.068Z"
+ },
+ "002/p_joyce": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:41.334Z"
+ },
+ "002/p_kioko": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:41.562Z"
+ },
+ "002/loc_bidii": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0252,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "2528x1696",
+  "at": "2026-11-02T19:48:42.594Z"
+ },
+ "002/ev_tin": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "1024x1024",
+  "at": "2026-11-02T19:48:44.072Z"
+ },
+ "002/ev_shelf": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "1024x1024",
+  "at": "2026-11-02T19:48:44.357Z"
+ },
+ "003/p_mwikali": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:44.590Z"
+ },
+ "003/p_gideon": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:44.826Z"
+ },
+ "003/ev_body": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0252,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "2400x1792",
+  "at": "2026-11-02T19:48:45.822Z"
+ },
+ "004/p_amos": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:46.059Z"
+ },
+ "004/p_selina": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:46.316Z"
+ },
+ "004/p_kioskowner": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:46.598Z"
+ },
+ "004/ev_body": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0252,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "2400x1792",
+  "at": "2026-11-02T19:48:47.642Z"
+ },
+ "005/p_esther": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:48.072Z"
+ },
+ "005/p_bakari": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:48.455Z"
+ },
+ "005/p_dispatcher": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:48.829Z"
+ },
+ "006/p_esther": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:50.740Z"
+ },
+ "006/p_aisha": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:51.099Z"
+ },
+ "006/p_mamaw": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:51.486Z"
+ },
+ "006/ev_body": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0252,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "2400x1792",
+  "at": "2026-11-02T19:48:52.825Z"
+ },
+ "006/ev_tray": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "1024x1024",
+  "at": "2026-11-02T19:48:53.173Z"
+ },
+ "007/p_ahmed": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:53.424Z"
+ },
+ "007/p_grace": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:53.730Z"
+ },
+ "007/p_apprentice": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:53.960Z"
+ },
+ "007/p_verger": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:54.173Z"
+ },
+ "007/ev_body": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0252,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "2400x1792",
+  "at": "2026-11-02T19:48:55.202Z"
+ },
+ "007/ev_stock": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "1024x1024",
+  "at": "2026-11-02T19:48:55.471Z"
+ },
+ "007/ev_lucy_apron": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "1024x1024",
+  "at": "2026-11-02T19:48:55.743Z"
+ },
+ "008/p_janet": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:55.967Z"
+ },
+ "008/p_musa": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:56.206Z"
+ },
+ "008/p_simon_w": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:56.460Z"
+ },
+ "008/p_foreman": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:56.691Z"
+ },
+ "008/ev_body": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0252,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "2400x1792",
+  "at": "2026-11-02T19:48:57.729Z"
+ },
+ "009/p_pendo": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:57.959Z"
+ },
+ "009/p_victor": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:58.214Z"
+ },
+ "009/p_gikomba": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:48:58.469Z"
+ },
+ "009/ev_body": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0252,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "2400x1792",
+  "at": "2026-11-02T19:48:59.551Z"
+ },
+ "009/ev_tin": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "1024x1024",
+  "at": "2026-11-02T19:48:59.824Z"
+ },
+ "010/p_abdullahi": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:49:00.066Z"
+ },
+ "010/p_zuhura": {
+  "status": "done",
+  "attempts": 1,
+  "spent": 0.0168,
+  "job": "batches/g9cwv7esutdg9oan3oaf2i0824cng8cmetd0",
+  "px": "896x1200",
+  "at": "2026-11-02T19:49:00.280Z"
  }
 }

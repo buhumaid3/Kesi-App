@@ -5,7 +5,9 @@
 //   node tools/generate-images.mjs dry-run [--region N | --case N | --all]   what a batch would contain, and its cost
 //   node tools/generate-images.mjs pilot                 4 test images, one of each kind (interactive, ≈ $0.17)
 //   node tools/generate-images.mjs refs                  the 16 recurring-cast reference portraits (interactive)
-//   node tools/generate-images.mjs batch --region N      submit a region's images as one Batch job (half price)
+//   node tools/generate-images.mjs batch --region N      submit a region's images as one Batch job (half price); images with a
+//                                                        reference (recurring faces, scenes) go in once their reference exists
+//   node tools/generate-images.mjs restore               rebuild missing www/img files from img-masters/
 //   node tools/generate-images.mjs batch --case N | --all
 //   node tools/generate-images.mjs status                state of every submitted job
 //   node tools/generate-images.mjs fetch                 download finished jobs, save masters and game images
@@ -137,7 +139,8 @@ async function submitBatch(rows, label) {
   fs.mkdirSync(P('prompts/batches'), { recursive: true });
   const stamp = new Date().toISOString().replace(/[:.]/g, '-');
   const inFile = P('prompts/batches', `${label}-${stamp}.in.jsonl`);
-  fs.writeFileSync(inFile, rows.map(r => JSON.stringify({ key: r.key, request: { contents: [{ role: 'user', parts: [{ text: r.prompt }] }], generation_config: genConfig(r) } })).join('\n') + '\n');
+  // Each line carries its reference image inline when it has one (a recurring face, or the place a scene shows).
+  fs.writeFileSync(inFile, rows.map(r => JSON.stringify({ key: r.key, request: { contents: [{ role: 'user', parts: parts(r) }], generation_config: genConfig(r) } })).join('\n') + '\n');
   const up = await g.files.upload({ file: inFile, config: { mimeType: 'jsonl', displayName: path.basename(inFile) } });
   const job = await g.batches.create({ model: MODEL, src: up.name, config: { displayName: `kesi-${label}` } });
   jobs.push({ name: job.name, label, inFile: path.relative(ROOT, inFile), keys: rows.map(r => r.key), submitted: new Date().toISOString(), state: job.state || 'JOB_STATE_PENDING', fetched: false });
@@ -184,7 +187,11 @@ async function fetchJobs() {
     }
     if (lines.length !== j.keys.length) console.log(`  note: ${lines.length} result lines for ${j.keys.length} requests`);
     j.fetched = true; save();
-    console.log(`${j.name} (${j.label}): ${ok} saved, ${bad} failed${bad ? ' (see  report ; regenerate with  redo )' : ''}.`);
+    console.log(`${j.name} (${j.label}): ${ok} saved, ${bad} failed.`);
+    for (const k of j.keys) if (st(k).status === 'failed') console.log(`  ✗ ${k}: ${st(k).error}`);
+    const missing = j.keys.filter(k => st(k).status === 'submitted');
+    if (missing.length) { for (const k of missing) Object.assign(st(k), { status: 'failed', error: 'no result line in the batch output' }); save(); console.log(`  ${missing.length} had no result at all: ${missing.join(', ')}`); }
+    if (bad || missing.length) console.log('  Failed images are ready to send again:  node tools/generate-images.mjs batch --region N  (or  redo KEY  for one at a time).');
   }
 }
 
@@ -239,7 +246,26 @@ switch (cmd) {
     console.log(`Recurring cast: ${rows.length} portraits, ≈ $${cost(rows, 'interactive').toFixed(2)}.`);
     await interactive(rows); break;
   }
-  case 'batch': { const rows = select(); await submitBatch(rows, flag('--region') ? `region-${flag('--region')}` : flag('--case') ? `case-${flag('--case')}` : 'all'); break; }
+  case 'batch': {
+    // Everything selected whose reference (if any) already exists goes in; the rest waits and is listed.
+    const rows = select({ withRefs: true });
+    const ready = rows.filter(r => !r.reference || fs.existsSync(P('img-masters', r.reference.replace(/^img\//, ''))));
+    const waiting = rows.filter(r => !ready.includes(r));
+    if (waiting.length) console.log(`${waiting.length} wait for their reference image (generate those first, then run batch again): ${waiting.map(r => r.key).join(', ')}`);
+    await submitBatch(ready, flag('--region') ? `region-${flag('--region')}` : flag('--case') ? `case-${flag('--case')}` : 'all');
+    break;
+  }
+  case 'restore': {
+    // Rebuild the game-size images from the masters, for anything generated whose www/ file is missing.
+    let n = 0;
+    for (const r of requests) {
+      if (fs.existsSync(P('www', r.file))) continue;
+      const master = P('img-masters', r.file.replace(/^img\//, ''));
+      if (!fs.existsSync(master)) continue;
+      await store(r, fs.readFileSync(master)); n++; console.log(`  restored www/${r.file}`);
+    }
+    console.log(`${n} images restored from img-masters/.`); break;
+  }
   case 'status': await status(); break;
   case 'fetch': await fetchJobs(); break;
   case 'continuity': {

@@ -138,7 +138,11 @@
         "start": true
       },
       "at": "plc_cart",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 50s, a bright yellow sun hat, a striped apron, the strap of a cool box over her shoulder, wise amused eyes, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_victor",
@@ -153,7 +157,11 @@
         "start": true
       },
       "at": "plc_lawn",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, early 30s, a sleeveless vest with many pockets over a T-shirt, a handful of small instant photo prints fanned in one hand, a pen behind his ear, eager to help, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_gikomba",
@@ -169,7 +177,11 @@
         "fact": "f_george_claim"
       },
       "at": "plc_gikomba",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, about 50, a second-hand puffer jacket, a money pouch belted at her waist, a headscarf, shrewd and direct, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -291,7 +303,10 @@
         "f_tin_missing"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "inside a wooden boat-hire shed by a park lake, a gap in the rack of oars on the wall, one oar lying on the plank floor, a cupboard standing open with an empty shelf, orange life jackets piled in the corner, police tape across the door, no body visible"
+      }
     },
     {
       "id": "ev_cap",
@@ -407,7 +422,10 @@
         "f_tin_found"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "evidence",
+        "brief": "an empty grey metal cash tin with its lid open on a cupboard shelf, behind a stack of orange life jackets, a stencilled word on the lid"
+      }
     }
   ],
   "facts": [

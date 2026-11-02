@@ -137,7 +137,11 @@
         "start": true
       },
       "at": "plc_teastand",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 50s, a printed kanga tied as a headscarf, a thick brown cardigan against the early cold, warm but cautious face, ID-photo framing",
+        "ref": null
+      }
     },
     {
       "id": "p_gideon",
@@ -152,7 +156,11 @@
         "fact": "f_mwikali_kevin"
       },
       "at": "plc_garissa_bus",
-      "image": null
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, about 40, navy mechanic's overalls with grease on the cuffs, a red rag over one shoulder, short beard, steady wary look, ID-photo framing",
+        "ref": null
+      }
     }
   ],
   "places": [
@@ -311,7 +319,10 @@
         "f_body_punch"
       ],
       "gate": null,
-      "image": null
+      "image": {
+        "kind": "scene",
+        "brief": "the bus booking-office counter seen from the public side just after dawn, a heavy steel ticket punch lying on the floor tiles below the counter, ticket stubs scattered across the floor, a stool knocked over, police tape across the doorway, no body visible"
+      }
     },
     {
       "id": "ev_counterfoil",
