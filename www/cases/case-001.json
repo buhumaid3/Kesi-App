@@ -196,8 +196,8 @@
           "id": "hs_gutter",
           "label": "The empty bay next door",
           "pos": [
-            38,
-            70
+            31,
+            57
           ],
           "yields": "ev_spanner",
           "text": "An oil stain marks where a matatu was parked until recently. In the gutter beside it, half under a flattened juice carton: a heavy wheel spanner."
@@ -206,8 +206,8 @@
           "id": "hs_tally",
           "label": "Kassim's tally book",
           "pos": [
-            20,
-            40
+            23,
+            77
           ],
           "yields": "ev_ngara_tally",
           "text": "Kassim writes every plate in and out of the stage, with times. His pencil is behind his ear; the book is on his stool."
@@ -216,8 +216,8 @@
           "id": "hs_cart",
           "label": "Mercy's smokie cart",
           "pos": [
-            84,
-            34
+            91,
+            54
           ],
           "yields": null,
           "text": "Smokies in a glass case, a bowl of kachumbari, a paraffin lamp. Mercy Chebet hasn't sold anything since 22:40."
@@ -239,8 +239,8 @@
           "id": "hs_kcz",
           "label": "Matatu KCZ 902M (back at 23:15)",
           "pos": [
-            40,
-            52
+            54,
+            25
           ],
           "yields": "ev_toolroll",
           "unlock": {
@@ -252,7 +252,8 @@
       "image": {
         "kind": "location",
         "brief": "Nairobi matatu stage at night under orange sodium lights, a brightly painted matatu parked in a bay with neon underglow off, two empty bays with oil stains, a glass-sided smokie cart with a paraffin lamp at the edge, wet tarmac, no people in frame"
-      }
+      },
+      "hotspotsAuto": true
     }
   ],
   "evidence": [

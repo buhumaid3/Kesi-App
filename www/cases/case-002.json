@@ -235,8 +235,8 @@
           "id": "hs_register",
           "label": "Ground-floor desk: visitor register",
           "pos": [
-            18,
-            80
+            21,
+            72
           ],
           "yields": "ev_register",
           "text": "A thick ruled book. After 19:00, the night askari writes in everyone who enters and signs them out."
@@ -245,8 +245,8 @@
           "id": "hs_tin",
           "label": "Paint tins on the 4th floor",
           "pos": [
-            70,
-            30
+            84,
+            42
           ],
           "yields": "ev_tin",
           "text": "Three tins of 'Ivory Cream' emulsion, one open. A painter's note is taped to the lid."
@@ -255,8 +255,8 @@
           "id": "hs_dropcloth",
           "label": "Drop cloth in the corridor",
           "pos": [
-            56,
-            34
+            43,
+            75
           ],
           "yields": "ev_print",
           "text": "The drop cloth runs the length of the corridor. Near the stairwell door, a single shoe print has set in the paint."
@@ -275,7 +275,8 @@
       "image": {
         "kind": "location",
         "brief": "a dim 1970s Nairobi office stairwell at night, cream paint drying on half the corridor wall, drop cloths on the floor, a step ladder, a stairwell window looking onto the lit window of the building next door, no people"
-      }
+      },
+      "hotspotsAuto": true
     },
     {
       "id": "loc_bidii",

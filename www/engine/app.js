@@ -2,7 +2,8 @@
 // Screens: prologue → cabinet → case desk (folder + dock) → verdict. Everything above the desk opens as a
 // sheet of paper: a place, a person, an exhibit, the notebook, the board, the phone, the charge sheet.
 import { CaseRun, groupFacts, timeRows, genericReply } from './state.js';
-import { load, persist, wipe, defaultSave } from './store.js';
+import { load, persist, wipe, defaultSave, restore } from './store.js';
+import { appReady, haptic, isNative } from './native.js';
 import { h, $, $$, put, clearNotices, ask, openSheet, closeSheet, closeAllSheets, rebuildSheets, sheetOpen, voiceNote, toast, popover, typewrite, makeSound, stamp, reducedMotion } from './ui.js';
 import { esc, pad3, tilt, makeGlossary, shortFact } from './text.js';
 import { renderEvidence, photo, zoomPhoto, imgPath } from './docs.js';
@@ -15,13 +16,15 @@ import { createCamera } from './camera.js';
 const SLICE_LAST = 10;                       // this build plays region 1
 const K = { campaign: null, save: load(), run: null, gloss: null, cases: new Map() };
 K.audio = createAudio(() => K.save.settings);
-K.sound = kind => K.audio.sfx(kind);
+const HAPTIC = { stamp: 'medium', accepted: 'success', returned: 'warning', pin: 'light', closed: 'heavy' };
+K.sound = kind => { K.audio.sfx(kind); if (HAPTIC[kind]) haptic(HAPTIC[kind], K.save.settings.haptics !== false); };
 K.reduced = () => reducedMotion(K.save.settings);
 K.motion = createMotion(K.reduced);
 window.KESI = K;                             // for the playtest console and automated tests
 
 // ── Boot ─────────────────────────────────────────────────────────────────────────────────────────────
 async function boot() {
+  if (await restore()) K.save = load();          // iOS app: the save kept in Preferences
   applySettings();
   K.motesToggle = K.motion.motes();
   [K.campaign, K.coach] = await Promise.all([fetchJSON('cases/_campaign.json'), fetchJSON('cases/_coach.json').catch(() => ({ beats: {}, core: {} }))]);
@@ -933,18 +936,21 @@ function showSettings() {
       row('Motion', h('div', { class: 'seg' }, [['system', 'System'], ['reduce', 'Reduce'], ['full', 'Full']].map(([v, l]) => h('button', { class: `seg-b ${s.motion === v ? 'is-on' : ''}`, type: 'button', 'aria-pressed': String(s.motion === v), onclick: () => { s.motion = v; applySettings(); save(); entry.rebuild(); } }, l))), 'Reduce follows iOS Reduce Motion by default.'),
       row('Depth in photos', toggle('depth'), 'Places and scenes move with real depth when you drag across them.'),
       row('Tilt to look around', h('button', { class: 'btn', type: 'button', onclick: async () => { const ok = await enableTilt(); toast(ok ? 'Tilt the phone to look around a photo.' : 'This device did not allow motion access.'); } }, 'Allow'), 'Uses the phone\'s motion sensor while a photo is open. Asks for permission once.'),
+      isNative ? row('Vibration', toggle('haptics'), 'A small tap when a stamp lands or a sheet is accepted.') : null,
       row('Playtest mode', toggle('playtest', () => {}), 'Opens every region 1 case at once, for testers. Stars still count.'),
       h('div', { class: 'set-danger' },
         h('button', { class: 'btn btn--danger', type: 'button', onclick: async () => {
           if (!await ask({ title: 'Erase all progress?', text: 'Every case, note, board and star is deleted. This cannot be undone.', ok: 'Erase', danger: true })) return;
           wipe(); K.save = defaultSave(); applySettings(); save(true); location.reload();
         } }, 'Erase all progress')),
+      (() => { const p = h('p', { class: 'fine dark' }); fetch('build.json').then(r => r.ok ? r.json() : null).then(b => { if (b) p.textContent = `Version ${b.version}${b.commit ? ` (${b.commit})` : ''} · built ${b.built.slice(0, 10)}`; }).catch(() => {}); return p; })(),
       h('p', { class: 'fine dark' }, 'Kesi: Kenya Case Files · region 1 build · every case is fiction. Fonts: Big Shoulders Display, Courier Prime, IBM Plex Mono, Patrick Hand (SIL Open Font License).'));
   } });
 }
 function refreshAll() { if ($('.scr-desk')) refreshDesk(); }
 
-boot().catch(err => {
+boot().then(appReady, err => {
+  appReady();
   console.error(err);
   $('#screen').replaceChildren(h('div', { class: 'boot-error' }, h('h1', {}, 'The folder would not open.'), h('p', {}, String(err.message || err)),
     h('p', {}, 'If you opened index.html straight from the disk, serve the www folder instead (npm run play).')));

@@ -1,251 +1,1000 @@
 {
   "meta": {
-    "id": "case-004", "number": 4, "region": "nairobi-cbd", "regionNumber": 1,
-    "title": "Stima Imepotea", "boss": false, "schemaVersion": 1, "estMinutes": 7,
-    "date": "Thursday 27 March", "folderTab": "HAILE SELASSIE AVE"
+    "id": "case-004",
+    "number": 4,
+    "region": "nairobi-cbd",
+    "regionNumber": 1,
+    "title": "Stima Imepotea",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 7,
+    "date": "Thursday 27 March",
+    "folderTab": "HAILE SELASSIE AVE"
   },
   "pattern": {
     "crimePattern": "fraudster recognised by a victim's relative silences her",
     "noRealCaseRetold": true,
     "notes": "Fictional hotel; the overseas-job scam is a common pattern, no real case retold.",
-    "tags": ["strangulation-report-only", "fraud", "blackout"]
+    "tags": [
+      "strangulation-report-only",
+      "fraud",
+      "blackout"
+    ]
   },
   "difficulty": {
-    "suspects": 3, "chainLength": 2, "redHerrings": 0, "liars": 0,
-    "groups": ["who"], "evidenceTypes": ["physical", "witness"], "gatedActions": [], "twist": null
+    "suspects": 3,
+    "chainLength": 2,
+    "redHerrings": 0,
+    "liars": 0,
+    "groups": [
+      "who"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness"
+    ],
+    "gatedActions": [],
+    "twist": null
   },
-
   "ob": {
-    "number": "OB 33/27/03", "date": "Friday 28 March", "time": "00:14",
+    "number": "OB 33/27/03",
+    "date": "Friday 28 March",
+    "time": "00:14",
     "reportedBy": "Amos Kibet, owner, Mapumziko Hotel",
     "text": "Hotel owner Amos Kibet reports that his night receptionist, Faith Chepkoech (26), was found dead at the front desk of Mapumziko Hotel, off Haile Selassie Avenue, at 23:58, shortly after a citywide power blackout ended.",
-    "facts": ["f_ob_found", "f_ob_blackout"]
+    "facts": [
+      "f_ob_found",
+      "f_ob_blackout"
+    ]
   },
-
   "people": [
-    { "id": "p_faith", "role": "victim", "name": "Faith Chepkoech", "age": 26, "occupation": "Night receptionist, Mapumziko Hotel",
+    {
+      "id": "p_faith",
+      "role": "victim",
+      "name": "Faith Chepkoech",
+      "age": 26,
+      "occupation": "Night receptionist, Mapumziko Hotel",
       "bio": "Studied hospitality at night school. Kept a small notebook in the desk drawer for guests' requests.",
-      "community": "Kalenjin", "isCulprit": false, "unlock": { "start": true }, "at": "loc_hotel",
-      "image": { "kind": "portrait", "brief": "Kenyan woman, mid 20s, short natural hair, white hotel receptionist blouse with a name pin, bright hopeful smile, ID-photo framing", "ref": null } },
-    { "id": "p_paul", "role": "suspect", "name": "Paul Njeru", "age": 44, "occupation": "Guest, room 12 (says he's a 'recruitment consultant')",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_hotel",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, mid 20s, short natural hair, white hotel receptionist blouse with a name pin, bright hopeful smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_paul",
+      "role": "suspect",
+      "name": "Paul Njeru",
+      "age": 44,
+      "occupation": "Guest, room 12 (says he's a 'recruitment consultant')",
       "bio": "Checked in two nights ago. Pays cash. Says he is in Nairobi to interview candidates for jobs in the Gulf.",
-      "community": "Embu", "isCulprit": true, "unlock": { "fact": "f_register_room12" }, "at": "loc_hotel",
-      "image": { "kind": "portrait", "brief": "Kenyan man, mid 40s, shiny grey suit a size too big, gold-coloured watch, practised salesman's smile, ID-photo framing", "ref": null } },
-    { "id": "p_kennedy", "role": "suspect", "name": "Kennedy Ouma", "age": 36, "occupation": "Guest, room 7",
+      "community": "Embu",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_register_room12"
+      },
+      "at": "loc_hotel",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, shiny grey suit a size too big, gold-coloured watch, practised salesman's smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_kennedy",
+      "role": "suspect",
+      "name": "Kennedy Ouma",
+      "age": 36,
+      "occupation": "Guest, room 7",
       "bio": "Complained loudly to Faith about the hot water at 22:30. Several guests heard him.",
-      "community": "Luo", "isCulprit": false, "unlock": { "fact": "f_register_room7" }, "at": "plc_lift",
-      "image": { "kind": "portrait", "brief": "Kenyan man, mid 30s, sweat-soaked shirt, loosened tie, furious and exhausted after hours in a stuck lift, ID-photo framing", "ref": null } },
-    { "id": "p_zawadi", "role": "suspect", "name": "Zawadi Mwende", "age": 39, "occupation": "Hotel cook",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_register_room7"
+      },
+      "at": "plc_lift",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 30s, sweat-soaked shirt, loosened tie, furious and exhausted after hours in a stuck lift, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_zawadi",
+      "role": "suspect",
+      "name": "Zawadi Mwende",
+      "age": 39,
+      "occupation": "Hotel cook",
       "bio": "Cooks breakfast and late suppers. Borrowed KSh 3,000 from Faith last month and hasn't paid it back.",
-      "community": "Kamba", "isCulprit": false, "unlock": { "fact": "f_amos_zawadi" }, "at": "plc_kiosk",
-      "image": { "kind": "portrait", "brief": "Kenyan woman, late 30s, white cook's apron and headscarf, a paper bag of candles in her hand, frightened eyes, ID-photo framing", "ref": null } },
-    { "id": "p_amos", "role": "witness", "name": "Amos Kibet", "age": 58, "occupation": "Owner, Mapumziko Hotel",
-      "bio": "Lives in Kileleshwa. Came as soon as the lift technician called.", "community": "Kalenjin", "isCulprit": false,
-      "unlock": { "start": true }, "at": "loc_hotel", "image": null },
-    { "id": "p_selina", "role": "witness", "name": "Selina Waweru", "age": 34, "occupation": "Lift technician on night call",
-      "bio": "Called out to free a guest stuck in the hotel's old lift.", "community": "Kikuyu", "isCulprit": false,
-      "unlock": { "fact": "f_lift_sheet" }, "at": "loc_hotel", "image": null },
-    { "id": "p_kioskowner", "role": "witness", "name": "Hassan Juma", "age": 50, "occupation": "Kiosk owner across the road",
-      "bio": "Sells candles, airtime and milk. Open until midnight.", "community": "Swahili", "isCulprit": false,
-      "unlock": { "fact": "f_amos_zawadi" }, "at": "plc_kiosk", "statementOnly": true, "image": null }
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_amos_zawadi"
+      },
+      "at": "plc_kiosk",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 30s, white cook's apron and headscarf, a paper bag of candles in her hand, frightened eyes, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_amos",
+      "role": "witness",
+      "name": "Amos Kibet",
+      "age": 58,
+      "occupation": "Owner, Mapumziko Hotel",
+      "bio": "Lives in Kileleshwa. Came as soon as the lift technician called.",
+      "community": "Kalenjin",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_hotel",
+      "image": null
+    },
+    {
+      "id": "p_selina",
+      "role": "witness",
+      "name": "Selina Waweru",
+      "age": 34,
+      "occupation": "Lift technician on night call",
+      "bio": "Called out to free a guest stuck in the hotel's old lift.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_lift_sheet"
+      },
+      "at": "loc_hotel",
+      "image": null
+    },
+    {
+      "id": "p_kioskowner",
+      "role": "witness",
+      "name": "Hassan Juma",
+      "age": 50,
+      "occupation": "Kiosk owner across the road",
+      "bio": "Sells candles, airtime and milk. Open until midnight.",
+      "community": "Swahili",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_amos_zawadi"
+      },
+      "at": "plc_kiosk",
+      "statementOnly": true,
+      "image": null
+    }
   ],
-
   "places": [
-    { "id": "plc_desk", "name": "Front desk, Mapumziko Hotel", "within": "loc_hotel" },
-    { "id": "plc_lift", "name": "The hotel lift, stuck between floors 1 and 2" },
-    { "id": "plc_kiosk", "name": "Hassan's kiosk across the road" },
-    { "id": "plc_kileleshwa", "name": "Amos's home, Kileleshwa" },
-    { "id": "plc_callout", "name": "Selina's previous call-out, Ngara" }
+    {
+      "id": "plc_desk",
+      "name": "Front desk, Mapumziko Hotel",
+      "within": "loc_hotel"
+    },
+    {
+      "id": "plc_lift",
+      "name": "The hotel lift, stuck between floors 1 and 2"
+    },
+    {
+      "id": "plc_kiosk",
+      "name": "Hassan's kiosk across the road"
+    },
+    {
+      "id": "plc_kileleshwa",
+      "name": "Amos's home, Kileleshwa"
+    },
+    {
+      "id": "plc_callout",
+      "name": "Selina's previous call-out, Ngara"
+    }
   ],
-
   "locations": [
-    { "id": "loc_hotel", "name": "Mapumziko Hotel", "kind": "scene",
+    {
+      "id": "loc_hotel",
+      "name": "Mapumziko Hotel",
+      "kind": "scene",
       "description": "A three-storey budget hotel off Haile Selassie Avenue. Fourteen rooms, one old lift, a narrow concrete staircase, a reception desk with a key board behind it. The scene sketch shows all three floors.",
-      "unlock": { "start": true },
+      "unlock": {
+        "start": true
+      },
       "hotspots": [
-        { "id": "hs_desk", "label": "Front desk", "pos": [20, 82], "yields": "ev_body",
-          "text": "Faith is slumped behind the desk. The report says she was strangled with the lanyard of her own key ring. Her reception candle is still in the drawer, unlit, with a box of matches." },
-        { "id": "hs_clock", "label": "Wall clock behind the desk", "pos": [24, 70], "yields": "ev_clock",
-          "text": "An electric clock. Its hands stopped when the power went." },
-        { "id": "hs_register", "label": "Guest register", "pos": [16, 78], "yields": "ev_register",
-          "text": "Rooms, names, nights. Faith's neat handwriting." },
-        { "id": "hs_drawer", "label": "Faith's desk notebook", "pos": [28, 86], "yields": "ev_notebook",
-          "text": "A small exercise book for guests' requests. The last page isn't a request." },
-        { "id": "hs_stairs", "label": "The staircase", "pos": [50, 60], "yields": "ev_wax",
-          "text": "In the sketch, each landing lights up as Amani climbs. White candle-wax drips mark the steps." },
-        { "id": "hs_room12", "label": "2nd-floor corridor, outside room 12", "pos": [72, 22], "yields": "ev_stub",
-          "text": "On the floor outside room 12: a candle burned down to a stub, stuck to the tiles by its own wax." },
-        { "id": "hs_lift", "label": "The lift", "pos": [44, 50], "yields": "ev_lift",
-          "text": "The lift doors are open now. Taped inside: the technician's call-out sheet." }
+        {
+          "id": "hs_desk",
+          "label": "Front desk",
+          "pos": [
+            24,
+            88
+          ],
+          "yields": "ev_body",
+          "text": "Faith is slumped behind the desk. The report says she was strangled with the lanyard of her own key ring. Her reception candle is still in the drawer, unlit, with a box of matches."
+        },
+        {
+          "id": "hs_clock",
+          "label": "Wall clock behind the desk",
+          "pos": [
+            25,
+            26
+          ],
+          "yields": "ev_clock",
+          "text": "An electric clock. Its hands stopped when the power went."
+        },
+        {
+          "id": "hs_register",
+          "label": "Guest register",
+          "pos": [
+            22,
+            79
+          ],
+          "yields": "ev_register",
+          "text": "Rooms, names, nights. Faith's neat handwriting."
+        },
+        {
+          "id": "hs_drawer",
+          "label": "Faith's desk notebook",
+          "pos": [
+            43,
+            80
+          ],
+          "yields": "ev_notebook",
+          "text": "A small exercise book for guests' requests. The last page isn't a request."
+        },
+        {
+          "id": "hs_stairs",
+          "label": "The staircase",
+          "pos": [
+            52,
+            56
+          ],
+          "yields": "ev_wax",
+          "text": "In the sketch, each landing lights up as Amani climbs. White candle-wax drips mark the steps."
+        },
+        {
+          "id": "hs_room12",
+          "label": "2nd-floor corridor, outside room 12",
+          "pos": [
+            72,
+            22
+          ],
+          "yields": "ev_stub",
+          "text": "On the floor outside room 12: a candle burned down to a stub, stuck to the tiles by its own wax."
+        },
+        {
+          "id": "hs_lift",
+          "label": "The lift",
+          "pos": [
+            44,
+            50
+          ],
+          "yields": "ev_lift",
+          "text": "The lift doors are open now. Taped inside: the technician's call-out sheet."
+        }
       ],
-      "image": { "kind": "location", "brief": "the reception desk of a cheap Nairobi city-centre hotel lit only by a single candle, a wooden key board with numbered hooks behind, a dark staircase rising on the right, deep shadows, no people" } }
+      "image": {
+        "kind": "location",
+        "brief": "the reception desk of a cheap Nairobi city-centre hotel lit only by a single candle, a wooden key board with numbered hooks behind, a dark staircase rising on the right, deep shadows, no people"
+      },
+      "hotspotsAuto": true
+    }
   ],
-
   "evidence": [
-    { "id": "ev_body", "type": "physical", "title": "The body", "render": "sceneNote",
-      "body": { "note": "Report language only; no image of the body." },
-      "facts": ["f_body_lanyard", "f_candle_unlit"], "gate": null, "image": null },
-    { "id": "ev_clock", "type": "physical", "title": "Stopped wall clock", "render": "object",
-      "body": { "label": "Electric wall clock. Stopped at 23:10." }, "facts": ["f_clock"], "gate": null,
-      "image": { "kind": "evidence", "brief": "a cheap round electric wall clock stopped at ten past eleven, photographed by torchlight against a cream wall" } },
-    { "id": "ev_register", "type": "physical", "title": "Guest register", "render": "visitorRegister",
-      "body": { "rows": [
-        { "room": "3", "name": "—", "note": "empty" },
-        { "room": "7", "name": "K. Ouma", "nights": "1" },
-        { "room": "9", "name": "—", "note": "empty" },
-        { "room": "12", "name": "P. Njeru", "nights": "3", "note": "cash" } ],
-        "keyboard": "Key board: room 7 key on its hook. Room 12 key NOT on its hook." },
-      "facts": ["f_register_room12", "f_register_room7", "f_key12"], "gate": null, "image": null },
-    { "id": "ev_notebook", "type": "physical", "title": "Faith's desk notebook", "render": "note",
-      "body": { "text": "Rm 7 hot water!! — told Amos.\n\nThe man in 12 is the agent who took Mama's 180,000 for the Qatar job. He called himself Peter Ndungu then. Police tomorrow first thing." },
-      "facts": ["f_notebook_agent"], "gate": null, "image": null },
-    { "id": "ev_wax", "type": "physical", "title": "Wax trail", "render": "sketch",
-      "body": { "label": "White wax drips from the desk, up the stairs, to the 2nd-floor landing. None on the 1st-floor corridor." },
-      "facts": ["f_wax_trail"], "gate": null, "image": null },
-    { "id": "ev_stub", "type": "physical", "title": "Candle stub, room 12", "render": "object",
-      "body": { "label": "White candle, burned to 2 cm, stuck to the tiles outside room 12." }, "facts": ["f_stub_room12"], "gate": null,
-      "image": { "kind": "evidence", "brief": "a white household candle burned down to a two-centimetre stub, stuck by its own wax to green floor tiles beside a hotel room door numbered 12" } },
-    { "id": "ev_lift", "type": "physical", "title": "Lift call-out sheet", "render": "form",
-      "body": { "callout": "Mapumziko Hotel lift", "stuck": "23:10 (power cut), between floors 1 and 2", "occupant": "1 adult male, guest room 7", "freed": "23:58", "tech": "S. Waweru, arrived 23:40" },
-      "facts": ["f_lift_sheet", "f_selina_arrive"], "gate": null, "image": null },
-    { "id": "ev_zawadi", "type": "witness", "title": "Statement: Zawadi Mwende", "render": "statement",
-      "body": { "speaker": "p_zawadi" }, "facts": ["f_zawadi_sent"], "gate": null, "image": null },
-    { "id": "ev_kiosk", "type": "witness", "title": "Statement: kiosk owner Hassan Juma", "render": "statement",
-      "body": { "speaker": "p_kioskowner" }, "facts": ["f_kiosk_zawadi", "f_kiosk_candles"], "gate": null, "image": null },
-    { "id": "ev_amos", "type": "witness", "title": "Statement: Amos Kibet", "render": "statement",
-      "body": { "speaker": "p_amos" }, "facts": ["f_amos_home", "f_amos_zawadi"], "gate": null, "image": null }
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only; no image of the body."
+      },
+      "facts": [
+        "f_body_lanyard",
+        "f_candle_unlit"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_clock",
+      "type": "physical",
+      "title": "Stopped wall clock",
+      "render": "object",
+      "body": {
+        "label": "Electric wall clock. Stopped at 23:10."
+      },
+      "facts": [
+        "f_clock"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a cheap round electric wall clock stopped at ten past eleven, photographed by torchlight against a cream wall"
+      }
+    },
+    {
+      "id": "ev_register",
+      "type": "physical",
+      "title": "Guest register",
+      "render": "visitorRegister",
+      "body": {
+        "rows": [
+          {
+            "room": "3",
+            "name": "—",
+            "note": "empty"
+          },
+          {
+            "room": "7",
+            "name": "K. Ouma",
+            "nights": "1"
+          },
+          {
+            "room": "9",
+            "name": "—",
+            "note": "empty"
+          },
+          {
+            "room": "12",
+            "name": "P. Njeru",
+            "nights": "3",
+            "note": "cash"
+          }
+        ],
+        "keyboard": "Key board: room 7 key on its hook. Room 12 key NOT on its hook."
+      },
+      "facts": [
+        "f_register_room12",
+        "f_register_room7",
+        "f_key12"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_notebook",
+      "type": "physical",
+      "title": "Faith's desk notebook",
+      "render": "note",
+      "body": {
+        "text": "Rm 7 hot water!! — told Amos.\n\nThe man in 12 is the agent who took Mama's 180,000 for the Qatar job. He called himself Peter Ndungu then. Police tomorrow first thing."
+      },
+      "facts": [
+        "f_notebook_agent"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_wax",
+      "type": "physical",
+      "title": "Wax trail",
+      "render": "sketch",
+      "body": {
+        "label": "White wax drips from the desk, up the stairs, to the 2nd-floor landing. None on the 1st-floor corridor."
+      },
+      "facts": [
+        "f_wax_trail"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_stub",
+      "type": "physical",
+      "title": "Candle stub, room 12",
+      "render": "object",
+      "body": {
+        "label": "White candle, burned to 2 cm, stuck to the tiles outside room 12."
+      },
+      "facts": [
+        "f_stub_room12"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a white household candle burned down to a two-centimetre stub, stuck by its own wax to green floor tiles beside a hotel room door numbered 12"
+      }
+    },
+    {
+      "id": "ev_lift",
+      "type": "physical",
+      "title": "Lift call-out sheet",
+      "render": "form",
+      "body": {
+        "callout": "Mapumziko Hotel lift",
+        "stuck": "23:10 (power cut), between floors 1 and 2",
+        "occupant": "1 adult male, guest room 7",
+        "freed": "23:58",
+        "tech": "S. Waweru, arrived 23:40"
+      },
+      "facts": [
+        "f_lift_sheet",
+        "f_selina_arrive"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_zawadi",
+      "type": "witness",
+      "title": "Statement: Zawadi Mwende",
+      "render": "statement",
+      "body": {
+        "speaker": "p_zawadi"
+      },
+      "facts": [
+        "f_zawadi_sent"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_kiosk",
+      "type": "witness",
+      "title": "Statement: kiosk owner Hassan Juma",
+      "render": "statement",
+      "body": {
+        "speaker": "p_kioskowner"
+      },
+      "facts": [
+        "f_kiosk_zawadi",
+        "f_kiosk_candles"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_amos",
+      "type": "witness",
+      "title": "Statement: Amos Kibet",
+      "render": "statement",
+      "body": {
+        "speaker": "p_amos"
+      },
+      "facts": [
+        "f_amos_home",
+        "f_amos_zawadi"
+      ],
+      "gate": null,
+      "image": null
+    }
   ],
-
   "facts": [
-    { "id": "f_ob_found", "text": "Faith Chepkoech was found dead at the front desk of Mapumziko Hotel at 23:58.", "kind": "true", "about": ["p_faith", "loc_hotel"] },
-    { "id": "f_ob_blackout", "text": "A citywide blackout hit at 23:10. Power came back at 23:55.", "kind": "true", "about": ["loc_hotel"] },
-    { "id": "f_body_lanyard", "text": "Faith was strangled with the lanyard of her own key ring after a struggle at the desk.", "kind": "true", "about": ["p_faith"] },
-    { "id": "f_candle_unlit", "text": "Faith's reception candle was still in the drawer, unlit, with the matches.", "kind": "true", "about": ["p_faith", "plc_desk"] },
-    { "id": "f_clock", "text": "The electric clock behind the desk stopped at 23:10, when the power went.", "kind": "true", "about": ["plc_desk"] },
-    { "id": "f_register_room12", "text": "Register: room 12, P. Njeru, three nights, paid cash.", "kind": "true", "about": ["p_paul"] },
-    { "id": "f_register_room7", "text": "Register: room 7, K. Ouma, one night. Rooms 3 and 9 empty.", "kind": "true", "about": ["p_kennedy"] },
-    { "id": "f_key12", "text": "Room 12's key isn't on the key board. Guests hand it in when they go out, so its guest was in the hotel all night.", "kind": "true", "about": ["p_paul", "loc_hotel"],
-      "where": { "person": "p_paul", "place": "loc_hotel", "from": "21:00", "to": "06:00" } },
-    { "id": "f_notebook_agent", "text": "Faith's note: the man in 12 is the 'agent' who took her mother's KSh 180,000 for a fake job. Police tomorrow.", "kind": "true", "about": ["p_faith", "p_paul"] },
-    { "id": "f_wax_trail", "text": "White wax drips run from the desk up the stairs to the 2nd floor. None on the 1st-floor corridor.", "kind": "true", "about": ["loc_hotel"] },
-    { "id": "f_stub_room12", "text": "A burned-down candle stub is stuck to the floor outside the door of room 12.", "kind": "true", "about": ["loc_hotel", "p_paul"] },
-    { "id": "f_lift_sheet", "text": "Lift call-out: stuck 23:10 between floors 1 and 2 with the room-7 guest inside; freed 23:58.", "kind": "true", "about": ["p_kennedy", "plc_lift"],
-      "where": { "person": "p_kennedy", "place": "plc_lift", "from": "23:10", "to": "23:58" } },
-    { "id": "f_selina_arrive", "text": "Technician Selina Waweru arrived through the front door at 23:40, coming from a call-out in Ngara.", "kind": "true", "about": ["p_selina"],
-      "where": { "person": "p_selina", "place": "plc_callout", "from": "22:30", "to": "23:25" } },
-    { "id": "f_zawadi_sent", "text": "Zawadi: when the power went, Faith sent her across the road for candles at about 23:11. Faith was alive at the desk.", "kind": "true", "about": ["p_zawadi", "p_faith"] },
-    { "id": "f_kiosk_zawadi", "text": "Kiosk owner: Zawadi bought four candles at about 23:12 and waited twenty minutes for change.", "kind": "true", "about": ["p_zawadi", "plc_kiosk"],
-      "where": { "person": "p_zawadi", "place": "plc_kiosk", "from": "23:11", "to": "23:35" } },
-    { "id": "f_kiosk_candles", "text": "Zawadi's four candles are still wrapped in their paper in her bag.", "kind": "true", "about": ["p_zawadi"] },
-    { "id": "f_amos_home", "text": "Amos was at home in Kileleshwa until Selina phoned him at 23:58.", "kind": "true", "about": ["p_amos"],
-      "where": { "person": "p_amos", "place": "plc_kileleshwa", "from": "19:00", "to": "23:58" } },
-    { "id": "f_amos_zawadi", "text": "Amos: the cook, Zawadi Mwende, stays late on Thursdays for the suppers. She owes Faith money.", "kind": "true", "about": ["p_amos", "p_zawadi"] },
-    { "id": "f_paul_claim", "text": "Paul: \"I was asleep in my room. I sleep early. I didn't even know there was a blackout.\"", "kind": "claim", "about": ["p_paul"] },
-    { "id": "f_paul_denial", "text": "Paul: \"I've never met that girl before this week.\"", "kind": "claim", "about": ["p_paul"] },
-    { "id": "f_kennedy_claim", "text": "Kennedy: \"I spent fifty minutes in a box between floors. Ask the technician.\"", "kind": "claim", "about": ["p_kennedy"] },
-    { "id": "f_kennedy_water", "text": "Kennedy shouted at Faith about the hot water at 22:30 and went up to bed.", "kind": "true", "about": ["p_kennedy", "p_faith"] }
+    {
+      "id": "f_ob_found",
+      "text": "Faith Chepkoech was found dead at the front desk of Mapumziko Hotel at 23:58.",
+      "kind": "true",
+      "about": [
+        "p_faith",
+        "loc_hotel"
+      ]
+    },
+    {
+      "id": "f_ob_blackout",
+      "text": "A citywide blackout hit at 23:10. Power came back at 23:55.",
+      "kind": "true",
+      "about": [
+        "loc_hotel"
+      ]
+    },
+    {
+      "id": "f_body_lanyard",
+      "text": "Faith was strangled with the lanyard of her own key ring after a struggle at the desk.",
+      "kind": "true",
+      "about": [
+        "p_faith"
+      ]
+    },
+    {
+      "id": "f_candle_unlit",
+      "text": "Faith's reception candle was still in the drawer, unlit, with the matches.",
+      "kind": "true",
+      "about": [
+        "p_faith",
+        "plc_desk"
+      ]
+    },
+    {
+      "id": "f_clock",
+      "text": "The electric clock behind the desk stopped at 23:10, when the power went.",
+      "kind": "true",
+      "about": [
+        "plc_desk"
+      ]
+    },
+    {
+      "id": "f_register_room12",
+      "text": "Register: room 12, P. Njeru, three nights, paid cash.",
+      "kind": "true",
+      "about": [
+        "p_paul"
+      ]
+    },
+    {
+      "id": "f_register_room7",
+      "text": "Register: room 7, K. Ouma, one night. Rooms 3 and 9 empty.",
+      "kind": "true",
+      "about": [
+        "p_kennedy"
+      ]
+    },
+    {
+      "id": "f_key12",
+      "text": "Room 12's key isn't on the key board. Guests hand it in when they go out, so its guest was in the hotel all night.",
+      "kind": "true",
+      "about": [
+        "p_paul",
+        "loc_hotel"
+      ],
+      "where": {
+        "person": "p_paul",
+        "place": "loc_hotel",
+        "from": "21:00",
+        "to": "06:00"
+      }
+    },
+    {
+      "id": "f_notebook_agent",
+      "text": "Faith's note: the man in 12 is the 'agent' who took her mother's KSh 180,000 for a fake job. Police tomorrow.",
+      "kind": "true",
+      "about": [
+        "p_faith",
+        "p_paul"
+      ]
+    },
+    {
+      "id": "f_wax_trail",
+      "text": "White wax drips run from the desk up the stairs to the 2nd floor. None on the 1st-floor corridor.",
+      "kind": "true",
+      "about": [
+        "loc_hotel"
+      ]
+    },
+    {
+      "id": "f_stub_room12",
+      "text": "A burned-down candle stub is stuck to the floor outside the door of room 12.",
+      "kind": "true",
+      "about": [
+        "loc_hotel",
+        "p_paul"
+      ]
+    },
+    {
+      "id": "f_lift_sheet",
+      "text": "Lift call-out: stuck 23:10 between floors 1 and 2 with the room-7 guest inside; freed 23:58.",
+      "kind": "true",
+      "about": [
+        "p_kennedy",
+        "plc_lift"
+      ],
+      "where": {
+        "person": "p_kennedy",
+        "place": "plc_lift",
+        "from": "23:10",
+        "to": "23:58"
+      }
+    },
+    {
+      "id": "f_selina_arrive",
+      "text": "Technician Selina Waweru arrived through the front door at 23:40, coming from a call-out in Ngara.",
+      "kind": "true",
+      "about": [
+        "p_selina"
+      ],
+      "where": {
+        "person": "p_selina",
+        "place": "plc_callout",
+        "from": "22:30",
+        "to": "23:25"
+      }
+    },
+    {
+      "id": "f_zawadi_sent",
+      "text": "Zawadi: when the power went, Faith sent her across the road for candles at about 23:11. Faith was alive at the desk.",
+      "kind": "true",
+      "about": [
+        "p_zawadi",
+        "p_faith"
+      ]
+    },
+    {
+      "id": "f_kiosk_zawadi",
+      "text": "Kiosk owner: Zawadi bought four candles at about 23:12 and waited twenty minutes for change.",
+      "kind": "true",
+      "about": [
+        "p_zawadi",
+        "plc_kiosk"
+      ],
+      "where": {
+        "person": "p_zawadi",
+        "place": "plc_kiosk",
+        "from": "23:11",
+        "to": "23:35"
+      }
+    },
+    {
+      "id": "f_kiosk_candles",
+      "text": "Zawadi's four candles are still wrapped in their paper in her bag.",
+      "kind": "true",
+      "about": [
+        "p_zawadi"
+      ]
+    },
+    {
+      "id": "f_amos_home",
+      "text": "Amos was at home in Kileleshwa until Selina phoned him at 23:58.",
+      "kind": "true",
+      "about": [
+        "p_amos"
+      ],
+      "where": {
+        "person": "p_amos",
+        "place": "plc_kileleshwa",
+        "from": "19:00",
+        "to": "23:58"
+      }
+    },
+    {
+      "id": "f_amos_zawadi",
+      "text": "Amos: the cook, Zawadi Mwende, stays late on Thursdays for the suppers. She owes Faith money.",
+      "kind": "true",
+      "about": [
+        "p_amos",
+        "p_zawadi"
+      ]
+    },
+    {
+      "id": "f_paul_claim",
+      "text": "Paul: \"I was asleep in my room. I sleep early. I didn't even know there was a blackout.\"",
+      "kind": "claim",
+      "about": [
+        "p_paul"
+      ]
+    },
+    {
+      "id": "f_paul_denial",
+      "text": "Paul: \"I've never met that girl before this week.\"",
+      "kind": "claim",
+      "about": [
+        "p_paul"
+      ]
+    },
+    {
+      "id": "f_kennedy_claim",
+      "text": "Kennedy: \"I spent fifty minutes in a box between floors. Ask the technician.\"",
+      "kind": "claim",
+      "about": [
+        "p_kennedy"
+      ]
+    },
+    {
+      "id": "f_kennedy_water",
+      "text": "Kennedy shouted at Faith about the hot water at 22:30 and went up to bed.",
+      "kind": "true",
+      "about": [
+        "p_kennedy",
+        "p_faith"
+      ]
+    }
   ],
-
   "interrogations": [
-    { "person": "p_amos", "stance": "cooperative",
+    {
+      "person": "p_amos",
+      "stance": "cooperative",
       "intro": "Amos stands in the doorway of his own hotel as if he's afraid to come in. \"She was saving for her diploma. Every shilling.\"",
-      "claims": [], "yields": ["ev_amos"],
+      "claims": [],
+      "yields": [
+        "ev_amos"
+      ],
       "topics": [
-        { "about": "p_paul", "reply": "Njeru in 12? Pays cash every morning. Says he recruits for jobs in Qatar. He asked Faith which school she went to.", "reveals": [] },
-        { "about": "p_kennedy", "reply": "Room 7 shouted about hot water all evening. Then he got stuck in my lift. He'll want a refund.", "reveals": [] },
-        { "about": "p_zawadi", "reply": "Zawadi is the cook. She stays late Thursdays. She borrowed from Faith; everyone borrows from everyone here.", "reveals": [] }
-      ] },
-    { "person": "p_zawadi", "stance": "cooperative",
+        {
+          "about": "p_paul",
+          "reply": "Njeru in 12? Pays cash every morning. Says he recruits for jobs in Qatar. He asked Faith which school she went to.",
+          "reveals": []
+        },
+        {
+          "about": "p_kennedy",
+          "reply": "Room 7 shouted about hot water all evening. Then he got stuck in my lift. He'll want a refund.",
+          "reveals": []
+        },
+        {
+          "about": "p_zawadi",
+          "reply": "Zawadi is the cook. She stays late Thursdays. She borrowed from Faith; everyone borrows from everyone here.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_zawadi",
+      "stance": "cooperative",
       "intro": "Zawadi still has the paper bag of candles in her hand. \"I went for candles. I went for candles and when I came back…\"",
-      "claims": [], "yields": ["ev_zawadi"],
+      "claims": [],
+      "yields": [
+        "ev_zawadi"
+      ],
       "topics": [
-        { "about": "p_faith", "reply": "She said, 'Zawadi, run across, get candles, ours is the last one.' She laughed about it. That was eleven, ten past eleven.", "reveals": [] },
-        { "about": "p_kioskowner", "reply": "Ask Hassan. The whole street was at his kiosk for candles and he had no coins for change.", "reveals": ["ev_kiosk"] }
-      ] },
-    { "person": "p_paul", "stance": "cooperative",
+        {
+          "about": "p_faith",
+          "reply": "She said, 'Zawadi, run across, get candles, ours is the last one.' She laughed about it. That was eleven, ten past eleven.",
+          "reveals": []
+        },
+        {
+          "about": "p_kioskowner",
+          "reply": "Ask Hassan. The whole street was at his kiosk for candles and he had no coins for change.",
+          "reveals": [
+            "ev_kiosk"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_paul",
+      "stance": "cooperative",
       "intro": "Paul opens the door of room 12 in a hotel dressing gown, smiling. \"Officer. Terrible thing. Terrible.\"",
-      "claims": ["f_paul_claim", "f_paul_denial"], "yields": [],
+      "claims": [
+        "f_paul_claim",
+        "f_paul_denial"
+      ],
+      "yields": [],
       "topics": [
-        { "about": "ev_stub", "reply": "Somebody left a candle by my door? People are careless in the dark.", "reveals": [] },
-        { "about": "ev_notebook", "reply": "Peter Ndungu? I don't know any Peter Ndungu. Njeru, Paul. You have my ID.", "reveals": [] }
-      ] },
-    { "person": "p_kennedy", "stance": "cooperative",
+        {
+          "about": "ev_stub",
+          "reply": "Somebody left a candle by my door? People are careless in the dark.",
+          "reveals": []
+        },
+        {
+          "about": "ev_notebook",
+          "reply": "Peter Ndungu? I don't know any Peter Ndungu. Njeru, Paul. You have my ID.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_kennedy",
+      "stance": "cooperative",
       "intro": "Kennedy sits on the bottom stair, shirt soaked. \"Fifty minutes. Fifty minutes in that coffin.\"",
-      "claims": ["f_kennedy_claim"], "yields": [],
+      "claims": [
+        "f_kennedy_claim"
+      ],
+      "yields": [],
       "topics": [
-        { "about": "p_faith", "reply": "Yes, I shouted at her about the water. I'm not proud of it. She said sorry like it was her fault.", "reveals": ["f_kennedy_water"] }
-      ] },
-    { "person": "p_selina", "stance": "cooperative",
+        {
+          "about": "p_faith",
+          "reply": "Yes, I shouted at her about the water. I'm not proud of it. She said sorry like it was her fault.",
+          "reveals": [
+            "f_kennedy_water"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_selina",
+      "stance": "cooperative",
       "intro": "Selina packs her tools. \"I came in the front door at twenty to midnight. The desk was dark. I thought the girl had gone upstairs.\"",
-      "claims": [], "yields": [],
+      "claims": [],
+      "yields": [],
       "topics": [
-        { "about": "p_kennedy", "reply": "He was in that lift the whole time, believe me. He told me about it, loudly.", "reveals": [] }
-      ] }
+        {
+          "about": "p_kennedy",
+          "reply": "He was in that lift the whole time, believe me. He told me about it, loudly.",
+          "reveals": []
+        }
+      ]
+    }
   ],
-
   "contradictions": [],
-
   "words": [
-    { "id": "w_paul", "text": "Paul Njeru", "category": "person", "ref": "p_paul", "unlock": { "anyOf": ["f_register_room12"] } },
-    { "id": "w_kennedy", "text": "Kennedy Ouma", "category": "person", "ref": "p_kennedy", "unlock": { "anyOf": ["f_register_room7"] } },
-    { "id": "w_zawadi", "text": "Zawadi Mwende", "category": "person", "ref": "p_zawadi", "unlock": { "anyOf": ["f_amos_zawadi"] } },
-    { "id": "w_amos", "text": "Amos Kibet", "category": "person", "ref": "p_amos", "unlock": { "anyOf": ["f_amos_home"] } },
-    { "id": "w_selina", "text": "Selina Waweru", "category": "person", "ref": "p_selina", "unlock": { "anyOf": ["f_lift_sheet"] } }
+    {
+      "id": "w_paul",
+      "text": "Paul Njeru",
+      "category": "person",
+      "ref": "p_paul",
+      "unlock": {
+        "anyOf": [
+          "f_register_room12"
+        ]
+      }
+    },
+    {
+      "id": "w_kennedy",
+      "text": "Kennedy Ouma",
+      "category": "person",
+      "ref": "p_kennedy",
+      "unlock": {
+        "anyOf": [
+          "f_register_room7"
+        ]
+      }
+    },
+    {
+      "id": "w_zawadi",
+      "text": "Zawadi Mwende",
+      "category": "person",
+      "ref": "p_zawadi",
+      "unlock": {
+        "anyOf": [
+          "f_amos_zawadi"
+        ]
+      }
+    },
+    {
+      "id": "w_amos",
+      "text": "Amos Kibet",
+      "category": "person",
+      "ref": "p_amos",
+      "unlock": {
+        "anyOf": [
+          "f_amos_home"
+        ]
+      }
+    },
+    {
+      "id": "w_selina",
+      "text": "Selina Waweru",
+      "category": "person",
+      "ref": "p_selina",
+      "unlock": {
+        "anyOf": [
+          "f_lift_sheet"
+        ]
+      }
+    }
   ],
-
   "chargeSheet": {
     "template": "{who} killed {victim} at the Mapumziko Hotel.",
-    "fixed": { "victim": "Faith Chepkoech" },
+    "fixed": {
+      "victim": "Faith Chepkoech"
+    },
     "groups": [
-      { "id": "g_who", "kind": "who", "blanks": [ { "id": "who", "category": "person", "answer": "w_paul" } ],
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_paul"
+          }
+        ],
         "prosecutor": {
           "pass": "The killer brought light, and the light went to his own door. That will hold.",
           "fail": [
             "This doesn't hold up. In a blackout, someone needed light. Follow it.",
             "No. Who could actually move around that hotel between ten past and half past eleven?"
-          ] } }
+          ]
+        }
+      }
     ]
   },
-
   "solution": {
-    "timeOfDeath": { "place": "loc_hotel", "from": "23:12", "to": "23:30", "within": ["plc_desk"] },
+    "timeOfDeath": {
+      "place": "loc_hotel",
+      "from": "23:12",
+      "to": "23:30",
+      "within": [
+        "plc_desk"
+      ]
+    },
     "proof": [
-      { "id": "s1", "from": ["f_clock", "f_candle_unlit", "f_zawadi_sent"],
-        "concludes": "Faith died during the blackout, after 23:11, in the dark, and her own candle was never lit: the killer brought light." },
-      { "id": "s2", "from": ["s1", "f_wax_trail", "f_stub_room12", "f_register_room12", "f_key12"],
+      {
+        "id": "s1",
+        "from": [
+          "f_clock",
+          "f_candle_unlit",
+          "f_zawadi_sent"
+        ],
+        "concludes": "Faith died during the blackout, after 23:11, in the dark, and her own candle was never lit: the killer brought light."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_wax_trail",
+          "f_stub_room12",
+          "f_register_room12",
+          "f_key12"
+        ],
         "concludes": "The light went from the desk up to room 12, whose guest, Paul Njeru, was in the hotel all night.",
-        "answers": ["who"] }
+        "answers": [
+          "who"
+        ]
+      }
     ],
     "eliminations": [
-      { "word": "w_kennedy", "blank": "who", "by": ["f_lift_sheet"], "why": "Kennedy was stuck in the lift from 23:10 to 23:58." },
-      { "word": "w_zawadi", "blank": "who", "by": ["f_kiosk_zawadi", "f_kiosk_candles"], "why": "Zawadi was across the road at the kiosk from 23:11 to about 23:35, and her candles are still wrapped." },
-      { "word": "w_amos", "blank": "who", "by": ["f_amos_home"], "why": "Amos was at home in Kileleshwa until he was phoned at 23:58." },
-      { "word": "w_selina", "blank": "who", "by": ["f_selina_arrive"], "why": "Selina was on a call-out in Ngara and only arrived through the front door at 23:40." }
+      {
+        "word": "w_kennedy",
+        "blank": "who",
+        "by": [
+          "f_lift_sheet"
+        ],
+        "why": "Kennedy was stuck in the lift from 23:10 to 23:58."
+      },
+      {
+        "word": "w_zawadi",
+        "blank": "who",
+        "by": [
+          "f_kiosk_zawadi",
+          "f_kiosk_candles"
+        ],
+        "why": "Zawadi was across the road at the kiosk from 23:11 to about 23:35, and her candles are still wrapped."
+      },
+      {
+        "word": "w_amos",
+        "blank": "who",
+        "by": [
+          "f_amos_home"
+        ],
+        "why": "Amos was at home in Kileleshwa until he was phoned at 23:58."
+      },
+      {
+        "word": "w_selina",
+        "blank": "who",
+        "by": [
+          "f_selina_arrive"
+        ],
+        "why": "Selina was on a call-out in Ngara and only arrived through the front door at 23:40."
+      }
     ],
     "reconstruction": [
-      { "text": "Two years ago, a man calling himself Peter Ndungu takes KSh 180,000 from Faith's mother for a job in Qatar that doesn't exist.", "image": null },
-      { "text": "Wednesday. 'Paul Njeru' checks into room 12 and pays cash. On Thursday evening Faith recognises his voice and writes it down: police tomorrow.", "image": null },
-      { "text": "23:10. Stima imepotea. The lift stops with a guest inside. Faith sends Zawadi across the road for candles.", "image": "loc_hotel" },
-      { "text": "Paul comes down the stairs with a candle from his room. At the dark desk he kills her with the lanyard of her own keys.", "image": null },
-      { "text": "He climbs back to the 2nd floor, wax dripping, and sets the candle down outside his door while he finds his key in the dark. It burns down there.", "image": null }
+      {
+        "text": "Two years ago, a man calling himself Peter Ndungu takes KSh 180,000 from Faith's mother for a job in Qatar that doesn't exist.",
+        "image": null
+      },
+      {
+        "text": "Wednesday. 'Paul Njeru' checks into room 12 and pays cash. On Thursday evening Faith recognises his voice and writes it down: police tomorrow.",
+        "image": null
+      },
+      {
+        "text": "23:10. Stima imepotea. The lift stops with a guest inside. Faith sends Zawadi across the road for candles.",
+        "image": "loc_hotel"
+      },
+      {
+        "text": "Paul comes down the stairs with a candle from his room. At the dark desk he kills her with the lanyard of her own keys.",
+        "image": null
+      },
+      {
+        "text": "He climbs back to the 2nd floor, wax dripping, and sets the candle down outside his door while he finds his key in the dark. It burns down there.",
+        "image": null
+      }
     ]
   },
-
   "hints": {
     "g_who": {
-      "tier1": { "point": "ev_stub", "line": "In a blackout everyone needs light. Faith's candle was never lit. So whose candle was it?" },
-      "tier2": { "facts": ["f_wax_trail", "f_stub_room12"], "line": "Wax from the desk to the 2nd floor, and a stub outside one door. Check the register for that door." }
+      "tier1": {
+        "point": "ev_stub",
+        "line": "In a blackout everyone needs light. Faith's candle was never lit. So whose candle was it?"
+      },
+      "tier2": {
+        "facts": [
+          "f_wax_trail",
+          "f_stub_room12"
+        ],
+        "line": "Wax from the desk to the 2nd floor, and a stub outside one door. Check the register for that door."
+      }
     }
   },
-
   "glossary": [
-    { "term": "stima", "def": "Electricity. 'Stima imepotea': the power's gone." },
-    { "term": "kibanda", "def": "Small roadside stall or kiosk." },
-    { "term": "mama", "def": "Mother; also a respectful way to address an older woman." }
+    {
+      "term": "stima",
+      "def": "Electricity. 'Stima imepotea': the power's gone."
+    },
+    {
+      "term": "kibanda",
+      "def": "Small roadside stall or kiosk."
+    },
+    {
+      "term": "mama",
+      "def": "Mother; also a respectful way to address an older woman."
+    }
   ],
-
   "ui": {
-    "beats": ["sceneSketch"],
+    "beats": [
+      "sceneSketch"
+    ],
     "beatNotes": "The scene is a police floor-plan sketch of all three floors. Tapping the stairs reveals the wax trail floor by floor. First case where following evidence across space matters."
   }
 }

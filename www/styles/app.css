@@ -967,3 +967,7 @@ img, video, canvas { max-width: 100%; }
 .cam-body .card-btn { margin: 4px 0 0; width: 100%; }
 [data-motion=reduce] .cam-card, [data-motion=reduce] .sheet--location .photo { transition: opacity 150ms; transform: none; }
 [hidden] { display: none !important; }
+
+/* In the iOS app: no text-selection loupe or link previews on long press, except where you type. */
+html.is-native body { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; }
+html.is-native input, html.is-native textarea { -webkit-user-select: text; user-select: text; }

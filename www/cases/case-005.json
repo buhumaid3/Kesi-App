@@ -1,233 +1,914 @@
 {
   "meta": {
-    "id": "case-005", "number": 5, "region": "nairobi-cbd", "regionNumber": 1,
-    "title": "The Long Rains", "boss": false, "schemaVersion": 1, "estMinutes": 7,
-    "date": "Thursday 9 April", "folderTab": "JEEVANJEE"
+    "id": "case-005",
+    "number": 5,
+    "region": "nairobi-cbd",
+    "regionNumber": 1,
+    "title": "The Long Rains",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 7,
+    "date": "Thursday 9 April",
+    "folderTab": "JEEVANJEE"
   },
   "pattern": {
     "crimePattern": "informal lender loses his temper over a small debt",
     "noRealCaseRetold": true,
     "notes": "Fictional lender and vendor; Jeevanjee Gardens is a public setting only.",
-    "tags": ["blunt-force", "debt"]
+    "tags": [
+      "blunt-force",
+      "debt"
+    ]
   },
   "difficulty": {
-    "suspects": 3, "chainLength": 2, "redHerrings": 0, "liars": 0,
-    "groups": ["who"], "evidenceTypes": ["physical", "witness"], "gatedActions": [], "twist": null
+    "suspects": 3,
+    "chainLength": 2,
+    "redHerrings": 0,
+    "liars": 0,
+    "groups": [
+      "who"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness"
+    ],
+    "gatedActions": [],
+    "twist": null
   },
-
   "ob": {
-    "number": "OB 12/09/04", "date": "Thursday 9 April", "time": "15:31",
+    "number": "OB 12/09/04",
+    "date": "Thursday 9 April",
+    "time": "15:31",
     "reportedBy": "Bakari Mwamba, county gardener, Jeevanjee Gardens",
     "text": "County gardener Bakari Mwamba reports that newspaper and airtime vendor Patrick Njoroge (47) was found collapsed under his kiosk awning at Jeevanjee Gardens at 15:25, after the afternoon downpour. Pronounced dead at the scene.",
-    "facts": ["f_ob_found"]
+    "facts": [
+      "f_ob_found"
+    ]
   },
-
   "people": [
-    { "id": "p_patrick", "role": "victim", "name": "Patrick Njoroge", "age": 47, "occupation": "Newspaper and airtime vendor, Jeevanjee Gardens",
+    {
+      "id": "p_patrick",
+      "role": "victim",
+      "name": "Patrick Njoroge",
+      "age": 47,
+      "occupation": "Newspaper and airtime vendor, Jeevanjee Gardens",
       "bio": "Sold newspapers and airtime from the same kiosk for fifteen years. Kept his accounts in a school exercise book.",
-      "community": "Kikuyu", "isCulprit": false, "unlock": { "start": true }, "at": "loc_jeevanjee",
-      "image": { "kind": "portrait", "brief": "Kenyan man, late 40s, round glasses, a sleeveless sweater over a shirt, a bundle of folded newspapers under one arm, warm crinkled smile, ID-photo framing", "ref": null } },
-    { "id": "p_bernard", "role": "suspect", "name": "Bernard Langat", "age": 50, "occupation": "Runs 'Langat Credit', a small lending business",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_jeevanjee",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 40s, round glasses, a sleeveless sweater over a shirt, a bundle of folded newspapers under one arm, warm crinkled smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_bernard",
+      "role": "suspect",
+      "name": "Bernard Langat",
+      "age": 50,
+      "occupation": "Runs 'Langat Credit', a small lending business",
       "bio": "Lends small sums to traders around the CBD at high interest. Patrick owed him KSh 10,000.",
-      "community": "Kalenjin", "isCulprit": true, "unlock": { "fact": "f_umbrella_sticker" }, "at": "plc_kiosk",
-      "image": { "kind": "portrait", "brief": "Kenyan man, around 50, long grey raincoat, trilby hat, a leather collection book in his hand, hard patient expression, ID-photo framing", "ref": null } },
-    { "id": "p_tony", "role": "suspect", "name": "Tony Kariuki", "age": 22, "occupation": "Patrick's nephew; worked the kiosk",
+      "community": "Kalenjin",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_umbrella_sticker"
+      },
+      "at": "plc_kiosk",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, around 50, long grey raincoat, trilby hat, a leather collection book in his hand, hard patient expression, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_tony",
+      "role": "suspect",
+      "name": "Tony Kariuki",
+      "age": 22,
+      "occupation": "Patrick's nephew; worked the kiosk",
       "bio": "Helps at the kiosk and collects the afternoon papers. Quarrelled with his uncle about wages last week.",
-      "community": "Kikuyu", "isCulprit": false, "unlock": { "fact": "f_bakari_tony" }, "at": "plc_depot",
-      "image": { "kind": "portrait", "brief": "Kenyan young man, early 20s, oversized football jersey, a bundle of afternoon newspapers tied with string, red eyes from crying, ID-photo framing", "ref": null } },
-    { "id": "p_fredrick", "role": "suspect", "name": "Fredrick Ouko", "age": 38, "occupation": "Rival vendor",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_bakari_tony"
+      },
+      "at": "plc_depot",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan young man, early 20s, oversized football jersey, a bundle of afternoon newspapers tied with string, red eyes from crying, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_fredrick",
+      "role": "suspect",
+      "name": "Fredrick Ouko",
+      "age": 38,
+      "occupation": "Rival vendor",
       "bio": "Sells newspapers at the other gate of the gardens. Has applied to the county for Patrick's better pitch.",
-      "community": "Luo", "isCulprit": false, "unlock": { "fact": "f_bakari_fredrick" }, "at": "plc_huduma",
-      "image": { "kind": "portrait", "brief": "Kenyan man, late 30s, neat shirt and tie, a plastic folder of county forms, defensive and offended, ID-photo framing", "ref": null } },
-    { "id": "p_esther", "role": "witness", "name": "Esther Muthoni", "age": 61, "occupation": "Regular customer",
-      "bio": "Buys airtime from Patrick every weekday on her way home to Kangemi.", "community": "Kikuyu", "isCulprit": false,
-      "unlock": { "fact": "f_ledger_esther" }, "at": "plc_kiosk", "image": null },
-    { "id": "p_bakari", "role": "witness", "name": "Bakari Mwamba", "age": 45, "occupation": "County gardener",
-      "bio": "Tends the flowerbeds at Jeevanjee. Found Patrick.", "community": "Mijikenda", "isCulprit": false,
-      "unlock": { "start": true }, "at": "loc_jeevanjee", "image": null },
-    { "id": "p_dispatcher", "role": "witness", "name": "Wilfred Kamau", "age": 44, "occupation": "Dispatcher, Taifa newspaper depot",
-      "bio": "Hands out the Taifa Jioni bundles. Speaks to Amani by phone.", "community": "Kikuyu", "isCulprit": false,
-      "unlock": { "fact": "f_bakari_tony" }, "at": "plc_depot", "statementOnly": true, "image": null }
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_bakari_fredrick"
+      },
+      "at": "plc_huduma",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, late 30s, neat shirt and tie, a plastic folder of county forms, defensive and offended, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_esther",
+      "role": "witness",
+      "name": "Esther Muthoni",
+      "age": 61,
+      "occupation": "Regular customer",
+      "bio": "Buys airtime from Patrick every weekday on her way home to Kangemi.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_ledger_esther"
+      },
+      "at": "plc_kiosk",
+      "image": null
+    },
+    {
+      "id": "p_bakari",
+      "role": "witness",
+      "name": "Bakari Mwamba",
+      "age": 45,
+      "occupation": "County gardener",
+      "bio": "Tends the flowerbeds at Jeevanjee. Found Patrick.",
+      "community": "Mijikenda",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "loc_jeevanjee",
+      "image": null
+    },
+    {
+      "id": "p_dispatcher",
+      "role": "witness",
+      "name": "Wilfred Kamau",
+      "age": 44,
+      "occupation": "Dispatcher, Taifa newspaper depot",
+      "bio": "Hands out the Taifa Jioni bundles. Speaks to Amani by phone.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_bakari_tony"
+      },
+      "at": "plc_depot",
+      "statementOnly": true,
+      "image": null
+    }
   ],
-
   "places": [
-    { "id": "plc_kiosk", "name": "Patrick's kiosk under its tin awning", "within": "loc_jeevanjee" },
-    { "id": "plc_toilets", "name": "Gardeners' shelter in the toilet block", "within": "loc_jeevanjee" },
-    { "id": "plc_depot", "name": "Taifa newspaper depot, Industrial Area" },
-    { "id": "plc_huduma", "name": "Huduma Centre, GPO" },
-    { "id": "plc_matatu", "name": "Matatu from Jeevanjee to Kangemi" }
+    {
+      "id": "plc_kiosk",
+      "name": "Patrick's kiosk under its tin awning",
+      "within": "loc_jeevanjee"
+    },
+    {
+      "id": "plc_toilets",
+      "name": "Gardeners' shelter in the toilet block",
+      "within": "loc_jeevanjee"
+    },
+    {
+      "id": "plc_depot",
+      "name": "Taifa newspaper depot, Industrial Area"
+    },
+    {
+      "id": "plc_huduma",
+      "name": "Huduma Centre, GPO"
+    },
+    {
+      "id": "plc_matatu",
+      "name": "Matatu from Jeevanjee to Kangemi"
+    }
   ],
-
   "locations": [
-    { "id": "loc_jeevanjee", "name": "Jeevanjee Gardens", "kind": "scene",
+    {
+      "id": "loc_jeevanjee",
+      "name": "Jeevanjee Gardens",
+      "kind": "scene",
       "description": "A small public park in the CBD, crowded at lunch, empty in rain. The downpour began at 14:50 and stopped at about 15:30. Everything is soaked: the benches, the grass, the paths. Patrick's kiosk stands under a small tin awning by the north gate.",
-      "unlock": { "start": true },
+      "unlock": {
+        "start": true
+      },
       "hotspots": [
-        { "id": "hs_body", "label": "Under the kiosk awning", "pos": [46, 64], "yields": "ev_body",
-          "text": "Patrick lies half under the awning, half out of it. The report says one blow. Amani crouches: the ground under his body is dry. Everything around it is soaked." },
-        { "id": "hs_umbrella", "label": "Beside the kiosk", "pos": [62, 70], "yields": "ev_umbrella",
-          "text": "A closed black umbrella leans against the kiosk. It isn't wet inside its folds. A sticker is on the handle." },
-        { "id": "hs_drawer", "label": "Kiosk drawer", "pos": [40, 54], "yields": "ev_ledger",
-          "text": "Airtime cards, a cash tin with a few hundred shillings, and a school exercise book of accounts." },
-        { "id": "hs_toilets", "label": "Toilet block", "pos": [84, 30], "yields": "ev_bakari",
-          "text": "Bakari Mwamba and two other gardeners shelter here when it rains." }
+        {
+          "id": "hs_body",
+          "label": "Under the kiosk awning",
+          "pos": [
+            52,
+            68
+          ],
+          "yields": "ev_body",
+          "text": "Patrick lies half under the awning, half out of it. The report says one blow. Amani crouches: the ground under his body is dry. Everything around it is soaked."
+        },
+        {
+          "id": "hs_umbrella",
+          "label": "Beside the kiosk",
+          "pos": [
+            63,
+            58
+          ],
+          "yields": "ev_umbrella",
+          "text": "A closed black umbrella leans against the kiosk. It isn't wet inside its folds. A sticker is on the handle."
+        },
+        {
+          "id": "hs_drawer",
+          "label": "Kiosk drawer",
+          "pos": [
+            53,
+            48
+          ],
+          "yields": "ev_ledger",
+          "text": "Airtime cards, a cash tin with a few hundred shillings, and a school exercise book of accounts."
+        },
+        {
+          "id": "hs_toilets",
+          "label": "Toilet block",
+          "pos": [
+            84,
+            30
+          ],
+          "yields": "ev_bakari",
+          "text": "Bakari Mwamba and two other gardeners shelter here when it rains."
+        }
       ],
-      "image": { "kind": "location", "brief": "Jeevanjee Gardens in Nairobi during heavy rain, a small green newspaper kiosk under a tin awning by the gate, soaked benches, puddles on the paths, grey sky, no people" } }
+      "image": {
+        "kind": "location",
+        "brief": "Jeevanjee Gardens in Nairobi during heavy rain, a small green newspaper kiosk under a tin awning by the gate, soaked benches, puddles on the paths, grey sky, no people"
+      },
+      "hotspotsAuto": true
+    }
   ],
-
   "evidence": [
-    { "id": "ev_body", "type": "physical", "title": "The body", "render": "sceneNote",
-      "body": { "note": "Report language only." }, "facts": ["f_body_blow", "f_dryground"], "gate": null,
-      "image": { "kind": "scene", "brief": "a dry rectangle of pavement under a kiosk awning surrounded by rain-soaked ground, scattered wet newspapers, police tape, no body visible" } },
-    { "id": "ev_umbrella", "type": "physical", "title": "Black umbrella", "render": "object",
-      "body": { "label": "Closed black umbrella, dry in its folds. Handle sticker: LANGAT CREDIT — Mikopo Haraka — 07xx xxx 214." },
-      "facts": ["f_umbrella_sticker", "f_umbrella_dry"], "gate": null,
-      "image": { "kind": "evidence", "brief": "a closed black umbrella leaning against a green kiosk, a printed sticker on the handle reading 'LANGAT CREDIT — Mikopo Haraka' with a phone number" } },
-    { "id": "ev_ledger", "type": "physical", "title": "Patrick's account book", "render": "note",
-      "body": { "text": "Thursday:\nAirtime — Mama Esther 100 (14:35)\nLangat 10,000 — paid 2,000 today. Balance 8,000.\nTony's wages — talk Saturday." },
-      "facts": ["f_ledger_langat", "f_ledger_esther"], "gate": null, "image": null },
-    { "id": "ev_bakari", "type": "witness", "title": "Statement: Bakari Mwamba", "render": "statement",
-      "body": { "speaker": "p_bakari" }, "facts": ["f_bakari_rain", "f_bakari_shelter", "f_bakari_tony", "f_bakari_fredrick"], "gate": null, "image": null },
-    { "id": "ev_esther", "type": "witness", "title": "Statement: Esther Muthoni", "render": "statement",
-      "body": { "speaker": "p_esther" }, "facts": ["f_esther_alive", "f_esther_man", "f_esther_left"], "gate": null, "image": null },
-    { "id": "ev_depot", "type": "witness", "title": "Phone: Taifa depot dispatcher", "render": "statement",
-      "body": { "speaker": "p_dispatcher", "channel": "phone" }, "facts": ["f_depot_tony"], "gate": null, "image": null },
-    { "id": "ev_huduma", "type": "physical", "title": "Huduma Centre queue ticket", "render": "ticket",
-      "body": { "office": "Huduma Centre GPO", "number": "C-114", "issued": "13:58", "served": "15:21" },
-      "facts": ["f_huduma"], "gate": null, "image": null }
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only."
+      },
+      "facts": [
+        "f_body_blow",
+        "f_dryground"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "scene",
+        "brief": "a dry rectangle of pavement under a kiosk awning surrounded by rain-soaked ground, scattered wet newspapers, police tape, no body visible"
+      }
+    },
+    {
+      "id": "ev_umbrella",
+      "type": "physical",
+      "title": "Black umbrella",
+      "render": "object",
+      "body": {
+        "label": "Closed black umbrella, dry in its folds. Handle sticker: LANGAT CREDIT — Mikopo Haraka — 07xx xxx 214."
+      },
+      "facts": [
+        "f_umbrella_sticker",
+        "f_umbrella_dry"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "a closed black umbrella leaning against a green kiosk, a printed sticker on the handle reading 'LANGAT CREDIT — Mikopo Haraka' with a phone number"
+      }
+    },
+    {
+      "id": "ev_ledger",
+      "type": "physical",
+      "title": "Patrick's account book",
+      "render": "note",
+      "body": {
+        "text": "Thursday:\nAirtime — Mama Esther 100 (14:35)\nLangat 10,000 — paid 2,000 today. Balance 8,000.\nTony's wages — talk Saturday."
+      },
+      "facts": [
+        "f_ledger_langat",
+        "f_ledger_esther"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_bakari",
+      "type": "witness",
+      "title": "Statement: Bakari Mwamba",
+      "render": "statement",
+      "body": {
+        "speaker": "p_bakari"
+      },
+      "facts": [
+        "f_bakari_rain",
+        "f_bakari_shelter",
+        "f_bakari_tony",
+        "f_bakari_fredrick"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_esther",
+      "type": "witness",
+      "title": "Statement: Esther Muthoni",
+      "render": "statement",
+      "body": {
+        "speaker": "p_esther"
+      },
+      "facts": [
+        "f_esther_alive",
+        "f_esther_man",
+        "f_esther_left"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_depot",
+      "type": "witness",
+      "title": "Phone: Taifa depot dispatcher",
+      "render": "statement",
+      "body": {
+        "speaker": "p_dispatcher",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_depot_tony"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_huduma",
+      "type": "physical",
+      "title": "Huduma Centre queue ticket",
+      "render": "ticket",
+      "body": {
+        "office": "Huduma Centre GPO",
+        "number": "C-114",
+        "issued": "13:58",
+        "served": "15:21"
+      },
+      "facts": [
+        "f_huduma"
+      ],
+      "gate": null,
+      "image": null
+    }
   ],
-
   "facts": [
-    { "id": "f_ob_found", "text": "Patrick Njoroge was found under his kiosk awning at 15:25, after the downpour.", "kind": "true", "about": ["p_patrick", "loc_jeevanjee"] },
-    { "id": "f_body_blow", "text": "Patrick was struck once, hard, on the side of the head.", "kind": "true", "about": ["p_patrick"] },
-    { "id": "f_dryground", "text": "The ground under Patrick's body is dry, though everything around it is soaked. He was lying there before the rain began.", "kind": "true", "about": ["p_patrick", "plc_kiosk"] },
-    { "id": "f_umbrella_sticker", "text": "The umbrella's handle sticker: 'Langat Credit — Mikopo Haraka', with a phone number.", "kind": "true", "about": ["ev_umbrella", "p_bernard"] },
-    { "id": "f_umbrella_dry", "text": "The umbrella is dry inside its folds: it was left closed before the rain and never opened.", "kind": "true", "about": ["ev_umbrella"] },
-    { "id": "f_ledger_langat", "text": "Patrick's book, today: 'Langat 10,000 — paid 2,000 today. Balance 8,000.'", "kind": "true", "about": ["p_patrick", "p_bernard"] },
-    { "id": "f_ledger_esther", "text": "Patrick's book, today: 'Airtime — Mama Esther 100 (14:35).'", "kind": "true", "about": ["p_patrick", "p_esther"] },
-    { "id": "f_bakari_rain", "text": "Bakari: the rain began at ten to three and stopped at about half past.", "kind": "true", "about": ["p_bakari", "loc_jeevanjee"] },
-    { "id": "f_bakari_shelter", "text": "Bakari sheltered in the toilet block with two other gardeners from 14:50 until 15:25, then found Patrick.", "kind": "true", "about": ["p_bakari"],
-      "where": { "person": "p_bakari", "place": "plc_toilets", "from": "14:50", "to": "15:25" } },
-    { "id": "f_bakari_tony", "text": "Bakari: Patrick's nephew Tony goes to the newspaper depot every afternoon for the Taifa Jioni.", "kind": "true", "about": ["p_bakari", "p_tony"] },
-    { "id": "f_bakari_fredrick", "text": "Bakari: Fredrick Ouko, who sells papers at the other gate, wants Patrick's pitch.", "kind": "true", "about": ["p_bakari", "p_fredrick"] },
-    { "id": "f_esther_alive", "text": "Esther bought airtime from Patrick at 14:35. He was fine.", "kind": "true", "about": ["p_esther", "p_patrick"] },
-    { "id": "f_esther_man", "text": "A man in a long grey coat with a black umbrella was waiting beside the kiosk 'like a man waiting to be paid.'", "kind": "true", "about": ["p_esther", "plc_kiosk"] },
-    { "id": "f_esther_left", "text": "Esther left on the 14:38 matatu to Kangemi and shows the fare receipt.", "kind": "true", "about": ["p_esther"],
-      "where": { "person": "p_esther", "place": "plc_matatu", "from": "14:38", "to": "15:30" } },
-    { "id": "f_esther_ids_langat", "text": "Esther: \"Langat? The lender? Yes, that was him in the grey coat at the kiosk, twenty-five to three.\"", "kind": "true", "about": ["p_esther", "p_bernard"],
-      "where": { "person": "p_bernard", "place": "plc_kiosk", "from": "14:35", "to": "14:40" } },
-    { "id": "f_depot_tony", "text": "Dispatcher: Tony collected the Taifa Jioni bundle at 14:30 and waited for the second van until 15:05.", "kind": "true", "about": ["p_tony"],
-      "where": { "person": "p_tony", "place": "plc_depot", "from": "14:30", "to": "15:05" } },
-    { "id": "f_huduma", "text": "Fredrick's Huduma Centre ticket C-114: issued 13:58, served 15:21. He was inside the whole time.", "kind": "true", "about": ["p_fredrick"],
-      "where": { "person": "p_fredrick", "place": "plc_huduma", "from": "13:58", "to": "15:21" } },
-    { "id": "f_bernard_claim", "text": "Bernard: \"I collect from forty people a week. I don't remember every one.\"", "kind": "claim", "about": ["p_bernard"] },
-    { "id": "f_bernard_denial", "text": "Bernard: \"I lend money. I don't break heads. Dead men don't pay.\"", "kind": "claim", "about": ["p_bernard"] },
-    { "id": "f_bernard_umbrella", "text": "Bernard says he 'lost an umbrella somewhere this week.'", "kind": "claim", "about": ["p_bernard", "ev_umbrella"] },
-    { "id": "f_tony_wages", "text": "Tony and his uncle argued about wages last week; they were meant to talk on Saturday.", "kind": "true", "about": ["p_tony", "p_patrick"] },
-    { "id": "f_fredrick_pitch", "text": "Fredrick has applied to the county for Patrick's pitch. He was at Huduma Centre about it today.", "kind": "true", "about": ["p_fredrick"] }
+    {
+      "id": "f_ob_found",
+      "text": "Patrick Njoroge was found under his kiosk awning at 15:25, after the downpour.",
+      "kind": "true",
+      "about": [
+        "p_patrick",
+        "loc_jeevanjee"
+      ]
+    },
+    {
+      "id": "f_body_blow",
+      "text": "Patrick was struck once, hard, on the side of the head.",
+      "kind": "true",
+      "about": [
+        "p_patrick"
+      ]
+    },
+    {
+      "id": "f_dryground",
+      "text": "The ground under Patrick's body is dry, though everything around it is soaked. He was lying there before the rain began.",
+      "kind": "true",
+      "about": [
+        "p_patrick",
+        "plc_kiosk"
+      ]
+    },
+    {
+      "id": "f_umbrella_sticker",
+      "text": "The umbrella's handle sticker: 'Langat Credit — Mikopo Haraka', with a phone number.",
+      "kind": "true",
+      "about": [
+        "ev_umbrella",
+        "p_bernard"
+      ]
+    },
+    {
+      "id": "f_umbrella_dry",
+      "text": "The umbrella is dry inside its folds: it was left closed before the rain and never opened.",
+      "kind": "true",
+      "about": [
+        "ev_umbrella"
+      ]
+    },
+    {
+      "id": "f_ledger_langat",
+      "text": "Patrick's book, today: 'Langat 10,000 — paid 2,000 today. Balance 8,000.'",
+      "kind": "true",
+      "about": [
+        "p_patrick",
+        "p_bernard"
+      ]
+    },
+    {
+      "id": "f_ledger_esther",
+      "text": "Patrick's book, today: 'Airtime — Mama Esther 100 (14:35).'",
+      "kind": "true",
+      "about": [
+        "p_patrick",
+        "p_esther"
+      ]
+    },
+    {
+      "id": "f_bakari_rain",
+      "text": "Bakari: the rain began at ten to three and stopped at about half past.",
+      "kind": "true",
+      "about": [
+        "p_bakari",
+        "loc_jeevanjee"
+      ]
+    },
+    {
+      "id": "f_bakari_shelter",
+      "text": "Bakari sheltered in the toilet block with two other gardeners from 14:50 until 15:25, then found Patrick.",
+      "kind": "true",
+      "about": [
+        "p_bakari"
+      ],
+      "where": {
+        "person": "p_bakari",
+        "place": "plc_toilets",
+        "from": "14:50",
+        "to": "15:25"
+      }
+    },
+    {
+      "id": "f_bakari_tony",
+      "text": "Bakari: Patrick's nephew Tony goes to the newspaper depot every afternoon for the Taifa Jioni.",
+      "kind": "true",
+      "about": [
+        "p_bakari",
+        "p_tony"
+      ]
+    },
+    {
+      "id": "f_bakari_fredrick",
+      "text": "Bakari: Fredrick Ouko, who sells papers at the other gate, wants Patrick's pitch.",
+      "kind": "true",
+      "about": [
+        "p_bakari",
+        "p_fredrick"
+      ]
+    },
+    {
+      "id": "f_esther_alive",
+      "text": "Esther bought airtime from Patrick at 14:35. He was fine.",
+      "kind": "true",
+      "about": [
+        "p_esther",
+        "p_patrick"
+      ]
+    },
+    {
+      "id": "f_esther_man",
+      "text": "A man in a long grey coat with a black umbrella was waiting beside the kiosk 'like a man waiting to be paid.'",
+      "kind": "true",
+      "about": [
+        "p_esther",
+        "plc_kiosk"
+      ]
+    },
+    {
+      "id": "f_esther_left",
+      "text": "Esther left on the 14:38 matatu to Kangemi and shows the fare receipt.",
+      "kind": "true",
+      "about": [
+        "p_esther"
+      ],
+      "where": {
+        "person": "p_esther",
+        "place": "plc_matatu",
+        "from": "14:38",
+        "to": "15:30"
+      }
+    },
+    {
+      "id": "f_esther_ids_langat",
+      "text": "Esther: \"Langat? The lender? Yes, that was him in the grey coat at the kiosk, twenty-five to three.\"",
+      "kind": "true",
+      "about": [
+        "p_esther",
+        "p_bernard"
+      ],
+      "where": {
+        "person": "p_bernard",
+        "place": "plc_kiosk",
+        "from": "14:35",
+        "to": "14:40"
+      }
+    },
+    {
+      "id": "f_depot_tony",
+      "text": "Dispatcher: Tony collected the Taifa Jioni bundle at 14:30 and waited for the second van until 15:05.",
+      "kind": "true",
+      "about": [
+        "p_tony"
+      ],
+      "where": {
+        "person": "p_tony",
+        "place": "plc_depot",
+        "from": "14:30",
+        "to": "15:05"
+      }
+    },
+    {
+      "id": "f_huduma",
+      "text": "Fredrick's Huduma Centre ticket C-114: issued 13:58, served 15:21. He was inside the whole time.",
+      "kind": "true",
+      "about": [
+        "p_fredrick"
+      ],
+      "where": {
+        "person": "p_fredrick",
+        "place": "plc_huduma",
+        "from": "13:58",
+        "to": "15:21"
+      }
+    },
+    {
+      "id": "f_bernard_claim",
+      "text": "Bernard: \"I collect from forty people a week. I don't remember every one.\"",
+      "kind": "claim",
+      "about": [
+        "p_bernard"
+      ]
+    },
+    {
+      "id": "f_bernard_denial",
+      "text": "Bernard: \"I lend money. I don't break heads. Dead men don't pay.\"",
+      "kind": "claim",
+      "about": [
+        "p_bernard"
+      ]
+    },
+    {
+      "id": "f_bernard_umbrella",
+      "text": "Bernard says he 'lost an umbrella somewhere this week.'",
+      "kind": "claim",
+      "about": [
+        "p_bernard",
+        "ev_umbrella"
+      ]
+    },
+    {
+      "id": "f_tony_wages",
+      "text": "Tony and his uncle argued about wages last week; they were meant to talk on Saturday.",
+      "kind": "true",
+      "about": [
+        "p_tony",
+        "p_patrick"
+      ]
+    },
+    {
+      "id": "f_fredrick_pitch",
+      "text": "Fredrick has applied to the county for Patrick's pitch. He was at Huduma Centre about it today.",
+      "kind": "true",
+      "about": [
+        "p_fredrick"
+      ]
+    }
   ],
-
   "interrogations": [
-    { "person": "p_bakari", "stance": "cooperative",
+    {
+      "person": "p_bakari",
+      "stance": "cooperative",
       "intro": "Bakari is still holding his rake. \"Fifteen years he sold me the Taifa every morning. Fifteen years.\"",
-      "claims": [], "yields": [],
+      "claims": [],
+      "yields": [],
       "topics": [
-        { "about": "p_patrick", "reply": "He owed some people money. Everyone does. He was a good man with bad luck.", "reveals": [] },
-        { "about": "p_tony", "reply": "Tony goes for the Taifa Jioni every afternoon. Industrial Area. He wasn't even here.", "reveals": [] }
-      ] },
-    { "person": "p_esther", "stance": "cooperative",
+        {
+          "about": "p_patrick",
+          "reply": "He owed some people money. Everyone does. He was a good man with bad luck.",
+          "reveals": []
+        },
+        {
+          "about": "p_tony",
+          "reply": "Tony goes for the Taifa Jioni every afternoon. Industrial Area. He wasn't even here.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_esther",
+      "stance": "cooperative",
       "intro": "Esther comes back to the gardens when she hears, still in her church scarf. \"I saw him at twenty-five to three. He gave me my airtime and a joke.\"",
-      "claims": [], "yields": ["ev_esther"],
+      "claims": [],
+      "yields": [
+        "ev_esther"
+      ],
       "topics": [
-        { "about": "p_bernard", "reply": "Langat? The lender in the grey coat? Yes, that was him waiting at the kiosk, twenty-five to three. I know that coat; he collects at my church too.", "reveals": ["f_esther_ids_langat"] },
-        { "about": "ev_umbrella", "reply": "A black umbrella, closed, hooked over his arm. It wasn't raining yet.", "reveals": [] }
-      ] },
-    { "person": "p_bernard", "stance": "cooperative",
+        {
+          "about": "p_bernard",
+          "reply": "Langat? The lender in the grey coat? Yes, that was him waiting at the kiosk, twenty-five to three. I know that coat; he collects at my church too.",
+          "reveals": [
+            "f_esther_ids_langat"
+          ]
+        },
+        {
+          "about": "ev_umbrella",
+          "reply": "A black umbrella, closed, hooked over his arm. It wasn't raining yet.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_bernard",
+      "stance": "cooperative",
       "intro": "Bernard answers the number on the sticker on the second ring. He comes to the gardens in the same grey coat, carrying a new umbrella.",
-      "claims": ["f_bernard_claim", "f_bernard_denial"], "yields": [],
+      "claims": [
+        "f_bernard_claim",
+        "f_bernard_denial"
+      ],
+      "yields": [],
       "topics": [
-        { "about": "ev_umbrella", "reply": "I give those umbrellas to customers. Advertising. I lost one somewhere this week.", "reveals": ["f_bernard_umbrella"] },
-        { "about": "ev_ledger", "reply": "Two thousand, yes, he paid two thousand. On a ten-thousand loan. I told him I'd come back next week.", "reveals": [] }
-      ] },
-    { "person": "p_tony", "stance": "cooperative",
+        {
+          "about": "ev_umbrella",
+          "reply": "I give those umbrellas to customers. Advertising. I lost one somewhere this week.",
+          "reveals": [
+            "f_bernard_umbrella"
+          ]
+        },
+        {
+          "about": "ev_ledger",
+          "reply": "Two thousand, yes, he paid two thousand. On a ten-thousand loan. I told him I'd come back next week.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_tony",
+      "stance": "cooperative",
       "intro": "Tony arrives with the afternoon papers and drops them in a puddle. \"Uncle?\"",
-      "claims": [], "yields": ["ev_depot"],
+      "claims": [],
+      "yields": [
+        "ev_depot"
+      ],
       "topics": [
-        { "about": "p_patrick", "reply": "We argued about money. He said Saturday. Now there's no Saturday.", "reveals": ["f_tony_wages"] }
-      ] },
-    { "person": "p_fredrick", "stance": "cooperative",
+        {
+          "about": "p_patrick",
+          "reply": "We argued about money. He said Saturday. Now there's no Saturday.",
+          "reveals": [
+            "f_tony_wages"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_fredrick",
+      "stance": "cooperative",
       "intro": "Fredrick takes a ticket out of his wallet before Amani asks for anything. \"I know what people will say. Here.\"",
-      "claims": [], "yields": ["ev_huduma"],
+      "claims": [],
+      "yields": [
+        "ev_huduma"
+      ],
       "topics": [
-        { "about": "p_patrick", "reply": "I wanted his pitch. Through the county, with forms. Not like this.", "reveals": ["f_fredrick_pitch"] }
-      ] }
+        {
+          "about": "p_patrick",
+          "reply": "I wanted his pitch. Through the county, with forms. Not like this.",
+          "reveals": [
+            "f_fredrick_pitch"
+          ]
+        }
+      ]
+    }
   ],
-
   "contradictions": [],
-
   "words": [
-    { "id": "w_bernard", "text": "Bernard Langat", "category": "person", "ref": "p_bernard", "unlock": { "anyOf": ["f_umbrella_sticker", "f_ledger_langat"] } },
-    { "id": "w_tony", "text": "Tony Kariuki", "category": "person", "ref": "p_tony", "unlock": { "anyOf": ["f_bakari_tony"] } },
-    { "id": "w_fredrick", "text": "Fredrick Ouko", "category": "person", "ref": "p_fredrick", "unlock": { "anyOf": ["f_bakari_fredrick"] } },
-    { "id": "w_esther", "text": "Esther Muthoni", "category": "person", "ref": "p_esther", "unlock": { "anyOf": ["f_ledger_esther"] } },
-    { "id": "w_bakari", "text": "Bakari Mwamba", "category": "person", "ref": "p_bakari", "unlock": { "anyOf": ["f_bakari_rain"] } }
+    {
+      "id": "w_bernard",
+      "text": "Bernard Langat",
+      "category": "person",
+      "ref": "p_bernard",
+      "unlock": {
+        "anyOf": [
+          "f_umbrella_sticker",
+          "f_ledger_langat"
+        ]
+      }
+    },
+    {
+      "id": "w_tony",
+      "text": "Tony Kariuki",
+      "category": "person",
+      "ref": "p_tony",
+      "unlock": {
+        "anyOf": [
+          "f_bakari_tony"
+        ]
+      }
+    },
+    {
+      "id": "w_fredrick",
+      "text": "Fredrick Ouko",
+      "category": "person",
+      "ref": "p_fredrick",
+      "unlock": {
+        "anyOf": [
+          "f_bakari_fredrick"
+        ]
+      }
+    },
+    {
+      "id": "w_esther",
+      "text": "Esther Muthoni",
+      "category": "person",
+      "ref": "p_esther",
+      "unlock": {
+        "anyOf": [
+          "f_ledger_esther"
+        ]
+      }
+    },
+    {
+      "id": "w_bakari",
+      "text": "Bakari Mwamba",
+      "category": "person",
+      "ref": "p_bakari",
+      "unlock": {
+        "anyOf": [
+          "f_bakari_rain"
+        ]
+      }
+    }
   ],
-
   "chargeSheet": {
     "template": "{who} killed {victim} at Jeevanjee Gardens.",
-    "fixed": { "victim": "Patrick Njoroge" },
+    "fixed": {
+      "victim": "Patrick Njoroge"
+    },
     "groups": [
-      { "id": "g_who", "kind": "who", "blanks": [ { "id": "who", "category": "person", "answer": "w_bernard" } ],
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_bernard"
+          }
+        ],
         "prosecutor": {
           "pass": "Dry ground, a dry umbrella and a man waiting to be paid. That will hold.",
           "fail": [
             "This doesn't hold up. When did he fall? The ground is telling you.",
             "No. Narrow the time first. Then ask who was standing at that kiosk in it."
-          ] } }
+          ]
+        }
+      }
     ]
   },
-
   "solution": {
-    "timeOfDeath": { "place": "plc_kiosk", "from": "14:35", "to": "14:50" },
+    "timeOfDeath": {
+      "place": "plc_kiosk",
+      "from": "14:35",
+      "to": "14:50"
+    },
     "proof": [
-      { "id": "s1", "from": ["f_dryground", "f_bakari_rain", "f_esther_alive"],
-        "concludes": "Patrick was attacked after 14:35 and before the rain began at 14:50." },
-      { "id": "s2", "from": ["s1", "f_esther_man", "f_umbrella_sticker", "f_ledger_langat", "f_esther_ids_langat"],
+      {
+        "id": "s1",
+        "from": [
+          "f_dryground",
+          "f_bakari_rain",
+          "f_esther_alive"
+        ],
+        "concludes": "Patrick was attacked after 14:35 and before the rain began at 14:50."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_esther_man",
+          "f_umbrella_sticker",
+          "f_ledger_langat",
+          "f_esther_ids_langat"
+        ],
         "concludes": "In that window the man waiting at the kiosk was Bernard Langat, there to collect a debt, and he left his own umbrella behind.",
-        "answers": ["who"] }
+        "answers": [
+          "who"
+        ]
+      }
     ],
     "eliminations": [
-      { "word": "w_tony", "blank": "who", "by": ["f_depot_tony"], "why": "Tony was at the newspaper depot from 14:30 to 15:05." },
-      { "word": "w_fredrick", "blank": "who", "by": ["f_huduma"], "why": "Fredrick was inside Huduma Centre from 13:58 to 15:21." },
-      { "word": "w_esther", "blank": "who", "by": ["f_esther_left", "f_esther_alive"], "why": "Esther left on the 14:38 matatu, with Patrick alive behind her." },
-      { "word": "w_bakari", "blank": "who", "by": ["f_bakari_shelter"], "why": "Bakari sheltered in the toilet block with two other gardeners from 14:50 until he found Patrick." }
+      {
+        "word": "w_tony",
+        "blank": "who",
+        "by": [
+          "f_depot_tony"
+        ],
+        "why": "Tony was at the newspaper depot from 14:30 to 15:05."
+      },
+      {
+        "word": "w_fredrick",
+        "blank": "who",
+        "by": [
+          "f_huduma"
+        ],
+        "why": "Fredrick was inside Huduma Centre from 13:58 to 15:21."
+      },
+      {
+        "word": "w_esther",
+        "blank": "who",
+        "by": [
+          "f_esther_left",
+          "f_esther_alive"
+        ],
+        "why": "Esther left on the 14:38 matatu, with Patrick alive behind her."
+      },
+      {
+        "word": "w_bakari",
+        "blank": "who",
+        "by": [
+          "f_bakari_shelter"
+        ],
+        "why": "Bakari sheltered in the toilet block with two other gardeners from 14:50 until he found Patrick."
+      }
     ],
     "reconstruction": [
-      { "text": "Patrick owes Bernard Langat KSh 10,000. On Thursday he has two thousand.", "image": null },
-      { "text": "14:35. Esther buys her airtime. A man in a grey coat waits beside the kiosk with a closed black umbrella over his arm.", "image": null },
-      { "text": "Patrick pays two thousand and asks for time. Bernard loses his temper and strikes him once.", "image": "loc_jeevanjee" },
-      { "text": "14:50. The first heavy drops fall. Bernard runs for the bus, leaving his umbrella against the kiosk. The rain soaks everything except the ground under Patrick.", "image": null }
+      {
+        "text": "Patrick owes Bernard Langat KSh 10,000. On Thursday he has two thousand.",
+        "image": null
+      },
+      {
+        "text": "14:35. Esther buys her airtime. A man in a grey coat waits beside the kiosk with a closed black umbrella over his arm.",
+        "image": null
+      },
+      {
+        "text": "Patrick pays two thousand and asks for time. Bernard loses his temper and strikes him once.",
+        "image": "loc_jeevanjee"
+      },
+      {
+        "text": "14:50. The first heavy drops fall. Bernard runs for the bus, leaving his umbrella against the kiosk. The rain soaks everything except the ground under Patrick.",
+        "image": null
+      }
     ]
   },
-
   "hints": {
     "g_who": {
-      "tier1": { "point": "ev_body", "line": "It rained for forty minutes. Look at the ground under him, and ask yourself when he fell." },
-      "tier2": { "facts": ["f_dryground", "f_esther_alive"], "line": "Alive at 14:35, on the ground before 14:50. Now ask the customer who was standing there." }
+      "tier1": {
+        "point": "ev_body",
+        "line": "It rained for forty minutes. Look at the ground under him, and ask yourself when he fell."
+      },
+      "tier2": {
+        "facts": [
+          "f_dryground",
+          "f_esther_alive"
+        ],
+        "line": "Alive at 14:35, on the ground before 14:50. Now ask the customer who was standing there."
+      }
     }
   },
-
   "glossary": [
-    { "term": "mikopo", "def": "Loans." },
-    { "term": "haraka", "def": "Fast, quick. 'Mikopo haraka': quick loans." },
-    { "term": "mvua", "def": "Rain." },
-    { "term": "huduma", "def": "Service. Huduma Centres are government one-stop service offices." },
-    { "term": "matatu", "def": "Privately run minibus." },
-    { "term": "mama", "def": "Respectful way to address an older woman." }
+    {
+      "term": "mikopo",
+      "def": "Loans."
+    },
+    {
+      "term": "haraka",
+      "def": "Fast, quick. 'Mikopo haraka': quick loans."
+    },
+    {
+      "term": "mvua",
+      "def": "Rain."
+    },
+    {
+      "term": "huduma",
+      "def": "Service. Huduma Centres are government one-stop service offices."
+    },
+    {
+      "term": "matatu",
+      "def": "Privately run minibus."
+    },
+    {
+      "term": "mama",
+      "def": "Respectful way to address an older woman."
+    }
   ],
-
   "ui": {
-    "beats": ["timeView"],
+    "beats": [
+      "timeView"
+    ],
     "beatNotes": "The notebook's time view shows each witness's times as bars; the 14:35–14:50 gap appears as an empty band. Seed of the region-5 timeline rail."
   }
 }

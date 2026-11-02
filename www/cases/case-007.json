@@ -1,249 +1,1025 @@
 {
   "meta": {
-    "id": "case-007", "number": 7, "region": "nairobi-cbd", "regionNumber": 1,
-    "title": "Pollen", "boss": false, "schemaVersion": 1, "estMinutes": 8,
-    "date": "Thursday 24 April", "folderTab": "CITY MARKET"
+    "id": "case-007",
+    "number": 7,
+    "region": "nairobi-cbd",
+    "regionNumber": 1,
+    "title": "Pollen",
+    "boss": false,
+    "schemaVersion": 1,
+    "estMinutes": 8,
+    "date": "Thursday 24 April",
+    "folderTab": "CITY MARKET"
   },
   "pattern": {
     "crimePattern": "market rivalry over undercut prices",
     "noRealCaseRetold": true,
     "notes": "City Market is a public setting only; fictional stalls and traders.",
-    "tags": ["blunt-force", "business-rivalry"]
+    "tags": [
+      "blunt-force",
+      "business-rivalry"
+    ]
   },
   "difficulty": {
-    "suspects": 3, "chainLength": 2, "redHerrings": 1, "liars": 0,
-    "groups": ["who"], "evidenceTypes": ["physical", "witness"], "gatedActions": [], "twist": null
+    "suspects": 3,
+    "chainLength": 2,
+    "redHerrings": 1,
+    "liars": 0,
+    "groups": [
+      "who"
+    ],
+    "evidenceTypes": [
+      "physical",
+      "witness"
+    ],
+    "gatedActions": [],
+    "twist": null
   },
-
   "ob": {
-    "number": "OB 22/24/04", "date": "Thursday 24 April", "time": "12:19",
+    "number": "OB 22/24/04",
+    "date": "Thursday 24 April",
+    "time": "12:19",
     "reportedBy": "Grace Adhiambo, customer, City Market",
     "text": "Customer Grace Adhiambo reports that florist Beatrice Kerubo (39), stall 39, City Market, was found behind the curtain of her stall's cold room at 12:10. Pronounced dead at the scene.",
-    "facts": ["f_ob_found"]
+    "facts": [
+      "f_ob_found"
+    ]
   },
-
   "people": [
-    { "id": "p_beatrice", "role": "victim", "name": "Beatrice Kerubo", "age": 39, "occupation": "Florist, stall 39 (roses and carnations)",
+    {
+      "id": "p_beatrice",
+      "role": "victim",
+      "name": "Beatrice Kerubo",
+      "age": 39,
+      "occupation": "Florist, stall 39 (roses and carnations)",
       "bio": "Started undercutting the market with cheap imported lilies this month. Her first box arrived yesterday.",
-      "community": "Kisii", "isCulprit": false, "unlock": { "start": true }, "at": "plc_stall39",
-      "image": { "kind": "portrait", "brief": "Kenyan woman, late 30s, white blouse, a measuring tape around her neck, a red rose behind one ear, confident grin, ID-photo framing", "ref": null } },
-    { "id": "p_lucy", "role": "suspect", "name": "Lucy Kagendo", "age": 33, "occupation": "Florist, stall 41 (lilies and gerberas)",
+      "community": "Kisii",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_stall39",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, late 30s, white blouse, a measuring tape around her neck, a red rose behind one ear, confident grin, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_lucy",
+      "role": "suspect",
+      "name": "Lucy Kagendo",
+      "age": 33,
+      "occupation": "Florist, stall 41 (lilies and gerberas)",
       "bio": "Has sold lilies at City Market for ten years. The only lily seller in the aisle until this month.",
-      "community": "Meru", "isCulprit": true, "unlock": { "fact": "f_stalls_only_lilies" }, "at": "plc_stall41",
-      "image": { "kind": "portrait", "brief": "Kenyan woman, early 30s, hair wrapped in a bright kanga, canvas apron with orange pollen stains, armful of white lilies, tight polite smile, ID-photo framing", "ref": null } },
-    { "id": "p_josphat", "role": "suspect", "name": "Josphat Kimani", "age": 45, "occupation": "Rose seller, stall 37", "redHerring": true,
+      "community": "Meru",
+      "isCulprit": true,
+      "unlock": {
+        "fact": "f_stalls_only_lilies"
+      },
+      "at": "plc_stall41",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, early 30s, hair wrapped in a bright kanga, canvas apron with orange pollen stains, armful of white lilies, tight polite smile, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_josphat",
+      "role": "suspect",
+      "name": "Josphat Kimani",
+      "age": 45,
+      "occupation": "Rose seller, stall 37",
+      "redHerring": true,
       "bio": "Sells roses two stalls the other side. His hands are covered in fresh scratches today.",
-      "community": "Kikuyu", "isCulprit": false, "unlock": { "start": true }, "at": "plc_cathedral",
-      "image": { "kind": "portrait", "brief": "Kenyan man, mid 40s, green apron, both hands and forearms covered in fresh thorn scratches, holding a bundle of red roses, uneasy, ID-photo framing", "ref": null } },
-    { "id": "p_naliaka", "role": "suspect", "name": "Naliaka Simiyu", "age": 50, "occupation": "Curio seller, next aisle",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_cathedral",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan man, mid 40s, green apron, both hands and forearms covered in fresh thorn scratches, holding a bundle of red roses, uneasy, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_naliaka",
+      "role": "suspect",
+      "name": "Naliaka Simiyu",
+      "age": 50,
+      "occupation": "Curio seller, next aisle",
       "bio": "Had a loud argument with Beatrice this morning about flower buckets blocking the aisle.",
-      "community": "Luhya", "isCulprit": false, "unlock": { "fact": "f_ahmed_argument" }, "at": "plc_cityhall",
-      "image": { "kind": "portrait", "brief": "Kenyan woman, around 50, beaded necklaces for sale draped over her arm, kitenge dress, indignant expression, ID-photo framing", "ref": null } },
-    { "id": "p_ahmed", "role": "witness", "name": "Ahmed Yusuf", "age": 48, "occupation": "Butcher across the aisle",
-      "bio": "His counter faces the flower aisle.", "community": "Somali", "isCulprit": false,
-      "unlock": { "start": true }, "at": "plc_butchery", "image": null },
-    { "id": "p_grace", "role": "witness", "name": "Grace Adhiambo", "age": 29, "occupation": "Customer who found her",
-      "bio": "Bought roses at 11:45 and came back at 12:10 for carnations.", "community": "Luo", "isCulprit": false,
-      "unlock": { "start": true }, "at": "plc_stall39", "image": null },
-    { "id": "p_apprentice", "role": "witness", "name": "Mwangi Thuo", "age": 20, "occupation": "Josphat's apprentice", "statementOnly": true,
-      "bio": "Works the rose stall.", "community": "Kikuyu", "isCulprit": false, "unlock": { "start": true }, "at": "plc_stall37", "image": null },
-    { "id": "p_verger", "role": "witness", "name": "Verger, All Saints Cathedral", "age": 60, "occupation": "Cathedral verger", "statementOnly": true,
-      "bio": "Received the wedding flowers. Statement by phone.", "community": "Kamba", "isCulprit": false,
-      "unlock": { "fact": "f_thorns" }, "at": "plc_cathedral", "image": null }
+      "community": "Luhya",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_ahmed_argument"
+      },
+      "at": "plc_cityhall",
+      "image": {
+        "kind": "portrait",
+        "brief": "Kenyan woman, around 50, beaded necklaces for sale draped over her arm, kitenge dress, indignant expression, ID-photo framing",
+        "ref": null
+      }
+    },
+    {
+      "id": "p_ahmed",
+      "role": "witness",
+      "name": "Ahmed Yusuf",
+      "age": 48,
+      "occupation": "Butcher across the aisle",
+      "bio": "His counter faces the flower aisle.",
+      "community": "Somali",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_butchery",
+      "image": null
+    },
+    {
+      "id": "p_grace",
+      "role": "witness",
+      "name": "Grace Adhiambo",
+      "age": 29,
+      "occupation": "Customer who found her",
+      "bio": "Bought roses at 11:45 and came back at 12:10 for carnations.",
+      "community": "Luo",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_stall39",
+      "image": null
+    },
+    {
+      "id": "p_apprentice",
+      "role": "witness",
+      "name": "Mwangi Thuo",
+      "age": 20,
+      "occupation": "Josphat's apprentice",
+      "statementOnly": true,
+      "bio": "Works the rose stall.",
+      "community": "Kikuyu",
+      "isCulprit": false,
+      "unlock": {
+        "start": true
+      },
+      "at": "plc_stall37",
+      "image": null
+    },
+    {
+      "id": "p_verger",
+      "role": "witness",
+      "name": "Verger, All Saints Cathedral",
+      "age": 60,
+      "occupation": "Cathedral verger",
+      "statementOnly": true,
+      "bio": "Received the wedding flowers. Statement by phone.",
+      "community": "Kamba",
+      "isCulprit": false,
+      "unlock": {
+        "fact": "f_thorns"
+      },
+      "at": "plc_cathedral",
+      "image": null
+    }
   ],
-
   "places": [
-    { "id": "plc_stall39", "name": "Stall 39 and its cold room", "within": "loc_market" },
-    { "id": "plc_stall41", "name": "Stall 41", "within": "loc_market" },
-    { "id": "plc_stall37", "name": "Stall 37 (roses)", "within": "loc_market" },
-    { "id": "plc_butchery", "name": "Ahmed's butchery counter", "within": "loc_market" },
-    { "id": "plc_cathedral", "name": "All Saints Cathedral" },
-    { "id": "plc_cityhall", "name": "City Hall stall-fee office" },
-    { "id": "plc_grace_route", "name": "Grace's route between the market and her office" }
+    {
+      "id": "plc_stall39",
+      "name": "Stall 39 and its cold room",
+      "within": "loc_market"
+    },
+    {
+      "id": "plc_stall41",
+      "name": "Stall 41",
+      "within": "loc_market"
+    },
+    {
+      "id": "plc_stall37",
+      "name": "Stall 37 (roses)",
+      "within": "loc_market"
+    },
+    {
+      "id": "plc_butchery",
+      "name": "Ahmed's butchery counter",
+      "within": "loc_market"
+    },
+    {
+      "id": "plc_cathedral",
+      "name": "All Saints Cathedral"
+    },
+    {
+      "id": "plc_cityhall",
+      "name": "City Hall stall-fee office"
+    },
+    {
+      "id": "plc_grace_route",
+      "name": "Grace's route between the market and her office"
+    }
   ],
-
   "locations": [
-    { "id": "loc_market", "name": "City Market flower aisle", "kind": "scene",
+    {
+      "id": "loc_market",
+      "name": "City Market flower aisle",
+      "kind": "scene",
       "description": "Late morning under the high roof of City Market off Muindi Mbingu Street. Buckets of roses, carnations, lilies and gerberas line one aisle; curio sellers fill the next; butchers work at the far end. Each stall has its licence number on a painted board.",
-      "unlock": { "start": true },
+      "unlock": {
+        "start": true
+      },
       "hotspots": [
-        { "id": "hs_body", "label": "Behind stall 39's cold-room curtain", "pos": [50, 56], "yields": "ev_body",
-          "text": "Beatrice lies behind the plastic curtain of her cold room. A flower-bucket stand is on its side. The report says one blow." },
-        { "id": "hs_blouse", "label": "Her blouse", "pos": [52, 50], "yields": "ev_pollen",
-          "text": "On the shoulder of her white blouse: bright orange stains in the shape of fingers." },
-        { "id": "hs_coldroom", "label": "Stall 39's cold room", "pos": [62, 44], "yields": "ev_stock",
-          "text": "Buckets of roses and carnations. In the corner, a cardboard box marked LILIES — IMPORT." },
-        { "id": "hs_board", "label": "Market master's licence board", "pos": [14, 20], "yields": "ev_stalls",
-          "text": "A painted board by the aisle entrance lists every stall by number, holder and product." },
-        { "id": "hs_josphat", "label": "Stall 37 (roses)", "pos": [32, 60], "yields": "ev_thorns",
-          "text": "The rose stall. A young apprentice is de-thorning stems with a knife; his hands are scratched too." },
-        { "id": "hs_butcher", "label": "Ahmed's butchery counter", "pos": [86, 62], "yields": "ev_ahmed",
-          "text": "Ahmed Yusuf's counter faces the flower aisle directly." }
+        {
+          "id": "hs_body",
+          "label": "Behind stall 39's cold-room curtain",
+          "pos": [
+            51,
+            57
+          ],
+          "yields": "ev_body",
+          "text": "Beatrice lies behind the plastic curtain of her cold room. A flower-bucket stand is on its side. The report says one blow."
+        },
+        {
+          "id": "hs_blouse",
+          "label": "Her blouse",
+          "pos": [
+            52,
+            50
+          ],
+          "yields": "ev_pollen",
+          "text": "On the shoulder of her white blouse: bright orange stains in the shape of fingers."
+        },
+        {
+          "id": "hs_coldroom",
+          "label": "Stall 39's cold room",
+          "pos": [
+            42,
+            49
+          ],
+          "yields": "ev_stock",
+          "text": "Buckets of roses and carnations. In the corner, a cardboard box marked LILIES — IMPORT."
+        },
+        {
+          "id": "hs_board",
+          "label": "Market master's licence board",
+          "pos": [
+            19,
+            20
+          ],
+          "yields": "ev_stalls",
+          "text": "A painted board by the aisle entrance lists every stall by number, holder and product."
+        },
+        {
+          "id": "hs_josphat",
+          "label": "Stall 37 (roses)",
+          "pos": [
+            32,
+            60
+          ],
+          "yields": "ev_thorns",
+          "text": "The rose stall. A young apprentice is de-thorning stems with a knife; his hands are scratched too."
+        },
+        {
+          "id": "hs_butcher",
+          "label": "Ahmed's butchery counter",
+          "pos": [
+            86,
+            62
+          ],
+          "yields": "ev_ahmed",
+          "text": "Ahmed Yusuf's counter faces the flower aisle directly."
+        }
       ],
-      "image": { "kind": "location", "brief": "the flower aisle of Nairobi City Market under a high iron roof, buckets of red roses, white lilies and orange gerberas, painted stall number boards, a plastic strip curtain over a cold room, no people" } }
+      "image": {
+        "kind": "location",
+        "brief": "the flower aisle of Nairobi City Market under a high iron roof, buckets of red roses, white lilies and orange gerberas, painted stall number boards, a plastic strip curtain over a cold room, no people"
+      },
+      "hotspotsAuto": true
+    }
   ],
-
   "evidence": [
-    { "id": "ev_body", "type": "physical", "title": "The body", "render": "sceneNote",
-      "body": { "note": "Report language only." }, "facts": ["f_body_blow"], "gate": null, "image": null },
-    { "id": "ev_pollen", "type": "physical", "title": "Pollen on the blouse", "render": "object",
-      "body": { "label": "Orange pollen, finger-shaped, on the left shoulder. Lily pollen stains everything and won't wash out (florists' saying)." },
-      "facts": ["f_pollen_blouse", "f_pollen_lily"], "gate": null,
-      "image": { "kind": "evidence", "brief": "close-up of the shoulder of a white cotton blouse with bright orange lily-pollen stains in the shape of four fingers, no person visible" } },
-    { "id": "ev_stock", "type": "physical", "title": "Beatrice's lily box", "render": "object",
-      "body": { "label": "Box: LILIES — IMPORT. Tape still sealed. Inside: closed buds, no open flowers, no pollen." },
-      "facts": ["f_beatrice_lilies_sealed"], "gate": null, "image": null },
-    { "id": "ev_stalls", "type": "physical", "title": "Licence board", "render": "board",
-      "body": { "rows": [ { "stall": "37", "holder": "J. Kimani", "product": "Roses" }, { "stall": "39", "holder": "B. Kerubo", "product": "Roses, carnations" }, { "stall": "41", "holder": "L. Kagendo", "product": "Lilies & gerberas" }, { "stall": "43", "holder": "S. Wanjiku", "product": "Potted plants" } ] },
-      "facts": ["f_stalls_only_lilies"], "gate": null, "image": null },
-    { "id": "ev_ahmed", "type": "witness", "title": "Statement: Ahmed Yusuf", "render": "statement",
-      "body": { "speaker": "p_ahmed" }, "facts": ["f_ahmed_lucy", "f_ahmed_argument", "f_ahmed_counter"], "gate": null, "image": null },
-    { "id": "ev_grace", "type": "witness", "title": "Statement: Grace Adhiambo", "render": "statement",
-      "body": { "speaker": "p_grace" }, "facts": ["f_grace_alive", "f_grace_receipt"], "gate": null, "image": null },
-    { "id": "ev_scratches", "type": "physical", "title": "Josphat's hands", "render": "object",
-      "body": { "label": "Fresh scratches on both hands and forearms." }, "facts": ["f_scratches"], "gate": null, "image": null },
-    { "id": "ev_thorns", "type": "witness", "title": "Statement: rose apprentice", "render": "statement",
-      "body": { "speaker": "p_apprentice" }, "facts": ["f_thorns"], "gate": null, "image": null },
-    { "id": "ev_church", "type": "witness", "title": "Phone: cathedral verger", "render": "statement",
-      "body": { "speaker": "p_verger", "channel": "phone" }, "facts": ["f_church"], "gate": null, "image": null },
-    { "id": "ev_fees", "type": "physical", "title": "Naliaka's fee receipt", "render": "receipt",
-      "body": { "office": "City Hall — market stall fees", "queueSlip": "11:20", "paid": "12:02", "gate": "out 12:12" },
-      "facts": ["f_fees"], "gate": null, "image": null },
-    { "id": "ev_lucy_apron", "type": "physical", "title": "Lucy's apron", "render": "object",
-      "body": { "label": "Canvas apron, fresh orange smears down the front, still damp from being rubbed." }, "facts": ["f_lucy_apron"], "gate": null, "image": null }
+    {
+      "id": "ev_body",
+      "type": "physical",
+      "title": "The body",
+      "render": "sceneNote",
+      "body": {
+        "note": "Report language only."
+      },
+      "facts": [
+        "f_body_blow"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_pollen",
+      "type": "physical",
+      "title": "Pollen on the blouse",
+      "render": "object",
+      "body": {
+        "label": "Orange pollen, finger-shaped, on the left shoulder. Lily pollen stains everything and won't wash out (florists' saying)."
+      },
+      "facts": [
+        "f_pollen_blouse",
+        "f_pollen_lily"
+      ],
+      "gate": null,
+      "image": {
+        "kind": "evidence",
+        "brief": "close-up of the shoulder of a white cotton blouse with bright orange lily-pollen stains in the shape of four fingers, no person visible"
+      }
+    },
+    {
+      "id": "ev_stock",
+      "type": "physical",
+      "title": "Beatrice's lily box",
+      "render": "object",
+      "body": {
+        "label": "Box: LILIES — IMPORT. Tape still sealed. Inside: closed buds, no open flowers, no pollen."
+      },
+      "facts": [
+        "f_beatrice_lilies_sealed"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_stalls",
+      "type": "physical",
+      "title": "Licence board",
+      "render": "board",
+      "body": {
+        "rows": [
+          {
+            "stall": "37",
+            "holder": "J. Kimani",
+            "product": "Roses"
+          },
+          {
+            "stall": "39",
+            "holder": "B. Kerubo",
+            "product": "Roses, carnations"
+          },
+          {
+            "stall": "41",
+            "holder": "L. Kagendo",
+            "product": "Lilies & gerberas"
+          },
+          {
+            "stall": "43",
+            "holder": "S. Wanjiku",
+            "product": "Potted plants"
+          }
+        ]
+      },
+      "facts": [
+        "f_stalls_only_lilies"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_ahmed",
+      "type": "witness",
+      "title": "Statement: Ahmed Yusuf",
+      "render": "statement",
+      "body": {
+        "speaker": "p_ahmed"
+      },
+      "facts": [
+        "f_ahmed_lucy",
+        "f_ahmed_argument",
+        "f_ahmed_counter"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_grace",
+      "type": "witness",
+      "title": "Statement: Grace Adhiambo",
+      "render": "statement",
+      "body": {
+        "speaker": "p_grace"
+      },
+      "facts": [
+        "f_grace_alive",
+        "f_grace_receipt"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_scratches",
+      "type": "physical",
+      "title": "Josphat's hands",
+      "render": "object",
+      "body": {
+        "label": "Fresh scratches on both hands and forearms."
+      },
+      "facts": [
+        "f_scratches"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_thorns",
+      "type": "witness",
+      "title": "Statement: rose apprentice",
+      "render": "statement",
+      "body": {
+        "speaker": "p_apprentice"
+      },
+      "facts": [
+        "f_thorns"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_church",
+      "type": "witness",
+      "title": "Phone: cathedral verger",
+      "render": "statement",
+      "body": {
+        "speaker": "p_verger",
+        "channel": "phone"
+      },
+      "facts": [
+        "f_church"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_fees",
+      "type": "physical",
+      "title": "Naliaka's fee receipt",
+      "render": "receipt",
+      "body": {
+        "office": "City Hall — market stall fees",
+        "queueSlip": "11:20",
+        "paid": "12:02",
+        "gate": "out 12:12"
+      },
+      "facts": [
+        "f_fees"
+      ],
+      "gate": null,
+      "image": null
+    },
+    {
+      "id": "ev_lucy_apron",
+      "type": "physical",
+      "title": "Lucy's apron",
+      "render": "object",
+      "body": {
+        "label": "Canvas apron, fresh orange smears down the front, still damp from being rubbed."
+      },
+      "facts": [
+        "f_lucy_apron"
+      ],
+      "gate": null,
+      "image": null
+    }
   ],
-
   "facts": [
-    { "id": "f_ob_found", "text": "Beatrice Kerubo was found behind the cold-room curtain of stall 39 at 12:10.", "kind": "true", "about": ["p_beatrice", "plc_stall39"] },
-    { "id": "f_body_blow", "text": "Beatrice was struck once with her own flower-bucket stand.", "kind": "true", "about": ["p_beatrice"] },
-    { "id": "f_pollen_blouse", "text": "Orange pollen in the shape of fingers stains the shoulder of her blouse, as if someone grabbed her.", "kind": "true", "about": ["p_beatrice"] },
-    { "id": "f_pollen_lily", "text": "Bright orange pollen like that comes from lilies.", "kind": "true", "about": ["ev_pollen"] },
-    { "id": "f_beatrice_lilies_sealed", "text": "Beatrice's own lily box is still sealed: closed buds, no pollen.", "kind": "true", "about": ["p_beatrice", "ev_stock"] },
-    { "id": "f_stalls_only_lilies", "text": "Licence board: the only stall selling lilies is stall 41, L. Kagendo.", "kind": "true", "about": ["p_lucy"] },
-    { "id": "f_ahmed_lucy", "text": "Ahmed saw Lucy walk back from stall 39 to stall 41 at about 11:55, wiping her hands hard on her apron.", "kind": "true", "about": ["p_ahmed", "p_lucy"],
-      "where": { "person": "p_lucy", "place": "plc_stall39", "from": "11:50", "to": "11:55" } },
-    { "id": "f_ahmed_argument", "text": "Ahmed: the curio seller Naliaka Simiyu shouted at Beatrice about buckets in the aisle this morning.", "kind": "true", "about": ["p_ahmed", "p_naliaka"] },
-    { "id": "f_ahmed_counter", "text": "Ahmed served two customers at his counter between 11:40 and 12:10; both remember him.", "kind": "true", "about": ["p_ahmed"],
-      "where": { "person": "p_ahmed", "place": "plc_butchery", "from": "11:40", "to": "12:10" } },
-    { "id": "f_lucy_apron", "text": "Lucy's apron is freshly smeared with orange pollen down the front.", "kind": "true", "about": ["p_lucy"] },
-    { "id": "f_grace_alive", "text": "Grace bought roses from Beatrice at 11:45. She was fine.", "kind": "true", "about": ["p_grace", "p_beatrice"] },
-    { "id": "f_grace_receipt", "text": "Grace's matatu receipts: to her office at 11:48 and back at 12:06.", "kind": "true", "about": ["p_grace"],
-      "where": { "person": "p_grace", "place": "plc_grace_route", "from": "11:47", "to": "12:08" } },
-    { "id": "f_scratches", "text": "Josphat Kimani's hands are covered in fresh scratches.", "kind": "true", "about": ["p_josphat"] },
-    { "id": "f_thorns", "text": "Apprentice: they de-thorned forty dozen roses this morning for a wedding. Everyone on the rose stall is scratched.", "kind": "true", "about": ["p_josphat"] },
-    { "id": "f_church", "text": "Verger: Josphat delivered and arranged the wedding flowers at All Saints Cathedral from 11:30 to 12:15.", "kind": "true", "about": ["p_josphat"],
-      "where": { "person": "p_josphat", "place": "plc_cathedral", "from": "11:30", "to": "12:15" } },
-    { "id": "f_fees", "text": "Naliaka's City Hall slip: queued from 11:20, paid at 12:02, signed out at the gate at 12:12.", "kind": "true", "about": ["p_naliaka"],
-      "where": { "person": "p_naliaka", "place": "plc_cityhall", "from": "11:20", "to": "12:12" } },
-    { "id": "f_lucy_claim", "text": "Lucy: \"I've been at my stall all morning. Ask anyone.\"", "kind": "claim", "about": ["p_lucy"] },
-    { "id": "f_lucy_denial", "text": "Lucy: \"Beatrice and I compete. That's the market. I didn't touch her.\"", "kind": "claim", "about": ["p_lucy"] },
-    { "id": "f_lucy_undercut", "text": "Lucy says Beatrice was selling imported lilies at half her price.", "kind": "true", "about": ["p_lucy", "p_beatrice"] },
-    { "id": "f_josphat_claim", "text": "Josphat: \"I was at the cathedral with the wedding flowers.\"", "kind": "claim", "about": ["p_josphat"] },
-    { "id": "f_naliaka_claim", "text": "Naliaka: \"Yes, I shouted at her. Then I went to City Hall to pay my fees.\"", "kind": "claim", "about": ["p_naliaka"] }
+    {
+      "id": "f_ob_found",
+      "text": "Beatrice Kerubo was found behind the cold-room curtain of stall 39 at 12:10.",
+      "kind": "true",
+      "about": [
+        "p_beatrice",
+        "plc_stall39"
+      ]
+    },
+    {
+      "id": "f_body_blow",
+      "text": "Beatrice was struck once with her own flower-bucket stand.",
+      "kind": "true",
+      "about": [
+        "p_beatrice"
+      ]
+    },
+    {
+      "id": "f_pollen_blouse",
+      "text": "Orange pollen in the shape of fingers stains the shoulder of her blouse, as if someone grabbed her.",
+      "kind": "true",
+      "about": [
+        "p_beatrice"
+      ]
+    },
+    {
+      "id": "f_pollen_lily",
+      "text": "Bright orange pollen like that comes from lilies.",
+      "kind": "true",
+      "about": [
+        "ev_pollen"
+      ]
+    },
+    {
+      "id": "f_beatrice_lilies_sealed",
+      "text": "Beatrice's own lily box is still sealed: closed buds, no pollen.",
+      "kind": "true",
+      "about": [
+        "p_beatrice",
+        "ev_stock"
+      ]
+    },
+    {
+      "id": "f_stalls_only_lilies",
+      "text": "Licence board: the only stall selling lilies is stall 41, L. Kagendo.",
+      "kind": "true",
+      "about": [
+        "p_lucy"
+      ]
+    },
+    {
+      "id": "f_ahmed_lucy",
+      "text": "Ahmed saw Lucy walk back from stall 39 to stall 41 at about 11:55, wiping her hands hard on her apron.",
+      "kind": "true",
+      "about": [
+        "p_ahmed",
+        "p_lucy"
+      ],
+      "where": {
+        "person": "p_lucy",
+        "place": "plc_stall39",
+        "from": "11:50",
+        "to": "11:55"
+      }
+    },
+    {
+      "id": "f_ahmed_argument",
+      "text": "Ahmed: the curio seller Naliaka Simiyu shouted at Beatrice about buckets in the aisle this morning.",
+      "kind": "true",
+      "about": [
+        "p_ahmed",
+        "p_naliaka"
+      ]
+    },
+    {
+      "id": "f_ahmed_counter",
+      "text": "Ahmed served two customers at his counter between 11:40 and 12:10; both remember him.",
+      "kind": "true",
+      "about": [
+        "p_ahmed"
+      ],
+      "where": {
+        "person": "p_ahmed",
+        "place": "plc_butchery",
+        "from": "11:40",
+        "to": "12:10"
+      }
+    },
+    {
+      "id": "f_lucy_apron",
+      "text": "Lucy's apron is freshly smeared with orange pollen down the front.",
+      "kind": "true",
+      "about": [
+        "p_lucy"
+      ]
+    },
+    {
+      "id": "f_grace_alive",
+      "text": "Grace bought roses from Beatrice at 11:45. She was fine.",
+      "kind": "true",
+      "about": [
+        "p_grace",
+        "p_beatrice"
+      ]
+    },
+    {
+      "id": "f_grace_receipt",
+      "text": "Grace's matatu receipts: to her office at 11:48 and back at 12:06.",
+      "kind": "true",
+      "about": [
+        "p_grace"
+      ],
+      "where": {
+        "person": "p_grace",
+        "place": "plc_grace_route",
+        "from": "11:47",
+        "to": "12:08"
+      }
+    },
+    {
+      "id": "f_scratches",
+      "text": "Josphat Kimani's hands are covered in fresh scratches.",
+      "kind": "true",
+      "about": [
+        "p_josphat"
+      ]
+    },
+    {
+      "id": "f_thorns",
+      "text": "Apprentice: they de-thorned forty dozen roses this morning for a wedding. Everyone on the rose stall is scratched.",
+      "kind": "true",
+      "about": [
+        "p_josphat"
+      ]
+    },
+    {
+      "id": "f_church",
+      "text": "Verger: Josphat delivered and arranged the wedding flowers at All Saints Cathedral from 11:30 to 12:15.",
+      "kind": "true",
+      "about": [
+        "p_josphat"
+      ],
+      "where": {
+        "person": "p_josphat",
+        "place": "plc_cathedral",
+        "from": "11:30",
+        "to": "12:15"
+      }
+    },
+    {
+      "id": "f_fees",
+      "text": "Naliaka's City Hall slip: queued from 11:20, paid at 12:02, signed out at the gate at 12:12.",
+      "kind": "true",
+      "about": [
+        "p_naliaka"
+      ],
+      "where": {
+        "person": "p_naliaka",
+        "place": "plc_cityhall",
+        "from": "11:20",
+        "to": "12:12"
+      }
+    },
+    {
+      "id": "f_lucy_claim",
+      "text": "Lucy: \"I've been at my stall all morning. Ask anyone.\"",
+      "kind": "claim",
+      "about": [
+        "p_lucy"
+      ]
+    },
+    {
+      "id": "f_lucy_denial",
+      "text": "Lucy: \"Beatrice and I compete. That's the market. I didn't touch her.\"",
+      "kind": "claim",
+      "about": [
+        "p_lucy"
+      ]
+    },
+    {
+      "id": "f_lucy_undercut",
+      "text": "Lucy says Beatrice was selling imported lilies at half her price.",
+      "kind": "true",
+      "about": [
+        "p_lucy",
+        "p_beatrice"
+      ]
+    },
+    {
+      "id": "f_josphat_claim",
+      "text": "Josphat: \"I was at the cathedral with the wedding flowers.\"",
+      "kind": "claim",
+      "about": [
+        "p_josphat"
+      ]
+    },
+    {
+      "id": "f_naliaka_claim",
+      "text": "Naliaka: \"Yes, I shouted at her. Then I went to City Hall to pay my fees.\"",
+      "kind": "claim",
+      "about": [
+        "p_naliaka"
+      ]
+    }
   ],
-
   "interrogations": [
-    { "person": "p_grace", "stance": "cooperative",
+    {
+      "person": "p_grace",
+      "stance": "cooperative",
       "intro": "Grace still holds the roses she bought. \"I only came back for carnations.\"",
-      "claims": [], "yields": ["ev_grace"],
+      "claims": [],
+      "yields": [
+        "ev_grace"
+      ],
       "topics": [
-        { "about": "p_beatrice", "reply": "She gave me an extra rose for free and said, 'Next week, lilies, half price, tell your friends.'", "reveals": [] }
-      ] },
-    { "person": "p_ahmed", "stance": "cooperative",
+        {
+          "about": "p_beatrice",
+          "reply": "She gave me an extra rose for free and said, 'Next week, lilies, half price, tell your friends.'",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_ahmed",
+      "stance": "cooperative",
       "intro": "Ahmed wipes his cleaver and sets it down carefully, away from Amani. \"Ask me. I see the whole aisle from here.\"",
-      "claims": [], "yields": [],
+      "claims": [],
+      "yields": [],
       "topics": [
-        { "about": "p_lucy", "reply": "The lily lady? About five to twelve she walked back from Beatrice's side to her own stall, rubbing her hands on her apron like they were dirty.", "reveals": ["f_ahmed_lucy"] },
-        { "about": "p_naliaka", "reply": "The curio mama shouted at Beatrice this morning about buckets in the aisle. Then she went off with her fee book.", "reveals": [] },
-        { "about": "p_josphat", "reply": "Kimani left early with his wedding flowers in a pickup. Half eleven, maybe.", "reveals": [] }
-      ] },
-    { "person": "p_lucy", "stance": "cooperative",
+        {
+          "about": "p_lucy",
+          "reply": "The lily lady? About five to twelve she walked back from Beatrice's side to her own stall, rubbing her hands on her apron like they were dirty.",
+          "reveals": [
+            "f_ahmed_lucy"
+          ]
+        },
+        {
+          "about": "p_naliaka",
+          "reply": "The curio mama shouted at Beatrice this morning about buckets in the aisle. Then she went off with her fee book.",
+          "reveals": []
+        },
+        {
+          "about": "p_josphat",
+          "reply": "Kimani left early with his wedding flowers in a pickup. Half eleven, maybe.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_lucy",
+      "stance": "cooperative",
       "intro": "Lucy keeps arranging lilies while she talks. Her apron is orange down the front.",
-      "claims": ["f_lucy_claim", "f_lucy_denial"], "yields": ["ev_lucy_apron"],
+      "claims": [
+        "f_lucy_claim",
+        "f_lucy_denial"
+      ],
+      "yields": [
+        "ev_lucy_apron"
+      ],
       "topics": [
-        { "about": "p_beatrice", "reply": "She brought in imported lilies at half my price. Half! Ten years I've sold lilies in this market.", "reveals": ["f_lucy_undercut"] },
-        { "about": "ev_pollen", "reply": "Everyone in this aisle has pollen on them. It's a flower market.", "reveals": [] }
-      ] },
-    { "person": "p_josphat", "stance": "cooperative",
+        {
+          "about": "p_beatrice",
+          "reply": "She brought in imported lilies at half my price. Half! Ten years I've sold lilies in this market.",
+          "reveals": [
+            "f_lucy_undercut"
+          ]
+        },
+        {
+          "about": "ev_pollen",
+          "reply": "Everyone in this aisle has pollen on them. It's a flower market.",
+          "reveals": []
+        }
+      ]
+    },
+    {
+      "person": "p_josphat",
+      "stance": "cooperative",
       "intro": "Josphat comes back from the cathedral and stops when he sees the tape. He hides his hands behind his back without meaning to.",
-      "claims": ["f_josphat_claim"], "yields": ["ev_scratches"],
+      "claims": [
+        "f_josphat_claim"
+      ],
+      "yields": [
+        "ev_scratches"
+      ],
       "topics": [
-        { "about": "ev_scratches", "reply": "Forty dozen roses de-thorned since six this morning! Look at the boy's hands, look at mine. Call the cathedral.", "reveals": ["ev_church"] }
-      ] },
-    { "person": "p_naliaka", "stance": "cooperative",
+        {
+          "about": "ev_scratches",
+          "reply": "Forty dozen roses de-thorned since six this morning! Look at the boy's hands, look at mine. Call the cathedral.",
+          "reveals": [
+            "ev_church"
+          ]
+        }
+      ]
+    },
+    {
+      "person": "p_naliaka",
+      "stance": "cooperative",
       "intro": "Naliaka arrives back with her receipt held up like a flag. \"I know what Ahmed told you. Here.\"",
-      "claims": ["f_naliaka_claim"], "yields": ["ev_fees"],
+      "claims": [
+        "f_naliaka_claim"
+      ],
+      "yields": [
+        "ev_fees"
+      ],
       "topics": [
-        { "about": "p_beatrice", "reply": "We shouted about buckets. Every week we shout about buckets. It's the soko.", "reveals": [] }
-      ] }
+        {
+          "about": "p_beatrice",
+          "reply": "We shouted about buckets. Every week we shout about buckets. It's the soko.",
+          "reveals": []
+        }
+      ]
+    }
   ],
-
   "contradictions": [],
-
   "words": [
-    { "id": "w_lucy", "text": "Lucy Kagendo", "category": "person", "ref": "p_lucy", "unlock": { "anyOf": ["f_stalls_only_lilies"] } },
-    { "id": "w_josphat", "text": "Josphat Kimani", "category": "person", "ref": "p_josphat", "unlock": { "anyOf": ["f_scratches", "f_thorns"] } },
-    { "id": "w_naliaka", "text": "Naliaka Simiyu", "category": "person", "ref": "p_naliaka", "unlock": { "anyOf": ["f_ahmed_argument"] } },
-    { "id": "w_ahmed", "text": "Ahmed Yusuf", "category": "person", "ref": "p_ahmed", "unlock": { "anyOf": ["f_ahmed_counter"] } },
-    { "id": "w_grace", "text": "Grace Adhiambo", "category": "person", "ref": "p_grace", "unlock": { "anyOf": ["f_grace_alive"] } }
+    {
+      "id": "w_lucy",
+      "text": "Lucy Kagendo",
+      "category": "person",
+      "ref": "p_lucy",
+      "unlock": {
+        "anyOf": [
+          "f_stalls_only_lilies"
+        ]
+      }
+    },
+    {
+      "id": "w_josphat",
+      "text": "Josphat Kimani",
+      "category": "person",
+      "ref": "p_josphat",
+      "unlock": {
+        "anyOf": [
+          "f_scratches",
+          "f_thorns"
+        ]
+      }
+    },
+    {
+      "id": "w_naliaka",
+      "text": "Naliaka Simiyu",
+      "category": "person",
+      "ref": "p_naliaka",
+      "unlock": {
+        "anyOf": [
+          "f_ahmed_argument"
+        ]
+      }
+    },
+    {
+      "id": "w_ahmed",
+      "text": "Ahmed Yusuf",
+      "category": "person",
+      "ref": "p_ahmed",
+      "unlock": {
+        "anyOf": [
+          "f_ahmed_counter"
+        ]
+      }
+    },
+    {
+      "id": "w_grace",
+      "text": "Grace Adhiambo",
+      "category": "person",
+      "ref": "p_grace",
+      "unlock": {
+        "anyOf": [
+          "f_grace_alive"
+        ]
+      }
+    }
   ],
-
   "chargeSheet": {
     "template": "{who} killed {victim} at City Market.",
-    "fixed": { "victim": "Beatrice Kerubo" },
+    "fixed": {
+      "victim": "Beatrice Kerubo"
+    },
     "groups": [
-      { "id": "g_who", "kind": "who", "blanks": [ { "id": "who", "category": "person", "answer": "w_lucy" } ],
+      {
+        "id": "g_who",
+        "kind": "who",
+        "blanks": [
+          {
+            "id": "who",
+            "category": "person",
+            "answer": "w_lucy"
+          }
+        ],
         "prosecutor": {
           "pass": "Lily pollen on her shoulder, and one lily seller in the market, seen wiping her hands. That will hold.",
           "fail": [
             "This doesn't hold up. Scratched hands are not a confession. What did the killer leave on her?",
             "No. Where did that pollen come from? Not from her own box."
-          ] } }
+          ]
+        }
+      }
     ]
   },
-
   "solution": {
-    "timeOfDeath": { "place": "plc_stall39", "from": "11:45", "to": "12:10" },
+    "timeOfDeath": {
+      "place": "plc_stall39",
+      "from": "11:45",
+      "to": "12:10"
+    },
     "proof": [
-      { "id": "s1", "from": ["f_pollen_blouse", "f_pollen_lily", "f_beatrice_lilies_sealed"],
-        "concludes": "The lily pollen on her shoulder didn't come from her own stock, which was still sealed. The attacker had lily pollen on their hands." },
-      { "id": "s2", "from": ["s1", "f_stalls_only_lilies", "f_ahmed_lucy", "f_lucy_apron"],
+      {
+        "id": "s1",
+        "from": [
+          "f_pollen_blouse",
+          "f_pollen_lily",
+          "f_beatrice_lilies_sealed"
+        ],
+        "concludes": "The lily pollen on her shoulder didn't come from her own stock, which was still sealed. The attacker had lily pollen on their hands."
+      },
+      {
+        "id": "s2",
+        "from": [
+          "s1",
+          "f_stalls_only_lilies",
+          "f_ahmed_lucy",
+          "f_lucy_apron"
+        ],
         "concludes": "Only Lucy Kagendo handles lilies in the market, and she was seen walking back from stall 39 at 11:55 wiping orange hands on her apron.",
-        "answers": ["who"] }
+        "answers": [
+          "who"
+        ]
+      }
     ],
     "eliminations": [
-      { "word": "w_josphat", "blank": "who", "by": ["f_church", "f_thorns"], "why": "Josphat was at All Saints Cathedral from 11:30 to 12:15; his scratches come from de-thorning forty dozen roses." },
-      { "word": "w_naliaka", "blank": "who", "by": ["f_fees"], "why": "Naliaka was in the City Hall fee queue from 11:20 and signed out of its gate at 12:12." },
-      { "word": "w_ahmed", "blank": "who", "by": ["f_ahmed_counter"], "why": "Ahmed was serving two customers at his own counter the whole time." },
-      { "word": "w_grace", "blank": "who", "by": ["f_grace_receipt", "f_grace_alive"], "why": "Grace left after buying roses at 11:45 and her matatu receipts cover the time until she came back at 12:10." }
+      {
+        "word": "w_josphat",
+        "blank": "who",
+        "by": [
+          "f_church",
+          "f_thorns"
+        ],
+        "why": "Josphat was at All Saints Cathedral from 11:30 to 12:15; his scratches come from de-thorning forty dozen roses."
+      },
+      {
+        "word": "w_naliaka",
+        "blank": "who",
+        "by": [
+          "f_fees"
+        ],
+        "why": "Naliaka was in the City Hall fee queue from 11:20 and signed out of its gate at 12:12."
+      },
+      {
+        "word": "w_ahmed",
+        "blank": "who",
+        "by": [
+          "f_ahmed_counter"
+        ],
+        "why": "Ahmed was serving two customers at his own counter the whole time."
+      },
+      {
+        "word": "w_grace",
+        "blank": "who",
+        "by": [
+          "f_grace_receipt",
+          "f_grace_alive"
+        ],
+        "why": "Grace left after buying roses at 11:45 and her matatu receipts cover the time until she came back at 12:10."
+      }
     ],
     "reconstruction": [
-      { "text": "This month Beatrice starts selling imported lilies at half Lucy's price. Ten years of Lucy's trade, undercut in a week.", "image": null },
-      { "text": "About 11:50. Lucy walks over to stall 39 with lily pollen still on her hands from her own buckets, to 'talk'.", "image": null },
-      { "text": "Beatrice laughs at her. Lucy grabs her by the shoulder and hits her with the bucket stand.", "image": "loc_market" },
-      { "text": "11:55. Lucy walks back to stall 41 rubbing her hands on her apron, and goes on selling lilies.", "image": null },
-      { "text": "Across the market, Josphat Kimani stands in All Saints Cathedral arranging forty dozen roses, his hands scratched raw by the thorns. Suspicion isn't evidence.", "image": null }
+      {
+        "text": "This month Beatrice starts selling imported lilies at half Lucy's price. Ten years of Lucy's trade, undercut in a week.",
+        "image": null
+      },
+      {
+        "text": "About 11:50. Lucy walks over to stall 39 with lily pollen still on her hands from her own buckets, to 'talk'.",
+        "image": null
+      },
+      {
+        "text": "Beatrice laughs at her. Lucy grabs her by the shoulder and hits her with the bucket stand.",
+        "image": "loc_market"
+      },
+      {
+        "text": "11:55. Lucy walks back to stall 41 rubbing her hands on her apron, and goes on selling lilies.",
+        "image": null
+      },
+      {
+        "text": "Across the market, Josphat Kimani stands in All Saints Cathedral arranging forty dozen roses, his hands scratched raw by the thorns. Suspicion isn't evidence.",
+        "image": null
+      }
     ]
   },
-
   "hints": {
     "g_who": {
-      "tier1": { "point": "ev_pollen", "line": "The killer left something on her. Florists will tell you: that colour doesn't come from roses." },
-      "tier2": { "facts": ["f_beatrice_lilies_sealed", "f_stalls_only_lilies"], "line": "Her own lilies were still sealed. Read the licence board: who else sells them?" }
+      "tier1": {
+        "point": "ev_pollen",
+        "line": "The killer left something on her. Florists will tell you: that colour doesn't come from roses."
+      },
+      "tier2": {
+        "facts": [
+          "f_beatrice_lilies_sealed",
+          "f_stalls_only_lilies"
+        ],
+        "line": "Her own lilies were still sealed. Read the licence board: who else sells them?"
+      }
     }
   },
-
   "glossary": [
-    { "term": "soko", "def": "Market." },
-    { "term": "mama", "def": "Respectful way to address or refer to an older woman." },
-    { "term": "kanga", "def": "Printed cotton cloth worn as a wrap or headscarf." },
-    { "term": "kitenge", "def": "Brightly printed cotton cloth and the clothes made from it." },
-    { "term": "matatu", "def": "Privately run minibus." },
-    { "term": "harusi", "def": "Wedding." }
+    {
+      "term": "soko",
+      "def": "Market."
+    },
+    {
+      "term": "mama",
+      "def": "Respectful way to address or refer to an older woman."
+    },
+    {
+      "term": "kanga",
+      "def": "Printed cotton cloth worn as a wrap or headscarf."
+    },
+    {
+      "term": "kitenge",
+      "def": "Brightly printed cotton cloth and the clothes made from it."
+    },
+    {
+      "term": "matatu",
+      "def": "Privately run minibus."
+    },
+    {
+      "term": "harusi",
+      "def": "Wedding."
+    }
   ],
-
   "ui": {
-    "beats": ["firstRedHerring", "hintOffer"],
+    "beats": [
+      "firstRedHerring",
+      "hintOffer"
+    ],
     "beatNotes": "First red herring: the scratched hands, explained in the evidence and in the reconstruction. First hint offer: after one wrong submission, Mwalimu's number lights up on the desk phone and she explains the three hint tiers in one sentence each.",
     "hintOfferLines": [
       "First call, Detective, and it's free in every way but stars. I'll tell you where to look.",

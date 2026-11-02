@@ -218,8 +218,8 @@
           "id": "hs_body",
           "label": "Back room, by the stamp bench",
           "pos": [
-            56,
-            60
+            57,
+            45
           ],
           "yields": "ev_body",
           "text": "Rashid lies by his stamp bench. The handle of the stamp press is on the floor. Every drawer on the wall has been pulled out and tipped. Under the counter, the cash box is closed."
@@ -228,8 +228,8 @@
           "id": "hs_drawer",
           "label": "One drawer on the floor",
           "pos": [
-            76,
-            40
+            83,
+            71
           ],
           "yields": "ev_drawer",
           "text": "Most drawers were pulled out and spilled. This one was emptied: not a single blank or proof left. Its label: 'Mvua — Friday'."
@@ -238,8 +238,8 @@
           "id": "hs_orderbook",
           "label": "Order book on the counter",
           "pos": [
-            18,
-            70
+            14,
+            69
           ],
           "yields": "ev_orderbook",
           "text": "Rashid's order book: every job, client, deposit and collection date."
@@ -249,7 +249,7 @@
           "label": "Under the order book",
           "pos": [
             22,
-            78
+            83
           ],
           "yields": "ev_slip",
           "text": "A carbon-paper collection-slip book. The top copy has been torn out. The carbon copy beneath is still there."
@@ -258,8 +258,8 @@
           "id": "hs_card",
           "label": "Tucked inside the order book",
           "pos": [
-            14,
-            64
+            26,
+            67
           ],
           "yields": "ev_note",
           "text": "A plain white card, slipped between two pages as a bookmark."
@@ -268,8 +268,8 @@
           "id": "hs_street",
           "label": "River Road outside",
           "pos": [
-            90,
-            82
+            69,
+            23
           ],
           "yields": "ev_abdullahi",
           "text": "The night askari, Abdullahi Gure, leans on his rungu at the corner."
@@ -288,7 +288,8 @@
       "image": {
         "kind": "location",
         "brief": "River Road in Nairobi on a Friday night, narrow street of printing and rubber-stamp shops lit by bare bulbs and signage, sign-writers' boards, a small print shop with its shutter half down, no people in focus"
-      }
+      },
+      "hotspotsAuto": true
     }
   ],
   "evidence": [

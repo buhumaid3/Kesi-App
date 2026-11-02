@@ -210,8 +210,8 @@
           "id": "hs_body",
           "label": "Inside the shed",
           "pos": [
-            50,
-            60
+            29,
+            39
           ],
           "yields": "ev_body",
           "text": "Charles lies by the oar rack. An oar is on the floor beside him. The report says he was struck with it. The cash-tin shelf is empty."
@@ -220,8 +220,8 @@
           "id": "hs_cap",
           "label": "A cap on the bench",
           "pos": [
-            32,
-            46
+            14,
+            51
           ],
           "yields": "ev_cap",
           "text": "A faded red cap with a Gikomba trader's market tag sewn inside: G. MAINA."
@@ -230,8 +230,8 @@
           "id": "hs_feebook",
           "label": "Fee book",
           "pos": [
-            66,
-            44
+            51,
+            61
           ],
           "yields": "ev_feebook",
           "text": "Hire tickets for the day stapled in. Turn to the back page: pencil, in Charles's hand."
@@ -240,8 +240,8 @@
           "id": "hs_cart",
           "label": "Mama Pendo's ice-cream cart",
           "pos": [
-            84,
-            70
+            73,
+            64
           ],
           "yields": "ev_pendo",
           "text": "The cart faces the shed door and the lake."
@@ -250,8 +250,8 @@
           "id": "hs_victor",
           "label": "The park photographer",
           "pos": [
-            16,
-            76
+            26,
+            81
           ],
           "yields": "ev_photo",
           "text": "Victor sells Amani a print from this afternoon for KSh 100: 'Look in the background. I always look in the background.'"
@@ -273,7 +273,8 @@
       "image": {
         "kind": "location",
         "brief": "a tin-roofed boat-hire shed beside a green park lake in Nairobi on a sunny Sunday, rowing boats tied up, oars racked on a wall, an ice-cream cart nearby, city skyline beyond the trees, no people in focus"
-      }
+      },
+      "hotspotsAuto": true
     }
   ],
   "evidence": [

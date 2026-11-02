@@ -66,7 +66,7 @@ async function loadCase(n, locId) {
   if (state.dirty && !confirm('Unsaved moves on this place. Leave without saving?')) { caseSel.value = state.n; return; }
   state.n = n; localStorage.setItem('place.case', n);
   state.c = await (await fetch(`/cases/case-${pad(n)}.json?t=${Date.now()}`)).json();
-  locSel.replaceChildren(...state.c.locations.map(l => new Option(`${l.hotspotsPlaced ? '✓ ' : ''}${l.name}`, l.id)));
+  locSel.replaceChildren(...state.c.locations.map(l => new Option(`${l.hotspotsPlaced ? '✓ ' : l.hotspotsAuto ? '? ' : ''}${l.name}`, l.id)));
   locSel.value = locId && state.c.locations.some(l => l.id === locId) ? locId : state.c.locations[0].id;
   loadLoc(locSel.value);
 }
@@ -75,7 +75,7 @@ function loadLoc(id) {
   state.pos = Object.fromEntries((state.loc.hotspots || []).map(h => [h.id, [...(h.pos || [50, 50])]]));
   state.sel = null; state.dirty = false;
   $('#title').textContent = `Case ${pad(state.n)} · ${state.loc.name}`;
-  $('#status').textContent = state.loc.hotspotsPlaced ? 'Placed before. Adjust and save again if needed.' : 'Not placed yet.';
+  $('#status').textContent = state.loc.hotspotsPlaced ? 'Placed before. Adjust and save again if needed.' : state.loc.hotspotsAuto ? 'Proposed: check. Positions were proposed automatically; move any that are off, then Save.' : 'Not placed yet.';
   $('#status').className = 'status';
   draw();
 }

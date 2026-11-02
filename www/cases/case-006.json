@@ -220,8 +220,8 @@
           "id": "hs_shelf",
           "label": "Repair shelf (zoom)",
           "pos": [
-            80,
-            30
+            78,
+            28
           ],
           "yields": "ev_tagstub",
           "text": "The shelf opens in a zoom view. Tags dangle from items. On the rail, one tag is torn: only the stub is left, still tied on. Flip it."
@@ -231,7 +231,7 @@
           "label": "Job book on the counter",
           "pos": [
             20,
-            70
+            77
           ],
           "yields": "ev_jobbook",
           "text": "Every repair: number, item, customer, notes. Joel's capitals."
@@ -240,8 +240,8 @@
           "id": "hs_floor",
           "label": "Under the workbench",
           "pos": [
-            56,
-            82
+            49,
+            76
           ],
           "yields": "ev_tray",
           "text": "Something small and metal under the bench, among solder drips."
@@ -250,8 +250,8 @@
           "id": "hs_wall",
           "label": "Wall calendar",
           "pos": [
-            36,
-            20
+            48,
+            26
           ],
           "yields": "ev_calendar",
           "text": "A free calendar from a loans company, still on March."
@@ -260,7 +260,8 @@
       "image": {
         "kind": "location",
         "brief": "the cluttered back room of a Nairobi electronics repair shop, a workbench with soldering irons and gutted radios, a shelf of repaired radios and phones each with a numbered paper tag, a wall calendar, fluorescent tube light, no people"
-      }
+      },
+      "hotspotsAuto": true
     }
   ],
   "evidence": [

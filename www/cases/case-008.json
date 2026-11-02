@@ -242,8 +242,8 @@
           "id": "hs_board",
           "label": "Schedule board",
           "pos": [
-            30,
-            12
+            25,
+            16
           ],
           "yields": "ev_timetable",
           "text": "A code-drawn timetable board. Tap a train row to see what it touches."
@@ -252,8 +252,8 @@
           "id": "hs_drawer",
           "label": "Kiosk drawer",
           "pos": [
-            48,
-            46
+            52,
+            68
           ],
           "yields": "ev_licence",
           "text": "The kiosk's trading licence in a plastic sleeve, and a folded note."
@@ -282,7 +282,8 @@
       "image": {
         "kind": "location",
         "brief": "a platform at Nairobi's old railway station at dusk, commuters' blur, a small tea kiosk with a tin counter and soda crates stacked behind it, a painted train timetable board overhead, warm station lamps, no faces in focus"
-      }
+      },
+      "hotspotsAuto": true
     }
   ],
   "evidence": [

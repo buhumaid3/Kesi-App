@@ -47,6 +47,7 @@ function saveHotspots(body) {
     if (!h.pos || h.pos[0] !== x || h.pos[1] !== y) { h.pos = [x, y]; changed++; }
   }
   loc.hotspotsPlaced = true;
+  delete loc.hotspotsAuto;            // checked by a person now
   fs.writeFileSync(file, JSON.stringify(c, null, 2));
   return changed;
 }

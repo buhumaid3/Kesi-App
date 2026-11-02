@@ -1,0 +1,33 @@
+<!doctype html>
+<!-- The app icon and launch screen, drawn from the game's own type and colours. Rendered to PNG by
+     tools/make-icon.mjs (?mode=icon | splash | splash-dark). Edit here, then run it again. -->
+<meta charset="utf-8">
+<style>
+@font-face { font-family: 'BSD'; font-weight: 100 900; src: url('../www/fonts/big-shoulders-display-latin-wght-normal.woff2') format('woff2'); }
+@font-face { font-family: 'BSS'; font-weight: 800; src: url('../www/fonts/big-shoulders-stencil-display-latin-800-normal.woff2') format('woff2'); }
+html, body { margin: 0; width: 100%; height: 100%; }
+body { display: grid; place-items: center; overflow: hidden;
+  background: radial-gradient(70% 60% at 28% 18%, rgba(246,198,107,.55), rgba(246,198,107,0) 70%), linear-gradient(160deg, #3D2B1F, #1A110C 75%); }
+.folder { position: relative; width: 80%; aspect-ratio: 1.18; transform: rotate(-7deg) translateY(4%); }
+.tab { position: absolute; left: 6%; top: -9%; width: 40%; height: 14%; background: #C9A66B; border-radius: 3% 3% 0 0 / 20% 20% 0 0; }
+.face { position: absolute; inset: 0; background: linear-gradient(170deg, #E9CD96, #D9B77C); border-radius: 1.5%; box-shadow: 0 3.5% 6% rgba(0,0,0,.55), inset 0 0 0 .6% rgba(0,0,0,.08); overflow: hidden; }
+.face::before { content: ''; position: absolute; left: 0; right: 0; top: 13%; height: 1.2%; background: rgba(120,80,30,.18); }
+.word { position: absolute; left: 0; right: 0; top: 21%; text-align: center; font: 900 calc(var(--w) * .30)/1 'BSD'; letter-spacing: .02em; color: #23222B; }
+.sub { position: absolute; left: 0; right: 30%; top: 66%; text-align: center; font: 800 calc(var(--w) * .062)/1 'BSS'; letter-spacing: .32em; color: #23222B; opacity: .8; }
+.stamp { position: absolute; right: 4%; bottom: 5%; width: 25%; aspect-ratio: 1; border: calc(var(--w) * .011) solid #B3261E; border-radius: 50%; transform: rotate(14deg);
+  display: grid; place-items: center; color: #B3261E; font: 800 calc(var(--w) * .05)/1 'BSS'; letter-spacing: .06em; opacity: .9; }
+.stamp::after { content: ''; position: absolute; inset: 7%; border: calc(var(--w) * .004) solid #B3261E; border-radius: 50%; }
+.splash body, body.splash { }
+body.splash .folder { width: 22%; }
+body.splash-dark { background: #120c08; }
+</style>
+<body>
+<div class="folder"><div class="tab"></div><div class="face"><div class="word">KESI</div><div class="sub">CASE&nbsp;FILES</div><div class="stamp">SCU</div></div></div>
+<script>
+const mode = new URLSearchParams(location.search).get('mode') || 'icon';
+if (mode !== 'icon') document.body.classList.add('splash', mode);
+const f = document.querySelector('.folder');
+const set = () => f.style.setProperty('--w', f.clientWidth + 'px');
+set(); addEventListener('resize', set);
+</script>
+</body>

@@ -4,12 +4,25 @@
 // · Effects: synthesized (typewriter keys, stamps, pins, phone) plus short musical cues.
 // · Voices: recorded lines from www/audio/voice/ (manifest.json maps voiceKey → file). A line without a
 //   recording simply isn't voiced; the text is always on screen.
-// iOS ignores <audio>.volume, so every file plays through Web Audio gain nodes.
+// iOS ignores <audio>.volume, so every file plays through Web Audio gain nodes. Files are fetched and decoded
+// into buffers (not streamed through <audio> elements): that works the same in Safari, Chrome and the iOS app's
+// web view, where media-element sources from the app's own scheme can play silent.
 import { voiceKey, characterKey, spokenText } from './voicekey.js';
 
 export function createAudio(getSettings) {
-  let ctx = null, buses = null, roomTone = null, musicEl = null, musicSrc = null, currentRegion = null;
-  let voiceEl = null, voiceSrc = null;
+  let ctx = null, buses = null, roomTone = null, musicSrc = null, currentRegion = null, musicToken = 0;
+  let voiceSrc = null, voiceToken = 0;
+  // Decoded audio, most recently used last; voices are small, music tracks are kept while their region plays.
+  const buffers = new Map(), MAX_BUFFERS = 40;
+  async function buffer(url) {
+    if (buffers.has(url)) { const b = buffers.get(url); buffers.delete(url); buffers.set(url, b); return b; }
+    const r = await fetch(url); if (!r.ok) throw new Error(`${url}: ${r.status}`);
+    const data = await r.arrayBuffer();
+    const b = await new Promise((res, rej) => { const p = ctx.decodeAudioData(data, res, rej); if (p?.then) p.then(res, rej); });
+    buffers.set(url, b);
+    while (buffers.size > MAX_BUFFERS) buffers.delete(buffers.keys().next().value);
+    return b;
+  }
   const manifests = { music: {}, voice: {}, cast: {} };
   const vol = k => Math.max(0, Math.min(1, (getSettings()[k] ?? 70) / 100));
 
@@ -30,7 +43,7 @@ export function createAudio(getSettings) {
   function unlock() {
     if (!ensure()) return;
     if (ctx.state === 'suspended') ctx.resume().catch(() => {});
-    if (currentRegion && !musicEl && !roomTone) startMusic(currentRegion);
+    if (currentRegion && !musicSrc && !roomTone) startMusic(currentRegion);
   }
   addEventListener('pointerdown', unlock, { capture: true });
   addEventListener('keydown', unlock, { capture: true });
@@ -54,16 +67,19 @@ export function createAudio(getSettings) {
   function startMusic(region) {
     if (!ensure()) return;
     const file = manifests.music[String(region)];
-    if (file) {
-      musicEl = new Audio(`audio/music/${file}`);
-      musicEl.loop = true; musicEl.crossOrigin = 'anonymous'; musicEl.preload = 'auto';
-      musicSrc = ctx.createMediaElementSource(musicEl);
-      musicSrc.connect(buses.music);
-      musicEl.play().catch(() => {});
-    } else roomTone = makeRoomTone();
+    if (!file) { roomTone = makeRoomTone(); return; }
+    const token = ++musicToken;
+    buffer(`audio/music/${file}`).then(b => {
+      if (token !== musicToken || currentRegion !== region) return;
+      const g = ctx.createGain(); g.gain.value = 0.0001; g.connect(buses.music);
+      const src = ctx.createBufferSource(); src.buffer = b; src.loop = true; src.connect(g); src.start();
+      g.gain.exponentialRampToValueAtTime(1, ctx.currentTime + 1.5);
+      musicSrc = { src, g };
+    }).catch(() => { if (token === musicToken) roomTone = makeRoomTone(); });
   }
   function stopMusic() {
-    if (musicEl) { musicEl.pause(); musicSrc?.disconnect(); musicEl = null; musicSrc = null; }
+    musicToken++;
+    if (musicSrc) { const { src, g } = musicSrc; const t = ctx.currentTime; g.gain.setTargetAtTime(0.0001, t, 0.3); setTimeout(() => { try { src.stop(); } catch { /* stopped */ } g.disconnect(); }, 1200); musicSrc = null; }
     if (roomTone) { roomTone.stop(); roomTone = null; }
     currentRegion = null;
   }
@@ -131,20 +147,21 @@ export function createAudio(getSettings) {
     const file = manifests.voice[voiceKey(speaker, text)];
     if (!file || !ensure() || ctx.state !== 'running' || vol('voice') === 0) return Promise.resolve(false);
     stopVoice();
-    return new Promise(resolve => {
-      voiceEl = new Audio(`audio/voice/${file}`);
-      voiceEl.crossOrigin = 'anonymous';
-      voiceSrc = ctx.createMediaElementSource(voiceEl);
-      voiceSrc.connect(buses.voice);
+    const token = ++voiceToken;
+    return buffer(`audio/voice/${file}`).then(b => new Promise(resolve => {
+      if (token !== voiceToken) return resolve(false);
+      const src = ctx.createBufferSource(); src.buffer = b; src.connect(buses.voice);
+      voiceSrc = { src, resolve };
       speaking = true; setVolumes();
-      const end = () => { speaking = false; setVolumes(); resolve(true); };
-      voiceEl.addEventListener('ended', end, { once: true });
-      voiceEl.addEventListener('error', () => { speaking = false; setVolumes(); resolve(false); }, { once: true });
-      voiceEl.play().catch(() => { speaking = false; setVolumes(); resolve(false); });
-    });
+      src.onended = () => { if (voiceSrc?.src === src) { voiceSrc = null; speaking = false; setVolumes(); } resolve(true); };
+      src.start();
+    })).catch(() => { speaking = false; setVolumes(); return false; });
   }
-  function stopVoice() { if (voiceEl) { voiceEl.pause(); voiceSrc?.disconnect(); voiceEl = null; voiceSrc = null; speaking = false; setVolumes(); } }
-
+  // Stopping a line counts as "not said": whoever waits on it (a voice-note, a call) moves on at reading pace.
+  function stopVoice() {
+    voiceToken++;
+    if (voiceSrc) { const { src, resolve } = voiceSrc; voiceSrc = null; src.onended = null; try { src.stop(); } catch { /* not started */ } speaking = false; setVolumes(); resolve(false); }
+  }
   // A character's line: only the words they say out loud (narration in an intro is never voiced).
   // "I don't know" answers belong to the voice, not the character, and are recorded once per voice.
   function character(caseNo, personId, kind, text, { generic = false } = {}) {

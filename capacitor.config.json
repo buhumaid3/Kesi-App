@@ -1,0 +1,24 @@
+{
+  "appId": "com.buhumaid.kesi",
+  "appName": "Kesi",
+  "webDir": "dist",
+  "backgroundColor": "#1A110C",
+  "ios": {
+    "contentInset": "never",
+    "backgroundColor": "#1A110C",
+    "scrollEnabled": true,
+    "allowsLinkPreview": false
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": true,
+      "launchShowDuration": 2500,
+      "backgroundColor": "#1A110C",
+      "showSpinner": false
+    },
+    "StatusBar": {
+      "style": "DARK",
+      "overlaysWebView": true
+    }
+  }
+}

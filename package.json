@@ -2,7 +2,7 @@
   "name": "kesi-app",
   "private": true,
   "version": "0.1.0",
-  "description": "Kesi: Kenya Case Files — case data, validator and asset tools",
+  "description": "Kesi: Kenya Case Files \u2014 case data, validator and asset tools",
   "type": "module",
   "scripts": {
     "validate": "node tools/validate.mjs www/cases",
@@ -11,13 +11,28 @@
     "images": "node tools/generate-images.mjs",
     "play": "node tools/serve.mjs",
     "place": "node tools/serve.mjs --place",
-    "test": "node tests/autoplay.mjs 1 10"
+    "test": "node tests/autoplay.mjs 1 10",
+    "build": "node tools/build.mjs",
+    "ios:sync": "node tools/build.mjs && npx cap sync ios",
+    "ios:assets": "npx @capacitor/assets generate --ios --iconBackgroundColor '#1A110C' --splashBackgroundColor '#1A110C' --splashBackgroundColorDark '#120C08'",
+    "icon": "node tools/make-icon.mjs",
+    "place:auto": "node tools/auto-place.mjs"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "dependencies": {
     "@google/genai": "2.32.0",
-    "sharp": "0.35.5"
+    "sharp": "0.35.5",
+    "@capacitor/core": "8.6.0",
+    "@capacitor/ios": "8.6.0",
+    "@capacitor/preferences": "8.0.1",
+    "@capacitor/status-bar": "8.0.4",
+    "@capacitor/splash-screen": "8.0.2",
+    "@capacitor/haptics": "8.0.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "8.6.0",
+    "@capacitor/assets": "4.0.0"
   }
 }

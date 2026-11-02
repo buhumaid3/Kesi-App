@@ -189,8 +189,8 @@
           "id": "hs_body",
           "label": "Behind the counter",
           "pos": [
-            55,
-            60
+            52,
+            94
           ],
           "yields": "ev_body",
           "text": "Ruth lies behind the counter. The steel ticket punch is on the floor beside her. Her right hand is closed around a torn slip of paper."
@@ -199,8 +199,8 @@
           "id": "hs_hand",
           "label": "The paper in Ruth's hand",
           "pos": [
-            60,
-            70
+            51,
+            86
           ],
           "yields": "ev_counterfoil",
           "text": "A torn counterfoil from the ticket book, still damp with her grip."
@@ -209,8 +209,8 @@
           "id": "hs_book",
           "label": "Carbon ticket book",
           "pos": [
-            38,
-            46
+            45,
+            64
           ],
           "yields": "ev_ticketbook",
           "text": "Every ticket is written in duplicate: one for the passenger, one carbon stays in the book with the time."
@@ -219,7 +219,7 @@
           "id": "hs_shelf",
           "label": "Empty space under the counter",
           "pos": [
-            48,
+            36,
             78
           ],
           "yields": null,
@@ -229,7 +229,8 @@
       "image": {
         "kind": "location",
         "brief": "a cramped bus-company booking office at Machakos Country Bus station before dawn, a wooden counter with a carbon ticket book and a steel ticket punch, buses with headlights on outside the window, diesel haze, no people in frame"
-      }
+      },
+      "hotspotsAuto": true
     },
     {
       "id": "loc_yard",
@@ -244,8 +245,8 @@
           "id": "hs_conductor",
           "label": "Kitui bus conductor (by phone)",
           "pos": [
-            30,
-            50
+            22,
+            58
           ],
           "yields": "ev_manifest",
           "text": "The Kitui bus conductor reads his manifest to Amani over the phone from Thika Road."
@@ -254,8 +255,8 @@
           "id": "hs_bay",
           "label": "Kitui Star Coaches luggage bay",
           "pos": [
-            74,
-            62
+            86,
+            53
           ],
           "yields": "ev_cashbox",
           "unlock": {
@@ -280,8 +281,8 @@
           "id": "hs_garissa",
           "label": "The 06:00 Garissa bus",
           "pos": [
-            52,
-            40
+            55,
+            44
           ],
           "yields": "ev_gideon",
           "unlock": {
@@ -293,7 +294,8 @@
       "image": {
         "kind": "location",
         "brief": "a crowded bus yard at dawn at Machakos Country Bus, long-distance buses nose to nose with painted liveries, one bus with its rear engine cover open, a luggage bay hatch half open, no people in focus"
-      }
+      },
+      "hotspotsAuto": true
     }
   ],
   "evidence": [
