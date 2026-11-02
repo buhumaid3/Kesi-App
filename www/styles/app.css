@@ -214,7 +214,7 @@ figure.photo[role=button] { cursor: zoom-in; }
 .sheet.is-out { transform: translateY(104%); opacity: .4; }
 [data-motion=reduce] .sheet { transition: opacity 120ms; transform: none; opacity: 0; }
 [data-motion=reduce] .sheet.is-in { opacity: 1; }
-.sheet-body { overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 18px 16px calc(var(--safe-b) + 40px); flex: 1; overscroll-behavior: contain; }
+.sheet-body { overflow-x: hidden; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 18px 16px calc(var(--safe-b) + 40px); flex: 1; overscroll-behavior: contain; }
 .sheet-close { position: absolute; top: 6px; right: 6px; z-index: 5; width: 48px; height: 48px; border: 0; background: var(--ink); color: var(--paper); border-radius: 50%; font: 700 28px/1 var(--font-plain); box-shadow: var(--shadow-paper); }
 .sheet-title { margin: 2px 52px 12px 0; font: 800 calc(28px * var(--scale))/.95 var(--font-display); text-transform: uppercase; letter-spacing: .02em; }
 .sheet-title.on-dark { color: var(--signwhite); }
@@ -654,7 +654,7 @@ body.has-phone #notes { visibility: hidden; }
 .sheet--zoom .sheet-close { background: #fff; color: #111; }
 .zoom-title { margin: 4px 56px 10px 0; font: 800 22px var(--font-display); text-transform: uppercase; }
 .zoom-pane { overflow: auto; max-height: calc(100vh - 190px); touch-action: pan-x pan-y; background: #000; }
-.zoom-pane img { display: block; width: 100%; filter: var(--photo-filter); }
+.zoom-pane img { display: block; width: 100%; max-width: none; filter: var(--photo-filter); }
 .zoom-bar { display: flex; align-items: center; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
 .zoom-level { font: 700 14px var(--font-data); min-width: 48px; text-align: center; }
 .zoom-hint { font: 12px var(--font-data); color: #aaa; }
@@ -855,6 +855,7 @@ img, video, canvas { max-width: 100%; }
   .ic-note { width: 30px; } .ic-cork { width: 40px; } .ic-phone { width: 22px; } .ic-charge { width: 30px; }
   .sheet { inset: 8px calc(96px + env(safe-area-inset-right, 0px)) 0 max(8px, env(safe-area-inset-left, 0px)); max-width: none; }
   .sheet--location .photo { max-width: 62vh; margin-inline: auto; }
+  .sheet--location .photo.is-looking { max-width: none; }
   .case-intro { grid-template-rows: auto 1fr auto; }
   .ci-title { font-size: clamp(36px, 12vh, 64px); }
   .person-head { grid-template-columns: 110px 1fr; }
@@ -923,3 +924,46 @@ img, video, canvas { max-width: 100%; }
 .photo-img::after { z-index: 2; }
 .say-btn { display: inline-grid; place-items: center; width: 30px; height: 30px; margin-left: 2px; vertical-align: middle; border: 1.5px solid var(--ink-soft); border-radius: 50%; background: transparent; color: var(--ink); font: 11px/1 var(--font-plain); }
 .say-btn:active { transform: scale(.92); }
+
+/* ── Place camera: the photo is a stage that moves inside its frame (camera.js) ───────────────────── */
+.sheet--location .photo { transition: transform 400ms var(--ease-settle); }
+.sheet--location .photo.is-looking { transform: none; }
+.photo-img.cam { width: 100%; touch-action: pan-y; -webkit-user-select: none; user-select: none; }
+.photo-img.cam.is-zoomed { touch-action: none; }
+.photo-img.cam::after { display: none; }
+.cam-stage { position: absolute; left: 0; top: 0; width: 100%; aspect-ratio: 3 / 2; transform-origin: 0 0; will-change: transform; }
+.cam-stage img { width: 100%; height: 100%; }
+.cam-stage::after { content: ''; position: absolute; inset: 0; opacity: var(--photo-grain-opacity); background-image: var(--grain); mix-blend-mode: overlay; pointer-events: none; z-index: 2; }
+.cam-stage .pin { transform: scale(calc(1 / var(--z, 1))); transition: opacity 300ms, filter 300ms; }
+.cam-stage .pin.just-done { animation: none; }
+.cam.has-card .pin:not(.is-active) { opacity: .45; filter: saturate(.4); }
+.cam .pin.is-active { outline: none; box-shadow: 0 0 0 4px var(--sodium), 0 2px 10px rgba(0,0,0,.6); }
+.cam .pin.is-active::after { display: none; }
+.cam-x { position: absolute; z-index: 6; top: 8px; right: 8px; width: 40px; height: 40px; border: 0; border-radius: 50%; background: rgba(20,14,10,.78); color: #fff; font: 700 24px/1 var(--font-plain);
+  opacity: 0; pointer-events: none; transition: opacity 200ms; box-shadow: 0 2px 8px rgba(0,0,0,.5); }
+.cam.is-zoomed:not(.has-card) .cam-x { opacity: 1; pointer-events: auto; }
+.cam-card { position: absolute; z-index: 5; box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden;
+  background: var(--paper) var(--paper-noise); color: var(--ink); border-radius: 3px; box-shadow: 0 10px 30px rgba(0,0,0,.55), 0 0 0 1px rgba(0,0,0,.1);
+  opacity: 0; transform: scale(.94); transition: opacity 220ms ease, transform 260ms var(--ease-settle); }
+.cam-card.is-right { transform-origin: 0 var(--py, 50%); } .cam-card.is-left { transform-origin: 100% var(--py, 50%); } .cam-card.is-bottom { transform-origin: var(--px, 50%) 0; transform: translateY(12px); }
+.cam-card.is-in { opacity: 1; transform: none; }
+.cam-card:focus { outline: none; } .cam-card:focus-visible { outline: 3px solid var(--focus); }
+.cam-pointer { position: absolute; width: 14px; height: 14px; background: var(--paper); transform: rotate(45deg); }
+.cam-card.is-right .cam-pointer { left: -7px; top: calc(var(--py) - 7px); }
+.cam-card.is-left .cam-pointer { right: -7px; top: calc(var(--py) - 7px); }
+.cam-card.is-bottom .cam-pointer { top: -7px; left: var(--px); }
+.cam-card.is-top { transform-origin: var(--px, 50%) 100%; }
+.cam-card.is-top:not(.is-in) { transform: translateY(-12px); }
+.cam-card.is-top .cam-pointer { bottom: -7px; left: var(--px); }
+.cam-card { overflow: visible; }
+.cam-head { position: relative; display: flex; align-items: center; gap: 2px; padding: 4px 4px 0 6px; flex: none; }
+.cam-nav, .cam-close { width: 40px; height: 40px; border: 0; background: none; color: var(--ink); font: 700 24px/1 var(--font-plain); border-radius: 50%; }
+.cam-nav:active, .cam-close:active { background: rgba(0,0,0,.08); }
+.cam-count { font: 700 13px var(--font-data); min-width: 44px; text-align: center; }
+.cam-close { margin-left: auto; }
+.cam-body { overflow-y: auto; overscroll-behavior: contain; padding: 0 14px 14px; min-height: 0; }
+.cam-body h3 { margin: 2px 0 6px; font: 800 calc(18px * var(--scale))/1.1 var(--font-display); text-transform: uppercase; letter-spacing: .04em; text-wrap: balance; }
+.cam-body p { margin: 0 0 10px; font: calc(15px * var(--scale))/1.5 var(--font-doc); }
+.cam-body .card-btn { margin: 4px 0 0; width: 100%; }
+[data-motion=reduce] .cam-card, [data-motion=reduce] .sheet--location .photo { transition: opacity 150ms; transform: none; }
+[hidden] { display: none !important; }

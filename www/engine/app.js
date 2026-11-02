@@ -10,6 +10,7 @@ import { createAudio } from './audio.js';
 import { createMotion } from './motion.js';
 import { attachDepth, enableTilt } from './depth.js';
 import { openPhoneApp, cleanText } from './phone.js';
+import { createCamera } from './camera.js';
 
 const SLICE_LAST = 10;                       // this build plays region 1
 const K = { campaign: null, save: load(), run: null, gloss: null, cases: new Map() };
@@ -354,40 +355,116 @@ function openLocation(id) {
   const run = K.run, l = run.byId.get(id);
   run.visit(id); setView({ sheet: 'location', id }); after(null, { quiet: true });
   const line = run.tutorial('sceneOpen'); if (line) setTimeout(() => mwalimu(line), 700); else coach('sceneOpen');
-  let active = null;
-  openSheet({ id: 'loc', className: 'sheet--location', label: l.name, onClose: clearView, build(body, entry) {
+  let active = null;                                   // the open pin survives a rebuild (e.g. a text-size change)
+  openSheet({ id: 'loc', className: 'sheet--location', label: l.name, onClose: clearView, build(body) {
     const hs = run.hotspots(id);
-    const pins = hs.map((x, i) => h('button', { class: `pin ${run.tapped.has(x.id) ? 'is-done' : ''} ${active === x.id ? 'is-active' : ''}`, type: 'button',
-      style: { left: `${Math.min(95, Math.max(5, x.pos?.[0] ?? 50))}%`, top: `${Math.min(93, Math.max(7, x.pos?.[1] ?? 50))}%` }, 'aria-label': x.label, onclick: e => tap(x.id, e.currentTarget) }, String(i + 1)));
+    const gloss = t => K.gloss.rich(t, { inline: K.save.settings.inlineGloss });
+    const pos = x => [Math.min(95, Math.max(5, x.pos?.[0] ?? 50)) / 100, Math.min(93, Math.max(7, x.pos?.[1] ?? 50)) / 100];
+    const pinLabel = (x, i) => `${i + 1}. ${x.label}${run.tapped.has(x.id) ? ', examined' : ''}`;
+    const pins = hs.map((x, i) => h('button', { class: `pin ${run.tapped.has(x.id) ? 'is-done' : ''}`, type: 'button', 'data-hid': x.id, 'aria-expanded': 'false',
+      style: { left: `${pos(x)[0] * 100}%`, top: `${pos(x)[1] * 100}%` }, 'aria-label': pinLabel(x, i), onclick: e => open(x.id, e.currentTarget) }, String(i + 1)));
     const pic = photo({ src: imgPath(run.n, id), label: `${l.name.split(' (')[0]}${l.kind === 'scene' ? ', ' + run.c.ob.time : ''}`, kind: 'location', id });
-    pic.querySelector('.photo-img').append(...pins);
-    setTimeout(() => attachDepth(body, K), 0);
-    pic.append(h('button', { class: 'zoom-btn', type: 'button', onclick: () => zoomPhoto(imgPath(run.n, id), l.name), 'aria-label': 'Open the photo full size' }, '⤢ Full size'));
+    const frame = pic.querySelector('.photo-img'), img = frame.querySelector('img');
+    // The stage holds the image, its depth canvas and the pins, and moves as one; the frame clips it.
+    const stage = h('div', { class: 'cam-stage' }); frame.classList.add('cam'); frame.prepend(stage);
+    if (img) stage.append(img); else stage.append(...frame.querySelectorAll('.pending'));
+    stage.append(...pins);
+    const card = h('div', { class: 'cam-card', role: 'dialog', 'aria-modal': 'false', tabindex: '-1', hidden: true });
+    const camX = h('button', { class: 'cam-x', type: 'button', 'aria-label': 'Back to the whole room', onclick: () => close() }, '×');
+    frame.append(card, camX);
+    const cam = createCamera(frame, stage, { reduced: K.reduced, onTapEmpty: ({ double }) => { if (active || double) close(); } });
+    frame.addEventListener('keydown', e => { if (e.key === 'Escape' && (active || cam.state().zoomed)) { e.stopPropagation(); close(); } });
+    const list = h('ol', { class: 'hs-list' }, hs.map((x, i) => h('li', {}, h('button', { class: `hs-btn ${run.tapped.has(x.id) ? 'is-done' : 'is-new'}`, type: 'button', 'data-hid': x.id,
+      onclick: () => { pic.scrollIntoView({ block: 'nearest', behavior: K.reduced() ? 'auto' : 'smooth' }); open(x.id, pins[i]); } },
+      h('span', { class: 'hs-no' }, String(i + 1)), h('span', { class: 'hs-l' }, x.label), h('span', { class: 'hs-tick', 'aria-label': 'examined', hidden: !run.tapped.has(x.id) }, '✓')))));
     put(body, h('h2', { class: 'sheet-title' }, l.name), pic,
-      h('p', { class: 'loc-desc', html: K.gloss.rich(l.description, { inline: K.save.settings.inlineGloss }) }),
-      h('h3', { class: 'sub-h' }, 'Look at'),
-      h('ol', { class: 'hs-list' }, hs.map((x, i) => h('li', {}, h('button', { class: `hs-btn ${run.tapped.has(x.id) ? 'is-done' : 'is-new'} ${active === x.id ? 'is-active' : ''}`, type: 'button', onclick: e => tap(x.id, e.currentTarget) },
-        h('span', { class: 'hs-no' }, String(i + 1)), h('span', { class: 'hs-l' }, x.label), run.tapped.has(x.id) ? h('span', { class: 'hs-tick', 'aria-label': 'examined' }, '✓') : null)))));
-    if (active) {
-      const x = hs.find(y => y.id === active);
-      const ev = x?.yields ? run.byId.get(x.yields) : null;
-      const panel = h('div', { class: 'hs-panel' }, h('h3', {}, x.label), h('p', { class: 'typed', html: K.gloss.rich(x.text, { inline: K.save.settings.inlineGloss }) }),
-        ev && run.kE.has(ev.id) ? h('button', { class: 'card-btn', type: 'button', onclick: () => openEvidence(ev.id) }, h('span', {}, `READ EXHIBIT ${exhibitNo(ev.id)}: `, h('b', {}, ev.title)), h('span', { class: 'arrow' }, '→')) : null);
-      body.querySelector('.photo').after(panel);
-    }
-    function tap(hid, src) {
-      const from = src?.getBoundingClientRect();
-      const first = !run.tapped.has(hid);
-      const r = run.tapHotspot(id, hid);
+      h('p', { class: 'loc-desc', html: gloss(l.description) }),
+      h('h3', { class: 'sub-h' }, 'Look at'), list);
+    setTimeout(() => attachDepth(body, K), 0);
+    if (active) requestAnimationFrame(() => open(active, null, { instant: true, again: true }));
+
+    // ── Open a pin: the camera moves in, the card opens beside the pin ────────────────────────────────
+    function open(hid, src, { instant = false, again = false } = {}) {
+      const i = hs.findIndex(x => x.id === hid); if (i < 0) return;
+      const x = hs[i], [px, py] = pos(x), pin = pins[i];
+      if (!again) {
+        const from = (src || pin)?.getBoundingClientRect();
+        const first = !run.tapped.has(hid);
+        const r = run.tapHotspot(id, hid);
+        K.sound(r?.evidence ? 'paper' : 'pin');
+        after(r);
+        if (first) { pin.classList.add('is-done', 'just-done'); pin.setAttribute('aria-label', pinLabel(x, i)); const b = list.querySelector(`[data-hid="${hid}"]`); b?.classList.replace('is-new', 'is-done'); b?.querySelector('.hs-tick')?.removeAttribute('hidden'); }
+        flyFinds(from, r);
+        if (r?.evidence) setTimeout(() => toast(`Exhibit ${exhibitNo(r.evidence)} bagged: ${run.byId.get(r.evidence).title}. ${r.facts.length} fact${r.facts.length === 1 ? '' : 's'} to the notebook.`), 100);
+      }
+      const moving = !!active && active !== hid;       // from one pin to the next: pan, don't zoom out first
       active = hid;
-      K.sound(r?.evidence ? 'paper' : 'pin');
-      after(r);
-      entry.rebuild();
-      if (first) body.querySelectorAll('.pin')[run.hotspots(id).findIndex(x => x.id === hid)]?.classList.add('just-done');
-      flyFinds(from, r);
-      requestAnimationFrame(() => body.querySelector('.hs-panel')?.scrollIntoView({ block: 'nearest', behavior: K.reduced() ? 'auto' : 'smooth' }));
-      attachDepth(body, K);
-      if (r?.evidence) setTimeout(() => toast(`Exhibit ${exhibitNo(r.evidence)} bagged: ${run.byId.get(r.evidence).title}. ${r.facts.length} fact${r.facts.length === 1 ? '' : 's'} to the notebook.`), 100);
+      pins.forEach(p => { const on = p === pin; p.classList.toggle('is-active', on); p.setAttribute('aria-expanded', String(on)); });
+      list.querySelectorAll('.hs-btn').forEach(b => b.classList.toggle('is-active', b.dataset.hid === hid));
+      frame.classList.add('has-card'); pic.classList.add('is-looking');
+      fillCard(x, i);
+      place(px, py, !instant, moving);
+      card.focus({ preventScroll: true });
+    }
+    function fillCard(x, i) {
+      const ev = x.yields ? run.byId.get(x.yields) : null;
+      const nav = (d, txt, lbl) => h('button', { class: 'cam-nav', type: 'button', 'aria-label': lbl, onclick: () => { const j = (i + d + hs.length) % hs.length; open(hs[j].id, pins[j]); } }, txt);
+      card.replaceChildren(
+        h('span', { class: 'cam-pointer', 'aria-hidden': 'true' }),
+        h('div', { class: 'cam-head' }, nav(-1, '‹', 'Previous'), h('span', { class: 'cam-count' }, `${i + 1} / ${hs.length}`), nav(1, '›', 'Next'),
+          h('button', { class: 'cam-close', type: 'button', 'aria-label': 'Close', onclick: () => close() }, '×')),
+        h('div', { class: 'cam-body' },
+          h('h3', {}, x.label), h('p', { class: 'typed', html: gloss(x.text) }),
+          ev && run.kE.has(ev.id) ? h('button', { class: 'card-btn', type: 'button', onclick: () => openEvidence(ev.id) }, h('span', {}, `READ EXHIBIT ${exhibitNo(ev.id)}: `, h('b', {}, ev.title)), h('span', { class: 'arrow' }, '→')) : null));
+      card.setAttribute('aria-label', x.label);
+      card.hidden = false;
+    }
+    // Where the camera goes and where the card sits. Wide frames: the card beside the pin, on the side with
+    // room. Narrow frames: the frame grows taller and the card runs along its bottom edge, over the photo.
+    function place(px, py, animate, moving) {
+      const W = frame.clientWidth, Hs = stage.offsetHeight, side = W >= 520;
+      card.classList.remove('is-left', 'is-right', 'is-bottom', 'is-top', 'is-in');
+      if (side) {
+        const H = Hs, cw = Math.min(330, Math.round(W * 0.46));
+        card.style.width = `${cw}px`; card.style.maxHeight = `${H - 16}px`;
+        cam.setFrameHeight(null, animate);
+        const right = px < 0.5;                      // card on the side away from the pin
+        const p = cam.lookAt(px, py, 2.2, right ? W * 0.26 : W * 0.74, H * 0.5, animate);
+        const ch = Math.min(card.offsetHeight, H - 16);
+        let left = right ? p.x + 30 : p.x - 30 - cw;
+        let useRight = right;
+        if (left < 8 || left + cw > W - 8) { useRight = !right; left = useRight ? p.x + 30 : p.x - 30 - cw; }
+        if (left < 8 || left + cw > W - 8) { bottom(); requestAnimationFrame(() => card.classList.add('is-in')); return; }
+        const top = Math.max(8, Math.min(H - ch - 8, p.y - ch / 2));
+        Object.assign(card.style, { left: `${left}px`, top: `${top}px`, right: '', bottom: '' });
+        card.style.setProperty('--py', `${Math.max(16, Math.min(ch - 16, p.y - top))}px`);
+        card.classList.add(useRight ? 'is-right' : 'is-left');
+      } else bottom();
+      requestAnimationFrame(() => card.classList.add('is-in'));
+      // Narrow frames: the frame grows taller and the card runs along the edge away from the pin
+      // (the bottom edge for pins in the top half, the top edge for pins in the bottom half).
+      function bottom() {
+        const vh = innerHeight, Hf = Math.round(Math.max(Hs, Math.min(W * 1.25, vh * 0.7)));
+        const atTop = py > 0.5, maxH = Math.round(Hf * 0.56);
+        card.style.width = ''; Object.assign(card.style, { left: '8px', right: '8px', top: atTop ? '8px' : '', bottom: atTop ? '' : '8px', maxHeight: `${maxH}px` });
+        cam.setFrameHeight(Hf, animate && !moving);
+        const ch = Math.min(card.offsetHeight, maxH);
+        const zz = Math.min(3, Math.max(2.2, cam.minZoom() * 1.3));     // room to pan the pin clear of the card
+        const free = Hf - ch - 16;
+        const p = cam.lookAt(px, py, zz, W / 2, atTop ? ch + 16 + free / 2 : free / 2 + 8, animate);
+        card.style.setProperty('--px', `${Math.max(18, Math.min(W - 34, p.x - 8))}px`);
+        card.classList.add(atTop ? 'is-top' : 'is-bottom');
+      }
+    }
+    function close() {
+      const pin = active ? pins[hs.findIndex(x => x.id === active)] : null;
+      active = null;
+      card.classList.remove('is-in'); frame.classList.remove('has-card'); pic.classList.remove('is-looking');
+      setTimeout(() => { if (!active) card.hidden = true; }, K.reduced() ? 0 : 200);
+      pins.forEach(p => { p.classList.remove('is-active'); p.setAttribute('aria-expanded', 'false'); });
+      list.querySelectorAll('.hs-btn').forEach(b => b.classList.remove('is-active'));
+      cam.reset(true);
+      pin?.focus({ preventScroll: true });
     }
   } });
 }

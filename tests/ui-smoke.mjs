@@ -48,7 +48,7 @@ for (let pass = 0; pass < 3; pass++) {
 await shot(page, '05-location-hotspot');
 // Open the spanner exhibit from the panel.
 await page.locator('.hs-btn', { hasText: 'empty bay' }).click(); await wait(200);
-await page.locator('.hs-panel .card-btn').click(); await wait(300);
+await page.locator('.cam-card .card-btn').click(); await wait(300);
 await shot(page, '06-exhibit-spanner');
 await closeTop(page); await closeTop(page);
 // Interview everyone and ask about everything.
@@ -182,7 +182,7 @@ await shot(d.page, '17-dark-desk-case10');
 await d.page.locator('.visit-card').first().click(); await wait(400);
 await shot(d.page, '18-dark-location-pending');
 await d.page.locator('.hs-btn').nth(2).click(); await wait(200);
-await d.page.locator('.hs-panel .card-btn').click(); await wait(300);
+await d.page.locator('.cam-card .card-btn').click(); await wait(300);
 await shot(d.page, '19-dark-orderbook');
 await d.ctx.close();
 await browser.close();

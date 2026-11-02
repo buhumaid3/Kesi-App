@@ -78,12 +78,16 @@ function mount(img, depthSrc, K) {
 
     let tx = 0, ty = 0, x = 0, y = 0, touched = 0, visible = true, last = 0;
     const size = () => {
+      // When the place camera zooms in (stage data-res), draw at a higher resolution so it stays sharp.
+      const res = Math.max(1, Math.min(3, parseFloat(frame.dataset.res) || 1));
       const dpr = Math.min(2, devicePixelRatio || 1), w = frame.clientWidth, h = frame.clientHeight;
       if (!w || !h) return;
-      canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr); gl.viewport(0, 0, canvas.width, canvas.height);
+      const k = Math.min(dpr * res, 4096 / w, 4096 / h);
+      canvas.width = Math.round(w * k); canvas.height = Math.round(h * k); gl.viewport(0, 0, canvas.width, canvas.height);
     };
     size();
     const ro = new ResizeObserver(size); ro.observe(frame);
+    frame.addEventListener('depthres', size);
     const io = new IntersectionObserver(es => { visible = es[0].isIntersecting; }); io.observe(frame);
     // Drag across the photo to look around; a tap still reaches the hotspot pins on top.
     frame.addEventListener('pointermove', e => {
