@@ -9,6 +9,7 @@ import { renderEvidence, photo, zoomPhoto, imgPath } from './docs.js';
 import { createAudio } from './audio.js';
 import { createMotion } from './motion.js';
 import { attachDepth, enableTilt } from './depth.js';
+import { openPhoneApp, cleanText } from './phone.js';
 
 const SLICE_LAST = 10;                       // this build plays region 1
 const K = { campaign: null, save: load(), run: null, gloss: null, cases: new Map() };
@@ -651,57 +652,12 @@ function showPatternFile() {
   } });
 }
 
-// ── The phone: Mwalimu's hint calls and the message history ──────────────────────────────────────────
+// ── The phone: a handset over the desk (phone.js). Hint calls, texts and voice-notes ─────────────────
 function openPhone() {
-  const run = K.run;
   setView({ sheet: 'phone' });
-  coach('phoneOpen');
-  K.save.progress.messages.forEach(m => { m.read = true; }); save(); refreshDesk();
-  let lastCall = null;
-  openSheet({ id: 'phone', className: 'sheet--phone', label: 'Phone', onClose: clearView, build(body, entry) {
-    const groups = run.c.chargeSheet.groups;
-    const label = g => ({ who: 'Who did it', why: 'Why', how: 'How', when: 'When', where: 'Where', spine: 'The pattern' }[g.kind] || g.kind);
-    put(body, h('div', { class: 'phone-screen' },
-      h('div', { class: 'ph-status' }, h('span', {}, run.c.ob.time), h('span', {}, 'SCU')),
-      h('h2', { class: 'ph-title' }, 'Mwalimu'),
-      h('p', { class: 'ph-sub' }, 'Ch. Insp. Esther Wairimu · free calls, as many as you need. A call costs stars, never the case.'),
-      groups.map(g => {
-        const tier = run.hintTier(g.id), done = run.passed.has(g.id);
-        const next = Math.min(3, tier + 1);
-        const what = ['', 'Where to look', 'What to notice', 'The answer'][next];
-        const cap = next === 3 ? 'Caps this case at ★' : 'Caps this case at ★★';
-        return h('div', { class: 'ph-group' }, h('h3', {}, label(g)),
-          done ? h('p', { class: 'ph-done' }, 'Accepted by the prosecutor.') :
-            h('button', { class: 'ph-call', type: 'button', onclick: () => call(g.id) }, h('span', { class: 'ph-call-ic', 'aria-hidden': 'true' }, '✆'), h('span', {}, h('b', {}, `Call: ${what}`), h('small', {}, tier >= 3 ? 'Another blank' : cap))),
-          tier ? h('p', { class: 'ph-used' }, `Calls used: ${['', 'where to look', 'where to look, what to notice', 'all three'][tier]}`) : null);
-      }),
-      lastCall ? callCard(lastCall) : null,
-      h('h3', { class: 'ph-h' }, 'Messages'),
-      h('ul', { class: 'ph-msgs' }, K.save.progress.messages.slice().reverse().slice(0, 30).map(m => h('li', { class: `ph-msg ph-msg--${m.kind}` }, h('b', {}, m.from, m.case ? ` · case ${pad3(m.case)}` : ''), h('span', {}, m.line))))));
-    function call(gid) {
-      const r = run.hint(gid); if (!r) return;
-      lastCall = r; K.sound('phone'); K.audio.speak('mwalimu', r.line);
-      K.save.progress.messages.push({ from: 'Mwalimu', line: r.line, kind: 'voice', case: run.n, read: true });
-      after(null, { quiet: true }); entry.rebuild();
-      requestAnimationFrame(() => body.querySelector('.ph-callcard')?.scrollIntoView({ block: 'center' }));
-    }
-    function callCard(r) {
-      const kids = [h('span', { class: 'ph-cc-h' }, `Mwalimu · ${['', 'where to look', 'what to notice', 'the answer'][r.tier]}`), h('p', {}, `"Detective. ${r.line}"`)];
-      if (r.point) {
-        const x = run.byId.get(r.point);
-        if (run.kE.has(r.point)) kids.push(h('button', { class: 'btn', type: 'button', onclick: () => openEvidence(r.point) }, `Open: ${x.title}`));
-        else if (run.kP.has(r.point)) kids.push(h('button', { class: 'btn', type: 'button', onclick: () => openPerson(r.point) }, `Open: ${x.name}`));
-        else kids.push(h('p', { class: 'hand' }, whereToFind(r.point)));
-      }
-      if (r.facts) {
-        kids.push(h('ul', { class: 'nb-lines' }, r.facts.filter(f => run.kF.has(f)).map(f => h('li', { class: 'nb-line is-hint' }, run.byId.get(f).text))));
-        if (r.missing?.length) kids.push(h('p', { class: 'hand' }, `One of them you haven't found yet. ${whereToFind(r.missing[0])}`));
-        else kids.push(h('button', { class: 'btn', type: 'button', onclick: () => { for (const f of r.facts) if (!run.s.pinned.includes(f)) run.pin(f); save(); openNotebook('pinned'); } }, 'Pin both and compare'));
-      }
-      if (r.tier === 3) kids.push(h('button', { class: 'btn', type: 'button', onclick: openCharge }, 'Open the charge sheet'));
-      return h('div', { class: 'ph-callcard', role: 'status' }, kids);
-    }
-  } });
+  // Notices wait while the phone is up (the lock screen and the apps show them); her tip is on the home screen.
+  openPhoneApp({ K, run: K.run, save, after: () => after(null, { quiet: true }), refreshDesk, clearView,
+    openEvidence, openPerson, openNotebook, openCharge, whereToFind });
 }
 // Where a fact or card can be found, said the way Mwalimu would say it.
 function whereToFind(id) {
@@ -864,7 +820,7 @@ function showVerdict(fresh) {
   if (fresh) {
     const t = run.tutorial('verdict'); if (t) setTimeout(() => mwalimu(t), 1200);
     if (bc.mwalimu) setTimeout(() => mwalimu(bc.mwalimu), t ? 2400 : 1200);
-    if (bc.halima) setTimeout(() => voiceNote({ from: 'Prosecutor H. Abdi', line: bc.halima, kind: 'text' }), 2600);
+    if (bc.halima) setTimeout(() => voiceNote({ from: 'Prosecutor H. Abdi', line: cleanText('Prosecutor H. Abdi', bc.halima), kind: 'text' }), 2600);
     setTimeout(() => K.sound('closed'), 700);
     if (!K.reduced()) { const s = $('.v-stamp'); s.classList.remove('is-stamped'); setTimeout(() => stamp(s, K.sound, false), 250); }
   }

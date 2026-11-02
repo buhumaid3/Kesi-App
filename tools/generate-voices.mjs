@@ -312,9 +312,13 @@ switch (cmd) {
     const redoSlot = flag('--redo-slot'); const cf = castFile();
     const slotOf = sp => cf?.assign?.[sp] || sp;
     const lines = compileLines(region).filter(l => (!who || l.speaker === who || slotOf(l.speaker) === who) && (!manifest[l.key] || (redoSlot && slotOf(l.speaker) === redoSlot)));
-    const e = estimate(lines);
-    console.log(`Recording ${lines.length} lines, about ${e.minutes.toFixed(1)} minutes of speech, ≈ $${e.usd.toFixed(2)}.`);
-    await record(lines);
+    // Lines whose voice hasn't been chosen yet are skipped with one message, not one error per line.
+    const missing = new Map();
+    const ready = lines.filter(l => { const v = voiceOf(l.speaker); if (v.voice) return true; missing.set(v.slot, (missing.get(v.slot) || 0) + 1); return false; });
+    for (const [slot, n] of missing) console.log(`Skipping ${n} lines for ${slot}: no voice yet (${SPEAKERS[slot] ? `pick ${slot} N` : 'design --cast'}).`);
+    const e = estimate(ready);
+    console.log(`Recording ${ready.length} lines, about ${e.minutes.toFixed(1)} minutes of speech, ≈ $${e.usd.toFixed(2)}.`);
+    await record(ready);
     break;
   }
   case 'redo': {

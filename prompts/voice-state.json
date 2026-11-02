@@ -1,4 +1,1320 @@
 {
- "spent": 0,
- "lines": {}
+ "spent": 0.1383,
+ "lines": {
+  "mwalimu/cb03a75e": {
+   "status": "failed",
+   "speaker": "mwalimu",
+   "text": "You're Amani. Good. I'm Chief Inspector Wairimu. Everyone here calls me Mwalimu, and you'll find out why.",
+   "where": "prologue pr3",
+   "error": "no voice for mwalimu (mwalimu): run  cast  and  design --cast, or  design  then  pick mwalimu N"
+  },
+  "mwalimu/069a30a0": {
+   "status": "failed",
+   "speaker": "mwalimu",
+   "text": "A driver at Ngara stage. Read the OB, go to the scene, look at everything twice. I'll be on the phone if you need me.",
+   "where": "prologue pr4",
+   "error": "no voice for mwalimu (mwalimu): run  cast  and  design --cast, or  design  then  pick mwalimu N"
+  },
+  "mwalimu/1159ef7b": {
+   "status": "failed",
+   "speaker": "mwalimu",
+   "text": "Detective. Ngara.",
+   "where": "prologue pr7",
+   "error": "no voice for mwalimu (mwalimu): run  cast  and  design --cast, or  design  then  pick mwalimu N"
+  },
+  "mwalimu/4b12b722": {
+   "status": "failed",
+   "speaker": "mwalimu",
+   "text": "Registers are kept by people who weren't thinking about murder. That's why they're honest. Read every row, not just the one you came for.",
+   "where": "tip foundPaperBook",
+   "error": "no voice for mwalimu (mwalimu): run  cast  and  design --cast, or  design  then  pick mwalimu N"
+  },
+  "mwalimu/a0ba30c8": {
+   "status": "failed",
+   "speaker": "mwalimu",
+   "text": "Times matter now. Your notebook has a Time tab: everyone you can place, lined up on one clock.",
+   "where": "tip timeWindow",
+   "error": "no voice for mwalimu (mwalimu): run  cast  and  design --cast, or  design  then  pick mwalimu N"
+  },
+  "mwalimu/f43dab2f": {
+   "status": "failed",
+   "speaker": "mwalimu",
+   "text": "Two places today. Both are in the folder. Go back and forth as often as you like. Walking costs you nothing.",
+   "where": "tip map",
+   "error": "no voice for mwalimu (mwalimu): run  cast  and  design --cast, or  design  then  pick mwalimu N"
+  },
+  "mwalimu/bddc454b": {
+   "status": "failed",
+   "speaker": "mwalimu",
+   "text": "When two papers talk about the same thing, put them side by side. Pin a line from each in your notebook and read the Pinned tab.",
+   "where": "tip paperMatch",
+   "error": "no voice for mwalimu (mwalimu): run  cast  and  design --cast, or  design  then  pick mwalimu N"
+  },
+  "mwalimu/34c26fc6": {
+   "status": "failed",
+   "speaker": "mwalimu",
+   "text": "A building, not a street. Before you decide who was where, ask how anyone got from one floor to another.",
+   "where": "tip sceneSketch",
+   "error": "no voice for mwalimu (mwalimu): run  cast  and  design --cast, or  design  then  pick mwalimu N"
+  },
+  "mwalimu/9e8c79ab": {
+   "status": "failed",
+   "speaker": "mwalimu",
+   "text": "Open the Time tab. Every bar is someone you can place. The empty stretches deserve as much attention as the bars.",
+   "where": "tip timeView",
+   "error": "no voice for mwalimu (mwalimu): run  cast  and  design --cast, or  design  then  pick mwalimu N"
+  },
+  "mwalimu/ab8b26c2": {
+   "status": "failed",
+   "speaker": "mwalimu",
+   "text": "Small writing matters. Tap any photograph to open it full size, then pinch or double-tap to look closer.",
+   "where": "tip zoomInspect",
+   "error": "no voice for mwalimu (mwalimu): run  cast  and  design --cast, or  design  then  pick mwalimu N"
+  },
+  "mwalimu/0d52205a": {
+   "status": "failed",
+   "speaker": "mwalimu",
+   "text": "Not everything that looks guilty is. When something points at a person, ask what else could explain it before you write a name.",
+   "where": "tip firstRedHerring",
+   "error": "no voice for mwalimu (mwalimu): run  cast  and  design --cast, or  design  then  pick mwalimu N"
+  },
+  "mwalimu/b6baaa41": {
+   "status": "failed",
+   "speaker": "mwalimu",
+   "text": "A timetable says where a train should be. People tell you where they were. Hold one against the other.",
+   "where": "tip timetable",
+   "error": "no voice for mwalimu (mwalimu): run  cast  and  design --cast, or  design  then  pick mwalimu N"
+  },
+  "mwalimu/5ae588ed": {
+   "status": "failed",
+   "speaker": "mwalimu",
+   "text": "Read every exhibit twice: once for what it shows, and once for what it ought to show.",
+   "where": "tip absencePreview",
+   "error": "no voice for mwalimu (mwalimu): run  cast  and  design --cast, or  design  then  pick mwalimu N"
+  },
+  "mwalimu/7f2ed231": {
+   "status": "failed",
+   "speaker": "mwalimu",
+   "text": "This one takes three steps, not two. If your name rests on a single fact, you're not finished.",
+   "where": "tip threeStepProof",
+   "error": "no voice for mwalimu (mwalimu): run  cast  and  design --cast, or  design  then  pick mwalimu N"
+  },
+  "mwalimu/53256677": {
+   "status": "failed",
+   "speaker": "mwalimu",
+   "text": "You can pin six facts. Keep the ones that belong together on the Pinned tab, and the board will show them too.",
+   "where": "tip pinnedFacts",
+   "error": "no voice for mwalimu (mwalimu): run  cast  and  design --cast, or  design  then  pick mwalimu N"
+  },
+  "mwalimu/45769964": {
+   "status": "failed",
+   "speaker": "mwalimu",
+   "text": "Photographs have backgrounds. Open it full size and look past the people in front.",
+   "where": "tip photoZoom",
+   "error": "no voice for mwalimu (mwalimu): run  cast  and  design --cast, or  design  then  pick mwalimu N"
+  },
+  "mwalimu/60131cc2": {
+   "status": "failed",
+   "speaker": "mwalimu",
+   "text": "Two blanks this time, judged together. Halima accepts both or neither, so be sure of each.",
+   "where": "tip twoBlankGroup",
+   "error": "no voice for mwalimu (mwalimu): run  cast  and  design --cast, or  design  then  pick mwalimu N"
+  },
+  "mwalimu/ec170671": {
+   "status": "failed",
+   "speaker": "mwalimu",
+   "text": "Everything you find lands here by itself. People, places, exhibits, and times. You don't write, you think.",
+   "where": "tip notebookOpen",
+   "error": "no voice for mwalimu (mwalimu): run  cast  and  design --cast, or  design  then  pick mwalimu N"
+  },
+  "mwalimu/b208531b": {
+   "status": "failed",
+   "speaker": "mwalimu",
+   "text": "The board is yours. Drag things where they make sense to you, tie string between them. Nobody grades it.",
+   "where": "tip boardOpen",
+   "error": "no voice for mwalimu (mwalimu): run  cast  and  design --cast, or  design  then  pick mwalimu N"
+  },
+  "mwalimu/72c0d5d5": {
+   "status": "failed",
+   "speaker": "mwalimu",
+   "text": "Call me when you're stuck. Where to look, what to notice, or the answer. Each one costs you a star you haven't earned yet, never the case.",
+   "where": "tip phoneOpen",
+   "error": "no voice for mwalimu (mwalimu): run  cast  and  design --cast, or  design  then  pick mwalimu N"
+  },
+  "mwalimu/ec32222d": {
+   "status": "failed",
+   "speaker": "mwalimu",
+   "text": "The charge sheet. Only names you've actually found are in the bank. Halima reads every one.",
+   "where": "tip chargeOpen",
+   "error": "no voice for mwalimu (mwalimu): run  cast  and  design --cast, or  design  then  pick mwalimu N"
+  },
+  "mwalimu/daf43b7a": {
+   "status": "failed",
+   "speaker": "mwalimu",
+   "text": "Detective. You can call me. \"Where to look\" names the thing that matters. \"What to notice\" shows you two facts that belong together. \"The answer\" fills a blank, and costs you more.",
+   "where": "hint offer",
+   "error": "no voice for mwalimu (mwalimu): run  cast  and  design --cast, or  design  then  pick mwalimu N"
+  },
+  "c001-p_kassim/7bd682f5": {
+   "status": "done",
+   "speaker": "c001-p_kassim",
+   "text": "Nine years he parked in that bay. Nine years.",
+   "where": "case 1 p_kassim intro",
+   "secs": 4.4,
+   "file": "c001-p_kassim/7bd682f5.m4a",
+   "at": "2026-11-02T14:54:55.505Z"
+  },
+  "c001-p_kassim/6238367b": {
+   "status": "done",
+   "speaker": "c001-p_kassim",
+   "text": "Moses was the chama treasurer for the 9N drivers. Strict with the book. He'd chase you for fifty bob.",
+   "where": "case 1 p_kassim about p_moses",
+   "secs": 7.1,
+   "file": "c001-p_kassim/6238367b.m4a",
+   "at": "2026-11-02T14:55:05.301Z"
+  },
+  "c001-p_kassim/cb375881": {
+   "status": "done",
+   "speaker": "c001-p_kassim",
+   "text": "9N is the route. K is the driver's initial. Every driver paints his tools, otherwise they walk to Githurai by morning.",
+   "where": "case 1 p_kassim about ev_spanner",
+   "secs": 9.8,
+   "file": "c001-p_kassim/cb375881.m4a",
+   "at": "2026-11-02T14:55:23.482Z"
+  },
+  "c001-p_kassim/064b473b": {
+   "status": "done",
+   "speaker": "c001-p_kassim",
+   "text": "The boy shouts at everyone. He's at Kencom tonight on 551Q. Talk to Wanjiru on the radio if you want.",
+   "where": "case 1 p_kassim about p_brian",
+   "secs": 8.4,
+   "file": "c001-p_kassim/064b473b.m4a",
+   "at": "2026-11-02T14:55:32.449Z"
+  },
+  "c001-p_kassim/7bfcfa31": {
+   "status": "done",
+   "speaker": "c001-p_kassim",
+   "text": "Kamau? He drives KCZ 902M. Left on his 22:30 trip. He'll be back around quarter past eleven.",
+   "where": "case 1 p_kassim about p_peter",
+   "secs": 9.8,
+   "file": "c001-p_kassim/7bfcfa31.m4a",
+   "at": "2026-11-02T14:55:42.553Z"
+  },
+  "c001-p_mercy/29d8e092": {
+   "status": "done",
+   "speaker": "c001-p_mercy",
+   "text": "I keep thinking I'll see him walking over for his smokie.",
+   "where": "case 1 p_mercy intro",
+   "secs": 4.6,
+   "file": "c001-p_mercy/29d8e092.m4a",
+   "at": "2026-11-02T14:55:51.105Z"
+  },
+  "c001-p_mercy/89dd0751": {
+   "status": "done",
+   "speaker": "c001-p_mercy",
+   "text": "Every night at ten, one smokie pasua, extra kachumbari. Tonight too. He was laughing.",
+   "where": "case 1 p_mercy about p_moses",
+   "secs": 7.1,
+   "file": "c001-p_mercy/89dd0751.m4a",
+   "at": "2026-11-02T14:55:59.960Z"
+  },
+  "c001-p_mercy/30e1dfc9": {
+   "status": "done",
+   "speaker": "c001-p_mercy",
+   "text": "Mzee Kassim was right here with a smokie in his hand when we heard it. He dropped it.",
+   "where": "case 1 p_mercy about p_kassim",
+   "secs": 5.6,
+   "file": "c001-p_mercy/30e1dfc9.m4a",
+   "at": "2026-11-02T14:56:07.326Z"
+  },
+  "c001-p_mercy/bf6fc4fc": {
+   "status": "done",
+   "speaker": "c001-p_mercy",
+   "text": "Kamau never buys from me. He says my smokies are small. I don't know him better than that.",
+   "where": "case 1 p_mercy about p_peter",
+   "secs": 6.5,
+   "file": "c001-p_mercy/bf6fc4fc.m4a",
+   "at": "2026-11-02T14:56:15.015Z"
+  },
+  "c001-p_peter/84520016": {
+   "status": "done",
+   "speaker": "c001-p_peter",
+   "text": "Moses? Wueh. I heard on the radio.",
+   "where": "case 1 p_peter intro",
+   "secs": 3.6,
+   "file": "c001-p_peter/84520016.m4a",
+   "at": "2026-11-02T14:56:22.181Z"
+  },
+  "c001-p_peter/64b9266e": {
+   "status": "done",
+   "speaker": "c001-p_peter",
+   "text": "He kept the chama book. We all owe the book something. I didn't touch him.",
+   "where": "case 1 p_peter about p_moses",
+   "secs": 4.6,
+   "file": "c001-p_peter/64b9266e.m4a",
+   "at": "2026-11-02T14:56:30.035Z"
+  },
+  "c001-p_peter/b44956df": {
+   "status": "done",
+   "speaker": "c001-p_peter",
+   "text": "Chama, chama. Yes, I'm three contributions behind. So are half the drivers on 9N.",
+   "where": "case 1 p_peter about f_brian_peter_debt",
+   "secs": 6.6,
+   "file": "c001-p_peter/b44956df.m4a",
+   "at": "2026-11-02T14:56:39.180Z"
+  },
+  "c001-p_peter/a9878344": {
+   "status": "done",
+   "speaker": "c001-p_peter",
+   "text": "Every driver has a spanner. Mine went missing this week. Someone borrowed it.",
+   "where": "case 1 p_peter about ev_spanner",
+   "secs": 4.8,
+   "file": "c001-p_peter/a9878344.m4a",
+   "at": "2026-11-02T14:56:46.451Z"
+  },
+  "c001-p_peter/cfbe03d2": {
+   "status": "done",
+   "speaker": "c001-p_peter",
+   "text": "Look all you want. I told you, it went missing.",
+   "where": "case 1 p_peter about ev_toolroll",
+   "secs": 3.5,
+   "file": "c001-p_peter/cfbe03d2.m4a",
+   "at": "2026-11-02T14:56:54.208Z"
+  },
+  "c001-p_peter/4cebdebd": {
+   "status": "done",
+   "speaker": "c001-p_peter",
+   "text": "I left on my 22:30 trip like every Friday.",
+   "where": "case 1 p_peter claim f_peter_claim_trip",
+   "secs": 4.2,
+   "file": "c001-p_peter/4cebdebd.m4a",
+   "at": "2026-11-02T14:57:02.539Z"
+  },
+  "c001-p_peter/80cb7ca9": {
+   "status": "done",
+   "speaker": "c001-p_peter",
+   "text": "I didn't touch him.",
+   "where": "case 1 p_peter claim f_peter_claim_denial",
+   "secs": 2.1,
+   "file": "c001-p_peter/80cb7ca9.m4a",
+   "at": "2026-11-02T14:57:09.705Z"
+  },
+  "c001-p_brian/9fecf362": {
+   "status": "done",
+   "speaker": "c001-p_brian",
+   "text": "I didn't even know until Mama Wanjiru told me.",
+   "where": "case 1 p_brian intro",
+   "secs": 3.3,
+   "file": "c001-p_brian/9fecf362.m4a",
+   "at": "2026-11-02T14:57:16.546Z"
+  },
+  "c001-p_brian/7dd078c5": {
+   "status": "done",
+   "speaker": "c001-p_brian",
+   "text": "He cut my daily pay by two hundred. I shouted. That's all. You don't kill a man for two hundred bob.",
+   "where": "case 1 p_brian about p_moses",
+   "secs": 6.6,
+   "file": "c001-p_brian/7dd078c5.m4a",
+   "at": "2026-11-02T14:57:25.786Z"
+  },
+  "c001-p_brian/fb6cf193": {
+   "status": "done",
+   "speaker": "c001-p_brian",
+   "text": "Kamau owes the chama. Everyone on 9N knows. Moses was going to the sacco chairman about it, that's what they were saying.",
+   "where": "case 1 p_brian about p_peter",
+   "secs": 7.1,
+   "file": "c001-p_brian/fb6cf193.m4a",
+   "at": "2026-11-02T14:57:34.195Z"
+  },
+  "c001-p_brian/54f22525": {
+   "status": "done",
+   "speaker": "c001-p_brian",
+   "text": "I was at Kencom all night filling 551Q.",
+   "where": "case 1 p_brian claim f_brian_claim",
+   "secs": 3.4,
+   "file": "c001-p_brian/54f22525.m4a",
+   "at": "2026-11-02T14:57:41.914Z"
+  },
+  "c001-p_wanjiru/cd704220": {
+   "status": "done",
+   "speaker": "c001-p_wanjiru",
+   "text": "Kencom, Gathoni speaking.",
+   "where": "case 1 p_wanjiru intro",
+   "secs": 2.4,
+   "file": "c001-p_wanjiru/cd704220.m4a",
+   "at": "2026-11-02T14:57:47.985Z"
+  },
+  "c001-p_wanjiru/28e96899": {
+   "status": "done",
+   "speaker": "c001-p_wanjiru",
+   "text": "Otieno? He's been in my queue since ten to ten shouting 'Ngara, Ngara!' I'd have heard if he stopped.",
+   "where": "case 1 p_wanjiru about p_brian",
+   "secs": 7.3,
+   "file": "c001-p_wanjiru/28e96899.m4a",
+   "at": "2026-11-02T14:57:57.310Z"
+  },
+  "c002-p_nancy/36db41e7": {
+   "status": "done",
+   "speaker": "c002-p_nancy",
+   "text": "Eleven years he greeted me every morning. Every morning.",
+   "where": "case 2 p_nancy intro",
+   "secs": 6.4,
+   "file": "c002-p_nancy/36db41e7.m4a",
+   "at": "2026-11-02T14:58:06.085Z"
+  },
+  "c002-p_nancy/c7f08d1a": {
+   "status": "done",
+   "speaker": "c002-p_nancy",
+   "text": "Francis did his rounds every hour with that big torch. Every floor. He was proud of that torch.",
+   "where": "case 2 p_nancy about p_francis",
+   "secs": 6.4,
+   "file": "c002-p_nancy/c7f08d1a.m4a",
+   "at": "2026-11-02T14:58:15.831Z"
+  },
+  "c002-p_nancy/bccc5000": {
+   "status": "done",
+   "speaker": "c002-p_nancy",
+   "text": "I clean Bidii Freight first, every morning. The bin is always just paper. Today there were shoes in it. Shoes!",
+   "where": "case 2 p_nancy about loc_bidii",
+   "secs": 8.4,
+   "file": "c002-p_nancy/bccc5000.m4a",
+   "at": "2026-11-02T14:58:24.970Z"
+  },
+  "c002-p_nancy/a39f537a": {
+   "status": "done",
+   "speaker": "c002-p_nancy",
+   "text": "Collins and Francis shouted at each other last week about weekend shifts. Young men shout.",
+   "where": "case 2 p_nancy about p_collins",
+   "secs": 6.1,
+   "file": "c002-p_nancy/a39f537a.m4a",
+   "at": "2026-11-02T14:58:33.410Z"
+  },
+  "c002-p_nancy/4b4f4166": {
+   "status": "done",
+   "speaker": "c002-p_nancy",
+   "text": "Mzee Ali next door sits at his window all night. Nothing happens on this street he doesn't see.",
+   "where": "case 2 p_nancy about p_ali",
+   "secs": 6,
+   "file": "c002-p_nancy/4b4f4166.m4a",
+   "at": "2026-11-02T14:58:42.030Z"
+  },
+  "c002-p_ali/ab178154": {
+   "status": "done",
+   "speaker": "c002-p_ali",
+   "text": "I keep a book too. Askari to askari, we watch each other's doors.",
+   "where": "case 2 p_ali intro",
+   "secs": 5,
+   "file": "c002-p_ali/ab178154.m4a",
+   "at": "2026-11-02T14:58:49.865Z"
+  },
+  "c002-p_ali/5eddde50": {
+   "status": "done",
+   "speaker": "c002-p_ali",
+   "text": "A woman with a laptop bag, about twenty to nine. Francis let her in and wrote in his book. I didn't see her come out of the front.",
+   "where": "case 2 p_ali about p_rehema",
+   "secs": 11.8,
+   "file": "c002-p_ali/5eddde50.m4a",
+   "at": "2026-11-02T14:58:59.080Z"
+  },
+  "c002-p_ali/3c073f9b": {
+   "status": "done",
+   "speaker": "c002-p_ali",
+   "text": "The painter? He left before dark, at five or so. Singing.",
+   "where": "case 2 p_ali about p_isaac",
+   "secs": 5.7,
+   "file": "c002-p_ali/3c073f9b.m4a",
+   "at": "2026-11-02T14:59:07.555Z"
+  },
+  "c002-p_isaac/f2708638": {
+   "status": "done",
+   "speaker": "c002-p_isaac",
+   "text": "I told everyone. Don't walk on my corridor.",
+   "where": "case 2 p_isaac intro",
+   "secs": 3.2,
+   "file": "c002-p_isaac/f2708638.m4a",
+   "at": "2026-11-02T14:59:15.918Z"
+  },
+  "c002-p_isaac/6a67176b": {
+   "status": "done",
+   "speaker": "c002-p_isaac",
+   "text": "Final coat at ten to five. That paint stays tacky till nine, ten at night. I told the whole floor.",
+   "where": "case 2 p_isaac about ev_tin",
+   "secs": 7.6,
+   "file": "c002-p_isaac/6a67176b.m4a",
+   "at": "2026-11-02T14:59:25.128Z"
+  },
+  "c002-p_isaac/673669b1": {
+   "status": "done",
+   "speaker": "c002-p_isaac",
+   "text": "That's not my boot. My boots are size 44. And I walk on the cloth edges, like a professional.",
+   "where": "case 2 p_isaac about ev_print",
+   "secs": 8.2,
+   "file": "c002-p_isaac/673669b1.m4a",
+   "at": "2026-11-02T14:59:34.134Z"
+  },
+  "c002-p_isaac/3110cb23": {
+   "status": "done",
+   "speaker": "c002-p_isaac",
+   "text": "Call Pastor Kioko. Tuesday is choir. I've never missed a Tuesday.",
+   "where": "case 2 p_isaac about p_kioko",
+   "secs": 4.2,
+   "file": "c002-p_isaac/3110cb23.m4a",
+   "at": "2026-11-02T14:59:42.490Z"
+  },
+  "c002-p_isaac/4ee2e569": {
+   "status": "done",
+   "speaker": "c002-p_isaac",
+   "text": "I signed out at ten past five and went to choir.",
+   "where": "case 2 p_isaac claim f_isaac_claim",
+   "secs": 3.3,
+   "file": "c002-p_isaac/4ee2e569.m4a",
+   "at": "2026-11-02T14:59:50.223Z"
+  },
+  "c002-p_collins/32c48bcb": {
+   "status": "done",
+   "speaker": "c002-p_collins",
+   "text": "Francis? Kwani what happened?",
+   "where": "case 2 p_collins intro",
+   "secs": 2.8,
+   "file": "c002-p_collins/32c48bcb.m4a",
+   "at": "2026-11-02T14:59:58.496Z"
+  },
+  "c002-p_collins/6ab9049a": {
+   "status": "done",
+   "speaker": "c002-p_collins",
+   "text": "We argued about Saturdays. He wanted me to cover. I said no. It was nothing. Call my wife.",
+   "where": "case 2 p_collins about p_francis",
+   "secs": 7,
+   "file": "c002-p_collins/6ab9049a.m4a",
+   "at": "2026-11-02T15:00:06.401Z"
+  },
+  "c002-p_collins/039b2ca8": {
+   "status": "done",
+   "speaker": "c002-p_collins",
+   "text": "I was home in Kayole. I didn't like Francis, but I didn't come back here.",
+   "where": "case 2 p_collins claim f_collins_claim",
+   "secs": 5.2,
+   "file": "c002-p_collins/039b2ca8.m4a",
+   "at": "2026-11-02T15:00:14.039Z"
+  },
+  "c002-p_rehema/bec36e37": {
+   "status": "done",
+   "speaker": "c002-p_rehema",
+   "text": "Kilele House? I was there last night, yes. Briefly.",
+   "where": "case 2 p_rehema intro",
+   "secs": 5.4,
+   "file": "c002-p_rehema/bec36e37.m4a",
+   "at": "2026-11-02T15:00:22.099Z"
+  },
+  "c002-p_rehema/b8905cd3": {
+   "status": "done",
+   "speaker": "c002-p_rehema",
+   "text": "I keep a pair of office shoes in the office and go home in flats. Doesn't everyone?",
+   "where": "case 2 p_rehema about ev_bin",
+   "secs": 6,
+   "file": "c002-p_rehema/b8905cd3.m4a",
+   "at": "2026-11-02T15:00:30.840Z"
+  },
+  "c002-p_rehema/0f02da73": {
+   "status": "done",
+   "speaker": "c002-p_rehema",
+   "text": "The audit is routine. Every year. I don't see what that has to do with Francis.",
+   "where": "case 2 p_rehema about f_shelf_audit",
+   "secs": 5.6,
+   "file": "c002-p_rehema/0f02da73.m4a",
+   "at": "2026-11-02T15:00:38.704Z"
+  },
+  "c002-p_rehema/ce90e102": {
+   "status": "done",
+   "speaker": "c002-p_rehema",
+   "text": "I came back for some files and left. I didn't see anyone.",
+   "where": "case 2 p_rehema claim f_rehema_claim",
+   "secs": 4.1,
+   "file": "c002-p_rehema/ce90e102.m4a",
+   "at": "2026-11-02T15:00:47.312Z"
+  },
+  "c003-p_mwikali/a71bed14": {
+   "status": "done",
+   "speaker": "c003-p_mwikali",
+   "text": "Drink. You'll need it. That girl was good to me.",
+   "where": "case 3 p_mwikali intro",
+   "secs": 4.5,
+   "file": "c003-p_mwikali/a71bed14.m4a",
+   "at": "2026-11-02T15:00:54.885Z"
+  },
+  "c003-p_mwikali/292c38f1": {
+   "status": "done",
+   "speaker": "c003-p_mwikali",
+   "text": "Musyoka bought a ticket at twenty past five. Him! He hasn't travelled anywhere in ten years. Since February he touts for Kitui Star, two bays down.",
+   "where": "case 3 p_mwikali about p_stephen",
+   "secs": 10.1,
+   "file": "c003-p_mwikali/292c38f1.m4a",
+   "at": "2026-11-02T15:01:03.848Z"
+  },
+  "c003-p_mwikali/aba46f8b": {
+   "status": "done",
+   "speaker": "c003-p_mwikali",
+   "text": "Kevin has been under the Garissa bus with Gideon since five. I took them tea.",
+   "where": "case 3 p_mwikali about p_kevin",
+   "secs": 5.9,
+   "file": "c003-p_mwikali/aba46f8b.m4a",
+   "at": "2026-11-02T15:01:11.831Z"
+  },
+  "c003-p_mwikali/38c66daf": {
+   "status": "done",
+   "speaker": "c003-p_mwikali",
+   "text": "Lilian left at five past five like every Friday. She takes the Kayole matatu.",
+   "where": "case 3 p_mwikali about p_lilian",
+   "secs": 6,
+   "file": "c003-p_mwikali/38c66daf.m4a",
+   "at": "2026-11-02T15:01:20.420Z"
+  },
+  "c003-p_gideon/2dc88bcb": {
+   "status": "done",
+   "speaker": "c003-p_gideon",
+   "text": "Ruth? No. No.",
+   "where": "case 3 p_gideon intro",
+   "secs": 3.4,
+   "file": "c003-p_gideon/2dc88bcb.m4a",
+   "at": "2026-11-02T15:01:26.703Z"
+  },
+  "c003-p_gideon/7453ccf9": {
+   "status": "done",
+   "speaker": "c003-p_gideon",
+   "text": "He held the torch for me the whole check. Five to ten to six. Brake lines, belts, tyres. He didn't move.",
+   "where": "case 3 p_gideon about p_kevin",
+   "secs": 7.8,
+   "file": "c003-p_gideon/7453ccf9.m4a",
+   "at": "2026-11-02T15:01:34.460Z"
+  },
+  "c003-p_stephen/8c1ebeef": {
+   "status": "done",
+   "speaker": "c003-p_stephen",
+   "text": "That woman lost me my job for two tickets. Two! Every manamba sells a few. But I didn't touch her.",
+   "where": "case 3 p_stephen about p_ruth",
+   "secs": 8.4,
+   "file": "c003-p_stephen/8c1ebeef.m4a",
+   "at": "2026-11-02T15:01:42.697Z"
+  },
+  "c003-p_stephen/661782a0": {
+   "status": "done",
+   "speaker": "c003-p_stephen",
+   "text": "Anyone can open a luggage bay. Ask who drives that bus.",
+   "where": "case 3 p_stephen about ev_cashbox",
+   "secs": 4.2,
+   "file": "c003-p_stephen/661782a0.m4a",
+   "at": "2026-11-02T15:01:50.253Z"
+  },
+  "c003-p_stephen/76ee040b": {
+   "status": "done",
+   "speaker": "c003-p_stephen",
+   "text": "I bought a ticket and changed my mind. Is that a crime?",
+   "where": "case 3 p_stephen claim f_stephen_claim",
+   "secs": 5,
+   "file": "c003-p_stephen/76ee040b.m4a",
+   "at": "2026-11-02T15:01:58.587Z"
+  },
+  "c003-p_stephen/7e80f7a7": {
+   "status": "done",
+   "speaker": "c003-p_stephen",
+   "text": "I never touched her. I never touched that box.",
+   "where": "case 3 p_stephen claim f_stephen_denial",
+   "secs": 3.2,
+   "file": "c003-p_stephen/7e80f7a7.m4a",
+   "at": "2026-11-02T15:02:06.193Z"
+  },
+  "c003-p_kevin/492f39e4": {
+   "status": "done",
+   "speaker": "c003-p_kevin",
+   "text": "She reported me twice this month. Now people will say I did it.",
+   "where": "case 3 p_kevin intro",
+   "secs": 4,
+   "file": "c003-p_kevin/492f39e4.m4a",
+   "at": "2026-11-02T15:02:13.406Z"
+  },
+  "c003-p_kevin/752fbe92": {
+   "status": "done",
+   "speaker": "c003-p_kevin",
+   "text": "She was strict about time. She was right, mostly. I'm late because the bus is old.",
+   "where": "case 3 p_kevin about p_ruth",
+   "secs": 5.2,
+   "file": "c003-p_kevin/752fbe92.m4a",
+   "at": "2026-11-02T15:02:22.783Z"
+  },
+  "c003-p_kevin/40b05fa3": {
+   "status": "done",
+   "speaker": "c003-p_kevin",
+   "text": "I was under my bus. Ask Gideon.",
+   "where": "case 3 p_kevin claim f_kevin_claim",
+   "secs": 3,
+   "file": "c003-p_kevin/40b05fa3.m4a",
+   "at": "2026-11-02T15:02:32.042Z"
+  },
+  "c003-p_lilian/0922ea3a": {
+   "status": "done",
+   "speaker": "c003-p_lilian",
+   "text": "Ruth? But I left her at five. She was fine.",
+   "where": "case 3 p_lilian intro",
+   "secs": 5.1,
+   "file": "c003-p_lilian/0922ea3a.m4a",
+   "at": "2026-11-02T15:02:40.139Z"
+  },
+  "c003-p_lilian/be72dcf1": {
+   "status": "done",
+   "speaker": "c003-p_lilian",
+   "text": "We fought about rotas. Not about anything real. I'm sorry I said bad things about her.",
+   "where": "case 3 p_lilian about p_ruth",
+   "secs": 9.3,
+   "file": "c003-p_lilian/be72dcf1.m4a",
+   "at": "2026-11-02T15:02:48.958Z"
+  },
+  "c003-p_lilian/e21e1a78": {
+   "status": "done",
+   "speaker": "c003-p_lilian",
+   "text": "I handed over at five and went home. We didn't like each other. That's all.",
+   "where": "case 3 p_lilian claim f_lilian_claim",
+   "secs": 6,
+   "file": "c003-p_lilian/e21e1a78.m4a",
+   "at": "2026-11-02T15:02:58.318Z"
+  },
+  "c004-p_amos/6f6e746e": {
+   "status": "done",
+   "speaker": "c004-p_amos",
+   "text": "She was saving for her diploma. Every shilling.",
+   "where": "case 4 p_amos intro",
+   "secs": 3.6,
+   "file": "c004-p_amos/6f6e746e.m4a",
+   "at": "2026-11-02T15:03:05.439Z"
+  },
+  "c004-p_amos/57c67af4": {
+   "status": "done",
+   "speaker": "c004-p_amos",
+   "text": "Njeru in 12? Pays cash every morning. Says he recruits for jobs in Qatar. He asked Faith which school she went to.",
+   "where": "case 4 p_amos about p_paul",
+   "secs": 8.5,
+   "file": "c004-p_amos/57c67af4.m4a",
+   "at": "2026-11-02T15:03:14.749Z"
+  },
+  "c004-p_amos/a6cd420d": {
+   "status": "done",
+   "speaker": "c004-p_amos",
+   "text": "Room 7 shouted about hot water all evening. Then he got stuck in my lift. He'll want a refund.",
+   "where": "case 4 p_amos about p_kennedy",
+   "secs": 6.9,
+   "file": "c004-p_amos/a6cd420d.m4a",
+   "at": "2026-11-02T15:03:23.577Z"
+  },
+  "c004-p_amos/f7e0f177": {
+   "status": "done",
+   "speaker": "c004-p_amos",
+   "text": "Zawadi is the cook. She stays late Thursdays. She borrowed from Faith; everyone borrows from everyone here.",
+   "where": "case 4 p_amos about p_zawadi",
+   "secs": 7,
+   "file": "c004-p_amos/f7e0f177.m4a",
+   "at": "2026-11-02T15:03:31.971Z"
+  },
+  "c004-p_zawadi/75f4f4b9": {
+   "status": "done",
+   "speaker": "c004-p_zawadi",
+   "text": "I went for candles. I went for candles and when I came back…",
+   "where": "case 4 p_zawadi intro",
+   "secs": 4.5,
+   "file": "c004-p_zawadi/75f4f4b9.m4a",
+   "at": "2026-11-02T15:03:39.194Z"
+  },
+  "c004-p_zawadi/f3043212": {
+   "status": "done",
+   "speaker": "c004-p_zawadi",
+   "text": "She said, 'Zawadi, run across, get candles, ours is the last one.' She laughed about it. That was eleven, ten past eleven.",
+   "where": "case 4 p_zawadi about p_faith",
+   "secs": 10,
+   "file": "c004-p_zawadi/f3043212.m4a",
+   "at": "2026-11-02T15:03:47.052Z"
+  },
+  "c004-p_zawadi/9290c791": {
+   "status": "done",
+   "speaker": "c004-p_zawadi",
+   "text": "Ask Hassan. The whole street was at his kiosk for candles and he had no coins for change.",
+   "where": "case 4 p_zawadi about p_kioskowner",
+   "secs": 7.2,
+   "file": "c004-p_zawadi/9290c791.m4a",
+   "at": "2026-11-02T15:03:55.762Z"
+  },
+  "c004-p_paul/a5ee44aa": {
+   "status": "done",
+   "speaker": "c004-p_paul",
+   "text": "Officer. Terrible thing. Terrible.",
+   "where": "case 4 p_paul intro",
+   "secs": 5,
+   "file": "c004-p_paul/a5ee44aa.m4a",
+   "at": "2026-11-02T15:04:03.589Z"
+  },
+  "c004-p_paul/dad8a340": {
+   "status": "done",
+   "speaker": "c004-p_paul",
+   "text": "Somebody left a candle by my door? People are careless in the dark.",
+   "where": "case 4 p_paul about ev_stub",
+   "secs": 5.3,
+   "file": "c004-p_paul/dad8a340.m4a",
+   "at": "2026-11-02T15:04:11.581Z"
+  },
+  "c004-p_paul/e39f57d1": {
+   "status": "done",
+   "speaker": "c004-p_paul",
+   "text": "Peter Ndungu? I don't know any Peter Ndungu. Njeru, Paul. You have my ID.",
+   "where": "case 4 p_paul about ev_notebook",
+   "secs": 6.8,
+   "file": "c004-p_paul/e39f57d1.m4a",
+   "at": "2026-11-02T15:04:19.530Z"
+  },
+  "c004-p_paul/e995fa9a": {
+   "status": "done",
+   "speaker": "c004-p_paul",
+   "text": "I was asleep in my room. I sleep early. I didn't even know there was a blackout.",
+   "where": "case 4 p_paul claim f_paul_claim",
+   "secs": 5.4,
+   "file": "c004-p_paul/e995fa9a.m4a",
+   "at": "2026-11-02T15:04:28.749Z"
+  },
+  "c004-p_paul/0fc45db1": {
+   "status": "done",
+   "speaker": "c004-p_paul",
+   "text": "I've never met that girl before this week.",
+   "where": "case 4 p_paul claim f_paul_denial",
+   "secs": 2.8,
+   "file": "c004-p_paul/0fc45db1.m4a",
+   "at": "2026-11-02T15:04:36.609Z"
+  },
+  "c004-p_kennedy/a18ec0d9": {
+   "status": "done",
+   "speaker": "c004-p_kennedy",
+   "text": "Fifty minutes. Fifty minutes in that coffin.",
+   "where": "case 4 p_kennedy intro",
+   "secs": 3.7,
+   "file": "c004-p_kennedy/a18ec0d9.m4a",
+   "at": "2026-11-02T15:04:44.182Z"
+  },
+  "c004-p_kennedy/f96958ed": {
+   "status": "done",
+   "speaker": "c004-p_kennedy",
+   "text": "Yes, I shouted at her about the water. I'm not proud of it. She said sorry like it was her fault.",
+   "where": "case 4 p_kennedy about p_faith",
+   "secs": 8.9,
+   "file": "c004-p_kennedy/f96958ed.m4a",
+   "at": "2026-11-02T15:05:39.480Z"
+  },
+  "c004-p_kennedy/5d7c75b0": {
+   "status": "done",
+   "speaker": "c004-p_kennedy",
+   "text": "I spent fifty minutes in a box between floors. Ask the technician.",
+   "where": "case 4 p_kennedy claim f_kennedy_claim",
+   "secs": 7.1,
+   "file": "c004-p_kennedy/5d7c75b0.m4a",
+   "at": "2026-11-02T15:05:47.767Z"
+  },
+  "c004-p_selina/5c1d43dc": {
+   "status": "done",
+   "speaker": "c004-p_selina",
+   "text": "I came in the front door at twenty to midnight. The desk was dark. I thought the girl had gone upstairs.",
+   "where": "case 4 p_selina intro",
+   "secs": 8.5,
+   "file": "c004-p_selina/5c1d43dc.m4a",
+   "at": "2026-11-02T15:05:56.190Z"
+  },
+  "c004-p_selina/10203cbd": {
+   "status": "done",
+   "speaker": "c004-p_selina",
+   "text": "He was in that lift the whole time, believe me. He told me about it, loudly.",
+   "where": "case 4 p_selina about p_kennedy",
+   "secs": 6.9,
+   "file": "c004-p_selina/10203cbd.m4a",
+   "at": "2026-11-02T15:06:03.769Z"
+  },
+  "c005-p_bakari/e3f14cf3": {
+   "status": "done",
+   "speaker": "c005-p_bakari",
+   "text": "Fifteen years he sold me the Taifa every morning. Fifteen years.",
+   "where": "case 5 p_bakari intro",
+   "secs": 6,
+   "file": "c005-p_bakari/e3f14cf3.m4a",
+   "at": "2026-11-02T15:06:11.501Z"
+  },
+  "c005-p_bakari/29ff34a2": {
+   "status": "done",
+   "speaker": "c005-p_bakari",
+   "text": "He owed some people money. Everyone does. He was a good man with bad luck.",
+   "where": "case 5 p_bakari about p_patrick",
+   "secs": 7.4,
+   "file": "c005-p_bakari/29ff34a2.m4a",
+   "at": "2026-11-02T15:06:20.808Z"
+  },
+  "c005-p_bakari/e6c871d1": {
+   "status": "done",
+   "speaker": "c005-p_bakari",
+   "text": "Tony goes for the Taifa Jioni every afternoon. Industrial Area. He wasn't even here.",
+   "where": "case 5 p_bakari about p_tony",
+   "secs": 7.6,
+   "file": "c005-p_bakari/e6c871d1.m4a",
+   "at": "2026-11-02T15:06:28.072Z"
+  },
+  "c005-p_esther/c774380e": {
+   "status": "done",
+   "speaker": "c005-p_esther",
+   "text": "I saw him at twenty-five to three. He gave me my airtime and a joke.",
+   "where": "case 5 p_esther intro",
+   "secs": 5.2,
+   "file": "c005-p_esther/c774380e.m4a",
+   "at": "2026-11-02T15:06:34.897Z"
+  },
+  "c005-p_esther/2be05d7d": {
+   "status": "done",
+   "speaker": "c005-p_esther",
+   "text": "Langat? The lender in the grey coat? Yes, that was him waiting at the kiosk, twenty-five to three. I know that coat; he collects at my church too.",
+   "where": "case 5 p_esther about p_bernard",
+   "secs": 11.8,
+   "file": "c005-p_esther/2be05d7d.m4a",
+   "at": "2026-11-02T15:06:44.802Z"
+  },
+  "c005-p_esther/7fc98c1b": {
+   "status": "done",
+   "speaker": "c005-p_esther",
+   "text": "A black umbrella, closed, hooked over his arm. It wasn't raining yet.",
+   "where": "case 5 p_esther about ev_umbrella",
+   "secs": 6.5,
+   "file": "c005-p_esther/7fc98c1b.m4a",
+   "at": "2026-11-02T15:06:54.311Z"
+  },
+  "c005-p_bernard/e36cb541": {
+   "status": "done",
+   "speaker": "c005-p_bernard",
+   "text": "I give those umbrellas to customers. Advertising. I lost one somewhere this week.",
+   "where": "case 5 p_bernard about ev_umbrella",
+   "secs": 6.3,
+   "file": "c005-p_bernard/e36cb541.m4a",
+   "at": "2026-11-02T15:07:02.345Z"
+  },
+  "c005-p_bernard/145648e1": {
+   "status": "done",
+   "speaker": "c005-p_bernard",
+   "text": "Two thousand, yes, he paid two thousand. On a ten-thousand loan. I told him I'd come back next week.",
+   "where": "case 5 p_bernard about ev_ledger",
+   "secs": 7.4,
+   "file": "c005-p_bernard/145648e1.m4a",
+   "at": "2026-11-02T15:07:10.669Z"
+  },
+  "c005-p_bernard/a0db94e9": {
+   "status": "done",
+   "speaker": "c005-p_bernard",
+   "text": "I collect from forty people a week. I don't remember every one.",
+   "where": "case 5 p_bernard claim f_bernard_claim",
+   "secs": 5.3,
+   "file": "c005-p_bernard/a0db94e9.m4a",
+   "at": "2026-11-02T15:07:18.212Z"
+  },
+  "c005-p_bernard/22c675dc": {
+   "status": "done",
+   "speaker": "c005-p_bernard",
+   "text": "I lend money. I don't break heads. Dead men don't pay.",
+   "where": "case 5 p_bernard claim f_bernard_denial",
+   "secs": 4.7,
+   "file": "c005-p_bernard/22c675dc.m4a",
+   "at": "2026-11-02T15:07:25.834Z"
+  },
+  "c005-p_tony/5710ffc7": {
+   "status": "done",
+   "speaker": "c005-p_tony",
+   "text": "Uncle?",
+   "where": "case 5 p_tony intro",
+   "secs": 1.7,
+   "file": "c005-p_tony/5710ffc7.m4a",
+   "at": "2026-11-02T15:07:33.139Z"
+  },
+  "c005-p_tony/44a16251": {
+   "status": "done",
+   "speaker": "c005-p_tony",
+   "text": "We argued about money. He said Saturday. Now there's no Saturday.",
+   "where": "case 5 p_tony about p_patrick",
+   "secs": 6.7,
+   "file": "c005-p_tony/44a16251.m4a",
+   "at": "2026-11-02T15:07:40.203Z"
+  },
+  "c005-p_fredrick/0fe79045": {
+   "status": "done",
+   "speaker": "c005-p_fredrick",
+   "text": "I know what people will say. Here.",
+   "where": "case 5 p_fredrick intro",
+   "secs": 3.2,
+   "file": "c005-p_fredrick/0fe79045.m4a",
+   "at": "2026-11-02T15:07:45.955Z"
+  },
+  "c005-p_fredrick/a87d43a0": {
+   "status": "done",
+   "speaker": "c005-p_fredrick",
+   "text": "I wanted his pitch. Through the county, with forms. Not like this.",
+   "where": "case 5 p_fredrick about p_patrick",
+   "secs": 5.3,
+   "file": "c005-p_fredrick/a87d43a0.m4a",
+   "at": "2026-11-02T15:07:54.657Z"
+  },
+  "c006-p_kelvin/c961cac3": {
+   "status": "done",
+   "speaker": "c006-p_kelvin",
+   "text": "I was only gone for lunch. Only lunch.",
+   "where": "case 6 p_kelvin intro",
+   "secs": 4,
+   "file": "c006-p_kelvin/c961cac3.m4a",
+   "at": "2026-11-02T15:08:01.414Z"
+  },
+  "c006-p_kelvin/a575f9c9": {
+   "status": "done",
+   "speaker": "c006-p_kelvin",
+   "text": "He shouted at me last week, said he'd dismiss me if I came late again. But he taught me everything. Everything.",
+   "where": "case 6 p_kelvin about p_joel",
+   "secs": 8.8,
+   "file": "c006-p_kelvin/a575f9c9.m4a",
+   "at": "2026-11-02T15:08:10.810Z"
+  },
+  "c006-p_kelvin/8a2e6e26": {
+   "status": "done",
+   "speaker": "c006-p_kelvin",
+   "text": "Joel writes 'check inside' when something's wrong with a job. He never wrote it with two marks before.",
+   "where": "case 6 p_kelvin about ev_jobbook",
+   "secs": 6.3,
+   "file": "c006-p_kelvin/8a2e6e26.m4a",
+   "at": "2026-11-02T15:08:19.433Z"
+  },
+  "c006-p_kelvin/2fe29008": {
+   "status": "done",
+   "speaker": "c006-p_kelvin",
+   "text": "Mr. Gakuru owns the shop. He and Joel argued about money for months. He went to Mombasa last night.",
+   "where": "case 6 p_kelvin about p_simon",
+   "secs": 7.2,
+   "file": "c006-p_kelvin/2fe29008.m4a",
+   "at": "2026-11-02T15:08:28.079Z"
+  },
+  "c006-p_kelvin/9822e226": {
+   "status": "done",
+   "speaker": "c006-p_kelvin",
+   "text": "Mama Wambui on Accra Road. Githeri. She'll tell you.",
+   "where": "case 6 p_kelvin about p_mamaw",
+   "secs": 4.6,
+   "file": "c006-p_kelvin/9822e226.m4a",
+   "at": "2026-11-02T15:08:35.606Z"
+  },
+  "c006-p_kelvin/a034a0dc": {
+   "status": "done",
+   "speaker": "c006-p_kelvin",
+   "text": "I went for lunch at quarter to one at Mama Wambui's on Accra Road.",
+   "where": "case 6 p_kelvin claim f_kelvin_lunch",
+   "secs": 6.1,
+   "file": "c006-p_kelvin/a034a0dc.m4a",
+   "at": "2026-11-02T15:08:44.705Z"
+  },
+  "c006-p_aisha/07b45f76": {
+   "status": "done",
+   "speaker": "c006-p_aisha",
+   "text": "I saw. I saw a man running with a radio. I thought he was late for a matatu.",
+   "where": "case 6 p_aisha intro",
+   "secs": 6.7,
+   "file": "c006-p_aisha/07b45f76.m4a",
+   "at": "2026-11-02T15:08:52.175Z"
+  },
+  "c006-p_aisha/bbd729d5": {
+   "status": "done",
+   "speaker": "c006-p_aisha",
+   "text": "Barasa? He's been in four times this month. Yes, that was him with the red radio at ten past one. In a hurry.",
+   "where": "case 6 p_aisha about p_wycliffe",
+   "secs": 9.9,
+   "file": "c006-p_aisha/bbd729d5.m4a",
+   "at": "2026-11-02T15:09:00.810Z"
+  },
+  "c006-p_aisha/d4b05f67": {
+   "status": "done",
+   "speaker": "c006-p_aisha",
+   "text": "Esther was here at half past twelve for a charger. Then she went back to her office on Kenyatta Avenue.",
+   "where": "case 6 p_aisha about p_esther",
+   "secs": 6.6,
+   "file": "c006-p_aisha/d4b05f67.m4a",
+   "at": "2026-11-02T15:09:10.002Z"
+  },
+  "c006-p_simon/919bbce7": {
+   "status": "done",
+   "speaker": "c006-p_simon",
+   "text": "Joel? What do you mean, Joel?",
+   "where": "case 6 p_simon intro",
+   "secs": 3.1,
+   "file": "c006-p_simon/919bbce7.m4a",
+   "at": "2026-11-02T15:09:16.911Z"
+  },
+  "c006-p_simon/c064c6f7": {
+   "status": "done",
+   "speaker": "c006-p_simon",
+   "text": "We argued about his share, yes. Every month. We were going to agree. I'll send you my bus ticket.",
+   "where": "case 6 p_simon about p_joel",
+   "secs": 7.4,
+   "file": "c006-p_simon/c064c6f7.m4a",
+   "at": "2026-11-02T15:09:23.457Z"
+  },
+  "c006-p_simon/cc8d73ed": {
+   "status": "done",
+   "speaker": "c006-p_simon",
+   "text": "That one brings radios every week. I told Joel not to take his jobs. Something about him.",
+   "where": "case 6 p_simon about p_wycliffe",
+   "secs": 6.6,
+   "file": "c006-p_simon/cc8d73ed.m4a",
+   "at": "2026-11-02T15:09:31.712Z"
+  },
+  "c006-p_wycliffe/7adaa459": {
+   "status": "failed",
+   "speaker": "c006-p_wycliffe",
+   "text": "Tags tear. Paper tears.",
+   "where": "case 6 p_wycliffe about ev_tagstub",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h49m53s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c006-p_wycliffe/0cf1e98d": {
+   "status": "failed",
+   "speaker": "c006-p_wycliffe",
+   "text": "SIM trays? Every repair shop has a hundred.",
+   "where": "case 6 p_wycliffe about ev_tray",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h49m11s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c006-p_wycliffe/98a7f5de": {
+   "status": "failed",
+   "speaker": "c006-p_wycliffe",
+   "text": "I came for my radio, it wasn't ready, I left. He was fine.",
+   "where": "case 6 p_wycliffe claim f_wycliffe_claim",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h48m28s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c006-p_wycliffe/0fba1d88": {
+   "status": "failed",
+   "speaker": "c006-p_wycliffe",
+   "text": "I don't know anything about SIM trays.",
+   "where": "case 6 p_wycliffe claim f_wycliffe_denial",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h47m45s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c006-p_esther/ad04a69a": {
+   "status": "failed",
+   "speaker": "c006-p_esther",
+   "text": "He fixed my radio for free last year because my son had exams. He was that kind of man.",
+   "where": "case 6 p_esther about p_joel",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h47m3s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c007-p_grace/abe595ea": {
+   "status": "failed",
+   "speaker": "c007-p_grace",
+   "text": "I only came back for carnations.",
+   "where": "case 7 p_grace intro",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h46m20s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c007-p_grace/a01e4083": {
+   "status": "failed",
+   "speaker": "c007-p_grace",
+   "text": "She gave me an extra rose for free and said, 'Next week, lilies, half price, tell your friends.'",
+   "where": "case 7 p_grace about p_beatrice",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h45m37s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c007-p_ahmed/0a749063": {
+   "status": "failed",
+   "speaker": "c007-p_ahmed",
+   "text": "Ask me. I see the whole aisle from here.",
+   "where": "case 7 p_ahmed intro",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h44m55s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c007-p_ahmed/ea249a38": {
+   "status": "failed",
+   "speaker": "c007-p_ahmed",
+   "text": "The lily lady? About five to twelve she walked back from Beatrice's side to her own stall, rubbing her hands on her apron like they were dirty.",
+   "where": "case 7 p_ahmed about p_lucy",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h44m12s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c007-p_ahmed/140aa50f": {
+   "status": "failed",
+   "speaker": "c007-p_ahmed",
+   "text": "The curio mama shouted at Beatrice this morning about buckets in the aisle. Then she went off with her fee book.",
+   "where": "case 7 p_ahmed about p_naliaka",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h43m29s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c007-p_ahmed/429a80d5": {
+   "status": "failed",
+   "speaker": "c007-p_ahmed",
+   "text": "Kimani left early with his wedding flowers in a pickup. Half eleven, maybe.",
+   "where": "case 7 p_ahmed about p_josphat",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h42m46s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c007-p_lucy/e7e17caa": {
+   "status": "failed",
+   "speaker": "c007-p_lucy",
+   "text": "She brought in imported lilies at half my price. Half! Ten years I've sold lilies in this market.",
+   "where": "case 7 p_lucy about p_beatrice",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h42m4s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c007-p_lucy/d8213fea": {
+   "status": "failed",
+   "speaker": "c007-p_lucy",
+   "text": "Everyone in this aisle has pollen on them. It's a flower market.",
+   "where": "case 7 p_lucy about ev_pollen",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h41m21s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c007-p_lucy/6e639d30": {
+   "status": "failed",
+   "speaker": "c007-p_lucy",
+   "text": "I've been at my stall all morning. Ask anyone.",
+   "where": "case 7 p_lucy claim f_lucy_claim",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h40m38s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c007-p_lucy/e5a67e41": {
+   "status": "failed",
+   "speaker": "c007-p_lucy",
+   "text": "Beatrice and I compete. That's the market. I didn't touch her.",
+   "where": "case 7 p_lucy claim f_lucy_denial",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h39m56s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c007-p_josphat/f637017c": {
+   "status": "failed",
+   "speaker": "c007-p_josphat",
+   "text": "Forty dozen roses de-thorned since six this morning! Look at the boy's hands, look at mine. Call the cathedral.",
+   "where": "case 7 p_josphat about ev_scratches",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h39m13s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c007-p_josphat/711b19fb": {
+   "status": "failed",
+   "speaker": "c007-p_josphat",
+   "text": "I was at the cathedral with the wedding flowers.",
+   "where": "case 7 p_josphat claim f_josphat_claim",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h38m30s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c007-p_naliaka/ffdd4ded": {
+   "status": "failed",
+   "speaker": "c007-p_naliaka",
+   "text": "I know what Ahmed told you. Here.",
+   "where": "case 7 p_naliaka intro",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h37m48s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c007-p_naliaka/5bd782e4": {
+   "status": "failed",
+   "speaker": "c007-p_naliaka",
+   "text": "We shouted about buckets. Every week we shout about buckets. It's the soko.",
+   "where": "case 7 p_naliaka about p_beatrice",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h37m5s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c007-p_naliaka/87416ac5": {
+   "status": "failed",
+   "speaker": "c007-p_naliaka",
+   "text": "Yes, I shouted at her. Then I went to City Hall to pay my fees.",
+   "where": "case 7 p_naliaka claim f_naliaka_claim",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h36m22s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c008-p_felix/a61d2cf7": {
+   "status": "failed",
+   "speaker": "c008-p_felix",
+   "text": "I found him. Me. And he called me a thief last month.",
+   "where": "case 8 p_felix intro",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h35m39s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c008-p_felix/6cf9c6a7": {
+   "status": "failed",
+   "speaker": "c008-p_felix",
+   "text": "He said I stole soda crates. I didn't. But I'm the one who found him, so you'll look at me. Look at the parcels book.",
+   "where": "case 8 p_felix about p_elijah",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h34m56s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c008-p_felix/3accba48": {
+   "status": "failed",
+   "speaker": "c008-p_felix",
+   "text": "Dorcas runs that kiosk more than he did. She catches the 18:10 every day. Every day.",
+   "where": "case 8 p_felix about p_dorcas",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h34m13s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c008-p_janet/7233a1ad": {
+   "status": "failed",
+   "speaker": "c008-p_janet",
+   "text": "I sell her the same ticket every day. I can tell you the exact minute.",
+   "where": "case 8 p_janet intro",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h33m31s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c008-p_janet/2458e27f": {
+   "status": "failed",
+   "speaker": "c008-p_janet",
+   "text": "Ten to six, 18:10 to Embakasi, like always. She looked upset. She usually jokes about the queue.",
+   "where": "case 8 p_janet about p_dorcas",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h32m48s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c008-p_janet/c2fd3aec": {
+   "status": "failed",
+   "speaker": "c008-p_janet",
+   "text": "Mzee Elijah brought me tea at quarter to six. Then later I heard bottles crash, about five past. I thought he'd dropped a crate.",
+   "where": "case 8 p_janet about p_elijah",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h32m5s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c008-p_musa/e8c93387": {
+   "status": "failed",
+   "speaker": "c008-p_musa",
+   "text": "Twenty years on this line. I know my regulars.",
+   "where": "case 8 p_musa intro",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h31m22s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c008-p_musa/901f62bd": {
+   "status": "failed",
+   "speaker": "c008-p_musa",
+   "text": "Mama Dorcas? Every day she greets me, 'Musa, how is your back?' Not today. Not on my train.",
+   "where": "case 8 p_musa about p_dorcas",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h30m40s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c008-p_musa/2911b6a7": {
+   "status": "failed",
+   "speaker": "c008-p_musa",
+   "text": "No hole. Then it was never on my train. I punch every ticket before Makadara. Every one.",
+   "where": "case 8 p_musa about ev_ticket",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h29m57s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c008-p_dorcas/6b5d9351": {
+   "status": "failed",
+   "speaker": "c008-p_dorcas",
+   "text": "Elijah? I left him at the kiosk.",
+   "where": "case 8 p_dorcas intro",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h29m14s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c008-p_dorcas/abbfb57a": {
+   "status": "failed",
+   "speaker": "c008-p_dorcas",
+   "text": "My name isn't on the licence because the county wanted one name. I put in half. Half! Five years.",
+   "where": "case 8 p_dorcas about ev_licence",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h28m31s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c008-p_dorcas/cac9ab56": {
+   "status": "failed",
+   "speaker": "c008-p_dorcas",
+   "text": "I must have dropped it. I didn't take the train in the end. I took a matatu. I didn't feel like the crowd.",
+   "where": "case 8 p_dorcas about ev_ticket",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h27m48s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c008-p_dorcas/978bf229": {
+   "status": "failed",
+   "speaker": "c008-p_dorcas",
+   "text": "I bought my ticket and went home. I always go home on the 18:10.",
+   "where": "case 8 p_dorcas claim f_dorcas_claim",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h27m5s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c008-p_dorcas/420b828a": {
+   "status": "failed",
+   "speaker": "c008-p_dorcas",
+   "text": "Elijah and I were partners. I'd never hurt him.",
+   "where": "case 8 p_dorcas claim f_dorcas_denial",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h26m23s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c008-p_kamal/ed61134f": {
+   "status": "failed",
+   "speaker": "c008-p_kamal",
+   "text": "Elijah? He owed me, yes, but he always paid in the end.",
+   "where": "case 8 p_kamal intro",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h25m40s or upgrade your tier at https://ai.dev/rate-limit."
+  },
+  "c008-p_kamal/4c3e4dcb": {
+   "status": "failed",
+   "speaker": "c008-p_kamal",
+   "text": "Three months of bread and milk. He said he'd sell and pay me. I'm sorry for him. I'm sorry for my money too, honestly.",
+   "where": "case 8 p_kamal about p_elijah",
+   "error": "429 Rate limit exceeded for model gemini-3.8-flash-tts (limit: 100 requests per day on Tier 1). Please retry in 16h24m57s or upgrade your tier at https://ai.dev/rate-limit."
+  }
+ }
 }

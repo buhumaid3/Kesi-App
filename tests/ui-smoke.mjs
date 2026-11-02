@@ -83,9 +83,50 @@ await bc.nth(0).click(); await bc.nth(5).click(); await bc.nth(1).click(); await
 await wait(200); await shot(page, '11-board');
 await closeTop(page);
 // Phone: one hint call (tier 1).
-await page.locator('.dock-obj', { hasText: 'Phone' }).click(); await wait(300);
-await page.locator('.ph-call').first().click(); await wait(300);
-await shot(page, '12-phone-hint');
+// Phone: lock screen → home → Phone → keypad (wrong number, then hers) → help pick → hang up while it
+// rings (free) → call again → connect (tier 1 used) → card → Recents → Messages / Voice-notes.
+const must = async (cond, msg) => { if (!(await cond)) errors.push(`[phone] ${msg}`); };
+await dismissNotes(page);
+await page.locator('.dock-obj', { hasText: 'Phone' }).click(); await wait(400);
+await must(page.locator('.ph-lock').count(), 'no lock screen the first time in a case');
+await shot(page, '12a-phone-lock');
+await page.locator('.ph-unlock').click(); await wait(300);
+await must(page.locator('.ph-grid .ph-app').count().then(n => n === 3), 'home screen should have 3 apps');
+await shot(page, '12b-phone-home');
+await page.locator('.ph-app--phone').click(); await wait(250);
+await page.locator('.ph-tab', { hasText: 'Keypad' }).click(); await wait(200);
+for (const d of '0712345678') await page.locator(`.ph-key[aria-label="${d}"]`).click();
+await page.locator('.ph-dial').click(); await wait(250);
+await must(page.locator('.ph-dialmsg', { hasText: 'not in service' }).count(), 'wrong number should be not in service');
+await shot(page, '12c-phone-wrong-number');
+for (let i = 0; i < 10; i++) await page.locator('.ph-del').click().catch(() => {});
+for (const d of '0700000214') await page.locator(`.ph-key[aria-label="${d}"]`).click();
+await page.locator('.ph-dial').click(); await wait(250);
+await must(page.locator('.ph-pick').count(), 'her number should open the help pick');
+await shot(page, '12d-phone-pick');
+const tierBefore = await page.evaluate(() => Object.values(window.KESI.run.s.hints).reduce((a, b) => a + b, 0));
+await page.locator('.ph-pick-b').first().click(); await wait(150);
+await must(page.locator('.ph-call--ringing').count(), 'call should ring first');
+await page.locator('.ph-hangup').click(); await wait(250);
+const tierAfterHangup = await page.evaluate(() => Object.values(window.KESI.run.s.hints).reduce((a, b) => a + b, 0));
+await must(tierAfterHangup === tierBefore, 'hanging up while ringing must not use a hint');
+await page.locator('.ph-row', { hasText: 'Mwalimu' }).click(); await wait(200);
+await page.locator('.ph-pick-b').first().click(); await wait(1200);
+await must(page.locator('.ph-caption').count(), 'connected call should show captions');
+await shot(page, '12e-phone-call');
+await page.locator('.ph-hangup').click().catch(() => {}); await wait(300);
+const tierAfter = await page.evaluate(() => Object.values(window.KESI.run.s.hints).reduce((a, b) => a + b, 0));
+await must(tierAfter === tierBefore + 1, `connected call should use one hint (${tierBefore} → ${tierAfter})`);
+await must(page.locator('.ph-call--ended .ph-actions').count(), 'after the call, the card actions should show');
+await shot(page, '12f-phone-card');
+await page.locator('.ph-cancel', { hasText: 'Done' }).click(); await wait(200);
+await page.locator('.ph-tab', { hasText: 'Recents' }).click(); await wait(200);
+await must(page.locator('.ph-row', { hasText: 'Where to look' }).count(), 'Recents should list the call');
+await page.locator('.ph-home').click(); await wait(200);
+await page.locator('.ph-app--voice').click(); await wait(200);
+await must(page.locator('.ph-vn').count(), 'Voice-notes should hold Mwalimu\'s case note');
+await shot(page, '12g-phone-voicenotes');
+await must(page.evaluate(() => window.KESI.save.progress.messages.every(m => m.kind !== 'voice' || m.read)), 'voice-notes should be read after opening the app');
 await closeTop(page);
 // Charge sheet: wrong first, then right.
 await page.locator('.dock-obj', { hasText: 'Charge sheet' }).click(); await wait(300);
@@ -114,6 +155,17 @@ console.log('case 2 locked after solving case 1:', c2);
 await page.locator('.folder-card').nth(1).click(); await wait(800);
 if (await page.locator('.case-intro').count()) { await page.locator('.case-intro').click({ timeout: 1500 }).catch(() => {}); await wait(500); }
 await dismissNotes(page);
+// Case 1 has no text from Halima; put case 2's (it has the "Prosecutor H. Abdi:" prefix) in the history to check it.
+await page.evaluate(() => window.KESI.save.progress.messages.push({ from: 'Prosecutor H. Abdi', line: window.KESI.campaign.betweenCases['2'].halima, kind: 'text', case: 2 }));
+// Halima's text is in Messages, with her name once (no "Prosecutor H. Abdi:" inside the bubble).
+await page.locator('.dock-obj', { hasText: 'Phone' }).click(); await wait(400);
+await page.locator('.ph-unlock').click().catch(() => {}); await wait(250);
+await page.locator('.ph-app--messages').click(); await wait(200);
+await page.locator('.ph-row').first().click(); await wait(250);
+const bubble = await page.locator('.ph-bubble').first().textContent().catch(() => '');
+if (!bubble || /^(Prosecutor )?H\. Abdi:/.test(bubble)) errors.push(`[phone] Halima's text bubble is wrong: ${bubble}`);
+await shot(page, '16c-phone-thread');
+await closeTop(page);
 await page.locator('.visit-card').first().click(); await wait(300);
 await page.locator('.hs-btn').first().click(); await wait(200);
 await page.goto(base + '/index.html'); await wait(1500);
