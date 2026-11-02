@@ -22,7 +22,7 @@ const TITLE = {
 export function photo({ src, label, kind = 'object', id, onZoom, small = false }) {
   const fig = h('figure', { class: `photo photo--${kind} ${small ? 'photo--small' : ''}`, style: { '--tilt': `${tilt(id || src)}deg` } });
   const frame = h('div', { class: 'photo-img' });
-  const img = h('img', { src, alt: label || '', loading: 'lazy', decoding: 'async', draggable: 'false' });
+  const img = h('img', { src, alt: label || '', loading: 'lazy', decoding: 'async', draggable: 'false', 'data-depth': kind === 'location' || kind === 'scene' ? '1' : null });
   img.addEventListener('error', () => { frame.classList.add('is-pending'); img.remove(); frame.append(h('span', { class: 'pending' }, 'Photo pending')); });
   frame.append(img);
   if (kind === 'portrait') fig.append(h('span', { class: 'clip', 'aria-hidden': 'true' }));

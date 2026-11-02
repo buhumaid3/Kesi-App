@@ -46,7 +46,7 @@ export function openSheet({ id, className = '', label, build, onClose, wide = fa
   stack.push(entry);
   requestAnimationFrame(() => wrap.classList.add('is-in'));
   setTimeout(() => close.focus({ preventScroll: true }), 30);
-  document.body.classList.add('has-sheet');
+  syncSheetState();
   return entry;
 }
 export function closeSheet(entry) {
@@ -54,9 +54,15 @@ export function closeSheet(entry) {
   stack.splice(i, 1);
   entry.el.classList.remove('is-in'); entry.el.classList.add('is-out');
   setTimeout(() => entry.el.remove(), 230);
-  if (!stack.length) document.body.classList.remove('has-sheet');
+  syncSheetState();
   entry.onClose?.();
 }
+function syncSheetState() {
+  document.body.classList.toggle('has-sheet', stack.length > 0);
+  document.body.classList.toggle('has-wide', stack.some(s => s.el.classList.contains('sheet--wide')));
+}
+// Tapping the dimmed desk behind a sheet puts the top sheet away.
+document.addEventListener('click', e => { if (e.target.id === 'scrim' && stack.length) closeSheet(stack[stack.length - 1]); });
 export function closeAllSheets() { for (const s of [...stack].reverse()) closeSheet(s); }
 export function topSheet() { return stack[stack.length - 1]; }
 export function rebuildSheets() { for (const s of stack) s.rebuild(); }

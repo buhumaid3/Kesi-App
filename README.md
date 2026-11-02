@@ -18,6 +18,20 @@ node tools/generate-voices.mjs generate          # every region 1 line (89, ≈ 
 node tools/generate-voices.mjs review            # then /review/voices.html with npm run play
 ```
 
+Every character's voice (a company of designed voices, cast case by case):
+
+```
+node tools/generate-voices.mjs cast                     # free: who speaks with which voice
+node tools/generate-voices.mjs design --cast --region 1 # the voices region 1 needs; samples in review/voices/
+node tools/generate-voices.mjs generate --region 1      # every line in region 1
+```
+
+Depth maps for the 2.5D photos (once: `pip install --break-system-packages torch --index-url https://download.pytorch.org/whl/cpu` then `pip install --break-system-packages transformers pillow`):
+
+```
+python3 tools/make-depth.py --region 1
+```
+
 Add `?playtest` to the URL to open all ten region 1 cases at once, `?case=7` to jump straight into a case,
 `?reset` to start from the prologue with an empty save.
 

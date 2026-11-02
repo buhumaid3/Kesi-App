@@ -5,16 +5,17 @@
 // · Voices: recorded lines from www/audio/voice/ (manifest.json maps voiceKey → file). A line without a
 //   recording simply isn't voiced; the text is always on screen.
 // iOS ignores <audio>.volume, so every file plays through Web Audio gain nodes.
-import { voiceKey } from './voicekey.js';
+import { voiceKey, characterKey, spokenText } from './voicekey.js';
 
 export function createAudio(getSettings) {
   let ctx = null, buses = null, roomTone = null, musicEl = null, musicSrc = null, currentRegion = null;
   let voiceEl = null, voiceSrc = null;
-  const manifests = { music: {}, voice: {} };
+  const manifests = { music: {}, voice: {}, cast: {} };
   const vol = k => Math.max(0, Math.min(1, (getSettings()[k] ?? 70) / 100));
 
   fetch('audio/music/manifest.json').then(r => r.ok ? r.json() : {}).then(m => { manifests.music = m || {}; }).catch(() => {});
   fetch('audio/voice/manifest.json').then(r => r.ok ? r.json() : {}).then(m => { manifests.voice = m || {}; }).catch(() => {});
+  fetch('audio/voice/cast.json').then(r => r.ok ? r.json() : {}).then(m => { manifests.cast = m || {}; }).catch(() => {});
 
   function ensure() {
     if (ctx) return ctx;
@@ -144,5 +145,15 @@ export function createAudio(getSettings) {
   }
   function stopVoice() { if (voiceEl) { voiceEl.pause(); voiceSrc?.disconnect(); voiceEl = null; voiceSrc = null; speaking = false; setVolumes(); } }
 
-  return { unlock, music, stopMusic, sfx, speak, stopVoice, hasVoice, setVolumes, get running() { return ctx?.state === 'running'; } };
+  // A character's line: only the words they say out loud (narration in an intro is never voiced).
+  // "I don't know" answers belong to the voice, not the character, and are recorded once per voice.
+  function character(caseNo, personId, kind, text, { generic = false } = {}) {
+    const key = characterKey(caseNo, personId);
+    if (generic) { const slot = manifests.cast[key]; return slot ? speak(slot, text) : Promise.resolve(false); }
+    const said = spokenText(kind, text);
+    return said ? speak(key, said) : Promise.resolve(false);
+  }
+  function hasCharacter(caseNo, personId, kind, text) { const said = spokenText(kind, text); return !!said && hasVoice(characterKey(caseNo, personId), said); }
+
+  return { character, hasCharacter, unlock, music, stopMusic, sfx, speak, stopVoice, hasVoice, setVolumes, get running() { return ctx?.state === 'running'; } };
 }

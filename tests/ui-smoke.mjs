@@ -102,7 +102,7 @@ await dismissNotes(page);
 await shot(page, '14-verdict');
 await page.evaluate(() => scrollTo(0, 900)); await wait(200);
 await shot(page, '15-verdict-recon');
-const stars = await page.locator('.v-stars .stars').getAttribute('aria-label');
+const stars = await page.locator('.v-stars').getAttribute('aria-label');
 console.log('verdict stars:', stars);
 // Back to the cabinet: case 2 unlocked?
 await page.locator('.v-actions .card-btn--ghost').click(); await wait(600);

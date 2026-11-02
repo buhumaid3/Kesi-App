@@ -54,7 +54,7 @@ for (let n = 1; n <= 10; n++) {
   if (await page.locator('.card-btn--submit', { hasText: 'SEND IT' }).count()) { await quiet(); await page.locator('.card-btn--submit').click(); }
   await wait(1500); await quiet();
   ok(await page.locator('.scr-verdict').count() === 1, `case ${n}: verdict screen`);
-  const stars = await page.locator('.v-stars .stars').getAttribute('aria-label');
+  const stars = await page.locator('.v-stars').getAttribute('aria-label');
   ok(stars === '3 of 3 stars', `case ${n}: ${stars}`);
   const recon = await page.locator('.recon-step').count();
   ok(recon === c.solution.reconstruction.length, `case ${n}: reconstruction ${recon} steps, eliminations ${await page.locator('.elims li').count()}`);

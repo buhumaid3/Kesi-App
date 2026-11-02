@@ -14,6 +14,7 @@ Status: build phase (planning complete 2 November 2026). Build brief: `claude/ke
 | 8 | Repo name | APPROVED (§7): `Kesi-App` |
 | B1 | Region 1 playable vertical slice | IN REVIEW (§8) |
 | B2 | Stage 1 polish: tips, case intros, music and cues, voices for Mwalimu and Halima | IN REVIEW (§9) |
+| B3 | Motion, every screen size, voices for every character, 2.5D depth | IN REVIEW (§10) |
 
 ## 1. Name + positioning (APPROVED)
 
@@ -1056,3 +1057,57 @@ The game plays a recorded line whenever it shows that exact text (the file name 
 
 - The voice tool ran end to end against a fake Gemini client (design, pick, say, lines, generate with ffmpeg conversion, report, review). The game then played a recorded line through the voice bus in a browser. The calls follow the shapes in Google's speech-generation docs and the installed SDK's type definitions; the first live run is `design` then `say`.
 - `npm test` and both interface tests pass with intros and tips on (the intro is screenshotted in `ui-smoke`); the validator still passes all 100 cases.
+
+---
+
+## 10. Build B3: motion, every screen size, every voice, 2.5D depth (IN REVIEW)
+
+Asked for on 2 November 2026, moving two stage 2 items (depth) forward and widening the voice pilot to the whole cast.
+
+### 10.1 Motion
+
+All of it lives in `www/engine/motion.js` and `app.css`. Only `transform` and `opacity` animate, everything can be interrupted, and Reduce Motion turns movement into a simple appearance.
+
+| Moment | What moves |
+|---|---|
+| The room | The desk lamp's pool of light drifts toward wherever you touch and eases home after six seconds; dust turns slowly in the light (26 specks at 30 frames a second, paused when the app is in the background) |
+| Opening a case | The intro (§9.2); the folder opens on its hinge; sections, place cards, ID cards, exhibit tags and the desk objects are dealt in with a 34 ms stagger |
+| Cabinet | Folders are dealt into the drawer, each settling at its own tilt |
+| Sheets | Paper slides up with a slight tilt and settles with a spring; the desk dims behind it on phones (tap the dimmed desk to put the sheet away) |
+| A place | Unexamined pins breathe (a soft ring); a pin flips when examined; the note about it unfolds; a kraft EXHIBIT tag flies from the pin to the notebook, which nods |
+| Interviews | New facts fly to the notebook as paper slips (up to three); the newest answer unfolds |
+| Notebook | Tabs turn like pages |
+| Board | New red string draws itself across the cork |
+| Charge sheet | A word snaps into its blank; a RETURNED sheet shivers |
+| Verdict | ACCEPTED stamps down, CASE CLOSED is painted on left to right, the title rises, the stars pop one by one, then the reason; the reconstruction, eliminations and filed details are dealt in |
+| Hover (mouse and trackpad) | Folders, cards and tags lift |
+
+### 10.2 Every screen size
+
+Tested on nine sizes, light and dark: iPhone SE (320 × 568), iPhone SE 3 (375 × 667), iPhone 15 (390 × 844), Pro Max (430 × 932), a phone on its side (844 × 390), iPad (768 × 1024), iPad landscape (1024 × 768), iPad Pro landscape (1366 × 1024) and a desktop (1440 × 900). `tests/ui-viewports.mjs` opens the cabinet, the desk, a place, an interview, an exhibit, the notebook, the board, the charge sheet and the verdict at each size and fails if anything makes the page scroll sideways, sticks out past the screen edge, or pushes the close button or the dock off screen.
+- **Small phones:** a smaller dock and portrait, the statement header in one column.
+- **Phones on their side:** the dock becomes a rail on the right so the folder keeps its height; sheets sit beside the rail.
+- **Tablets and desktops (900 px and wider):** the folder stays on the left and places, people, exhibits, the notebook, the phone and the charge sheet open beside it, so the case stays in view while you read. The board and the Pattern File use the full width. The cabinet shows the drawer and the desk shelf side by side, and the verdict lays the reconstruction out in two columns.
+- Long words wrap inside their paper instead of widening the page; titles scale with the screen.
+
+### 10.3 2.5D depth
+
+Each place and scene photo gets a depth map, a small greyscale image where white is near. The game draws the photo through a WebGL shader that shifts near things more than far ones, refined three times so edges don't tear. It moves when you drag across the photo, when you tilt the phone (optional: Settings → Tilt to look around, which asks iOS for motion access once), and otherwise drifts slowly by itself. It appears on the place photos, the case intro, scene notes and the reconstruction. Hotspot pins stay where they are: the shift is at most about 2% of the photo. A photo without a depth map, or a device without WebGL, stays a still photo. No more than four photos run the effect at once, and older ones are released (iOS limits WebGL contexts). Settings → Depth in photos turns it off.
+
+**Making the depth maps:** `tools/make-depth.py`, run in the Codespace on its CPU, about 1–3 seconds a photo. It uses **Depth Anything V2 Small**, which is Apache-2.0 licensed (the project's licence section: Small is Apache-2.0; Base, Large and Giant are CC-BY-NC-4.0, so they are not used). It writes `loc_*.depth.webp` beside each photo (640 px wide, slightly blurred so edges don't tear, about 15 KB each) and lists them in `www/img/depth.json`. That is 416 photos, roughly 6 MB for the whole game. Tested here with a hand-made depth map, because Hugging Face can't be reached from my workspace; the first real run is yours.
+
+### 10.4 A voice for every character
+
+538 people speak across the 100 cases. Google keeps at most 200 designed voices per project, and an individually designed voice for every person would also make region-to-region quality hard to control. So the game works like a radio-drama company (`tools/voice-cast.mjs`):
+- **47 company voices**, each designed from a written description: Kenyan women and men in four age bands (twenties, thirties to early forties, late forties and fifties, sixties and older) with different timbres, plus Kenyan Asian and Kenyan-born European voices for the 17 characters whose briefs say so. Each band is sized by the largest number of same-band speakers in any one case, plus two for variety.
+- **Casting:** case by case, no two people in the same case share a voice (checked: 0 clashes in 100 cases), and a voice used in the case before is avoided where possible. **9 fixed voices** keep recurring people the same across the campaign (people in `imageContinuity`, such as Juma Mwakio, Fundi and the fourth-floor names). Mwalimu and Halima keep their own voices.
+- **What is voiced:** only the words a character says. Interview intros are mostly narration ("Kassim takes off his kofia…"), so only the quoted words are spoken. Every answer to a question is voiced, as are claims written as speech ("Peter: "I left on my 22:30 trip…""). The four plain "I don't know" answers are recorded once per company voice. Amani is never voiced. Every line stays on screen, and a ▶ button replays any recorded line.
+- **The delivery note** sent with each line comes from the character's occupation, age and stance (cooperative, guarded, with a lawyer), ending "everyday Kenyan speech, not theatrical".
+- **Size and cost (Google's 2026 prices):** region 1 is 394 lines, about 30 minutes, ≈ $0.42. The whole game's character lines are about 1,660 lines and 114,000 characters, about 2.3 hours, ≈ $2 in 2026 (≈ $4 from 1 January 2027), plus Mwalimu, Halima and the company's "don't know" lines. Voice design itself was not priced on Google's page.
+- **Gender** comes from each person's image brief or bio. The 94 people where neither says were set from their names when the cast was written. The list is in `tools/voice-cast.mjs` for the cultural reader to check.
+
+Run order: `cast` (free), `design --cast --region 1` (33 voices for region 1, each with a sample in `review/voices/`), listen and `redesign SLOT "…"` any that are wrong, then `generate --region 1` and `review`. Each later region is designed and recorded when its mechanics are built, so its lines are final first.
+
+### 10.5 Tested
+
+`npm test`, `ui-smoke`, `ui-region1` (all ten cases through the interface) and `ui-viewports` (nine sizes) pass. The depth shader was checked in a browser against a hand-made depth map: near objects shift against the background when you drag. The whole voice pipeline was run against a fake Google client for all of region 1 (cast, design, 394 recordings, manifest), and the game played a character's answer, a company "don't know" line, and correctly skipped a narration-only intro.

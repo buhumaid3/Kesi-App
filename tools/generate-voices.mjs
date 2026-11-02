@@ -2,6 +2,8 @@
 // Needs GEMINI_API_KEY in the environment (the same Codespaces secret as the images). The key is never
 // printed or written to disk. Amani is never voiced (design doc §4.2).
 //
+//   node tools/generate-voices.mjs cast                    cast every speaking character from the voice company (no cost)
+//   node tools/generate-voices.mjs design --cast [--region N]   design the company voices that region needs (1 each)
 //   node tools/generate-voices.mjs catalog                 list library voices tagged Kenyan (region KE), if any
 //   node tools/generate-voices.mjs design                  design 3 candidate voices each for Mwalimu and Halima from a
 //                                                          written description; saves a sample of each to review/voices/
@@ -19,6 +21,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { voiceKey } from '../www/engine/voicekey.js';
+import { buildCast, characterLines, loadCases } from './voice-cast.mjs';
+import { GENERIC_REPLIES } from '../www/engine/state.js';
 
 const MODEL = process.env.KESI_TTS_MODEL || 'gemini-3.8-flash-tts';
 // Google's pricing page, read 2 November 2026: $0.50 / 1M text tokens and $9.00 / 1M audio tokens through 2026,
@@ -86,6 +90,13 @@ function compileLines(region) {
     for (const [t, line] of Object.entries(coach.core || {})) add('mwalimu', line, `tip ${t}`);
     add('mwalimu', coach.hintOffer, 'hint offer');
   }
+  const castMap = readJSON(P('www/audio/voice/cast.json'), {});
+  const slotsUsed = new Set();
+  if (!flag('--leads')) for (const c of loadCases(ROOT).filter(c => c.meta.number >= a && c.meta.number <= b)) {
+    for (const l of characterLines(c)) { add(l.speaker, l.text, l.where); if (castMap[l.speaker]) slotsUsed.add(castMap[l.speaker]); }
+  }
+  // "I don't know" answers are said by the voice, not the character, so each company voice records them once.
+  for (const slot of slotsUsed) for (const g of GENERIC_REPLIES) add(slot, g, `${slot} generic`);
   for (let n = a; n <= b; n++) {
     const f = P('www/cases', `case-${String(n).padStart(3, '0')}.json`);
     if (!fs.existsSync(f)) continue;
@@ -130,16 +141,30 @@ function toWav(buf, mime) {
 const wavSeconds = (wav) => Math.max(0, (wav.length - 44) / (wav.readUInt32LE(28) || 48000));
 const hasFfmpeg = () => spawnSync('ffmpeg', ['-version'], { stdio: 'ignore' }).status === 0;
 
+const castFile = () => readJSON(P('prompts/voice-cast.json'), null);
+function voiceOf(speaker) {
+  const cf = castFile();
+  const slot = cf?.assign?.[speaker] || speaker;
+  return { slot, voice: cast.speakers[slot]?.voice || cast.speakers[speaker]?.voice, person: cf?.people?.[speaker] };
+}
+function styleOf(speaker, person) {
+  if (SPEAKERS[speaker]) return SPEAKERS[speaker].style;
+  if (person) {
+    const mood = { guarded: 'wary, giving as little as possible', lawyered: 'clipped and careful, a lawyer beside them', cooperative: 'natural and conversational' }[person.stance] || 'natural and conversational';
+    return `${person.occupation}, about ${person.age}, talking to a police detective; ${mood}; everyday Kenyan speech, not theatrical`;
+  }
+  return 'natural and conversational, talking to a police detective; everyday Kenyan speech, not theatrical';
+}
 async function synth(speaker, text, note) {
-  const sp = cast.speakers[speaker];
-  if (!sp?.voice) throw new Error(`no voice chosen for ${speaker}: run  design  then  pick ${speaker} N`);
+  const { voice, slot, person } = voiceOf(speaker);
+  if (!voice) throw new Error(`no voice for ${speaker} (${slot}): run  cast  and  design --cast, or  design  then  pick ${speaker} N`);
   const g = await client();
-  const style = SPEAKERS[speaker].style + (note ? `; correction from review: ${note}` : '');
+  const style = styleOf(speaker, person) + (note ? `; correction from review: ${note}` : '');
   const resp = await g.interactions.create({
     model: cast.model || MODEL,
     input: [{ type: 'user_input', content: [{ type: 'text', text, annotations: [{ type: 'speech_metadata', style }] }] }],
     response_format: { type: 'audio' },
-    generation_config: { speech_config: [{ voice: sp.voice }] },
+    generation_config: { speech_config: [{ voice }] },
   });
   const a = audioFrom(resp);
   if (!a) throw new Error('no audio in the response');
@@ -191,8 +216,37 @@ switch (cmd) {
     for (const v of vs) console.log(`${v.id || v.display_name} | ${v.display_name} | ${v.language_code || ''} ${v.accent || ''} ${v.gender || ''} | ${v.description || ''}`);
     break;
   }
+  case 'cast': {
+    const r = buildCast(ROOT);
+    writeJSON(P('prompts/voice-cast.json'), { slots: r.slots, assign: r.assign, people: r.people });
+    writeJSON(P('www/audio/voice/cast.json'), r.assign);
+    const pool = Object.keys(r.slots).filter(s => s.startsWith('pool-')).length, fixed = Object.keys(r.slots).length - pool;
+    console.log(`${Object.keys(r.assign).length} speaking characters cast from ${pool} company voices and ${fixed} fixed voices for recurring people.`);
+    console.log('No two people in one case share a voice. Written to prompts/voice-cast.json and www/audio/voice/cast.json.');
+    break;
+  }
   case 'design': {
     const g = await client();
+    if (rest.includes('--cast')) {
+      const cf = castFile(); if (!cf) { console.error('Run  node tools/generate-voices.mjs cast  first.'); process.exit(1); }
+      const region = flag('--region');
+      const wanted = new Set(Object.entries(cf.assign).filter(([k]) => !region || Math.ceil(+k.slice(1, 4) / 10) === +region).map(([, s]) => s));
+      const todo = [...wanted].filter(s => !cast.speakers[s]?.voice).sort();
+      console.log(`Designing ${todo.length} voices${region ? ` for region ${region}` : ''}.`);
+      fs.mkdirSync(P('review/voices'), { recursive: true });
+      for (const slot of todo) {
+        const d = cf.slots[slot];
+        try {
+          const v = await g.voices.create({ store: true, voice: { type: 'prompted', display_name: `kesi-${slot}`.slice(0, 60), language_code: 'en-KE', region_code: 'KE', gender: d.gender === 'f' ? 'female' : 'male', prompted: { input: d.description } } });
+          cast.speakers[slot] = { voice: v.id, candidates: [{ n: 1, id: v.id, description: d.description }] };
+          if (v.sample_audio?.data) fs.writeFileSync(P('review/voices', `${slot}.wav`), toWav(Buffer.from(v.sample_audio.data, 'base64'), v.sample_audio.mime_type || 'audio/wav'));
+          console.log(`  ✓ ${slot}  ${v.id}`);
+        } catch (e) { console.log(`  ✗ ${slot}  ${e.message || e}`); }
+        save();
+      }
+      console.log('Samples are in review/voices/. To replace one you don\'t like:  node tools/generate-voices.mjs redesign SLOT "new description"');
+      break;
+    }
     fs.mkdirSync(P('review/voices'), { recursive: true });
     for (const [id, sp] of Object.entries(SPEAKERS)) {
       const entry = cast.speakers[id] ||= { voice: null, candidates: [] };
@@ -207,6 +261,18 @@ switch (cmd) {
       }
     }
     console.log('Listen to the samples: start  npm run play  and open /review/voices/mwalimu-1.wav (and the others) on the forwarded port, then:  node tools/generate-voices.mjs pick mwalimu N  and  pick halima N');
+    break;
+  }
+  case 'redesign': {
+    const [slot, ...words] = rest; const cf = castFile();
+    const g = await client();
+    const desc = words.join(' ') || cf?.slots?.[slot]?.description;
+    if (!desc) { console.error('usage: redesign SLOT "description"'); process.exit(1); }
+    const v = await g.voices.create({ store: true, voice: { type: 'prompted', display_name: `kesi-${slot}`.slice(0, 60), language_code: 'en-KE', region_code: 'KE', prompted: { input: desc } } });
+    cast.speakers[slot] = { voice: v.id, candidates: [{ n: 1, id: v.id, description: desc }] };
+    if (v.sample_audio?.data) { fs.mkdirSync(P('review/voices'), { recursive: true }); fs.writeFileSync(P('review/voices', `${slot}.wav`), toWav(Buffer.from(v.sample_audio.data, 'base64'), v.sample_audio.mime_type || 'audio/wav')); }
+    // Lines already recorded with the old voice are re-recorded on the next  generate --redo-slot SLOT .
+    save(); console.log(`${slot} → ${v.id}. Re-record its lines:  node tools/generate-voices.mjs generate --region N --redo-slot ${slot}`);
     break;
   }
   case 'pick': {
@@ -231,16 +297,21 @@ switch (cmd) {
     const region = +(flag('--region') || 1);
     const lines = compileLines(region);
     writeJSON(P('prompts/voice-lines.json'), lines);
-    for (const sp of Object.keys(SPEAKERS)) {
-      const ls = lines.filter(l => l.speaker === sp), e = estimate(ls), done = ls.filter(l => manifest[l.key]).length;
-      console.log(`${sp}: ${ls.length} lines (${done} recorded), ${e.chars} characters, about ${e.minutes.toFixed(1)} minutes, ≈ $${e.usd.toFixed(2)} (≈ $${e.usd2027.toFixed(2)} at 2027 prices)`);
+    const groups = { mwalimu: l => l.speaker === 'mwalimu', halima: l => l.speaker === 'halima', characters: l => l.speaker.startsWith('c'), 'company "don\'t know" lines': l => /^(pool|rc)-/.test(l.speaker) };
+    for (const [name, fn] of Object.entries(groups)) {
+      const ls = lines.filter(fn); if (!ls.length) continue;
+      const e = estimate(ls), done = ls.filter(l => manifest[l.key]).length;
+      console.log(`${name}: ${ls.length} lines (${done} recorded), ${e.chars} characters, about ${e.minutes.toFixed(1)} minutes, ≈ $${e.usd.toFixed(2)} (≈ $${e.usd2027.toFixed(2)} at 2027 prices)`);
     }
+    const all = estimate(lines); console.log(`Total: ${lines.length} lines, about ${all.minutes.toFixed(0)} minutes, ≈ $${all.usd.toFixed(2)}.`);
     console.log('Written to prompts/voice-lines.json.');
     break;
   }
   case 'generate': {
     const region = +(flag('--region') || 1), who = flag('--speaker');
-    const lines = compileLines(region).filter(l => (!who || l.speaker === who) && !manifest[l.key]);
+    const redoSlot = flag('--redo-slot'); const cf = castFile();
+    const slotOf = sp => cf?.assign?.[sp] || sp;
+    const lines = compileLines(region).filter(l => (!who || l.speaker === who || slotOf(l.speaker) === who) && (!manifest[l.key] || (redoSlot && slotOf(l.speaker) === redoSlot)));
     const e = estimate(lines);
     console.log(`Recording ${lines.length} lines, about ${e.minutes.toFixed(1)} minutes of speech, ≈ $${e.usd.toFixed(2)}.`);
     await record(lines);
