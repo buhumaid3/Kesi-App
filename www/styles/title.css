@@ -1,0 +1,65 @@
+/* The title sequence (www/engine/title.js). One deliberate look in every theme: night, sodium light, paper. */
+.title-seq { position: fixed; inset: 0; z-index: 90; overflow: hidden; background: #0b0807; color: #f3ebda; cursor: pointer;
+  transform: translate(var(--shake, 0), calc(var(--shake, 0) * -.5)); transition: opacity 360ms ease; -webkit-tap-highlight-color: transparent; }
+.title-seq.is-out { opacity: 0; }
+.ts-photo { position: absolute; inset: -2%; opacity: 0; }
+.ts-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 58% 50%; filter: saturate(1.05) contrast(1.06); transform-origin: 58% 45%; }
+.ts-gl { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; }
+.ts-gl.is-on { opacity: 1; }
+.ts-rain { position: absolute; inset: 0; width: 100%; height: 100%; mix-blend-mode: screen; }
+.ts-lamp { position: absolute; inset: 0; background: radial-gradient(60% 40% at 80% 6%, rgba(242,163,58,.32), transparent 70%), radial-gradient(40% 30% at 22% 2%, rgba(242,163,58,.18), transparent 70%); mix-blend-mode: screen; }
+.ts-vignette { position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, transparent 35%, rgba(5,4,3,.55) 70%, rgba(5,4,3,.92) 100%), linear-gradient(transparent 55%, rgba(5,4,3,.75)); }
+
+/* The typed word, the stamp and the stencil sit in the middle third. */
+.ts-type { position: absolute; left: 50%; top: 44%; transform: translate(-50%, -50%); font: 700 clamp(44px, 15vmin, 120px)/1 'Courier Prime', 'Courier New', monospace; letter-spacing: .14em; color: #f3ebda; text-shadow: 0 2px 18px rgba(0,0,0,.8); white-space: nowrap; }
+.ts-caret { display: inline-block; width: .5em; height: .08em; margin-left: .05em; background: #f2a33a; vertical-align: baseline; }
+.ts-stamp { position: absolute; left: 50%; top: 44%; opacity: 0; }
+.ts-stamp span { display: block; padding: .02em .18em .04em; border: .07em solid currentColor; border-radius: .06em; color: #d9362b;
+  font: 900 clamp(84px, 30vmin, 230px)/.92 'Big Shoulders Display', 'Arial Narrow', sans-serif; letter-spacing: .04em;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,.7));
+  /* rubber-stamp ink: a little uneven, speckled where the stamp didn't take */
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.6 2.15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' seed='4'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2.6 2.15'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); -webkit-mask-size: 240px; mask-size: 240px; }
+.ts-stencil { position: absolute; left: 0; right: 0; top: calc(44% + clamp(64px, 19vmin, 150px)); text-align: center; opacity: 0; white-space: nowrap;
+  font: 800 clamp(17px, 4.6vmin, 38px)/1 'Big Shoulders Stencil', 'Big Shoulders Display', sans-serif; letter-spacing: .32em; color: #f3ebda; text-shadow: 0 2px 10px rgba(0,0,0,.85); padding-left: .32em; }
+.ts-line { position: absolute; left: 50%; bottom: max(12%, calc(env(safe-area-inset-bottom, 0px) + 72px)); transform: translateX(-50%); width: min(86vw, 520px); margin: 0; padding: 12px 16px; text-align: center; opacity: 0;
+  border-radius: 6px; background: rgba(8,6,5,.66); font: 400 clamp(16px, 2.6vmin, 20px)/1.4 'Courier Prime', 'Courier New', monospace; color: #f3ebda; }
+.ts-line b { display: block; margin-bottom: 2px; font: 700 11px/1 'IBM Plex Mono', monospace; letter-spacing: .14em; text-transform: uppercase; color: #f2a33a; }
+.ts-skip { position: absolute; right: max(16px, env(safe-area-inset-right, 0px)); bottom: max(16px, env(safe-area-inset-bottom, 0px)); min-height: 44px; padding: 0 16px; border: 1px solid rgba(243,235,218,.25); border-radius: 22px; background: rgba(8,6,5,.4); color: rgba(243,235,218,.7); font: 500 13px 'IBM Plex Mono', monospace; letter-spacing: .06em; cursor: pointer; }
+.ts-skip:focus-visible { outline: 3px solid #19b5d6; outline-offset: 2px; }
+.ts-black { position: absolute; inset: 0; background: #0b0807; opacity: 0; pointer-events: none; }
+.title-seq.is-still .ts-skip { display: none; }
+
+/* The launch image: the case folder on the desk under the lamp (also tools/make-splash.mjs). Sized by vmin so
+   the same composition fills a square splash, a phone and an iPad. */
+.ts-folder { position: absolute; inset: 0; transform-origin: 50% 52%; }
+.tf-desk { position: absolute; inset: 0; background:
+  radial-gradient(70vmax 52vmax at 34% 26%, rgba(246,198,107,.42), rgba(246,198,107,.08) 45%, transparent 70%),
+  repeating-linear-gradient(97deg, rgba(0,0,0,.08) 0 2px, transparent 2px 9px, rgba(255,255,255,.015) 9px 10px, transparent 10px 23px),
+  linear-gradient(160deg, #3d2b1f, #2a1d15 45%, #1a110c); }
+.tf-lamp { position: absolute; left: 34%; top: 26%; width: 2px; height: 2px; box-shadow: 0 0 22vmin 14vmin rgba(255,214,140,.10); }
+/* Sized against the larger screen side, like iOS fills the square splash: the folder is the same size on the
+   splash and on the sequence's first frame, and stays inside the part of the splash every device shows. */
+.tf-folder { container-type: inline-size; position: absolute; left: 50%; top: 52%; width: min(40vmax, 84vw); aspect-ratio: 62 / 46; transform: translate(-50%, -50%) rotate(-7deg); filter: drop-shadow(0 3vmin 3vmin rgba(0,0,0,.55)) drop-shadow(0 .6vmin .8vmin rgba(0,0,0,.4)); }
+.tf-back { position: absolute; inset: 0; background: #c9a66b; border-radius: 0.97cqw; }
+.tf-tab { position: absolute; left: 5%; top: -7.5%; width: 34%; height: 10%; background: #c9a66b; border-radius: 1.94cqw 1.94cqw 0 0; font: 700 3.39cqw/7.42cqw 'IBM Plex Mono', monospace; letter-spacing: .2em; text-align: center; color: rgba(35,34,43,.7); }
+.tf-front { position: absolute; inset: 3% 0 0 0; background: linear-gradient(170deg, #e8cc95, #e2c48c 40%, #d6b67c); border-radius: 0.65cqw 0.97cqw 0.97cqw 0.97cqw;
+  box-shadow: inset 0 0.48cqw 0 rgba(255,255,255,.35), inset 0 -0.65cqw 0.97cqw rgba(0,0,0,.08); }
+.tf-label { position: absolute; left: 9%; top: 20%; display: grid; gap: 1.94cqw; color: #23222b; }
+.tf-k { font: 900 24.20cqw/.82 'Big Shoulders Display', 'Arial Narrow', sans-serif; letter-spacing: .02em; }
+.tf-rule { width: 48.39cqw; height: 0.56cqw; background: #23222b; opacity: .75; }
+.tf-sub { font: 700 3.39cqw/1 'IBM Plex Mono', monospace; letter-spacing: .24em; opacity: .75; }
+.tf-received { position: absolute; right: 8%; top: 14%; padding: 1.61cqw 2.58cqw; border: 0.65cqw solid #2f4497; border-radius: 0.97cqw; transform: rotate(9deg); text-align: center;
+  font: 700 3.06cqw/1.25 'IBM Plex Mono', monospace; letter-spacing: .14em; color: #2f4497; opacity: .78; }
+.tf-conf { position: absolute; right: 9%; bottom: 13%; padding: 0.97cqw 2.58cqw; border: 0.81cqw solid #b3261e; transform: rotate(-5deg);
+  font: 800 5.81cqw/1 'Big Shoulders Stencil', 'Big Shoulders Display', sans-serif; letter-spacing: .12em; color: #b3261e; opacity: .85; }
+.tf-clip { position: absolute; left: 66%; top: -4%; width: 5.16cqw; height: 16.13cqw; border: 0.97cqw solid #9ea2a8; border-radius: 2.58cqw; border-bottom-color: transparent; transform: rotate(4deg); }
+
+@media (prefers-reduced-motion: reduce) { .title-seq { transition: opacity 120ms ease; } }
+
+/* A phone on its side: title higher, smaller stamp, the line low on the left so nothing overlaps. */
+@media (max-height: 500px) and (orientation: landscape) {
+  .ts-type, .ts-stamp { top: 36%; }
+  .ts-stamp span { font-size: clamp(64px, 30vh, 130px); }
+  .ts-stencil { top: calc(36% + clamp(48px, 21vh, 86px)); font-size: clamp(15px, 5vh, 24px); }
+  .ts-line { left: max(16px, env(safe-area-inset-left, 0px)); bottom: max(14px, env(safe-area-inset-bottom, 0px)); transform: none; width: min(56vw, 460px); text-align: left; padding: 8px 12px; }
+}

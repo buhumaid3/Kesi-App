@@ -9,7 +9,7 @@ const KEY = 'kesi.save.v1';
 export function defaultSave() {
   return {
     v: 1,
-    settings: { scale: 1, plain: false, inlineGloss: false, motion: 'system', playtest: false, music: 60, sfx: 80, voice: 90, intros: 'first', depth: true, haptics: true },
+    settings: { scale: 1, plain: false, inlineGloss: false, motion: 'system', playtest: false, music: 60, sfx: 80, voice: 90, intros: 'first', depth: true, haptics: true, onSilent: true, titleSeq: true },
     progress: { prologue: false, regionCardSeen: false, solved: {}, unlockedTo: 1, desk: [], messages: [], pattern: [], collectibles: [], lastCase: null, flags: {} },
     cases: {},
   };

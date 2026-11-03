@@ -91,7 +91,7 @@ await page.locator('.dock-obj', { hasText: 'Phone' }).click(); await wait(400);
 await must(page.locator('.ph-lock').count(), 'no lock screen the first time in a case');
 await shot(page, '12a-phone-lock');
 await page.locator('.ph-unlock').click(); await wait(300);
-await must(page.locator('.ph-grid .ph-app').count().then(n => n === 3), 'home screen should have 3 apps');
+await must(page.locator('.ph-grid .ph-app').count().then(n => n === 9), 'home screen should have 9 apps');
 await shot(page, '12b-phone-home');
 await page.locator('.ph-app--phone').click(); await wait(250);
 await page.locator('.ph-tab', { hasText: 'Keypad' }).click(); await wait(200);

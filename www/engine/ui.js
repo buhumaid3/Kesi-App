@@ -34,12 +34,18 @@ const stack = [];
 export function openSheet({ id, className = '', label, build, onClose, wide = false }) {
   const layer = $('#sheets');
   const existing = stack.find(s => s.id === id);
-  if (existing && id) { existing.rebuild(); return existing; }
+  // Same sheet, new content (another person, place or exhibit): swap what it builds and how it closes, so the
+  // sheet never shows the previous one's closure, and start again from the top.
+  if (existing && id) {
+    if (build) { existing.build = build; existing.onClose = onClose; existing.el.setAttribute('aria-label', label || id); existing.body.replaceChildren(); build(existing.body, existing); existing.body.scrollTop = 0; }
+    else existing.rebuild();
+    return existing;
+  }
   const wrap = h('section', { class: `sheet ${className} ${wide ? 'sheet--wide' : ''}`, role: 'dialog', 'aria-modal': 'true', 'aria-label': label || id });
   const close = h('button', { class: 'sheet-close', type: 'button', 'aria-label': 'Close' }, h('span', { 'aria-hidden': 'true' }, '×'));
   const body = h('div', { class: 'sheet-body' });
   wrap.append(close, body);
-  const entry = { id, el: wrap, body, onClose, rebuild: () => { const y = body.scrollTop; body.replaceChildren(); build(body, entry); body.scrollTop = y; } };
+  const entry = { id, el: wrap, body, onClose, build, rebuild: () => { const y = body.scrollTop; body.replaceChildren(); entry.build(body, entry); body.scrollTop = y; } };
   close.addEventListener('click', () => closeSheet(entry));
   build(body, entry);
   layer.append(wrap);

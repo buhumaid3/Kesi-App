@@ -172,19 +172,39 @@ async function fetchJobs() {
     }
     if (b.state !== 'JOB_STATE_SUCCEEDED') { console.log(`${j.name} still ${b.state}`); continue; }
     const outFile = P('prompts/batches', path.basename(j.inFile).replace('.in.jsonl', '.out.jsonl'));
-    await g.files.download({ file: b.dest.fileName, downloadPath: outFile });
-    const lines = fs.readFileSync(outFile, 'utf8').split('\n').filter(Boolean);
+    // A big batch's output is several GB (every image as base64), so it is downloaded to disk and read one line
+    // at a time; reading it whole runs a Codespace out of memory and the process is killed ("Terminated").
+    if (!fs.existsSync(outFile)) {
+      const part = outFile + '.part';
+      fs.rmSync(part, { force: true });
+      console.log(`${j.name}: downloading the results (${j.keys.length} images; this can take a few minutes)…`);
+      await g.files.download({ file: b.dest.fileName, downloadPath: part });
+      fs.renameSync(part, outFile);
+    }
+    console.log(`  ${(fs.statSync(outFile).size / 1048576).toFixed(0)} MB of results; saving images…`);
+    const readline = await import('node:readline');
+    const rl = readline.createInterface({ input: fs.createReadStream(outFile, { encoding: 'utf8', highWaterMark: 1 << 20 }), crlfDelay: Infinity });
     // Google: responses are written in the same order as the requests. Use the key when present, the order when not.
-    let ok = 0, bad = 0;
-    for (const [i, line] of lines.entries()) {
-      const o = JSON.parse(line); const key = o.key || j.keys[i]; const r = byKey.get(key); const s = st(key);
+    // Resumable: an image already saved (status done) is skipped, and progress is saved every 25 images.
+    let ok = 0, bad = 0, skipped = 0, i = -1, n = 0;
+    for await (const line of rl) {
+      if (!line.trim()) continue;
+      i++;
+      let o; try { o = JSON.parse(line); } catch { bad++; continue; }
+      const key = o.key || j.keys[i]; const r = byKey.get(key);
+      if (!r) continue;
+      const s = st(key);
+      if (['done', 'approved'].includes(s.status) && s.job === j.name) { skipped++; continue; }
       try {
         if (o.error) throw new Error(o.error.message || JSON.stringify(o.error));
         await store(r, imageFrom(o.response || o));
         Object.assign(s, { status: 'done', attempts: s.attempts + 1, spent: +(s.spent + PRICE.batch[r.size]).toFixed(4), at: new Date().toISOString(), error: undefined });
         ok++;
       } catch (e) { Object.assign(s, { status: 'failed', attempts: s.attempts + 1, error: String(e.message || e).slice(0, 300) }); bad++; }
+      if (++n % 25 === 0) { save(); process.stdout.write(`  ${n} saved so far…\r`); }
     }
+    const lines = { length: i + 1 };
+    if (skipped) console.log(`  ${skipped} were already saved by an earlier run.`);
     if (lines.length !== j.keys.length) console.log(`  note: ${lines.length} result lines for ${j.keys.length} requests`);
     j.fetched = true; save();
     console.log(`${j.name} (${j.label}): ${ok} saved, ${bad} failed.`);

@@ -1,4 +1,5 @@
 import UIKit
+import AVFoundation
 import Capacitor
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -8,10 +9,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
 
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = CAPBridgeViewController()
+        window?.rootViewController = KesiViewController()   // AppDelegate.swift: Capacitor + the AudioSession plugin
         window?.makeKeyAndVisible()
 
         SceneDelegateProxy.shared.scene(scene, willConnectTo: session, options: connectionOptions)
+    }
+
+    func sceneDidBecomeActive(_ scene: UIScene) {
+        // Back from the background, a call or Siri: make sure sound is on again.
+        try? AVAudioSession.sharedInstance().setActive(true)
     }
 
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {

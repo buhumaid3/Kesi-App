@@ -82,7 +82,7 @@ function showPrologue() {
   const skip = h('button', { class: 'link skip', type: 'button', onclick: finish }, 'Skip');
   screen(h('div', { class: 'prologue-wrap' }, stage, skip), 'scr-prologue');
   K.audio.music('cabinet');
-  const say = (speaker, line) => { K.audio.speak('mwalimu', line); return h('p', { class: 'subtitle' }, h('b', {}, speaker), ' ', line); };
+  const say = (speaker, line) => { K.audio.speak('mwalimu', line, { tag: 'prologue' }); return h('p', { class: 'subtitle' }, h('b', {}, speaker), ' ', line); };
   const next = (label, fn) => h('button', { class: 'card-btn', type: 'button', onclick: fn }, label, h('span', { class: 'arrow', 'aria-hidden': 'true' }, '→'));
   let step = 0;
   const beats = [
@@ -103,7 +103,7 @@ function showPrologue() {
     () => { $$('.old-folder, .card-btn', stage).forEach(x => x.remove()); put(stage, say('Mwalimu:', get('pr7').voice.line), next('Open case 001', finish)); },
   ];
   function advance() { if (step < beats.length) beats[step++](); }
-  function finish() { K.save.progress.prologue = true; save(true); openCase(1); }
+  function finish() { K.audio.stopVoice('prologue'); K.save.progress.prologue = true; save(true); openCase(1); }
   advance();
 }
 
@@ -207,11 +207,14 @@ function reopenView(v) {
 const setView = v => { if (K.run) { K.run.s.view = v; save(); } };
 const clearView = () => setView(null);
 
+let noteSeq = 0;
 function mwalimu(line, opts = {}) {
   K.sound('phone');
   const msg = { from: 'Mwalimu', line, kind: 'voice', case: K.run?.n, at: Date.now() };
   K.save.progress.messages.push(msg);
-  voiceNote({ from: 'Mwalimu', line, kind: 'voice', play: () => K.audio.speak('mwalimu', line), stop: () => K.audio.stopVoice(), ...opts });
+  // Each note's line has its own tag: dismissing the note stops that line only, never someone else's.
+  const tag = `note${++noteSeq}`;
+  voiceNote({ from: 'Mwalimu', line, kind: 'voice', play: () => K.audio.speak('mwalimu', line, { tag }), stop: () => K.audio.stopVoice(tag), ...opts });
   save();
 }
 
@@ -361,6 +364,10 @@ function openLocation(id) {
   let active = null;                                   // the open pin survives a rebuild (e.g. a text-size change)
   openSheet({ id: 'loc', className: 'sheet--location', label: l.name, onClose: clearView, build(body) {
     const hs = run.hotspots(id);
+    const places = run.locations();
+    if (places.length > 1) put(body, h('nav', { class: 'switcher switcher--places', 'aria-label': 'Places in this case' }, places.map(x => h('button', {
+      class: `sw-chip ${x.id === id ? 'is-on' : ''} ${run.visited.has(x.id) ? '' : 'is-fresh'}`, type: 'button', 'data-lid': x.id, 'aria-current': x.id === id ? 'true' : null,
+      onclick: () => { if (x.id !== id) openLocation(x.id); } }, x.name.split(' (')[0]))));
     const gloss = t => K.gloss.rich(t, { inline: K.save.settings.inlineGloss });
     const pos = x => [Math.min(95, Math.max(5, x.pos?.[0] ?? 50)) / 100, Math.min(93, Math.max(7, x.pos?.[1] ?? 50)) / 100];
     const pinLabel = (x, i) => `${i + 1}. ${x.label}${run.tapped.has(x.id) ? ', examined' : ''}`;
@@ -473,8 +480,23 @@ function openLocation(id) {
 }
 
 // ── A person: the interview ───────────────────────────────────────────────────────────────────────────
+// A row of everyone you can question in this case, at the top of a person's sheet: tap one to switch to them
+// without closing (their conversation so far is kept: it lives in the case state, not the sheet).
+function peopleStrip(pid) {
+  const run = K.run;
+  const ps = run.people().filter(p => !p.statementOnly && p.role !== 'victim' && run.interrogation.has(p.id));
+  if (ps.length < 2 && ps.every(p => p.id === pid)) return null;
+  return h('nav', { class: 'switcher switcher--people', 'aria-label': 'People in this case' }, ps.map(p => {
+    const on = p.id === pid, fresh = run.canInterview(p.id) && !run.talked.has(p.id);
+    return h('button', { class: `sw-person ${on ? 'is-on' : ''} ${fresh ? 'is-fresh' : ''}`, type: 'button', 'data-pid': p.id, 'aria-current': on ? 'true' : null, 'aria-label': `${p.name}${fresh ? ', not yet interviewed' : ''}`,
+      onclick: () => { if (!on) openPerson(p.id); } },
+      p.image ? h('img', { src: imgPath(run.n, p.id), alt: '', loading: 'lazy', onerror: e => e.target.replaceWith(h('span', { class: 'sw-ini' }, initials(p.name))) }) : h('span', { class: 'sw-ini' }, initials(p.name)),
+      h('span', { class: 'sw-name' }, p.name.split(' ')[0]));
+  }));
+}
 function openPerson(pid) {
   const run = K.run, p = run.byId.get(pid);
+  K.audio.stopVoice('person');                       // switching people: the last one stops mid-sentence, like closing
   setView({ sheet: 'person', id: pid });
   let introTyped = run.talked.has(pid);
   if (run.canInterview(pid)) {
@@ -487,8 +509,10 @@ function openPerson(pid) {
   const say = (kind, text, opts) => K.audio.character(run.n, pid, kind, text, opts);
   const playBtn = (kind, text, opts) => K.audio.hasCharacter(run.n, pid, kind, text) ?
     h('button', { class: 'say-btn', type: 'button', 'aria-label': 'Play this line', onclick: e => { e.stopPropagation(); say(kind, text, opts); } }, '▶') : null;
-  openSheet({ id: 'person', className: 'sheet--person', label: p.name, onClose: () => { K.audio.stopVoice(); clearView(); }, build(body) {
+  openSheet({ id: 'person', className: 'sheet--person', label: p.name, onClose: () => { K.audio.stopVoice('person'); clearView(); }, build(body) {
     const it = run.interrogation.get(pid);
+    put(body, peopleStrip(pid));
+    requestAnimationFrame(() => body.querySelector('.sw-person.is-on')?.scrollIntoView({ inline: 'center', block: 'nearest' }));
     put(body, h('div', { class: 'person-head' },
       p.image ? photo({ src: imgPath(run.n, pid), label: p.name, kind: 'portrait', id: pid, onZoom: zoomPhoto }) : h('span', { class: 'no-portrait big', 'aria-hidden': 'true' }, initials(p.name)),
       h('div', { class: 'person-meta' }, h('h2', {}, p.name), h('p', {}, p.role === 'victim' ? `${p.age} · deceased` : `${p.age} · ${p.occupation}`), h('p', { class: 'bio', html: K.gloss.rich(p.bio, { inline: K.save.settings.inlineGloss }) }))));
@@ -496,7 +520,7 @@ function openPerson(pid) {
     if (!it) { put(body, h('p', { class: 'typed' }, 'Statement only. See the exhibits.')); return; }
     const intro = h('p', { class: 'intro typed' });
     put(body, intro);
-    if (!introTyped) { introTyped = true; say('intro', it.intro); typewrite(intro, it.intro, { reduced: K.reduced(), sound: K.sound }).then(() => { intro.innerHTML = K.gloss.rich(it.intro); const b = playBtn('intro', it.intro); if (b) intro.append(' ', b); }); }
+    if (!introTyped) { introTyped = true; say('intro', it.intro, { now: false }); typewrite(intro, it.intro, { reduced: K.reduced(), sound: K.sound }).then(() => { intro.innerHTML = K.gloss.rich(it.intro); const b = playBtn('intro', it.intro); if (b) intro.append(' ', b); }); }
     else { intro.innerHTML = K.gloss.rich(it.intro, { inline: K.save.settings.inlineGloss }); const b = playBtn('intro', it.intro); if (b) intro.append(' ', b); }
     const statements = (it.yields || []).filter(e => run.kE.has(e));
     const claims = run.claimsOf(pid);
@@ -542,7 +566,13 @@ function openEvidence(id) {
   run.seenEvidence.add(id); run.markSeen(e.facts || []);
   coach('evidenceOpen', { render: e.render });
   setView({ sheet: 'evidence', id }); after(null, { quiet: true });
-  openSheet({ id: 'ev-' + id, className: 'sheet--doc', label: e.title, onClose: () => setView(null), build(body) {
+  const all = [...run.kE], at = all.indexOf(id);
+  const go = d => { const n = all[(at + d + all.length) % all.length]; if (n && n !== id) openEvidence(n); };
+  openSheet({ id: 'ev', className: 'sheet--doc', label: e.title, onClose: () => setView(null), build(body) {
+    if (all.length > 1) put(body, h('nav', { class: 'switcher switcher--ex', 'aria-label': 'Exhibits' },
+      h('button', { class: 'sw-step', type: 'button', 'aria-label': 'Previous exhibit', onclick: () => go(-1) }, '‹'),
+      h('span', { class: 'sw-count' }, `Exhibit ${at + 1} of ${all.length}`),
+      h('button', { class: 'sw-step', type: 'button', 'aria-label': 'Next exhibit', onclick: () => go(1) }, '›')));
     put(body, renderEvidence(K, e, { exhibitNo: exhibitNo(id) }));
     setTimeout(() => attachDepth(body, K), 0);
     put(body, h('div', { class: 'doc-actions' },
@@ -624,29 +654,42 @@ function timeView(run) {
 }
 
 // ── The corkboard (§2.6): free-form, never graded ─────────────────────────────────────────────────────
+// The board lies in a viewport: on opening it is fitted whole to the screen (nothing cut off), then pinch,
+// the scroll wheel or +/− zoom, dragging the cork pans, and Fit goes back. Card positions are stored in board
+// units, so they stay exactly where they were put at any zoom.
 function openBoard() {
   const run = K.run;
   setView({ sheet: 'board' });
   coach('boardOpen');
   const B = run.s.board || (run.s.board = { pos: {}, strings: [], notes: [] });
   let mode = 'move', sel = null, newString = null;
-  openSheet({ id: 'board', className: 'sheet--board', wide: true, label: 'Corkboard', onClose: clearView, build(body, entry) {
+  const cam = { z: 1, tx: 0, ty: 0, auto: true };      // auto: still fitted (refits when the screen turns)
+  let ro = null;
+  openSheet({ id: 'board', className: 'sheet--board', wide: true, label: 'Corkboard', onClose: () => { ro?.disconnect(); clearView(); }, build(body, entry) {
     const items = [
       ...run.people().filter(p => !p.statementOnly).map(p => ({ id: p.id, kind: 'person', label: p.name, sub: p.role === 'victim' ? 'Deceased' : p.occupation })),
       ...[...run.kE].map(id => ({ id, kind: 'evidence', label: run.byId.get(id).title, sub: `Exhibit ${exhibitNo(id)}` })),
       ...run.s.pinned.map(fid => ({ id: fid, kind: 'fact', label: shortFact(run.byId.get(fid).text, 80), sub: 'Pinned fact' })),
       ...B.notes.map(n => ({ id: n.id, kind: 'note', label: n.text, sub: '' })),
     ];
-    const W = 760, H = Math.max(900, 160 + Math.ceil(items.length / 3) * 190);
-    items.forEach((it, i) => { if (!B.pos[it.id]) B.pos[it.id] = [24 + (i % 3) * 240 + tilt(it.id, 12), 30 + Math.floor(i / 3) * 190 + tilt(it.id + 'y', 14)]; });
+    // New cards are laid out in as many columns as suit the screen's shape (3 on a phone held upright, up to 6
+    // on its side), so the fitted board is as large as it can be. Cards already placed never move.
+    const aspect = innerWidth / Math.max(1, innerHeight - 160);
+    const cols = Math.max(3, Math.min(6, Math.round(aspect * 3.2)));
+    const placed = Object.keys(B.pos).filter(k => items.some(it => it.id === k)).length;
+    let slot = placed;
+    items.forEach(it => { if (!B.pos[it.id]) { const i = slot++; B.pos[it.id] = [24 + (i % cols) * 240 + tilt(it.id, 12), 30 + Math.floor(i / cols) * 190 + tilt(it.id + 'y', 14)]; } });
+    const W = Math.max(760, 40 + Math.max(...items.map(it => B.pos[it.id][0]), 0) + 200);
+    // The board is as tall as its cards need (a card is about 180 × 150), never less than a landscape sheet.
+    const H = Math.max(560, 40 + Math.max(0, ...items.map(it => B.pos[it.id][1])) + 190);
     const cork = h('div', { class: 'cork', style: { width: W + 'px', height: H + 'px' } });
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svg.setAttribute('class', 'strings'); svg.setAttribute('width', W); svg.setAttribute('height', H); svg.setAttribute('aria-hidden', 'true');
+    svg.setAttribute('class', 'strings'); svg.setAttribute('width', W); svg.setAttribute('height', H); svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('aria-hidden', 'true');
     cork.append(svg);
     const cards = new Map();
     for (const it of items) {
       const [x, y] = B.pos[it.id];
-      const card = h('div', { class: `bcard bcard--${it.kind} ${sel === it.id ? 'is-sel' : ''}`, tabIndex: 0, role: 'button', 'aria-label': `${it.label}. ${mode === 'string' ? 'Tap to tie string' : 'Drag to move'}`,
+      const card = h('div', { class: `bcard bcard--${it.kind} ${sel === it.id ? 'is-sel' : ''}`, tabIndex: 0, role: 'button', 'data-id': it.id, 'aria-label': `${it.label}. ${mode === 'string' ? 'Tap to tie string' : 'Drag to move'}`,
         style: { transform: `translate(${x}px, ${y}px) rotate(${tilt(it.id)}deg)` } },
         h('span', { class: 'bpin', 'aria-hidden': 'true' }),
         it.kind === 'person' && run.byId.get(it.id).image ? photo({ src: imgPath(run.n, it.id), kind: 'portrait', id: it.id, small: true }) : null,
@@ -670,11 +713,11 @@ function openBoard() {
     };
     function drag(card, it) {
       let start = null, moved = false;
-      card.addEventListener('pointerdown', e => { if (e.target.closest('button')) return; start = { x: e.clientX, y: e.clientY, p: [...B.pos[it.id]] }; moved = false; card.setPointerCapture(e.pointerId); card.classList.add('is-lifted'); });
+      card.addEventListener('pointerdown', e => { if (e.target.closest('button')) return; e.stopPropagation(); start = { x: e.clientX, y: e.clientY, p: [...B.pos[it.id]] }; moved = false; card.setPointerCapture(e.pointerId); card.classList.add('is-lifted'); });
       card.addEventListener('pointermove', e => {
         if (!start) return;
-        const dx = e.clientX - start.x, dy = e.clientY - start.y;
-        if (Math.hypot(dx, dy) > 6) moved = true;
+        const dx = (e.clientX - start.x) / cam.z, dy = (e.clientY - start.y) / cam.z;     // screen px → board units
+        if (Math.hypot(dx * cam.z, dy * cam.z) > 6) moved = true;
         if (!moved || mode === 'string') return;
         B.pos[it.id] = [Math.max(0, Math.min(W - 180, start.p[0] + dx)), Math.max(0, Math.min(H - 120, start.p[1] + dy))];
         card.style.transform = `translate(${B.pos[it.id][0]}px, ${B.pos[it.id][1]}px) rotate(${tilt(it.id)}deg)`;
@@ -694,6 +737,62 @@ function openBoard() {
       if (sel !== id && !B.strings.some(s => s.includes(sel) && s.includes(id))) { B.strings.push([sel, id]); newString = `${sel}|${id}`; K.sound('pin'); save(); }
       cards.get(sel)?.classList.remove('is-sel'); sel = null; drawStrings();
     }
+    // ── The viewport: fit, zoom, pan ─────────────────────────────────────────────────────────────────
+    const view = h('div', { class: 'cork-view', 'aria-label': 'Corkboard. Pinch or use the plus and minus buttons to zoom, drag the cork to move around.' }, cork);
+    const PAD = 10;
+    const fitZ = () => Math.min((view.clientWidth - PAD * 2) / W, (view.clientHeight - PAD * 2) / H);
+    const zMin = () => Math.min(fitZ(), 1) * 0.8, zMax = 2.5;
+    function clamp() {
+      cam.z = Math.max(zMin(), Math.min(zMax, cam.z));
+      const vw = view.clientWidth, vh = view.clientHeight, bw = W * cam.z, bh = H * cam.z;
+      // Smaller than the view: centred. Larger: it can be dragged until its edge meets the view's edge.
+      cam.tx = bw <= vw ? (vw - bw) / 2 : Math.min(PAD, Math.max(vw - bw - PAD, cam.tx));
+      cam.ty = bh <= vh ? (vh - bh) / 2 : Math.min(PAD, Math.max(vh - bh - PAD, cam.ty));
+    }
+    function apply(animate = false) {
+      clamp();
+      cork.style.transition = animate && !K.reduced() ? 'transform 300ms cubic-bezier(.2,.8,.2,1)' : 'none';
+      cork.style.transform = `translate(${cam.tx}px, ${cam.ty}px) scale(${cam.z})`;
+      view.dataset.z = cam.z.toFixed(3);
+      if (zLabel) zLabel.textContent = `${Math.round(cam.z * 100)}%`;
+    }
+    function fit(animate = false) { cam.z = fitZ(); cam.auto = true; apply(animate); }
+    function zoomAt(f, cx = view.clientWidth / 2, cy = view.clientHeight / 2, animate = false) {
+      const bx = (cx - cam.tx) / cam.z, by = (cy - cam.ty) / cam.z;
+      cam.z = Math.max(zMin(), Math.min(zMax, cam.z * f)); cam.auto = false;
+      cam.tx = cx - bx * cam.z; cam.ty = cy - by * cam.z; apply(animate);
+    }
+    const pts = new Map(); let pan = null, pinch = null;
+    view.addEventListener('pointerdown', e => {
+      if (e.target.closest('.bcard, button, .string')) return;
+      view.setPointerCapture(e.pointerId); pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      if (pts.size === 1) pan = { x: e.clientX, y: e.clientY, tx: cam.tx, ty: cam.ty };
+      if (pts.size === 2) { const [a, b] = [...pts.values()]; pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), z: cam.z }; pan = null; }
+    });
+    view.addEventListener('pointermove', e => {
+      if (!pts.has(e.pointerId)) return;
+      pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+      const r = view.getBoundingClientRect();
+      if (pinch && pts.size >= 2) {
+        const [a, b] = [...pts.values()]; const d = Math.hypot(a.x - b.x, a.y - b.y);
+        zoomAt((pinch.z * d / pinch.d) / cam.z, (a.x + b.x) / 2 - r.left, (a.y + b.y) / 2 - r.top);
+      } else if (pan) { cam.tx = pan.tx + e.clientX - pan.x; cam.ty = pan.ty + e.clientY - pan.y; cam.auto = false; apply(); }
+    });
+    const up = e => { pts.delete(e.pointerId); if (pts.size < 2) pinch = null; if (!pts.size) pan = null; };
+    view.addEventListener('pointerup', up); view.addEventListener('pointercancel', up);
+    view.addEventListener('wheel', e => {
+      e.preventDefault();
+      const r = view.getBoundingClientRect();
+      if (e.ctrlKey || Math.abs(e.deltaY) >= Math.abs(e.deltaX)) zoomAt(Math.exp(-e.deltaY * (e.ctrlKey ? 0.01 : 0.0018)), e.clientX - r.left, e.clientY - r.top);
+      else { cam.tx -= e.deltaX; cam.auto = false; apply(); }
+    }, { passive: false });
+    view.addEventListener('dblclick', e => { if (e.target.closest('.bcard')) return; const r = view.getBoundingClientRect(); zoomAt(1.6, e.clientX - r.left, e.clientY - r.top, true); });
+    let zLabel = null;
+    const zoomCtl = h('div', { class: 'cork-zoom' },
+      h('button', { class: 'cz-b', type: 'button', 'aria-label': 'Zoom out', onclick: () => zoomAt(1 / 1.3, undefined, undefined, true) }, '−'),
+      zLabel = h('span', { class: 'cz-l', 'aria-live': 'polite' }, ''),
+      h('button', { class: 'cz-b', type: 'button', 'aria-label': 'Zoom in', onclick: () => zoomAt(1.3, undefined, undefined, true) }, '+'),
+      h('button', { class: 'cz-fit', type: 'button', onclick: () => fit(true) }, 'Fit'));
     const tools = h('div', { class: 'board-tools' },
       h('button', { class: `btn ${mode === 'move' ? 'is-on' : ''}`, type: 'button', 'aria-pressed': String(mode === 'move'), onclick: () => { mode = 'move'; sel = null; entry.rebuild(); } }, 'Move / open'),
       h('button', { class: `btn ${mode === 'string' ? 'is-on' : ''}`, type: 'button', 'aria-pressed': String(mode === 'string'), onclick: () => { mode = 'string'; sel = null; entry.rebuild(); } }, 'Red string'),
@@ -701,11 +800,15 @@ function openBoard() {
         const text = await ask({ title: 'Sticky note', input: true, ok: 'Pin it' }); if (!text) return;
         const id = 'note_' + Date.now(); B.notes.push({ id, text: text.slice(0, 140) }); save(); entry.rebuild();
       } }, 'Sticky note'),
-      h('button', { class: 'btn', type: 'button', onclick: async () => { if (await ask({ title: 'Tidy the board?', text: 'Cards go back in rows and every string is cut.', ok: 'Tidy' })) { B.pos = {}; B.strings = []; save(); entry.rebuild(); } } }, 'Tidy'));
-    put(body, h('h2', { class: 'sheet-title on-dark' }, 'Corkboard'),
-      h('p', { class: 'board-help' }, mode === 'string' ? 'Tap two cards to tie a string between them. Tap a string to cut it.' : 'Drag cards anywhere. Tap a card to open it. Nothing here is graded: it is for thinking.'),
-      tools, h('div', { class: 'cork-scroll' }, cork));
+      h('button', { class: 'btn', type: 'button', onclick: async () => { if (await ask({ title: 'Tidy the board?', text: 'Cards go back in rows and every string is cut.', ok: 'Tidy' })) { B.pos = {}; B.strings = []; cam.auto = true; save(); entry.rebuild(); } } }, 'Tidy'));
+    put(body, h('div', { class: 'board-top' }, h('h2', { class: 'sheet-title on-dark' }, 'Corkboard'),
+      h('p', { class: 'board-help' }, mode === 'string' ? 'Tap two cards to tie a string between them. Tap a string to cut it.' : 'Drag cards anywhere. Tap a card to open it. Pinch or +/− to zoom, drag the cork to move around. Nothing here is graded.'),
+      tools), h('div', { class: 'cork-frame' }, view, zoomCtl));
     drawStrings();
+    // Size is known once the sheet is laid out; keep fitting while it is still "fitted" (rotation, resizing).
+    const first = () => { if (cam.auto) fit(); else apply(); };
+    requestAnimationFrame(first);
+    ro?.disconnect(); ro = new ResizeObserver(first); ro.observe(view);
   } });
 }
 
@@ -737,7 +840,7 @@ function openPhone() {
   setView({ sheet: 'phone' });
   // Notices wait while the phone is up (the lock screen and the apps show them); her tip is on the home screen.
   openPhoneApp({ K, run: K.run, save, after: () => after(null, { quiet: true }), refreshDesk, clearView,
-    openEvidence, openPerson, openNotebook, openCharge, whereToFind });
+    openEvidence, openPerson, openNotebook, openCharge, whereToFind, openLocation, openSettings: showSettings, regionName: regionOf(K.run.n)?.name });
 }
 // Where a fact or card can be found, said the way Mwalimu would say it.
 function whereToFind(id) {
@@ -827,8 +930,9 @@ function openCharge() {
         save(true);
         // Halima reads her verdict on the sheet out loud when it has been recorded.
         const said = r.results.filter(x => !x.already && x.line).map(x => x.line);
-        if (said.length) K.audio.speak('halima', said[0]);
-        if (r.solved) { K.sound('accepted'); setTimeout(() => { closeAllSheets(); showVerdict(true); }, K.reduced() ? 200 : 1600); entry.rebuild(); return; }
+        // A solved case: her line is read on the verdict screen, in its place in the closing sequence.
+        if (r.solved) { K.sound('accepted'); setTimeout(() => { closeAllSheets(); showVerdict(true, said[0]); }, K.reduced() ? 200 : 1600); entry.rebuild(); return; }
+        if (said.length) K.audio.speak('halima', said[0], { now: true, tag: 'verdict' });
         K.sound('returned'); coach('afterWrong');
         setTimeout(() => K.motion.shake(body.querySelector('.charge')), 120);
         if (run.n >= 7 && !K.save.progress.flags.hintOffer) {
@@ -849,7 +953,7 @@ function openCharge() {
 }
 
 // ── The verdict (beat 6): accepted stamp, reconstruction, eliminations, and what changes on the desk ──
-function showVerdict(fresh) {
+function showVerdict(fresh, halimaLine = null) {
   const run = K.run, c = run.c, n = run.n, pr = K.save.progress;
   const st = run.stars();
   const bc = K.campaign.betweenCases[String(n)] || {};
@@ -897,17 +1001,46 @@ function showVerdict(fresh) {
   screen(el, 'scr-verdict');
   K.motion.deal(el, '.recon-step, .elims li, .after-beat, .v-pins li', { step: 70, max: 10 });
   attachDepth(el, K);
-  if (fresh) {
-    const t = run.tutorial('verdict'); if (t) setTimeout(() => mwalimu(t), 1200);
-    if (bc.mwalimu) setTimeout(() => mwalimu(bc.mwalimu), t ? 2400 : 1200);
-    if (bc.halima) setTimeout(() => voiceNote({ from: 'Prosecutor H. Abdi', line: cleanText('Prosecutor H. Abdi', bc.halima), kind: 'text' }), 2600);
-    setTimeout(() => K.sound('closed'), 700);
-    if (!K.reduced()) { const s = $('.v-stamp'); s.classList.remove('is-stamped'); setTimeout(() => stamp(s, K.sound, false), 250); }
-  }
+  if (fresh) closingSequence(run, bc, halimaLine || g0.map(g => g.prosecutor?.pass).filter(Boolean)[0]);
+}
+// Case closed, in order, each heard in full with a breath between (one voice at a time, see audio.js):
+// the ACCEPTED stamp and the closing chord → Halima reads her verdict → Mwalimu's notes → Halima's text.
+async function closingSequence(run, bc, halimaLine) {
+  const reduced = K.reduced(), wait = ms => new Promise(r => setTimeout(r, ms));
+  const s = $('.v-stamp');
+  if (!reduced && s) { s.classList.remove('is-stamped'); await wait(250); stamp(s, K.sound, false); } else K.sound('stamp');
+  await wait(450); K.sound('closed');
+  await wait(reduced ? 600 : 1300);
+  const spoke = halimaLine ? await K.audio.speak('halima', halimaLine, { tag: 'verdict' }) : false;
+  await wait(spoke ? 700 : 1500);
+  const t = run.tutorial('verdict'); if (t) mwalimu(t);
+  if (bc.mwalimu) mwalimu(bc.mwalimu);
+  if (bc.halima) voiceNote({ from: 'Prosecutor H. Abdi', line: cleanText('Prosecutor H. Abdi', bc.halima), kind: 'text' });
 }
 async function replay(n) {
   if (!await ask({ title: `Play case ${pad3(n)} again?`, text: 'You start again from the OB. Your best stars are kept.', ok: 'Start again' })) return;
   delete K.save.cases[n]; save(true); openCase(n);
+}
+
+// ── Sound check (Settings) ──────────────────────────────────────────────────────────────────────────────
+const isIOS = () => /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+const hasSilentSwitch = () => isNative || 'audioSession' in navigator || isIOS();
+function soundTest() {
+  const out = h('small', { class: 'set-note', 'aria-live': 'polite' });
+  const btn = h('button', { class: 'btn', type: 'button', onclick: async () => {
+    btn.disabled = true; out.textContent = 'Playing: a cue, then music, then a voice…';
+    const s = K.save.settings, r = await K.audio.test();
+    const muted = ['music', 'sfx', 'voice'].filter(k => !s[k]).map(k => ({ music: 'Music', sfx: 'Sound effects', voice: 'Voices' })[k]);
+    const notes = [];
+    if (!r.ok) notes.push('Sound is blocked. Tap anywhere on the page, then try again.');
+    if (muted.length) notes.push(`${muted.join(', ')} ${muted.length > 1 ? 'are' : 'is'} turned down to 0 above.`);
+    if (!r.voiced && s.voice) notes.push('No recorded line was found to play.');
+    if (hasSilentSwitch() && s.onSilent === false) notes.push('The ring/silent switch mutes the game while "Play sound when the phone is on silent" is off.');
+    if (!isNative && isIOS() && !('audioSession' in navigator)) notes.push('On this iPhone browser the ring/silent switch can mute the game: if you heard nothing, check the switch and the volume buttons.');
+    out.textContent = notes.length ? notes.join(' ') : 'You should have heard all three. If not, turn the device volume up.';
+    btn.disabled = false;
+  } }, 'Play');
+  return h('div', { class: 'set-test' }, btn, out);
 }
 
 // ── Settings: the clipboard ────────────────────────────────────────────────────────────────────────────
@@ -930,7 +1063,9 @@ function showSettings() {
       row('Show word meanings inline', toggle('inlineGloss'), 'Swahili and Sheng words show their meaning in brackets. You can always tap a word instead.'),
       slider('music', 'Music', 'Region music; a quiet room tone where a region has no track yet.'),
       slider('sfx', 'Sound effects', 'Typewriter keys, stamps, the phone, the cues.'),
-      slider('voice', 'Voices', 'Mwalimu and Halima, where their lines are recorded. Every line is always on screen too.'),
+      slider('voice', 'Voices', 'Mwalimu, Halima and everyone you question, where their lines are recorded. Every line is always on screen too.'),
+      hasSilentSwitch() ? row('Play sound when the phone is on silent', toggle('onSilent', () => K.audio.applySession()), 'On: voices and music play even with the ring/silent switch on. Off: the switch mutes the game.') : null,
+      row('Test sound', soundTest(), 'Plays a cue, a few seconds of music and a line of Mwalimu\'s.'),
       row('Case intros', h('div', { class: 'seg' }, [['first', 'First time'], ['always', 'Always'], ['off', 'Off']].map(([v, l]) => h('button', { class: `seg-b ${s.intros === v ? 'is-on' : ''}`, type: 'button', 'aria-pressed': String(s.intros === v), onclick: () => { s.intros = v; save(); entry.rebuild(); } }, l))), 'The short title sequence when a case opens.'),
       row('Mwalimu\'s tips', h('button', { class: 'btn', type: 'button', onclick: () => { const f = K.save.progress.flags; f.coach = {}; f.coachCore = {}; save(); toast('Tips will play again the next time each one comes up.'); } }, 'Replay'), 'The one-time tips for each new part of the job.'),
       row('Motion', h('div', { class: 'seg' }, [['system', 'System'], ['reduce', 'Reduce'], ['full', 'Full']].map(([v, l]) => h('button', { class: `seg-b ${s.motion === v ? 'is-on' : ''}`, type: 'button', 'aria-pressed': String(s.motion === v), onclick: () => { s.motion = v; applySettings(); save(); entry.rebuild(); } }, l))), 'Reduce follows iOS Reduce Motion by default.'),

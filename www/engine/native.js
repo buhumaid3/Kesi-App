@@ -6,6 +6,7 @@ const cap = typeof window !== 'undefined' ? window.Capacitor : undefined;
 export const isNative = !!cap?.isNativePlatform?.();
 const plugin = name => { try { return isNative ? cap.registerPlugin(name) : null; } catch { return null; } };
 const Preferences = plugin('Preferences'), StatusBar = plugin('StatusBar'), SplashScreen = plugin('SplashScreen'), Haptics = plugin('Haptics');
+const AudioSession = plugin('AudioSession');      // ios/App/App/AppDelegate.swift
 
 // ── Save storage: iOS can clear a web view's localStorage when space runs low; Preferences (UserDefaults)
 // is never cleared. The game keeps reading localStorage (fast, synchronous) and mirrors every write here;
@@ -39,4 +40,17 @@ export function haptic(kind = 'light', enabled = true) {
   const style = { light: 'LIGHT', medium: 'MEDIUM', heavy: 'HEAVY' }[kind];
   if (style) Haptics.impact({ style }).catch(() => {});
   else if (kind === 'success' || kind === 'warning') Haptics.notification({ type: kind.toUpperCase() }).catch(() => {});
+}
+
+// ── Sound with the silent switch on ─────────────────────────────────────────────────────────────────────
+// The app's own AVAudioSession decides whether the ring/silent switch mutes the web view: "playback"
+// plays through it (and mixes with the player's own music), "ambient" respects it. The Swift side also
+// reactivates the session after a call or Siri and tells us, so audio.js can resume.
+export function setAudioSession(playThroughSilent) {
+  if (!AudioSession) return;
+  AudioSession.set({ playback: !!playThroughSilent }).catch(() => {});
+}
+export function onAudioResume(fn) {
+  if (!AudioSession) return;
+  try { AudioSession.addListener('resume', fn); AudioSession.addListener('route', fn); } catch { /* older shell */ }
 }

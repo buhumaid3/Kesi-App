@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kesi title sequence preview</title>
+<link rel="stylesheet" href="styles/tokens.css"><link rel="stylesheet" href="styles/title.css">
+<style>html,body{margin:0;background:#0b0807}</style></head>
+<body>
+<script type="module">
+// Preview of the title sequence (not shipped: tools/build.mjs leaves it out).
+//   title-preview.html            plays it (tap to skip, reload to replay)
+//   title-preview.html?t=3.6      one still frame at 3.6 s       ?short  the shorter version   ?still  Reduce Motion
+//   title-preview.html?folder     just the launch image (what tools/make-splash.mjs renders)
+import { createTitle } from './engine/title.js';
+const q = new URLSearchParams(location.search);
+const t = q.has('t') ? +q.get('t') : q.has('folder') ? 0 : null;
+const ready = document.fonts ? document.fonts.load('900 40px "Big Shoulders Display"').then(() => document.fonts.load('800 20px "Big Shoulders Stencil"')).then(() => document.fonts.load('700 20px "Courier Prime"')) : Promise.resolve();
+ready.then(() => {
+  const seq = createTitle(document.body, { short: q.has('short'), reduced: q.has('still'), still: t, onDone: () => { document.body.dataset.done = '1'; } });
+  if (q.has('folder')) seq.el.querySelector('.ts-skip').hidden = true;
+  setTimeout(() => { document.body.dataset.ready = '1'; }, 1300);
+});
+</script>
+</body></html>

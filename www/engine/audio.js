@@ -4,14 +4,27 @@
 // · Effects: synthesized (typewriter keys, stamps, pins, phone) plus short musical cues.
 // · Voices: recorded lines from www/audio/voice/ (manifest.json maps voiceKey → file). A line without a
 //   recording simply isn't voiced; the text is always on screen.
+// · One voice at a time: every spoken line goes through a single queue. A new line waits for the one playing
+//   (with a short breath between); only a tap that asks for a line now (a question, a play button, a call)
+//   jumps the queue, and closing a sheet stops only that sheet's lines (tags). Music and effects duck under
+//   a voice and come back after it.
+// · Loudness: voices are normalised in the build (tools/build.mjs); here a gentle compressor on the voice bus
+//   and a limiter on the master keep lines clear on a phone speaker without clipping.
+// · iPhone silent switch: Settings → "Play sound when the phone is on silent" (default on) sets the Audio
+//   Session to "playback" (Safari 16.4+ / the app's web view); older WebKit gets the same through a silent
+//   looping media element, which moves the page into the playback category.
 // iOS ignores <audio>.volume, so every file plays through Web Audio gain nodes. Files are fetched and decoded
 // into buffers (not streamed through <audio> elements): that works the same in Safari, Chrome and the iOS app's
 // web view, where media-element sources from the app's own scheme can play silent.
 import { voiceKey, characterKey, spokenText } from './voicekey.js';
+import { setAudioSession, onAudioResume } from './native.js';
+
+// 0.1 s of silence (8 kHz, 8-bit mono WAV) for the silent-switch fallback.
+const SILENT_WAV = 'data:audio/wav;base64,UklGRkQDAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YSADAACAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA==';
 
 export function createAudio(getSettings) {
   let ctx = null, buses = null, roomTone = null, musicSrc = null, currentRegion = null, musicToken = 0;
-  let voiceSrc = null, voiceToken = 0;
+  let speaking = false;            // a voice line is playing or queued: music and effects duck
   // Decoded audio, most recently used last; voices are small, music tracks are kept while their region plays.
   const buffers = new Map(), MAX_BUFFERS = 40;
   async function buffer(url) {
@@ -23,37 +36,69 @@ export function createAudio(getSettings) {
     while (buffers.size > MAX_BUFFERS) buffers.delete(buffers.keys().next().value);
     return b;
   }
-  const manifests = { music: {}, voice: {}, cast: {} };
+  const manifests = { music: {}, voice: {}, cast: {}, loudness: {} };
   const vol = k => Math.max(0, Math.min(1, (getSettings()[k] ?? 70) / 100));
 
   fetch('audio/music/manifest.json').then(r => r.ok ? r.json() : {}).then(m => { manifests.music = m || {}; }).catch(() => {});
   fetch('audio/voice/manifest.json').then(r => r.ok ? r.json() : {}).then(m => { manifests.voice = m || {}; }).catch(() => {});
+  fetch('audio/voice/loudness.json').then(r => r.ok ? r.json() : {}).then(m => { manifests.loudness = m || {}; }).catch(() => {});
   fetch('audio/voice/cast.json').then(r => r.ok ? r.json() : {}).then(m => { manifests.cast = m || {}; }).catch(() => {});
 
   function ensure() {
     if (ctx) return ctx;
     const AC = window.AudioContext || window.webkitAudioContext;
     if (!AC) return null;
-    ctx = new AC();
-    const mk = v => { const g = ctx.createGain(); g.gain.value = v; g.connect(ctx.destination); return g; };
-    buses = { music: mk(vol('music') * 0.6), sfx: mk(vol('sfx')), voice: mk(vol('voice')) };
+    ctx = new AC({ latencyHint: 'playback' });
+    // master: limiter → speakers. voice: compressor → master. music, sfx → master.
+    const limiter = ctx.createDynamicsCompressor();
+    limiter.threshold.value = -3; limiter.knee.value = 0; limiter.ratio.value = 20; limiter.attack.value = 0.003; limiter.release.value = 0.15;
+    limiter.connect(ctx.destination);
+    const master = ctx.createGain(); master.gain.value = 1; master.connect(limiter);
+    const voiceComp = ctx.createDynamicsCompressor();
+    voiceComp.threshold.value = -22; voiceComp.knee.value = 8; voiceComp.ratio.value = 3; voiceComp.attack.value = 0.005; voiceComp.release.value = 0.2;
+    const voiceMakeup = ctx.createGain(); voiceMakeup.gain.value = 1.6;          // about +4 dB after the compressor
+    voiceComp.connect(voiceMakeup); voiceMakeup.connect(master);
+    const mk = (v, to) => { const g = ctx.createGain(); g.gain.value = v; g.connect(to); return g; };
+    buses = { music: mk(vol('music') * 0.55, master), sfx: mk(vol('sfx') * 0.9, master), voice: mk(vol('voice'), voiceComp) };
+    ctx.onstatechange = () => { if (ctx.state !== 'running') needsResume = true; };
     return ctx;
   }
-  // Browsers (and iOS) only start audio after a tap.
+  let needsResume = false;
+  // ── The iPhone silent switch ───────────────────────────────────────────────────────────────────────
+  let silentEl = null, lastSession = null;
+  function applySession() {
+    const play = getSettings().onSilent !== false;
+    if (play !== lastSession) { lastSession = play; setAudioSession(play); }   // the iOS app: AVAudioSession, see AppDelegate.swift
+    try { if (navigator.audioSession) navigator.audioSession.type = play ? 'playback' : 'ambient'; } catch { /* not supported */ }
+    // Older WebKit: a looping silent media element puts the page in the playback category.
+    if (!navigator.audioSession && play && !silentEl) {
+      silentEl = new Audio(SILENT_WAV); silentEl.loop = true; silentEl.setAttribute('playsinline', ''); silentEl.volume = 0.01;
+      silentEl.play().catch(() => { silentEl = null; });
+    } else if ((!play || navigator.audioSession) && silentEl) { silentEl.pause(); silentEl = null; }
+  }
+  // Browsers (and iOS) only start audio after a tap; iOS also suspends or "interrupts" it after a call, Siri,
+  // the app going to the background, or headphones changing. Every tap and every return brings it back.
   function unlock() {
     if (!ensure()) return;
-    if (ctx.state === 'suspended') ctx.resume().catch(() => {});
+    applySession();
+    if (ctx.state !== 'running') ctx.resume().then(() => { needsResume = false; pump(); }).catch(() => {});
     if (currentRegion && !musicSrc && !roomTone) startMusic(currentRegion);
   }
   addEventListener('pointerdown', unlock, { capture: true });
+  addEventListener('touchend', unlock, { capture: true });
   addEventListener('keydown', unlock, { capture: true });
-  document.addEventListener('visibilitychange', () => { if (!ctx) return; if (document.hidden) ctx.suspend().catch(() => {}); else ctx.resume().catch(() => {}); });
+  const wake = () => { if (!ctx) return; if (document.hidden) ctx.suspend().catch(() => {}); else { applySession(); ctx.resume().then(pump).catch(() => {}); } };
+  document.addEventListener('visibilitychange', wake);
+  addEventListener('pageshow', wake);
+  addEventListener('focus', wake);
+  onAudioResume(() => { if (ctx) ctx.resume().then(pump).catch(() => {}); });
+  navigator.mediaDevices?.addEventListener?.('devicechange', () => { if (ctx) ctx.resume().catch(() => {}); });
 
   function setVolumes() {
     if (!ctx) return;
     const t = ctx.currentTime;
-    buses.music.gain.setTargetAtTime(vol('music') * 0.6 * (speaking ? 0.35 : 1), t, 0.05);
-    buses.sfx.gain.setTargetAtTime(vol('sfx'), t, 0.05);
+    buses.music.gain.setTargetAtTime(vol('music') * 0.55 * (speaking ? 0.3 : 1), t, 0.08);
+    buses.sfx.gain.setTargetAtTime(vol('sfx') * 0.9 * (speaking ? 0.6 : 1), t, 0.08);
     buses.voice.gain.setTargetAtTime(vol('voice'), t, 0.05);
   }
 
@@ -140,37 +185,96 @@ export function createAudio(getSettings) {
     else if (kind === 'clue') { note(hz(76), t, 0.5, 0.06); note(hz(83), t + 0.07, 0.6, 0.05); }
   }
 
-  // ── Voices ──────────────────────────────────────────────────────────────────────────────────────────
-  let speaking = false;
+  // ── Voices: one queue ─────────────────────────────────────────────────────────────────────────────
+  const queue = [];                 // { url, resolve, tag }
+  let current = null;               // { src, resolve, tag }
+  let gapUntil = 0;
+  const GAP = 350;                  // ms of breath between two lines
   function hasVoice(speaker, text) { return !!manifests.voice[voiceKey(speaker, text)]; }
-  function speak(speaker, text) {
+  // speak(speaker, text, { now, tag }) → Promise<true if heard in full, false if not recorded, muted or stopped>
+  //   tag:  who started the line ('person', 'phone', 'note3', 'verdict'…); stopVoice(tag) stops only those.
+  //   now:  the player tapped for this line (asked a question, pressed ▶). It replaces any line with the SAME
+  //         tag (their tap is the skip) and goes to the front of the queue, but a line from someone else that
+  //         is already playing finishes first. Nothing is ever cut off by a line the player didn't ask for.
+  function speak(speaker, text, { now = false, tag = 'any' } = {}) {
     const file = manifests.voice[voiceKey(speaker, text)];
-    if (!file || !ensure() || ctx.state !== 'running' || vol('voice') === 0) return Promise.resolve(false);
-    stopVoice();
-    const token = ++voiceToken;
-    return buffer(`audio/voice/${file}`).then(b => new Promise(resolve => {
-      if (token !== voiceToken) return resolve(false);
-      const src = ctx.createBufferSource(); src.buffer = b; src.connect(buses.voice);
-      voiceSrc = { src, resolve };
+    if (!file || !ensure() || vol('voice') === 0) return Promise.resolve(false);
+    return new Promise(resolve => {
+      const job = { url: `audio/voice/${file}`, gain: manifests.loudness[file] || 0, resolve, tag };
+      if (now) { stopVoice(tag); queue.unshift(job); }
+      else queue.push(job);
       speaking = true; setVolumes();
-      src.onended = () => { if (voiceSrc?.src === src) { voiceSrc = null; speaking = false; setVolumes(); } resolve(true); };
-      src.start();
-    })).catch(() => { speaking = false; setVolumes(); return false; });
+      pump();
+    });
   }
-  // Stopping a line counts as "not said": whoever waits on it (a voice-note, a call) moves on at reading pace.
-  function stopVoice() {
-    voiceToken++;
-    if (voiceSrc) { const { src, resolve } = voiceSrc; voiceSrc = null; src.onended = null; try { src.stop(); } catch { /* not started */ } speaking = false; setVolumes(); resolve(false); }
+  async function pump() {
+    if (current || !queue.length || !ctx) { if (!current && !queue.length && speaking) { speaking = false; setVolumes(); } return; }
+    if (ctx.state !== 'running') return;                     // resumes on the next tap or return to the app
+    const wait = gapUntil - performance.now();
+    if (wait > 0) { setTimeout(pump, wait); return; }
+    const job = queue.shift();
+    current = { job, src: null };
+    let b;
+    try { b = await buffer(job.url); } catch { b = null; }
+    if (current?.job !== job) return;                         // stopped while loading
+    if (!b) { current = null; job.resolve(false); pump(); return; }
+    const src = ctx.createBufferSource(); src.buffer = b;
+    // Each line's own level (loudness.json, -16 LUFS); 0 dB when the build already baked it in.
+    if (job.gain) { const g = ctx.createGain(); g.gain.value = Math.pow(10, job.gain / 20); src.connect(g); g.connect(buses.voice); }
+    else src.connect(buses.voice);
+    current.src = src;
+    speaking = true; setVolumes();
+    const rec = log && { tag: job.tag, url: job.url, start: performance.now(), end: null };
+    if (rec) log.push(rec);
+    const stopRec = () => { if (rec && rec.end == null) rec.end = performance.now(); };
+    current.stopRec = stopRec;
+    src.onended = () => {
+      stopRec();
+      if (current?.src !== src) return;
+      current = null; speaking = !!queue.length; setVolumes();
+      gapUntil = performance.now() + GAP;
+      job.resolve(true); pump();
+    };
+    src.start();
   }
+  function stopCurrent() {
+    if (!current) return;
+    const { job, src, stopRec } = current; current = null;
+    stopRec?.();
+    if (src) { src.onended = null; try { src.stop(); } catch { /* not started */ } }
+    job.resolve(false);
+  }
+  // stopVoice(): stop everything. stopVoice('tag'): stop only that tag's line and its queued lines.
+  function stopVoice(tag) {
+    for (let i = queue.length - 1; i >= 0; i--) if (!tag || queue[i].tag === tag) queue.splice(i, 1)[0].resolve(false);
+    if (current && (!tag || current.job.tag === tag)) { stopCurrent(); gapUntil = 0; }
+    speaking = !!(current || queue.length); setVolumes();
+    pump();
+  }
+  const isSpeaking = () => !!current;
+  // Tests: window.__kesiAudioLog = [] before boot records every line's start and end (tests/ui-sound.mjs).
+  const log = typeof window !== 'undefined' && Array.isArray(window.__kesiAudioLog) ? window.__kesiAudioLog : null;
+
   // A character's line: only the words they say out loud (narration in an intro is never voiced).
   // "I don't know" answers belong to the voice, not the character, and are recorded once per voice.
-  function character(caseNo, personId, kind, text, { generic = false } = {}) {
+  function character(caseNo, personId, kind, text, { generic = false, now = true, tag = 'person' } = {}) {
     const key = characterKey(caseNo, personId);
-    if (generic) { const slot = manifests.cast[key]; return slot ? speak(slot, text) : Promise.resolve(false); }
+    if (generic) { const slot = manifests.cast[key]; return slot ? speak(slot, text, { now, tag }) : Promise.resolve(false); }
     const said = spokenText(kind, text);
-    return said ? speak(key, said) : Promise.resolve(false);
+    return said ? speak(key, said, { now, tag }) : Promise.resolve(false);
+  }
+  // Settings → Test sound: a cue on effects, four seconds of music, then a recorded line if there is one.
+  async function test() {
+    unlock(); if (!ctx) return { ok: false, why: 'This browser has no Web Audio.' };
+    await ctx.resume().catch(() => {});
+    sfx('accepted');
+    if (!musicSrc && !roomTone) { const region = currentRegion || 1; currentRegion = null; music(region); }
+    const key = Object.keys(manifests.voice).find(k => k.startsWith('mwalimu/'));
+    let voiced = false;
+    if (key) { const file = manifests.voice[key]; stopVoice('test'); voiced = await new Promise(resolve => { queue.unshift({ url: `audio/voice/${file}`, gain: manifests.loudness[file] || 0, resolve, tag: 'test' }); pump(); }); }
+    return { ok: ctx.state === 'running', voiced, state: ctx.state };
   }
   function hasCharacter(caseNo, personId, kind, text) { const said = spokenText(kind, text); return !!said && hasVoice(characterKey(caseNo, personId), said); }
 
-  return { character, hasCharacter, unlock, music, stopMusic, sfx, speak, stopVoice, hasVoice, setVolumes, get running() { return ctx?.state === 'running'; } };
+  return { character, hasCharacter, unlock, music, stopMusic, sfx, speak, stopVoice, hasVoice, isSpeaking, setVolumes, applySession, test, get running() { return ctx?.state === 'running'; } };
 }

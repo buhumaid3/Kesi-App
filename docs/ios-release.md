@@ -11,7 +11,8 @@ The app is the same web game wrapped in a native iOS shell by **Capacitor 8**. *
 | `assets/icon-only.png`, `splash*.png` | App icon (1024, no transparency) and launch screens, drawn by `tools/icon.html` |
 | `tools/build.mjs` | `npm run build`: www → dist, voices re-encoded to 32 kbit/s (about 160 MB → 90 MB) |
 | `codemagic.yaml` | The cloud build: checks, build, sign, upload to TestFlight |
-| `www/engine/native.js` | Save kept in iOS Preferences, splash, status bar, haptics. Does nothing in a browser. |
+| `www/engine/native.js` | Save kept in iOS Preferences, splash, status bar, haptics, audio session. Does nothing in a browser. |
+| `ios/App/App/AppDelegate.swift` | `AudioSessionPlugin`: AVAudioSession `.playback` (plays with the silent switch on) or `.ambient`, set from Settings; tells the game when a call or Siri ends or headphones change. Registered by `KesiViewController` (used in `SceneDelegate.swift`). |
 
 To change the bundle ID, edit it in **two places**: `capacitor.config.json` (`appId`) and `codemagic.yaml` (`bundle_identifier`). Then run `npx cap sync ios`. Do this before step 2 below; after the app exists in App Store Connect, its bundle ID can't change.
 

@@ -20,7 +20,10 @@
     "images:audit": "node tools/images-audit.mjs",
     "images:check": "node tools/images-audit.mjs --region 1 --gaps",
     "images:briefs": "node tools/apply-briefs.mjs",
-    "test:images": "node tests/ui-images.mjs http://127.0.0.1:5173"
+    "test:images": "node tests/ui-images.mjs http://127.0.0.1:5173",
+    "voices:loudness": "node tools/voice-loudness.mjs",
+    "splash": "node tools/make-splash.mjs",
+    "test:b8": "node tests/ui-b8.mjs http://127.0.0.1:5173"
   },
   "engines": {
     "node": ">=22"
