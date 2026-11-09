@@ -30,8 +30,12 @@ export function createAudio(getSettings) {
   const buffers = new Map(), MAX_BUFFERS = 40;
   async function buffer(url) {
     if (buffers.has(url)) { const b = buffers.get(url); buffers.delete(url); buffers.set(url, b); return b; }
-    const r = await fetch(url); if (!r.ok) throw new Error(`${url}: ${r.status}`);
+    // In the iOS app, Capacitor serves audio files (.m4a, .mp3, .wav…) with a plain, non-HTTP response, so
+    // fetch() reports status 0 even though the whole file arrived. Status 0 with data is a success there.
+    const r = await fetch(url);
+    if (!r.ok && r.status !== 0) throw new Error(`${url}: ${r.status}`);
     const data = await r.arrayBuffer();
+    if (!data.byteLength) throw new Error(`${url}: empty`);
     const b = await new Promise((res, rej) => { const p = ctx.decodeAudioData(data, res, rej); if (p?.then) p.then(res, rej); });
     buffers.set(url, b);
     while (buffers.size > MAX_BUFFERS) buffers.delete(buffers.keys().next().value);
