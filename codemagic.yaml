@@ -63,7 +63,7 @@ workflows:
     publishing:
       app_store_connect:
         auth: integration
-        submit_to_testflight: true      # internal testers get it as soon as Apple finishes processing
+        submit_to_testflight: false     # internal testers get it as soon as Apple finishes processing
         # beta_groups:                  # external testers: create a group in TestFlight, then list it here
         #   - Kesi playtest
         submit_to_app_store: false
