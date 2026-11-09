@@ -69,5 +69,6 @@ fs.writeFileSync(path.join(out, 'build.json'), JSON.stringify({ version: pkg.ver
 const mb = b => (b / 1048576).toFixed(1);
 console.log(`dist/: ${files} files, ${mb(bytesOut)} MB (www/ was ${mb(bytesIn)} MB).`);
 if (encoder) console.log(`Voices: ${voices} lines at 32 kbit/s with ${encoder} (${encoded} encoded, ${cached} from cache)${bake ? `, ${Object.keys(gains).length} levelled to -16 LUFS` : ', levelled as they play (loudness.json)'}.`);
+else if (fast) console.log('Voices: copied as recorded (--fast), levelled as they play (loudness.json).');
+else console.log('No ffmpeg or afconvert found: voices copied as recorded.');
 if (!Object.keys(gains).length) console.log('Voices are not levelled yet: run  npm run voices:loudness  (needs ffmpeg) and commit www/audio/voice/loudness.json.');
-else if (!fast) console.log('No ffmpeg or afconvert found: voices copied as recorded. On a Mac, afconvert is built in.');

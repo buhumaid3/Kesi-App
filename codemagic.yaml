@@ -7,7 +7,10 @@
 #   4. Codemagic → Team settings → Integrations → Developer Portal → Manage keys: add that key and name it
 #      exactly  kesi_asc  (the name used below).
 #   5. Codemagic → add the GitHub repo → it finds this file → Start new build → workflow "iOS to TestFlight".
-# Codemagic creates the signing certificate and provisioning profile itself (ios_signing below).
+# Signing (one time, by you): Codemagic → Settings → codemagic.yaml settings → Code signing identities:
+#   iOS certificates → Generate certificate (Apple Distribution, key kesi_asc); then in the Apple Developer
+#   portal make an App Store profile for com.buhumaid.kesi with that certificate; then iOS provisioning
+#   profiles → Fetch profiles → download it. ios_signing below only uses files already added there.
 workflows:
   ios-testflight:
     name: iOS to TestFlight
@@ -35,8 +38,10 @@ workflows:
           npm test
       - name: Every region 1 picture is there
         script: npm run images:check
-      - name: Build the web bundle (voices re-encoded small with afconvert)
-        script: npm run build
+      - name: Build the web bundle
+        # --fast: the voice files go in exactly as recorded (the same files the browser plays). The Mac's
+        # afconvert re-encode made voices silent in TestFlight 0.8.1, so it is off until it's proven on a device.
+        script: npm run build -- --fast
       - name: Copy it into the iOS project
         script: npx cap sync ios
       - name: Version and build number

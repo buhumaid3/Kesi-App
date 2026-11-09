@@ -25,6 +25,7 @@ const SILENT_WAV = 'data:audio/wav;base64,UklGRkQDAABXQVZFZm10IBAAAAABAAEAQB8AAE
 export function createAudio(getSettings) {
   let ctx = null, buses = null, roomTone = null, musicSrc = null, currentRegion = null, musicToken = 0;
   let speaking = false;            // a voice line is playing or queued: music and effects duck
+  let lastError = '';              // the last voice file that failed to load or decode (Settings → Test sound)
   // Decoded audio, most recently used last; voices are small, music tracks are kept while their region plays.
   const buffers = new Map(), MAX_BUFFERS = 40;
   async function buffer(url) {
@@ -215,7 +216,7 @@ export function createAudio(getSettings) {
     const job = queue.shift();
     current = { job, src: null };
     let b;
-    try { b = await buffer(job.url); } catch { b = null; }
+    try { b = await buffer(job.url); } catch (e) { b = null; lastError = `${job.url.split('/').slice(-2).join('/')}: ${e?.message || e?.name || e}`; }
     if (current?.job !== job) return;                         // stopped while loading
     if (!b) { current = null; job.resolve(false); pump(); return; }
     const src = ctx.createBufferSource(); src.buffer = b;
@@ -272,7 +273,7 @@ export function createAudio(getSettings) {
     const key = Object.keys(manifests.voice).find(k => k.startsWith('mwalimu/'));
     let voiced = false;
     if (key) { const file = manifests.voice[key]; stopVoice('test'); voiced = await new Promise(resolve => { queue.unshift({ url: `audio/voice/${file}`, gain: manifests.loudness[file] || 0, resolve, tag: 'test' }); pump(); }); }
-    return { ok: ctx.state === 'running', voiced, state: ctx.state };
+    return { ok: ctx.state === 'running', voiced, state: ctx.state, lines: Object.keys(manifests.voice).length, error: lastError };
   }
   function hasCharacter(caseNo, personId, kind, text) { const said = spokenText(kind, text); return !!said && hasVoice(characterKey(caseNo, personId), said); }
 

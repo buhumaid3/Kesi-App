@@ -1034,10 +1034,11 @@ function soundTest() {
     const notes = [];
     if (!r.ok) notes.push('Sound is blocked. Tap anywhere on the page, then try again.');
     if (muted.length) notes.push(`${muted.join(', ')} ${muted.length > 1 ? 'are' : 'is'} turned down to 0 above.`);
-    if (!r.voiced && s.voice) notes.push('No recorded line was found to play.');
+    if (!r.voiced && s.voice) notes.push(r.error ? `The voice didn't play (${r.error}).` : r.lines ? 'The voice didn\'t play.' : 'No recorded lines were found in this build.');
+    notes.push(`[sound ${r.state} · ${r.lines || 0} lines${isNative ? ' · app' : ''}]`);
     if (hasSilentSwitch() && s.onSilent === false) notes.push('The ring/silent switch mutes the game while "Play sound when the phone is on silent" is off.');
     if (!isNative && isIOS() && !('audioSession' in navigator)) notes.push('On this iPhone browser the ring/silent switch can mute the game: if you heard nothing, check the switch and the volume buttons.');
-    out.textContent = notes.length ? notes.join(' ') : 'You should have heard all three. If not, turn the device volume up.';
+    out.textContent = notes.length > 1 ? notes.join(' ') : `You should have heard all three. If not, turn the device volume up. ${notes.join(' ')}`;
     btn.disabled = false;
   } }, 'Play');
   return h('div', { class: 'set-test' }, btn, out);
