@@ -27,6 +27,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
+import { TITLE_LINE } from '../www/engine/title.js';
 import { voiceKey } from '../www/engine/voicekey.js';
 import { buildCast, characterLines, loadCases } from './voice-cast.mjs';
 import { GENERIC_REPLIES } from '../www/engine/state.js';
@@ -97,6 +98,7 @@ function compileLines(region) {
     for (const [beat, d] of Object.entries(coach.beats || {})) add('mwalimu', d.line, `tip ${beat}`);
     for (const [t, line] of Object.entries(coach.core || {})) add('mwalimu', line, `tip ${t}`);
     add('mwalimu', coach.hintOffer, 'hint offer');
+    add('mwalimu', TITLE_LINE, 'title sequence');
   }
   const castMap = readJSON(P('www/audio/voice/cast.json'), {});
   const slotsUsed = new Set();

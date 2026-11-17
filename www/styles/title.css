@@ -36,7 +36,7 @@
   radial-gradient(70vmax 52vmax at 34% 26%, rgba(246,198,107,.42), rgba(246,198,107,.08) 45%, transparent 70%),
   repeating-linear-gradient(97deg, rgba(0,0,0,.08) 0 2px, transparent 2px 9px, rgba(255,255,255,.015) 9px 10px, transparent 10px 23px),
   linear-gradient(160deg, #3d2b1f, #2a1d15 45%, #1a110c); }
-.tf-lamp { position: absolute; left: 34%; top: 26%; width: 2px; height: 2px; box-shadow: 0 0 22vmin 14vmin rgba(255,214,140,.10); }
+.tf-lamp { display: none; }
 /* Sized against the larger screen side, like iOS fills the square splash: the folder is the same size on the
    splash and on the sequence's first frame, and stays inside the part of the splash every device shows. */
 .tf-folder { container-type: inline-size; position: absolute; left: 50%; top: 52%; width: min(40vmax, 84vw); aspect-ratio: 62 / 46; transform: translate(-50%, -50%) rotate(-7deg); filter: drop-shadow(0 3vmin 3vmin rgba(0,0,0,.55)) drop-shadow(0 .6vmin .8vmin rgba(0,0,0,.4)); }

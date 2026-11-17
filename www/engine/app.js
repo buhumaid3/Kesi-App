@@ -4,6 +4,7 @@
 import { CaseRun, groupFacts, timeRows, genericReply } from './state.js';
 import { load, persist, wipe, defaultSave, restore } from './store.js';
 import { appReady, haptic, isNative } from './native.js';
+import { createTitle } from './title.js';
 import { h, $, $$, put, clearNotices, ask, openSheet, closeSheet, closeAllSheets, rebuildSheets, sheetOpen, voiceNote, toast, popover, typewrite, makeSound, stamp, reducedMotion } from './ui.js';
 import { esc, pad3, tilt, makeGlossary, shortFact } from './text.js';
 import { renderEvidence, photo, zoomPhoto, imgPath } from './docs.js';
@@ -36,11 +37,29 @@ async function boot() {
   if (q.has('reset')) { wipe(); K.save = defaultSave(); }
   if (q.has('playtest')) { K.save.settings.playtest = true; K.save.progress.prologue = true; }
   if (q.get('case')) return openCase(+q.get('case'));
+  // Automated test browsers skip it (they test it on purpose with ?title, see tests/ui-title.mjs).
+  const auto = navigator.webdriver && !q.has('title');
+  if (K.save.settings.titleSeq !== false && !auto && !q.has('notitle') && !q.has('playtest')) await playTitle();
   if (!K.save.progress.prologue) return showPrologue();
   // Quit anywhere, come back to exactly that place (§2.1).
   const lc = K.save.progress.lastCase;
   if (lc && K.save.cases[lc] && !K.save.cases[lc].solved && lc <= unlockedTo()) return openCase(lc);
   showCabinet();
+}
+// The title sequence (title.js): in full the first time, shorter after, a tap skips it, a still frame with Reduce
+// Motion. The app's splash is the sequence's first frame, so it is hidden as soon as the sequence is on screen.
+// Sound starts with it where the device allows (the iOS app does); in a browser it stays silent until a tap.
+function playTitle() {
+  const short = !!K.save.progress.titleSeen;
+  return new Promise(resolve => {
+    createTitle(document.body, {
+      short, reduced: K.reduced(),
+      sound: kind => K.sound(kind),
+      speak: (sp, line) => K.audio.speak(sp, line, { tag: 'title' }),
+      onDone: skipped => { if (skipped) K.audio.stopVoice('title'); K.save.progress.titleSeen = true; save(); resolve(); },
+    });
+    appReady();
+  });
 }
 async function fetchJSON(url) { const r = await fetch(url); if (!r.ok) throw new Error(`${url}: ${r.status}`); return r.json(); }
 async function getCase(n) {
@@ -1067,6 +1086,7 @@ function showSettings() {
       slider('voice', 'Voices', 'Mwalimu, Halima and everyone you question, where their lines are recorded. Every line is always on screen too.'),
       hasSilentSwitch() ? row('Play sound when the phone is on silent', toggle('onSilent', () => K.audio.applySession()), 'On: voices and music play even with the ring/silent switch on. Off: the switch mutes the game.') : null,
       row('Test sound', soundTest(), 'Plays a cue, a few seconds of music and a line of Mwalimu\'s.'),
+      row('Title sequence', toggle('titleSeq'), 'The title when the app opens: in full the first time, shorter after. Tap it to skip.'),
       row('Case intros', h('div', { class: 'seg' }, [['first', 'First time'], ['always', 'Always'], ['off', 'Off']].map(([v, l]) => h('button', { class: `seg-b ${s.intros === v ? 'is-on' : ''}`, type: 'button', 'aria-pressed': String(s.intros === v), onclick: () => { s.intros = v; save(); entry.rebuild(); } }, l))), 'The short title sequence when a case opens.'),
       row('Mwalimu\'s tips', h('button', { class: 'btn', type: 'button', onclick: () => { const f = K.save.progress.flags; f.coach = {}; f.coachCore = {}; save(); toast('Tips will play again the next time each one comes up.'); } }, 'Replay'), 'The one-time tips for each new part of the job.'),
       row('Motion', h('div', { class: 'seg' }, [['system', 'System'], ['reduce', 'Reduce'], ['full', 'Full']].map(([v, l]) => h('button', { class: `seg-b ${s.motion === v ? 'is-on' : ''}`, type: 'button', 'aria-pressed': String(s.motion === v), onclick: () => { s.motion = v; applySettings(); save(); entry.rebuild(); } }, l))), 'Reduce follows iOS Reduce Motion by default.'),

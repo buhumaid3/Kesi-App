@@ -38,10 +38,10 @@ workflows:
           npm test
       - name: Every region 1 picture is there
         script: npm run images:check
-      - name: Build the web bundle
-        # --fast: the voice files go in exactly as recorded (the same files the browser plays). The Mac's
-        # afconvert re-encode made voices silent in TestFlight 0.8.1, so it is off until it's proven on a device.
-        script: npm run build -- --fast
+      - name: Build the web bundle (voices re-encoded small with the Mac's afconvert)
+        # If voices ever go silent in TestFlight again, check Settings → Test sound first; to ship the voices
+        # exactly as recorded instead, change this to:  npm run build -- --fast
+        script: npm run build
       - name: Copy it into the iOS project
         script: npx cap sync ios
       - name: Version and build number
@@ -63,7 +63,7 @@ workflows:
     publishing:
       app_store_connect:
         auth: integration
-        submit_to_testflight: false     # internal testers get it as soon as Apple finishes processing
+        submit_to_testflight: true      # internal testers get it as soon as Apple finishes processing
         # beta_groups:                  # external testers: create a group in TestFlight, then list it here
         #   - Kesi playtest
         submit_to_app_store: false

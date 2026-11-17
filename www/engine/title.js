@@ -87,10 +87,10 @@ export function createTitle(root, { short = false, reduced = false, still = null
   // Sounds fire once when their moment passes (never while showing a still).
   const cues = [...T.keys.map(k => [k, () => sound('key')]), [T.stamp, () => sound('stamp')], [T.stamp + 0.05, () => sound('closed')], [T.line, () => speak('mwalimu', TITLE_LINE)]];
   let raf = 0, t0 = 0, done = false, fired = 0;
-  function finish() {
+  function finish(skipped = false) {
     if (done) return; done = true; cancelAnimationFrame(raf);
     el.classList.add('is-out');
-    setTimeout(() => { el.remove(); onDone(); }, reduced ? 120 : 380);
+    setTimeout(() => { el.remove(); onDone(skipped); }, reduced ? 120 : 380);
   }
   function loop(now) {
     const t = (now - t0) / 1000;
@@ -99,8 +99,8 @@ export function createTitle(root, { short = false, reduced = false, still = null
     if (t >= T.end) return finish();
     raf = requestAnimationFrame(loop);
   }
-  el.addEventListener('click', finish);
-  el.addEventListener('keydown', e => { if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') finish(); });
+  el.addEventListener('click', () => finish(true));
+  el.addEventListener('keydown', e => { if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') finish(true); });
   const start = () => {
     if (still != null) { render(still); return; }
     if (reduced) { render(0); setTimeout(finish, 2600); return; }
