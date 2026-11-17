@@ -182,8 +182,7 @@ async function fetchJobs() {
       fs.renameSync(part, outFile);
     }
     console.log(`  ${(fs.statSync(outFile).size / 1048576).toFixed(0)} MB of results; saving images…`);
-    const readline = await import('node:readline');
-    const rl = readline.createInterface({ input: fs.createReadStream(outFile, { encoding: 'utf8', highWaterMark: 1 << 20 }), crlfDelay: Infinity });
+    const rl = jsonLines(outFile);
     // Google: responses are written in the same order as the requests. Use the key when present, the order when not.
     // Resumable: an image already saved (status done) is skipped, and progress is saved every 25 images.
     let ok = 0, bad = 0, skipped = 0, i = -1, n = 0;
@@ -308,4 +307,27 @@ switch (cmd) {
   case 'review': review(); break;
   case 'report': report(); break;
   default: console.log(fs.readFileSync(new URL(import.meta.url), 'utf8').split('\n').slice(0, 20).join('\n'));
+}
+
+// One line of a JSONL file at a time, read only when the previous line has been dealt with. (Node's readline
+// keeps reading ahead while each image is saved, so on a 7 GB batch it queues gigabytes of lines and runs
+// out of memory; reading the file ourselves, synchronously, never holds more than one line.)
+function* jsonLines(file) {
+  const fd = fs.openSync(file, 'r');
+  const buf = Buffer.allocUnsafe(8 << 20);
+  let parts = [];
+  try {
+    for (;;) {
+      const n = fs.readSync(fd, buf, 0, buf.length, null);
+      if (!n) break;
+      let start = 0;
+      for (let i = buf.indexOf(10, 0); i !== -1 && i < n; i = buf.indexOf(10, start)) {
+        parts.push(Buffer.from(buf.subarray(start, i)));
+        yield Buffer.concat(parts).toString('utf8');
+        parts = []; start = i + 1;
+      }
+      if (start < n) parts.push(Buffer.from(buf.subarray(start, n)));
+    }
+    if (parts.length) yield Buffer.concat(parts).toString('utf8');
+  } finally { fs.closeSync(fd); }
 }
