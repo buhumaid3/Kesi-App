@@ -19,7 +19,8 @@ export function genericReply(pid, about) {
 export function emptySave() {
   return { kF: [], kE: [], kL: [], kP: [], visited: [], talked: [], asked: [], tapped: [], seenFacts: [], seenEvidence: [],
     log: [], charge: {}, passed: [], wrong: 0, hints: {}, hintLog: [], tut: [], pinned: [], board: null, view: null,
-    credibility: 5, solved: false, startedAt: Date.now() };
+    credibility: 5, solved: false, startedAt: Date.now(),
+    broken: [], greyed: [], tried: [], served: [], superior: false };
 }
 
 export class CaseRun {
@@ -32,6 +33,10 @@ export class CaseRun {
     for (const k of ['people', 'locations', 'evidence', 'facts', 'words', 'places']) for (const x of c[k] || []) this.byId.set(x.id, x);
     this.interrogation = new Map((c.interrogations || []).map(i => [i.person, i]));
     this.blanks = c.chargeSheet.groups.flatMap(g => g.blanks.map(b => ({ ...b, group: g.id })));
+    this.contradictions = c.contradictions || [];
+    this.claimOwner = new Map();
+    for (const it of c.interrogations || []) for (const cl of [...(it.claims || []), ...(it.laterClaims || []).map(l => l.claim)]) this.claimOwner.set(cl, it.person);
+    this.pins = ctx.patternPins || new Set();
     const s = { ...emptySave(), ...(saved || {}) };
     this.s = s;
     for (const k of ['kF', 'kE', 'kL', 'kP', 'visited', 'talked', 'asked', 'tapped', 'seenFacts', 'seenEvidence', 'passed', 'tut'])
@@ -79,10 +84,70 @@ export class CaseRun {
   collect(evId, src) {
     const e = this.byId.get(evId);
     if (!e || this.kE.has(evId)) return { evidence: null, facts: [] };
-    if (e.gate) return { evidence: null, facts: [], gated: e.gate };   // gates arrive in region 2
+    if (e.gate && !this.s.served.includes(evId)) return { evidence: null, facts: [], gated: this.gateInfo(evId) };
     this.kE.add(evId);
     const facts = (e.facts || []).filter(f => this._addFact(f, src || evId));
     return { evidence: evId, facts };
+  }
+
+  // ── Warrants (region 2) and records requests (region 3) ──────────────────────────────────────────────
+  // A gated card needs paperwork: a search warrant for a hotspot in a search location, a court order for
+  // phone and mobile-money records. The form can only be filed once one of its grounds is known; it costs
+  // credibility stamps. With no stamps left the case isn't lost: Mwalimu signs it instead and
+  // the case can earn one star at most (§2.5, no softlocks).
+  gateInfo(evId) {
+    const e = this.byId.get(evId); if (!e?.gate) return null;
+    const grounds = e.gate.grounds || [];
+    return { id: evId, action: e.gate.action, cost: e.gate.cost ?? 1, grounds, ready: !grounds.length || grounds.some(g => this.kF.has(g)),
+      served: this.s.served.includes(evId), title: e.title };
+  }
+  // Records requests need no place: their form is on the desk as soon as the grounds are known.
+  requests() {
+    return this.c.evidence.filter(e => e.gate?.action === 'records' && !this.kE.has(e.id)).map(e => this.gateInfo(e.id)).filter(g => g.ready);
+  }
+  file(evId, src) {
+    const g = this.gateInfo(evId);
+    if (!g || g.served || !g.ready) return null;
+    let superior = false;
+    if (this.s.credibility >= g.cost) this.s.credibility -= g.cost; else { this.s.credibility = 0; this.s.superior = superior = true; }
+    this.s.served.push(evId);
+    const got = this.collect(evId, src || g.action);
+    return { ...got, gate: g, superior, unlocked: this.refresh() };
+  }
+
+  // ── Pressing a claim (region 2) ───────────────────────────────────────────────────────────────────
+  // Pick a claim on someone's statement sheet and put a fact in front of them. If the fact is one of the
+  // contradiction's brokenBy, the claim breaks: the reaction, a stamp (implicates: red; explains: grey;
+  // mistaken: amber), and whatever it reveals. Linked claims (greys) collapse with it. A fact that doesn't
+  // contradict the claim costs a stamp, once per pairing (the same wrong pairing again is free).
+  claimState(fid) {
+    const k = this.contradictions.find(x => x.claim === fid && this.s.broken.includes(x.id));
+    if (k) return { state: 'broken', mark: k.mark, k };
+    if (this.s.greyed.includes(fid)) return { state: 'greyed', mark: 'explains' };
+    return null;
+  }
+  pressable(pid) { return this.claimsOf(pid).filter(f => !this.claimState(f)); }
+  pressOn() { return this.contradictions.length > 0; }
+  press(pid, claim, fid) {
+    if (this.claimOwner.get(claim) !== pid || !this.kF.has(claim) || !this.kF.has(fid) || this.claimState(claim)) return null;
+    const k = this.contradictions.find(x => x.claim === claim && x.brokenBy.includes(fid));
+    if (!k) {
+      const pair = claim + '|' + fid, again = this.s.tried.includes(pair);
+      let cost = 0;
+      if (!again) { this.s.tried.push(pair); if (this.credibilityOn() && this.s.credibility > 0) { this.s.credibility--; cost = 1; } this.s.badPress = (this.s.badPress || 0) + 1; }
+      return { ok: false, again, cost };
+    }
+    this.s.broken.push(k.id);
+    for (const g of k.greys || []) if (!this.s.greyed.includes(g)) this.s.greyed.push(g);
+    const facts = [], evidence = [];
+    for (const r of k.reveals || []) {
+      if (this.c.facts.some(f => f.id === r)) { if (this._addFact(r, pid)) facts.push(r); }
+      else { const g = this.collect(r, pid); if (g.evidence) { evidence.push(g.evidence); facts.push(...g.facts); } }
+    }
+    // A broken claim can let a later claim through (laterClaims with after: a revealed fact).
+    const it = this.interrogation.get(pid);
+    for (const lc of it?.laterClaims || []) if (this.kF.has(lc.after) && this._addFact(lc.claim, pid)) facts.push(lc.claim);
+    return { ok: true, k, mark: k.mark, reaction: k.reaction, facts, evidence, unlocked: this.refresh() };
   }
 
   // ── Places ─────────────────────────────────────────────────────────────────────────────────────
@@ -176,7 +241,9 @@ export class CaseRun {
 
   // ── Charge sheet ───────────────────────────────────────────────────────────────────────────────
   bank(category) {
-    return this.c.words.filter(w => w.category === category && (w.unlock?.start || (w.unlock?.anyOf || []).some(x => this.kF.has(x))));
+    // Pin words (SPINE groups) also need their pin on the Pattern File, i.e. found in an earlier case (rule 15).
+    return this.c.words.filter(w => w.category === category && (w.unlock?.start || (w.unlock?.anyOf || []).some(x => this.kF.has(x)))
+      && (!w.pin || this.pins.has(w.pin)));
   }
   blank(id) { return this.blanks.find(b => b.id === id); }
   options(blankId) {
@@ -241,7 +308,7 @@ export class CaseRun {
       out = { tier, blank: b.id, word: b.answer, line: `Put ${w?.text || 'that'} in the blank. Then make sure you can say why.` };
     }
     // Tier 2 facts the player hasn't found yet are pointed to by their card, never given away.
-    if (out.facts) out.missing = out.facts.filter(f => !this.kF.has(f));
+    if (out.facts) out.missing = out.facts.filter(f => !this.kF.has(f) && !this.pins.has(f));
     this.s.hintLog.push({ gid, tier, at: Date.now() });
     return out;
   }
@@ -250,7 +317,7 @@ export class CaseRun {
 
   stars() {
     const t = this.maxHintTier(), w = this.s.wrong, cred = this.credibilityOn() ? this.s.credibility : 5;
-    if (t >= 3 || w > 3 || cred <= 0) return 1;
+    if (t >= 3 || w > 3 || cred <= 0 || this.s.superior) return 1;
     if (t >= 1 || w >= 2) return 2;
     return 3;
   }
@@ -259,6 +326,7 @@ export class CaseRun {
     const parts = [];
     parts.push(w === 0 ? 'No returned sheets' : `${w} returned sheet${w > 1 ? 's' : ''}`);
     parts.push(t === 0 ? 'no calls to Mwalimu' : t === 3 ? 'Mwalimu gave you a name' : 'Mwalimu pointed the way');
+    if (this.s.superior) parts.push('Mwalimu had to sign your paperwork');
     return parts.join(', ');
   }
 

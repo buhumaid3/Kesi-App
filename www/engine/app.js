@@ -290,11 +290,13 @@ function deskNode({ opening = false, typing = false } = {}) {
     h('span', { class: 'folder-tab-big' }, m.folderTab),
     h('span', { class: 'received', 'aria-hidden': 'true' }, 'NAIROBI', h('br'), 'SCU', h('br'), (c.ob.date || '').split(' ').slice(1).join(' ').slice(0, 6).toUpperCase()),
     h('div', { class: 'folder-head' }, h('b', {}, c.ob.number), h('span', {}, `Case ${pad3(m.number)} · ${m.date || ''}`)),
+    run.credibilityOn() ? credStamps() : null,
     h('h1', { class: 'case-title' }, m.title),
     h('div', { class: 'ledger-strip ob' }, h('span', { class: 'ledger-t' }, c.ob.time), ledgerP, h('span', { class: 'ob-by' }, `Reported by ${c.ob.reportedBy}`)),
     section('Places', run.locations().map(l => h('button', { class: `visit-card ${run.visited.has(l.id) ? '' : 'is-new'}`, type: 'button', onclick: () => openLocation(l.id) },
       h('span', {}, run.visited.has(l.id) ? 'RETURN: ' : 'VISIT: ', h('b', {}, l.name.toUpperCase())), h('span', { class: 'arrow', 'aria-hidden': 'true' }, '→')))),
     section('People', h('div', { class: 'people-grid' }, run.people().filter(p => !p.statementOnly).map(personCard))),
+    paperworkSection(),
     run.kE.size ? section('Exhibits', h('div', { class: 'exhibits' }, [...run.kE].map((id, i) => exhibitTag(id, i + 1)))) : null,
     run.s.solved ? h('button', { class: 'card-btn', type: 'button', onclick: () => showVerdict(false) }, 'Read the verdict again', h('span', { class: 'arrow' }, '→')) : null);
   const top = h('header', { class: 'topbar' },
@@ -313,6 +315,43 @@ function showDesk(first = false) {
     run.s.obTyped = true; ledgerP.innerHTML = K.gloss.rich(run.c.ob.text, { inline: K.save.settings.inlineGloss }); save();
   });
 }
+// ── Credibility (§2.5): the stamps on the folder ─────────────────────────────────────────────────────
+function credStamps({ small = false } = {}) {
+  const run = K.run, n = run.s.credibility;
+  return h('div', { class: `cred ${small ? 'cred--small' : ''} ${run.s.superior ? 'is-superior' : ''}`, role: 'img', 'aria-label': `Credibility: ${n} of 5 stamps${run.s.superior ? '. Mwalimu is signing your paperwork' : ''}` },
+    h('span', { class: 'cred-l' }, 'Credibility'),
+    h('span', { class: 'cred-row', 'aria-hidden': 'true' }, [0, 1, 2, 3, 4].map(i => h('span', { class: `cred-s ${i < n ? 'is-on' : ''}` }))),
+    !small ? h('button', { class: 'link tiny', type: 'button', onclick: e => popover(e.currentTarget, 'Credibility', 'Five stamps per case. A warrant or a court order costs one; so does pressing someone with a fact that doesn\'t contradict them, and every returned charge sheet. At zero the case goes on: Mwalimu signs your paperwork, and the case can earn one star.') }, 'What is this?') : null);
+}
+// Warrants and court orders (§2.5). A records request needs no place: its form waits on the folder once you have grounds.
+function paperworkSection() {
+  const run = K.run, reqs = run.requests();
+  if (!reqs.length) return null;
+  coach('requests');
+  return section('Court orders', h('p', { class: 'hand dim' }, 'You have grounds to ask a magistrate for these.'), reqs.map(g => paperwork(g)));
+}
+function paperwork(g, { src = null, onDone = null } = {}) {
+  const run = K.run;
+  const kind = g.action === 'warrant' ? 'Search warrant' : 'Court order for records';
+  const ground = g.grounds.map(id => run.byId.get(id)).find(f => f && run.kF.has(f.id));
+  const noStamps = run.s.credibility < g.cost;
+  return h('div', { class: `paper-form ${g.ready ? '' : 'is-waiting'}` },
+    h('span', { class: 'pf-kind' }, kind),
+    h('b', { class: 'pf-title' }, g.title),
+    g.ready
+      ? h('p', { class: 'pf-grounds' }, h('span', { class: 'doc-k' }, 'Grounds'), h('span', { html: K.gloss.rich(ground?.text || '') }))
+      : h('p', { class: 'pf-grounds hand dim' }, g.action === 'warrant' ? 'No grounds yet. A magistrate needs a reason to let you search here: something you know that points to it.' : 'No grounds yet.'),
+    g.ready ? h('button', { class: 'btn btn--primary', type: 'button', onclick: async () => {
+      if (noStamps && !(await ask({ title: 'No credibility left', text: 'Mwalimu will sign it for you. The case can then earn one star at most.', ok: 'Ask Mwalimu' }))) return;
+      const r = run.file(g.id, src);
+      if (!r) return;
+      K.sound('stamp'); after(r);
+      if (r.evidence) toast(`${kind} granted. Exhibit ${exhibitNo(r.evidence)}: ${run.byId.get(r.evidence).title}. ${r.facts.length} fact${r.facts.length === 1 ? '' : 's'} to the notebook.`);
+      if (r.superior) mwalimu('I signed it. Next time, keep your stamps for when you need them.');
+      onDone?.(r); rebuildSheets();
+    } }, noStamps ? 'Ask Mwalimu to sign it' : `Apply · ${g.cost} stamp${g.cost > 1 ? 's' : ''}`) : null);
+}
+
 function section(title, ...kids) { return h('section', { class: 'fsec' }, h('h2', { class: 'fsec-h' }, title), ...kids); }
 function personCard(p) {
   const run = K.run;
@@ -444,9 +483,12 @@ function openLocation(id) {
           h('button', { class: 'cam-close', type: 'button', 'aria-label': 'Close', onclick: () => close() }, '×')),
         h('div', { class: 'cam-body' },
           h('h3', {}, x.label), h('p', { class: 'typed', html: gloss(x.text) }),
-          ev && run.kE.has(ev.id) ? h('button', { class: 'card-btn', type: 'button', onclick: () => openEvidence(ev.id) }, h('span', {}, `READ EXHIBIT ${exhibitNo(ev.id)}: `, h('b', {}, ev.title)), h('span', { class: 'arrow' }, '→')) : null));
+          ev && run.kE.has(ev.id) ? h('button', { class: 'card-btn', type: 'button', onclick: () => openEvidence(ev.id) }, h('span', {}, `READ EXHIBIT ${exhibitNo(ev.id)}: `, h('b', {}, ev.title)), h('span', { class: 'arrow' }, '→'))
+            : ev?.gate ? (coach('warrant'), paperwork(run.gateInfo(ev.id), { src: x.id, onDone: () => fillCard(x, i) })) : null));
       card.setAttribute('aria-label', x.label);
       card.hidden = false;
+      // Paperwork sits under the description: bring the Apply button into view inside the card.
+      if (ev?.gate && !run.kE.has(ev.id)) requestAnimationFrame(() => { const cb = card.querySelector('.cam-body'); if (cb) cb.scrollTop = cb.scrollHeight; });
     }
     // Where the camera goes and where the card sits. Wide frames: the card beside the pin, on the side with
     // room. Narrow frames: the frame grows taller and the card runs along its bottom edge, over the photo.
@@ -537,6 +579,12 @@ function openPerson(pid) {
       h('div', { class: 'person-meta' }, h('h2', {}, p.name), h('p', {}, p.role === 'victim' ? `${p.age} · deceased` : `${p.age} · ${p.occupation}`), h('p', { class: 'bio', html: K.gloss.rich(p.bio, { inline: K.save.settings.inlineGloss }) }))));
     if (p.role === 'victim') { put(body, h('p', { class: 'typed' }, p.occupation)); return; }
     if (!it) { put(body, h('p', { class: 'typed' }, 'Statement only. See the exhibits.')); return; }
+    if (!run.canInterview(pid)) {
+      coach('guarded');
+      put(body, h('p', { class: 'intro typed' }, it.stance === 'lawyered' ? `${p.name.split(' ')[0]}'s advocate does the talking: "My client has nothing to add." Come back with something that reopens it.`
+        : `${p.name.split(' ')[0]} won't talk. Arms folded, eyes on the door. Come back with something to put in front of them.`));
+      return;
+    }
     const intro = h('p', { class: 'intro typed' });
     put(body, intro);
     if (!introTyped) { introTyped = true; say('intro', it.intro, { now: false }); typewrite(intro, it.intro, { reduced: K.reduced(), sound: K.sound }).then(() => { intro.innerHTML = K.gloss.rich(it.intro); const b = playBtn('intro', it.intro); if (b) intro.append(' ', b); }); }
@@ -544,7 +592,16 @@ function openPerson(pid) {
     const statements = (it.yields || []).filter(e => run.kE.has(e));
     const claims = run.claimsOf(pid);
     if (claims.length || statements.length) put(body, h('div', { class: 'claims' }, h('h3', { class: 'sub-h' }, 'Says'),
-      h('ul', {}, claims.map(f => { const li = h('li', { class: 'claim', html: K.gloss.rich(run.byId.get(f).text) }); const b = playBtn('claim', run.byId.get(f).text); if (b) li.append(' ', b); return li; })),
+      run.pressOn() && claims.length ? (coach('personClaims'), h('p', { class: 'hand dim press-help' }, 'Something here doesn\'t fit what you know? Press it and show them why.')) : null,
+      h('ul', {}, claims.map(f => {
+        const st = run.claimState(f);
+        const li = h('li', { class: `claim ${st ? `is-${st.state} mark-${st.mark}` : ''}` }, h('span', { html: K.gloss.rich(run.byId.get(f).text) }));
+        const b = playBtn('claim', run.byId.get(f).text); if (b) li.append(' ', b);
+        if (st) li.append(h('span', { class: `claim-stamp st st--${st.mark}` }, st.state === 'greyed' ? 'FELL WITH IT' : { implicates: 'LIE', explains: 'EXPLAINED', mistaken: 'MISTAKEN' }[st.mark] || 'BROKEN'));
+        else if (run.pressOn()) li.append(h('button', { class: 'press-btn', type: 'button', 'aria-label': 'Press this claim', onclick: () => pressClaim(pid, f) }, 'Press'));
+        return li;
+      })),
+      pressed.get(pid) ? h('div', { class: `caught mark-${pressed.get(pid).mark}`, 'aria-live': 'polite' }, h('span', { class: 'caught-h' }, 'Caught'), h('p', { class: 'caught-r', html: K.gloss.rich(pressed.get(pid).reaction) })) : null,
       statements.map(e => h('button', { class: 'card-btn card-btn--small', type: 'button', onclick: () => openEvidence(e) }, h('span', {}, `EXHIBIT ${exhibitNo(e)}: `, h('b', {}, run.byId.get(e).title)), h('span', { class: 'arrow' }, '→')))));
     // The conversation so far, oldest first; replies are deterministic, so the transcript is rebuilt from what was asked.
     const asked = [...run.asked].filter(k => k.startsWith(pid + '|')).map(k => k.split('|')[1]);
@@ -569,6 +626,53 @@ function openPerson(pid) {
       rebuildSheets();
       requestAnimationFrame(() => body.querySelector('.qa.is-last')?.scrollIntoView({ block: 'center', behavior: K.reduced() ? 'auto' : 'smooth' }));
       if (r?.facts.length) toast(`${r.facts.length} new fact${r.facts.length > 1 ? 's' : ''} to the notebook.`);
+    }
+  } });
+}
+// ── Pressing a claim (§2.4): pick the fact that contradicts it ─────────────────────────────────────────
+const pressed = new Map();          // pid → the last broken contradiction, shown under the claims
+function pressClaim(pid, claim) {
+  const run = K.run, p = run.byId.get(pid);
+  let q = '';
+  openSheet({ id: 'press', className: 'sheet--press', label: `Press ${p.name}`, build(body, entry) {
+    const list = h('div', { class: 'press-list' });
+    put(body, h('h2', { class: 'sheet-title' }, `Press ${p.name.split(' ')[0]}`),
+      h('blockquote', { class: 'press-claim', html: K.gloss.rich(run.byId.get(claim).text) }),
+      h('p', { class: 'hand dim' }, 'Which fact can\'t be true if this is? Pick one. The wrong one costs a credibility stamp.'),
+      credStamps({ small: true }),
+      h('input', { class: 'nb-search', type: 'search', placeholder: 'Search what you know', 'aria-label': 'Search what you know', oninput: e => { q = e.target.value.toLowerCase(); draw(); } }),
+      list);
+    const pinned = new Set(run.s.pinned);
+    const facts = run.factsKnown().filter(f => f.id !== claim);
+    facts.sort((a, b) => (pinned.has(b.id) - pinned.has(a.id)) || b.order - a.order);
+    function draw() {
+      list.replaceChildren(...facts.filter(f => !q || f.text.toLowerCase().includes(q)).slice(0, 80).map(f => {
+        const tried = run.s.tried.includes(claim + '|' + f.id);
+        return h('button', { class: `press-fact ${pinned.has(f.id) ? 'is-pinned' : ''} ${tried ? 'is-tried' : ''}`, type: 'button', disabled: tried, onclick: () => present(f.id) },
+          pinned.has(f.id) ? h('span', { class: 'pf-pin', 'aria-label': 'pinned' }, '📌') : null, h('span', { html: K.gloss.rich(f.text) }), tried ? h('small', {}, 'didn\'t hold') : null);
+      }));
+    }
+    draw();
+    async function present(fid) {
+      const r = run.press(pid, claim, fid);
+      if (!r) return;
+      if (!r.ok) {
+        K.sound('returned'); save(); refreshDesk();
+        toast(`${p.name.split(' ')[0]} doesn't blink. That doesn't contradict it${r.cost ? ': one credibility stamp gone' : ''}.`);
+        entry.rebuild(); return;
+      }
+      closeSheet(entry);
+      pressed.set(pid, r);
+      // A held beat of silence, then the stamp and the reaction (§2.4).
+      K.audio.stopVoice('person');
+      await new Promise(res => setTimeout(res, K.reduced() ? 100 : 700));
+      K.sound('stamp');
+      K.audio.character(run.n, pid, 'reaction', r.reaction, { now: true, tag: 'person' });
+      after(r); rebuildSheets();
+      if (r.k.greys?.length) coach('caughtGreys'); else if (r.mark === 'explains') coach('caughtExplains');
+      const n = r.facts.length;
+      if (n || r.evidence.length) setTimeout(() => toast(`${n} new fact${n === 1 ? '' : 's'} to the notebook${r.evidence.length ? ` and ${r.evidence.length} new exhibit${r.evidence.length > 1 ? 's' : ''}` : ''}.`), 600);
+      requestAnimationFrame(() => $('.sheet--person .caught')?.scrollIntoView({ block: 'center', behavior: K.reduced() ? 'auto' : 'smooth' }));
     }
   } });
 }

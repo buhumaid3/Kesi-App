@@ -5,18 +5,43 @@
 import fs from 'node:fs';
 import { CaseRun, groupFacts, timeRows } from '../www/engine/state.js';
 const from = +(process.argv[2] || 1), to = +(process.argv[3] || 10);
+// The Pattern File as it stands when case n opens (same rule as tools/validate.mjs): opening pins after case 10,
+// plus every spine fact of every earlier case (auto-filed when that case is solved).
+const campaign = JSON.parse(fs.readFileSync('www/cases/_campaign.json', 'utf8'));
+const pad = n => String(n).padStart(3, '0');
+const caseFile = n => JSON.parse(fs.readFileSync(`www/cases/case-${pad(n)}.json`, 'utf8'));
+function patternBefore(n) {
+  const pf = campaign.patternFile || {};
+  if (!pf.unlocksAfter || n <= pf.unlocksAfter) return new Set();
+  const pins = new Set(pf.openingPins || []);
+  for (let m = 1; m < n; m++) for (const f of caseFile(m).facts) if (f.spine) pins.add(`case-${pad(m)}:${f.id}`);
+  return pins;
+}
 let fails = 0;
 const say = (n, ok, msg) => { if (!ok) fails++; console.log(`${ok ? 'ok  ' : 'FAIL'} case ${String(n).padStart(3, '0')}  ${msg}`); };
 for (let n = from; n <= to; n++) {
-  const c = JSON.parse(fs.readFileSync(`www/cases/case-${String(n).padStart(3, '0')}.json`, 'utf8'));
-  let run = new CaseRun(c, null);
+  const c = caseFile(n);
+  const ctx = { patternPins: patternBefore(n) };
+  let run = new CaseRun(c, null, ctx);
+  let stampsSpent = 0;
   let actions = 0;
   for (let pass = 0; pass < 30; pass++) {
     const before = run.kF.size + run.kE.size + run.kP.size + run.kL.size;
-    for (const l of run.locations()) { run.visit(l.id); for (const h of run.hotspots(l.id)) { run.tapHotspot(l.id, h.id); actions++; } }
+    for (const l of run.locations()) { run.visit(l.id); for (const h of run.hotspots(l.id)) {
+      const r = run.tapHotspot(l.id, h.id); actions++;
+      // A search warrant, filed as soon as there are grounds (region 2).
+      if (r?.gated?.ready && !r.gated.served) { const before = run.s.credibility; if (run.file(r.gated.id, h.id)) { stampsSpent += before - run.s.credibility; actions++; } }
+    } }
+    // Records requests on the desk (region 3).
+    for (const g of run.requests()) { const before = run.s.credibility; if (run.file(g.id)) { stampsSpent += before - run.s.credibility; actions++; } }
+    // Press every claim with the fact that breaks it (region 2): the bot never guesses, so no stamp is lost here.
+    for (const k of run.contradictions) {
+      const pid = run.claimOwner.get(k.claim), by = k.brokenBy.find(b => run.kF.has(b));
+      if (pid && by && run.kF.has(k.claim) && !run.claimState(k.claim)) { run.press(pid, k.claim, by); actions++; }
+    }
     for (const p of run.people()) if (run.canInterview(p.id)) { run.interview(p.id); actions++; for (const t of run.topics(p.id)) { run.ask(p.id, t.about); actions++; } }
     // Save/load round trip mid-case, every pass.
-    run = new CaseRun(c, JSON.parse(JSON.stringify(run.toJSON())));
+    run = new CaseRun(c, JSON.parse(JSON.stringify(run.toJSON())), ctx);
     if (run.kF.size + run.kE.size + run.kP.size + run.kL.size === before) break;
   }
   const proofFacts = c.solution.proof.flatMap(s => s.from).filter(x => x.startsWith('f_'));
@@ -35,9 +60,13 @@ for (let n = from; n <= to; n++) {
   for (const b of run.blanks) run.setBlank(b.id, b.answer);
   if (wrong) { run.setBlank(b0.id, wrong.id); const r = run.submit(); say(n, r && !r.solved && r.results.some(x => !x.pass && x.line), `wrong sheet returned with a line ("${(r.results.find(x => !x.pass)?.line || '').slice(0, 50)}…")`); run.setBlank(b0.id, b0.answer); }
   const r = run.submit();
+  if (run.contradictions.length) {
+    const broken = run.s.broken.length, wrongPress = new CaseRun(c, null, ctx);
+    say(n, broken === run.contradictions.length || broken > 0, `contradictions broken ${broken}/${run.contradictions.length}, stamps spent on paperwork ${stampsSpent}, superior ${run.s.superior}`);
+  }
   say(n, r && r.solved, `correct sheet accepted ("${(r?.results[0]?.line || '').slice(0, 50)}…"), stars ${run.stars()}`);
   // Hints on a fresh run: tier 1, 2, 3 and the tier-3 fill.
-  const h = new CaseRun(c, null); const g = c.chargeSheet.groups[0];
+  const h = new CaseRun(c, null, ctx); const g = c.chargeSheet.groups[0];
   const t1 = h.hint(g.id), t2 = h.hint(g.id), t3 = h.hint(g.id);
   say(n, t1?.line && t2?.line && t3?.word && h.s.charge[t3.blank] === t3.word && h.stars() === 1, `hints: tier1 → ${t1?.point}, tier2 → ${t2?.facts?.length} facts, tier3 fills ${t3?.blank}`);
   const gf = groupFacts(run), tr = timeRows(run);
