@@ -14,7 +14,7 @@ import { attachDepth, enableTilt } from './depth.js';
 import { openPhoneApp, cleanText } from './phone.js';
 import { createCamera } from './camera.js';
 
-const SLICE_LAST = 10;                       // this build plays region 1
+const SLICE_LAST = 40;                       // this build plays regions 1–4 (cases 1–40)
 const K = { campaign: null, save: load(), run: null, gloss: null, cases: new Map() };
 K.audio = createAudio(() => K.save.settings);
 const HAPTIC = { stamp: 'medium', accepted: 'success', returned: 'warning', pin: 'light', closed: 'heavy' };
@@ -133,16 +133,22 @@ function showCabinet() {
   const last = pr.lastCase && !pr.solved[pr.lastCase] && pr.lastCase <= unlockedTo() ? pr.lastCase : null;
   const next = Math.min(unlockedTo(), SLICE_LAST);
   const regions = K.campaign.regions;
-  const r1 = regions[0];
   const el = h('div', { class: 'cabinet' },
     h('header', { class: 'cab-head' },
       h('div', { class: 'title-board', 'data-region': '1' }, h('span', { class: 'sign' }, 'Kesi'), h('small', {}, 'Kenya Case Files · ', K.campaign.unit.station)),
       h('button', { class: 'icon-btn', type: 'button', onclick: showSettings, 'aria-label': 'Settings' }, h('span', { class: 'clipboard-ic', 'aria-hidden': 'true' }), 'Settings')),
     last || !pr.solved[next] ? h('button', { class: 'card-btn card-btn--big', type: 'button', onclick: () => openCase(last || firstOpen()) },
       h('span', {}, last ? 'CONTINUE: ' : 'OPEN: ', h('b', {}, `CASE ${pad3(last || firstOpen())}`), K.cases.get(last || firstOpen()) ? ` · ${K.cases.get(last || firstOpen()).meta.title}` : ''), h('span', { class: 'arrow', 'aria-hidden': 'true' }, '→')) : null,
-    h('section', { class: 'drawer', 'data-region': '1', 'aria-label': `Region 1, ${r1.name}` },
-      h('div', { class: 'drawer-label' }, h('span', { class: 'drawer-no' }, '01'), h('span', { class: 'drawer-name' }, r1.name), h('span', { class: 'drawer-count' }, `${Object.keys(pr.solved).filter(n => +n <= 10).length}/10 closed`)),
-      h('div', { class: 'folders' }, Array.from({ length: 10 }, (_, i) => folderCard(i + 1)))),
+    // One drawer per region in this build. The drawer with the case you're on is open; the others fold shut.
+    regions.filter(r => r.cases[0] <= SLICE_LAST).map(r => {
+      const [a, b] = r.cases, cur = last || firstOpen(), count = Object.keys(pr.solved).filter(n => +n >= a && +n <= b).length;
+      const open = cur >= a && cur <= b, reached = a <= unlockedTo();
+      return h('details', { class: 'drawer', 'data-region': String(r.number), open: open ? '' : null },
+        h('summary', { class: 'drawer-label', 'aria-label': `Region ${r.number}, ${r.name}, ${reached ? `${count} of ${b - a + 1} closed` : 'sealed'}` },
+          h('span', { class: 'drawer-no' }, String(r.number).padStart(2, '0')), h('span', { class: 'drawer-name' }, r.name),
+          h('span', { class: 'drawer-count' }, reached ? `${count}/${b - a + 1} closed` : `Opens after case ${pad3(a - 1)}`)),
+        h('div', { class: 'folders' }, Array.from({ length: b - a + 1 }, (_, i) => folderCard(a + i))));
+    }),
     h('section', { class: 'desk-shelf', 'aria-label': 'Your desk' },
       h('h2', { class: 'shelf-h' }, 'On the desk'),
       h('div', { class: 'shelf' },
@@ -151,7 +157,7 @@ function showCabinet() {
         h('button', { class: 'shelf-item shelf-item--drawer', type: 'button', onclick: showOldFolder }, h('b', {}, 'The desk drawer'), h('span', {}, 'An old folder: Mwenda, J.')),
         pr.desk.length ? h('ul', { class: 'desk-notes' }, pr.desk.map(d => h('li', {}, d))) : h('p', { class: 'desk-empty' }, 'A wooden desk, a green blotter, a desk phone, a wire in-tray.'))),
     h('section', { class: 'drawers-locked', 'aria-label': 'Later regions' },
-      regions.slice(1).map(r => h('div', { class: 'drawer drawer--shut', 'data-region': String(r.number) },
+      regions.filter(r => r.cases[0] > SLICE_LAST).map(r => h('div', { class: 'drawer drawer--shut', 'data-region': String(r.number) },
         h('div', { class: 'drawer-label' }, h('span', { class: 'drawer-no' }, String(r.number).padStart(2, '0')), h('span', { class: 'drawer-name' }, r.name), h('span', { class: 'drawer-count' }, 'Not in this build'))))),
     h('p', { class: 'fine' }, 'Every case in Kesi is fiction. Streets and slang are real; the crimes, people and companies are invented.'));
   screen(el, 'scr-cabinet');
@@ -197,12 +203,14 @@ async function openCase(n) {
   const c = await getCase(n);
   const saved = K.save.cases[n];
   const pins = new Set(K.save.progress.pattern);
-  K.run = new CaseRun(c, saved && !saved.solved ? saved : saved?.solved ? saved : null, { patternPins: pins });
+  K.run = new CaseRun(c, saved && !saved.solved ? saved : saved?.solved ? saved : null, { patternPins: pins, clock: K.campaign.clock, regionRules: regionOf(n) });
   K.gloss = makeGlossary(c);
   K.save.progress.lastCase = n;
   const fresh = !saved;
   save();
   K.audio.music(c.meta.regionNumber);
+  const reg = regionOf(n), seen = K.save.progress.regionsSeen = K.save.progress.regionsSeen || [1];
+  if (reg && !seen.includes(reg.number)) { seen.push(reg.number); save(); regionCard(reg.number); await new Promise(r => setTimeout(r, K.reduced() ? 600 : 2400)); }
   const mode = K.save.settings.intros;
   if (mode === 'always' || (mode === 'first' && fresh)) await caseIntro(c);
   showDesk(true);
@@ -291,12 +299,14 @@ function deskNode({ opening = false, typing = false } = {}) {
     h('span', { class: 'received', 'aria-hidden': 'true' }, 'NAIROBI', h('br'), 'SCU', h('br'), (c.ob.date || '').split(' ').slice(1).join(' ').slice(0, 6).toUpperCase()),
     h('div', { class: 'folder-head' }, h('b', {}, c.ob.number), h('span', {}, `Case ${pad3(m.number)} · ${m.date || ''}`)),
     run.credibilityOn() ? credStamps() : null,
+    clockPlate(),
     h('h1', { class: 'case-title' }, m.title),
     h('div', { class: 'ledger-strip ob' }, h('span', { class: 'ledger-t' }, c.ob.time), ledgerP, h('span', { class: 'ob-by' }, `Reported by ${c.ob.reportedBy}`)),
     section('Places', run.locations().map(l => h('button', { class: `visit-card ${run.visited.has(l.id) ? '' : 'is-new'}`, type: 'button', onclick: () => openLocation(l.id) },
       h('span', {}, run.visited.has(l.id) ? 'RETURN: ' : 'VISIT: ', h('b', {}, l.name.toUpperCase())), h('span', { class: 'arrow', 'aria-hidden': 'true' }, '→')))),
     section('People', h('div', { class: 'people-grid' }, run.people().filter(p => !p.statementOnly).map(personCard))),
     paperworkSection(),
+    labSection(),
     run.kE.size ? section('Exhibits', h('div', { class: 'exhibits' }, [...run.kE].map((id, i) => exhibitTag(id, i + 1)))) : null,
     run.s.solved ? h('button', { class: 'card-btn', type: 'button', onclick: () => showVerdict(false) }, 'Read the verdict again', h('span', { class: 'arrow' }, '→')) : null);
   const top = h('header', { class: 'topbar' },
@@ -352,6 +362,124 @@ function paperwork(g, { src = null, onDone = null } = {}) {
     } }, noStamps ? 'Ask Mwalimu to sign it' : `Apply · ${g.cost} stamp${g.cost > 1 ? 's' : ''}`) : null);
 }
 
+// ── The lab and the arrest clock (region 4, §2.5) ─────────────────────────────────────────────────────
+// No real time: every action moves the case clock on. Lab tests come back hours after they're sent;
+// detaining a suspect gives 24 hours to take samples and question them before they walk.
+const TEST = { autopsy: 'Post-mortem', fibres: 'Fibre comparison', toxicology: 'Toxicology', prints: 'Fingerprints', soil: 'Soil', toolMarks: 'Tool marks',
+  paint: 'Paint', water: 'Water analysis', trace: 'Trace', document: 'Questioned document', handwriting: 'Handwriting', comparison: 'Comparison', clotting: 'Clotting' };
+const testName = t => TEST[t] || t.replace(/^./, c => c.toUpperCase());
+const firstName = pid => K.run.byId.get(pid)?.name.split(' ')[0] || '';
+function clockPlate() {
+  const run = K.run; if (!run.clockOn) return null;
+  const at = run.clockAt(), d = run.s.detained, left = run.hoursLeft();
+  return h('div', { class: `clock ${d ? 'is-custody' : ''} ${d && left <= 6 ? 'is-low' : ''}` },
+    h('div', { class: 'clock-row' },
+      h('span', { class: 'clock-l' }, 'Case clock'),
+      h('b', { class: 'clock-t', 'aria-label': `Case clock: day ${at.day}, ${at.hh}` }, at.label),
+      h('button', { class: 'link tiny clock-what', type: 'button', onclick: e => popover(e.currentTarget, 'The case clock', 'Nothing here runs in real time. Every visit, interview, form and lab test moves the clock on by hours. Detain a suspect and a second clock starts: 24 hours, then they go before a court or walk out. Article 49 of the Constitution of Kenya.') }, 'What is this?')),
+    d ? h('button', { class: 'clock-custody', type: 'button', onclick: () => openPerson(d), 'aria-label': `${run.byId.get(d).name} in custody, ${left} hours left. Open` },
+      h('span', { class: 'cc-who' }, `${firstName(d)} in custody`),
+      h('b', { class: 'cc-left' }, `${left} h left`),
+      h('span', { class: 'cc-bar', 'aria-hidden': 'true' }, h('i', { style: { width: `${Math.max(0, left) / 24 * 100}%` } }))) : null);
+}
+function labSection() {
+  const run = K.run; if (!run.clockOn) return null;
+  const ready = run.labsReady(), pending = run.labsPending();
+  if (!ready.length && !pending.length) return null;
+  coach('labQueue');
+  const d = run.s.detained, left = run.hoursLeft();
+  return section('The lab',
+    h('p', { class: 'hand dim' }, ready.length ? 'Ready to send. Results come back while you keep working.' : 'In the lab.'),
+    h('div', { class: 'lab-list' },
+      ready.map(l => h('div', { class: 'lab-tag' },
+        h('span', { class: 'lab-k' }, testName(l.test)),
+        h('b', { class: 'lab-title' }, labItems(l.id)),
+        h('span', { class: 'lab-time' }, `Takes ${l.hours} h`),
+        h('button', { class: 'btn', type: 'button', onclick: () => sendLab(l.id) }, 'Send · 1 h'))),
+      pending.map(l => h('div', { class: 'lab-tag is-pending' },
+        h('span', { class: 'lab-k' }, testName(l.test)),
+        h('b', { class: 'lab-title' }, labItems(l.id)),
+        h('span', { class: 'lab-time' }, `Back ${run.clockAt(l.due).day !== run.clockAt().day ? `day ${run.clockAt(l.due).day}, ` : ''}${run.clockAt(l.due).hh} · ${l.left} h`),
+        run.rushOn ? h('button', { class: 'btn btn--small', type: 'button', onclick: () => rushLab(l.id) }, 'Rush · 1 stamp') : null))),
+    pending.length ? h('button', { class: 'btn lab-wait', type: 'button', onclick: waitLab },
+      `Wait for the ${testName(pending[0].test).toLowerCase()} result · ${pending[0].left} h`) : null,
+    d && pending.length && pending[0].left > left ? h('p', { class: 'hand lab-warn' }, `${firstName(d)} walks before it's back.`) : null);
+}
+// What goes to the lab, in words: the items the test compares ("Autopsy report + Green sweater").
+function labItems(id) {
+  const run = K.run, e = run.byId.get(id);
+  const items = (e.lab.needs || []).map(x => run.byId.get(x)?.title.replace(/ \((seized|Dr\.[^)]*)\)$/, '')).filter(Boolean);
+  return items.length ? items.join(' + ') : e.title.replace(/^Lab: /, '');
+}
+function sendLab(id) {
+  const run = K.run, r = run.submitLab(id); if (!r) return;
+  K.sound('stamp'); toast(`Sent to the lab. Back ${run.clockAt(r.due).label}.`);
+  after(r); rebuildSheets();
+}
+async function rushLab(id) {
+  const run = K.run, e = run.byId.get(id), none = run.s.credibility < 1;
+  if (!(await ask({ title: 'Forensic rush', text: `The lab drops everything for this one. ${none ? 'You have no stamps left: Mwalimu will sign for it, and the case can earn one star at most.' : 'It costs a credibility stamp.'}`, ok: none ? 'Ask Mwalimu' : 'Rush it · 1 stamp' }))) return;
+  const r = run.rush(id); if (!r) return;
+  K.sound('stamp'); after(r); rebuildSheets();
+  toast(`Rushed. ${e.title.replace(/^Lab: /, '')} is back: ${r.facts.length} fact${r.facts.length === 1 ? '' : 's'} to the notebook.`);
+  if (r.superior) mwalimu('I signed for the rush. Don\'t make it a habit.');
+}
+async function waitLab() {
+  const run = K.run, next = run.labsPending()[0]; if (!next) return;
+  const d = run.s.detained, left = run.hoursLeft();
+  if (d && next.left > left && !(await ask({ title: 'Wait?', text: `${run.byId.get(d).name} will be released before the result comes back, and you won't be able to question them again.`, ok: 'Wait anyway' }))) return;
+  const r = run.wait();
+  K.sound('key'); after(r); rebuildSheets();
+}
+// What the clock did while you worked: results back, a suspect walking out.
+function clockEvents(events) {
+  const run = K.run;
+  for (const e of events || []) {
+    if (e.type === 'lab') {
+      const ev = run.byId.get(e.id), autopsy = ev.lab?.test === 'autopsy';
+      setTimeout(() => toast(autopsy ? `The post-mortem report is in: ${ev.title}. ${e.facts.length} findings to the notebook.` : `Back from the lab: ${ev.title.replace(/^Lab: /, '')}. ${e.facts.length} fact${e.facts.length === 1 ? '' : 's'} to the notebook.`), 300);
+      if (autopsy) { const l = run.tutorial('firstAutopsy'); if (l) setTimeout(() => mwalimu(l), 1200); else coach('autopsy'); }
+    } else if (e.type === 'released') {
+      const p = run.byId.get(e.pid);
+      if (e.expired) { K.sound('returned'); setTimeout(() => toast(`The 24 hours are up. ${p.name} walks out of the cells. No more questions for ${firstName(e.pid)}.`), 300); }
+    }
+  }
+}
+// Custody on the person sheet: detain, take samples, release.
+function custodyBlock(pid) {
+  const run = K.run, p = run.byId.get(pid);
+  if (!run.detainOn() || p.role !== 'suspect') return null;
+  const first = firstName(pid);
+  if (run.s.detained === pid) {
+    const left = run.hoursLeft(), samples = run.samplesFor(pid);
+    return h('div', { class: `custody is-on ${left <= 6 ? 'is-low' : ''}` },
+      h('div', { class: 'custody-h' }, h('span', {}, 'In custody'), h('b', {}, `${left} h left`)),
+      h('span', { class: 'cc-bar', 'aria-hidden': 'true' }, h('i', { style: { width: `${left / 24 * 100}%` } })),
+      samples.length ? h('div', { class: 'samples' }, h('span', { class: 'doc-k' }, 'You can take, without consent, while detained'),
+        samples.map(e => h('button', { class: 'btn', type: 'button', onclick: () => takeSample(e.id) }, `Take: ${e.title.replace(/ \(seized\)$/, '')} · 1 h`)))
+        : h('p', { class: 'hand dim' }, `Nothing more to take. Ask ${first} what you need while the hours last.`),
+      h('button', { class: 'link tiny', type: 'button', onclick: async () => {
+        if (!(await ask({ title: `Release ${first}?`, text: 'Once released, they can\'t be questioned or detained again in this case.', ok: 'Release' }))) return;
+        run.release(); save(); refreshDesk(); rebuildSheets();
+      } }, `Release ${first}`));
+  }
+  if (run.isReleased(pid)) return h('div', { class: 'custody is-released' }, h('span', { class: 'st st--implicates' }, 'RELEASED'), h('p', { class: 'hand' }, `${first} walked out of the cells. No more questions for ${first} in this case.`));
+  coach('detainable');
+  const other = run.s.detained;
+  if (other) return h('p', { class: 'hand dim custody-note' }, `One detention at a time. ${firstName(other)} is in the cells.`);
+  return h('div', { class: 'custody' }, h('button', { class: 'btn btn--danger', type: 'button', onclick: async () => {
+    if (!(await ask({ title: `Detain ${first}?`, text: `${first} goes to the cells and a clock starts: 24 hours to take samples and ask what you need. Then ${first} walks, and can't be questioned again. One detention at a time.`, ok: 'Detain' }))) return;
+    const r = run.detain(pid); if (!r) return;
+    K.sound('stamp'); after(r); rebuildSheets();
+    const l = run.tutorial('firstDetention'); if (l) setTimeout(() => mwalimu(l), 700);
+  } }, 'Detain · 24 hours'));
+}
+function takeSample(id) {
+  const run = K.run, r = run.sample(id); if (!r?.evidence) return;
+  K.sound('stamp'); after(r); rebuildSheets();
+  toast(`Exhibit ${exhibitNo(r.evidence)}: ${run.byId.get(r.evidence).title}.${run.labsReady().length ? ' It can go to the lab now.' : ''}`);
+}
+
 function section(title, ...kids) { return h('section', { class: 'fsec' }, h('h2', { class: 'fsec-h' }, title), ...kids); }
 function personCard(p) {
   const run = K.run;
@@ -402,6 +530,7 @@ function after(result, { quiet = false } = {}) {
       if (u.type === 'location') toast(`New place: ${x.name}.`);
     }
   }
+  clockEvents([...(result?.events || []), ...run.takeEvents()]);
   save();
   refreshDesk();
 }
@@ -579,6 +708,8 @@ function openPerson(pid) {
       h('div', { class: 'person-meta' }, h('h2', {}, p.name), h('p', {}, p.role === 'victim' ? `${p.age} · deceased` : `${p.age} · ${p.occupation}`), h('p', { class: 'bio', html: K.gloss.rich(p.bio, { inline: K.save.settings.inlineGloss }) }))));
     if (p.role === 'victim') { put(body, h('p', { class: 'typed' }, p.occupation)); return; }
     if (!it) { put(body, h('p', { class: 'typed' }, 'Statement only. See the exhibits.')); return; }
+    put(body, custodyBlock(pid));
+    if (run.isReleased(pid)) return;
     if (!run.canInterview(pid)) {
       coach('guarded');
       put(body, h('p', { class: 'intro typed' }, it.stance === 'lawyered' ? `${p.name.split(' ')[0]}'s advocate does the talking: "My client has nothing to add." Come back with something that reopens it.`

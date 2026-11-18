@@ -15,8 +15,11 @@ const TITLE = {
   visitorRegister: 'Register', ticket: 'Ticket', ticketBook: 'Ticket book', manifest: 'Manifest', logBook: 'Log book', receipt: 'Receipt',
   note: 'Handwritten note', sketch: 'Scene sketch', form: 'Report form', tag: 'Tag', jobBook: 'Job book', calendar: 'Wall calendar',
   board: 'Notice board', timetable: 'Timetable', feeBook: 'Fee book', photo: 'Found photograph', orderBook: 'Order book',
-  collectionSlip: 'Collection slip', ledger: 'Cash book',
+  collectionSlip: 'Collection slip', ledger: 'Cash book', labReport: 'Laboratory report',
 };
+const LAB_TEST = { autopsy: 'Post-mortem examination', fibres: 'Fibre comparison', toxicology: 'Toxicology', prints: 'Fingerprint comparison', soil: 'Soil comparison',
+  toolMarks: 'Tool-mark comparison', paint: 'Paint comparison', water: 'Water analysis', trace: 'Trace evidence', document: 'Questioned document',
+  handwriting: 'Handwriting comparison', comparison: 'Comparison', clotting: 'Clotting and blood chemistry' };
 
 // ── The case-photo treatment (§5.6): border, grain, tilt, clip or tape, a label in Amani's hand ────────
 export function photo({ src, label, kind = 'object', id, onZoom, small = false }) {
@@ -117,6 +120,26 @@ export function renderEvidence(K, ev, { exhibitNo } = {}) {
     if (imgOf) doc.append(photo({ src: imgOf, label: no || 'Found photograph', kind: 'evidence', id: ev.id, onZoom: zoom }));
     if (b.front) doc.append(h('div', { class: 'doc-kv' }, h('span', { class: 'doc-k' }, imgOf ? 'What the print shows' : 'The print'), h('span', { class: 'doc-v', html: gloss(b.front) })));
     if (b.back) doc.append(h('div', { class: 'doc-hand' }, h('span', { class: 'doc-k' }, 'On the back'), h('p', { class: 'other-hand' }, b.back)));
+  } else if (r === 'labReport') {
+    // A typed laboratory form (§5.4): lab number, what was sent and when, findings in report language, signed.
+    const test = ev.lab?.test || b.test, autopsy = test === 'autopsy';
+    const due = run.s.labs?.[ev.id], sent = due != null && ev.lab?.hours ? due - ev.lab.hours - (run.transport || 0) : null;
+    const labNo = `${autopsy ? 'PM' : 'GC'}/${pad3(n)}/${String([...ev.id].reduce((a, ch) => (a * 31 + ch.charCodeAt(0)) % 9000, 7) + 1000)}`;
+    const sent2 = (ev.lab?.needs || []).map(x => run.byId.get(x)).filter(Boolean);
+    doc.classList.add('doc--lab');
+    doc.append(h('div', { class: 'lab-head' },
+      h('span', { class: 'lab-org' }, autopsy ? 'Pathology' : 'Forensic laboratory'),
+      h('span', { class: 'lab-no' }, labNo)),
+      h('dl', { class: 'lab-kv' },
+        h('div', {}, h('dt', { class: 'doc-k' }, 'Examination'), h('dd', {}, LAB_TEST[test] || human(test || 'test'))),
+        sent2.length ? h('div', {}, h('dt', { class: 'doc-k' }, autopsy ? 'Of' : 'Items received'), h('dd', {}, sent2.map(x => x.title).join('; '))) : null,
+        sent != null && run.clockAt ? h('div', {}, h('dt', { class: 'doc-k' }, 'Received'), h('dd', {}, run.clockAt(sent).label)) : null,
+        due != null && run.clockAt ? h('div', {}, h('dt', { class: 'doc-k' }, 'Reported'), h('dd', {}, run.clockAt(Math.min(due, run.s.hours)).label, (run.s.rushed || []).includes(ev.id) ? h('span', { class: 'lab-rush' }, ' RUSHED') : null)) : null),
+      h('span', { class: 'doc-k lab-fh' }, autopsy ? 'Findings' : 'Results'),
+      h('ol', { class: 'lab-findings' }, (ev.facts || []).map(fid => h('li', { html: gloss((run.byId.get(fid)?.text || '').replace(/^(Lab|Autopsy|Post-mortem|Toxicology|Pathologist)( \([^)]*\))?:\s*/i, '').replace(/^./, ch => ch.toUpperCase())) }))),
+      h('div', { class: 'lab-sign' }, h('span', { class: 'doc-k' }, 'Signed'), h('span', { class: 'other-hand sig' }, /Chebii/.test(ev.title) ? 'R. Chebii' : autopsy ? 'Pathologist' : 'Analyst'),
+        h('span', { class: 'lab-stamp', 'aria-hidden': 'true' }, autopsy ? 'PATHOLOGY' : 'LABORATORY')));
+    if (imgOf) doc.append(photo({ src: imgOf, label: no || ev.title, kind: 'evidence', id: ev.id, onZoom: zoom, small: true }));
   } else if (r === 'note') {
     doc.append(h('div', { class: 'lined other-hand', html: gloss(b.text || '').replace(/\n/g, '<br>') }));
     doc.append(...kv(b, new Set(['text']), gloss));
@@ -128,7 +151,7 @@ export function renderEvidence(K, ev, { exhibitNo } = {}) {
   }
 
   // What Amani noted from this card: every fact on it is in the notebook already (§2.2).
-  if (r !== 'statement' && r !== 'sceneNote') {
+  if (r !== 'statement' && r !== 'sceneNote' && r !== 'labReport') {
     doc.append(h('div', { class: 'noted' }, h('span', { class: 'noted-h' }, 'Noted'),
       h('ul', {}, (ev.facts || []).map(fid => h('li', { class: 'hand', html: gloss(run.byId.get(fid)?.text || '') })))));
   }

@@ -20,8 +20,15 @@ export function emptySave() {
   return { kF: [], kE: [], kL: [], kP: [], visited: [], talked: [], asked: [], tapped: [], seenFacts: [], seenEvidence: [],
     log: [], charge: {}, passed: [], wrong: 0, hints: {}, hintLog: [], tut: [], pinned: [], board: null, view: null,
     credibility: 5, solved: false, startedAt: Date.now(),
-    broken: [], greyed: [], tried: [], served: [], superior: false };
+    broken: [], greyed: [], tried: [], served: [], superior: false,
+    hours: 0, at: null, labs: {}, rushed: [], detained: null, dStart: null, everDetained: [] };
 }
+
+// The campaign clock (_campaign.json clock): hours each action takes, [min, max]. The engine charges the
+// minimum, so any order the validator's clockPlan proves (rule 16) also fits in the game.
+export const DEFAULT_CLOCK = { interview: [2, 2], visit: [1, 3], read: [0, 1], search: [3, 3], records: [4, 4], submit: [1, 1],
+  detain: [0, 0], sample: [1, 1], press: [0, 0], wait: [1, 24], release: [0, 0], rush: [0, 0], travel: [0, 3], reopen: [0, 1] };
+export const DETENTION_HOURS = 24;     // Article 49: before a court within 24 hours
 
 export class CaseRun {
   constructor(c, saved, ctx = {}) {
@@ -37,6 +44,14 @@ export class CaseRun {
     this.claimOwner = new Map();
     for (const it of c.interrogations || []) for (const cl of [...(it.claims || []), ...(it.laterClaims || []).map(l => l.claim)]) this.claimOwner.set(cl, it.person);
     this.pins = ctx.patternPins || new Set();
+    // Region 4: labs, detention samples and the arrest clock. The clock only runs in cases that need it.
+    this.labs = c.evidence.filter(e => e.lab);
+    this.samples = c.evidence.filter(e => e.detention);
+    this.clockOn = !!(this.labs.length || this.samples.length || c.map);
+    this.cost = ctx.clock || DEFAULT_CLOCK;
+    this.transport = ctx.regionRules?.labTransportHours || 0;
+    this.rushOn = this.clockOn && (ctx.regionRules ? (ctx.regionRules.allows?.gates || []).includes('forensicRush') : this.region >= 4);
+    this.events = [];
     const s = { ...emptySave(), ...(saved || {}) };
     this.s = s;
     for (const k of ['kF', 'kE', 'kL', 'kP', 'visited', 'talked', 'asked', 'tapped', 'seenFacts', 'seenEvidence', 'passed', 'tut'])
@@ -69,6 +84,10 @@ export class CaseRun {
       changed = false;
       for (const l of this.c.locations) if (!this.kL.has(l.id) && this.ok(l.unlock)) { this.kL.add(l.id); news.push({ type: 'location', id: l.id }); changed = true; }
       for (const p of this.c.people) if (!this.kP.has(p.id) && this.ok(p.unlock)) { this.kP.add(p.id); news.push({ type: 'person', id: p.id }); changed = true; }
+      // Immediate results (an autopsy, an on-site comparison: lab.hours 0) arrive as soon as what they need is in hand.
+      for (const e of this.labs) if (!e.lab.hours && !this.kE.has(e.id) && this.labNeedsMet(e)) {
+        const g = this.collect(e.id, 'lab'); if (g.evidence) { news.push({ type: 'evidence', id: e.id, facts: g.facts, lab: true }); this.events.push({ type: 'lab', id: e.id, facts: g.facts, now: true }); changed = true; }
+      }
     }
     return news;
   }
@@ -111,6 +130,7 @@ export class CaseRun {
     let superior = false;
     if (this.s.credibility >= g.cost) this.s.credibility -= g.cost; else { this.s.credibility = 0; this.s.superior = superior = true; }
     this.s.served.push(evId);
+    this.tick(this.cost[g.action === 'warrant' ? 'search' : 'records']?.[0] || 0);
     const got = this.collect(evId, src || g.action);
     return { ...got, gate: g, superior, unlocked: this.refresh() };
   }
@@ -129,7 +149,7 @@ export class CaseRun {
   pressable(pid) { return this.claimsOf(pid).filter(f => !this.claimState(f)); }
   pressOn() { return this.contradictions.length > 0; }
   press(pid, claim, fid) {
-    if (this.claimOwner.get(claim) !== pid || !this.kF.has(claim) || !this.kF.has(fid) || this.claimState(claim)) return null;
+    if (this.claimOwner.get(claim) !== pid || !this.kF.has(claim) || !this.kF.has(fid) || this.claimState(claim) || this.isReleased(pid)) return null;
     const k = this.contradictions.find(x => x.claim === claim && x.brokenBy.includes(fid));
     if (!k) {
       const pair = claim + '|' + fid, again = this.s.tried.includes(pair);
@@ -150,10 +170,98 @@ export class CaseRun {
     return { ok: true, k, mark: k.mark, reaction: k.reaction, facts, evidence, unlocked: this.refresh() };
   }
 
+  // ── The clock, the lab and detention (region 4, §2.5; validator rules 16 and 17) ────────────────────
+  // Nothing runs in real time: actions advance in-game hours. A lab test comes back `lab.hours` after it is
+  // submitted (plus the region's transport hours). Detaining someone starts 24 hours; inside them their
+  // samples can be taken without consent. When the hours run out they are released and can't be questioned
+  // or pressed again. That never ends the case: the rest of the evidence, and Mwalimu, are still there.
+  tick(h) {
+    if (!this.clockOn || !h) return this.events;
+    this.s.hours += h;
+    for (const [id, due] of Object.entries(this.s.labs)) if (due <= this.s.hours && !this.kE.has(id)) {
+      const g = this.collect(id, 'lab'); this.events.push({ type: 'lab', id, facts: g.facts, at: due });
+    }
+    if (this.s.detained && this.s.hours > this.s.dStart + DETENTION_HOURS) {
+      const pid = this.s.detained; this.s.detained = null; this.events.push({ type: 'released', pid, expired: true });
+    }
+    if (this.events.length) this.refresh();
+    return this.events;
+  }
+  takeEvents() { const e = this.events; this.events = []; return e; }
+  labNeedsMet(e) { return (e.lab.needs || []).every(x => this.kE.has(x)); }
+  labsReady() {
+    return this.labs.filter(e => e.lab.hours > 0 && !this.kE.has(e.id) && !(e.id in this.s.labs) && this.labNeedsMet(e))
+      .map(e => ({ id: e.id, title: e.title, test: e.lab.test, hours: e.lab.hours + this.transport }));
+  }
+  labsPending() {
+    return Object.entries(this.s.labs).filter(([id]) => !this.kE.has(id))
+      .map(([id, due]) => ({ id, title: this.byId.get(id).title, test: this.byId.get(id).lab.test, due, left: due - this.s.hours })).sort((a, b) => a.due - b.due);
+  }
+  submitLab(evId) {
+    const e = this.byId.get(evId);
+    if (!e?.lab || !this.labsReady().some(x => x.id === evId)) return null;
+    this.tick(this.cost.submit[0]);
+    this.s.labs[evId] = this.s.hours + e.lab.hours + this.transport;
+    return { id: evId, due: this.s.labs[evId], events: this.takeEvents(), unlocked: this.refresh() };
+  }
+  // Forensic rush: one stamp, the result now (rule 17: never needed to solve).
+  rush(evId) {
+    if (!this.rushOn || !(evId in this.s.labs) || this.kE.has(evId)) return null;
+    let superior = false;
+    if (this.s.credibility >= 1) this.s.credibility--; else { this.s.superior = superior = true; }
+    this.s.rushed.push(evId);
+    this.s.labs[evId] = this.s.hours;
+    const g = this.collect(evId, 'lab');
+    return { id: evId, evidence: g.evidence, facts: g.facts, superior, unlocked: this.refresh() };
+  }
+  // Wait: to the next lab result, or a number of hours.
+  wait(hours) {
+    if (!this.clockOn) return null;
+    const next = this.labsPending()[0];
+    const h = hours ?? (next ? Math.max(1, next.left) : 1);
+    this.tick(Math.min(24, Math.max(1, h)));
+    const events = this.takeEvents();
+    return { hours: this.s.hours, events, facts: events.flatMap(e => e.facts || []), unlocked: this.refresh() };
+  }
+  detainOn() { return this.clockOn; }
+  isReleased(pid) { return this.s.everDetained.includes(pid) && this.s.detained !== pid; }
+  canDetain(pid) {
+    const p = this.byId.get(pid);
+    return this.detainOn() && this.kP.has(pid) && p?.role === 'suspect' && this.interrogation.has(pid) && !this.s.everDetained.includes(pid) && !this.s.detained;
+  }
+  detain(pid) {
+    if (!this.canDetain(pid)) return null;
+    this.s.detained = pid; this.s.dStart = this.s.hours; this.s.everDetained.push(pid);
+    this.tick(this.cost.detain[0]);
+    return { pid, until: this.s.dStart + DETENTION_HOURS, unlocked: this.refresh() };
+  }
+  release() {
+    const pid = this.s.detained; if (!pid) return null;
+    this.s.detained = null; this.events.push({ type: 'released', pid, expired: false });
+    return { pid, events: this.takeEvents() };
+  }
+  // The case clock as a time of day: it starts on the hour after the OB entry.
+  clockAt(hours = this.s.hours) {
+    const m = /^(\d{1,2}):(\d{2})/.exec(this.c.ob.time || ''); const start = m ? +m[1] + (+m[2] > 0 ? 1 : 0) : 8;
+    const t = start + hours;
+    return { day: 1 + Math.floor(t / 24), hh: String(t % 24).padStart(2, '0') + ':00', label: `Day ${1 + Math.floor(t / 24)} · ${String(t % 24).padStart(2, '0')}:00` };
+  }
+  hoursLeft() { return this.s.detained ? this.s.dStart + DETENTION_HOURS - this.s.hours : null; }
+  samplesFor(pid) { return this.samples.filter(e => e.detention === pid && !this.kE.has(e.id)); }
+  sample(evId) {
+    const e = this.byId.get(evId);
+    if (!e?.detention || this.kE.has(evId) || this.s.detained !== e.detention) return null;
+    if (this.hoursLeft() < this.cost.sample[0]) return null;
+    this.tick(this.cost.sample[0]);
+    const g = this.collect(evId, 'sample');
+    return { ...g, events: this.takeEvents(), unlocked: this.refresh() };
+  }
+
   // ── Places ─────────────────────────────────────────────────────────────────────────────────────
   locations() { return this.c.locations.filter(l => this.kL.has(l.id)); }
   visit(locId) {
     if (!this.kL.has(locId)) return false;
+    if (this.clockOn && this.s.at !== locId) { this.s.at = locId; this.tick(this.cost.visit[0]); }
     this.visited.add(locId); return true;
   }
   hotspots(locId) {
@@ -172,7 +280,7 @@ export class CaseRun {
 
   // ── People ─────────────────────────────────────────────────────────────────────────────────────
   people() { return this.c.people.filter(p => this.kP.has(p.id)); }
-  canInterview(pid) { return this.kP.has(pid) && this.interrogation.has(pid) && this.talks(this.interrogation.get(pid)); }
+  canInterview(pid) { return this.kP.has(pid) && this.interrogation.has(pid) && !this.isReleased(pid) && this.talks(this.interrogation.get(pid)); }
   talks(it) {
     if (it.stance === 'guarded') return (it.opensWith || []).some(x => this.kF.has(x) || this.kE.has(x));
     if (it.stance === 'lawyered') return (it.lawyered?.reopenedBy || []).some(x => this.kF.has(x));
@@ -183,6 +291,7 @@ export class CaseRun {
     if (!it || !this.canInterview(pid)) return null;
     const first = !this.talked.has(pid);
     this.talked.add(pid);
+    if (first) this.tick(this.cost.interview[0]);
     const evidence = [], facts = [];
     for (const y of it.yields || []) { const r = this.collect(y, pid); if (r.evidence) { evidence.push(r.evidence); facts.push(...r.facts); } }
     for (const cl of it.claims || []) if (this._addFact(cl, pid)) facts.push(cl);

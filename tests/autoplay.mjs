@@ -21,10 +21,11 @@ let fails = 0;
 const say = (n, ok, msg) => { if (!ok) fails++; console.log(`${ok ? 'ok  ' : 'FAIL'} case ${String(n).padStart(3, '0')}  ${msg}`); };
 for (let n = from; n <= to; n++) {
   const c = caseFile(n);
-  const ctx = { patternPins: patternBefore(n) };
+  const ctx = { patternPins: patternBefore(n), clock: campaign.clock, regionRules: campaign.regions.find(r => n >= r.cases[0] && n <= r.cases[1]) };
   let run = new CaseRun(c, null, ctx);
   let stampsSpent = 0;
-  let actions = 0;
+  let actions = 0, waits = 0;
+  const detentions = [];
   for (let pass = 0; pass < 30; pass++) {
     const before = run.kF.size + run.kE.size + run.kP.size + run.kL.size;
     for (const l of run.locations()) { run.visit(l.id); for (const h of run.hotspots(l.id)) {
@@ -40,10 +41,26 @@ for (let n = from; n <= to; n++) {
       if (pid && by && run.kF.has(k.claim) && !run.claimState(k.claim)) { run.press(pid, k.claim, by); actions++; }
     }
     for (const p of run.people()) if (run.canInterview(p.id)) { run.interview(p.id); actions++; for (const t of run.topics(p.id)) { run.ask(p.id, t.about); actions++; } }
+    // The lab (region 4): submit every test as soon as what it needs is in hand.
+    for (const l of run.labsReady()) { run.submitLab(l.id); actions++; }
     // Save/load round trip mid-case, every pass.
     run = new CaseRun(c, JSON.parse(JSON.stringify(run.toJSON())), ctx);
-    if (run.kF.size + run.kE.size + run.kP.size + run.kL.size === before) break;
+    if (run.kF.size + run.kE.size + run.kP.size + run.kL.size === before) {
+      // Stuck: wait for a result, or (having investigated everything first, as the design rewards) detain
+      // the next person whose samples are still untaken, take them, and carry on inside the 24 hours.
+      if (run.labsPending().length) { run.wait(); waits++; continue; }
+      const next = run.samples.find(e => !run.kE.has(e.id) && !run.s.everDetained.includes(e.detention));
+      if (next) {
+        if (run.s.detained) run.release();
+        if (!run.detain(next.detention)) break;
+        detentions.push(`${next.detention}@${run.s.hours}h`);
+        for (const e of run.samplesFor(next.detention)) run.sample(e.id);
+        continue;
+      }
+      break;
+    }
   }
+  if (run.clockOn) say(n, true, `clock ${run.s.hours} h · detained ${detentions.join(', ') || 'nobody'} · ${waits} waits · labs ${run.labs.filter(e => run.kE.has(e.id)).length}/${run.labs.length} back`);
   const proofFacts = c.solution.proof.flatMap(s => s.from).filter(x => x.startsWith('f_'));
   const missingProof = proofFacts.filter(f => !run.kF.has(f));
   const elimFacts = c.solution.eliminations.flatMap(e => e.by).filter(x => x.startsWith('f_'));
@@ -60,9 +77,10 @@ for (let n = from; n <= to; n++) {
   for (const b of run.blanks) run.setBlank(b.id, b.answer);
   if (wrong) { run.setBlank(b0.id, wrong.id); const r = run.submit(); say(n, r && !r.solved && r.results.some(x => !x.pass && x.line), `wrong sheet returned with a line ("${(r.results.find(x => !x.pass)?.line || '').slice(0, 50)}…")`); run.setBlank(b0.id, b0.answer); }
   const r = run.submit();
+  if (r == null) { say(n, false, 'charge sheet not ready'); continue; }
   if (run.contradictions.length) {
     const broken = run.s.broken.length, wrongPress = new CaseRun(c, null, ctx);
-    say(n, broken === run.contradictions.length || broken > 0, `contradictions broken ${broken}/${run.contradictions.length}, stamps spent on paperwork ${stampsSpent}, superior ${run.s.superior}`);
+    say(n, broken === run.contradictions.length, `contradictions broken ${broken}/${run.contradictions.length}, stamps spent on paperwork ${stampsSpent}, superior ${run.s.superior}`);
   }
   say(n, r && r.solved, `correct sheet accepted ("${(r?.results[0]?.line || '').slice(0, 50)}…"), stars ${run.stars()}`);
   // Hints on a fresh run: tier 1, 2, 3 and the tier-3 fill.
