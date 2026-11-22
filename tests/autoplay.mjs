@@ -68,13 +68,27 @@ for (let n = from; n <= to; n++) {
   say(n, !missingProof.length, `proof facts reachable (${proofFacts.length})${missingProof.length ? ' missing ' + missingProof : ''}`);
   say(n, !missingElim.length, `elimination facts reachable (${elimFacts.length})${missingElim.length ? ' missing ' + missingElim : ''}`);
   for (const b of run.blanks) {
+    if (b.category === 'strip') {
+      const evs = run.stripEvents(b.id);
+      say(n, evs.length === b.strip.events.length, `strip ${b.id}: all ${b.strip.events.length} event cards found (${evs.length}), ${b.strip.slots.length} slots`);
+      continue;
+    }
     const opts = run.options(b.id).map(w => w.id);
     say(n, opts.includes(b.answer), `blank ${b.id}: answer ${b.answer} in bank (${opts.length} options)`);
   }
-  // Wrong submission first: pick a wrong word for the first blank.
-  const b0 = run.blanks[0];
-  const wrong = run.options(b0.id).find(w => w.id !== b0.answer);
-  for (const b of run.blanks) run.setBlank(b.id, b.answer);
+  // Wrong submission first: pick a wrong word for the first blank (or swap two strip cards).
+  const b0 = run.blanks.find(b => b.category !== 'strip') || run.blanks[0];
+  const wrong = b0.category === 'strip' ? null : run.options(b0.id).find(w => w.id !== b0.answer);
+  for (const b of run.blanks) if (b.category === 'strip') for (const e of b.strip.events) run.placeEvent(b.id, e.id, e.slot); else run.setBlank(b.id, b.answer);
+  for (const b of run.blanks.filter(b => b.category === 'strip')) {
+    // On a copy, so the real run's groups aren't accepted early.
+    const cp = new CaseRun(c, JSON.parse(JSON.stringify(run.toJSON())), ctx);
+    const act = b.strip.events.find(e => e.act), decoy = b.strip.slots.find(x => !b.strip.events.some(e => e.slot === x.id));
+    cp.placeEvent(b.id, act.id, decoy.id);
+    const rr = cp.submit(); say(n, rr && !rr.solved && rr.results.some(x => x.id === b.group && !x.pass && x.line), `strip with the act in a decoy slot (${decoy.label}) returned ("${(rr?.results.find(x => !x.pass)?.line || '').slice(0, 50)}…")`);
+    const rs = new CaseRun(c, JSON.parse(JSON.stringify(cp.toJSON())), ctx);
+    say(n, rs.stripPlaced(b.id)[act.id] === decoy.id, 'strip placements survive save and load');
+  }
   if (wrong) { run.setBlank(b0.id, wrong.id); const r = run.submit(); say(n, r && !r.solved && r.results.some(x => !x.pass && x.line), `wrong sheet returned with a line ("${(r.results.find(x => !x.pass)?.line || '').slice(0, 50)}…")`); run.setBlank(b0.id, b0.answer); }
   const r = run.submit();
   if (r == null) { say(n, false, 'charge sheet not ready'); continue; }
@@ -86,7 +100,8 @@ for (let n = from; n <= to; n++) {
   // Hints on a fresh run: tier 1, 2, 3 and the tier-3 fill.
   const h = new CaseRun(c, null, ctx); const g = c.chargeSheet.groups[0];
   const t1 = h.hint(g.id), t2 = h.hint(g.id), t3 = h.hint(g.id);
-  say(n, t1?.line && t2?.line && t3?.word && h.s.charge[t3.blank] === t3.word && h.stars() === 1, `hints: tier1 → ${t1?.point}, tier2 → ${t2?.facts?.length} facts, tier3 fills ${t3?.blank}`);
+  const t3ok = t3?.event ? h.stripPlaced(t3.blank)[t3.event] === t3.slot : t3?.word && h.s.charge[t3.blank] === t3.word;
+  say(n, t1?.line && t2?.line && t3ok && h.stars() === 1, `hints: tier1 → ${t1?.point}, tier2 → ${t2?.facts?.length} facts, tier3 fills ${t3?.event ? t3.event + ' → ' + t3.slot : t3?.blank}`);
   const gf = groupFacts(run), tr = timeRows(run);
   console.log(`      ${actions} actions · ${run.kF.size}/${c.facts.length} facts · ${run.kE.size}/${c.evidence.length} cards · notebook ${gf.person.size} people, ${gf.place.size} places · ${tr.length} time rows`);
 }

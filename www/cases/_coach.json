@@ -124,6 +124,22 @@
     "howGroup": {
       "trigger": "chargeOpen",
       "line": "New line on the sheet: how. Not the weapon you'd guess. The one the evidence proves."
+    },
+    "whenWindow": {
+      "trigger": "chargeOpen",
+      "line": "A new line on the sheet: when. Not a guess at the hour. The window the evidence closes from both ends: the last time they were seen alive, and the first time they were not."
+    },
+    "whenFromBothSides": {
+      "trigger": "chargeOpen",
+      "line": "Close the window from both sides. One fact says no earlier than this, another says no later than that. The answer is what is left between them."
+    },
+    "timelineRail": {
+      "trigger": "timelineRail",
+      "line": "Along the bottom of the board: every time you have found, in order. It is not graded. It is where a story that doesn't fit the clock starts to show."
+    },
+    "timelineStrip": {
+      "trigger": "timelineStrip",
+      "line": "This one wants the night in order. Put each event in its time. Some times are there to tempt you, and stay empty. It all has to be right for Halima to accept it."
     }
   },
   "core": {

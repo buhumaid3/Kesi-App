@@ -1183,3 +1183,39 @@ summary.drawer-label::-webkit-details-marker { display: none; }
 summary.drawer-label::after { content: '▸'; font: 700 14px var(--font-data); transition: transform .2s ease; }
 details.drawer[open] > summary.drawer-label::after { transform: rotate(90deg); }
 details.drawer:not([open]) { padding-bottom: 10px; }
+
+/* ── B12: the timeline strip on the charge sheet, the timeline rail on the board (region 5) ────────── */
+.cs-strip { margin: 14px 0 6px; display: grid; gap: 8px; }
+.tl-slots { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.tl-slot { display: grid; grid-template-columns: 7.5em 1fr; align-items: center; gap: 10px; min-height: var(--tap-min); padding: 4px 8px; border: 1px dashed var(--ink-soft); border-radius: 2px; background: rgba(255,255,255,.25); cursor: pointer; }
+.tl-slot.is-full { border-style: solid; background: rgba(255,255,255,.45); }
+.tl-slot.is-target { border-color: var(--carbon); box-shadow: inset 0 0 0 1px var(--carbon); }
+.tl-slot.is-over { background: var(--highlighter); }
+.tl-time { font: 700 13px var(--font-data); color: var(--ink); }
+.tl-time small { font-weight: 500; color: var(--ink-soft); }
+.tl-empty { font: 13px var(--font-data); color: var(--ink-soft); }
+.tl-card { text-align: left; font: var(--t-doc-s) var(--font-doc); color: var(--ink); background: var(--paper); border: 1px solid var(--ink-soft); border-left: 4px solid var(--carbon); border-radius: 2px; padding: 8px 10px; min-height: var(--tap-min); box-shadow: var(--shadow-paper); touch-action: none; min-width: 0; overflow-wrap: anywhere; }
+.tl-card.is-sel { outline: 3px solid var(--focus); outline-offset: 1px; }
+.tl-card.is-hinted { border-left-color: var(--ob-green); }
+.tl-card:disabled { opacity: 1; cursor: default; }
+.tl-card--ghost { position: fixed; left: 0; top: 0; z-index: 9999; pointer-events: none; max-width: 240px; box-shadow: var(--shadow-lift); }
+.tl-tray { display: grid; gap: 6px; padding: 8px; border-radius: 2px; background: rgba(35,34,43,.06); }
+.tl-loose { display: grid; gap: 6px; }
+.cs-strip.is-locked .tl-slot { cursor: default; }
+@media (max-width: 360px) { .tl-slot { grid-template-columns: 1fr; gap: 4px; } }
+.tl-rail { margin-top: 10px; background: #1d1611; color: var(--signwhite); border-radius: 3px; padding: 8px 10px 10px; max-width: 100%; }
+.tl-rail-h { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; font: 12px var(--font-data); }
+.tl-rail-h b { font: 700 12px var(--font-data); letter-spacing: .12em; text-transform: uppercase; color: var(--sodium); }
+.tl-rail-list { list-style: none; margin: 8px 0 0; padding: 4px 0 6px; display: flex; gap: 8px; overflow-x: auto; scroll-snap-type: x proximity; border-top: 2px solid var(--sodium); }
+.tl-rail-list li { flex: 0 0 auto; scroll-snap-align: start; position: relative; padding-top: 8px; }
+.tl-rail-list li::before { content: ''; position: absolute; top: -7px; left: 12px; width: 10px; height: 10px; border-radius: 50%; background: var(--sodium); }
+.tl-fact { display: grid; gap: 2px; width: 180px; text-align: left; background: var(--paper); color: var(--ink); border: 0; border-radius: 2px; padding: 6px 8px; min-height: var(--tap-min); box-shadow: var(--shadow-paper); }
+.tl-fact.is-pinned { box-shadow: inset 0 0 0 2px var(--string), var(--shadow-paper); }
+.tl-at { font: 700 12px var(--font-data); }
+.tl-txt { font: 12px/1.35 var(--font-doc); overflow-wrap: anywhere; }
+@media (max-height: 520px) {
+  .tl-rail { padding: 6px 8px 6px; margin-top: 6px; }
+  .tl-rail-h span { display: none; }
+  .tl-fact { width: 160px; min-height: 0; }
+  .tl-txt { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+}

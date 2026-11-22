@@ -14,7 +14,7 @@ import { attachDepth, enableTilt } from './depth.js';
 import { openPhoneApp, cleanText } from './phone.js';
 import { createCamera } from './camera.js';
 
-const SLICE_LAST = 40;                       // this build plays regions 1–4 (cases 1–40)
+const SLICE_LAST = 50;                       // this build plays regions 1–5 (cases 1–50)
 const K = { campaign: null, save: load(), run: null, gloss: null, cases: new Map() };
 K.audio = createAudio(() => K.save.settings);
 const HAPTIC = { stamp: 'medium', accepted: 'success', returned: 'warning', pin: 'light', closed: 'heavy' };
@@ -1057,13 +1057,37 @@ function openBoard() {
       h('button', { class: 'btn', type: 'button', onclick: async () => { if (await ask({ title: 'Tidy the board?', text: 'Cards go back in rows and every string is cut.', ok: 'Tidy' })) { B.pos = {}; B.strings = []; cam.auto = true; save(); entry.rebuild(); } } }, 'Tidy'));
     put(body, h('div', { class: 'board-top' }, h('h2', { class: 'sheet-title on-dark' }, 'Corkboard'),
       h('p', { class: 'board-help' }, mode === 'string' ? 'Tap two cards to tie a string between them. Tap a string to cut it.' : 'Drag cards anywhere. Tap a card to open it. Pinch or +/− to zoom, drag the cork to move around. Nothing here is graded.'),
-      tools), h('div', { class: 'cork-frame' }, view, zoomCtl));
+      tools), h('div', { class: 'cork-frame' }, view, zoomCtl), timelineRail(entry));
     drawStrings();
     // Size is known once the sheet is laid out; keep fitting while it is still "fitted" (rotation, resizing).
     const first = () => { if (cam.auto) fit(); else apply(); };
     requestAnimationFrame(first);
     ro?.disconnect(); ro = new ResizeObserver(first); ro.observe(view);
   } });
+}
+
+// ── The timeline rail (region 5, §2.6): every fact with a time, in order along the bottom of the board.
+// Never graded. Times after the OB entry (plus three hours) belong to the night before it.
+function railKey(at, ob) {
+  const m = t => { const x = /^(\d{1,2}):(\d{2})/.exec(t || ''); return x ? +x[1] * 60 + +x[2] : null; };
+  const min = m(at.from) ?? 0, anchor = (m(ob) ?? 480) + 180;
+  const day = at.day ? Date.parse(`${at.day} 2026`) / 60000 : 0;
+  return (Number.isNaN(day) ? 0 : day) + (at.day ? min : min > anchor ? min - 1440 : min);
+}
+function timelineRail(entry) {
+  const run = K.run;
+  if (run.region < 5) return null;
+  const facts = run.factsKnown().filter(f => f.at?.from).sort((a, b) => railKey(a.at, run.c.ob.time) - railKey(b.at, run.c.ob.time));
+  if (!facts.length) return null;
+  coach('timelineRail');
+  return h('section', { class: 'tl-rail', 'aria-label': 'Timeline' },
+    h('div', { class: 'tl-rail-h' }, h('b', {}, 'Timeline'), h('span', {}, 'Every time you have found, in order. Tap one to pin it.')),
+    h('ol', { class: 'tl-rail-list' }, facts.map(f => {
+      const on = run.s.pinned.includes(f.id);
+      return h('li', {}, h('button', { class: `tl-fact ${on ? 'is-pinned' : ''}`, type: 'button', 'aria-pressed': String(on), onclick: () => { run.pin(f.id); save(); entry.rebuild(); } },
+        h('span', { class: 'tl-at' }, f.at.day ? `${f.at.day} · ` : '', f.at.from, f.at.to ? `–${f.at.to}` : ''),
+        h('span', { class: 'tl-txt' }, shortFact(f.text, 90))));
+    })));
 }
 
 // ── The Pattern File (unlocks after case 10): every Kivuli detail, pinned by case ─────────────────────
@@ -1116,8 +1140,9 @@ function openCharge() {
   const run = K.run, cs = run.c.chargeSheet;
   setView({ sheet: 'charge' });
   const line = run.tutorial('chargeSheetOpen'); if (line) setTimeout(() => mwalimu(line), 500); else coach('chargeOpen');
-  let selected = run.blanks.find(b => !run.s.charge[b.id] && !run.passed.has(b.group))?.id || run.blanks[0].id;
-  let armed = false, lastResult = null, justFilled = null;
+  const wordBlanks = run.blanks.filter(b => b.category !== 'strip');
+  let selected = wordBlanks.find(b => !run.s.charge[b.id] && !run.passed.has(b.group))?.id || wordBlanks[0]?.id;
+  let armed = false, lastResult = null, justFilled = null, card = null;
   openSheet({ id: 'charge', className: 'sheet--charge', label: 'Charge sheet', onClose: clearView, build(body, entry) {
     const parts = cs.template.split(/(\{[a-z0-9_]+\})/i);
     const sentence = h('p', { class: 'cs-sentence' }, parts.map(p => {
@@ -1162,11 +1187,61 @@ function openCharge() {
       c.addEventListener('click', e => { if (c.dataset.dragged) { e.stopImmediatePropagation(); delete c.dataset.dragged; } }, true);
       return c;
     }
+    // The timeline strip (region 5): tap a card, then a time; or drag the card onto the time. Tap a placed
+    // card to pick it up again. Graded as one group, like any other.
+    function stripBlock(b) {
+      coach('timelineStrip');
+      const st = b.strip, events = run.stripEvents(b.id), locked = run.passed.has(b.group), placed = run.stripPlaced(b.id);
+      const byId = new Map(events.map(e => [e.id, e]));
+      const missing = st.events.length - events.length;
+      const evCard = (e, inSlot) => {
+        const el = h('button', { class: `tl-card ${card === e.id ? 'is-sel' : ''} ${e.hinted ? 'is-hinted' : ''}`, type: 'button', disabled: locked, 'data-event': e.id,
+          'aria-label': `${e.text}${inSlot ? ', placed' : ''}${card === e.id ? ', selected' : ''}`,
+          onclick: ev => { if (el.dataset.dragged) { delete el.dataset.dragged; return; } card = card === e.id ? null : e.id; entry.rebuild(); } }, e.text);
+        el.addEventListener('pointerdown', ev => {
+          if (locked || (ev.pointerType === 'mouse' && ev.button !== 0)) return;
+          const sx = ev.clientX, sy = ev.clientY; let ghost = null;
+          const move = m => {
+            if (!ghost && Math.hypot(m.clientX - sx, m.clientY - sy) < 8) return;
+            if (!ghost) { ghost = h('span', { class: 'tl-card tl-card--ghost' }, e.text); document.body.append(ghost); }
+            ghost.style.transform = `translate(${m.clientX - 60}px, ${m.clientY - 20}px)`;
+            $$('.tl-slot').forEach(x => x.classList.toggle('is-over', x === document.elementFromPoint(m.clientX, m.clientY)?.closest('.tl-slot')));
+          };
+          const up = u => {
+            removeEventListener('pointermove', move); removeEventListener('pointerup', up);
+            if (!ghost) return; ghost.remove(); el.dataset.dragged = '1';
+            const t = document.elementFromPoint(u.clientX, u.clientY);
+            const slot = t?.closest('.tl-slot'), tray = t?.closest('.tl-tray');
+            if (slot) drop(e.id, slot.dataset.slot); else if (tray) drop(e.id, null); else entry.rebuild();
+          };
+          addEventListener('pointermove', move); addEventListener('pointerup', up);
+        });
+        return el;
+      };
+      function drop(eid, sid) {
+        if (!run.placeEvent(b.id, eid, sid)) return;
+        card = null; K.sound(sid ? 'pin' : 'key'); armed = false; lastResult = null; save(); entry.rebuild();
+      }
+      const loose = events.filter(e => !placed[e.id]);
+      return h('div', { class: `cs-strip ${locked ? 'is-locked' : ''}` },
+        h('span', { class: 'doc-k' }, 'Sequence of events'),
+        h('ol', { class: 'tl-slots' }, st.slots.map(sl => {
+          const eid = Object.keys(placed).find(k => placed[k] === sl.id), e = eid && byId.get(eid);
+          return h('li', { class: `tl-slot ${e ? 'is-full' : ''} ${card && !e ? 'is-target' : ''}`, 'data-slot': sl.id,
+            onclick: ev => { if (ev.target.closest('.tl-card')) return; if (card) drop(card, sl.id); } },
+            h('span', { class: 'tl-time' }, sl.label, sl.day ? h('small', {}, ` ${sl.day}`) : null),
+            e ? evCard(e, true) : h('span', { class: 'tl-empty' }, card ? 'Put it here' : '—'));
+        })),
+        locked ? null : h('div', { class: 'tl-tray', onclick: ev => { if (!ev.target.closest('.tl-card') && card && placed[card]) drop(card, null); } },
+          h('span', { class: 'bank-h' }, loose.length ? 'Events · tap one, then a time' : card ? 'Tap here to take it off the strip' : 'Every event is on the strip'),
+          h('div', { class: 'tl-loose' }, loose.map(e => evCard(e, false))),
+          missing ? h('p', { class: 'hand dim' }, `${missing} more event${missing > 1 ? 's' : ''} to find before this can be sent.`) : null));
+    }
     function place(blankId, wid) {
       if (!run.setBlank(blankId, wid)) return;
       justFilled = blankId;
       K.sound('key'); armed = false; lastResult = null;
-      const nb = run.blanks.find(x => !run.s.charge[x.id] && !run.passed.has(x.group));
+      const nb = wordBlanks.find(x => !run.s.charge[x.id] && !run.passed.has(x.group));
       if (nb) selected = nb.id;
       save(); entry.rebuild();
     }
@@ -1200,9 +1275,10 @@ function openCharge() {
         h('div', { class: 'cs-meta' }, h('span', {}, `${run.c.ob.number}`), h('span', {}, `Case ${pad3(run.n)}`), h('span', {}, `Reviewer: ${cs.reviewer ? run.byId.get(cs.reviewer)?.name || 'R. Hassan' : 'H. Abdi, ODPP'}`))),
       h('div', { class: 'cs-offence' }, h('span', { class: 'doc-k' }, 'Statement of offence'), h('span', {}, 'Murder, contrary to section 203 of the Penal Code.')),
       h('div', { class: 'cs-part' }, h('span', { class: 'doc-k' }, 'Particulars of offence'), sentence),
+      run.blanks.filter(b => b.category === 'strip').map(b => stripBlock(b)),
       run.s.wrong ? h('p', { class: 'cs-count' }, `Returned ${run.s.wrong} time${run.s.wrong > 1 ? 's' : ''}.`) : null,
       results, bank, submit,
-      h('p', { class: 'cs-help' }, 'Tap a blank, then a word. Or drag a word onto a blank. Only names and things you have actually found are in the bank. The prosecutor confirms a group only when every blank in it is right.')));
+      h('p', { class: 'cs-help' }, run.blanks.some(x => x.category === 'strip') ? 'The sequence of events is graded as one: every card in its right time. Not every time has a card. ' : '', 'Tap a blank, then a word. Or drag a word onto a blank. Only names and things you have actually found are in the bank. The prosecutor confirms a group only when every blank in it is right.')));
   } });
 }
 

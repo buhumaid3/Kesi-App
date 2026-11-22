@@ -315,7 +315,8 @@ export class CaseRun {
     };
     for (const p of this.c.people) if (this.kP.has(p.id)) add(p.id, 'person');
     for (const l of this.c.locations) if (this.kL.has(l.id)) add(l.id, 'location');
-    for (const e of this.c.evidence) if (this.kE.has(e.id) && e.type !== 'witness') add(e.id, 'evidence');
+    // Someone else's statement can be put to a person too (case 47: Fidelis's statement opens Sharleen).
+    for (const e of this.c.evidence) if (this.kE.has(e.id) && (e.type !== 'witness' || (e.body?.speaker && e.body.speaker !== pid))) add(e.id, 'evidence');
     for (const t of it.topics || []) if (this.kF.has(t.about)) add(t.about, 'fact');
     return items;
   }
@@ -362,20 +363,45 @@ export class CaseRun {
     if ((this.s.hintFilled || []).includes(blankId) && !ws.some(w => w.id === b.answer)) ws = [...ws, this.byId.get(b.answer)];
     return ws;
   }
+  // ── The timeline strip (region 5, from case 43) ─────────────────────────────────────────────────
+  // Event cards dragged into time slots, graded together. An event card appears once one of its unlock
+  // facts is known; a slot holds one card; the strip is ready when every card is on it.
+  stripOf(blankId) { const b = this.blank(blankId); return b?.category === 'strip' ? b.strip : null; }
+  stripPlaced(blankId) { const v = this.s.charge[blankId]; return v && typeof v === 'object' ? v : {}; }
+  stripEvents(blankId) {
+    const st = this.stripOf(blankId); if (!st) return [];
+    const placed = this.stripPlaced(blankId), hinted = this.s.stripHinted || [];
+    return st.events.filter(e => !e.unlock || (e.unlock.anyOf || []).some(x => this.kF.has(x)) || hinted.includes(e.id))
+      .map(e => ({ id: e.id, text: e.text, slot: placed[e.id] || null, hinted: hinted.includes(e.id) }));
+  }
+  placeEvent(blankId, eventId, slotId) {
+    const b = this.blank(blankId), st = this.stripOf(blankId); if (!st || this.passed.has(b.group)) return false;
+    if (!this.stripEvents(blankId).some(e => e.id === eventId)) return false;
+    if (slotId != null && !st.slots.some(x => x.id === slotId)) return false;
+    const placed = { ...this.stripPlaced(blankId) };
+    // A card dropped on a taken slot swaps with the card there (back to where this one came from, or off).
+    const other = Object.keys(placed).find(k => placed[k] === slotId && k !== eventId);
+    if (other) { if (placed[eventId]) placed[other] = placed[eventId]; else delete placed[other]; }
+    if (slotId == null) delete placed[eventId]; else placed[eventId] = slotId;
+    this.s.charge[blankId] = placed; return true;
+  }
+  stripReady(blankId) { const st = this.stripOf(blankId), p = this.stripPlaced(blankId); return !!st && st.events.every(e => p[e.id]); }
+  stripCorrect(b) { const p = this.stripPlaced(b.id); return b.strip.events.every(e => p[e.id] === e.slot); }
+
   setBlank(blankId, wordId) {
-    const b = this.blank(blankId); if (!b || this.passed.has(b.group)) return false;
+    const b = this.blank(blankId); if (!b || this.passed.has(b.group) || b.category === 'strip') return false;
     if (wordId == null) { delete this.s.charge[blankId]; return true; }
     if (!this.options(blankId).some(w => w.id === wordId)) return false;
     this.s.charge[blankId] = wordId; return true;
   }
-  ready() { return this.blanks.every(b => this.s.charge[b.id]); }
+  ready() { return this.blanks.every(b => b.category === 'strip' ? this.stripReady(b.id) : this.s.charge[b.id]); }
   groupCorrect(g) {
     if (g.unordered) {
       const want = g.blanks.map(b => b.answer).sort().join('|');
       const got = g.blanks.map(b => this.s.charge[b.id]).sort().join('|');
       return want === got;
     }
-    return g.blanks.every(b => { const v = this.s.charge[b.id]; return v === b.answer || (b.accept || []).includes(v); });
+    return g.blanks.every(b => { if (b.category === 'strip') return this.stripCorrect(b); const v = this.s.charge[b.id]; return v === b.answer || (b.accept || []).includes(v); });
   }
   submit() {
     if (!this.ready()) return null;
@@ -409,6 +435,18 @@ export class CaseRun {
     if (tier === 1) out = { tier, line: h.tier1?.line, point: h.tier1?.point };
     else if (tier === 2) out = { tier, line: h.tier2?.line, facts: h.tier2?.facts || [] };
     else {
+      const sb = g.blanks.find(x => x.category === 'strip');
+      if (sb) {
+        // On a strip, tier 3 puts one card in its slot (the first that is off or wrong).
+        const placed = this.stripPlaced(sb.id), ev = sb.strip.events.find(e => placed[e.id] !== e.slot) || sb.strip.events[0];
+        this.s.stripHinted = [...new Set([...(this.s.stripHinted || []), ev.id])];
+        this.placeEvent(sb.id, ev.id, ev.slot);
+        const sl = sb.strip.slots.find(x => x.id === ev.slot);
+        out = { tier, blank: sb.id, event: ev.id, slot: ev.slot, line: `"${ev.text}" goes at ${sl.label}. Then make sure you can say why.` };
+        if (out.facts) out.missing = [];
+        this.s.hintLog.push({ gid, tier, at: Date.now() });
+        return out;
+      }
       // Fill the first blank that is empty or wrong with its answer.
       const b = g.blanks.find(x => this.s.charge[x.id] !== x.answer) || g.blanks[0];
       this.s.charge[b.id] = b.answer;
