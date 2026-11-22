@@ -21,7 +21,8 @@ export function emptySave() {
     log: [], charge: {}, passed: [], wrong: 0, hints: {}, hintLog: [], tut: [], pinned: [], board: null, view: null,
     credibility: 5, solved: false, startedAt: Date.now(),
     broken: [], greyed: [], tried: [], served: [], superior: false,
-    hours: 0, at: null, labs: {}, rushed: [], detained: null, dStart: null, everDetained: [] };
+    hours: 0, at: null, labs: {}, rushed: [], detained: null, dStart: null, everDetained: [],
+    site: null, driven: 0, trips: [] };
 }
 
 // The campaign clock (_campaign.json clock): hours each action takes, [min, max]. The engine charges the
@@ -29,6 +30,14 @@ export function emptySave() {
 export const DEFAULT_CLOCK = { interview: [2, 2], visit: [1, 3], read: [0, 1], search: [3, 3], records: [4, 4], submit: [1, 1],
   detain: [0, 0], sample: [1, 1], press: [0, 0], wait: [1, 24], release: [0, 0], rush: [0, 0], travel: [0, 3], reopen: [0, 1] };
 export const DETENTION_HOURS = 24;     // Article 49: before a court within 24 hours
+
+// Hours as people say them: "45 min", "3 h", "2 h 15 min". The clock runs in fractions of an hour once
+// travel is on the map (region 6), so anything shown to the player goes through this.
+export function fmtHours(h) {
+  const m = Math.round((h || 0) * 60), hh = Math.floor(Math.abs(m) / 60), mm = Math.abs(m) % 60, sign = m < 0 ? '-' : '';
+  if (!hh) return `${sign}${mm} min`;
+  return mm ? `${sign}${hh} h ${mm} min` : `${sign}${hh} h`;
+}
 
 export class CaseRun {
   constructor(c, saved, ctx = {}) {
@@ -52,8 +61,12 @@ export class CaseRun {
     this.transport = ctx.regionRules?.labTransportHours || 0;
     this.rushOn = this.clockOn && (ctx.regionRules ? (ctx.regionRules.allows?.gates || []).includes('forensicRush') : this.region >= 4);
     this.events = [];
+    // Region 6: the site map. You are always at one site on it; going to another site drives the shortest
+    // open route and costs the route's minutes (never more than the validator's clockPlan allows, rule 16).
+    this.map = c.map || null;
     const s = { ...emptySave(), ...(saved || {}) };
     this.s = s;
+    if (this.map && !s.site) s.site = this.map.start;
     for (const k of ['kF', 'kE', 'kL', 'kP', 'visited', 'talked', 'asked', 'tapped', 'seenFacts', 'seenEvidence', 'passed', 'tut'])
       this[k] = new Set(s[k] || []);
     if (!saved) {
@@ -177,11 +190,11 @@ export class CaseRun {
   // or pressed again. That never ends the case: the rest of the evidence, and Mwalimu, are still there.
   tick(h) {
     if (!this.clockOn || !h) return this.events;
-    this.s.hours += h;
-    for (const [id, due] of Object.entries(this.s.labs)) if (due <= this.s.hours && !this.kE.has(id)) {
+    this.s.hours = Math.round((this.s.hours + h) * 60) / 60;          // whole minutes, no float drift
+    for (const [id, due] of Object.entries(this.s.labs)) if (due <= this.s.hours + 1e-9 && !this.kE.has(id)) {
       const g = this.collect(id, 'lab'); this.events.push({ type: 'lab', id, facts: g.facts, at: due });
     }
-    if (this.s.detained && this.s.hours > this.s.dStart + DETENTION_HOURS) {
+    if (this.s.detained && this.s.hours > this.s.dStart + DETENTION_HOURS + 1e-9) {
       const pid = this.s.detained; this.s.detained = null; this.events.push({ type: 'released', pid, expired: true });
     }
     if (this.events.length) this.refresh();
@@ -195,7 +208,7 @@ export class CaseRun {
   }
   labsPending() {
     return Object.entries(this.s.labs).filter(([id]) => !this.kE.has(id))
-      .map(([id, due]) => ({ id, title: this.byId.get(id).title, test: this.byId.get(id).lab.test, due, left: due - this.s.hours })).sort((a, b) => a.due - b.due);
+      .map(([id, due]) => ({ id, title: this.byId.get(id).title, test: this.byId.get(id).lab.test, due, left: Math.round((due - this.s.hours) * 60) / 60 })).sort((a, b) => a.due - b.due);
   }
   submitLab(evId) {
     const e = this.byId.get(evId);
@@ -243,15 +256,62 @@ export class CaseRun {
   // The case clock as a time of day: it starts on the hour after the OB entry.
   clockAt(hours = this.s.hours) {
     const m = /^(\d{1,2}):(\d{2})/.exec(this.c.ob.time || ''); const start = m ? +m[1] + (+m[2] > 0 ? 1 : 0) : 8;
-    const t = start + hours;
-    return { day: 1 + Math.floor(t / 24), hh: String(t % 24).padStart(2, '0') + ':00', label: `Day ${1 + Math.floor(t / 24)} · ${String(t % 24).padStart(2, '0')}:00` };
+    const t = Math.round((start + hours) * 60), day = 1 + Math.floor(t / 1440);
+    const hh = `${String(Math.floor(t / 60) % 24).padStart(2, '0')}:${String(t % 60).padStart(2, '0')}`;
+    return { day, hh, label: `Day ${day} · ${hh}` };
   }
-  hoursLeft() { return this.s.detained ? this.s.dStart + DETENTION_HOURS - this.s.hours : null; }
+  // ── The site map (region 6) ──────────────────────────────────────────────────────────────────────
+  onMap(id) { return !!this.map?.nodes.includes(id); }
+  // The shortest route between two sites, through sites you know about (a hidden site is never a waypoint;
+  // if there's no other way, any road will do).
+  route(from, to) {
+    if (!this.map || !this.onMap(from) || !this.onMap(to)) return null;
+    if (from === to) return { from, to, minutes: 0, path: [from], legs: [] };
+    const open = id => id === to || id === from || this.kL.has(id);
+    const run = passable => {
+      const dist = new Map([[from, 0]]), prev = new Map(), todo = new Set(this.map.nodes.filter(passable));
+      while (todo.size) {
+        let u = null; for (const x of todo) if (dist.has(x) && (u === null || dist.get(x) < dist.get(u))) u = x;
+        if (u === null) break; todo.delete(u); if (u === to) break;
+        for (const e of this.map.edges) {
+          const v = e.a === u ? e.b : e.b === u ? e.a : null;
+          if (!v || !todo.has(v)) continue;
+          const d = dist.get(u) + e.minutes;
+          if (!dist.has(v) || d < dist.get(v)) { dist.set(v, d); prev.set(v, { u, e }); }
+        }
+      }
+      if (!dist.has(to)) return null;
+      const path = [to], legs = []; let x = to;
+      while (x !== from) { const p = prev.get(x); legs.unshift(p.e); path.unshift(p.u); x = p.u; }
+      return { from, to, minutes: dist.get(to), path, legs };
+    };
+    return run(open) || run(() => true);
+  }
+  // Every site on the map, as the player sees it now.
+  sites() {
+    if (!this.map) return [];
+    return this.map.nodes.map(id => {
+      const x = this.byId.get(id), location = this.c.locations.some(l => l.id === id);
+      const known = location ? this.kL.has(id) : true;     // a place on the map (a lodge, a town) is a landmark
+      return { id, name: x?.name || id, location, known, here: this.s.site === id, visited: this.visited.has(id), kind: x?.kind,
+        route: known && location ? this.route(this.s.site, id) : null };
+    });
+  }
+  // Drive to a site. The clock moves on by the route's minutes.
+  travel(to) {
+    if (!this.map || !this.onMap(to) || !this.kL.has(to) || to === this.s.site) return null;
+    const r = this.route(this.s.site, to); if (!r) return null;
+    this.s.site = to; this.s.driven += r.minutes;
+    this.s.trips.push({ from: r.from, to, minutes: r.minutes, at: this.s.hours });
+    this.tick(r.minutes / 60);
+    return { ...r, by: [...new Set(r.legs.map(e => e.by))], unlocked: this.refresh() };   // results that came back on the road wait in this.events for the caller
+  }
+  hoursLeft() { return this.s.detained ? Math.round((this.s.dStart + DETENTION_HOURS - this.s.hours) * 60) / 60 : null; }
   samplesFor(pid) { return this.samples.filter(e => e.detention === pid && !this.kE.has(e.id)); }
   sample(evId) {
     const e = this.byId.get(evId);
     if (!e?.detention || this.kE.has(evId) || this.s.detained !== e.detention) return null;
-    if (this.hoursLeft() < this.cost.sample[0]) return null;
+    if (this.hoursLeft() < this.cost.sample[0] - 1e-9) return null;
     this.tick(this.cost.sample[0]);
     const g = this.collect(evId, 'sample');
     return { ...g, events: this.takeEvents(), unlocked: this.refresh() };
@@ -259,10 +319,13 @@ export class CaseRun {
 
   // ── Places ─────────────────────────────────────────────────────────────────────────────────────
   locations() { return this.c.locations.filter(l => this.kL.has(l.id)); }
+  // Visiting a site on the map drives there first (region 6). Places off the map (a search, a warrant, a
+  // vehicle) are reached without a drive. Returns { ok, travel } or false.
   visit(locId) {
     if (!this.kL.has(locId)) return false;
+    const travel = this.map && this.onMap(locId) && this.s.site !== locId ? this.travel(locId) : null;
     if (this.clockOn && this.s.at !== locId) { this.s.at = locId; this.tick(this.cost.visit[0]); }
-    this.visited.add(locId); return true;
+    this.visited.add(locId); return { ok: true, travel };
   }
   hotspots(locId) {
     const l = this.byId.get(locId);

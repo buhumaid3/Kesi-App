@@ -1,7 +1,8 @@
 // Kesi: Kenya Case Files — the game shell. Region 1 vertical slice (cases 1–10).
 // Screens: prologue → cabinet → case desk (folder + dock) → verdict. Everything above the desk opens as a
 // sheet of paper: a place, a person, an exhibit, the notebook, the board, the phone, the charge sheet.
-import { CaseRun, groupFacts, timeRows, genericReply } from './state.js';
+import { CaseRun, groupFacts, timeRows, genericReply, fmtHours } from './state.js';
+import { layoutSites, byWords } from './sitemap.js';
 import { load, persist, wipe, defaultSave, restore } from './store.js';
 import { appReady, haptic, isNative } from './native.js';
 import { createTitle } from './title.js';
@@ -14,7 +15,7 @@ import { attachDepth, enableTilt } from './depth.js';
 import { openPhoneApp, cleanText } from './phone.js';
 import { createCamera } from './camera.js';
 
-const SLICE_LAST = 50;                       // this build plays regions 1–5 (cases 1–50)
+const SLICE_LAST = 60;                       // this build plays regions 1–6 (cases 1–60)
 const K = { campaign: null, save: load(), run: null, gloss: null, cases: new Map() };
 K.audio = createAudio(() => K.save.settings);
 const HAPTIC = { stamp: 'medium', accepted: 'success', returned: 'warning', pin: 'light', closed: 'heavy' };
@@ -302,8 +303,7 @@ function deskNode({ opening = false, typing = false } = {}) {
     clockPlate(),
     h('h1', { class: 'case-title' }, m.title),
     h('div', { class: 'ledger-strip ob' }, h('span', { class: 'ledger-t' }, c.ob.time), ledgerP, h('span', { class: 'ob-by' }, `Reported by ${c.ob.reportedBy}`)),
-    section('Places', run.locations().map(l => h('button', { class: `visit-card ${run.visited.has(l.id) ? '' : 'is-new'}`, type: 'button', onclick: () => openLocation(l.id) },
-      h('span', {}, run.visited.has(l.id) ? 'RETURN: ' : 'VISIT: ', h('b', {}, l.name.toUpperCase())), h('span', { class: 'arrow', 'aria-hidden': 'true' }, '→')))),
+    section('Places', siteMap(), run.locations().map(visitCard)),
     section('People', h('div', { class: 'people-grid' }, run.people().filter(p => !p.statementOnly).map(personCard))),
     paperworkSection(),
     labSection(),
@@ -362,6 +362,124 @@ function paperwork(g, { src = null, onDone = null } = {}) {
     } }, noStamps ? 'Ask Mwalimu to sign it' : `Apply · ${g.cost} stamp${g.cost > 1 ? 's' : ''}`) : null);
 }
 
+// ── The site map and travel (region 6, §2.5) ──────────────────────────────────────────────────────────
+// Sites are far apart. The map draws them from the drive times, you are always at one of them, and going to
+// another drives the shortest route you know: the clock moves on by its minutes. Places off the map (a
+// search, a warrant, a vehicle) are reached without a drive.
+function visitCard(l) {
+  const run = K.run, seen = run.visited.has(l.id), onMap = run.onMap(l.id), here = onMap && run.s.site === l.id;
+  const r = onMap && !here ? run.route(run.s.site, l.id) : null;
+  const verb = here ? (seen ? 'HERE: ' : 'YOU\'RE HERE: ') : r ? `${seen ? 'BACK' : 'DRIVE'} · ${fmtHours(r.minutes / 60).toUpperCase()}: ` : seen ? 'RETURN: ' : 'VISIT: ';
+  return h('button', { class: `visit-card ${seen ? '' : 'is-new'} ${here ? 'is-here' : ''}`, type: 'button', 'data-lid': l.id, onclick: () => goTo(l.id),
+    'aria-label': `${l.name}${here ? ', you are here' : r ? `, ${fmtHours(r.minutes / 60)} by ${r.legs.map(e => byWords(e.by)).filter((x, i, a) => a.indexOf(x) === i).join(' and ')}` : ''}${seen ? '' : ', not visited'}` },
+    h('span', {}, verb, h('b', {}, l.name.toUpperCase())), h('span', { class: 'arrow', 'aria-hidden': 'true' }, '→'));
+}
+const mapLayouts = new Map();
+const CAR = [15, -12];          // the 4×4 parks beside the site, not on its name
+// A label in two short lines at most ("Sunrise Balloon / Safaris camp").
+function labelLines(name, max = 15) {
+  const base = name.replace(/ \(.*\)$/, '').replace(/^The /, ''), words = (base[0].toUpperCase() + base.slice(1)).split(' '), lines = [''];
+  for (const w of words) { const cur = lines[lines.length - 1]; if (cur && (cur + ' ' + w).length > max && lines.length < 2) lines.push(w); else lines[lines.length - 1] = cur ? `${cur} ${w}` : w; }
+  return lines;
+}
+function siteMap() {
+  const run = K.run, map = run.map; if (!map) return null;
+  coach('siteMap');
+  // Draw narrower on small phones so the labels keep their size.
+  const W = Math.round(Math.max(290, Math.min(350, innerWidth - 40))), H = 210, key = `${run.n}:${W}`;
+  if (!mapLayouts.has(key)) mapLayouts.set(key, layoutSites(map.nodes, map.edges, { start: map.start, width: W, height: H }));
+  const P = mapLayouts.get(key); mapLayouts.set(run.n, P);
+  const sites = run.sites(), byIdS = new Map(sites.map(x => [x.id, x]));
+  const shown = id => byIdS.get(id)?.known;
+  let svg = `<svg class="sm-svg" viewBox="0 0 ${W} ${H}" role="group" aria-label="Site map">`;
+  svg += `<defs><pattern id="sm-grass" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(18)"><path d="M0 7h4" class="sm-tuft"/></pattern></defs>`;
+  svg += `<rect class="sm-ground" x="0" y="0" width="${W}" height="${H}" rx="6"/><rect x="0" y="0" width="${W}" height="${H}" fill="url(#sm-grass)" rx="6"/>`;
+  // Routes, then their times on top.
+  const labels = [];
+  for (const e of map.edges) {
+    if (!shown(e.a) || !shown(e.b)) continue;
+    const [x1, y1] = P[e.a], [x2, y2] = P[e.b], cls = `sm-route sm-by-${String(e.by).replace(/\W+/g, '')}`;
+    const land = !byIdS.get(e.a).location || !byIdS.get(e.b).location;
+    svg += `<line class="${cls}${land ? ' is-landmark' : ''}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`;
+    const mx = (x1 + x2) / 2, my = (y1 + y2) / 2, len = Math.hypot(x2 - x1, y2 - y1) || 1, nx = -(y2 - y1) / len, ny = (x2 - x1) / len;
+    const txt = e.minutes < 60 ? `${e.minutes} min` : `${Math.floor(e.minutes / 60)}h${e.minutes % 60 ? ` ${e.minutes % 60}m` : ''}`, pw = 10 + txt.length * 5.6;
+    if (len - 56 < pw) continue;        // too short to label: the place card under the map says the time
+    labels.push(`<g class="sm-time" transform="translate(${(mx + nx * 9).toFixed(1)} ${(my + ny * 9).toFixed(1)})"><rect x="${(-pw / 2).toFixed(1)}" y="-7" width="${pw.toFixed(1)}" height="13" rx="6.5"/><text y="3">${esc(txt)}</text></g>`);
+  }
+  svg += labels.join('');
+  // Each name goes below its site, or above when a road leaves downwards (so names don't sit on routes).
+  const sideOf = id => {
+    const [x0, y0] = P[id];
+    const ang = map.edges.filter(e => (e.a === id || e.b === id) && shown(e.a) && shown(e.b)).map(e => { const o = P[e.a === id ? e.b : e.a]; return Math.atan2(o[1] - y0, o[0] - x0); });
+    const clear = a => Math.min(Math.PI, ...ang.map(b => { const d = Math.abs(a - b) % (2 * Math.PI); return d > Math.PI ? 2 * Math.PI - d : d; }));
+    return clear(Math.PI / 2) + 0.25 >= clear(-Math.PI / 2) ? 'below' : 'above';
+  };
+  for (const x of sites) {
+    if (!x.known) continue;
+    const [cx, cy] = P[x.id], lines = labelLines(x.name), up = sideOf(x.id) === 'above';
+    // Near the edge of the sheet, a name hangs inwards instead of running off it.
+    const half = Math.max(...lines.map(l => l.length)) * 3.1, ax = cx + half > W - 4 ? ['end', 7] : cx - half < 4 ? ['start', -7] : ['middle', 0];
+    const t = lines.map((ln, i) => `<tspan x="${ax[1]}" dy="${i ? 11 : 0}">${esc(ln)}</tspan>`).join('');
+    const ty = (r0) => up ? -(r0 + 6 + (lines.length - 1) * 11) : r0 + 12;
+    if (!x.location) {      // a landmark: a lodge, a town on the way
+      svg += `<g class="sm-site is-landmark" transform="translate(${cx} ${cy})" aria-hidden="true"><rect x="-4" y="-4" width="8" height="8"/><text class="sm-name" text-anchor="${ax[0]}" y="${ty(6)}">${t}</text></g>`;
+      continue;
+    }
+    const scene = x.kind === 'scene', mins = x.route?.minutes;
+    const aria = `${x.name}${x.here ? ', you are here' : mins != null ? `, ${fmtHours(mins / 60)} away` : ''}${x.visited ? '' : ', not visited'}`;
+    svg += `<g class="sm-site${x.here ? ' is-here' : ''}${scene ? ' is-scene' : ''}${x.visited ? '' : ' is-new'}" data-site="${x.id}" transform="translate(${cx} ${cy})" role="button" tabindex="0" aria-label="${esc(aria)}">`
+      + `<circle class="sm-hit" r="22"/><circle class="sm-dot" r="${scene ? 8 : 6.5}"/>${scene ? '<path class="sm-x" d="M-4 -4L4 4M4 -4L-4 4"/>' : ''}`
+      + `<text class="sm-name" text-anchor="${ax[0]}" y="${ty(scene ? 9 : 7)}">${t}</text></g>`;
+  }
+  // The detective's 4×4, parked at the site you're at.
+  const [hx, hy] = P[run.s.site] || [0, 0], carDy = run.s.site && sideOf(run.s.site) === 'above' ? 13 : CAR[1];
+  svg += `<g class="sm-car" transform="translate(${hx + CAR[0]} ${hy + carDy})" aria-hidden="true"><rect x="-9" y="-5" width="18" height="8" rx="2"/><rect class="sm-car-top" x="-5" y="-9" width="10" height="5" rx="1.5"/><circle cx="-5" cy="4" r="2.4"/><circle cx="5" cy="4" r="2.4"/></g>`;
+  svg += `</svg>`;
+  const wrap = h('div', { class: 'site-map' });
+  wrap.innerHTML = svg;
+  for (const g of wrap.querySelectorAll('.sm-site[data-site]')) {
+    const id = g.dataset.site;
+    g.addEventListener('click', () => goTo(id));
+    g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goTo(id); } });
+  }
+  const here = byIdS.get(run.s.site);
+  return h('div', { class: 'sm-wrap' }, wrap,
+    h('p', { class: 'sm-cap' }, h('span', {}, `You're at ${here?.name.replace(/ \(.*\)$/, '').replace(/^The /, 'the ') || '—'}.`),
+      run.s.driven ? h('span', { class: 'sm-driven' }, `Driven ${fmtHours(run.s.driven / 60)}`) : null,
+      h('button', { class: 'link tiny', type: 'button', onclick: e => popover(e.currentTarget, 'The site map', 'Tap a site to drive there. The drive takes the minutes on the route, by the shortest way you know, and the case clock moves on. Looking round a site you\'re already at costs nothing extra; leaving and coming back does. Plan the order.') }, 'How it works')));
+}
+// Drive to a site and open it. On the folder's map, the 4×4 drives the route first.
+let driving = false;
+async function goTo(id) {
+  const run = K.run;
+  if (driving) return;
+  if (run.map && run.onMap(id) && run.s.site !== id && run.kL.has(id)) {
+    driving = true;
+    try { await animateDrive(run.route(run.s.site, id)); } finally { driving = false; }
+  }
+  openLocation(id);
+}
+function animateDrive(r) {
+  const car = $('.scr-desk .site-map .sm-car'), P = mapLayouts.get(K.run.n);
+  if (!r || !car || !P || K.reduced() || r.path.length < 2) return Promise.resolve();
+  const rect = car.ownerSVGElement.getBoundingClientRect();
+  if (rect.bottom < 0 || rect.top > innerHeight) return Promise.resolve();      // map off screen: no point
+  const pts = r.path.map(id => P[id]), seg = pts.slice(1).map((p, i) => Math.hypot(p[0] - pts[i][0], p[1] - pts[i][1])), total = seg.reduce((a, b) => a + b, 0) || 1;
+  const dur = Math.min(1500, 450 + r.minutes * 6);
+  K.sound('key');
+  return new Promise(res => {
+    const t0 = performance.now();
+    const step = now => {
+      const k = Math.min(1, (now - t0) / dur), e = k < 0.5 ? 2 * k * k : 1 - (-2 * k + 2) ** 2 / 2;
+      let d = e * total, i = 0; while (i < seg.length - 1 && d > seg[i]) { d -= seg[i]; i++; }
+      const f = seg[i] ? Math.min(1, d / seg[i]) : 1, x = pts[i][0] + (pts[i + 1][0] - pts[i][0]) * f, y = pts[i][1] + (pts[i + 1][1] - pts[i][1]) * f;
+      car.setAttribute('transform', `translate(${(x + CAR[0]).toFixed(1)} ${(y + CAR[1]).toFixed(1)})`);
+      if (k < 1) requestAnimationFrame(step); else setTimeout(res, 120);
+    };
+    requestAnimationFrame(step);
+  });
+}
+
 // ── The lab and the arrest clock (region 4, §2.5) ─────────────────────────────────────────────────────
 // No real time: every action moves the case clock on. Lab tests come back hours after they're sent;
 // detaining a suspect gives 24 hours to take samples and question them before they walk.
@@ -376,10 +494,10 @@ function clockPlate() {
     h('div', { class: 'clock-row' },
       h('span', { class: 'clock-l' }, 'Case clock'),
       h('b', { class: 'clock-t', 'aria-label': `Case clock: day ${at.day}, ${at.hh}` }, at.label),
-      h('button', { class: 'link tiny clock-what', type: 'button', onclick: e => popover(e.currentTarget, 'The case clock', 'Nothing here runs in real time. Every visit, interview, form and lab test moves the clock on by hours. Detain a suspect and a second clock starts: 24 hours, then they go before a court or walk out. Article 49 of the Constitution of Kenya.') }, 'What is this?')),
-    d ? h('button', { class: 'clock-custody', type: 'button', onclick: () => openPerson(d), 'aria-label': `${run.byId.get(d).name} in custody, ${left} hours left. Open` },
+      h('button', { class: 'link tiny clock-what', type: 'button', onclick: e => popover(e.currentTarget, 'The case clock', 'Nothing here runs in real time. Every visit, interview, form and lab test moves the clock on by hours, and every drive between sites by its minutes. Detain a suspect and a second clock starts: 24 hours, then they go before a court or walk out. Article 49 of the Constitution of Kenya.') }, 'What is this?')),
+    d ? h('button', { class: 'clock-custody', type: 'button', onclick: () => openPerson(d), 'aria-label': `${run.byId.get(d).name} in custody, ${fmtHours(left)} left. Open` },
       h('span', { class: 'cc-who' }, `${firstName(d)} in custody`),
-      h('b', { class: 'cc-left' }, `${left} h left`),
+      h('b', { class: 'cc-left' }, `${fmtHours(left)} left`),
       h('span', { class: 'cc-bar', 'aria-hidden': 'true' }, h('i', { style: { width: `${Math.max(0, left) / 24 * 100}%` } }))) : null);
 }
 function labSection() {
@@ -399,10 +517,10 @@ function labSection() {
       pending.map(l => h('div', { class: 'lab-tag is-pending' },
         h('span', { class: 'lab-k' }, testName(l.test)),
         h('b', { class: 'lab-title' }, labItems(l.id)),
-        h('span', { class: 'lab-time' }, `Back ${run.clockAt(l.due).day !== run.clockAt().day ? `day ${run.clockAt(l.due).day}, ` : ''}${run.clockAt(l.due).hh} · ${l.left} h`),
+        h('span', { class: 'lab-time' }, `Back ${run.clockAt(l.due).day !== run.clockAt().day ? `day ${run.clockAt(l.due).day}, ` : ''}${run.clockAt(l.due).hh} · ${fmtHours(l.left)}`),
         run.rushOn ? h('button', { class: 'btn btn--small', type: 'button', onclick: () => rushLab(l.id) }, 'Rush · 1 stamp') : null))),
     pending.length ? h('button', { class: 'btn lab-wait', type: 'button', onclick: waitLab },
-      `Wait for the ${testName(pending[0].test).toLowerCase()} result · ${pending[0].left} h`) : null,
+      `Wait for the ${testName(pending[0].test).toLowerCase()} result · ${fmtHours(pending[0].left)}`) : null,
     d && pending.length && pending[0].left > left ? h('p', { class: 'hand lab-warn' }, `${firstName(d)} walks before it's back.`) : null);
 }
 // What goes to the lab, in words: the items the test compares ("Autopsy report + Green sweater").
@@ -453,7 +571,7 @@ function custodyBlock(pid) {
   if (run.s.detained === pid) {
     const left = run.hoursLeft(), samples = run.samplesFor(pid);
     return h('div', { class: `custody is-on ${left <= 6 ? 'is-low' : ''}` },
-      h('div', { class: 'custody-h' }, h('span', {}, 'In custody'), h('b', {}, `${left} h left`)),
+      h('div', { class: 'custody-h' }, h('span', {}, 'In custody'), h('b', {}, `${fmtHours(left)} left`)),
       h('span', { class: 'cc-bar', 'aria-hidden': 'true' }, h('i', { style: { width: `${left / 24 * 100}%` } })),
       samples.length ? h('div', { class: 'samples' }, h('span', { class: 'doc-k' }, 'You can take, without consent, while detained'),
         samples.map(e => h('button', { class: 'btn', type: 'button', onclick: () => takeSample(e.id) }, `Take: ${e.title.replace(/ \(seized\)$/, '')} · 1 h`)))
@@ -527,7 +645,7 @@ function after(result, { quiet = false } = {}) {
     if (!quiet) for (const u of result.unlocked || []) {
       const x = run.byId.get(u.id);
       if (u.type === 'person' && !x.statementOnly) toast(`New in the folder: ${x.name}, ${x.occupation.toLowerCase()}.`);
-      if (u.type === 'location') toast(`New place: ${x.name}.`);
+      if (u.type === 'location') toast(run.onMap(u.id) ? `New site on the map: ${x.name}.` : `New place: ${x.name}.`);
     }
   }
   clockEvents([...(result?.events || []), ...run.takeEvents()]);
@@ -546,7 +664,8 @@ function flyFinds(from, r) {
 // ── A place: the photo with its hotspots ──────────────────────────────────────────────────────────────
 function openLocation(id) {
   const run = K.run, l = run.byId.get(id);
-  run.visit(id); setView({ sheet: 'location', id }); after(null, { quiet: true });
+  const v = run.visit(id); setView({ sheet: 'location', id }); after(null, { quiet: true });
+  if (v?.travel) toast(`${fmtHours(v.travel.minutes / 60)} by ${v.travel.by.map(byWords).join(' and ')}. ${run.clockAt().label}.`);
   const line = run.tutorial('sceneOpen'); if (line) setTimeout(() => mwalimu(line), 700); else coach('sceneOpen');
   let active = null;                                   // the open pin survives a rebuild (e.g. a text-size change)
   openSheet({ id: 'loc', className: 'sheet--location', label: l.name, onClose: clearView, build(body) {
@@ -554,7 +673,8 @@ function openLocation(id) {
     const places = run.locations();
     if (places.length > 1) put(body, h('nav', { class: 'switcher switcher--places', 'aria-label': 'Places in this case' }, places.map(x => h('button', {
       class: `sw-chip ${x.id === id ? 'is-on' : ''} ${run.visited.has(x.id) ? '' : 'is-fresh'}`, type: 'button', 'data-lid': x.id, 'aria-current': x.id === id ? 'true' : null,
-      onclick: () => { if (x.id !== id) openLocation(x.id); } }, x.name.split(' (')[0]))));
+      onclick: () => { if (x.id !== id) openLocation(x.id); } }, x.name.split(' (')[0],
+      run.onMap(x.id) && x.id !== run.s.site ? h('span', { class: 'sw-drive' }, ` · ${fmtHours((run.route(run.s.site, x.id)?.minutes || 0) / 60)}`) : null))));
     const gloss = t => K.gloss.rich(t, { inline: K.save.settings.inlineGloss });
     const pos = x => [Math.min(95, Math.max(5, x.pos?.[0] ?? 50)) / 100, Math.min(93, Math.max(7, x.pos?.[1] ?? 50)) / 100];
     const pinLabel = (x, i) => `${i + 1}. ${x.label}${run.tapped.has(x.id) ? ', examined' : ''}`;
@@ -1318,20 +1438,36 @@ function showVerdict(fresh, halimaLine = null) {
     h('section', { class: 'elims' }, h('h2', { class: 'fsec-h on-dark' }, 'Why not the others'),
       h('ul', {}, c.solution.eliminations.map(e => h('li', {}, h('b', {}, run.byId.get(e.word)?.text || e.word), ' — ', e.why)))),
     c.afterVerdict ? h('section', { class: 'after' }, h('h2', { class: 'fsec-h on-dark' }, 'Afterwards'),
-      c.afterVerdict.map(a => h('p', { class: 'after-beat' }, a.beat))) : null,
+      c.afterVerdict.map(a => a.choice ? afterChoice(a) : h('p', { class: 'after-beat' }, a.beat))) : null,
     pins.length ? h('section', { class: 'v-pins' }, h('h2', { class: 'fsec-h on-dark' }, pr.flags.patternFile ? 'Filed to the Pattern File' : 'Filed for later'),
       h('ul', {}, pins.map(p => h('li', {}, h('span', { class: 'pin-dot', 'aria-hidden': 'true' }), p.text, p.found ? '' : h('em', {}, ' (you missed this one; it is filed anyway)'))))) : null,
     col ? h('section', { class: 'v-col' }, h('h2', { class: 'fsec-h on-dark' }, 'On your desk now'), h('div', { class: 'shelf-item shelf-item--object big' }, h('b', {}, col.name), h('span', {}, col.desc))) : null,
     bc.desk ? h('p', { class: 'v-desk hand' }, bc.desk) : null,
     h('div', { class: 'v-actions' },
       n < SLICE_LAST ? h('button', { class: 'card-btn card-btn--big', type: 'button', onclick: () => openCase(n + 1) }, h('span', {}, 'NEXT: ', h('b', {}, `CASE ${pad3(n + 1)}`)), h('span', { class: 'arrow' }, '→'))
-        : h('div', { class: 'slice-end' }, h('h2', { class: 'sign' }, 'End of region 1'), h('p', {}, 'Region 2, Eastlands, arrives in the next build. Thank you for playing.')),
+        : h('div', { class: 'slice-end' }, h('h2', { class: 'sign' }, `End of region ${region.number}`), h('p', {}, `${regionOf(n + 1)?.name || 'The next region'} arrives in the next build. Thank you for playing.`)),
       h('button', { class: 'card-btn card-btn--ghost', type: 'button', onclick: () => showCabinet() }, 'Back to the cabinet'),
       h('button', { class: 'link', type: 'button', onclick: () => replay(n) }, 'Play this case again')));
   screen(el, 'scr-verdict');
   K.motion.deal(el, '.recon-step, .elims li, .after-beat, .v-pins li', { step: 70, max: 10 });
   attachDepth(el, K);
   if (fresh) closingSequence(run, bc, halimaLine || g0.map(g => g.prosecutor?.pass).filter(Boolean)[0]);
+}
+// A story choice after the verdict (case 60's phone call). It never changes the solution; the choice is kept
+// in progress.choices for later cases to read.
+function afterChoice(a) {
+  const ch = a.choice, pr = K.save.progress; pr.choices = pr.choices || {};
+  const wrap = h('div', { class: 'after-choice' });
+  const draw = () => {
+    const picked = ch.options.find(o => o.id === pr.choices[ch.id]);
+    wrap.replaceChildren(
+      h('p', { class: 'after-beat' }, a.beat),
+      picked ? h('p', { class: 'after-result' }, picked.result)
+        : h('div', { class: 'after-opts', role: 'group', 'aria-label': a.beat }, ch.options.map(o => h('button', { class: 'btn', type: 'button', 'data-choice': o.id,
+          onclick: () => { pr.choices[ch.id] = o.id; K.sound(o.id === 'answer' ? 'phone' : 'key'); save(true); draw(); } }, o.label))));
+  };
+  draw();
+  return wrap;
 }
 // Case closed, in order, each heard in full with a breath between (one voice at a time, see audio.js):
 // the ACCEPTED stamp and the closing chord → Halima reads her verdict → Mwalimu's notes → Halima's text.

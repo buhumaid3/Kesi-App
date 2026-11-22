@@ -3,7 +3,7 @@
 // answer words and every proof fact are reachable, the charge sheet accepts the answer, rejects a wrong
 // one, the hints work and the run survives a save/load round trip. Usage: node tests/autoplay.mjs [from] [to]
 import fs from 'node:fs';
-import { CaseRun, groupFacts, timeRows } from '../www/engine/state.js';
+import { fmtHours, CaseRun, groupFacts, timeRows } from '../www/engine/state.js';
 const from = +(process.argv[2] || 1), to = +(process.argv[3] || 10);
 // The Pattern File as it stands when case n opens (same rule as tools/validate.mjs): opening pins after case 10,
 // plus every spine fact of every earlier case (auto-filed when that case is solved).
@@ -53,14 +53,14 @@ for (let n = from; n <= to; n++) {
       if (next) {
         if (run.s.detained) run.release();
         if (!run.detain(next.detention)) break;
-        detentions.push(`${next.detention}@${run.s.hours}h`);
+        detentions.push(`${next.detention}@${fmtHours(run.s.hours)}`);
         for (const e of run.samplesFor(next.detention)) run.sample(e.id);
         continue;
       }
       break;
     }
   }
-  if (run.clockOn) say(n, true, `clock ${run.s.hours} h · detained ${detentions.join(', ') || 'nobody'} · ${waits} waits · labs ${run.labs.filter(e => run.kE.has(e.id)).length}/${run.labs.length} back`);
+  if (run.clockOn) say(n, true, `clock ${fmtHours(run.s.hours)}${run.map ? ` (${fmtHours(run.s.driven / 60)} driving, ${run.s.trips.length} drives)` : ''} · detained ${detentions.join(', ') || 'nobody'} · ${waits} waits · labs ${run.labs.filter(e => run.kE.has(e.id)).length}/${run.labs.length} back`);
   const proofFacts = c.solution.proof.flatMap(s => s.from).filter(x => x.startsWith('f_'));
   const missingProof = proofFacts.filter(f => !run.kF.has(f));
   const elimFacts = c.solution.eliminations.flatMap(e => e.by).filter(x => x.startsWith('f_'));
