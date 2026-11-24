@@ -22,7 +22,11 @@ workflows:
       ios_signing:
         distribution_type: app_store
         bundle_identifier: com.buhumaid.kesi
-      xcode: latest            # Capacitor 8 needs Xcode 26 or later
+      # Pinned to Xcode 27 (iOS 27 SDK): from April 2027 App Store Connect refuses builds made with an older
+      # SDK (ITMS-90725). Codemagic's `latest` was still Xcode 26.5 in November 2026. The app already uses
+      # the UIScene lifecycle, which apps built with the iOS 27 SDK need in order to launch. If a build fails
+      # here, `xcode: latest` brings back the previous setup (accepted until April 2027).
+      xcode: 27.0
       node: 22
     triggering:                # also startable by hand from the Codemagic dashboard
       events:

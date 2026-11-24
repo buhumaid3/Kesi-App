@@ -1450,3 +1450,89 @@ details.drawer:not([open]) { padding-bottom: 10px; }
 .epi-frame.is-mosaic { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; }
 .epi-frame.is-mosaic img { grid-area: auto; }
 .end-credits .hand { color: rgba(255, 248, 236, .78); font-size: calc(15px * var(--scale)); max-width: 40ch; }
+
+/* ── B17: the rest of the paper ───────────────────────────────────────────────────────────────────── */
+/* Records printout: continuous stationery, tractor-feed holes, green bands, a court-order stamp. */
+.doc--records { font-family: var(--font-data); }
+.rp-head { display: flex; flex-wrap: wrap; gap: 4px 14px; font: 600 12px var(--font-data); text-transform: uppercase; letter-spacing: .05em; border-bottom: 1px dashed var(--ink-soft); padding-bottom: 8px; margin-bottom: 10px; }
+.rp-org { flex-basis: 100%; font-weight: 800; letter-spacing: .14em; }
+.rp-court { color: var(--stamp); border: 1.5px solid var(--stamp); padding: 1px 6px; transform: rotate(-2deg); }
+.rp-sec { margin: 12px 0; }
+.rp-h { margin: 0 0 6px; font: 800 12px var(--font-data); letter-spacing: .14em; text-transform: uppercase; display: flex; align-items: center; gap: 6px; }
+.rp-tbl td, .rp-tbl th { background: transparent; }
+.rp-tbl .rp-row-note td { font-style: italic; color: var(--ink-soft); }
+.rp-sub { color: var(--ink-soft); font-weight: 500; }
+.rp-amt { text-align: right; white-space: nowrap; font-weight: 700; }
+.rp-note { margin: 6px 0; font: var(--t-data)/1.45 var(--font-data); }
+.rp-end { margin: 14px 0 0; text-align: center; font: 600 11px var(--font-data); letter-spacing: .2em; color: var(--ink-soft); }
+.rp-sms { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font: var(--t-data)/1.4 var(--font-data); }
+.rp-sms li { display: grid; grid-template-columns: 5.5em 7em 1fr; gap: 8px; border-bottom: 1px dotted #b7c7b0; padding: 3px 0; }
+.rp-t, .rp-dir { color: var(--ink-soft); font-weight: 600; }
+.pp-mark { display: inline-grid; place-items: center; width: 16px; height: 16px; border-radius: 3px; background: #2F5D46; color: #fff; font: 800 11px var(--font-data); }
+.rp-bars { display: grid; gap: 4px; margin: 4px 0 10px; padding: 8px; background: rgba(255, 255, 255, .55); border: 1px solid #b7c7b0; }
+.rp-bar-row { display: grid; grid-template-columns: minmax(70px, 30%) 1fr; gap: 8px; align-items: center; font: 600 11px var(--font-data); }
+.rp-bar-l { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rp-bar-track { position: relative; height: 10px; background: repeating-linear-gradient(90deg, transparent 0 9.5%, rgba(0, 0, 0, .08) 9.5% 10%); }
+.rp-bar { position: absolute; top: 1px; bottom: 1px; background: #2F5D46; border-radius: 2px; }
+.rp-bar.is-open-l { border-radius: 0 2px 2px 0; background: linear-gradient(90deg, transparent, #2F5D46 30%); }
+.rp-bar.is-open-r { border-radius: 2px 0 0 2px; background: linear-gradient(90deg, #2F5D46 70%, transparent); }
+.rp-bar-axis { display: flex; justify-content: space-between; margin-left: calc(min(30%, 9999px) + 8px); font: 600 10px var(--font-data); color: var(--ink-soft); }
+@media (max-width: 420px) { .rp-sms li { grid-template-columns: 4.5em 1fr; } .rp-sms li > :last-child { grid-column: 1 / -1; } }
+/* A phone screen (smsThread, phoneLog): the handset's own system face, like the game's phone. */
+.doc--phone { padding: 0; }
+.ps-phone { max-width: 340px; margin: 0 auto; padding: 10px; background: #111; border-radius: 28px; box-shadow: var(--shadow-lift); }
+.ps-screen { background: #F2F2F4; color: #111; border-radius: 20px; overflow: hidden; font: 14px/1.35 -apple-system, system-ui, sans-serif; min-height: 200px; }
+.ps-bar { display: flex; justify-content: space-between; padding: 6px 14px; font-size: 11px; font-weight: 600; background: #E6E6EA; }
+.ps-title { padding: 8px 14px; font-weight: 700; border-bottom: 1px solid #ddd; text-align: center; }
+.ps-thread { display: grid; gap: 8px; padding: 12px; }
+.ps-msg { max-width: 82%; padding: 8px 11px; border-radius: 16px; display: grid; gap: 2px; }
+.ps-in { justify-self: start; background: #fff; border-bottom-left-radius: 4px; }
+.ps-out { justify-self: end; background: #2F7D5B; color: #fff; border-bottom-right-radius: 4px; }
+.ps-sys { justify-self: stretch; max-width: none; background: #E8EFE9; border-radius: 10px; }
+.ps-from { font-size: 11px; font-weight: 700; opacity: .7; }
+.ps-time { font-size: 11px; opacity: .6; justify-self: end; }
+.ps-calls { list-style: none; margin: 0; padding: 4px 0; }
+.ps-calls li { display: grid; grid-template-columns: 24px 1fr auto; gap: 8px; align-items: center; padding: 9px 14px; border-bottom: 1px solid #e3e3e6; }
+.ps-call-ico { color: #2F7D5B; }
+/* A letter on letterhead. */
+.doc--letter { background: #fdfbf5; padding: 16px 18px 20px; box-shadow: var(--shadow-paper); }
+.lt-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; border-bottom: 3px double var(--ink); padding-bottom: 8px; margin-bottom: 14px; }
+.lt-org { font: 800 13px var(--font-display); letter-spacing: .16em; }
+.lt-date { font: 500 12px var(--font-data); color: var(--ink-soft); }
+.lt-body { font: var(--t-doc)/1.6 var(--font-doc); margin: 0 0 12px; }
+/* A report form: boxed fields. */
+.doc--form { background: #fbf8ef; padding: 14px; box-shadow: var(--shadow-paper); }
+.fm-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); border-top: 1.5px solid var(--ink); border-left: 1.5px solid var(--ink); margin-bottom: 10px; }
+.fm-box { display: grid; gap: 2px; padding: 6px 8px; border-right: 1.5px solid var(--ink); border-bottom: 1.5px solid var(--ink); min-width: 0; }
+.fm-box.is-wide { grid-column: 1 / -1; }
+.fm-part { border: 1.5px solid var(--ink); margin-bottom: 10px; }
+.fm-k { font: 700 10px var(--font-data); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+.fm-v { font: var(--t-doc-s)/1.45 var(--font-doc); margin: 0; overflow-wrap: anywhere; }
+.fm-sign { display: flex; align-items: baseline; gap: 10px; margin-top: 8px; }
+.fm-line { flex: 1; border-bottom: 1px solid var(--ink); height: 1.2em; }
+/* A log book written as prose: ruled lines with a time column. */
+.lg-lines { list-style: none; margin: 4px 0; padding: 0; background-image: repeating-linear-gradient(transparent 0 calc(1.5em - 1px), var(--ledger-rule) calc(1.5em - 1px) 1.5em); font: var(--t-doc-s)/1.5em var(--font-doc); }
+.lg-lines li { display: grid; grid-template-columns: 4.2em 1fr; gap: 8px; }
+.lg-t { font-family: var(--font-data); font-weight: 600; color: var(--ink-soft); border-right: 1.5px solid var(--ledger-margin); padding-right: 6px; }
+/* Video and CCTV. */
+.doc--footage { background: #fbf8ef; padding: 14px; box-shadow: var(--shadow-paper); }
+.ft-screen { position: relative; aspect-ratio: 16 / 9; max-width: 100%; background: radial-gradient(circle at 60% 40%, #3a3530, #121010 70%); border-radius: 4px; color: #f2f2f2; font: 700 12px var(--font-data); overflow: hidden; }
+.ft-screen.is-cctv { filter: grayscale(1); background: repeating-linear-gradient(0deg, #1b1b1b 0 2px, #222 2px 4px); }
+.ft-rec { position: absolute; top: 8px; left: 10px; color: #ff5148; }
+.ft-screen.is-cctv .ft-rec { color: #f2f2f2; }
+.ft-ts { position: absolute; top: 8px; right: 10px; }
+.ft-cap { position: absolute; bottom: 8px; left: 10px; opacity: .7; font-weight: 500; }
+.ft-scrub { margin: 8px 0; }
+.ft-track { position: relative; height: 6px; background: #d8d0bd; border-radius: 3px; }
+.ft-mark { position: absolute; top: -4px; width: 4px; height: 14px; margin-left: -2px; background: var(--stamp); border-radius: 2px; }
+.ft-axis { display: flex; justify-content: space-between; font: 600 11px var(--font-data); color: var(--ink-soft); margin-top: 4px; }
+/* A wall calendar. */
+.cal { background: #fff; box-shadow: var(--shadow-paper); padding: 0 0 12px; max-width: 360px; margin: 0 auto; text-align: center; }
+.cal-head { background: #2F5D46; color: #fff; font: 800 18px var(--font-display); letter-spacing: .14em; padding: 10px; }
+.cal-lines { display: grid; gap: 2px; padding: 8px; font: 600 12px var(--font-data); }
+.cal-month { font: 800 26px var(--font-display); letter-spacing: .1em; text-transform: uppercase; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 1px; background: #ddd; margin: 8px 12px 0; border: 1px solid #ddd; }
+.cal-grid span { background: #fff; aspect-ratio: 1; }
+.cal-note { margin: 8px 12px 0; }
+.rp-tbl td.rp-t { white-space: nowrap; }
+.ft-notes.is-plain li { grid-template-columns: 1fr; }

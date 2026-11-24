@@ -2,6 +2,7 @@
 // sharp, accessible and translatable; generated photos only ever show places, faces and objects.
 import { h, $, openSheet } from './ui.js';
 import { esc, pad3, tilt } from './text.js';
+import { recordsPrintout, phoneScreen, letter, form, writtenLog, footage, calendar } from './paper.js';
 
 const LEDGER = new Set(['tallyBook', 'visitorRegister', 'logBook', 'ticketBook', 'jobBook', 'orderBook', 'feeBook', 'ledger']);
 const SLIP = new Set(['receipt', 'ticket', 'collectionSlip', 'tag']);
@@ -15,7 +16,8 @@ const TITLE = {
   visitorRegister: 'Register', ticket: 'Ticket', ticketBook: 'Ticket book', manifest: 'Manifest', logBook: 'Log book', receipt: 'Receipt',
   note: 'Handwritten note', sketch: 'Scene sketch', form: 'Report form', tag: 'Tag', jobBook: 'Job book', calendar: 'Wall calendar',
   board: 'Notice board', timetable: 'Timetable', feeBook: 'Fee book', photo: 'Found photograph', orderBook: 'Order book',
-  collectionSlip: 'Collection slip', ledger: 'Cash book', labReport: 'Laboratory report',
+  collectionSlip: 'Collection slip', ledger: 'Cash book', labReport: 'Laboratory report', letter: 'Letter', smsThread: 'Messages',
+  phoneLog: 'Phone', video: 'Video', cctv: 'CCTV', mastRecord: 'Mast records', pesapapStatement: 'Records printout',
 };
 const LAB_TEST = { autopsy: 'Post-mortem examination', fibres: 'Fibre comparison', toxicology: 'Toxicology', prints: 'Fingerprint comparison', soil: 'Soil comparison',
   toolMarks: 'Tool-mark comparison', paint: 'Paint comparison', water: 'Water analysis', trace: 'Trace evidence', document: 'Questioned document',
@@ -145,9 +147,23 @@ export function renderEvidence(K, ev, { exhibitNo } = {}) {
     doc.append(...kv(b, new Set(['text']), gloss));
     if (imgOf) doc.append(photo({ src: imgOf, label: no, kind: 'evidence', id: ev.id, onZoom: zoom, small: true }));
   } else {
+    // B17: bespoke paper where the case gives the shape for it; the generic table otherwise.
+    const ctx = { gloss, caseNo: pad3(n), gated: ev.gate?.action === 'records', date: c.meta.date, human, kind: r };
+    const records = ['masts', 'mast', 'calls', 'call', 'pesapap', 'pay', 'messages', 'message', 'chat'].some(k => b[k] != null);
+    let made = null;
+    if ((r === 'smsThread' || r === 'phoneLog') && records) { made = phoneScreen(ev, b, ctx); doc.classList.remove('doc--print'); doc.classList.add('doc--phone'); }
+    else if (PRINT.has(r) && records) { made = recordsPrintout(ev, b, ctx); doc.classList.add('doc--records'); }
+    else if (r === 'letter') { made = letter(ev, b, ctx); doc.classList.add('doc--letter'); }
+    else if (r === 'form' && !Array.isArray(b.rows)) { made = form(ev, b, ctx); doc.classList.add('doc--form'); }
+    else if ((r === 'video' || r === 'cctv') && (b.notes || b.frames)) { made = footage(ev, b, ctx); doc.classList.add('doc--footage'); }
+    else if (r === 'calendar') { made = calendar(ev, b, ctx); }
+    else if (LEDGER.has(r) && !Array.isArray(b.rows) && typeof b.text === 'string') made = { nodes: [writtenLog(b.text, gloss)], used: new Set(['text']) };
     if (imgOf) doc.append(photo({ src: imgOf, label: no || ev.title, kind: 'evidence', id: ev.id, onZoom: zoom, small: true }));
-    if (Array.isArray(b.rows)) doc.append(table(b.rows, LEDGER.has(r) ? 'tbl--ledger' : ''));
-    doc.append(...kv(b, new Set(['rows']), gloss));
+    if (made) { doc.append(...made.nodes.filter(Boolean)); doc.append(...kv(b, new Set([...made.used, 'rows']), gloss)); if (Array.isArray(b.rows)) doc.append(table(b.rows, LEDGER.has(r) ? 'tbl--ledger' : '')); }
+    else {
+      if (Array.isArray(b.rows)) doc.append(table(b.rows, LEDGER.has(r) ? 'tbl--ledger' : ''));
+      doc.append(...kv(b, new Set(['rows']), gloss));
+    }
   }
 
   // What Amani noted from this card: every fact on it is in the notebook already (§2.2).

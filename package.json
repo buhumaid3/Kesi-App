@@ -29,7 +29,8 @@
     "test:b13": "node tests/ui-b13.mjs http://127.0.0.1:5173",
     "test:b14": "node tests/ui-b14.mjs http://127.0.0.1:5173",
     "test:b15": "node tests/ui-b15.mjs http://127.0.0.1:5173",
-    "test:b16": "node tests/ui-b16.mjs http://127.0.0.1:5173"
+    "test:b16": "node tests/ui-b16.mjs http://127.0.0.1:5173",
+    "test:paper": "node tests/ui-paper.mjs http://127.0.0.1:5173"
   },
   "engines": {
     "node": ">=22"
