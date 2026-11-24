@@ -1414,3 +1414,39 @@ details.drawer:not([open]) { padding-bottom: 10px; }
 .nb-line.is-absence { outline: 1.5px dashed var(--stamp); outline-offset: -2px; }
 .bcard--absence { border: 2px dashed var(--stamp) !important; }
 .exp-stamp.st--ret { width: 72px; height: 72px; font-size: 11px; }
+
+/* ── The ending (case 100, B16) ───────────────────────────────────────────────────────────────────── */
+.scr-ending { background: var(--desk-lo); }
+.ending { min-height: 100vh; display: grid; grid-template-rows: auto 1fr auto; gap: 16px; padding-block: 0 calc(24px + env(safe-area-inset-bottom, 0px)); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); color: var(--signwhite); }
+.end-stage { display: grid; gap: 16px; align-content: start; max-width: 760px; width: 100%; margin: 0 auto; }
+.end-h { margin: 8px 0 0; font-size: 34px; text-align: center; }
+.epi-strip { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+.epi-card { margin: 0; padding: 10px 10px 14px; background: #F7F3EA; color: var(--ink); box-shadow: var(--shadow-lift); transform: rotate(var(--tilt, 0deg)); display: grid; gap: 8px; }
+.epi-frame { aspect-ratio: 4 / 3; max-width: 100%; background: linear-gradient(160deg, #3b2d22, #1d1611); position: relative; }
+.epi-frame::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 70% 30%, rgba(246, 198, 107, .28), transparent 60%); }
+.epi-card figcaption { font: var(--t-doc-s)/1.45 var(--font-doc); }
+.end-folder { position: relative; background: var(--manila); color: var(--ink); padding: 28px 18px 22px; box-shadow: var(--shadow-lift); display: grid; gap: 12px; margin-top: 18px; }
+.end-tab { position: absolute; top: -18px; left: 16px; background: var(--manila-lo); color: var(--ink); font: 800 16px var(--font-display); letter-spacing: .12em; padding: 4px 14px; border-radius: 4px 4px 0 0; }
+.end-meta { margin: 0; font: 500 12px var(--font-data); color: var(--ink-soft); }
+.end-ledger { background: var(--ledger); padding: 14px 14px 14px 26px; border-left: 2px solid var(--ledger-margin); background-image: repeating-linear-gradient(transparent 0 23px, var(--ledger-rule) 23px 24px); }
+.end-ob { margin: 0; font: var(--t-doc-s)/24px var(--font-doc); min-height: 96px; }
+.end-closed { position: static; justify-self: end; transform: rotate(-8deg); font-size: 30px; padding: 6px 16px; border-radius: 4px; width: auto; height: auto; }
+.end-thick { margin: 0; color: var(--ink-soft); }
+.end-last { display: grid; gap: 20px; justify-items: center; text-align: center; margin-top: 12px; }
+.end-note { margin: 0; max-width: 34ch; font: italic calc(18px * var(--scale)) / 1.5 var(--font-doc); }
+.end-from { display: block; font: 600 12px var(--font-data); letter-spacing: .12em; text-transform: uppercase; color: var(--sodium); font-style: normal; margin-bottom: 6px; }
+.end-newfolder { position: relative; background: var(--manila); color: var(--ink); padding: 26px 30px 14px; box-shadow: var(--shadow-lift); transform: rotate(-3deg); animation: end-slide 900ms var(--ease-settle, ease-out) both; display: grid; gap: 4px; }
+.end-tab--new { top: -16px; font-size: 13px; }
+@keyframes end-slide { from { opacity: 0; transform: translateX(40px) rotate(4deg); } to { opacity: 1; transform: rotate(-3deg); } }
+@media (prefers-reduced-motion: reduce) { .end-newfolder { animation: none; } }
+.end-credits { display: grid; gap: 4px; }
+.end-credits h2 { margin: 0; font-size: 44px; }
+.end-credits p { margin: 0; }
+.end-stat { font: 600 13px var(--font-data); color: var(--sodium); }
+.end-next { justify-self: center; min-width: 220px; }
+.card-btn--final b { color: var(--stamp); }
+.epi-frame { display: grid; overflow: hidden; }
+.epi-frame img { width: 100%; height: 100%; object-fit: cover; grid-area: 1 / 1; filter: saturate(.7) contrast(1.04) sepia(.18); }
+.epi-frame.is-mosaic { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; }
+.epi-frame.is-mosaic img { grid-area: auto; }
+.end-credits .hand { color: rgba(255, 248, 236, .78); font-size: calc(15px * var(--scale)); max-width: 40ch; }

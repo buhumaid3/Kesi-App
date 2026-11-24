@@ -15,7 +15,7 @@ import { attachDepth, enableTilt } from './depth.js';
 import { openPhoneApp, cleanText } from './phone.js';
 import { createCamera } from './camera.js';
 
-const SLICE_LAST = 80;                       // this build plays regions 1–8 (cases 1–80)
+const SLICE_LAST = 100;                      // the whole campaign
 const K = { campaign: null, save: load(), run: null, gloss: null, cases: new Map() };
 K.audio = createAudio(() => K.save.settings);
 const HAPTIC = { stamp: 'medium', accepted: 'success', returned: 'warning', pin: 'light', closed: 'heavy' };
@@ -1455,7 +1455,7 @@ function openCharge() {
     const results = lastResult ? h('div', { class: 'cs-results' }, lastResult.results.filter(r => !r.already).map(r => {
       const st = h('span', { class: `st ${r.pass ? 'st--acc' : 'st--ret'}` }, r.pass ? 'ACCEPTED' : 'RETURNED');
       requestAnimationFrame(() => stamp(st, K.sound, K.reduced()));
-      return h('div', { class: 'cs-result' }, st, h('p', { class: 'halima' }, h('b', {}, 'H. Abdi: '), r.line || ''));
+      return h('div', { class: 'cs-result' }, st, h('p', { class: 'halima' }, h('b', {}, `${reviewerShort(run.c)}: `), r.line || ''));
     })) : null;
     const submit = h('button', { class: `card-btn card-btn--submit ${run.ready() ? '' : 'is-disabled'}`, type: 'button', disabled: !run.ready() || run.s.solved,
       onclick: () => {
@@ -1479,7 +1479,7 @@ function openCharge() {
       } }, h('span', {}, run.s.solved ? 'ACCEPTED' : armed ? 'SEND IT' : 'SEND TO THE PROSECUTOR'), h('span', { class: 'arrow', 'aria-hidden': 'true' }, '→'));
     put(body, h('article', { class: 'charge' },
       h('header', { class: 'cs-head' }, h('span', { class: 'cs-rep' }, 'REPUBLIC OF KENYA'), h('h2', {}, 'Charge sheet'), h('span', { class: 'cs-copy' }, 'COPY'),
-        h('div', { class: 'cs-meta' }, h('span', {}, `${run.c.ob.number}`), h('span', {}, `Case ${pad3(run.n)}`), h('span', {}, `Reviewer: ${cs.reviewer ? run.byId.get(cs.reviewer)?.name || 'R. Hassan' : 'H. Abdi, ODPP'}`))),
+        h('div', { class: 'cs-meta' }, h('span', {}, `${run.c.ob.number}`), h('span', {}, `Case ${pad3(run.n)}`), h('span', {}, `Reviewer: ${cs.reviewer ? `${reviewerShort(run.c)}, ODPP` : 'H. Abdi, ODPP'}`))),
       h('div', { class: 'cs-offence' }, h('span', { class: 'doc-k' }, 'Statement of offence'), h('span', {}, 'Murder, contrary to section 203 of the Penal Code.')),
       h('div', { class: 'cs-part' }, h('span', { class: 'doc-k' }, 'Particulars of offence'), sentence),
       run.blanks.filter(b => b.category === 'strip').map(b => stripBlock(b)),
@@ -1517,7 +1517,7 @@ function showVerdict(fresh, halimaLine = null) {
     h('header', { class: 'topbar' }, h('button', { class: 'link back', type: 'button', onclick: () => showCabinet() }, '← Cabinet'), h('span', { class: 'topbar-mid' }, `Case ${pad3(n)}`), h('span')),
     h('div', { class: 'v-sheet' },
       h('span', { class: 'st st--acc is-stamped v-stamp' }, 'ACCEPTED'),
-      h('p', { class: 'halima big' }, h('b', {}, 'H. Abdi: '), g0.map(g => g.prosecutor?.pass).filter(Boolean).join(' ')),
+      h('p', { class: 'halima big' }, h('b', {}, `${reviewerShort(c)}: `), g0.map(g => g.prosecutor?.pass).filter(Boolean).join(' ')),
       c.chargeSheet.halima ? h('p', { class: 'halima' }, c.chargeSheet.halima) : null),
     h('div', { class: 'v-closed' }, h('span', { class: 'sign v-sign' }, 'Case closed'), h('h1', { class: 'v-title sign' }, c.meta.title),
       h('div', { class: 'v-stars', 'aria-label': `${st} of 3 stars` }, [1, 2, 3].map(i => h('span', { class: `v-star ${i <= st ? 'on' : 'off'}`, style: { '--n': i - 1 }, 'aria-hidden': 'true' }, i <= st ? '★' : '☆'))), h('p', { class: 'v-reason' }, `${['', 'Closed (by the book)', 'Closed', 'Commended'][st]} · ${run.starReason()}`)),
@@ -1528,12 +1528,13 @@ function showVerdict(fresh, halimaLine = null) {
     h('section', { class: 'elims' }, h('h2', { class: 'fsec-h on-dark' }, 'Why not the others'),
       h('ul', {}, c.solution.eliminations.map(e => h('li', {}, h('b', {}, run.byId.get(e.word)?.text || e.word), ' — ', e.why)))),
     c.afterVerdict ? h('section', { class: 'after' }, h('h2', { class: 'fsec-h on-dark' }, 'Afterwards'),
-      c.afterVerdict.map(a => a.choice ? afterChoice(a) : a.scene ? afterScene(a) : [h('p', { class: 'after-beat' }, a.beat), (a.files || []).length ? h('ul', { class: 'after-files' }, a.files.map(f => h('li', {}, h('span', { class: 'pin-dot', 'aria-hidden': 'true' }), h('b', {}, 'Pattern File: '), f.text))) : null])) : null,
+      (c.meta.final ? c.afterVerdict.slice(0, 1) : c.afterVerdict).map(a => a.choice ? afterChoice(a) : a.scene ? afterScene(a) : [a.beat ? h('p', { class: 'after-beat' }, a.beat) : null, (a.files || []).length ? h('ul', { class: 'after-files' }, a.files.map(f => h('li', {}, h('span', { class: 'pin-dot', 'aria-hidden': 'true' }), h('b', {}, 'Pattern File: '), f.text))) : null])) : null,
     pins.length ? h('section', { class: 'v-pins' }, h('h2', { class: 'fsec-h on-dark' }, pr.flags.patternFile ? 'Filed to the Pattern File' : 'Filed for later'),
       h('ul', {}, pins.map(p => h('li', {}, h('span', { class: 'pin-dot', 'aria-hidden': 'true' }), p.text, p.found ? '' : h('em', {}, ' (you missed this one; it is filed anyway)'))))) : null,
     col ? h('section', { class: 'v-col' }, h('h2', { class: 'fsec-h on-dark' }, 'On your desk now'), h('div', { class: 'shelf-item shelf-item--object big' }, h('b', {}, col.name), h('span', {}, col.desc))) : null,
     bc.desk ? h('p', { class: 'v-desk hand' }, bc.desk) : null,
     h('div', { class: 'v-actions' },
+      c.meta.final ? h('button', { class: 'card-btn card-btn--big card-btn--final', type: 'button', onclick: () => showEnding(c) }, h('span', {}, 'OPEN THE DRAWER: ', h('b', {}, 'MWENDA, J.')), h('span', { class: 'arrow' }, '→')) :
       n < SLICE_LAST ? h('button', { class: 'card-btn card-btn--big', type: 'button', onclick: () => openCase(n + 1) }, h('span', {}, 'NEXT: ', h('b', {}, `CASE ${pad3(n + 1)}`)), h('span', { class: 'arrow' }, '→'))
         : h('div', { class: 'slice-end' }, h('h2', { class: 'sign' }, `End of region ${region.number}`), h('p', {}, `${regionOf(n + 1)?.name || 'The next region'} arrives in the next build. Thank you for playing.`)),
       h('button', { class: 'card-btn card-btn--ghost', type: 'button', onclick: () => showCabinet() }, 'Back to the cabinet'),
@@ -1541,7 +1542,83 @@ function showVerdict(fresh, halimaLine = null) {
   screen(el, 'scr-verdict');
   K.motion.deal(el, '.recon-step, .elims li, .after-beat, .v-pins li', { step: 70, max: 10 });
   attachDepth(el, K);
-  if (fresh) closingSequence(run, bc, halimaLine || g0.map(g => g.prosecutor?.pass).filter(Boolean)[0]);
+  if (fresh) closingSequence(run, bc, c.chargeSheet.reviewer ? null : halimaLine || g0.map(g => g.prosecutor?.pass).filter(Boolean)[0]);
+}
+// Who reviews the charge sheet: Halima, except where the case names someone else (case 90: Rukia Hassan,
+// while Halima is suspended). "Senior Prosecutor Rukia Hassan" → "R. Hassan".
+function reviewerShort(c) {
+  const r = c.chargeSheet.reviewer; if (!r) return 'H. Abdi';
+  const w = r.replace(/^(Senior |Chief |Deputy )?(Prosecutor|Advocate|Inspector|Judge) /, '').split(' ');
+  return `${w[0][0]}. ${w.slice(1).join(' ')}`;
+}
+// ── The ending (case 100) ─────────────────────────────────────────────────────────────────────────────
+// After the last charge sheet: the epilogue in silent cards, the prologue's drawer (the OB entry typed into
+// Joseph's file and stamped CLOSED, in red), Mwalimu's last voice-note, and a new folder on the desk. Tap to
+// go on; nothing is timed; Reduce Motion shows each step still.
+function showEnding(c) {
+  const pr = K.save.progress, av = c.afterVerdict || [], reduced = K.reduced();
+  pr.flags.finished = true; save(true);
+  document.querySelectorAll('#notes .note').forEach(n => n.click());          // the verdict's notices don't follow you in
+  const epi = av.find(a => /epilogue strip/i.test(a.beat || ''))?.beat || '';
+  const cards = epi.replace(/^[^:]*:\s*/, '').replace(/\.$/, '').split(/;\s*/).filter(Boolean).map(t => t[0].toUpperCase() + t.slice(1));
+  const drawer = av.find(a => /prologue's drawer/i.test(a.beat || ''))?.beat || '';
+  const ob = (/types: "(.+?)" CLOSED/.exec(drawer) || [])[1] || '';
+  const last = av.find(a => /last voice-note/i.test(a.beat || ''))?.beat || '';
+  const quotes = [...last.matchAll(/"([^"]+)"/g)].map(m => m[1]), noteLine = quotes[0] || '', nextOb = (quotes[1] || '').replace(/\.$/, '');
+  const stars = Object.values(pr.solved).reduce((a, x) => a + (x.stars || 0), 0), closed = Object.keys(pr.solved).length;
+  let step = 0;
+  const stage = h('div', { class: 'end-stage', 'aria-live': 'polite' });
+  const next = h('button', { class: 'card-btn end-next', type: 'button' }, 'Continue');
+  const el = h('div', { class: 'ending' },
+    h('header', { class: 'topbar' }, h('button', { class: 'link back', type: 'button', onclick: () => showCabinet() }, '← Cabinet'), h('span', { class: 'topbar-mid' }, 'Mwenda, J.'), h('span')),
+    stage, next);
+  const steps = [
+    // 1. The epilogue strip: silent cards.
+    () => { stage.replaceChildren(h('h2', { class: 'end-h sign' }, 'Afterwards'), h('div', { class: 'epi-strip' }, cards.map((t, i) => h('figure', { class: 'epi-card', style: { '--n': i, '--tilt': `${tilt('epi' + i, 1.6)}deg` } }, h('div', { class: 'epi-frame', 'aria-hidden': 'true' }), h('figcaption', {}, t))))); K.motion.deal(stage, '.epi-card', { step: 160, max: 12 }); next.textContent = 'The drawer'; },
+    // 2. The drawer: Joseph's file, the OB entry, CLOSED.
+    async () => {
+      const line = h('p', { class: 'end-ob' }), st = h('span', { class: 'st st--ret end-closed' }, 'CLOSED');
+      stage.replaceChildren(h('div', { class: 'end-folder' },
+        h('div', { class: 'end-tab' }, 'MWENDA, J.'),
+        h('p', { class: 'end-meta' }, 'OB 01/05/12 · Nakuru · CLOSED (robbery), twelve years ago'),
+        h('div', { class: 'end-ledger' }, line), st,
+        h('p', { class: 'end-thick hand' }, 'The folder is thick.')));
+      next.disabled = true; next.textContent = 'Close the drawer';
+      K.sound('paper');
+      await typewrite(line, ob, { reduced, cps: 55, sound: K.sound });
+      await new Promise(r => setTimeout(r, reduced ? 100 : 500));
+      stamp(st, K.sound, reduced); st.classList.add('is-stamped');
+      next.disabled = false;
+    },
+    // 3. Mwalimu's last voice-note, and a new folder.
+    () => {
+      stage.replaceChildren(h('div', { class: 'end-last' },
+        h('p', { class: 'end-note' }, h('span', { class: 'end-from' }, 'Mwalimu · voice-note'), `"${noteLine}"`),
+        h('div', { class: 'end-newfolder' }, h('span', { class: 'end-tab end-tab--new' }, nextOb || 'OB 02/05/12'), h('span', { class: 'hand' }, 'Unopened.')),
+        h('div', { class: 'end-credits' },
+          h('h2', { class: 'sign' }, 'Kesi'), h('p', {}, 'Kenya Case Files'),
+          h('p', { class: 'end-stat' }, `${closed} cases closed · ${stars} of ${closed * 3} stars`),
+          h('p', { class: 'hand dim' }, 'Every crime in these files is fiction. The streets, the paper and the way the evidence works are Kenya\'s.'))));
+      if (noteLine) K.audio.speak('mwalimu', noteLine, { tag: 'ending' });
+      next.textContent = 'Back to the cabinet';
+    },
+    () => showCabinet(),
+  ];
+  next.addEventListener('click', () => { K.audio.stopVoice?.('ending'); steps[++step]?.(); scrollTo(0, 0); });
+  screen(el, 'scr-ending');
+  steps[0]();
+  // The epilogue's stills, from the campaign's own photos: Mwalimu, Block 9 (case 40), the Isiolo files (case 80),
+  // the seal (case 10), one still from each region, Halima. A missing photo leaves the dark frame.
+  (async () => {
+    const sceneOf = async n => { try { const cc = await getCase(n), l = cc.locations.find(x => x.kind === 'scene') || cc.locations[0]; return imgPath(n, l.id); } catch { return null; } };
+    const srcs = [['img/ref/rc_mwalimu.webp'], [await sceneOf(40)], [await sceneOf(80)], [await sceneOf(10)],
+      await Promise.all([10, 20, 30, 40, 50, 60, 70, 80, 90].map(sceneOf)), ['img/ref/rc_halima.webp']];
+    stage.querySelectorAll('.epi-frame').forEach((fr, i) => {
+      const list = (srcs[i] || []).filter(Boolean); if (!list.length) return;
+      fr.classList.toggle('is-mosaic', list.length > 1);
+      for (const src of list) fr.append(h('img', { src, alt: '', loading: 'lazy', onerror: e => e.target.remove() }));
+    });
+  })();
 }
 // A story choice after the verdict (case 60's phone call). It never changes the solution; the choice is kept
 // in progress.choices for later cases to read.

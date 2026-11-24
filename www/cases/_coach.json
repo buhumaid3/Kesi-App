@@ -184,6 +184,30 @@
     "refutedAbsence": {
       "trigger": "chargeOpen",
       "line": "An absence proves less than it seems. Before you build on one, ask what else could explain it. If something else could, it doesn't prove your point."
+    },
+    "secondSentence": {
+      "trigger": "chargeOpen",
+      "line": "A second sentence on the sheet: who helped, and how. If nobody did, say nobody. Someone who helped without knowing is not an accomplice."
+    },
+    "suspectedPlanted": {
+      "trigger": "chargeOpen",
+      "line": "Some of what you found was put there for you to find. Name the planted item, and the flaw that shows it was planted. Evidence that is too convenient deserves a second look."
+    },
+    "realTarget": {
+      "trigger": "chargeOpen",
+      "line": "The one who died is not always the one who was meant to. Ask who the poison, the trap, the bullet was meant for."
+    },
+    "twoGrips": {
+      "trigger": "chargeOpen",
+      "line": "Two names this time. Two people did this together. Either order, but both must be proven."
+    },
+    "reviewerSwap": {
+      "trigger": "chargeOpen",
+      "line": "Halima can't review this one. Rukia Hassan will. She doesn't know you, and she won't make allowances. Make it airtight."
+    },
+    "wholeDesk": {
+      "trigger": "chargeOpen",
+      "line": "Everything you have filed in a hundred cases is on this desk. The Pattern File has six threads. Each one ends at the same door."
     }
   },
   "core": {
