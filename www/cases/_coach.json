@@ -156,6 +156,34 @@
     "twoBlankWhere": {
       "trigger": "chargeOpen",
       "line": "Two places on this sheet: where he was killed, and where the lease files went. Both come from the same list. Prove each one on its own."
+    },
+    "documentTools": {
+      "trigger": "documentOpen",
+      "line": "From here on, paper can lie. When a document matters, put it beside one you trust and compare them: numbers, stamps, signatures, dates. Whatever does not match is your tell."
+    },
+    "forgeryGroup": {
+      "trigger": "chargeOpen",
+      "line": "New line on the sheet: which document was forged, and what shows it. Name the paper, and the one flaw a court can see. A guess about who wrote it is not a tell."
+    },
+    "lawyeredSuspect": {
+      "trigger": "lawyered",
+      "line": "An advocate. Your questions will get you nothing now. Find the fact that changes the case against the client, and put it in front of the advocate. Guess, and you lose a stamp."
+    },
+    "twoValidTells": {
+      "trigger": "chargeOpen",
+      "line": "This forgery has more than one flaw. Any tell you can prove will do. Pick the one you understand best."
+    },
+    "expectedList": {
+      "trigger": "expectedOpen",
+      "line": "Up here, look for what isn't there. Every place has things that should be: a dog that barks, a fire that was lit. When you know why one should be there, check it. Missing is a fact too."
+    },
+    "absenceGroup": {
+      "trigger": "chargeOpen",
+      "line": "New line on the sheet: what was missing, and what that proves. Pick the absence, then say what it shows. An absence only proves what it rules out."
+    },
+    "refutedAbsence": {
+      "trigger": "chargeOpen",
+      "line": "An absence proves less than it seems. Before you build on one, ask what else could explain it. If something else could, it doesn't prove your point."
     }
   },
   "core": {

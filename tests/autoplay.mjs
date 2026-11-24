@@ -25,9 +25,11 @@ for (let n = from; n <= to; n++) {
   let run = new CaseRun(c, null, ctx);
   let stampsSpent = 0;
   let actions = 0, waits = 0;
-  const detentions = [];
+  const detentions = [], reopened = [];
   for (let pass = 0; pass < 30; pass++) {
     const before = run.kF.size + run.kE.size + run.kP.size + run.kL.size;
+    // What should be here (region 8): check every expected item once its reason is known.
+    for (const l of run.locations()) if (run.visited.has(l.id)) for (const x of run.expectedAt(l.id)) if (!x.checked) { run.checkExpected(l.id, x.id); actions++; }
     for (const l of run.locations()) { run.visit(l.id); for (const h of run.hotspots(l.id)) {
       const r = run.tapHotspot(l.id, h.id); actions++;
       // A search warrant, filed as soon as there are grounds (region 2).
@@ -40,6 +42,8 @@ for (let n = from; n <= to; n++) {
       const pid = run.claimOwner.get(k.claim), by = k.brokenBy.find(b => run.kF.has(b));
       if (pid && by && run.kF.has(k.claim) && !run.claimState(k.claim)) { run.press(pid, k.claim, by); actions++; }
     }
+    // Lawyered suspects (region 7): present the reopening fact to the advocate as soon as it is known.
+    for (const p of run.people()) if (run.lawyered(p.id)) { const f = run.interrogation.get(p.id).lawyered.reopenedBy.find(x => run.kF.has(x)); if (f && run.reopen(p.id, f)?.ok) { actions++; reopened.push(p.id); } }
     for (const p of run.people()) if (run.canInterview(p.id)) { run.interview(p.id); actions++; for (const t of run.topics(p.id)) { run.ask(p.id, t.about); actions++; } }
     // The lab (region 4): submit every test as soon as what it needs is in hand.
     for (const l of run.labsReady()) { run.submitLab(l.id); actions++; }
@@ -55,6 +59,10 @@ for (let n = from; n <= to; n++) {
         if (!run.detain(next.detention)) break;
         detentions.push(`${next.detention}@${fmtHours(run.s.hours)}`);
         for (const e of run.samplesFor(next.detention)) run.sample(e.id);
+        // While they're held: send what the samples make possible, wait for it, press with it (no touring).
+        for (const l of run.labsReady()) { run.submitLab(l.id); actions++; }
+        while (run.labsPending().length && run.s.detained) { run.wait(); waits++; }
+        for (const k of run.contradictions) { const pid = run.claimOwner.get(k.claim), by = k.brokenBy.find(b => run.kF.has(b)); if (pid && by && run.kF.has(k.claim) && !run.claimState(k.claim)) { run.press(pid, k.claim, by); actions++; } }
         continue;
       }
       break;

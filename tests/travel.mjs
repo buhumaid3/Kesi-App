@@ -5,6 +5,7 @@
 // Usage: node tests/travel.mjs
 import fs from 'node:fs';
 import { CaseRun, fmtHours } from '../www/engine/state.js';
+import { layoutSites, renderMap } from '../www/engine/sitemap.js';
 const campaign = JSON.parse(fs.readFileSync('www/cases/_campaign.json', 'utf8'));
 const load = n => JSON.parse(fs.readFileSync(`www/cases/case-${String(n).padStart(3, '0')}.json`, 'utf8'));
 const ctxFor = n => ({ patternPins: new Set(), clock: campaign.clock, regionRules: campaign.regions.find(r => n >= r.cases[0] && n <= r.cases[1]) });
@@ -105,6 +106,38 @@ for (let n = 51; n <= 60; n++) {
   run.detain(sus.id);
   const left = run.hoursLeft(), r = run.visit('loc_post');
   check(Math.abs(left - run.hoursLeft() - (r.travel.minutes / 60 + 1)) < 1e-9, 'case 054: a drive while someone is detained spends their hours', `${fmtHours(left)} → ${fmtHours(run.hoursLeft())}`);
+}
+// The printed map: every case 51–100 draws, with every known site, deterministic, with the sheet's furniture.
+{
+  const kinds = {}, problems = [];
+  for (let n = 51; n <= 100; n++) {
+    const c = load(n), run = new CaseRun(c, null, ctxFor(n)); for (const l of c.locations) run.kL.add(l.id);
+    try {
+      const P = layoutSites(c.map.nodes, c.map.edges, { start: c.map.start, width: 600, height: 440, pad: 64 });
+      const a = renderMap(c, { sites: run.sites(), here: run.s.site }, { W: 600, H: 440, full: true, P });
+      const b = renderMap(c, { sites: run.sites(), here: run.s.site }, { W: 600, H: 440, full: true, P });
+      const strip = t => t.replace(/-\d+x\d+/g, '');
+      const drawn = (a.svg.match(/data-site="/g) || []).length, want = c.locations.filter(l => c.map.nodes.includes(l.id)).length;
+      if (drawn !== want) problems.push(`${n}: ${drawn}/${want} sites`);
+      if (strip(a.svg) !== strip(b.svg)) problems.push(`${n}: not deterministic`);
+      for (const k of ['mp-rose', 'mp-scale', 'mp-inset', 'mp-gridnum', 'mp-corner', 'sm-car']) if (!a.svg.includes(k)) problems.push(`${n}: no ${k}`);
+      if (a.legend.length < 4) problems.push(`${n}: legend ${a.legend.length}`);
+      kinds[a.theme.kind] = (kinds[a.theme.kind] || 0) + 1;
+    } catch (e) { problems.push(`${n}: ${e.message}`); }
+  }
+  check(!problems.length, 'printed map: cases 51–100 draw every site, the same every time, with north, scale, locator, grid and legend', problems.join('; ') || Object.entries(kinds).map(([k, v]) => `${k} ${v}`).join(', '));
+  check(['savanna', 'highland', 'arid', 'town', 'suburb', 'farmland', 'building', 'urban'].every(k => kinds[k]), 'every kind of sheet is used somewhere');
+}
+// Hidden sites and their roads are not drawn; the terrain doesn't change when they appear.
+{
+  const c = load(51), run = new CaseRun(c, null, ctxFor(51));
+  const P = layoutSites(c.map.nodes, c.map.edges, { start: c.map.start, width: 340, height: 225 });
+  const a = renderMap(c, { sites: run.sites(), here: run.s.site }, { W: 340, H: 225, P });
+  run.kL.add('loc_launch');
+  const b = renderMap(c, { sites: run.sites(), here: run.s.site }, { W: 340, H: 225, P });
+  const ground = t => (t.match(/class="mp-contour[^"]*" stroke="[^"]+" d="[^"]+"|<path d="[^"]+" class="mp-contour/g) || []).join('');
+  check(!a.svg.includes('data-site="loc_launch"') && b.svg.includes('data-site="loc_launch"'), 'a hidden site is not on the printed map until found');
+  check(ground(a.svg) === ground(b.svg) && ground(a.svg).length > 100, 'finding a site does not move the terrain');
 }
 console.log(fails ? `\n${fails} failed` : '\nAll travel checks passed.');
 process.exit(fails ? 1 : 0);

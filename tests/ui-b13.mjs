@@ -92,6 +92,34 @@ for (const [name, w, hgt] of SIZES) {
   check(await run(() => window.KESI.run.s.site) === 'loc_talek', `${name} a site can be driven to from the keyboard`);
   await closeAll(); await quiet();
 
+  // ── The printed map: the folder copy, the full sheet, the phone ─────────────────────────────────────
+  await toMap();
+  check(await page.locator('.site-map .mp-contour').count() >= 1 && await page.locator('.site-map .mp-rose').count() === 1 && await page.locator('.site-map .mp-scale').count() === 1 && await page.locator('.site-map .mp-area').count() === 1,
+    `${name} the folder map is a printed sheet: contours, north arrow, scale bar, area name`);
+  check(await page.locator('.site-map .mp-trees > *').count() > 20 && await page.locator('.site-map .mp-road').count() >= 3, `${name} acacia and roads by surface are drawn`);
+  await page.locator('.sm-open').click(); await wait(700); await quiet();
+  check(await page.locator('.sheet--map .mp-svg.is-full').count() === 1, `${name} "Open the map" opens the full sheet`);
+  check(await page.locator('.sheet--map .mp-inset').count() === 1 && await page.locator('.sheet--map .mp-gridnum text').count() >= 4 && await page.locator('.sheet--map .mp-corner').count() === 2,
+    `${name} the sheet has a Kenya locator, grid numbers and corner coordinates`);
+  const keys = await page.locator('.sheet--map .mp-key').allTextContents();
+  check(keys.length >= 6 && keys.some(k => /Scene of crime/.test(k)) && keys.some(k => /Murram road/.test(k)), `${name} the legend lists what this sheet shows`, `${keys.length} entries`);
+  check(/ENKARE CONSERVANCY/i.test(await page.locator('.mp-title-h').textContent()), `${name} the title block names the area`);
+  check(await wide() <= 0, `${name} nothing wider than the screen (map sheet)`);
+  await page.locator('.mp-frame').scrollIntoViewIfNeeded(); await shot('03b-map-sheet');
+  await page.evaluate(() => document.querySelector('.mp-legend')?.scrollIntoView({ block: 'center' })); await shot('03c-legend');
+  const hs = await run(() => window.KESI.run.s.hours);
+  await page.locator('.sheet--map .sm-site[data-site="loc_landing"]').dispatchEvent('click'); await wait(900); await quiet();
+  const s3 = await run(() => ({ site: window.KESI.run.s.site, view: window.KESI.run.s.view?.id, hours: window.KESI.run.s.hours }));
+  check(s3.site === 'loc_landing' && s3.view === 'loc_landing' && await page.locator('.sheet--map').count() === 0 && s3.hours > hs, `${name} tap a site on the sheet: it closes, you drive there and the place opens`);
+  await closeAll(); await quiet();
+  // The phone's Map app shows the same sheet.
+  await page.locator('.dock-phone').click(); await wait(450);
+  await page.locator('.ph-unlock').click().catch(() => {}); await wait(250);
+  await page.locator('[data-app=map]').click(); await wait(400);
+  check(await page.locator('.ph-map--sheet .mp-svg').count() === 1 && await page.locator('.ph-map--sheet .sm-site[data-site]').count() === 4, `${name} the phone's Map app shows the printed sheet with the four sites`);
+  await shot('03d-phone-map');
+  await closeAll(); await quiet();
+
   // ── WHERE on the charge sheet ───────────────────────────────────────────────────────────────────────
   await run(() => {
     const r = window.KESI.run;

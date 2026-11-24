@@ -2,7 +2,7 @@
 // Screens: prologue → cabinet → case desk (folder + dock) → verdict. Everything above the desk opens as a
 // sheet of paper: a place, a person, an exhibit, the notebook, the board, the phone, the charge sheet.
 import { CaseRun, groupFacts, timeRows, genericReply, fmtHours } from './state.js';
-import { layoutSites, byWords } from './sitemap.js';
+import { layoutSites, byWords, renderMap, LEGEND } from './sitemap.js';
 import { load, persist, wipe, defaultSave, restore } from './store.js';
 import { appReady, haptic, isNative } from './native.js';
 import { createTitle } from './title.js';
@@ -15,7 +15,7 @@ import { attachDepth, enableTilt } from './depth.js';
 import { openPhoneApp, cleanText } from './phone.js';
 import { createCamera } from './camera.js';
 
-const SLICE_LAST = 60;                       // this build plays regions 1–6 (cases 1–60)
+const SLICE_LAST = 80;                       // this build plays regions 1–8 (cases 1–80)
 const K = { campaign: null, save: load(), run: null, gloss: null, cases: new Map() };
 K.audio = createAudio(() => K.save.settings);
 const HAPTIC = { stamp: 'medium', accepted: 'success', returned: 'warning', pin: 'light', closed: 'heavy' };
@@ -231,6 +231,7 @@ function reopenView(v) {
   else if (v.sheet === 'board') openBoard();
   else if (v.sheet === 'phone') openPhone();
   else if (v.sheet === 'charge') openCharge();
+  else if (v.sheet === 'map') openMapSheet();
 }
 const setView = v => { if (K.run) { K.run.s.view = v; save(); } };
 const clearView = () => setView(null);
@@ -372,83 +373,68 @@ function visitCard(l) {
   const verb = here ? (seen ? 'HERE: ' : 'YOU\'RE HERE: ') : r ? `${seen ? 'BACK' : 'DRIVE'} · ${fmtHours(r.minutes / 60).toUpperCase()}: ` : seen ? 'RETURN: ' : 'VISIT: ';
   return h('button', { class: `visit-card ${seen ? '' : 'is-new'} ${here ? 'is-here' : ''}`, type: 'button', 'data-lid': l.id, onclick: () => goTo(l.id),
     'aria-label': `${l.name}${here ? ', you are here' : r ? `, ${fmtHours(r.minutes / 60)} by ${r.legs.map(e => byWords(e.by)).filter((x, i, a) => a.indexOf(x) === i).join(' and ')}` : ''}${seen ? '' : ', not visited'}` },
-    h('span', {}, verb, h('b', {}, l.name.toUpperCase())), h('span', { class: 'arrow', 'aria-hidden': 'true' }, '→'));
+    h('span', {}, verb, h('b', {}, l.name.toUpperCase()), (() => { const n = run.expectedCount(l.id).unchecked; return n && seen ? h('small', { class: 'vc-check' }, ` · ${n} to check`) : null; })()), h('span', { class: 'arrow', 'aria-hidden': 'true' }, '→'));
 }
+// The map is a printed field sheet (sitemap.js renderMap): terrain, water, roads by surface, symbols, grid,
+// north, scale and a Kenya locator. The folder carries a small copy; tapping it opens the full sheet.
 const mapLayouts = new Map();
-const CAR = [15, -12];          // the 4×4 parks beside the site, not on its name
-// A label in two short lines at most ("Sunrise Balloon / Safaris camp").
-function labelLines(name, max = 15) {
-  const base = name.replace(/ \(.*\)$/, '').replace(/^The /, ''), words = (base[0].toUpperCase() + base.slice(1)).split(' '), lines = [''];
-  for (const w of words) { const cur = lines[lines.length - 1]; if (cur && (cur + ' ' + w).length > max && lines.length < 2) lines.push(w); else lines[lines.length - 1] = cur ? `${cur} ${w}` : w; }
-  return lines;
+let folderMap = null;                     // the folder copy's geometry, for the drive animation
+function mapRender(run, { W, H, full }) {
+  const key = `${run.n}:${W}x${H}:${full ? 1 : 0}`, map = run.map;
+  if (!mapLayouts.has(key)) mapLayouts.set(key, layoutSites(map.nodes, map.edges, { start: map.start, width: W, height: H, pad: full ? 64 : 42 }));
+  const P = mapLayouts.get(key);
+  return { P, W, H, ...renderMap(run.c, { sites: run.sites(), here: run.s.site }, { W, H, full, P, regionName: regionOf(run.n)?.name || '' }) };
 }
-function siteMap() {
-  const run = K.run, map = run.map; if (!map) return null;
-  coach('siteMap');
-  // Draw narrower on small phones so the labels keep their size.
-  const W = Math.round(Math.max(290, Math.min(350, innerWidth - 40))), H = 210, key = `${run.n}:${W}`;
-  if (!mapLayouts.has(key)) mapLayouts.set(key, layoutSites(map.nodes, map.edges, { start: map.start, width: W, height: H }));
-  const P = mapLayouts.get(key); mapLayouts.set(run.n, P);
-  const sites = run.sites(), byIdS = new Map(sites.map(x => [x.id, x]));
-  const shown = id => byIdS.get(id)?.known;
-  let svg = `<svg class="sm-svg" viewBox="0 0 ${W} ${H}" role="group" aria-label="Site map">`;
-  svg += `<defs><pattern id="sm-grass" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(18)"><path d="M0 7h4" class="sm-tuft"/></pattern></defs>`;
-  svg += `<rect class="sm-ground" x="0" y="0" width="${W}" height="${H}" rx="6"/><rect x="0" y="0" width="${W}" height="${H}" fill="url(#sm-grass)" rx="6"/>`;
-  // Routes, then their times on top.
-  const labels = [];
-  for (const e of map.edges) {
-    if (!shown(e.a) || !shown(e.b)) continue;
-    const [x1, y1] = P[e.a], [x2, y2] = P[e.b], cls = `sm-route sm-by-${String(e.by).replace(/\W+/g, '')}`;
-    const land = !byIdS.get(e.a).location || !byIdS.get(e.b).location;
-    svg += `<line class="${cls}${land ? ' is-landmark' : ''}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`;
-    const mx = (x1 + x2) / 2, my = (y1 + y2) / 2, len = Math.hypot(x2 - x1, y2 - y1) || 1, nx = -(y2 - y1) / len, ny = (x2 - x1) / len;
-    const txt = e.minutes < 60 ? `${e.minutes} min` : `${Math.floor(e.minutes / 60)}h${e.minutes % 60 ? ` ${e.minutes % 60}m` : ''}`, pw = 10 + txt.length * 5.6;
-    if (len - 56 < pw) continue;        // too short to label: the place card under the map says the time
-    labels.push(`<g class="sm-time" transform="translate(${(mx + nx * 9).toFixed(1)} ${(my + ny * 9).toFixed(1)})"><rect x="${(-pw / 2).toFixed(1)}" y="-7" width="${pw.toFixed(1)}" height="13" rx="6.5"/><text y="3">${esc(txt)}</text></g>`);
-  }
-  svg += labels.join('');
-  // Each name goes below its site, or above when a road leaves downwards (so names don't sit on routes).
-  const sideOf = id => {
-    const [x0, y0] = P[id];
-    const ang = map.edges.filter(e => (e.a === id || e.b === id) && shown(e.a) && shown(e.b)).map(e => { const o = P[e.a === id ? e.b : e.a]; return Math.atan2(o[1] - y0, o[0] - x0); });
-    const clear = a => Math.min(Math.PI, ...ang.map(b => { const d = Math.abs(a - b) % (2 * Math.PI); return d > Math.PI ? 2 * Math.PI - d : d; }));
-    return clear(Math.PI / 2) + 0.25 >= clear(-Math.PI / 2) ? 'below' : 'above';
-  };
-  for (const x of sites) {
-    if (!x.known) continue;
-    const [cx, cy] = P[x.id], lines = labelLines(x.name), up = sideOf(x.id) === 'above';
-    // Near the edge of the sheet, a name hangs inwards instead of running off it.
-    const half = Math.max(...lines.map(l => l.length)) * 3.1, ax = cx + half > W - 4 ? ['end', 7] : cx - half < 4 ? ['start', -7] : ['middle', 0];
-    const t = lines.map((ln, i) => `<tspan x="${ax[1]}" dy="${i ? 11 : 0}">${esc(ln)}</tspan>`).join('');
-    const ty = (r0) => up ? -(r0 + 6 + (lines.length - 1) * 11) : r0 + 12;
-    if (!x.location) {      // a landmark: a lodge, a town on the way
-      svg += `<g class="sm-site is-landmark" transform="translate(${cx} ${cy})" aria-hidden="true"><rect x="-4" y="-4" width="8" height="8"/><text class="sm-name" text-anchor="${ax[0]}" y="${ty(6)}">${t}</text></g>`;
-      continue;
-    }
-    const scene = x.kind === 'scene', mins = x.route?.minutes;
-    const aria = `${x.name}${x.here ? ', you are here' : mins != null ? `, ${fmtHours(mins / 60)} away` : ''}${x.visited ? '' : ', not visited'}`;
-    svg += `<g class="sm-site${x.here ? ' is-here' : ''}${scene ? ' is-scene' : ''}${x.visited ? '' : ' is-new'}" data-site="${x.id}" transform="translate(${cx} ${cy})" role="button" tabindex="0" aria-label="${esc(aria)}">`
-      + `<circle class="sm-hit" r="22"/><circle class="sm-dot" r="${scene ? 8 : 6.5}"/>${scene ? '<path class="sm-x" d="M-4 -4L4 4M4 -4L-4 4"/>' : ''}`
-      + `<text class="sm-name" text-anchor="${ax[0]}" y="${ty(scene ? 9 : 7)}">${t}</text></g>`;
-  }
-  // The detective's 4×4, parked at the site you're at.
-  const [hx, hy] = P[run.s.site] || [0, 0], carDy = run.s.site && sideOf(run.s.site) === 'above' ? 13 : CAR[1];
-  svg += `<g class="sm-car" transform="translate(${hx + CAR[0]} ${hy + carDy})" aria-hidden="true"><rect x="-9" y="-5" width="18" height="8" rx="2"/><rect class="sm-car-top" x="-5" y="-9" width="10" height="5" rx="1.5"/><circle cx="-5" cy="4" r="2.4"/><circle cx="5" cy="4" r="2.4"/></g>`;
-  svg += `</svg>`;
-  const wrap = h('div', { class: 'site-map' });
-  wrap.innerHTML = svg;
-  for (const g of wrap.querySelectorAll('.sm-site[data-site]')) {
+function bindSites(root, pick) {
+  for (const g of root.querySelectorAll('.sm-site[data-site]')) {
     const id = g.dataset.site;
-    g.addEventListener('click', () => goTo(id));
-    g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); goTo(id); } });
+    g.addEventListener('click', e => { e.stopPropagation(); pick(id); });
+    g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(id); } });
   }
-  const here = byIdS.get(run.s.site);
-  return h('div', { class: 'sm-wrap' }, wrap,
-    h('p', { class: 'sm-cap' }, h('span', {}, `You're at ${here?.name.replace(/ \(.*\)$/, '').replace(/^The /, 'the ') || '—'}.`),
-      run.s.driven ? h('span', { class: 'sm-driven' }, `Driven ${fmtHours(run.s.driven / 60)}`) : null,
-      h('button', { class: 'link tiny', type: 'button', onclick: e => popover(e.currentTarget, 'The site map', 'Tap a site to drive there. The drive takes the minutes on the route, by the shortest way you know, and the case clock moves on. Looking round a site you\'re already at costs nothing extra; leaving and coming back does. Plan the order.') }, 'How it works')));
 }
-// Drive to a site and open it. On the folder's map, the 4×4 drives the route first.
+const hereLine = run => { const x = run.sites().find(q => q.here); return `You're at ${x?.name.replace(/ \(.*\)$/, '').replace(/^The /, 'the ') || '—'}.`; };
+function siteMap() {
+  const run = K.run; if (!run.map) return null;
+  coach('siteMap');
+  // Drawn at the width it is shown, so the lettering keeps its size.
+  const W = Math.round(Math.max(290, Math.min(520, innerWidth - 40))), H = Math.round(W * 0.66);
+  const r = folderMap = mapRender(run, { W, H, full: false });
+  const wrap = h('div', { class: 'site-map', title: 'Open the map' });
+  wrap.innerHTML = r.svg;
+  bindSites(wrap, goTo);
+  wrap.addEventListener('click', () => openMapSheet());
+  return h('div', { class: 'sm-wrap' }, wrap,
+    h('p', { class: 'sm-cap' }, h('span', {}, hereLine(run)),
+      run.s.driven ? h('span', { class: 'sm-driven' }, `Driven ${fmtHours(run.s.driven / 60)}`) : null,
+      h('button', { class: 'link tiny sm-open', type: 'button', onclick: () => openMapSheet() }, 'Open the map'),
+      h('button', { class: 'link tiny', type: 'button', onclick: e => popover(e.currentTarget, 'The site map', 'Tap a site to drive there. The drive takes the minutes on the route, by the shortest way you know, and the case clock moves on. Looking round a site you\'re already at costs nothing extra; leaving and coming back does. Plan the order. Tap the map anywhere else to open the full sheet.') }, 'How it works')));
+}
+// The full sheet: title block, the map (pinch or double-tap to zoom, drag to look round), the legend.
+function openMapSheet() {
+  const run = K.run; if (!run.map) return;
+  setView({ sheet: 'map' });
+  const entry = openSheet({ id: 'map', className: 'sheet--map', label: 'Site map', onClose: clearView, build(body) {
+    const avail = Math.max(300, Math.min(900, (body.clientWidth || Math.min(innerWidth, 900)) - 28));
+    const W = Math.round(avail), H = Math.round(W * (W < 560 ? 1.08 : 0.7));
+    const r = mapRender(run, { W, H, full: true }), m = run.c.meta;
+    const stage = h('div', { class: 'mp-stage' }); stage.innerHTML = r.svg;
+    const frame = h('div', { class: 'mp-frame' }, stage);
+    bindSites(stage, id => { closeSheet(entry); goTo(id); });
+    put(body,
+      h('header', { class: 'mp-title' },
+        h('span', { class: 'mp-sheetno' }, `Field sheet ${pad3(m.number)}/1 · SCU Nairobi`),
+        h('h2', { class: 'mp-title-h' }, r.area || 'Site map'),
+        h('span', { class: 'mp-title-sub' }, `Case ${pad3(m.number)} · ${m.title}${m.date ? ` · ${m.date}` : ''}`)),
+      frame,
+      h('p', { class: 'mp-note' }, `${hereLine(run)}${run.s.driven ? ` Driven ${fmtHours(run.s.driven / 60)}.` : ''} Tap a site to drive there. Pinch or double-tap to zoom.`),
+      h('section', { class: 'mp-legend', 'aria-label': 'Legend' }, h('h3', { class: 'mp-legend-h' }, 'Legend'),
+        h('div', { class: 'mp-legend-grid' }, r.legend.map(k => LEGEND[k]).filter(Boolean).map(([label, draw]) => h('div', { class: 'mp-key' },
+          h('span', { class: 'mp-key-sw', html: `<svg viewBox="0 0 32 14" width="32" height="14" aria-hidden="true">${draw}</svg>` }), h('span', {}, label))))),
+      h('p', { class: 'mp-imprint' }, `Compiled from drive times and the case file; positions and distances approximate (scale bar ≈ ${r.unit < 1 ? `${Math.round(r.unit * 1000)} m` : `${r.unit} km`}). Grid and coordinates for reference only. Not for navigation.`));
+    requestAnimationFrame(() => createCamera(frame, stage, { reduced: K.reduced, zMax: 4 }));
+  } });
+}
+// Drive to a site and open it. On the folder's map, the 4×4 drives the road first.
 let driving = false;
 async function goTo(id) {
   const run = K.run;
@@ -460,12 +446,13 @@ async function goTo(id) {
   openLocation(id);
 }
 function animateDrive(r) {
-  const car = $('.scr-desk .site-map .sm-car'), P = mapLayouts.get(K.run.n);
-  if (!r || !car || !P || K.reduced() || r.path.length < 2) return Promise.resolve();
+  const car = $('.scr-desk .site-map .sm-car');
+  if (!r || !car || !folderMap || K.reduced() || r.path.length < 2) return Promise.resolve();
   const rect = car.ownerSVGElement.getBoundingClientRect();
   if (rect.bottom < 0 || rect.top > innerHeight) return Promise.resolve();      // map off screen: no point
-  const pts = r.path.map(id => P[id]), seg = pts.slice(1).map((p, i) => Math.hypot(p[0] - pts[i][0], p[1] - pts[i][1])), total = seg.reduce((a, b) => a + b, 0) || 1;
-  const dur = Math.min(1500, 450 + r.minutes * 6);
+  const pts = folderMap.routePoints(r); if (pts.length < 2) return Promise.resolve();
+  const seg = pts.slice(1).map((p, i) => Math.hypot(p[0] - pts[i][0], p[1] - pts[i][1])), total = seg.reduce((a, b) => a + b, 0) || 1;
+  const dur = Math.min(1600, 500 + r.minutes * 6);
   K.sound('key');
   return new Promise(res => {
     const t0 = performance.now();
@@ -473,7 +460,7 @@ function animateDrive(r) {
       const k = Math.min(1, (now - t0) / dur), e = k < 0.5 ? 2 * k * k : 1 - (-2 * k + 2) ** 2 / 2;
       let d = e * total, i = 0; while (i < seg.length - 1 && d > seg[i]) { d -= seg[i]; i++; }
       const f = seg[i] ? Math.min(1, d / seg[i]) : 1, x = pts[i][0] + (pts[i + 1][0] - pts[i][0]) * f, y = pts[i][1] + (pts[i + 1][1] - pts[i][1]) * f;
-      car.setAttribute('transform', `translate(${(x + CAR[0]).toFixed(1)} ${(y + CAR[1]).toFixed(1)})`);
+      car.setAttribute('transform', `translate(${(x + 15).toFixed(1)} ${(y - 13).toFixed(1)})`);
       if (k < 1) requestAnimationFrame(step); else setTimeout(res, 120);
     };
     requestAnimationFrame(step);
@@ -512,7 +499,7 @@ function labSection() {
       ready.map(l => h('div', { class: 'lab-tag' },
         h('span', { class: 'lab-k' }, testName(l.test)),
         h('b', { class: 'lab-title' }, labItems(l.id)),
-        h('span', { class: 'lab-time' }, `Takes ${l.hours} h`),
+        h('span', { class: 'lab-time' }, `Takes ${l.hours} h${run.transport ? ` (${run.transport} h on the road to the county lab)` : ''}`),
         h('button', { class: 'btn', type: 'button', onclick: () => sendLab(l.id) }, 'Send · 1 h'))),
       pending.map(l => h('div', { class: 'lab-tag is-pending' },
         h('span', { class: 'lab-k' }, testName(l.test)),
@@ -696,7 +683,7 @@ function openLocation(id) {
       h('span', { class: 'hs-no' }, String(i + 1)), h('span', { class: 'hs-l' }, x.label), h('span', { class: 'hs-tick', 'aria-label': 'examined', hidden: !run.tapped.has(x.id) }, '✓')))));
     put(body, h('h2', { class: 'sheet-title' }, l.name), pic,
       h('p', { class: 'loc-desc', html: gloss(l.description) }),
-      h('h3', { class: 'sub-h' }, 'Look at'), list);
+      h('h3', { class: 'sub-h' }, 'Look at'), list, expectedBlock(id));
     setTimeout(() => attachDepth(body, K), 0);
     if (active) requestAnimationFrame(() => open(active, null, { instant: true, again: true }));
 
@@ -789,6 +776,32 @@ function openLocation(id) {
   } });
 }
 
+// ── What should be here (region 8): a checklist of what ought to be at this place, and why ────────────
+function expectedBlock(locId) {
+  const run = K.run, items = run.expectedAt(locId), l = run.byId.get(locId);
+  if (!(l.expected || []).length) return null;
+  coach('expectedOpen');
+  const hidden = l.expected.length - items.length;
+  return h('section', { class: 'expected' },
+    h('h3', { class: 'sub-h' }, 'Expected here'),
+    h('p', { class: 'hand dim' }, 'What should be at this place, and why you expect it. Check each one: what isn\'t here can be evidence too.'),
+    items.length ? h('ul', { class: 'exp-list' }, items.map(x => {
+      const because = run.byId.get(x.because);
+      return h('li', { class: `exp-item ${x.checked ? (x.present === false ? 'is-missing' : 'is-present') : ''}`, 'data-x': x.id },
+        h('div', { class: 'exp-text' }, h('b', {}, x.text), h('span', { class: 'exp-why', html: `Because: ${K.gloss.rich(because?.text || '')}` })),
+        x.checked ? h('span', { class: `exp-stamp st ${x.present === false ? 'st--ret' : 'st--acc'} is-stamped` }, x.present === false ? 'MISSING' : 'PRESENT')
+          : h('button', { class: 'btn btn--small exp-check', type: 'button', onclick: () => checkItem(locId, x.id) }, 'Check'));
+    })) : null,
+    hidden ? h('p', { class: 'hand dim exp-more' }, `${hidden === 1 ? 'One more thing' : `${hidden} more things`} you'd expect here, once you know why.`) : null);
+}
+function checkItem(locId, xId) {
+  const run = K.run, r = run.checkExpected(locId, xId); if (!r) return;
+  K.sound(r.missing ? 'stamp' : 'pin');
+  after(r); rebuildSheets();
+  if (r.missing && r.facts.length) { toast(`Missing. Noted: ${run.byId.get(r.fact).text.replace(/^Missing: /, '')}`); coach('absenceFound'); }
+  else if (!r.missing) toast('It\'s there, as you\'d expect.');
+}
+
 // ── A person: the interview ───────────────────────────────────────────────────────────────────────────
 // A row of everyone you can question in this case, at the top of a person's sheet: tap one to switch to them
 // without closing (their conversation so far is kept: it lives in the case state, not the sheet).
@@ -830,10 +843,10 @@ function openPerson(pid) {
     if (!it) { put(body, h('p', { class: 'typed' }, 'Statement only. See the exhibits.')); return; }
     put(body, custodyBlock(pid));
     if (run.isReleased(pid)) return;
+    if (run.lawyered(pid)) { put(body, advocateBlock(pid)); return; }
     if (!run.canInterview(pid)) {
       coach('guarded');
-      put(body, h('p', { class: 'intro typed' }, it.stance === 'lawyered' ? `${p.name.split(' ')[0]}'s advocate does the talking: "My client has nothing to add." Come back with something that reopens it.`
-        : `${p.name.split(' ')[0]} won't talk. Arms folded, eyes on the door. Come back with something to put in front of them.`));
+      put(body, h('p', { class: 'intro typed' }, `${p.name.split(' ')[0]} won't talk. Arms folded, eyes on the door. Come back with something to put in front of them.`));
       return;
     }
     const intro = h('p', { class: 'intro typed' });
@@ -877,6 +890,57 @@ function openPerson(pid) {
       rebuildSheets();
       requestAnimationFrame(() => body.querySelector('.qa.is-last')?.scrollIntoView({ block: 'center', behavior: K.reduced() ? 'auto' : 'smooth' }));
       if (r?.facts.length) toast(`${r.facts.length} new fact${r.facts.length > 1 ? 's' : ''} to the notebook.`);
+    }
+  } });
+}
+// ── A lawyered suspect (region 7): the advocate answers for them until something reopens it ───────────
+function advocateBlock(pid) {
+  const run = K.run, p = run.byId.get(pid), it = run.interrogation.get(pid), adv = it.lawyered.advocate || 'Their advocate';
+  const first = p.name.split(' ')[0], rc = K.campaign.recurringCast.find(r => r.name === adv);
+  coach('lawyered');
+  return h('div', { class: 'advocate' },
+    h('div', { class: 'adv-head' },
+      rc ? h('img', { class: 'adv-face', src: `img/ref/${rc.id}.webp`, alt: '', onerror: e => e.target.remove() }) : null,
+      h('div', {}, h('span', { class: 'adv-k' }, 'Represented by'), h('b', { class: 'adv-name' }, adv), rc ? h('span', { class: 'adv-role' }, rc.role.split(';')[0]) : null)),
+    h('blockquote', { class: 'adv-line' }, `"${it.lawyered.line || "On my advocate's advice, no comment."}"`),
+    h('p', { class: 'hand dim' }, `${first} won't answer a single question while ${adv.split(' ').slice(-1)[0]} sits there. Put something in front of the advocate that changes the case against ${first}, and the interview reopens. The wrong thing costs a credibility stamp.`),
+    credStamps({ small: true }),
+    h('button', { class: 'btn btn--primary', type: 'button', onclick: () => reopenPicker(pid) }, 'Present something to the advocate'));
+}
+function reopenPicker(pid) {
+  const run = K.run, p = run.byId.get(pid), it = run.interrogation.get(pid), adv = it.lawyered.advocate || 'The advocate', advLast = adv.split(' ').slice(-1)[0];
+  let q = '';
+  openSheet({ id: 'reopen', className: 'sheet--press', label: `Present to ${adv}`, build(body, entry) {
+    const list = h('div', { class: 'press-list' });
+    put(body, h('h2', { class: 'sheet-title' }, `Present to ${advLast}`),
+      h('blockquote', { class: 'press-claim' }, `"${it.lawyered.line || "On my advocate's advice, no comment."}"`),
+      h('p', { class: 'hand dim' }, `Which fact would make an advocate tell ${p.name.split(' ')[0]} to start talking? Pick one. The wrong one costs a credibility stamp.`),
+      credStamps({ small: true }),
+      h('input', { class: 'nb-search', type: 'search', placeholder: 'Search what you know', 'aria-label': 'Search what you know', oninput: e => { q = e.target.value.toLowerCase(); draw(); } }),
+      list);
+    const pinned = new Set(run.s.pinned);
+    const facts = run.factsKnown().filter(f => run.claimOwner.get(f.id) !== pid);
+    facts.sort((a, b) => (pinned.has(b.id) - pinned.has(a.id)) || b.order - a.order);
+    function draw() {
+      list.replaceChildren(...facts.filter(f => !q || f.text.toLowerCase().includes(q)).slice(0, 80).map(f => {
+        const tried = run.s.tried.includes(`reopen|${pid}|${f.id}`);
+        return h('button', { class: `press-fact ${pinned.has(f.id) ? 'is-pinned' : ''} ${tried ? 'is-tried' : ''}`, type: 'button', disabled: tried, 'data-fact': f.id, onclick: () => present(f.id) },
+          pinned.has(f.id) ? h('span', { class: 'pf-pin', 'aria-label': 'pinned' }, '📌') : null, h('span', { html: K.gloss.rich(f.text) }), tried ? h('small', {}, 'changed nothing') : null);
+      }));
+    }
+    draw();
+    async function present(fid) {
+      const r = run.reopen(pid, fid); if (!r) return;
+      if (!r.ok) {
+        K.sound('returned'); save(); refreshDesk();
+        toast(`${advLast} reads it and slides it back. "That changes nothing, Detective."${r.cost ? ' One credibility stamp gone.' : ''}`);
+        entry.rebuild(); return;
+      }
+      closeSheet(entry);
+      await new Promise(res => setTimeout(res, K.reduced() ? 100 : 600));
+      K.sound('stamp');
+      toast(`${advLast} reads it twice, then leans to ${p.name.split(' ')[0]} and says something quietly. "My client will answer your questions."`);
+      after(r); openPerson(pid);
     }
   } });
 }
@@ -949,9 +1013,31 @@ function openEvidence(id) {
       h('button', { class: 'sw-step', type: 'button', 'aria-label': 'Next exhibit', onclick: () => go(1) }, '›')));
     put(body, renderEvidence(K, e, { exhibitNo: exhibitNo(id) }));
     setTimeout(() => attachDepth(body, K), 0);
+    const others = e.doc ? run.compareWith(id) : [];
+    if (e.doc) coach('documentOpen');
     put(body, h('div', { class: 'doc-actions' },
+      others.length ? h('button', { class: 'btn btn--primary', type: 'button', onclick: () => openCompare(id, others[0].id) }, 'Compare side by side') : null,
       h('button', { class: 'btn', type: 'button', onclick: () => openNotebook('evidence', id) }, 'See in notebook'),
       h('button', { class: 'btn', type: 'button', onclick: () => openBoard() }, 'Pin to board')));
+  } });
+}
+
+// ── Two documents side by side (region 7). On a narrow screen, flip between them in the same place. ──
+function openCompare(a, b) {
+  const run = K.run;
+  let left = a, right = b, showing = 'a';
+  openSheet({ id: 'compare', className: 'sheet--compare', wide: true, label: 'Compare documents', build(body, entry) {
+    const A = run.byId.get(left), B = run.byId.get(right), wide = innerWidth >= 760;
+    const pick = (cur, other, set) => h('select', { class: 'cmp-pick', 'aria-label': 'Choose the document', onchange: ev => { set(ev.target.value); entry.rebuild(); } },
+      run.documents().filter(x => x.id !== other).map(x => h('option', { value: x.id, selected: x.id === cur }, x.title)));
+    const col = (x, which) => h('div', { class: `cmp-col ${!wide && showing !== which ? 'is-hidden' : ''}`, 'data-which': which },
+      h('div', { class: 'cmp-head' }, h('span', { class: 'cmp-tag' }, `EXHIBIT ${exhibitNo(x.id)}`), pick(x.id, which === 'a' ? right : left, v => { if (which === 'a') left = v; else right = v; })),
+      renderEvidence(K, x, { exhibitNo: exhibitNo(x.id) }));
+    put(body, h('h2', { class: 'sheet-title' }, 'Compare documents'),
+      h('p', { class: 'hand dim' }, wide ? 'The same kind of paper, side by side. Look at what should match: numbers, stamps, signatures, dates.' : 'Flip between them. What changes when you flip is what doesn\'t match.'),
+      wide ? null : h('div', { class: 'cmp-flip', role: 'tablist' },
+        [['a', A], ['b', B]].map(([k, x]) => h('button', { class: `nb-tab ${showing === k ? 'is-on' : ''}`, role: 'tab', 'aria-selected': String(showing === k), type: 'button', onclick: () => { showing = k; const y = body.scrollTop; entry.rebuild(); body.scrollTop = y; } }, x.title.length > 26 ? x.title.slice(0, 25) + '…' : x.title))),
+      h('div', { class: `cmp-grid ${wide ? 'is-wide' : ''}` }, col(A, 'a'), col(B, 'b')));
   } });
 }
 
@@ -972,7 +1058,7 @@ function openNotebook(tab = 'person', focus = null) {
       tab === 'glossary' || tab === 'time' ? null : search, content);
     function line(f) {
       const pinned = run.s.pinned.includes(f.id);
-      return h('li', { class: `nb-line ${unseenAtOpen.has(f.id) ? 'is-new' : ''} ${f.kind === 'claim' ? 'is-claim' : ''}` },
+      return h('li', { class: `nb-line ${unseenAtOpen.has(f.id) ? 'is-new' : ''} ${f.kind === 'claim' ? 'is-claim' : ''} ${run.byId.get(f.id)?.absence ? 'is-absence' : ''}` },
         h('span', { class: 'nb-text', html: K.gloss.rich(f.text, { inline: K.save.settings.inlineGloss }) }),
         h('button', { class: `pin-btn ${pinned ? 'is-on' : ''}`, type: 'button', 'aria-pressed': String(pinned), 'aria-label': pinned ? 'Unpin this fact' : 'Pin this fact', onclick: () => { run.pin(f.id); save(); entry.rebuild(); } }, pinned ? '📌' : '＋'));
     }
@@ -1043,7 +1129,7 @@ function openBoard() {
     const items = [
       ...run.people().filter(p => !p.statementOnly).map(p => ({ id: p.id, kind: 'person', label: p.name, sub: p.role === 'victim' ? 'Deceased' : p.occupation })),
       ...[...run.kE].map(id => ({ id, kind: 'evidence', label: run.byId.get(id).title, sub: `Exhibit ${exhibitNo(id)}` })),
-      ...run.s.pinned.map(fid => ({ id: fid, kind: 'fact', label: shortFact(run.byId.get(fid).text, 80), sub: 'Pinned fact' })),
+      ...run.s.pinned.map(fid => ({ id: fid, kind: run.byId.get(fid).absence ? 'fact bcard--absence' : 'fact', label: shortFact(run.byId.get(fid).text, 80), sub: run.byId.get(fid).absence ? 'Missing' : 'Pinned fact' })),
       ...B.notes.map(n => ({ id: n.id, kind: 'note', label: n.text, sub: '' })),
     ];
     // New cards are laid out in as many columns as suit the screen's shape (3 on a phone held upright, up to 6
@@ -1225,10 +1311,11 @@ function showPatternFile() {
       if (!byThread.has(t)) byThread.set(t, []);
       byThread.get(t).push({ n, f });
     }
+    for (const nt of pr.patternNotes || []) { const t = nt.thread || 'other'; if (!byThread.has(t)) byThread.set(t, []); byThread.get(t).push({ n: nt.case, f: { id: `note-${nt.case}-${nt.text.length}`, text: nt.text }, note: true }); }
     for (const [t, pins] of byThread) {
       const th = K.campaign.threads.find(x => x.id === t);
       put(wall, h('section', { class: 'thread' }, h('h3', {}, th?.label || t),
-        h('div', { class: 'thread-pins' }, pins.sort((a, b) => a.n - b.n).map(({ n, f }) => h('div', { class: 'ppin', style: { '--tilt': `${tilt(f.id)}deg` } }, h('span', { class: 'bpin', 'aria-hidden': 'true' }), h('b', {}, `Case ${pad3(n)}`), h('span', {}, f.text))))));
+        h('div', { class: 'thread-pins' }, pins.sort((a, b) => a.n - b.n).map(({ n, f, note }) => h('div', { class: `ppin ${note ? 'is-note' : ''}`, style: { '--tilt': `${tilt(f.id)}deg` } }, h('span', { class: 'bpin', 'aria-hidden': 'true' }), h('b', {}, `Case ${pad3(n)}${note ? ' · note' : ''}`), h('span', {}, f.text))))));
     }
   } });
 }
@@ -1413,6 +1500,9 @@ function showVerdict(fresh, halimaLine = null) {
     pr.unlockedTo = Math.max(pr.unlockedTo, n + 1);
     if (bc.desk && !pr.desk.includes(bc.desk)) pr.desk.push(bc.desk);
     for (const p of run.spinePins()) if (!pr.pattern.includes(p.key)) pr.pattern.push(p.key);
+    // Pattern File notes filed after the verdict (region 7 on): what people said, not facts.
+    pr.patternNotes = pr.patternNotes || [];
+    for (const a of c.afterVerdict || []) for (const f of a.files || []) if (!pr.patternNotes.some(x => x.case === n && x.text === f.text)) pr.patternNotes.push({ case: n, thread: f.thread, text: f.text });
     if (n === K.campaign.patternFile.unlocksAfter) { pr.flags.patternFile = true; for (const k of K.campaign.patternFile.openingPins) if (!pr.pattern.includes(k)) pr.pattern.push(k); }
     const col = K.campaign.collectibles.find(x => x.case === n); if (col && !pr.collectibles.includes(col.id)) pr.collectibles.push(col.id);
     if (bc.halima) pr.messages.push({ from: 'Prosecutor H. Abdi', line: bc.halima, kind: 'text', case: n });
@@ -1438,7 +1528,7 @@ function showVerdict(fresh, halimaLine = null) {
     h('section', { class: 'elims' }, h('h2', { class: 'fsec-h on-dark' }, 'Why not the others'),
       h('ul', {}, c.solution.eliminations.map(e => h('li', {}, h('b', {}, run.byId.get(e.word)?.text || e.word), ' — ', e.why)))),
     c.afterVerdict ? h('section', { class: 'after' }, h('h2', { class: 'fsec-h on-dark' }, 'Afterwards'),
-      c.afterVerdict.map(a => a.choice ? afterChoice(a) : h('p', { class: 'after-beat' }, a.beat))) : null,
+      c.afterVerdict.map(a => a.choice ? afterChoice(a) : a.scene ? afterScene(a) : [h('p', { class: 'after-beat' }, a.beat), (a.files || []).length ? h('ul', { class: 'after-files' }, a.files.map(f => h('li', {}, h('span', { class: 'pin-dot', 'aria-hidden': 'true' }), h('b', {}, 'Pattern File: '), f.text))) : null])) : null,
     pins.length ? h('section', { class: 'v-pins' }, h('h2', { class: 'fsec-h on-dark' }, pr.flags.patternFile ? 'Filed to the Pattern File' : 'Filed for later'),
       h('ul', {}, pins.map(p => h('li', {}, h('span', { class: 'pin-dot', 'aria-hidden': 'true' }), p.text, p.found ? '' : h('em', {}, ' (you missed this one; it is filed anyway)'))))) : null,
     col ? h('section', { class: 'v-col' }, h('h2', { class: 'fsec-h on-dark' }, 'On your desk now'), h('div', { class: 'shelf-item shelf-item--object big' }, h('b', {}, col.name), h('span', {}, col.desc))) : null,
@@ -1465,6 +1555,22 @@ function afterChoice(a) {
       picked ? h('p', { class: 'after-result' }, picked.result)
         : h('div', { class: 'after-opts', role: 'group', 'aria-label': a.beat }, ch.options.map(o => h('button', { class: 'btn', type: 'button', 'data-choice': o.id,
           onclick: () => { pr.choices[ch.id] = o.id; K.sound(o.id === 'answer' ? 'phone' : 'key'); save(true); draw(); } }, o.label))));
+  };
+  draw();
+  return wrap;
+}
+// A quiet tap-through scene after the verdict (case 70: Mwalimu's kitchen table). No hints, no choices.
+function afterScene(a) {
+  let i = 0;
+  const wrap = h('div', { class: `after-scene scene-${a.scene}` });
+  const draw = () => {
+    const done = i >= a.beats.length;
+    wrap.replaceChildren(
+      h('p', { class: 'after-beat' }, a.beat),
+      h('div', { class: 'scene-card', 'aria-live': 'polite' },
+        a.beats.slice(0, i).map((b, k) => h('p', { class: `scene-line ${k === i - 1 ? 'is-new' : ''}` }, b)),
+        done ? (a.files || []).length ? h('ul', { class: 'after-files' }, a.files.map(f => h('li', {}, h('span', { class: 'pin-dot', 'aria-hidden': 'true' }), h('b', {}, 'Pattern File: '), f.text))) : null
+          : h('button', { class: 'btn scene-next', type: 'button', onclick: () => { i++; K.sound('paper'); draw(); wrap.querySelector('.scene-line.is-new')?.scrollIntoView({ block: 'center', behavior: K.reduced() ? 'auto' : 'smooth' }); } }, i === 0 ? 'Sit down' : 'Continue')));
   };
   draw();
   return wrap;

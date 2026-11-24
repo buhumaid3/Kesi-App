@@ -11,6 +11,7 @@ import { pad3 } from './text.js';
 import { imgPath } from './docs.js';
 import { timeRows, genericReply } from './state.js';
 import { createCamera } from './camera.js';
+import { layoutSites, renderMap } from './sitemap.js';
 
 const MWALIMU_TAIL = '214';                         // her number is only ever shown as 07•• ••• 214
 const fmt = s => `${Math.floor((s || 0) / 60)}:${String((s || 0) % 60).padStart(2, '0')}`;
@@ -209,8 +210,10 @@ export function openPhoneApp(ctx) {
       call = { gid, phase: 'ringing', muted: false, speaker: false };
       go('call');
       const reduced = K.reduced();
-      K.sound('phone'); if (!reduced) timers.push(setTimeout(() => call?.phase === 'ringing' && K.sound('phone'), 1100));
-      timers.push(setTimeout(connect, reduced ? 600 : 2200));
+      // After case 60's phone call (answered or not), her calls arrive a beat late: one more ring.
+      const late = run.n >= 61 && pr.choices?.ch_answer_mwalimu ? 1 : 0;
+      K.sound('phone'); if (!reduced) for (let k = 1; k <= 1 + late; k++) timers.push(setTimeout(() => call?.phase === 'ringing' && K.sound('phone'), 1100 * k));
+      timers.push(setTimeout(connect, reduced ? 600 + late * 300 : 2200 + late * 1100));
     }
     function connect() {
       if (!call || call.phase !== 'ringing') return;
@@ -386,6 +389,16 @@ export function openPhoneApp(ctx) {
     // ── Map: the case's places on a hand-drawn sketch of the area (not to scale) ──────────────────────────
     function mapApp() {
       const ls = run.locations();
+      // Region 6 on: the case's printed field sheet, the same one as on the folder (tap a site to drive there).
+      if (run.map) {
+        const W = 300, H = 380, P = layoutSites(run.map.nodes, run.map.edges, { start: run.map.start, width: W, height: H, pad: 40 });
+        const r = renderMap(run.c, { sites: run.sites(), here: run.s.site }, { W, H, full: false, P, regionName: ctx.regionName || '' });
+        const box = h('div', { class: 'ph-map ph-map--sheet', html: r.svg });
+        for (const g of box.querySelectorAll('.sm-site[data-site]')) g.addEventListener('click', () => ctx.openLocation(g.dataset.site));
+        const vis = ls.filter(l => run.visited.has(l.id)).length;
+        return appFrame('Map', ['Home', 'home'], h('p', { class: 'ph-sub' }, `${r.area || ctx.regionName || 'The area'} · ${vis} of ${ls.length} visited`), box,
+          h('p', { class: 'ph-foot' }, 'Tap a site to drive there.'));
+      }
       const seed = str => { let v = 2166136261; for (const ch of str) v = Math.imul(v ^ ch.charCodeAt(0), 16777619) >>> 0; return v; };
       const n = ls.length, W = 320, H = 400;
       // Places sit around a loose ring, nudged by their names, so each case's sketch is its own and never changes.

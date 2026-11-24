@@ -22,7 +22,7 @@ export function emptySave() {
     credibility: 5, solved: false, startedAt: Date.now(),
     broken: [], greyed: [], tried: [], served: [], superior: false,
     hours: 0, at: null, labs: {}, rushed: [], detained: null, dStart: null, everDetained: [],
-    site: null, driven: 0, trips: [] };
+    site: null, driven: 0, trips: [], reopened: [], checked: [] };
 }
 
 // The campaign clock (_campaign.json clock): hours each action takes, [min, max]. The engine charges the
@@ -181,6 +181,52 @@ export class CaseRun {
     const it = this.interrogation.get(pid);
     for (const lc of it?.laterClaims || []) if (this.kF.has(lc.after) && this._addFact(lc.claim, pid)) facts.push(lc.claim);
     return { ok: true, k, mark: k.mark, reaction: k.reaction, facts, evidence, unlocked: this.refresh() };
+  }
+
+  // ── Lawyered suspects (region 7) ─────────────────────────────────────────────────────────────────
+  // "On my advocate's advice, no comment" until the player puts a reopening fact in front of the advocate.
+  // A fact that doesn't reopen it costs a stamp, once per pairing, like a wrong press. Takes clock.reopen.
+  lawyered(pid) { const it = this.interrogation.get(pid); return it?.stance === 'lawyered' && !this.s.reopened.includes(pid); }
+  reopen(pid, fid) {
+    const it = this.interrogation.get(pid);
+    if (!this.lawyered(pid) || !this.kP.has(pid) || !this.kF.has(fid) || this.isReleased(pid)) return null;
+    if ((it.lawyered?.reopenedBy || []).includes(fid)) {
+      this.s.reopened.push(pid); this.tick(this.cost.reopen?.[0] || 0);
+      return { ok: true, pid, fid, unlocked: this.refresh() };
+    }
+    const pair = `reopen|${pid}|${fid}`, again = this.s.tried.includes(pair);
+    let cost = 0;
+    if (!again) { this.s.tried.push(pair); if (this.credibilityOn() && this.s.credibility > 0) { this.s.credibility--; cost = 1; } this.s.badPress = (this.s.badPress || 0) + 1; }
+    return { ok: false, again, cost };
+  }
+  // ── What should be here (region 8) ───────────────────────────────────────────────────────────────
+  // A place's Expected list: things that should be there, each grounded in a fact (why it should be there).
+  // An item shows once its grounding fact is known; checking it at the place says whether it's there. A
+  // missing one becomes an absence fact ("Missing: …"). Checking is free and needs a visit.
+  expectedAt(locId) {
+    const l = this.byId.get(locId);
+    return (l?.expected || []).filter(x => this.kF.has(x.because)).map(x => ({ ...x, checked: this.s.checked.includes(`${locId}|${x.id}`) }));
+  }
+  expectedCount(locId) { const all = this.expectedAt(locId); return { shown: all.length, unchecked: all.filter(x => !x.checked).length }; }
+  checkExpected(locId, xId) {
+    if (!this.kL.has(locId) || !this.visited.has(locId)) return null;
+    const x = this.expectedAt(locId).find(q => q.id === xId); if (!x) return null;
+    const key = `${locId}|${xId}`, first = !this.s.checked.includes(key);
+    if (first) this.s.checked.push(key);
+    const facts = x.present === false && x.fact && this._addFact(x.fact, `expected:${locId}`) ? [x.fact] : [];
+    return { id: xId, missing: x.present === false, fact: x.fact || null, facts, first, unlocked: this.refresh() };
+  }
+
+  // Documents (region 7): the other documents in hand, most alike first, for a side-by-side comparison.
+  documents() { return this.c.evidence.filter(e => e.doc && this.kE.has(e.id)); }
+  compareWith(evId) {
+    const e = this.byId.get(evId); if (!e?.doc) return [];
+    // Families of paper that belong together (a codicil goes with its will), then shared words.
+    const FAM = [['will', 'codicil', 'probate', 'testament', 'grant'], ['certificate', 'cert', 'kcse'], ['title', 'deed', 'parcel', 'index', 'survey'], ['register', 'log', 'book', 'roster'], ['invoice', 'delivery', 'supplier'], ['slip', 'payout', 'transfer'], ['logbook', 'vehicle', 'chassi']];
+    const words = t => { const ws = new Set(String(t).toLowerCase().replace(/s\b/g, '').split(/\W+/).filter(w => w.length > 2)); for (const f of FAM) if (f.some(w => ws.has(w))) ws.add(`fam:${f[0]}`); return ws; };
+    const a = words(`${e.doc.kind} ${e.title}`);
+    return this.documents().filter(x => x.id !== evId).map(x => { const b = words(`${x.doc.kind} ${x.title}`); return { x, score: [...a].filter(w => b.has(w)).length }; })
+      .sort((p, q) => q.score - p.score).map(p => p.x);
   }
 
   // ── The clock, the lab and detention (region 4, §2.5; validator rules 16 and 17) ────────────────────
@@ -346,7 +392,7 @@ export class CaseRun {
   canInterview(pid) { return this.kP.has(pid) && this.interrogation.has(pid) && !this.isReleased(pid) && this.talks(this.interrogation.get(pid)); }
   talks(it) {
     if (it.stance === 'guarded') return (it.opensWith || []).some(x => this.kF.has(x) || this.kE.has(x));
-    if (it.stance === 'lawyered') return (it.lawyered?.reopenedBy || []).some(x => this.kF.has(x));
+    if (it.stance === 'lawyered') return this.s.reopened.includes(it.person);
     return true;
   }
   interview(pid) {
@@ -379,7 +425,8 @@ export class CaseRun {
     for (const p of this.c.people) if (this.kP.has(p.id)) add(p.id, 'person');
     for (const l of this.c.locations) if (this.kL.has(l.id)) add(l.id, 'location');
     // Someone else's statement can be put to a person too (case 47: Fidelis's statement opens Sharleen).
-    for (const e of this.c.evidence) if (this.kE.has(e.id) && (e.type !== 'witness' || (e.body?.speaker && e.body.speaker !== pid))) add(e.id, 'evidence');
+    // Statements: someone else's always; your own only when the case gives an answer about it (case 78).
+    for (const e of this.c.evidence) if (this.kE.has(e.id) && (e.type !== 'witness' || (e.body?.speaker && e.body.speaker !== pid) || authored.has(e.id))) add(e.id, 'evidence');
     for (const t of it.topics || []) if (this.kF.has(t.about)) add(t.about, 'fact');
     return items;
   }
