@@ -1573,8 +1573,9 @@
    "100/ev_verge"
   ],
   "submitted": "2026-11-17T15:17:51.065Z",
-  "state": "JOB_STATE_PENDING",
-  "fetched": false
+  "state": "JOB_STATE_SUCCEEDED",
+  "fetched": true,
+  "dest": "files/batch-dbyajkibd0xcp0gycyrmc9m468gvdtvubp52"
  },
  {
   "name": "batches/716mo1l9jj1z9mt7pkb54d9fhbh4ast0cny1",
@@ -1593,7 +1594,8 @@
    "010/recon"
   ],
   "submitted": "2026-11-26T05:27:43.368Z",
-  "state": "JOB_STATE_PENDING",
-  "fetched": false
+  "state": "JOB_STATE_SUCCEEDED",
+  "fetched": true,
+  "dest": "files/batch-716mo1l9jj1z9mt7pkb54d9fhbh4ast0cny1"
  }
 ]
