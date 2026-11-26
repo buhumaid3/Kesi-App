@@ -37,6 +37,10 @@ export const KIND = {
     text: 'Establishing photograph of a real kind of place in Kenya, taken at eye level from where an investigator would stand on arrival. Natural 35 mm perspective, everything in focus, people absent or distant and unidentifiable. Light and time of day as described; if not stated, bright overcast daylight.' },
   scene: { ratio: '4:3', size: '2K', openai: '1536x1024',
     text: 'Crime-scene record photograph of the place after the event, slightly above eye level, flat on-camera flash or the available light, documentary and still. The event is implied only by what was left behind.' },
+  // Polish P5: the verdict's reconstruction still. The place, generated from the scene's own location photo, a
+  // moment after the event; people only as one small distant figure from behind. Nothing violent, ever.
+  reconstruction: { ratio: '3:2', size: '2K', openai: '1536x1024',
+    text: 'Reconstruction photograph for a case file: a quiet, still documentary frame of the place a moment after the event, from a little further back than an investigator would stand. Nothing happening in frame. People appear only as at most one small, distant, unidentifiable figure seen from behind or in silhouette; no faces, no struggle, no weapon in anyone\'s hand, no injury, no body.' },
   evidence: { ratio: '1:1', size: '1K', openai: '1024x1024',
     text: 'Close-up evidence photograph of the object as it was found, in its place, filling about two thirds of the frame, soft even light or flat flash, sharp detail on the object, the surroundings plain and slightly out of focus. No ruler, no numbered marker (the case file adds its own).' },
 };
@@ -116,7 +120,8 @@ const push = (caseNo, id, kind, brief, extra = {}) => {
   const b = kind === 'portrait' ? rewrite(lifted) : noPlates(lifted.replace(/,?\s*ID-photo framing\.?/i, '')).replace(/\.$/, '');
   const parts = [MASTER, k.text, (kind === 'portrait' ? 'Subject: ' : kind === 'evidence' ? 'Object: ' : 'Show: ') + b + '.'];
   if (extra.compose) parts.push(extra.compose);
-  if (extra.reference && kind === 'scene') parts.push(`The attached photograph (${extra.reference}) is this same place, taken earlier the same night: keep the same vehicles, paintwork, buildings, ground and light, and show the closer view described.`);
+  if (extra.reference && kind === 'reconstruction') parts.push(`The attached photograph (${extra.reference}) is this same place: keep the same buildings, vehicles, ground, objects and light, framed a little wider.`);
+  else if (extra.reference && kind === 'scene') parts.push(`The attached photograph (${extra.reference}) is this same place, taken earlier the same night: keep the same vehicles, paintwork, buildings, ground and light, and show the closer view described.`);
   else if (extra.reference) parts.push(`Use the attached reference image (${extra.reference}) for this person's face, build and age${extra.ageNote ? ', ' + extra.ageNote : ''}; change only clothing, expression and setting as described.`);
   parts.push(GUARD);
   const prompt = parts.join('\n');
@@ -162,6 +167,13 @@ for (const f of files) {
     const isScene = e.image.kind === 'scene';
     push(n, e.id, isScene ? 'scene' : 'evidence', e.image.brief, isScene && sceneLoc ? { reference: `img/cases/${String(n).padStart(3, '0')}/${sceneLoc.id}.webp` } : {});
   }
+}
+
+// Reconstruction stills (polish P5): one per case, from prompts/briefs/reconstructions.json (tools/recon-briefs.mjs).
+const RECON_F = path.join(process.cwd(), 'prompts', 'briefs', 'reconstructions.json');
+if (fs.existsSync(RECON_F)) {
+  const recon = JSON.parse(fs.readFileSync(RECON_F, 'utf8'));
+  for (const [n, r] of Object.entries(recon)) push(+n, 'recon', 'reconstruction', r.brief, { reference: `img/cases/${n}/${r.scene}.webp` });
 }
 
 // Same name in two cases without a continuity entry: either a collision or a missing link.

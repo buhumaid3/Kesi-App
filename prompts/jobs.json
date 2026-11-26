@@ -1575,5 +1575,25 @@
   "submitted": "2026-11-17T15:17:51.065Z",
   "state": "JOB_STATE_PENDING",
   "fetched": false
+ },
+ {
+  "name": "batches/716mo1l9jj1z9mt7pkb54d9fhbh4ast0cny1",
+  "label": "region-1",
+  "inFile": "prompts/batches/region-1-2026-11-26T05-27-26-615Z.in.jsonl",
+  "keys": [
+   "001/recon",
+   "002/recon",
+   "003/recon",
+   "004/recon",
+   "005/recon",
+   "006/recon",
+   "007/recon",
+   "008/recon",
+   "009/recon",
+   "010/recon"
+  ],
+  "submitted": "2026-11-26T05:27:43.368Z",
+  "state": "JOB_STATE_PENDING",
+  "fetched": false
  }
 ]

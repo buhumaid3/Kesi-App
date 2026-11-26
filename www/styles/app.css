@@ -1639,3 +1639,36 @@ body.is-hidden #desk-life *, body.is-hidden #lamp { animation-play-state: paused
 [data-desk-life=off] #desk-life, [data-motion=reduce] #desk-life { display: none; }
 [data-desk-life=off] #lamp, [data-motion=reduce] #lamp { animation: none; }
 body:not([data-screen=scr-desk]) .dl-fan { opacity: .05; }
+
+/* ── Collectibles as objects on the desk (polish P5) ─────────────────────────────────────────────────── */
+.desk-objects { display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 6px 10px; padding: 8px 4px 4px; }
+.desk-obj { display: flex; flex-direction: column; align-items: center; gap: 2px; background: none; border: 0; padding: 4px; color: #E9DFC9; cursor: pointer; transform: rotate(var(--tilt, 0deg)); border-radius: 6px; min-height: var(--tap-min); }
+.desk-obj:hover .desk-obj-art, .desk-obj:focus-visible .desk-obj-art { transform: translateY(-4px); filter: drop-shadow(0 8px 6px rgba(0,0,0,.35)); }
+.desk-obj:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.desk-obj-art { display: block; transition: transform 200ms var(--ease-settle), filter 200ms; }
+.desk-obj-art svg { display: block; width: 92px; height: 92px; }
+.desk-obj-name { font: 500 11px/1.25 var(--font-data); text-align: center; max-width: 110px; }
+.obj-inspect { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px 4px 20px; text-align: center; }
+.obj-big svg { width: min(240px, 64vw); height: auto; }
+.obj-desc { font: var(--t-doc) var(--font-doc); max-width: 34ch; text-align: left; }
+.v-col-obj { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center; }
+.v-col-art svg { width: 120px; height: 120px; display: block; }
+.verdict.is-fresh .v-col-art { animation: thump 420ms var(--ease-settle) 2600ms both; }
+@media (max-width: 360px) { .v-col-obj { grid-template-columns: 1fr; justify-items: center; } }
+[data-motion=reduce] .verdict.is-fresh .v-col-art { animation: none; }
+/* The reconstruction still: the case-photo treatment with a typed RECONSTRUCTION tag (polish P5). */
+.recon-still { position: relative; margin: 6px auto 16px; max-width: 520px; transform: rotate(var(--tilt, 0deg)); }
+.recon-tag { position: absolute; left: 14px; top: 14px; padding: 3px 8px; font: 800 12px var(--font-stencil); letter-spacing: .14em; color: var(--paper); background: rgba(35,34,43,.82); border: 1px solid rgba(243,235,218,.5); }
+.verdict.is-fresh .recon-still { animation: deal-tilt 520ms var(--ease-settle) 2200ms both; }
+[data-motion=reduce] .verdict.is-fresh .recon-still { animation: none; }
+/* The next morning's clipping (polish P5): newsprint, a halftone, torn edges. */
+.clipping { margin: 16px auto; max-width: 340px; padding: 12px 14px 14px; background: #E9E2D0; color: #1d1a17; transform: rotate(var(--tilt, 0deg)); box-shadow: var(--shadow-paper);
+  clip-path: polygon(0 2%, 6% 0, 14% 1.5%, 23% 0, 35% 1%, 47% 0, 60% 1.6%, 72% 0, 84% 1.2%, 93% 0, 100% 1.5%, 99% 30%, 100% 62%, 99.2% 100%, 88% 98.6%, 76% 100%, 63% 98.4%, 51% 100%, 39% 98.8%, 27% 100%, 15% 98.5%, 5% 100%, 0 98%, .8% 64%, 0 33%); }
+.clip-mast { display: flex; justify-content: space-between; border-bottom: 2px solid #1d1a17; padding-bottom: 3px; font: 700 10px var(--font-data); letter-spacing: .12em; }
+.clip-mast span:first-child { font: 900 15px var(--font-display); letter-spacing: .06em; }
+.clip-head { margin: 8px 0 6px; font: 900 22px/1.02 var(--font-display); text-transform: uppercase; text-wrap: balance; }
+.clip-pic canvas { display: block; width: 100%; height: auto; aspect-ratio: 300 / 170; }
+.clip-body { margin: 8px 0 0; font: 13px/1.4 Georgia, 'Times New Roman', serif; columns: 2 130px; column-gap: 12px; }
+.clip-body b { font: 700 11px var(--font-data); letter-spacing: .06em; }
+.verdict.is-fresh .clipping { animation: deal-tilt 520ms var(--ease-settle) 2900ms both; }
+[data-motion=reduce] .verdict.is-fresh .clipping { animation: none; }

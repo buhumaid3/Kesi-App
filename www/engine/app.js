@@ -12,6 +12,8 @@ import { renderEvidence, photo, zoomPhoto, imgPath } from './docs.js';
 import { createAudio } from './audio.js';
 import { createMotion } from './motion.js';
 import { regionArt } from './regionart.js';
+import { objectArt } from './objects.js';
+import { halftone } from './halftone.js';
 import { attachDepth, enableTilt } from './depth.js';
 import { openPhoneApp, cleanText } from './phone.js';
 import { createCamera } from './camera.js';
@@ -162,7 +164,11 @@ function showCabinet() {
       h('h2', { class: 'shelf-h' }, 'On the desk'),
       h('div', { class: 'shelf' },
         pr.flags.patternFile ? h('button', { class: 'shelf-item shelf-item--cork', type: 'button', onclick: showPatternFile }, h('b', {}, 'Pattern File'), h('span', {}, `${pr.pattern.length} pins`)) : null,
-        pr.collectibles.map(c => { const col = K.campaign.collectibles.find(x => x.id === c); return h('div', { class: 'shelf-item shelf-item--object' }, h('b', {}, col?.name), h('span', {}, col?.desc)); }),
+        pr.collectibles.length ? h('div', { class: 'desk-objects', role: 'list', 'aria-label': 'Collectibles on the desk' }, pr.collectibles.map(c => {
+          const col = K.campaign.collectibles.find(x => x.id === c); if (!col) return null;
+          return h('button', { class: 'desk-obj', type: 'button', role: 'listitem', 'aria-label': `${col.name}. Tap to look closer`, onclick: () => inspectObject(col), style: { '--tilt': `${tilt(c, 4)}deg` } },
+            h('span', { class: 'desk-obj-art', html: objectArt(c, { size: 92, label: col.name }) }), h('span', { class: 'desk-obj-name' }, col.name));
+        })) : null,
         h('button', { class: 'shelf-item shelf-item--drawer', type: 'button', onclick: showOldFolder }, h('b', {}, 'The desk drawer'), h('span', {}, 'An old folder: Mwenda, J.')),
         pr.desk.length ? h('ul', { class: 'desk-notes' }, pr.desk.map(d => h('li', {}, d))) : h('p', { class: 'desk-empty' }, 'A wooden desk, a green blotter, a desk phone, a wire in-tray.'))),
     h('section', { class: 'drawers-locked', 'aria-label': 'Later regions' },
@@ -204,6 +210,14 @@ function regionCard(num) {
   K.sound('region');
   K.motion.play(card.querySelector('.region-art-card'), 'folder');
   setTimeout(close, 5200);
+}
+// A collectible picked up off the desk: the object large, what it is, who gave it and when.
+function inspectObject(col) {
+  openSheet({ id: 'obj', className: 'sheet--object', label: col.name, build(body) {
+    put(body, h('div', { class: 'obj-inspect' }, h('div', { class: 'obj-big', html: objectArt(col.id, { size: 240, label: col.name }) }),
+      h('h2', { class: 'sheet-title' }, col.name), h('p', { class: 'doc-meta' }, `From case ${pad3(col.case)}`), h('p', { class: 'obj-desc' }, col.desc)));
+  } });
+  K.sound('paper');
 }
 function showOldFolder() {
   const pr6 = K.campaign.prologue.beats.find(b => b.id === 'pr6');
@@ -1535,6 +1549,30 @@ function openCharge() {
   } });
 }
 
+// The next morning's paper (polish P5): a clipping with a halftone of the scene. The paper is fictional
+// ("The Daily Ledger"); the story is told from the verdict, with no name a reader of the case wouldn't know.
+function clipping(c) {
+  const n = c.meta.number, scene = c.locations.find(l => l.kind === 'scene') || c.locations[0];
+  const culprits = c.people.filter(p => p.isCulprit), victim = c.people.find(p => p.role === 'victim');
+  const who = culprits.length > 1 ? `${culprits.length} charged` : culprits[0] ? `${(culprits[0].occupation || 'suspect').split(',')[0].replace(/^(a|an|the) /i, '')} charged` : 'arrest made';
+  const head = `${c.meta.title}: ${who}`;
+  const place = (scene?.name || '').replace(/^the /i, '');
+  const body = `Detectives from the Serious Crimes Unit have charged ${culprits.map(p => p.name).join(' and ') || 'a suspect'} over the death of ${victim?.name || 'the victim'}${victim?.age ? `, ${victim.age}` : ''}, at ${place}. The file has been accepted by the prosecution.`;
+  const date = (c.meta.date || c.ob.date || '').replace(/^\w+\s/, '');
+  return h('figure', { class: 'clipping', style: { '--tilt': `${tilt('clip' + n, 2.2)}deg` }, 'aria-label': `Newspaper clipping: ${head}` },
+    h('div', { class: 'clip-mast' }, h('span', {}, 'THE DAILY LEDGER'), h('span', {}, date)),
+    h('h3', { class: 'clip-head' }, head),
+    scene?.image ? h('div', { class: 'clip-pic' }, halftone(imgPath(n, scene.id), { width: 300, height: 170 })) : null,
+    h('p', { class: 'clip-body' }, h('b', {}, `${(c.meta.region || '').replace(/-/g, ' ').toUpperCase() || 'NAIROBI'} · `), body));
+}
+// The reconstruction still (polish P5): shown only once it has been generated; never a "Photo pending" frame.
+function reconStill(n) {
+  const fig = h('figure', { class: 'recon-still photo photo--scene', style: { '--tilt': `${tilt('recon' + n, 1.2)}deg` } });
+  const img = h('img', { src: imgPath(n, 'recon'), alt: 'Reconstruction: the place, a moment after', loading: 'lazy', decoding: 'async' });
+  img.addEventListener('error', () => fig.remove());
+  fig.append(h('div', { class: 'photo-img' }, img), h('span', { class: 'recon-tag', 'aria-hidden': 'true' }, 'RECONSTRUCTION'));
+  return fig;
+}
 // ── The verdict (beat 6): accepted stamp, reconstruction, eliminations, and what changes on the desk ──
 function showVerdict(fresh, halimaLine = null) {
   const run = K.run, c = run.c, n = run.n, pr = K.save.progress;
@@ -1569,6 +1607,7 @@ function showVerdict(fresh, halimaLine = null) {
     h('div', { class: 'v-closed' }, h('span', { class: 'sign v-sign' }, 'Case closed'), h('h1', { class: 'v-title sign' }, c.meta.title),
       h('div', { class: 'v-stars', 'aria-label': `${st} of 3 stars` }, [1, 2, 3].map(i => h('span', { class: `v-star ${i <= st ? 'on' : 'off'}`, style: { '--n': i - 1 }, 'aria-hidden': 'true' }, i <= st ? '★' : '☆'))), h('p', { class: 'v-reason' }, `${['', 'Closed (by the book)', 'Closed', 'Commended'][st]} · ${run.starReason()}`)),
     h('section', { class: 'recon' }, h('h2', { class: 'fsec-h on-dark' }, 'What happened'),
+      reconStill(n),
       c.solution.reconstruction.map((r, i) => h('div', { class: 'recon-step', style: { '--tilt': `${tilt(c.meta.id + i, 1)}deg` } },
         r.image ? photo({ src: imgPath(n, r.image), kind: 'location', id: r.image + i, small: true }) : null,
         h('p', { html: K.gloss.rich(r.text) })))),
@@ -1578,7 +1617,8 @@ function showVerdict(fresh, halimaLine = null) {
       (c.meta.final ? c.afterVerdict.slice(0, 1) : c.afterVerdict).map(a => a.choice ? afterChoice(a) : a.scene ? afterScene(a) : [a.beat ? h('p', { class: 'after-beat' }, a.beat) : null, (a.files || []).length ? h('ul', { class: 'after-files' }, a.files.map(f => h('li', {}, h('span', { class: 'pin-dot', 'aria-hidden': 'true' }), h('b', {}, 'Pattern File: '), f.text))) : null])) : null,
     pins.length ? h('section', { class: 'v-pins' }, h('h2', { class: 'fsec-h on-dark' }, pr.flags.patternFile ? 'Filed to the Pattern File' : 'Filed for later'),
       h('ul', {}, pins.map(p => h('li', {}, h('span', { class: 'pin-dot', 'aria-hidden': 'true' }), p.text, p.found ? '' : h('em', {}, ' (you missed this one; it is filed anyway)'))))) : null,
-    col ? h('section', { class: 'v-col' }, h('h2', { class: 'fsec-h on-dark' }, 'On your desk now'), h('div', { class: 'shelf-item shelf-item--object big' }, h('b', {}, col.name), h('span', {}, col.desc))) : null,
+    col ? h('section', { class: 'v-col' }, h('h2', { class: 'fsec-h on-dark' }, 'On your desk now'), h('div', { class: 'shelf-item shelf-item--object big v-col-obj' }, h('span', { class: 'v-col-art', html: objectArt(col.id, { size: 140, label: col.name }) }), h('div', {}, h('b', {}, col.name), h('span', {}, col.desc)))) : null,
+    clipping(c),
     bc.desk ? h('p', { class: 'v-desk hand' }, bc.desk) : null,
     h('div', { class: 'v-actions' },
       c.meta.final ? h('button', { class: 'card-btn card-btn--big card-btn--final', type: 'button', onclick: () => showEnding(c) }, h('span', {}, 'OPEN THE DRAWER: ', h('b', {}, 'MWENDA, J.')), h('span', { class: 'arrow' }, '→')) :

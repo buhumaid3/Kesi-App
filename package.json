@@ -36,7 +36,9 @@
     "music": "node tools/generate-music.mjs",
     "test:music": "node tests/music.mjs",
     "test:audio": "node tests/ui-audio.mjs",
-    "test:motion-ui": "node tests/ui-motion.mjs"
+    "test:motion-ui": "node tests/ui-motion.mjs",
+    "recon:briefs": "node tools/recon-briefs.mjs",
+    "test:pictures": "node tests/ui-pictures.mjs"
   },
   "engines": {
     "node": ">=22"

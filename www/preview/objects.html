@@ -1,0 +1,8 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../styles/tokens.css">
+<style>body{margin:0;padding:20px;display:flex;flex-wrap:wrap;gap:16px;background:#3B2416 linear-gradient(#3B2416,#2A180E);font:12px 'IBM Plex Mono',monospace;color:#eee}figure{margin:0;width:170px;text-align:center}</style></head><body>
+<script type="module">
+import { objectArt, COLLECTIBLE_ART } from '../engine/objects.js';
+const camp = await (await fetch('../cases/_campaign.json')).json();
+for (const id of COLLECTIBLE_ART) { const c = camp.collectibles.find(x => x.id === id); const f = document.createElement('figure'); f.innerHTML = objectArt(id, { size: 160, label: c?.name }) + `<figcaption>${c?.case} · ${c?.name}</figcaption>`; document.body.append(f); }
+document.body.dataset.ready = '1';
+</script></body></html>
