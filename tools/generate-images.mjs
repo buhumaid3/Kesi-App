@@ -25,7 +25,7 @@ import path from 'node:path';
 
 const MODEL = process.env.KESI_IMAGE_MODEL || 'gemini-nano-banana-2.1';
 const PRICE = { interactive: { '1K': 0.0336, '2K': 0.0504 }, batch: { '1K': 0.0168, '2K': 0.0252 } }; // USD, Google's pricing page, 2 Nov 2026
-const SHIP = { portrait: [600, 800], location: [1200, 800], scene: [1200, 900], evidence: [800, 800] };
+const SHIP = { portrait: [600, 800], location: [1200, 800], scene: [1200, 900], evidence: [800, 800], reconstruction: [1200, 800] };
 const ROOT = process.cwd();
 const P = (...a) => path.join(ROOT, ...a);
 const readJSON = (f, d) => (fs.existsSync(f) ? JSON.parse(fs.readFileSync(f, 'utf8')) : d);
