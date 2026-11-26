@@ -56,7 +56,7 @@ async function boot() {
 // Motion. The app's splash is the sequence's first frame, so it is hidden as soon as the sequence is on screen.
 // Sound starts with it where the device allows (the iOS app does); in a browser it stays silent until a tap.
 function playTitle() {
-  const short = !!K.save.progress.titleSeen;
+  const short = false;   // the owner's call (26 Nov 2026): the full opening on every launch; a tap still skips it
   let stingOn = false;
   return new Promise(resolve => {
     createLaunch(document.body, {
@@ -1881,7 +1881,7 @@ function showSettings() {
       slider('voice', 'Voices', 'Mwalimu, Halima and everyone you question, where their lines are recorded. Every line is always on screen too.'),
       hasSilentSwitch() ? row('Play sound when the phone is on silent', toggle('onSilent', () => K.audio.applySession()), 'On: voices and music play even with the ring/silent switch on. Off: the switch mutes the game.') : null,
       row('Test sound', soundTest(), 'Plays a cue, a few seconds of music and a line of Mwalimu\'s.'),
-      row('Title sequence', toggle('titleSeq'), 'The title when the app opens: in full the first time, shorter after. Tap it to skip.'),
+      row('Title sequence', toggle('titleSeq'), 'The opening sequence each time the app opens. Tap it to skip.'),
       row('Case intros', h('div', { class: 'seg' }, [['first', 'First time'], ['always', 'Always'], ['off', 'Off']].map(([v, l]) => h('button', { class: `seg-b ${s.intros === v ? 'is-on' : ''}`, type: 'button', 'aria-pressed': String(s.intros === v), onclick: () => { s.intros = v; save(); entry.rebuild(); } }, l))), 'The short title sequence when a case opens.'),
       row('Mwalimu\'s tips', h('button', { class: 'btn', type: 'button', onclick: () => { const f = K.save.progress.flags; f.coach = {}; f.coachCore = {}; save(); toast('Tips will play again the next time each one comes up.'); } }, 'Replay'), 'The one-time tips for each new part of the job.'),
       row('Motion', h('div', { class: 'seg' }, [['system', 'System'], ['reduce', 'Reduce'], ['full', 'Full']].map(([v, l]) => h('button', { class: `seg-b ${s.motion === v ? 'is-on' : ''}`, type: 'button', 'aria-pressed': String(s.motion === v), onclick: () => { s.motion = v; applySettings(); save(); entry.rebuild(); } }, l))), 'Reduce follows iOS Reduce Motion by default.'),

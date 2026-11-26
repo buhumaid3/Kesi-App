@@ -1758,3 +1758,16 @@ body:not([data-screen=scr-desk]) .dl-fan { opacity: .05; }
 .ov-stage { position: relative; overflow: hidden; border-radius: 3px; }
 .ov-top { position: absolute; inset: 0; cursor: grab; touch-action: none; mix-blend-mode: multiply; filter: hue-rotate(190deg) saturate(1.6); }
 .ov-top:active { cursor: grabbing; }
+/* Working views for exhibits (widgets.js): the audio clip, the pencil sum, collar tracks. */
+.wf, .ct { margin: 14px 0 4px; padding: 10px 12px; background: #F6F2E6; border: 1px solid var(--paper-lo); border-radius: 3px; }
+.wf-label { display: flex; justify-content: space-between; font: 700 12px var(--font-data); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 6px; }
+.wf-track { position: relative; }
+.wf-svg svg { display: block; width: 100%; height: 70px; }
+.wf-head { position: absolute; top: 0; bottom: 0; left: 0; width: 2px; background: var(--stamp); }
+.wf-range, .ct-range { width: 100%; margin: 8px 0 4px; accent-color: var(--stamp); min-height: var(--tap-min); }
+.wf-cap { margin: 2px 0 6px; font: 600 14px/1.4 var(--font-doc); min-height: 2.8em; }
+.wf-list { margin: 0; padding-left: 1.2em; font: 13px/1.4 var(--font-data); color: var(--ink-soft); }
+.pencil-sum { margin: 10px 0 0; font-size: 20px; color: var(--pencil); transform: rotate(-1deg); }
+.pencil-sum b { text-decoration: underline double; text-underline-offset: 4px; }
+.ct-svg svg { display: block; width: 100%; height: auto; background: #EFE6CF; border-radius: 2px; }
+.ct-svg .ct-l { font: 500 10px var(--font-hand); fill: #2A221B; }

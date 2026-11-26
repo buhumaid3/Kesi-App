@@ -2,6 +2,7 @@
 // sharp, accessible and translatable; generated photos only ever show places, faces and objects.
 import { h, $, openSheet } from './ui.js';
 import { esc, pad3, tilt } from './text.js';
+import { exhibitExtras } from './widgets.js';
 import { recordsPrintout, phoneScreen, letter, form, writtenLog, footage, calendar, sketch } from './paper.js';
 
 const LEDGER = new Set(['tallyBook', 'visitorRegister', 'logBook', 'ticketBook', 'jobBook', 'orderBook', 'feeBook', 'ledger']);
@@ -175,6 +176,7 @@ export function renderEvidence(K, ev, { exhibitNo } = {}) {
     doc.append(h('div', { class: 'noted' }, h('span', { class: 'noted-h' }, 'Noted'),
       h('ul', {}, (ev.facts || []).map(fid => h('li', { class: 'hand', html: gloss(run.byId.get(fid)?.text || '') })))));
   }
+  for (const x of exhibitExtras(ev)) if (x) doc.append(x);   // working views the case beat asks for (widgets.js)
   return doc;
 }
 

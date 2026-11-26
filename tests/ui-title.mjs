@@ -1,4 +1,4 @@
-// The title sequence at launch: full the first time, short after, a tap skips, Reduce Motion gets a still,
+// The title sequence at launch: the full version on every launch, a tap skips, Reduce Motion gets a still,
 // the setting turns it off.   npm run play  then  node tests/ui-title.mjs http://127.0.0.1:5173
 import { createRequire } from 'node:module';
 const { chromium } = createRequire(import.meta.url)('playwright');
@@ -24,8 +24,10 @@ async function ctx(reduced) {
   check(await page.evaluate(() => window.KESI.save.progress.titleSeen === true), 'it is remembered as seen');
   await page.goto(`${base}/index.html?title`); await wait(300);
   check(await page.locator('.title-seq').count() === 1, 'next launch: it plays again');
-  await wait(4600);
-  check(await page.locator('.title-seq').count() === 0, 'next launch: the short version ends by itself (about 2.5 s)');
+  await wait(3000);
+  check(await page.locator('.title-seq').count() === 1, 'next launch: the full version again (still playing after 3 s)');
+  await wait(4300);
+  check(await page.locator('.title-seq').count() === 0, 'it ends by itself (6.4 s)');
   await page.evaluate(() => { window.KESI.save.settings.titleSeq = false; localStorage.setItem('kesi.save.v1', JSON.stringify(window.KESI.save)); });
   await page.goto(`${base}/index.html?title`); await wait(600);
   check(await page.locator('.title-seq').count() === 0, 'Settings → Title sequence off: no title');

@@ -38,6 +38,30 @@ for (const [name, w, h] of [['iphone', 390, 844], ['ipad', 1024, 768]]) {
   check(sw, `${name}: nothing scrolls sideways`);
   await page.close();
 }
+// The working views (widgets.js) on a phone: case 88's audio clip, case 32's pencil sum, case 54's collar tracks.
+{
+  const page = await b.newPage({ viewport: { width: 390, height: 844 }, hasTouch: true, isMobile: true, reducedMotion: 'reduce' });
+  page.on('pageerror', e => errs.push(`widgets: ${e.message}`));
+  const open = async (n, id) => { await page.goto(`${base}/index.html?case=${n}`); await wait(1200);
+    await page.evaluate(id => { document.querySelectorAll('#notes .note, .region-card-wrap').forEach(x => x.remove()); window.KESI.run.kE.add(id); window.KESI.dev.openEvidence(id); }, id); await wait(400); };
+  await open(88, 'ev_monitor');
+  check(await page.locator('.wf .wf-list li').count() === 2, 'case 88: the audio clip shows its two marked moments');
+  await page.locator('.wf-range').evaluate(r => { r.value = '1388'; r.dispatchEvent(new Event('input', { bubbles: true })); });
+  check(/23:08: a heavy thud/.test(await page.locator('.wf-cap').textContent()), 'scrubbing to 23:08 brings up the thud');
+  await page.locator('.wf-range').evaluate(r => { r.value = '1370'; r.dispatchEvent(new Event('input', { bubbles: true })); });
+  check(/Quiet/.test(await page.locator('.wf-cap').textContent()), 'between the marks it is quiet');
+  await open(32, 'ev_storecard');
+  check(/500 ml − 420 ml = 80 ml/.test(await page.locator('.pencil-sum').textContent()), 'case 32: the pencil sum from the stock card');
+  await open(41, 'ev_levybook');
+  check(await page.locator('.pencil-sum').count() === 0, 'no sum where the numbers are unrelated (case 41 levy book)');
+  await open(54, 'ev_collar');
+  const c0 = await page.locator('.ct-svg circle').first().getAttribute('cx');
+  await page.locator('.ct-range').evaluate(r => { r.value = '1675'; r.dispatchEvent(new Event('input', { bubbles: true })); });
+  const c1 = await page.locator('.ct-svg circle').first().getAttribute('cx');
+  check(c0 !== c1, 'case 54: moving the time slider moves the lionesses toward the kill', `${c0} → ${c1}`);
+  check(await page.evaluate(() => document.scrollingElement.scrollWidth <= innerWidth + 1), 'nothing scrolls sideways');
+  await page.close();
+}
 await b.close();
 check(!errs.length, 'no page errors', errs.join(' | '));
 console.log(`\n${pass} passed, ${fail} failed`); process.exit(fail ? 1 : 0);
