@@ -12,11 +12,13 @@ A brief to send to a composer (or to judge licensed tracks against). Kesi is a f
 | `region-03.m4a` | Mombasa Old Town (21–30) | Coral stone, the harbour, slow heat | Oud or qanun texture with taarab colour, frame drum |
 | `region-04.m4a` | Rift Valley / Nakuru (31–40) | Red roads, wide valley, wind | Kalimba or thumb piano, long drones, sparse percussion |
 | `region-05.m4a` | Kisumu and Lake Victoria (41–50) | Water, fishing boats at dusk | Nyatiti, ohangla-coloured drums kept very low |
-| `region-06.m4a` | Maasai Mara (51–60) | Open savanna at night, distance | Low voices as texture only (no words), bells, drones |
+| `region-06.m4a` | Maasai Mara (51–60) | Open savanna at night, distance | Low drones that suggest distant voices (no singing, no words), small bells |
 | `region-07.m4a` | Mt Kenya / Nyeri (61–70) | Tea hills in mist, cold mornings | Fiddle or flute, soft guitar, rain-like textures |
 | `region-08.m4a` | Northern frontier (71–80) | Basalt, heat, almost nothing | Very sparse: a single drum, wind, long silences |
 | `region-09.m4a` | Westlands / Karen / Runda (81–90) | Glass towers, money, quiet menace | Electric piano, slow bass, cool pads |
 | `region-10.m4a` | The Final Files (91–100) | The theme returns, heavier; the case that closes the story | The cabinet theme rearranged, fuller, building slowly |
+| `finale.m4a` | The ending (after case 100): Joseph's file closed, the epilogue cards | Resolution after twelve years; quiet relief, not triumph | Acoustic guitar figure from the cabinet theme, warm strings or pads, soft bass, brushes |
+| `sting.m4a` | The launch sequence (about 7 s) | Rain, a lamp switching on, a case file that matters | Low drone, rain-like texture, one deep drum and low piano hit |
 
 Use the reference instruments as a starting point. A Kenyan composer's own judgement on what each place sounds like matters more than this table. The cultural reader hears every track before release.
 
@@ -25,7 +27,8 @@ Use the reference instruments as a starting point. A Kenyan composer's own judge
 - **Loops:** 90 to 150 seconds each, seamless (the end flows into the start with no click or gap). The game loops them for as long as a case runs.
 - **Under text:** no lead vocals, no lyrics, no sudden hits or big builds. Keep it in the background: about −20 LUFS integrated, peaks under −3 dBTP. The game lowers the music further while a character speaks.
 - **Delivery:** 48 kHz WAV masters, plus AAC `.m4a` at 96–128 kbps stereo (or we convert). Name the files exactly as in the table.
-- **Rights:** a written licence (or buyout) for worldwide use in the app, its trailers and its store pages, with no royalties per download and no Content ID claims against our own trailers. AI-generated music is not accepted unless its commercial rights are documented.
+- **Rights:** a written licence (or buyout) for worldwide use in the app, its trailers and its store pages, with no royalties per download and no Content ID claims against our own trailers.
+- **Route chosen (25 Nov 2026): A, generated with Lyria** (`tools/generate-music.mjs`, see `docs/music-decision.md`). This table is the source of the prompts; edit it, then run `node tools/generate-music.mjs prompts`. Every approved take is logged in `docs/licences.md`. The finale and the sting are new rows for that route.
 
 ## Where the files go
 

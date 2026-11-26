@@ -53,11 +53,13 @@ async function boot() {
 // Sound starts with it where the device allows (the iOS app does); in a browser it stays silent until a tap.
 function playTitle() {
   const short = !!K.save.progress.titleSeen;
+  let stingOn = false;
   return new Promise(resolve => {
     createLaunch(document.body, {
       short, reduced: K.reduced(),
-      sound: kind => K.sound(kind),
-      rain: () => K.audio.rain(),
+      // The score's sting (Lyria) replaces the drawn drone and hit when it exists; the hit's haptic stays.
+      sound: kind => { if (stingOn && (kind === 'rise' || kind === 'hit')) { if (kind === 'hit') haptic('medium', K.save.settings.haptics !== false); return; } K.sound(kind); },
+      rain: () => { stingOn = K.audio.sting(); return K.audio.rain(); },
       speak: (sp, line) => K.audio.speak(sp, line, { tag: 'title' }),
       onDone: skipped => { if (skipped) K.audio.stopVoice('title'); K.save.progress.titleSeen = true; save(); resolve(); },
     });
@@ -249,7 +251,7 @@ const clearView = () => setView(null);
 
 let noteSeq = 0;
 function mwalimu(line, opts = {}) {
-  K.sound('phone');
+  K.sound('phone'); K.sound('vibrate');
   const msg = { from: 'Mwalimu', line, kind: 'voice', case: K.run?.n, at: Date.now() };
   K.save.progress.messages.push(msg);
   // Each note's line has its own tag: dismissing the note stops that line only, never someone else's.
@@ -557,7 +559,7 @@ function clockEvents(events) {
       if (autopsy) { const l = run.tutorial('firstAutopsy'); if (l) setTimeout(() => mwalimu(l), 1200); else coach('autopsy'); }
     } else if (e.type === 'released') {
       const p = run.byId.get(e.pid);
-      if (e.expired) { K.sound('returned'); setTimeout(() => toast(`The 24 hours are up. ${p.name} walks out of the cells. No more questions for ${firstName(e.pid)}.`), 300); }
+      if (e.expired) { K.sound('clockout'); setTimeout(() => toast(`The 24 hours are up. ${p.name} walks out of the cells. No more questions for ${firstName(e.pid)}.`), 300); }
     }
   }
 }
@@ -992,7 +994,7 @@ function pressClaim(pid, claim) {
       // A held beat of silence, then the stamp and the reaction (§2.4).
       K.audio.stopVoice('person');
       await new Promise(res => setTimeout(res, K.reduced() ? 100 : 700));
-      K.sound('stamp');
+      K.sound('stamp'); K.sound('caught');
       K.audio.character(run.n, pid, 'reaction', r.reaction, { now: true, tag: 'person' });
       after(r); rebuildSheets();
       if (r.k.greys?.length) coach('caughtGreys'); else if (r.mark === 'explains') coach('caughtExplains');
@@ -1205,7 +1207,7 @@ function openBoard() {
     function select(id) {
       if (mode !== 'string') { if (id.startsWith('ev_')) openEvidence(id); else if (id.startsWith('p_')) openPerson(id); return; }
       if (!sel) { sel = id; cards.get(id)?.classList.add('is-sel'); return; }
-      if (sel !== id && !B.strings.some(s => s.includes(sel) && s.includes(id))) { B.strings.push([sel, id]); newString = `${sel}|${id}`; K.sound('pin'); save(); }
+      if (sel !== id && !B.strings.some(s => s.includes(sel) && s.includes(id))) { B.strings.push([sel, id]); newString = `${sel}|${id}`; K.sound('string'); save(); }
       cards.get(sel)?.classList.remove('is-sel'); sel = null; drawStrings();
     }
     // ── The viewport: fit, zoom, pan ─────────────────────────────────────────────────────────────────
@@ -1510,7 +1512,8 @@ function showVerdict(fresh, halimaLine = null) {
     pr.solved[n] = { stars: Math.max(st, prev?.stars || 0), wrong: run.s.wrong, hints: run.maxHintTier(), at: Date.now() };
     pr.unlockedTo = Math.max(pr.unlockedTo, n + 1);
     if (bc.desk && !pr.desk.includes(bc.desk)) pr.desk.push(bc.desk);
-    for (const p of run.spinePins()) if (!pr.pattern.includes(p.key)) pr.pattern.push(p.key);
+    let pinned = 0; for (const p of run.spinePins()) if (!pr.pattern.includes(p.key)) { pr.pattern.push(p.key); pinned++; }
+    if (pinned) setTimeout(() => K.sound('pattern'), 2600);
     // Pattern File notes filed after the verdict (region 7 on): what people said, not facts.
     pr.patternNotes = pr.patternNotes || [];
     for (const a of c.afterVerdict || []) for (const f of a.files || []) if (!pr.patternNotes.some(x => x.case === n && x.text === f.text)) pr.patternNotes.push({ case: n, thread: f.thread, text: f.text });
@@ -1569,6 +1572,7 @@ function reviewerShort(c) {
 function showEnding(c) {
   const pr = K.save.progress, av = c.afterVerdict || [], reduced = K.reduced();
   pr.flags.finished = true; save(true);
+  K.audio.music('finale'); K.sound('ending');
   document.querySelectorAll('#notes .note').forEach(n => n.click());          // the verdict's notices don't follow you in
   const epi = av.find(a => /epilogue strip/i.test(a.beat || ''))?.beat || '';
   const cards = epi.replace(/^[^:]*:\s*/, '').replace(/\.$/, '').split(/;\s*/).filter(Boolean).map(t => t[0].toUpperCase() + t.slice(1));
@@ -1722,8 +1726,9 @@ function showSettings() {
       row('Text size', h('div', { class: 'seg' }, scales.map(([v, l]) => h('button', { class: `seg-b ${s.scale === v ? 'is-on' : ''}`, type: 'button', 'aria-pressed': String(s.scale === v), onclick: () => { s.scale = v; applySettings(); save(); entry.rebuild(); } }, l))), 'Every document and note scales.'),
       row('Plain text', toggle('plain'), 'Swap the typewriter and handwriting for the system font.'),
       row('Show word meanings inline', toggle('inlineGloss'), 'Swahili and Sheng words show their meaning in brackets. You can always tap a word instead.'),
-      slider('music', 'Music', 'Region music; a quiet room tone where a region has no track yet.'),
+      slider('music', 'Music', 'The score for each region and the cabinet; a quiet room tone where a track is missing. Room sounds ride on this slider too.'),
       slider('sfx', 'Sound effects', 'Typewriter keys, stamps, the phone, the cues.'),
+      row('Room sounds', toggle('roomSounds', () => K.audio.ambience(K.audio.status().region)), 'Each region\'s background: traffic, the sea, night insects, the wind. Very quiet, under the music.'),
       slider('voice', 'Voices', 'Mwalimu, Halima and everyone you question, where their lines are recorded. Every line is always on screen too.'),
       hasSilentSwitch() ? row('Play sound when the phone is on silent', toggle('onSilent', () => K.audio.applySession()), 'On: voices and music play even with the ring/silent switch on. Off: the switch mutes the game.') : null,
       row('Test sound', soundTest(), 'Plays a cue, a few seconds of music and a line of Mwalimu\'s.'),

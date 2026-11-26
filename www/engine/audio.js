@@ -25,6 +25,7 @@ const SILENT_WAV = 'data:audio/wav;base64,UklGRkQDAABXQVZFZm10IBAAAAABAAEAQB8AAE
 export function createAudio(getSettings) {
   let ctx = null, buses = null, roomTone = null, musicSrc = null, currentRegion = null, musicToken = 0;
   let speaking = false;            // a voice line is playing or queued: music and effects duck
+  let analyser = null, amb = null, ambRegion = null;
   let lastError = '';              // the last voice file that failed to load or decode (Settings → Test sound)
   // Decoded audio, most recently used last; voices are small, music tracks are kept while their region plays.
   const buffers = new Map(), MAX_BUFFERS = 40;
@@ -59,6 +60,8 @@ export function createAudio(getSettings) {
     limiter.threshold.value = -3; limiter.knee.value = 0; limiter.ratio.value = 20; limiter.attack.value = 0.003; limiter.release.value = 0.15;
     limiter.connect(ctx.destination);
     const master = ctx.createGain(); master.gain.value = 1; master.connect(limiter);
+    // A meter after the limiter (Settings → Test sound and tests/ui-audio.mjs read it): peak since last read.
+    analyser = ctx.createAnalyser(); analyser.fftSize = 2048; limiter.connect(analyser);
     const voiceComp = ctx.createDynamicsCompressor();
     voiceComp.threshold.value = -22; voiceComp.knee.value = 8; voiceComp.ratio.value = 3; voiceComp.attack.value = 0.005; voiceComp.release.value = 0.2;
     const voiceMakeup = ctx.createGain(); voiceMakeup.gain.value = 1.6;          // about +4 dB after the compressor
@@ -87,7 +90,7 @@ export function createAudio(getSettings) {
     if (!ensure()) return;
     applySession();
     if (ctx.state !== 'running') ctx.resume().then(() => { needsResume = false; pump(); }).catch(() => {});
-    if (currentRegion && !musicSrc && !roomTone) startMusic(currentRegion);
+    if (currentRegion && !musicSrc && !roomTone) { startMusic(currentRegion); ambience(currentRegion); }
   }
   addEventListener('pointerdown', unlock, { capture: true });
   addEventListener('touchend', unlock, { capture: true });
@@ -112,7 +115,7 @@ export function createAudio(getSettings) {
     if (currentRegion === region) return;
     stopMusic();
     currentRegion = region;
-    if (ctx && ctx.state === 'running') startMusic(region);
+    if (ctx && ctx.state === 'running') { startMusic(region); ambience(region); }
   }
   function startMusic(region) {
     if (!ensure()) return;
@@ -122,7 +125,14 @@ export function createAudio(getSettings) {
     buffer(`audio/music/${file}`).then(b => {
       if (token !== musicToken || currentRegion !== region) return;
       const g = ctx.createGain(); g.gain.value = 0.0001; g.connect(buses.music);
-      const src = ctx.createBufferSource(); src.buffer = b; src.loop = true; src.connect(g); src.start();
+      const src = ctx.createBufferSource(); src.buffer = b;
+      // A loop's exact length is in the manifest (tools/generate-music.mjs); an AAC decoder may keep the
+      // encoder's priming at the start, so the loop runs over the last `len` seconds of the buffer.
+      const len = manifests.music._loops?.[String(region)];
+      const once = (manifests.music._once || []).includes(String(region));
+      src.loop = !once;
+      if (len && len < b.duration) { src.loopStart = b.duration - len; src.loopEnd = b.duration; }
+      src.connect(g); src.start(0, len && len < b.duration ? b.duration - len : 0);
       g.gain.exponentialRampToValueAtTime(1, ctx.currentTime + 1.5);
       musicSrc = { src, g };
     }).catch(() => { if (token === musicToken) roomTone = makeRoomTone(); });
@@ -132,6 +142,56 @@ export function createAudio(getSettings) {
     if (musicSrc) { const { src, g } = musicSrc; const t = ctx.currentTime; g.gain.setTargetAtTime(0.0001, t, 0.3); setTimeout(() => { try { src.stop(); } catch { /* stopped */ } g.disconnect(); }, 1200); musicSrc = null; }
     if (roomTone) { roomTone.stop(); roomTone = null; }
     currentRegion = null;
+  }
+  // ── Room sounds per region (polish P3): synthesized, very low, on the music bus so they duck under voices.
+  // Settings → Room sounds turns them off. Each is a bed (filtered noise with a slow swell) plus rare events.
+  const AMB = {
+    1: { bed: [280, 0.06], events: ['horn', 'horn2'], every: 14 },          // Nairobi: traffic far off, a matatu hooter
+    2: { bed: [320, 0.06], events: ['horn', 'radio'], every: 12 },          // Eastlands: traffic, a radio down the road
+    3: { bed: [520, 0.05, 0.09], events: ['gull'], every: 9 },             // Mombasa: the sea's wash, gulls
+    4: { bed: [900, 0.03, 0.04], events: ['bird'], every: 11 },            // Rift Valley: wind in grass, a bird
+    5: { bed: [420, 0.05, 0.12], events: ['bird'], every: 13 },            // Kisumu: water lapping
+    6: { bed: [2400, 0.02], events: ['crickets', 'lion'], every: 10 },     // Mara: night insects, a distant lion
+    7: { bed: [1500, 0.035, 0.05], events: ['bird'], every: 15 },          // Mt Kenya: rain-like hiss, birds
+    8: { bed: [700, 0.05, 0.03], events: [], every: 0 },                   // Northern frontier: the wind
+    9: { bed: [200, 0.04], events: [], every: 0 },                         // Westlands: air conditioning, a hum
+    10: { bed: [280, 0.04], events: ['horn'], every: 30 },                 // The final files: the city, quieter
+  };
+  function ambience(region) {
+    if (amb) { amb.stop(); amb = null; ambRegion = null; }
+    const a = AMB[region];
+    if (!a || getSettings().roomSounds === false || !ensure() || ctx.state !== 'running') return;
+    const [freq, level, swell = 0.02] = a.bed;
+    const len = ctx.sampleRate * 4, b = ctx.createBuffer(1, len, ctx.sampleRate), d = b.getChannelData(0);
+    for (let i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+    for (let i = 0; i < 4000; i++) { const k = i / 4000; d[i] = d[i] * k + d[len - 4000 + i] * (1 - k); }
+    const src = ctx.createBufferSource(); src.buffer = b; src.loop = true;
+    const f = ctx.createBiquadFilter(); f.type = freq > 1000 ? 'bandpass' : 'lowpass'; f.frequency.value = freq; f.Q.value = 0.7;
+    const g = ctx.createGain(); g.gain.value = 0.0001;
+    const lfo = ctx.createOscillator(), lg = ctx.createGain(); lfo.frequency.value = 0.08 + region * 0.01; lg.gain.value = swell; lfo.connect(lg); lg.connect(g.gain);
+    src.connect(f); f.connect(g); g.connect(buses.music); src.start(); lfo.start();
+    g.gain.exponentialRampToValueAtTime(level, ctx.currentTime + 3);
+    let timer = 0;
+    const next = () => { if (!a.every) return; timer = setTimeout(() => { if (ambRegion !== region) return; event(a.events[Math.floor(Math.random() * a.events.length)]); next(); }, (a.every * (0.6 + Math.random() * 0.8)) * 1000); };
+    next();
+    ambRegion = region;
+    amb = { stop() { clearTimeout(timer); const t = ctx.currentTime; g.gain.setTargetAtTime(0.0001, t, 0.5); setTimeout(() => { try { src.stop(); lfo.stop(); } catch { /* stopped */ } g.disconnect(); }, 2000); } };
+  }
+  // Rare sounds inside a room bed, all quiet and far away.
+  function event(kind) {
+    if (!ctx || ctx.state !== 'running') return;
+    const t = ctx.currentTime, out = ctx.createGain(); out.gain.value = 0.35; out.connect(buses.music);
+    const pan = ctx.createStereoPanner ? ctx.createStereoPanner() : null; if (pan) { pan.pan.value = Math.random() * 1.6 - 0.8; pan.connect(out); }
+    const dest = pan || out, far = ctx.createBiquadFilter(); far.type = 'lowpass'; far.frequency.value = 1800; far.connect(dest);
+    const tone = (type, f0, f1, at, dur, v) => { const o = ctx.createOscillator(), g = ctx.createGain(); o.type = type; o.frequency.setValueAtTime(f0, at); o.frequency.exponentialRampToValueAtTime(f1, at + dur); g.gain.setValueAtTime(0.0001, at); g.gain.exponentialRampToValueAtTime(v, at + 0.03); g.gain.exponentialRampToValueAtTime(0.0001, at + dur); o.connect(g); g.connect(far); o.start(at); o.stop(at + dur + 0.05); };
+    if (kind === 'horn') { tone('sawtooth', 392, 390, t, 0.35, 0.05); tone('sawtooth', 494, 492, t, 0.35, 0.04); }
+    else if (kind === 'horn2') { for (let i = 0; i < 3; i++) tone('square', 440, 436, t + i * 0.22, 0.14, 0.03); }
+    else if (kind === 'radio') { for (let i = 0; i < 8; i++) tone('triangle', [330, 392, 440, 392][i % 4], [330, 392, 440, 392][i % 4], t + i * 0.25, 0.2, 0.025); }
+    else if (kind === 'gull') { tone('sine', 1800, 900, t, 0.35, 0.03); tone('sine', 1700, 1000, t + 0.45, 0.3, 0.025); }
+    else if (kind === 'bird') { for (let i = 0; i < 3; i++) tone('sine', 2600 + i * 200, 3200, t + i * 0.12, 0.08, 0.02); }
+    else if (kind === 'crickets') { for (let i = 0; i < 12; i++) tone('sine', 4200, 4200, t + i * 0.09, 0.04, 0.012); }
+    else if (kind === 'lion') { tone('sawtooth', 110, 60, t, 1.6, 0.04); tone('sawtooth', 95, 55, t + 1.9, 1.2, 0.03); }
+    setTimeout(() => out.disconnect(), 4000);
   }
   // The desk at night: brown noise far away (traffic), a low lamp hum, a slow swell.
   function makeRoomTone() {
@@ -210,10 +270,37 @@ export function createAudio(getSettings) {
       lp.type = 'lowpass'; lp.frequency.setValueAtTime(180, t); lp.frequency.exponentialRampToValueAtTime(1400, t + 1.0);
       g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.12, t + 0.95); g.gain.exponentialRampToValueAtTime(0.0001, t + 1.25);
       o.connect(lp); o2.connect(lp); lp.connect(g); g.connect(out); o.start(t); o2.start(t); o.stop(t + 1.3); o2.stop(t + 1.3);
-    } else if (kind === 'hit') {          // the sting's hit as the title lands
+    } else if (kind === 'caught') {       // a contradiction: the held beat is the caller's; then a low hit
+      noise(0.3, 0.4, 90); note(hz(33), t, 1.8, 0.16); note(hz(40), t + 0.02, 1.6, 0.08);
+    } else if (kind === 'clockout') { note(hz(57), t, 0.4, 0.12); note(hz(57), t + 0.5, 0.4, 0.12); note(hz(50), t + 1.0, 1.4, 0.14); }
+    else if (kind === 'pattern') { noise(0.05, 0.25, 1500); note(hz(69), t + 0.06, 1.2, 0.06); note(hz(76), t + 0.14, 1.4, 0.05); }
+    else if (kind === 'ending') { [43, 50, 55, 59, 62, 67].forEach((m, i) => note(hz(m), t + i * 0.18, 4, 0.08)); }
+    else if (kind === 'page') { noise(0.18, 0.07, 1400); noise(0.08, 0.05, 600, t + 0.12); }
+    else if (kind === 'string') { const o = ctx.createOscillator(), g = ctx.createGain(); o.type = 'triangle'; o.frequency.setValueAtTime(180, t); o.frequency.exponentialRampToValueAtTime(260, t + 0.12); g.gain.setValueAtTime(0.06, t); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.25); o.connect(g); g.connect(out); o.start(t); o.stop(t + 0.3); }
+    else if (kind === 'carriage') { for (let i = 0; i < 5; i++) noise(0.02, 0.08, 1800, t + i * 0.03); note(hz(96), t + 0.2, 0.6, 0.05); }
+    else if (kind === 'vibrate') { for (let i = 0; i < 2; i++) { const o = ctx.createOscillator(), g = ctx.createGain(); o.type = 'square'; o.frequency.value = 160; g.gain.setValueAtTime(0.0001, t + i * 0.5); g.gain.exponentialRampToValueAtTime(0.05, t + i * 0.5 + 0.02); g.gain.setValueAtTime(0.05, t + i * 0.5 + 0.32); g.gain.exponentialRampToValueAtTime(0.0001, t + i * 0.5 + 0.36); const lp = ctx.createBiquadFilter(); lp.frequency.value = 400; o.connect(lp); lp.connect(g); g.connect(out); o.start(t + i * 0.5); o.stop(t + i * 0.5 + 0.4); } }
+    else if (kind === 'hit') {          // the sting's hit as the title lands
       noise(0.5, 0.55, 110); noise(0.25, 0.2, 2400);
       [38, 45, 50, 57, 62].forEach(m => note(hz(m), t, 3.2, 0.09));
     }
+  }
+  // The launch sting from the score (Lyria), if there is one: plays once from the start. Returns true if it will.
+  function hasSting() { return !!manifests.music.sting; }
+  function sting() {
+    if (!hasSting() || !ensure() || ctx.state !== 'running' || vol('music') === 0) return false;
+    buffer(`audio/music/${manifests.music.sting}`).then(b => { const s2 = ctx.createBufferSource(); s2.buffer = b; s2.connect(buses.music); s2.start(); }).catch(() => {});
+    return true;
+  }
+  // The meter: peak (0–1, linear) and RMS of the last 2048 samples after the limiter; and what plays.
+  function levels() {
+    if (!analyser) return { peak: 0, rms: 0 };
+    const a = new Float32Array(analyser.fftSize); analyser.getFloatTimeDomainData(a);
+    let p = 0, s2 = 0; for (const v of a) { p = Math.max(p, Math.abs(v)); s2 += v * v; }
+    return { peak: p, rms: Math.sqrt(s2 / a.length) };
+  }
+  function status() {
+    return { running: ctx?.state === 'running', region: currentRegion, music: !!musicSrc, looping: !!musicSrc?.src.loop, loopStart: musicSrc?.src.loopStart || 0, loopEnd: musicSrc?.src.loopEnd || 0,
+      duration: musicSrc?.src.buffer?.duration || 0, roomTone: !!roomTone, ambience: ambRegion, speaking, musicGain: buses ? buses.music.gain.value : 0 };
   }
   // Rain on a window (the launch sequence's first sound): filtered noise with slow swells. Returns { stop }.
   function rain() {
@@ -320,5 +407,5 @@ export function createAudio(getSettings) {
   }
   function hasCharacter(caseNo, personId, kind, text) { const said = spokenText(kind, text); return !!said && hasVoice(characterKey(caseNo, personId), said); }
 
-  return { character, hasCharacter, unlock, music, stopMusic, sfx, rain, speak, stopVoice, hasVoice, isSpeaking, setVolumes, applySession, test, get running() { return ctx?.state === 'running'; } };
+  return { character, hasCharacter, unlock, music, stopMusic, sfx, rain, sting, hasSting, levels, status, ambience, speak, stopVoice, hasVoice, isSpeaking, setVolumes, applySession, test, get running() { return ctx?.state === 'running'; } };
 }
