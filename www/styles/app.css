@@ -1740,3 +1740,21 @@ body:not([data-screen=scr-desk]) .dl-fan { opacity: .05; }
 .sk-notes { margin: 10px 0 0; padding-left: 1.4em; font: var(--t-doc) var(--font-doc); display: grid; gap: 6px; }
 .sk-notes li::marker { color: var(--stamp); font-weight: 700; }
 .sk-foot { margin: 8px 0 0; font: 12px var(--font-hand); color: var(--ink-soft); }
+
+/* ── The magnifier and the overlay (ui.beats tools) ──────────────────────────────────────────────────── */
+.has-loupe { cursor: none; touch-action: none; outline: none; }
+.loupe { position: absolute; left: 0; top: 0; z-index: 8; border-radius: 50%; overflow: hidden; pointer-events: none; background: var(--paper);
+  box-shadow: 0 0 0 3px #2A221B, 0 0 0 6px #C9A24A, 0 14px 28px rgba(0,0,0,.45), inset 0 0 18px rgba(0,0,0,.25); }
+.loupe::after { content: ''; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 30% 25%, rgba(255,255,255,.35), transparent 40%); }
+.loupe-copy * { animation: none !important; transition: none !important; }
+.btn--loupe[aria-pressed=true] { background: var(--ink); color: var(--paper); }
+.cmp-modes { display: flex; gap: 6px; margin: 4px 0 8px; }
+.ov-tools { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin: 8px 0; }
+.ov-l { display: flex; align-items: center; gap: 8px; font: 600 13px var(--font-data); }
+.ov-fade { width: 160px; accent-color: var(--stamp); }
+.ov-nudges { display: flex; gap: 4px; flex-wrap: wrap; }
+.ov-nudge { min-width: var(--tap-min); padding: 0 8px; }
+.cmp-picks { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font: 600 12px var(--font-data); margin-bottom: 8px; }
+.ov-stage { position: relative; overflow: hidden; border-radius: 3px; }
+.ov-top { position: absolute; inset: 0; cursor: grab; touch-action: none; mix-blend-mode: multiply; filter: hue-rotate(190deg) saturate(1.6); }
+.ov-top:active { cursor: grabbing; }

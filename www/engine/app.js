@@ -14,6 +14,7 @@ import { createMotion } from './motion.js';
 import { regionArt } from './regionart.js';
 import { objectArt } from './objects.js';
 import { halftone } from './halftone.js';
+import { attachLoupe } from './loupe.js';
 import { attachDepth, enableTilt } from './depth.js';
 import { openPhoneApp, cleanText } from './phone.js';
 import { createCamera } from './camera.js';
@@ -26,6 +27,7 @@ K.sound = kind => { K.audio.sfx(kind); if (HAPTIC[kind]) haptic(HAPTIC[kind], K.
 K.reduced = () => reducedMotion(K.save.settings);
 K.motion = createMotion(K.reduced);
 window.KESI = K;                             // for the playtest console and automated tests
+K.dev = { openCompare: (a, b) => openCompare(a, b), openEvidence: id => openEvidence(id) };   // test hooks
 
 // ── Boot ─────────────────────────────────────────────────────────────────────────────────────────────
 async function boot() {
@@ -1083,11 +1085,14 @@ function openEvidence(id) {
       h('button', { class: 'sw-step', type: 'button', 'aria-label': 'Previous exhibit', onclick: () => go(-1) }, '‹'),
       h('span', { class: 'sw-count' }, `Exhibit ${at + 1} of ${all.length}`),
       h('button', { class: 'sw-step', type: 'button', 'aria-label': 'Next exhibit', onclick: () => go(1) }, '›')));
-    put(body, renderEvidence(K, e, { exhibitNo: exhibitNo(id) }));
+    const docEl = renderEvidence(K, e, { exhibitNo: exhibitNo(id) });
+    put(body, docEl);
     setTimeout(() => attachDepth(body, K), 0);
     const others = e.doc ? run.compareWith(id) : [];
     if (e.doc) coach('documentOpen');
+    const loupe = attachLoupe(docEl);
     put(body, h('div', { class: 'doc-actions' },
+      h('button', { class: 'btn btn--loupe', type: 'button', 'aria-pressed': 'false', onclick: ev => { const on = loupe.toggle(); ev.currentTarget.setAttribute('aria-pressed', String(on)); ev.currentTarget.textContent = on ? 'Put the magnifier away' : 'Magnifier'; if (on) { K.sound('paper'); coach('loupeOpen'); } } }, 'Magnifier'),
       others.length ? h('button', { class: 'btn btn--primary', type: 'button', onclick: () => openCompare(id, others[0].id) }, 'Compare side by side') : null,
       h('button', { class: 'btn', type: 'button', onclick: () => openNotebook('evidence', id) }, 'See in notebook'),
       h('button', { class: 'btn', type: 'button', onclick: () => openBoard() }, 'Pin to board')));
@@ -1097,15 +1102,38 @@ function openEvidence(id) {
 // ── Two documents side by side (region 7). On a narrow screen, flip between them in the same place. ──
 function openCompare(a, b) {
   const run = K.run;
-  let left = a, right = b, showing = 'a';
+  let left = a, right = b, showing = 'a', mode = 'side', fade = 50, off = [0, 0];
+  coach('compareOpen');
   openSheet({ id: 'compare', className: 'sheet--compare', wide: true, label: 'Compare documents', build(body, entry) {
     const A = run.byId.get(left), B = run.byId.get(right), wide = innerWidth >= 760;
+    const modes = h('div', { class: 'cmp-modes', role: 'radiogroup', 'aria-label': 'How to compare' },
+      [['side', wide ? 'Side by side' : 'Flip'], ['overlay', 'Overlay']].map(([k, l]) => h('button', { class: `nb-tab ${mode === k ? 'is-on' : ''}`, role: 'radio', 'aria-checked': String(mode === k), type: 'button', onclick: () => { mode = k; if (k === 'overlay') coach('overlayOpen'); entry.rebuild(); } }, l)));
+    if (mode === 'overlay') {
+      // Tracing paper (ui.beats overlayRecords, signatureOverlay, twoWillOverlay, indexMapOverlay, textComparison):
+      // the second document on top, see-through, slid by finger or arrow buttons until the parts line up.
+      const top = h('div', { class: 'ov-top', style: { opacity: String(fade / 100), transform: `translate(${off[0]}px, ${off[1]}px)` } }, renderEvidence(K, B, { exhibitNo: exhibitNo(B.id) }));
+      const stage = h('div', { class: 'ov-stage' }, h('div', { class: 'ov-base' }, renderEvidence(K, A, { exhibitNo: exhibitNo(A.id) })), top);
+      let drag = null;
+      top.addEventListener('pointerdown', e => { drag = { x: e.clientX - off[0], y: e.clientY - off[1] }; top.setPointerCapture(e.pointerId); });
+      top.addEventListener('pointermove', e => { if (!drag) return; off = [e.clientX - drag.x, e.clientY - drag.y]; top.style.transform = `translate(${off[0]}px, ${off[1]}px)`; });
+      top.addEventListener('pointerup', () => { drag = null; });
+      const nudge = (dx, dy, l) => h('button', { class: 'btn ov-nudge', type: 'button', 'aria-label': `Move the top sheet ${l}`, onclick: () => { off = [off[0] + dx, off[1] + dy]; top.style.transform = `translate(${off[0]}px, ${off[1]}px)`; } }, { left: '←', right: '→', up: '↑', down: '↓' }[l]);
+      const slider = h('input', { type: 'range', min: '0', max: '100', value: String(fade), class: 'ov-fade', 'aria-label': `How see-through ${B.title} is`, oninput: e => { fade = +e.target.value; top.style.opacity = String(fade / 100); } });
+      put(body, h('h2', { class: 'sheet-title' }, 'Compare documents'), modes,
+        h('p', { class: 'hand dim' }, `${B.title} lies over ${A.title} like tracing paper. Slide it until the parts that should match sit on top of each other; whatever won't line up doesn't match.`),
+        h('div', { class: 'ov-tools' }, h('label', { class: 'ov-l' }, 'See-through', slider), h('div', { class: 'ov-nudges' }, nudge(-4, 0, 'left'), nudge(0, -4, 'up'), nudge(0, 4, 'down'), nudge(4, 0, 'right'),
+          h('button', { class: 'btn', type: 'button', onclick: () => { off = [0, 0]; top.style.transform = 'none'; } }, 'Line up again'))),
+        h('div', { class: 'cmp-picks' }, h('span', {}, 'Under: '), h('select', { class: 'cmp-pick', 'aria-label': 'The document underneath', onchange: ev => { left = ev.target.value; entry.rebuild(); } }, run.documents().filter(x => x.id !== right).map(x => h('option', { value: x.id, selected: x.id === left }, x.title))),
+          h('span', {}, ' On top: '), h('select', { class: 'cmp-pick', 'aria-label': 'The document on top', onchange: ev => { right = ev.target.value; entry.rebuild(); } }, run.documents().filter(x => x.id !== left).map(x => h('option', { value: x.id, selected: x.id === right }, x.title)))),
+        stage);
+      return;
+    }
     const pick = (cur, other, set) => h('select', { class: 'cmp-pick', 'aria-label': 'Choose the document', onchange: ev => { set(ev.target.value); entry.rebuild(); } },
       run.documents().filter(x => x.id !== other).map(x => h('option', { value: x.id, selected: x.id === cur }, x.title)));
     const col = (x, which) => h('div', { class: `cmp-col ${!wide && showing !== which ? 'is-hidden' : ''}`, 'data-which': which },
       h('div', { class: 'cmp-head' }, h('span', { class: 'cmp-tag' }, `EXHIBIT ${exhibitNo(x.id)}`), pick(x.id, which === 'a' ? right : left, v => { if (which === 'a') left = v; else right = v; })),
       renderEvidence(K, x, { exhibitNo: exhibitNo(x.id) }));
-    put(body, h('h2', { class: 'sheet-title' }, 'Compare documents'),
+    put(body, h('h2', { class: 'sheet-title' }, 'Compare documents'), modes,
       h('p', { class: 'hand dim' }, wide ? 'The same kind of paper, side by side. Look at what should match: numbers, stamps, signatures, dates.' : 'Flip between them. What changes when you flip is what doesn\'t match.'),
       wide ? null : h('div', { class: 'cmp-flip', role: 'tablist' },
         [['a', A], ['b', B]].map(([k, x]) => h('button', { class: `nb-tab ${showing === k ? 'is-on' : ''}`, role: 'tab', 'aria-selected': String(showing === k), type: 'button', onclick: () => { showing = k; const y = body.scrollTop; entry.rebuild(); body.scrollTop = y; } }, x.title.length > 26 ? x.title.slice(0, 25) + '…' : x.title))),

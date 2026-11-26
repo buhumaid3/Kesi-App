@@ -40,7 +40,8 @@
     "recon:briefs": "node tools/recon-briefs.mjs",
     "test:pictures": "node tests/ui-pictures.mjs",
     "store:shots": "node tools/store-shots.mjs",
-    "test:look": "node tests/ui-look.mjs"
+    "test:look": "node tests/ui-look.mjs",
+    "test:tools": "node tests/ui-tools.mjs"
   },
   "engines": {
     "node": ">=22"
