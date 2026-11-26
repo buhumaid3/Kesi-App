@@ -5,12 +5,13 @@ import { CaseRun, groupFacts, timeRows, genericReply, fmtHours } from './state.j
 import { layoutSites, byWords, renderMap, LEGEND } from './sitemap.js';
 import { load, persist, wipe, defaultSave, restore } from './store.js';
 import { appReady, haptic, isNative } from './native.js';
-import { createTitle } from './title.js';
+import { createLaunch } from './launch.js';
 import { h, $, $$, put, clearNotices, ask, openSheet, closeSheet, closeAllSheets, rebuildSheets, sheetOpen, voiceNote, toast, popover, typewrite, makeSound, stamp, reducedMotion } from './ui.js';
 import { esc, pad3, tilt, makeGlossary, shortFact } from './text.js';
 import { renderEvidence, photo, zoomPhoto, imgPath } from './docs.js';
 import { createAudio } from './audio.js';
 import { createMotion } from './motion.js';
+import { regionArt } from './regionart.js';
 import { attachDepth, enableTilt } from './depth.js';
 import { openPhoneApp, cleanText } from './phone.js';
 import { createCamera } from './camera.js';
@@ -18,7 +19,7 @@ import { createCamera } from './camera.js';
 const SLICE_LAST = 100;                      // the whole campaign
 const K = { campaign: null, save: load(), run: null, gloss: null, cases: new Map() };
 K.audio = createAudio(() => K.save.settings);
-const HAPTIC = { stamp: 'medium', accepted: 'success', returned: 'warning', pin: 'light', closed: 'heavy' };
+const HAPTIC = { stamp: 'medium', accepted: 'success', returned: 'warning', pin: 'light', closed: 'heavy', thud: 'light', hit: 'medium', drawer: 'light' };
 K.sound = kind => { K.audio.sfx(kind); if (HAPTIC[kind]) haptic(HAPTIC[kind], K.save.settings.haptics !== false); };
 K.reduced = () => reducedMotion(K.save.settings);
 K.motion = createMotion(K.reduced);
@@ -47,15 +48,16 @@ async function boot() {
   if (lc && K.save.cases[lc] && !K.save.cases[lc].solved && lc <= unlockedTo()) return openCase(lc);
   showCabinet();
 }
-// The title sequence (title.js): in full the first time, shorter after, a tap skips it, a still frame with Reduce
+// The launch sequence (launch.js, "Lamp on"): in full the first time (6.4 s), 2.5 s after, a tap skips it, a still frame with Reduce
 // Motion. The app's splash is the sequence's first frame, so it is hidden as soon as the sequence is on screen.
 // Sound starts with it where the device allows (the iOS app does); in a browser it stays silent until a tap.
 function playTitle() {
   const short = !!K.save.progress.titleSeen;
   return new Promise(resolve => {
-    createTitle(document.body, {
+    createLaunch(document.body, {
       short, reduced: K.reduced(),
       sound: kind => K.sound(kind),
+      rain: () => K.audio.rain(),
       speak: (sp, line) => K.audio.speak(sp, line, { tag: 'title' }),
       onDone: skipped => { if (skipped) K.audio.stopVoice('title'); K.save.progress.titleSeen = true; save(); resolve(); },
     });
@@ -145,9 +147,12 @@ function showCabinet() {
       const [a, b] = r.cases, cur = last || firstOpen(), count = Object.keys(pr.solved).filter(n => +n >= a && +n <= b).length;
       const open = cur >= a && cur <= b, reached = a <= unlockedTo();
       return h('details', { class: 'drawer', 'data-region': String(r.number), open: open ? '' : null },
-        h('summary', { class: 'drawer-label', 'aria-label': `Region ${r.number}, ${r.name}, ${reached ? `${count} of ${b - a + 1} closed` : 'sealed'}` },
-          h('span', { class: 'drawer-no' }, String(r.number).padStart(2, '0')), h('span', { class: 'drawer-name' }, r.name),
-          h('span', { class: 'drawer-count' }, reached ? `${count}/${b - a + 1} closed` : `Opens after case ${pad3(a - 1)}`)),
+        h('summary', { class: 'drawer-label drawer-front', 'aria-label': `Region ${r.number}, ${r.name}, ${reached ? `${count} of ${b - a + 1} closed` : 'sealed'}` },
+          h('span', { class: 'drawer-art', 'aria-hidden': 'true', html: regionArt(r, 'sign', { band: true }) }),
+          h('span', { class: 'drawer-holder' },
+            h('span', { class: 'drawer-no' }, String(r.number).padStart(2, '0')), h('span', { class: 'drawer-name' }, r.name),
+            h('span', { class: 'drawer-count' }, reached ? `${count}/${b - a + 1} closed` : `Opens after case ${pad3(a - 1)}`)),
+          h('span', { class: 'drawer-pull', 'aria-hidden': 'true' })),
         h('div', { class: 'folders' }, Array.from({ length: b - a + 1 }, (_, i) => folderCard(a + i))));
     }),
     h('section', { class: 'desk-shelf', 'aria-label': 'Your desk' },
@@ -164,6 +169,7 @@ function showCabinet() {
   screen(el, 'scr-cabinet');
   K.audio.music('cabinet');
   K.motion.deal(el, '.folder-card', { step: 45 });
+  el.querySelectorAll('details.drawer').forEach(d => d.addEventListener('toggle', () => { if (d.open) { K.sound('drawer'); K.motion.play(d.querySelector('.folders'), 'drawer'); K.motion.stagger(d.querySelectorAll('.folder-card'), 'card', { step: 30, delay: 120 }); } }));
   if (!pr.regionCardSeen) { regionCard(1); pr.regionCardSeen = true; save(); }
 }
 function firstOpen() { for (let n = 1; n <= unlockedTo(); n++) if (!K.save.progress.solved[n]) return n; return 1; }
@@ -183,12 +189,17 @@ function folderCard(n) {
 }
 function regionCard(num) {
   const r = K.campaign.regions[num - 1];
-  const card = h('div', { class: 'region-card-wrap', role: 'dialog', 'aria-label': `Region ${num}: ${r.name}` },
-    h('div', { class: 'sign-card is-entering', 'data-region': String(num) }, h('span', { class: 'sign' }, r.name), h('small', {}, `Region ${num} · cases ${r.cases[0]}–${r.cases[1]} · ${r.months}`)),
+  // The region's key art (polish P2): the scene slides in, the name is painted on letter by letter.
+  const card = h('div', { class: 'region-card-wrap', role: 'dialog', 'aria-label': `Region ${num}: ${r.name}, cases ${r.cases[0]} to ${r.cases[1]}, ${r.months}` },
+    h('div', { class: 'region-art-card is-entering', 'data-region': String(num), html: regionArt(r, 'sign') }),
+    h('p', { class: 'region-months' }, r.months),
     h('p', { class: 'tap-on' }, 'Tap to continue'));
-  card.addEventListener('click', () => card.remove());
+  const close = () => { if (!card.isConnected) return; K.motion.play(card, 'paper', { dir: 'out' }).then(() => card.remove()); };
+  card.addEventListener('click', close);
   document.body.append(card);
-  setTimeout(() => card.remove(), 4000);
+  K.sound('region');
+  K.motion.play(card.querySelector('.region-art-card'), 'folder');
+  setTimeout(close, 5200);
 }
 function showOldFolder() {
   const pr6 = K.campaign.prologue.beats.find(b => b.id === 'pr6');

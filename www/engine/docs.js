@@ -67,7 +67,10 @@ function table(rows, cls = '') {
   const cols = [...new Set(rows.flatMap(r => Object.keys(r)))];
   return h('div', { class: 'tbl-wrap' }, h('table', { class: `tbl ${cls}` },
     h('thead', {}, h('tr', {}, cols.map(c => h('th', { scope: 'col' }, human(c))))),
-    h('tbody', {}, rows.map(r => h('tr', {}, cols.map(c => h('td', {}, r[c] == null || r[c] === '' ? '' : String(r[c]))))))));
+    h('tbody', {}, rows.map(r => h('tr', {}, cols.map(c => { const v = r[c] == null || r[c] === '' ? '' : String(r[c]);
+      // A time, a plate or a short code never breaks across lines (a time read as "21:5 / 8" is a misreading).
+      const m = v.match(/^(\d{1,2}[:.]\d{2}|[A-Z]{3} ?\d{3}[A-Z]?)(\s.*)?$/);
+      return h('td', {}, m ? [h('span', { class: 'td-keep' }, m[1]), m[2] || ''] : v); }))))));
 }
 function kv(body, skip, gloss) {
   const out = [];

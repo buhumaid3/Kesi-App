@@ -20,7 +20,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const src = path.join(root, 'www'), out = path.join(root, 'dist'), cache = path.join(root, '.cache', 'voice32');
 const fast = process.argv.includes('--fast');
-const SKIP = [/^title-preview\.html$/, /(^|\/)\.DS_Store$/, /\.map$/, /(^|\/)review\//, /\.tmp\./, /\.wav$/];
+const SKIP = [/^title-preview\.html$/, /(^|\/)preview\//, /(^|\/)\.DS_Store$/, /\.map$/, /(^|\/)review\//, /\.tmp\./, /\.wav$/];
 const has = cmd => spawnSync('which', [cmd], { stdio: 'ignore' }).status === 0;
 const encoder = fast ? null : has('ffmpeg') ? 'ffmpeg' : has('afconvert') ? 'afconvert' : null;
 

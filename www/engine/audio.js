@@ -188,6 +188,45 @@ export function createAudio(getSettings) {
     else if (kind === 'returned') { note(hz(57), t, 0.6, 0.14); note(hz(53), t + 0.22, 1.0, 0.14); }
     else if (kind === 'closed') { [48, 55, 60, 64, 67].forEach((m, i) => note(hz(m), t + i * 0.08, 2.2, 0.1)); }
     else if (kind === 'clue') { note(hz(76), t, 0.5, 0.06); note(hz(83), t + 0.07, 0.6, 0.05); }
+    // Polish P2: the cabinet, the region card and the launch sequence.
+    else if (kind === 'drawer') {         // a steel drawer rolling out on its runners, then the stop
+      for (let i = 0; i < 6; i++) noise(0.06, 0.05, 500 + i * 60, t + i * 0.045);
+      noise(0.08, 0.22, 220, t + 0.3); note(hz(40), t + 0.3, 0.25, 0.08, 'triangle');
+    } else if (kind === 'region') {       // a drum, then a bright rising figure: the street arriving
+      noise(0.22, 0.35, 140);
+      [62, 66, 69, 74, 78].forEach((m, i) => note(hz(m), t + 0.18 + i * 0.07, 1.1, 0.07, 'triangle'));
+      note(hz(50), t + 0.18, 2.4, 0.09);
+    } else if (kind === 'lamp') { noise(0.02, 0.4, 3200); noise(0.03, 0.18, 900, t + 0.012); }
+    else if (kind === 'slide') noise(0.42, 0.12, 700);
+    else if (kind === 'thud') {
+      noise(0.1, 0.35, 180);
+      const o = ctx.createOscillator(), g = ctx.createGain();
+      o.frequency.setValueAtTime(90, t); o.frequency.exponentialRampToValueAtTime(40, t + 0.12);
+      g.gain.setValueAtTime(0.25, t); g.gain.exponentialRampToValueAtTime(0.001, t + 0.16); o.connect(g); g.connect(out); o.start(t); o.stop(t + 0.18);
+    } else if (kind === 'clip') { noise(0.015, 0.3, 4200); noise(0.02, 0.18, 2600, t + 0.05); }
+    else if (kind === 'rise') {           // the sting's build: a low drone swelling under the push into the photo
+      const o = ctx.createOscillator(), o2 = ctx.createOscillator(), g = ctx.createGain(), lp = ctx.createBiquadFilter();
+      o.type = 'sawtooth'; o2.type = 'sawtooth'; o.frequency.value = hz(38); o2.frequency.value = hz(38) * 1.006;
+      lp.type = 'lowpass'; lp.frequency.setValueAtTime(180, t); lp.frequency.exponentialRampToValueAtTime(1400, t + 1.0);
+      g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.12, t + 0.95); g.gain.exponentialRampToValueAtTime(0.0001, t + 1.25);
+      o.connect(lp); o2.connect(lp); lp.connect(g); g.connect(out); o.start(t); o2.start(t); o.stop(t + 1.3); o2.stop(t + 1.3);
+    } else if (kind === 'hit') {          // the sting's hit as the title lands
+      noise(0.5, 0.55, 110); noise(0.25, 0.2, 2400);
+      [38, 45, 50, 57, 62].forEach(m => note(hz(m), t, 3.2, 0.09));
+    }
+  }
+  // Rain on a window (the launch sequence's first sound): filtered noise with slow swells. Returns { stop }.
+  function rain() {
+    if (!ensure() || ctx.state !== 'running' || vol('sfx') === 0) return { stop() {} };
+    const len = ctx.sampleRate * 2, b = ctx.createBuffer(1, len, ctx.sampleRate), d = b.getChannelData(0);
+    for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * (Math.random() < 0.002 ? 3 : 1) * 0.5;
+    const src = ctx.createBufferSource(); src.buffer = b; src.loop = true;
+    const hp = ctx.createBiquadFilter(); hp.type = 'highpass'; hp.frequency.value = 900;
+    const lp = ctx.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 6000;
+    const g = ctx.createGain(); g.gain.value = 0.0001;
+    src.connect(hp); hp.connect(lp); lp.connect(g); g.connect(buses.sfx);
+    const t = ctx.currentTime; g.gain.exponentialRampToValueAtTime(0.09, t + 0.6); src.start();
+    return { stop(fade = 0.8) { const t2 = ctx.currentTime; g.gain.setTargetAtTime(0.0001, t2, fade / 3); setTimeout(() => { try { src.stop(); } catch { /* stopped */ } g.disconnect(); }, fade * 1000 + 400); } };
   }
 
   // ── Voices: one queue ─────────────────────────────────────────────────────────────────────────────
@@ -281,5 +320,5 @@ export function createAudio(getSettings) {
   }
   function hasCharacter(caseNo, personId, kind, text) { const said = spokenText(kind, text); return !!said && hasVoice(characterKey(caseNo, personId), said); }
 
-  return { character, hasCharacter, unlock, music, stopMusic, sfx, speak, stopVoice, hasVoice, isSpeaking, setVolumes, applySession, test, get running() { return ctx?.state === 'running'; } };
+  return { character, hasCharacter, unlock, music, stopMusic, sfx, rain, speak, stopVoice, hasVoice, isSpeaking, setVolumes, applySession, test, get running() { return ctx?.state === 'running'; } };
 }

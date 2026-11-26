@@ -11,7 +11,7 @@
     "images": "node tools/generate-images.mjs",
     "play": "node tools/serve.mjs",
     "place": "node tools/serve.mjs --place",
-    "test": "node tests/autoplay.mjs 1 100 && node tests/clock.mjs && node tests/travel.mjs && node tests/region7.mjs && node tests/region9.mjs",
+    "test": "node tests/autoplay.mjs 1 100 && node tests/clock.mjs && node tests/travel.mjs && node tests/region7.mjs && node tests/region9.mjs && node tests/motion.mjs",
     "build": "node tools/build.mjs",
     "ios:sync": "node tools/build.mjs && npx cap sync ios",
     "ios:assets": "npx @capacitor/assets generate --ios --iconBackgroundColor '#1A110C' --splashBackgroundColor '#1A110C' --splashBackgroundColorDark '#120C08'",
@@ -30,7 +30,9 @@
     "test:b14": "node tests/ui-b14.mjs http://127.0.0.1:5173",
     "test:b15": "node tests/ui-b15.mjs http://127.0.0.1:5173",
     "test:b16": "node tests/ui-b16.mjs http://127.0.0.1:5173",
-    "test:paper": "node tests/ui-paper.mjs http://127.0.0.1:5173"
+    "test:paper": "node tests/ui-paper.mjs http://127.0.0.1:5173",
+    "test:motion": "node tests/motion.mjs",
+    "test:launch": "node tests/ui-launch.mjs"
   },
   "engines": {
     "node": ">=22"

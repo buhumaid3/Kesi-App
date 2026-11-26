@@ -1,0 +1,12 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Kesi launch prototypes</title><link rel="stylesheet" href="../styles/tokens.css">
+<style>html,body{margin:0;height:100%;background:#060504;overflow:hidden}.launch,.launch-c{position:fixed;inset:0;width:100%;height:100%}.launch-skip{display:none}</style></head><body>
+<script type="module">
+// Launch v2 prototypes (not shipped).  ?v=lamp|string  ?t=3.6 (a still)  ?still (Reduce Motion)
+import { createLaunch } from '../engine/launch.js';
+const q = new URLSearchParams(location.search);
+await Promise.all(['900 40px "Big Shoulders Display"', '800 20px "Big Shoulders Stencil"', '700 20px "Courier Prime"', '400 20px "Courier Prime"', '500 12px "IBM Plex Mono"', '700 12px "IBM Plex Mono"'].map(f => document.fonts.load(f)));
+const L = createLaunch(document.body, { variant: q.get('v') || 'lamp', still: q.has('t') ? +q.get('t') : null, reduced: q.has('still'), onDone: () => { document.body.dataset.done = '1'; } });
+await L.ready; requestAnimationFrame(() => { document.body.dataset.ready = '1'; });
+window.__render = t => L.render(t);
+</script></body></html>

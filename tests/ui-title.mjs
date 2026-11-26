@@ -18,13 +18,14 @@ async function ctx(reduced) {
   check(await page.locator('.title-seq').count() === 1, 'first launch: the title sequence is on screen');
   await wait(1200);
   check(await page.locator('.title-seq').count() === 1, 'first launch: still playing after 1.8 s (the full version)');
+  check(await page.locator('.title-seq canvas.launch-c').count() === 1, 'the launch sequence draws on one canvas');
   await page.locator('.title-seq').click(); await wait(700);
   check(await page.locator('.title-seq').count() === 0, 'a tap skips it');
   check(await page.evaluate(() => window.KESI.save.progress.titleSeen === true), 'it is remembered as seen');
   await page.goto(`${base}/index.html?title`); await wait(300);
   check(await page.locator('.title-seq').count() === 1, 'next launch: it plays again');
   await wait(4600);
-  check(await page.locator('.title-seq').count() === 0, 'next launch: the short version ends by itself (about 3.5 s)');
+  check(await page.locator('.title-seq').count() === 0, 'next launch: the short version ends by itself (about 2.5 s)');
   await page.evaluate(() => { window.KESI.save.settings.titleSeq = false; localStorage.setItem('kesi.save.v1', JSON.stringify(window.KESI.save)); });
   await page.goto(`${base}/index.html?title`); await wait(600);
   check(await page.locator('.title-seq').count() === 0, 'Settings → Title sequence off: no title');
@@ -34,8 +35,8 @@ async function ctx(reduced) {
   const { c, page } = await ctx(true);
   await page.goto(`${base}/index.html?reset&title`); await wait(500);
   check(await page.locator('.title-seq.is-still').count() === 1, 'Reduce Motion: a still frame');
-  const vis = await page.evaluate(() => getComputedStyle(document.querySelector('.ts-stamp')).opacity);
-  check(+vis > 0.9, 'Reduce Motion: the still shows the finished title');
+  const fr = await page.evaluate(() => document.querySelector('.title-seq')?.dataset.frame);
+  check(fr === '4.90', 'Reduce Motion: the still shows the finished title and the line', `frame ${fr}`);
   await wait(3300);
   check(await page.locator('.title-seq').count() === 0, 'Reduce Motion: it moves on by itself');
   await c.close();

@@ -63,3 +63,7 @@
   .ts-stencil { top: calc(36% + clamp(48px, 21vh, 86px)); font-size: clamp(15px, 5vh, 24px); }
   .ts-line { left: max(16px, env(safe-area-inset-left, 0px)); bottom: max(14px, env(safe-area-inset-bottom, 0px)); transform: none; width: min(56vw, 460px); text-align: left; padding: 8px 12px; }
 }
+
+/* Launch v2 ("Lamp on", polish P2): one canvas; the skip button sits top right, clear of the ledger strip. */
+.launch .launch-c { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.launch .launch-skip { top: max(16px, env(safe-area-inset-top, 0px)); bottom: auto; }
