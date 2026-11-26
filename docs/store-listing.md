@@ -86,6 +86,6 @@ Apple needs a public privacy-policy URL and support URL. Your app repo is privat
 2. Copy the three files from this repo's `site/` folder into it.
 3. Settings → Pages → Source: deploy from branch `main`, folder `/ (root)`.
 4. The pages appear at `https://<your-github-name>.github.io/kesi-site/` within a minute or two. Paste those URLs into App Store Connect.
-5. Put a support email you're happy to publish into `site/support.html` and `site/privacy.html` (search for `SUPPORT_EMAIL`). A separate address for the game is better than your personal one.
+5. Support email on the pages: kesicasefiles@gmail.com (set 26 Nov 2026).
 
 Sources checked: Apple's age-rating values and definitions (App Store Connect Help); Apple's July 2025 notice on updated age ratings; App Store Connect Help on app privacy.
