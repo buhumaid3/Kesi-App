@@ -176,7 +176,7 @@ function showCabinet() {
         h('div', { class: 'drawer-label' }, h('span', { class: 'drawer-no' }, String(r.number).padStart(2, '0')), h('span', { class: 'drawer-name' }, r.name), h('span', { class: 'drawer-count' }, 'Not in this build'))))),
     h('p', { class: 'fine' }, 'Every case in Kesi is fiction. Streets and slang are real; the crimes, people and companies are invented.'));
   screen(el, 'scr-cabinet');
-  document.body.dataset.rain = '';
+  document.body.dataset.rain = ''; delete document.getElementById('sheets').dataset.region;
   K.audio.music('cabinet');
   K.motion.deal(el, '.folder-card', { step: 45 });
   el.querySelectorAll('details.drawer').forEach(d => d.addEventListener('toggle', () => { if (d.open) { K.sound('drawer'); K.motion.play(d.querySelector('.folders'), 'drawer'); K.motion.stagger(d.querySelectorAll('.folder-card'), 'card', { step: 30, delay: 120 }); } }));
@@ -343,7 +343,13 @@ function deskNode({ opening = false, typing = false } = {}) {
     h('button', { class: 'link back', type: 'button', onclick: () => { save(true); showCabinet(); } }, '← Cabinet'),
     h('span', { class: 'topbar-mid' }, `Case ${pad3(m.number)}`),
     h('button', { class: 'link', type: 'button', onclick: showSettings }, 'Settings'));
-  const hint = h('div', { class: 'workspace-hint', 'aria-hidden': 'true' }, h('b', {}, 'The desk'), h('span', {}, 'Open a place, a person, an exhibit or the notebook. It lies here, beside the folder.'));
+  // Wide screens: the empty half of the desk holds the scene photo pinned under the lamp and the region's art,
+  // not an empty box (polish P6).
+  const sceneLoc = c.locations.find(l => l.kind === 'scene' && l.image);
+  const hint = h('div', { class: 'workspace-hint', 'aria-hidden': 'true' },
+    h('div', { class: 'wh-art', html: regionArt(K.campaign.regions[m.regionNumber - 1], 'sign', { band: true }) }),
+    sceneLoc ? photo({ src: imgPath(m.number, sceneLoc.id), label: sceneLoc.name, kind: 'scene', id: 'wh' + sceneLoc.id }) : null,
+    h('b', {}, 'The desk'), h('span', {}, 'Open a place, a person, an exhibit or the notebook. It lies here, beside the folder.'));
   return { node: h('div', { class: 'desk' }, top, folder, hint, dock()), ledgerP };
 }
 function showDesk(first = false) {
@@ -353,6 +359,7 @@ function showDesk(first = false) {
   // Desk life: the ceiling fan's shadow drifting over the desk, and rain on the window on wet-season nights.
   const hour = +String(run.c.ob.time || '12').split(':')[0], night = hour >= 19 || hour < 6;
   document.body.dataset.rain = night && [1, 2, 5, 7].includes(run.c.meta.regionNumber) ? 'on' : '';
+  document.getElementById('sheets').dataset.region = String(run.c.meta.regionNumber);   // sheets carry the region's edge (P6)
   if (first) {
     K.motion.deal(node, '.fsec, .visit-card, .id-card, .ex-tag, .dock-obj', { step: 34 });
     node.querySelector('.folder-tab-big')?.classList.add('glint');          // the region tab catches the lamp once
@@ -884,6 +891,11 @@ function openPerson(pid) {
     const it = run.interrogation.get(pid);
     put(body, peopleStrip(pid));
     requestAnimationFrame(() => body.querySelector('.sw-person.is-on')?.scrollIntoView({ inline: 'center', block: 'nearest' }));
+    // A small bar with the face and name stays at the top once the portrait scrolls away (polish P6).
+    const mini = h('div', { class: 'person-mini', 'aria-hidden': 'true' }, p.image ? h('img', { src: imgPath(run.n, pid), alt: '', loading: 'lazy', onerror: e => e.target.remove() }) : h('span', { class: 'sw-ini' }, initials(p.name)), h('b', {}, p.name), h('span', {}, p.role === 'victim' ? 'deceased' : p.occupation));
+    put(body, mini);
+    requestAnimationFrame(() => { const head = body.querySelector('.person-head'); if (!head || !('IntersectionObserver' in window)) return;
+      new IntersectionObserver(([e]) => mini.classList.toggle('is-on', !e.isIntersecting && e.boundingClientRect.top < 0), { root: body.closest('.sheet') ? body : null, threshold: 0 }).observe(head); });
     put(body, h('div', { class: 'person-head' },
       p.image ? photo({ src: imgPath(run.n, pid), label: p.name, kind: 'portrait', id: pid, onZoom: zoomPhoto }) : h('span', { class: 'no-portrait big', 'aria-hidden': 'true' }, initials(p.name)),
       h('div', { class: 'person-meta' }, h('h2', {}, p.name), h('p', {}, p.role === 'victim' ? `${p.age} · deceased` : `${p.age} · ${p.occupation}`), h('p', { class: 'bio', html: K.gloss.rich(p.bio, { inline: K.save.settings.inlineGloss }) }))));
@@ -917,13 +929,23 @@ function openPerson(pid) {
       statements.map(e => h('button', { class: 'card-btn card-btn--small', type: 'button', onclick: () => openEvidence(e) }, h('span', {}, `EXHIBIT ${exhibitNo(e)}: `, h('b', {}, run.byId.get(e).title)), h('span', { class: 'arrow' }, '→')))));
     // The conversation so far, oldest first; replies are deterministic, so the transcript is rebuilt from what was asked.
     const asked = [...run.asked].filter(k => k.startsWith(pid + '|')).map(k => k.split('|')[1]);
-    if (asked.length) put(body, h('div', { class: 'transcript', 'aria-live': 'polite' }, asked.map(a => {
-      const t = (it.topics || []).find(x => x.about === a);
-      const reply = t ? t.reply : genericReply(pid, a);
-      const ans = h('p', { class: 'a', html: K.gloss.rich(reply, { inline: K.save.settings.inlineGloss }) });
-      const b = t ? playBtn('reply', reply) : null; if (b) ans.append(' ', b);
-      return h('div', { class: `qa ${a === lastAsked ? 'is-last' : ''}` }, h('p', { class: 'q' }, 'About ', h('b', {}, topicName(a))), ans);
-    })));
+    // Polish P6: questions that got nothing ("I don't know") fold into one line, so the answers that matter stand
+    // out; the one just asked always shows in full.
+    if (asked.length) {
+      const out = []; let none = [];
+      const flush = () => { if (none.length) out.push(h('div', { class: 'qa qa--none' }, h('p', { class: 'q' }, 'Nothing on ', none.map((x, i) => [i ? (i === none.length - 1 ? ' or ' : ', ') : '', h('b', {}, topicName(x))]), '.'))); none = []; };
+      for (const a of asked) {
+        const t = (it.topics || []).find(x => x.about === a);
+        if (!t && a !== lastAsked) { none.push(a); continue; }
+        flush();
+        const reply = t ? t.reply : genericReply(pid, a);
+        const ans = h('p', { class: 'a', html: K.gloss.rich(reply, { inline: K.save.settings.inlineGloss }) });
+        const b = t ? playBtn('reply', reply) : null; if (b) ans.append(' ', b);
+        out.push(h('div', { class: `qa ${a === lastAsked ? 'is-last' : ''}` }, h('p', { class: 'q' }, 'About ', h('b', {}, topicName(a))), ans));
+      }
+      flush();
+      put(body, h('div', { class: 'transcript', 'aria-live': 'polite' }, out));
+    }
     const topics = run.topics(pid);
     const groups = [['person', 'People'], ['location', 'Places'], ['evidence', 'Exhibits'], ['fact', 'Things you know']];
     put(body, h('div', { class: 'ask' }, h('h3', { class: 'sub-h' }, `Ask ${p.name.split(' ')[0]} about`),
@@ -1109,7 +1131,7 @@ function openNotebook(tab = 'person', focus = null) {
     function line(f) {
       const pinned = run.s.pinned.includes(f.id);
       return h('li', { class: `nb-line ${unseenAtOpen.has(f.id) ? 'is-new' : ''} ${f.kind === 'claim' ? 'is-claim' : ''} ${run.byId.get(f.id)?.absence ? 'is-absence' : ''}` },
-        h('span', { class: 'nb-text', html: K.gloss.rich(f.text, { inline: K.save.settings.inlineGloss }) }),
+        h('span', { class: 'nb-text' }, h('span', { class: 'hl', html: K.gloss.rich(f.text, { inline: K.save.settings.inlineGloss }) })),
         h('button', { class: `pin-btn ${pinned ? 'is-on' : ''}`, type: 'button', 'aria-pressed': String(pinned), 'aria-label': pinned ? 'Unpin this fact' : 'Pin this fact', onclick: () => { run.pin(f.id); save(); entry.rebuild(); } }, pinned ? '📌' : '＋'));
     }
     const match = f => !q || f.text.toLowerCase().includes(q.toLowerCase());
@@ -1184,14 +1206,17 @@ function openBoard() {
     ];
     // New cards are laid out in as many columns as suit the screen's shape (3 on a phone held upright, up to 6
     // on its side), so the fitted board is as large as it can be. Cards already placed never move.
-    const aspect = innerWidth / Math.max(1, innerHeight - 160);
-    const cols = Math.max(3, Math.min(6, Math.round(aspect * 3.2)));
+    // Polish P6: the column count that lets the fitted board open largest for this many cards on this screen.
+    const DX = innerWidth < 520 ? 200 : 240, DY = 186;
+    const vw = Math.max(200, Math.min(innerWidth, 900) - 32), vh = Math.max(200, innerHeight - 230), nCards = items.length;
+    const zFor = k => { const rows = Math.ceil(nCards / k); return Math.min(vw / (40 + (k - 1) * DX + 200), vh / (40 + (rows - 1) * DY + 190)); };
+    const cols = [2, 3, 4, 5, 6].reduce((best, k) => zFor(k) > zFor(best) + 1e-6 ? k : best, 2);
     const placed = Object.keys(B.pos).filter(k => items.some(it => it.id === k)).length;
     let slot = placed;
-    items.forEach(it => { if (!B.pos[it.id]) { const i = slot++; B.pos[it.id] = [24 + (i % cols) * 240 + tilt(it.id, 12), 30 + Math.floor(i / cols) * 190 + tilt(it.id + 'y', 14)]; } });
-    const W = Math.max(760, 40 + Math.max(...items.map(it => B.pos[it.id][0]), 0) + 200);
-    // The board is as tall as its cards need (a card is about 180 × 150), never less than a landscape sheet.
-    const H = Math.max(560, 40 + Math.max(0, ...items.map(it => B.pos[it.id][1])) + 190);
+    items.forEach(it => { if (!B.pos[it.id]) { const i = slot++; B.pos[it.id] = [24 + (i % cols) * DX + tilt(it.id, 10), 30 + Math.floor(i / cols) * DY + tilt(it.id + 'y', 12)]; } });
+    const W = Math.max(innerWidth < 520 ? 440 : 760, 40 + Math.max(...items.map(it => B.pos[it.id][0]), 0) + 200);
+    // The board is as tall as its cards need (a card is about 180 × 150).
+    const H = Math.max(innerWidth < 520 ? 420 : 560, 40 + Math.max(0, ...items.map(it => B.pos[it.id][1])) + 190);
     const cork = h('div', { class: 'cork', style: { width: W + 'px', height: H + 'px' } });
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('class', 'strings'); svg.setAttribute('width', W); svg.setAttribute('height', H); svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('aria-hidden', 'true');
@@ -1606,6 +1631,10 @@ function showVerdict(fresh, halimaLine = null) {
       c.chargeSheet.halima ? h('p', { class: 'halima' }, c.chargeSheet.halima) : null),
     h('div', { class: 'v-closed' }, h('span', { class: 'sign v-sign' }, 'Case closed'), h('h1', { class: 'v-title sign' }, c.meta.title),
       h('div', { class: 'v-stars', 'aria-label': `${st} of 3 stars` }, [1, 2, 3].map(i => h('span', { class: `v-star ${i <= st ? 'on' : 'off'}`, style: { '--n': i - 1 }, 'aria-hidden': 'true' }, i <= st ? '★' : '☆'))), h('p', { class: 'v-reason' }, `${['', 'Closed (by the book)', 'Closed', 'Commended'][st]} · ${run.starReason()}`)),
+    // The ceremony (polish P6): on a fresh verdict, the stamp, the title and the stars hold the screen on their own;
+    // the file follows when you ask for it.
+    fresh ? h('button', { class: 'v-read', type: 'button', onclick: e => { e.currentTarget.closest('.verdict').querySelector('.recon')?.scrollIntoView({ behavior: K.reduced() ? 'auto' : 'smooth', block: 'start' }); } },
+      h('span', {}, 'Read the file'), h('span', { class: 'v-read-ar', 'aria-hidden': 'true' }, '↓')) : null,
     h('section', { class: 'recon' }, h('h2', { class: 'fsec-h on-dark' }, 'What happened'),
       reconStill(n),
       c.solution.reconstruction.map((r, i) => h('div', { class: 'recon-step', style: { '--tilt': `${tilt(c.meta.id + i, 1)}deg` } },
@@ -1696,12 +1725,14 @@ function showEnding(c) {
   screen(el, 'scr-ending');
   steps[0]();
   // The epilogue's stills, from the campaign's own photos: Mwalimu, Block 9 (case 40), the Isiolo files (case 80),
-  // the seal (case 10), one still from each region, Halima. A missing photo leaves the dark frame.
+  // the seal (case 10), one still from each region, Halima. A missing photo shows the region's drawn art (P6).
   (async () => {
     const sceneOf = async n => { try { const cc = await getCase(n), l = cc.locations.find(x => x.kind === 'scene') || cc.locations[0]; return imgPath(n, l.id); } catch { return null; } };
     const srcs = [['img/ref/rc_mwalimu.webp'], [await sceneOf(40)], [await sceneOf(80)], [await sceneOf(10)],
       await Promise.all([10, 20, 30, 40, 50, 60, 70, 80, 90].map(sceneOf)), ['img/ref/rc_halima.webp']];
+    const artRegion = [10, 4, 8, 1, 1, 10];          // a missing photo shows that place's drawn key art, never a dark frame
     stage.querySelectorAll('.epi-frame').forEach((fr, i) => {
+      fr.prepend(h('div', { class: 'epi-art', 'aria-hidden': 'true', html: regionArt(K.campaign.regions[(artRegion[i] || 10) - 1], 'sign', { band: true }) }));
       const list = (srcs[i] || []).filter(Boolean); if (!list.length) return;
       fr.classList.toggle('is-mosaic', list.length > 1);
       for (const src of list) fr.append(h('img', { src, alt: '', loading: 'lazy', onerror: e => e.target.remove() }));

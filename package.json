@@ -38,7 +38,9 @@
     "test:audio": "node tests/ui-audio.mjs",
     "test:motion-ui": "node tests/ui-motion.mjs",
     "recon:briefs": "node tools/recon-briefs.mjs",
-    "test:pictures": "node tests/ui-pictures.mjs"
+    "test:pictures": "node tests/ui-pictures.mjs",
+    "store:shots": "node tools/store-shots.mjs",
+    "test:look": "node tests/ui-look.mjs"
   },
   "engines": {
     "node": ">=22"

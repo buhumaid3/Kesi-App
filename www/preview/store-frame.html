@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../styles/tokens.css"><link rel="stylesheet" href="../styles/app.css">
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#120c08}
+.bg{position:fixed;inset:-4%;filter:blur(6px) brightness(.55) saturate(1.1)}.bg svg{width:100%;height:100%}
+.cap{position:fixed;left:7%;right:7%;top:5.2%;text-align:center;font:900 calc(100vw*.083)/1 'Big Shoulders Display',sans-serif;color:#FFF8EC;text-transform:uppercase;letter-spacing:.01em;text-wrap:balance;
+  text-shadow:3px 3px 0 var(--sodium),6px 6px 0 #000}
+.dev{position:fixed;left:50%;bottom:-4%;width:78%;transform:translateX(-50%) rotate(-1.5deg);border-radius:calc(100vw*.08);padding:calc(100vw*.022);background:#0b0b0d;box-shadow:0 30px 60px rgba(0,0,0,.6),inset 0 0 0 2px #2a2a30}
+.dev img{display:block;width:100%;border-radius:calc(100vw*.062)}
+.brand{position:fixed;left:0;right:0;top:calc(5.2% + 0px);}
+</style></head><body>
+<div class="bg"></div><div class="cap"></div><div class="dev"><img alt=""></div>
+<script type="module">
+import { regionArt } from '../engine/regionart.js';
+const camp = await (await fetch('../cases/_campaign.json')).json();
+const r = +(new URLSearchParams(location.search).get('r') || 1);
+document.querySelector('.bg').innerHTML = regionArt(camp.regions[r - 1], 'sign', { title: false, w: 360, h: 780 });
+await document.fonts.load('900 40px "Big Shoulders Display"');
+window.__frame = async (src, caption) => { document.querySelector('.cap').textContent = caption; const i = document.querySelector('.dev img'); i.src = src; await i.decode(); document.body.dataset.ready = '1'; };
+</script></body></html>

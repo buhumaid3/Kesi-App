@@ -7,7 +7,7 @@ const css = fs.readFileSync(process.argv[2] || 'www/styles/tokens.css', 'utf8');
 const block = (re) => { const m = css.match(re); return m ? m[1] : ''; };
 const vars = (txt) => Object.fromEntries([...txt.matchAll(/--([\w-]+):\s*(#[0-9A-Fa-f]{6})/g)].map(m => [m[1], m[2]]));
 const light = vars(block(/:root\s*{([\s\S]*?)\n}/));
-const dark = { ...light, ...vars(block(/prefers-color-scheme: dark\)\s*{\s*:root\s*{([\s\S]*?)}/)) };
+const dark = { ...light, ...vars(block(/prefers-color-scheme: dark\)\s*{\s*:root[^{]*{([\s\S]*?)}/)) };   // :root:not([data-theme="light"]) since B8
 const regions = [...css.matchAll(/\[data-region="(\d+)"\]\s*{([^}]*)}/g)].map(m => {
   const v = vars(m[2]); const acc = (m[2].match(/--region-accent:\s*var\(--([\w-]+)\)/) || [])[1];
   return { n: +m[1], region: v.region, ink: v['region-ink'], accent: v['region-accent'] || light[acc] };

@@ -1672,3 +1672,63 @@ body:not([data-screen=scr-desk]) .dl-fan { opacity: .05; }
 .clip-body b { font: 700 11px var(--font-data); letter-spacing: .06em; }
 .verdict.is-fresh .clipping { animation: deal-tilt 520ms var(--ease-settle) 2900ms both; }
 [data-motion=reduce] .verdict.is-fresh .clipping { animation: none; }
+
+/* ── Polish P6: the look fixes ───────────────────────────────────────────────────────────────────────── */
+/* Interview: folded "nothing" answers, a sticky face, ask chips as index-card tabs. */
+.qa--none .q { color: var(--ink-soft); font-style: italic; }
+.person-mini { position: sticky; top: -1px; z-index: 6; display: flex; align-items: center; gap: 8px; margin: 0 -16px; padding: 6px 16px; background: var(--paper); border-bottom: 1px solid var(--paper-lo);
+  font: 600 13px var(--font-data); color: var(--ink); opacity: 0; transform: translateY(-8px); pointer-events: none; transition: opacity 160ms, transform 160ms; height: 0; overflow: hidden; }
+.person-mini.is-on { opacity: 1; transform: none; height: auto; overflow: visible; box-shadow: 0 6px 10px -8px rgba(0,0,0,.35); }
+.person-mini img, .person-mini .sw-ini { width: 30px; height: 36px; object-fit: cover; border-radius: 2px; flex: none; }
+.person-mini b { font: 800 16px var(--font-display); text-transform: uppercase; letter-spacing: .02em; }
+.person-mini span:last-child { color: var(--ink-soft); font-weight: 500; font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ask .chip { border: 0; border-top: 5px solid var(--manila-lo); background: #FBF7EC; box-shadow: 0 1px 0 rgba(0,0,0,.18), 0 3px 6px -3px rgba(0,0,0,.3); border-radius: 1px 1px 3px 3px; }
+.ask .chip.is-asked { border-top-color: var(--paper-lo); background: var(--paper-lo); color: var(--ink-soft); box-shadow: none; border-style: solid; }
+.ask .chip.is-asked::after { content: ' ✓'; color: var(--ob-green); }
+/* Notebook: the highlighter follows each line of handwriting, not the block; the tab row shows it scrolls. */
+.nb-line.is-new .nb-text { background: none; }
+.nb-line.is-new .nb-text > .hl, .nb-line.is-new .nb-text { -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.nb-line.is-new .nb-text .hl { background: linear-gradient(transparent 48%, var(--highlighter) 48% 86%, transparent 86%); padding: 0 2px; }
+.nb-tabs { -webkit-mask: linear-gradient(90deg, #000 calc(100% - 28px), transparent); mask: linear-gradient(90deg, #000 calc(100% - 28px), transparent); scroll-padding: 16px; }
+.nb-tabs::after { content: ''; flex: none; width: 20px; }
+/* Empty states that look intended (P6): an epilogue still not yet generated shows the place's drawn art. */
+.epi-art { grid-area: 1 / 1; width: 100%; height: 100%; filter: saturate(.7) brightness(.8); }
+.epi-art svg { width: 100%; height: 100%; display: block; }
+.epi-frame.is-mosaic .epi-art { grid-column: 1 / -1; grid-row: 1 / -1; }
+.epi-frame img { position: relative; z-index: 1; }
+@media (min-width: 900px) {
+  body[data-screen=scr-desk] .workspace-hint { border: 0; justify-items: center; align-content: center; }
+  .workspace-hint .wh-art { width: min(420px, 100%); height: 110px; border-radius: 4px; overflow: hidden; opacity: .85; box-shadow: 0 10px 22px rgba(0,0,0,.45); transform: rotate(-1deg); }
+  .workspace-hint .wh-art svg { width: 100%; height: 100%; display: block; }
+  .workspace-hint .photo { width: min(340px, 80%); margin-top: -18px; }
+  .workspace-hint span { max-width: 32ch; }
+}
+/* Region identity carried further (P6): every sheet opened in a case has the region's colour along its top edge. */
+#sheets[data-region] .sheet:not(.sheet--device)::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 5px; z-index: 3; border-radius: inherit; border-bottom-left-radius: 0; border-bottom-right-radius: 0;
+  background: linear-gradient(90deg, var(--region) 0 72%, var(--region-accent) 72% 100%); pointer-events: none; }
+/* The send button: quiet while the sheet isn't ready, a stamp-red edge when it is. */
+.card-btn--submit.is-disabled, .card-btn--submit:disabled { background: transparent; color: var(--ink-soft); border: 1.5px dashed color-mix(in srgb, var(--ink-soft) 60%, transparent); box-shadow: none; opacity: 1; }
+.card-btn--submit.is-disabled .arrow, .card-btn--submit:disabled .arrow { color: var(--ink-soft); }
+.card-btn--submit:not(:disabled):not(.is-disabled) { box-shadow: 4px 4px 0 var(--stamp); }
+.card-btn--submit:not(:disabled):not(.is-disabled):active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--stamp); }
+/* The masthead: an enamel nameplate on a brass strip instead of a grey label. */
+.title-board { background: linear-gradient(#22352B, #16241D); color: #E9DFC9; border: 2px solid #C9A24A; box-shadow: var(--shadow-lift), inset 0 0 0 3px #16241D, inset 0 0 0 4px rgba(201,162,74,.5); }
+.title-board .sign { --region-accent: var(--sodium); }
+.title-board small { color: #E9DFC9; opacity: .85; letter-spacing: .04em; }
+/* Small type raised to the §5.4 floors (P6). */
+.bcard { font-size: 13px; } .bcard b { font-size: 14px; }
+.folder-tab { font-size: 13px; }
+.dock-obj { font-size: 13px; }
+@media (max-width: 360px) { .dock-obj { font-size: 12px; } }
+.mp-key { font-size: calc(12.5px * var(--scale)); }
+/* The drawer screens sit in the middle of the screen, not at the top of an empty page. */
+.end-stage:has(.end-folder) { align-content: center; min-height: 60vh; }
+.prologue-wrap:has(.old-folder) .prologue { display: grid; align-content: center; }
+/* The verdict as a ceremony (P6): the first screen is the stamp, the title and the stars; the file follows. */
+.verdict.is-fresh .v-closed { min-height: calc(100svh - 300px); display: grid; align-content: center; justify-items: center; text-align: center; }
+.v-read { display: flex; flex-direction: column; align-items: center; gap: 2px; margin: 4px auto 18px; background: none; border: 0; color: #E9DFC9; font: 600 13px var(--font-data); letter-spacing: .12em; text-transform: uppercase; min-height: var(--tap-min); cursor: pointer; opacity: 0; animation: v-read-in 500ms ease-out 3000ms forwards; }
+.v-read-ar { font-size: 20px; animation: v-read-bob 1.6s ease-in-out 3500ms infinite; }
+@keyframes v-read-in { to { opacity: 1; } }
+@keyframes v-read-bob { 50% { transform: translateY(5px); } }
+.v-read:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+[data-motion=reduce] .v-read { animation: none; opacity: 1; } [data-motion=reduce] .v-read-ar { animation: none; }
