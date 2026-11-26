@@ -27,7 +27,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { TITLE_LINE } from '../www/engine/title.js';
+import { LAUNCH_LINE as TITLE_LINE } from '../www/engine/launch.js';
 import { voiceKey } from '../www/engine/voicekey.js';
 import { buildCast, characterLines, loadCases } from './voice-cast.mjs';
 import { GENERIC_REPLIES } from '../www/engine/state.js';

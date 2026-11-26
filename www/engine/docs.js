@@ -2,7 +2,7 @@
 // sharp, accessible and translatable; generated photos only ever show places, faces and objects.
 import { h, $, openSheet } from './ui.js';
 import { esc, pad3, tilt } from './text.js';
-import { recordsPrintout, phoneScreen, letter, form, writtenLog, footage, calendar } from './paper.js';
+import { recordsPrintout, phoneScreen, letter, form, writtenLog, footage, calendar, sketch } from './paper.js';
 
 const LEDGER = new Set(['tallyBook', 'visitorRegister', 'logBook', 'ticketBook', 'jobBook', 'orderBook', 'feeBook', 'ledger']);
 const SLIP = new Set(['receipt', 'ticket', 'collectionSlip', 'tag']);
@@ -160,6 +160,7 @@ export function renderEvidence(K, ev, { exhibitNo } = {}) {
     else if (r === 'form' && !Array.isArray(b.rows)) { made = form(ev, b, ctx); doc.classList.add('doc--form'); }
     else if ((r === 'video' || r === 'cctv') && (b.notes || b.frames)) { made = footage(ev, b, ctx); doc.classList.add('doc--footage'); }
     else if (r === 'calendar') { made = calendar(ev, b, ctx); }
+    else if (r === 'sketch') { made = sketch(ev, b, ctx); }
     else if (LEDGER.has(r) && !Array.isArray(b.rows) && typeof b.text === 'string') made = { nodes: [writtenLog(b.text, gloss)], used: new Set(['text']) };
     if (imgOf) doc.append(photo({ src: imgOf, label: no || ev.title, kind: 'evidence', id: ev.id, onZoom: zoom, small: true }));
     if (made) { doc.append(...made.nodes.filter(Boolean)); doc.append(...kv(b, new Set([...made.used, 'rows']), gloss)); if (Array.isArray(b.rows)) doc.append(table(b.rows, LEDGER.has(r) ? 'tbl--ledger' : '')); }

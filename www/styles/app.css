@@ -1732,3 +1732,11 @@ body:not([data-screen=scr-desk]) .dl-fan { opacity: .05; }
 @keyframes v-read-bob { 50% { transform: translateY(5px); } }
 .v-read:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
 [data-motion=reduce] .v-read { animation: none; opacity: 1; } [data-motion=reduce] .v-read-ar { animation: none; }
+/* Forensic sketch (P6): graph paper, pencil plan, numbered marks, the notes typed beneath. */
+.sk-sheet { background: #F6F2E6; background-image: linear-gradient(rgba(47,68,151,.14) 1px, transparent 1px), linear-gradient(90deg, rgba(47,68,151,.14) 1px, transparent 1px); background-size: 12px 12px; border: 1px solid var(--paper-lo); padding: 6px; }
+.sk-sheet svg { display: block; width: 100%; height: auto; }
+.sk-sheet .sk-l { font: 500 9px var(--font-hand); fill: #3F3F44; }
+.sk-sheet .sk-n { font: 700 10px var(--font-data); fill: #B3261E; }
+.sk-notes { margin: 10px 0 0; padding-left: 1.4em; font: var(--t-doc) var(--font-doc); display: grid; gap: 6px; }
+.sk-notes li::marker { color: var(--stamp); font-weight: 700; }
+.sk-foot { margin: 8px 0 0; font: 12px var(--font-hand); color: var(--ink-soft); }

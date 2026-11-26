@@ -196,3 +196,46 @@ export function calendar(ev, b, { gloss }) {
     h('div', { class: 'cal-grid', 'aria-hidden': 'true' }, Array.from({ length: 35 }, () => h('span'))),
     b.page ? h('p', { class: 'other-hand cal-note', html: gloss(String(b.page)) }) : null)] };
 }
+
+// ── Forensic sketch (polish P6, the 7 `sketch` exhibits) ─────────────────────────────────────────────────
+// Graph paper with a plan drawn in pencil from what the sketch's notes describe, a north arrow, "not to scale",
+// and the notes themselves typed beside numbered marks. The drawing follows the notes' own words; it adds no fact.
+export function sketchKind(text) {
+  const t = text.toLowerCase();
+  if (/tyre|wheel|lorry|all-terrain|vehicle/.test(t)) return 'tyres';
+  if (/print|boot|gumboot|sole|heel/.test(t)) return 'prints';
+  if (/tracks/.test(t)) return 'tyres';
+  if (/drip|wax|stair|landing|floor/.test(t)) return 'stairs';
+  if (/→|route|km\b|distance/.test(t)) return 'route';
+  if (/farm|boundary|plot|side/.test(t)) return 'plots';
+  return 'plain';
+}
+const SK = '#3F3F44';
+function sketchArt(kind) {
+  const foot = (x, y, r, k = 1) => `<g transform="translate(${x} ${y}) rotate(${r})"><ellipse rx="${5 * k}" ry="${9 * k}" fill="none" stroke="${SK}" stroke-width="1.2"/><path d="M${-3 * k} ${-4 * k}h${6 * k}M${-3 * k} 0h${6 * k}M${-3 * k} ${4 * k}h${6 * k}" stroke="${SK}" stroke-width=".8"/></g>`;
+  if (kind === 'prints') {
+    let s = ''; for (let i = 0; i < 7; i++) s += foot(60 + i * 26, 70 + (i % 2) * 18 - i * 4, 80, .9);
+    for (let i = 0; i < 6; i++) s += foot(212 - i * 26, 132 + (i % 2) * 16 + i * 3, -100, .9);
+    return `${s}<path d="M250 30v130" stroke="${SK}" stroke-width="1" stroke-dasharray="4 3"/><text x="256" y="44" class="sk-l">edge</text>`;
+  }
+  if (kind === 'tyres') return `<path d="M20 150C90 140 150 100 270 40M30 162C100 152 162 112 280 52" fill="none" stroke="${SK}" stroke-width="5" stroke-dasharray="3 3"/><path d="M20 150C90 140 150 100 270 40" fill="none" stroke="${SK}" stroke-width=".8"/><text x="22" y="140" class="sk-l">road</text>`;
+  if (kind === 'stairs') {
+    let s = '<rect x="30" y="30" width="80" height="120" fill="none" stroke="' + SK + '" stroke-width="1.4"/><text x="36" y="46" class="sk-l">office</text>';
+    for (let i = 0; i < 8; i++) s += `<path d="M150 ${150 - i * 14}h60" stroke="${SK}" stroke-width="1"/>`;
+    s += `<rect x="150" y="38" width="60" height="114" fill="none" stroke="${SK}" stroke-width="1.4"/><text x="216" y="60" class="sk-l">stairs up</text><rect x="230" y="20" width="60" height="40" fill="none" stroke="${SK}" stroke-width="1.4"/><text x="234" y="34" class="sk-l">landing</text>`;
+    for (const [x, y] of [[80, 110], [118, 128], [140, 140], [170, 120], [190, 92], [176, 64], [200, 46], [244, 40], [262, 44]]) s += `<circle cx="${x}" cy="${y}" r="2.6" fill="${SK}"/>`;
+    return s;
+  }
+  if (kind === 'route') return `<path d="M40 140C80 60 160 40 250 60" fill="none" stroke="${SK}" stroke-width="1.6"/><path d="M250 70C170 70 100 110 50 150" fill="none" stroke="${SK}" stroke-width="1.2" stroke-dasharray="6 4"/><circle cx="40" cy="142" r="6" fill="none" stroke="${SK}" stroke-width="1.6"/><path d="M244 52l12 8-12 8z" fill="${SK}"/><circle cx="250" cy="62" r="6" fill="none" stroke="${SK}" stroke-width="1.6"/>`;
+  if (kind === 'plots') return `<path d="M20 40h110v110H20zM170 40h110v110H170z" fill="none" stroke="${SK}" stroke-width="1.4"/><path d="M150 20v150" stroke="${SK}" stroke-width="1" stroke-dasharray="2 4"/><path d="M30 60l90 80M40 50l80 70M180 60l90 80M190 50l80 70" stroke="${SK}" stroke-width=".5" opacity=".6"/><text x="138" y="180" class="sk-l">town</text>`;
+  return `<path d="M40 40h220v120H40z" fill="none" stroke="${SK}" stroke-width="1.2"/>`;
+}
+export function sketch(ev, b, { gloss }) {
+  const notes = Object.entries(b).filter(([, v]) => typeof v === 'string' && v.trim());
+  const kind = sketchKind(notes.map(([, v]) => v).join(' '));
+  const marks = [[64, 66], [200, 132], [250, 62], [150, 100]];
+  return { used: new Set(notes.map(([k]) => k)), nodes: [h('div', { class: 'sk' },
+    h('div', { class: 'sk-sheet', html: `<svg viewBox="0 0 300 190" role="img" aria-label="Sketch: ${notes.map(([, v]) => v).join(' ').replace(/"/g, '&quot;')}">${sketchArt(kind)}${notes.slice(0, 4).map((_, i) => `<g transform="translate(${marks[i][0]} ${marks[i][1] - 18})"><circle r="8" fill="#F3EBDA" stroke="#B3261E" stroke-width="1.4"/><text y="4" text-anchor="middle" class="sk-n">${i + 1}</text></g>`).join('')}<g transform="translate(276 160)"><path d="M0 -18l6 16h-12z" fill="${SK}"/><text y="10" text-anchor="middle" class="sk-l">N</text></g></svg>` }),
+    h('ol', { class: 'sk-notes' }, notes.map(([k, v]) => h('li', {}, k !== 'note' && k !== 'label' ? h('b', {}, `${k[0].toUpperCase()}${k.slice(1)}: `) : null, h('span', { html: gloss(v) })))),
+    h('p', { class: 'sk-foot' }, 'Not to scale · drawn at the scene'))] };
+}

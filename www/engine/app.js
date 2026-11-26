@@ -1244,8 +1244,24 @@ function openBoard() {
         path.setAttribute('class', `string ${newString === `${a}|${b}` ? 'is-new' : ''}`);
         path.addEventListener('click', () => { if (mode === 'string') { B.strings = B.strings.filter(s => !(s[0] === a && s[1] === b)); save(); drawStrings(); } });
         svg.append(path);
+        if (swingIds && (swingIds.has(a) || swingIds.has(b) || newString === `${a}|${b}`)) swing(path, x1, y1, x2, y2, sag);
       }
+      swingIds = null;
     };
+    // The red string is a rope (polish P6, the P4 leftover): a new string, or one whose card just moved, swings
+    // on its sag and settles (a damped spring on the low point), then hangs still.
+    let swingIds = new Set();
+    function swing(path, x1, y1, x2, y2, sag) {
+      if (K.reduced()) return;
+      const t0 = performance.now(), mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+      const step = now => {
+        const t = (now - t0) / 1000; if (t > 1.2 || !path.isConnected) { path.setAttribute('d', `M${x1},${y1} Q${mx},${my + sag} ${x2},${y2}`); return; }
+        const k = Math.exp(-4.2 * t) * Math.cos(13 * t);
+        path.setAttribute('d', `M${x1},${y1} Q${mx + k * sag * 0.35},${my + sag * (1 + 0.75 * k)} ${x2},${y2}`);
+        requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
     function drag(card, it) {
       let start = null, moved = false;
       card.addEventListener('pointerdown', e => { if (e.target.closest('button')) return; e.stopPropagation(); start = { x: e.clientX, y: e.clientY, p: [...B.pos[it.id]] }; moved = false; card.setPointerCapture(e.pointerId); card.classList.add('is-lifted'); });
@@ -1262,6 +1278,7 @@ function openBoard() {
         if (!start) return; card.classList.remove('is-lifted');
         if (!moved || mode === 'string') select(it.id); else {
           K.sound('pin'); save();
+          swingIds = new Set([it.id]); drawStrings();
           // The pin is pushed back into the cork: it lifts with the card and goes in with a little press.
           if (!K.reduced()) card.querySelector('.bpin')?.animate([{ transform: 'translateY(-6px) scale(1.35)', boxShadow: '0 8px 6px rgba(0,0,0,.35)' }, { transform: 'translateY(1px) scale(.92)', offset: .6 }, { transform: 'none' }], { duration: 300, easing: 'cubic-bezier(.6,0,.4,1)' });
         }
@@ -1273,7 +1290,7 @@ function openBoard() {
     function select(id) {
       if (mode !== 'string') { if (id.startsWith('ev_')) openEvidence(id); else if (id.startsWith('p_')) openPerson(id); return; }
       if (!sel) { sel = id; cards.get(id)?.classList.add('is-sel'); return; }
-      if (sel !== id && !B.strings.some(s => s.includes(sel) && s.includes(id))) { B.strings.push([sel, id]); newString = `${sel}|${id}`; K.sound('string'); save(); }
+      if (sel !== id && !B.strings.some(s => s.includes(sel) && s.includes(id))) { B.strings.push([sel, id]); newString = `${sel}|${id}`; swingIds = new Set(); K.sound('string'); save(); }
       cards.get(sel)?.classList.remove('is-sel'); sel = null; drawStrings();
     }
     // ── The viewport: fit, zoom, pan ─────────────────────────────────────────────────────────────────
