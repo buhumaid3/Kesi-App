@@ -1573,3 +1573,69 @@ summary.drawer-front:focus-visible { outline: 3px solid var(--focus); outline-of
 }
 @keyframes ra-paint { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
 @keyframes ra-drive { from { transform: translateX(-120%); } to { transform: none; } }
+
+/* ── Motion v2 moments (polish P4) ───────────────────────────────────────────────────────────────────── */
+.motion-ghost { transition: none !important; animation: none !important; }
+.flyer--word { background: var(--paper); color: var(--ink); font: 700 14px var(--font-doc); padding: 6px 10px; border: 1.5px solid var(--ink); border-radius: 2px; box-shadow: var(--shadow-lift); }
+/* The region tab catches the lamp once when the folder lands. */
+.folder-tab-big.glint { position: relative; overflow: hidden; }
+.folder-tab-big.glint::after { content: ''; position: absolute; inset: 0; background: linear-gradient(105deg, transparent 30%, rgba(255,248,236,.75) 48%, transparent 62%); transform: translateX(-120%); animation: glint 600ms ease-out 400ms 1 both; pointer-events: none; }
+@keyframes glint { to { transform: translateX(120%); } }
+/* A caught lie: the ink line is drawn through the claim, then the stamp. */
+.claim.just-broken > span:first-child { text-decoration: none; background: linear-gradient(var(--lie), var(--lie)) no-repeat 0 58% / 0 2px; -webkit-box-decoration-break: clone; box-decoration-break: clone; animation: ink-strike 520ms cubic-bezier(.5,0,.2,1) 120ms forwards; }
+.claim.just-broken.mark-explains > span:first-child { background-image: linear-gradient(#77737f, #77737f); }
+@keyframes ink-strike { to { background-size: 100% 2px; } }
+.claim.just-broken .claim-stamp { animation: thump 340ms var(--ease-settle) 600ms both; }
+/* The charge sheet comes back from the prosecutor. */
+.charge.is-back { animation: back-in 420ms var(--ease-settle) 380ms both; }
+@keyframes back-in { from { opacity: 0; transform: translate(-40px, -20px) rotate(-3deg) scale(.96); } to { opacity: 1; transform: none; } }
+/* A sheet opened over another: the one underneath sinks a little (paper over paper). */
+#sheets .sheet.is-in:not(:last-of-type) { transform: translateY(-6px) scale(.975); filter: brightness(.9); transition: transform 300ms var(--ease-settle), filter 300ms; }
+[data-motion=reduce] .claim.just-broken > span:first-child { animation: none; background-size: 100% 2px; }
+[data-motion=reduce] .charge.is-back, [data-motion=reduce] .folder-tab-big.glint::after { animation: none; }
+[data-motion=reduce] #sheets .sheet.is-in:not(:last-of-type) { transform: none; filter: none; }
+/* A lab result arrives face down and turns over. */
+.ex-tag.flip-in { animation: flip-in 620ms cubic-bezier(.3,.7,.3,1.1) 250ms both; transform-origin: 50% 50%; }
+@keyframes flip-in { 0% { transform: perspective(600px) rotateY(180deg); filter: brightness(.55); } 55% { filter: brightness(.55); } 100% { transform: perspective(600px) rotate(var(--tilt, 0deg)); filter: none; } }
+/* Murram dust behind the 4×4 on the site map. */
+.sm-dust { fill: #C49A6C; transform-box: fill-box; transform-origin: center; pointer-events: none; }
+/* Detained: the cell door's bars pass over the sheet once. */
+.cell-bars { position: absolute; inset: 0; z-index: 5; pointer-events: none; background: repeating-linear-gradient(90deg, rgba(10,8,6,0) 0 34px, rgba(10,8,6,.55) 34px 44px); animation: cell-pass 1400ms cubic-bezier(.4,0,.2,1) both; }
+@keyframes cell-pass { 0% { transform: translateX(-100%); opacity: 0; } 25% { opacity: 1; } 60% { transform: translateX(0); opacity: 1; } 100% { transform: translateX(0); opacity: 0; } }
+/* An exhibit arrives in a kraft envelope that slides away; switching exhibits slides the next one in. */
+.sheet--doc.is-in::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 46%; z-index: 4; pointer-events: none; border-radius: 0 0 4px 4px;
+  background: linear-gradient(var(--kraft), color-mix(in srgb, var(--kraft) 85%, #000)); clip-path: polygon(0 0, 50% 22%, 100% 0, 100% 100%, 0 100%); animation: envelope-away 420ms cubic-bezier(.5,0,.75,0) 120ms both; }
+@keyframes envelope-away { from { transform: none; opacity: 1; } to { transform: translateY(105%); opacity: 1; visibility: hidden; } }
+.sheet-body.is-swap > * { animation: swap-in 280ms var(--ease-settle) both; }
+@keyframes swap-in { from { opacity: 0; transform: translateX(22px) rotate(.6deg); } to { opacity: 1; transform: none; } }
+[data-motion=reduce] .ex-tag.flip-in, [data-motion=reduce] .sheet-body.is-swap > * { animation: none; }
+[data-motion=reduce] .sheet--doc.is-in::after, [data-motion=reduce] .cell-bars { display: none; }
+/* Verdict stars as brass stamps: each comes down, rings and leaves an ink ring. */
+.v-star { animation-name: star-stamp; animation-duration: 420ms; animation-timing-function: cubic-bezier(.6,0,.9,.3); }
+.v-star.on { color: #C9A24A; text-shadow: 0 1px 0 #6b5420, 0 0 0 transparent; position: relative; }
+@keyframes star-stamp { 0% { opacity: 0; transform: translateY(-36px) scale(1.9) rotate(-14deg); } 55% { opacity: 1; transform: scale(.9) rotate(0); } 75% { transform: scale(1.06); } 100% { opacity: 1; transform: none; } }
+.verdict.is-fresh .v-star.on::after { content: ''; position: absolute; left: 50%; top: 50%; width: 1.3em; height: 1.3em; margin: -.65em 0 0 -.65em; border-radius: 50%; border: 2px solid rgba(201,162,74,.6); opacity: 0;
+  animation: ink-ring 700ms ease-out both; animation-delay: calc(1800ms + var(--n) * 220ms + 220ms); }
+@keyframes ink-ring { from { opacity: .8; transform: scale(.6); } to { opacity: 0; transform: scale(1.5); } }
+/* New sticky notes peel onto the cork from a corner. */
+.bcard--note.deal, .bcard--note.is-fresh { animation: note-peel 420ms var(--ease-settle) both; transform-origin: 0 0; }
+@keyframes note-peel { from { opacity: 0; transform: rotate(-14deg) translate(-8px, -12px) scale(.9); } to { opacity: 1; transform: rotate(var(--tilt, 0deg)); } }
+[data-motion=reduce] .v-star.on::after, [data-motion=reduce] .bcard--note.is-fresh { animation: none; }
+/* Desk life (polish P4): very slow, very quiet, never over what you read (z-index under #app), paused when hidden. */
+#desk-life { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.dl-fan { position: absolute; left: 50%; top: 28%; width: 150vmax; height: 150vmax; margin: -75vmax 0 0 -75vmax; opacity: .09; mix-blend-mode: multiply;
+  background: conic-gradient(from 0deg, #000 0 7deg, transparent 7deg 120deg, #000 120deg 127deg, transparent 127deg 240deg, #000 240deg 247deg, transparent 247deg 360deg);
+  -webkit-mask: radial-gradient(circle, #000 0 18%, transparent 46%); mask: radial-gradient(circle, #000 0 18%, transparent 46%); filter: blur(14px); animation: fan 9s linear infinite; }
+@keyframes fan { to { transform: rotate(360deg); } }
+.dl-rain { position: absolute; inset: 0 0 50% 0; opacity: 0; transition: opacity 1.5s; background:
+  repeating-linear-gradient(100deg, transparent 0 22px, rgba(170,200,240,.06) 22px 23px, transparent 23px 61px),
+  repeating-linear-gradient(97deg, transparent 0 37px, rgba(170,200,240,.05) 37px 38px, transparent 38px 90px);
+  -webkit-mask: linear-gradient(#000, transparent); mask: linear-gradient(#000, transparent); animation: rain-fall 1.6s linear infinite; }
+body[data-rain=on] .dl-rain { opacity: 1; }
+@keyframes rain-fall { from { background-position: 0 -200px, 0 -300px; } to { background-position: -30px 0, -40px 0; } }
+#lamp { animation: lamp-flicker 23s steps(1, end) infinite; }
+@keyframes lamp-flicker { 0%, 61%, 61.6%, 62.2%, 100% { opacity: 1; } 61.3% { opacity: .82; } 61.9% { opacity: .9; } }
+body.is-hidden #desk-life *, body.is-hidden #lamp { animation-play-state: paused; }
+[data-desk-life=off] #desk-life, [data-motion=reduce] #desk-life { display: none; }
+[data-desk-life=off] #lamp, [data-motion=reduce] #lamp { animation: none; }
+body:not([data-screen=scr-desk]) .dl-fan { opacity: .05; }

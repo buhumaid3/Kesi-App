@@ -37,7 +37,8 @@ export function openSheet({ id, className = '', label, build, onClose, wide = fa
   // Same sheet, new content (another person, place or exhibit): swap what it builds and how it closes, so the
   // sheet never shows the previous one's closure, and start again from the top.
   if (existing && id) {
-    if (build) { existing.build = build; existing.onClose = onClose; existing.el.setAttribute('aria-label', label || id); existing.body.replaceChildren(); build(existing.body, existing); existing.body.scrollTop = 0; }
+    if (build) { existing.build = build; existing.onClose = onClose; existing.el.setAttribute('aria-label', label || id); existing.body.replaceChildren(); build(existing.body, existing); existing.body.scrollTop = 0;
+      existing.body.classList.remove('is-swap'); void existing.body.offsetWidth; existing.body.classList.add('is-swap'); }   // the next one slides in over it
     else existing.rebuild();
     return existing;
   }

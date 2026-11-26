@@ -76,7 +76,7 @@ function save(now = false) {
   persist(K.save, now);
 }
 addEventListener('pagehide', () => save(true));
-document.addEventListener('visibilitychange', () => { if (document.hidden) save(true); });
+document.addEventListener('visibilitychange', () => { document.body.classList.toggle('is-hidden', document.hidden); if (document.hidden) save(true); });
 
 function applySettings() {
   const s = K.save.settings, root = document.documentElement;
@@ -84,6 +84,7 @@ function applySettings() {
   root.style.setProperty('--scale', s.scale);
   root.dataset.plain = s.plain ? '1' : '0';
   root.dataset.motion = K.reduced() ? 'reduce' : 'full';
+  root.dataset.deskLife = K.save.settings.deskLife === false ? 'off' : 'on';
 }
 function screen(el, cls) {
   const sc = $('#screen');
@@ -169,6 +170,7 @@ function showCabinet() {
         h('div', { class: 'drawer-label' }, h('span', { class: 'drawer-no' }, String(r.number).padStart(2, '0')), h('span', { class: 'drawer-name' }, r.name), h('span', { class: 'drawer-count' }, 'Not in this build'))))),
     h('p', { class: 'fine' }, 'Every case in Kesi is fiction. Streets and slang are real; the crimes, people and companies are invented.'));
   screen(el, 'scr-cabinet');
+  document.body.dataset.rain = '';
   K.audio.music('cabinet');
   K.motion.deal(el, '.folder-card', { step: 45 });
   el.querySelectorAll('details.drawer').forEach(d => d.addEventListener('toggle', () => { if (d.open) { K.sound('drawer'); K.motion.play(d.querySelector('.folders'), 'drawer'); K.motion.stagger(d.querySelectorAll('.folder-card'), 'card', { step: 30, delay: 120 }); } }));
@@ -180,7 +182,7 @@ function folderCard(n) {
   const meta = K.cases.get(n)?.meta;
   const title = meta?.title || '';
   const btn = h('button', { class: `folder-card ${solved ? 'is-closed' : ''} ${open ? '' : 'is-locked'}`, type: 'button', disabled: !open, style: { '--tilt': `${tilt('f' + n, 1.2)}deg` },
-    onclick: () => open && openCase(n), 'aria-label': open ? `Case ${pad3(n)}${title ? ', ' + title : ''}${solved ? `, closed, ${solved.stars} stars` : ''}` : `Case ${pad3(n)}, sealed until case ${pad3(n - 1)} is closed` },
+    onclick: e => { if (!open) return; K.motion.liftFolder(e.currentTarget); K.sound('paper'); openCase(n); }, 'aria-label': open ? `Case ${pad3(n)}${title ? ', ' + title : ''}${solved ? `, closed, ${solved.stars} stars` : ''}` : `Case ${pad3(n)}, sealed until case ${pad3(n - 1)} is closed` },
     h('span', { class: 'folder-tab' }, meta?.folderTab || pad3(n)),
     h('span', { class: 'folder-no' }, `CASE ${pad3(n)}`),
     h('span', { class: 'folder-title' }, open ? title || '…' : 'Sealed'),
@@ -334,7 +336,13 @@ function showDesk(first = false) {
   const run = K.run, typing = !run.s.obTyped && !run.s.solved;
   const { node, ledgerP } = deskNode({ opening: first && !K.reduced(), typing });
   screen(node, 'scr-desk');
-  if (first) K.motion.deal(node, '.fsec, .visit-card, .id-card, .ex-tag, .dock-obj', { step: 34 });
+  // Desk life: the ceiling fan's shadow drifting over the desk, and rain on the window on wet-season nights.
+  const hour = +String(run.c.ob.time || '12').split(':')[0], night = hour >= 19 || hour < 6;
+  document.body.dataset.rain = night && [1, 2, 5, 7].includes(run.c.meta.regionNumber) ? 'on' : '';
+  if (first) {
+    K.motion.deal(node, '.fsec, .visit-card, .id-card, .ex-tag, .dock-obj', { step: 34 });
+    node.querySelector('.folder-tab-big')?.classList.add('glint');          // the region tab catches the lamp once
+  }
   if (typing) typewrite(ledgerP, run.c.ob.text, { reduced: K.reduced(), sound: K.sound }).then(() => {
     run.s.obTyped = true; ledgerP.innerHTML = K.gloss.rich(run.c.ob.text, { inline: K.save.settings.inlineGloss }); save();
   });
@@ -458,6 +466,14 @@ async function goTo(id) {
   }
   openLocation(id);
 }
+// Murram dust behind the 4×4: a small puff that grows and fades where the car just was.
+function puff(svg, x, y) {
+  const c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+  c.setAttribute('cx', x.toFixed(1)); c.setAttribute('cy', y.toFixed(1)); c.setAttribute('r', '3'); c.setAttribute('class', 'sm-dust');
+  svg.append(c);
+  const a = c.animate([{ opacity: 0.55, transform: 'scale(1)' }, { opacity: 0, transform: 'scale(3.2) translateY(-3px)' }], { duration: 700, easing: 'ease-out' });
+  a.onfinish = () => c.remove();
+}
 function animateDrive(r) {
   const car = $('.scr-desk .site-map .sm-car');
   if (!r || !car || !folderMap || K.reduced() || r.path.length < 2) return Promise.resolve();
@@ -468,12 +484,13 @@ function animateDrive(r) {
   const dur = Math.min(1600, 500 + r.minutes * 6);
   K.sound('key');
   return new Promise(res => {
-    const t0 = performance.now();
+    const t0 = performance.now(); let lastPuff = 0;
     const step = now => {
       const k = Math.min(1, (now - t0) / dur), e = k < 0.5 ? 2 * k * k : 1 - (-2 * k + 2) ** 2 / 2;
       let d = e * total, i = 0; while (i < seg.length - 1 && d > seg[i]) { d -= seg[i]; i++; }
       const f = seg[i] ? Math.min(1, d / seg[i]) : 1, x = pts[i][0] + (pts[i + 1][0] - pts[i][0]) * f, y = pts[i][1] + (pts[i + 1][1] - pts[i][1]) * f;
       car.setAttribute('transform', `translate(${(x + 15).toFixed(1)} ${(y - 13).toFixed(1)})`);
+      if (now - lastPuff > 70 && k < 0.97) { lastPuff = now; puff(car.ownerSVGElement, x, y); }
       if (k < 1) requestAnimationFrame(step); else setTimeout(res, 120);
     };
     requestAnimationFrame(step);
@@ -530,7 +547,8 @@ function labItems(id) {
   return items.length ? items.join(' + ') : e.title.replace(/^Lab: /, '');
 }
 function sendLab(id) {
-  const run = K.run, r = run.submitLab(id); if (!r) return;
+  const run = K.run, btn = document.activeElement?.closest?.('.lab-tag'), from = btn?.getBoundingClientRect(), r = run.submitLab(id); if (!r) return;
+  if (from) K.motion.ghost(btn, [{ transform: 'none', opacity: 1 }, { transform: 'translateY(-8px) scale(.9) rotate(-3deg)', offset: .3 }, { transform: `translate(${innerWidth}px, -20px) scale(.4) rotate(10deg)`, opacity: 0 }], { duration: 460 });
   K.sound('stamp'); toast(`Sent to the lab. Back ${run.clockAt(r.due).label}.`);
   after(r); rebuildSheets();
 }
@@ -555,6 +573,7 @@ function clockEvents(events) {
   for (const e of events || []) {
     if (e.type === 'lab') {
       const ev = run.byId.get(e.id), autopsy = ev.lab?.test === 'autopsy';
+      (K.flipIn ||= new Set()).add(e.id);
       setTimeout(() => toast(autopsy ? `The post-mortem report is in: ${ev.title}. ${e.facts.length} findings to the notebook.` : `Back from the lab: ${ev.title.replace(/^Lab: /, '')}. ${e.facts.length} fact${e.facts.length === 1 ? '' : 's'} to the notebook.`), 300);
       if (autopsy) { const l = run.tutorial('firstAutopsy'); if (l) setTimeout(() => mwalimu(l), 1200); else coach('autopsy'); }
     } else if (e.type === 'released') {
@@ -589,6 +608,7 @@ function custodyBlock(pid) {
     if (!(await ask({ title: `Detain ${first}?`, text: `${first} goes to the cells and a clock starts: 24 hours to take samples and ask what you need. Then ${first} walks, and can't be questioned again. One detention at a time.`, ok: 'Detain' }))) return;
     const r = run.detain(pid); if (!r) return;
     K.sound('stamp'); after(r); rebuildSheets();
+    if (!K.reduced()) { const bars = h('div', { class: 'cell-bars', 'aria-hidden': 'true' }); document.querySelector('#sheets .sheet.is-in:last-of-type')?.append(bars); setTimeout(() => bars.remove(), 1500); }
     const l = run.tutorial('firstDetention'); if (l) setTimeout(() => mwalimu(l), 700);
   } }, 'Detain · 24 hours'));
 }
@@ -610,7 +630,8 @@ function personCard(p) {
 const initials = name => name.split(/\s+/).filter(w => /^[A-Z]/.test(w)).slice(0, 2).map(w => w[0]).join('');
 function exhibitTag(id, no) {
   const run = K.run, e = run.byId.get(id), fresh = !run.seenEvidence.has(id);
-  return h('button', { class: `ex-tag ${fresh ? 'is-new' : ''}`, type: 'button', onclick: () => openEvidence(id), style: { '--tilt': `${tilt(id, 1.5)}deg` } },
+  const flip = K.flipIn?.delete(id);
+  return h('button', { class: `ex-tag ${fresh ? 'is-new' : ''} ${flip ? 'flip-in' : ''}`, type: 'button', onclick: () => openEvidence(id), style: { '--tilt': `${tilt(id, 1.5)}deg` } },
     h('b', {}, `EXHIBIT ${no}`), h('span', {}, e.title));
 }
 const exhibitNo = id => [...K.run.kE].indexOf(id) + 1;
@@ -872,7 +893,7 @@ function openPerson(pid) {
       run.pressOn() && claims.length ? (coach('personClaims'), h('p', { class: 'hand dim press-help' }, 'Something here doesn\'t fit what you know? Press it and show them why.')) : null,
       h('ul', {}, claims.map(f => {
         const st = run.claimState(f);
-        const li = h('li', { class: `claim ${st ? `is-${st.state} mark-${st.mark}` : ''}` }, h('span', { html: K.gloss.rich(run.byId.get(f).text) }));
+        const li = h('li', { class: `claim ${st ? `is-${st.state} mark-${st.mark}` : ''} ${st && K.justBroken === f ? 'just-broken' : ''}`, 'data-claim': f }, h('span', { html: K.gloss.rich(run.byId.get(f).text) }));
         const b = playBtn('claim', run.byId.get(f).text); if (b) li.append(' ', b);
         if (st) li.append(h('span', { class: `claim-stamp st st--${st.mark}` }, st.state === 'greyed' ? 'FELL WITH IT' : { implicates: 'LIE', explains: 'EXPLAINED', mistaken: 'MISTAKEN' }[st.mark] || 'BROKEN'));
         else if (run.pressOn()) li.append(h('button', { class: 'press-btn', type: 'button', 'aria-label': 'Press this claim', onclick: () => pressClaim(pid, f) }, 'Press'));
@@ -986,11 +1007,13 @@ function pressClaim(pid, claim) {
       if (!r) return;
       if (!r.ok) {
         K.sound('returned'); save(); refreshDesk();
+        K.motion.bounce(document.querySelector(`.claim[data-claim="${claim}"]`) || document.querySelector('#sheets .sheet.is-in:last-of-type .sheet-body'));
         toast(`${p.name.split(' ')[0]} doesn't blink. That doesn't contradict it${r.cost ? ': one credibility stamp gone' : ''}.`);
         entry.rebuild(); return;
       }
       closeSheet(entry);
       pressed.set(pid, r);
+      K.justBroken = claim; setTimeout(() => { K.justBroken = null; }, 2500);
       // A held beat of silence, then the stamp and the reaction (§2.4).
       K.audio.stopVoice('person');
       await new Promise(res => setTimeout(res, K.reduced() ? 100 : 700));
@@ -1162,7 +1185,7 @@ function openBoard() {
     const cards = new Map();
     for (const it of items) {
       const [x, y] = B.pos[it.id];
-      const card = h('div', { class: `bcard bcard--${it.kind} ${sel === it.id ? 'is-sel' : ''}`, tabIndex: 0, role: 'button', 'data-id': it.id, 'aria-label': `${it.label}. ${mode === 'string' ? 'Tap to tie string' : 'Drag to move'}`,
+      const card = h('div', { class: `bcard bcard--${it.kind} ${sel === it.id ? 'is-sel' : ''} ${K.freshNote === it.id ? 'is-fresh' : ''}`, tabIndex: 0, role: 'button', 'data-id': it.id, 'aria-label': `${it.label}. ${mode === 'string' ? 'Tap to tie string' : 'Drag to move'}`,
         style: { transform: `translate(${x}px, ${y}px) rotate(${tilt(it.id)}deg)` } },
         h('span', { class: 'bpin', 'aria-hidden': 'true' }),
         it.kind === 'person' && run.byId.get(it.id).image ? photo({ src: imgPath(run.n, it.id), kind: 'portrait', id: it.id, small: true }) : null,
@@ -1198,7 +1221,11 @@ function openBoard() {
       });
       const end = () => {
         if (!start) return; card.classList.remove('is-lifted');
-        if (!moved || mode === 'string') select(it.id); else { K.sound('pin'); save(); }
+        if (!moved || mode === 'string') select(it.id); else {
+          K.sound('pin'); save();
+          // The pin is pushed back into the cork: it lifts with the card and goes in with a little press.
+          if (!K.reduced()) card.querySelector('.bpin')?.animate([{ transform: 'translateY(-6px) scale(1.35)', boxShadow: '0 8px 6px rgba(0,0,0,.35)' }, { transform: 'translateY(1px) scale(.92)', offset: .6 }, { transform: 'none' }], { duration: 300, easing: 'cubic-bezier(.6,0,.4,1)' });
+        }
         start = null;
       };
       card.addEventListener('pointerup', end); card.addEventListener('pointercancel', () => { start = null; card.classList.remove('is-lifted'); });
@@ -1271,7 +1298,7 @@ function openBoard() {
       h('button', { class: `btn ${mode === 'string' ? 'is-on' : ''}`, type: 'button', 'aria-pressed': String(mode === 'string'), onclick: () => { mode = 'string'; sel = null; entry.rebuild(); } }, 'Red string'),
       h('button', { class: 'btn', type: 'button', onclick: async () => {
         const text = await ask({ title: 'Sticky note', input: true, ok: 'Pin it' }); if (!text) return;
-        const id = 'note_' + Date.now(); B.notes.push({ id, text: text.slice(0, 140) }); save(); entry.rebuild();
+        const id = 'note_' + Date.now(); B.notes.push({ id, text: text.slice(0, 140) }); K.freshNote = id; setTimeout(() => { K.freshNote = null; }, 700); K.sound('paper'); save(); entry.rebuild();
       } }, 'Sticky note'),
       h('button', { class: 'btn', type: 'button', onclick: async () => { if (await ask({ title: 'Tidy the board?', text: 'Cards go back in rows and every string is cut.', ok: 'Tidy' })) { B.pos = {}; B.strings = []; cam.auto = true; save(); entry.rebuild(); } } }, 'Tidy'));
     put(body, h('div', { class: 'board-top' }, h('h2', { class: 'sheet-title on-dark' }, 'Corkboard'),
@@ -1458,12 +1485,16 @@ function openCharge() {
           missing ? h('p', { class: 'hand dim' }, `${missing} more event${missing > 1 ? 's' : ''} to find before this can be sent.`) : null));
     }
     function place(blankId, wid) {
+      const from = [...body.querySelectorAll('.chip--word')].find(c => c.textContent === run.byId.get(wid)?.text)?.getBoundingClientRect();
       if (!run.setBlank(blankId, wid)) return;
       justFilled = blankId;
       K.sound('key'); armed = false; lastResult = null;
       const nb = wordBlanks.find(x => !run.s.charge[x.id] && !run.passed.has(x.group));
       if (nb) selected = nb.id;
       save(); entry.rebuild();
+      // The word flies from the bank into its blank (the blank is already filled underneath).
+      const to = body.querySelector(`.cs-blank[data-blank="${blankId}"]`);
+      if (from && to) K.motion.flyTo(from, to, { label: run.byId.get(wid)?.text || '', kind: 'word' });
     }
     const results = lastResult ? h('div', { class: 'cs-results' }, lastResult.results.filter(r => !r.already).map(r => {
       const st = h('span', { class: `st ${r.pass ? 'st--acc' : 'st--ret'}` }, r.pass ? 'ACCEPTED' : 'RETURNED');
@@ -1476,6 +1507,8 @@ function openCharge() {
         if (l && !armed) { armed = true; mwalimu(l); entry.rebuild(); return; }
         const r = run.submit(); if (!r) return;
         lastResult = r; armed = false;
+        K.motion.sendAway(body.querySelector('.charge')); K.sound('slide');
+        setTimeout(() => body.querySelector('.charge')?.classList.add('is-back'), 0);
         save(true);
         // Halima reads her verdict on the sheet out loud when it has been recorded.
         const said = r.results.filter(x => !x.already && x.line).map(x => x.line);
@@ -1736,6 +1769,7 @@ function showSettings() {
       row('Case intros', h('div', { class: 'seg' }, [['first', 'First time'], ['always', 'Always'], ['off', 'Off']].map(([v, l]) => h('button', { class: `seg-b ${s.intros === v ? 'is-on' : ''}`, type: 'button', 'aria-pressed': String(s.intros === v), onclick: () => { s.intros = v; save(); entry.rebuild(); } }, l))), 'The short title sequence when a case opens.'),
       row('Mwalimu\'s tips', h('button', { class: 'btn', type: 'button', onclick: () => { const f = K.save.progress.flags; f.coach = {}; f.coachCore = {}; save(); toast('Tips will play again the next time each one comes up.'); } }, 'Replay'), 'The one-time tips for each new part of the job.'),
       row('Motion', h('div', { class: 'seg' }, [['system', 'System'], ['reduce', 'Reduce'], ['full', 'Full']].map(([v, l]) => h('button', { class: `seg-b ${s.motion === v ? 'is-on' : ''}`, type: 'button', 'aria-pressed': String(s.motion === v), onclick: () => { s.motion = v; applySettings(); save(); entry.rebuild(); } }, l))), 'Reduce follows iOS Reduce Motion by default.'),
+      row('Desk life', toggle('deskLife'), 'The lamp\'s flicker, the ceiling fan\'s shadow drifting over the desk, rain on the window at night. Very slow, and paused whenever the app is in the background.'),
       row('Depth in photos', toggle('depth'), 'Places and scenes move with real depth when you drag across them.'),
       row('Tilt to look around', h('button', { class: 'btn', type: 'button', onclick: async () => { const ok = await enableTilt(); toast(ok ? 'Tilt the phone to look around a photo.' : 'This device did not allow motion access.'); } }, 'Allow'), 'Uses the phone\'s motion sensor while a photo is open. Asks for permission once.'),
       isNative ? row('Vibration', toggle('haptics'), 'A small tap when a stamp lands or a sheet is accepted.') : null,

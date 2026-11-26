@@ -83,7 +83,7 @@ export function createMotion(reduced) {
   }
 
   // A tag or slip flies along a curve from a point (or element) to a target element, then the target nods.
-  function flyTo(from, to, { label = '', kind = 'tag', delay = 0 } = {}) {
+  function flyTo(from, to, { label = '', kind = 'tag', delay = 0, duration = kind === 'word' ? 480 : 600 } = {}) {
     if (!to) return Promise.resolve();
     const fr = from instanceof Element ? from.getBoundingClientRect() : from;
     const tr = to.getBoundingClientRect();
@@ -105,7 +105,7 @@ export function createMotion(reduced) {
       frames.push({ transform: `translate(${x}px, ${y}px) rotate(${(1 - t) * -8 + t * 6}deg) scale(${s})`, opacity: i === 0 ? 0 : i === 12 ? 0.2 : 1 });
     }
     return new Promise(res => {
-      const a = ghost.animate(frames, { duration: 720, delay, easing: 'cubic-bezier(.45,.05,.35,1)', fill: 'both' });
+      const a = ghost.animate(frames, { duration, delay, easing: 'cubic-bezier(.45,.05,.35,1)', fill: 'both' });
       a.onfinish = () => { ghost.remove(); bump(to); res(); };
       a.oncancel = () => { ghost.remove(); res(); };
     });
@@ -179,5 +179,53 @@ export function createMotion(reduced) {
   function skipStory() { for (const a of [...story]) { try { a.finish(); } catch { a.cancel(); } } }
   addEventListener('pointerdown', () => { if (story.size) skipStory(); }, { passive: true, capture: true });
 
-  return { deal, bump, shake, flyTo, lamp, motes, play, stagger, skipStory };
+  // P4 helpers. ghost(): a copy of an element that does the leaving while the real one is already replaced
+  // (so the game's state never waits on an animation). Resolves when gone.
+  function ghost(el, frames, { duration = 420, easing = EASE.in, delay = 0 } = {}) {
+    if (!el || reduced()) return Promise.resolve();
+    const r = el.getBoundingClientRect(); if (!r.width) return Promise.resolve();
+    const g = el.cloneNode(true);
+    g.removeAttribute('id'); g.setAttribute('aria-hidden', 'true'); g.inert = true;
+    g.classList.add('motion-ghost');
+    Object.assign(g.style, { position: 'fixed', left: `${r.left}px`, top: `${r.top}px`, width: `${r.width}px`, height: `${r.height}px`, margin: '0', zIndex: '95', pointerEvents: 'none' });
+    document.body.append(g);
+    const a = g.animate(frames, { duration, easing, delay, fill: 'both' });
+    return new Promise(res => { const done = () => { g.remove(); res(); }; a.onfinish = done; a.oncancel = done; });
+  }
+  // A folder lifted out of its drawer, flying to the middle of the desk and opening (cabinet → case).
+  function liftFolder(card) {
+    if (!card || reduced()) return Promise.resolve();
+    const r = card.getBoundingClientRect(), cx = innerWidth / 2 - (r.left + r.width / 2), cy = innerHeight * 0.42 - (r.top + r.height / 2);
+    return ghost(card, [
+      { transform: 'none', boxShadow: '0 2px 4px rgba(0,0,0,.3)' },
+      { transform: 'translateY(-14px) rotate(-2deg) scale(1.04)', boxShadow: '0 18px 30px rgba(0,0,0,.5)', offset: 0.25 },
+      { transform: `translate(${cx}px, ${cy}px) rotate(1deg) scale(1.9)`, opacity: 1, offset: 0.8 },
+      { transform: `translate(${cx}px, ${cy}px) scale(2.1)`, opacity: 0 },
+    ], { duration: 520, easing: EASE.inOut });
+  }
+  // A sheet sent away: into an envelope, off to the right (the charge sheet to the prosecutor).
+  function sendAway(el) {
+    return ghost(el, [
+      { transform: 'none', opacity: 1 },
+      { transform: 'translateY(30px) scale(.86) rotate(-2deg)', opacity: 1, offset: 0.35 },
+      { transform: `translate(${innerWidth * 0.7}px, 10px) scale(.5) rotate(8deg)`, opacity: 0 },
+    ], { duration: 480 });
+  }
+  // A card that doesn't fit bounces back (a wrong press).
+  function bounce(el) {
+    if (!el || reduced()) return;
+    el.animate([{ transform: 'none' }, { transform: 'translateX(28px) rotate(2deg)' }, { transform: 'translateX(-6px)' }, { transform: 'none' }], { duration: 420, easing: EASE.settle });
+  }
+  // Brass stamps for the verdict's stars: each comes down, rings, and leaves an ink ring.
+  function stampIn(els, { delay = 0, step = 260 } = {}) {
+    if (reduced()) return;
+    [...els].forEach((el, i) => el.animate([
+      { transform: 'translateY(-40px) scale(1.8) rotate(-12deg)', opacity: 0, offset: 0 },
+      { transform: 'translateY(0) scale(.92) rotate(0)', opacity: 1, offset: 0.55 },
+      { transform: 'scale(1.04)', offset: 0.75 },
+      { transform: 'none', opacity: 1, offset: 1 },
+    ], { duration: 380, delay: delay + i * step, easing: EASE.impact, fill: 'backwards' }));
+  }
+
+  return { deal, bump, shake, flyTo, lamp, motes, play, stagger, skipStory, ghost, liftFolder, sendAway, bounce, stampIn };
 }
